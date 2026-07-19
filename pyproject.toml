@@ -1,0 +1,34 @@
+[project]
+name = "histomap"
+version = "0.1.0"
+description = "Historical map data visualization"
+requires-python = ">=3.9"
+authors = [{ name = "Pierre Mainguet", email = "pierre.mainguet@kelkoogroup.com" }]
+
+dependencies = [
+  "pandas>=2.2",
+  "pyarrow>=18.0",
+  "pydantic>=2.7",
+  "pyyaml>=6.0",
+  "SPARQLWrapper>=2.0",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+# E/W pycodestyle · F pyflakes · I isort · UP pyupgrade · B bugbear
+
+[tool.ruff.format]
+# Black-compatible formatter
+
+[tool.mypy]
+python_version = "3.9"
+check_untyped_defs = true
+ignore_missing_imports = true

@@ -1,0 +1,57 @@
+:root {
+  color-scheme: light;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #27251f;
+  background: #eee9de;
+  --ink-faint: #777063;
+  --paper: #f9f5ea;
+  --rule: #c7beaa;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+header {
+  padding: 2.5rem clamp(1rem, 5vw, 5rem) 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.eyebrow {
+  margin: 0 0 .4rem;
+  color: #8c422d;
+  font: 700 .72rem/1.2 system-ui, sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+h1 { margin: 0; font-size: clamp(2.8rem, 7vw, 5.8rem); font-weight: 500; line-height: .95; }
+.intro { max-width: 42rem; color: var(--ink-faint); font-size: 1.05rem; }
+
+.controls { display: flex; flex-wrap: wrap; gap: .8rem; align-items: end; font: .82rem system-ui, sans-serif; }
+.controls label { display: grid; gap: .2rem; }
+input, button { border: 1px solid var(--rule); border-radius: 2px; padding: .45rem .6rem; background: white; }
+input { width: 8rem; }
+button { cursor: pointer; background: #343b35; color: white; border-color: #343b35; }
+#summary { color: var(--ink-faint); }
+
+main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem); gap: 1.25rem; padding: 1.25rem; }
+.chart { min-height: 70vh; overflow: auto; background: var(--paper); border: 1px solid var(--rule); }
+.chart svg { display: block; min-width: 740px; }
+.details { position: sticky; top: 1rem; align-self: start; min-height: 9rem; padding: 1rem; background: var(--paper); border-top: 3px solid #8c422d; }
+.details h2 { margin: 0 0 .3rem; font-size: 1.4rem; font-weight: 500; }
+.details p { color: var(--ink-faint); line-height: 1.45; }
+.details dl { display: grid; grid-template-columns: auto 1fr; gap: .3rem .8rem; font: .82rem system-ui, sans-serif; }
+.details dt { color: var(--ink-faint); }
+.details dd { margin: 0; }
+.band { cursor: pointer; transition: opacity .12s; }
+.band:hover, .band:focus { opacity: 1 !important; outline: none; stroke: #27251f; stroke-width: 2; }
+.axis-label { fill: #6f685c; font: 11px system-ui, sans-serif; }
+.grid-line { stroke: #d8d1c2; stroke-width: 1; }
+.empty, .error { padding: 2rem; color: var(--ink-faint); }
+
+@media (max-width: 760px) {
+  main { grid-template-columns: 1fr; }
+  .details { position: static; order: -1; }
+}

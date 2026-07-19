@@ -1,0 +1,36 @@
+id: roman_republic
+canonical_name: Roman Republic
+names:
+  la: Res Publica Romana
+  it: Repubblica romana
+  fr: République romaine
+external_ids:
+  wikidata: Q1747689
+  seshat: ItRomR
+parent: roman_kingdom
+successors: [roman_empire]
+region: italy
+culture_group: latin
+start: -509
+end: -27
+start_confidence: medium
+end_confidence: high
+weight_by_era:
+  -500: 2
+  -400: 3
+  -300: 5
+  -270: 6
+  -200: 7
+  -150: 8
+  -100: 8
+  -50: 9
+  -30: 9
+weight_imputed: false
+icon: roman_eagle
+text:
+  short_child_en: "Ancient Rome before the emperors. Run by elected officials and the Senate."
+  short_adult_en: "Roman state from the overthrow of the kings to the founding of the Empire under Augustus."
+  long_en: ""
+notes: "Traditional founding date 509 BCE is legendary; end conventionally 27 BCE with the grant of the title Augustus to Octavian."
+sources:
+  - wikidata

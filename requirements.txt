@@ -1,0 +1,12 @@
+pydantic>=2.7
+pyyaml>=6.0
+pandas>=2.2
+pyarrow>=18.0
+SPARQLWrapper>=2.0
+# Phase 2+ deps (uncomment when ready):
+# rapidfuzz>=3.9
+# unidecode
+# Phase 3+ deps (uncomment when ready):
+# xarray>=2024.5
+# netCDF4
+# openpyxl
