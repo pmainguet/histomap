@@ -1,0 +1,26 @@
+id: second_federal_republic_of_mexico
+canonical_name: Second Federal Republic of Mexico
+names:
+  fr: Deuxième République fédérale mexicaine
+  aliases_en: Federal Republic of Mexico
+external_ids:
+  wikidata: Q7443295
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1846
+end: 1863
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1846: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

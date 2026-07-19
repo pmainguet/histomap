@@ -1,0 +1,26 @@
+id: union_between_sweden_and_norway
+canonical_name: Union between Sweden and Norway
+names:
+  fr: Suède-Norvège
+  aliases_en: Den svensk-norske union | Svensk-norska unionen | Sweden-Norway
+external_ids:
+  wikidata: Q62589
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1814
+end: 1905
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1814: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: dali_kingdom
+canonical_name: Dali Kingdom
+names:
+  fr: Royaume de Dali
+  aliases_en: Dablit Guaif | Dali State | Kingdom of Dali
+external_ids:
+  wikidata: Q26472
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 937
+end: 1253
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  937: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

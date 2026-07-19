@@ -1,0 +1,26 @@
+id: sultanate_of_damagaram
+canonical_name: Sultanate of Damagaram
+names:
+  fr: Sultanat du Damagaram
+  aliases_en: Sultanate of Damagarim | Sultanate of Zinder
+external_ids:
+  wikidata: Q4154364
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1731
+end: 1899
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1731: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

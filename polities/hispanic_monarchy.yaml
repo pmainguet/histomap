@@ -1,0 +1,27 @@
+id: hispanic_monarchy
+canonical_name: Hispanic Monarchy
+names:
+  fr: monarchie catholique espagnole
+  aliases_en: Spain | Crown of Spain | Hispanic Crown | Kingdom of Spains | Kingdom
+    of the Spains | Spains
+external_ids:
+  wikidata: Q766543
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1479
+end: 1700
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1479: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

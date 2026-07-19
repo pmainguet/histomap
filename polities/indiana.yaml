@@ -1,0 +1,27 @@
+id: indiana
+canonical_name: Indiana
+names:
+  fr: Indiana
+  aliases_en: IN | Hoosier State | Indiana, United States | Ind. | State of Indiana
+    | US-IN
+external_ids:
+  wikidata: Q1415
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1816
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1816: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

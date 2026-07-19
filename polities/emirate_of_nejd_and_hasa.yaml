@@ -1,0 +1,26 @@
+id: emirate_of_nejd_and_hasa
+canonical_name: Emirate of Nejd and Hasa
+names:
+  fr: Émirat du Nedjd et du Hassa
+  aliases_en: Emirate of Nejd and Hasa (1913)
+external_ids:
+  wikidata: Q96028967
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1902
+end: 1921
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1902: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

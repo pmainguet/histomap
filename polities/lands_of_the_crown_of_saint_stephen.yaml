@@ -1,0 +1,26 @@
+id: lands_of_the_crown_of_saint_stephen
+canonical_name: Lands of the Crown of Saint Stephen
+names:
+  fr: Pays de la Couronne de saint Étienne
+  aliases_en: Transleithania
+external_ids:
+  wikidata: Q696970
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1867
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1867: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

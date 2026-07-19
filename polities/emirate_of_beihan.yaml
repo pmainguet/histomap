@@ -1,0 +1,25 @@
+id: emirate_of_beihan
+canonical_name: Emirate of Beihan
+names:
+  fr: Émirat du Beihan
+external_ids:
+  wikidata: Q2485209
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1680
+end: 1967
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1680: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

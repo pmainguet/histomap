@@ -1,0 +1,26 @@
+id: caucasian_albania_sasanian_province
+canonical_name: Caucasian Albania (Sasanian province)
+names:
+  fr: Albanie
+  aliases_en: Albania | Arran | Ardhan
+external_ids:
+  wikidata: Q3607864
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 252
+end: 636
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  252: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

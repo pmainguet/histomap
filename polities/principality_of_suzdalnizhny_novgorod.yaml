@@ -1,0 +1,25 @@
+id: principality_of_suzdalnizhny_novgorod
+canonical_name: Principality of Suzdal—Nizhny Novgorod
+names:
+  fr: principauté de Sudzal-Nijni Novgorod
+external_ids:
+  wikidata: Q4318679
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1341
+end: 1447
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1341: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

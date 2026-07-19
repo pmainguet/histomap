@@ -1,0 +1,26 @@
+id: principality_of_morosvia
+canonical_name: Principality of Morosvia
+names:
+  fr: Principauté de Hutt River
+  aliases_en: God Save you
+external_ids:
+  wikidata: Q591309
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1970
+end: 2020
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1970: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: tibet_under_yuan_administrative_rule
+canonical_name: Tibet under Yuan administrative rule
+names:
+  fr: Contrôle du Tibet par la dynastie Yuan
+  aliases_en: Sakya dynasty
+external_ids:
+  wikidata: Q3216325
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1270
+end: 1354
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1270: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

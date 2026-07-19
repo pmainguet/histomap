@@ -1,0 +1,26 @@
+id: duchy_of_warsaw
+canonical_name: Duchy of Warsaw
+names:
+  fr: duché de Varsovie
+  aliases_en: Grand Duchy of Warsaw
+external_ids:
+  wikidata: Q152115
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1807
+end: 1815
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1807: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: irish_republic_q2712121
+canonical_name: Irish Republic
+names:
+  fr: République du Connaught
+  aliases_en: Republic of Connacht | Republic of Connaught
+external_ids:
+  wikidata: Q2712121
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1798
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1798: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

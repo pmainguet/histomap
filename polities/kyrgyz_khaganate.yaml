@@ -1,0 +1,26 @@
+id: kyrgyz_khaganate
+canonical_name: Kyrgyz Khaganate
+names:
+  fr: Khaganat kirghiz du Yenisei
+  aliases_en: Kyrgyz Empire
+external_ids:
+  wikidata: Q2047076
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 693
+end: 1207
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  693: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

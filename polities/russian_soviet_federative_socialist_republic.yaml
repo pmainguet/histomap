@@ -1,0 +1,29 @@
+id: russian_soviet_federative_socialist_republic
+canonical_name: Russian Soviet Federative Socialist Republic
+names:
+  fr: république socialiste fédérative soviétique de Russie
+  aliases_en: Soviet Russia | Communist Russia | R.S.F.S.R. | RSFSR | Russian S.F.S.R.
+    | Russian SFSR | Russian Socialist Federated Soviet Republic | Russian Socialist
+    Federative Soviet Republic | Russian Soviet Federal Socialist Republic | Russian
+    Soviet Federated Socialist Republic | Soviet Russian Republic | the Russian SFSR
+external_ids:
+  wikidata: Q2184
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1917
+end: 1991
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1917: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

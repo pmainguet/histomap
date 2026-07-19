@@ -1,0 +1,25 @@
+id: kingdom_of_arshakuni
+canonical_name: Kingdom of Arshakuni
+names:
+  fr: Royaume arsacide
+external_ids:
+  wikidata: Q20088823
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 55
+end: 428
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  55: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

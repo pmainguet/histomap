@@ -1,0 +1,27 @@
+id: saskatchewan
+canonical_name: Saskatchewan
+names:
+  fr: Saskatchewan
+  aliases_en: SK | CA-SK | Canada's Breadbasket | Province of Saskatchewan | Sask.
+    | The Land of the Living Skies
+external_ids:
+  wikidata: Q1989
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1905
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1905: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

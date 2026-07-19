@@ -1,0 +1,25 @@
+id: mosquito_coast
+canonical_name: Mosquito Coast
+names:
+  fr: Côte des Mosquitos
+external_ids:
+  wikidata: Q101541518
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1638
+end: 1787
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1638: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

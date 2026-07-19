@@ -1,0 +1,25 @@
+id: republic_of_the_floridas
+canonical_name: Republic of the Floridas
+names:
+  aliases_en: Republic of Floridas | Supreme Council of the Floridas
+external_ids:
+  wikidata: Q6106050
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1817
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1817: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

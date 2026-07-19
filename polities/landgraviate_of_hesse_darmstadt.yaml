@@ -1,0 +1,25 @@
+id: landgraviate_of_hesse_darmstadt
+canonical_name: Landgraviate of Hesse-Darmstadt
+names:
+  fr: landgraviat de Hesse-Darmstadt
+external_ids:
+  wikidata: Q693551
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1567
+end: 1806
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1567: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

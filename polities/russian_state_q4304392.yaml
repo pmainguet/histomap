@@ -1,0 +1,26 @@
+id: russian_state_q4304392
+canonical_name: Russian State
+names:
+  fr: État russe
+  aliases_en: État moscovien | Moscou Ulus
+external_ids:
+  wikidata: Q4304392
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1478
+end: 1721
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1478: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

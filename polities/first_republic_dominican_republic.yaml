@@ -1,0 +1,25 @@
+id: first_republic_dominican_republic
+canonical_name: First Republic (Dominican Republic)
+names:
+  fr: Première République (République dominicaine)
+external_ids:
+  wikidata: Q51545918
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1844
+end: 1861
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1844: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

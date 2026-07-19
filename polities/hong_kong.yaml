@@ -1,0 +1,28 @@
+id: hong_kong
+canonical_name: Hong Kong
+names:
+  fr: Hong Kong
+  aliases_en: Hong Kong, China | Hongkong | HKSAR | Hong Kong SAR | Hong Kong SAR,
+    China | Hong Kong Special Administrative Region | Hong Kong Special Administrative
+    Region of the People's Republic of China
+external_ids:
+  wikidata: Q8646
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1997
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1997: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,27 @@
+id: lanna
+canonical_name: Lanna
+names:
+  fr: Lanna
+  aliases_en: Bingarattha | Kingdom of the Mae Ping | Kingdom of the Yuon | Lan Na
+    | Lanna Kingdom | Lannathai | Pa pai si fu | Pa-pai-si-fu | Yonarattha | Yonkarattha
+external_ids:
+  wikidata: Q1059707
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1292
+end: 1775
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1292: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

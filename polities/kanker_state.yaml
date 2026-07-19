@@ -1,0 +1,25 @@
+id: kanker_state
+canonical_name: Kanker State
+names:
+  fr: Etat Kanker
+external_ids:
+  wikidata: Q12816977
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 200
+end: 1947
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  200: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: virpur_kherdi_state
+canonical_name: Virpur-Kherdi State
+names:
+  fr: État de Virpur-Kherdi
+external_ids:
+  wikidata: Q16258513
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1600
+end: 1948
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1600: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

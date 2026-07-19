@@ -1,0 +1,26 @@
+id: german_east_africa
+canonical_name: German East Africa
+names:
+  fr: Afrique orientale allemande
+  aliases_en: DOA | GEA | Deutsch-Ostafrika
+external_ids:
+  wikidata: Q153963
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1885
+end: 1919
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1885: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

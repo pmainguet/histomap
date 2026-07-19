@@ -1,0 +1,26 @@
+id: norway
+canonical_name: Norway
+names:
+  fr: Norvège
+  aliases_en: Kingdom of Norway
+external_ids:
+  wikidata: Q20
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 900
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  900: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

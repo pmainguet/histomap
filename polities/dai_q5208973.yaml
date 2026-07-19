@@ -1,0 +1,25 @@
+id: dai_q5208973
+canonical_name: Dai
+names:
+  fr: État Dai
+external_ids:
+  wikidata: Q5208973
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -226
+end: -221
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -226: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

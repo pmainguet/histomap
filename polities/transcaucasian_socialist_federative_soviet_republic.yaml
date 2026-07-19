@@ -1,0 +1,26 @@
+id: transcaucasian_socialist_federative_soviet_republic
+canonical_name: Transcaucasian Socialist Federative Soviet Republic
+names:
+  fr: République socialiste fédérative soviétique de Transcaucasie
+  aliases_en: Transcaucasian SFSR | TSFSR
+external_ids:
+  wikidata: Q545205
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1922
+end: 1936
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1922: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

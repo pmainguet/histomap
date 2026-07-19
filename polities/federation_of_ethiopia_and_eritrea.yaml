@@ -1,0 +1,25 @@
+id: federation_of_ethiopia_and_eritrea
+canonical_name: Federation of Ethiopia and Eritrea
+names:
+  fr: Fédération de l'Éthiopie et de l'Érythrée
+external_ids:
+  wikidata: Q2603305
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1952
+end: 1962
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1952: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

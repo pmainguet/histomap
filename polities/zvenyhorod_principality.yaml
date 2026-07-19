@@ -1,0 +1,25 @@
+id: zvenyhorod_principality
+canonical_name: Zvenyhorod Principality
+names:
+  fr: principauté de Svenigorod
+external_ids:
+  wikidata: Q4189498
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1084
+end: 1444
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1084: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

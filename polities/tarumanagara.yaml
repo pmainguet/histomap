@@ -1,0 +1,26 @@
+id: tarumanagara
+canonical_name: Tarumanagara
+names:
+  fr: Royaume de Tarumanagara
+  aliases_en: Taruma | Taruma Kingdom
+external_ids:
+  wikidata: Q2247225
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 450
+end: 669
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  450: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

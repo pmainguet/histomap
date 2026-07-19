@@ -1,0 +1,27 @@
+id: kievan_rus
+canonical_name: Kievan Rus'
+names:
+  fr: Rus' de Kiev
+  aliases_en: Rus | Kievan Rus | Kyivan Rus | Kyivan Rus' | Kyivan Rusʹ | Kyivan Rusʼ
+    | Kyivan state | Kyivska Rus'
+external_ids:
+  wikidata: Q1108445
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 882
+end: 1240
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  882: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

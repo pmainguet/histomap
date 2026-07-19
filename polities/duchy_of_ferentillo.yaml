@@ -1,0 +1,24 @@
+id: duchy_of_ferentillo
+canonical_name: Duchy of Ferentillo
+names: {}
+external_ids:
+  wikidata: Q16550786
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1484
+end: 1730
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1484: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,27 @@
+id: people_s_republic_of_china
+canonical_name: People's Republic of China
+names:
+  fr: République populaire de Chine
+  aliases_en: the People's Republic of China | cn | Red China | Communist China |
+    China PR | P.R.C. | PR China | The PRC
+external_ids:
+  wikidata: Q148
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1949
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1949: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,27 @@
+id: yuan_dynasty
+canonical_name: Yuan dynasty
+names:
+  fr: dynastie Yuan en Chine
+  aliases_en: Yuan | Empire of the Great Khan | Great Yuan | Great Yuan Empire | Great
+    Yuan Great Mongol State | Yüan | Yuan Empire | Yuan imperial dynasty
+external_ids:
+  wikidata: Q7313
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1271
+end: 1368
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1271: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

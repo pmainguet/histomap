@@ -1,0 +1,26 @@
+id: serbia_and_montenegro
+canonical_name: Serbia and Montenegro
+names:
+  fr: Serbie-et-Monténégro
+  aliases_en: Serbia-Montenegro
+external_ids:
+  wikidata: Q37024
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2003
+end: 2006
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2003: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

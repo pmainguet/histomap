@@ -1,0 +1,26 @@
+id: anhalt_bernburg
+canonical_name: Anhalt-Bernburg
+names:
+  fr: Anhalt-Bernbourg
+  aliases_en: Principality of Anhalt-Bernburg
+external_ids:
+  wikidata: Q686965
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1252
+end: 1863
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1252: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

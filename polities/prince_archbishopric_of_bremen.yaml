@@ -1,0 +1,27 @@
+id: prince_archbishopric_of_bremen
+canonical_name: Prince-Archbishopric of Bremen
+names:
+  fr: Principauté de Brême
+  aliases_en: Archbishopric of Bremen | Archbishopric and Duchy of Bremen | Bremen
+    prince-archbishopric | Duchy of Bremen
+external_ids:
+  wikidata: Q837128
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 787
+end: 1648
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  787: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

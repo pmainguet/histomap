@@ -1,0 +1,26 @@
+id: videha
+canonical_name: Videha
+names:
+  fr: Videha
+  aliases_en: Vedic Kingdom
+external_ids:
+  wikidata: Q3359147
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -850
+end: -500
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -850: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

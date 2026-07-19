@@ -1,0 +1,26 @@
+id: first_bulgarian_empire
+canonical_name: First Bulgarian Empire
+names:
+  fr: Premier Empire bulgare
+  aliases_en: Danube Bulgaria
+external_ids:
+  wikidata: Q203817
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 681
+end: 1018
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  681: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

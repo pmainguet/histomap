@@ -1,0 +1,26 @@
+id: kingdom_of_deheubarth
+canonical_name: Kingdom of Deheubarth
+names:
+  fr: Royaume de Deheubarth
+  aliases_en: Deheubarth
+external_ids:
+  wikidata: Q837136
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 920
+end: 1197
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  920: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

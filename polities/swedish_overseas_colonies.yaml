@@ -1,0 +1,25 @@
+id: swedish_overseas_colonies
+canonical_name: Swedish overseas colonies
+names:
+  fr: Empire colonial suédois
+external_ids:
+  wikidata: Q175358
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1638
+end: 1878
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1638: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

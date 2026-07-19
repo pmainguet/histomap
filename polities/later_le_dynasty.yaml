@@ -1,0 +1,26 @@
+id: later_le_dynasty
+canonical_name: Later Lê dynasty
+names:
+  fr: Dynastie Lê
+  aliases_en: Đại Việt | Kingdom of Annam | Le dynasty
+external_ids:
+  wikidata: Q878276
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1428
+end: 1789
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1428: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

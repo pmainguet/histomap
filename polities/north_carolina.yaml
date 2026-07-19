@@ -1,0 +1,27 @@
+id: north_carolina
+canonical_name: North Carolina
+names:
+  fr: Caroline du Nord
+  aliases_en: NC, United States | North Carolina (US) | North Carolina, United States
+    | State of North Carolina | Tar Heel State | The Tar Heel State
+external_ids:
+  wikidata: Q1454
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1789
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1789: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

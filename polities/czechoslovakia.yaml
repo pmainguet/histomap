@@ -1,0 +1,27 @@
+id: czechoslovakia
+canonical_name: Czechoslovakia
+names:
+  fr: Tchécoslovaquie
+  aliases_en: Czecho-Slovakia | Federation of Czechoslovakia | People's Republic of
+    Czechoslovakia | cs | TCH | Československo
+external_ids:
+  wikidata: Q33946
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1918
+end: 1992
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1918: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

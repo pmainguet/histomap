@@ -117,7 +117,7 @@ def to_document(row: dict, polity_id: str) -> dict:
     }
 
 
-def convert(input_path: Path, output_dir: Path, overwrite: bool = False) -> tuple[int, int]:
+def convert(input_path: Path, output_dir: Path, overwrite: bool = False) -> tuple[int, int, int]:
     frame = pd.read_parquet(input_path).sort_values("qid", kind="stable")
     required = {"qid", "label_en", "inception"}
     missing = required - set(frame.columns)
@@ -125,18 +125,37 @@ def convert(input_path: Path, output_dir: Path, overwrite: bool = False) -> tupl
         raise ValueError(f"input is missing columns: {', '.join(sorted(missing))}")
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    written = skipped = 0
+    existing_qids: dict[str, str | None] = {}
+    for path in output_dir.glob("*.yaml"):
+        try:
+            document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+            existing_qids[path.stem] = (document.get("external_ids") or {}).get("wikidata")
+        except (OSError, yaml.YAMLError):
+            # Validation reports malformed canonical files; the importer only needs
+            # to avoid overwriting a path it cannot confidently identify.
+            existing_qids[path.stem] = None
+
+    written = preserved = rejected = 0
     for row, polity_id in allocate_ids(frame.to_dict(orient="records")):
+        qid = str(row["qid"])
+        occupied_by = existing_qids.get(polity_id)
+        if polity_id in existing_qids and occupied_by != qid:
+            polity_id = f"{polity_id}_{qid.lower()}"
         destination = output_dir / f"{polity_id}.yaml"
         if destination.exists() and not overwrite:
-            skipped += 1
+            preserved += 1
             continue
-        document = to_document(row, polity_id)
+        try:
+            document = to_document(row, polity_id)
+        except ValueError:
+            rejected += 1
+            continue
         destination.write_text(
             yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
         )
+        existing_qids[polity_id] = qid
         written += 1
-    return written, skipped
+    return written, preserved, rejected
 
 
 def main() -> None:
@@ -147,8 +166,11 @@ def main() -> None:
     args = parser.parse_args()
     if not args.input.exists():
         parser.error(f"input does not exist: {args.input}; run extract_wikidata.py first")
-    written, skipped = convert(args.input, args.output_dir, args.overwrite)
-    print(f"Wrote {written} draft YAML files; preserved {skipped} existing files.")
+    written, preserved, rejected = convert(args.input, args.output_dir, args.overwrite)
+    print(
+        f"Wrote {written} draft YAML files; preserved {preserved} existing files; "
+        f"rejected {rejected} rows with invalid inception dates."
+    )
 
 
 if __name__ == "__main__":

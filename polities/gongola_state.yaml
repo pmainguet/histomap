@@ -1,0 +1,25 @@
+id: gongola_state
+canonical_name: Gongola State
+names:
+  fr: État de Gongola
+external_ids:
+  wikidata: Q3508968
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1976
+end: 1991
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1976: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

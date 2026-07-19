@@ -1,0 +1,26 @@
+id: sultanate_of_bulungan
+canonical_name: Sultanate of Bulungan
+names:
+  fr: Sultanat de Bulungan
+  aliases_en: Berau Sultanate
+external_ids:
+  wikidata: Q3503548
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1731
+end: 1964
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1731: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

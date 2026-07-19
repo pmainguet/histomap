@@ -1,0 +1,24 @@
+id: south_african_republic_q766411
+canonical_name: South African Republic
+names: {}
+external_ids:
+  wikidata: Q766411
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1914
+end: 1915
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1914: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: khuzistan_sasanian_province
+canonical_name: Khuzistan (Sasanian province)
+names:
+  fr: Khouzistan
+external_ids:
+  wikidata: Q102163938
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 224
+end: 642
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  224: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

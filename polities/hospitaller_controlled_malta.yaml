@@ -1,0 +1,26 @@
+id: hospitaller_controlled_malta
+canonical_name: Hospitaller-controlled Malta
+names:
+  fr: État monastique de l'Ordre de Malte
+  aliases_en: Hospitaller Malta | Monastic State of the Order of Malta
+external_ids:
+  wikidata: Q97464297
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1530
+end: 1798
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1530: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

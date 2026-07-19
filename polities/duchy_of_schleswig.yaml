@@ -1,0 +1,26 @@
+id: duchy_of_schleswig
+canonical_name: Duchy of Schleswig
+names:
+  fr: duché de Schleswig
+  aliases_en: Sønderjylland
+external_ids:
+  wikidata: Q26167
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1058
+end: 1866
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1058: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

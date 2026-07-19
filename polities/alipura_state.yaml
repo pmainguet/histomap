@@ -1,0 +1,25 @@
+id: alipura_state
+canonical_name: Alipura State
+names:
+  fr: État Alipura
+external_ids:
+  wikidata: Q4726842
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1757
+end: 1947
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1757: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

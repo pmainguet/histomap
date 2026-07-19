@@ -1,0 +1,26 @@
+id: kingdom_of_sicily_q188586
+canonical_name: Kingdom of Sicily
+names:
+  fr: royaume de Sicile
+  aliases_en: Kingdom of Trinacria
+external_ids:
+  wikidata: Q188586
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1130
+end: 1816
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1130: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

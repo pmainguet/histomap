@@ -1,0 +1,25 @@
+id: al_muntafiq
+canonical_name: Al-Muntafiq
+names:
+  fr: émirat d'al-Múntafiq
+external_ids:
+  wikidata: Q20395996
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1530
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1530: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

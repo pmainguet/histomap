@@ -1,0 +1,26 @@
+id: saxe_altenburg
+canonical_name: Saxe-Altenburg
+names:
+  fr: duché de Saxe-Altenbourg
+  aliases_en: Sachsen-Altenburg
+external_ids:
+  wikidata: Q158151
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1602
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1602: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,27 @@
+id: latvia
+canonical_name: Latvia
+names:
+  fr: Lettonie
+  aliases_en: lv | Latveja | Latvejas Republika | Latvian Republic | Latvija | Latvijas
+    Republika | Leţmо̄ | Leţmо̄ Vabāmо̄ | Republic of Latvia
+external_ids:
+  wikidata: Q211
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1918
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1918: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

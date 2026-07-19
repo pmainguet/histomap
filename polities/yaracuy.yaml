@@ -1,0 +1,26 @@
+id: yaracuy
+canonical_name: Yaracuy
+names:
+  fr: Yaracuy
+  aliases_en: Yaracuy State
+external_ids:
+  wikidata: Q201121
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1899
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1899: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

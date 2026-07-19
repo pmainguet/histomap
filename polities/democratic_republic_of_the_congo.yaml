@@ -1,0 +1,28 @@
+id: democratic_republic_of_the_congo
+canonical_name: Democratic Republic of the Congo
+names:
+  fr: République démocratique du Congo
+  aliases_en: DRC | D.R.C. | COD | cd | Congo (Kinshasa) | Dem. Rep. Congo | Dem.
+    Republic of Congo | Dem. Republic of the Congo | Democratic Republic of Congo
+    | DR Congo
+external_ids:
+  wikidata: Q974
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1960
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1960: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

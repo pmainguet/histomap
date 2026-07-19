@@ -1,0 +1,28 @@
+id: nizari_ismaili_state
+canonical_name: Nizari Ismaili state
+names:
+  fr: État ismaélite nizârite
+  aliases_en: Alamut period | Alamut state | Isma'ili state | Ismaili state | Ismailis
+    of the Alamut period | Nizari Isma'ili state | Nizari state | Nizari state of
+    Persia and Syria | Nizaris of the Alamut period | Order of the Assassins
+external_ids:
+  wikidata: Q6563843
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1090
+end: 1256
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1090: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

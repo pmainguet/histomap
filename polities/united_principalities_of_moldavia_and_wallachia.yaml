@@ -1,0 +1,26 @@
+id: united_principalities_of_moldavia_and_wallachia
+canonical_name: United Principalities of Moldavia and Wallachia
+names:
+  fr: Principautés unies de Moldavie et de Valachie
+  aliases_en: Romania | Romanian United Principalities | United Principalities
+external_ids:
+  wikidata: Q958291
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1859
+end: 1881
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1859: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: duchy_of_courland_and_semigallia_q156038
+canonical_name: Duchy of Courland and Semigallia
+names:
+  fr: duché de Courlande
+external_ids:
+  wikidata: Q156038
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1561
+end: 1795
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1561: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: trucial_states
+canonical_name: Trucial States
+names:
+  fr: États de la Trêve
+  aliases_en: Trucial Coast
+external_ids:
+  wikidata: Q1852345
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1820
+end: 1971
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1820: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

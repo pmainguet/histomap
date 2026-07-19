@@ -1,0 +1,26 @@
+id: prussia
+canonical_name: Prussia
+names:
+  fr: Prusse
+  aliases_en: Prussia (Germany)
+external_ids:
+  wikidata: Q38872
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1525
+end: 1947
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1525: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: quwe
+canonical_name: Quwê
+names:
+  aliases_en: Que | Coa | Kue | Kuê | Adanawa | Keveh | Qeve | Quwe
+external_ids:
+  wikidata: Q823862
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -900
+end: -700
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -900: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

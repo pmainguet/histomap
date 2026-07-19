@@ -1,0 +1,27 @@
+id: hungarian_soviet_republic
+canonical_name: Hungarian Soviet Republic
+names:
+  fr: République des conseils de Hongrie
+  aliases_en: Magyarországi Tanácsköztársaság | Republic of Councils in Hungary |
+    Soviet Republic of Hungary
+external_ids:
+  wikidata: Q243652
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1919
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1919: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

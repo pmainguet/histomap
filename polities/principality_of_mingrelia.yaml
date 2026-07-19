@@ -1,0 +1,26 @@
+id: principality_of_mingrelia
+canonical_name: Principality of Mingrelia
+names:
+  fr: principauté de Mingrélie
+  aliases_en: სამეგრელოს (ოდიშის) სამთავრო
+external_ids:
+  wikidata: Q2907860
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1442
+end: 1803
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1442: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

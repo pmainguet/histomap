@@ -1,0 +1,26 @@
+id: electorate_of_hanover
+canonical_name: Electorate of Hanover
+names:
+  fr: électorat de Brunswick-Lunebourg
+  aliases_en: Electorate of Brunswick-Lüneburg
+external_ids:
+  wikidata: Q706018
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1692
+end: 1814
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1692: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: le_royaume_de_l_anse_saint_jean
+canonical_name: Le Royaume de L'Anse-Saint-Jean
+names:
+  fr: Le Royaume de L'Anse-Saint-Jean
+  aliases_en: Kingdom of L'Anse-Saint-Jean
+external_ids:
+  wikidata: Q3446188
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1997
+end: 2000
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1997: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

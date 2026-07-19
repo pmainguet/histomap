@@ -1,0 +1,25 @@
+id: zheng_q197598
+canonical_name: Zheng
+names:
+  fr: État Zheng
+external_ids:
+  wikidata: Q197598
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -805
+end: -374
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -805: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

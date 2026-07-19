@@ -1,0 +1,25 @@
+id: pathari_state_q104152108
+canonical_name: Pathari State
+names:
+  fr: État de Pathari
+external_ids:
+  wikidata: Q104152108
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1794
+end: 1948
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1794: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

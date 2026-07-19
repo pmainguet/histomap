@@ -1,0 +1,26 @@
+id: bogd_khanate_of_mongolia
+canonical_name: Bogd Khanate of Mongolia
+names:
+  fr: Khaganat de Mongolie du Bogdo
+  aliases_en: Bogd Khanate | Great Mongolian State | Outer Mongolia
+external_ids:
+  wikidata: Q2475921
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1911
+end: 1924
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1911: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

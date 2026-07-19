@@ -1,0 +1,25 @@
+id: samtskhe_atabegate
+canonical_name: Samtskhe atabegate
+names:
+  aliases_en: Atabegate of Samtskhe | Principality of Samtskhe | Samtskhe-Saatabago
+external_ids:
+  wikidata: Q2029317
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1268
+end: 1628
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1268: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

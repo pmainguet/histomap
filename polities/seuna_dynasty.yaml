@@ -1,0 +1,26 @@
+id: seuna_dynasty
+canonical_name: Seuna Dynasty
+names:
+  fr: Seuna
+  aliases_en: Seuna (Yadava) Dynasty | Yadavas of Devagiri | Yadavs of Devagiri
+external_ids:
+  wikidata: Q5790
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1173
+end: 1317
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1173: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

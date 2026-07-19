@@ -1,0 +1,25 @@
+id: duchy_of_merania
+canonical_name: Duchy of Merania
+names:
+  fr: duché de Méranie
+external_ids:
+  wikidata: Q567609
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1153
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1153: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

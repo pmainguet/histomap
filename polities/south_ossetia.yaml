@@ -1,0 +1,29 @@
+id: south_ossetia
+canonical_name: South Ossetia
+names:
+  fr: Ossétie du Sud-Alanie
+  aliases_en: Alania | Republic of South Ossetia | Republic of South Ossetia – the
+    State of Alania | S Ossetia | S. Ossetia | South Osetia | South Ossetian | South
+    Ossetian Republic | South Ossettia | State of Alania | the State of Alania | Tskhinvali
+    Region
+external_ids:
+  wikidata: Q23427
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1990
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1990: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

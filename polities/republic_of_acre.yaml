@@ -1,0 +1,27 @@
+id: republic_of_acre
+canonical_name: Republic of Acre
+names:
+  fr: République d'Acre
+  aliases_en: Estado Independente do Acre | Independent State of Acre | Republica
+    de Acre | República de Acre | Republica do Acre | República do Acre
+external_ids:
+  wikidata: Q564809
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1899
+end: 1903
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1899: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

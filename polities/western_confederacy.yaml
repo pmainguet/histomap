@@ -1,0 +1,26 @@
+id: western_confederacy
+canonical_name: Western Confederacy
+names:
+  fr: Confédération de l'Ouest
+  aliases_en: United Indian Nations
+external_ids:
+  wikidata: Q4186402
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1783
+end: 1795
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1783: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

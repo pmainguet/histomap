@@ -1,0 +1,27 @@
+id: khanate_of_kalat
+canonical_name: Khanate of Kalat
+names:
+  fr: Royaume de Kalat
+  aliases_en: Kalat (princely state) | Kalat Khanate | Qalat Khanate | Kalat State
+    | State of Kalat
+external_ids:
+  wikidata: Q139948
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1638
+end: 1955
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1638: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

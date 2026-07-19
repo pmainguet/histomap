@@ -1,0 +1,25 @@
+id: balladhdarh_state
+canonical_name: Balladhdarh State
+names:
+  fr: État de Ballabhgarh
+external_ids:
+  wikidata: Q104152096
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1710
+end: 1867
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1710: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

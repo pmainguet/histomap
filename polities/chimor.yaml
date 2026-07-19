@@ -1,0 +1,26 @@
+id: chimor
+canonical_name: Chimor
+names:
+  fr: Chimor
+  aliases_en: Chimú Empire | Kingdom of Chimor
+external_ids:
+  wikidata: Q581741
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 850
+end: 1470
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  850: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

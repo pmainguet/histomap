@@ -1,0 +1,26 @@
+id: judicate_of_arborea
+canonical_name: Judicate of Arborea
+names:
+  fr: Judicat d'Arborée
+  aliases_en: Giudicato of Arborea | Kingdom of Arborea | Regno di Arborea
+external_ids:
+  wikidata: Q1241847
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 800
+end: 1420
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  800: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

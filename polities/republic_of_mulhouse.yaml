@@ -1,0 +1,26 @@
+id: republic_of_mulhouse
+canonical_name: Republic of Mulhouse
+names:
+  fr: république de Mulhouse
+  aliases_en: Free City of Mulhouse
+external_ids:
+  wikidata: Q3456410
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1308
+end: 1798
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1308: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

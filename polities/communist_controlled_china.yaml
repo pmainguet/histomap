@@ -1,0 +1,25 @@
+id: communist_controlled_china
+canonical_name: Communist-controlled China
+names:
+  fr: Chine sous contrôle communiste
+external_ids:
+  wikidata: Q1060072
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1927
+end: 1949
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1927: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

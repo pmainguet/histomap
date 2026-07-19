@@ -1,0 +1,25 @@
+id: esu_karu
+canonical_name: Esu Karu
+names:
+  aliases_en: Esu of Karu | Esu Karu Chiefdom
+external_ids:
+  wikidata: Q138768038
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 19
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  19: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

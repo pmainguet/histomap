@@ -1,0 +1,26 @@
+id: kingdom_of_mysore
+canonical_name: Kingdom of Mysore
+names:
+  fr: royaume de Mysore
+  aliases_en: Mysore | Mysore State | Princely State of Mysore | State of Mysore
+external_ids:
+  wikidata: Q266923
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1399
+end: 1950
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1399: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

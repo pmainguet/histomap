@@ -1,0 +1,26 @@
+id: duchy_of_cornwall
+canonical_name: Duchy of Cornwall
+names:
+  fr: duché de Cornouailles
+  aliases_en: The Duchy of Cornwall
+external_ids:
+  wikidata: Q876107
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1337
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1337: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

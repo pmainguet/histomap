@@ -1,0 +1,25 @@
+id: west_breifne
+canonical_name: West Breifne
+names:
+  fr: royaume du Breifne occidental
+external_ids:
+  wikidata: Q16824250
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1256
+end: 1605
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1256: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

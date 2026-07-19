@@ -1,0 +1,28 @@
+id: caliphate_of_cordoba
+canonical_name: Caliphate of Córdoba
+names:
+  fr: califat de Cordoue
+  aliases_en: Califato de Córdova | Caliphate of Cordoba | Caliphate of Qurṭubah |
+    Khilāfat Qurṭuba | Umayyad Caliphate of Córdoba | Umayyad Caliphate of Qurṭubah
+    | Umayyad state in al-Andalus | Umayyad state of al-Andalus | Western Caliphate
+external_ids:
+  wikidata: Q171740
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 929
+end: 1031
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  929: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

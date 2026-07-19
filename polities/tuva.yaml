@@ -1,0 +1,26 @@
+id: tuva
+canonical_name: Tuva
+names:
+  fr: Touva
+  aliases_en: Touva | Republic of Tuva | Republic of Tyva
+external_ids:
+  wikidata: Q960
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1991
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1991: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,24 @@
+id: federal_republic_of_mindanao
+canonical_name: Federal Republic of Mindanao
+names: {}
+external_ids:
+  wikidata: Q17069572
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1986
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1986: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

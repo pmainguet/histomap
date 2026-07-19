@@ -1,0 +1,26 @@
+id: kingdom_of_italy_q172579
+canonical_name: Kingdom of Italy
+names:
+  fr: royaume d'Italie
+  aliases_en: Italy | Regno d’Italia
+external_ids:
+  wikidata: Q172579
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1861
+end: 1946
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1861: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

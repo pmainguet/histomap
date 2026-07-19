@@ -1,0 +1,27 @@
+id: xia_dynasty
+canonical_name: Xia dynasty
+names:
+  fr: dynastie Xia
+  aliases_en: Hsia | Xia | Hia | Hia dynasty | Hsia dynasty | the Hia | the Hsia |
+    the Xia | Xiahou shi
+external_ids:
+  wikidata: Q169705
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -2204
+end: -1599
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -2204: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

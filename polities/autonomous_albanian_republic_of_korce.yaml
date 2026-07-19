@@ -1,0 +1,27 @@
+id: autonomous_albanian_republic_of_korce
+canonical_name: Autonomous Albanian Republic of Korçë
+names:
+  fr: république de Koritza
+  aliases_en: Autonomous Albanian Republic of Korce | Autonomous Province of Korçë
+    | Korçë | Korce Republic | Republic of Korce
+external_ids:
+  wikidata: Q1028133
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1916
+end: 1920
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1916: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

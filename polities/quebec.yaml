@@ -1,0 +1,26 @@
+id: quebec
+canonical_name: Quebec
+names:
+  fr: Québec
+  aliases_en: P.Q. | Province of Quebec | Quebec Province | PQ | Québec | QC
+external_ids:
+  wikidata: Q176
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1867
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1867: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

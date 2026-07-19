@@ -1,0 +1,25 @@
+id: dios_hieron_lydia
+canonical_name: Dios Hieron (Lydia)
+names:
+  aliases_en: Dioshieron | Mint of Dioshieron
+external_ids:
+  wikidata: Q3708109
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1933
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1933: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

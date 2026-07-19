@@ -1,0 +1,26 @@
+id: buyid_dynasty
+canonical_name: Buyid dynasty
+names:
+  fr: Bouyides
+  aliases_en: Al-e Buya | Al-i Buya | Buyid Empire | Buyids | Buyyids
+external_ids:
+  wikidata: Q273874
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 934
+end: 1062
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  934: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: romanian_old_kingdom
+canonical_name: Romanian Old Kingdom
+names:
+  fr: Vieux Royaume
+  aliases_en: Old Romanian Kingdom | Vechiul Regat
+external_ids:
+  wikidata: Q444912
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1881
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1881: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: duke_of_fernandez_miranda
+canonical_name: Duke of Fernández-Miranda
+names:
+  fr: duché de Fernández-Miranda
+external_ids:
+  wikidata: Q5814587
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1977
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1977: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

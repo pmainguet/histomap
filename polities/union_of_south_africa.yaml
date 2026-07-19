@@ -1,0 +1,26 @@
+id: union_of_south_africa
+canonical_name: Union of South Africa
+names:
+  fr: union d'Afrique du Sud
+  aliases_en: South Africa
+external_ids:
+  wikidata: Q193619
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1910
+end: 1961
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1910: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,29 @@
+id: yang_wu
+canonical_name: Yang Wu
+names:
+  fr: Wu
+  aliases_en: Nan Wu | Wu | Southern Wu | Wu State | Huainan | Hongnong | Dong Wu
+    | Dongwu | Nanwu | Eastern Wu | State of Wu | Wu Kingdom | Dong-Wu | Huai-nan
+    | Hung-nung | Nan-Wu | Tung Wu | Tung-Wu | Wu-kuo | Wuguo | Kingdom of Southern
+    Wu | Kingdom of Wu | Kingdom of Yang Wu | Southern Wu Kingdom | Yang Wu Kingdom
+external_ids:
+  wikidata: Q1323195
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 902
+end: 937
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  902: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

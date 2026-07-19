@@ -1,0 +1,26 @@
+id: ottoman_empire
+canonical_name: Ottoman Empire
+names:
+  fr: Empire ottoman
+  aliases_en: Turkish Empire | Ottoman State | Sublime Ottoman State
+external_ids:
+  wikidata: Q12560
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1299
+end: 1922
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1299: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: khmer_empire
+canonical_name: Khmer Empire
+names:
+  fr: Empire khmer
+  aliases_en: Khmer
+external_ids:
+  wikidata: Q201705
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 802
+end: 1431
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  802: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

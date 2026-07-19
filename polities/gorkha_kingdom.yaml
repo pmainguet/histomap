@@ -1,0 +1,26 @@
+id: gorkha_kingdom
+canonical_name: Gorkha Kingdom
+names:
+  fr: Royaume Gorkha
+  aliases_en: Kingdom of Gorkha | Gorkhā
+external_ids:
+  wikidata: Q3332217
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1559
+end: 1768
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1559: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

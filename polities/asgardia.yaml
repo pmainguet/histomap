@@ -1,0 +1,27 @@
+id: asgardia
+canonical_name: Asgardia
+names:
+  fr: Asgardia
+  aliases_en: Asgardia Space Nation | Asgardia Space State | Space Kingdom of Asgardia
+    | Space Nation of Asgardia | Space State of Asgardia
+external_ids:
+  wikidata: Q27304761
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2016
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2016: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

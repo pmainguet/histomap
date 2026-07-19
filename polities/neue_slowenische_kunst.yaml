@@ -1,0 +1,25 @@
+id: neue_slowenische_kunst
+canonical_name: Neue Slowenische Kunst
+names:
+  fr: Neue Slowenische Kunst
+external_ids:
+  wikidata: Q1266300
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1984
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1984: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

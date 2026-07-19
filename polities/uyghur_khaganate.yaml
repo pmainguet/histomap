@@ -1,0 +1,27 @@
+id: uyghur_khaganate
+canonical_name: Uyghur Khaganate
+names:
+  fr: Khaganat ouïgour
+  aliases_en: Huihe | Huíhé | Huihu | Huíhú | Jiu Xing | Nine Clans | Toquz Oghuz
+    Country | Toquz Tughluq | Uighur Khaganate | Uyghur Empire
+external_ids:
+  wikidata: Q831218
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 744
+end: 840
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  744: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

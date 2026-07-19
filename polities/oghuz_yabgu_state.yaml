@@ -1,0 +1,25 @@
+id: oghuz_yabgu_state
+canonical_name: Oghuz Yabgu State
+names:
+  fr: État d'Oghouze Yabgou
+external_ids:
+  wikidata: Q1099731
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 750
+end: 1055
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  750: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

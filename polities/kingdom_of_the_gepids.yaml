@@ -1,0 +1,25 @@
+id: kingdom_of_the_gepids
+canonical_name: Kingdom of the Gepids
+names:
+  fr: royaume des Gépides
+external_ids:
+  wikidata: Q2784785
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 454
+end: 567
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  454: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

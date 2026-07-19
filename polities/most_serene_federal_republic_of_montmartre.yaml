@@ -1,0 +1,26 @@
+id: most_serene_federal_republic_of_montmartre
+canonical_name: Most Serene Federal Republic of Montmartre
+names:
+  aliases_en: Republic of Montmartre | Embassy of Montmartre | Government of Montmartre
+    | Montmartre Govt Of
+external_ids:
+  wikidata: Q117422273
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1960
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1960: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

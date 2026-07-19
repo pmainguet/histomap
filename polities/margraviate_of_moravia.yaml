@@ -1,0 +1,26 @@
+id: margraviate_of_moravia
+canonical_name: Margraviate of Moravia
+names:
+  fr: margraviat de Moravie
+  aliases_en: March of Moravia
+external_ids:
+  wikidata: Q2670751
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1182
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1182: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

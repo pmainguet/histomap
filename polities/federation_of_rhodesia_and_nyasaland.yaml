@@ -1,0 +1,26 @@
+id: federation_of_rhodesia_and_nyasaland
+canonical_name: Federation of Rhodesia and Nyasaland
+names:
+  fr: Fédération de Rhodésie et du Nyassaland
+  aliases_en: Central African Federation
+external_ids:
+  wikidata: Q654342
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1953
+end: 1963
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1953: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

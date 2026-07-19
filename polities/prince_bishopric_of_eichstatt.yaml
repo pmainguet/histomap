@@ -1,0 +1,26 @@
+id: prince_bishopric_of_eichstatt
+canonical_name: Prince-Bishopric of Eichstätt
+names:
+  fr: évêché d'Eichstätt
+  aliases_en: Bishopric of Eichstätt
+external_ids:
+  wikidata: Q318987
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1305
+end: 1802
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1305: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,28 @@
+id: ivory_coast
+canonical_name: Ivory Coast
+names:
+  fr: Côte d'Ivoire
+  aliases_en: ci | Cote d'Ivoire | Cote d'lvoire | Cote Ivoire | Cote-d'Ivoire | Côte-d'Ivoire
+    | Republic of Cote d'Ivoire | Republic of Côte d'Ivoire | Republic of Ivory Coast
+    | Republic of the Ivory Coast | The Ivory Coast
+external_ids:
+  wikidata: Q1008
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1960
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1960: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

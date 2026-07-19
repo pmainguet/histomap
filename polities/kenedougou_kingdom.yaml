@@ -1,0 +1,27 @@
+id: kenedougou_kingdom
+canonical_name: Kénédougou Kingdom
+names:
+  fr: royaume du Kénédougou
+  aliases_en: Kenedougou Empire | Kenedougou Kingdom | Kenedugu Empire | Kenedugu
+    Kingdom | Kenedugu polity
+external_ids:
+  wikidata: Q15824804
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1650
+end: 1898
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1650: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

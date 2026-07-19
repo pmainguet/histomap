@@ -1,0 +1,26 @@
+id: wituland_q705598
+canonical_name: Wituland
+names:
+  fr: Swahililand
+  aliases_en: Vitu | Witu | Swahililand | Witu Protectorate
+external_ids:
+  wikidata: Q705598
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1858
+end: 1890
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1858: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

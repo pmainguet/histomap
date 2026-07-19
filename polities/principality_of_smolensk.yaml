@@ -1,0 +1,26 @@
+id: principality_of_smolensk
+canonical_name: Principality of Smolensk
+names:
+  fr: principauté de Smolensk
+  aliases_en: Grand Principality of Smolensk
+external_ids:
+  wikidata: Q1483495
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1010
+end: 1508
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1010: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

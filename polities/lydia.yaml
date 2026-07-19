@@ -1,0 +1,26 @@
+id: lydia
+canonical_name: Lydia
+names:
+  fr: Lydie
+  aliases_en: Kingdom of Lydia
+external_ids:
+  wikidata: Q620765
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1199
+end: -545
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1199: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

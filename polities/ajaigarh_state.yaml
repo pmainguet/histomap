@@ -1,0 +1,25 @@
+id: ajaigarh_state
+canonical_name: Ajaigarh State
+names:
+  fr: État d'Ajaigarh
+external_ids:
+  wikidata: Q5301066
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1765
+end: 1949
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1765: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

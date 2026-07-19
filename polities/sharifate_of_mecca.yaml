@@ -1,0 +1,26 @@
+id: sharifate_of_mecca
+canonical_name: Sharifate of Mecca
+names:
+  fr: chérifat de la Mecque
+  aliases_en: Emirate of Mecca
+external_ids:
+  wikidata: Q4121369
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 968
+end: 1925
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  968: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

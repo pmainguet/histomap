@@ -1,0 +1,25 @@
+id: free_imperial_city_of_kaufbeuren
+canonical_name: free imperial city of Kaufbeuren
+names:
+  fr: ville libre de Kaufbeuren
+external_ids:
+  wikidata: Q1918186
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1286
+end: 1803
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1286: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

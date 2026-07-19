@@ -1,0 +1,25 @@
+id: independent_first_syrian_republic
+canonical_name: independent First Syrian Republic
+names:
+  fr: Première République syrienne indépendante
+external_ids:
+  wikidata: Q108868572
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1946
+end: 1950
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1946: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

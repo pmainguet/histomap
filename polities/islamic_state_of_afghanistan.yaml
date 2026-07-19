@@ -1,0 +1,26 @@
+id: islamic_state_of_afghanistan
+canonical_name: Islamic State of Afghanistan
+names:
+  fr: État islamique d'Afghanistan
+  aliases_en: Da Afghanistan Islami Dowlat | Dawlat-i Islāmī-yi Afghānistan
+external_ids:
+  wikidata: Q1415585
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1992
+end: 2002
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1992: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

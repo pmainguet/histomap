@@ -1,0 +1,25 @@
+id: kingdom_of_sardinia_q55599391
+canonical_name: Kingdom of Sardinia
+names:
+  fr: Royaume de Sardaigne (1324-1713)
+external_ids:
+  wikidata: Q55599391
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1324
+end: 1713
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1324: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

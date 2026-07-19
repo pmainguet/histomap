@@ -1,0 +1,27 @@
+id: socialist_republic_of_montenegro
+canonical_name: Socialist Republic of Montenegro
+names:
+  fr: république socialiste du Monténégro
+  aliases_en: People's Republic of Montenegro | PR Montenegro | Socijalistička Republika
+    Crna Gora | SR Crna Gora | SR Montenegro
+external_ids:
+  wikidata: Q838291
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1945
+end: 1992
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1945: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

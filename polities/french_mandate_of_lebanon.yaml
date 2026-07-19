@@ -1,0 +1,27 @@
+id: french_mandate_of_lebanon
+canonical_name: French mandate of Lebanon
+names:
+  fr: Grand Liban
+  aliases_en: mandatory Lebanese Republic | State of Greater Lebanon | French mandate
+    for the Lebanon | Greater Lebanon
+external_ids:
+  wikidata: Q130842
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1920
+end: 1943
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1920: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

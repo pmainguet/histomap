@@ -1,0 +1,26 @@
+id: amb_state
+canonical_name: Amb State
+names:
+  fr: État Amb
+  aliases_en: Amb (princely state) | Fuedal Tanawal
+external_ids:
+  wikidata: Q2841472
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1900
+end: 1969
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1900: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

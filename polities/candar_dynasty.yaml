@@ -1,0 +1,28 @@
+id: candar_dynasty
+canonical_name: Candar dynasty
+names:
+  fr: Dynastie Candar
+  aliases_en: Beylik of Sinop | Beylik of Candar | Beylik of Isfendiyar | Candar |
+    Candaroğulları | House of Candar | Isfendiyar | Isfendiyar dynasty | Isfendiyaroğulları
+    | Principality of Candar | Principality of Isfendiyar
+external_ids:
+  wikidata: Q2096678
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1291
+end: 1461
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1291: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

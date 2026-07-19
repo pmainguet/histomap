@@ -1,0 +1,26 @@
+id: transitional_islamic_state_of_afghanistan
+canonical_name: Transitional Islamic State of Afghanistan
+names:
+  fr: État transitoire islamique d'Afghanistan
+  aliases_en: Afghan Transitional Administration
+external_ids:
+  wikidata: Q4689103
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2002
+end: 2004
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2002: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: republic_of_the_rif
+canonical_name: Republic of the Rif
+names:
+  fr: République du Rif
+  aliases_en: Tribal Confederal Republic of the Rif
+external_ids:
+  wikidata: Q37102
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1921
+end: 1926
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1921: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

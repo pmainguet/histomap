@@ -1,0 +1,26 @@
+id: prince_bishopric_of_munster
+canonical_name: Prince-Bishopric of Münster
+names:
+  fr: Principauté épiscopale de Münster
+  aliases_en: diocese of Münster
+external_ids:
+  wikidata: Q697254
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1180
+end: 1803
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1180: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

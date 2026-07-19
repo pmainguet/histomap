@@ -1,0 +1,26 @@
+id: alodia
+canonical_name: Alodia
+names:
+  fr: Alodie
+  aliases_en: Aloa | Alwa
+external_ids:
+  wikidata: Q449639
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 600
+end: 1504
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  600: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

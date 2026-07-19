@@ -1,0 +1,26 @@
+id: louisiana
+canonical_name: Louisiana
+names:
+  fr: Louisiane
+  aliases_en: Pelican State | 18th State | Louisiana, United States | State of Louisiana
+external_ids:
+  wikidata: Q1588
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1812
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1812: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

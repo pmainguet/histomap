@@ -1,0 +1,30 @@
+id: zhou_dynasty
+canonical_name: Zhou dynasty
+names:
+  fr: dynastie Zhou
+  aliases_en: Chew | Chou Empire | Chou Kingdom | Kingdom of Chou | Kingdom of Zhou
+    | Zhou Empire | Zhou Kingdom | Chou | Zhou | Tchou | Tcheou | Chou Dynasty | Zhou
+    Dynasty | Chew Dynasty | Chew Empire | Chew Epoch | Chew Kingdom | Dynasty of
+    Chew | Dynasty of Chou | Dynasty of Ji | Dynasty of Zhou | Ji Dynasty | Kingdom
+    of Chew
+external_ids:
+  wikidata: Q35216
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1045
+end: -255
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1045: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

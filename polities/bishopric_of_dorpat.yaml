@@ -1,0 +1,27 @@
+id: bishopric_of_dorpat
+canonical_name: Bishopric of Dorpat
+names:
+  fr: évêché de Dorpat
+  aliases_en: Diocese of Tartu | Diocese of Leal | Diocese of Dorpat | episcopal principality
+    of Dorpat | Roman Catholic diocese of Dorpat
+external_ids:
+  wikidata: Q389360
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1224
+end: 1558
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1224: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

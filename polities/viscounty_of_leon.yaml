@@ -1,0 +1,26 @@
+id: viscounty_of_leon
+canonical_name: Viscounty of Léon
+names:
+  fr: Vicomté de Léon
+  aliases_en: Viscounty of Leon
+external_ids:
+  wikidata: Q3556993
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 801
+end: 1276
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  801: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

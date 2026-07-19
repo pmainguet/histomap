@@ -1,0 +1,25 @@
+id: lordship_of_caymont
+canonical_name: lordship of Caymont
+names:
+  fr: seigneurie de Caymont
+external_ids:
+  wikidata: Q58482373
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1191
+end: 1193
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1191: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

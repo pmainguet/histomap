@@ -1,0 +1,27 @@
+id: first_toungoo_empire
+canonical_name: First Toungoo Empire
+names:
+  fr: premier empire Taungû
+  aliases_en: First Taungoo Dynasty | First Taungoo Empire | First Toungoo Dynasty
+    | Manipur Empire | Second Burmese Empire | Taungoo Empire | Toungoo Empire
+external_ids:
+  wikidata: Q23039102
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1510
+end: 1599
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1510: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

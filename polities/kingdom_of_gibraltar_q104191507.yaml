@@ -1,0 +1,25 @@
+id: kingdom_of_gibraltar_q104191507
+canonical_name: Kingdom of Gibraltar
+names:
+  fr: royaume de Gibraltar
+external_ids:
+  wikidata: Q104191507
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1462
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1462: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

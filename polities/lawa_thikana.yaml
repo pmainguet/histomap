@@ -1,0 +1,25 @@
+id: lawa_thikana
+canonical_name: Lawa Thikana
+names:
+  fr: Lawa Thikana
+external_ids:
+  wikidata: Q6503547
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1772
+end: 1947
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1772: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

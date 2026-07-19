@@ -1,0 +1,28 @@
+id: united_provinces_of_the_rio_de_la_plata
+canonical_name: United Provinces of the Río de la Plata
+names:
+  fr: Provinces-Unies du Río de la Plata
+  aliases_en: Provinces of the Río de la Plata | Provinces of the River Plate | United
+    Provinces of the River Plate | United Provinces of the South | United Provinces
+    of South America | United Provinces of the Rio de la Plata
+external_ids:
+  wikidata: Q738144
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1810
+end: 1831
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1810: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

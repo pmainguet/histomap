@@ -1,0 +1,25 @@
+id: state_of_buryat_mongolia
+canonical_name: State of Buryat-Mongolia
+names:
+  fr: État de Bouriatie-Mongolie
+external_ids:
+  wikidata: Q4147012
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1917
+end: 1921
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1917: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: neapolitan_republic
+canonical_name: Neapolitan Republic
+names:
+  fr: République royale de Naples
+  aliases_en: Royal Republic of Naples
+external_ids:
+  wikidata: Q573072
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1647
+end: 1648
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1647: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

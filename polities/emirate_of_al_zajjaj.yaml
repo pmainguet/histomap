@@ -1,0 +1,25 @@
+id: emirate_of_al_zajjaj
+canonical_name: Emirate of al-Zajjaj
+names:
+  fr: émirat d'al-Zajjaj
+external_ids:
+  wikidata: Q121856128
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1065
+end: 1067
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1065: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

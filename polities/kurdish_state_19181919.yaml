@@ -1,0 +1,24 @@
+id: kurdish_state_19181919
+canonical_name: Kurdish state (1918–1919)
+names: {}
+external_ids:
+  wikidata: Q106391158
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1918
+end: 1919
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1918: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

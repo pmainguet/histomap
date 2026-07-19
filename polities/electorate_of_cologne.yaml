@@ -1,0 +1,26 @@
+id: electorate_of_cologne
+canonical_name: Electorate of Cologne
+names:
+  fr: électorat de Cologne
+  aliases_en: Electorate of Köln | Kurköln
+external_ids:
+  wikidata: Q7904317
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 953
+end: 1803
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  953: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

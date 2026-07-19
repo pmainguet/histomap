@@ -1,0 +1,27 @@
+id: federated_states_of_micronesia
+canonical_name: Federated States of Micronesia
+names:
+  fr: États fédérés de Micronésie
+  aliases_en: Fed. Sts. Micronesia | Fed. Sts. of Micronesia | Federated States of
+    Micronesia, FSM | Micronesia | FSM | fm
+external_ids:
+  wikidata: Q702
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1986
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1986: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

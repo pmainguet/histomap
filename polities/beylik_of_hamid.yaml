@@ -1,0 +1,26 @@
+id: beylik_of_hamid
+canonical_name: Beylik of Hamid
+names:
+  fr: Hamidides
+  aliases_en: Hamid Dynasty | Hamidids
+external_ids:
+  wikidata: Q2410637
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1280
+end: 1391
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1280: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

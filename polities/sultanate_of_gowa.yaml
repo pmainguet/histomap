@@ -1,0 +1,27 @@
+id: sultanate_of_gowa
+canonical_name: Sultanate of Gowa
+names:
+  fr: Royaume de Gowa
+  aliases_en: Gowa-Tallo | Kingdom of Goa | Kingdom of Gowa | Makassar Kingdom | Sultanate
+    of Goa | Sultanate of Gowa-Tallo
+external_ids:
+  wikidata: Q1408641
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1320
+end: 1911
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1320: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

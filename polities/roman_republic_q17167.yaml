@@ -1,0 +1,26 @@
+id: roman_republic_q17167
+canonical_name: Roman Republic
+names:
+  fr: République romaine
+  aliases_en: Rome | res publica
+external_ids:
+  wikidata: Q17167
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -508
+end: -26
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -508: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

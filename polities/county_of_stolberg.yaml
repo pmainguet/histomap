@@ -1,0 +1,24 @@
+id: county_of_stolberg
+canonical_name: County of Stolberg
+names: {}
+external_ids:
+  wikidata: Q320335
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1210
+end: 1548
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1210: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

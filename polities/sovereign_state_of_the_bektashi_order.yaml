@@ -1,0 +1,25 @@
+id: sovereign_state_of_the_bektashi_order
+canonical_name: Sovereign State of the Bektashi Order
+names:
+  fr: État souverain de l'Ordre Bektashi
+external_ids:
+  wikidata: Q130340667
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2024
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2024: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

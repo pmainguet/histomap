@@ -1,0 +1,25 @@
+id: grand_duchy_of_wurzburg
+canonical_name: Grand Duchy of Würzburg
+names:
+  fr: grand-duché de Wurtzbourg
+external_ids:
+  wikidata: Q698089
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1806
+end: 1814
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1806: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

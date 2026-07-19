@@ -1,0 +1,26 @@
+id: sultanate_of_demak
+canonical_name: Sultanate of Demak
+names:
+  fr: Sultanat de Demak
+  aliases_en: Demak Sultanate
+external_ids:
+  wikidata: Q49322
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1475
+end: 1548
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1475: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

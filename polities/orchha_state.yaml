@@ -1,0 +1,25 @@
+id: orchha_state
+canonical_name: Orchha State
+names:
+  fr: État d'Orchha
+external_ids:
+  wikidata: Q668415
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1501
+end: 1950
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1501: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

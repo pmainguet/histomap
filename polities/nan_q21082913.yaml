@@ -1,0 +1,25 @@
+id: nan_q21082913
+canonical_name: nan
+names:
+  fr: sultanat de Habar Yonis
+external_ids:
+  wikidata: Q21082913
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1800
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1800: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

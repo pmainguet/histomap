@@ -1,0 +1,26 @@
+id: western_liang_dynasty
+canonical_name: Western Liang dynasty
+names:
+  fr: Liang occidentaux
+  aliases_en: Later Liang Dynasty
+external_ids:
+  wikidata: Q849770
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 555
+end: 587
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  555: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

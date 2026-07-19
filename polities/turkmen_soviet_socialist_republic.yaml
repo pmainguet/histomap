@@ -1,0 +1,26 @@
+id: turkmen_soviet_socialist_republic
+canonical_name: Turkmen Soviet Socialist Republic
+names:
+  fr: République socialiste soviétique du Turkménistan
+  aliases_en: Soviet Turkmenia | Soviet Turkmenistan | Turkmen S.S.R. | Turkmen SSR
+external_ids:
+  wikidata: Q199707
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1924
+end: 1991
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1924: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

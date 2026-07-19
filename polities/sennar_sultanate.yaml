@@ -1,0 +1,27 @@
+id: sennar_sultanate
+canonical_name: Sennar Sultanate
+names:
+  fr: Sultanat de Sennar
+  aliases_en: Sinnar | Blue Sultanate | Funj Caliphate | Funj Kingdom | Funj Monarchy
+    | Funj Sultanate of Sennar
+external_ids:
+  wikidata: Q1475713
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1505
+end: 1821
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1505: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

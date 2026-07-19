@@ -1,0 +1,27 @@
+id: russian_empire
+canonical_name: Russian Empire
+names:
+  fr: Empire russe
+  aliases_en: Russia | Tsarist Russia | Rusia | Rossia | Empire of Russia | Imperial
+    Russia | Moscovy | Moscovy or Russia | Russia or Moscovy
+external_ids:
+  wikidata: Q34266
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1721
+end: 1917
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1721: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

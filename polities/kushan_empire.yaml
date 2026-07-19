@@ -1,0 +1,26 @@
+id: kushan_empire
+canonical_name: Kushan Empire
+names:
+  fr: Empire kouchan
+  aliases_en: Guishuang | Kuṣāṇa Empire | Kushana Empire
+external_ids:
+  wikidata: Q25979
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 30
+end: 375
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  30: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

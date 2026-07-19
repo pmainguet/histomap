@@ -1,0 +1,25 @@
+id: ammon
+canonical_name: Ammon
+names:
+  fr: Ammon
+external_ids:
+  wikidata: Q473353
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1029
+end: -109
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1029: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

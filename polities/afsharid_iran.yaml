@@ -1,0 +1,26 @@
+id: afsharid_iran
+canonical_name: Afsharid Iran
+names:
+  fr: Empire afcharide
+  aliases_en: Afsharid Empire | Afsharid State | Empire of Afsharids | Afsharid Persia
+external_ids:
+  wikidata: Q63149558
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1736
+end: 1796
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1736: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

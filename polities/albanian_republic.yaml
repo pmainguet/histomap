@@ -1,0 +1,26 @@
+id: albanian_republic
+canonical_name: Albanian Republic
+names:
+  fr: République d'Albanie
+  aliases_en: Albania | Republic of Albania | Republika Shqiptare
+external_ids:
+  wikidata: Q1923781
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1925
+end: 1928
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1925: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

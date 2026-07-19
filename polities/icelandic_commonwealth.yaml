@@ -1,0 +1,26 @@
+id: icelandic_commonwealth
+canonical_name: Icelandic Commonwealth
+names:
+  fr: État libre islandais
+  aliases_en: Free State of Iceland | Icelandic Free State | Þjóðveldið Ísland
+external_ids:
+  wikidata: Q62389
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 930
+end: 1262
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  930: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

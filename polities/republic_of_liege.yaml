@@ -1,0 +1,26 @@
+id: republic_of_liege
+canonical_name: Republic of Liège
+names:
+  fr: République liégeoise
+  aliases_en: Republic of Liege | Republique liegeoise | République liégeoise
+external_ids:
+  wikidata: Q3456469
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1789
+end: 1791
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1789: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

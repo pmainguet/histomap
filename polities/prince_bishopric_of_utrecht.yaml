@@ -1,0 +1,26 @@
+id: prince_bishopric_of_utrecht
+canonical_name: Prince-Bishopric of Utrecht
+names:
+  fr: Principauté d'Utrecht
+  aliases_en: Bishopric of Utrecht | Episcopal principality of Utrecht
+external_ids:
+  wikidata: Q707767
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1024
+end: 1528
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1024: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

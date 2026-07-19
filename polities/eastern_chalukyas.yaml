@@ -1,0 +1,26 @@
+id: eastern_chalukyas
+canonical_name: Eastern Chalukyas
+names:
+  fr: Chalukyas orientaux
+  aliases_en: Chalukyas of Vengi
+external_ids:
+  wikidata: Q3765117
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 624
+end: 1189
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  624: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

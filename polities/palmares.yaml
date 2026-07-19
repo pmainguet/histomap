@@ -1,0 +1,27 @@
+id: palmares
+canonical_name: Palmares
+names:
+  fr: Palmares
+  aliases_en: Angola Janga | Quilombo de Palmares | Quilombos dos Palmares | República
+    dos Palmares
+external_ids:
+  wikidata: Q1542741
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1605
+end: 1710
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1605: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

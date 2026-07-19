@@ -1,0 +1,26 @@
+id: kingdom_of_jhalavad
+canonical_name: Kingdom of Jhalavad
+names:
+  fr: État de Dhrangadhra
+  aliases_en: Halvad-Dhrangadhra State
+external_ids:
+  wikidata: Q16829581
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1742
+end: 1948
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1742: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

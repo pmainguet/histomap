@@ -1,0 +1,27 @@
+id: national_government_of_the_republic_of_china
+canonical_name: National Government of the Republic of China
+names:
+  fr: Gouvernement nationaliste
+  aliases_en: National Government of China | Nationalist government | Nationalist
+    Government | Republic of China (1928-1949)
+external_ids:
+  wikidata: Q2308761
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1925
+end: 1948
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1925: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

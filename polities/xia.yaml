@@ -1,0 +1,27 @@
+id: xia
+canonical_name: Xia
+names:
+  fr: Xia
+  aliases_en: Daxia | Hu Xia | Bei Xia | Da Xia | Helian Xia | Ta Hsia | Ta-Hsia |
+    Hu Hsia | Hu-hsia | Northern Xia | Pei Hsia | Pei-Hsia | Ta-hsia
+external_ids:
+  wikidata: Q546282
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 407
+end: 431
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  407: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

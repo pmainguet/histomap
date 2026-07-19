@@ -1,0 +1,26 @@
+id: wey
+canonical_name: Wey
+names:
+  fr: Wei
+  aliases_en: Wei | Ouey | State of Wei | State of Wey
+external_ids:
+  wikidata: Q1147897
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1040
+end: -208
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1040: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: taifa_of_lorca_q1949209
+canonical_name: Taifa of Lorca
+names:
+  fr: taïfa de Lorca
+external_ids:
+  wikidata: Q1949209
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1228
+end: 1250
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1228: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

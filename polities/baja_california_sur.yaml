@@ -1,0 +1,28 @@
+id: baja_california_sur
+canonical_name: Baja California Sur
+names:
+  fr: Basse-Californie du Sud
+  aliases_en: BCS | South Territory of Baja California | Estado de Baja California
+    Sur | Free and Sovereign State of Baja California Sur | MX-BCS | MX03 | South
+    Lower California
+external_ids:
+  wikidata: Q46508
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1974
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1974: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

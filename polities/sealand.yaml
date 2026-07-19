@@ -1,0 +1,25 @@
+id: sealand
+canonical_name: Sealand
+names:
+  fr: Pays de la Mer
+external_ids:
+  wikidata: Q1977088
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1685
+end: -1459
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1685: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

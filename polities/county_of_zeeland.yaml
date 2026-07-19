@@ -1,0 +1,25 @@
+id: county_of_zeeland
+canonical_name: County of Zeeland
+names:
+  fr: comté de Zélande
+external_ids:
+  wikidata: Q1945565
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1012
+end: 1795
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1012: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

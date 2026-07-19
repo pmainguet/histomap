@@ -1,0 +1,27 @@
+id: canton_of_nidwalden
+canonical_name: Canton of Nidwalden
+names:
+  fr: canton de Nidwald
+  aliases_en: NW | Canton of Nidwald | Kanton Nidwalden | Nidwald | Unterwalden nid
+    dem Wald
+external_ids:
+  wikidata: Q12592
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1291
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1291: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

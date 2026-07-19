@@ -1,0 +1,25 @@
+id: german_empire_of_1848_1849
+canonical_name: German Empire of 1848/1849
+names:
+  fr: Empire allemand
+external_ids:
+  wikidata: Q18285930
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1848
+end: 1849
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1848: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

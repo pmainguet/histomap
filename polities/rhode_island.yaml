@@ -1,0 +1,31 @@
+id: rhode_island
+canonical_name: Rhode Island
+names:
+  fr: Rhode Island
+  aliases_en: RI | 13th State | Little Rhody | Ocean State | Providence Plantations
+    | Rhode Island (state) | Rhode Island (U.S. state) | Rhode Island and Providence
+    Plantations | Rhode Island State | Rhode Island, United States | Road Island |
+    State of Rhode Island | State of Rhode Island and Providence Plantations | The
+    Ocean State | The State of Rhode Island and Providence Plantations | US-RI | Little
+    Rhodie
+external_ids:
+  wikidata: Q1387
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1790
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1790: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

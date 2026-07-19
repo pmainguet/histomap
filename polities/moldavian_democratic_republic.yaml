@@ -1,0 +1,25 @@
+id: moldavian_democratic_republic
+canonical_name: Moldavian Democratic Republic
+names:
+  fr: République démocratique moldave
+external_ids:
+  wikidata: Q964024
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1917
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1917: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

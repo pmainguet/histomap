@@ -1,0 +1,26 @@
+id: aigai
+canonical_name: Aigai
+names:
+  fr: Aigai
+  aliases_en: Vergina | Aegae | Aegeae | Aegaea | Aigaia | Aigeai
+external_ids:
+  wikidata: Q16963755
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -749
+end: 100
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -749: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

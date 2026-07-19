@@ -1,0 +1,26 @@
+id: zakarid_armenia
+canonical_name: Zakarid Armenia
+names:
+  fr: Arménie zakaride
+  aliases_en: Georgian Armenia | Principality of Armenia | Somkhiti
+external_ids:
+  wikidata: Q2863018
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1201
+end: 1360
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1201: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

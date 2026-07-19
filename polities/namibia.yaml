@@ -1,0 +1,26 @@
+id: namibia
+canonical_name: Namibia
+names:
+  fr: Namibie
+  aliases_en: na | Republic of Namibia
+external_ids:
+  wikidata: Q1030
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1990
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1990: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

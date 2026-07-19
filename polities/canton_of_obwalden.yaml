@@ -1,0 +1,27 @@
+id: canton_of_obwalden
+canonical_name: Canton of Obwalden
+names:
+  fr: canton d'Obwald
+  aliases_en: Canton of Obwald | Canton of Obwalden | Kanton Obwalden | OW | Unterwalden
+    ob dem Wald
+external_ids:
+  wikidata: Q12573
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1291
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1291: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

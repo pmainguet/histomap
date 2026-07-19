@@ -1,0 +1,25 @@
+id: county_of_piedmont
+canonical_name: County of Piedmont
+names:
+  fr: comté angevin de Piémont
+external_ids:
+  wikidata: Q21027413
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1255
+end: 1382
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1255: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

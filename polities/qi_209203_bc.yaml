@@ -1,0 +1,24 @@
+id: qi_209203_bc
+canonical_name: Qi  (209–203 BC)
+names: {}
+external_ids:
+  wikidata: Q11180205
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -208
+end: -202
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -208: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

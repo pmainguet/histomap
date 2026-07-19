@@ -1,0 +1,24 @@
+id: state_of_grao_para_and_maranhao
+canonical_name: State of Grão-Pará and Maranhão
+names: {}
+external_ids:
+  wikidata: Q616965
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1654
+end: 1772
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1654: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

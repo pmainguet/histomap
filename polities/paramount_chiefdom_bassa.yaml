@@ -1,0 +1,26 @@
+id: paramount_chiefdom_bassa
+canonical_name: Paramount chiefdom Bassa
+names:
+  fr: Chefferie Supérieure du Canton Bassa
+  aliases_en: Bassa Chieftancy
+external_ids:
+  wikidata: Q130425769
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1919
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1919: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

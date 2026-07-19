@@ -1,0 +1,27 @@
+id: people_s_republic_of_bulgaria
+canonical_name: People's Republic of Bulgaria
+names:
+  fr: république populaire de Bulgarie
+  aliases_en: PRB | Communist Bulgaria | Narodna republika Balgariya | PR Bulgaria
+    | Socialist Bulgaria
+external_ids:
+  wikidata: Q121932
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1946
+end: 1990
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1946: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

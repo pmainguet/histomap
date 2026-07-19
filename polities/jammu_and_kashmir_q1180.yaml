@@ -1,0 +1,26 @@
+id: jammu_and_kashmir_q1180
+canonical_name: Jammu and Kashmir
+names:
+  fr: Jammu-et-Cachemire
+  aliases_en: JK | J&K | Jammu and Kashmir (state) | Jammu Kashmir
+external_ids:
+  wikidata: Q1180
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1947
+end: 2019
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1947: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

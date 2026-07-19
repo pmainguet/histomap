@@ -1,0 +1,25 @@
+id: republic_of_lydenburg
+canonical_name: Republic of Lydenburg
+names:
+  fr: république de Lydenburg
+external_ids:
+  wikidata: Q220167
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1849
+end: 1860
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1849: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

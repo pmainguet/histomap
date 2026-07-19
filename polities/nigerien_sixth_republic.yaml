@@ -1,0 +1,25 @@
+id: nigerien_sixth_republic
+canonical_name: Nigerien Sixth Republic
+names:
+  fr: Sixième République
+external_ids:
+  wikidata: Q30745609
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2009
+end: 2010
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2009: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

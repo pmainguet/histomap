@@ -1,0 +1,26 @@
+id: empire_of_great_fulo
+canonical_name: Empire of Great Fulo
+names:
+  fr: empire du Grand Fulo
+  aliases_en: Denanke Kingdom | Denianke Kingdom | Empire of Great Fula | Fulo Empire
+external_ids:
+  wikidata: Q1186858
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1490
+end: 1776
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1490: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

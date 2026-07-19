@@ -1,0 +1,26 @@
+id: duchy_of_holstein
+canonical_name: Duchy of Holstein
+names:
+  fr: duché de Holstein
+  aliases_en: Holstein
+external_ids:
+  wikidata: Q704288
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1474
+end: 1867
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1474: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,24 @@
+id: beylik_of_erzincan
+canonical_name: Beylik of Erzincan
+names: {}
+external_ids:
+  wikidata: Q1254667
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1279
+end: 1410
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1279: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

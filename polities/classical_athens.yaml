@@ -1,0 +1,26 @@
+id: classical_athens
+canonical_name: Classical Athens
+names:
+  fr: Athènes
+  aliases_en: Athens | Ancient Athens | Athens (Samian Ware Discovery Site)
+external_ids:
+  wikidata: Q844930
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -507
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -507: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: georgian_ssr
+canonical_name: Georgian SSR
+names:
+  fr: République socialiste soviétique de Géorgie
+  aliases_en: Georgian S.S.R. | Georgian Soviet Socialist Republic | Soviet Georgia
+external_ids:
+  wikidata: Q130229
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1921
+end: 1991
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1921: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: northern_han
+canonical_name: Northern Han
+names:
+  fr: Han du Nord
+  aliases_en: Beihan | Bei Han | Pei Han | Pei-han
+external_ids:
+  wikidata: Q1141471
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 951
+end: 979
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  951: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

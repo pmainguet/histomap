@@ -1,0 +1,26 @@
+id: sultanate_of_zanzibar_q48769061
+canonical_name: Sultanate of Zanzibar
+names:
+  fr: Sultanat de Zanzibar
+  aliases_en: Zanzibar | Kingdom of Zanzibar
+external_ids:
+  wikidata: Q48769061
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1963
+end: 1964
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1963: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

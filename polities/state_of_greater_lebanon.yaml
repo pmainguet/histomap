@@ -1,0 +1,26 @@
+id: state_of_greater_lebanon
+canonical_name: State of Greater Lebanon
+names:
+  fr: État du Grand Liban
+  aliases_en: Большой Ливан
+external_ids:
+  wikidata: Q108865226
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1920
+end: 1926
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1920: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

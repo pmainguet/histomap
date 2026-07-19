@@ -1,0 +1,26 @@
+id: kingdom_of_derge
+canonical_name: Kingdom of Derge
+names:
+  fr: Royaume de Dergé
+  aliases_en: Dege | Derge
+external_ids:
+  wikidata: Q3446167
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1500
+end: 1727
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1500: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: sultanate_of_sarawak
+canonical_name: Sultanate of Sarawak
+names:
+  fr: sultanat du Sarawak
+external_ids:
+  wikidata: Q47012851
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1599
+end: 1641
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1599: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,29 @@
+id: mughal_empire
+canonical_name: Mughal Empire
+names:
+  fr: Empire moghol
+  aliases_en: Hindustan | Hind | Hindostan | Dominion of Hindustan | Land of Hind
+    | Moghal Empire | Moghal India | Moghol Empire | Moghol India | Moghul Empire
+    | Moghul India | Mogol Empire | Mogol India | Mogul Empire | Mogul India | Mongol
+    Empire in India | Mughal India | Sultanate of al-Hind
+external_ids:
+  wikidata: Q33296
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1526
+end: 1857
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1526: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

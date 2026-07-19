@@ -1,0 +1,26 @@
+id: republic_of_spanish_haiti
+canonical_name: Republic of Spanish Haiti
+names:
+  fr: Haïti espagnol
+  aliases_en: República del Haití Español
+external_ids:
+  wikidata: Q11681694
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1821
+end: 1822
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1821: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

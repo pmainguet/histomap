@@ -1,0 +1,28 @@
+id: italian_protectorate_of_albania
+canonical_name: Italian protectorate of Albania
+names:
+  fr: Albanie sous protectorat italien
+  aliases_en: Albania | Kingdom of Albania | German occupation of Albania | Axis occupation
+    of Albania | Italian occupation of Albania | Italian Occupation of the Kingdom
+    of Albania | Mbretëria Shqiptare
+external_ids:
+  wikidata: Q1448131
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1939
+end: 1943
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1939: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: taifa_of_santa_maria_do_algarve
+canonical_name: Taifa of Santa Maria do Algarve
+names:
+  fr: taïfa de Sainte Marie d'Algarve
+external_ids:
+  wikidata: Q2077765
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1018
+end: 1051
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1018: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

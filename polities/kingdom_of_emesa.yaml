@@ -1,0 +1,25 @@
+id: kingdom_of_emesa
+canonical_name: Kingdom of Emesa
+names:
+  fr: royaume d'Émèse
+external_ids:
+  wikidata: Q136702054
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -45
+end: 70
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -45: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

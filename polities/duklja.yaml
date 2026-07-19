@@ -1,0 +1,26 @@
+id: duklja
+canonical_name: Duklja
+names:
+  fr: Dioclée
+  aliases_en: Doclea | Diokletija
+external_ids:
+  wikidata: Q1252942
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 854
+end: 1252
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  854: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: western_roman_empire
+canonical_name: Western Roman Empire
+names:
+  fr: Empire romain d'Occident
+  aliases_en: Roman Empire
+external_ids:
+  wikidata: Q42834
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 395
+end: 476
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  395: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

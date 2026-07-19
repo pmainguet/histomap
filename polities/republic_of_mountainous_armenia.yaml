@@ -1,0 +1,25 @@
+id: republic_of_mountainous_armenia
+canonical_name: Republic of Mountainous Armenia
+names:
+  fr: République arménienne de la montagne
+external_ids:
+  wikidata: Q1926064
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1921
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1921: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

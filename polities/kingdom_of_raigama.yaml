@@ -1,0 +1,26 @@
+id: kingdom_of_raigama
+canonical_name: Kingdom of Raigama
+names:
+  fr: Kingdom of Raigama
+  aliases_en: Raigama
+external_ids:
+  wikidata: Q6412645
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1391
+end: 1412
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1391: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

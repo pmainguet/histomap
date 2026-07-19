@@ -1,0 +1,27 @@
+id: ijebu_kingdom
+canonical_name: Ijebu Kingdom
+names:
+  fr: royaume Ijebu
+  aliases_en: Jebusites | 'Jeb'u'sale' | Geebu | Ijebu- | Jebu | Jebus-salem | The
+    Jebu
+external_ids:
+  wikidata: Q1658023
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1500
+end: 1892
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1500: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

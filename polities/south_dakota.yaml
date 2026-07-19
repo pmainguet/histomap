@@ -1,0 +1,27 @@
+id: south_dakota
+canonical_name: South Dakota
+names:
+  fr: Dakota du Sud
+  aliases_en: SD | S. Dak. | S. Dakota | S.D. | SoDak | South Dakota, United States
+    | State of South Dakota | The Coyote State | The Mount Rushmore State | US-SD
+external_ids:
+  wikidata: Q1211
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1889
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1889: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

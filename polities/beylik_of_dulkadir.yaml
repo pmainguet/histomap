@@ -1,0 +1,25 @@
+id: beylik_of_dulkadir
+canonical_name: Beylik of Dulkadir
+names:
+  fr: Dulkadir
+external_ids:
+  wikidata: Q1264808
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1337
+end: 1522
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1337: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

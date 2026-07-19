@@ -1,0 +1,26 @@
+id: kingdom_of_cappadocia
+canonical_name: Kingdom of Cappadocia
+names:
+  fr: royaume de Cappadoce
+  aliases_en: Cappadocia
+external_ids:
+  wikidata: Q29654286
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -320
+end: 17
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -320: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

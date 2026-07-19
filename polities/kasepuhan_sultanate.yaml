@@ -1,0 +1,24 @@
+id: kasepuhan_sultanate
+canonical_name: Kasepuhan Sultanate
+names: {}
+external_ids:
+  wikidata: Q25460197
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1679
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1679: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

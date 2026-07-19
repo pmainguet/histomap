@@ -1,0 +1,26 @@
+id: albanian_kingdom_q1048340
+canonical_name: Albanian Kingdom
+names:
+  fr: Royaume d'Albanie
+  aliases_en: Albania
+external_ids:
+  wikidata: Q1048340
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1928
+end: 1939
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1928: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: samorian_state
+canonical_name: Samorian state
+names:
+  fr: Empire wassoulou
+  aliases_en: Mandinka empire | Samori's empire | Samory's empire | Wassoulou empire
+external_ids:
+  wikidata: Q568712
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1878
+end: 1898
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1878: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

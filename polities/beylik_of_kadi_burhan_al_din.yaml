@@ -1,0 +1,25 @@
+id: beylik_of_kadi_burhan_al_din
+canonical_name: Beylik of Kadi Burhan al-Din
+names:
+  aliases_en: Kadi Burhan al-Din
+external_ids:
+  wikidata: Q4834782
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1381
+end: 1398
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1381: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

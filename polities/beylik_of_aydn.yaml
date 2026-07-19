@@ -1,0 +1,26 @@
+id: beylik_of_aydn
+canonical_name: Beylik of Aydın
+names:
+  fr: émirat d'Aydın
+  aliases_en: Aydınoğlu | Aydınids | Beylik of Aydin
+external_ids:
+  wikidata: Q717112
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1300
+end: 1426
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1300: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

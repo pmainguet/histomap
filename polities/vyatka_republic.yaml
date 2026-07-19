@@ -1,0 +1,24 @@
+id: vyatka_republic
+canonical_name: Vyatka Republic
+names: {}
+external_ids:
+  wikidata: Q4130471
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1374
+end: 1489
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1374: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

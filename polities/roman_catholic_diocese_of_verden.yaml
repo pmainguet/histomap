@@ -1,0 +1,26 @@
+id: roman_catholic_diocese_of_verden
+canonical_name: Roman Catholic Diocese of Verden
+names:
+  fr: diocèse de Verden
+  aliases_en: Bishopric of Verden | Verden | Diocese Verden
+external_ids:
+  wikidata: Q329590
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 850
+end: 1648
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  850: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

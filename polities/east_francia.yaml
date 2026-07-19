@@ -1,0 +1,26 @@
+id: east_francia
+canonical_name: East Francia
+names:
+  fr: Francie orientale
+  aliases_en: Kingdom of the East Franks
+external_ids:
+  wikidata: Q153080
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 843
+end: 962
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  843: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

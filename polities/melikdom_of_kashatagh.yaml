@@ -1,0 +1,25 @@
+id: melikdom_of_kashatagh
+canonical_name: Melikdom of Kashatagh
+names:
+  aliases_en: Melikdom of Kashatag
+external_ids:
+  wikidata: Q21661714
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1500
+end: 1700
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1500: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

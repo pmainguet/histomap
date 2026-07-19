@@ -1,0 +1,26 @@
+id: somaliland
+canonical_name: Somaliland
+names:
+  fr: Somaliland
+  aliases_en: Republic of Somaliland
+external_ids:
+  wikidata: Q34754
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1991
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1991: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

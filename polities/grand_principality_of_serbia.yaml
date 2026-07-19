@@ -1,0 +1,26 @@
+id: grand_principality_of_serbia
+canonical_name: Grand Principality of Serbia
+names:
+  fr: Rascie
+  aliases_en: Serbia | Rascia | Raška | Serbian Grand Principality
+external_ids:
+  wikidata: Q1311990
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1084
+end: 1217
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1084: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

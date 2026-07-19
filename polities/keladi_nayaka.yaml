@@ -1,0 +1,25 @@
+id: keladi_nayaka
+canonical_name: Keladi Nayaka
+names:
+  aliases_en: Nayakas of Keladi
+external_ids:
+  wikidata: Q1587991
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1499
+end: 1763
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1499: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

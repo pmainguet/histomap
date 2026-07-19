@@ -1,0 +1,26 @@
+id: kingdom_of_hungary_q600018
+canonical_name: Kingdom of Hungary
+names:
+  fr: Royaume de Hongrie
+  aliases_en: Horthy era | Horthy system | Regency Hungary
+external_ids:
+  wikidata: Q600018
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1920
+end: 1946
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1920: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

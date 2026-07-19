@@ -1,0 +1,29 @@
+id: connecticut
+canonical_name: Connecticut
+names:
+  fr: Connecticut
+  aliases_en: CT | Constitution State | The Constitution State | 5th State | Conn.
+    | Connecticut (state) | Connecticut (U.S. state) | Connecticut, U.S. | Connecticut,
+    United States | Conneticut | CT, USA | State of Connecticut | The Nutmeg State
+    | US-CT | Nutmeg State
+external_ids:
+  wikidata: Q779
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1788
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1788: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

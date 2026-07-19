@@ -1,0 +1,33 @@
+id: bukey_horde
+canonical_name: Bukey Horde
+names:
+  fr: Horde de Boukeï
+  aliases_en: Bökey Ordası | Bökey Xandığı | Bököy Ordosu | Bököy Xandıgı | Bükäy
+    Urdası | Bükäy Xanlığı | Bukey Orda | Bukey Urda | Bukeyev Horde | Bukeyevskaya
+    Orda | Bukeyevskoye Khanstvo | Eçke Qırğız Urdası | Eçke Urdası | Horde of Bukey
+    | İçki Kırgız Ordosu | İçki Ordosu | Inner Horde | Inner Kirgiz Horde | Inner
+    Kırgız Horde | Inner Kyrgyz Horde | Inner Orda | Inner Qırğız Horde | Inner Urda
+    | İşki Ordası | İşki Qırğız Ordası | Orda Bukeya | Orda of Bukey | Urda of Bukey
+    | Vnutrennyaya Kirgizskaya Orda | Vnutrennyaya Orda | Bokey Horde | Bokey Orda
+    | Bokey Urda | Bokeyevskaya Orda
+external_ids:
+  wikidata: Q129799
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1801
+end: 1845
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1801: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

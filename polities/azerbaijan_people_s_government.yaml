@@ -1,0 +1,26 @@
+id: azerbaijan_people_s_government
+canonical_name: Azerbaijan People's Government
+names:
+  fr: Gouvernement populaire d'Azerbaïdjan
+  aliases_en: Azerbaijan National Government
+external_ids:
+  wikidata: Q2305337
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1945
+end: 1946
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1945: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

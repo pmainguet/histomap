@@ -1,0 +1,26 @@
+id: kingdom_of_naples_q173065
+canonical_name: Kingdom of Naples
+names:
+  fr: royaume de Naples
+  aliases_en: Regno di Napoli
+external_ids:
+  wikidata: Q173065
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1282
+end: 1816
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1282: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

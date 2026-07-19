@@ -1,0 +1,26 @@
+id: republic_of_molossia
+canonical_name: Republic of Molossia
+names:
+  fr: République de Molossia
+  aliases_en: Molossia | Repulic of Molossia
+external_ids:
+  wikidata: Q1155768
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1999
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1999: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

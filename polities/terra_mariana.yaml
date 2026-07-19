@@ -1,0 +1,25 @@
+id: terra_mariana
+canonical_name: Terra Mariana
+names:
+  fr: Terra Mariana
+external_ids:
+  wikidata: Q2458532
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1207
+end: 1561
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1207: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

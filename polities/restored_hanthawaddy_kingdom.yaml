@@ -1,0 +1,25 @@
+id: restored_hanthawaddy_kingdom
+canonical_name: Restored Hanthawaddy Kingdom
+names:
+  aliases_en: Restored Kingdom of Hanthawaddy Pegu
+external_ids:
+  wikidata: Q3302610
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1740
+end: 1757
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1740: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: duchy_of_carinthia
+canonical_name: Duchy of Carinthia
+names:
+  fr: duché de Carinthie
+external_ids:
+  wikidata: Q702224
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 976
+end: 1335
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  976: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

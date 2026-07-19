@@ -1,0 +1,26 @@
+id: kingdom_of_thomond
+canonical_name: Kingdom of Thomond
+names:
+  fr: Royaume de Thomond
+  aliases_en: Thomond
+external_ids:
+  wikidata: Q1688151
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1118
+end: 1543
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1118: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: ly_dynasty
+canonical_name: Ly dynasty
+names:
+  fr: dynastie Ly
+  aliases_en: Later Lý dynasty | Lý dynasty
+external_ids:
+  wikidata: Q878309
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1009
+end: 1226
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1009: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

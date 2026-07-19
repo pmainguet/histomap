@@ -1,0 +1,26 @@
+id: despotate_of_the_morea
+canonical_name: Despotate of the Morea
+names:
+  fr: despotat de Morée
+  aliases_en: Despotate of Mystras
+external_ids:
+  wikidata: Q604593
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1349
+end: 1460
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1349: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

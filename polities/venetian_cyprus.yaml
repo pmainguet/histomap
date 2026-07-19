@@ -1,0 +1,25 @@
+id: venetian_cyprus
+canonical_name: Venetian Cyprus
+names:
+  fr: Chypre vénitienne
+external_ids:
+  wikidata: Q18639863
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1489
+end: 1571
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1489: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

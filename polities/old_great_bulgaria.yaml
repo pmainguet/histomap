@@ -1,0 +1,26 @@
+id: old_great_bulgaria
+canonical_name: Old Great Bulgaria
+names:
+  fr: Ancienne Grande Bulgarie
+  aliases_en: Great Bulgaria
+external_ids:
+  wikidata: Q191484
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 632
+end: 668
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  632: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

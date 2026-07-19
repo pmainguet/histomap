@@ -1,0 +1,26 @@
+id: aztec_empire
+canonical_name: Aztec Empire
+names:
+  fr: Empire aztèque
+  aliases_en: Triple Alliance | Mexica Empire
+external_ids:
+  wikidata: Q2608489
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1325
+end: 1521
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1325: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: kingdom_of_scotland
+canonical_name: Kingdom of Scotland
+names:
+  fr: royaume d'Écosse
+  aliases_en: Scotland | The Kingdom of Scotland
+external_ids:
+  wikidata: Q230791
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 843
+end: 1707
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  843: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

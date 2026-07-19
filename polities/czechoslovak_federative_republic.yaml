@@ -1,0 +1,25 @@
+id: czechoslovak_federative_republic
+canonical_name: Czechoslovak Federative Republic
+names:
+  fr: République fédérative tchéco-slovaque
+external_ids:
+  wikidata: Q11177699
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1990
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1990: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

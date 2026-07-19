@@ -1,0 +1,26 @@
+id: tay_son_dynasty
+canonical_name: Tây Sơn dynasty
+names:
+  fr: Dynastie Tây Sơn
+  aliases_en: Annam | Đại Việt | Tây Sơn
+external_ids:
+  wikidata: Q1034173
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1778
+end: 1802
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1778: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

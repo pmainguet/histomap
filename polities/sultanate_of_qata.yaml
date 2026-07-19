@@ -1,0 +1,25 @@
+id: sultanate_of_qata
+canonical_name: Sultanate of Qata
+names:
+  fr: Sultanat de Quatta
+external_ids:
+  wikidata: Q7636799
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 900
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  900: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

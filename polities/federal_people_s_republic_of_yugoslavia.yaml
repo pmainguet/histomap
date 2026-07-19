@@ -1,0 +1,26 @@
+id: federal_people_s_republic_of_yugoslavia
+canonical_name: Federal People's Republic of Yugoslavia
+names:
+  fr: république fédérale populaire de Yougoslavie
+  aliases_en: FPR Yugoslavia | FPRY | FNRJ
+external_ids:
+  wikidata: Q1290149
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1945
+end: 1963
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1945: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

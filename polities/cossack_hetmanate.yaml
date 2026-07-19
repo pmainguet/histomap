@@ -1,0 +1,26 @@
+id: cossack_hetmanate
+canonical_name: Cossack Hetmanate
+names:
+  fr: hetmanat cosaque
+  aliases_en: Zaporozhian Host
+external_ids:
+  wikidata: Q212439
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1648
+end: 1764
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1648: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

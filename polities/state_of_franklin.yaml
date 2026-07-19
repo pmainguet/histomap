@@ -1,0 +1,26 @@
+id: state_of_franklin
+canonical_name: State of Franklin
+names:
+  fr: État de Franklin
+  aliases_en: Free Republic of Franklin | Lost State of Franklin | State of Frankland
+external_ids:
+  wikidata: Q1557627
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1784
+end: 1788
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1784: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

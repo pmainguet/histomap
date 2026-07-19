@@ -1,0 +1,26 @@
+id: kingdom_of_the_algarve
+canonical_name: Kingdom of the Algarve
+names:
+  fr: Royaume d'Algarve
+  aliases_en: Al-Gharb al-Andalus | Regnum Algarbiorum | Reino dos Algarves
+external_ids:
+  wikidata: Q1796196
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1242
+end: 1910
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1242: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

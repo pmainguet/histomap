@@ -1,0 +1,26 @@
+id: eastern_wei
+canonical_name: Eastern Wei
+names:
+  fr: Dynastie Wei de l'Est
+  aliases_en: Eastern Wei dynasty
+external_ids:
+  wikidata: Q307069
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 534
+end: 550
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  534: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

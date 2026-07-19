@@ -1,0 +1,26 @@
+id: amazonas
+canonical_name: Amazonas
+names:
+  fr: Amazonas
+  aliases_en: Amazonas State | estado Amazonas | estado indígena de Amazonas
+external_ids:
+  wikidata: Q170453
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1994
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1994: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

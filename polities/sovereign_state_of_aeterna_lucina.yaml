@@ -1,0 +1,26 @@
+id: sovereign_state_of_aeterna_lucina
+canonical_name: Sovereign State of Aeterna Lucina
+names:
+  fr: Aeterna Lucina
+  aliases_en: Aeterna Lucina
+external_ids:
+  wikidata: Q7571613
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1978
+end: 1994
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1978: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

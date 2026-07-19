@@ -1,0 +1,25 @@
+id: kingdom_of_vientiane
+canonical_name: Kingdom of Vientiane
+names:
+  fr: royaume de Vientiane
+external_ids:
+  wikidata: Q1141632
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1707
+end: 1828
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1707: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,27 @@
+id: socialist_republic_of_croatia
+canonical_name: Socialist Republic of Croatia
+names:
+  fr: république socialiste de Croatie
+  aliases_en: People's Republic of Croatia | PR Croatia | Socijalistička Republika
+    Hrvatska | SR Croatia | SR Hrvatska
+external_ids:
+  wikidata: Q209062
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1945
+end: 1990
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1945: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

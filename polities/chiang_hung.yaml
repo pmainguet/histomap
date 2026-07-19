@@ -1,0 +1,27 @@
+id: chiang_hung
+canonical_name: Chiang Hung
+names:
+  fr: Chiang Hung
+  aliases_en: Chiang Rung | Keng Hung | Kingdom of Chiang Hung | Kingdom of Jinghong
+    | Kingdom of Sibsongbanna | Kingdom of Sipsong Panna | Mueang Ho Kham Chiang Rung
+external_ids:
+  wikidata: Q1357404
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1180
+end: 1847
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1180: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: great_balhae_kingdom
+canonical_name: Great Balhae Kingdom
+names:
+  aliases_en: Daewonguk | Dayuan Kingdom | Great Bohai Kingdom
+external_ids:
+  wikidata: Q703695
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1116
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1116: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

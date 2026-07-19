@@ -1,0 +1,26 @@
+id: kingdom_of_poland_q696908
+canonical_name: Kingdom of Poland
+names:
+  fr: Royaume de Pologne
+  aliases_en: Kingdom of Poland (1917–1918) | Regency Kingdom of Poland
+external_ids:
+  wikidata: Q696908
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1916
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1916: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

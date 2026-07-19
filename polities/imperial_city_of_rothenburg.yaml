@@ -1,0 +1,26 @@
+id: imperial_city_of_rothenburg
+canonical_name: Imperial City of Rothenburg
+names:
+  fr: Ville impériale de Rothenburg
+  aliases_en: Free Imperial City of Rothenburg
+external_ids:
+  wikidata: Q2423057
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1274
+end: 1803
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1274: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

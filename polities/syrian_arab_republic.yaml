@@ -1,0 +1,27 @@
+id: syrian_arab_republic
+canonical_name: Syrian Arab Republic
+names:
+  fr: Syrie baasiste
+  aliases_en: Syria | Assad regime | Jumhūriyyah al-ʿArabiyyah as-Sūriyyah | Syria
+    under the Assad regime | Syrian Arab Republic
+external_ids:
+  wikidata: Q131404661
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1963
+end: 2024
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1963: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

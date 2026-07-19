@@ -1,0 +1,24 @@
+id: cultura_tarija
+canonical_name: Cultura Tarija
+names: {}
+external_ids:
+  wikidata: Q96337601
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -500
+end: 1470
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -500: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

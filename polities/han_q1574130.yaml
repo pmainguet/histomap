@@ -1,0 +1,28 @@
+id: han_q1574130
+canonical_name: Han
+names:
+  fr: Han
+  aliases_en: Han Guo | Han Kuo | Hane | Han kingdom | Han Kingdom | Han Principality
+    | Han state | Han State | Han-kuo | Hanguo | Kingdom of Han | Principality of
+    Han | state of Han | State of Han
+external_ids:
+  wikidata: Q1574130
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -402
+end: -229
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -402: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

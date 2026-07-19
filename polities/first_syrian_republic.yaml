@@ -1,0 +1,25 @@
+id: first_syrian_republic
+canonical_name: First Syrian Republic
+names:
+  fr: Première République de Syrie
+external_ids:
+  wikidata: Q26234937
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1930
+end: 1950
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1930: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

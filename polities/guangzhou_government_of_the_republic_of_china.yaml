@@ -1,0 +1,26 @@
+id: guangzhou_government_of_the_republic_of_china
+canonical_name: Guangzhou Government of the Republic of China
+names:
+  aliases_en: Republic of China in Guangzhou government | the Republic of China in
+    Guangzhou government
+external_ids:
+  wikidata: Q11061992
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1921
+end: 1923
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1921: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

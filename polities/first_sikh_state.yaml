@@ -1,0 +1,25 @@
+id: first_sikh_state
+canonical_name: First Sikh State
+names:
+  aliases_en: Sikh Kingdom | Sikh Rule | Sikh State
+external_ids:
+  wikidata: Q124986380
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1709
+end: 1715
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1709: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

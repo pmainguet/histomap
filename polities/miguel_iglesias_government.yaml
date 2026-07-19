@@ -1,0 +1,26 @@
+id: miguel_iglesias_government
+canonical_name: Miguel Iglesias government
+names:
+  aliases_en: Peruvian Republic | Government of Miguel Iglesias | Regenerator Government
+    | Regenerator Government of the Peruvian Republic
+external_ids:
+  wikidata: Q30899490
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1882
+end: 1885
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1882: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: principality_of_minsk
+canonical_name: Principality of Minsk
+names:
+  fr: Principauté de Minsk
+  aliases_en: Minsk (Principality)
+external_ids:
+  wikidata: Q2662372
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1101
+end: 1413
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1101: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

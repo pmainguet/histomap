@@ -1,0 +1,26 @@
+id: palatinate_zweibrucken
+canonical_name: Palatinate-Zweibrücken
+names:
+  fr: Palatinat-Deux-Ponts
+  aliases_en: County Palatine of Zweibrücken
+external_ids:
+  wikidata: Q701983
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1444
+end: 1801
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1444: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

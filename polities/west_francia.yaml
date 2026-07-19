@@ -1,0 +1,26 @@
+id: west_francia
+canonical_name: West Francia
+names:
+  fr: Francie occidentale
+  aliases_en: Kingdom of the West Franks
+external_ids:
+  wikidata: Q46370
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 843
+end: 987
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  843: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

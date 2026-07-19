@@ -1,0 +1,24 @@
+id: county_of_drenthe
+canonical_name: County of Drenthe
+names: {}
+external_ids:
+  wikidata: Q2976571
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1024
+end: 1046
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1024: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

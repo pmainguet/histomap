@@ -1,0 +1,27 @@
+id: makhnovshchina
+canonical_name: Makhnovshchina
+names:
+  fr: Makhnovchtchina
+  aliases_en: Makhnovtchina | Anarchist Ukraine | Makhnovia | Makhnovshchyna | Makhnovschina
+    | Vilna teritoriya | Volnaya territoriya
+external_ids:
+  wikidata: Q1436243
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1918
+end: 1921
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1918: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

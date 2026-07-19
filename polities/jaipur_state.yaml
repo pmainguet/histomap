@@ -1,0 +1,26 @@
+id: jaipur_state
+canonical_name: Jaipur State
+names:
+  fr: État de Jaipur
+  aliases_en: Jeypore | Jaipur (Princely State) | Kingdom of Amber | Kingdom of Dhoondar
+external_ids:
+  wikidata: Q6124144
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1128
+end: 1949
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1128: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

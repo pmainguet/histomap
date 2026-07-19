@@ -1,0 +1,26 @@
+id: principality_of_achaea
+canonical_name: Principality of Achaea
+names:
+  fr: principauté d'Achaïe
+  aliases_en: Principality of Achaia
+external_ids:
+  wikidata: Q332005
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1205
+end: 1432
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1205: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

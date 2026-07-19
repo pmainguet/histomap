@@ -1,0 +1,25 @@
+id: lordship_of_brecknock
+canonical_name: Lordship of Brecknock
+names:
+  aliases_en: Brecknock
+external_ids:
+  wikidata: Q16949002
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1088
+end: 1535
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1088: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

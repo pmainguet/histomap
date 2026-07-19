@@ -1,0 +1,25 @@
+id: princedom_of_albania
+canonical_name: Princedom of Albania
+names:
+  fr: Princedom of Albania
+external_ids:
+  wikidata: Q865584
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1368
+end: 1392
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1368: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: anhalt_harzgerode
+canonical_name: Anhalt-Harzgerode
+names:
+  fr: Anhalt-Harzgerode
+  aliases_en: Principality of Anhalt-Harzgerode
+external_ids:
+  wikidata: Q1157118
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1635
+end: 1709
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1635: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

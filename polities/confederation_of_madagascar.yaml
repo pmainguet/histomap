@@ -1,0 +1,25 @@
+id: confederation_of_madagascar
+canonical_name: Confederation of Madagascar
+names:
+  fr: Confédération de Madagascar
+external_ids:
+  wikidata: Q136807505
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2002
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2002: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

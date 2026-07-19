@@ -1,0 +1,25 @@
+id: emirate_of_jelgooji
+canonical_name: Emirate of Jelgooji
+names:
+  fr: Émirat du Jelgooji
+external_ids:
+  wikidata: Q1232141
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1705
+end: 1827
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1705: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

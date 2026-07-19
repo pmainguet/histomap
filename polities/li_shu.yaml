@@ -1,0 +1,24 @@
+id: li_shu
+canonical_name: Li Shu
+names: {}
+external_ids:
+  wikidata: Q11097973
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 994
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  994: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

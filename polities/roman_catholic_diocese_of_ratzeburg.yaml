@@ -1,0 +1,26 @@
+id: roman_catholic_diocese_of_ratzeburg
+canonical_name: Roman Catholic Diocese of Ratzeburg
+names:
+  aliases_en: Prince-Bishopric of Ratzeburg | Bishopric of Ratzeburg | Diocese of
+    Ratzeburg
+external_ids:
+  wikidata: Q664659
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1236
+end: 1648
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1236: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

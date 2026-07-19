@@ -1,0 +1,26 @@
+id: free_imperial_city_of_besancon
+canonical_name: Free Imperial City of Besançon
+names:
+  fr: Ville libre d'Empire de Besançon
+  aliases_en: Besançon | Imperial City of Besançon
+external_ids:
+  wikidata: Q2351359
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1180
+end: 1654
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1180: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

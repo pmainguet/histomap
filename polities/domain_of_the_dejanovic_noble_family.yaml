@@ -1,0 +1,24 @@
+id: domain_of_the_dejanovic_noble_family
+canonical_name: Domain of the Dejanović noble family
+names: {}
+external_ids:
+  wikidata: Q1100893
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1371
+end: 1395
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1371: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

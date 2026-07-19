@@ -1,0 +1,25 @@
+id: sultanate_of_deli
+canonical_name: Sultanate of Deli
+names:
+  fr: Sultanat de Deli
+external_ids:
+  wikidata: Q2030015
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1632
+end: 1946
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1632: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

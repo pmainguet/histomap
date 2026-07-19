@@ -1,0 +1,26 @@
+id: canton_of_glarus
+canonical_name: Canton of Glarus
+names:
+  fr: canton de Glaris
+  aliases_en: GL | Canton of Glarus | Kanton Glarus
+external_ids:
+  wikidata: Q11922
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1352
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1352: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: international_association_of_the_congo
+canonical_name: International Association of the Congo
+names:
+  fr: Association internationale du Congo
+  aliases_en: Association internationale du Congo | International Congo Society
+external_ids:
+  wikidata: Q838416
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1879
+end: 1885
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1879: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

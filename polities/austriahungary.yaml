@@ -1,0 +1,29 @@
+id: austriahungary
+canonical_name: Austria–Hungary
+names:
+  fr: Autriche-Hongrie
+  aliases_en: Austria | Austria Hungary | Austria-Hungary | Austro-Hungarian Empire
+    | Austro-Hungarian Monarchy | Dual Monarchy | Monarchy of Austria-Hungary | The
+    Kingdoms and Lands Represented in the Imperial Council and the Lands of the Holy
+    Hungarian Crown of St. Stephen | Monarchy of Austria–Hungary
+external_ids:
+  wikidata: Q28513
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1867
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1867: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

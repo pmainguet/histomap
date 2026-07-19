@@ -1,0 +1,25 @@
+id: orange_river_sovereignty
+canonical_name: Orange River Sovereignty
+names:
+  fr: Souveraineté de la rivière Orange
+external_ids:
+  wikidata: Q3048062
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1848
+end: 1854
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1848: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

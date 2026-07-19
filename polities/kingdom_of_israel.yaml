@@ -1,0 +1,26 @@
+id: kingdom_of_israel
+canonical_name: Kingdom of Israel
+names:
+  fr: royaume d'Israël
+  aliases_en: Northern Kingdom | Kingdom of Samaria | Northern Kingdom of Israel
+external_ids:
+  wikidata: Q230407
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -929
+end: -719
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -929: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

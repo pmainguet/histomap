@@ -1,0 +1,26 @@
+id: prince_bishopric_of_regensburg
+canonical_name: Prince-Bishopric of Regensburg
+names:
+  fr: Principauté épiscopale de Ratisbonne
+  aliases_en: Bishopric of Regensburg | diocese of Regensburg
+external_ids:
+  wikidata: Q329522
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1201
+end: 1803
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1201: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

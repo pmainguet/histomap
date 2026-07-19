@@ -1,0 +1,27 @@
+id: lhasa
+canonical_name: Lhasa
+names:
+  fr: Lhassa
+  aliases_en: Lhása | Lhasa Prefecture | Lhasa Prefecture-Level City | Lhasa, Tibet
+    | Lhassa | Lla-Ssa | Lasa | Lassa | Barantola | Lhasa City
+external_ids:
+  wikidata: Q5869
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 633
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  633: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

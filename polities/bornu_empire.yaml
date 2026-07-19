@@ -1,0 +1,26 @@
+id: bornu_empire
+canonical_name: Bornu Empire
+names:
+  fr: empire Bornu
+  aliases_en: Borno Empire | Bornu
+external_ids:
+  wikidata: Q894030
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1387
+end: 1893
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1387: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

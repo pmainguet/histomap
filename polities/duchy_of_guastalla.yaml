@@ -1,0 +1,26 @@
+id: duchy_of_guastalla
+canonical_name: Duchy of Guastalla
+names:
+  fr: duché de Guastalla
+  aliases_en: Ducato di Guastalla
+external_ids:
+  wikidata: Q706596
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1621
+end: 1748
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1621: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

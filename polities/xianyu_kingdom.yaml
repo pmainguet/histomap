@@ -1,0 +1,25 @@
+id: xianyu_kingdom
+canonical_name: Xianyu Kingdom
+names:
+  fr: royaume Xianyu
+external_ids:
+  wikidata: Q137515259
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -659
+end: -505
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -659: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

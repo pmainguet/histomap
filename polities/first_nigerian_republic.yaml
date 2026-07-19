@@ -1,0 +1,25 @@
+id: first_nigerian_republic
+canonical_name: First Nigerian Republic
+names:
+  fr: Première République nigériane
+external_ids:
+  wikidata: Q3511905
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1963
+end: 1966
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1963: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

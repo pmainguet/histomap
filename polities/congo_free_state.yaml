@@ -1,0 +1,27 @@
+id: congo_free_state
+canonical_name: Congo Free State
+names:
+  fr: État indépendant du Congo
+  aliases_en: Etat independant du Congo | État indépendant du Congo | Independent
+    State of Congo | Independent State of the Congo
+external_ids:
+  wikidata: Q76048
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1885
+end: 1908
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1885: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

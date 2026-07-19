@@ -1,0 +1,25 @@
+id: kingdom_of_sardinia_q2577303
+canonical_name: Kingdom of Sardinia
+names:
+  fr: royaume de Sardaigne
+external_ids:
+  wikidata: Q2577303
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1720
+end: 1861
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1720: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

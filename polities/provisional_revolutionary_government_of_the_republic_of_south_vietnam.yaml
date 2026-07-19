@@ -1,0 +1,26 @@
+id: provisional_revolutionary_government_of_the_republic_of_south_vietnam
+canonical_name: Provisional Revolutionary Government of the Republic of South Vietnam
+names:
+  fr: Gouvernement révolutionnaire provisoire de la République du Sud Viêt Nam
+  aliases_en: PRG
+external_ids:
+  wikidata: Q1072362
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1969
+end: 1976
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1969: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

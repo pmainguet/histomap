@@ -1,0 +1,25 @@
+id: ayyubid_sultanate
+canonical_name: Ayyubid Sultanate
+names:
+  fr: Sultanat ayyoubide
+external_ids:
+  wikidata: Q63135869
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1171
+end: 1250
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1171: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

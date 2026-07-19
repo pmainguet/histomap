@@ -1,0 +1,25 @@
+id: county_of_buren
+canonical_name: county of Buren
+names:
+  fr: comté de Buren
+external_ids:
+  wikidata: Q283330
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 994
+end: 1795
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  994: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

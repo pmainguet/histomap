@@ -1,0 +1,26 @@
+id: fante_confederacy
+canonical_name: Fante Confederacy
+names:
+  fr: Confédération fantie
+  aliases_en: Fante Confederation
+external_ids:
+  wikidata: Q1395929
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1868
+end: 1874
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1868: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

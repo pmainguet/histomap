@@ -1,0 +1,29 @@
+id: macau
+canonical_name: Macau
+names:
+  fr: Macao
+  aliases_en: Macao | Aomen | Macao S.A.R. | Macao SAR | Macao SAR, China | Macao
+    Special Administrative Region | Macao Special Administrative Region of the People's
+    Republic of China | Macau SAR | Macau SAR, China | Macau Special Administrative
+    Region | Macau Special Administrative Region of the People's Republic of China
+external_ids:
+  wikidata: Q14773
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1557
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1557: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

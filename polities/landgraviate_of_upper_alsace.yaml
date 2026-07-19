@@ -1,0 +1,25 @@
+id: landgraviate_of_upper_alsace
+canonical_name: Landgraviate of Upper Alsace
+names:
+  fr: Landgraviat de Haute-Alsace
+external_ids:
+  wikidata: Q21077045
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1200
+end: 1648
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1200: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

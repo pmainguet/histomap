@@ -1,0 +1,27 @@
+id: four_oirats
+canonical_name: Four Oirats
+names:
+  fr: Quatre oïrats
+  aliases_en: Eleuths | Alliance of the Four Oirat Tribes | Elut Mongols | Eluts |
+    Four Oirat | Oirads | Oirat Confederation | Oirat Mongols | Oirats
+external_ids:
+  wikidata: Q4332415
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1399
+end: 1628
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1399: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

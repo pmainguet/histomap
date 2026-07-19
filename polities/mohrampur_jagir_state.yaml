@@ -1,0 +1,25 @@
+id: mohrampur_jagir_state
+canonical_name: Mohrampur Jagir State
+names:
+  fr: État de Mohrampur Jagir
+external_ids:
+  wikidata: Q104152105
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1580
+end: 1948
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1580: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

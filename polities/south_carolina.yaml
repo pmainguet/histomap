@@ -1,0 +1,27 @@
+id: south_carolina
+canonical_name: South Carolina
+names:
+  fr: Caroline du Sud
+  aliases_en: S.C. | SC | S. C. | Palmetto State | South Carolina, United States |
+    State of South Carolina | US-SC
+external_ids:
+  wikidata: Q1456
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1788
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1788: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

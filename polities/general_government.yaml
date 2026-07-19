@@ -1,0 +1,27 @@
+id: general_government
+canonical_name: General Government
+names:
+  fr: Gouvernement général de Pologne
+  aliases_en: Generalgouvernement | General Governorate for the occupied Polish Region
+    | Nazi Poland
+external_ids:
+  wikidata: Q156111
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1939
+end: 1945
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1939: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

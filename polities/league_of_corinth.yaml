@@ -1,0 +1,25 @@
+id: league_of_corinth
+canonical_name: League of Corinth
+names:
+  fr: Ligue de Corinthe
+external_ids:
+  wikidata: Q332337
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -336
+end: -321
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -336: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

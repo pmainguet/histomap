@@ -1,0 +1,25 @@
+id: calvinist_republic_of_ghent
+canonical_name: Calvinist Republic of Ghent
+names:
+  fr: République de Gand
+external_ids:
+  wikidata: Q1926952
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1577
+end: 1584
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1577: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

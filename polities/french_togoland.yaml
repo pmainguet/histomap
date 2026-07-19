@@ -1,0 +1,26 @@
+id: french_togoland
+canonical_name: French Togoland
+names:
+  fr: Togo français
+  aliases_en: Le Togo français
+external_ids:
+  wikidata: Q797214
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1916
+end: 1960
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1916: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

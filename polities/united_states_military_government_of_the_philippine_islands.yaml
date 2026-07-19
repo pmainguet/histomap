@@ -1,0 +1,25 @@
+id: united_states_military_government_of_the_philippine_islands
+canonical_name: United States Military Government of the Philippine Islands
+names:
+  fr: gouvernement militaire américain des Îles Philippines
+external_ids:
+  wikidata: Q31351948
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1898
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1898: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

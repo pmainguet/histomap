@@ -1,0 +1,26 @@
+id: free_state_bottleneck
+canonical_name: Free State Bottleneck
+names:
+  fr: État libre du Goulot
+  aliases_en: Free State of Bottleneck
+external_ids:
+  wikidata: Q694858
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1919
+end: 1923
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1919: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

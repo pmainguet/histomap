@@ -1,0 +1,26 @@
+id: dauphinate_of_viennois
+canonical_name: Dauphinate of Viennois
+names:
+  fr: Dauphiné de Viennois
+  aliases_en: Dauphinate of Vienne | Delphinate of Vienne
+external_ids:
+  wikidata: Q19955992
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1142
+end: 1349
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1142: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

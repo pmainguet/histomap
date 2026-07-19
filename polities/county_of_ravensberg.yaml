@@ -1,0 +1,26 @@
+id: county_of_ravensberg
+canonical_name: County of Ravensberg
+names:
+  fr: comté de Ravensberg
+  aliases_en: Ravensberg
+external_ids:
+  wikidata: Q573290
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1140
+end: 1807
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1140: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

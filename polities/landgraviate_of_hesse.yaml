@@ -1,0 +1,25 @@
+id: landgraviate_of_hesse
+canonical_name: Landgraviate of Hesse
+names:
+  fr: Hesse historique
+external_ids:
+  wikidata: Q695322
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1264
+end: 1567
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1264: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

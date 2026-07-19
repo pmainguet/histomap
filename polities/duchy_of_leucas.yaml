@@ -1,0 +1,25 @@
+id: duchy_of_leucas
+canonical_name: Duchy of Leucas
+names:
+  fr: duché de Leucade
+external_ids:
+  wikidata: Q127607963
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1360
+end: 1479
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1360: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

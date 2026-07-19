@@ -1,0 +1,26 @@
+id: sovereign_council_of_asturias_and_leon
+canonical_name: Sovereign Council of Asturias and León
+names:
+  fr: Conseil souverain des Asturies et de León
+  aliases_en: Sovereign Council of Asturias and Leon
+external_ids:
+  wikidata: Q3324546
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1937
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1937: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

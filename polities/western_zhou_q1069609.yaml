@@ -1,0 +1,29 @@
+id: western_zhou_q1069609
+canonical_name: Western Zhou
+names:
+  fr: période des Zhou de l'Ouest
+  aliases_en: Xi Zhou | Xizhou | Chou Empire | Chou Kingdom | Hsi Chou | Hsi-chou
+    | Kingdom of Chou | Kingdom of Zhou | Western Chou | Western Chou Dynasty | Western
+    Chou Period | Western Zhou Dynasty | Western Zhou Period | Zhou Empire | Zhou
+    Kingdom
+external_ids:
+  wikidata: Q1069609
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1045
+end: -770
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1045: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

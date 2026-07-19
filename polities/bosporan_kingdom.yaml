@@ -1,0 +1,27 @@
+id: bosporan_kingdom
+canonical_name: Bosporan Kingdom
+names:
+  fr: royaume du Bosphore
+  aliases_en: Cimmerian Bosphorus | Kingdom of the Cimmerian Bosporus | Βασιλεία τοῦ
+    Κιμμερικοῦ Βοσπόρου (Ancient Greek)
+external_ids:
+  wikidata: Q321371
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -436
+end: 370
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -436: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: republic_for_the_united_states_of_america
+canonical_name: Republic for the United States of America
+names:
+  fr: République pour les États-Unis d'Amérique
+external_ids:
+  wikidata: Q56320530
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2010
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2010: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

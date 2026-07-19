@@ -1,0 +1,25 @@
+id: kingdom_of_morgannwg_q21005050
+canonical_name: Kingdom of Morgannwg
+names:
+  aliases_en: Morgannwg
+external_ids:
+  wikidata: Q21005050
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1063
+end: 1091
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1063: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

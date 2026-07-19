@@ -1,0 +1,26 @@
+id: saxe_coburg_saalfeld
+canonical_name: Saxe-Coburg-Saalfeld
+names:
+  fr: duché de Saxe-Cobourg-Saalfeld
+  aliases_en: Sachsen-Coburg-Saalfeld
+external_ids:
+  wikidata: Q700663
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1699
+end: 1825
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1699: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

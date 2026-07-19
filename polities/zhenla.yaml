@@ -1,0 +1,28 @@
+id: zhenla
+canonical_name: Zhenla
+names:
+  fr: Chenla
+  aliases_en: Cambodia | Chenla | Isanapura Kingdom | Kingdom of Chenla | Kingdom
+    of Cambodia | Isanapura | Chen La | Chen-la | Chenla Kingdom | Kingdom of Isanapura
+    | Kingdom of Zhenla | Zhen La | Zhen-la | Zhenla Kingdom
+external_ids:
+  wikidata: Q1057118
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 550
+end: 706
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  550: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

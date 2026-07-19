@@ -1,0 +1,25 @@
+id: kingdom_of_kakheti
+canonical_name: Kingdom of Kakheti
+names:
+  fr: Royaume de Kakhétie
+external_ids:
+  wikidata: Q1209822
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1465
+end: 1762
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1465: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

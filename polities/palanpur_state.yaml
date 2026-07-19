@@ -1,0 +1,25 @@
+id: palanpur_state
+canonical_name: Palanpur State
+names:
+  fr: État de Pâlanpur
+external_ids:
+  wikidata: Q7126720
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1370
+end: 1948
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1370: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

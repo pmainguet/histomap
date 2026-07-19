@@ -1,0 +1,25 @@
+id: principality_of_karachev
+canonical_name: Principality of Karachev
+names:
+  fr: principauté de Karatchev
+external_ids:
+  wikidata: Q3253408
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1246
+end: 1360
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1246: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

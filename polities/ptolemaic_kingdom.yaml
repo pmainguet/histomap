@@ -1,0 +1,27 @@
+id: ptolemaic_kingdom
+canonical_name: Ptolemaic Kingdom
+names:
+  fr: royaume ptolémaïque
+  aliases_en: Kingdom of the Ptolemies | Lagid Egypt | Lagid Kingdom | Ptolemaic Egypt
+    | Ptolemaic Empire
+external_ids:
+  wikidata: Q2320005
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -304
+end: -29
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -304: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

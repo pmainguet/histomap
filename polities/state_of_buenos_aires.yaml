@@ -1,0 +1,26 @@
+id: state_of_buenos_aires
+canonical_name: State of Buenos Aires
+names:
+  fr: État de Buenos Aires
+  aliases_en: Estado de Buenos Ayres
+external_ids:
+  wikidata: Q6553448
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1852
+end: 1861
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1852: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

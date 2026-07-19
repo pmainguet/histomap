@@ -1,0 +1,26 @@
+id: jorvik
+canonical_name: Jorvik
+names:
+  fr: Royaume viking d'York
+  aliases_en: Kingdom of York | Scandinavian York | Viking York
+external_ids:
+  wikidata: Q889970
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 866
+end: 954
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  866: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

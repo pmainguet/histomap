@@ -1,0 +1,26 @@
+id: republic_of_the_rio_grande
+canonical_name: Republic of the Río Grande
+names:
+  fr: République du Rio Grande
+  aliases_en: Republic of the Rio Grande
+external_ids:
+  wikidata: Q2014442
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1840
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1840: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

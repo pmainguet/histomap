@@ -1,0 +1,26 @@
+id: duchy_of_salzburg
+canonical_name: Duchy of Salzburg
+names:
+  fr: duché de Salzbourg
+  aliases_en: Salzburg
+external_ids:
+  wikidata: Q661340
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1849
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1849: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

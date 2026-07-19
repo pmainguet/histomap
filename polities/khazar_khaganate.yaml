@@ -1,0 +1,26 @@
+id: khazar_khaganate
+canonical_name: Khazar Khaganate
+names:
+  fr: Khaganat khazar
+  aliases_en: Khazaria
+external_ids:
+  wikidata: Q2090473
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 650
+end: 969
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  650: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

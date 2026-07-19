@@ -1,0 +1,26 @@
+id: taifa_of_majorca
+canonical_name: Taifa of Majorca
+names:
+  fr: taïfa de Majorque
+  aliases_en: Taifa of Mallorca
+external_ids:
+  wikidata: Q3315525
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1076
+end: 1203
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1076: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

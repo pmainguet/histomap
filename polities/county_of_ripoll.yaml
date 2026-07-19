@@ -1,0 +1,25 @@
+id: county_of_ripoll
+canonical_name: County of Ripoll
+names:
+  fr: comté de Ripoll
+external_ids:
+  wikidata: Q20103241
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 988
+end: 1111
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  988: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: emirate_of_abdelkader
+canonical_name: Emirate of Abdelkader
+names:
+  fr: État d'Abd el Kader
+external_ids:
+  wikidata: Q3591817
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1832
+end: 1847
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1832: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

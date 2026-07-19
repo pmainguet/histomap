@@ -1,0 +1,25 @@
+id: ban_de_la_roche
+canonical_name: Ban de la Roche
+names:
+  fr: seigneurie du Ban de la Roche
+external_ids:
+  wikidata: Q2465074
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1284
+end: 1789
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1284: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

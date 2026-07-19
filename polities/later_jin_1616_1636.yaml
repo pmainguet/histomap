@@ -1,0 +1,25 @@
+id: later_jin_1616_1636
+canonical_name: Later Jin (1616-1636)
+names:
+  fr: dynastie des derniers Jin (1616-1636)
+external_ids:
+  wikidata: Q1062546
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1616
+end: 1636
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1616: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

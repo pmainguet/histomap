@@ -1,0 +1,24 @@
+id: grand_duchy_of_lithuania_1812
+canonical_name: Grand Duchy of Lithuania 1812
+names: {}
+external_ids:
+  wikidata: Q25536394
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1812
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1812: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

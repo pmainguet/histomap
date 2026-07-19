@@ -1,0 +1,27 @@
+id: united_belgian_states
+canonical_name: United Belgian States
+names:
+  fr: États belgiques unis
+  aliases_en: Etats-Belgiques-Unis | États-Belgiques-Unis | Foederati belgii | United
+    Netherlandish States | United States of Belgium | Verenigde Nederlandse Staten
+external_ids:
+  wikidata: Q692015
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1790
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1790: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

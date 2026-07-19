@@ -1,0 +1,26 @@
+id: kara_del
+canonical_name: Kara Del
+names:
+  fr: Kara Del
+  aliases_en: Kumul | Qara Del
+external_ids:
+  wikidata: Q9643578
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1380
+end: 1513
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1380: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

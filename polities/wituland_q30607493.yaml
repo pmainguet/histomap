@@ -1,0 +1,26 @@
+id: wituland_q30607493
+canonical_name: Wituland
+names:
+  fr: Wituland
+  aliases_en: German Protectorate of Wituland
+external_ids:
+  wikidata: Q30607493
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1885
+end: 1890
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1885: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

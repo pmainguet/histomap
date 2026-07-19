@@ -1,0 +1,26 @@
+id: first_philippine_republic
+canonical_name: First Philippine Republic
+names:
+  fr: Première République des Philippines
+  aliases_en: Malolos Republic | Philippine Republic
+external_ids:
+  wikidata: Q1361989
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1899
+end: 1901
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1899: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

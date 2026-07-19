@@ -1,0 +1,24 @@
+id: northern_liao_q2214985
+canonical_name: Northern Liao
+names: {}
+external_ids:
+  wikidata: Q2214985
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1122
+end: 1123
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1122: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

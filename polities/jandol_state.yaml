@@ -1,0 +1,25 @@
+id: jandol_state
+canonical_name: Jandol State
+names:
+  fr: État de Jandol
+external_ids:
+  wikidata: Q28172756
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1830
+end: 1948
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1830: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

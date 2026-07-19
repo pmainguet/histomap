@@ -1,0 +1,27 @@
+id: kingdom_of_navarre_beyond_the_pyrenees
+canonical_name: Kingdom of Navarre beyond the Pyrenees
+names:
+  fr: royaume de Basse-Navarre
+  aliases_en: kingdom of Lower Navarre | Kingdom of Lower Navarre | kingdom of Navarre
+    | kingdom of Navarre beyond the Pyrenees | Lower Navarre | Ultrapuertos
+external_ids:
+  wikidata: Q63021609
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1512
+end: 1620
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1512: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

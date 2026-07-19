@@ -1,0 +1,25 @@
+id: duchy_of_modena_and_reggio
+canonical_name: Duchy of Modena and Reggio
+names:
+  fr: duché de Modène et Reggio
+external_ids:
+  wikidata: Q252580
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1452
+end: 1859
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1452: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: kingdom_of_khotan
+canonical_name: Kingdom of Khotan
+names:
+  fr: Royaume de Khotan
+  aliases_en: Hetian | Yutian | Hotan
+external_ids:
+  wikidata: Q914898
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 56
+end: 1006
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  56: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

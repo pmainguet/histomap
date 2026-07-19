@@ -1,0 +1,25 @@
+id: people_s_democratic_republic_of_ethiopia
+canonical_name: People's Democratic Republic of Ethiopia
+names:
+  fr: République populaire démocratique d'Éthiopie
+external_ids:
+  wikidata: Q940821
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1987
+end: 1991
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1987: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

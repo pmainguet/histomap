@@ -1,0 +1,28 @@
+id: new_jersey
+canonical_name: New Jersey
+names:
+  fr: New Jersey
+  aliases_en: Jersey | NJ | Garden State | Iersey | N.J. | New Iersey | New Jersey,
+    United States | State of New Jersey | the Garden State | the State of New Jersey
+    | US-NJ
+external_ids:
+  wikidata: Q1408
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1776
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1776: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

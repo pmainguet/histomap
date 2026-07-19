@@ -1,0 +1,25 @@
+id: republic_of_crimea_q15925436
+canonical_name: Republic of Crimea
+names:
+  fr: république de Crimée
+external_ids:
+  wikidata: Q15925436
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2014
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2014: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

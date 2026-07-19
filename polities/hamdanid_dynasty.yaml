@@ -1,0 +1,25 @@
+id: hamdanid_dynasty
+canonical_name: Hamdanid dynasty
+names:
+  fr: Hamdanides
+external_ids:
+  wikidata: Q837187
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 890
+end: 1004
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  890: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: kingdom_of_serbia_q241748
+canonical_name: Kingdom of Serbia
+names:
+  fr: royaume de Serbie
+  aliases_en: Servia | Kraljevina Srbija | Serbian Kingdom | Serb Kingdom
+external_ids:
+  wikidata: Q241748
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1882
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1882: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: first_republic_of_venezuela
+canonical_name: First Republic of Venezuela
+names:
+  fr: première république du Venezuela
+external_ids:
+  wikidata: Q8935
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1810
+end: 1812
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1810: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

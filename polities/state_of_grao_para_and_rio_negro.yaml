@@ -1,0 +1,24 @@
+id: state_of_grao_para_and_rio_negro
+canonical_name: State of Grão-Pará and Rio Negro
+names: {}
+external_ids:
+  wikidata: Q3339389
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1772
+end: 1775
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1772: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

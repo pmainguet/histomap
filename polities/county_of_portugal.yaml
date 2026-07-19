@@ -1,0 +1,26 @@
+id: county_of_portugal
+canonical_name: County of Portugal
+names:
+  fr: comté de Portugal
+  aliases_en: Portugalia
+external_ids:
+  wikidata: Q1139807
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 868
+end: 1143
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  868: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,24 @@
+id: community_of_municipalities_of_northern_dalmatia_and_lika
+canonical_name: Community of Municipalities of Northern Dalmatia and Lika
+names: {}
+external_ids:
+  wikidata: Q2354842
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1990
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1990: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

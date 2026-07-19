@@ -1,0 +1,26 @@
+id: kingdom_of_cilicia_ancient
+canonical_name: Kingdom of Cilicia (ancient)
+names:
+  fr: royaume de Cilicie
+  aliases_en: Kingdom of Cilicia
+external_ids:
+  wikidata: Q95982472
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -611
+end: -548
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -611: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

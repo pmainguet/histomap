@@ -1,0 +1,27 @@
+id: circassia
+canonical_name: Circassia
+names:
+  fr: Circassie
+  aliases_en: Cherkessia | Adyge Heku | Adyge Kheku | Adyge Xekuže | Adygey Khekuje
+    | Adyghe Heku | Adyghe Kheku | Çerkässia | Cherkesia
+external_ids:
+  wikidata: Q1408764
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1427
+end: 1864
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1427: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

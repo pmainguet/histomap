@@ -1,0 +1,24 @@
+id: territory_of_the_rapid_support_forces
+canonical_name: Territory of the Rapid Support Forces
+names: {}
+external_ids:
+  wikidata: Q136933080
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2023
+end: 2025
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2023: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

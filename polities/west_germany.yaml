@@ -1,0 +1,27 @@
+id: west_germany
+canonical_name: West Germany
+names:
+  fr: Allemagne de l'Ouest
+  aliases_en: BR Dtld. | Federal Republic of Germany (1949–1990) | history of West
+    Germany from 1949 to 1990 | West-Deutschland
+external_ids:
+  wikidata: Q713750
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1949
+end: 1990
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1949: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

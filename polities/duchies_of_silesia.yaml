@@ -1,0 +1,26 @@
+id: duchies_of_silesia
+canonical_name: Duchies of Silesia
+names:
+  fr: duché silésien
+  aliases_en: Duchies of Silesia | duchy of Silesia
+external_ids:
+  wikidata: Q691981
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1335
+end: 1742
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1335: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

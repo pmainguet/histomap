@@ -1,0 +1,26 @@
+id: sagaing_kingdom
+canonical_name: Sagaing Kingdom
+names:
+  fr: Royaume de Sagaing
+  aliases_en: Kingdom of Sagaing
+external_ids:
+  wikidata: Q3446223
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1315
+end: 1364
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1315: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: powys_wenwynwyn
+canonical_name: Powys Wenwynwyn
+names:
+  fr: Powys Wenwynwyn
+external_ids:
+  wikidata: Q2670639
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1160
+end: 1283
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1160: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

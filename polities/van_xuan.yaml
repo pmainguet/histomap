@@ -1,0 +1,26 @@
+id: van_xuan
+canonical_name: Van Xuan
+names:
+  aliases_en: Vietnam | Annam | Annan | Wanchun | Wanchun Kingdom | Van Xuan Kingdom
+    | Early Ly Dynasty | Ly Dynasty
+external_ids:
+  wikidata: Q1886032
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 544
+end: 603
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  544: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

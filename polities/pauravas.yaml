@@ -1,0 +1,25 @@
+id: pauravas
+canonical_name: Pauravas
+names:
+  fr: Paurava
+external_ids:
+  wikidata: Q3110559
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -889
+end: -321
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -889: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

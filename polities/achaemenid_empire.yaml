@@ -1,0 +1,27 @@
+id: achaemenid_empire
+canonical_name: Achaemenid Empire
+names:
+  fr: Empire achéménide
+  aliases_en: Persia | Persian Empire | Achaemenid Persia | Achaemenid Persian Empire
+    | First Persian Empire | Persian Achaemenid Empire
+external_ids:
+  wikidata: Q389688
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -549
+end: -329
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -549: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

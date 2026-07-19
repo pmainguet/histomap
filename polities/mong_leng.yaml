@@ -1,0 +1,25 @@
+id: mong_leng
+canonical_name: Möng Leng
+names:
+  fr: Möng Leng
+external_ids:
+  wikidata: Q137392980
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1840
+end: 1887
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1840: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

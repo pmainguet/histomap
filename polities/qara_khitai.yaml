@@ -1,0 +1,26 @@
+id: qara_khitai
+canonical_name: Qara Khitai
+names:
+  fr: Kara-Khitans
+  aliases_en: Great Liao | Kara Khitan Khanate | Western Liao
+external_ids:
+  wikidata: Q862304
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1124
+end: 1218
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1124: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: neo_hittite_states
+canonical_name: Neo-Hittite states
+names:
+  fr: États néo-hittites
+  aliases_en: Luwo-Aramean states | Syro-Anatolian states | Syro-Hittite states
+external_ids:
+  wikidata: Q770281
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1200
+end: -700
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1200: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -35,14 +35,14 @@ PAGE_SIZE = 2000
 SLEEP_BETWEEN_PAGES = 1.0
 
 # Polity-adjacent Wikidata classes. Labels are for logging/cache filenames only.
-# Q1250464 (former country) and Q3024240 (historical country / civilization) should
-# be verified against Wikidata before locking in the full run.
+# Q3024240 is historical country (and covers the former-country role in the plan);
+# Q8432 is civilization. These definitions were verified against Wikidata in July 2026.
 CLASSES = {
     "Q48349": "empire",
     "Q417175": "kingdom",
-    "Q3024240": "historical_country",
+    "Q8432": "civilization",
     "Q7275": "state",
-    "Q1250464": "former_country",
+    "Q3024240": "historical_country",
 }
 
 QUERY_TEMPLATE = """
@@ -144,6 +144,17 @@ def _val(row: dict, key: str) -> str | None:
     return v if v not in ("", None) else None
 
 
+def _float_val(row: dict, key: str) -> float | None:
+    """Coerce numeric bindings, ignoring malformed/generated-node values."""
+    value = _val(row, key)
+    if value is None:
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
 def flatten_row(row: dict, classes_seen: list[str]) -> dict:
     return {
         "qid": _qid_from_uri(_val(row, "item")),
@@ -152,8 +163,8 @@ def flatten_row(row: dict, classes_seen: list[str]) -> dict:
         "aliases_en": _val(row, "aliases_en") or "",
         "inception": _val(row, "inception"),
         "dissolution": _val(row, "dissolution"),
-        "area_km2": float(_val(row, "area")) if _val(row, "area") else None,
-        "population": float(_val(row, "population")) if _val(row, "population") else None,
+        "area_km2": _float_val(row, "area"),
+        "population": _float_val(row, "population"),
         "country_qid": _qid_from_uri(_val(row, "country")),
         "coords": _val(row, "coords"),
         "image": _val(row, "image"),

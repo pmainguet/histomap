@@ -1,0 +1,27 @@
+id: medieval_egypt
+canonical_name: Medieval Egypt
+names:
+  fr: Égypte au Moyen Âge
+  aliases_en: Medieval Egypt | Egyptian Islamic State | Islamic Egypt | Egyptian Mamluk
+    Sultanate | Egyptian Sultanate
+external_ids:
+  wikidata: Q11696332
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 641
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  641: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

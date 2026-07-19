@@ -1,0 +1,24 @@
+id: yan_zang_tu
+canonical_name: Yan (Zang Tu)
+names: {}
+external_ids:
+  wikidata: Q17036011
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -208
+end: -201
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -208: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

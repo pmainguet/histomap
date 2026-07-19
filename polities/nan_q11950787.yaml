@@ -1,0 +1,25 @@
+id: nan_q11950787
+canonical_name: nan
+names:
+  fr: taïfa de Càceres
+external_ids:
+  wikidata: Q11950787
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1159
+end: 1171
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1159: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

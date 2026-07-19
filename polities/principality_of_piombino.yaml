@@ -1,0 +1,25 @@
+id: principality_of_piombino
+canonical_name: Principality of Piombino
+names:
+  fr: Principauté de Piombino
+external_ids:
+  wikidata: Q537503
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1398
+end: 1805
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1398: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

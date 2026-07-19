@@ -1,0 +1,27 @@
+id: italian_social_republic
+canonical_name: Italian Social Republic
+names:
+  fr: République sociale italienne
+  aliases_en: 'Italy (Fascist Republic: 1943-1945) | Republic of Salo | Republic of
+    Salò'
+external_ids:
+  wikidata: Q153660
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1943
+end: 1945
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1943: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

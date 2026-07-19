@@ -1,0 +1,25 @@
+id: former_yan
+canonical_name: Former Yan
+names:
+  fr: Yan antérieur
+external_ids:
+  wikidata: Q1472004
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 337
+end: 370
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  337: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,27 @@
+id: alaska
+canonical_name: Alaska
+names:
+  fr: Alaska
+  aliases_en: The Last Frontier | AK | Russian America | State of Alaska | Alaska,
+    United States | US-AK
+external_ids:
+  wikidata: Q797
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1959
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1959: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

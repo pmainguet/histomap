@@ -1,0 +1,28 @@
+id: apamea
+canonical_name: Apamea
+names:
+  fr: Apamée
+  aliases_en: Apameia | Apameia in Syria | Mint of Apameia in Syria | Apamea (Samian
+    Ware Discovery Site) | Apamea, Syria | Apamean, Al-Suqaylabiyah | Apameia (zaniklé
+    město) | Apameia ad Orontes
+external_ids:
+  wikidata: Q617550
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -299
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -299: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

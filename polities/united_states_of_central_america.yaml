@@ -1,0 +1,25 @@
+id: united_states_of_central_america
+canonical_name: United States of Central America
+names:
+  fr: États-Unis de l'Amérique centrale
+external_ids:
+  wikidata: Q8842993
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1898
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1898: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

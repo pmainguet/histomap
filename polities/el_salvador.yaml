@@ -1,0 +1,26 @@
+id: el_salvador
+canonical_name: El Salvador
+names:
+  fr: Salvador
+  aliases_en: Republic of El Salvador | Salvador | ESA | sv
+external_ids:
+  wikidata: Q792
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1841
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1841: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: kingdom_of_france
+canonical_name: Kingdom of France
+names:
+  fr: royaume de France
+  aliases_en: França e Navarra | French kingdom | Kingdom of France and Navarre
+external_ids:
+  wikidata: Q70972
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 987
+end: 1791
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  987: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

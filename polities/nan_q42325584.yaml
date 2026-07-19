@@ -1,0 +1,24 @@
+id: nan_q42325584
+canonical_name: nan
+names: {}
+external_ids:
+  wikidata: Q42325584
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1716
+end: 1806
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1716: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

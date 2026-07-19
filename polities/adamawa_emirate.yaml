@@ -1,0 +1,27 @@
+id: adamawa_emirate
+canonical_name: Adamawa Emirate
+names:
+  fr: émirat de l'Adamaoua
+  aliases_en: Adamawa | Adamaua Emirate | Adamawa polity | Foumbina Emirate | Old
+    Adamawa Emirate
+external_ids:
+  wikidata: Q775550
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1809
+end: 1903
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1809: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

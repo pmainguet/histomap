@@ -1,0 +1,25 @@
+id: jalaun_state
+canonical_name: Jalaun State
+names:
+  fr: État de Jalaun
+external_ids:
+  wikidata: Q18126183
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1806
+end: 1840
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1806: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

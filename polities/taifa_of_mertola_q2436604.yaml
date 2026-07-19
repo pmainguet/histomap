@@ -1,0 +1,26 @@
+id: taifa_of_mertola_q2436604
+canonical_name: Taifa of Mértola
+names:
+  fr: taïfa de Mertola
+  aliases_en: Taifa of Mertola
+external_ids:
+  wikidata: Q2436604
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1033
+end: 1151
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1033: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

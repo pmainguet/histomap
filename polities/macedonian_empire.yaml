@@ -1,0 +1,26 @@
+id: macedonian_empire
+canonical_name: Macedonian Empire
+names:
+  fr: royaume d'Alexandre le Grand
+  aliases_en: Empire of Alexander the Great
+external_ids:
+  wikidata: Q13405524
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -335
+end: -300
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -335: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

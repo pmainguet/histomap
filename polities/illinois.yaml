@@ -1,0 +1,28 @@
+id: illinois
+canonical_name: Illinois
+names:
+  fr: Illinois
+  aliases_en: Prairie State | Land of Lincoln | IL | Ill. | Illinois, United States
+    | Ills. | Lincoln State | State of Illinois | The Land of Lincoln | The Prairie
+    State | US-IL
+external_ids:
+  wikidata: Q1204
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1818
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1818: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

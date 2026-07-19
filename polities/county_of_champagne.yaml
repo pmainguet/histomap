@@ -1,0 +1,25 @@
+id: county_of_champagne
+canonical_name: County of Champagne
+names:
+  fr: comté de Champagne
+external_ids:
+  wikidata: Q546266
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 967
+end: 1314
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  967: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

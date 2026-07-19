@@ -1,0 +1,26 @@
+id: principality_of_rugia
+canonical_name: Principality of Rugia
+names:
+  fr: principauté de Rügen
+  aliases_en: Fürstentum Rügen
+external_ids:
+  wikidata: Q571428
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1168
+end: 1325
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1168: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

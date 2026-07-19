@@ -1,0 +1,25 @@
+id: kathiri_sultanate
+canonical_name: Kathiri Sultanate
+names:
+  fr: État Kathiri de Sai'un
+external_ids:
+  wikidata: Q1296908
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1379
+end: 1967
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1379: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

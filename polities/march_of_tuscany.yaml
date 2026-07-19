@@ -1,0 +1,26 @@
+id: march_of_tuscany
+canonical_name: March of Tuscany
+names:
+  fr: Marche de Toscane
+  aliases_en: Marca di Tuscia | Margraviate of Tuscany
+external_ids:
+  wikidata: Q1867844
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 846
+end: 1197
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  846: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

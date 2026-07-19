@@ -1,0 +1,28 @@
+id: first_brazilian_republic
+canonical_name: First Brazilian Republic
+names:
+  fr: République des États Unis du Brésil
+  aliases_en: Old Republic | Republic of the United States of Brazil | Republica dos
+    Estados Unidos do Brasil | República dos Estados Unidos do Brasil | Republica
+    Velha | República Velha
+external_ids:
+  wikidata: Q2414171
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1889
+end: 1930
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1889: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

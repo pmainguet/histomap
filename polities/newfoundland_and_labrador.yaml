@@ -1,0 +1,27 @@
+id: newfoundland_and_labrador
+canonical_name: Newfoundland and Labrador
+names:
+  fr: Terre-Neuve-et-Labrador
+  aliases_en: Newfoundland | NL | CA-NL | Canada's Happy Province | N.L. | New Foundland
+    and Labrador | NFLD | Nfld.
+external_ids:
+  wikidata: Q2003
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1949
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1949: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

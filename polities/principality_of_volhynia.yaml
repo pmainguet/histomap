@@ -1,0 +1,26 @@
+id: principality_of_volhynia
+canonical_name: Principality of Volhynia
+names:
+  fr: Principauté de Volhynie
+  aliases_en: Volodymyr-Volynskyi principality | Volyn principality
+external_ids:
+  wikidata: Q680472
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 987
+end: 1452
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  987: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

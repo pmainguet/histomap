@@ -1,0 +1,25 @@
+id: kingdom_of_beni_abbas
+canonical_name: Kingdom of Beni Abbas
+names:
+  fr: Royaume des Aït Abbas
+external_ids:
+  wikidata: Q3446243
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1510
+end: 1872
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1510: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

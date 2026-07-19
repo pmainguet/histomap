@@ -1,0 +1,26 @@
+id: northern_wei
+canonical_name: Northern Wei
+names:
+  fr: dynastie Wei du Nord
+  aliases_en: Northern Wei Dynasty
+external_ids:
+  wikidata: Q875305
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 386
+end: 535
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  386: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

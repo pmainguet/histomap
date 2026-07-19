@@ -1,0 +1,25 @@
+id: kingdom_of_besut_darul_iman
+canonical_name: Kingdom of Besut Darul Iman
+names:
+  fr: royaume de Besut Darul Iman
+external_ids:
+  wikidata: Q48728257
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1780
+end: 1899
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1780: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

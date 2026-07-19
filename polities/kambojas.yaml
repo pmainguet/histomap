@@ -1,0 +1,25 @@
+id: kambojas
+canonical_name: Kambojas
+names:
+  fr: Kambojas
+external_ids:
+  wikidata: Q2586782
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -300
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -300: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

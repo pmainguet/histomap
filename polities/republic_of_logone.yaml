@@ -1,0 +1,26 @@
+id: republic_of_logone
+canonical_name: Republic of Logone
+names:
+  fr: République de Logone
+  aliases_en: Dar El Kuti | Republic of Dar El Kuti
+external_ids:
+  wikidata: Q23906811
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2015
+end: 2021
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2015: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

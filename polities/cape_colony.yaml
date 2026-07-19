@@ -1,0 +1,26 @@
+id: cape_colony
+canonical_name: Cape Colony
+names:
+  fr: Colonie du Cap
+  aliases_en: Cape of Good Hope
+external_ids:
+  wikidata: Q370736
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1795
+end: 1910
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1795: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: emirate_of_homs
+canonical_name: Emirate of Homs
+names:
+  fr: émirat de Homs
+  aliases_en: Emirate of Hims
+external_ids:
+  wikidata: Q62070228
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1097
+end: 1103
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1097: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

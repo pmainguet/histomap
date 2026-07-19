@@ -1,0 +1,26 @@
+id: kingdom_of_commagene
+canonical_name: Kingdom of Commagene
+names:
+  fr: royaume de Commagène
+  aliases_en: Commagene
+external_ids:
+  wikidata: Q332137
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -162
+end: 72
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -162: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

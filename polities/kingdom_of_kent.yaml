@@ -1,0 +1,26 @@
+id: kingdom_of_kent
+canonical_name: Kingdom of Kent
+names:
+  fr: royaume de Kent
+  aliases_en: Kent | Kingdom of the Kentish
+external_ids:
+  wikidata: Q328818
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 450
+end: 871
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  450: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: kingdom_of_the_suebi
+canonical_name: Kingdom of the Suebi
+names:
+  fr: Royaume suève
+  aliases_en: Kingdom of Gallæcia | Suebic Kingdom of Galicia
+external_ids:
+  wikidata: Q1048918
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 409
+end: 585
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  409: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

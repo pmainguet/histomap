@@ -1,0 +1,26 @@
+id: free_imperial_city_of_schlettstadt
+canonical_name: Free Imperial City of Schlettstadt
+names:
+  fr: ville impériale de Sélestat
+  aliases_en: Free City of Sélestat
+external_ids:
+  wikidata: Q2112681
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1281
+end: 1679
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1281: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

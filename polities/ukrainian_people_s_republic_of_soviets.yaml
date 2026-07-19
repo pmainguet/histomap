@@ -1,0 +1,25 @@
+id: ukrainian_people_s_republic_of_soviets
+canonical_name: Ukrainian People's Republic of Soviets
+names:
+  fr: République soviétique d'Ukraine
+external_ids:
+  wikidata: Q2381337
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1917
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1917: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

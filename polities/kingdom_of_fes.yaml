@@ -1,0 +1,26 @@
+id: kingdom_of_fes
+canonical_name: Kingdom of Fes
+names:
+  fr: royaume de Fès
+  aliases_en: Kingdom of Fez
+external_ids:
+  wikidata: Q2300246
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 800
+end: 1900
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  800: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

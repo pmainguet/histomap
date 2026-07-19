@@ -1,0 +1,26 @@
+id: holy_empire_of_reunion
+canonical_name: Holy Empire of Reunion
+names:
+  fr: Saint Empire de la Réunion
+  aliases_en: Sacro Império de Reunião | Sacro Imperio de Reunión
+external_ids:
+  wikidata: Q19356759
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1997
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1997: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: nigeria
+canonical_name: Nigeria
+names:
+  fr: Nigeria
+  aliases_en: Federal Republic of Nigeria | Naija
+external_ids:
+  wikidata: Q1033
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1963
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1963: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

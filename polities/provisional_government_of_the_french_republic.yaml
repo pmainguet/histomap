@@ -1,0 +1,25 @@
+id: provisional_government_of_the_french_republic
+canonical_name: Provisional Government of the French Republic
+names:
+  fr: Gouvernement provisoire de la République française
+external_ids:
+  wikidata: Q783684
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1944
+end: 1946
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1944: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

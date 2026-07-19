@@ -1,0 +1,24 @@
+id: lam_ap
+canonical_name: Lâm Ấp
+names: {}
+external_ids:
+  wikidata: Q5507706
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 192
+end: 629
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  192: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

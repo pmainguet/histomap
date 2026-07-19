@@ -1,0 +1,27 @@
+id: idaho
+canonical_name: Idaho
+names:
+  fr: Idaho
+  aliases_en: ID | Gem State | Idaho, United States | Potato State | State of Idaho
+    | US-ID
+external_ids:
+  wikidata: Q1221
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1890
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1890: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

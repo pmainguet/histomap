@@ -1,0 +1,26 @@
+id: prince_bishopric_of_wurzburg
+canonical_name: Prince-Bishopric of Würzburg
+names:
+  fr: principauté épiscopale de Wurtzbourg
+  aliases_en: Bishopric of Würzburg
+external_ids:
+  wikidata: Q13427044
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1168
+end: 1803
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1168: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

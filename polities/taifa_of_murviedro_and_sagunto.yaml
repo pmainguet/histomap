@@ -1,0 +1,25 @@
+id: taifa_of_murviedro_and_sagunto
+canonical_name: Taifa of Murviedro and Sagunto
+names:
+  fr: taïfa de Murviedro et de Sagonte
+external_ids:
+  wikidata: Q2398434
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1086
+end: 1092
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1086: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

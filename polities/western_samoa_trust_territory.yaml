@@ -1,0 +1,26 @@
+id: western_samoa_trust_territory
+canonical_name: Western Samoa Trust Territory
+names:
+  fr: Territoire sous tutelle des Samoa occidentales
+  aliases_en: Territory of Western Samoa
+external_ids:
+  wikidata: Q7988268
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1920
+end: 1962
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1920: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,27 @@
+id: emirate_of_granada
+canonical_name: Emirate of Granada
+names:
+  fr: royaume de Grenade
+  aliases_en: Granada | Kingdom of Granada | Nasrid Kingdom of Granada | Sultanate
+    of Granada
+external_ids:
+  wikidata: Q238445
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1238
+end: 1492
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1238: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

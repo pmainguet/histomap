@@ -1,0 +1,26 @@
+id: canton_of_ticino
+canonical_name: Canton of Ticino
+names:
+  fr: canton du Tessin
+  aliases_en: TI | Canton Ticino | Repubblica e Cantone Ticino | Ticino
+external_ids:
+  wikidata: Q12724
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1803
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1803: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

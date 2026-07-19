@@ -1,0 +1,26 @@
+id: pandya_dynasty
+canonical_name: Pandya dynasty
+names:
+  fr: Empire Pândya
+  aliases_en: Pandyan dynasty | Pandyas of Madurai
+external_ids:
+  wikidata: Q844910
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -299
+end: 1650
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -299: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

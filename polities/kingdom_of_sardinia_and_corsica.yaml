@@ -1,0 +1,25 @@
+id: kingdom_of_sardinia_and_corsica
+canonical_name: Kingdom of Sardinia and Corsica
+names:
+  fr: royaume de Sardaigne (1713-1720)
+external_ids:
+  wikidata: Q3932080
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1713
+end: 1720
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1713: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

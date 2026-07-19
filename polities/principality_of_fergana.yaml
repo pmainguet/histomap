@@ -1,0 +1,24 @@
+id: principality_of_fergana
+canonical_name: Principality of Fergana
+names: {}
+external_ids:
+  wikidata: Q131127812
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1469
+end: 1503
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1469: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

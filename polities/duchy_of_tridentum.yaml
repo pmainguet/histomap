@@ -1,0 +1,25 @@
+id: duchy_of_tridentum
+canonical_name: Duchy of Tridentum
+names:
+  fr: duché de Trente
+external_ids:
+  wikidata: Q1615479
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 574
+end: 774
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  574: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

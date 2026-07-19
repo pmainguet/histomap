@@ -1,0 +1,25 @@
+id: duchy_of_athens
+canonical_name: Duchy of Athens
+names:
+  fr: duché d'Athènes
+external_ids:
+  wikidata: Q334714
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1205
+end: 1458
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1205: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

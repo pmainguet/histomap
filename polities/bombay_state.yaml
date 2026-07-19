@@ -1,0 +1,27 @@
+id: bombay_state
+canonical_name: Bombay State
+names:
+  fr: État de Bombay
+  aliases_en: Bombay Province | Mumbai Province | Mumbai State | province of Bombay
+    | province of Mumbai | state of Bombay | state of Mumbai
+external_ids:
+  wikidata: Q2627082
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1947
+end: 1960
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1947: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

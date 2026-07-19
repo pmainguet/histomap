@@ -1,0 +1,26 @@
+id: coahuila_y_tejas
+canonical_name: Coahuila y Tejas
+names:
+  fr: Coahuila y Texas
+  aliases_en: Coahuila and Texas | Coahuila y Texas | Tejas y Coahuila | Texas y Coahuila
+external_ids:
+  wikidata: Q949898
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1824
+end: 1835
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1824: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

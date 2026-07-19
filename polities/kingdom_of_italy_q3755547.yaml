@@ -1,0 +1,27 @@
+id: kingdom_of_italy_q3755547
+canonical_name: Kingdom of Italy
+names:
+  fr: royaume d'Italie
+  aliases_en: Kingdom of Italy (476–493) | Kingdom of Odoacer | Regnum italicum |
+    Regnum Italiae
+external_ids:
+  wikidata: Q3755547
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 476
+end: 493
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  476: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

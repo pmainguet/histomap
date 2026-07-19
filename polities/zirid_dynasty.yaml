@@ -1,0 +1,27 @@
+id: zirid_dynasty
+canonical_name: Zirid Dynasty
+names:
+  fr: Zirides
+  aliases_en: Zirid family | Zirid Kingdom | Zirid polity | Zirides | Zirids | Zīrids
+    | Amazigh Zirid dynasty
+external_ids:
+  wikidata: Q205718
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 972
+end: 1148
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  972: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

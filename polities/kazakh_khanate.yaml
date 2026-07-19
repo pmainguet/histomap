@@ -1,0 +1,26 @@
+id: kazakh_khanate
+canonical_name: Kazakh Khanate
+names:
+  fr: Khanat kazakh
+  aliases_en: Kazakh Horde | Qazaq Khanate
+external_ids:
+  wikidata: Q1433867
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1465
+end: 1847
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1465: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

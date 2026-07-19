@@ -1,0 +1,25 @@
+id: hua
+canonical_name: Hua
+names:
+  fr: État Hua
+external_ids:
+  wikidata: Q1291229
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -770
+end: -626
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -770: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

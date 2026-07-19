@@ -1,0 +1,25 @@
+id: karadagh_khanate
+canonical_name: Karadagh Khanate
+names:
+  fr: khanat Karadakh
+external_ids:
+  wikidata: Q958764
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1748
+end: 1828
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1748: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

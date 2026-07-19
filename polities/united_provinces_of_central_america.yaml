@@ -1,0 +1,26 @@
+id: united_provinces_of_central_america
+canonical_name: United Provinces of Central America
+names:
+  fr: provinces unies d'Amérique centrale
+  aliases_en: Federated States of Central America
+external_ids:
+  wikidata: Q9063401
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1823
+end: 1824
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1823: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

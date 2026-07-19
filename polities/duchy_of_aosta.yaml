@@ -1,0 +1,25 @@
+id: duchy_of_aosta
+canonical_name: Duchy of Aosta
+names:
+  fr: duché d'Aoste
+external_ids:
+  wikidata: Q5311344
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1536
+end: 1770
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1536: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: kingdom_of_nicoya
+canonical_name: Kingdom of Nicoya
+names:
+  fr: Reino de Nicoya
+  aliases_en: Nicoya
+external_ids:
+  wikidata: Q16624774
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 800
+end: 1520
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  800: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

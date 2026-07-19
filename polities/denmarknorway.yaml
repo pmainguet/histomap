@@ -1,0 +1,26 @@
+id: denmarknorway
+canonical_name: Denmark–Norway
+names:
+  fr: royaume de Danemark et de Norvège
+  aliases_en: Denmark-Norway
+external_ids:
+  wikidata: Q62651
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1536
+end: 1814
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1536: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

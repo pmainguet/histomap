@@ -1,0 +1,25 @@
+id: patani_kingdom
+canonical_name: Patani Kingdom
+names:
+  fr: Royaume de Patani
+external_ids:
+  wikidata: Q584435
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1516
+end: 1902
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1516: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

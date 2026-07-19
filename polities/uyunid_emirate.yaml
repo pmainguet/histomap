@@ -1,0 +1,26 @@
+id: uyunid_emirate
+canonical_name: Uyunid Emirate
+names:
+  fr: émirat uyunide
+  aliases_en: Uyunid kingdom
+external_ids:
+  wikidata: Q12229205
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1076
+end: 1238
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1076: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

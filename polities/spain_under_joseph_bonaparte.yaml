@@ -1,0 +1,26 @@
+id: spain_under_joseph_bonaparte
+canonical_name: Spain under Joseph Bonaparte
+names:
+  fr: royaume d'Espagne
+  aliases_en: Spain | Kingdom of Spain | Napoleonic Spain
+external_ids:
+  wikidata: Q1709185
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1808
+end: 1813
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1808: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

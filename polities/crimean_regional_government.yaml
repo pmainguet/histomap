@@ -1,0 +1,26 @@
+id: crimean_regional_government
+canonical_name: Crimean Regional Government
+names:
+  fr: gouvernement régional criméen
+  aliases_en: Crimea
+external_ids:
+  wikidata: Q2703679
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1918
+end: 1919
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1918: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

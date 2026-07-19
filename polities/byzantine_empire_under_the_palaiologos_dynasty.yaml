@@ -1,0 +1,25 @@
+id: byzantine_empire_under_the_palaiologos_dynasty
+canonical_name: Byzantine Empire under the Palaiologos dynasty
+names:
+  fr: Empire byzantin sous les Paléologues
+external_ids:
+  wikidata: Q3053276
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1261
+end: 1453
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1261: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

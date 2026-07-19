@@ -1,0 +1,25 @@
+id: southern_qi
+canonical_name: Southern Qi
+names:
+  fr: dynastie Qi du Sud
+external_ids:
+  wikidata: Q62456
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 479
+end: 502
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  479: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

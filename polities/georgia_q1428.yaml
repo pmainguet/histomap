@@ -1,0 +1,27 @@
+id: georgia_q1428
+canonical_name: Georgia
+names:
+  fr: Géorgie
+  aliases_en: GA | State of Georgia | Georgia, United States | The Empire State of
+    the South | The Goober State | The Peach State | US-GA
+external_ids:
+  wikidata: Q1428
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1788
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1788: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

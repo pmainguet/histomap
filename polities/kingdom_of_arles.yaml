@@ -1,0 +1,26 @@
+id: kingdom_of_arles
+canonical_name: Kingdom of Arles
+names:
+  fr: royaume d'Arles
+  aliases_en: Arles
+external_ids:
+  wikidata: Q3271735
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 933
+end: 1378
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  933: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

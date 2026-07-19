@@ -1,0 +1,27 @@
+id: hanthawaddy_kingdom
+canonical_name: Hanthawaddy Kingdom
+names:
+  fr: royaume d'Hanthawaddy
+  aliases_en: Bago | Pegu | Hanthawaddy Pegu | Hanthawadi | Martaban Kingdom | Pegu
+    Kindom | Pegu Kingdom | Ramannadesa | Ramaññadesa | Ramanya Kingdom
+external_ids:
+  wikidata: Q1572529
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1287
+end: 1552
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1287: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,24 @@
+id: margraviate_of_baden_q20011161
+canonical_name: Margraviate of Baden
+names: {}
+external_ids:
+  wikidata: Q20011161
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1771
+end: 1803
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1771: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

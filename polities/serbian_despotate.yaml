@@ -1,0 +1,25 @@
+id: serbian_despotate
+canonical_name: Serbian Despotate
+names:
+  fr: Despotat de Serbie
+external_ids:
+  wikidata: Q878319
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1402
+end: 1537
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1402: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: emirate_of_diriyah
+canonical_name: Emirate of Diriyah
+names:
+  fr: Émirat de Dariya
+  aliases_en: ‘Imāra ad-Dir‘iyya | Emirate of al-Diriyah | Sheikhdom of Diriyah
+external_ids:
+  wikidata: Q56885910
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1446
+end: 1744
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1446: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

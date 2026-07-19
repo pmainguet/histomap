@@ -1,0 +1,26 @@
+id: kolhapur_state
+canonical_name: Kolhapur State
+names:
+  fr: Kolhâpur
+  aliases_en: Kolhâpur
+external_ids:
+  wikidata: Q657946
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1707
+end: 1949
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1707: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

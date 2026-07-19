@@ -1,0 +1,25 @@
+id: kilwa_sultanate
+canonical_name: Kilwa Sultanate
+names:
+  fr: Sultanat de Kilwa
+external_ids:
+  wikidata: Q3107156
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 957
+end: 1513
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  957: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

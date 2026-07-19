@@ -1,0 +1,27 @@
+id: imperial_abbey_of_wissembourg
+canonical_name: Imperial Abbey of Wissembourg
+names:
+  fr: abbaye impériale de Wissembourg
+  aliases_en: Abbey of Wissembourg | Prince-Provostry of Wissembourg | Provostry of
+    Wissembourg
+external_ids:
+  wikidata: Q54818777
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 974
+end: 1789
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  974: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

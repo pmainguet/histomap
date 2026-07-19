@@ -1,0 +1,25 @@
+id: chandelas_of_jejakabhukti
+canonical_name: Chandelas of Jejakabhukti
+names:
+  fr: Chandela
+external_ids:
+  wikidata: Q2039087
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 831
+end: 1311
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  831: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: duchy_of_wurttemberg
+canonical_name: Duchy of Württemberg
+names:
+  fr: duché de Wurtemberg
+  aliases_en: Württemberg
+external_ids:
+  wikidata: Q2227570
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1495
+end: 1803
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1495: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

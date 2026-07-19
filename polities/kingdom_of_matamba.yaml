@@ -1,0 +1,26 @@
+id: kingdom_of_matamba
+canonical_name: Kingdom of Matamba
+names:
+  fr: Royaume du Matamba
+  aliases_en: Matamba | Matamba Kingdom | Matamba polity
+external_ids:
+  wikidata: Q973988
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1631
+end: 1744
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1631: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

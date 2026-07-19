@@ -1,0 +1,25 @@
+id: minyue
+canonical_name: Minyue
+names:
+  fr: Minyue
+external_ids:
+  wikidata: Q1936158
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -333
+end: -109
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -333: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

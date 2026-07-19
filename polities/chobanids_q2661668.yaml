@@ -1,0 +1,25 @@
+id: chobanids_q2661668
+canonical_name: Chobanids
+names:
+  fr: Çobanoğulları
+external_ids:
+  wikidata: Q2661668
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1211
+end: 1309
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1211: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

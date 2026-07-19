@@ -1,0 +1,26 @@
+id: duchy_of_reichstadt
+canonical_name: Duchy of Reichstadt
+names:
+  fr: Duché de Reichstadt
+  aliases_en: Duke of Reichstadt
+external_ids:
+  wikidata: Q110918088
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1818
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1818: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

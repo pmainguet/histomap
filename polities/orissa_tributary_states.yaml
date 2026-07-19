@@ -1,0 +1,26 @@
+id: orissa_tributary_states
+canonical_name: Orissa Tributary States
+names:
+  fr: État de Orissa Tributarys
+  aliases_en: Orissa | Garhjats
+external_ids:
+  wikidata: Q15630982
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1888
+end: 1947
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1888: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

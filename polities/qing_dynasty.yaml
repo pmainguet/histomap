@@ -1,0 +1,31 @@
+id: qing_dynasty
+canonical_name: Qing dynasty
+names:
+  fr: dynastie Qing
+  aliases_en: Ch'ing China | Ch'ing dynasty | Ch'ing Empire | Chinese-Tartar empire
+    | Empire of the Great Qing | Great Ching dynasty | Great Pure dynasty | Great
+    Qing | Great Qing Empire | Great Qing state | Great Tsing dynasty | Manchu China
+    | Manchu dynasty | Manchu empire | Manchu Tartar dynasty | Qing China | Qing Empire
+    | Ta Tsing Empire | Ta-tsing dynasty | Tai Ching Ti Kuo | Tai-tsing dynasty |
+    Tartar Chinese Empire | Tartar-Manchu dynasty | Tsing dynasty
+external_ids:
+  wikidata: Q8733
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1636
+end: 1912
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1636: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

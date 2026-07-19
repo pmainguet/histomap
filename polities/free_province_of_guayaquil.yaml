@@ -1,0 +1,26 @@
+id: free_province_of_guayaquil
+canonical_name: Free Province of Guayaquil
+names:
+  fr: province libre de Guayaquil
+  aliases_en: País Libre de Guayaquil | Provincia del Guayas | República del Guayaquil
+external_ids:
+  wikidata: Q3892131
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1820
+end: 1822
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1820: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

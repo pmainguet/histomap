@@ -1,0 +1,26 @@
+id: kahlur_state
+canonical_name: Kahlur State
+names:
+  fr: État de Kahlur
+  aliases_en: Bilaspur State
+external_ids:
+  wikidata: Q860407
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 697
+end: 1948
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  697: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

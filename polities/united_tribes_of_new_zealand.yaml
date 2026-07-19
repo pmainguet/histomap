@@ -1,0 +1,27 @@
+id: united_tribes_of_new_zealand
+canonical_name: United Tribes of New Zealand
+names:
+  fr: Tribus unies de Nouvelle-Zélande
+  aliases_en: Te Wakaminenga o Nga Rangatiratanga o Nga Hapu o Nu Tireni | Te Whakaminenga
+    o Nga Rangatiratanga o Nga Hapu o Nu Tireni
+external_ids:
+  wikidata: Q7893618
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1835
+end: 1840
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1835: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

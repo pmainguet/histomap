@@ -1,0 +1,25 @@
+id: jiang_qi
+canonical_name: Jiang Qi
+names:
+  aliases_en: Tian Qi | Qi guo | Qi state
+external_ids:
+  wikidata: Q11091481
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1045
+end: -385
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1045: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,29 @@
+id: chu_q504759
+canonical_name: Chu
+names:
+  fr: État de Chu
+  aliases_en: King | Jing Guo | Chu Guo | Jing | Jingchu | Jingguo | Ching Kuo | Ching-kuo
+    | Ch'u | Ch'u Kuo | Ch'u-kuo | Chu Kuo | Chu-kuo | Chuguo | Jing Kingdom | Kingdom
+    of Ch'u | Kingdom of Chu | Kingdom of Jing | Kingdom of King | State of Ch'u |
+    State of Chu | State of Jing | State of King
+external_ids:
+  wikidata: Q504759
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -721
+end: -222
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -721: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

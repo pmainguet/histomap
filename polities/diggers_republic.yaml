@@ -1,0 +1,26 @@
+id: diggers_republic
+canonical_name: Diggers Republic
+names:
+  fr: république de Klipdrift
+  aliases_en: Digger's Republic | Klipdrift Republic | Republic of Griqualand West
+external_ids:
+  wikidata: Q21849591
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1870
+end: 1871
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1870: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

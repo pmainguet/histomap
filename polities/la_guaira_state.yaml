@@ -1,0 +1,26 @@
+id: la_guaira_state
+canonical_name: La Guaira state
+names:
+  fr: La Guaira
+  aliases_en: Vargas | La Guaira state | Vargas state | Vargas State
+external_ids:
+  wikidata: Q205843
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1998
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1998: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

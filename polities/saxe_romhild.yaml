@@ -1,0 +1,25 @@
+id: saxe_romhild
+canonical_name: Saxe-Römhild
+names:
+  fr: duché de Saxe-Römhild
+external_ids:
+  wikidata: Q675201
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1680
+end: 1710
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1680: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

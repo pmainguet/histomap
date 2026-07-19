@@ -1,6 +1,11 @@
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
 
-from pipeline.wd_to_yaml import allocate_ids, parse_year, slugify, to_document
+import pandas as pd
+import yaml
+
+from pipeline.wd_to_yaml import allocate_ids, convert, parse_year, slugify, to_document
 
 
 class WikidataToYamlTests(unittest.TestCase):
@@ -39,6 +44,40 @@ class WikidataToYamlTests(unittest.TestCase):
         self.assertEqual(document["end"], 100)
         self.assertEqual(document["weight_by_era"], {-500: 5})
         self.assertEqual(document["external_ids"], {"wikidata": "Q42"})
+
+    def test_convert_suffixes_slug_occupied_by_another_qid(self) -> None:
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            output = root / "polities"
+            output.mkdir()
+            (output / "example_empire.yaml").write_text(
+                yaml.safe_dump({"external_ids": {"wikidata": "Q1"}}), encoding="utf-8"
+            )
+            parquet = root / "input.parquet"
+            pd.DataFrame(
+                [{"qid": "Q2", "label_en": "Example Empire", "inception": "+0100"}]
+            ).to_parquet(parquet)
+
+            written, preserved, rejected = convert(parquet, output)
+
+            self.assertEqual((written, preserved, rejected), (1, 0, 0))
+            self.assertTrue((output / "example_empire_q2.yaml").exists())
+
+    def test_convert_rejects_bad_dates_and_continues(self) -> None:
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            parquet = root / "input.parquet"
+            pd.DataFrame(
+                [
+                    {"qid": "Q1", "label_en": "Bad", "inception": "not-a-date"},
+                    {"qid": "Q2", "label_en": "Good", "inception": "+0100"},
+                ]
+            ).to_parquet(parquet)
+
+            result = convert(parquet, root / "polities")
+
+            self.assertEqual(result, (1, 0, 1))
+            self.assertTrue((root / "polities" / "good.yaml").exists())
 
 
 if __name__ == "__main__":

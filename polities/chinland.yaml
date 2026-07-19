@@ -1,0 +1,26 @@
+id: chinland
+canonical_name: Chinland
+names:
+  fr: Chinland
+  aliases_en: Chinram
+external_ids:
+  wikidata: Q124153644
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2023
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2023: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

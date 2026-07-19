@@ -1,0 +1,25 @@
+id: lavo_kingdom
+canonical_name: Lavo Kingdom
+names:
+  fr: Royaume de Lavo
+external_ids:
+  wikidata: Q1332305
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 700
+end: 1388
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  700: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

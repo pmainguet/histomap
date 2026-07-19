@@ -1,0 +1,27 @@
+id: nevada
+canonical_name: Nevada
+names:
+  fr: Nevada
+  aliases_en: The Silver State | Silver State | Nevada, United States | State of Nevada
+    | US-NV
+external_ids:
+  wikidata: Q1227
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1864
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1864: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

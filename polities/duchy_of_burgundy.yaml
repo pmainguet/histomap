@@ -1,0 +1,26 @@
+id: duchy_of_burgundy
+canonical_name: Duchy of Burgundy
+names:
+  fr: duché de Bourgogne
+  aliases_en: Transaonian Burgundy
+external_ids:
+  wikidata: Q4712
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 880
+end: 1477
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  880: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

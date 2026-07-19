@@ -1,0 +1,26 @@
+id: aceh_sultanate
+canonical_name: Aceh Sultanate
+names:
+  fr: Sultanat d'Aceh
+  aliases_en: Kingdom of Aceh Darussalam | Aceh Darussalam
+external_ids:
+  wikidata: Q1061057
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1496
+end: 1903
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1496: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: kingdom_of_italy_q5343710
+canonical_name: Kingdom of Italy
+names:
+  fr: royaume d'Italie
+  aliases_en: Italy | Italian Kingdom | Regno d'Italia | Regnum Italicum
+external_ids:
+  wikidata: Q5343710
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 774
+end: 961
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  774: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

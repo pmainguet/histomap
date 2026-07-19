@@ -1,0 +1,26 @@
+id: upingtonia
+canonical_name: Upingtonia
+names:
+  fr: Upingtonia
+  aliases_en: Republic of Lijdensrust
+external_ids:
+  wikidata: Q8146595
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1885
+end: 1887
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1885: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

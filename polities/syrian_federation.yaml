@@ -1,0 +1,25 @@
+id: syrian_federation
+canonical_name: Syrian Federation
+names:
+  fr: Fédération syrienne
+external_ids:
+  wikidata: Q12183911
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1922
+end: 1925
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1922: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,28 @@
+id: british_raj
+canonical_name: British Raj
+names:
+  fr: Raj britannique
+  aliases_en: Hindustan | Indian Empire | Indian Raj | British Indian Empire | Crown
+    rule in India | Direct rule in India | Hindoostan | India, British | Raj India
+    | the Raj
+external_ids:
+  wikidata: Q129286
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1858
+end: 1947
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1858: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

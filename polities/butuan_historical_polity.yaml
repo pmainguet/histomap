@@ -1,0 +1,27 @@
+id: butuan_historical_polity
+canonical_name: Butuan (historical polity)
+names:
+  fr: royaume de Butuan
+  aliases_en: Gingharian hong Butuan | Gingharian sa Butuan | Puduanguo | Púduānguó
+    | Rajahnate of Butuan | 蒲端國
+external_ids:
+  wikidata: Q4401303
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1001
+end: 1521
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1001: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

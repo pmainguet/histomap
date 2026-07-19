@@ -1,0 +1,27 @@
+id: azerbaijan_democratic_republic
+canonical_name: Azerbaijan Democratic Republic
+names:
+  fr: République démocratique d'Azerbaïdjan
+  aliases_en: Azerbaijan People's Republic | Democratic Republic of Azerbaijan | People's
+    Republic of Azerbaijan
+external_ids:
+  wikidata: Q206411
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1918
+end: 1920
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1918: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

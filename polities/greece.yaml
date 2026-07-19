@@ -1,0 +1,27 @@
+id: greece
+canonical_name: Greece
+names:
+  fr: Grèce
+  aliases_en: Ellada | Greek Republic | Hellas, Greece | Hellas | el | gr | Hellenic
+    Republic
+external_ids:
+  wikidata: Q41
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1821
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1821: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

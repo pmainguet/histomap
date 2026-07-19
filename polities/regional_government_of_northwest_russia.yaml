@@ -1,0 +1,24 @@
+id: regional_government_of_northwest_russia
+canonical_name: Regional Government of Northwest Russia
+names: {}
+external_ids:
+  wikidata: Q4412473
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1919
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1919: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,27 @@
+id: greco_bactrian_kingdom
+canonical_name: Greco-Bactrian Kingdom
+names:
+  fr: Royaume gréco-bactrien
+  aliases_en: Bactria | Bactrian Kingdom | Hellenistic Bactria | Hellenistic Bactrian
+    Kingdom
+external_ids:
+  wikidata: Q488880
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -249
+end: -124
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -249: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

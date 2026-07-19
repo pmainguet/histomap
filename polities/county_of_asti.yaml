@@ -1,0 +1,25 @@
+id: county_of_asti
+canonical_name: County of Asti
+names:
+  fr: comté d'Asti
+external_ids:
+  wikidata: Q3687948
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 776
+end: 1095
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  776: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

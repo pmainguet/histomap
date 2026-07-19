@@ -1,0 +1,27 @@
+id: kingdom_of_strathclyde
+canonical_name: Kingdom of Strathclyde
+names:
+  fr: royaume de Strathclyde
+  aliases_en: Strathclyde | Alclud | Alt Clut | Kingdom of Al Clud | Kingdom of Alt
+    Clut | Northern Cumbria | Strath-Clota | Ystrad Clud
+external_ids:
+  wikidata: Q225890
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 410
+end: 1058
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  410: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

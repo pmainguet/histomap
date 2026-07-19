@@ -1,0 +1,25 @@
+id: kingdom_of_holland
+canonical_name: Kingdom of Holland
+names:
+  fr: Royaume de Hollande
+external_ids:
+  wikidata: Q212278
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1806
+end: 1810
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1806: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

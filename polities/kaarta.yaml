@@ -1,0 +1,26 @@
+id: kaarta
+canonical_name: Kaarta
+names:
+  fr: Royaume bambara du Kaarta
+  aliases_en: Ka'arta
+external_ids:
+  wikidata: Q924833
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1753
+end: 1854
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1753: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

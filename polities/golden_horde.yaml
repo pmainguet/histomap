@@ -1,0 +1,26 @@
+id: golden_horde
+canonical_name: Golden Horde
+names:
+  fr: Horde d'or
+  aliases_en: Ulug Ulus | Great Horde | Kipchak Khanate | Ulus of Jochi
+external_ids:
+  wikidata: Q79965
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1243
+end: 1502
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1243: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

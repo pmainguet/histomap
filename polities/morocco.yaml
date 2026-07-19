@@ -1,0 +1,26 @@
+id: morocco
+canonical_name: Morocco
+names:
+  fr: Maroc
+  aliases_en: al-Maġrib | Kingdom of Morocco | Lmaġrib | Maroc | Marocco
+external_ids:
+  wikidata: Q1028
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 789
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  789: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

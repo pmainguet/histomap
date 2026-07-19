@@ -1,0 +1,27 @@
+id: republic_of_san_marco
+canonical_name: Republic of San Marco
+names:
+  fr: République de Saint-Marc
+  aliases_en: Repubblica di San Marco | Repùblega Vèneta | Venetian Revolution of
+    1848
+external_ids:
+  wikidata: Q2037576
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1848
+end: 1849
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1848: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

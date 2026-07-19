@@ -1,0 +1,25 @@
+id: lydia_satrapy
+canonical_name: Lydia Satrapy
+names:
+  fr: satrapie de Lydie
+external_ids:
+  wikidata: Q3832039
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -545
+end: -333
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -545: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

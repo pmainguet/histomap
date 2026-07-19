@@ -1,0 +1,26 @@
+id: liu_qi
+canonical_name: Liu Qi
+names:
+  fr: Liuqi
+  aliases_en: Qi | Ci | False Qi | State of Qi
+external_ids:
+  wikidata: Q4505481
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1130
+end: 1137
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1130: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

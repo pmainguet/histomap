@@ -1,0 +1,26 @@
+id: kamakura_shogunate
+canonical_name: Kamakura shogunate
+names:
+  fr: Shogunat de Kamakura
+  aliases_en: Hojo shogunate | Kamakura bakufu | Kamakura Japan | Minamoto shogunate
+external_ids:
+  wikidata: Q736839
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1200
+end: 1333
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1200: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

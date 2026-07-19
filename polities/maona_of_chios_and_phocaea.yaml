@@ -1,0 +1,25 @@
+id: maona_of_chios_and_phocaea
+canonical_name: Maona of Chios and Phocaea
+names:
+  fr: Maona de Chios et Phocée
+external_ids:
+  wikidata: Q6753657
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1346
+end: 1566
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1346: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

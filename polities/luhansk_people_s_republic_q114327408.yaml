@@ -1,0 +1,26 @@
+id: luhansk_people_s_republic_q114327408
+canonical_name: Luhansk People's Republic
+names:
+  fr: république populaire de Lougansk
+  aliases_en: Lugansk People's Republic
+external_ids:
+  wikidata: Q114327408
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2014
+end: 2022
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2014: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

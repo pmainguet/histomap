@@ -1,0 +1,27 @@
+id: republic_of_rose_island
+canonical_name: Republic of Rose Island
+names:
+  fr: Insulo de la Rozoj
+  aliases_en: Esperanta Respubliko de la Insulo de la Rozoj | Esperantist Republic
+    of Rose Island | Rose Island Republic
+external_ids:
+  wikidata: Q1044668
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1968
+end: 1969
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1968: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

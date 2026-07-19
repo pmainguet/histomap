@@ -1,0 +1,27 @@
+id: afghanistan
+canonical_name: Afghanistan
+names:
+  fr: Afghanistan
+  aliases_en: Affghaunistan | Afghania | Afghanisthan | Afghaunistan | Afghaunistaun
+    | Affghanistan | Affghanisthan
+external_ids:
+  wikidata: Q889
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1709
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1709: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: jin_dynasty_q7352
+canonical_name: Jin dynasty
+names:
+  fr: dynastie Jin
+  aliases_en: Jin | Sima Jin | Liang Jin | Jin China | Jin Empire | 晉朝
+external_ids:
+  wikidata: Q7352
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 266
+end: 420
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  266: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

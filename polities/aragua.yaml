@@ -1,0 +1,26 @@
+id: aragua
+canonical_name: Aragua
+names:
+  fr: Aragua
+  aliases_en: Aragua state
+external_ids:
+  wikidata: Q190687
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1899
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1899: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,28 @@
+id: shang_dynasty
+canonical_name: Shang dynasty
+names:
+  fr: dynastie Shang
+  aliases_en: Chang dynasty | Chang Dynasty | Ine dynasty | Ine Dynasty | Shang Dynasty
+    | the Chang | the Ine | the Shang | the Yin | Yin dynasty | Yin Dynasty | Shang
+    | Yin | Ine
+external_ids:
+  wikidata: Q128938
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1599
+end: -1045
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1599: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

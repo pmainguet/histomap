@@ -1,0 +1,25 @@
+id: emirate_of_adrar
+canonical_name: Emirate of Adrar
+names:
+  fr: Émirat de l'Adrar
+external_ids:
+  wikidata: Q20395973
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1732
+end: 1909
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1732: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

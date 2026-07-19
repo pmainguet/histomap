@@ -1,0 +1,27 @@
+id: tajik_soviet_socialist_republic
+canonical_name: Tajik Soviet Socialist Republic
+names:
+  fr: République socialiste soviétique du Tadjikistan
+  aliases_en: Soviet Tadzhikistan | Soviet Tajikistan | Tadzhik Soviet Socialist Republic
+    | Tadzhik SSR | Tajik SSR
+external_ids:
+  wikidata: Q199711
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1929
+end: 1991
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1929: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

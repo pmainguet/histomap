@@ -1,0 +1,26 @@
+id: liu_song_dynasty
+canonical_name: Liu Song dynasty
+names:
+  fr: dynastie Song du Sud
+  aliases_en: Liu Song | former Song Dynasty
+external_ids:
+  wikidata: Q49697
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 420
+end: 479
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  420: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

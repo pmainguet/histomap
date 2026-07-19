@@ -1,0 +1,25 @@
+id: wen_state
+canonical_name: Wen State
+names:
+  fr: État de Wen
+external_ids:
+  wikidata: Q5098964
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1045
+end: -649
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1045: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

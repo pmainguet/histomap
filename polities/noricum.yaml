@@ -1,0 +1,25 @@
+id: noricum
+canonical_name: Noricum
+names:
+  fr: Norique
+external_ids:
+  wikidata: Q131434
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -15
+end: 476
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -15: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

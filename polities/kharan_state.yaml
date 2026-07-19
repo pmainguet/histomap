@@ -1,0 +1,25 @@
+id: kharan_state
+canonical_name: Kharan State
+names:
+  fr: État de Kharan (princely state)
+external_ids:
+  wikidata: Q2989491
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1697
+end: 1955
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1697: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

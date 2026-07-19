@@ -1,0 +1,27 @@
+id: maynila
+canonical_name: Maynila
+names:
+  fr: Royaume de Maynila
+  aliases_en: Luçon | Lusong | Balen ning Maynila | Bayan ng Maynila | Kingdom of
+    Luzon | Kingdom of Maynila | Kotā Salūdong | Lǚsòngguó | Lusung
+external_ids:
+  wikidata: Q4401247
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1500
+end: 1571
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1500: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

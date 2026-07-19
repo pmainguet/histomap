@@ -1,0 +1,25 @@
+id: new_kingdom_of_leon
+canonical_name: New Kingdom of León
+names:
+  fr: Nouveau Royaume de Léon
+external_ids:
+  wikidata: Q3823442
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1582
+end: 1821
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1582: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

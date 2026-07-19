@@ -1,0 +1,25 @@
+id: principality_of_lucca_and_piombino
+canonical_name: Principality of Lucca and Piombino
+names:
+  fr: Principauté de Lucques et Piombino
+external_ids:
+  wikidata: Q1995553
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1805
+end: 1814
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1805: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

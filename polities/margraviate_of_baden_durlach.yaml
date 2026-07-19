@@ -1,0 +1,25 @@
+id: margraviate_of_baden_durlach
+canonical_name: Margraviate of Baden-Durlach
+names:
+  fr: Margraviat de Bade-Durlach
+external_ids:
+  wikidata: Q650370
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1515
+end: 1771
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1515: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

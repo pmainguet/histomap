@@ -1,0 +1,25 @@
+id: turkish_federated_state_of_cyprus
+canonical_name: Turkish Federated State of Cyprus
+names:
+  fr: État fédéré turc de Chypre
+external_ids:
+  wikidata: Q784851
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1975
+end: 1983
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1975: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,27 @@
+id: herodian_kingdom_of_judea
+canonical_name: Herodian Kingdom of Judea
+names:
+  fr: Royaume d'Hérode
+  aliases_en: Kingdom of Judaea | Kingdom of Judea | Kingdom of Israel | Kingdom of
+    the Jews
+external_ids:
+  wikidata: Q16000109
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -36
+end: -3
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -36: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

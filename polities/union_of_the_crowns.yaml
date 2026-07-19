@@ -1,0 +1,26 @@
+id: union_of_the_crowns
+canonical_name: Union of the Crowns
+names:
+  fr: Union des Couronnes
+  aliases_en: Union of the Crowns 1603
+external_ids:
+  wikidata: Q2732400
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1603
+end: 1707
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1603: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: songhai_empire
+canonical_name: Songhai Empire
+names:
+  fr: Empire songhaï
+  aliases_en: Songhay Empire
+external_ids:
+  wikidata: Q202687
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1464
+end: 1591
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1464: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,28 @@
+id: shu
+canonical_name: Shu
+names:
+  fr: ancien royaume de Shu
+  aliases_en: Ancient Kingdom of Shu | Ancient Shu | Ancient Shu Kingdom | former
+    kingdom of Shu | Kingdom of Shu | Shu (kingdom) | Shu Kingdom | Prehistoric Shu
+    | ancient Shu kingdom
+external_ids:
+  wikidata: Q1193806
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -2000
+end: -315
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -2000: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

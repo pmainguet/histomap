@@ -1,0 +1,26 @@
+id: provisional_government_of_the_republic_of_korea
+canonical_name: Provisional Government of the Republic of Korea
+names:
+  fr: gouvernement provisoire de la République de Corée
+  aliases_en: Korean Provisional Government | KPGR | PGRK
+external_ids:
+  wikidata: Q28278
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1919
+end: 1945
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1919: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

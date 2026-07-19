@@ -1,0 +1,26 @@
+id: kenya_19631964
+canonical_name: Kenya (1963–1964)
+names:
+  fr: Kenya (1963–1964)
+  aliases_en: Kenya | Commonwealth realm of Kenya
+external_ids:
+  wikidata: Q6392538
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1963
+end: 1964
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1963: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

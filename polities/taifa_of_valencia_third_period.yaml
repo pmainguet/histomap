@@ -1,0 +1,25 @@
+id: taifa_of_valencia_third_period
+canonical_name: Taifa of Valencia (third period)
+names:
+  fr: taïfa de Valence
+external_ids:
+  wikidata: Q104192518
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1228
+end: 1238
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1228: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

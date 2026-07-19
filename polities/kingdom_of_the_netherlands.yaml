@@ -1,0 +1,26 @@
+id: kingdom_of_the_netherlands
+canonical_name: Kingdom of the Netherlands
+names:
+  fr: Royaume des Pays-Bas
+  aliases_en: the Netherlands | Nederlanden | Kingdom of Netherlands | Netherlands
+external_ids:
+  wikidata: Q29999
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1815
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1815: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

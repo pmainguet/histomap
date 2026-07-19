@@ -1,0 +1,24 @@
+id: inalids
+canonical_name: Inalids
+names: {}
+external_ids:
+  wikidata: Q2060041
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1098
+end: 1183
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1098: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

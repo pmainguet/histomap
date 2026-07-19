@@ -1,0 +1,25 @@
+id: chen_dynasty
+canonical_name: Chen dynasty
+names:
+  fr: dynastie Chen
+external_ids:
+  wikidata: Q62454
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 557
+end: 589
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  557: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

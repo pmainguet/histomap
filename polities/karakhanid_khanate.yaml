@@ -1,0 +1,26 @@
+id: karakhanid_khanate
+canonical_name: Karakhanid Khanate
+names:
+  fr: Qarakhanides
+  aliases_en: Ilek Khanids | Karakhanids | Qarakhanids
+external_ids:
+  wikidata: Q494354
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 840
+end: 1212
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  840: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: dominion_of_fiji
+canonical_name: Dominion of Fiji
+names:
+  fr: dominion des Fidji
+external_ids:
+  wikidata: Q5291089
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1970
+end: 1987
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1970: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

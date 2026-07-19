@@ -1,0 +1,30 @@
+id: lonc_kjauw
+canonical_name: Lonc-kjauw
+names:
+  aliases_en: Langjiao shiba fanshe | Langjiao shiba she | Lonc-kjauw 18 commerce
+    society | Hengchun 18 commerce society | Langjiao 18 commerce society | Langkiao
+    18 commerce society | Langqiao 18 commerce society | Langqiao shiba fanshe | Langqiao
+    shiba she | Liang-kiau | Ljungkiaw 18 commerce society | Lonckijou 18 commerce
+    society | Lonckjau 18 commerce society | Long-kiau 18 commerce society | Longkiauw
+    18 commerce society | Veljangaljangaw
+external_ids:
+  wikidata: Q97351967
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1600
+end: 1905
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1600: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

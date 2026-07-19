@@ -1,0 +1,27 @@
+id: manitoba
+canonical_name: Manitoba
+names:
+  fr: Manitoba
+  aliases_en: MB | Manitoba, Canada | CA-MB | Man. | Province of Manitoba | The Keystone
+    Province
+external_ids:
+  wikidata: Q1948
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1870
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1870: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

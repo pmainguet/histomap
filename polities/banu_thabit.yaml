@@ -1,0 +1,25 @@
+id: banu_thabit
+canonical_name: Banu thabit
+names:
+  fr: Aït Thabit
+external_ids:
+  wikidata: Q117374166
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1324
+end: 1416
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1324: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: iberian_union
+canonical_name: Iberian Union
+names:
+  fr: union ibérique
+external_ids:
+  wikidata: Q377350
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1580
+end: 1640
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1580: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

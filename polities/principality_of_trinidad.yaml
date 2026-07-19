@@ -1,0 +1,25 @@
+id: principality_of_trinidad
+canonical_name: Principality of Trinidad
+names:
+  fr: Principauté de Trinidad
+external_ids:
+  wikidata: Q4224859
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1893
+end: 1895
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1893: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

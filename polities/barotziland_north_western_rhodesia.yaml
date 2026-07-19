@@ -1,0 +1,25 @@
+id: barotziland_north_western_rhodesia
+canonical_name: Barotziland-North-Western Rhodesia
+names:
+  fr: Barotseland-Rhodésie du Nord-Ouest
+external_ids:
+  wikidata: Q20312596
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1899
+end: 1911
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1899: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: the_apartheid_regime_in_south_africa
+canonical_name: The Apartheid Regime in South Africa
+names:
+  fr: République d'Afrique du Sud
+external_ids:
+  wikidata: Q3456382
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1961
+end: 1994
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1961: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

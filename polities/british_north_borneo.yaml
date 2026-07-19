@@ -1,0 +1,27 @@
+id: british_north_borneo
+canonical_name: British North Borneo
+names:
+  fr: Bornéo du Nord britannique
+  aliases_en: North Borneo | British Borneo Territories | British Territories in Borneo
+    | Colony of North Borneo | NBO | State of British North Borneo
+external_ids:
+  wikidata: Q1147441
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1882
+end: 1963
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1882: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

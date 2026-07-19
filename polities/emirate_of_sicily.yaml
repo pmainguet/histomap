@@ -1,0 +1,25 @@
+id: emirate_of_sicily
+canonical_name: Emirate of Sicily
+names:
+  aliases_en: history of Muslim Sicily
+external_ids:
+  wikidata: Q118780154
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 827
+end: 1091
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  827: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

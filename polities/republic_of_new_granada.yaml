@@ -1,0 +1,27 @@
+id: republic_of_new_granada
+canonical_name: Republic of New Granada
+names:
+  fr: République de Nouvelle-Grenade
+  aliases_en: New Grenada | New Granada | New Granada Republic | República de la Nueva
+    Granada
+external_ids:
+  wikidata: Q630882
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1831
+end: 1858
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1831: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

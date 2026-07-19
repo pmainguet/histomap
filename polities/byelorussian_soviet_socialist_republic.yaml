@@ -1,0 +1,32 @@
+id: byelorussian_soviet_socialist_republic
+canonical_name: Byelorussian Soviet Socialist Republic
+names:
+  fr: république socialiste soviétique de Biélorussie
+  aliases_en: BSSR | Soviet Belarus | Belarusian Soviet Socialist Republic | Belarusian
+    SSR | Belorussian S.S.R. | Belorussian Soviet Socialist Republic | Belorussian
+    SSR | Belorusskaya SSR | Bielaruskaja Savieckaja Sacyjalistyčnaja Respublika |
+    Byelorussian S.S.R. | Byelorussian SSR | Byelorusskaya Sovyetskaya Sotsialisticheskaya
+    Respublika | Communist Belarus | Soviet Belorussia | Soviet Byelorussia | White
+    Russian Soviet Socialist Republic | Беларуская Савецкая Сацыялістычная Рэспубліка
+    | Белорусская Советская Социалистическая Республика | Белорусская ССР
+external_ids:
+  wikidata: Q2895
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1919
+end: 1991
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1919: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: county_of_anjou
+canonical_name: county of Anjou
+names:
+  fr: comté d'Anjou
+  aliases_en: County of Anjou
+external_ids:
+  wikidata: Q2991084
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 930
+end: 1360
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  930: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: kingdom_of_gumma
+canonical_name: Kingdom of Gumma
+names:
+  fr: Royaume de Gumma
+external_ids:
+  wikidata: Q1778868
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1701
+end: 1899
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1701: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

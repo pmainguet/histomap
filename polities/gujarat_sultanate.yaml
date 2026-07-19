@@ -1,0 +1,25 @@
+id: gujarat_sultanate
+canonical_name: Gujarat Sultanate
+names:
+  fr: Sultanat du Gujarat
+external_ids:
+  wikidata: Q507796
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1407
+end: 1573
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1407: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

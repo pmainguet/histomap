@@ -1,0 +1,25 @@
+id: western_wei_q17059107
+canonical_name: Western Wei
+names:
+  aliases_en: Xiwei
+external_ids:
+  wikidata: Q17059107
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -205
+end: -204
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -205: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

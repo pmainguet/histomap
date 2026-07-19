@@ -1,0 +1,25 @@
+id: duchy_of_opole
+canonical_name: Duchy of Opole
+names:
+  fr: duché d'Opole
+external_ids:
+  wikidata: Q661980
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1172
+end: 1532
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1172: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

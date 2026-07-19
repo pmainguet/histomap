@@ -1,0 +1,25 @@
+id: duchy_of_lorraine
+canonical_name: Duchy of Lorraine
+names:
+  fr: duché de Lorraine
+external_ids:
+  wikidata: Q155019
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 959
+end: 1766
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  959: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

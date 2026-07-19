@@ -1,0 +1,25 @@
+id: duchy_of_ferrara
+canonical_name: Duchy of Ferrara
+names:
+  fr: duché de Ferrare
+external_ids:
+  wikidata: Q693570
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1264
+end: 1597
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1264: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

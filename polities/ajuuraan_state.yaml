@@ -1,0 +1,26 @@
+id: ajuuraan_state
+canonical_name: Ajuuraan state
+names:
+  fr: État Ajuran
+  aliases_en: Ajuran | Ajuran Sultanate | Ajuuraan Sultanate
+external_ids:
+  wikidata: Q862532
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1201
+end: 1700
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1201: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

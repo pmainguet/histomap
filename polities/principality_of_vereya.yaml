@@ -1,0 +1,24 @@
+id: principality_of_vereya
+canonical_name: Principality of Vereya
+names: {}
+external_ids:
+  wikidata: Q4107639
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1432
+end: 1486
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1432: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

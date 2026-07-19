@@ -1,0 +1,26 @@
+id: german_new_guinea
+canonical_name: German New Guinea
+names:
+  fr: Nouvelle-Guinée allemande
+  aliases_en: Deutsch-Neu-Guinea | Deutsch-Neuguinea
+external_ids:
+  wikidata: Q165008
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1884
+end: 1919
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1884: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

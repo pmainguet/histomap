@@ -1,0 +1,25 @@
+id: taifa_of_arjona
+canonical_name: Taifa of Arjona
+names:
+  fr: taïfa d'Arjona
+external_ids:
+  wikidata: Q11704201
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1232
+end: 1238
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1232: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

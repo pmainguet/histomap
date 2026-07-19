@@ -1,0 +1,28 @@
+id: zhao_q8004603
+canonical_name: Zhao
+names:
+  aliases_en: Chao | Wang Chao | Wang Zhao | State of Zhao | Kingdom of Zhao | Chao
+    Kingdom | Chao Principality | Chao State | Kingdom of Chao | Principality of Chao
+    | Principality of Zhao | State of Chao | Zhao Kingdom | Zhao Principality | Zhao
+    State
+external_ids:
+  wikidata: Q8004603
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 910
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  910: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

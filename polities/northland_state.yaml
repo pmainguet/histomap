@@ -1,0 +1,25 @@
+id: northland_state
+canonical_name: Northland State
+names:
+  aliases_en: Northland State of Somalia
+external_ids:
+  wikidata: Q2552742
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2008
+end: 2009
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2008: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

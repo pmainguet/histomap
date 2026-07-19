@@ -1,0 +1,26 @@
+id: kingdom_of_bosnia
+canonical_name: Kingdom of Bosnia
+names:
+  fr: royaume de Bosnie
+  aliases_en: Bosnian Kingdom
+external_ids:
+  wikidata: Q2980623
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1377
+end: 1463
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1377: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

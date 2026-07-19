@@ -1,0 +1,25 @@
+id: duchy_of_gifhorn
+canonical_name: Duchy of Gifhorn
+names:
+  fr: duché de Gifhorn
+external_ids:
+  wikidata: Q165737
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1539
+end: 1549
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1539: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

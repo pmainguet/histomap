@@ -1,0 +1,27 @@
+id: kingdom_of_montenegro
+canonical_name: Kingdom of Montenegro
+names:
+  fr: royaume du Monténégro
+  aliases_en: Montenegro | Principality | Crna Gora | Kraljevina Crna Gora | Montenegrin
+    Kingdom | Principality of Montenegro
+external_ids:
+  wikidata: Q386496
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1910
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1910: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

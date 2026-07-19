@@ -1,0 +1,26 @@
+id: first_east_turkestan_republic
+canonical_name: First East Turkestan Republic
+names:
+  fr: Première République du Turkestan oriental
+  aliases_en: East Turkistan | Islamic Republic of East Turkistan
+external_ids:
+  wikidata: Q986665
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1933
+end: 1934
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1933: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

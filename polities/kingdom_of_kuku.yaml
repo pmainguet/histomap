@@ -1,0 +1,26 @@
+id: kingdom_of_kuku
+canonical_name: Kingdom of Kuku
+names:
+  fr: Royaume de Koukou
+  aliases_en: Kingdom of Koukou
+external_ids:
+  wikidata: Q3446186
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1515
+end: 1730
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1515: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

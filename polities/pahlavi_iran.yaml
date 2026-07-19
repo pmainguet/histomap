@@ -1,0 +1,26 @@
+id: pahlavi_iran
+canonical_name: Pahlavi Iran
+names:
+  fr: Iran pahlavi
+  aliases_en: Imperial Iran | Imperial state of Iran | Pahlavi regime
+external_ids:
+  wikidata: Q107258515
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1925
+end: 1979
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1925: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

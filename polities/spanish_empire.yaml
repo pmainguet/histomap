@@ -1,0 +1,26 @@
+id: spanish_empire
+canonical_name: Spanish Empire
+names:
+  fr: Empire espagnol
+  aliases_en: Imperio español | Monarquía Hispánica | Monarquía universal Española
+external_ids:
+  wikidata: Q80702
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1402
+end: 1976
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1402: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

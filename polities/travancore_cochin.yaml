@@ -1,0 +1,25 @@
+id: travancore_cochin
+canonical_name: Travancore-Cochin
+names:
+  fr: Travancore-Cochin
+external_ids:
+  wikidata: Q1538311
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1949
+end: 1956
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1949: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

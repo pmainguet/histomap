@@ -1,0 +1,24 @@
+id: lordship_of_the_isles
+canonical_name: Lordship of the Isles
+names: {}
+external_ids:
+  wikidata: Q39908702
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1266
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1266: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

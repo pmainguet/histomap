@@ -1,0 +1,26 @@
+id: mangkunegaran
+canonical_name: Mangkunegaran
+names:
+  fr: Principauté du Mangkunegaran
+  aliases_en: Mangkoenegaran
+external_ids:
+  wikidata: Q1853386
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1757
+end: 1945
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1757: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

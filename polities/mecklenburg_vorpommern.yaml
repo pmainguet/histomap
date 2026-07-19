@@ -1,0 +1,27 @@
+id: mecklenburg_vorpommern
+canonical_name: Mecklenburg-Vorpommern
+names:
+  fr: Mecklembourg-Poméranie-Occidentale
+  aliases_en: Mecklenburg-West Pomerania | Mecklenburg-Western Pomerania | Mecklenburg–Western
+    Pomerania
+external_ids:
+  wikidata: Q1196
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1990
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1990: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

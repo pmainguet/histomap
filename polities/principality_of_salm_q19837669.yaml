@@ -1,0 +1,25 @@
+id: principality_of_salm_q19837669
+canonical_name: Principality of Salm
+names:
+  fr: principauté de Salm
+external_ids:
+  wikidata: Q19837669
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1802
+end: 1811
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1802: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

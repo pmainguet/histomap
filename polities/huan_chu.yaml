@@ -1,0 +1,24 @@
+id: huan_chu
+canonical_name: Huan Chu
+names: {}
+external_ids:
+  wikidata: Q8008721
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 403
+end: 404
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  403: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

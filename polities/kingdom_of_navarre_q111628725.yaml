@@ -1,0 +1,27 @@
+id: kingdom_of_navarre_q111628725
+canonical_name: Kingdom of Navarre
+names:
+  fr: Royaume de Navarre (Haute-Navarre)
+  aliases_en: Navarre | Kingdom of Navarre (1512–1841) | Kingdom of Navarre (Spain)
+    | Kingdom of Upper Navarre | Upper Navarre | viceroyalty of Navarre
+external_ids:
+  wikidata: Q111628725
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1512
+end: 1841
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1512: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

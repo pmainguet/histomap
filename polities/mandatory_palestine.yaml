@@ -1,0 +1,27 @@
+id: mandatory_palestine
+canonical_name: Mandatory Palestine
+names:
+  fr: Palestine mandataire
+  aliases_en: British Mandate of Palestine | British Palestine | Mandate Palestine
+    | Mandate of Palestine | Mandatory of Palestine | Palestine
+external_ids:
+  wikidata: Q193714
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1920
+end: 1948
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1920: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: kingdom_of_jimma
+canonical_name: Kingdom of Jimma
+names:
+  fr: Royaume de Jimma
+external_ids:
+  wikidata: Q1759078
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1790
+end: 1932
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1790: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

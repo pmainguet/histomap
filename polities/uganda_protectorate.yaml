@@ -1,0 +1,26 @@
+id: uganda_protectorate
+canonical_name: Uganda Protectorate
+names:
+  fr: Protectorat de l'Ouganda
+  aliases_en: Uganda | Protectorate of Uganda
+external_ids:
+  wikidata: Q1097943
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1894
+end: 1962
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1894: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

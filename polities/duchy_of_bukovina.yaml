@@ -1,0 +1,26 @@
+id: duchy_of_bukovina
+canonical_name: Duchy of Bukovina
+names:
+  fr: duché de Bucovine
+  aliases_en: Bukowina | Duchy Boekovina
+external_ids:
+  wikidata: Q4137588
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1849
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1849: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

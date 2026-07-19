@@ -1,0 +1,26 @@
+id: state_of_somaliland
+canonical_name: State of Somaliland
+names:
+  fr: État du Somaliland
+  aliases_en: Somaliland
+external_ids:
+  wikidata: Q1106857
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1960
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1960: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

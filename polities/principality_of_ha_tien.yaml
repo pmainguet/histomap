@@ -1,0 +1,27 @@
+id: principality_of_ha_tien
+canonical_name: Principality of Hà Tiên
+names:
+  fr: Principauté de Hà Tiên
+  aliases_en: Pam | Piem | Bam | Bǎm | Can Cao | Cancar | Hà Tiên Protectorate | Hà
+    Tiên trấn | Mueang Phutthaimat | Peam | Peam Province | Ponthiamas
+external_ids:
+  wikidata: Q56271582
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1707
+end: 1832
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1707: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

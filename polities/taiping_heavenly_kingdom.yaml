@@ -1,0 +1,29 @@
+id: taiping_heavenly_kingdom
+canonical_name: Taiping Heavenly Kingdom
+names:
+  fr: royaume céleste de la Grande Paix
+  aliases_en: Taiping | Taïping Insurrection | Heavenly Kingdom of Great Peace | Heavenly
+    Kingdom of Peace | Heavenly Kingdom of Taiping | Kingdom of Heavenly Peace | T'ai-p'ing
+    T'ien-kuo | Taïping | Taiping Celestial Kingdom | Taiping Kingdom | Taïping Kingdom
+    | Taiping Tianguo | Taipings | Taïpings
+external_ids:
+  wikidata: Q3486676
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1851
+end: 1864
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1851: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

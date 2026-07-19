@@ -1,0 +1,26 @@
+id: duchy_of_apulia_and_calabria
+canonical_name: Duchy of Apulia and Calabria
+names:
+  fr: duché d'Apulie et de Calabre
+  aliases_en: Duchy of Apulia
+external_ids:
+  wikidata: Q3715874
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1059
+end: 1130
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1059: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

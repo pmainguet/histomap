@@ -1,0 +1,25 @@
+id: republic_of_zamboanga
+canonical_name: Republic of Zamboanga
+names:
+  fr: République de Zamboanga
+external_ids:
+  wikidata: Q3496573
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1899
+end: 1909
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1899: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

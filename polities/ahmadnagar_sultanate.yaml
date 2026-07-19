@@ -1,0 +1,25 @@
+id: ahmadnagar_sultanate
+canonical_name: Ahmadnagar Sultanate
+names:
+  fr: sultanat d'Ahmadnagar
+external_ids:
+  wikidata: Q400998
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1490
+end: 1636
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1490: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

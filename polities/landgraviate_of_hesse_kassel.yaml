@@ -1,0 +1,25 @@
+id: landgraviate_of_hesse_kassel
+canonical_name: Landgraviate of Hesse-Kassel
+names:
+  fr: landgraviat de Hesse-Cassel
+external_ids:
+  wikidata: Q168651
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1567
+end: 1803
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1567: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

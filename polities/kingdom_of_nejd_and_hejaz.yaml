@@ -1,0 +1,26 @@
+id: kingdom_of_nejd_and_hejaz
+canonical_name: Kingdom of Nejd and Hejaz
+names:
+  fr: Royaume du Nejd et du Hedjaz
+  aliases_en: Kingdom of Hejaz and Sultanate of Nejd
+external_ids:
+  wikidata: Q1756546
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1926
+end: 1932
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1926: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

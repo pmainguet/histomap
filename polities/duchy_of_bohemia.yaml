@@ -1,0 +1,26 @@
+id: duchy_of_bohemia
+canonical_name: Duchy of Bohemia
+names:
+  fr: duché de Bohême
+  aliases_en: Czech Duchy | Czech Principality | Principality of Bohemia
+external_ids:
+  wikidata: Q2162698
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 870
+end: 1198
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  870: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

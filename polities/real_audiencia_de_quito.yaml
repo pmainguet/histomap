@@ -1,0 +1,26 @@
+id: real_audiencia_de_quito
+canonical_name: Real Audiencia de Quito
+names:
+  fr: Real Audiencia de Quito
+  aliases_en: Real Audiencia of Quito | Royal Audiencia of Quito
+external_ids:
+  wikidata: Q1759249
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1563
+end: 1822
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1563: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

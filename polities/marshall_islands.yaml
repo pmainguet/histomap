@@ -1,0 +1,26 @@
+id: marshall_islands
+canonical_name: Marshall Islands
+names:
+  fr: Îles Marshall
+  aliases_en: mh | Republic of the Marshall Islands
+external_ids:
+  wikidata: Q709
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1986
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1986: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

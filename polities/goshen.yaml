@@ -1,0 +1,26 @@
+id: goshen
+canonical_name: Goshen
+names:
+  fr: république de Goshen
+  aliases_en: Goshen (South Africa) | State of Goshen
+external_ids:
+  wikidata: Q2145397
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1882
+end: 1883
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1882: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

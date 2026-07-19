@@ -1,0 +1,25 @@
+id: zhou_dynasty_16781681
+canonical_name: Zhou dynasty (1678–1681)
+names:
+  aliases_en: Wu Zhou | Great Zhou Dynasty
+external_ids:
+  wikidata: Q10920088
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1678
+end: 1681
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1678: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

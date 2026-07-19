@@ -1,0 +1,27 @@
+id: south_yemen
+canonical_name: South Yemen
+names:
+  fr: République démocratique populaire du Yémen
+  aliases_en: Democratic Yemen | People's Democratic Republic of Yemen | People's
+    Republic of Southern Yemen | Southern Yemen | Yemen (Aden)
+external_ids:
+  wikidata: Q199841
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1967
+end: 1990
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1967: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

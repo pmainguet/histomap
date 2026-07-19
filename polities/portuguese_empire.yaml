@@ -1,0 +1,26 @@
+id: portuguese_empire
+canonical_name: Portuguese Empire
+names:
+  fr: Empire colonial portugais
+  aliases_en: Portuguese Colonial Empire | Portuguese Overseas
+external_ids:
+  wikidata: Q200464
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1415
+end: 1999
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1415: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

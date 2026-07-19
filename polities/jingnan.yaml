@@ -1,0 +1,30 @@
+id: jingnan
+canonical_name: Jingnan
+names:
+  fr: Jingnan
+  aliases_en: Nanping | Pei Chu | Jingnan Guo | Nan-p'ing | Bei Chu | Beichu | Ching-nan
+    | Jingnan Kingdom | Northern Ch'u | Northern Chu | Pei Ch'u | Pei-ch'u | Pei-Chu
+    | Ching-nan Kuo | Ching-nan-kuo | Jingnanguo | State of Ching-nan | State of Jingnan
+    | Ching-nan Chieh-tu-shih | Jingnan Jiedushi | Nan-p'ing Kingdom | Nan-ping |
+    Nan-ping Kingdom | Nanping Kingdom
+external_ids:
+  wikidata: Q1325075
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 924
+end: 963
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  924: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

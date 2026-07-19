@@ -1,0 +1,25 @@
+id: mauro_roman_kingdoms
+canonical_name: Mauro-Roman kingdoms
+names:
+  fr: royaume des Maures et des Romains
+external_ids:
+  wikidata: Q25080783
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 429
+end: 578
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  429: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

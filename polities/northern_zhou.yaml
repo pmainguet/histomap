@@ -1,0 +1,26 @@
+id: northern_zhou
+canonical_name: Northern Zhou
+names:
+  fr: Dynastie Zhou du Nord
+  aliases_en: Bei Zhou
+external_ids:
+  wikidata: Q551067
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 557
+end: 581
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  557: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

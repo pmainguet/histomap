@@ -1,0 +1,26 @@
+id: kingdom_saal
+canonical_name: Kingdom Saal
+names:
+  fr: royaume de Saal
+  aliases_en: Saal
+external_ids:
+  wikidata: Q22338414
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 400
+end: 900
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  400: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

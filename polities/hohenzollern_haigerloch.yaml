@@ -1,0 +1,25 @@
+id: hohenzollern_haigerloch
+canonical_name: Hohenzollern-Haigerloch
+names:
+  fr: comté de Hohenzollern-Haigerloch
+external_ids:
+  wikidata: Q316124
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1576
+end: 1767
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1576: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

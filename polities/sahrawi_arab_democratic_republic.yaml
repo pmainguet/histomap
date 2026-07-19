@@ -1,0 +1,26 @@
+id: sahrawi_arab_democratic_republic
+canonical_name: Sahrawi Arab Democratic Republic
+names:
+  fr: République arabe sahraouie démocratique
+  aliases_en: Saharawi Arab Democratic Republic | 🇪🇭 | SADR
+external_ids:
+  wikidata: Q40362
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1976
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1976: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

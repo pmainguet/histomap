@@ -1,0 +1,26 @@
+id: xu_q5363393
+canonical_name: Xǔ
+names:
+  fr: état Xǔ
+  aliases_en: Xu | State of Xu | State of Xǔ
+external_ids:
+  wikidata: Q5363393
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1063
+end: -374
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1063: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

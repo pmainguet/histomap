@@ -1,0 +1,27 @@
+id: romanian_people_s_republic
+canonical_name: Romanian People's Republic
+names:
+  fr: République populaire roumaine
+  aliases_en: RPR | People's Republic of Romania | People's Republic of Rumania |
+    PR Romania | PR Rumania | Republica Populară Romînă | Romania PR | Romanian PR
+external_ids:
+  wikidata: Q2685298
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1947
+end: 1965
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1947: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

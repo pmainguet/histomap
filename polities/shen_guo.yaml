@@ -1,0 +1,26 @@
+id: shen_guo
+canonical_name: Shen Guo
+names:
+  fr: État Shēn
+  aliases_en: Xie Guo
+external_ids:
+  wikidata: Q1056772
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -840
+end: -680
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -840: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

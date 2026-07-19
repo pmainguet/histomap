@@ -1,0 +1,24 @@
+id: polity_4000_parvat_kingdom
+canonical_name: 4000 Parvat Kingdom
+names: {}
+external_ids:
+  wikidata: Q61355146
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1189
+end: 1488
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1189: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

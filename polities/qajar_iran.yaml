@@ -1,0 +1,27 @@
+id: qajar_iran
+canonical_name: Qajar Iran
+names:
+  fr: Perse qadjare
+  aliases_en: Guarded Domains of Persia | Qajar Empire | Qajar Persia | Sublime State
+    of Persia | Iran | Persia
+external_ids:
+  wikidata: Q63158027
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1789
+end: 1925
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1789: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

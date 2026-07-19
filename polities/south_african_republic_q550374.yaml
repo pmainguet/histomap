@@ -1,0 +1,27 @@
+id: south_african_republic_q550374
+canonical_name: South African Republic
+names:
+  fr: République sud-africaine du Transvaal
+  aliases_en: ZAR | Republic of Transvaal | The Transvaal | Transvaal Republic | Zuid-Afrikaansche
+    Republiek
+external_ids:
+  wikidata: Q550374
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1852
+end: 1902
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1852: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

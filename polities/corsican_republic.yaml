@@ -1,0 +1,25 @@
+id: corsican_republic
+canonical_name: Corsican Republic
+names:
+  fr: République corse
+external_ids:
+  wikidata: Q71234
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1755
+end: 1769
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1755: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

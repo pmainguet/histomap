@@ -1,0 +1,26 @@
+id: hohenzollern_hechingen
+canonical_name: Hohenzollern-Hechingen
+names:
+  fr: Principauté de Hohenzollern-Hechingen
+  aliases_en: Principality of Hohenzollern-Hechingen
+external_ids:
+  wikidata: Q673865
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1576
+end: 1850
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1576: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

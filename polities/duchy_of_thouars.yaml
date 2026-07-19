@@ -1,0 +1,26 @@
+id: duchy_of_thouars
+canonical_name: Duchy of Thouars
+names:
+  fr: Duché de Thouars
+  aliases_en: Duchy and peerage of Thouars
+external_ids:
+  wikidata: Q55979574
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1595
+end: 1789
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1595: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

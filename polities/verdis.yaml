@@ -1,0 +1,27 @@
+id: verdis
+canonical_name: Verdis
+names:
+  fr: Verdis
+  aliases_en: Free Republic of Verdis | Pocket 3 | Pocket 3 of Croatia-Serbia border
+    dispute | Verdis Republic
+external_ids:
+  wikidata: Q73330139
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2019
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2019: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

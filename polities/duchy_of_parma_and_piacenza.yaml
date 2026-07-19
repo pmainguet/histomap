@@ -1,0 +1,26 @@
+id: duchy_of_parma_and_piacenza
+canonical_name: Duchy of Parma and Piacenza
+names:
+  fr: duché de Parme et Plaisance
+  aliases_en: Ducato di Parma | Duchy of Parma
+external_ids:
+  wikidata: Q165040
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1545
+end: 1859
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1545: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

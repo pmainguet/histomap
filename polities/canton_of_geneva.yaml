@@ -1,0 +1,27 @@
+id: canton_of_geneva
+canonical_name: Canton of Geneva
+names:
+  fr: canton de Genève
+  aliases_en: Geneva | GE | Genève | Geneve | Canton de Geneve | Canton de Genève
+    | CH-GE | Republic and Canton of Geneva
+external_ids:
+  wikidata: Q11917
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1815
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1815: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

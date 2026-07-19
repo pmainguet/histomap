@@ -1,0 +1,26 @@
+id: unterwalden
+canonical_name: Unterwalden
+names:
+  fr: Canton d'Unterwald
+  aliases_en: Canton of Unterwalden
+external_ids:
+  wikidata: Q214069
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1315
+end: 1798
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1315: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

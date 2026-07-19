@@ -1,0 +1,26 @@
+id: austrian_empire
+canonical_name: Austrian Empire
+names:
+  fr: empire d'Autriche
+  aliases_en: Austria
+external_ids:
+  wikidata: Q131964
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1804
+end: 1867
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1804: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

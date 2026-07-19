@@ -1,0 +1,25 @@
+id: nan_q48838868
+canonical_name: nan
+names:
+  fr: État de Tharad
+external_ids:
+  wikidata: Q48838868
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1759
+end: 1948
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1759: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: rurik_s_state
+canonical_name: Rurik's state
+names:
+  fr: État de Riourik
+  aliases_en: Rurik's state
+external_ids:
+  wikidata: Q1392840
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 862
+end: 882
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  862: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

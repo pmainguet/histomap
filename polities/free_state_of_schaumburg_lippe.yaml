@@ -1,0 +1,25 @@
+id: free_state_of_schaumburg_lippe
+canonical_name: Free State of Schaumburg-Lippe
+names:
+  fr: État libre de Schaumbourg-Lippe
+external_ids:
+  wikidata: Q427703
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1918
+end: 1946
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1918: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: palatinate_sulzbach
+canonical_name: Palatinate-Sulzbach
+names:
+  fr: duché de Palatinat-Soulzbach
+external_ids:
+  wikidata: Q454436
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1557
+end: 1808
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1557: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

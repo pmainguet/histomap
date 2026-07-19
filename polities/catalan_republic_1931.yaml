@@ -1,0 +1,26 @@
+id: catalan_republic_1931
+canonical_name: Catalan Republic (1931)
+names:
+  fr: République catalane (1931)
+  aliases_en: Catalan Republic | República Catalana
+external_ids:
+  wikidata: Q42346198
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1931
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1931: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

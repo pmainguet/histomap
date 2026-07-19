@@ -1,0 +1,26 @@
+id: state_of_presidi
+canonical_name: State of Presidi
+names:
+  fr: État des Présides
+  aliases_en: State of the Royal Presidios | State of Presidios | State of the Presidios
+external_ids:
+  wikidata: Q1778792
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1557
+end: 1801
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1557: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

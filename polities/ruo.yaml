@@ -1,0 +1,25 @@
+id: ruo
+canonical_name: Ruo
+names:
+  fr: État Ruo
+external_ids:
+  wikidata: Q2584857
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1045
+end: -255
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1045: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

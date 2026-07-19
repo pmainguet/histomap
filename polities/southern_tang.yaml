@@ -1,0 +1,29 @@
+id: southern_tang
+canonical_name: Southern Tang
+names:
+  fr: Tang du Sud
+  aliases_en: Nan Tang | Chiang-nan | Jiangnan | Tang | Nantang | Xu Qi | Jiangnan
+    Kingdom | Kingdom of Jiangnan | Kingdom of Nan Tang | Kingdom of Nantang | Kingdom
+    of Southern Tang | Kingdom of Tang | Nan T'ang | Nan Tang Kingdom | Nan-t'ang
+    | Nantang Kingdom | Southern T'ang | Southern Tang Kingdom | Tang Kingdom | Xuqi
+external_ids:
+  wikidata: Q1326742
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 937
+end: 976
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  937: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

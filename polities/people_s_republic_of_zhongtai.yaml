@@ -1,0 +1,26 @@
+id: people_s_republic_of_zhongtai
+canonical_name: People's Republic of Zhongtai
+names:
+  fr: République populaire de Zhongtai
+  aliases_en: Tanghoutu | Zhongtai fast food restaurant | Zhongtai fast food stir-fry
+external_ids:
+  wikidata: Q10874967
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2008
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2008: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: socialist_republic_of_germany
+canonical_name: Socialist Republic of Germany
+names:
+  fr: république socialiste d'Allemagne
+external_ids:
+  wikidata: Q109599840
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1918
+end: 1919
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1918: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

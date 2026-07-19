@@ -1,0 +1,27 @@
+id: first_islamic_state
+canonical_name: first Islamic state
+names:
+  fr: Communauté de Médine
+  aliases_en: Medina State | Islamic State of Medina | Riasat-e-Medina | State of
+    Medina
+external_ids:
+  wikidata: Q76821846
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 622
+end: 632
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  622: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

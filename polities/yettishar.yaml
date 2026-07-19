@@ -1,0 +1,26 @@
+id: yettishar
+canonical_name: Yettishar
+names:
+  fr: Kasgharie
+  aliases_en: Kashgaria | Kashgar Khanate
+external_ids:
+  wikidata: Q1688526
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1864
+end: 1877
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1864: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

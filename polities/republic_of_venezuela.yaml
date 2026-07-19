@@ -1,0 +1,26 @@
+id: republic_of_venezuela
+canonical_name: Republic of Venezuela
+names:
+  fr: Quatrième République (Venezuela)
+  aliases_en: República de Venezuela | History of Venezuela (1953-1999)
+external_ids:
+  wikidata: Q21296156
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1953
+end: 1999
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1953: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

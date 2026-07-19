@@ -1,0 +1,27 @@
+id: provisional_government_of_national_union_and_national_salvation_of_cambodia
+canonical_name: Provisional Government of National Union and National Salvation of
+  Cambodia
+names:
+  fr: Gouvernement Provisoire d'Union NAtionale et de Sauvetage National du Cambodge
+  aliases_en: PGNUNSC
+external_ids:
+  wikidata: Q6585262
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1994
+end: 1998
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1994: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

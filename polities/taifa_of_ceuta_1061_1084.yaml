@@ -1,0 +1,25 @@
+id: taifa_of_ceuta_1061_1084
+canonical_name: Taifa of Ceuta (1061-1084)
+names:
+  fr: taïfa de Ceuta
+external_ids:
+  wikidata: Q5947557
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1061
+end: 1084
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1061: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: samudra_pasai
+canonical_name: Samudra Pasai
+names:
+  fr: Sultanat de Pasai
+  aliases_en: Samudra Pasai Sultanate | Sultanate of Samudra Pasai | Sumadera Pasai
+external_ids:
+  wikidata: Q3284315
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1267
+end: 1521
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1267: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: jeypore_estate
+canonical_name: Jeypore Estate
+names:
+  fr: royaume de Jeypore
+external_ids:
+  wikidata: Q85774522
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1453
+end: 1947
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1453: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

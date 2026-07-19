@@ -1,0 +1,27 @@
+id: apollonia
+canonical_name: Apollonia
+names:
+  fr: Apollonie d'Illyrie
+  aliases_en: Apollonia, Illyria | Mint of Apollonia, Illyria | Archaeological Park
+    Apollonia | Archaeological Park of Apollonia
+external_ids:
+  wikidata: Q505703
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -587
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -587: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

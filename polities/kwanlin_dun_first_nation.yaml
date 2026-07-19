@@ -1,0 +1,26 @@
+id: kwanlin_dun_first_nation
+canonical_name: Kwanlin Dün First Nation
+names:
+  fr: Première Nation de Kwanlin Dün
+  aliases_en: Kwanlin Dun First Nation | Whitehorse Indian Band
+external_ids:
+  wikidata: Q1726214
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1956
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1956: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

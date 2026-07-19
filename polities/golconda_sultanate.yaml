@@ -1,0 +1,28 @@
+id: golconda_sultanate
+canonical_name: Golconda Sultanate
+names:
+  fr: Sultanat de Golconde
+  aliases_en: Golconda | Golkunda | Golkonda | Golcona Kingdom | Golkonda Kingdom
+    | Golkonda Sultanate | Golkunda Kingdom | Golkunda Sultanate | Sultanate of Golconda
+    | Sultanate of Golkonda | Sultanate of Golkunda
+external_ids:
+  wikidata: Q19805959
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1518
+end: 1687
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1518: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

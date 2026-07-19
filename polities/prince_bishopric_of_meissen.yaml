@@ -1,0 +1,26 @@
+id: prince_bishopric_of_meissen
+canonical_name: Prince-Bishopric of Meissen
+names:
+  aliases_en: Diocese of Meissen | Diocese of Meißen | Bishopric of Meissen | Bishopric
+    of Meißen | Diocese of Meißen (Meissen) | Prince-Bishopric of Meißen
+external_ids:
+  wikidata: Q650412
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 968
+end: 1581
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  968: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

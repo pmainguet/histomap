@@ -1,0 +1,27 @@
+id: minnesota
+canonical_name: Minnesota
+names:
+  fr: Minnesota
+  aliases_en: MN | Land of 10,000 Lakes | Minn. | Minnesota, United States | North
+    Star State | State of Minnesota | US-MN
+external_ids:
+  wikidata: Q1527
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1858
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1858: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

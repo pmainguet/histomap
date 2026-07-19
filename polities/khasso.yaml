@@ -1,0 +1,27 @@
+id: khasso
+canonical_name: Khasso
+names:
+  fr: Royaume du Khasso
+  aliases_en: Khasso Kingdom | Khasso polity | Xaaso | Xaaso Kingdom | Xaaso polity
+    | Xasso | Xasso Kingdom | Xasso polity
+external_ids:
+  wikidata: Q3090194
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1681
+end: 1857
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1681: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

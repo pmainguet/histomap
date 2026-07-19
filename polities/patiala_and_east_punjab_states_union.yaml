@@ -1,0 +1,25 @@
+id: patiala_and_east_punjab_states_union
+canonical_name: Patiala and East Punjab States Union
+names:
+  fr: Union des États de Patiala et du Pendjab oriental
+external_ids:
+  wikidata: Q669534
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1948
+end: 1956
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1948: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

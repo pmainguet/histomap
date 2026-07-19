@@ -1,0 +1,27 @@
+id: republic_of_the_congo
+canonical_name: Republic of the Congo
+names:
+  fr: République du Congo
+  aliases_en: Congo | CGO | cg | Congo (Brazzaville) | Congo Republic | Congo-Brazzaville
+    | Rep. Congo | Republic of Congo | Republique du Congo | République du Congo
+external_ids:
+  wikidata: Q971
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1960
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1960: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

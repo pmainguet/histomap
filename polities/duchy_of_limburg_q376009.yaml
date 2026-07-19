@@ -1,0 +1,26 @@
+id: duchy_of_limburg_q376009
+canonical_name: Duchy of Limburg
+names:
+  fr: duché de Limbourg
+  aliases_en: Hertogdom Limburg | Herzogtum Limburg
+external_ids:
+  wikidata: Q376009
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1839
+end: 1866
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1839: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

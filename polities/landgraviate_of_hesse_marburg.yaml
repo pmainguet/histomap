@@ -1,0 +1,26 @@
+id: landgraviate_of_hesse_marburg
+canonical_name: Landgraviate of Hesse-Marburg
+names:
+  fr: Landgraviat de Hesse-Marbourg
+  aliases_en: Hesse-Marburg
+external_ids:
+  wikidata: Q673837
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1458
+end: 1604
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1458: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

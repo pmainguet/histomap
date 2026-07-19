@@ -1,0 +1,26 @@
+id: county_of_cerdanya
+canonical_name: County of Cerdanya
+names:
+  fr: comté de Cerdagne
+  aliases_en: Cerdanya
+external_ids:
+  wikidata: Q652275
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 798
+end: 1403
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  798: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

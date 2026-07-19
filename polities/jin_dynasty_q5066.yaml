@@ -1,0 +1,30 @@
+id: jin_dynasty_q5066
+canonical_name: Jin dynasty
+names:
+  fr: dynastie Jin
+  aliases_en: Great Jin | Da Jin | Jin Dynasty | Jin Chao | Jurchen dynasty | Kin
+    dynasty | Jin Empire | Chin dynasty | Chin Dynasty | Chin Empire | Great Chin
+    Empire | Great Jin Empire | Jurchen Chin dynasty | Jurchen Chin Dynasty | Jurchen
+    Dynasty | Jurchen Jin | Jurchen Jin dynasty | Jurchen Jin Dynasty | Kin Dynasty
+    | Ta Chin | Jurchen Chin Empire | Jurchen Jin Empire
+external_ids:
+  wikidata: Q5066
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1115
+end: 1234
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1115: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: sao_eastern_slavonia_baranja_and_western_syrmia
+canonical_name: SAO Eastern Slavonia, Baranja and Western Syrmia
+names:
+  fr: Slavonie orientale
+external_ids:
+  wikidata: Q65362
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1991
+end: 1992
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1991: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

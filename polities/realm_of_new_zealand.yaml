@@ -1,0 +1,25 @@
+id: realm_of_new_zealand
+canonical_name: Realm of New Zealand
+names:
+  fr: royaume de Nouvelle-Zélande
+external_ids:
+  wikidata: Q889033
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1983
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1983: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

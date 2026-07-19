@@ -1,0 +1,25 @@
+id: kingdom_of_poland_q3446214
+canonical_name: Kingdom of Poland
+names:
+  fr: Royaume de Pologne
+external_ids:
+  wikidata: Q3446214
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1320
+end: 1386
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1320: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

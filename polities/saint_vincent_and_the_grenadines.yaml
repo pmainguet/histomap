@@ -1,0 +1,27 @@
+id: saint_vincent_and_the_grenadines
+canonical_name: Saint Vincent and the Grenadines
+names:
+  fr: Saint-Vincent-et-les-Grenadines
+  aliases_en: St. Vincent | St Vincent | Saint Vincent | vc | St Vincent and the Grenadines
+    | St. Vincent and the Grenadines | vct
+external_ids:
+  wikidata: Q757
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1979
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1979: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

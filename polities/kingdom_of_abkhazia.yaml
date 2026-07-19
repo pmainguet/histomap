@@ -1,0 +1,26 @@
+id: kingdom_of_abkhazia
+canonical_name: Kingdom of Abkhazia
+names:
+  fr: royaume d'Abkhazie
+  aliases_en: Abasgia | Egris-Abkhazia Kingdom | Kingdom of the Abkhazes
+external_ids:
+  wikidata: Q325493
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 778
+end: 1008
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  778: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

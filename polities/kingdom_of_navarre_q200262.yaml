@@ -1,0 +1,26 @@
+id: kingdom_of_navarre_q200262
+canonical_name: Kingdom of Navarre
+names:
+  fr: royaume de Navarre
+  aliases_en: Kingdom of Pamplona
+external_ids:
+  wikidata: Q200262
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1162
+end: 1841
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1162: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

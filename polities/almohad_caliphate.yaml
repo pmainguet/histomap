@@ -1,0 +1,26 @@
+id: almohad_caliphate
+canonical_name: Almohad Caliphate
+names:
+  fr: califat almohade
+  aliases_en: Almohades | Almohads | Almohad Empire | al-Muwaḥḥidūn
+external_ids:
+  wikidata: Q199688
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1121
+end: 1269
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1121: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

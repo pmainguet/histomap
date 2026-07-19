@@ -1,0 +1,26 @@
+id: republic_of_cuba
+canonical_name: Republic of Cuba
+names:
+  fr: république de Cuba
+  aliases_en: Cuba | Neocolonial Republic
+external_ids:
+  wikidata: Q14905932
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1902
+end: 1959
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1902: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

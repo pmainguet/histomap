@@ -1,0 +1,27 @@
+id: later_shu
+canonical_name: Later Shu
+names:
+  fr: Shu postérieurs
+  aliases_en: Shu | Kingdom of Shu | Shu Kingdom | Hou Shu | Houshu | Houshu Kingdom
+    | Later Shu Kingdom
+external_ids:
+  wikidata: Q526507
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 934
+end: 965
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  934: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

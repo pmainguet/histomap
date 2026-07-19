@@ -1,0 +1,29 @@
+id: tang_dynasty
+canonical_name: Tang dynasty
+names:
+  fr: dynastie Tang
+  aliases_en: Tang | Tang Dynasty | Datang | Tang China | Da Tang | Great T'ang |
+    Great Tang | Great Tang Empire | Great Thang | rule of the Tang | T'ang Dynasty
+    | T'ang Empire | Ta T'ang | Ta Tang | Ta-T'ang | Ta-Tang | Tang Empire | Tang
+    era | Tang imperial dynasty | Tang period | Thang Dynasty
+external_ids:
+  wikidata: Q9683
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 618
+end: 907
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  618: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

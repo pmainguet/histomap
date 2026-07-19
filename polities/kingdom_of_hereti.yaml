@@ -1,0 +1,25 @@
+id: kingdom_of_hereti
+canonical_name: Kingdom of Hereti
+names:
+  fr: Héréthie
+external_ids:
+  wikidata: Q187461
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 893
+end: 1020
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  893: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

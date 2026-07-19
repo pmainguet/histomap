@@ -1,0 +1,29 @@
+id: transnistria
+canonical_name: Transnistria
+names:
+  fr: Transnistrie
+  aliases_en: PMR | Transnistrian Moldavian Republic | Moldavian Republic of Transdniestria
+    | Pridnestria | Pridnestrovia | Pridnestrovian Moldavian Republic | Pridnestrovie
+    | Republic of Pridnestrovie | Trans-Dniestr | Transdniester | Transdniestria |
+    Transdniestrian Moldavian Republic
+external_ids:
+  wikidata: Q907112
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1991
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1991: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

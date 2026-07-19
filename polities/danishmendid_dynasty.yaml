@@ -1,0 +1,26 @@
+id: danishmendid_dynasty
+canonical_name: Danishmendid dynasty
+names:
+  fr: Danichmendides
+  aliases_en: Danishmend dynasty | Danishmendids | Danishmends
+external_ids:
+  wikidata: Q846670
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1071
+end: 1178
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1071: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

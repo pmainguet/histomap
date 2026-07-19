@@ -1,0 +1,27 @@
+id: papal_states
+canonical_name: Papal States
+names:
+  fr: États pontificaux
+  aliases_en: Church State | Church States | Ecclesiastical States | Papal State |
+    State of the Church | States of the Church | Status Ecclesiae
+external_ids:
+  wikidata: Q170174
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 754
+end: 1870
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  754: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

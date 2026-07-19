@@ -1,0 +1,27 @@
+id: canton_of_appenzell_innerrhoden
+canonical_name: Canton of Appenzell Innerrhoden
+names:
+  fr: canton d'Appenzell Rhodes-Intérieures
+  aliases_en: AI | Appenzell Inner Rhodes | Appenzell Inner-Rhoden | Appenzell Inner-Rhodes
+    | Innerrhoden | Kanton Appenzell Innerrhoden
+external_ids:
+  wikidata: Q12094
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1513
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1513: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

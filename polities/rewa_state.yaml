@@ -1,0 +1,26 @@
+id: rewa_state
+canonical_name: Rewa State
+names:
+  fr: État Rewâ
+  aliases_en: Rewa | Rewah | Riwa | Rewah State | Riwa State
+external_ids:
+  wikidata: Q176466
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1755
+end: 1947
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1755: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,24 @@
+id: eastern_zhou_q2263327
+canonical_name: Eastern Zhou
+names: {}
+external_ids:
+  wikidata: Q2263327
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -769
+end: -248
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -769: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,27 @@
+id: kingdom_of_hana
+canonical_name: Kingdom of Ḫana
+names:
+  aliases_en: Khana | Hana | Ancient Kingdom of Hana | Ancient Kingdom of Khana |
+    Hana Ancient Kingdom | Hana Kingdom | Khana Ancient Kingdom | Khana Kingdom |
+    Kingdom of Hana | Kingdom of Khana
+external_ids:
+  wikidata: Q425405
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1800
+end: -1700
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1800: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

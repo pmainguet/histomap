@@ -1,0 +1,39 @@
+id: three_sovereigns_and_five_emperors
+canonical_name: Three Sovereigns and Five Emperors
+names:
+  fr: Trois augustes et cinq empereurs
+  aliases_en: Five Emperors | Hsien Wang | Hsien-wang | San Hoang Ou Ti | San Huang
+    Wu Di | San Huang Wu Ti | San-fen Wu-tien | San-hoang ou-ti | San-Hoang U-Ty |
+    San-hoang-ou-ti | San-huang Wu-ti | San-huang-wu-ti | Sane Hoang and Ou Ti | Sane-Hoang
+    Ou-Ti | Sanfen Wudian | Sanhuang Wudi | Sanhuangwudi | The 3 and 5 | the Former
+    Kings | the Three and the Five | Three August Ones and Five Lords | Three August
+    Ones and Five Sovereigns | Three August Ones and Five Thearchs | Three August
+    Rulers and Five Thearchs | Three Augusti and Five Emperors | Three Augusts and
+    Five Emperors | Three Emperors and Five Kings | Three Emperors and Five Sovereigns
+    | Three Great Kings and Five Emperors | Three High Sovereigns and Five Thearchs
+    | Three Hoang and Five Ti | Three Hoang Five Ty | Three Huang and Five Di | Three
+    Huang and Five Ti | Three Hwangs and Five Tis | Three Kings and Five Thearchs
+    | Three Kings and Five Tis | Three Lords and Five Kings | Three Lords and Five
+    Thearchs | Three Luminaries and Five Thearchs | Three Sovereigns | Three Thearchs
+    and Five Sovereigns | Xianwang
+external_ids:
+  wikidata: Q201727
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -2851
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -2851: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

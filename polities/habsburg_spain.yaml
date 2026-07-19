@@ -1,0 +1,27 @@
+id: habsburg_spain
+canonical_name: Habsburg Spain
+names:
+  fr: maison de Habsbourg en Espagne
+  aliases_en: Monarchy of Spain | Spain under the Habsburgs | Spanish Habsburg | The
+    Spanish Habsburgs
+external_ids:
+  wikidata: Q600093
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1516
+end: 1700
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1516: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

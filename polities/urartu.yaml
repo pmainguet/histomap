@@ -1,0 +1,26 @@
+id: urartu
+canonical_name: Urartu
+names:
+  fr: royaume d'Ourartou
+  aliases_en: Kingdom of Urartu
+external_ids:
+  wikidata: Q185068
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -860
+end: -589
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -860: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

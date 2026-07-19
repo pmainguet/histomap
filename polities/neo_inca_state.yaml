@@ -1,0 +1,26 @@
+id: neo_inca_state
+canonical_name: Neo-Inca State
+names:
+  fr: Royaume inca de Vilcabamba
+  aliases_en: Neo-Inca state of Vilcabamba
+external_ids:
+  wikidata: Q10715354
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1537
+end: 1572
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1537: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: principality_of_serbia_q684030
+canonical_name: Principality of Serbia
+names:
+  fr: principauté de Serbie
+  aliases_en: Kneževina Srbija | Serb Principality | Serbian Principality
+external_ids:
+  wikidata: Q684030
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1815
+end: 1882
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1815: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

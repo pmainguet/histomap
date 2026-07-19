@@ -1,0 +1,26 @@
+id: khanate_of_kokand
+canonical_name: Khanate of Kokand
+names:
+  fr: Khanat de Kokand
+  aliases_en: Kokand | Khoqand | Khanate of Khoqand
+external_ids:
+  wikidata: Q696241
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1709
+end: 1876
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1709: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

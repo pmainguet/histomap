@@ -1,0 +1,25 @@
+id: maihar_state
+canonical_name: Maihar State
+names:
+  fr: État de Maihar
+external_ids:
+  wikidata: Q999297
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1778
+end: 1948
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1778: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

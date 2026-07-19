@@ -1,0 +1,26 @@
+id: kingdom_of_artaxerxes
+canonical_name: Kingdom of Artaxerxes
+names:
+  fr: royaume d'Artaxerxes
+  aliases_en: Artaxerxes Kingdom
+external_ids:
+  wikidata: Q20507218
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -188
+end: 1
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -188: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

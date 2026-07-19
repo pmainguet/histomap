@@ -1,0 +1,26 @@
+id: kingdom_of_england
+canonical_name: Kingdom of England
+names:
+  fr: royaume d'Angleterre
+  aliases_en: England
+external_ids:
+  wikidata: Q179876
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 927
+end: 1707
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  927: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

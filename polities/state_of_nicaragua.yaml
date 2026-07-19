@@ -1,0 +1,26 @@
+id: state_of_nicaragua
+canonical_name: State of Nicaragua
+names:
+  fr: État du Nicaragua
+  aliases_en: Nicaragua State
+external_ids:
+  wikidata: Q68257039
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1824
+end: 1838
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1824: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

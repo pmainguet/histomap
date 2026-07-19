@@ -1,0 +1,26 @@
+id: jin_q912043
+canonical_name: Jin
+names:
+  fr: État Jin
+  aliases_en: Tang | Jin state
+external_ids:
+  wikidata: Q912043
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1100
+end: -375
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1100: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

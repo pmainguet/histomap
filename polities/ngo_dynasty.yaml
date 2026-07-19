@@ -1,0 +1,27 @@
+id: ngo_dynasty
+canonical_name: Ngô dynasty
+names:
+  fr: Dynastie Ngô
+  aliases_en: Tĩnh Hải quân | Military region of Tranquil Sea | Ngo dynasty | The
+    Military region of Tranquil Sea
+external_ids:
+  wikidata: Q703919
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 939
+end: 965
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  939: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

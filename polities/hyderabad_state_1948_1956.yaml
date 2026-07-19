@@ -1,0 +1,25 @@
+id: hyderabad_state_1948_1956
+canonical_name: Hyderabad State (1948-1956)
+names:
+  fr: État d'Hyderabad
+external_ids:
+  wikidata: Q4494730
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1948
+end: 1956
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1948: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

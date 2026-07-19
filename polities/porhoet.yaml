@@ -1,0 +1,25 @@
+id: porhoet
+canonical_name: Porhoët
+names:
+  fr: Porhoët
+external_ids:
+  wikidata: Q2670139
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1008
+end: 1231
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1008: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

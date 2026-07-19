@@ -1,0 +1,27 @@
+id: gagauz_republic
+canonical_name: Gagauz Republic
+names:
+  fr: République gagaouze
+  aliases_en: Gagauzia | Gagauz ASSR | Gagauz Autonomous Soviet Socialist Republic
+    | Gagauz Soviet Socialist Republic | Gagauz SSR | Republic of Gagauzia
+external_ids:
+  wikidata: Q2504040
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1989
+end: 1995
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1989: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

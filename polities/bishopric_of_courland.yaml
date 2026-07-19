@@ -1,0 +1,25 @@
+id: bishopric_of_courland
+canonical_name: Bishopric of Courland
+names:
+  fr: Évêché de Courlande
+external_ids:
+  wikidata: Q870877
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1234
+end: 1562
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1234: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

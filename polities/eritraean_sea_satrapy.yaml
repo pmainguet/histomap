@@ -1,0 +1,25 @@
+id: eritraean_sea_satrapy
+canonical_name: Eritraean Sea Satrapy
+names:
+  fr: satrapie de la mer Érythrée
+external_ids:
+  wikidata: Q1491263
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -220
+end: -164
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -220: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

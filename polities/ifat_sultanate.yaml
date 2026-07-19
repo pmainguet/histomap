@@ -1,0 +1,25 @@
+id: ifat_sultanate
+canonical_name: Ifat Sultanate
+names:
+  fr: Ifat
+external_ids:
+  wikidata: Q157727
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1285
+end: 1415
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1285: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

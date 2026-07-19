@@ -1,0 +1,26 @@
+id: federal_islamic_republic_of_the_comoros
+canonical_name: Federal Islamic Republic of the Comoros
+names:
+  fr: République fédérale islamique des Comores
+  aliases_en: Federal and Islamic Republic of the Comoros
+external_ids:
+  wikidata: Q16674377
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1978
+end: 2001
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1978: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

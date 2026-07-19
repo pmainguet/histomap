@@ -1,0 +1,28 @@
+id: saint_kitts_and_nevis
+canonical_name: Saint Kitts and Nevis
+names:
+  fr: Saint-Christophe-et-Niévès
+  aliases_en: SKN | Federation of Saint Christopher and Nevis | Federation of Saint
+    Kitts and Nevis | Kitts & Nevis | Kitts and Nevis | Saint Christopher and Nevis
+    | St Kitts & Nevis | St Kitts and Nevis | St. Kitts & Nevis | St. Kitts and Nevis
+external_ids:
+  wikidata: Q763
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1967
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1967: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

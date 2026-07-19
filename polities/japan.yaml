@@ -1,0 +1,27 @@
+id: japan
+canonical_name: Japan
+names:
+  fr: Japon
+  aliases_en: Land of the Rising Sun | Iapan | Iapon | Land of Rising Sun | Nihon-koku
+    | Nippon-koku | State of Japan
+external_ids:
+  wikidata: Q17
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1947
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1947: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: north_korea
+canonical_name: North Korea
+names:
+  fr: Corée du Nord
+  aliases_en: DPR Korea | kp | Democratic People's Republic of Korea | DPRK | N. Korea
+external_ids:
+  wikidata: Q423
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1948
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1948: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

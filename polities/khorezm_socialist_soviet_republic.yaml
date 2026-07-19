@@ -1,0 +1,27 @@
+id: khorezm_socialist_soviet_republic
+canonical_name: Khorezm Socialist Soviet Republic
+names:
+  fr: République soviétique socialiste du Khorezm
+  aliases_en: Khorezm People's Socialist Soviet Republic | Khorezm Republic | Khorezm
+    SSR | KPSSR | KSSR
+external_ids:
+  wikidata: Q11730773
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1923
+end: 1924
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1923: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

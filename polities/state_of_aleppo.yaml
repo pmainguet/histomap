@@ -1,0 +1,25 @@
+id: state_of_aleppo
+canonical_name: State of Aleppo
+names:
+  fr: État d'Alep
+external_ids:
+  wikidata: Q146872
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1920
+end: 1925
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1920: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

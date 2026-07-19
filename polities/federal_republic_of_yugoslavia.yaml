@@ -1,0 +1,26 @@
+id: federal_republic_of_yugoslavia
+canonical_name: Federal Republic of Yugoslavia
+names:
+  fr: république fédérale de Yougoslavie
+  aliases_en: Serbia | FRY | Yugoslavia | FR Yugoslavia
+external_ids:
+  wikidata: Q838261
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1992
+end: 2003
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1992: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

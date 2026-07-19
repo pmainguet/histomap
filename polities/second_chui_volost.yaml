@@ -1,0 +1,25 @@
+id: second_chui_volost
+canonical_name: Second Chui Volost
+names:
+  aliases_en: Altan Nuur Urianghai | Altın köl Urangkay | The Second Chui Volost
+external_ids:
+  wikidata: Q15921577
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1717
+end: 1913
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1717: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: au_lac
+canonical_name: Âu Lạc
+names:
+  fr: Âu Lạc
+external_ids:
+  wikidata: Q867227
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -256
+end: -206
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -256: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

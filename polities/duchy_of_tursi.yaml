@@ -1,0 +1,24 @@
+id: duchy_of_tursi
+canonical_name: Duchy of Tursi
+names: {}
+external_ids:
+  wikidata: Q65181924
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1552
+end: 1769
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1552: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

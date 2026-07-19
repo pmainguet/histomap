@@ -1,0 +1,25 @@
+id: kurundvad_senior
+canonical_name: Kurundvad Senior
+names:
+  fr: Kurandvad Senior Branch
+external_ids:
+  wikidata: Q18127028
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1733
+end: 1948
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1733: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

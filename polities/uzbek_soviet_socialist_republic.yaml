@@ -1,0 +1,26 @@
+id: uzbek_soviet_socialist_republic
+canonical_name: Uzbek Soviet Socialist Republic
+names:
+  fr: République socialiste soviétique d'Ouzbékistan
+  aliases_en: Soviet Uzbekistan | Uzbek S.S.R. | Uzbek SSR
+external_ids:
+  wikidata: Q484578
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1924
+end: 1991
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1924: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

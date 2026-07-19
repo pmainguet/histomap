@@ -1,0 +1,27 @@
+id: union
+canonical_name: Union
+names:
+  fr: Union
+  aliases_en: the Union | Northern states | the North | Union (American Civil War)
+    | Union (United States)
+external_ids:
+  wikidata: Q214102
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1861
+end: 1865
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1861: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

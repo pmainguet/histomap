@@ -1,0 +1,26 @@
+id: tarascan_state
+canonical_name: Tarascan State
+names:
+  fr: Royaume tarasque
+  aliases_en: Purépecha Empire
+external_ids:
+  wikidata: Q2605410
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1300
+end: 1530
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1300: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

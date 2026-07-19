@@ -1,0 +1,26 @@
+id: bali_kingdom
+canonical_name: Bali Kingdom
+names:
+  fr: Royaume de Bali
+  aliases_en: Balinese Kingdom
+external_ids:
+  wikidata: Q12491027
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 914
+end: 1908
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  914: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

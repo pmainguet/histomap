@@ -1,0 +1,25 @@
+id: suriname_q19901436
+canonical_name: Suriname
+names:
+  fr: Suriname
+external_ids:
+  wikidata: Q19901436
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1954
+end: 1975
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1954: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

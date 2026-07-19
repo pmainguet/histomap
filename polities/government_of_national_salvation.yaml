@@ -1,0 +1,26 @@
+id: government_of_national_salvation
+canonical_name: Government of National Salvation
+names:
+  fr: gouvernement de salut national
+  aliases_en: Nedić's government | Nedić's regime
+external_ids:
+  wikidata: Q5589262
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1941
+end: 1944
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1941: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

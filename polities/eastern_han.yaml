@@ -1,0 +1,27 @@
+id: eastern_han
+canonical_name: Eastern Han
+names:
+  fr: Han orientaux
+  aliases_en: Zhong Han | Eastern Han Dynasty | Eastern Han Empire | Hou Han | Later
+    Han | Later Han Dynasty | Tong Hàn
+external_ids:
+  wikidata: Q1147037
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 25
+end: 220
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  25: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

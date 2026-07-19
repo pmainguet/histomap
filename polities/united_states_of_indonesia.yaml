@@ -1,0 +1,26 @@
+id: united_states_of_indonesia
+canonical_name: United States of Indonesia
+names:
+  fr: République des États-Unis d'Indonésie
+  aliases_en: United Republic of Indonesia
+external_ids:
+  wikidata: Q523435
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1949
+end: 1950
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1949: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

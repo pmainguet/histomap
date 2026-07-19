@@ -1,0 +1,25 @@
+id: kingdom_of_poland_q11750128
+canonical_name: Kingdom of Poland
+names:
+  fr: royaume de Pologne
+external_ids:
+  wikidata: Q11750128
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1830
+end: 1831
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1830: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

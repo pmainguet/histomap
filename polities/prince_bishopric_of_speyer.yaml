@@ -1,0 +1,27 @@
+id: prince_bishopric_of_speyer
+canonical_name: Prince-Bishopric of Speyer
+names:
+  fr: principauté épiscopale de Spire
+  aliases_en: Speyer | Bishopric of Espira | Bishopric of Speyer | Bishopric of Spire
+    | diocese of Speyer
+external_ids:
+  wikidata: Q574644
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 888
+end: 1803
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  888: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

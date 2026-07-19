@@ -1,0 +1,25 @@
+id: palatinate_simmern_and_zweibrucken
+canonical_name: Palatinate-Simmern and Zweibrücken
+names:
+  fr: Palatinat-Simmern-Deux-Ponts
+external_ids:
+  wikidata: Q438909
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1410
+end: 1459
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1410: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

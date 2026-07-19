@@ -1,0 +1,26 @@
+id: grand_principality_of_moscow
+canonical_name: Grand Principality of Moscow
+names:
+  fr: grande-principauté de Moscou
+  aliases_en: Muscovy | Muscovite Russia | Principality of Moscow
+external_ids:
+  wikidata: Q170770
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1263
+end: 1547
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1263: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

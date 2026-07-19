@@ -1,0 +1,25 @@
+id: pachan_kingdom
+canonical_name: Pachan kingdom
+names:
+  aliases_en: Kingdom of Pachan | Pa’chan
+external_ids:
+  wikidata: Q16685194
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 400
+end: 900
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  400: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

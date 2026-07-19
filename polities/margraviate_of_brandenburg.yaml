@@ -1,0 +1,26 @@
+id: margraviate_of_brandenburg
+canonical_name: Margraviate of Brandenburg
+names:
+  fr: marche de Brandebourg
+  aliases_en: the House of Brandenburg
+external_ids:
+  wikidata: Q148499
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1157
+end: 1806
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1157: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: aq_qoyunlu
+canonical_name: Aq Qoyunlu
+names:
+  fr: Aq Qoyunlu
+  aliases_en: Aqqoyunlu | Akkoyunlu | Agh Qoyunlu | Ak Koyunlu | White Sheep Turkomans
+external_ids:
+  wikidata: Q555994
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1378
+end: 1508
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1378: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

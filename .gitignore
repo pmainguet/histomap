@@ -2,7 +2,8 @@ venv/
 .venv/
 __pycache__/
 *.pyc
-sources/
+sources/*
+!sources/MANIFEST.md
 *.parquet
 *.duckdb
 data.json

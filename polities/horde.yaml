@@ -1,0 +1,26 @@
+id: horde
+canonical_name: Hörde
+names:
+  fr: Hoerde
+  aliases_en: Hörde/Westphalia
+external_ids:
+  wikidata: Q269297
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1198
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1198: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

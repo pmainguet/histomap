@@ -1,0 +1,26 @@
+id: mamluk_sultanate_of_egypt
+canonical_name: Mamluk Sultanate of Egypt
+names:
+  fr: sultanat mamelouk d'Égypte
+  aliases_en: Egyptian Mamluk Sultanate | Egyptian Mamluk Empire
+external_ids:
+  wikidata: Q282428
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1250
+end: 1517
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1250: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

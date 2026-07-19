@@ -1,0 +1,26 @@
+id: tibetan_empire
+canonical_name: Tibetan Empire
+names:
+  fr: Empire du Tibet
+  aliases_en: Bod | bod chen po | Great Tibet | བོད་ཆེན་པོ
+external_ids:
+  wikidata: Q2431480
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 618
+end: 842
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  618: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

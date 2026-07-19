@@ -1,0 +1,25 @@
+id: lordship_of_echery
+canonical_name: lordship of Échéry
+names:
+  fr: seigneurie d'Échéry
+external_ids:
+  wikidata: Q54805326
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1232
+end: 1381
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1232: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

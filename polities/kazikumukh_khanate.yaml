@@ -1,0 +1,26 @@
+id: kazikumukh_khanate
+canonical_name: Kazikumukh Khanate
+names:
+  fr: khanat Kazikumuke
+  aliases_en: Ханское хано Газикумух
+external_ids:
+  wikidata: Q4208290
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1642
+end: 1860
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1642: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: kingdom_of_cambodia
+canonical_name: Kingdom of Cambodia
+names:
+  fr: royaume du Cambodge
+  aliases_en: Royaume du Cambodge
+external_ids:
+  wikidata: Q2638486
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1953
+end: 1970
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1953: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

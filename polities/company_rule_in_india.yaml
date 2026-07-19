@@ -1,0 +1,28 @@
+id: company_rule_in_india
+canonical_name: Company rule in India
+names:
+  fr: domination de la Compagnie britannique des Indes orientales en Inde
+  aliases_en: British India | Indian Raj | Raj India | Company Raj | East India Company
+    India | India under company rule | India under the British East India Company
+    | India under the British rule | Ruling Company | The Raj
+external_ids:
+  wikidata: Q2001966
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1757
+end: 1858
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1757: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

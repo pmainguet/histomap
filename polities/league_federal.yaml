@@ -1,0 +1,27 @@
+id: league_federal
+canonical_name: League Federal
+names:
+  fr: Liga Federal
+  aliases_en: League of the Free Peoples Union of the Free Peoples Union of the Free
+    Peoples Union Confederation of Free Peoples Confederation Union de Pu
+external_ids:
+  wikidata: Q2625228
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1815
+end: 1820
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1815: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

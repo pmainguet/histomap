@@ -1,0 +1,26 @@
+id: geumgwan_gaya
+canonical_name: Geumgwan Gaya
+names:
+  fr: Geumgwan Gaya
+  aliases_en: Kŭmgwan Kaya
+external_ids:
+  wikidata: Q715210
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 43
+end: 532
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  43: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

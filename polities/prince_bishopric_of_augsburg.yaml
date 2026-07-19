@@ -1,0 +1,25 @@
+id: prince_bishopric_of_augsburg
+canonical_name: Prince-Bishopric of Augsburg
+names:
+  fr: principauté épiscopale d'Augsbourg
+external_ids:
+  wikidata: Q173863
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 888
+end: 1803
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  888: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,27 @@
+id: kingdom_of_valencia
+canonical_name: Kingdom of Valencia
+names:
+  fr: royaume de Valence
+  aliases_en: Regnum Valentiae | Regne de Valencia | Regne de València | Reino de
+    Valencia
+external_ids:
+  wikidata: Q142417
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1238
+end: 1707
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1238: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

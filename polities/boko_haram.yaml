@@ -1,0 +1,27 @@
+id: boko_haram
+canonical_name: Boko Haram
+names:
+  fr: Boko Haram
+  aliases_en: Jama'atu Ahlis Sunna Lidda'Awati Wal-Jihad | People Committed to the
+    Prophet's Teachings for Propagation and Jihad | Wilayat Gharb Afriqiyya
+external_ids:
+  wikidata: Q212372
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2002
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2002: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

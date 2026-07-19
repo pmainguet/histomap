@@ -1,0 +1,25 @@
+id: greater_republic_of_central_america
+canonical_name: Greater Republic of Central America
+names:
+  fr: Grande République d'Amérique centrale
+external_ids:
+  wikidata: Q2741089
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1896
+end: 1898
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1896: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

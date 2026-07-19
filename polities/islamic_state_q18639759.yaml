@@ -1,0 +1,26 @@
+id: islamic_state_q18639759
+canonical_name: Islamic State
+names:
+  fr: organisation territoriale de l'État islamique
+  aliases_en: territory of the Islamic State
+external_ids:
+  wikidata: Q18639759
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2014
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2014: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

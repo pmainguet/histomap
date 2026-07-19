@@ -1,0 +1,26 @@
+id: saxe_eisenberg
+canonical_name: Saxe-Eisenberg
+names:
+  fr: duché de Saxe-Eisenberg
+  aliases_en: Saxe-Eisenburg
+external_ids:
+  wikidata: Q657792
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1680
+end: 1707
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1680: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

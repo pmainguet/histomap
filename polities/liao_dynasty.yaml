@@ -1,0 +1,27 @@
+id: liao_dynasty
+canonical_name: Liao dynasty
+names:
+  fr: dynastie liao
+  aliases_en: Liao | Great Liao | Qidan | Greater Liao | Khitan Empire | Liao Empire
+    | Mos diau-d kitai | Mos Jælud | Qidan State | Liao State
+external_ids:
+  wikidata: Q4958
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 916
+end: 1125
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  916: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

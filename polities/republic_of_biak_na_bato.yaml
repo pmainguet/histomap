@@ -1,0 +1,25 @@
+id: republic_of_biak_na_bato
+canonical_name: Republic of Biak-na-Bato
+names:
+  fr: Roches-à-Saint-Michel
+external_ids:
+  wikidata: Q575132
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1897
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1897: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,27 @@
+id: grand_principality_of_vladimir
+canonical_name: Grand Principality of Vladimir
+names:
+  fr: principauté de Vladimir-Souzdal
+  aliases_en: Grand Duchy of Vladimir | Principality of Vladimir-Suzdal | Vladimir-Suzdal
+    | Vladimir-Suzdalian Rus' | Vladimir Rus
+external_ids:
+  wikidata: Q83546
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1125
+end: 1389
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1125: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

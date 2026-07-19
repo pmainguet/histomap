@@ -1,0 +1,27 @@
+id: western_australia
+canonical_name: Western Australia
+names:
+  fr: Australie-Occidentale
+  aliases_en: WA | State of WA | State of Western Australia | W. Aust. | W.A. | Western
+    Oz
+external_ids:
+  wikidata: Q3206
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1901
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1901: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

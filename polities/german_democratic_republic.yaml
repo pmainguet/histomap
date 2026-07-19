@@ -1,0 +1,27 @@
+id: german_democratic_republic
+canonical_name: German Democratic Republic
+names:
+  fr: République démocratique allemande
+  aliases_en: East Germany | DDR | GDR | Communist Germany | Deutsche Demokratische
+    Republik
+external_ids:
+  wikidata: Q16957
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1949
+end: 1990
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1949: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

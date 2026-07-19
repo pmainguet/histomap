@@ -1,0 +1,26 @@
+id: duchy_of_poland_q104863335
+canonical_name: Duchy of Poland
+names:
+  fr: duché de Pologne
+  aliases_en: Civitas Schinesghe | early Piast monarchy
+external_ids:
+  wikidata: Q104863335
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 960
+end: 1138
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  960: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

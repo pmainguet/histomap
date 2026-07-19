@@ -1,0 +1,26 @@
+id: republic_of_hawaii
+canonical_name: Republic of Hawaii
+names:
+  fr: République d'Hawaï
+  aliases_en: Hawaii Republic
+external_ids:
+  wikidata: Q1057542
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1894
+end: 1898
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1894: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: kingdom_of_toledo_q2301372
+canonical_name: Kingdom of Toledo
+names:
+  fr: royaume de Tolède
+  aliases_en: Castilian Kingdom of Toledo
+external_ids:
+  wikidata: Q2301372
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1085
+end: 1833
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1085: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

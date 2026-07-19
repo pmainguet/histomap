@@ -1,0 +1,25 @@
+id: taiwan_under_qing_dynasty_rule
+canonical_name: Taiwan under Qing dynasty rule
+names:
+  fr: Taïwan sous la tutelle des Qing
+external_ids:
+  wikidata: Q391189
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1683
+end: 1895
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1683: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

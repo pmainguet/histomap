@@ -1,0 +1,28 @@
+id: dzungar_khanate
+canonical_name: Dzungar Khanate
+names:
+  fr: Khanat dzoungar
+  aliases_en: Dzungaria | Eleuth Kingdom | Eleutharia | Jungar Khanate | Jungaria
+    | Kingdom of the Eleuths | Realm of the Eleuths | Sungaria | Zungaria | Zunghar
+    Khanate | Calmouc
+external_ids:
+  wikidata: Q1923401
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1634
+end: 1758
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1634: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

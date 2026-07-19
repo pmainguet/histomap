@@ -1,0 +1,26 @@
+id: kingdom_of_najera
+canonical_name: Kingdom of Najera
+names:
+  fr: royaume de Najera
+  aliases_en: Naher's Caralery | Nahera
+external_ids:
+  wikidata: Q5692614
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 923
+end: 1113
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  923: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

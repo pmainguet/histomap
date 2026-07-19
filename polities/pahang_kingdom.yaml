@@ -1,0 +1,24 @@
+id: pahang_kingdom
+canonical_name: Pahang Kingdom
+names: {}
+external_ids:
+  wikidata: Q48724193
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1770
+end: 1881
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1770: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

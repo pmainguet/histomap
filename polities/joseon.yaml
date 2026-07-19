@@ -1,0 +1,29 @@
+id: joseon
+canonical_name: Joseon
+names:
+  fr: période Joseon
+  aliases_en: Korea | Coree | Corea | Joseon dynasty | Choson | Choson Corea | Choson
+    dynasty | Choson Korea | Chosun | Chosun Corea | Chosun Korea | Joseon Corea |
+    Joseon Korea | Joseonguk | Kingdom of Corea | Kingdom of Korea | Lee Joseon |
+    Yi dynasty | Yi Joseon
+external_ids:
+  wikidata: Q28179
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1392
+end: 1897
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1392: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

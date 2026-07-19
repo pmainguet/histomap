@@ -1,0 +1,26 @@
+id: canton_of_zurich
+canonical_name: Canton of Zurich
+names:
+  fr: canton de Zurich
+  aliases_en: Zurich | ZH | Canton Zurich
+external_ids:
+  wikidata: Q11943
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1351
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1351: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

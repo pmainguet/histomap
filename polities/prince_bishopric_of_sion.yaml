@@ -1,0 +1,26 @@
+id: prince_bishopric_of_sion
+canonical_name: Prince-Bishopric of Sion
+names:
+  fr: principauté épiscopale de Sion
+  aliases_en: Bishopric of Sion | Prince-Bishopric Sion
+external_ids:
+  wikidata: Q2498804
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1189
+end: 1798
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1189: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

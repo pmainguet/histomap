@@ -1,0 +1,26 @@
+id: oman
+canonical_name: Oman
+names:
+  fr: Oman
+  aliases_en: Uman | om | omn | Sultanate of Oman
+external_ids:
+  wikidata: Q842
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1970
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1970: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

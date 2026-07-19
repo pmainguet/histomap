@@ -1,0 +1,26 @@
+id: kingdom_of_makuria
+canonical_name: Kingdom of Makuria
+names:
+  fr: Makurie
+  aliases_en: Kingdom of Dongola | Makuria
+external_ids:
+  wikidata: Q829356
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 500
+end: 1518
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  500: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

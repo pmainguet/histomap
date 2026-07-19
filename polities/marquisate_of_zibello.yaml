@@ -1,0 +1,25 @@
+id: marquisate_of_zibello
+canonical_name: Marquisate of Zibello
+names:
+  fr: Marquisat de Zibello
+external_ids:
+  wikidata: Q20009975
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1459
+end: 1802
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1459: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

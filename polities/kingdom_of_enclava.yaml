@@ -1,0 +1,26 @@
+id: kingdom_of_enclava
+canonical_name: Kingdom of Enclava
+names:
+  fr: Royaume d'Enclava
+  aliases_en: Kingdom of Enklava
+external_ids:
+  wikidata: Q19928833
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2015
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2015: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

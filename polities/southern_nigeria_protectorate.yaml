@@ -1,0 +1,25 @@
+id: southern_nigeria_protectorate
+canonical_name: Southern Nigeria Protectorate
+names:
+  fr: Protectorat du Nigeria du Sud
+external_ids:
+  wikidata: Q2062030
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1900
+end: 1913
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1900: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

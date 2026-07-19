@@ -1,0 +1,26 @@
+id: chola_dynasty
+canonical_name: Chola dynasty
+names:
+  fr: Chola
+  aliases_en: Chola empire | Chola kingdom
+external_ids:
+  wikidata: Q151148
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -299
+end: 1279
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -299: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

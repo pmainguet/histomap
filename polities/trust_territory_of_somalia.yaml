@@ -1,0 +1,26 @@
+id: trust_territory_of_somalia
+canonical_name: Trust Territory of Somalia
+names:
+  fr: territoire sous tutelle de la Somalie sous administration italienne
+  aliases_en: Trust Territory of Somaliland
+external_ids:
+  wikidata: Q616221
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1950
+end: 1960
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1950: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: merina_kingdom
+canonical_name: Merina Kingdom
+names:
+  fr: Royaume merina
+  aliases_en: Imerina | Kingdom of Imerina | Kingdom of Madagascar | Merina
+external_ids:
+  wikidata: Q1071439
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1540
+end: 1897
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1540: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

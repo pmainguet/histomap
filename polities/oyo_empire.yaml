@@ -1,0 +1,25 @@
+id: oyo_empire
+canonical_name: Oyo Empire
+names:
+  fr: royaume d'Oyo
+external_ids:
+  wikidata: Q849623
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1400
+end: 1905
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1400: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

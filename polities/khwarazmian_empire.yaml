@@ -1,0 +1,27 @@
+id: khwarazmian_empire
+canonical_name: Khwarazmian Empire
+names:
+  fr: Empire khwarezmien
+  aliases_en: Khwarazm | Chorasmian Empire | Empire of the Khwarazmshahs | Khorezmian
+    Empire | Khwarezmian Empire
+external_ids:
+  wikidata: Q63134381
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1077
+end: 1231
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1077: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

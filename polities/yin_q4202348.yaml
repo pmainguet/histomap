@@ -1,0 +1,28 @@
+id: yin_q4202348
+canonical_name: Yin
+names:
+  aliases_en: Min | Dayin | Da Yin | Minguo | Yinguo | Kingdom of Min | Min Kingdom
+    | Min-kuo | Min State | state of Min | Yin Kingdom | Kingdom of Yin | state of
+    Yin | Yin State | Yin-kuo | Great Yin | Great Yin Kingdom | Kingdom of Great Yin
+    | Ta Yin | Ta-yin
+external_ids:
+  wikidata: Q4202348
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 943
+end: 945
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  943: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

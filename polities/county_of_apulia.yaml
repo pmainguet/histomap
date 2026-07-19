@@ -1,0 +1,25 @@
+id: county_of_apulia
+canonical_name: County of Apulia
+names:
+  fr: comté d'Apulie
+external_ids:
+  wikidata: Q2324047
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1042
+end: 1077
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1042: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: french_annam
+canonical_name: French Annam
+names:
+  fr: protectorat français d'Annam
+  aliases_en: Anam | Annam
+external_ids:
+  wikidata: Q10828323
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1884
+end: 1949
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1884: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: crimean_socialist_soviet_republic
+canonical_name: Crimean Socialist Soviet Republic
+names:
+  fr: République socialiste soviétique de Crimée
+external_ids:
+  wikidata: Q1842362
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1919
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1919: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

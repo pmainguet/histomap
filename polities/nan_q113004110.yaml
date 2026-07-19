@@ -1,0 +1,25 @@
+id: nan_q113004110
+canonical_name: nan
+names:
+  fr: République de Porto Rico
+external_ids:
+  wikidata: Q113004110
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1868
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1868: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

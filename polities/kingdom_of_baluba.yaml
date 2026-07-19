@@ -1,0 +1,26 @@
+id: kingdom_of_baluba
+canonical_name: Kingdom of Baluba
+names:
+  fr: Empire Luba
+  aliases_en: Kiluba State
+external_ids:
+  wikidata: Q1768252
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1585
+end: 1889
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1585: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

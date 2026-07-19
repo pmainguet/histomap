@@ -1,0 +1,25 @@
+id: principality_of_lubeck
+canonical_name: Principality of Lübeck
+names:
+  fr: Principauté de Lübeck
+external_ids:
+  wikidata: Q1311767
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1803
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1803: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

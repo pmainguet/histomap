@@ -1,0 +1,25 @@
+id: ellice_islands
+canonical_name: Ellice Islands
+names:
+  fr: protectorat des Îles Ellice
+external_ids:
+  wikidata: Q3593530
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1892
+end: 1916
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1892: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

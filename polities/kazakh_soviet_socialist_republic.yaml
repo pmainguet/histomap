@@ -1,0 +1,26 @@
+id: kazakh_soviet_socialist_republic
+canonical_name: Kazakh Soviet Socialist Republic
+names:
+  fr: République socialiste soviétique kazakhe
+  aliases_en: Kazakh S.S.R | Kazakh SSR | Soviet Kazakhstan
+external_ids:
+  wikidata: Q168811
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1936
+end: 1991
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1936: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: republic_of_afghanistan_q2067309
+canonical_name: Republic of Afghanistan
+names:
+  aliases_en: Republic of Afghanistan (1978–1992)
+external_ids:
+  wikidata: Q2067309
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1987
+end: 1992
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1987: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

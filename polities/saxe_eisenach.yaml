@@ -1,0 +1,26 @@
+id: saxe_eisenach
+canonical_name: Saxe-Eisenach
+names:
+  fr: duché de Saxe-Eisenach
+  aliases_en: Sachsen-Eisenach | Duchy of Saxe-Eisenach
+external_ids:
+  wikidata: Q696651
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1596
+end: 1809
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1596: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

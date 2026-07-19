@@ -1,0 +1,27 @@
+id: kentucky
+canonical_name: Kentucky
+names:
+  fr: Kentucky
+  aliases_en: KY | Bluegrass State | Commonwealth of Kentucky | Kentucky, United States
+    | Ky. | US-KY
+external_ids:
+  wikidata: Q1603
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1792
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1792: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

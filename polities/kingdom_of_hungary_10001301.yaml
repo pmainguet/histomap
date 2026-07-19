@@ -1,0 +1,26 @@
+id: kingdom_of_hungary_10001301
+canonical_name: Kingdom of Hungary (1000–1301)
+names:
+  fr: royaume de Hongrie
+  aliases_en: Hungarian Kingdom
+external_ids:
+  wikidata: Q1470101
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1000
+end: 1301
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1000: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: democratic_republic_of_the_congo_19651971
+canonical_name: Democratic Republic of the Congo (1965–1971)
+names:
+  fr: république démocratique du Congo
+external_ids:
+  wikidata: Q60852075
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1965
+end: 1971
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1965: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

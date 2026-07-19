@@ -1,0 +1,26 @@
+id: first_republic_of_south_korea
+canonical_name: First Republic of South Korea
+names:
+  fr: première république de Corée du Sud
+  aliases_en: Syngman Rhee administration | Syngman Rhee government
+external_ids:
+  wikidata: Q491559
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1948
+end: 1960
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1948: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

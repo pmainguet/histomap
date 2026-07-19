@@ -1,0 +1,26 @@
+id: kingdom_of_thiruvithamkoor
+canonical_name: Kingdom of Thiruvithamkoor
+names:
+  fr: Travancore
+  aliases_en: Travancore | Kingdom of Travancore | Thiruvithamkoor Maharajyam
+external_ids:
+  wikidata: Q150058
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1729
+end: 1949
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1729: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

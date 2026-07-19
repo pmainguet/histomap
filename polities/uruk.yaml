@@ -1,0 +1,26 @@
+id: uruk
+canonical_name: Uruk
+names:
+  fr: Uruk
+  aliases_en: Auruk | Erech | Orékh | Orkhóē | Ōrúgeia | Erekh
+external_ids:
+  wikidata: Q168518
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -3199
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -3199: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

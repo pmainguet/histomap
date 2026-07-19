@@ -1,0 +1,26 @@
+id: wang_jingwei_regime
+canonical_name: Wang Jingwei regime
+names:
+  fr: Gouvernement national réorganisé de la République de Chine
+  aliases_en: Reorganized National Government of China | Wang Jingwei government
+external_ids:
+  wikidata: Q696242
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1940
+end: 1945
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1940: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: free_city_of_krakow
+canonical_name: Free City of Kraków
+names:
+  fr: Ville libre de Cracovie
+  aliases_en: Free City of Cracow | Free City of Krakow
+external_ids:
+  wikidata: Q501303
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1815
+end: 1846
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1815: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

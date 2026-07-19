@@ -1,0 +1,26 @@
+id: philippines
+canonical_name: Philippines
+names:
+  fr: Philippines
+  aliases_en: RP | Republic of the Philippines | Philippine Islands | The Philippines
+external_ids:
+  wikidata: Q928
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1565
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1565: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: tripura_q1620265
+canonical_name: Tripura
+names:
+  fr: Royaume de Tripura
+  aliases_en: Twipra Kingdom
+external_ids:
+  wikidata: Q1620265
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1400
+end: 1809
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1400: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

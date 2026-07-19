@@ -1,0 +1,26 @@
+id: principality_of_halych
+canonical_name: Principality of Halych
+names:
+  fr: Principauté de Galicie
+  aliases_en: Galicia principality | Halych principality | Principality of Galicia
+external_ids:
+  wikidata: Q3403551
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1124
+end: 1199
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1124: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

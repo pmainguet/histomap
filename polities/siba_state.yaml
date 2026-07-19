@@ -1,0 +1,25 @@
+id: siba_state
+canonical_name: Siba State
+names:
+  fr: État de Siba
+external_ids:
+  wikidata: Q11949691
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1450
+end: 1849
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1450: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: kampili
+canonical_name: Kampili
+names:
+  fr: Kampili
+  aliases_en: Basnaga kingdom | Kampili kingdom
+external_ids:
+  wikidata: Q1446192
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1294
+end: 1328
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1294: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

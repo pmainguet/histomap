@@ -1,0 +1,25 @@
+id: principality_of_peremyshl
+canonical_name: Principality of Peremyshl
+names:
+  fr: principauté de Przemyśl
+external_ids:
+  wikidata: Q4350658
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1031
+end: 1124
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1031: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

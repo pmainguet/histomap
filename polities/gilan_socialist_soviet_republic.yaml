@@ -1,0 +1,28 @@
+id: gilan_socialist_soviet_republic
+canonical_name: Gilan Socialist Soviet Republic
+names:
+  fr: République socialiste du Gilan
+  aliases_en: Iran Socialist Soviet Republic | Iranian Socialist Soviet Republic |
+    Persian Socialist Soviet Republic | Socialist Soviet Republic of Gilan | Socialist
+    Soviet Republic of Persia
+external_ids:
+  wikidata: Q8341881
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1920
+end: 1921
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1920: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

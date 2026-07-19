@@ -1,0 +1,27 @@
+id: roman_republic_q1072140
+canonical_name: Roman Republic
+names:
+  fr: République romaine
+  aliases_en: Repubblica Romana | Repubblica romana (1849) | Repubblica Romana del
+    1849 | Roman Republic (1849) | Seconda Repubblica Romana | Second Roman Republic
+external_ids:
+  wikidata: Q1072140
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1849
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1849: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

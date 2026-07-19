@@ -1,0 +1,25 @@
+id: toltec_empire
+canonical_name: Toltec Empire
+names:
+  fr: empire toltèque
+external_ids:
+  wikidata: Q17523945
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 674
+end: 1122
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  674: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

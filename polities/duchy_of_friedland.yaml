@@ -1,0 +1,25 @@
+id: duchy_of_friedland
+canonical_name: Duchy of Friedland
+names:
+  fr: duché de Friedland
+external_ids:
+  wikidata: Q1615433
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1627
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1627: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

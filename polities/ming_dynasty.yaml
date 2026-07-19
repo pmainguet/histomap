@@ -1,0 +1,27 @@
+id: ming_dynasty
+canonical_name: Ming dynasty
+names:
+  fr: dynastie Ming
+  aliases_en: Ming China | Ming Empire | Ming era | Ming imperium | Ming period |
+    Ming-era | Ming | Empire of the Great Ming | Great Ming
+external_ids:
+  wikidata: Q9903
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1368
+end: 1644
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1368: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

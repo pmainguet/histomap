@@ -1,0 +1,26 @@
+id: halicarnassus
+canonical_name: Halicarnassus
+names:
+  fr: Halicarnasse
+  aliases_en: Mint of Halicarnassus
+external_ids:
+  wikidata: Q5843680
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -1099
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1099: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

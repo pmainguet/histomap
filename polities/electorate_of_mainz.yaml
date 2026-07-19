@@ -1,0 +1,26 @@
+id: electorate_of_mainz
+canonical_name: Electorate of Mainz
+names:
+  fr: Électorat de Mayence
+  aliases_en: Mainz
+external_ids:
+  wikidata: Q284667
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 780
+end: 1803
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  780: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

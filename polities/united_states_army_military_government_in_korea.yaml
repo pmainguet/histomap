@@ -1,0 +1,25 @@
+id: united_states_army_military_government_in_korea
+canonical_name: United States Army Military Government in Korea
+names:
+  fr: gouvernement militaire de l'armée des États-Unis en Corée
+external_ids:
+  wikidata: Q484104
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1945
+end: 1948
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1945: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

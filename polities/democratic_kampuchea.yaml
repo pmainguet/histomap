@@ -1,0 +1,25 @@
+id: democratic_kampuchea
+canonical_name: Democratic Kampuchea
+names:
+  fr: Kampuchéa démocratique
+external_ids:
+  wikidata: Q330988
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1976
+end: 1979
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1976: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

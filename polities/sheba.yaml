@@ -1,0 +1,26 @@
+id: sheba
+canonical_name: Sheba
+names:
+  fr: royaume de Saba
+  aliases_en: Saba | Saba'
+external_ids:
+  wikidata: Q216068
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -999
+end: 275
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -999: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

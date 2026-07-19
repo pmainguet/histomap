@@ -1,0 +1,27 @@
+id: united_nations_transitional_administration_for_eastern_slavonia_baranja_and_western_sirmium
+canonical_name: United Nations Transitional Administration for Eastern Slavonia, Baranja
+  and Western Sirmium
+names:
+  fr: Administration Transitoire des Nations Unies pour la Slavonie orientale, la
+    Baranja et le Srem Occidental
+external_ids:
+  wikidata: Q1257607
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1996
+end: 1998
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1996: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

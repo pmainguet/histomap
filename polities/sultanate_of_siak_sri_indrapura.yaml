@@ -1,0 +1,25 @@
+id: sultanate_of_siak_sri_indrapura
+canonical_name: Sultanate of Siak Sri Indrapura
+names:
+  fr: sultanat de Siak
+external_ids:
+  wikidata: Q2988765
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1723
+end: 1946
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1723: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

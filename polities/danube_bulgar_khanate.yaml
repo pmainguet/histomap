@@ -1,0 +1,25 @@
+id: danube_bulgar_khanate
+canonical_name: Danube Bulgar Khanate
+names:
+  fr: Khanat bulgare du Danube
+external_ids:
+  wikidata: Q3196064
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 681
+end: 864
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  681: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: kingdom_of_ossory
+canonical_name: Kingdom of Ossory
+names:
+  fr: royaume d'Osraige
+  aliases_en: Kingdom of Osraí | Kingdom of Osraige | Kingdom of Osraighe
+external_ids:
+  wikidata: Q199383
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 150
+end: 1185
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  150: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

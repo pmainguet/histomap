@@ -1,0 +1,26 @@
+id: mahan_confederacy
+canonical_name: Mahan confederacy
+names:
+  fr: Mahan
+  aliases_en: Mahan
+external_ids:
+  wikidata: Q704278
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 100
+end: 300
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  100: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

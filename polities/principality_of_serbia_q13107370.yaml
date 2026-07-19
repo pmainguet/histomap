@@ -1,0 +1,26 @@
+id: principality_of_serbia_q13107370
+canonical_name: Principality of Serbia
+names:
+  fr: principauté de Serbie
+  aliases_en: Serbia | Principality of Serbia (early medieval)
+external_ids:
+  wikidata: Q13107370
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 768
+end: 969
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  768: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

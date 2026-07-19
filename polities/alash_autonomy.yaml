@@ -1,0 +1,26 @@
+id: alash_autonomy
+canonical_name: Alash Autonomy
+names:
+  fr: Autonomie d'Alash
+  aliases_en: Kazakhstan | Alash Orda
+external_ids:
+  wikidata: Q1779823
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1917
+end: 1920
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1917: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

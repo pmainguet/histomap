@@ -1,0 +1,27 @@
+id: empire_of_kitara
+canonical_name: Empire of Kitara
+names:
+  fr: Empire du Kitara
+  aliases_en: Kitara | Bachwezi dynasty | Bachwezi empire | Bachwezi kingdom | Bunyoro
+    Kitara | Bunyoro-Kitara | Chwezi Empire | Kitaara | Kittara | Kitwara
+external_ids:
+  wikidata: Q1444485
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 940
+end: 1300
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  940: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

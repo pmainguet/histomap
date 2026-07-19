@@ -1,0 +1,25 @@
+id: peruvian_republic_q28517256
+canonical_name: Peruvian Republic
+names:
+  aliases_en: Peru | North Peru | Peruvian Republic of the North
+external_ids:
+  wikidata: Q28517256
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1838
+end: 1839
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1838: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

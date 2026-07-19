@@ -1,0 +1,26 @@
+id: european_hun_empire
+canonical_name: European Hun Empire
+names:
+  fr: Empire hunnique
+  aliases_en: Western Hun Empire
+external_ids:
+  wikidata: Q12836180
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 378
+end: 470
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  378: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

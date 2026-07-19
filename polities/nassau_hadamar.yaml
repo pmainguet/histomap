@@ -1,0 +1,25 @@
+id: nassau_hadamar
+canonical_name: Nassau-Hadamar
+names:
+  fr: comté de Nassau-Hadamar
+external_ids:
+  wikidata: Q831048
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1303
+end: 1394
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1303: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

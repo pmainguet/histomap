@@ -1,0 +1,28 @@
+id: later_tang
+canonical_name: Later Tang
+names:
+  fr: Tang postérieurs
+  aliases_en: Later Tang dynasty | Hou Tang | Houtang | Empire of the Later T'ang
+    | Empire of the Later Tang | Hou T'ang | Hou-t'ang | Hou-T'ang | Later T'ang |
+    Later T'ang dynasty | Later T'ang Empire | Later Tang Empire
+external_ids:
+  wikidata: Q1143126
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 923
+end: 936
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  923: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: duchy_of_opava
+canonical_name: Duchy of Opava
+names:
+  fr: duché d'Opava
+external_ids:
+  wikidata: Q566639
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1269
+end: 1918
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1269: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

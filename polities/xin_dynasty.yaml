@@ -1,0 +1,27 @@
+id: xin_dynasty
+canonical_name: Xin dynasty
+names:
+  fr: dynastie Xin
+  aliases_en: Wang Mang | Hsin dynasty | Hsin Dynasty | Hsin Empire | New Dynasty
+    | Xin Dynasty | Xin Empire
+external_ids:
+  wikidata: Q504769
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 9
+end: 23
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  9: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

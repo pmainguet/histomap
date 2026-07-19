@@ -1,0 +1,26 @@
+id: syria
+canonical_name: Syria
+names:
+  fr: Syrie
+  aliases_en: Surya | Syrian Arab Republic
+external_ids:
+  wikidata: Q858
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1920
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1920: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

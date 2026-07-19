@@ -1,0 +1,28 @@
+id: kirghiz_soviet_socialist_republic
+canonical_name: Kirghiz Soviet Socialist Republic
+names:
+  fr: République socialiste soviétique kirghize
+  aliases_en: Kirghiz S.S.R. | Kirghiz SSR | Kirgiz S.S.R. | Kirgiz Soviet Socialist
+    Republic | Kirgiz SSR | Kyrgyz S.S.R. | Kyrgyz SSR | Soviet Kirghizia | Soviet
+    Kirgizia
+external_ids:
+  wikidata: Q130276
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1936
+end: 1991
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1936: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: united_provinces_of_new_granada
+canonical_name: United Provinces of New Granada
+names:
+  fr: Provinces-Unies de Nouvelle-Grenade
+external_ids:
+  wikidata: Q2249661
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 181
+end: 1816
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  181: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

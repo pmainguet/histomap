@@ -1,0 +1,25 @@
+id: islamic_government_of_laristan
+canonical_name: Islamic government of Laristan
+names:
+  aliases_en: Islamic nation | Islamic state of Laristan | Laristan nation
+external_ids:
+  wikidata: Q111967268
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1909
+end: 1914
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1909: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

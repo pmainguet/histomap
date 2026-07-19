@@ -1,0 +1,24 @@
+id: old_pahang_kingdom
+canonical_name: old Pahang kingdom
+names: {}
+external_ids:
+  wikidata: Q28455836
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 450
+end: 1454
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  450: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

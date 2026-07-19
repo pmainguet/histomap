@@ -1,0 +1,27 @@
+id: alexandria
+canonical_name: Alexandria
+names:
+  fr: Alexandrie
+  aliases_en: Al Iskandariya | Alexandria, Egypt | Iskandariyya | Mediterranean's
+    Bride | Pearl of the Mediterranean
+external_ids:
+  wikidata: Q87
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -330
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -330: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

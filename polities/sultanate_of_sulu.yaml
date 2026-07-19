@@ -1,0 +1,26 @@
+id: sultanate_of_sulu
+canonical_name: Sultanate of Sulu
+names:
+  fr: Sultanat de Soulou
+  aliases_en: Kasultanan ng Sulu | Kesultanan Sulu | Kesultanan Suluk
+external_ids:
+  wikidata: Q422065
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1405
+end: 1915
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1405: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

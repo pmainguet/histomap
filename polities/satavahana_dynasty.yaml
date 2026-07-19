@@ -1,0 +1,26 @@
+id: satavahana_dynasty
+canonical_name: Satavahana dynasty
+names:
+  fr: Satavahana
+  aliases_en: Ancient Marathi dynasty
+external_ids:
+  wikidata: Q5257
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -229
+end: 220
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -229: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

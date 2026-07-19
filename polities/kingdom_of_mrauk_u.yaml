@@ -1,0 +1,27 @@
+id: kingdom_of_mrauk_u
+canonical_name: Kingdom of Mrauk U
+names:
+  fr: Royaume d'Arakan
+  aliases_en: Arakan Kingdom | Arakanese Kingdom of Mrohaung | Kingdom of Arakan |
+    Kingdom of Rakhine | Northern Kingdom | Rakhine Kingdom
+external_ids:
+  wikidata: Q10791211
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1429
+end: 1785
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1429: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

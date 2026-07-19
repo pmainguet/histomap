@@ -1,0 +1,28 @@
+id: kingdom_of_tungning
+canonical_name: Kingdom of Tungning
+names:
+  fr: royaume de Tungning
+  aliases_en: Zheng dynasty | Ian-peng Kingdom | Kingdom of Taiwan | Kingdom of Tang-lêng
+    | Kingdom of Tang-lîng | Kingdom of Tangling | Kingdom of Tywan | Koxinga dynasty
+    | Tywan | Yanping Kingdom | Zheng clan Kingdom
+external_ids:
+  wikidata: Q152855
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1661
+end: 1683
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1661: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

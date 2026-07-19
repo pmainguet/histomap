@@ -1,0 +1,26 @@
+id: tahirid_sultanate
+canonical_name: Tahirid Sultanate
+names:
+  fr: Tahirides (Yémen)
+  aliases_en: Banu Tahir | Tahirid State | Tahirids
+external_ids:
+  wikidata: Q2342941
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1454
+end: 1517
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1454: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

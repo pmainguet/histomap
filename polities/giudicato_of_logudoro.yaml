@@ -1,0 +1,25 @@
+id: giudicato_of_logudoro
+canonical_name: Giudicato of Logudoro
+names:
+  fr: Judicat de Logudoro
+external_ids:
+  wikidata: Q1761381
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 800
+end: 1259
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  800: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

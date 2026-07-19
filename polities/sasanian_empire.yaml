@@ -1,0 +1,28 @@
+id: sasanian_empire
+canonical_name: Sasanian Empire
+names:
+  fr: Empire sassanide
+  aliases_en: Persia | Persian Empire | Second Persian Empire | Ērān | Ērānshahr |
+    Neo-Persian Empire | Sasanian Persia | Sasanid Empire | Sasanid Persia | Sassanian
+    Empire | Sassanian Persia | Sassanid Empire | Sassanid Persia
+external_ids:
+  wikidata: Q83891
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 224
+end: 651
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  224: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

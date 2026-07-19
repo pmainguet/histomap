@@ -1,0 +1,26 @@
+id: second_saudi_state
+canonical_name: Second Saudi State
+names:
+  fr: deuxième État saoudien
+  aliases_en: Emirate of Nejd
+external_ids:
+  wikidata: Q146862
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1818
+end: 1891
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1818: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

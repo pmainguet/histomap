@@ -1,0 +1,26 @@
+id: free_imperial_city_of_aachen
+canonical_name: Free Imperial City of Aachen
+names:
+  fr: Ville libre d'Aix-la-Chapelle
+  aliases_en: Aix-la-Chapelle
+external_ids:
+  wikidata: Q2629137
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1306
+end: 1801
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1306: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

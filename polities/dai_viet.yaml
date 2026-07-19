@@ -1,0 +1,28 @@
+id: dai_viet
+canonical_name: Dai Viet
+names:
+  fr: Đại Việt
+  aliases_en: Vietnam | Annam | Kingdom of Vietnam | Empire of Vietnam | An Nan |
+    Annan | Viet Nam | Great Viet | An Nam | Daiviet | Vietnamese Empire | Vietnamese
+    Kingdom
+external_ids:
+  wikidata: Q430309
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1054
+end: 1805
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1054: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

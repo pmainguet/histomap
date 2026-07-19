@@ -1,0 +1,27 @@
+id: canton_of_neuchatel
+canonical_name: Canton of Neuchâtel
+names:
+  fr: canton de Neuchâtel
+  aliases_en: Canton de Neuchatel | Canton de Neuchâtel | Canton Neuchatel | NE |
+    Neuenburg
+external_ids:
+  wikidata: Q12738
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1034
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1034: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

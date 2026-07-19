@@ -1,0 +1,26 @@
+id: tyrconnell
+canonical_name: Tyrconnell
+names:
+  fr: Tyrconnell
+  aliases_en: Tirconnell | Tirconaill
+external_ids:
+  wikidata: Q4274522
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 401
+end: 1607
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  401: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: kingdom_of_spain_q3399982
+canonical_name: Kingdom of Spain
+names:
+  fr: royaume d'Espagne
+  aliases_en: Spain | Bourbon Spain
+external_ids:
+  wikidata: Q3399982
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1700
+end: 1873
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1700: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

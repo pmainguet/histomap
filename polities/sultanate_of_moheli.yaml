@@ -1,0 +1,27 @@
+id: sultanate_of_moheli
+canonical_name: Sultanate of Mohéli
+names:
+  fr: sultanat de Mohéli
+  aliases_en: Kingdom of Mohéli | Kingdom of Mwali | Sultanate of Moheli | Sultanate
+    of Mwali
+external_ids:
+  wikidata: Q25424205
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1830
+end: 1909
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1830: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

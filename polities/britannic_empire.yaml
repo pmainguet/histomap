@@ -1,0 +1,25 @@
+id: britannic_empire
+canonical_name: Britannic Empire
+names:
+  aliases_en: Romano-British Empire
+external_ids:
+  wikidata: Q2078249
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 286
+end: 296
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  286: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

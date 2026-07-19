@@ -1,0 +1,25 @@
+id: duchy_of_brzeg
+canonical_name: Duchy of Brzeg
+names:
+  fr: duché de Brzeg
+external_ids:
+  wikidata: Q606974
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1311
+end: 1675
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1311: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

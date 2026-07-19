@@ -1,0 +1,25 @@
+id: kingdom_of_guatemala
+canonical_name: Kingdom of Guatemala
+names:
+  aliases_en: Kingdom of Goatemala | Kingdom of Goathemala
+external_ids:
+  wikidata: Q111777877
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1540
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1540: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: dutch_brazil
+canonical_name: Dutch Brazil
+names:
+  fr: Nouvelle-Hollande
+  aliases_en: New Holland | Nederlands-Brazilië | Nieuw-Holland
+external_ids:
+  wikidata: Q221357
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1630
+end: 1654
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1630: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

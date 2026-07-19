@@ -1,0 +1,25 @@
+id: sahib_ataids
+canonical_name: Sahib Ataids
+names:
+  fr: Sâhipataoğullari
+external_ids:
+  wikidata: Q2501069
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1275
+end: 1341
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1275: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

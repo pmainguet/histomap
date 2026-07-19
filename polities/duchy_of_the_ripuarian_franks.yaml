@@ -1,0 +1,25 @@
+id: duchy_of_the_ripuarian_franks
+canonical_name: duchy of the Ripuarian Franks
+names:
+  fr: Duché ripuaire
+external_ids:
+  wikidata: Q31840697
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 700
+end: 843
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  700: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

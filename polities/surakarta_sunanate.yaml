@@ -1,0 +1,26 @@
+id: surakarta_sunanate
+canonical_name: Surakarta Sunanate
+names:
+  fr: royaume de Surakarta
+  aliases_en: Sunanate of Surakarta
+external_ids:
+  wikidata: Q2122499
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1745
+end: 1946
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1745: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

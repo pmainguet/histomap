@@ -1,0 +1,27 @@
+id: first_republic_of_austria
+canonical_name: First Republic of Austria
+names:
+  fr: Première République d'Autriche
+  aliases_en: Republic of Austria | Republik Österreich | Erste österreichische Republik
+    | First Austrian Republic
+external_ids:
+  wikidata: Q518101
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1919
+end: 1934
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1919: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

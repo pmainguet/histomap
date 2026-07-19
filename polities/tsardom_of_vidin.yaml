@@ -1,0 +1,26 @@
+id: tsardom_of_vidin
+canonical_name: Tsardom of Vidin
+names:
+  fr: Tsarat de Vidin
+  aliases_en: Vidin Tsardom
+external_ids:
+  wikidata: Q927154
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1356
+end: 1396
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1356: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

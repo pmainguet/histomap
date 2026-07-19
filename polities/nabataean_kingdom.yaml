@@ -1,0 +1,26 @@
+id: nabataean_kingdom
+canonical_name: Nabataean kingdom
+names:
+  fr: royaume nabatéen
+  aliases_en: Nabataea
+external_ids:
+  wikidata: Q11029653
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -400
+end: 106
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -400: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

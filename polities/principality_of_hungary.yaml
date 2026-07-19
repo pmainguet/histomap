@@ -1,0 +1,27 @@
+id: principality_of_hungary
+canonical_name: Principality of Hungary
+names:
+  fr: grande-principauté de Hongrie
+  aliases_en: Duchy of Hungary | Grand Principality of Hungary | Gyula/Kende of the
+    Hungarians
+external_ids:
+  wikidata: Q2899771
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 895
+end: 1000
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  895: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

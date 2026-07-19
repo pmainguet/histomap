@@ -1,0 +1,26 @@
+id: kingdom_of_palembang
+canonical_name: Kingdom of Palembang
+names:
+  fr: Palembang
+  aliases_en: Palembang Kingdom
+external_ids:
+  wikidata: Q112963228
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1445
+end: 1659
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1445: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

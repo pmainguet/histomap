@@ -1,0 +1,26 @@
+id: yan_q1188046
+canonical_name: Yan
+names:
+  fr: dynastie Yan
+  aliases_en: An-Shi | Great Yan
+external_ids:
+  wikidata: Q1188046
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 756
+end: 763
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  756: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

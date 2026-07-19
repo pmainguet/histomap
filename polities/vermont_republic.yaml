@@ -1,0 +1,27 @@
+id: vermont_republic
+canonical_name: Vermont Republic
+names:
+  fr: République du Vermont
+  aliases_en: Republic of the Green Mountains | New Connecticut | New Connecticut
+    Republic | Republic of New Connecticut | Republic of Vermont | State of Vermont
+external_ids:
+  wikidata: Q1649602
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1777
+end: 1791
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1777: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

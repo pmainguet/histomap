@@ -1,0 +1,27 @@
+id: ancient_rome
+canonical_name: Ancient Rome
+names:
+  fr: Rome antique
+  aliases_en: ancient Roman culture | Roman civilization | ancient Roman civilization
+    | Roman antiquity | Roman culture
+external_ids:
+  wikidata: Q1747689
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -752
+end: 476
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -752: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

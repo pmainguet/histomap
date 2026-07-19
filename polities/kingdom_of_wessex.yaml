@@ -1,0 +1,26 @@
+id: kingdom_of_wessex
+canonical_name: Kingdom of Wessex
+names:
+  fr: Wessex
+  aliases_en: Wessex | Kingdom of the West Saxons
+external_ids:
+  wikidata: Q105313
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 519
+end: 927
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  519: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

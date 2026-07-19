@@ -1,0 +1,25 @@
+id: angadh_estate
+canonical_name: Angadh Estate
+names:
+  fr: État Angadh
+external_ids:
+  wikidata: Q104151568
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1874
+end: 1947
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1874: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

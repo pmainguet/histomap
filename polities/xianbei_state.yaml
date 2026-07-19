@@ -1,0 +1,26 @@
+id: xianbei_state
+canonical_name: Xianbei state
+names:
+  fr: confédération Xianbei
+  aliases_en: Sianbi | Xianbei confederation
+external_ids:
+  wikidata: Q4783395
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 93
+end: 236
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  93: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

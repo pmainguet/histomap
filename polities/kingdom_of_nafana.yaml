@@ -1,0 +1,25 @@
+id: kingdom_of_nafana
+canonical_name: Kingdom of Nafana
+names:
+  fr: Royaume du Nafana
+external_ids:
+  wikidata: Q102133106
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1720
+end: 1848
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1720: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

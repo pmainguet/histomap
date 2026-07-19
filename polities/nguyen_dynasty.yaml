@@ -1,0 +1,26 @@
+id: nguyen_dynasty
+canonical_name: Nguyen dynasty
+names:
+  fr: dynastie Nguyen
+  aliases_en: Empire of Annam | Nguyễn Dynasty
+external_ids:
+  wikidata: Q6500483
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1802
+end: 1945
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1802: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

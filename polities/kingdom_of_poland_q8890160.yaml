@@ -1,0 +1,26 @@
+id: kingdom_of_poland_q8890160
+canonical_name: Kingdom of Poland
+names:
+  fr: royaume de Pologne
+  aliases_en: Realm of Poland
+external_ids:
+  wikidata: Q8890160
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 966
+end: 1795
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  966: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

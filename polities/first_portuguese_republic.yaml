@@ -1,0 +1,26 @@
+id: first_portuguese_republic
+canonical_name: First Portuguese Republic
+names:
+  fr: Première République portugaise
+  aliases_en: Primeira Republica Portuguesa | Primeira República Portuguesa
+external_ids:
+  wikidata: Q167360
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1910
+end: 1926
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1910: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

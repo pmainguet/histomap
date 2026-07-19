@@ -1,0 +1,30 @@
+id: republic_of_venice
+canonical_name: Republic of Venice
+names:
+  fr: république de Venise
+  aliases_en: Venice | Duchy of Venetia | Most Serene Republic of Venice | Republic
+    of Saint Mark | Republic of St. Mark | Republic of Venezia | Republic Venice |
+    Repulic of Venice | Serenìsima Repùblega de Venèsia | Serenissima Repubblica di
+    Venezia | The Most Serene Republic of Venice | The Republic of Venice | The Serenissima
+    | Venetian Empire | Venetian Republic | Venezia Republic | Venice Republic
+external_ids:
+  wikidata: Q4948
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 697
+end: 1797
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  697: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

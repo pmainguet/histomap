@@ -1,0 +1,25 @@
+id: albertine_duchy_of_saxony_1485_1547
+canonical_name: Albertine Duchy of Saxony (1485-1547)
+names:
+  fr: Duché de Saxe (1485-1547)
+external_ids:
+  wikidata: Q2219448
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1485
+end: 1547
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1485: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

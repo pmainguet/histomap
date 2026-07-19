@@ -1,0 +1,25 @@
+id: federation_of_central_america
+canonical_name: Federation of Central America
+names:
+  fr: Fédération d'Amérique centrale (1921–1922)
+external_ids:
+  wikidata: Q133844233
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1921
+end: 1922
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1921: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

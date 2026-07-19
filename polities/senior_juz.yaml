@@ -1,0 +1,27 @@
+id: senior_juz
+canonical_name: Senior jüz
+names:
+  fr: Grand juz
+  aliases_en: Elder jüz | Senior juz | Senior zhuz | Ulı jüz | Uly júz | Uly jüz |
+    Uly zhuz | Ūly zhu̇z
+external_ids:
+  wikidata: Q640998
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1718
+end: 1822
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1718: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

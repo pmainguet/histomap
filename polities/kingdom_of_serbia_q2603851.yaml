@@ -1,0 +1,25 @@
+id: kingdom_of_serbia_q2603851
+canonical_name: Kingdom of Serbia
+names:
+  fr: Royaume de Serbie
+external_ids:
+  wikidata: Q2603851
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1718
+end: 1739
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1718: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

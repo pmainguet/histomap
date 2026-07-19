@@ -1,0 +1,25 @@
+id: nan_q3933222
+canonical_name: nan
+names:
+  fr: République d'Asti
+external_ids:
+  wikidata: Q3933222
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1797
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1797: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,28 @@
+id: monaco
+canonical_name: Monaco
+names:
+  fr: Monaco
+  aliases_en: mc | Fort-Hercule | Mùnegu | Principality and Diocese of Monaco | Principality
+    of Monaco | Principato di Monaco | Principatu de Mu̍negu | Prinçipatu de Mùnegu
+    | Principauté de Monaco
+external_ids:
+  wikidata: Q235
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1297
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1297: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

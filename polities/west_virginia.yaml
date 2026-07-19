@@ -1,0 +1,27 @@
+id: west_virginia
+canonical_name: West Virginia
+names:
+  fr: Virginie-Occidentale
+  aliases_en: WV | Almost Heaven | State of West Virginia | The Mountain State | US-WV
+    | W. Va. | W.Va. | West Virginia, United States
+external_ids:
+  wikidata: Q1371
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1863
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1863: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

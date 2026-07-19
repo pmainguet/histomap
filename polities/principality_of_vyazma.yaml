@@ -1,0 +1,24 @@
+id: principality_of_vyazma
+canonical_name: Principality of Vyazma
+names: {}
+external_ids:
+  wikidata: Q4130229
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1239
+end: 1403
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1239: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

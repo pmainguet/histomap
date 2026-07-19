@@ -1,0 +1,28 @@
+id: canton_of_basel_landschaft
+canonical_name: Canton of Basel-Landschaft
+names:
+  fr: canton de Bâle-Campagne
+  aliases_en: BL | Bâle-Campagne | Basel-Landschaft | Baselbiet | Baselland | Basle-Campagne
+    | Basle-Country | Canton of Basel-Land | Kanton Basel-Land | Kanton Basel-Landschaft
+    | Canton of Basel-Country
+external_ids:
+  wikidata: Q12146
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1833
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1833: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

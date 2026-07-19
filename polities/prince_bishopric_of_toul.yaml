@@ -1,0 +1,27 @@
+id: prince_bishopric_of_toul
+canonical_name: Prince-Bishopric of Toul
+names:
+  fr: diocèse de Toul
+  aliases_en: Ancient Diocese of Toul | Bishopric of Toul | Diocese of Toul | Roman
+    Catholic Diocese of Toul
+external_ids:
+  wikidata: Q328001
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1048
+end: 1801
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1048: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

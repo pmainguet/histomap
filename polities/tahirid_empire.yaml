@@ -1,0 +1,25 @@
+id: tahirid_empire
+canonical_name: Tahirid Empire
+names:
+  fr: Émirat Tahiride
+external_ids:
+  wikidata: Q65037374
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 821
+end: 873
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  821: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

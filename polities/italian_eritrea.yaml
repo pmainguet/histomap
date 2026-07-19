@@ -1,0 +1,26 @@
+id: italian_eritrea
+canonical_name: Italian Eritrea
+names:
+  fr: Érythrée italienne
+  aliases_en: Colonia eritrea | Erythrea
+external_ids:
+  wikidata: Q1232988
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1890
+end: 1936
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1890: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

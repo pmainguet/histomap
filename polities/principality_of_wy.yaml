@@ -1,0 +1,26 @@
+id: principality_of_wy
+canonical_name: Principality of Wy
+names:
+  fr: principauté de Wy
+  aliases_en: wy
+external_ids:
+  wikidata: Q1083009
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2004
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2004: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

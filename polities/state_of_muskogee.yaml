@@ -1,0 +1,25 @@
+id: state_of_muskogee
+canonical_name: State of Muskogee
+names:
+  aliases_en: Muskogee
+external_ids:
+  wikidata: Q7603783
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1799
+end: 1802
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1799: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

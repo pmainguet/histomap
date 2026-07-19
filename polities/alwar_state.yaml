@@ -1,0 +1,26 @@
+id: alwar_state
+canonical_name: Alwar State
+names:
+  fr: État d'Alwar
+  aliases_en: State of Alwar
+external_ids:
+  wikidata: Q1553143
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1770
+end: 1949
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1770: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

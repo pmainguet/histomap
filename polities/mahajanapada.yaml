@@ -1,0 +1,27 @@
+id: mahajanapada
+canonical_name: Mahajanapada
+names:
+  fr: royaumes Mahâ-Janapadas
+  aliases_en: 16 mahajanapadas (great states) | mahājanapada | sixteen mahajanapadas
+    (great states)
+external_ids:
+  wikidata: Q846025
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -599
+end: -344
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -599: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

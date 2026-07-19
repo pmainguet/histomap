@@ -1,0 +1,25 @@
+id: kingdom_of_ce
+canonical_name: Kingdom of Ce
+names:
+  fr: royaume de Ce
+external_ids:
+  wikidata: Q21523635
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1
+end: 900
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

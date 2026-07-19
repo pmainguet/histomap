@@ -1,0 +1,25 @@
+id: united_states_of_the_ionian_islands
+canonical_name: United States of the Ionian Islands
+names:
+  fr: république des îles Ioniennes
+external_ids:
+  wikidata: Q1063498
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1815
+end: 1864
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1815: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

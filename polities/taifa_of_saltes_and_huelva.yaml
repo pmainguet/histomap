@@ -1,0 +1,26 @@
+id: taifa_of_saltes_and_huelva
+canonical_name: Taifa of Saltés and Huelva
+names:
+  fr: taïfa de Saltés et de Huelva
+  aliases_en: Taifa of Saltes and Huelva
+external_ids:
+  wikidata: Q2081763
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1012
+end: 1051
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1012: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

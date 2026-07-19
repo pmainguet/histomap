@@ -1,0 +1,25 @@
+id: duchy_of_brescia
+canonical_name: Duchy of Brescia
+names:
+  fr: duché de Brescia
+external_ids:
+  wikidata: Q1152508
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 568
+end: 774
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  568: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

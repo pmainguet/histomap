@@ -1,0 +1,27 @@
+id: sri_lanka
+canonical_name: Sri Lanka
+names:
+  fr: Sri Lanka
+  aliases_en: SRI | Ceylan | ce | Serendib | Taprobane | sri | Srilanka | Democratic
+    Socialist Republic of Sri Lanka | Lanka, Sri | lk | lke
+external_ids:
+  wikidata: Q854
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1972
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1972: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: taifa_of_cordoba
+canonical_name: Taifa of Córdoba
+names:
+  fr: taïfa de Cordoue
+  aliases_en: Taifa of Cordoba
+external_ids:
+  wikidata: Q2285679
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1031
+end: 1070
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1031: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

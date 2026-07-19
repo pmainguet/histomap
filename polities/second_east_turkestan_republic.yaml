@@ -1,0 +1,26 @@
+id: second_east_turkestan_republic
+canonical_name: Second East Turkestan Republic
+names:
+  fr: Seconde République du Turkestan oriental
+  aliases_en: East Turkestan
+external_ids:
+  wikidata: Q10988528
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1944
+end: 1946
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1944: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

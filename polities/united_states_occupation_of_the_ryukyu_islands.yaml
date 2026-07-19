@@ -1,0 +1,25 @@
+id: united_states_occupation_of_the_ryukyu_islands
+canonical_name: United States occupation of the Ryukyu Islands
+names:
+  fr: îles Ryūkyū sous occupation américaine
+external_ids:
+  wikidata: Q11285099
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1945
+end: 1972
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1945: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

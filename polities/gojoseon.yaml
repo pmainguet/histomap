@@ -1,0 +1,26 @@
+id: gojoseon
+canonical_name: Gojoseon
+names:
+  fr: Gojoseon
+  aliases_en: Joseon | Chaoxian | Chosŏn
+external_ids:
+  wikidata: Q28405
+parent: null
+successors: []
+region: null
+culture_group: null
+start: -2332
+end: -107
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -2332: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: principality_of_bulgaria
+canonical_name: Principality of Bulgaria
+names:
+  fr: principauté de Bulgarie
+  aliases_en: Bulgarian Principality | Knyazhestvo Balgariya
+external_ids:
+  wikidata: Q815731
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1878
+end: 1908
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1878: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

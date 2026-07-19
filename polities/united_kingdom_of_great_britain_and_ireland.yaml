@@ -1,0 +1,26 @@
+id: united_kingdom_of_great_britain_and_ireland
+canonical_name: United Kingdom of Great Britain and Ireland
+names:
+  fr: Royaume-Uni de Grande-Bretagne et d'Irlande
+  aliases_en: United Kingdom | Great Britain and Ireland | UKGBI
+external_ids:
+  wikidata: Q174193
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1801
+end: 1927
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1801: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

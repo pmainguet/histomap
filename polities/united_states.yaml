@@ -1,0 +1,29 @@
+id: united_states
+canonical_name: United States
+names:
+  fr: États-Unis
+  aliases_en: the United States | the USA | Murica | Merica | the States | the U.S.
+    | the U.S. of A | the U.S. of America | the U.S.A. | the United States of America
+    | the US | the US of A | the US of America | U. S. | U. S. A. | U.S. of America
+    | US of A | US of America
+external_ids:
+  wikidata: Q30
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1784
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1784: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

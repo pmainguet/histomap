@@ -1,0 +1,26 @@
+id: sultanate_of_the_maldives
+canonical_name: Sultanate of the Maldives
+names:
+  fr: sultanat des Maldives
+  aliases_en: Sultanate of Maldive Islands | Sultanate of Maldives
+external_ids:
+  wikidata: Q11344632
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1153
+end: 1968
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1153: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

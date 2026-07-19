@@ -1,0 +1,25 @@
+id: county_of_burgundy
+canonical_name: County of Burgundy
+names:
+  fr: comté de Bourgogne
+external_ids:
+  wikidata: Q642314
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 982
+end: 1678
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  982: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

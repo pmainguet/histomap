@@ -1,0 +1,28 @@
+id: latvian_soviet_socialist_republic
+canonical_name: Latvian Soviet Socialist Republic
+names:
+  fr: République socialiste soviétique de Lettonie
+  aliases_en: LSSR | Latvian SSR | Latvijas Padomju Sociālistiskā Republika | Latvijas
+    PSR | LPSR | Soviet Latvia | Латвийская Советская Социалистическая Республика
+    | ЛССР
+external_ids:
+  wikidata: Q192180
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1940
+end: 1990
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1940: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,26 @@
+id: republic_of_yucatan
+canonical_name: Republic of Yucatán
+names:
+  fr: République du Yucatán
+  aliases_en: Republic of Yucatan
+external_ids:
+  wikidata: Q671658
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1841
+end: 1848
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1841: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: jaitpur_state
+canonical_name: Jaitpur State
+names:
+  fr: État de Jaitpur
+external_ids:
+  wikidata: Q1678787
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1731
+end: 1849
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1731: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

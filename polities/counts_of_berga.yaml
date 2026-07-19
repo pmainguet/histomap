@@ -1,0 +1,26 @@
+id: counts_of_berga
+canonical_name: Counts of Berga
+names:
+  fr: comté de Berga
+  aliases_en: viscounts of Berga
+external_ids:
+  wikidata: Q956729
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 988
+end: 1117
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  988: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

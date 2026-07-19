@@ -1,0 +1,25 @@
+id: signoria_of_milan
+canonical_name: Signoria of Milan
+names:
+  fr: seigneurie de Milan
+external_ids:
+  wikidata: Q15890801
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1259
+end: 1395
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1259: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

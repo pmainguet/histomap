@@ -1,0 +1,27 @@
+id: sultanate_of_rum
+canonical_name: Sultanate of Rum
+names:
+  fr: sultanat de Roum
+  aliases_en: Rum | Rum sultanate | Rûm sultanate | Seljuq Sultanate | Sultanate of
+    Rûm
+external_ids:
+  wikidata: Q975405
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1077
+end: 1307
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1077: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,27 @@
+id: southern_han
+canonical_name: Southern Han
+names:
+  fr: Han du Sud
+  aliases_en: Nanhan | Nan Han | Kingdom of S. Han | Kingdom of Southern Han | S.
+    Han | S. Han Kingdom | Southern Han Kingdom
+external_ids:
+  wikidata: Q1198071
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 917
+end: 971
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  917: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

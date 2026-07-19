@@ -1,0 +1,25 @@
+id: kingdom_of_tunisia
+canonical_name: Kingdom of Tunisia
+names:
+  fr: royaume de Tunisie
+external_ids:
+  wikidata: Q6412669
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1956
+end: 1957
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1956: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

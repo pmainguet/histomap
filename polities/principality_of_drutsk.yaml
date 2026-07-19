@@ -1,0 +1,25 @@
+id: principality_of_drutsk
+canonical_name: Principality of Drutsk
+names:
+  fr: Principauté de Droutsk
+external_ids:
+  wikidata: Q2596884
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1101
+end: 1565
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1101: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

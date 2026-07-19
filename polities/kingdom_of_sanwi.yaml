@@ -1,0 +1,26 @@
+id: kingdom_of_sanwi
+canonical_name: Kingdom of Sanwi
+names:
+  fr: Royaume du Sanwi
+  aliases_en: Sannvin Kingdom | Sanvi Kingdom | Sanwi Kingdom
+external_ids:
+  wikidata: Q1322953
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1700
+end: 1896
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1700: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

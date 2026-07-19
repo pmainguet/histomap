@@ -1,0 +1,26 @@
+id: nobatia
+canonical_name: Nobatia
+names:
+  fr: Nobatie
+  aliases_en: Nobadia
+external_ids:
+  wikidata: Q568523
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 400
+end: 650
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  400: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: republic_of_siena_at_montalcino
+canonical_name: Republic of Siena at Montalcino
+names:
+  fr: République de Sienne à Montalcino
+external_ids:
+  wikidata: Q3933252
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1555
+end: 1559
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1555: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

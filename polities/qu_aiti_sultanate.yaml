@@ -1,0 +1,26 @@
+id: qu_aiti_sultanate
+canonical_name: Qu'aiti Sultanate
+names:
+  fr: État Quaiti de Shihr et Mukalla
+  aliases_en: Qu'aiti | Qu'aiti Sultanate of Shihr and Mukalla
+external_ids:
+  wikidata: Q202775
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1858
+end: 1967
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1858: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

@@ -1,0 +1,25 @@
+id: german_colonial_empire
+canonical_name: German colonial empire
+names:
+  fr: empire colonial allemand
+external_ids:
+  wikidata: Q329618
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1884
+end: 1920
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1884: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

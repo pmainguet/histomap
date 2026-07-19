@@ -1,0 +1,25 @@
+id: principality_of_aigues_mortes
+canonical_name: Principality of Aigues-Mortes
+names:
+  fr: principauté d'Aigues-Mortes
+external_ids:
+  wikidata: Q104879858
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 2011
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  2011: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

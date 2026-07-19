@@ -1,0 +1,26 @@
+id: kingdom_of_candia
+canonical_name: Kingdom of Candia
+names:
+  fr: Duché de Candie
+  aliases_en: Duchy of Candia | Realm of Candia | Venetian Crete
+external_ids:
+  wikidata: Q2288441
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1205
+end: 1669
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1205: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

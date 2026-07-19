@@ -1,0 +1,26 @@
+id: kingdom_of_georgia
+canonical_name: Kingdom of Georgia
+names:
+  fr: royaume de Géorgie
+  aliases_en: Georgia | Georgian Empire
+external_ids:
+  wikidata: Q154667
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1008
+end: 1466
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1008: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

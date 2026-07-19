@@ -1,0 +1,26 @@
+id: malwa_sultanate
+canonical_name: Malwa Sultanate
+names:
+  fr: sultanat du Malwa
+  aliases_en: Malwa | Sultanate of Malwa
+external_ids:
+  wikidata: Q937879
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1401
+end: 1562
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1401: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

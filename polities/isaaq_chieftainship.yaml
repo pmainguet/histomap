@@ -1,0 +1,25 @@
+id: isaaq_chieftainship
+canonical_name: Isaaq chieftainship
+names:
+  fr: Sultanat d'Isaaq
+external_ids:
+  wikidata: Q105582386
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1749
+end: 1884
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1749: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

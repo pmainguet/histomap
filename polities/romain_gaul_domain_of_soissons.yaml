@@ -1,0 +1,25 @@
+id: romain_gaul_domain_of_soissons
+canonical_name: Romain-Gaul domain of Soissons
+names:
+  fr: Domaine gallo-romain
+external_ids:
+  wikidata: Q1247508
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 457
+end: 486
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  457: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

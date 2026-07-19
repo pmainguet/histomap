@@ -1,0 +1,25 @@
+id: county_of_berg
+canonical_name: County of Berg
+names:
+  fr: comté de Berg
+external_ids:
+  wikidata: Q21011805
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1101
+end: 1380
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1101: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

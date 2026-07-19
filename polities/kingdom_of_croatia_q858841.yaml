@@ -1,0 +1,26 @@
+id: kingdom_of_croatia_q858841
+canonical_name: Kingdom of Croatia
+names:
+  fr: État croate médiéval
+  aliases_en: Croatia | Croatian Kingdom
+external_ids:
+  wikidata: Q858841
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 925
+end: 1102
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  925: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

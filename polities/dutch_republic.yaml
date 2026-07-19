@@ -1,0 +1,29 @@
+id: dutch_republic
+canonical_name: Dutch Republic
+names:
+  fr: Provinces-Unies
+  aliases_en: United Provinces | Dutch Federation | Federated Dutch Provinces | Netherlands
+    (1581–1795) | Republic of the Netherlands | Republic of the Seven United Netherlands
+    | Republic of the Seven United Provinces | Republic of the United Netherlands
+    | Republiek der Zeven Verenigde Nederlanden | United Provinces of the Netherlands
+external_ids:
+  wikidata: Q170072
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1581
+end: 1795
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1581: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

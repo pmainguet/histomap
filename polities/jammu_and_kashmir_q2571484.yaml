@@ -1,0 +1,25 @@
+id: jammu_and_kashmir_q2571484
+canonical_name: Jammu and Kashmir
+names:
+  fr: Jammu-et-Cachemire
+external_ids:
+  wikidata: Q2571484
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1846
+end: 1947
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1846: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

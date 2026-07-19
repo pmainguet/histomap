@@ -1,0 +1,28 @@
+id: azerbaijan_soviet_socialist_republic
+canonical_name: Azerbaijan Soviet Socialist Republic
+names:
+  fr: République socialiste soviétique d'Azerbaïdjan
+  aliases_en: Azerbaidzhan Soviet Socialist Republic | Azerbaidzhan SSR | Azerbaidzhani
+    SSR | Azerbaijan SSR | Azerbaijani SSR | Azerbaydzhanskaya Sovetskaya Sotsialisticheskaya
+    Respublika | Soviet Azerbaidzhan | Soviet Azerbaijan
+external_ids:
+  wikidata: Q131337
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1920
+end: 1991
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1920: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

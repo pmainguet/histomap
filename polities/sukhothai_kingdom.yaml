@@ -1,0 +1,26 @@
+id: sukhothai_kingdom
+canonical_name: Sukhothai Kingdom
+names:
+  fr: Royaume de Sukhothaï
+  aliases_en: Kingdom of Sukhothai | Roy de Sukhodaya
+external_ids:
+  wikidata: Q863279
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1238
+end: 1438
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1238: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

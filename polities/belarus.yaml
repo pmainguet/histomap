@@ -1,0 +1,28 @@
+id: belarus
+canonical_name: Belarus
+names:
+  fr: Biélorussie
+  aliases_en: by | White Russia | Bielaruś | Bielorussia | Byeloruss | Byelorussia
+    | Republic of Belarus | Respublika Belarus' | Respublika Bielaruś | White Ruthenia
+    | Belorussia
+external_ids:
+  wikidata: Q184
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 882
+end: null
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  882: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

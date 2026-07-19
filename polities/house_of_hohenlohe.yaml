@@ -1,0 +1,26 @@
+id: house_of_hohenlohe
+canonical_name: House of Hohenlohe
+names:
+  fr: maison de Hohenlohe
+  aliases_en: Hohenlohe
+external_ids:
+  wikidata: Q705240
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1450
+end: 1806
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1450: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

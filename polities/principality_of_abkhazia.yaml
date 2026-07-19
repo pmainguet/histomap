@@ -1,0 +1,25 @@
+id: principality_of_abkhazia
+canonical_name: Principality of Abkhazia
+names:
+  fr: principauté d'Abkhazie
+external_ids:
+  wikidata: Q1760473
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1463
+end: 1810
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1463: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata

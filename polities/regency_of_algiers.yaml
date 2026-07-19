@@ -1,0 +1,26 @@
+id: regency_of_algiers
+canonical_name: Regency of Algiers
+names:
+  fr: Régence d'Alger
+  aliases_en: Eyalet of Algiers | State of Algeria
+external_ids:
+  wikidata: Q3045696
+parent: null
+successors: []
+region: null
+culture_group: null
+start: 1516
+end: 1830
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1516: 5
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- wikidata
