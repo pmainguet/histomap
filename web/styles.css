@@ -31,7 +31,7 @@ h1 { margin: 0; font-size: clamp(2.8rem, 7vw, 5.8rem); font-weight: 500; line-he
 
 .controls { display: flex; flex-wrap: wrap; gap: .8rem; align-items: end; font: .82rem system-ui, sans-serif; }
 .controls label { display: grid; gap: .2rem; }
-input, button { border: 1px solid var(--rule); border-radius: 2px; padding: .45rem .6rem; background: white; }
+input, select, button { border: 1px solid var(--rule); border-radius: 2px; padding: .45rem .6rem; background: white; }
 input { width: 8rem; }
 button { cursor: pointer; background: #343b35; color: white; border-color: #343b35; }
 #summary { color: var(--ink-faint); }

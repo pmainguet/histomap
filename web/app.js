@@ -3,6 +3,7 @@ const details = document.querySelector("#details");
 const summary = document.querySelector("#summary");
 const startInput = document.querySelector("#year-start");
 const endInput = document.querySelector("#year-end");
+const visibilityInput = document.querySelector("#visibility");
 
 const palette = ["#a9563f", "#d0913d", "#59755e", "#51758e", "#725c87", "#9a6f72", "#797044"];
 let polities = [];
@@ -35,6 +36,7 @@ function showDetails(polity) {
     <p>${description}</p>
     <dl><dt>Dates</dt><dd>${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}</dd>
     <dt>Region</dt><dd>${polity.region || "unclassified"}</dd>
+    <dt>Visibility</dt><dd>${polity.visibility_tier || "detailed"} (${polity.prominence_score || 0})</dd>
     <dt>Confidence</dt><dd>${polity.start_confidence} / ${polity.end_confidence}</dd></dl>`;
 }
 
@@ -51,7 +53,14 @@ function render() {
     chart.innerHTML = '<p class="error">Choose an end year later than the start year.</p>';
     return;
   }
-  const visible = polities.filter((p) => p.start < yearEnd && (p.end == null || p.end > yearStart));
+  const tierRank = { global: 0, regional: 1, detailed: 2 };
+  const selectedRank = tierRank[visibilityInput.value];
+  const visible = polities.filter(
+    (p) =>
+      tierRank[p.visibility_tier || "detailed"] <= selectedRank &&
+      p.start < yearEnd &&
+      (p.end == null || p.end > yearStart),
+  );
   const width = Math.max(760, visible.length * 58 + 110);
   const height = Math.max(900, (yearEnd - yearStart) * .7);
   const margin = { top: 35, right: 20, bottom: 25, left: 88 };
@@ -94,6 +103,7 @@ function render() {
 }
 
 document.querySelector("#apply").addEventListener("click", render);
+visibilityInput.addEventListener("change", render);
 
 try {
   const response = await fetch("../data.json");

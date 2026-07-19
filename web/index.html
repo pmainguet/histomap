@@ -12,6 +12,13 @@
       <h1>Histomap</h1>
       <p class="intro">Time runs downward. Band width reflects each polity’s estimated historical weight.</p>
       <div class="controls">
+        <label>Detail
+          <select id="visibility">
+            <option value="global">Global overview</option>
+            <option value="regional">Regional detail</option>
+            <option value="detailed">Full dataset</option>
+          </select>
+        </label>
         <label>From <input id="year-start" type="number" value="-1000" step="100"></label>
         <label>To <input id="year-end" type="number" value="2100" step="100"></label>
         <button id="apply" type="button">Redraw</button>

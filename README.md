@@ -33,8 +33,11 @@ make serve
 ```powershell
 make extract
 make import-wikidata
+make compute-prominence
 make validate
 ```
 
 Raw downloads and generated `data.json` are gitignored. Existing canonical YAML files are
 preserved during import unless `pipeline/wd_to_yaml.py --overwrite` is explicitly requested.
+The prominence stage keeps every record but assigns `global`, `regional`, or `detailed` visibility;
+the web view defaults to the compact global tier.

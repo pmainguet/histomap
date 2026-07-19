@@ -201,6 +201,13 @@ Get ~3,000 polities into draft YAML and render them. Quality is bad on purpose �
 
 7. **Crappy streamgraph.** Minimal Observable Plot view in `web/`: years on Y axis (BCE→CE top-to-bottom), polities as horizontal bands, fixed width = 1, colored by `culture_group` or class. No labels, no transitions, no hover. The point is to *see* where coverage is thin. Expect the Bronze Age near-empty, the 19th century dense, the post-1945 explosion of nation-states obvious.
 
+7a. **Prominence and visibility tiers.** Keep the complete canonical dataset, but prevent obscure entities and administrative subdivisions from overwhelming the default chart. `pipeline/compute_prominence.py` combines Wikidata sitelink reach, longevity, authoritative-source coverage, editorial work, and a parent-country penalty for still-extant entities. (For extinct polities, Wikidata's country field often means present-day location rather than political subordination.) It writes a reproducible `prominence_score` and one of three display tiers:
+   - `global`: the few hundred polities suitable for a world-history overview.
+   - `regional`: important regional polities, visible when the reader asks for more detail.
+   - `detailed`: the full research dataset, including minor and disputed entities.
+
+   Thresholds are global and deterministic, but the renderer may additionally cap active bands per region/century to prevent well-documented regions from crowding out others. Manual editorial text, icons, and Seshat coverage can promote a polity; no automated score deletes canonical data.
+
 **Done when:** the streamgraph renders all ~3,000 polities and you can eyeball gaps (e.g., "where are the Hittites?") that Phase 2 needs to fill.
 
 ### Phase 2 — Authoritative overlay

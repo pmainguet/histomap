@@ -17,6 +17,12 @@ class Confidence(str, Enum):
     legendary = "legendary"
 
 
+class VisibilityTier(str, Enum):
+    global_ = "global"
+    regional = "regional"
+    detailed = "detailed"
+
+
 class ExternalIds(BaseModel):
     wikidata: str | None = None
     seshat: str | None = None
@@ -50,6 +56,8 @@ class Polity(BaseModel):
     end_confidence: Confidence
     weight_by_era: dict[int, float] = Field(default_factory=dict)
     weight_imputed: bool = False
+    prominence_score: float = Field(default=0, ge=0, le=100)
+    visibility_tier: VisibilityTier = VisibilityTier.detailed
     icon: str | None = None
     text: Text = Field(default_factory=Text)
     notes: str = ""

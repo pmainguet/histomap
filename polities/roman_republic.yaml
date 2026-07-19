@@ -8,7 +8,8 @@ external_ids:
   wikidata: Q1747689
   seshat: ItRomR
 parent: roman_kingdom
-successors: [roman_empire]
+successors:
+- roman_empire
 region: italy
 culture_group: latin
 start: -509
@@ -28,9 +29,14 @@ weight_by_era:
 weight_imputed: false
 icon: roman_eagle
 text:
-  short_child_en: "Ancient Rome before the emperors. Run by elected officials and the Senate."
-  short_adult_en: "Roman state from the overthrow of the kings to the founding of the Empire under Augustus."
-  long_en: ""
-notes: "Traditional founding date 509 BCE is legendary; end conventionally 27 BCE with the grant of the title Augustus to Octavian."
+  short_child_en: Ancient Rome before the emperors. Run by elected officials and the
+    Senate.
+  short_adult_en: Roman state from the overthrow of the kings to the founding of the
+    Empire under Augustus.
+  long_en: ''
+notes: Traditional founding date 509 BCE is legendary; end conventionally 27 BCE with
+  the grant of the title Augustus to Octavian.
 sources:
-  - wikidata
+- wikidata
+prominence_score: 74.17
+visibility_tier: global

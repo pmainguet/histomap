@@ -1,4 +1,4 @@
-.PHONY: setup extract import-wikidata validate build serve test format lint check
+.PHONY: setup extract import-wikidata compute-prominence validate build serve test format lint check
 
 setup:
 	uv pip install -r requirements.txt ruff mypy
@@ -8,6 +8,9 @@ extract:
 
 import-wikidata:
 	python pipeline/wd_to_yaml.py
+
+compute-prominence:
+	python pipeline/compute_prominence.py
 
 validate:
 	python build.py
