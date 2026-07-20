@@ -7,13 +7,14 @@ import math
 import sys
 from pathlib import Path
 from typing import Literal
+from urllib.parse import quote
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from pipeline.review_cli import pending_records, save_decision
+from pipeline.review_cli import pending_records, polity_metadata, save_decision
 
 ROOT = Path(__file__).resolve().parent.parent
 ALLOWED_ACTIONS = {
@@ -21,6 +22,10 @@ ALLOWED_ACTIONS = {
     "build": ["build.py"],
     "compute-weights": ["pipeline/compute_weights.py"],
 }
+EQUINOX_URL = (
+    "https://github.com/seshatdb/Equinox_Data/blob/master/"
+    "Equinox_on_GitHub_June9_2022.xlsx"
+)
 
 
 class ReviewDecision(BaseModel):
@@ -38,6 +43,43 @@ def clean_json(value: object) -> object:
     return value
 
 
+def add_source_links(record: dict, metadata: dict[str, dict]) -> dict:
+    enriched = dict(record)
+    enriched["source_links"] = [
+        {
+            "label": "Seshat polity search",
+            "url": "https://www.seshat-db.com/api/core/polities/?search="
+            + quote(str(record["seshat_name"])),
+        },
+        {"label": "Equinox 2020 workbook", "url": EQUINOX_URL},
+    ]
+    enriched_candidates = []
+    for candidate in record.get("candidates", []):
+        enriched_candidate = dict(candidate)
+        document = metadata.get(candidate["polity_id"], {})
+        external_ids = document.get("external_ids") or {}
+        links = []
+        if external_ids.get("wikidata"):
+            links.append(
+                {
+                    "label": "Wikidata",
+                    "url": f"https://www.wikidata.org/wiki/{external_ids['wikidata']}",
+                }
+            )
+        if external_ids.get("seshat"):
+            links.append(
+                {
+                    "label": "Seshat polity search",
+                    "url": "https://www.seshat-db.com/api/core/polities/?search="
+                    + quote(str(document.get("canonical_name", candidate["canonical_name"]))),
+                }
+            )
+        enriched_candidate["source_links"] = links
+        enriched_candidates.append(enriched_candidate)
+    enriched["candidates"] = enriched_candidates
+    return enriched
+
+
 def create_app(root: Path = ROOT) -> FastAPI:
     application = FastAPI(title="Histomap", version="0.1.0")
     web_dir = root / "web"
@@ -45,6 +87,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
     review_path = reports_dir / "seshat_reconciliation.jsonl"
     decisions_path = reports_dir / "seshat_review_decisions.jsonl"
     polities_dir = root / "polities"
+    metadata = polity_metadata(polities_dir)
     job = {"status": "idle", "action": None, "output": "", "returncode": None}
     job_lock = asyncio.Lock()
 
@@ -68,7 +111,8 @@ def create_app(root: Path = ROOT) -> FastAPI:
     @application.get("/api/reviews")
     async def reviews(offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)) -> dict:
         queue = pending_records(review_path, decisions_path, polities_dir)
-        return clean_json({"total": len(queue), "offset": offset, "items": queue[offset : offset + limit]})
+        items = [add_source_links(record, metadata) for record in queue[offset : offset + limit]]
+        return clean_json({"total": len(queue), "offset": offset, "items": items})
 
     @application.post("/api/reviews/{seshat_id}")
     async def decide_review(seshat_id: str, request: ReviewDecision) -> dict:

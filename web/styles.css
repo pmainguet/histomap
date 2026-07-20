@@ -62,9 +62,12 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .review-card h2 { margin: .2rem 0; font-size: 2rem; font-weight: 500; }
 .review-rank, .score-breakdown { color: var(--ink-faint); font: .8rem system-ui, sans-serif; }
 .candidate-list { display: grid; gap: .55rem; margin: 1.5rem 0; }
-.candidate { display: grid; gap: .2rem; width: 100%; color: #27251f; text-align: left; background: white; border-color: var(--rule); }
+.candidate { display: grid; gap: .35rem; width: 100%; padding: .7rem; color: #27251f; text-align: left; background: white; border: 1px solid var(--rule); }
 .candidate span, .candidate small { color: var(--ink-faint); }
-.candidate:hover, .candidate:focus { border-color: #8c422d; }
+.source-links { font: .78rem system-ui, sans-serif; }
+.source-links a { color: #8c422d; }
+.candidate:hover, .candidate:focus-within { border-color: #8c422d; }
+.accept-candidate { justify-self: start; margin-top: .25rem; }
 .review-actions { display: flex; gap: .6rem; }
 .danger { background: #8c422d; border-color: #8c422d; }
 kbd { padding: .1rem .3rem; background: white; border: 1px solid var(--rule); font: .75rem system-ui, sans-serif; }

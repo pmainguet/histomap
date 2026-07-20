@@ -6,11 +6,18 @@ let total = 0;
 let deferredOffset = 0;
 
 function candidateMarkup(candidate, index) {
-  return `<button class="candidate" data-polity-id="${candidate.polity_id}">
+  const links = (candidate.source_links || []).map((link) => `<a href="${link.url}" target="_blank" rel="noopener noreferrer" data-source-link>${link.label} ↗</a>`).join(" · ");
+  return `<article class="candidate">
     <strong>${index + 1}. ${candidate.canonical_name}</strong>
     <span>${candidate.polity_id}</span>
     <small>Total ${candidate.total_score.toFixed(1)} · name ${candidate.name_score.toFixed(1)} · dates ${candidate.date_score.toFixed(1)} · geography ${candidate.geography_score.toFixed(1)}</small>
-  </button>`;
+    <span class="source-links">${links || "No external identifier"}</span>
+    <button class="accept-candidate" data-polity-id="${candidate.polity_id}">Accept this match</button>
+  </article>`;
+}
+
+function sourceLinksMarkup(links) {
+  return links.map((link) => `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label} ↗</a>`).join(" · ");
 }
 
 async function loadNext() {
@@ -28,10 +35,11 @@ async function loadNext() {
   card.innerHTML = `<p class="review-rank">Priority ${current.review_priority.toFixed(1)}</p>
     <h2>${current.seshat_name}</h2>
     <p>${current.start_year} to ${current.end_year} · ${current.seshat_id}</p>
+    <p class="source-links">${sourceLinksMarkup(current.source_links || [])}</p>
     <p class="score-breakdown">Source ${parts.source_importance.toFixed(0)} · candidate impact ${parts.candidate_impact.toFixed(0)} · quality ${parts.quality.toFixed(0)} · ambiguity ${parts.ambiguity.toFixed(0)}</p>
     <div class="candidate-list">${current.candidates.map(candidateMarkup).join("")}</div>
     <div class="review-actions"><button id="reject" class="danger">Reject candidates</button><button id="defer">Defer</button></div>`;
-  card.querySelectorAll(".candidate").forEach((button) => button.addEventListener("click", () => decide("accept", button.dataset.polityId)));
+  card.querySelectorAll(".accept-candidate").forEach((button) => button.addEventListener("click", () => decide("accept", button.dataset.polityId)));
   card.querySelector("#reject").addEventListener("click", () => decide("reject"));
   card.querySelector("#defer").addEventListener("click", () => decide("defer"));
 }

@@ -24,7 +24,7 @@ class UnifiedServerTests(unittest.TestCase):
             "canonical_name": "Candidate",
             "prominence_score": 70,
             "visibility_tier": "global",
-            "external_ids": {},
+            "external_ids": {"wikidata": "Q123"},
         }
         (self.root / "polities" / "candidate.yaml").write_text(
             yaml.safe_dump(polity), encoding="utf-8"
@@ -65,6 +65,11 @@ class UnifiedServerTests(unittest.TestCase):
     def test_lists_and_accepts_a_valid_candidate(self) -> None:
         payload = self.client.get("/api/reviews").json()
         self.assertEqual(payload["total"], 1)
+        self.assertIn("search=Source", payload["items"][0]["source_links"][0]["url"])
+        self.assertEqual(
+            payload["items"][0]["candidates"][0]["source_links"][0]["url"],
+            "https://www.wikidata.org/wiki/Q123",
+        )
         response = self.client.post(
             "/api/reviews/S1", json={"decision": "accept", "polity_id": "candidate"}
         )
