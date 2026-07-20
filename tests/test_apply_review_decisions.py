@@ -23,7 +23,7 @@ class ApplyReviewDecisionsTests(unittest.TestCase):
             )
             records = [
                 {"seshat_id": "S1", "seshat_name": "Matched", "start_year": 1, "end_year": 2},
-                {"seshat_id": "S2", "seshat_name": "Separate", "start_year": 3, "end_year": 4},
+                {"seshat_id": "S2*", "seshat_name": "Separate", "start_year": 3, "end_year": 4},
             ]
             review_path = reports / "reviews.jsonl"
             review_path.write_text(
@@ -33,7 +33,7 @@ class ApplyReviewDecisionsTests(unittest.TestCase):
             decisions_path.write_text(
                 json.dumps({"seshat_id": "S1", "decision": "accept", "polity_id": "target"})
                 + "\n"
-                + json.dumps({"seshat_id": "S2", "decision": "reject"})
+                + json.dumps({"seshat_id": "S2*", "decision": "reject"})
                 + "\n",
                 encoding="utf-8",
             )
@@ -50,7 +50,7 @@ class ApplyReviewDecisionsTests(unittest.TestCase):
             self.assertEqual(counts, {"accepted": 1, "rejected": 1, "unchanged": 0})
             self.assertEqual(target["external_ids"]["seshat"], ["S1"])
             self.assertIn("seshat", target["sources"])
-            self.assertEqual(draft["external_ids"]["seshat"], ["S2"])
+            self.assertEqual(draft["external_ids"]["seshat"], ["S2*"])
             self.assertEqual(separate["canonical_name"], "Separate")
             self.assertEqual(separate["eligibility"], "review")
             Polity.model_validate(separate)

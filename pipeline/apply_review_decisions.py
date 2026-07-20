@@ -37,7 +37,9 @@ def apply_review_decisions(
         if record is None:
             raise ValueError(f"review decision references unknown Seshat record {seshat_id}")
         if decision["decision"] == "reject":
-            polity_id = f"seshat_{normalize_name(record['seshat_name']).replace(' ', '_')}_{seshat_id.lower()}"
+            name_slug = normalize_name(record["seshat_name"]).replace(" ", "_") or "entity"
+            source_slug = normalize_name(seshat_id).replace(" ", "_") or "record"
+            polity_id = f"seshat_{name_slug}_{source_slug}"
             draft = {
                 "id": polity_id,
                 "canonical_name": record["seshat_name"],
