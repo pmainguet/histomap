@@ -103,6 +103,18 @@ function geographyGroup(polity) {
   return "unknown";
 }
 
+function countryLaneKey(polity) {
+  const countries = polity.geography?.present_countries || [];
+  if (countries.length === 1) return countries[0];
+  return countries.length > 1 ? "__multiple" : "__unknown";
+}
+
+function countryLaneLabel(key) {
+  if (key === "__multiple") return "Multiple present countries";
+  if (key === "__unknown") return "Country unknown";
+  return countryNames.of(key) || key;
+}
+
 function weightAt(polity, year) {
   const points = Object.entries(polity.weight_by_era).map(([y, w]) => [+y, +w]).sort((a, b) => a[0] - b[0]);
   if (!points.length) return 1;
@@ -429,20 +441,34 @@ function render() {
   const span = yearEnd - yearStart;
   const rowHeight = 25;
   const laneHeaderHeight = 27;
+  const countryHeaderHeight = 22;
   const margin = { top: 48, right: 24, bottom: 24, left: 24 };
   const pixelsPerYear = Math.max(.2, Math.min(2, 1500 / span));
   const width = Math.max(900, Math.min(4800, span * pixelsPerYear + margin.left + margin.right));
   const groups = geographyOrder
     .map((name) => {
       const items = matched.filter((polity) => geographyGroup(polity) === name);
+      const countryKeys = [...new Set(items.map(countryLaneKey))].sort((a, b) => {
+        if (a.startsWith("__") !== b.startsWith("__")) return a.startsWith("__") ? 1 : -1;
+        return countryLaneLabel(a).localeCompare(countryLaneLabel(b));
+      });
+      const countryGroups = countryKeys.map((country) => ({
+        country,
+        items: orderLaneEntities(items.filter((polity) => countryLaneKey(polity) === country)),
+      }));
       return {
         name,
-        items: orderLaneEntities(items),
+        countryGroups,
+        items: countryGroups.flatMap((countryGroup) => countryGroup.items),
       };
     })
     .filter((group) => group.items.length);
   const visible = groups.flatMap((group) => collapsedGeographies.has(group.name) ? [] : group.items);
-  const height = Math.max(180, visible.length * rowHeight + groups.length * laneHeaderHeight + margin.top + margin.bottom);
+  const visibleCountryLanes = groups.reduce(
+    (count, group) => count + (collapsedGeographies.has(group.name) ? 0 : group.countryGroups.length), 0,
+  );
+  const height = Math.max(180, visible.length * rowHeight + groups.length * laneHeaderHeight
+    + visibleCountryLanes * countryHeaderHeight + margin.top + margin.bottom);
   const innerWidth = width - margin.left - margin.right;
   const x = (year) => margin.left + ((year - yearStart) / span) * innerWidth;
   const svg = svgElement("svg", { viewBox: `0 0 ${width} ${height}`, width, height });
@@ -453,7 +479,8 @@ function render() {
   let laneY = margin.top;
   for (const group of groups) {
     const collapsed = collapsedGeographies.has(group.name);
-    const laneHeight = laneHeaderHeight + (collapsed ? 0 : group.items.length * rowHeight);
+    const laneHeight = laneHeaderHeight + (collapsed ? 0
+      : group.items.length * rowHeight + group.countryGroups.length * countryHeaderHeight);
     svg.append(svgElement("rect", { x: margin.left, y: laneY, width: innerWidth, height: laneHeight, class: "swimlane" }));
     svg.append(svgElement("rect", { x: margin.left, y: laneY, width: 4, height: laneHeight, fill: geographyColors[group.name] }));
     const laneToggle = svgElement("rect", {
@@ -479,7 +506,25 @@ function render() {
     const laneLabel = svgElement("text", { x: margin.left + 11, y: laneY + 18, class: "swimlane-label" });
     laneLabel.textContent = `${collapsed ? "▸" : "▾"} ${displayTerm(group.name)} · ${group.items.length}`;
     svg.append(laneLabel);
-    if (!collapsed) group.items.forEach((polity, index) => rowCenters.set(polity.id, laneY + laneHeaderHeight + index * rowHeight + rowHeight / 2));
+    if (!collapsed) {
+      let countryY = laneY + laneHeaderHeight;
+      group.countryGroups.forEach((countryGroup, countryIndex) => {
+        const countryLaneHeight = countryHeaderHeight + countryGroup.items.length * rowHeight;
+        svg.append(svgElement("rect", {
+          x: margin.left + 4, y: countryY, width: innerWidth - 4, height: countryLaneHeight,
+          class: `country-swimlane country-swimlane-${countryIndex % 2 ? "odd" : "even"}`,
+        }));
+        const countryLabel = svgElement("text", {
+          x: margin.left + 14, y: countryY + 15, class: "country-swimlane-label",
+        });
+        countryLabel.textContent = `${countryLaneLabel(countryGroup.country)} · ${countryGroup.items.length}`;
+        svg.append(countryLabel);
+        countryGroup.items.forEach((polity, index) => {
+          rowCenters.set(polity.id, countryY + countryHeaderHeight + index * rowHeight + rowHeight / 2);
+        });
+        countryY += countryLaneHeight;
+      });
+    }
     laneY += laneHeight;
   }
 
