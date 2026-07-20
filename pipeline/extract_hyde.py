@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import re
 from pathlib import Path
 
@@ -15,6 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_INPUT = ROOT / "sources" / "hyde"
 OUTPUT_PATH = ROOT / "sources" / "hyde_pop_by_polity.parquet"
 REPORT_PATH = ROOT / "reports" / "hyde_extraction_summary.md"
+DIRECT_TYPES_PATH = ROOT / "sources" / "wikidata_direct_types.json"
 POPULATION_NAMES = ("popc", "population_count", "population", "pop")
 LATITUDE_NAMES = ("lat", "latitude", "y")
 LONGITUDE_NAMES = ("lon", "longitude", "x")
@@ -88,10 +90,18 @@ def radius_cell_indices(
 
 def polity_points() -> list[dict]:
     points = []
+    direct_types = json.loads(DIRECT_TYPES_PATH.read_text(encoding="utf-8"))
+    sovereign_qids = {
+        qid
+        for qid, metadata in direct_types.items()
+        if {"Q6256", "Q3624078"} & set(metadata.get("types", []))
+    }
     for path in (ROOT / "polities").glob("*.yaml"):
         document = yaml.safe_load(path.read_text(encoding="utf-8"))
         centroid = (document.get("geography") or {}).get("centroid")
-        if document.get("eligibility") == "accepted" and centroid:
+        qid = (document.get("external_ids") or {}).get("wikidata")
+        credible_open_end = document.get("end") is not None or qid in sovereign_qids
+        if document.get("eligibility") == "accepted" and centroid and credible_open_end:
             points.append(
                 {
                     "polity_id": document["id"],

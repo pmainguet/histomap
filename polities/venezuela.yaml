@@ -14,7 +14,10 @@ end: null
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1811: 5
+  1850: 6.1
+  1900: 5.74
+  1950: 8.22
+  2000: 7.17
 weight_imputed: true
 icon: null
 text:
@@ -23,6 +26,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- maddison
 - wikidata
 prominence_score: 54.72
 visibility_tier: regional

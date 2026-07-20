@@ -13,7 +13,7 @@ end: 2010
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1992: 5
+  2000: 5.24
 weight_imputed: true
 icon: null
 text:
@@ -22,6 +22,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- hyde
 - wikidata
 prominence_score: 24.57
 visibility_tier: detailed

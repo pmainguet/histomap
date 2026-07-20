@@ -14,7 +14,8 @@ end: null
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1948: 5
+  1950: 5.86
+  2000: 4.74
 weight_imputed: true
 icon: null
 text:
@@ -23,6 +24,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- maddison
 - wikidata
 prominence_score: 54.0
 visibility_tier: regional

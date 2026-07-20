@@ -14,7 +14,11 @@ end: 1897
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1540: 5
+  1600: 3.47
+  1700: 3.63
+  1750: 4.33
+  1800: 4.98
+  1850: 5.32
 weight_imputed: true
 icon: null
 text:
@@ -23,6 +27,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- hyde
 - wikidata
 prominence_score: 50.27
 visibility_tier: regional

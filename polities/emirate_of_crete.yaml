@@ -15,7 +15,7 @@ end: 961
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  820: 5
+  900: 1.0
 weight_imputed: true
 icon: null
 text:
@@ -24,6 +24,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- hyde
 - seshat
 - wikidata
 prominence_score: 47.52

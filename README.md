@@ -41,6 +41,7 @@ make import-wikidata
 make reconcile
 make spotcheck
 make compute-prominence
+make compute-weights
 make enrich-relationships
 make enrich-geography
 make validate

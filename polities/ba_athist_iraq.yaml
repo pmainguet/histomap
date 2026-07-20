@@ -15,7 +15,7 @@ end: 2003
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1968: 5
+  2000: 6.39
 weight_imputed: true
 icon: null
 text:
@@ -24,6 +24,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- hyde
 - wikidata
 prominence_score: 43.15
 visibility_tier: detailed

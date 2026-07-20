@@ -14,7 +14,7 @@ end: 1959
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1912: 5
+  1950: 2.81
 weight_imputed: true
 icon: null
 text:
@@ -23,6 +23,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- hyde
 - wikidata
 prominence_score: 47.04
 visibility_tier: regional

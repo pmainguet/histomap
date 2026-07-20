@@ -291,6 +291,11 @@ HYDE downloads are slow and rate-limited — do it once and cache aggressively.
     weight(polity, year) = clip(10 · raw / p95(raw_in_century), 1, 10)
     ```
     Persist sparse `weight_by_era` at 50-year resolution where data exists; linear interpolation fills the gaps at render time. Any polity with one or more missing components gets `weight_imputed: true`.
+    The initial implementation prefers Maddison for mapped modern states, otherwise uses HYDE,
+    interpolates Seshat area/complexity, and median-imputes missing components by century. Extant
+    sovereign microstates absent from Maddison retain neutral placeholders rather than misleading
+    centroid-radius totals. All current computed records remain marked imputed until polygon coverage
+    replaces the HYDE radius fallback.
 
 16. **Tunable.** All coefficients, the per-century normalization, and the imputation fallbacks live in `pipeline/weights.toml`. Re-tuning is one file edit + `just compute-weights` — the canonical YAMLs are rewritten in-place, the diff lands in git for review.
 

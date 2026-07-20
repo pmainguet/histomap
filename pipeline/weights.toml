@@ -1,0 +1,12 @@
+[coefficients]
+population = 0.4
+area = 0.4
+complexity = 0.2
+
+[normalization]
+interval_years = 50
+complexity_scale = 10.0
+minimum_weight = 1.0
+maximum_weight = 10.0
+percentile = 0.95
+lower_percentile = 0.05

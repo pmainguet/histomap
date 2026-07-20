@@ -14,7 +14,10 @@ end: null
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1844: 5
+  1850: 4.78
+  1900: 5.29
+  1950: 6.59
+  2000: 5.2
 weight_imputed: true
 icon: null
 text:
@@ -23,6 +26,8 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- hyde
+- maddison
 - wikidata
 prominence_score: 52.27
 visibility_tier: regional

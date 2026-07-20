@@ -33,6 +33,9 @@ spotcheck:
 compute-prominence:
 	python pipeline/compute_prominence.py
 
+compute-weights:
+	python pipeline/compute_weights.py
+
 enrich-relationships:
 	python pipeline/enrich_relationships.py
 
