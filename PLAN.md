@@ -323,7 +323,8 @@ HYDE downloads are slow and rate-limited — do it once and cache aggressively.
 ### Phase 6 — Web view
 21. Write `build.py`: YAML files → single `data.json` (compact, indexed by era).
 22. Build the streamgraph in `web/`:
-    - Vertical timeline, horizontal stream width, splits/merges from `transitions.yaml`.
+    - Horizontal time axis with one compact row per polity; band thickness encodes weight, labels
+      are left-aligned inside bands, and splits/merges come from `transitions.yaml`.
     - Reading-level toggle (child / adult).
     - Historical-grouping, continent, present-country, and visibility-tier filters; era zoom and hover cards.
     - Collapsible display groups derived from reviewed political relationships.

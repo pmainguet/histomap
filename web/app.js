@@ -56,6 +56,13 @@ function confidenceLevel(polity) {
   return values.sort((a, b) => (rank[b] ?? 2) - (rank[a] ?? 2))[0] || "low";
 }
 
+function niceTickStep(span) {
+  const rough = span / 9;
+  const power = 10 ** Math.floor(Math.log10(rough));
+  const ratio = rough / power;
+  return (ratio <= 1 ? 1 : ratio <= 2 ? 2 : ratio <= 5 ? 5 : 10) * power;
+}
+
 function render() {
   const yearStart = Number(startInput.value);
   const yearEnd = Number(endInput.value);
@@ -75,31 +82,42 @@ function render() {
       p.start < yearEnd &&
       (p.end == null || p.end > yearStart),
   );
-  const width = Math.max(760, visible.length * 58 + 110);
-  const height = Math.max(900, (yearEnd - yearStart) * .7);
-  const margin = { top: 35, right: 20, bottom: 25, left: 88 };
-  const innerHeight = height - margin.top - margin.bottom;
-  const y = (year) => margin.top + ((year - yearStart) / (yearEnd - yearStart)) * innerHeight;
+  visible.sort((a, b) => a.start - b.start || a.canonical_name.localeCompare(b.canonical_name));
+  const span = yearEnd - yearStart;
+  const rowHeight = 25;
+  const margin = { top: 48, right: 24, bottom: 24, left: 24 };
+  const pixelsPerYear = Math.max(.2, Math.min(2, 1500 / span));
+  const width = Math.max(900, Math.min(4800, span * pixelsPerYear + margin.left + margin.right));
+  const height = Math.max(180, visible.length * rowHeight + margin.top + margin.bottom);
+  const innerWidth = width - margin.left - margin.right;
+  const x = (year) => margin.left + ((year - yearStart) / span) * innerWidth;
   const svg = svgElement("svg", { viewBox: `0 0 ${width} ${height}`, width, height });
+  const definitions = svgElement("defs");
+  svg.append(definitions);
 
-  const tickStep = Math.max(50, 10 ** Math.floor(Math.log10((yearEnd - yearStart) / 8)));
+  const tickStep = niceTickStep(span);
   for (let year = Math.ceil(yearStart / tickStep) * tickStep; year <= yearEnd; year += tickStep) {
-    svg.append(svgElement("line", { x1: margin.left, x2: width - margin.right, y1: y(year), y2: y(year), class: "grid-line" }));
-    const label = svgElement("text", { x: margin.left - 10, y: y(year) + 4, "text-anchor": "end", class: "axis-label" });
+    svg.append(svgElement("line", { x1: x(year), x2: x(year), y1: margin.top - 10, y2: height - margin.bottom, class: "grid-line" }));
+    const label = svgElement("text", { x: x(year), y: margin.top - 20, "text-anchor": "middle", class: "axis-label" });
     label.textContent = formatYear(year);
     svg.append(label);
   }
 
-  visible.sort((a, b) => a.start - b.start || a.canonical_name.localeCompare(b.canonical_name));
   visible.forEach((polity, index) => {
     const start = Math.max(yearStart, polity.start);
     const end = Math.min(yearEnd, polity.end ?? yearEnd);
     const mid = start + (end - start) / 2;
-    const bandWidth = 12 + weightAt(polity, mid) * 4;
-    const center = margin.left + 35 + index * 58;
+    const bandHeight = Math.min(rowHeight - 3, 6 + weightAt(polity, mid) * 1.55);
+    const center = margin.top + index * rowHeight + rowHeight / 2;
+    const bandX = x(start);
+    const bandWidth = Math.max(2, x(end) - bandX);
     const confidence = confidenceLevel(polity);
-    const path = svgElement("path", {
-      d: `M ${center - bandWidth / 2} ${y(start)} L ${center + bandWidth / 2} ${y(start)} L ${center + bandWidth / 2} ${y(end)} L ${center - bandWidth / 2} ${y(end)} Z`,
+    const path = svgElement("rect", {
+      x: bandX,
+      y: center - bandHeight / 2,
+      width: bandWidth,
+      height: bandHeight,
+      rx: "1",
       fill: palette[hash(polity.culture_group || polity.id) % palette.length],
       opacity: { high: .92, medium: .74, low: .52, legendary: .38 }[confidence],
       class: `band confidence-${confidence}`,
@@ -111,6 +129,29 @@ function render() {
     title.textContent = `${polity.canonical_name}: ${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}`;
     path.append(title);
     svg.append(path);
+
+    if (bandWidth >= 18) {
+      const clipId = `band-label-${index}`;
+      const clipPath = svgElement("clipPath", { id: clipId });
+      clipPath.append(
+        svgElement("rect", {
+          x: bandX + 3,
+          y: center - bandHeight / 2,
+          width: Math.max(0, bandWidth - 6),
+          height: bandHeight,
+        }),
+      );
+      definitions.append(clipPath);
+      const label = svgElement("text", {
+        x: bandX + 6,
+        y: center + 4,
+        "text-anchor": "start",
+        "clip-path": `url(#${clipId})`,
+        class: "band-label",
+      });
+      label.textContent = polity.canonical_name;
+      svg.append(label);
+    }
   });
 
   chart.replaceChildren(svg);

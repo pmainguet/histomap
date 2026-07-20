@@ -54,6 +54,7 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .band { cursor: pointer; transition: opacity .12s; }
 .band:hover, .band:focus { opacity: 1 !important; outline: none; stroke: #27251f; stroke-width: 2; }
 .band.confidence-legendary { stroke: #27251f; stroke-width: 1; stroke-dasharray: 4 3; }
+.band-label { fill: #24231e; font: 600 11px/1 system-ui, sans-serif; pointer-events: none; }
 .axis-label { fill: #6f685c; font: 11px system-ui, sans-serif; }
 .grid-line { stroke: #d8d1c2; stroke-width: 1; }
 .empty, .error { padding: 2rem; color: var(--ink-faint); }
