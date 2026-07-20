@@ -23,6 +23,12 @@ class VisibilityTier(str, Enum):
     detailed = "detailed"
 
 
+class Eligibility(str, Enum):
+    accepted = "accepted"
+    review = "review"
+    excluded = "excluded"
+
+
 class ExternalIds(BaseModel):
     wikidata: str | None = None
     seshat: str | None = None
@@ -58,6 +64,7 @@ class Polity(BaseModel):
     weight_imputed: bool = False
     prominence_score: float = Field(default=0, ge=0, le=100)
     visibility_tier: VisibilityTier = VisibilityTier.detailed
+    eligibility: Eligibility = Eligibility.review
     icon: str | None = None
     text: Text = Field(default_factory=Text)
     notes: str = ""

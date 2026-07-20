@@ -8,6 +8,7 @@ regeneration.
 from __future__ import annotations
 
 import argparse
+import json
 import math
 import re
 import unicodedata
@@ -20,6 +21,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_INPUT = ROOT / "sources" / "wikidata.parquet"
 DEFAULT_OUTPUT = ROOT / "polities"
+DEFAULT_TYPE_REPORT = ROOT / "reports" / "wikidata_type_decisions.jsonl"
 YEAR_RE = re.compile(r"^([+-]?\d{1,6})")
 NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
 
@@ -110,6 +112,7 @@ def to_document(row: dict, polity_id: str) -> dict:
         "end_confidence": "low",
         "weight_by_era": {start: 5},
         "weight_imputed": True,
+        "eligibility": "review",
         "icon": None,
         "text": {"short_child_en": "", "short_adult_en": "", "long_en": ""},
         "notes": "Automatically generated from Wikidata; requires review.",
@@ -117,7 +120,12 @@ def to_document(row: dict, polity_id: str) -> dict:
     }
 
 
-def convert(input_path: Path, output_dir: Path, overwrite: bool = False) -> tuple[int, int, int]:
+def convert(
+    input_path: Path,
+    output_dir: Path,
+    overwrite: bool = False,
+    type_report: Path | None = None,
+) -> tuple[int, int, int]:
     frame = pd.read_parquet(input_path).sort_values("qid", kind="stable")
     required = {"qid", "label_en", "inception"}
     missing = required - set(frame.columns)
@@ -125,6 +133,11 @@ def convert(input_path: Path, output_dir: Path, overwrite: bool = False) -> tupl
         raise ValueError(f"input is missing columns: {', '.join(sorted(missing))}")
 
     output_dir.mkdir(parents=True, exist_ok=True)
+    decisions: dict[str, str] = {}
+    if type_report is not None and type_report.exists():
+        for line in type_report.read_text(encoding="utf-8").splitlines():
+            row = json.loads(line)
+            decisions[row["qid"]] = row["decision"]
     existing_qids: dict[str, str | None] = {}
     for path in output_dir.glob("*.yaml"):
         try:
@@ -138,6 +151,9 @@ def convert(input_path: Path, output_dir: Path, overwrite: bool = False) -> tupl
     written = preserved = rejected = 0
     for row, polity_id in allocate_ids(frame.to_dict(orient="records")):
         qid = str(row["qid"])
+        if decisions.get(qid) == "excluded":
+            rejected += 1
+            continue
         occupied_by = existing_qids.get(polity_id)
         if polity_id in existing_qids and occupied_by != qid:
             polity_id = f"{polity_id}_{qid.lower()}"
@@ -150,6 +166,7 @@ def convert(input_path: Path, output_dir: Path, overwrite: bool = False) -> tupl
         except ValueError:
             rejected += 1
             continue
+        document["eligibility"] = decisions.get(qid, "review")
         destination.write_text(
             yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
         )
@@ -163,10 +180,18 @@ def main() -> None:
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--overwrite", action="store_true")
+    parser.add_argument(
+        "--type-report",
+        type=Path,
+        default=DEFAULT_TYPE_REPORT,
+        help="Eligibility report; excluded QIDs are not imported.",
+    )
     args = parser.parse_args()
     if not args.input.exists():
         parser.error(f"input does not exist: {args.input}; run extract_wikidata.py first")
-    written, preserved, rejected = convert(args.input, args.output_dir, args.overwrite)
+    written, preserved, rejected = convert(
+        args.input, args.output_dir, args.overwrite, args.type_report
+    )
     print(
         f"Wrote {written} draft YAML files; preserved {preserved} existing files; "
         f"rejected {rejected} rows with invalid inception dates."

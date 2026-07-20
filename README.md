@@ -32,6 +32,7 @@ make serve
 
 ```powershell
 make extract
+make filter-wikidata-types
 make import-wikidata
 make compute-prominence
 make validate
@@ -39,5 +40,7 @@ make validate
 
 Raw downloads and generated `data.json` are gitignored. Existing canonical YAML files are
 preserved during import unless `pipeline/wd_to_yaml.py --overwrite` is explicitly requested.
+Direct Wikidata types are classified as accepted, excluded, or review before import; the rules
+live in `pipeline/wikidata_types.toml` and ambiguous entities remain visible only in Full dataset.
 The prominence stage keeps every record but assigns `global`, `regional`, or `detailed` visibility;
 the web view defaults to the compact global tier.

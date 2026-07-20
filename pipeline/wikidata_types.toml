@@ -1,0 +1,49 @@
+[allow]
+# Strong direct political types take precedence over place-like types.
+strong_qids = [
+  "Q6256",     # country
+  "Q3624078",  # sovereign state
+  "Q3024240",  # historical country
+  "Q48349",    # empire
+  "Q417175",   # kingdom
+  "Q1790360",  # colonial empire
+]
+
+# These types are political only in context. If an entity is also directly a
+# modern city/settlement, send it to review (for example Berlin).
+contextual_qids = [
+  "Q133442",   # city-state
+  "Q148837",   # polis
+]
+
+[deny]
+# Direct place/non-polity types. Descendant expansion can be added after the
+# direct-type review report shows which additional roots are safe.
+qids = [
+  "Q515",       # city
+  "Q1549591",   # big city
+  "Q200250",    # metropolis
+  "Q174844",    # megacity
+  "Q51929311",  # largest city
+  "Q257391",    # federal capital
+  "Q1422929",   # primate city
+  "Q486972",    # human settlement
+  "Q43229",     # organization
+  "Q811979",    # architectural structure
+]
+
+[review]
+# These are ambiguous for historical data: the Wikidata item may represent a
+# former polity, its modern administrative successor, or only its ruins.
+qids = [
+  "Q839954",  # archaeological site
+  "Q56061",   # administrative territorial entity
+]
+
+[overrides]
+# Per-QID decisions take precedence over type rules. Keep this small and explain
+# additions in review commits.
+Q96 = "accepted"      # Mexico, the sovereign country
+Q1489 = "excluded"    # Mexico City
+Q1524 = "excluded"    # modern Athens
+Q844930 = "accepted"  # Classical Athens

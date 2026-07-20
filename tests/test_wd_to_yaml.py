@@ -44,6 +44,7 @@ class WikidataToYamlTests(unittest.TestCase):
         self.assertEqual(document["end"], 100)
         self.assertEqual(document["weight_by_era"], {-500: 5})
         self.assertEqual(document["external_ids"], {"wikidata": "Q42"})
+        self.assertEqual(document["eligibility"], "review")
 
     def test_convert_suffixes_slug_occupied_by_another_qid(self) -> None:
         with TemporaryDirectory() as temporary_directory:
@@ -78,6 +79,30 @@ class WikidataToYamlTests(unittest.TestCase):
 
             self.assertEqual(result, (1, 0, 1))
             self.assertTrue((root / "polities" / "good.yaml").exists())
+
+    def test_convert_skips_type_exclusions(self) -> None:
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            parquet = root / "input.parquet"
+            pd.DataFrame(
+                [
+                    {"qid": "Q1", "label_en": "City", "inception": "+0100"},
+                    {"qid": "Q2", "label_en": "Country", "inception": "+0100"},
+                ]
+            ).to_parquet(parquet)
+            report = root / "decisions.jsonl"
+            report.write_text(
+                '{"qid":"Q1","decision":"excluded"}\n'
+                '{"qid":"Q2","decision":"accepted"}\n',
+                encoding="utf-8",
+            )
+
+            result = convert(parquet, root / "polities", type_report=report)
+
+            self.assertEqual(result, (1, 0, 1))
+            self.assertFalse((root / "polities" / "city.yaml").exists())
+            country = yaml.safe_load((root / "polities" / "country.yaml").read_text())
+            self.assertEqual(country["eligibility"], "accepted")
 
 
 if __name__ == "__main__":

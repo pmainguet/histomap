@@ -37,6 +37,7 @@ function showDetails(polity) {
     <dl><dt>Dates</dt><dd>${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}</dd>
     <dt>Region</dt><dd>${polity.region || "unclassified"}</dd>
     <dt>Visibility</dt><dd>${polity.visibility_tier || "detailed"} (${polity.prominence_score || 0})</dd>
+    <dt>Eligibility</dt><dd>${polity.eligibility || "review"}</dd>
     <dt>Confidence</dt><dd>${polity.start_confidence} / ${polity.end_confidence}</dd></dl>`;
 }
 
@@ -57,6 +58,8 @@ function render() {
   const selectedRank = tierRank[visibilityInput.value];
   const visible = polities.filter(
     (p) =>
+      p.eligibility !== "excluded" &&
+      (visibilityInput.value === "detailed" || p.eligibility === "accepted") &&
       tierRank[p.visibility_tier || "detailed"] <= selectedRank &&
       p.start < yearEnd &&
       (p.end == null || p.end > yearStart),

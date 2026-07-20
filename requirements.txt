@@ -3,6 +3,7 @@ pyyaml>=6.0
 pandas>=2.2
 pyarrow>=18.0
 SPARQLWrapper>=2.0
+tomli>=2.0; python_version < "3.11"
 # Phase 2+ deps (uncomment when ready):
 # rapidfuzz>=3.9
 # unidecode
