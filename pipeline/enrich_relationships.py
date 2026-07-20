@@ -28,6 +28,7 @@ GROUPS_PATH = ROOT / "reports" / "display_group_candidates.json"
 ENDPOINT = "https://query.wikidata.org/sparql"
 USER_AGENT = "histomap/0.1 (https://github.com/pmainguet/histomap)"
 BATCH_SIZE = 250
+MAX_SUCCESSION_GAP = 250
 PROPERTIES = ("P361", "P527", "P155", "P156", "P1365", "P1366", "P17")
 
 
@@ -47,7 +48,7 @@ def succession_dates_compatible(predecessor: PolityDates, successor: PolityDates
     if predecessor.end is None:
         return False
     gap = successor.start - predecessor.end
-    return successor.start >= predecessor.start and -25 <= gap <= 100
+    return successor.start >= predecessor.start and -25 <= gap <= MAX_SUCCESSION_GAP
 
 
 def _qid(uri: str) -> str:
