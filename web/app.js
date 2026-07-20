@@ -9,6 +9,23 @@ const countryInput = document.querySelector("#country");
 
 const palette = ["#a9563f", "#d0913d", "#59755e", "#51758e", "#725c87", "#9a6f72", "#797044"];
 let polities = [];
+const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;",
+  })[character]);
+}
+
+function displayTerm(value) {
+  return String(value).replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function entityLink(id) {
+  const entity = polities.find((candidate) => candidate.id === id);
+  const label = entity?.canonical_name || displayTerm(id);
+  return entity ? `<button class="entity-link" type="button" data-entity-id="${escapeHtml(id)}">${escapeHtml(label)}</button>` : escapeHtml(label);
+}
 
 function formatYear(year) {
   if (year < 0) return `${Math.abs(year)} BCE`;
@@ -34,14 +51,44 @@ function weightAt(polity, year) {
 
 function showDetails(polity) {
   const description = polity.text?.short_adult_en || polity.notes || "Draft record; description pending review.";
-  details.innerHTML = `<h2>${polity.canonical_name}</h2>
-    <p>${description}</p>
-    <dl><dt>Dates</dt><dd>${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}</dd>
-    <dt>Historical grouping</dt><dd>${polity.region || "unclassified"}</dd>
-    <dt>Geography</dt><dd>${(polity.geography?.continents || []).join(", ") || "unknown"}; ${(polity.geography?.present_countries || []).join(", ") || "no country"}</dd>
-    <dt>Visibility</dt><dd>${polity.visibility_tier || "detailed"} (${polity.prominence_score || 0})</dd>
-    <dt>Eligibility</dt><dd>${polity.eligibility || "review"}</dd>
-    <dt>Confidence</dt><dd>${polity.start_confidence} / ${polity.end_confidence}</dd></dl>`;
+  const aliases = [polity.names?.aliases_en?.replaceAll(" | ", ", "), polity.names?.fr].filter(Boolean).join("; ");
+  const countries = (polity.geography?.present_countries || []).map((code) => countryNames.of(code) || code);
+  const centroid = polity.geography?.centroid;
+  const duration = polity.end == null ? null : polity.end - polity.start;
+  const successors = polity.successors || [];
+  const wikidata = polity.external_ids?.wikidata;
+  const seshat = polity.external_ids?.seshat || [];
+  const sources = (polity.sources || []).map(displayTerm);
+  const externalLinks = [
+    wikidata ? `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(wikidata)}" target="_blank" rel="noopener noreferrer">Wikidata (${escapeHtml(wikidata)}) ↗</a>` : "",
+    centroid ? `<a href="https://www.openstreetmap.org/?mlat=${centroid.lat}&mlon=${centroid.lon}#map=5/${centroid.lat}/${centroid.lon}" target="_blank" rel="noopener noreferrer">View location ↗</a>` : "",
+  ].filter(Boolean);
+  details.innerHTML = `<h2>${escapeHtml(polity.canonical_name)}</h2>
+    <p>${escapeHtml(description)}</p>
+    <dl>
+      <dt>Dates</dt><dd>${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}${duration ? ` (${duration.toLocaleString()} years)` : ""}</dd>
+      ${aliases ? `<dt>Other names</dt><dd>${escapeHtml(aliases)}</dd>` : ""}
+      <dt>Historical grouping</dt><dd>${escapeHtml(polity.region || "unclassified")}</dd>
+      ${polity.parent ? `<dt>Part of</dt><dd>${entityLink(polity.parent)}</dd>` : ""}
+      ${successors.length ? `<dt>Followed by</dt><dd>${successors.map(entityLink).join(", ")}</dd>` : ""}
+      <dt>Continents</dt><dd>${escapeHtml((polity.geography?.continents || []).map(displayTerm).join(", ") || "unknown")}</dd>
+      <dt>Present countries</dt><dd>${escapeHtml(countries.join(", ") || "unknown")}</dd>
+      ${centroid ? `<dt>Approx. location</dt><dd>${centroid.lat.toFixed(2)}°, ${centroid.lon.toFixed(2)}°</dd>` : ""}
+      <dt>Geography confidence</dt><dd>${escapeHtml(polity.geography?.confidence || "unknown")}</dd>
+      <dt>Prominence</dt><dd>${Number(polity.prominence_score || 0).toFixed(2)} / 100 (${escapeHtml(polity.visibility_tier || "detailed")})</dd>
+      <dt>Historical weight</dt><dd>${polity.weight_imputed ? "estimated" : "source-based"}</dd>
+      <dt>Review status</dt><dd>${escapeHtml(polity.eligibility || "review")}</dd>
+      <dt>Date confidence</dt><dd>start ${escapeHtml(polity.start_confidence || "unknown")}; end ${escapeHtml(polity.end_confidence || "unknown")}</dd>
+      ${sources.length ? `<dt>Data sources</dt><dd>${escapeHtml(sources.join(", "))}</dd>` : ""}
+      ${seshat.length ? `<dt>Seshat IDs</dt><dd>${escapeHtml(seshat.join(", "))}</dd>` : ""}
+    </dl>
+    ${externalLinks.length ? `<p class="detail-links">${externalLinks.join(" · ")}</p>` : ""}`;
+  details.querySelectorAll("[data-entity-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const entity = polities.find((candidate) => candidate.id === button.dataset.entityId);
+      if (entity) showDetails(entity);
+    });
+  });
 }
 
 function svgElement(name, attributes = {}) {
