@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q252268
 parent: null
-successors: []
+successors:
+- landgraviate_of_upper_alsace
 region: null
 culture_group: null
 start: 673

@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q3185305
 parent: null
-successors: []
+successors:
+- kingdom_of_israel
+- kingdom_of_judah
 region: null
 culture_group: null
 start: -1049

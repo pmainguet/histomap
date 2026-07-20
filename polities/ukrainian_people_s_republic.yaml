@@ -5,7 +5,10 @@ names:
 external_ids:
   wikidata: Q243610
 parent: null
-successors: []
+successors:
+- ukraine
+- ukrainian_soviet_socialist_republic
+- ukrainian_state
 region: null
 culture_group: null
 start: 1917

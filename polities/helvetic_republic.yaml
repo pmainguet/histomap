@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q206696
 parent: null
-successors: []
+successors:
+- switzerland_in_the_napoleonic_era
 region: null
 culture_group: null
 start: 1798

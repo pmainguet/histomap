@@ -6,7 +6,10 @@ names:
 external_ids:
   wikidata: Q199821
 parent: null
-successors: []
+successors:
+- ecuador
+- federal_republic_of_central_america
+- republic_of_new_granada
 region: null
 culture_group: null
 start: 1819

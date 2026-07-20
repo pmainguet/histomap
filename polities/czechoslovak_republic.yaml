@@ -5,8 +5,9 @@ names:
   aliases_en: ČSR
 external_ids:
   wikidata: Q11178782
-parent: null
-successors: []
+parent: czechoslovakia
+successors:
+- czechoslovak_socialist_republic
 region: null
 culture_group: null
 start: 1948

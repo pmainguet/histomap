@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q156418
 parent: null
-successors: []
+successors:
+- provisional_government_of_hawaii
 region: null
 culture_group: null
 start: 1795

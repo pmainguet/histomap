@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q104178238
 parent: null
-successors: []
+successors:
+- kingdom_of_murcia
 region: null
 culture_group: null
 start: 1228

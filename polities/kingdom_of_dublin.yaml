@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q436994
 parent: null
-successors: []
+successors:
+- lordship_of_ireland
 region: null
 culture_group: null
 start: 839

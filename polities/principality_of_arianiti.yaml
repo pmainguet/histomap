@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q2047479
 parent: null
-successors: []
+successors:
+- league_of_lezhe
 region: null
 culture_group: null
 start: 1432

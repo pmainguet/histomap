@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q160307
 parent: null
-successors: []
+successors:
+- ayyubid_sultanate
 region: null
 culture_group: null
 start: 909

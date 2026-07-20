@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q3845763
 parent: null
-successors: []
+successors:
+- duchy_of_mantua
 region: null
 culture_group: null
 start: 1433

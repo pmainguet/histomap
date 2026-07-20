@@ -7,7 +7,11 @@ names:
 external_ids:
   wikidata: Q12548
 parent: null
-successors: []
+successors:
+- grand_duchy_of_baden
+- kingdom_of_saxony
+- kingdom_of_wurttemberg
+- principality_of_nassau_orange_fulda
 region: null
 culture_group: null
 start: 962

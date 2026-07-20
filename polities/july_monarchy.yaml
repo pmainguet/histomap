@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q58202
 parent: null
-successors: []
+successors:
+- french_second_republic
 region: null
 culture_group: null
 start: 1830

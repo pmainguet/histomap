@@ -4,8 +4,9 @@ names:
   fr: royaume de Prusse
 external_ids:
   wikidata: Q27306
-parent: null
-successors: []
+parent: prussia
+successors:
+- free_state_of_prussia
 region: null
 culture_group: null
 start: 1701

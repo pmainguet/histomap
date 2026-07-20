@@ -4,8 +4,9 @@ names:
   fr: Brandebourg-Prusse
 external_ids:
   wikidata: Q157367
-parent: null
-successors: []
+parent: prussia
+successors:
+- kingdom_of_prussia
 region: null
 culture_group: null
 start: 1618

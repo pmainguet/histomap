@@ -10,7 +10,8 @@ names:
 external_ids:
   wikidata: Q4948
 parent: null
-successors: []
+successors:
+- austrian_empire
 region: null
 culture_group: null
 start: 697

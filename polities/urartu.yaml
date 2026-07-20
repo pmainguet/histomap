@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q185068
 parent: null
-successors: []
+successors:
+- satrapy_of_armenia
 region: null
 culture_group: null
 start: -860

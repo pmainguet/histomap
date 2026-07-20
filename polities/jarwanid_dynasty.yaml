@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q13639109
 parent: null
-successors: []
+successors:
+- jabrids
 region: null
 culture_group: null
 start: 1392

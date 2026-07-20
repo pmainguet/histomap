@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q12642600
 parent: null
-successors: []
+successors:
+- neo_assyrian_empire
 region: null
 culture_group: null
 start: -1362

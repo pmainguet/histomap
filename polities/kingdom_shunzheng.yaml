@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q15905301
 parent: null
-successors: []
+successors:
+- people_s_republic_of_china
 region: null
 culture_group: null
 start: 1946

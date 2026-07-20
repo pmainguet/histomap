@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q6741448
 parent: null
-successors: []
+successors:
+- malawi
 region: null
 culture_group: null
 start: 1964

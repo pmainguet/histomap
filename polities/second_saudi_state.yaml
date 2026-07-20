@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q146862
 parent: null
-successors: []
+successors:
+- third_saudi_state
 region: null
 culture_group: null
 start: 1818

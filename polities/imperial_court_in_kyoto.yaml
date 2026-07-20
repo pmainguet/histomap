@@ -4,8 +4,9 @@ names:
   fr: cour impériale de Kyōto
 external_ids:
   wikidata: Q11680900
-parent: null
-successors: []
+parent: imperial_court_of_japan
+successors:
+- government_of_meiji_japan
 region: null
 culture_group: null
 start: 794

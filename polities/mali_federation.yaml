@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q216632
 parent: null
-successors: []
+successors:
+- mali
+- senegal
 region: null
 culture_group: null
 start: 1959

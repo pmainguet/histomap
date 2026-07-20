@@ -11,7 +11,8 @@ names:
 external_ids:
   wikidata: Q8733
 parent: null
-successors: []
+successors:
+- taiwan
 region: null
 culture_group: null
 start: 1636

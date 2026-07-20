@@ -4,7 +4,9 @@ names: {}
 external_ids:
   wikidata: Q596092
 parent: null
-successors: []
+successors:
+- kingdom_of_butua
+- kingdom_of_mutapa
 region: null
 culture_group: null
 start: 1220

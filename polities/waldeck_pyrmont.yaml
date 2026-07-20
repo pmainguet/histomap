@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q136802438
 parent: null
-successors: []
+successors:
+- free_state_of_waldeck_pyrmont
 region: null
 culture_group: null
 start: 1849

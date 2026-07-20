@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q837128
 parent: null
-successors: []
+successors:
+- duchy_of_bremen_and_verden
 region: null
 culture_group: null
 start: 787

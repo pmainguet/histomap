@@ -4,8 +4,9 @@ names:
   fr: Royaume de Sardaigne (1324-1713)
 external_ids:
   wikidata: Q55599391
-parent: null
-successors: []
+parent: crown_of_aragon
+successors:
+- kingdom_of_sardinia_and_corsica
 region: null
 culture_group: null
 start: 1324

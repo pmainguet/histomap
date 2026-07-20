@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1709185
 parent: null
-successors: []
+successors:
+- kingdom_of_spain_q15238138
 region: null
 culture_group: null
 start: 1808

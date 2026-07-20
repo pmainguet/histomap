@@ -8,7 +8,8 @@ names:
 external_ids:
   wikidata: Q1448131
 parent: null
-successors: []
+successors:
+- albanian_kingdom_q777147
 region: null
 culture_group: null
 start: 1939

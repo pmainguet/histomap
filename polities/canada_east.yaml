@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q2935756
 parent: null
-successors: []
+successors:
+- quebec
 region: null
 culture_group: null
 start: 1841

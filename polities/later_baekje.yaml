@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q698239
 parent: null
-successors: []
+successors:
+- goryeo
 region: null
 culture_group: null
 start: 892

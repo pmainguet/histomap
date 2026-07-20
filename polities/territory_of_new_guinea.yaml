@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q1443945
 parent: null
-successors: []
+successors:
+- territory_of_papua_and_new_guinea
 region: null
 culture_group: null
 start: 1919

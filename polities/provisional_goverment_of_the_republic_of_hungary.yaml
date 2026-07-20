@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q16985296
 parent: null
-successors: []
+successors:
+- kingdom_of_hungary_q600018
 region: null
 culture_group: null
 start: 1919

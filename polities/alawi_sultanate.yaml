@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q131429368
 parent: null
-successors: []
+successors:
+- french_protectorate_in_morocco
 region: null
 culture_group: null
 start: 1660

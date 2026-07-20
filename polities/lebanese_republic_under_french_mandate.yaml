@@ -5,8 +5,9 @@ names:
   aliases_en: mandatory Lebanese Republic
 external_ids:
   wikidata: Q108865218
-parent: null
-successors: []
+parent: french_mandate_of_lebanon
+successors:
+- lebanon
 region: null
 culture_group: null
 start: 1926

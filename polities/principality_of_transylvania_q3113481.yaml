@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q3113481
 parent: null
-successors: []
+successors:
+- kingdom_of_hungary_q25395037
 region: null
 culture_group: null
 start: 1711

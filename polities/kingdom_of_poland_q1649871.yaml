@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q1649871
 parent: null
-successors: []
+successors:
+- polishlithuanian_commonwealth
 region: null
 culture_group: null
 start: 1386

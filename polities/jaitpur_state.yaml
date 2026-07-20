@@ -5,7 +5,9 @@ names:
 external_ids:
   wikidata: Q1678787
 parent: null
-successors: []
+successors:
+- british_raj
+- india
 region: null
 culture_group: null
 start: 1731

@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q637238
 parent: null
-successors: []
+successors:
+- grand_duchy_of_baden
 region: null
 culture_group: null
 start: 1803

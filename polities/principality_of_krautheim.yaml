@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q58856346
 parent: null
-successors: []
+successors:
+- grand_duchy_of_baden
+- kingdom_of_wurttemberg
 region: null
 culture_group: null
 start: 1803

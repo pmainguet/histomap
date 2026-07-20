@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q132868834
 parent: null
-successors: []
+successors:
+- japan_during_the_insei_period
 region: null
 culture_group: null
 start: 866

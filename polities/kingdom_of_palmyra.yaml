@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q136702067
 parent: null
-successors: []
+successors:
+- palmyrene_empire
 region: null
 culture_group: null
 start: 260

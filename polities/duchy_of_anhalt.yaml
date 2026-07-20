@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q16550783
 parent: null
-successors: []
+successors:
+- free_state_of_anhalt
 region: null
 culture_group: null
 start: 1863

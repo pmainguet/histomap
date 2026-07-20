@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q769782
 parent: null
-successors: []
+successors:
+- powys_fadog
+- powys_wenwynwyn
 region: null
 culture_group: null
 start: 500

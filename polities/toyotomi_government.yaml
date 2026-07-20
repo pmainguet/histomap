@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q11634225
 parent: null
-successors: []
+successors:
+- tokugawa_shogunate
 region: null
 culture_group: null
 start: 1580

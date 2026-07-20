@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q2991433
 parent: null
-successors: []
+successors:
+- kingdom_of_aragon
 region: null
 culture_group: null
 start: 724

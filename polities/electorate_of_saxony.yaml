@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q156199
 parent: null
-successors: []
+successors:
+- kingdom_of_saxony
 region: null
 culture_group: null
 start: 1356

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1392840
 parent: null
-successors: []
+successors:
+- principality_of_novgorod_seversk
 region: null
 culture_group: null
 start: 862

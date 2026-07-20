@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q940123
 parent: null
-successors: []
+successors:
+- fatimid_caliphate
 region: null
 culture_group: null
 start: 767

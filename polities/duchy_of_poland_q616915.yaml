@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q616915
 parent: null
-successors: []
+successors:
+- kingdom_of_poland_q3446214
 region: null
 culture_group: null
 start: 1138

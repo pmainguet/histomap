@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q2208978
 parent: null
-successors: []
+successors:
+- duchy_of_swabia
 region: null
 culture_group: null
 start: 300

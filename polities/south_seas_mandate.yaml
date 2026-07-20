@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q718763
 parent: null
-successors: []
+successors:
+- trust_territory_of_the_pacific_islands
 region: null
 culture_group: null
 start: 1919

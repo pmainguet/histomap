@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q55633633
 parent: null
-successors: []
+successors:
+- weimar_republic
 region: null
 culture_group: null
 start: 1918

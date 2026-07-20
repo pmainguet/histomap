@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q871091
 parent: null
-successors: []
+successors:
+- malayan_union
 region: null
 culture_group: null
 start: 1826

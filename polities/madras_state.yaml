@@ -5,7 +5,10 @@ names:
 external_ids:
   wikidata: Q2618458
 parent: null
-successors: []
+successors:
+- andhra_state
+- kerala
+- tamil_nadu
 region: null
 culture_group: null
 start: 1950

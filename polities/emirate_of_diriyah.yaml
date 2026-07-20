@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q56885910
 parent: null
-successors: []
+successors:
+- first_saudi_state
+- saudi_arabia
 region: null
 culture_group: null
 start: 1446

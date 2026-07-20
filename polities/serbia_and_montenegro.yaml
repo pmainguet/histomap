@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q37024
 parent: null
-successors: []
+successors:
+- montenegro
+- serbia
 region: null
 culture_group: null
 start: 2003

@@ -6,8 +6,9 @@ names:
     | Regnum Spaniae | Visigothic Kingdom of Toledo
 external_ids:
   wikidata: Q2940142
-parent: null
-successors: []
+parent: visigothic_kingdom
+successors:
+- kingdom_of_asturias
 region: null
 culture_group: null
 start: 549

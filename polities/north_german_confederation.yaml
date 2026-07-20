@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q150981
 parent: null
-successors: []
+successors:
+- german_reich
 region: null
 culture_group: null
 start: 1867

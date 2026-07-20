@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q2552742
 parent: null
-successors: []
+successors:
+- waqooyi_bari
 region: null
 culture_group: null
 start: 2008

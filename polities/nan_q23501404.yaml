@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q23501404
 parent: null
-successors: []
+successors:
+- shaki_khanate
 region: null
 culture_group: null
 start: 1650

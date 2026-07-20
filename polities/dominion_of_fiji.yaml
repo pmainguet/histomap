@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q5291089
 parent: null
-successors: []
+successors:
+- fiji
 region: null
 culture_group: null
 start: 1970

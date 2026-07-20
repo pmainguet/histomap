@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q648297
 parent: null
-successors: []
+successors:
+- state_of_brunswick
 region: null
 culture_group: null
 start: 1918

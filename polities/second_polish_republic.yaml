@@ -6,7 +6,10 @@ names:
 external_ids:
   wikidata: Q207272
 parent: null
-successors: []
+successors:
+- general_government
+- polish_people_s_republic
+- soviet_union
 region: null
 culture_group: null
 start: 1918

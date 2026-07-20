@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q234197
 parent: null
-successors: []
+successors:
+- kingdom_of_palembang
 region: null
 culture_group: null
 start: 650

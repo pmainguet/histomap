@@ -6,8 +6,11 @@ names:
     Council
 external_ids:
   wikidata: Q533534
-parent: null
-successors: []
+parent: austriahungary
+successors:
+- first_czechoslovak_republic
+- republic_of_german_austria
+- second_polish_republic
 region: null
 culture_group: null
 start: 1867

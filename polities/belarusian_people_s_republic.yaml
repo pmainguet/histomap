@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q842199
 parent: null
-successors: []
+successors:
+- byelorussian_soviet_socialist_republic
+- socialist_soviet_republic_of_byelorussia
 region: null
 culture_group: null
 start: 1918

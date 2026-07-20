@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q832888
 parent: null
-successors: []
+successors:
+- landgraviate_of_lower_alsace
 region: null
 culture_group: null
 start: 700

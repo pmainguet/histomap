@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q694231
 parent: null
-successors: []
+successors:
+- greater_hesse
 region: null
 culture_group: null
 start: 1918

@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q154195
 parent: null
-successors: []
+successors:
+- bavaria
 region: null
 culture_group: null
 start: 1806

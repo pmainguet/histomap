@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q303836
 parent: null
-successors: []
+successors:
+- poland
 region: null
 culture_group: null
 start: 1918

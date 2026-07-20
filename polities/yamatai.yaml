@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q844295
 parent: null
-successors: []
+successors:
+- yamato_kinship
 region: null
 culture_group: null
 start: 100

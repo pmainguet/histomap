@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q10827839
 parent: null
-successors: []
+successors:
+- kamakura_shogunate
 region: null
 culture_group: null
 start: 1167

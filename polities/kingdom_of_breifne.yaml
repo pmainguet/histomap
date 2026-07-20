@@ -5,7 +5,9 @@ names:
 external_ids:
   wikidata: Q905131
 parent: null
-successors: []
+successors:
+- east_breifne
+- west_breifne
 region: null
 culture_group: null
 start: 700

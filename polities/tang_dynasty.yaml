@@ -9,7 +9,9 @@ names:
 external_ids:
   wikidata: Q9683
 parent: null
-successors: []
+successors:
+- later_liang_dynasty
+- yang_wu
 region: null
 culture_group: null
 start: 618

@@ -5,8 +5,9 @@ names:
   aliases_en: Xi Han | Former Han | Western Han Dynasty | Western Han Empire
 external_ids:
   wikidata: Q1072949
-parent: null
-successors: []
+parent: han_dynasty
+successors:
+- xin_dynasty
 region: null
 culture_group: null
 start: -201

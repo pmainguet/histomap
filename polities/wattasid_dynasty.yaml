@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q970799
 parent: null
-successors: []
+successors:
+- saadi_dynasty
 region: null
 culture_group: null
 start: 1472

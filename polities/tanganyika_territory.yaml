@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q158725
 parent: null
-successors: []
+successors:
+- commonwealth_realm_of_tanganyika
 region: null
 culture_group: null
 start: 1922

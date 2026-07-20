@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q659312
 parent: null
-successors: []
+successors:
+- first_french_empire
 region: null
 culture_group: null
 start: 1797

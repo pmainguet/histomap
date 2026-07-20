@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q23366230
 parent: null
-successors: []
+successors:
+- canton_of_geneva
 region: null
 culture_group: null
 start: 1534

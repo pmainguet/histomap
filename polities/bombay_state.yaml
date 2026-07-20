@@ -7,7 +7,9 @@ names:
 external_ids:
   wikidata: Q2627082
 parent: null
-successors: []
+successors:
+- gujarat
+- maharashtra
 region: null
 culture_group: null
 start: 1947

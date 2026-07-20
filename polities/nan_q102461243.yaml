@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q102461243
 parent: null
-successors: []
+successors:
+- counani_free_state
 region: null
 culture_group: null
 start: 1887

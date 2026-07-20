@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q13134747
 parent: null
-successors: []
+successors:
+- kingdom_of_holland
 region: null
 culture_group: null
 start: 1801

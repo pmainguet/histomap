@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q5919137
 parent: null
-successors: []
+successors:
+- kingdom_of_toledo_q2940142
 region: null
 culture_group: null
 start: 507

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q13414776
 parent: null
-successors: []
+successors:
+- western_han
 region: null
 culture_group: null
 start: -205

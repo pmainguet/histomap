@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q854850
 parent: null
-successors: []
+successors:
+- india
+- united_states_of_matsya
 region: null
 culture_group: null
 start: 1680

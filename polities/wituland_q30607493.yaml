@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q30607493
 parent: null
-successors: []
+successors:
+- protectorate_of_wituland
 region: null
 culture_group: null
 start: 1885

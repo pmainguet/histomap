@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q1337854
 parent: null
-successors: []
+successors:
+- caliphate_of_cordoba
 region: null
 culture_group: null
 start: 756

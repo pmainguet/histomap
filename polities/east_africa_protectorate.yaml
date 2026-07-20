@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q876185
 parent: null
-successors: []
+successors:
+- kenya_colony
 region: null
 culture_group: null
 start: 1895

@@ -7,7 +7,9 @@ names:
 external_ids:
   wikidata: Q846025
 parent: null
-successors: []
+successors:
+- maurya_empire
+- nanda_empire
 region: null
 culture_group: null
 start: -599

@@ -5,8 +5,9 @@ names:
   aliases_en: Большой Ливан
 external_ids:
   wikidata: Q108865226
-parent: null
-successors: []
+parent: french_mandate_of_lebanon
+successors:
+- lebanese_republic_under_french_mandate
 region: null
 culture_group: null
 start: 1920

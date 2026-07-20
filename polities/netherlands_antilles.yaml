@@ -8,8 +8,10 @@ names:
     | The Netherlands Antilles
 external_ids:
   wikidata: Q25227
-parent: null
-successors: []
+parent: dutch_empire
+successors:
+- aruba
+- sint_maarten
 region: null
 culture_group: null
 start: 1954

@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q979756
 parent: null
-successors: []
+successors:
+- free_state_of_mecklenburg
 region: null
 culture_group: null
 start: 1918

@@ -5,8 +5,10 @@ names:
   aliases_en: Transleithania
 external_ids:
   wikidata: Q696970
-parent: null
-successors: []
+parent: austriahungary
+successors:
+- first_czechoslovak_republic
+- kingdom_of_hungary_q600018
 region: null
 culture_group: null
 start: 1867

@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q62633
 parent: null
-successors: []
+successors:
+- finnish_socialist_workers_republic
+- kingdom_of_finland
 region: null
 culture_group: null
 start: 1809

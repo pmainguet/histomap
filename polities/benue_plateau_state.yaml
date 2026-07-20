@@ -4,7 +4,9 @@ names: {}
 external_ids:
   wikidata: Q840930
 parent: null
-successors: []
+successors:
+- benue_state
+- plateau_state
 region: null
 culture_group: null
 start: 1967

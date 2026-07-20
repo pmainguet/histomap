@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q3818611
 parent: null
-successors: []
+successors:
+- jarwanid_dynasty
 region: null
 culture_group: null
 start: 1232

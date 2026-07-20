@@ -7,7 +7,10 @@ names:
 external_ids:
   wikidata: Q170174
 parent: null
-successors: []
+successors:
+- kingdom_of_italy_q172579
+- roman_republic_q1072140
+- vatican_city
 region: null
 culture_group: null
 start: 754

@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q560771
 parent: null
-successors: []
+successors:
+- margraviate_of_baden_q20011161
 region: null
 culture_group: null
 start: 1515

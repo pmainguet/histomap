@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q43287
 parent: null
-successors: []
+successors:
+- weimar_republic
 region: null
 culture_group: null
 start: 1871

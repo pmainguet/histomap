@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q199389
 parent: null
-successors: []
+successors:
+- kingdom_of_the_iberians
 region: null
 culture_group: null
 start: 588

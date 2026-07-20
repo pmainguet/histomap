@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q903779
 parent: null
-successors: []
+successors:
+- empire_of_brazil
 region: null
 culture_group: null
 start: 1815

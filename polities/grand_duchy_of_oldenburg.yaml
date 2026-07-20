@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q693669
 parent: null
-successors: []
+successors:
+- free_state_of_oldenburg
 region: null
 culture_group: null
 start: 1814

@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q104177909
 parent: null
-successors: []
+successors:
+- trust_territory_of_nauru
 region: null
 culture_group: null
 start: 1920

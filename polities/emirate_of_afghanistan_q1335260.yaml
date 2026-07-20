@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q1335260
 parent: null
-successors: []
+successors:
+- kingdom_of_afghanistan
 region: null
 culture_group: null
 start: 1823

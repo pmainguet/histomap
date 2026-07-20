@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q14624218
 parent: null
-successors: []
+successors:
+- seuna_dynasty
 region: null
 culture_group: null
 start: 973

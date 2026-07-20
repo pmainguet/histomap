@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q641138
 parent: null
-successors: []
+successors:
+- grand_duchy_of_berg
 region: null
 culture_group: null
 start: 1092

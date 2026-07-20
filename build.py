@@ -11,6 +11,25 @@ POLITIES_DIR = ROOT / "polities"
 OUT_PATH = ROOT / "data.json"
 
 
+def find_parent_cycles(polities: list[Polity]) -> list[list[str]]:
+    parents = {polity.id: polity.parent for polity in polities}
+    cycles: set[tuple[str, ...]] = set()
+    for start in parents:
+        path: list[str] = []
+        positions: dict[str, int] = {}
+        current: str | None = start
+        while current in parents and current is not None:
+            if current in positions:
+                cycle = path[positions[current] :]
+                rotations = [tuple(cycle[index:] + cycle[:index]) for index in range(len(cycle))]
+                cycles.add(min(rotations))
+                break
+            positions[current] = len(path)
+            path.append(current)
+            current = parents[current]
+    return [list(cycle) for cycle in sorted(cycles)]
+
+
 def load_all() -> list[Polity]:
     polities: list[Polity] = []
     seen_ids: set[str] = set()
@@ -27,6 +46,8 @@ def load_all() -> list[Polity]:
             continue
         seen_ids.add(polity.id)
         polities.append(polity)
+    for cycle in find_parent_cycles(polities):
+        errors.append(f"parent relationship cycle: {' -> '.join(cycle + [cycle[0]])}")
     if errors:
         for e in errors:
             print(f"ERROR  {e}", file=sys.stderr)

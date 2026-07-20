@@ -4,8 +4,9 @@ names:
   fr: Troisième République tchécoslovaque
 external_ids:
   wikidata: Q2454585
-parent: null
-successors: []
+parent: czechoslovakia
+successors:
+- czechoslovak_republic
 region: null
 culture_group: null
 start: 1945

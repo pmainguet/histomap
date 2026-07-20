@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q736839
 parent: null
-successors: []
+successors:
+- kenmu_restoration
 region: null
 culture_group: null
 start: 1200

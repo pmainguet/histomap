@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q20011161
 parent: null
-successors: []
+successors:
+- electorate_of_baden
 region: null
 culture_group: null
 start: 1771

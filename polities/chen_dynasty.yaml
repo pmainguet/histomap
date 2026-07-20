@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q62454
 parent: null
-successors: []
+successors:
+- sui_dynasty
 region: null
 culture_group: null
 start: 557

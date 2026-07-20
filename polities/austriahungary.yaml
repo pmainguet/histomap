@@ -9,7 +9,13 @@ names:
 external_ids:
   wikidata: Q28513
 parent: null
-successors: []
+successors:
+- czechoslovakia
+- first_czechoslovak_republic
+- kingdom_of_hungary_q600018
+- republic_of_german_austria
+- second_polish_republic
+- state_of_slovenes_croats_and_serbs
 region: null
 culture_group: null
 start: 1867

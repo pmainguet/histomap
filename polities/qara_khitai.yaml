@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q862304
 parent: null
-successors: []
+successors:
+- mongol_empire
 region: null
 culture_group: null
 start: 1124

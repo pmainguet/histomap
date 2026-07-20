@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q476757
 parent: null
-successors: []
+successors:
+- islamic_state_of_afghanistan
 region: null
 culture_group: null
 start: 1978

@@ -4,8 +4,9 @@ names:
   fr: États malais fédérés
 external_ids:
   wikidata: Q1400154
-parent: null
-successors: []
+parent: british_malaya
+successors:
+- malayan_union
 region: null
 culture_group: null
 start: 1895

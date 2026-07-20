@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1358851
 parent: null
-successors: []
+successors:
+- tibetan_empire
 region: null
 culture_group: null
 start: -500

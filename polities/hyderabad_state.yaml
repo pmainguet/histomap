@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1240096
 parent: null
-successors: []
+successors:
+- hyderabad_state_1948_1956
 region: null
 culture_group: null
 start: 1724

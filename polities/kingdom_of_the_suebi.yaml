@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1048918
 parent: null
-successors: []
+successors:
+- galicia_in_the_visigothic_kingdom
 region: null
 culture_group: null
 start: 409

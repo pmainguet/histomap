@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q147909
 parent: null
-successors: []
+successors:
+- people_s_republic_of_bulgaria
 region: null
 culture_group: null
 start: 1908

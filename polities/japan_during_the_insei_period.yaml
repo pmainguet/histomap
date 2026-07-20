@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q132869051
 parent: null
-successors: []
+successors:
+- taira_administration
 region: null
 culture_group: null
 start: 1086

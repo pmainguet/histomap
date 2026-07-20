@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q12557
 parent: null
-successors: []
+successors:
+- ming_dynasty
 region: null
 culture_group: null
 start: 1206

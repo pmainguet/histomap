@@ -8,7 +8,9 @@ names:
 external_ids:
   wikidata: Q2305208
 parent: null
-successors: []
+successors:
+- russian_soviet_federative_socialist_republic
+- soviet_union
 region: null
 culture_group: null
 start: 1917

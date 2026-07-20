@@ -7,7 +7,10 @@ names:
 external_ids:
   wikidata: Q71084
 parent: null
-successors: []
+successors:
+- bourbon_restoration_in_france
+- genoese_republic
+- sovereign_principality_of_the_united_netherlands
 region: null
 culture_group: null
 start: 1804

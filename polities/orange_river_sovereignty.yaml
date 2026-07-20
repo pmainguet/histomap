@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q3048062
 parent: null
-successors: []
+successors:
+- orange_free_state
 region: null
 culture_group: null
 start: 1848

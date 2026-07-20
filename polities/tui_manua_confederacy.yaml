@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q137517992
 parent: null
-successors: []
+successors:
+- kingdom_of_samoa
 region: null
 culture_group: null
 start: 1000

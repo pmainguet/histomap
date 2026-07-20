@@ -4,7 +4,9 @@ names: {}
 external_ids:
   wikidata: Q27536437
 parent: null
-successors: []
+successors:
+- delta_state
+- edo_state
 region: null
 culture_group: null
 start: 1976

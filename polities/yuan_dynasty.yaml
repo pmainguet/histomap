@@ -6,8 +6,10 @@ names:
     Yuan Great Mongol State | Yüan | Yuan Empire | Yuan imperial dynasty
 external_ids:
   wikidata: Q7313
-parent: null
-successors: []
+parent: mongol_empire
+successors:
+- ming_dynasty
+- northern_yuan_dynasty
 region: null
 culture_group: null
 start: 1271

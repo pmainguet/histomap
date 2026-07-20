@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q330988
 parent: null
-successors: []
+successors:
+- people_s_republic_of_kampuchea
 region: null
 culture_group: null
 start: 1976

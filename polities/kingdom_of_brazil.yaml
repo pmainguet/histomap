@@ -4,8 +4,9 @@ names:
   aliases_en: United Kingdom of Portugal, Brazil and the Algarves
 external_ids:
   wikidata: Q3932042
-parent: null
-successors: []
+parent: united_kingdom_of_portugal_brazil_and_the_algarves
+successors:
+- united_kingdom_of_portugal_brazil_and_the_algarves
 region: null
 culture_group: null
 start: 1815

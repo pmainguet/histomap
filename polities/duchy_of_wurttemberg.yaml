@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q2227570
 parent: null
-successors: []
+successors:
+- kingdom_of_wurttemberg
 region: null
 culture_group: null
 start: 1495

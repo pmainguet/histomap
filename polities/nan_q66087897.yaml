@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q66087897
 parent: null
-successors: []
+successors:
+- liechtenstein
 region: null
 culture_group: null
 start: 1719

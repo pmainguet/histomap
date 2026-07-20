@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q124943
 parent: null
-successors: []
+successors:
+- republic_of_egypt
 region: null
 culture_group: null
 start: 1922

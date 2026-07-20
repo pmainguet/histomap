@@ -5,7 +5,9 @@ names:
 external_ids:
   wikidata: Q583038
 parent: null
-successors: []
+successors:
+- duchy_of_brescia
+- duchy_of_rome
 region: null
 culture_group: null
 start: 493

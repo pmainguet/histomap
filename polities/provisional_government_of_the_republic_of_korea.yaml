@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q28278
 parent: null
-successors: []
+successors:
+- first_republic_of_south_korea
 region: null
 culture_group: null
 start: 1919

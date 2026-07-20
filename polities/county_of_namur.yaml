@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q599613
 parent: null
-successors: []
+successors:
+- french_first_republic
 region: null
 culture_group: null
 start: 981

@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q8272919
 parent: null
-successors: []
+successors:
+- lithuanian_soviet_socialist_republic_q173761
+- nazi_germany
 region: null
 culture_group: null
 start: 1918

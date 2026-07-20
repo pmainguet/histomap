@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q91394308
 parent: null
-successors: []
+successors:
+- regency_of_algiers
 region: null
 culture_group: null
 start: 1235

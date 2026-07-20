@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q38610
 parent: null
-successors: []
+successors:
+- newfoundland_and_labrador
 region: null
 culture_group: null
 start: 1907

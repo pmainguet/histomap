@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q1232887
 parent: null
-successors: []
+successors:
+- duchy_of_savoy
 region: null
 culture_group: null
 start: 1003

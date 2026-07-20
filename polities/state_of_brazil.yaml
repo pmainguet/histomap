@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q11876909
 parent: null
-successors: []
+successors:
+- kingdom_of_brazil
 region: null
 culture_group: null
 start: 1621

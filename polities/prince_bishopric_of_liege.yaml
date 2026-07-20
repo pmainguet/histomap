@@ -7,7 +7,9 @@ names:
 external_ids:
   wikidata: Q158835
 parent: null
-successors: []
+successors:
+- french_first_republic
+- republic_of_liege
 region: null
 culture_group: null
 start: 985

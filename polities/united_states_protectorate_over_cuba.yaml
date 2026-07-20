@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q7891201
 parent: null
-successors: []
+successors:
+- republic_of_cuba
 region: null
 culture_group: null
 start: 1898

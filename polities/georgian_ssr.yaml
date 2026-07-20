@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q130229
 parent: null
-successors: []
+successors:
+- georgia_q230
 region: null
 culture_group: null
 start: 1921

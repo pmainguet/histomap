@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q502009
 parent: null
-successors: []
+successors:
+- state_of_grao_para_and_maranhao
 region: null
 culture_group: null
 start: 1621

@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q2741089
 parent: null
-successors: []
+successors:
+- united_states_of_central_america
 region: null
 culture_group: null
 start: 1896

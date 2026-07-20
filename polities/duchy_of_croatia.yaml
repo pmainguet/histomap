@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q2576305
 parent: null
-successors: []
+successors:
+- kingdom_of_croatia_q858841
 region: null
 culture_group: null
 start: 700

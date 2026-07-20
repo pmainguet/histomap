@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q5848651
 parent: null
-successors: []
+successors:
+- republic_of_venezuela
 region: null
 culture_group: null
 start: 1864

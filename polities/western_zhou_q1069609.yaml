@@ -8,8 +8,9 @@ names:
     Kingdom
 external_ids:
   wikidata: Q1069609
-parent: null
-successors: []
+parent: zhou_dynasty
+successors:
+- eastern_zhou_q307066
 region: null
 culture_group: null
 start: -1045

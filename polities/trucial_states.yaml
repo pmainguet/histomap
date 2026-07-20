@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1852345
 parent: null
-successors: []
+successors:
+- united_arab_emirates
 region: null
 culture_group: null
 start: 1820

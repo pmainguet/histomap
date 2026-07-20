@@ -6,7 +6,10 @@ names:
 external_ids:
   wikidata: Q1206012
 parent: null
-successors: []
+successors:
+- german_democratic_republic
+- germany
+- west_germany
 region: null
 culture_group: null
 start: 1871

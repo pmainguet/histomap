@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q2342282
 parent: null
-successors: []
+successors:
+- oman
 region: null
 culture_group: null
 start: 751

@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q130802
 parent: null
-successors: []
+successors:
+- syrian_republic_under_french_mandate
 region: null
 culture_group: null
 start: 1922

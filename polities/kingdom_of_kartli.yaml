@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q195972
 parent: null
-successors: []
+successors:
+- kingdom_of_kartli_kakheti
 region: null
 culture_group: null
 start: 1466

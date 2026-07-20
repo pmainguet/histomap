@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q2684394
 parent: null
-successors: []
+successors:
+- kingdom_of_jaen
 region: null
 culture_group: null
 start: 1224

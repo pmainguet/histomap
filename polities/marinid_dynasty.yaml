@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q582861
 parent: null
-successors: []
+successors:
+- wattasid_dynasty
 region: null
 culture_group: null
 start: 1215

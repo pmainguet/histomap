@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q146720
 parent: null
-successors: []
+successors:
+- kingdom_of_iraq
 region: null
 culture_group: null
 start: 1920

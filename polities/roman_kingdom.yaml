@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q201038
 parent: null
-successors: []
+successors:
+- roman_republic_q17167
 region: null
 culture_group: null
 start: -752

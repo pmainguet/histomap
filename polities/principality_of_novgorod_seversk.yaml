@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q130499974
 parent: null
-successors: []
+successors:
+- novgorod_republic
 region: null
 culture_group: null
 start: 882

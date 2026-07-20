@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q21849591
 parent: null
-successors: []
+successors:
+- griqualand_west
 region: null
 culture_group: null
 start: 1870

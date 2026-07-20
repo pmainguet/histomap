@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1591030
 parent: null
-successors: []
+successors:
+- sokoto_caliphate
 region: null
 culture_group: null
 start: 900

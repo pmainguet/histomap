@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q3456487
 parent: null
-successors: []
+successors:
+- mali_federation
 region: null
 culture_group: null
 start: 1958

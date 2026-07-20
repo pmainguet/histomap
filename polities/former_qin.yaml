@@ -6,7 +6,12 @@ names:
 external_ids:
   wikidata: Q1471995
 parent: null
-successors: []
+successors:
+- later_liang
+- later_qin
+- later_yan
+- western_qin
+- western_yan
 region: null
 culture_group: null
 start: 350

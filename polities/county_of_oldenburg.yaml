@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q170390
 parent: null
-successors: []
+successors:
+- duchy_of_oldenburg
 region: null
 culture_group: null
 start: 1091

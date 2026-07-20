@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q12183911
 parent: null
-successors: []
+successors:
+- state_of_syria
 region: null
 culture_group: null
 start: 1922

@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q855044
 parent: null
-successors: []
+successors:
+- bhopal_state_19491956
+- india
 region: null
 culture_group: null
 start: 1723

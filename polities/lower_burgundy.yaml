@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q33242
 parent: null
-successors: []
+successors:
+- kingdom_of_arles
 region: null
 culture_group: null
 start: 855

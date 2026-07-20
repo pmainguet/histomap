@@ -4,8 +4,9 @@ names:
   fr: royaume de Hongrie
 external_ids:
   wikidata: Q25395037
-parent: null
-successors: []
+parent: lands_of_the_crown_of_saint_stephen
+successors:
+- first_hungarian_republic
 region: null
 culture_group: null
 start: 1867

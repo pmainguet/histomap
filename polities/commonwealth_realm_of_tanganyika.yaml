@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q19929935
 parent: null
-successors: []
+successors:
+- tanganyika
 region: null
 culture_group: null
 start: 1961

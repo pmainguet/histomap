@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q706018
 parent: null
-successors: []
+successors:
+- kingdom_of_hanover
 region: null
 culture_group: null
 start: 1692

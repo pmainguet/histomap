@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q27536370
 parent: null
-successors: []
+successors:
+- cross_river_state
 region: null
 culture_group: null
 start: 1967

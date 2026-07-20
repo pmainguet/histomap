@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q28233
 parent: null
-successors: []
+successors:
+- provisional_government_of_the_republic_of_korea
 region: null
 culture_group: null
 start: 1897

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1989935
 parent: null
-successors: []
+successors:
+- principality_of_albania
 region: null
 culture_group: null
 start: 1912

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q58481205
 parent: null
-successors: []
+successors:
+- principality_of_girona
 region: null
 culture_group: null
 start: 1351

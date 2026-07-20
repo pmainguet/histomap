@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q4120907
 parent: null
-successors: []
+successors:
+- autonomous_government_of_inner_mongolia
 region: null
 culture_group: null
 start: 1945

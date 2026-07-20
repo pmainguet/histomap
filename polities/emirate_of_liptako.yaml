@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q58053082
 parent: null
-successors: []
+successors:
+- burkina_faso
 region: null
 culture_group: null
 start: 1809

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q165040
 parent: null
-successors: []
+successors:
+- united_provinces_of_central_italy
 region: null
 culture_group: null
 start: 1545

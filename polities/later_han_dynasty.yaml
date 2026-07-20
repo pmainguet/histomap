@@ -5,7 +5,9 @@ names:
 external_ids:
   wikidata: Q1069829
 parent: null
-successors: []
+successors:
+- later_zhou_dynasty
+- northern_han
 region: null
 culture_group: null
 start: 947

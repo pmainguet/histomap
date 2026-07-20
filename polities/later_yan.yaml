@@ -5,7 +5,9 @@ names:
 external_ids:
   wikidata: Q1534482
 parent: null
-successors: []
+successors:
+- northern_yan
+- southern_yan
 region: null
 culture_group: null
 start: 384

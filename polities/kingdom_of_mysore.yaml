@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q266923
 parent: null
-successors: []
+successors:
+- india
+- mysore_state
 region: null
 culture_group: null
 start: 1399

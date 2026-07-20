@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q12060881
 parent: null
-successors: []
+successors:
+- mongolia
+- republic_of_china
 region: null
 culture_group: null
 start: -219

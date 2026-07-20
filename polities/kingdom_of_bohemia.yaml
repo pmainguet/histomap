@@ -5,8 +5,10 @@ names:
   aliases_en: Bohemia | České království | Königreich Böhmen | Regnum Bohemiae
 external_ids:
   wikidata: Q42585
-parent: null
-successors: []
+parent: cisleithania
+successors:
+- czechoslovakia
+- first_czechoslovak_republic
 region: null
 culture_group: null
 start: 1198

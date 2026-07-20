@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q958291
 parent: null
-successors: []
+successors:
+- kingdom_of_romania
+- romania
 region: null
 culture_group: null
 start: 1859

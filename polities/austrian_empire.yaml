@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q131964
 parent: null
-successors: []
+successors:
+- austriahungary
+- kingdom_of_italy_q172579
 region: null
 culture_group: null
 start: 1804

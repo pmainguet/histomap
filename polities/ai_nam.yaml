@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q107368497
 parent: null
-successors: []
+successors:
+- empire_of_vietnam
 region: null
 culture_group: null
 start: 1839

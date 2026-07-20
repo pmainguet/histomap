@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q16155815
 parent: null
-successors: []
+successors:
+- duchy_of_anhalt
 region: null
 culture_group: null
 start: 1212

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q2638486
 parent: null
-successors: []
+successors:
+- khmer_republic
 region: null
 culture_group: null
 start: 1953

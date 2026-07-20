@@ -5,7 +5,9 @@ names:
 external_ids:
   wikidata: Q15864
 parent: null
-successors: []
+successors:
+- belgium
+- duchy_of_limburg_q376009
 region: null
 culture_group: null
 start: 1815

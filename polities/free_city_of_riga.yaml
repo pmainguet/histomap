@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q4124689
 parent: null
-successors: []
+successors:
+- duchy_of_livonia
 region: null
 culture_group: null
 start: 1561

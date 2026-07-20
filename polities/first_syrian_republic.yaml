@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q26234937
 parent: null
-successors: []
+successors:
+- second_syrian_republic
 region: null
 culture_group: null
 start: 1930

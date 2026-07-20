@@ -5,7 +5,10 @@ names:
 external_ids:
   wikidata: Q2458532
 parent: null
-successors: []
+successors:
+- duchy_of_courland_and_semigallia_q156038
+- duchy_of_estonia
+- duchy_of_livonia
 region: null
 culture_group: null
 start: 1207

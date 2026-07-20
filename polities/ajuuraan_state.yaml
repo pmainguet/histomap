@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q862532
 parent: null
-successors: []
+successors:
+- hiraab_imamate
 region: null
 culture_group: null
 start: 1201

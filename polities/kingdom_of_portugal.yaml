@@ -5,8 +5,9 @@ names:
   aliases_en: Portuguese Kingdom
 external_ids:
   wikidata: Q45670
-parent: null
-successors: []
+parent: united_kingdom_of_portugal_brazil_and_the_algarves
+successors:
+- first_portuguese_republic
 region: null
 culture_group: null
 start: 1139

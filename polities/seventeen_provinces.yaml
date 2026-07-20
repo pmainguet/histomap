@@ -5,7 +5,9 @@ names:
 external_ids:
   wikidata: Q330533
 parent: null
-successors: []
+successors:
+- dutch_republic
+- spanish_netherlands
 region: null
 culture_group: null
 start: 1482

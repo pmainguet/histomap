@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q156020
 parent: null
-successors: []
+successors:
+- duchy_of_prussia
 region: null
 culture_group: null
 start: 1230

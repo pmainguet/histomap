@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q878309
 parent: null
-successors: []
+successors:
+- tran_dynasty
 region: null
 culture_group: null
 start: 1009

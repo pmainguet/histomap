@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q153665
 parent: null
-successors: []
+successors:
+- south_west_africa
 region: null
 culture_group: null
 start: 1884

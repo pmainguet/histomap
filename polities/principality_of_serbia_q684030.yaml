@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q684030
 parent: null
-successors: []
+successors:
+- kingdom_of_serbia_q241748
 region: null
 culture_group: null
 start: 1815

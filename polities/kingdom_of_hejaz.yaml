@@ -5,7 +5,9 @@ names:
 external_ids:
   wikidata: Q956357
 parent: null
-successors: []
+successors:
+- kingdom_of_nejd_and_hejaz
+- sharifian_caliphate
 region: null
 culture_group: null
 start: 1916

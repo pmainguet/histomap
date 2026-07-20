@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q4250299
 parent: null
-successors: []
+successors:
+- turkish_federated_state_of_cyprus
 region: null
 culture_group: null
 start: 1974

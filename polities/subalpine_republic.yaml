@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q302454
 parent: null
-successors: []
+successors:
+- italian_republic
 region: null
 culture_group: null
 start: 1800

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q207162
 parent: null
-successors: []
+successors:
+- july_monarchy
 region: null
 culture_group: null
 start: 1815

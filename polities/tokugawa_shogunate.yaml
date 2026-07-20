@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q205662
 parent: null
-successors: []
+successors:
+- empire_of_japan
+- government_of_meiji_japan
 region: null
 culture_group: null
 start: 1603

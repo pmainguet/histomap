@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q695322
 parent: null
-successors: []
+successors:
+- landgraviate_of_hesse_kassel
 region: null
 culture_group: null
 start: 1264

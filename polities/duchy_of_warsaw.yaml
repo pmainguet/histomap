@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q152115
 parent: null
-successors: []
+successors:
+- grand_duchy_of_posen
 region: null
 culture_group: null
 start: 1807

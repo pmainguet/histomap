@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q3446210
 parent: null
-successors: []
+successors:
+- kingdom_of_navarre_q200262
 region: null
 culture_group: null
 start: 824

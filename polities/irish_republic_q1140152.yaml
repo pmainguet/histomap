@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1140152
 parent: null
-successors: []
+successors:
+- irish_free_state
 region: null
 culture_group: null
 start: 1919

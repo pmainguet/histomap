@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1192347
 parent: null
-successors: []
+successors:
+- southern_tang
 region: null
 culture_group: null
 start: 907

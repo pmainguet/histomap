@@ -6,7 +6,10 @@ names:
 external_ids:
   wikidata: Q12536
 parent: null
-successors: []
+successors:
+- ilkhanate
+- mamluk_sultanate_of_egypt
+- ottoman_empire
 region: null
 culture_group: null
 start: 750

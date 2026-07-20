@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q953068
 parent: null
-successors: []
+successors:
+- namibia
 region: null
 culture_group: null
 start: 1915

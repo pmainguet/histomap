@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q1154406
 parent: null
-successors: []
+successors:
+- oda_regime
 region: null
 culture_group: null
 start: 1336

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q230791
 parent: null
-successors: []
+successors:
+- kingdom_of_great_britain
 region: null
 culture_group: null
 start: 843

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q60775599
 parent: null
-successors: []
+successors:
+- congo_free_state
 region: null
 culture_group: null
 start: 1860

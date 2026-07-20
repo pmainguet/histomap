@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q3249587
 parent: null
-successors: []
+successors:
+- dominion_of_pakistan
 region: null
 culture_group: null
 start: 1775

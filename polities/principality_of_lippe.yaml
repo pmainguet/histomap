@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q14551680
 parent: null
-successors: []
+successors:
+- free_state_of_lippe
 region: null
 culture_group: null
 start: 1789

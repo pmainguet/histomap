@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q391189
 parent: null
-successors: []
+successors:
+- republic_of_formosa
 region: null
 culture_group: null
 start: 1683

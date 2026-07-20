@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q11774
 parent: null
-successors: []
+successors:
+- empire_of_harsha
 region: null
 culture_group: null
 start: 320

@@ -7,7 +7,10 @@ names:
 external_ids:
   wikidata: Q76236
 parent: null
-successors: []
+successors:
+- byelorussian_soviet_socialist_republic
+- republic_of_central_lithuania
+- socialist_soviet_republic_of_byelorussia
 region: null
 culture_group: null
 start: 1919

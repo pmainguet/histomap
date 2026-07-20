@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q976099
 parent: null
-successors: []
+successors:
+- federation_of_malaya
 region: null
 culture_group: null
 start: 1946

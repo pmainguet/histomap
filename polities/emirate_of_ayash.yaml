@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q120060873
 parent: null
-successors: []
+successors:
+- uyunid_emirate
 region: null
 culture_group: null
 start: 1067

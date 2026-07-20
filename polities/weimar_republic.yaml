@@ -7,7 +7,9 @@ names:
 external_ids:
   wikidata: Q41304
 parent: null
-successors: []
+successors:
+- free_city_of_danzig_q216173
+- nazi_germany
 region: null
 culture_group: null
 start: 1918

@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q5301066
 parent: null
-successors: []
+successors:
+- india
 region: null
 culture_group: null
 start: 1765

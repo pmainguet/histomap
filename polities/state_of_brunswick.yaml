@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q23000637
 parent: null
-successors: []
+successors:
+- lower_saxony
 region: null
 culture_group: null
 start: 1933

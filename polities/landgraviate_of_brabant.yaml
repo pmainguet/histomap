@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q751868
 parent: null
-successors: []
+successors:
+- duchy_of_brabant
 region: null
 culture_group: null
 start: 1085

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q174306
 parent: null
-successors: []
+successors:
+- ligurian_republic
 region: null
 culture_group: null
 start: 1005

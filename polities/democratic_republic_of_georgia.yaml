@@ -5,7 +5,9 @@ names:
 external_ids:
   wikidata: Q245160
 parent: null
-successors: []
+successors:
+- georgian_ssr
+- socialist_soviet_republic_of_georgia
 region: null
 culture_group: null
 start: 1918

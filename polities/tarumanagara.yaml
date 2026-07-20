@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q2247225
 parent: null
-successors: []
+successors:
+- galuh_kingdom
+- sunda_kingdom
 region: null
 culture_group: null
 start: 450

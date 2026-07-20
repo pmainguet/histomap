@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q111471
 parent: null
-successors: []
+successors:
+- kingdom_of_alba
 region: null
 culture_group: null
 start: 498

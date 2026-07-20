@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q127861
 parent: null
-successors: []
+successors:
+- sultanate_of_egypt
 region: null
 culture_group: null
 start: 1867

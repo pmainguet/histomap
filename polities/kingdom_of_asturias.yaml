@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q231392
 parent: null
-successors: []
+successors:
+- kingdom_of_leon
 region: null
 culture_group: null
 start: 718

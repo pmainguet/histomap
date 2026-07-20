@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q168651
 parent: null
-successors: []
+successors:
+- electorate_of_hesse_q100594799
 region: null
 culture_group: null
 start: 1567

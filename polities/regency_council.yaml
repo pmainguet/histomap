@@ -5,7 +5,9 @@ names:
 external_ids:
   wikidata: Q7308003
 parent: null
-successors: []
+successors:
+- poland
+- second_polish_republic
 region: null
 culture_group: null
 start: 1917

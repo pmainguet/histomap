@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q12229205
 parent: null
-successors: []
+successors:
+- usfurids
 region: null
 culture_group: null
 start: 1076

@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q17005004
 parent: null
-successors: []
+successors:
+- nagpur_kingdom
 region: null
 culture_group: null
 start: 1200

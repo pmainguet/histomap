@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q199688
 parent: null
-successors: []
+successors:
+- kingdom_of_seville
 region: null
 culture_group: null
 start: 1121

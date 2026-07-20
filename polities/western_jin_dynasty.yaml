@@ -5,8 +5,12 @@ names:
   aliases_en: Sima Jin
 external_ids:
   wikidata: Q1145470
-parent: null
-successors: []
+parent: jin_dynasty_q7352
+successors:
+- cheng_han
+- eastern_jin_dynasty
+- former_liang
+- han_zhao
 region: null
 culture_group: null
 start: 265

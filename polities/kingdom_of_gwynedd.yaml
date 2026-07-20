@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q816814
 parent: null
-successors: []
+successors:
+- principality_of_wales
 region: null
 culture_group: null
 start: 401

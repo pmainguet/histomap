@@ -7,7 +7,9 @@ names:
 external_ids:
   wikidata: Q1998866
 parent: null
-successors: []
+successors:
+- czech_republic
+- slovakia
 region: null
 culture_group: null
 start: 1990

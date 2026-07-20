@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q830084
 parent: null
-successors: []
+successors:
+- duchy_of_brunswick
 region: null
 culture_group: null
 start: 1269

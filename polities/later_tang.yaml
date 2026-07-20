@@ -8,7 +8,9 @@ names:
 external_ids:
   wikidata: Q1143126
 parent: null
-successors: []
+successors:
+- later_jin_dynasty
+- later_shu
 region: null
 culture_group: null
 start: 923

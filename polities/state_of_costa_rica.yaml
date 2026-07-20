@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q68256371
 parent: null
-successors: []
+successors:
+- free_state_of_costa_rica
 region: null
 culture_group: null
 start: 1824

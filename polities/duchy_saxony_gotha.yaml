@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q14631244
 parent: null
-successors: []
+successors:
+- free_state_of_saxe_gotha
 region: null
 culture_group: null
 start: 1826

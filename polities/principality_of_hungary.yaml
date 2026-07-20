@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q2899771
 parent: null
-successors: []
+successors:
+- kingdom_of_hungary_q171150
 region: null
 culture_group: null
 start: 895

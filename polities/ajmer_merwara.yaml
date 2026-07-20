@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q412980
 parent: null
-successors: []
+successors:
+- ajmer_state
 region: null
 culture_group: null
 start: 1818

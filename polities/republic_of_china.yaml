@@ -8,7 +8,9 @@ names:
 external_ids:
   wikidata: Q13426199
 parent: null
-successors: []
+successors:
+- kingdom_shunzheng
+- people_s_republic_of_china
 region: null
 culture_group: null
 start: 1912

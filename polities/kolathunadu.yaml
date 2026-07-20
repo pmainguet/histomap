@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q6427080
 parent: null
-successors: []
+successors:
+- british_raj
 region: null
 culture_group: null
 start: -600

@@ -7,7 +7,10 @@ names:
 external_ids:
   wikidata: Q193714
 parent: null
-successors: []
+successors:
+- all_palestine_government
+- israel
+- jordan
 region: null
 culture_group: null
 start: 1920

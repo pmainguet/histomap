@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q55523
 parent: null
-successors: []
+successors:
+- ryukyu_kingdom
 region: null
 culture_group: null
 start: 1314

@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q7010587
 parent: null
-successors: []
+successors:
+- estado_de_occidente
 region: null
 culture_group: null
 start: 1565

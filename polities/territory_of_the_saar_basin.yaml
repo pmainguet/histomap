@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q170361
 parent: null
-successors: []
+successors:
+- nan_q27069436
 region: null
 culture_group: null
 start: 1920

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q814959
 parent: null
-successors: []
+successors:
+- national_government_of_the_republic_of_china
 region: null
 culture_group: null
 start: 1913

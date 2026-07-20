@@ -1,4 +1,4 @@
-.PHONY: setup extract filter-wikidata-types import-wikidata compute-prominence validate build serve test format lint check
+.PHONY: setup extract filter-wikidata-types import-wikidata compute-prominence enrich-relationships validate build serve test format lint check
 
 setup:
 	uv pip install -r requirements.txt ruff mypy
@@ -14,6 +14,9 @@ import-wikidata:
 
 compute-prominence:
 	python pipeline/compute_prominence.py
+
+enrich-relationships:
+	python pipeline/enrich_relationships.py
 
 validate:
 	python build.py

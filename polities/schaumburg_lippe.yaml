@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q310650
 parent: null
-successors: []
+successors:
+- free_state_of_schaumburg_lippe
 region: null
 culture_group: null
 start: 1643

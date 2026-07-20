@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q3532158
 parent: null
-successors: []
+successors:
+- kingdom_of_thiruvithamkoor
 region: null
 culture_group: null
 start: 1100

@@ -6,7 +6,10 @@ names:
 external_ids:
   wikidata: Q715257
 parent: null
-successors: []
+successors:
+- goryeo
+- later_baekje
+- taebong
 region: null
 culture_group: null
 start: 668

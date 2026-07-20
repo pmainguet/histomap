@@ -5,8 +5,9 @@ names:
   aliases_en: Later Liang Dynasty
 external_ids:
   wikidata: Q849770
-parent: null
-successors: []
+parent: liang_dynasty
+successors:
+- sui_dynasty
 region: null
 culture_group: null
 start: 555

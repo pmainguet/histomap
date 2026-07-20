@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q7603765
 parent: null
-successors: []
+successors:
+- malta
 region: null
 culture_group: null
 start: 1964

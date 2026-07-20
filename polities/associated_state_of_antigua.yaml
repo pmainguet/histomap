@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q111939938
 parent: null
-successors: []
+successors:
+- antigua_and_barbuda
 region: null
 culture_group: null
 start: 1967

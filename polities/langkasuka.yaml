@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q2320075
 parent: null
-successors: []
+successors:
+- patani_kingdom
 region: null
 culture_group: null
 start: 100

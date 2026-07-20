@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q1574107
 parent: null
-successors: []
+successors:
+- later_zhao
 region: null
 culture_group: null
 start: 304

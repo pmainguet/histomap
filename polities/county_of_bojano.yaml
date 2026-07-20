@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q85861952
 parent: null
-successors: []
+successors:
+- county_of_molise
 region: null
 culture_group: null
 start: 550

@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q15146034
 parent: null
-successors: []
+successors:
+- eastern_turkic_khaganate
+- western_turkic_khaganate
 region: null
 culture_group: null
 start: 551

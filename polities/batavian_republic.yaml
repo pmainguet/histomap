@@ -7,7 +7,9 @@ names:
 external_ids:
   wikidata: Q188553
 parent: null
-successors: []
+successors:
+- batavian_commonwealth
+- kingdom_of_holland
 region: null
 culture_group: null
 start: 1795

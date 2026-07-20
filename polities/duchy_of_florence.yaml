@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q2252973
 parent: null
-successors: []
+successors:
+- grand_duchy_of_tuscany
 region: null
 culture_group: null
 start: 1532

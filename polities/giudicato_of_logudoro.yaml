@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q1761381
 parent: null
-successors: []
+successors:
+- kingdom_of_sardinia_q55599391
 region: null
 culture_group: null
 start: 800

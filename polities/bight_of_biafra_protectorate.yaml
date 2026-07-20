@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q130316047
 parent: null
-successors: []
+successors:
+- bights_of_biafra_and_benin_protectorate
 region: null
 culture_group: null
 start: 1849

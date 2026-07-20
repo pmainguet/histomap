@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q798431
 parent: null
-successors: []
+successors:
+- people_s_republic_of_benin
 region: null
 culture_group: null
 start: 1958

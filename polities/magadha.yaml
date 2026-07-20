@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q234009
 parent: null
-successors: []
+successors:
+- nanda_empire
 region: null
 culture_group: null
 start: -1200

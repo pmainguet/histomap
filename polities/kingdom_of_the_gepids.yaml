@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q2784785
 parent: null
-successors: []
+successors:
+- avar_khaganate
 region: null
 culture_group: null
 start: 454

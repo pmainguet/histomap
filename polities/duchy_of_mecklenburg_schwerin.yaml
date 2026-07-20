@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q11024667
 parent: null
-successors: []
+successors:
+- grand_duchy_of_mecklenburg_schwerin
 region: null
 culture_group: null
 start: 1701

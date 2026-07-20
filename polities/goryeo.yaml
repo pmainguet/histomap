@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q28208
 parent: null
-successors: []
+successors:
+- joseon
 region: null
 culture_group: null
 start: 918

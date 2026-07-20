@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q940741
 parent: null
-successors: []
+successors:
+- hungarian_people_s_republic
 region: null
 culture_group: null
 start: 1946

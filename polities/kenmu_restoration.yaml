@@ -5,8 +5,9 @@ names:
   aliases_en: Kemmu Restoration
 external_ids:
   wikidata: Q826021
-parent: null
-successors: []
+parent: imperial_court_of_japan
+successors:
+- ashikaga_shogunate
 region: null
 culture_group: null
 start: 1333

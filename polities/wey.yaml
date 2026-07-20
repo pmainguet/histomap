@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1147897
 parent: null
-successors: []
+successors:
+- qin_dynasty
 region: null
 culture_group: null
 start: -1040

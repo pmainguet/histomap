@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q5177890
 parent: null
-successors: []
+successors:
+- duchy_of_luxembourg
 region: null
 culture_group: null
 start: 963

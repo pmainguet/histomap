@@ -6,7 +6,10 @@ names:
 external_ids:
   wikidata: Q174193
 parent: null
-successors: []
+successors:
+- ireland
+- irish_free_state
+- irish_republic_q1140152
 region: null
 culture_group: null
 start: 1801

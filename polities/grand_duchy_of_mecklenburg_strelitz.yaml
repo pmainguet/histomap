@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q161215
 parent: null
-successors: []
+successors:
+- free_state_of_mecklenburg_strelitz
 region: null
 culture_group: null
 start: 1815

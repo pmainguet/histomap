@@ -5,7 +5,9 @@ names:
 external_ids:
   wikidata: Q16953965
 parent: null
-successors: []
+successors:
+- emirate_of_cyrenaica
+- kingdom_of_libya
 region: null
 culture_group: null
 start: 1943

@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q1122980
 parent: null
-successors: []
+successors:
+- french_constitutional_monarchy
 region: null
 culture_group: null
 start: 1274

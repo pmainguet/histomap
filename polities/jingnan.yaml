@@ -10,7 +10,8 @@ names:
 external_ids:
   wikidata: Q1325075
 parent: null
-successors: []
+successors:
+- northern_song_dynasty
 region: null
 culture_group: null
 start: 924

@@ -4,8 +4,9 @@ names:
   fr: royaume wisigoth de Toulouse
 external_ids:
   wikidata: Q3307686
-parent: null
-successors: []
+parent: visigothic_kingdom
+successors:
+- empire_of_theodoric_the_great
 region: null
 culture_group: null
 start: 418

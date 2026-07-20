@@ -8,7 +8,17 @@ names:
 external_ids:
   wikidata: Q15180
 parent: null
-successors: []
+successors:
+- armenia
+- azerbaijan
+- kazakhstan
+- kyrgyzstan
+- lithuania
+- moldova
+- tajikistan
+- turkmenistan
+- ukraine
+- uzbekistan
 region: null
 culture_group: null
 start: 1922

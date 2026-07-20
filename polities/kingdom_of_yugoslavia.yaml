@@ -5,8 +5,11 @@ names:
   aliases_en: Yugoslavia | Jugoslavija
 external_ids:
   wikidata: Q191077
-parent: null
-successors: []
+parent: yugoslavia
+successors:
+- democratic_federal_yugoslavia
+- governorate_of_montenegro
+- independent_state_of_croatia
 region: null
 culture_group: null
 start: 1929

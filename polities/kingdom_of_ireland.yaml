@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q215530
 parent: null
-successors: []
+successors:
+- united_kingdom_of_great_britain_and_ireland
 region: null
 culture_group: null
 start: 1542

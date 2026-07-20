@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q164092
 parent: null
-successors: []
+successors:
+- duchy_of_saxe_wittenberg
+- saxe_lauenburg
 region: null
 culture_group: null
 start: 804

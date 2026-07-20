@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q1468426
 parent: null
-successors: []
+successors:
+- kingdom_of_limmu_ennarea
 region: null
 culture_group: null
 start: 1400

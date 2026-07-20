@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q46370
 parent: null
-successors: []
+successors:
+- kingdom_of_france
 region: null
 culture_group: null
 start: 843

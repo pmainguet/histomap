@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q771193
 parent: null
-successors: []
+successors:
+- duchy_of_brittany
 region: null
 culture_group: null
 start: 851

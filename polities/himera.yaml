@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1111219
 parent: null
-successors: []
+successors:
+- thermai_himeraiai
 region: null
 culture_group: null
 start: -647

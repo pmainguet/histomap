@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q1472004
 parent: null
-successors: []
+successors:
+- former_qin
 region: null
 culture_group: null
 start: 337

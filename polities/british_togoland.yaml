@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q797527
 parent: null
-successors: []
+successors:
+- ghana
 region: null
 culture_group: null
 start: 1916

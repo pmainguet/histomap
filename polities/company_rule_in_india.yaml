@@ -8,7 +8,8 @@ names:
 external_ids:
   wikidata: Q2001966
 parent: null
-successors: []
+successors:
+- british_raj
 region: null
 culture_group: null
 start: 1757

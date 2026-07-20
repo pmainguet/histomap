@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q3932084
 parent: null
-successors: []
+successors:
+- anuradhapura_kingdom
 region: null
 culture_group: null
 start: -542

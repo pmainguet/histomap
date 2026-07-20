@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q28567
 parent: null
-successors: []
+successors:
+- kingdom_of_new_spain
 region: null
 culture_group: null
 start: -2000

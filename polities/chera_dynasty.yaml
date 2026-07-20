@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q877155
 parent: null
-successors: []
+successors:
+- venad
 region: null
 culture_group: null
 start: 800

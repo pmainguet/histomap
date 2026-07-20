@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q69808
 parent: null
-successors: []
+successors:
+- provisional_government_of_the_french_republic
 region: null
 culture_group: null
 start: 1940

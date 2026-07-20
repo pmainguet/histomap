@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q170770
 parent: null
-successors: []
+successors:
+- tsardom_of_russia
 region: null
 culture_group: null
 start: 1263

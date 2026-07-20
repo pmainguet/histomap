@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q2314963
 parent: null
-successors: []
+successors:
+- inca_empire
 region: null
 culture_group: null
 start: 1197

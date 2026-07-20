@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q623751
 parent: null
-successors: []
+successors:
+- kingdom_of_northumbria
 region: null
 culture_group: null
 start: 420

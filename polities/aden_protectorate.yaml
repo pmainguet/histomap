@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q1865132
 parent: null
-successors: []
+successors:
+- protectorate_of_south_arabia
 region: null
 culture_group: null
 start: 1869

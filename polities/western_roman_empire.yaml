@@ -6,7 +6,10 @@ names:
 external_ids:
   wikidata: Q42834
 parent: null
-successors: []
+successors:
+- francia
+- kingdom_of_italy_q3755547
+- romain_gaul_domain_of_soissons
 region: null
 culture_group: null
 start: 395

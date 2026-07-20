@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q16881283
 parent: null
-successors: []
+successors:
+- muscat_and_oman
 region: null
 culture_group: null
 start: 1650

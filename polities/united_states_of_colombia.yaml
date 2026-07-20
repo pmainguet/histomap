@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q1061488
 parent: null
-successors: []
+successors:
+- panama
 region: null
 culture_group: null
 start: 1863

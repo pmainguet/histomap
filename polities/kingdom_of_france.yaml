@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q70972
 parent: null
-successors: []
+successors:
+- french_constitutional_monarchy
 region: null
 culture_group: null
 start: 987

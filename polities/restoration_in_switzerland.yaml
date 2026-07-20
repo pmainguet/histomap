@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q568452
 parent: null
-successors: []
+successors:
+- federalism_in_switzerland
 region: null
 culture_group: null
 start: 1814

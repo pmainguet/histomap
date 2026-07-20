@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q402145
 parent: null
-successors: []
+successors:
+- surakarta_sunanate
+- yogyakarta_sultanate
 region: null
 culture_group: null
 start: 1586

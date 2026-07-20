@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q15911539
 parent: null
-successors: []
+successors:
+- mongol_military_government
 region: null
 culture_group: null
 start: 1933

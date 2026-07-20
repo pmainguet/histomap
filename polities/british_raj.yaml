@@ -8,7 +8,10 @@ names:
 external_ids:
   wikidata: Q129286
 parent: null
-successors: []
+successors:
+- dominion_of_india
+- dominion_of_pakistan
+- india
 region: null
 culture_group: null
 start: 1858

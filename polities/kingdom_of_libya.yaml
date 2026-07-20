@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q31454
 parent: null
-successors: []
+successors:
+- libyan_arab_republic
 region: null
 culture_group: null
 start: 1951

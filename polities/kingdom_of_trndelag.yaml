@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q63341831
 parent: null
-successors: []
+successors:
+- kingdom_of_norway_q2196956
 region: null
 culture_group: null
 start: 700

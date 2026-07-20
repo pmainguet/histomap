@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q186096
 parent: null
-successors: []
+successors:
+- russian_empire
 region: null
 culture_group: null
 start: 1547

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q28428
 parent: null
-successors: []
+successors:
+- later_silla
 region: null
 culture_group: null
 start: -17

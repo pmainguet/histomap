@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q1493766
 parent: null
-successors: []
+successors:
+- songhai_empire
 region: null
 culture_group: null
 start: 800

@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q680530
 parent: null
-successors: []
+successors:
+- principality_of_halych
 region: null
 culture_group: null
 start: 1048

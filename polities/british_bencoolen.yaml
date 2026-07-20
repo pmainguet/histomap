@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q4969562
 parent: null
-successors: []
+successors:
+- dutch_east_indies
 region: null
 culture_group: null
 start: 1785

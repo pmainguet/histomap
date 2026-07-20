@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q132869361
 parent: null
-successors: []
+successors:
+- japan_during_the_rekkan_politics_period
 region: null
 culture_group: null
 start: 701

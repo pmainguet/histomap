@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q1044536
 parent: null
-successors: []
+successors:
+- second_spanish_republic
 region: null
 culture_group: null
 start: 1874

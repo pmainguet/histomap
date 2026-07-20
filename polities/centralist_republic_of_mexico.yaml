@@ -6,7 +6,12 @@ names:
 external_ids:
   wikidata: Q5062192
 parent: null
-successors: []
+successors:
+- california_republic
+- republic_of_texas
+- republic_of_the_rio_grande
+- republic_of_yucatan
+- second_federal_republic_of_mexico
 region: null
 culture_group: null
 start: 1835

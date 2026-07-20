@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q310293
 parent: null
-successors: []
+successors:
+- saarland
 region: null
 culture_group: null
 start: 1947

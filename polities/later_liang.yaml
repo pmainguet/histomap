@@ -5,7 +5,9 @@ names:
 external_ids:
   wikidata: Q2314869
 parent: null
-successors: []
+successors:
+- northern_liang
+- southern_liang
 region: null
 culture_group: null
 start: 386

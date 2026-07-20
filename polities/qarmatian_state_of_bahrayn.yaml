@@ -6,7 +6,10 @@ names:
 external_ids:
   wikidata: Q111805383
 parent: null
-successors: []
+successors:
+- emirate_of_al_zajjaj
+- emirate_of_ayash
+- uyunid_emirate
 region: null
 culture_group: null
 start: 899

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q153080
 parent: null
-successors: []
+successors:
+- holy_roman_empire
 region: null
 culture_group: null
 start: 843

@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q686971
 parent: null
-successors: []
+successors:
+- first_czechoslovak_republic
 region: null
 culture_group: null
 start: 1348

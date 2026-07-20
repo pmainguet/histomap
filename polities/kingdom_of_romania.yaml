@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q203493
 parent: null
-successors: []
+successors:
+- national_legionary_state
+- romanian_people_s_republic
 region: null
 culture_group: null
 start: 1881

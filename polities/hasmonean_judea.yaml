@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q10359001
 parent: null
-successors: []
+successors:
+- herodian_kingdom_of_judea
 region: null
 culture_group: null
 start: -139

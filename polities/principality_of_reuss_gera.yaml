@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q639100
 parent: null
-successors: []
+successors:
+- republic_of_reuss
 region: null
 culture_group: null
 start: 1806

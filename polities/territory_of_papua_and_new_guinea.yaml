@@ -5,7 +5,9 @@ names:
 external_ids:
   wikidata: Q2301972
 parent: null
-successors: []
+successors:
+- papua_new_guinea
+- republic_of_the_north_solomons
 region: null
 culture_group: null
 start: 1949

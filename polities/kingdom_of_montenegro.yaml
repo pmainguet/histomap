@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q386496
 parent: null
-successors: []
+successors:
+- kingdom_of_serbs_croats_and_slovenes
 region: null
 culture_group: null
 start: 1910

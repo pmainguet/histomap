@@ -6,8 +6,11 @@ names:
     Han | Later Han Dynasty | Tong Hàn
 external_ids:
   wikidata: Q1147037
-parent: null
-successors: []
+parent: han_dynasty
+successors:
+- cao_wei
+- eastern_wu
+- shu_han
 region: null
 culture_group: null
 start: 25

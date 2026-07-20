@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q2253783
 parent: null
-successors: []
+successors:
+- kingdom_of_morgannwg_q21005050
 region: null
 culture_group: null
 start: 500

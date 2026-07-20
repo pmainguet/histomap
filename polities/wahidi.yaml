@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q4105363
 parent: null
-successors: []
+successors:
+- federation_of_south_arabia
 region: null
 culture_group: null
 start: 1800

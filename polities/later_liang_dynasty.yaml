@@ -5,7 +5,13 @@ names:
 external_ids:
   wikidata: Q783489
 parent: null
-successors: []
+successors:
+- chu_q1192347
+- former_shu
+- later_tang
+- min
+- southern_han
+- wuyue
 region: null
 culture_group: null
 start: 907

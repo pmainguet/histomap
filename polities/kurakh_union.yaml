@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q4247822
 parent: null
-successors: []
+successors:
+- kura_khanate
 region: null
 culture_group: null
 start: 1400

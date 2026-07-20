@@ -7,7 +7,8 @@ names:
 external_ids:
   wikidata: Q518101
 parent: null
-successors: []
+successors:
+- federal_state_of_austria
 region: null
 culture_group: null
 start: 1919

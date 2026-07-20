@@ -6,7 +6,9 @@ names:
 external_ids:
   wikidata: Q668294
 parent: null
-successors: []
+successors:
+- british_cameroons
+- french_cameroons
 region: null
 culture_group: null
 start: 1884

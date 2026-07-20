@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q99469759
 parent: null
-successors: []
+successors:
+- mirdasid_emirate_of_aleppo
 region: null
 culture_group: null
 start: 944

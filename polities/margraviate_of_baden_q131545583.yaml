@@ -4,7 +4,9 @@ names: {}
 external_ids:
   wikidata: Q131545583
 parent: null
-successors: []
+successors:
+- margraviate_of_baden_baden
+- margraviate_of_baden_durlach
 region: null
 culture_group: null
 start: 1112

@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q108868568
 parent: null
-successors: []
+successors:
+- independent_first_syrian_republic
 region: null
 culture_group: null
 start: 1930

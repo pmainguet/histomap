@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q747314
 parent: null
-successors: []
+successors:
+- botswana
 region: null
 culture_group: null
 start: 1885
