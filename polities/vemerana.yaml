@@ -26,3 +26,10 @@ sources:
 prominence_score: 11.27
 visibility_tier: detailed
 eligibility: review
+geography:
+  continents:
+  - oceania
+  present_countries:
+  - VU
+  centroid: null
+  confidence: medium

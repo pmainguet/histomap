@@ -25,3 +25,13 @@ sources:
 prominence_score: 0
 visibility_tier: detailed
 eligibility: review
+geography:
+  continents:
+  - africa
+  - europe
+  present_countries:
+  - IT
+  centroid:
+    lat: 42.833333333
+    lon: 12.583333333
+  confidence: medium

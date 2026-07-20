@@ -27,3 +27,12 @@ sources:
 prominence_score: 32.3
 visibility_tier: detailed
 eligibility: accepted
+geography:
+  continents:
+  - asia
+  present_countries:
+  - IN
+  centroid:
+    lat: 10.3833
+    lon: 78.7833
+  confidence: low

@@ -27,3 +27,12 @@ sources:
 prominence_score: 49.62
 visibility_tier: regional
 eligibility: accepted
+geography:
+  continents:
+  - oceania
+  present_countries:
+  - NR
+  centroid:
+    lat: -0.5275
+    lon: 166.935
+  confidence: medium

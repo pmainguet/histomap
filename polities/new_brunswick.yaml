@@ -27,3 +27,12 @@ sources:
 prominence_score: 44.78
 visibility_tier: detailed
 eligibility: review
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - CA
+  centroid:
+    lat: 46.6
+    lon: -66.0
+  confidence: medium

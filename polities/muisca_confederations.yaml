@@ -26,3 +26,12 @@ sources:
 prominence_score: 37.51
 visibility_tier: detailed
 eligibility: accepted
+geography:
+  continents:
+  - south_america
+  present_countries:
+  - CO
+  centroid:
+    lat: 4.7175
+    lon: -74.209444444
+  confidence: low

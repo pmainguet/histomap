@@ -26,3 +26,18 @@ sources:
 prominence_score: 33.17
 visibility_tier: detailed
 eligibility: accepted
+geography:
+  continents:
+  - africa
+  - asia
+  present_countries:
+  - AE
+  - BH
+  - IQ
+  - KW
+  - OM
+  - QA
+  - SA
+  - YE
+  centroid: null
+  confidence: medium

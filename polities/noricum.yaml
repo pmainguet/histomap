@@ -26,3 +26,11 @@ sources:
 prominence_score: 54.08
 visibility_tier: regional
 eligibility: review
+geography:
+  continents:
+  - africa
+  - asia
+  - europe
+  present_countries: []
+  centroid: null
+  confidence: medium

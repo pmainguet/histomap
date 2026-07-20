@@ -27,3 +27,13 @@ sources:
 prominence_score: 55.44
 visibility_tier: global
 eligibility: accepted
+geography:
+  continents:
+  - africa
+  - europe
+  present_countries:
+  - DZ
+  - MA
+  - MR
+  centroid: null
+  confidence: medium

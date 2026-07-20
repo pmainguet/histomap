@@ -36,6 +36,7 @@ make filter-wikidata-types
 make import-wikidata
 make compute-prominence
 make enrich-relationships
+make enrich-geography
 make validate
 ```
 

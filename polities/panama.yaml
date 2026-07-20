@@ -27,3 +27,13 @@ sources:
 prominence_score: 52.34
 visibility_tier: regional
 eligibility: accepted
+geography:
+  continents:
+  - north_america
+  - south_america
+  present_countries:
+  - PA
+  centroid:
+    lat: 8.616667
+    lon: -80.366667
+  confidence: medium

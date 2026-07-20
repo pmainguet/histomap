@@ -28,3 +28,12 @@ sources:
 prominence_score: 51.34
 visibility_tier: regional
 eligibility: accepted
+geography:
+  continents:
+  - africa
+  present_countries:
+  - NE
+  centroid:
+    lat: 17.0
+    lon: 10.0
+  confidence: medium

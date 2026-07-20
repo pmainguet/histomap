@@ -26,3 +26,10 @@ sources:
 prominence_score: 24.51
 visibility_tier: detailed
 eligibility: review
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - MX
+  centroid: null
+  confidence: medium

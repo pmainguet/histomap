@@ -26,3 +26,15 @@ sources:
 prominence_score: 39.85
 visibility_tier: detailed
 eligibility: accepted
+geography:
+  continents:
+  - africa
+  - asia
+  - europe
+  - oceania
+  present_countries:
+  - MY
+  centroid:
+    lat: 2.188888888
+    lon: 102.384444444
+  confidence: medium

@@ -25,3 +25,12 @@ sources:
 prominence_score: 12.34
 visibility_tier: detailed
 eligibility: review
+geography:
+  continents:
+  - asia
+  present_countries:
+  - JP
+  centroid:
+    lat: 36.43634
+    lon: 136.6302222
+  confidence: medium

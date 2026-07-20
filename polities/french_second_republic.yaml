@@ -28,3 +28,15 @@ sources:
 prominence_score: 48.12
 visibility_tier: regional
 eligibility: accepted
+geography:
+  continents:
+  - africa
+  - antarctica
+  - europe
+  - oceania
+  present_countries:
+  - FR
+  centroid:
+    lat: 48.816666666
+    lon: 2.483333333
+  confidence: medium

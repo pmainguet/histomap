@@ -26,3 +26,13 @@ sources:
 prominence_score: 19.0
 visibility_tier: detailed
 eligibility: review
+geography:
+  continents:
+  - antarctica
+  - europe
+  present_countries:
+  - 'NO'
+  centroid:
+    lat: 60.83333333
+    lon: 10.16666667
+  confidence: medium

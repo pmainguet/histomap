@@ -25,3 +25,12 @@ sources:
 prominence_score: 0
 visibility_tier: detailed
 eligibility: review
+geography:
+  continents:
+  - asia
+  present_countries:
+  - PH
+  centroid:
+    lat: 14.191938888
+    lon: 121.071111111
+  confidence: medium

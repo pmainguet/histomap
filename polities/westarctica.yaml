@@ -27,3 +27,12 @@ sources:
 prominence_score: 21.7
 visibility_tier: detailed
 eligibility: review
+geography:
+  continents:
+  - antarctica
+  present_countries:
+  - AQ
+  centroid:
+    lat: -79.45
+    lon: -119.35
+  confidence: low

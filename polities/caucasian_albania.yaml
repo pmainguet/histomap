@@ -27,3 +27,13 @@ sources:
 prominence_score: 55.47
 visibility_tier: global
 eligibility: accepted
+geography:
+  continents:
+  - asia
+  - europe
+  present_countries:
+  - AZ
+  centroid:
+    lat: 40.364722
+    lon: 46.882222
+  confidence: medium

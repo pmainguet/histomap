@@ -27,3 +27,13 @@ sources:
 prominence_score: 54.16
 visibility_tier: regional
 eligibility: accepted
+geography:
+  continents:
+  - asia
+  - north_america
+  present_countries:
+  - UZ
+  centroid:
+    lat: 41.378333333
+    lon: 60.363888888
+  confidence: medium

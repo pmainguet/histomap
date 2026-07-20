@@ -28,3 +28,10 @@ sources:
 prominence_score: 57.86
 visibility_tier: global
 eligibility: accepted
+geography:
+  continents:
+  - asia
+  present_countries:
+  - IN
+  centroid: null
+  confidence: medium

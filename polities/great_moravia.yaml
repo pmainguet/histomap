@@ -27,3 +27,12 @@ sources:
 prominence_score: 51.95
 visibility_tier: regional
 eligibility: accepted
+geography:
+  continents:
+  - europe
+  present_countries:
+  - CZ
+  centroid:
+    lat: 49.603402691
+    lon: 18.152819609
+  confidence: low

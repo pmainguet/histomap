@@ -1,4 +1,4 @@
-.PHONY: setup extract filter-wikidata-types import-wikidata compute-prominence enrich-relationships validate build serve test format lint check
+.PHONY: setup extract filter-wikidata-types import-wikidata compute-prominence enrich-relationships enrich-geography validate build serve test format lint check
 
 setup:
 	uv pip install -r requirements.txt ruff mypy
@@ -17,6 +17,9 @@ compute-prominence:
 
 enrich-relationships:
 	python pipeline/enrich_relationships.py
+
+enrich-geography:
+	python pipeline/enrich_geography.py
 
 validate:
 	python build.py

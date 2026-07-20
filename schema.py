@@ -47,6 +47,25 @@ class Text(BaseModel):
     long_en: str = ""
 
 
+class Centroid(BaseModel):
+    lat: float = Field(ge=-90, le=90)
+    lon: float = Field(ge=-180, le=180)
+
+
+class Geography(BaseModel):
+    continents: list[str] = Field(default_factory=list)
+    present_countries: list[str] = Field(default_factory=list)
+    centroid: Centroid | None = None
+    confidence: Confidence | None = None
+
+    @field_validator("present_countries")
+    @classmethod
+    def _country_codes(cls, values: list[str]) -> list[str]:
+        if any(not re.fullmatch(r"[A-Z]{2}", value) for value in values):
+            raise ValueError("present_countries must contain ISO alpha-2 codes")
+        return sorted(set(values))
+
+
 class Polity(BaseModel):
     id: str
     canonical_name: str
@@ -56,6 +75,7 @@ class Polity(BaseModel):
     successors: list[str] = Field(default_factory=list)
     region: str | None = None
     culture_group: str | None = None
+    geography: Geography = Field(default_factory=Geography)
     start: int
     end: int | None = None
     start_confidence: Confidence

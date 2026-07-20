@@ -27,3 +27,12 @@ sources:
 prominence_score: 52.77
 visibility_tier: regional
 eligibility: accepted
+geography:
+  continents:
+  - europe
+  present_countries:
+  - DE
+  centroid:
+    lat: 50.454636
+    lon: 9.528352
+  confidence: medium

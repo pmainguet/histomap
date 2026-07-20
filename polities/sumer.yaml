@@ -26,3 +26,12 @@ sources:
 prominence_score: 65.58
 visibility_tier: global
 eligibility: review
+geography:
+  continents:
+  - asia
+  present_countries:
+  - IQ
+  centroid:
+    lat: 32.0
+    lon: 45.5
+  confidence: low

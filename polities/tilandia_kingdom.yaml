@@ -26,3 +26,13 @@ sources:
 prominence_score: 0
 visibility_tier: detailed
 eligibility: review
+geography:
+  continents:
+  - oceania
+  - south_america
+  present_countries:
+  - CL
+  centroid:
+    lat: -36.881831111
+    lon: -72.241316111
+  confidence: medium

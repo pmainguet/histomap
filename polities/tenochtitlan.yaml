@@ -27,3 +27,12 @@ sources:
 prominence_score: 57.91
 visibility_tier: global
 eligibility: review
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - MX
+  centroid:
+    lat: 19.435
+    lon: -99.13138889
+  confidence: medium

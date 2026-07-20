@@ -30,3 +30,9 @@ sources:
 prominence_score: 52.69
 visibility_tier: regional
 eligibility: review
+geography:
+  continents:
+  - north_america
+  present_countries: []
+  centroid: null
+  confidence: medium

@@ -25,3 +25,9 @@ sources:
 prominence_score: 0
 visibility_tier: detailed
 eligibility: review
+geography:
+  continents: []
+  present_countries:
+  - AU
+  centroid: null
+  confidence: medium

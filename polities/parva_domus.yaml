@@ -27,3 +27,12 @@ sources:
 prominence_score: 17.67
 visibility_tier: detailed
 eligibility: excluded
+geography:
+  continents:
+  - south_america
+  present_countries:
+  - UY
+  centroid:
+    lat: -34.926132
+    lon: -56.161133
+  confidence: medium

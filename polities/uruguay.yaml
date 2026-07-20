@@ -27,3 +27,12 @@ sources:
 prominence_score: 53.92
 visibility_tier: regional
 eligibility: accepted
+geography:
+  continents:
+  - south_america
+  present_countries:
+  - UY
+  centroid:
+    lat: -33.0
+    lon: -56.0
+  confidence: medium

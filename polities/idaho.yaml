@@ -28,3 +28,14 @@ sources:
 prominence_score: 49.25
 visibility_tier: regional
 eligibility: review
+geography:
+  continents:
+  - asia
+  - north_america
+  - oceania
+  present_countries:
+  - US
+  centroid:
+    lat: 45.0
+    lon: -114.0
+  confidence: medium

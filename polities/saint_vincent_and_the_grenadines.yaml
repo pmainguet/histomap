@@ -28,3 +28,12 @@ sources:
 prominence_score: 48.14
 visibility_tier: regional
 eligibility: accepted
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - VC
+  centroid:
+    lat: 13.0139
+    lon: -61.2296
+  confidence: medium

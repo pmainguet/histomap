@@ -30,3 +30,13 @@ sources:
 prominence_score: 46.0
 visibility_tier: regional
 eligibility: accepted
+geography:
+  continents:
+  - africa
+  - antarctica
+  - asia
+  - europe
+  - oceania
+  present_countries: []
+  centroid: null
+  confidence: medium

@@ -26,3 +26,12 @@ sources:
 prominence_score: 36.5
 visibility_tier: detailed
 eligibility: review
+geography:
+  continents:
+  - south_america
+  present_countries:
+  - VE
+  centroid:
+    lat: 9.833333333
+    lon: -72.25
+  confidence: medium

@@ -27,3 +27,8 @@ sources:
 prominence_score: 45.8
 visibility_tier: regional
 eligibility: accepted
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null

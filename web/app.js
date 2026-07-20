@@ -4,6 +4,8 @@ const summary = document.querySelector("#summary");
 const startInput = document.querySelector("#year-start");
 const endInput = document.querySelector("#year-end");
 const visibilityInput = document.querySelector("#visibility");
+const continentInput = document.querySelector("#continent");
+const countryInput = document.querySelector("#country");
 
 const palette = ["#a9563f", "#d0913d", "#59755e", "#51758e", "#725c87", "#9a6f72", "#797044"];
 let polities = [];
@@ -36,6 +38,7 @@ function showDetails(polity) {
     <p>${description}</p>
     <dl><dt>Dates</dt><dd>${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}</dd>
     <dt>Region</dt><dd>${polity.region || "unclassified"}</dd>
+    <dt>Geography</dt><dd>${(polity.geography?.continents || []).join(", ") || "unknown"}; ${(polity.geography?.present_countries || []).join(", ") || "no country"}</dd>
     <dt>Visibility</dt><dd>${polity.visibility_tier || "detailed"} (${polity.prominence_score || 0})</dd>
     <dt>Eligibility</dt><dd>${polity.eligibility || "review"}</dd>
     <dt>Confidence</dt><dd>${polity.start_confidence} / ${polity.end_confidence}</dd></dl>`;
@@ -60,6 +63,8 @@ function render() {
     (p) =>
       p.eligibility !== "excluded" &&
       (visibilityInput.value === "detailed" || p.eligibility === "accepted") &&
+      (!continentInput.value || (p.geography?.continents || []).includes(continentInput.value)) &&
+      (!countryInput.value || (p.geography?.present_countries || []).includes(countryInput.value)) &&
       tierRank[p.visibility_tier || "detailed"] <= selectedRank &&
       p.start < yearEnd &&
       (p.end == null || p.end > yearStart),
@@ -107,11 +112,28 @@ function render() {
 
 document.querySelector("#apply").addEventListener("click", render);
 visibilityInput.addEventListener("change", render);
+continentInput.addEventListener("change", render);
+countryInput.addEventListener("change", render);
+
+function populateSelect(select, values, formatter = (value) => value) {
+  for (const value of [...values].sort()) {
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = formatter(value);
+    select.append(option);
+  }
+}
 
 try {
   const response = await fetch("../data.json");
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   polities = await response.json();
+  populateSelect(
+    continentInput,
+    new Set(polities.flatMap((p) => p.geography?.continents || [])),
+    (value) => value.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase()),
+  );
+  populateSelect(countryInput, new Set(polities.flatMap((p) => p.geography?.present_countries || [])));
   if (polities.length) {
     startInput.value = Math.min(...polities.map((p) => p.start));
     endInput.value = Math.max(...polities.map((p) => p.end ?? new Date().getFullYear()));

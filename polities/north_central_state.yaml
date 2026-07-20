@@ -27,3 +27,10 @@ sources:
 prominence_score: 4.0
 visibility_tier: detailed
 eligibility: review
+geography:
+  continents:
+  - africa
+  present_countries:
+  - NG
+  centroid: null
+  confidence: medium

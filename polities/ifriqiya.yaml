@@ -26,3 +26,14 @@ sources:
 prominence_score: 54.25
 visibility_tier: regional
 eligibility: accepted
+geography:
+  continents:
+  - africa
+  - asia
+  - europe
+  present_countries:
+  - DZ
+  centroid:
+    lat: 35.0
+    lon: 7.0
+  confidence: medium

@@ -27,3 +27,16 @@ sources:
 prominence_score: 33.5
 visibility_tier: detailed
 eligibility: review
+geography:
+  continents:
+  - africa
+  - asia
+  - europe
+  - north_america
+  - oceania
+  present_countries:
+  - MX
+  centroid:
+    lat: 30.330833
+    lon: -110.169167
+  confidence: medium
