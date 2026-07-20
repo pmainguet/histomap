@@ -101,7 +101,7 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(self.client.get("/api/reviews").json()["total"], 0)
 
-    def test_rejects_candidate_not_in_the_review(self) -> None:
+    def test_rejects_unknown_histomap_entity(self) -> None:
         response = self.client.post(
             "/api/reviews/S1", json={"decision": "accept", "polity_id": "invented"}
         )
@@ -116,8 +116,37 @@ class UnifiedServerTests(unittest.TestCase):
             404,
         )
 
+    def test_accepts_entity_found_outside_proposed_candidates(self) -> None:
+        other = {
+            "id": "other",
+            "canonical_name": "Other Entity",
+            "eligibility": "accepted",
+            "start": 100,
+            "end": 200,
+        }
+        (self.root / "polities" / "other.yaml").write_text(
+            yaml.safe_dump(other), encoding="utf-8"
+        )
+        client = TestClient(create_app(self.root))
+        response = client.post(
+            "/api/reviews/S1", json={"decision": "accept", "polity_id": "other"}
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["polity_id"], "other")
+
     def test_rejects_unknown_pipeline_action(self) -> None:
         self.assertEqual(self.client.post("/api/actions/arbitrary-command").status_code, 404)
+
+    def test_searches_all_polities_by_alias(self) -> None:
+        polity_path = self.root / "polities" / "candidate.yaml"
+        polity = yaml.safe_load(polity_path.read_text(encoding="utf-8"))
+        polity["names"] = {"aliases_en": "Alternate Candidate | Other name"}
+        polity_path.write_text(yaml.safe_dump(polity), encoding="utf-8")
+        client = TestClient(create_app(self.root))
+        response = client.get("/api/polities/search", params={"q": "Alternate Candidate"})
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["items"][0]["polity_id"], "candidate")
+        self.assertEqual(response.json()["items"][0]["search_score"], 100)
 
 
 if __name__ == "__main__":

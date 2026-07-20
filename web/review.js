@@ -81,14 +81,55 @@ async function loadNext() {
       <dt>Ambiguity requiring review</dt><dd>${parts.ambiguity.toFixed(0)} / 100</dd></dl></details>
     <h3 class="candidate-heading">Possible existing Histomap records</h3>
     <div class="candidate-list">${current.candidates.map(candidateMarkup).join("")}</div>
+    <section class="all-entity-search">
+      <h3>Search all Histomap entities</h3>
+      <p>Use this when the correct entity is missing from the proposed matches.</p>
+      <form id="entity-search-form" class="entity-search-form">
+        <input id="entity-search" type="search" value="${escapeHtml(current.seshat_long_name || current.seshat_name)}" aria-label="Search all Histomap entities" minlength="2">
+        <button type="submit">Search</button>
+      </form>
+      <div id="entity-search-results" class="entity-search-results" aria-live="polite"></div>
+    </section>
     <div class="review-actions"><button id="reject" class="danger">No match — keep as separate entity</button><button id="defer">Defer</button></div>`;
   card.querySelectorAll(".accept-candidate").forEach((button) => button.addEventListener("click", () => decide("accept", button.dataset.polityId)));
   card.querySelector("#reject").addEventListener("click", () => decide("reject"));
   card.querySelector("#defer").addEventListener("click", () => decide("defer"));
+  card.querySelector("#entity-search-form").addEventListener("submit", searchAllEntities);
+}
+
+async function searchAllEntities(event) {
+  event.preventDefault();
+  const query = card.querySelector("#entity-search").value.trim();
+  const results = card.querySelector("#entity-search-results");
+  if (query.length < 2) {
+    results.textContent = "Enter at least two characters.";
+    return;
+  }
+  results.textContent = "Searching…";
+  try {
+    const response = await fetch(`/api/polities/search?q=${encodeURIComponent(query)}&limit=10`);
+    if (!response.ok) throw new Error(await response.text());
+    const payload = await response.json();
+    if (!payload.items.length) {
+      results.textContent = "No Histomap entities found.";
+      return;
+    }
+    results.innerHTML = payload.items.map((candidate) => `<article class="search-result">
+      <div><strong>${escapeHtml(candidate.canonical_name)}</strong>
+        <span>${formatYear(candidate.canonical_start)}–${formatYear(candidate.canonical_end)} · ${score(candidate.search_score)} name match</span>
+        <span class="source-links">${sourceLinksMarkup(candidate.source_links || [])}</span></div>
+      <button type="button" class="accept-search-result" data-polity-id="${escapeHtml(candidate.polity_id)}">Accept this match</button>
+    </article>`).join("");
+    results.querySelectorAll(".accept-search-result").forEach((button) => {
+      button.addEventListener("click", () => decide("accept", button.dataset.polityId));
+    });
+  } catch (error) {
+    results.textContent = `Search failed: ${error.message}`;
+  }
 }
 
 function setDecisionControlsDisabled(disabled) {
-  card.querySelectorAll(".accept-candidate, #reject, #defer").forEach((button) => {
+  card.querySelectorAll(".accept-candidate, .accept-search-result, #reject, #defer").forEach((button) => {
     button.disabled = disabled;
   });
 }

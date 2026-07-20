@@ -13,6 +13,7 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
+from rapidfuzz import fuzz
 
 from pipeline.review_cli import pending_records, polity_metadata, save_decision
 
@@ -110,6 +111,45 @@ def add_source_links(record: dict, metadata: dict[str, dict]) -> dict:
     return enriched
 
 
+def search_polities(query: str, metadata: dict[str, dict], limit: int = 10) -> list[dict]:
+    query = query.strip()
+    ranked = []
+    for polity_id, document in metadata.items():
+        if document.get("eligibility") == "excluded":
+            continue
+        names = [str(document.get("canonical_name", "")), polity_id]
+        for key, value in (document.get("names") or {}).items():
+            if key == "aliases_en":
+                names.extend(part.strip() for part in str(value).split("|") if part.strip())
+            elif value:
+                names.append(str(value))
+        score = max(float(fuzz.WRatio(query, name)) for name in names if name)
+        exact_alias = any(query.casefold() == name.casefold() for name in names if name)
+        ranked.append((not exact_alias, -score, str(document.get("canonical_name", "")), polity_id))
+    results = []
+    for _, negative_score, _, polity_id in sorted(ranked)[:limit]:
+        document = metadata[polity_id]
+        external_ids = document.get("external_ids") or {}
+        links = []
+        if external_ids.get("wikidata"):
+            links.append({"label": "Wikidata", "url": f"https://www.wikidata.org/wiki/{external_ids['wikidata']}"})
+        wikipedia_url = english_wikipedia_url(external_ids)
+        if wikipedia_url:
+            links.append({"label": "Wikipedia (English)", "url": wikipedia_url})
+        results.append(
+            {
+                "polity_id": polity_id,
+                "canonical_name": document.get("canonical_name", polity_id),
+                "canonical_start": document.get("start"),
+                "canonical_end": document.get("end"),
+                "canonical_sources": document.get("sources", []),
+                "source_links": links,
+                "search_score": round(-negative_score, 1),
+            }
+        )
+    return results
+
+
 def create_app(root: Path = ROOT) -> FastAPI:
     application = FastAPI(title="Histomap", version="0.1.0")
     web_dir = root / "web"
@@ -160,6 +200,12 @@ def create_app(root: Path = ROOT) -> FastAPI:
         items = [add_source_links(record, metadata) for record in review_queue[offset : offset + limit]]
         return clean_json({"total": len(review_queue), "offset": offset, "items": items})
 
+    @application.get("/api/polities/search")
+    async def search_all_polities(
+        q: str = Query(..., min_length=2), limit: int = Query(10, ge=1, le=25)
+    ) -> dict:
+        return clean_json({"query": q, "items": search_polities(q, metadata, limit)})
+
     @application.post("/api/reviews/{seshat_id}")
     async def decide_review(seshat_id: str, request: ReviewDecision) -> dict:
         record = reviews_by_id.get(seshat_id)
@@ -169,9 +215,9 @@ def create_app(root: Path = ROOT) -> FastAPI:
             return {"status": "deferred", "seshat_id": seshat_id}
         decision = {"seshat_id": seshat_id, "decision": request.decision}
         if request.decision == "accept":
-            candidate_ids = {candidate["polity_id"] for candidate in record["candidates"]}
-            if request.polity_id not in candidate_ids:
-                raise HTTPException(422, "polity_id must identify one of the proposed candidates")
+            target = metadata.get(request.polity_id or "")
+            if target is None or target.get("eligibility") == "excluded":
+                raise HTTPException(422, "polity_id must identify an eligible Histomap entity")
             decision["polity_id"] = request.polity_id
         save_decision(decision, decisions_path)
         reviews_by_id.pop(seshat_id, None)

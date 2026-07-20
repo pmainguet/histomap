@@ -122,6 +122,16 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .candidate:hover, .candidate:focus-within { border-color: #8c422d; }
 .accept-candidate { justify-self: start; margin-top: .25rem; }
 .review-actions { display: flex; gap: .6rem; }
+.all-entity-search { margin: 1.5rem 0; padding: 1rem; background: #f5f0e5; border: 1px solid var(--rule); }
+.all-entity-search h3, .all-entity-search p { margin: 0 0 .55rem; }
+.all-entity-search p { color: var(--ink-faint); font: .8rem system-ui, sans-serif; }
+.entity-search-form { display: flex; gap: .5rem; }
+.entity-search-form input { flex: 1; min-width: 8rem; padding: .55rem; border: 1px solid var(--rule); font: .9rem system-ui, sans-serif; }
+.entity-search-results { display: grid; gap: .4rem; margin-top: .6rem; font: .8rem system-ui, sans-serif; }
+.search-result { display: flex; justify-content: space-between; gap: .7rem; align-items: center; padding: .55rem; background: white; border: 1px solid var(--rule); }
+.search-result div, .search-result span { display: block; }
+.search-result span { margin-top: .15rem; color: var(--ink-faint); }
+.search-result button { flex: none; }
 .decision-status { min-height: 2.8rem; padding: .55rem .65rem; border-left: 3px solid transparent; font: 700 .8rem/1.35 system-ui, sans-serif; }
 .decision-status:empty { padding-block: 0; }
 .decision-status.pending { color: var(--ink-faint); border-color: var(--rule); }
