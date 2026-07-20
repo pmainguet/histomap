@@ -1,6 +1,6 @@
 # Histomap — Plan
 
-A modern, data-driven recreation of the 1931 Sparks/Rand McNally *Histomap*: a vertical timeline showing the relative weight of polities through history.
+A modern, data-driven recreation of the 1931 Sparks/Rand McNally *Histomap*: a horizontal timeline showing the relative weight of polities through history.
 
 **Audience:** the author (43, history-literate) and family, including a child who will grow into it over years. Hobby project, long-lived, good data.
 
@@ -13,6 +13,48 @@ A modern, data-driven recreation of the 1931 Sparks/Rand McNally *Histomap*: a v
 Build a layered pipeline that extracts from multiple open sources, reconciles disagreements via an LLM-assisted review queue, computes visual weights from territory/population/complexity rather than hand-assigning them, and produces both an interactive web view and a print-ready poster from a single canonical dataset.
 
 The dataset itself — YAML files in a Git repo — is the long-term artifact. Everything else (viz, print, reading levels) is regenerable from it.
+
+## Implementation status — 20 July 2026
+
+This section is the current source of truth. Detailed phase descriptions below retain design context,
+including targets that are not yet complete.
+
+| Phase | Status | Implemented | Still required |
+|---|---|---|---|
+| 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules, YAML import, prominence tiers, relationships, geography | Resolve 1,842 type-review records; accept reviewed display groups; improve relationship review |
+| 2 — Seshat overlay | **Partial** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks | Finish 227 pending reviews, handle 64 unmatched records, and improve the 81/373 (21.7%) auto-match rate toward the 60% target |
+| 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; 4,793 of 4,794 records are still imputed |
+| 4 — Review workflow | **Partial, in active use** | Prioritized web review, provenance, score explanations, source links, saved decisions, pipeline actions | Complete review pass; cost estimator and optional structured LLM proposal/diff workflow |
+| 5 — Editorial pass | **Started** | Validated transition model and 5 curated transitions | Roughly 45 more transitions, icons for top ~50, and polished adult/child copy for top ~50 |
+| 6 — Web view | **Mostly complete** | Unified FastAPI server, horizontal SVG timeline, geographic lanes, filters/search, era zoom, drawer, sources, relationship navigation, transition connectors | Reviewed collapsible display groups, linked map, stronger mobile/visual testing, authentication before public write access |
+| 7 — Print poster | **Not started** | — | A1/A0 SVG renderer, methodology/legend footer, PDF export and print test |
+| 8 — Grow with the kid | **Ongoing later work** | Adult/Child selector and extensible text model | Substantial content, more reading levels, language UI, family-history layer |
+
+### Current measurable state
+
+- **4,794** canonical polities; **221 global**, **987 regional**, **3,586 detailed**.
+- **70** automated tests passing; `build.py` validates **5** curated transitions.
+- Seshat reconciliation: **81 auto**, **1 reviewed decision saved**, **227 pending**, **64 unmatched**.
+- Geography: **2,889** with present countries, **383** continent-only, **60** centroid-only,
+  **1,462 unknown**; the Global tier has **15 unknown**.
+- Editorial coverage: **2 adult descriptions**, **2 child descriptions**, **1 icon**, and no
+  accepted display-group field yet.
+- Weight quality: **4,793 imputed** records; HYDE uses centroid-radius estimates until historical
+  polygons are available.
+
+### Remaining work, in recommended order
+
+1. **Finish the Seshat review pass** and inspect bad candidate families; review decisions are durable
+   and must not be overwritten by pipeline reruns.
+2. **Reduce noisy entities** by resolving high-impact Wikidata type-review records and relationship
+   candidates before expanding the default view.
+3. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
+4. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
+5. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
+6. **Add the linked map**, followed by the print SVG/PDF pipeline.
+7. Treat LLM proposals as optional acceleration after estimating cost; the human review decisions and
+   canonical YAML remain authoritative.
 
 ### Why not full manual curation
 Slow, doesn't scale, can't be re-tuned.
@@ -61,8 +103,8 @@ Sources disagree. Wikidata's pre-1000 CE quality is poor. Splits/merges and icon
                                                             │
                                                             ▼
                                                     ┌────────────────────┐
-                                                    │  Review CLI        │
-                                                    │  accept/edit/skip  │
+                                                    │  Web review UI     │
+                                                    │ accept/reject/defer│
                                                     │  ~5s per polity    │
                                                     └────────────────────┘
                                                             │
@@ -217,7 +259,10 @@ Get ~3,000 polities into draft YAML and render them. Quality is bad on purpose �
    - `external_ids.wikidata = QID`. Everything else: empty.
    Commit the generated files as one bulk commit titled `wd: initial import` so future hand-edits show clearly in `git log`.
 
-7. **Crappy streamgraph.** Minimal Observable Plot view in `web/`: years on Y axis (BCE→CE top-to-bottom), polities as horizontal bands, fixed width = 1, colored by `culture_group` or class. No labels, no transitions, no hover. The point is to *see* where coverage is thin. Expect the Bronze Age near-empty, the 19th century dense, the post-1945 explosion of nation-states obvious.
+7. **First renderer (completed and superseded).** The initial coverage renderer evolved into a
+   horizontal vanilla-SVG timeline with weighted labelled bands, geographic swimlanes, confidence,
+   details, transitions, filters, and zoom. It still serves the original purpose of making coverage
+   gaps and modern-data density visible.
 
 7a. **Prominence and visibility tiers.** Keep the complete canonical dataset, but prevent obscure entities and administrative subdivisions from overwhelming the default chart. `pipeline/compute_prominence.py` combines Wikidata sitelink reach, longevity, authoritative-source coverage, editorial work, and a parent-country penalty for still-extant entities. (For extinct polities, Wikidata's country field often means present-day location rather than political subordination.) It writes a reproducible `prominence_score` and one of three display tiers:
    - `global`: the few hundred polities suitable for a world-history overview.
@@ -405,7 +450,7 @@ Every Phase produces something complete and useful. None blocks the next.
 |---|---|
 | YAML in Git | Same files indexed into DuckDB |
 | Python scripts | Same scripts, more sources |
-| Observable Plot streamgraph | D3 with split/merge animations |
+| Vanilla SVG timeline | Richer SVG/canvas interaction if scale requires it |
 | FastAPI serving static UI + review API | Authenticated deployment or read-only static mirror |
 | Print to PDF from browser | Dedicated SVG export with `paged.js` |
 
@@ -419,7 +464,7 @@ The data model is the durable asset. Everything else is regenerable.
 - **ChatGPT API** for LLM-assisted reconciliation.
 - **SQLite / DuckDB** as a working store during reconciliation (throwaway).
 - **YAML files in Git** as the canonical dataset.
-- **Observable Plot** (or D3 later) for the web viz.
+- **Vanilla SVG + JavaScript** for the current web visualization; no framework dependency.
 - **FastAPI + Uvicorn** for one local timeline, review, and allowlisted pipeline-action server.
 - **`paged.js` or headless Chromium** for print PDF export.
 
