@@ -92,6 +92,15 @@ def add_source_links(record: dict, metadata: dict[str, dict]) -> dict:
                     + quote(str(document.get("canonical_name", candidate["canonical_name"]))),
                 }
             )
+        comparison_query = (
+            f"{candidate['canonical_name']} vs {record['seshat_name']}"
+        )
+        links.append(
+            {
+                "label": "Google comparison",
+                "url": "https://www.google.com/search?q=" + quote(comparison_query),
+            }
+        )
         enriched_candidate["source_links"] = links
         enriched_candidates.append(enriched_candidate)
     enriched["candidates"] = enriched_candidates

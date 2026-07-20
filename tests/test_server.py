@@ -79,6 +79,12 @@ class UnifiedServerTests(unittest.TestCase):
             payload["items"][0]["candidates"][0]["source_links"][1]["label"],
             "Wikipedia (English)",
         )
+        comparison = payload["items"][0]["candidates"][0]["source_links"][-1]
+        self.assertEqual(comparison["label"], "Google comparison")
+        self.assertEqual(
+            comparison["url"],
+            "https://www.google.com/search?q=Candidate%20vs%20Source",
+        )
         self.assertEqual(payload["items"][0]["candidates"][0]["canonical_start"], 90)
         self.assertEqual(payload["items"][0]["candidates"][0]["canonical_end"], 210)
         self.assertEqual(payload["items"][0]["candidates"][0]["canonical_sources"], ["wikidata"])
