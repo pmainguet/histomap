@@ -25,6 +25,9 @@ class UnifiedServerTests(unittest.TestCase):
             "prominence_score": 70,
             "visibility_tier": "global",
             "external_ids": {"wikidata": "Q123"},
+            "start": 90,
+            "end": 210,
+            "sources": ["wikidata"],
         }
         (self.root / "polities" / "candidate.yaml").write_text(
             yaml.safe_dump(polity), encoding="utf-8"
@@ -74,6 +77,9 @@ class UnifiedServerTests(unittest.TestCase):
             payload["items"][0]["candidates"][0]["source_links"][1]["label"],
             "Wikipedia (English)",
         )
+        self.assertEqual(payload["items"][0]["candidates"][0]["canonical_start"], 90)
+        self.assertEqual(payload["items"][0]["candidates"][0]["canonical_end"], 210)
+        self.assertEqual(payload["items"][0]["candidates"][0]["canonical_sources"], ["wikidata"])
         response = self.client.post(
             "/api/reviews/S1", json={"decision": "accept", "polity_id": "candidate"}
         )

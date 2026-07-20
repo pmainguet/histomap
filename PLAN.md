@@ -315,6 +315,9 @@ HYDE downloads are slow and rate-limited — do it once and cache aggressively.
     requiring human judgment, 10% visibility tier, and 5% missing Seshat coverage. This puts
     consequential global-history decisions ahead of obscure or weak matches without letting a bad
     proposal inherit importance merely because its suggested target is famous.
+    The web review card labels the Seshat record separately from canonical Histomap candidates,
+    exposes source/canonical dates and external links, and explains both the queue-priority score and
+    candidate match components. Match scores are ranking aids, not probabilities.
 17. Run the review. Budget: 5s per polity × ~500 polities = ~40 minutes. Expect to spend longer on disputed dates.
 
 ### Phase 5 — Manual editorial pass

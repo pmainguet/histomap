@@ -91,6 +91,17 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .candidate-list { display: grid; gap: .55rem; margin: 1.5rem 0; }
 .candidate { display: grid; gap: .35rem; width: 100%; padding: .7rem; color: #27251f; text-align: left; background: white; border: 1px solid var(--rule); }
 .candidate span, .candidate small { color: var(--ink-faint); }
+.source-explanation { max-width: 42rem; line-height: 1.5; }
+.source-facts, .candidate-facts, .score-details dl, .priority-details dl { display: grid; grid-template-columns: minmax(8rem, auto) 1fr; gap: .3rem .8rem; margin: .8rem 0; font: .8rem/1.4 system-ui, sans-serif; }
+.source-facts dt, .candidate-facts dt, .score-details dt, .priority-details dt { color: var(--ink-faint); }
+.source-facts dd, .candidate-facts dd, .score-details dd, .priority-details dd { margin: 0; }
+.candidate-heading { margin: 1.6rem 0 .5rem; font-size: 1rem; font-family: system-ui, sans-serif; }
+.candidate-number { margin: 0; color: var(--ink-faint); font: 700 .7rem system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+.match-score { display: flex; gap: .6rem; align-items: baseline; margin-top: .35rem; }
+.match-score strong { font: 700 1rem system-ui, sans-serif; }
+.match-score span { font: .78rem system-ui, sans-serif; }
+.score-details, .priority-details { font: .78rem/1.4 system-ui, sans-serif; }
+.score-details summary, .priority-details summary { cursor: pointer; color: #8c422d; }
 .source-links { font: .78rem system-ui, sans-serif; }
 .source-links a { color: #8c422d; }
 .candidate:hover, .candidate:focus-within { border-color: #8c422d; }

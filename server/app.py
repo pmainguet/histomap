@@ -69,6 +69,10 @@ def add_source_links(record: dict, metadata: dict[str, dict]) -> dict:
         enriched_candidate = dict(candidate)
         document = metadata.get(candidate["polity_id"], {})
         external_ids = document.get("external_ids") or {}
+        enriched_candidate["canonical_start"] = document.get("start")
+        enriched_candidate["canonical_end"] = document.get("end")
+        enriched_candidate["canonical_sources"] = document.get("sources", [])
+        enriched_candidate["external_ids"] = external_ids
         links = []
         if external_ids.get("wikidata"):
             links.append(
