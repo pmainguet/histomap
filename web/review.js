@@ -6,6 +6,7 @@ let current = null;
 let total = 0;
 let deferredOffset = 0;
 let submitting = false;
+let activeActionButton = null;
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (character) => ({
@@ -168,19 +169,54 @@ async function decide(decision, polityId = null) {
 }
 
 async function startAction(action) {
-  const response = await fetch(`/api/actions/${action}`, { method: "POST" });
-  if (!response.ok) throw new Error(await response.text());
-  const label = action === "apply-reviews" ? "Applying review decisions" : action === "build" ? "Rebuilding timeline" : action;
-  jobStatus.textContent = `${label}…`;
-  pollJob();
+  const button = action === "apply-reviews"
+    ? document.querySelector("#apply-decisions")
+    : document.querySelector("#build-data");
+  activeActionButton = button;
+  setActionButtonState(button, "running");
+  jobStatus.textContent = "";
+  try {
+    const response = await fetch(`/api/actions/${action}`, { method: "POST" });
+    if (!response.ok) throw new Error(await response.text());
+    pollJob();
+  } catch (error) {
+    setActionButtonState(button, "failed");
+    jobStatus.textContent = `Action failed: ${error.message}`;
+  }
+}
+
+function setActionButtonState(button, state) {
+  if (!button.dataset.label) button.dataset.label = button.textContent.trim();
+  const label = escapeHtml(button.dataset.label);
+  button.classList.toggle("is-running", state === "running");
+  button.disabled = state === "running";
+  button.setAttribute("aria-busy", state === "running" ? "true" : "false");
+  if (state === "running") {
+    button.innerHTML = `<span class="button-spinner" aria-hidden="true"></span><span>${label}</span>`;
+  } else if (state === "complete") {
+    button.innerHTML = `<span class="button-check" aria-hidden="true">✓</span><span>Done</span>`;
+    window.setTimeout(() => setActionButtonState(button, "idle"), 1800);
+  } else if (state === "failed") {
+    button.innerHTML = `<span aria-hidden="true">×</span><span>Failed</span>`;
+    window.setTimeout(() => setActionButtonState(button, "idle"), 2500);
+  } else {
+    button.innerHTML = label;
+    button.disabled = false;
+    button.removeAttribute("aria-busy");
+  }
 }
 
 async function pollJob() {
   const job = await fetch("/api/actions/status").then((response) => response.json());
-  const label = job.action === "apply-reviews" ? "Review decisions" : job.action === "build" ? "Timeline rebuild" : job.action || "Pipeline";
-  jobStatus.textContent = job.status === "running" ? `${label}…` : `${label}: ${job.status}`;
-  if (job.status === "running") setTimeout(pollJob, 1000);
-  if (job.status === "complete") loadNext();
+  if (job.status === "queued" || job.status === "running") setTimeout(pollJob, 500);
+  if (job.status === "complete") {
+    setActionButtonState(activeActionButton, "complete");
+    jobStatus.textContent = "";
+    loadNext();
+  } else if (job.status === "failed") {
+    setActionButtonState(activeActionButton, "failed");
+    jobStatus.textContent = "Action failed. Check the server output for details.";
+  }
 }
 
 document.querySelector("#apply-decisions").addEventListener("click", () => startAction("apply-reviews"));

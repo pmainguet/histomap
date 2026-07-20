@@ -122,6 +122,10 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .candidate:hover, .candidate:focus-within { border-color: #8c422d; }
 .accept-candidate { justify-self: start; margin-top: .25rem; }
 .review-actions { display: flex; gap: .6rem; }
+.action-button { display: inline-flex; gap: .45rem; align-items: center; justify-content: center; }
+.button-spinner { width: .85rem; height: .85rem; border: 2px solid rgb(255 255 255 / 40%); border-top-color: white; border-radius: 50%; animation: button-spin .7s linear infinite; }
+.button-check { font-size: 1rem; line-height: 1; }
+@keyframes button-spin { to { transform: rotate(360deg); } }
 .all-entity-search { margin: 1.5rem 0; padding: 1rem; background: #f5f0e5; border: 1px solid var(--rule); }
 .all-entity-search h3, .all-entity-search p { margin: 0 0 .55rem; }
 .all-entity-search p { color: var(--ink-faint); font: .8rem system-ui, sans-serif; }
@@ -152,4 +156,5 @@ kbd { padding: .1rem .3rem; background: white; border: 1px solid var(--rule); fo
 
 @media (prefers-reduced-motion: reduce) {
   .detail-drawer, .detail-backdrop { transition: none; }
+  .button-spinner { animation-duration: 1.5s; }
 }
