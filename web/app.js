@@ -738,7 +738,7 @@ entitySearchInput.addEventListener("keydown", (event) => {
 });
 
 function populateSelect(select, values, formatter = (value) => value) {
-  for (const value of [...values].sort()) {
+  for (const value of [...values].sort((a, b) => formatter(a).localeCompare(formatter(b)))) {
     const option = document.createElement("option");
     option.value = value;
     option.textContent = formatter(value);
@@ -765,7 +765,11 @@ try {
     (value) => value.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase()),
   );
   populateSelect(historicalGroupInput, new Set(polities.map((p) => p.region).filter(Boolean)), displayTerm);
-  populateSelect(countryInput, new Set(polities.flatMap((p) => p.geography?.present_countries || [])));
+  populateSelect(
+    countryInput,
+    new Set(polities.flatMap((p) => p.geography?.present_countries || [])),
+    (code) => `${countryNames.of(code) || code} (${code})`,
+  );
   if (polities.length) {
     startInput.value = Math.max(-8000, Math.min(...polities.map((p) => p.start)));
     endInput.value = currentYear;
