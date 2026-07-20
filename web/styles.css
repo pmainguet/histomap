@@ -35,6 +35,12 @@ input, select, button { border: 1px solid var(--rule); border-radius: 2px; paddi
 input { width: 8rem; }
 button { cursor: pointer; background: #343b35; color: white; border-color: #343b35; }
 #summary { color: var(--ink-faint); }
+.confidence-legend { display: flex; flex-wrap: wrap; gap: .35rem .55rem; align-items: center; margin-top: .8rem; color: var(--ink-faint); font: .76rem system-ui, sans-serif; }
+.confidence-legend i { display: inline-block; width: 1.35rem; height: .65rem; background: #59755e; }
+.confidence-legend .high { opacity: .92; }
+.confidence-legend .medium { opacity: .74; }
+.confidence-legend .low { opacity: .52; }
+.confidence-legend .legendary { opacity: .38; border: 1px dashed #27251f; }
 
 main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem); gap: 1.25rem; padding: 1.25rem; }
 .chart { min-height: 70vh; overflow: auto; background: var(--paper); border: 1px solid var(--rule); }
@@ -47,6 +53,7 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .details dd { margin: 0; }
 .band { cursor: pointer; transition: opacity .12s; }
 .band:hover, .band:focus { opacity: 1 !important; outline: none; stroke: #27251f; stroke-width: 2; }
+.band.confidence-legendary { stroke: #27251f; stroke-width: 1; stroke-dasharray: 4 3; }
 .axis-label { fill: #6f685c; font: 11px system-ui, sans-serif; }
 .grid-line { stroke: #d8d1c2; stroke-width: 1; }
 .empty, .error { padding: 2rem; color: var(--ink-faint); }

@@ -126,7 +126,7 @@ external_ids:
   seshat: IrAchae
 parent: median_empire             # what it succeeded
 successors: [macedonian_empire]
-region: persia
+region: persia                     # displayed as "Historical grouping"
 culture_group: iranian
 geography:
   continents: [asia]
@@ -301,7 +301,7 @@ Compute `weight_by_era` from territory, population, and complexity. The output i
 22. Build the streamgraph in `web/`:
     - Vertical timeline, horizontal stream width, splits/merges from `transitions.yaml`.
     - Reading-level toggle (child / adult).
-    - Region, continent, present-country, and visibility-tier filters; era zoom and hover cards.
+    - Historical-grouping, continent, present-country, and visibility-tier filters; era zoom and hover cards.
     - Collapsible display groups derived from reviewed political relationships.
     - Linked geographic map once historical polygon coverage is sufficient.
     - Confidence shown as opacity or hatching.

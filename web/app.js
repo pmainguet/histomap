@@ -37,7 +37,7 @@ function showDetails(polity) {
   details.innerHTML = `<h2>${polity.canonical_name}</h2>
     <p>${description}</p>
     <dl><dt>Dates</dt><dd>${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}</dd>
-    <dt>Region</dt><dd>${polity.region || "unclassified"}</dd>
+    <dt>Historical grouping</dt><dd>${polity.region || "unclassified"}</dd>
     <dt>Geography</dt><dd>${(polity.geography?.continents || []).join(", ") || "unknown"}; ${(polity.geography?.present_countries || []).join(", ") || "no country"}</dd>
     <dt>Visibility</dt><dd>${polity.visibility_tier || "detailed"} (${polity.prominence_score || 0})</dd>
     <dt>Eligibility</dt><dd>${polity.eligibility || "review"}</dd>
@@ -48,6 +48,12 @@ function svgElement(name, attributes = {}) {
   const element = document.createElementNS("http://www.w3.org/2000/svg", name);
   for (const [key, value] of Object.entries(attributes)) element.setAttribute(key, value);
   return element;
+}
+
+function confidenceLevel(polity) {
+  const rank = { high: 0, medium: 1, low: 2, legendary: 3 };
+  const values = [polity.start_confidence, polity.end_confidence].filter(Boolean);
+  return values.sort((a, b) => (rank[b] ?? 2) - (rank[a] ?? 2))[0] || "low";
 }
 
 function render() {
@@ -91,11 +97,12 @@ function render() {
     const mid = start + (end - start) / 2;
     const bandWidth = 12 + weightAt(polity, mid) * 4;
     const center = margin.left + 35 + index * 58;
+    const confidence = confidenceLevel(polity);
     const path = svgElement("path", {
       d: `M ${center - bandWidth / 2} ${y(start)} L ${center + bandWidth / 2} ${y(start)} L ${center + bandWidth / 2} ${y(end)} L ${center - bandWidth / 2} ${y(end)} Z`,
       fill: palette[hash(polity.culture_group || polity.id) % palette.length],
-      opacity: polity.start_confidence === "low" ? .55 : .86,
-      class: "band",
+      opacity: { high: .92, medium: .74, low: .52, legendary: .38 }[confidence],
+      class: `band confidence-${confidence}`,
       tabindex: "0",
     });
     path.addEventListener("mouseenter", () => showDetails(polity));
