@@ -9,6 +9,7 @@ reproduce the canonical dataset.
 | Natural Earth Admin 0 Countries | 2026-07-20 | 1:110m GeoJSON, Natural Earth master dataset | `ne_110m_admin_0_countries.geojson` |
 | Seshat Equinox 2020 | 2026-07-20 | `Equinox_on_GitHub_June9_2022.xlsx` from `seshatdb/Equinox_Data` | `seshat_equinox_2022.xlsx` |
 | Maddison Project Database 2023 | not downloaded | GGDC release, DOI `10.34894/INZBF2` | `mpd2023_web.xlsx` |
+| HYDE 3.3 | not downloaded | Utrecht University HYDE project | `hyde/**/*.nc` |
 
 ## Wikidata extraction
 
@@ -45,3 +46,10 @@ Download `mpd2023_web.xlsx` from the official GGDC MPD 2023 release page. The da
 4.0 and requires attribution; the source sheet in the workbook lists additional papers that must
 be cited for certain country-level uses. Run `make extract-maddison` to produce the ignored
 long-format `sources/maddison.parquet` and a tracked extraction summary.
+
+## HYDE
+
+Place HYDE population-count NetCDF files under `sources/hyde/`. The extractor recognizes the
+common `popc`, `lat`, `lon`, and `time` fields, as well as documented aliases. Run
+`make extract-hyde`; current estimates use a clearly marked centroid-radius fallback until
+reviewed historical polygons are available.

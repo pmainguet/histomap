@@ -277,6 +277,8 @@ Compute `weight_by_era` from territory, population, and complexity. The output i
     historical and multi-country entities wait for polygon-based allocation.
 
 14. `pipeline/extract_hyde.py`: load with `xarray`, aggregate gridded population to polity territory. **Catch:** we only have polygons for the Seshat-covered ~600 polities. For everyone else, fall back to the polity's NGA centroid + a regional radius, or use the modern successor's footprint as a crude proxy. Mark these with `weight_imputed: true`. Persist `sources/pop_by_polity.parquet` keyed by `(polity_id, year)`.
+    The first implementation reads population-count NetCDF grids and emits explicitly imputed
+    centroid-radius estimates; polygon aggregation remains the next accuracy upgrade.
 
 15. `pipeline/compute_weights.py`:
     ```
@@ -293,7 +295,8 @@ Compute `weight_by_era` from territory, population, and complexity. The output i
 **Done when:** spot-checked band widths reflect actual scale (Han ≈ Roman ≈ heavy, one-city kingdoms thin), and a sensible perturbation to `weights.toml` (e.g., raise the area coefficient) shifts the streamgraph the way you'd expect.
 
 ### Phase 4 — LLM review queue
-15. Write `pipeline/llm_propose.py`: for each candidate polity, send the merged source rows to the ChatGPT API, get back a structured proposal with conflict notes and child/adult reading-level text.
+15. Estimate the workload/price of doing this step entirely. We don't want to have something too costly
+15 bis. Write `pipeline/llm_propose.py`: for each candidate polity, send the merged source rows to the ChatGPT API, get back a structured proposal with conflict notes and child/adult reading-level text.
 16. Write `pipeline/review_cli.py`: terminal UI that walks proposals, shows diff vs. existing YAML, accepts with Enter, edits in `$EDITOR`, skips with `s`.
 17. Run the review. Budget: 5s per polity × ~500 polities = ~40 minutes. Expect to spend longer on disputed dates.
 
