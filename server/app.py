@@ -267,11 +267,19 @@ def create_app(root: Path = ROOT) -> FastAPI:
             }
         ).model_dump(mode="json", exclude_none=True)
         document["geography"] = geography
+        document["manual_overrides"] = sorted(
+            set(document.get("manual_overrides", [])) | {"geography"}
+        )
         path.write_text(
             yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
         )
         metadata[polity_id] = document
-        return {"status": "saved", "polity_id": polity_id, "geography": geography}
+        return {
+            "status": "saved",
+            "polity_id": polity_id,
+            "geography": geography,
+            "manual_overrides": document["manual_overrides"],
+        }
 
     @application.post("/api/reviews/{seshat_id}")
     async def decide_review(seshat_id: str, request: ReviewDecision) -> dict:

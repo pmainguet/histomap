@@ -1,9 +1,12 @@
 import unittest
 
-from pipeline.enrich_geography import locate_point, parse_point, point_in_polygon
+from pipeline.enrich_geography import field_locked, locate_point, parse_point, point_in_polygon
 
 
 class GeographyEnrichmentTests(unittest.TestCase):
+    def test_manual_geography_override_is_locked(self) -> None:
+        self.assertTrue(field_locked({"manual_overrides": ["geography"]}, "geography"))
+        self.assertFalse(field_locked({"manual_overrides": []}, "geography"))
     def test_parse_wikidata_point(self) -> None:
         self.assertEqual(parse_point("Point(2.35 48.86)"), (2.35, 48.86))
         self.assertIsNone(parse_point(None))

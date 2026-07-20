@@ -21,6 +21,10 @@ RELATIONSHIP_CACHE = ROOT / "sources" / "wikidata_relationships.json"
 COUNTRY_CACHE = ROOT / "sources" / "wikidata_country_metadata.json"
 BOUNDARIES_PATH = ROOT / "sources" / "ne_110m_admin_0_countries.geojson"
 REPORT_PATH = ROOT / "reports" / "geography_coverage.md"
+
+
+def field_locked(document: dict, field: str) -> bool:
+    return field in set(document.get("manual_overrides", []))
 NATURAL_EARTH_URL = (
     "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/"
     "geojson/ne_110m_admin_0_countries.geojson"
@@ -184,6 +188,22 @@ def run(offline: bool = False) -> dict[str, int]:
     for path in POLITIES_DIR.glob("*.yaml"):
         document = yaml.safe_load(path.read_text(encoding="utf-8"))
         existing_geography = document.get("geography") or {}
+        if field_locked(document, "geography"):
+            countries = set(existing_geography.get("present_countries", []))
+            continents = set(existing_geography.get("continents", []))
+            category = (
+                "country"
+                if countries
+                else "continent_only"
+                if continents
+                else "centroid_only"
+                if existing_geography.get("centroid")
+                else "unknown"
+            )
+            counts[category] += 1
+            tier = document.get("visibility_tier", "detailed")
+            by_tier.setdefault(tier, {key: 0 for key in counts})[category] += 1
+            continue
         qid = (document.get("external_ids") or {}).get("wikidata")
         record = records.get(qid, {})
         point = parse_point(record.get("coords"))

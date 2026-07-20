@@ -159,11 +159,12 @@ async function saveGeography(polity) {
     if (!response.ok) throw new Error(await response.text());
     const payload = await response.json();
     polity.geography = payload.geography;
+    polity.manual_overrides = payload.manual_overrides;
     render();
     const band = chart.querySelector(`[data-polity-id="${polity.id}"]`);
     showDetails(polity, band || detailTrigger);
     const savedStatus = details.querySelector(".geography-save-status");
-    savedStatus.textContent = "Saved. Rebuild timeline when finished editing.";
+    savedStatus.textContent = "Saved and locked against automatic geography updates. Rebuild timeline when finished editing.";
     details.querySelector("#geography-editor").hidden = false;
   } catch (error) {
     status.textContent = `Could not save: ${error.message}`;
@@ -212,6 +213,7 @@ function showDetails(polity, trigger = null) {
       <dt>Present countries</dt><dd>${escapeHtml(countries.join(", ") || "unknown")}</dd>
       ${centroid ? `<dt>Approx. location</dt><dd>${centroid.lat.toFixed(2)}°, ${centroid.lon.toFixed(2)}°</dd>` : ""}
       <dt>Geography confidence</dt><dd>${escapeHtml(polity.geography?.confidence || "unknown")}</dd>
+      ${(polity.manual_overrides || []).includes("geography") ? "<dt>Automatic geography updates</dt><dd>Locked (manual edit)</dd>" : ""}
       <dt>Prominence</dt><dd>${Number(polity.prominence_score || 0).toFixed(2)} / 100 (${escapeHtml(polity.visibility_tier || "detailed")})</dd>
       <dt>Historical weight</dt><dd>${polity.weight_imputed ? "estimated" : "source-based"}</dd>
       <dt>Review status</dt><dd>${escapeHtml(polity.eligibility || "review")}</dd>

@@ -103,6 +103,7 @@ class Polity(BaseModel):
     region: str | None = None
     culture_group: str | None = None
     geography: Geography = Field(default_factory=Geography)
+    manual_overrides: list[str] = Field(default_factory=list)
     start: int
     end: int | None = None
     start_confidence: Confidence

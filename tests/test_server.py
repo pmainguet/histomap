@@ -171,6 +171,7 @@ class UnifiedServerTests(unittest.TestCase):
             (self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8")
         )
         self.assertEqual(saved["geography"]["confidence"], "high")
+        self.assertIn("geography", saved["manual_overrides"])
 
     def test_rejects_unknown_geography_values(self) -> None:
         response = self.client.patch(
