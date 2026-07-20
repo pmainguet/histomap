@@ -10,8 +10,8 @@ class RelationshipEnrichmentTests(unittest.TestCase):
 
     def test_succession_date_tolerance(self) -> None:
         self.assertTrue(succession_dates_compatible(PolityDates(100, 200), PolityDates(200, 400)))
-        self.assertTrue(succession_dates_compatible(PolityDates(100, 200), PolityDates(450, 500)))
-        self.assertFalse(succession_dates_compatible(PolityDates(100, 200), PolityDates(451, 500)))
+        self.assertTrue(succession_dates_compatible(PolityDates(100, 200), PolityDates(700, 800)))
+        self.assertFalse(succession_dates_compatible(PolityDates(100, 200), PolityDates(701, 800)))
         self.assertFalse(succession_dates_compatible(PolityDates(100, None), PolityDates(200, 400)))
 
     def test_reciprocal_parent_is_automatic(self) -> None:

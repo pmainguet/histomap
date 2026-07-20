@@ -28,7 +28,7 @@ GROUPS_PATH = ROOT / "reports" / "display_group_candidates.json"
 ENDPOINT = "https://query.wikidata.org/sparql"
 USER_AGENT = "histomap/0.1 (https://github.com/pmainguet/histomap)"
 BATCH_SIZE = 250
-MAX_SUCCESSION_GAP = 250
+MAX_SUCCESSION_GAP = 500
 PROPERTIES = ("P361", "P527", "P155", "P156", "P1365", "P1366", "P17")
 
 
