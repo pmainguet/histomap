@@ -51,7 +51,8 @@ enrich-geography:
 validate:
 	python build.py
 
-build: validate
+build:
+	python -m pipeline.rebuild_timeline
 
 serve: build
 	python -m server.app

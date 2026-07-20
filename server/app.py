@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ALLOWED_ACTIONS = {
     "apply-reviews": ["-m", "pipeline.apply_review_decisions"],
     "reconcile": ["pipeline/reconcile.py"],
-    "build": ["build.py"],
+    "build": ["-m", "pipeline.rebuild_timeline"],
     "compute-weights": ["pipeline/compute_weights.py"],
 }
 EQUINOX_URL = (
