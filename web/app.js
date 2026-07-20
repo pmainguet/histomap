@@ -7,8 +7,20 @@ const endInput = document.querySelector("#year-end");
 const visibilityInput = document.querySelector("#visibility");
 const continentInput = document.querySelector("#continent");
 const countryInput = document.querySelector("#country");
+const colorLegend = document.querySelector("#color-legend");
 
-const palette = ["#a9563f", "#d0913d", "#59755e", "#51758e", "#725c87", "#9a6f72", "#797044"];
+const geographyColors = {
+  africa: "#b56f55",
+  asia: "#c6964f",
+  europe: "#687f69",
+  north_america: "#66899b",
+  south_america: "#806f99",
+  oceania: "#a6747b",
+  antarctica: "#82969b",
+  transcontinental: "#958c70",
+  unknown: "#8b867d",
+};
+const geographyOrder = ["africa", "asia", "europe", "north_america", "south_america", "oceania", "antarctica", "transcontinental", "unknown"];
 let polities = [];
 let detailTrigger = null;
 const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
@@ -34,10 +46,11 @@ function formatYear(year) {
   return `${year} CE`;
 }
 
-function hash(text) {
-  let value = 0;
-  for (const char of text) value = ((value << 5) - value + char.charCodeAt(0)) | 0;
-  return Math.abs(value);
+function geographyGroup(polity) {
+  const continents = polity.geography?.continents || [];
+  if (continents.length === 1) return continents[0];
+  if (continents.length > 1) return "transcontinental";
+  return "unknown";
 }
 
 function weightAt(polity, year) {
@@ -151,18 +164,38 @@ function render() {
       p.start < yearEnd &&
       (p.end == null || p.end > yearStart),
   );
-  visible.sort((a, b) => a.start - b.start || a.canonical_name.localeCompare(b.canonical_name));
+  visible.sort((a, b) => {
+    const groupDifference = geographyOrder.indexOf(geographyGroup(a)) - geographyOrder.indexOf(geographyGroup(b));
+    return groupDifference || a.start - b.start || a.canonical_name.localeCompare(b.canonical_name);
+  });
   const span = yearEnd - yearStart;
   const rowHeight = 25;
+  const laneHeaderHeight = 27;
   const margin = { top: 48, right: 24, bottom: 24, left: 24 };
   const pixelsPerYear = Math.max(.2, Math.min(2, 1500 / span));
   const width = Math.max(900, Math.min(4800, span * pixelsPerYear + margin.left + margin.right));
-  const height = Math.max(180, visible.length * rowHeight + margin.top + margin.bottom);
+  const groups = geographyOrder
+    .map((name) => ({ name, items: visible.filter((polity) => geographyGroup(polity) === name) }))
+    .filter((group) => group.items.length);
+  const height = Math.max(180, visible.length * rowHeight + groups.length * laneHeaderHeight + margin.top + margin.bottom);
   const innerWidth = width - margin.left - margin.right;
   const x = (year) => margin.left + ((year - yearStart) / span) * innerWidth;
   const svg = svgElement("svg", { viewBox: `0 0 ${width} ${height}`, width, height });
   const definitions = svgElement("defs");
   svg.append(definitions);
+
+  const rowCenters = new Map();
+  let laneY = margin.top;
+  for (const group of groups) {
+    const laneHeight = laneHeaderHeight + group.items.length * rowHeight;
+    svg.append(svgElement("rect", { x: margin.left, y: laneY, width: innerWidth, height: laneHeight, class: "swimlane" }));
+    svg.append(svgElement("rect", { x: margin.left, y: laneY, width: 4, height: laneHeight, fill: geographyColors[group.name] }));
+    const laneLabel = svgElement("text", { x: margin.left + 11, y: laneY + 18, class: "swimlane-label" });
+    laneLabel.textContent = `${displayTerm(group.name)} · ${group.items.length}`;
+    svg.append(laneLabel);
+    group.items.forEach((polity, index) => rowCenters.set(polity.id, laneY + laneHeaderHeight + index * rowHeight + rowHeight / 2));
+    laneY += laneHeight;
+  }
 
   const tickStep = niceTickStep(span);
   for (let year = Math.ceil(yearStart / tickStep) * tickStep; year <= yearEnd; year += tickStep) {
@@ -177,7 +210,7 @@ function render() {
     const end = Math.min(yearEnd, polity.end ?? yearEnd);
     const mid = start + (end - start) / 2;
     const bandHeight = Math.min(rowHeight - 3, 6 + weightAt(polity, mid) * 1.55);
-    const center = margin.top + index * rowHeight + rowHeight / 2;
+    const center = rowCenters.get(polity.id);
     const bandX = x(start);
     const bandWidth = Math.max(2, x(end) - bandX);
     const confidence = confidenceLevel(polity);
@@ -187,7 +220,7 @@ function render() {
       width: bandWidth,
       height: bandHeight,
       rx: "1",
-      fill: palette[hash(polity.culture_group || polity.id) % palette.length],
+      fill: geographyColors[geographyGroup(polity)] || geographyColors.unknown,
       opacity: { high: .92, medium: .74, low: .52, legendary: .38 }[confidence],
       class: `band confidence-${confidence}`,
       tabindex: "0",
@@ -229,6 +262,7 @@ function render() {
   });
 
   chart.replaceChildren(svg);
+  colorLegend.innerHTML = `<span>Band color</span>${groups.map((group) => `<i style="--legend-color:${geographyColors[group.name]}"></i>${escapeHtml(displayTerm(group.name))}`).join("")}`;
   summary.textContent = `${visible.length} of ${polities.length} polities visible`;
 }
 
