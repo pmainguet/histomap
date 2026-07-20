@@ -5,6 +5,8 @@ const summary = document.querySelector("#summary");
 const startInput = document.querySelector("#year-start");
 const endInput = document.querySelector("#year-end");
 const visibilityInput = document.querySelector("#visibility");
+const readingLevelInput = document.querySelector("#reading-level");
+const historicalGroupInput = document.querySelector("#historical-group");
 const continentInput = document.querySelector("#continent");
 const countryInput = document.querySelector("#country");
 const colorLegend = document.querySelector("#color-legend");
@@ -23,6 +25,7 @@ const geographyColors = {
 const geographyOrder = ["africa", "asia", "europe", "north_america", "south_america", "oceania", "antarctica", "transcontinental", "unknown"];
 let polities = [];
 let detailTrigger = null;
+let selectedPolity = null;
 const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
 
 function escapeHtml(value) {
@@ -65,8 +68,12 @@ function weightAt(polity, year) {
 }
 
 function showDetails(polity, trigger = null) {
+  selectedPolity = polity;
   if (trigger) detailTrigger = trigger;
-  const description = polity.text?.short_adult_en || polity.notes || "Draft record; description pending review.";
+  const description = readingLevelInput.value === "child"
+    ? polity.text?.short_child_en || polity.text?.short_adult_en || polity.notes
+    : polity.text?.short_adult_en || polity.text?.long_en || polity.notes;
+  const descriptionText = description || "Draft record; description pending review.";
   const aliases = [polity.names?.aliases_en?.replaceAll(" | ", ", "), polity.names?.fr].filter(Boolean).join("; ");
   const countries = (polity.geography?.present_countries || []).map((code) => countryNames.of(code) || code);
   const centroid = polity.geography?.centroid;
@@ -82,7 +89,7 @@ function showDetails(polity, trigger = null) {
   ].filter(Boolean);
   details.innerHTML = `<button class="detail-close" type="button" aria-label="Close entity details">×</button>
     <h2>${escapeHtml(polity.canonical_name)}</h2>
-    <p>${escapeHtml(description)}</p>
+    <p>${escapeHtml(descriptionText)}</p>
     <dl>
       <dt>Dates</dt><dd>${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}${duration ? ` (${duration.toLocaleString()} years)` : ""}</dd>
       ${aliases ? `<dt>Other names</dt><dd>${escapeHtml(aliases)}</dd>` : ""}
@@ -158,6 +165,7 @@ function render() {
     (p) =>
       p.eligibility !== "excluded" &&
       (visibilityInput.value === "detailed" || p.eligibility === "accepted") &&
+      (!historicalGroupInput.value || p.region === historicalGroupInput.value) &&
       (!continentInput.value || (p.geography?.continents || []).includes(continentInput.value)) &&
       (!countryInput.value || (p.geography?.present_countries || []).includes(countryInput.value)) &&
       tierRank[p.visibility_tier || "detailed"] <= selectedRank &&
@@ -268,6 +276,10 @@ function render() {
 
 document.querySelector("#apply").addEventListener("click", render);
 visibilityInput.addEventListener("change", render);
+readingLevelInput.addEventListener("change", () => {
+  if (selectedPolity && details.classList.contains("is-open")) showDetails(selectedPolity);
+});
+historicalGroupInput.addEventListener("change", render);
 continentInput.addEventListener("change", render);
 countryInput.addEventListener("change", render);
 
@@ -289,6 +301,7 @@ try {
     new Set(polities.flatMap((p) => p.geography?.continents || [])),
     (value) => value.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase()),
   );
+  populateSelect(historicalGroupInput, new Set(polities.map((p) => p.region).filter(Boolean)), displayTerm);
   populateSelect(countryInput, new Set(polities.flatMap((p) => p.geography?.present_countries || [])));
   if (polities.length) {
     startInput.value = Math.max(-8000, Math.min(...polities.map((p) => p.start)));
