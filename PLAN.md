@@ -332,6 +332,8 @@ HYDE downloads are slow and rate-limited — do it once and cache aggressively.
     source URLs, a separate generated web payload, and restrained chart connectors. The Treaty of
     Verdun, the Roman division, the Austro-Hungarian Compromise, the German Revolution, and the
     partition of British India form the initial curated set; remaining transitions stay manual.
+    A dashed-line legend identifies transitions; connectors are mouse/keyboard selectable and open a
+    source-linked drawer with the event date, editorial note, and navigable source/target entities.
 19. Draw or source SVG icons for the top ~50 polities into `icons/`.
 20. Tighten short-child text for the top ~50; the LLM's first pass is usable but uneven.
 

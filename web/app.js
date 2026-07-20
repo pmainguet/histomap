@@ -81,6 +81,15 @@ function highlightRelationships(polity) {
   });
 }
 
+function highlightTransition(transition) {
+  const involvedIds = new Set([...transition.from, ...transition.to]);
+  chart.classList.add("relationship-focus");
+  chart.querySelectorAll("[data-polity-id]").forEach((element) => {
+    element.classList.toggle("is-selected", involvedIds.has(element.dataset.polityId));
+    element.classList.remove("is-related");
+  });
+}
+
 function formatYear(year) {
   if (year < 0) return `${Math.abs(year)} BCE`;
   return `${year} CE`;
@@ -172,6 +181,37 @@ function showDetails(polity, trigger = null) {
   details.setAttribute("aria-hidden", "false");
   details.querySelector(".detail-close").focus();
   highlightRelationships(polity);
+}
+
+function showTransitionDetails(transition, trigger = null) {
+  selectedPolity = null;
+  if (trigger) detailTrigger = trigger;
+  const fromLinks = transition.from.map(entityLink).join(", ");
+  const toLinks = transition.to.map(entityLink).join(", ");
+  const sourceLinks = (transition.source_urls || []).map((url, index) =>
+    `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Source ${index + 1} ↗</a>`
+  ).join("<br>");
+  details.innerHTML = `<button class="detail-close" type="button" aria-label="Close transition details">×</button>
+    <p class="eyebrow">Curated ${escapeHtml(transition.kind)}</p>
+    <h2>${escapeHtml(transition.label)}</h2>
+    <dl><dt>Date</dt><dd>${formatYear(transition.year)}</dd>
+      <dt>From</dt><dd>${fromLinks}</dd>
+      <dt>To</dt><dd>${toLinks}</dd>
+      ${transition.notes ? `<dt>Editorial note</dt><dd>${escapeHtml(transition.notes)}</dd>` : ""}
+      ${sourceLinks ? `<dt>Sources</dt><dd class="detail-links">${sourceLinks}</dd>` : ""}
+    </dl>`;
+  details.querySelectorAll("[data-entity-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const entity = polities.find((candidate) => candidate.id === button.dataset.entityId);
+      if (entity) navigateToEntity(entity);
+    });
+  });
+  details.querySelector(".detail-close").addEventListener("click", closeDetails);
+  details.classList.add("is-open");
+  detailBackdrop.classList.add("is-open");
+  details.setAttribute("aria-hidden", "false");
+  details.querySelector(".detail-close").focus();
+  highlightTransition(transition);
 }
 
 function closeDetails() {
@@ -298,13 +338,26 @@ function render() {
     const ys = endpoints.map((id) => rowCenters.get(id)).filter(Number.isFinite);
     if (ys.length < 2) continue;
     const transitionX = x(transition.year);
-    const group = svgElement("g", { class: `transition transition-${transition.kind}` });
+    const group = svgElement("g", {
+      class: `transition transition-${transition.kind}`,
+      tabindex: "0",
+      role: "button",
+      "aria-label": `${transition.label}, ${formatYear(transition.year)}`,
+    });
     const title = svgElement("title");
     title.textContent = `${transition.label} (${formatYear(transition.year)})`;
     group.append(title);
+    group.append(svgElement("line", { x1: transitionX, x2: transitionX, y1: Math.min(...ys), y2: Math.max(...ys), class: "transition-hit" }));
     group.append(svgElement("line", { x1: transitionX, x2: transitionX, y1: Math.min(...ys), y2: Math.max(...ys), class: "transition-line" }));
     for (const y of ys) group.append(svgElement("line", { x1: transitionX - 7, x2: transitionX + 7, y1: y, y2: y, class: "transition-line" }));
     group.append(svgElement("circle", { cx: transitionX, cy: rowCenters.get(transition.from.find((id) => visibleIds.has(id))), r: 3, class: "transition-node" }));
+    group.addEventListener("click", () => showTransitionDetails(transition, group));
+    group.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        showTransitionDetails(transition, group);
+      }
+    });
     svg.append(group);
   }
 

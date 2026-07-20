@@ -55,6 +55,8 @@ button { cursor: pointer; background: #343b35; color: white; border-color: #343b
 .confidence-legend .legendary { opacity: .38; border: 1px dashed #27251f; }
 .color-legend { display: flex; flex-wrap: wrap; gap: .35rem .55rem; align-items: center; margin-top: .45rem; color: var(--ink-faint); font: .76rem system-ui, sans-serif; }
 .color-legend i { display: inline-block; width: .8rem; height: .8rem; background: var(--legend-color); border-radius: 50%; }
+.transition-legend { margin-top: .4rem; color: var(--ink-faint); font: .76rem system-ui, sans-serif; }
+.transition-legend i { display: inline-block; width: 1.35rem; margin-right: .35rem; border-top: 2px dashed #8c422d; vertical-align: middle; }
 
 main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem); gap: 1.25rem; padding: 1.25rem; }
 .timeline-main { grid-template-columns: minmax(0, 1fr); }
@@ -88,6 +90,9 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .grid-line { stroke: #d8d1c2; stroke-width: 1; }
 .transition-line { stroke: #8c422d; stroke-width: 1.5; stroke-dasharray: 3 2; }
 .transition-node { fill: #8c422d; }
+.transition { cursor: pointer; }
+.transition-hit { stroke: transparent; stroke-width: 14; }
+.transition:hover .transition-line, .transition:focus .transition-line { stroke-width: 3; }
 .swimlane { fill: #f5f0e5; stroke: #ded6c7; stroke-width: 1; }
 .swimlane-toggle { cursor: pointer; fill: transparent; }
 .swimlane-toggle:hover, .swimlane-toggle:focus { fill: rgb(140 66 45 / 8%); outline: none; }
