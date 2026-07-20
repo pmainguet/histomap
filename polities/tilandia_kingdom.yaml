@@ -36,3 +36,4 @@ geography:
     lat: -36.881831111
     lon: -72.241316111
   confidence: medium
+  primary_continent: south_america

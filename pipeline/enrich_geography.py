@@ -183,6 +183,7 @@ def run(offline: bool = False) -> dict[str, int]:
     by_tier: dict[str, dict[str, int]] = {}
     for path in POLITIES_DIR.glob("*.yaml"):
         document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        existing_geography = document.get("geography") or {}
         qid = (document.get("external_ids") or {}).get("wikidata")
         record = records.get(qid, {})
         point = parse_point(record.get("coords"))
@@ -199,12 +200,22 @@ def run(offline: bool = False) -> dict[str, int]:
             if located[1]:
                 continents.add(located[1])
         confidence = "medium" if p17.get(qid) else "low" if located else None
-        document["geography"] = {
-            "continents": sorted(continents),
-            "present_countries": sorted(countries),
-            "centroid": {"lat": point[1], "lon": point[0]} if point else None,
-            "confidence": confidence,
-        }
+        if not countries and not continents and not point and any(
+            existing_geography.get(key) for key in ("continents", "present_countries", "centroid")
+        ):
+            geography = existing_geography
+            countries = set(existing_geography.get("present_countries", []))
+            continents = set(existing_geography.get("continents", []))
+        else:
+            geography = {
+                "continents": sorted(continents),
+                "present_countries": sorted(countries),
+                "centroid": {"lat": point[1], "lon": point[0]} if point else None,
+                "confidence": confidence,
+            }
+            if len(continents) > 1 and located and located[1]:
+                geography["primary_continent"] = located[1]
+        document["geography"] = geography
         path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
         category = (
             "country"

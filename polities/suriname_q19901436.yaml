@@ -40,3 +40,4 @@ geography:
     lat: 4.0
     lon: -56.0
   confidence: medium
+  primary_continent: south_america

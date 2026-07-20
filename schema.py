@@ -71,6 +71,7 @@ class Centroid(BaseModel):
 
 class Geography(BaseModel):
     continents: list[str] = Field(default_factory=list)
+    primary_continent: str | None = None
     present_countries: list[str] = Field(default_factory=list)
     centroid: Centroid | None = None
     confidence: Confidence | None = None
@@ -81,6 +82,14 @@ class Geography(BaseModel):
         if any(not re.fullmatch(r"[A-Z]{2}", value) for value in values):
             raise ValueError("present_countries must contain ISO alpha-2 codes")
         return sorted(set(values))
+
+    @model_validator(mode="after")
+    def _primary_is_a_known_continent(self) -> "Geography":
+        if self.primary_continent is not None and self.primary_continent not in self.continents:
+            raise ValueError("primary_continent must also appear in continents")
+        if self.primary_continent is None and len(self.continents) == 1:
+            self.primary_continent = self.continents[0]
+        return self
 
 
 class Polity(BaseModel):

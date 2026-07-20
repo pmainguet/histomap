@@ -44,3 +44,4 @@ geography:
     lat: 36.8333
     lon: 10.15
   confidence: medium
+  primary_continent: africa

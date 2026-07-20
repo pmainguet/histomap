@@ -41,3 +41,4 @@ geography:
     lat: 32.522907
     lon: 44.42415
   confidence: medium
+  primary_continent: asia

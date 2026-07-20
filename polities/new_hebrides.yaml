@@ -43,3 +43,4 @@ geography:
     lat: -15.34246
     lon: 167.08282
   confidence: medium
+  primary_continent: oceania

@@ -38,3 +38,4 @@ geography:
     lat: 51.698055555
     lon: 94.39
   confidence: medium
+  primary_continent: europe

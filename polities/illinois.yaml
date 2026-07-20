@@ -40,3 +40,4 @@ geography:
     lat: 40.000277777
     lon: -89.250277777
   confidence: medium
+  primary_continent: north_america

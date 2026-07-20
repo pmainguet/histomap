@@ -9,14 +9,14 @@
 
 ## Detailed
 
-- Country: 1,936
+- Country: 1,935
 - Continent Only: 312
 - Centroid Only: 48
 - Unknown: 1,291
 
 ## Global
 
-- Country: 197
+- Country: 198
 - Continent Only: 6
 - Centroid Only: 2
 - Unknown: 15

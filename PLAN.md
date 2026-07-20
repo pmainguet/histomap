@@ -241,6 +241,9 @@ Get ~3,000 polities into draft YAML and render them. Quality is bad on purpose â
    - Until polygons are available, use Wikidata coordinates (`P625`) and reverse-map the point into a modern country and continent.
    - Treat Wikidata `P17` and `P131` only as fallback candidates, because their meaning is inconsistent for extinct polities.
    - Keep multi-continent and multi-country results rather than forcing one location. Preserve the evidence and mark centroid-only or inferred assignments as low/medium confidence.
+   - Preserve a single `primary_continent` for display placement, preferably from the centroid's
+     Natural Earth country intersection. The full continent list remains available for filtering;
+     multi-continent records are not duplicated into a separate swimlane.
 
    Emit a coverage report by century and visibility tier. Missing geography remains explicit rather than being guessed. The web view uses these fields for continent/country filters and, later, a linked map.
 

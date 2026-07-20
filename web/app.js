@@ -21,10 +21,9 @@ const geographyColors = {
   south_america: "#806f99",
   oceania: "#a6747b",
   antarctica: "#82969b",
-  transcontinental: "#958c70",
   unknown: "#8b867d",
 };
-const geographyOrder = ["africa", "asia", "europe", "north_america", "south_america", "oceania", "antarctica", "transcontinental", "unknown"];
+const geographyOrder = ["africa", "asia", "europe", "north_america", "south_america", "oceania", "antarctica", "unknown"];
 let polities = [];
 let detailTrigger = null;
 let selectedPolity = null;
@@ -55,8 +54,8 @@ function formatYear(year) {
 
 function geographyGroup(polity) {
   const continents = polity.geography?.continents || [];
-  if (continents.length === 1) return continents[0];
-  if (continents.length > 1) return "transcontinental";
+  if (polity.geography?.primary_continent) return polity.geography.primary_continent;
+  if (continents.length) return geographyOrder.find((continent) => continents.includes(continent)) || continents[0];
   return "unknown";
 }
 
