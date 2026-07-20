@@ -114,6 +114,7 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .match-score { display: flex; gap: .6rem; align-items: baseline; margin-top: .35rem; }
 .match-score strong { font: 700 1rem system-ui, sans-serif; }
 .match-score span { font: .78rem system-ui, sans-serif; }
+.exact-match { justify-self: start; margin: 0; padding: .15rem .35rem; color: #315d3a; background: #edf4e9; font: 700 .7rem system-ui, sans-serif; text-transform: uppercase; letter-spacing: .04em; }
 .score-details, .priority-details { font: .78rem/1.4 system-ui, sans-serif; }
 .score-details summary, .priority-details summary { cursor: pointer; color: #8c422d; }
 .source-links { font: .78rem system-ui, sans-serif; }

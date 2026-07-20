@@ -39,6 +39,7 @@ function candidateMarkup(candidate, index) {
       <dt>External pages</dt><dd class="source-links">${links || "No Wikidata, Wikipedia, or Seshat link recorded"}</dd>
     </dl>
     <div class="match-score"><strong>${score(candidate.total_score)} / 100</strong><span>Overall weighted match score</span></div>
+    ${candidate.exact_name_match ? '<p class="exact-match">Exact normalized name match</p>' : ""}
     <details class="score-details"><summary>How this score was calculated</summary>
       <dl><dt>Name similarity</dt><dd>${score(candidate.name_score)} / 100</dd>
       <dt>Date overlap</dt><dd>${score(candidate.date_score)} / 100</dd>

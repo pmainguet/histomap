@@ -54,6 +54,7 @@ REGION_CONTINENTS = {
 class CandidateScore:
     polity_id: str
     canonical_name: str
+    exact_name_match: bool
     name_score: float
     primary_name_score: float
     date_score: float
@@ -92,8 +93,11 @@ def _names(document: dict) -> list[str]:
 
 
 def score_candidate(seshat: dict, document: dict) -> CandidateScore:
+    normalized_seshat_name = normalize_name(str(seshat["canonical_name"]))
+    normalized_canonical_name = normalize_name(str(document["canonical_name"]))
+    exact_name_match = normalized_seshat_name == normalized_canonical_name
     seshat_names = {
-        normalize_name(str(seshat["canonical_name"])),
+        normalized_seshat_name,
         normalize_name(str(seshat["canonical_name"]), strip_types=True),
     }
     canonical_names = {
@@ -144,9 +148,12 @@ def score_candidate(seshat: dict, document: dict) -> CandidateScore:
     canonical_types = set(normalize_name(document["canonical_name"]).split()) & TYPE_WORDS
     type_score = 100.0 if seshat_types and seshat_types & canonical_types else 50.0 if not seshat_types else 0.0
     total = 0.55 * name_score + 0.30 * date_score + 0.10 * geography_score + 0.05 * type_score
+    if exact_name_match:
+        total = min(100.0, total + 5.0)
     return CandidateScore(
         polity_id=document["id"],
         canonical_name=document["canonical_name"],
+        exact_name_match=exact_name_match,
         name_score=round(name_score, 2),
         primary_name_score=round(primary_name_score, 2),
         date_score=round(date_score, 2),
@@ -162,13 +169,14 @@ def decide(scores: list[CandidateScore], eligibility: dict[str, str]) -> tuple[s
     best = scores[0]
     runner_up = scores[1].total_score if len(scores) > 1 else 0
     margin = best.total_score - runner_up
+    exact_name_candidates = sum(score.exact_name_match for score in scores)
     if (
         eligibility.get(best.polity_id) == "accepted"
         and best.total_score >= 82
         and best.name_score >= 88
         and best.primary_name_score >= 88
         and best.date_score >= 65
-        and margin >= 6
+        and (margin >= 6 or (best.exact_name_match and exact_name_candidates == 1))
     ):
         return "auto", best
     if best.total_score >= 55 and best.name_score >= 60:

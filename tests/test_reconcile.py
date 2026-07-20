@@ -70,11 +70,33 @@ class ReconciliationTests(unittest.TestCase):
         self.assertLess(score.primary_name_score, 88)
 
     def test_auto_match_requires_clear_margin(self) -> None:
-        first = CandidateScore("one", "One", 100, 100, 100, 100, 100, 100)
-        close = CandidateScore("two", "Two", 99, 99, 100, 100, 100, 98)
+        first = CandidateScore("one", "One", False, 100, 100, 100, 100, 100, 100)
+        close = CandidateScore("two", "Two", False, 99, 99, 100, 100, 100, 98)
         self.assertEqual(decide([first, close], {"one": "accepted"})[0], "review")
-        distant = CandidateScore("two", "Two", 80, 80, 70, 50, 50, 70)
+        distant = CandidateScore("two", "Two", False, 80, 80, 70, 50, 50, 70)
         self.assertEqual(decide([first, distant], {"one": "accepted"})[0], "auto")
+
+    def test_unique_exact_name_breaks_a_type_stripped_tie(self) -> None:
+        seshat = {
+            "canonical_name": "Ayyubid Sultanate",
+            "start_year": 1171,
+            "end_year": 1259,
+            "world_region": "Southwest Asia",
+        }
+        sultanate = {
+            "id": "ayyubid_sultanate", "canonical_name": "Ayyubid Sultanate", "names": {},
+            "start": 1171, "end": 1250, "geography": {}, "eligibility": "accepted",
+        }
+        dynasty = {
+            "id": "ayyubid_dynasty", "canonical_name": "Ayyubid dynasty", "names": {},
+            "start": 1171, "end": 1341, "geography": {}, "eligibility": "accepted",
+        }
+        exact = score_candidate(seshat, sultanate)
+        related = score_candidate(seshat, dynasty)
+        self.assertTrue(exact.exact_name_match)
+        self.assertFalse(related.exact_name_match)
+        self.assertEqual(exact.total_score, 100)
+        self.assertEqual(decide([exact, related], {"ayyubid_sultanate": "accepted"})[0], "auto")
 
 
 if __name__ == "__main__":
