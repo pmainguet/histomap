@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import json
 import math
 import sys
 from pathlib import Path
@@ -18,6 +19,7 @@ from pydantic import BaseModel
 from rapidfuzz import fuzz
 
 from pipeline.review_cli import pending_records, polity_metadata, save_decision
+from schema import Geography
 
 ROOT = Path(__file__).resolve().parent.parent
 ALLOWED_ACTIONS = {
@@ -30,6 +32,7 @@ EQUINOX_URL = (
     "https://github.com/seshatdb/Equinox_Data/blob/master/"
     "Equinox_on_GitHub_June9_2022.xlsx"
 )
+CONTINENTS = ["africa", "asia", "europe", "north_america", "south_america", "oceania", "antarctica"]
 
 
 def english_wikipedia_url(external_ids: dict) -> str | None:
@@ -46,6 +49,12 @@ def english_wikipedia_url(external_ids: dict) -> str | None:
 class ReviewDecision(BaseModel):
     decision: Literal["accept", "reject", "defer"]
     polity_id: str | None = None
+
+
+class GeographyUpdate(BaseModel):
+    continents: list[str]
+    primary_continent: str | None = None
+    present_countries: list[str]
 
 
 def clean_json(value: object) -> object:
@@ -161,6 +170,17 @@ def create_app(root: Path = ROOT) -> FastAPI:
     decisions_path = reports_dir / "seshat_review_decisions.jsonl"
     polities_dir = root / "polities"
     metadata = polity_metadata(polities_dir)
+    country_metadata_path = root / "sources" / "wikidata_country_metadata.json"
+    country_metadata = (
+        json.loads(country_metadata_path.read_text(encoding="utf-8"))
+        if country_metadata_path.exists()
+        else {}
+    )
+    country_options = {
+        info["iso2"]: info.get("label", info["iso2"])
+        for info in country_metadata.values()
+        if info.get("iso2") and len(info["iso2"]) == 2
+    }
     review_queue = pending_records(review_path, decisions_path, metadata=metadata)
     reviews_by_id = {record["seshat_id"]: record for record in review_queue}
     job = {"status": "idle", "action": None, "output": "", "returncode": None}
@@ -213,6 +233,45 @@ def create_app(root: Path = ROOT) -> FastAPI:
         q: str = Query(..., min_length=2), limit: int = Query(10, ge=1, le=25)
     ) -> dict:
         return clean_json({"query": q, "items": search_polities(q, metadata, limit)})
+
+    @application.get("/api/options/geography")
+    async def geography_options() -> dict:
+        return {
+            "continents": CONTINENTS,
+            "countries": [
+                {"code": code, "label": label}
+                for code, label in sorted(country_options.items(), key=lambda item: item[1])
+            ],
+        }
+
+    @application.patch("/api/polities/{polity_id}/geography")
+    async def update_polity_geography(polity_id: str, request: GeographyUpdate) -> dict:
+        document = metadata.get(polity_id)
+        path = polities_dir / f"{polity_id}.yaml"
+        if document is None or not path.exists():
+            raise HTTPException(404, "Unknown Histomap entity")
+        unknown_continents = sorted(set(request.continents) - set(CONTINENTS))
+        unknown_countries = sorted(set(request.present_countries) - set(country_options))
+        if unknown_continents:
+            raise HTTPException(422, f"Unknown continents: {', '.join(unknown_continents)}")
+        if unknown_countries:
+            raise HTTPException(422, f"Unknown country codes: {', '.join(unknown_countries)}")
+        existing = document.get("geography") or {}
+        geography = Geography.model_validate(
+            {
+                "continents": sorted(set(request.continents)),
+                "primary_continent": request.primary_continent,
+                "present_countries": sorted(set(request.present_countries)),
+                "centroid": existing.get("centroid"),
+                "confidence": "high",
+            }
+        ).model_dump(mode="json", exclude_none=True)
+        document["geography"] = geography
+        path.write_text(
+            yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
+        )
+        metadata[polity_id] = document
+        return {"status": "saved", "polity_id": polity_id, "geography": geography}
 
     @application.post("/api/reviews/{seshat_id}")
     async def decide_review(seshat_id: str, request: ReviewDecision) -> dict:

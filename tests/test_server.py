@@ -16,6 +16,11 @@ class UnifiedServerTests(unittest.TestCase):
         (self.root / "web").mkdir()
         (self.root / "reports").mkdir()
         (self.root / "polities").mkdir()
+        (self.root / "sources").mkdir()
+        (self.root / "sources" / "wikidata_country_metadata.json").write_text(
+            json.dumps({"Q142": {"iso2": "FR", "label": "France", "continents": ["europe"]}}),
+            encoding="utf-8",
+        )
         for name in ("index.html", "review.html", "styles.css", "app.js", "review.js"):
             (self.root / "web" / name).write_text(name, encoding="utf-8")
         (self.root / "data.json").write_text("[]", encoding="utf-8")
@@ -147,6 +152,32 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["items"][0]["polity_id"], "candidate")
         self.assertEqual(response.json()["items"][0]["search_score"], 100)
+
+    def test_lists_and_updates_geography_with_controlled_values(self) -> None:
+        options = self.client.get("/api/options/geography").json()
+        self.assertIn("europe", options["continents"])
+        self.assertIn({"code": "FR", "label": "France"}, options["countries"])
+        response = self.client.patch(
+            "/api/polities/candidate/geography",
+            json={
+                "continents": ["europe"],
+                "primary_continent": "europe",
+                "present_countries": ["FR"],
+            },
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["geography"]["present_countries"], ["FR"])
+        saved = yaml.safe_load(
+            (self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8")
+        )
+        self.assertEqual(saved["geography"]["confidence"], "high")
+
+    def test_rejects_unknown_geography_values(self) -> None:
+        response = self.client.patch(
+            "/api/polities/candidate/geography",
+            json={"continents": ["atlantis"], "present_countries": ["ZZ"]},
+        )
+        self.assertEqual(response.status_code, 422)
 
 
 if __name__ == "__main__":

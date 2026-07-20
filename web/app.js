@@ -30,6 +30,7 @@ let transitions = [];
 let detailTrigger = null;
 let selectedPolity = null;
 let focusedPolityId = null;
+let geographyOptions = { continents: [], countries: [] };
 const collapsedGeographies = new Set();
 const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
 const currentYear = new Date().getFullYear();
@@ -113,6 +114,63 @@ function weightAt(polity, year) {
   return w0 + (w1 - w0) * ((year - y0) / (y1 - y0));
 }
 
+function geographyEditorMarkup(polity) {
+  const selectedContinents = new Set(polity.geography?.continents || []);
+  const selectedCountries = new Set(polity.geography?.present_countries || []);
+  const countries = [...geographyOptions.countries].sort((a, b) => {
+    const selectedDifference = Number(selectedCountries.has(b.code)) - Number(selectedCountries.has(a.code));
+    return selectedDifference || a.label.localeCompare(b.label);
+  });
+  return `<section id="geography-editor" class="geography-editor" hidden>
+    <h3>Edit geography</h3>
+    <fieldset><legend>Continents</legend><div class="geography-checkboxes">
+      ${geographyOptions.continents.map((continent) => `<label><input type="checkbox" name="continent" value="${escapeHtml(continent)}" ${selectedContinents.has(continent) ? "checked" : ""}> ${escapeHtml(displayTerm(continent))}</label>`).join("")}
+    </div></fieldset>
+    <label class="geography-primary">Primary continent / swimlane
+      <select name="primary_continent"><option value="">Automatic</option>${geographyOptions.continents.map((continent) => `<option value="${escapeHtml(continent)}" ${polity.geography?.primary_continent === continent ? "selected" : ""}>${escapeHtml(displayTerm(continent))}</option>`).join("")}</select>
+    </label>
+    <fieldset><legend>Present countries</legend>
+      <input class="country-filter" type="search" placeholder="Filter countries…" aria-label="Filter country list">
+      <div class="country-checklist">${countries.map((country) => `<label data-country-search="${escapeHtml(`${country.label} ${country.code}`.toLowerCase())}"><input type="checkbox" name="country" value="${escapeHtml(country.code)}" ${selectedCountries.has(country.code) ? "checked" : ""}> ${escapeHtml(country.label)} <small>${escapeHtml(country.code)}</small></label>`).join("")}</div>
+    </fieldset>
+    <div class="geography-editor-actions"><button type="button" class="save-geography">Save geography</button><button type="button" class="cancel-geography">Cancel</button><span class="geography-save-status" role="status"></span></div>
+  </section>`;
+}
+
+async function saveGeography(polity) {
+  const editor = details.querySelector("#geography-editor");
+  const status = editor.querySelector(".geography-save-status");
+  const button = editor.querySelector(".save-geography");
+  const continents = [...editor.querySelectorAll('input[name="continent"]:checked')].map((input) => input.value);
+  const countries = [...editor.querySelectorAll('input[name="country"]:checked')].map((input) => input.value);
+  const primary = editor.querySelector('[name="primary_continent"]').value || null;
+  if (primary && !continents.includes(primary)) {
+    status.textContent = "Primary continent must also be checked.";
+    return;
+  }
+  button.disabled = true;
+  status.textContent = "Saving…";
+  try {
+    const response = await fetch(`/api/polities/${encodeURIComponent(polity.id)}/geography`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ continents, primary_continent: primary, present_countries: countries }),
+    });
+    if (!response.ok) throw new Error(await response.text());
+    const payload = await response.json();
+    polity.geography = payload.geography;
+    render();
+    const band = chart.querySelector(`[data-polity-id="${polity.id}"]`);
+    showDetails(polity, band || detailTrigger);
+    const savedStatus = details.querySelector(".geography-save-status");
+    savedStatus.textContent = "Saved. Rebuild timeline when finished editing.";
+    details.querySelector("#geography-editor").hidden = false;
+  } catch (error) {
+    status.textContent = `Could not save: ${error.message}`;
+    button.disabled = false;
+  }
+}
+
 function showDetails(polity, trigger = null) {
   selectedPolity = polity;
   if (trigger) detailTrigger = trigger;
@@ -140,7 +198,7 @@ function showDetails(polity, trigger = null) {
   ].filter(Boolean);
   details.innerHTML = `<button class="detail-close" type="button" aria-label="Close entity details">×</button>
     <h2>${escapeHtml(polity.canonical_name)}</h2>
-    <div class="detail-actions"><button class="zoom-lifetime" type="button">Zoom to lifetime</button><button class="reset-era" type="button">Full timeline</button></div>
+    <div class="detail-actions"><button class="zoom-lifetime" type="button">Zoom to lifetime</button><button class="reset-era" type="button">Full timeline</button><button class="edit-geography" type="button">Edit geography</button></div>
     <p>${escapeHtml(descriptionText)}</p>
     <dl>
       <dt>Dates</dt><dd>${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}${duration ? ` (${duration.toLocaleString()} years)` : ""}</dd>
@@ -165,6 +223,7 @@ function showDetails(polity, trigger = null) {
       }).join("<br>")}</dd>` : ""}
       ${externalLinks.length ? `<dt>External pages</dt><dd class="detail-links">${externalLinks.join("<br>")}</dd>` : ""}
     </dl>
+    ${geographyEditorMarkup(polity)}
     ${hasRelationships ? `<p class="relationship-hint">Related visible bands are outlined on the timeline. Select a related name to navigate to it.</p>` : ""}
     `;
   details.querySelectorAll("[data-entity-id]").forEach((button) => {
@@ -176,6 +235,19 @@ function showDetails(polity, trigger = null) {
   details.querySelector(".detail-close").addEventListener("click", closeDetails);
   details.querySelector(".zoom-lifetime").addEventListener("click", () => zoomToPolity(polity));
   details.querySelector(".reset-era").addEventListener("click", () => applyEraPreset("full"));
+  const geographyEditor = details.querySelector("#geography-editor");
+  details.querySelector(".edit-geography").addEventListener("click", () => {
+    geographyEditor.hidden = !geographyEditor.hidden;
+    if (!geographyEditor.hidden) geographyEditor.querySelector(".country-filter").focus();
+  });
+  geographyEditor.querySelector(".cancel-geography").addEventListener("click", () => { geographyEditor.hidden = true; });
+  geographyEditor.querySelector(".save-geography").addEventListener("click", () => saveGeography(polity));
+  geographyEditor.querySelector(".country-filter").addEventListener("input", (event) => {
+    const query = event.target.value.trim().toLowerCase();
+    geographyEditor.querySelectorAll("[data-country-search]").forEach((label) => {
+      label.hidden = Boolean(query) && !label.dataset.countrySearch.includes(query);
+    });
+  });
   details.classList.add("is-open");
   detailBackdrop.classList.add("is-open");
   details.setAttribute("aria-hidden", "false");
@@ -630,10 +702,13 @@ function populateSelect(select, values, formatter = (value) => value) {
 }
 
 try {
-  const [response, transitionResponse] = await Promise.all([fetch("/data.json"), fetch("/transitions.json")]);
+  const [response, transitionResponse, geographyResponse] = await Promise.all([
+    fetch("/data.json"), fetch("/transitions.json"), fetch("/api/options/geography"),
+  ]);
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   polities = await response.json();
   transitions = transitionResponse.ok ? await transitionResponse.json() : [];
+  geographyOptions = geographyResponse.ok ? await geographyResponse.json() : { continents: geographyOrder.slice(0, -1), countries: [] };
   for (const name of [...new Set(polities.map((polity) => polity.canonical_name))].sort()) {
     const option = document.createElement("option");
     option.value = name;
