@@ -6,6 +6,7 @@ import argparse
 import re
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import xarray as xr
 import yaml
@@ -65,6 +66,26 @@ def aggregate_radius(
     return float(values.where(mask).sum(skipna=True).item())
 
 
+def radius_cell_indices(
+    latitudes: np.ndarray,
+    longitudes: np.ndarray,
+    lat: float,
+    lon: float,
+    radius: float,
+) -> np.ndarray:
+    target_lon = lon % 360 if float(longitudes.max()) > 180 else lon
+    lat_indices = np.flatnonzero(np.abs(latitudes - lat) <= radius)
+    lon_delta = np.abs(longitudes - target_lon)
+    if float(longitudes.max()) > 180:
+        lon_delta = np.minimum(lon_delta, 360 - lon_delta)
+    lon_indices = np.flatnonzero(lon_delta <= radius)
+    if not len(lat_indices) or not len(lon_indices):
+        return np.array([], dtype=np.int64)
+    lat_grid, lon_grid = np.meshgrid(lat_indices, lon_indices, indexing="ij")
+    distances = (latitudes[lat_grid] - lat) ** 2 + lon_delta[lon_grid] ** 2
+    return (lat_grid * len(longitudes) + lon_grid)[distances <= radius**2].astype(np.int64)
+
+
 def polity_points() -> list[dict]:
     points = []
     for path in (ROOT / "polities").glob("*.yaml"):
@@ -83,38 +104,55 @@ def polity_points() -> list[dict]:
     return points
 
 
-def extract_file(path: Path, points: list[dict], radius: float) -> list[dict]:
+def extract_file(path: Path, points: list[dict], radius: float, progress: bool = False) -> list[dict]:
     rows = []
     with xr.open_dataset(path) as dataset:
         population, latitude, longitude, time = inspect_dataset(dataset)
-        slices: list[tuple[int, xr.DataArray]] = []
+        latitudes = np.asarray(dataset[latitude].values)
+        longitudes = np.asarray(dataset[longitude].values)
+        indexed_points = [
+            {
+                **point,
+                "cells": radius_cell_indices(
+                    latitudes, longitudes, point["lat"], point["lon"], radius
+                ),
+            }
+            for point in points
+        ]
+        slices: list[tuple[int, int | None]] = []
         if time:
-            for raw_year in dataset[time].values:
+            for index, raw_year in enumerate(dataset[time].values):
                 year = int(getattr(raw_year, "year", raw_year))
-                slices.append((year, dataset[population].sel({time: raw_year})))
+                slices.append((year, index))
         else:
             year = dataset.attrs.get("year") or year_from_path(path)
             if year is None:
                 raise ValueError(f"cannot determine year for {path.name}")
-            slices.append((int(year), dataset[population]))
-        for year, values in slices:
-            for point in points:
-                if year < point["start"] or (point["end"] is not None and year > point["end"]):
-                    continue
+            slices.append((int(year), None))
+        for position, (year, time_index) in enumerate(slices, start=1):
+            active = [
+                point
+                for point in indexed_points
+                if year >= point["start"]
+                and (point["end"] is None or year <= point["end"])
+                and len(point["cells"])
+            ]
+            if not active:
+                continue
+            if progress and (position == 1 or position % 10 == 0 or position == len(slices)):
+                print(f"HYDE {path.name}: slice {position}/{len(slices)} ({year})", flush=True)
+            values = (
+                dataset[population].isel({time: time_index}).values
+                if time_index is not None
+                else dataset[population].values
+            )
+            flattened = np.asarray(values).reshape(-1)
+            for point in active:
                 rows.append(
                     {
                         "polity_id": point["polity_id"],
                         "year": year,
-                        "population": round(
-                            aggregate_radius(
-                                values,
-                                latitude,
-                                longitude,
-                                point["lat"],
-                                point["lon"],
-                                radius,
-                            )
-                        ),
+                        "population": round(float(np.nansum(flattened[point["cells"]]))),
                         "method": "centroid_radius",
                         "radius_degrees": radius,
                         "weight_imputed": True,
@@ -128,7 +166,7 @@ def run(input_dir: Path = DEFAULT_INPUT, radius: float = 2.5) -> pd.DataFrame:
     if not files:
         raise FileNotFoundError(f"no NetCDF files found under {input_dir}")
     points = polity_points()
-    rows = [row for path in files for row in extract_file(path, points, radius)]
+    rows = [row for path in files for row in extract_file(path, points, radius, progress=True)]
     output = pd.DataFrame(rows, columns=OUTPUT_COLUMNS).sort_values(
         ["polity_id", "year"], ignore_index=True
     )

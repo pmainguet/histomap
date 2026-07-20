@@ -32,7 +32,7 @@ Sources disagree. Wikidata's pre-1000 CE quality is poor. Splits/merges and icon
 | **Wikidata** (SPARQL) | Entity backbone, ~3,000 polities | Live query → Parquet | Inconsistent quality, especially pre-1000 CE |
 | **Seshat / Cliopatria** | Authoritative dates, territory, complexity | CSV / GeoJSON | ~600 polities, ~35 regions only |
 | **Maddison Project** | Population + GDP, year 1 CE → today | Excel/CSV | Modern nation-state framing |
-| **HYDE 3.3** | Gridded population, 10,000 BCE → 2017 | NetCDF | Geographic — aggregate by polity territory |
+| **HYDE 3.5** | Gridded population, 10,000 BCE → 2025 | NetCDF | Geographic — aggregate by polity territory |
 | **CShapes 2.0** | Modern state boundaries 1886 → today | Shapefile | Modern only |
 | **World Historical Gazetteer** | Place-name reconciliation | API | Helps join datasets |
 
@@ -267,7 +267,9 @@ Reconcile Seshat and the territorial atlas data into the Wikidata draft set. Aft
 
 Compute `weight_by_era` from territory, population, and complexity. The output is what makes the streamgraph *honest* about scale — Han Dynasty should dwarf Lan Xang.
 
-12. Download Maddison Project (`maddison.xlsx`, ~2 MB) and HYDE 3.3 (NetCDF, ~2 GB compressed). Add both to `sources/MANIFEST.md` with version. HYDE downloads are slow and rate-limited — do it once and cache aggressively.
+12. Download Maddison Project (`mpd2023_web.xlsx`, ~5 MB) and the HYDE 3.5 baseline
+population-count NetCDF (~640 MB compressed). Add both to `sources/MANIFEST.md` with version.
+HYDE downloads are slow and rate-limited — do it once and cache aggressively.
 
 13. `pipeline/extract_maddison.py`: long-format table `(country, year, population, gdp_per_capita)`. Country codes are modern ISO — map to our polity IDs only for 1500+ entities; pre-modern populations fall back to HYDE.
     The extractor targets the official MPD 2023 workbook, detects its data sheet/header, converts

@@ -5,7 +5,13 @@ from pathlib import Path
 import numpy as np
 import xarray as xr
 
-from pipeline.extract_hyde import aggregate_radius, extract_file, inspect_dataset, year_from_path
+from pipeline.extract_hyde import (
+    aggregate_radius,
+    extract_file,
+    inspect_dataset,
+    radius_cell_indices,
+    year_from_path,
+)
 
 
 class HydeExtractionTests(unittest.TestCase):
@@ -21,6 +27,12 @@ class HydeExtractionTests(unittest.TestCase):
     def test_radius_sum_uses_population_counts(self) -> None:
         values = self.dataset["popc"].sel(time=1000)
         self.assertEqual(aggregate_radius(values, "lat", "lon", 0, 10, 1.1), 6)
+
+    def test_precomputes_the_same_radius_cells(self) -> None:
+        cells = radius_cell_indices(
+            self.dataset.lat.values, self.dataset.lon.values, 0, 10, 1.1
+        )
+        self.assertEqual(cells.tolist(), [0, 1, 2])
 
     def test_extracts_only_years_in_polity_lifespan(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
