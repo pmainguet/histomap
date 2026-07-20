@@ -1,4 +1,4 @@
-.PHONY: setup extract extract-seshat extract-maddison extract-hyde map-maddison filter-wikidata-types import-wikidata reconcile spotcheck compute-prominence enrich-relationships enrich-geography validate build serve test format lint check
+.PHONY: setup extract extract-seshat extract-maddison extract-hyde map-maddison filter-wikidata-types import-wikidata reconcile apply-reviews spotcheck compute-prominence enrich-relationships enrich-geography validate build serve test format lint check
 
 setup:
 	uv pip install -r requirements.txt ruff mypy
@@ -26,6 +26,9 @@ import-wikidata:
 
 reconcile:
 	python pipeline/reconcile.py
+
+apply-reviews:
+	python -m pipeline.apply_review_decisions
 
 review:
 	python pipeline/review_cli.py

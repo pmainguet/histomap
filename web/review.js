@@ -170,18 +170,20 @@ async function decide(decision, polityId = null) {
 async function startAction(action) {
   const response = await fetch(`/api/actions/${action}`, { method: "POST" });
   if (!response.ok) throw new Error(await response.text());
-  jobStatus.textContent = `${action} running...`;
+  const label = action === "apply-reviews" ? "Applying review decisions" : action === "build" ? "Rebuilding timeline" : action;
+  jobStatus.textContent = `${label}…`;
   pollJob();
 }
 
 async function pollJob() {
   const job = await fetch("/api/actions/status").then((response) => response.json());
-  jobStatus.textContent = job.status === "running" ? `${job.action} running...` : `${job.action || "pipeline"}: ${job.status}`;
+  const label = job.action === "apply-reviews" ? "Review decisions" : job.action === "build" ? "Timeline rebuild" : job.action || "Pipeline";
+  jobStatus.textContent = job.status === "running" ? `${label}…` : `${label}: ${job.status}`;
   if (job.status === "running") setTimeout(pollJob, 1000);
   if (job.status === "complete") loadNext();
 }
 
-document.querySelector("#apply-decisions").addEventListener("click", () => startAction("reconcile"));
+document.querySelector("#apply-decisions").addEventListener("click", () => startAction("apply-reviews"));
 document.querySelector("#build-data").addEventListener("click", () => startAction("build"));
 document.addEventListener("keydown", (event) => {
   if (!current || submitting || event.target.matches("input, textarea, button, a, summary")) return;

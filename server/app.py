@@ -19,6 +19,7 @@ from pipeline.review_cli import pending_records, polity_metadata, save_decision
 
 ROOT = Path(__file__).resolve().parent.parent
 ALLOWED_ACTIONS = {
+    "apply-reviews": ["-m", "pipeline.apply_review_decisions"],
     "reconcile": ["pipeline/reconcile.py"],
     "build": ["build.py"],
     "compute-weights": ["pipeline/compute_weights.py"],
