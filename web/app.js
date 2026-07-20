@@ -247,6 +247,87 @@ function niceTickStep(span) {
   return (ratio <= 1 ? 1 : ratio <= 2 ? 2 : ratio <= 5 ? 5 : 10) * power;
 }
 
+function directlyRelated(left, right) {
+  if (left.parent === right.id || right.parent === left.id) return true;
+  if (left.parent && left.parent === right.parent) return true;
+  if ((left.successors || []).includes(right.id) || (right.successors || []).includes(left.id)) return true;
+  return transitions.some((transition) => {
+    const ids = new Set([...transition.from, ...transition.to]);
+    return ids.has(left.id) && ids.has(right.id);
+  });
+}
+
+function temporalGap(left, right) {
+  const leftEnd = left.end ?? 2026;
+  const rightEnd = right.end ?? 2026;
+  if (left.start <= rightEnd && right.start <= leftEnd) return 0;
+  return Math.max(left.start, right.start) - Math.min(leftEnd, rightEnd);
+}
+
+function orderingCost(left, right) {
+  if ((left.successors || []).includes(right.id)) return -1000000 + temporalGap(left, right);
+  if ((right.successors || []).includes(left.id)) return -950000 + temporalGap(left, right);
+  if (left.parent === right.id || right.parent === left.id) return -900000 + temporalGap(left, right);
+  if (left.parent && left.parent === right.parent) return -850000 + temporalGap(left, right);
+  if (directlyRelated(left, right)) return -800000 + temporalGap(left, right);
+  const leftCountries = new Set(left.geography?.present_countries || []);
+  const sharedCountry = (right.geography?.present_countries || []).some((country) => leftCountries.has(country));
+  const sameHistoricalGroup = left.region && left.region !== "unclassified" && left.region === right.region;
+  return temporalGap(left, right) + Math.abs(left.start - right.start) * .05
+    - (sharedCountry ? 5000 : 0) - (sameHistoricalGroup ? 2000 : 0);
+}
+
+function relationshipComponents(items) {
+  const remaining = new Set(items.map((item) => item.id));
+  const byId = new Map(items.map((item) => [item.id, item]));
+  const components = [];
+  while (remaining.size) {
+    const firstId = remaining.values().next().value;
+    const stack = [firstId];
+    const component = [];
+    remaining.delete(firstId);
+    while (stack.length) {
+      const current = byId.get(stack.pop());
+      component.push(current);
+      for (const candidateId of [...remaining]) {
+        if (directlyRelated(current, byId.get(candidateId))) {
+          remaining.delete(candidateId);
+          stack.push(candidateId);
+        }
+      }
+    }
+    components.push(component);
+  }
+  return components;
+}
+
+function greedyOrder(items) {
+  if (items.length < 2) return [...items];
+  const remaining = [...items].sort((a, b) => a.start - b.start || a.canonical_name.localeCompare(b.canonical_name));
+  const ordered = [remaining.shift()];
+  while (remaining.length) {
+    const previous = ordered.at(-1);
+    remaining.sort((a, b) => orderingCost(previous, a) - orderingCost(previous, b)
+      || a.start - b.start || a.canonical_name.localeCompare(b.canonical_name));
+    ordered.push(remaining.shift());
+  }
+  return ordered;
+}
+
+function orderGlobalLane(items) {
+  if (items.length < 2) return [...items];
+  const components = relationshipComponents(items).map(greedyOrder);
+  components.sort((a, b) => a[0].start - b[0].start || a[0].canonical_name.localeCompare(b[0].canonical_name));
+  const orderedComponents = [components.shift()];
+  while (components.length) {
+    const previous = orderedComponents.at(-1).at(-1);
+    components.sort((a, b) => orderingCost(previous, a[0]) - orderingCost(previous, b[0])
+      || a[0].start - b[0].start);
+    orderedComponents.push(components.shift());
+  }
+  return orderedComponents.flat();
+}
+
 function render() {
   const yearStart = Number(startInput.value);
   const yearEnd = Number(endInput.value);
@@ -278,7 +359,15 @@ function render() {
   const pixelsPerYear = Math.max(.2, Math.min(2, 1500 / span));
   const width = Math.max(900, Math.min(4800, span * pixelsPerYear + margin.left + margin.right));
   const groups = geographyOrder
-    .map((name) => ({ name, items: matched.filter((polity) => geographyGroup(polity) === name) }))
+    .map((name) => {
+      const items = matched.filter((polity) => geographyGroup(polity) === name);
+      return {
+        name,
+        items: visibilityInput.value === "global"
+          ? orderGlobalLane(items)
+          : items.sort((a, b) => a.start - b.start || a.canonical_name.localeCompare(b.canonical_name)),
+      };
+    })
     .filter((group) => group.items.length);
   const visible = groups.flatMap((group) => collapsedGeographies.has(group.name) ? [] : group.items);
   const height = Math.max(180, visible.length * rowHeight + groups.length * laneHeaderHeight + margin.top + margin.bottom);
