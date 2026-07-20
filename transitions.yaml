@@ -11,3 +11,46 @@
   notes: Curated split connecting the canonical Francia successor records.
   source_urls:
   - https://en.wikipedia.org/wiki/Treaty_of_Verdun
+- id: division_of_roman_empire
+  year: 395
+  kind: split
+  from:
+  - ancient_rome
+  to:
+  - western_roman_empire
+  - byzantine_empire
+  label: Permanent division of Roman imperial administration
+  notes: Curated division following the death of Theodosius I.
+  source_urls:
+  - https://en.wikipedia.org/wiki/Western_Roman_Empire
+- id: austro_hungarian_compromise
+  year: 1867
+  kind: succession
+  from:
+  - austrian_empire
+  to:
+  - austriahungary
+  label: Austrian Empire reorganized as Austria-Hungary
+  source_urls:
+  - https://en.wikipedia.org/wiki/Austro-Hungarian_Compromise_of_1867
+- id: german_revolution
+  year: 1918
+  kind: succession
+  from:
+  - german_empire
+  to:
+  - weimar_republic
+  label: German Empire succeeded by the Weimar Republic
+  source_urls:
+  - https://en.wikipedia.org/wiki/German_Revolution_of_1918%E2%80%931919
+- id: partition_of_british_india
+  year: 1947
+  kind: split
+  from:
+  - british_raj
+  to:
+  - dominion_of_india
+  - dominion_of_pakistan
+  label: Partition of British India
+  source_urls:
+  - https://en.wikipedia.org/wiki/Partition_of_India

@@ -330,7 +330,8 @@ HYDE downloads are slow and rate-limited — do it once and cache aggressively.
 18. Create `transitions.yaml` for non-trivial splits/merges (Roman fragmentation, Mongol partitions, decolonization). ~50 entries total.
     Transition records now have validated split/merge/succession shapes, canonical polity references,
     source URLs, a separate generated web payload, and restrained chart connectors. The Treaty of
-    Verdun partition is the first curated record; the remaining transitions stay manual.
+    Verdun, the Roman division, the Austro-Hungarian Compromise, the German Revolution, and the
+    partition of British India form the initial curated set; remaining transitions stay manual.
 19. Draw or source SVG icons for the top ~50 polities into `icons/`.
 20. Tighten short-child text for the top ~50; the LLM's first pass is usable but uneven.
 

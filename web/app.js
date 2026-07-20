@@ -121,6 +121,7 @@ function showDetails(polity, trigger = null) {
   const wikipedia = polity.external_ids?.wikipedia_en || (wikidata ? `https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/${encodeURIComponent(wikidata)}` : "");
   const seshat = polity.external_ids?.seshat || [];
   const sources = (polity.sources || []).map(displayTerm);
+  const relevantTransitions = transitions.filter((transition) => [...transition.from, ...transition.to].includes(polity.id));
   const hasRelationships = polity.parent || children.length || predecessors.length || successors.length;
   const externalLinks = [
     wikidata ? `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(wikidata)}" target="_blank" rel="noopener noreferrer">Wikidata (${escapeHtml(wikidata)}) ↗</a>` : "",
@@ -149,6 +150,10 @@ function showDetails(polity, trigger = null) {
       <dt>Review status</dt><dd>${escapeHtml(polity.eligibility || "review")}</dd>
       <dt>Date confidence</dt><dd>start ${escapeHtml(polity.start_confidence || "unknown")}; end ${escapeHtml(polity.end_confidence || "unknown")}</dd>
       ${sources.length ? `<dt>Data sources</dt><dd>${escapeHtml(sources.join(", "))}</dd>` : ""}
+      ${relevantTransitions.length ? `<dt>Transitions</dt><dd class="detail-links">${relevantTransitions.map((transition) => {
+        const label = `${formatYear(transition.year)}: ${escapeHtml(transition.label)}`;
+        return transition.source_urls?.[0] ? `<a href="${escapeHtml(transition.source_urls[0])}" target="_blank" rel="noopener noreferrer">${label} ↗</a>` : label;
+      }).join("<br>")}</dd>` : ""}
       ${externalLinks.length ? `<dt>External pages</dt><dd class="detail-links">${externalLinks.join("<br>")}</dd>` : ""}
     </dl>
     ${hasRelationships ? `<p class="relationship-hint">Related visible bands are outlined on the timeline. Select a related name to navigate to it.</p>` : ""}

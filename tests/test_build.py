@@ -39,7 +39,7 @@ class BuildRelationshipValidationTests(unittest.TestCase):
         transition = Transition.model_validate(
             {
                 "id": "division",
-                "year": 10,
+                "year": 2,
                 "kind": "split",
                 "from": ["first"],
                 "to": ["second", "third"],
@@ -54,7 +54,7 @@ class BuildRelationshipValidationTests(unittest.TestCase):
         transition = Transition.model_validate(
             {
                 "id": "continuity",
-                "year": 10,
+                "year": 2,
                 "kind": "succession",
                 "from": ["first"],
                 "to": ["missing"],
@@ -63,6 +63,20 @@ class BuildRelationshipValidationTests(unittest.TestCase):
         )
         with self.assertRaisesRegex(ValueError, "unknown polity IDs: missing"):
             validate_transitions([transition], [polity("first")])
+
+    def test_transition_rejects_impossible_date(self) -> None:
+        transition = Transition.model_validate(
+            {
+                "id": "late_transition",
+                "year": 100,
+                "kind": "succession",
+                "from": ["first"],
+                "to": ["second"],
+                "label": "Too late",
+            }
+        )
+        with self.assertRaisesRegex(ValueError, "outside source first dates"):
+            validate_transitions([transition], [polity("first"), polity("second")])
 
 
 if __name__ == "__main__":

@@ -69,7 +69,8 @@ def load_transitions(polities: list[Polity]) -> list[Transition]:
 
 
 def validate_transitions(transitions: list[Transition], polities: list[Polity]) -> None:
-    known_ids = {polity.id for polity in polities}
+    known = {polity.id: polity for polity in polities}
+    known_ids = set(known)
     transition_ids = [transition.id for transition in transitions]
     if len(transition_ids) != len(set(transition_ids)):
         raise ValueError("transition IDs must be unique")
@@ -83,6 +84,19 @@ def validate_transitions(transitions: list[Transition], polities: list[Polity]) 
     )
     if unknown:
         raise ValueError(f"transitions reference unknown polity IDs: {', '.join(unknown)}")
+    for transition in transitions:
+        for source_id in transition.from_ids:
+            source = known[source_id]
+            if transition.year < source.start or (
+                source.end is not None and transition.year > source.end + 25
+            ):
+                raise ValueError(f"transition {transition.id} falls outside source {source_id} dates")
+        for target_id in transition.to_ids:
+            target = known[target_id]
+            if transition.year < target.start - 25 or (
+                target.end is not None and transition.year > target.end
+            ):
+                raise ValueError(f"transition {transition.id} falls outside target {target_id} dates")
 
 
 def main() -> None:
