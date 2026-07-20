@@ -37,13 +37,17 @@ class WikidataToYamlTests(unittest.TestCase):
                 "aliases_en": "Example realm|Example realm|Realm",
                 "inception": "-0500-01-01T00:00:00Z",
                 "dissolution": "+0100-01-01T00:00:00Z",
+                "wikipedia_en": "https://en.wikipedia.org/wiki/Example",
             },
             "example_empire",
         )
         self.assertEqual(document["start"], -500)
         self.assertEqual(document["end"], 100)
         self.assertEqual(document["weight_by_era"], {-500: 5})
-        self.assertEqual(document["external_ids"], {"wikidata": "Q42"})
+        self.assertEqual(
+            document["external_ids"],
+            {"wikidata": "Q42", "wikipedia_en": "https://en.wikipedia.org/wiki/Example"},
+        )
         self.assertEqual(document["eligibility"], "review")
 
     def test_convert_suffixes_slug_occupied_by_another_qid(self) -> None:

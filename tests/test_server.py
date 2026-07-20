@@ -70,6 +70,10 @@ class UnifiedServerTests(unittest.TestCase):
             payload["items"][0]["candidates"][0]["source_links"][0]["url"],
             "https://www.wikidata.org/wiki/Q123",
         )
+        self.assertEqual(
+            payload["items"][0]["candidates"][0]["source_links"][1]["label"],
+            "Wikipedia (English)",
+        )
         response = self.client.post(
             "/api/reviews/S1", json={"decision": "accept", "polity_id": "candidate"}
         )

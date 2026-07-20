@@ -28,6 +28,17 @@ EQUINOX_URL = (
 )
 
 
+def english_wikipedia_url(external_ids: dict) -> str | None:
+    if external_ids.get("wikipedia_en"):
+        return str(external_ids["wikipedia_en"])
+    if external_ids.get("wikidata"):
+        return (
+            "https://www.wikidata.org/wiki/Special:GoToLinkedPage/"
+            f"enwiki/{external_ids['wikidata']}"
+        )
+    return None
+
+
 class ReviewDecision(BaseModel):
     decision: Literal["accept", "reject", "defer"]
     polity_id: str | None = None
@@ -66,6 +77,9 @@ def add_source_links(record: dict, metadata: dict[str, dict]) -> dict:
                     "url": f"https://www.wikidata.org/wiki/{external_ids['wikidata']}",
                 }
             )
+        wikipedia_url = english_wikipedia_url(external_ids)
+        if wikipedia_url:
+            links.append({"label": "Wikipedia (English)", "url": wikipedia_url})
         if external_ids.get("seshat"):
             links.append(
                 {

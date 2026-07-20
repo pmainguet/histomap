@@ -123,6 +123,7 @@ names:
   fa: شاهنشاهی هخامنشی
 external_ids:
   wikidata: Q47222
+  wikipedia_en: https://en.wikipedia.org/wiki/Achaemenid_Empire
   seshat: IrAchae
 parent: median_empire             # what it succeeded
 successors: [macedonian_empire]
@@ -191,6 +192,7 @@ Get ~3,000 polities into draft YAML and render them. Quality is bad on purpose �
 
 4. **SPARQL extraction.** `pipeline/extract_wikidata.py` runs one query per class, using `wdt:P31/wdt:P279*` to catch subclasses. Starter set of classes: state (Q7275), empire (Q48349), kingdom (Q417175), civilization (Q3024240), plus former country (verify the current QID against Wikidata before locking it in). For each entity, pull:
    - labels (`en`, `fr`, native), aliases
+   - English Wikipedia article sitelink
    - `P571` inception, `P576` dissolution (with qualifiers — Wikidata often has multiple inception dates)
    - `P2046` area, `P1082` population (capture point-in-time qualifier where present)
    - `P17` country, coordinates, `P18` image

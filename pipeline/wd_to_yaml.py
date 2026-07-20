@@ -97,11 +97,15 @@ def to_document(row: dict, polity_id: str) -> dict:
     if alias_values:
         names["aliases_en"] = " | ".join(alias_values)
 
+    external_ids = {"wikidata": qid}
+    if present(row.get("wikipedia_en")):
+        external_ids["wikipedia_en"] = str(row["wikipedia_en"])
+
     return {
         "id": polity_id,
         "canonical_name": str(row.get("label_en") or qid),
         "names": names,
-        "external_ids": {"wikidata": qid},
+        "external_ids": external_ids,
         "parent": None,
         "successors": [],
         "region": None,

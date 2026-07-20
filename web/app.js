@@ -80,10 +80,12 @@ function showDetails(polity, trigger = null) {
   const duration = polity.end == null ? null : polity.end - polity.start;
   const successors = polity.successors || [];
   const wikidata = polity.external_ids?.wikidata;
+  const wikipedia = polity.external_ids?.wikipedia_en || (wikidata ? `https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/${encodeURIComponent(wikidata)}` : "");
   const seshat = polity.external_ids?.seshat || [];
   const sources = (polity.sources || []).map(displayTerm);
   const externalLinks = [
     wikidata ? `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(wikidata)}" target="_blank" rel="noopener noreferrer">Wikidata (${escapeHtml(wikidata)}) ↗</a>` : "",
+    wikipedia ? `<a href="${escapeHtml(wikipedia)}" target="_blank" rel="noopener noreferrer">Wikipedia (English) ↗</a>` : "",
     seshat.length ? `<a href="https://www.seshat-db.com/api/core/polities/?search=${encodeURIComponent(polity.canonical_name)}" target="_blank" rel="noopener noreferrer">Seshat (${escapeHtml(seshat.join(", "))}) ↗</a>` : "",
     centroid ? `<a href="https://www.openstreetmap.org/?mlat=${centroid.lat}&mlon=${centroid.lon}#map=5/${centroid.lat}/${centroid.lon}" target="_blank" rel="noopener noreferrer">View location ↗</a>` : "",
   ].filter(Boolean);

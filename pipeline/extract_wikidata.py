@@ -56,6 +56,7 @@ SELECT ?item
        (SAMPLE(?country_v)    AS ?country)
        (SAMPLE(?coords_v)     AS ?coords)
        (SAMPLE(?image_v)      AS ?image)
+       (SAMPLE(?article_v)    AS ?wikipedia_en)
        (GROUP_CONCAT(DISTINCT ?alias_v; SEPARATOR="|") AS ?aliases_en)
 WHERE {
   ?item wdt:P31/wdt:P279* wd:CLASS_QID .
@@ -69,6 +70,10 @@ WHERE {
   OPTIONAL { ?item wdt:P17   ?country_v . }
   OPTIONAL { ?item wdt:P625  ?coords_v . }
   OPTIONAL { ?item wdt:P18   ?image_v . }
+  OPTIONAL {
+    ?article_v schema:about ?item ;
+               schema:isPartOf <https://en.wikipedia.org/> .
+  }
 }
 GROUP BY ?item
 ORDER BY ?item
@@ -168,6 +173,7 @@ def flatten_row(row: dict, classes_seen: list[str]) -> dict:
         "country_qid": _qid_from_uri(_val(row, "country")),
         "coords": _val(row, "coords"),
         "image": _val(row, "image"),
+        "wikipedia_en": _val(row, "wikipedia_en"),
         "wd_classes": list(classes_seen),
     }
 

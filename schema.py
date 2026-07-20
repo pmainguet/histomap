@@ -31,6 +31,7 @@ class Eligibility(str, Enum):
 
 class ExternalIds(BaseModel):
     wikidata: str | None = None
+    wikipedia_en: str | None = None
     seshat: list[str] = Field(default_factory=list)
 
     @field_validator("seshat", mode="before")
@@ -48,6 +49,13 @@ class ExternalIds(BaseModel):
         if v is not None and not QID_PATTERN.match(v):
             raise ValueError("wikidata id must match ^Q\\d+$")
         return v
+
+    @field_validator("wikipedia_en")
+    @classmethod
+    def _english_wikipedia_url(cls, value: str | None) -> str | None:
+        if value is not None and not value.startswith("https://en.wikipedia.org/wiki/"):
+            raise ValueError("wikipedia_en must be an English Wikipedia article URL")
+        return value
 
 
 class Text(BaseModel):

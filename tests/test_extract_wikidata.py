@@ -9,12 +9,14 @@ class ExtractWikidataTests(unittest.TestCase):
             "item": {"value": "http://www.wikidata.org/entity/Q42"},
             "area": {"value": "123.5"},
             "population": {"value": "http://www.wikidata.org/.well-known/genid/example"},
+            "wikipedia_en": {"value": "https://en.wikipedia.org/wiki/Douglas_Adams"},
         }
 
         flattened = flatten_row(row, ["Q7275"])
 
         self.assertEqual(flattened["area_km2"], 123.5)
         self.assertIsNone(flattened["population"])
+        self.assertEqual(flattened["wikipedia_en"], "https://en.wikipedia.org/wiki/Douglas_Adams")
 
     def test_merge_combines_class_membership(self) -> None:
         rows = {}
