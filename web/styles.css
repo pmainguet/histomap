@@ -121,6 +121,12 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .candidate:hover, .candidate:focus-within { border-color: #8c422d; }
 .accept-candidate { justify-self: start; margin-top: .25rem; }
 .review-actions { display: flex; gap: .6rem; }
+.decision-status { min-height: 2.8rem; padding: .55rem .65rem; border-left: 3px solid transparent; font: 700 .8rem/1.35 system-ui, sans-serif; }
+.decision-status:empty { padding-block: 0; }
+.decision-status.pending { color: var(--ink-faint); border-color: var(--rule); }
+.decision-status.success { color: #315d3a; background: #edf4e9; border-color: #66836b; }
+.decision-status.error { color: #7b291d; background: #f8e9e4; border-color: #8c422d; }
+.review-card button:disabled { cursor: wait; opacity: .55; }
 .danger { background: #8c422d; border-color: #8c422d; }
 kbd { padding: .1rem .3rem; background: white; border: 1px solid var(--rule); font: .75rem system-ui, sans-serif; }
 

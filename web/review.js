@@ -1,9 +1,11 @@
 const card = document.querySelector("#review-card");
 const progress = document.querySelector("#review-progress");
+const decisionStatus = document.querySelector("#decision-status");
 const jobStatus = document.querySelector("#job-status");
 let current = null;
 let total = 0;
 let deferredOffset = 0;
+let submitting = false;
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (character) => ({
@@ -80,19 +82,48 @@ async function loadNext() {
   card.querySelector("#defer").addEventListener("click", () => decide("defer"));
 }
 
-async function decide(decision, polityId = null) {
-  if (!current) return;
-  const response = await fetch(`/api/reviews/${encodeURIComponent(current.seshat_id)}`, {
-    method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ decision, polity_id: polityId }),
+function setDecisionControlsDisabled(disabled) {
+  card.querySelectorAll(".accept-candidate, #reject, #defer").forEach((button) => {
+    button.disabled = disabled;
   });
-  if (!response.ok) throw new Error(await response.text());
-  if (decision === "defer") {
-    deferredOffset = total > deferredOffset + 1 ? deferredOffset + 1 : 0;
+}
+
+function pause(milliseconds) {
+  return new Promise((resolve) => window.setTimeout(resolve, milliseconds));
+}
+
+async function decide(decision, polityId = null) {
+  if (!current || submitting) return;
+  submitting = true;
+  setDecisionControlsDisabled(true);
+  decisionStatus.className = "decision-status pending";
+  decisionStatus.textContent = "Saving decision…";
+  try {
+    const reviewed = current;
+    const candidate = reviewed.candidates.find((item) => item.polity_id === polityId);
+    const response = await fetch(`/api/reviews/${encodeURIComponent(reviewed.seshat_id)}`, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ decision, polity_id: polityId }),
+    });
+    if (!response.ok) throw new Error(await response.text());
+    if (decision === "defer") {
+      deferredOffset = total > deferredOffset + 1 ? deferredOffset + 1 : 0;
+      decisionStatus.textContent = `Deferred ${reviewed.seshat_name}. Loading the next item…`;
+    } else {
+      deferredOffset = Math.min(deferredOffset, Math.max(0, total - 2));
+      decisionStatus.textContent = decision === "accept"
+        ? `Saved: ${reviewed.seshat_name} matched to ${candidate?.canonical_name || polityId}. Loading the next item…`
+        : `Saved: ${reviewed.seshat_name} has no matching candidate. Loading the next item…`;
+    }
+    decisionStatus.className = "decision-status success";
+    await pause(450);
     await loadNext();
-    return;
+  } catch (error) {
+    decisionStatus.className = "decision-status error";
+    decisionStatus.textContent = `Decision was not saved: ${error.message}`;
+    setDecisionControlsDisabled(false);
+  } finally {
+    submitting = false;
   }
-  deferredOffset = Math.min(deferredOffset, Math.max(0, total - 2));
-  await loadNext();
 }
 
 async function startAction(action) {
@@ -112,10 +143,18 @@ async function pollJob() {
 document.querySelector("#apply-decisions").addEventListener("click", () => startAction("reconcile"));
 document.querySelector("#build-data").addEventListener("click", () => startAction("build"));
 document.addEventListener("keydown", (event) => {
-  if (!current || event.target.matches("input, textarea, button, a, summary")) return;
-  if (/^[1-5]$/.test(event.key) && current.candidates[Number(event.key) - 1]) decide("accept", current.candidates[Number(event.key) - 1].polity_id);
-  if (event.key.toLowerCase() === "r") decide("reject");
-  if (event.key.toLowerCase() === "s") decide("defer");
+  if (!current || submitting || event.target.matches("input, textarea, button, a, summary")) return;
+  const candidate = /^[1-5]$/.test(event.key) ? current.candidates[Number(event.key) - 1] : null;
+  if (candidate) {
+    event.preventDefault();
+    decide("accept", candidate.polity_id);
+  } else if (event.key.toLowerCase() === "r") {
+    event.preventDefault();
+    decide("reject");
+  } else if (event.key.toLowerCase() === "s") {
+    event.preventDefault();
+    decide("defer");
+  }
 });
 
 loadNext().catch((error) => { card.textContent = `Could not load reviews: ${error.message}`; });
