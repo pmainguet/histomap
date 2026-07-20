@@ -50,7 +50,9 @@ def score_prominence(
     return round(min(100, max(0, reach + longevity + authority_bonus + editorial_bonus - subordinate_penalty)), 2)
 
 
-def tier_for(score: float) -> str:
+def tier_for(score: float, override: str | None = None) -> str:
+    if override is not None:
+        return override
     if score >= GLOBAL_THRESHOLD:
         return "global"
     if score >= REGIONAL_THRESHOLD:
@@ -140,7 +142,7 @@ def compute(
             authoritative="seshat" in document.get("sources", []),
             editorial=bool(document.get("icon") or text.get("short_adult_en")),
         )
-        tier = tier_for(score)
+        tier = tier_for(score, document.get("visibility_override"))
         document["prominence_score"] = score
         document["visibility_tier"] = tier
         path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")

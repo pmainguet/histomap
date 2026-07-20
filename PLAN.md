@@ -225,6 +225,9 @@ Get ~3,000 polities into draft YAML and render them. Quality is bad on purpose â
    - `detailed`: the full research dataset, including minor and disputed entities.
 
    Thresholds are global and deterministic, but the renderer may additionally cap active bands per region/century to prevent well-documented regions from crowding out others. Manual editorial text, icons, and Seshat coverage can promote a polity; no automated score deletes canonical data.
+   A versioned `visibility_override` may promote or demote exceptional records when the automated
+   score clearly conflicts with their editorial world-history importance. Prominence recomputation
+   preserves this override rather than silently reverting the decision.
 
 7b. **Political relationships and display groups.** `pipeline/enrich_relationships.py` extracts Wikidata relationship candidates using `P361` (part of), reciprocal `P527` (has part), `P17` (country), `P155`/`P156` (follows/followed by), and `P1365`/`P1366` (replaces/replaced by). Keep three concepts separate:
    - `parent`: accepted political containment, used when one polity was genuinely subordinate to or contained by another.

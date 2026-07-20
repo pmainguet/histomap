@@ -1,10 +1,11 @@
 id: hatti
-canonical_name: Hatti
+canonical_name: Hittite Empire
 names:
   fr: royaume hittite
-  aliases_en: Hittite Empire | Hittite empire
+  aliases_en: Hatti | Hittites | Hittite kingdom
 external_ids:
   wikidata: Q4496560
+  wikipedia_en: https://en.wikipedia.org/wiki/Hittites
   seshat:
   - TrHatNK
   - TrHatOK
@@ -21,15 +22,16 @@ weight_by_era:
 weight_imputed: true
 icon: null
 text:
-  short_child_en: ''
-  short_adult_en: ''
+  short_child_en: A powerful Bronze Age kingdom centered in Anatolia, in present-day Turkey.
+  short_adult_en: A Bronze Age Anatolian empire centered at Hattusa that rivalled Egypt and controlled much of Anatolia and northern Syria.
   long_en: ''
-notes: Automatically generated from Wikidata; requires review.
+notes: Canonical political record uses Wikidata Q4496560 (Hatti); the English Wikipedia article is attached editorially because it presents the polity as the Hittite Empire.
 sources:
 - seshat
 - wikidata
 prominence_score: 43.75
-visibility_tier: detailed
+visibility_tier: global
+visibility_override: global
 eligibility: accepted
 geography:
   continents:

@@ -101,6 +101,7 @@ class Polity(BaseModel):
     weight_imputed: bool = False
     prominence_score: float = Field(default=0, ge=0, le=100)
     visibility_tier: VisibilityTier = VisibilityTier.detailed
+    visibility_override: VisibilityTier | None = None
     eligibility: Eligibility = Eligibility.review
     icon: str | None = None
     text: Text = Field(default_factory=Text)

@@ -54,6 +54,9 @@ class ComputeProminenceTests(unittest.TestCase):
         )
         self.assertLess(plain, edited)
 
+    def test_editorial_visibility_override_is_durable(self) -> None:
+        self.assertEqual(tier_for(10, "global"), "global")
+
 
 if __name__ == "__main__":
     unittest.main()
