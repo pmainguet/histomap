@@ -77,7 +77,7 @@ async function loadNext() {
       <dt>Ambiguity requiring review</dt><dd>${parts.ambiguity.toFixed(0)} / 100</dd></dl></details>
     <h3 class="candidate-heading">Possible existing Histomap records</h3>
     <div class="candidate-list">${current.candidates.map(candidateMarkup).join("")}</div>
-    <div class="review-actions"><button id="reject" class="danger">Reject candidates</button><button id="defer">Defer</button></div>`;
+    <div class="review-actions"><button id="reject" class="danger">No match — keep as separate entity</button><button id="defer">Defer</button></div>`;
   card.querySelectorAll(".accept-candidate").forEach((button) => button.addEventListener("click", () => decide("accept", button.dataset.polityId)));
   card.querySelector("#reject").addEventListener("click", () => decide("reject"));
   card.querySelector("#defer").addEventListener("click", () => decide("defer"));
