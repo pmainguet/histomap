@@ -89,10 +89,6 @@ function setDecisionControlsDisabled(disabled) {
   });
 }
 
-function pause(milliseconds) {
-  return new Promise((resolve) => window.setTimeout(resolve, milliseconds));
-}
-
 async function decide(decision, polityId = null) {
   if (!current || submitting) return;
   submitting = true;
@@ -116,7 +112,6 @@ async function decide(decision, polityId = null) {
         : `Saved: ${reviewed.seshat_name} has no matching candidate. Loading the next item…`;
     }
     decisionStatus.className = "decision-status success";
-    await pause(450);
     await loadNext();
   } catch (error) {
     decisionStatus.className = "decision-status error";

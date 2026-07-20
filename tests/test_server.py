@@ -94,6 +94,15 @@ class UnifiedServerTests(unittest.TestCase):
         )
         self.assertEqual(response.status_code, 422)
 
+    def test_saved_review_is_removed_from_the_cached_queue(self) -> None:
+        response = self.client.post("/api/reviews/S1", json={"decision": "reject"})
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(self.client.get("/api/reviews").json()["total"], 0)
+        self.assertEqual(
+            self.client.post("/api/reviews/S1", json={"decision": "reject"}).status_code,
+            404,
+        )
+
     def test_rejects_unknown_pipeline_action(self) -> None:
         self.assertEqual(self.client.post("/api/actions/arbitrary-command").status_code, 404)
 

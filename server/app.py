@@ -106,8 +106,18 @@ def create_app(root: Path = ROOT) -> FastAPI:
     decisions_path = reports_dir / "seshat_review_decisions.jsonl"
     polities_dir = root / "polities"
     metadata = polity_metadata(polities_dir)
+    review_queue = pending_records(review_path, decisions_path, metadata=metadata)
+    reviews_by_id = {record["seshat_id"]: record for record in review_queue}
     job = {"status": "idle", "action": None, "output": "", "returncode": None}
     job_lock = asyncio.Lock()
+
+    def refresh_review_queue() -> None:
+        metadata.clear()
+        metadata.update(polity_metadata(polities_dir))
+        review_queue.clear()
+        review_queue.extend(pending_records(review_path, decisions_path, metadata=metadata))
+        reviews_by_id.clear()
+        reviews_by_id.update((record["seshat_id"], record) for record in review_queue)
 
     application.mount("/static", StaticFiles(directory=web_dir), name="static")
 
@@ -135,14 +145,12 @@ def create_app(root: Path = ROOT) -> FastAPI:
 
     @application.get("/api/reviews")
     async def reviews(offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)) -> dict:
-        queue = pending_records(review_path, decisions_path, polities_dir)
-        items = [add_source_links(record, metadata) for record in queue[offset : offset + limit]]
-        return clean_json({"total": len(queue), "offset": offset, "items": items})
+        items = [add_source_links(record, metadata) for record in review_queue[offset : offset + limit]]
+        return clean_json({"total": len(review_queue), "offset": offset, "items": items})
 
     @application.post("/api/reviews/{seshat_id}")
     async def decide_review(seshat_id: str, request: ReviewDecision) -> dict:
-        queue = pending_records(review_path, decisions_path, polities_dir)
-        record = next((item for item in queue if item["seshat_id"] == seshat_id), None)
+        record = reviews_by_id.get(seshat_id)
         if record is None:
             raise HTTPException(404, "Review is not pending")
         if request.decision == "defer":
@@ -154,6 +162,8 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 raise HTTPException(422, "polity_id must identify one of the proposed candidates")
             decision["polity_id"] = request.polity_id
         save_decision(decision, decisions_path)
+        reviews_by_id.pop(seshat_id, None)
+        review_queue.remove(record)
         return {"status": "saved", **decision}
 
     async def run_action(action: str) -> None:
@@ -172,6 +182,8 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 output=output.decode("utf-8", errors="replace")[-20000:],
                 returncode=process.returncode,
             )
+            if process.returncode == 0 and action == "reconcile":
+                refresh_review_queue()
 
     @application.post("/api/actions/{action}", status_code=202)
     async def start_action(action: str) -> dict:

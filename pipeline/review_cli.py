@@ -72,6 +72,7 @@ def pending_records(
     review_path: Path = REVIEW_PATH,
     decisions_path: Path = DECISIONS_PATH,
     polities_dir: Path | None = None,
+    metadata: dict[str, dict] | None = None,
 ) -> list[dict]:
     decisions = load_review_decisions(decisions_path)
     records = [
@@ -84,7 +85,8 @@ def pending_records(
         for record in records
         if record["decision"] == "review" and record["seshat_id"] not in decisions
     ]
-    metadata = polity_metadata(polities_dir or REVIEW_PATH.parent.parent / "polities")
+    if metadata is None:
+        metadata = polity_metadata(polities_dir or REVIEW_PATH.parent.parent / "polities")
     for record in pending:
         score, components = review_priority(record, metadata)
         record["review_priority"] = score
