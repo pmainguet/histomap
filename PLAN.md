@@ -270,6 +270,8 @@ Compute `weight_by_era` from territory, population, and complexity. The output i
 12. Download Maddison Project (`maddison.xlsx`, ~2 MB) and HYDE 3.3 (NetCDF, ~2 GB compressed). Add both to `sources/MANIFEST.md` with version. HYDE downloads are slow and rate-limited — do it once and cache aggressively.
 
 13. `pipeline/extract_maddison.py`: long-format table `(country, year, population, gdp_per_capita)`. Country codes are modern ISO — map to our polity IDs only for 1500+ entities; pre-modern populations fall back to HYDE.
+    The extractor targets the official MPD 2023 workbook, detects its data sheet/header, converts
+    population from thousands to persons, and emits `sources/maddison.parquet` plus a coverage report.
 
 14. `pipeline/extract_hyde.py`: load with `xarray`, aggregate gridded population to polity territory. **Catch:** we only have polygons for the Seshat-covered ~600 polities. For everyone else, fall back to the polity's NGA centroid + a regional radius, or use the modern successor's footprint as a crude proxy. Mark these with `weight_imputed: true`. Persist `sources/pop_by_polity.parquet` keyed by `(polity_id, year)`.
 

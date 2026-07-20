@@ -1,4 +1,4 @@
-.PHONY: setup extract extract-seshat filter-wikidata-types import-wikidata reconcile spotcheck compute-prominence enrich-relationships enrich-geography validate build serve test format lint check
+.PHONY: setup extract extract-seshat extract-maddison filter-wikidata-types import-wikidata reconcile spotcheck compute-prominence enrich-relationships enrich-geography validate build serve test format lint check
 
 setup:
 	uv pip install -r requirements.txt ruff mypy
@@ -8,6 +8,9 @@ extract:
 
 extract-seshat:
 	python pipeline/extract_seshat.py
+
+extract-maddison:
+	python pipeline/extract_maddison.py
 
 filter-wikidata-types:
 	python pipeline/filter_wikidata_types.py

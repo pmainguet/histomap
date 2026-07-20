@@ -33,6 +33,7 @@ make serve
 ```powershell
 make extract
 make extract-seshat
+make extract-maddison
 make filter-wikidata-types
 make import-wikidata
 make reconcile

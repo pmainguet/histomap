@@ -8,6 +8,7 @@ reproduce the canonical dataset.
 | Wikidata Query Service | 2026-07-19 | `https://query.wikidata.org/sparql` live data | `wikidata_raw/*.json`, `wikidata.parquet` |
 | Natural Earth Admin 0 Countries | 2026-07-20 | 1:110m GeoJSON, Natural Earth master dataset | `ne_110m_admin_0_countries.geojson` |
 | Seshat Equinox 2020 | 2026-07-20 | `Equinox_on_GitHub_June9_2022.xlsx` from `seshatdb/Equinox_Data` | `seshat_equinox_2022.xlsx` |
+| Maddison Project Database 2023 | not downloaded | GGDC release, DOI `10.34894/INZBF2` | `mpd2023_web.xlsx` |
 
 ## Wikidata extraction
 
@@ -37,3 +38,10 @@ The archived Equinox workbook is the current reproducible public snapshot linked
 data page. The repository contains a CC0 license file, while its README and the current Seshat
 download page describe the data as CC BY-NC-SA; Histomap conservatively treats the workbook as
 CC BY-NC-SA. The live Seshat download service requires an account and acceptance of current terms.
+
+## Maddison Project Database
+
+Download `mpd2023_web.xlsx` from the official GGDC MPD 2023 release page. The dataset is CC BY
+4.0 and requires attribution; the source sheet in the workbook lists additional papers that must
+be cited for certain country-level uses. Run `make extract-maddison` to produce the ignored
+long-format `sources/maddison.parquet` and a tracked extraction summary.
