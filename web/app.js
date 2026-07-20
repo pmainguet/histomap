@@ -47,6 +47,28 @@ function entityLink(id) {
   return entity ? `<button class="entity-link" type="button" data-entity-id="${escapeHtml(id)}">${escapeHtml(label)}</button>` : escapeHtml(label);
 }
 
+function relatedEntities(polity) {
+  return {
+    children: polities.filter((candidate) => candidate.parent === polity.id),
+    predecessors: polities.filter((candidate) => (candidate.successors || []).includes(polity.id)),
+  };
+}
+
+function highlightRelationships(polity) {
+  const { children, predecessors } = relatedEntities(polity);
+  const relatedIds = new Set([
+    polity.parent,
+    ...(polity.successors || []),
+    ...children.map((entity) => entity.id),
+    ...predecessors.map((entity) => entity.id),
+  ].filter(Boolean));
+  chart.classList.add("relationship-focus");
+  chart.querySelectorAll("[data-polity-id]").forEach((element) => {
+    element.classList.toggle("is-selected", element.dataset.polityId === polity.id);
+    element.classList.toggle("is-related", relatedIds.has(element.dataset.polityId));
+  });
+}
+
 function formatYear(year) {
   if (year < 0) return `${Math.abs(year)} BCE`;
   return `${year} CE`;
@@ -82,10 +104,12 @@ function showDetails(polity, trigger = null) {
   const centroid = polity.geography?.centroid;
   const duration = polity.end == null ? null : polity.end - polity.start;
   const successors = polity.successors || [];
+  const { children, predecessors } = relatedEntities(polity);
   const wikidata = polity.external_ids?.wikidata;
   const wikipedia = polity.external_ids?.wikipedia_en || (wikidata ? `https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/${encodeURIComponent(wikidata)}` : "");
   const seshat = polity.external_ids?.seshat || [];
   const sources = (polity.sources || []).map(displayTerm);
+  const hasRelationships = polity.parent || children.length || predecessors.length || successors.length;
   const externalLinks = [
     wikidata ? `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(wikidata)}" target="_blank" rel="noopener noreferrer">Wikidata (${escapeHtml(wikidata)}) ↗</a>` : "",
     wikipedia ? `<a href="${escapeHtml(wikipedia)}" target="_blank" rel="noopener noreferrer">Wikipedia (English) ↗</a>` : "",
@@ -100,6 +124,8 @@ function showDetails(polity, trigger = null) {
       ${aliases ? `<dt>Other names</dt><dd>${escapeHtml(aliases)}</dd>` : ""}
       <dt>Historical grouping</dt><dd>${escapeHtml(polity.region || "unclassified")}</dd>
       ${polity.parent ? `<dt>Part of</dt><dd>${entityLink(polity.parent)}</dd>` : ""}
+      ${children.length ? `<dt>Contains</dt><dd>${children.map((entity) => entityLink(entity.id)).join(", ")}</dd>` : ""}
+      ${predecessors.length ? `<dt>Preceded by</dt><dd>${predecessors.map((entity) => entityLink(entity.id)).join(", ")}</dd>` : ""}
       ${successors.length ? `<dt>Followed by</dt><dd>${successors.map(entityLink).join(", ")}</dd>` : ""}
       <dt>Continents</dt><dd>${escapeHtml((polity.geography?.continents || []).map(displayTerm).join(", ") || "unknown")}</dd>
       <dt>Present countries</dt><dd>${escapeHtml(countries.join(", ") || "unknown")}</dd>
@@ -112,11 +138,12 @@ function showDetails(polity, trigger = null) {
       ${sources.length ? `<dt>Data sources</dt><dd>${escapeHtml(sources.join(", "))}</dd>` : ""}
       ${externalLinks.length ? `<dt>External pages</dt><dd class="detail-links">${externalLinks.join("<br>")}</dd>` : ""}
     </dl>
+    ${hasRelationships ? `<p class="relationship-hint">Related visible bands are outlined on the timeline. Select a related name to navigate to it.</p>` : ""}
     `;
   details.querySelectorAll("[data-entity-id]").forEach((button) => {
     button.addEventListener("click", () => {
       const entity = polities.find((candidate) => candidate.id === button.dataset.entityId);
-      if (entity) showDetails(entity);
+      if (entity) navigateToEntity(entity);
     });
   });
   details.querySelector(".detail-close").addEventListener("click", closeDetails);
@@ -124,12 +151,15 @@ function showDetails(polity, trigger = null) {
   detailBackdrop.classList.add("is-open");
   details.setAttribute("aria-hidden", "false");
   details.querySelector(".detail-close").focus();
+  highlightRelationships(polity);
 }
 
 function closeDetails() {
   details.classList.remove("is-open");
   detailBackdrop.classList.remove("is-open");
   details.setAttribute("aria-hidden", "true");
+  chart.classList.remove("relationship-focus");
+  chart.querySelectorAll(".is-selected, .is-related").forEach((element) => element.classList.remove("is-selected", "is-related"));
   detailTrigger?.focus();
 }
 
@@ -291,6 +321,7 @@ function render() {
         "text-anchor": "start",
         "clip-path": `url(#${clipId})`,
         class: "band-label",
+        "data-polity-id": polity.id,
       });
       label.textContent = polity.canonical_name;
       svg.append(label);
@@ -336,6 +367,10 @@ function selectEntity() {
     summary.textContent = `No entity found for "${entitySearchInput.value}"`;
     return;
   }
+  navigateToEntity(polity);
+}
+
+function navigateToEntity(polity) {
   focusedPolityId = polity.id;
   entitySearchInput.value = polity.canonical_name;
   historicalGroupInput.value = "";
@@ -347,7 +382,10 @@ function selectEntity() {
   if (polityEnd > Number(endInput.value)) endInput.value = Math.ceil(polityEnd / 100) * 100;
   render();
   const band = chart.querySelector(`[data-polity-id="${polity.id}"]`);
-  if (band) showDetails(polity, band);
+  if (band) {
+    showDetails(polity, band);
+    band.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+  }
 }
 
 entitySearchInput.addEventListener("change", selectEntity);

@@ -74,10 +74,14 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .entity-link { display: inline; padding: 0; color: #8c422d; background: none; border: 0; font: inherit; text-align: left; text-decoration: underline; }
 .detail-links { font: .78rem/1.7 system-ui, sans-serif; }
 .detail-links a { color: #8c422d; }
+.relationship-hint { padding-top: .75rem; border-top: 1px solid var(--rule); font: .76rem/1.45 system-ui, sans-serif; }
 .band { cursor: pointer; transition: opacity .12s; }
 .band:hover, .band:focus { opacity: 1 !important; outline: none; stroke: #27251f; stroke-width: 2; }
 .band.confidence-legendary { stroke: #27251f; stroke-width: 1; stroke-dasharray: 4 3; }
 .band-label { fill: #24231e; font: 600 11px/1 system-ui, sans-serif; pointer-events: none; }
+.chart.relationship-focus .band:not(.is-selected):not(.is-related), .chart.relationship-focus .band-label:not(.is-selected):not(.is-related) { opacity: .14; }
+.band.is-selected { stroke: #27251f; stroke-width: 2.5; }
+.band.is-related { stroke: #8c422d; stroke-width: 1.5; }
 .axis-label { fill: #6f685c; font: 11px system-ui, sans-serif; }
 .grid-line { stroke: #d8d1c2; stroke-width: 1; }
 .swimlane { fill: #f5f0e5; stroke: #ded6c7; stroke-width: 1; }
