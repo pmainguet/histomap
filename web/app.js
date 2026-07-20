@@ -2,6 +2,8 @@ const chart = document.querySelector("#chart");
 const details = document.querySelector("#details");
 const detailBackdrop = document.querySelector("#detail-backdrop");
 const summary = document.querySelector("#summary");
+const entitySearchInput = document.querySelector("#entity-search");
+const entityOptions = document.querySelector("#entity-options");
 const startInput = document.querySelector("#year-start");
 const endInput = document.querySelector("#year-end");
 const visibilityInput = document.querySelector("#visibility");
@@ -26,6 +28,7 @@ const geographyOrder = ["africa", "asia", "europe", "north_america", "south_amer
 let polities = [];
 let detailTrigger = null;
 let selectedPolity = null;
+let focusedPolityId = null;
 const collapsedGeographies = new Set();
 const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
 
@@ -167,11 +170,11 @@ function render() {
   const matched = polities.filter(
     (p) =>
       p.eligibility !== "excluded" &&
-      (visibilityInput.value === "detailed" || p.eligibility === "accepted") &&
+      (p.id === focusedPolityId || visibilityInput.value === "detailed" || p.eligibility === "accepted") &&
       (!historicalGroupInput.value || p.region === historicalGroupInput.value) &&
       (!continentInput.value || (p.geography?.continents || []).includes(continentInput.value)) &&
       (!countryInput.value || (p.geography?.present_countries || []).includes(countryInput.value)) &&
-      tierRank[p.visibility_tier || "detailed"] <= selectedRank &&
+      (p.id === focusedPolityId || tierRank[p.visibility_tier || "detailed"] <= selectedRank) &&
       p.start < yearEnd &&
       (p.end == null || p.end > yearStart),
   );
@@ -257,6 +260,7 @@ function render() {
       opacity: { high: .92, medium: .74, low: .52, legendary: .38 }[confidence],
       class: `band confidence-${confidence}`,
       tabindex: "0",
+      "data-polity-id": polity.id,
     });
     path.addEventListener("click", () => showDetails(polity, path));
     path.addEventListener("keydown", (event) => {
@@ -309,6 +313,55 @@ historicalGroupInput.addEventListener("change", render);
 continentInput.addEventListener("change", render);
 countryInput.addEventListener("change", render);
 
+function findEntity(query) {
+  const needle = query.trim().toLocaleLowerCase();
+  if (!needle) return null;
+  const names = (polity) => [
+    polity.id,
+    polity.canonical_name,
+    ...(polity.names?.aliases_en || "").split("|"),
+  ].map((value) => value.trim().toLocaleLowerCase());
+  const exact = polities.filter((polity) => names(polity).includes(needle));
+  const partial = polities.filter((polity) => names(polity).some((value) => value.includes(needle)));
+  return (exact.length ? exact : partial).sort((a, b) => Number(b.prominence_score || 0) - Number(a.prominence_score || 0))[0] || null;
+}
+
+function selectEntity() {
+  if (!entitySearchInput.value.trim()) {
+    focusedPolityId = null;
+    render();
+    return;
+  }
+  const polity = findEntity(entitySearchInput.value);
+  if (!polity) {
+    summary.textContent = `No entity found for "${entitySearchInput.value}"`;
+    return;
+  }
+  focusedPolityId = polity.id;
+  entitySearchInput.value = polity.canonical_name;
+  historicalGroupInput.value = "";
+  continentInput.value = "";
+  countryInput.value = "";
+  collapsedGeographies.delete(geographyGroup(polity));
+  if (polity.start < Number(startInput.value)) startInput.value = Math.floor(polity.start / 100) * 100;
+  const polityEnd = polity.end ?? new Date().getFullYear();
+  if (polityEnd > Number(endInput.value)) endInput.value = Math.ceil(polityEnd / 100) * 100;
+  render();
+  const band = chart.querySelector(`[data-polity-id="${polity.id}"]`);
+  if (band) showDetails(polity, band);
+}
+
+entitySearchInput.addEventListener("change", selectEntity);
+entitySearchInput.addEventListener("search", () => {
+  if (!entitySearchInput.value) selectEntity();
+});
+entitySearchInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    selectEntity();
+  }
+});
+
 function populateSelect(select, values, formatter = (value) => value) {
   for (const value of [...values].sort()) {
     const option = document.createElement("option");
@@ -322,6 +375,11 @@ try {
   const response = await fetch("/data.json");
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   polities = await response.json();
+  for (const name of [...new Set(polities.map((polity) => polity.canonical_name))].sort()) {
+    const option = document.createElement("option");
+    option.value = name;
+    entityOptions.append(option);
+  }
   populateSelect(
     continentInput,
     new Set(polities.flatMap((p) => p.geography?.continents || [])),

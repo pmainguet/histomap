@@ -44,6 +44,7 @@ body { margin: 0; }
 .controls label { display: grid; gap: .2rem; }
 input, select, button { border: 1px solid var(--rule); border-radius: 2px; padding: .45rem .6rem; background: white; }
 input { width: 8rem; }
+#entity-search { width: min(15rem, 70vw); }
 button { cursor: pointer; background: #343b35; color: white; border-color: #343b35; }
 #summary { color: var(--ink-faint); }
 .confidence-legend { display: flex; flex-wrap: wrap; gap: .35rem .55rem; align-items: center; margin-top: .8rem; color: var(--ink-faint); font: .76rem system-ui, sans-serif; }

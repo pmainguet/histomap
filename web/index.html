@@ -21,6 +21,10 @@
     <section class="timeline-toolbar" aria-label="Timeline controls">
       <p class="toolbar-intro">Time runs left to right; thickness represents estimated historical weight. Select a geographic lane heading to collapse it.</p>
       <div class="controls">
+        <label>Find entity
+          <input id="entity-search" type="search" list="entity-options" placeholder="e.g. Hittite Empire" autocomplete="off">
+          <datalist id="entity-options"></datalist>
+        </label>
         <label>Detail
           <select id="visibility">
             <option value="global">Global overview</option>

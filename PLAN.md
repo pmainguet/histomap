@@ -342,6 +342,8 @@ HYDE downloads are slow and rate-limited — do it once and cache aggressively.
     collapsible geographic swimlanes and legend, visibility/continent/country/historical-grouping filters, and
     Adult/Child drawer text with fallbacks. Reviewed relationship groups, transitions, and the linked
     map remain later increments.
+    An entity finder searches canonical names, English aliases, and stable IDs; selected lower-tier
+    records are temporarily surfaced in context without switching the entire chart to Full dataset.
 23. Serve the timeline and editorial workspace from one FastAPI application. Local mode binds to
     `127.0.0.1`; any public deployment must authenticate write actions. Static assets remain
     independently deployable if a read-only public mirror is wanted later.
