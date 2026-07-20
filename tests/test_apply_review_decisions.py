@@ -6,6 +6,7 @@ from pathlib import Path
 import yaml
 
 from pipeline.apply_review_decisions import apply_review_decisions
+from schema import Polity
 
 
 class ApplyReviewDecisionsTests(unittest.TestCase):
@@ -44,10 +45,15 @@ class ApplyReviewDecisionsTests(unittest.TestCase):
 
             target = yaml.safe_load((polities / "target.yaml").read_text(encoding="utf-8"))
             draft = next(yaml.safe_load_all(drafts_path.read_text(encoding="utf-8")))
+            separate_path = polities / "seshat_separate_s2.yaml"
+            separate = yaml.safe_load(separate_path.read_text(encoding="utf-8"))
             self.assertEqual(counts, {"accepted": 1, "rejected": 1, "unchanged": 0})
             self.assertEqual(target["external_ids"]["seshat"], ["S1"])
             self.assertIn("seshat", target["sources"])
             self.assertEqual(draft["external_ids"]["seshat"], ["S2"])
+            self.assertEqual(separate["canonical_name"], "Separate")
+            self.assertEqual(separate["eligibility"], "review")
+            Polity.model_validate(separate)
 
 
 if __name__ == "__main__":

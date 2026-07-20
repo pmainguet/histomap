@@ -9,6 +9,8 @@ from pathlib import Path
 from typing import Literal
 from urllib.parse import quote
 
+import yaml
+
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
@@ -172,6 +174,11 @@ def create_app(root: Path = ROOT) -> FastAPI:
         reviews_by_id.clear()
         reviews_by_id.update((record["seshat_id"], record) for record in review_queue)
 
+    def refresh_separate_entities() -> None:
+        for path in polities_dir.glob("seshat_*.yaml"):
+            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+            metadata[document["id"]] = document
+
     application.mount("/static", StaticFiles(directory=web_dir), name="static")
 
     @application.get("/", include_in_schema=False)
@@ -243,6 +250,8 @@ def create_app(root: Path = ROOT) -> FastAPI:
             )
             if process.returncode == 0 and action == "reconcile":
                 refresh_review_queue()
+            elif process.returncode == 0 and action == "apply-reviews":
+                refresh_separate_entities()
 
     @application.post("/api/actions/{action}", status_code=202)
     async def start_action(action: str) -> dict:

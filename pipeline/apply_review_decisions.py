@@ -37,18 +37,33 @@ def apply_review_decisions(
         if record is None:
             raise ValueError(f"review decision references unknown Seshat record {seshat_id}")
         if decision["decision"] == "reject":
-            separate_drafts.append(
-                {
-                    "id": f"seshat_{normalize_name(record['seshat_name']).replace(' ', '_')}_{seshat_id.lower()}",
-                    "canonical_name": record["seshat_name"],
-                    "external_ids": {"seshat": [seshat_id]},
-                    "start": int(record["start_year"]),
-                    "end": int(record["end_year"]),
-                    "eligibility": "review",
-                    "notes": "Kept as a separate entity during Seshat reconciliation; requires canonical review.",
-                    "sources": ["seshat"],
-                }
-            )
+            polity_id = f"seshat_{normalize_name(record['seshat_name']).replace(' ', '_')}_{seshat_id.lower()}"
+            draft = {
+                "id": polity_id,
+                "canonical_name": record["seshat_name"],
+                "external_ids": {"seshat": [seshat_id]},
+                "parent": None,
+                "successors": [],
+                "region": "unclassified",
+                "geography": {},
+                "start": int(record["start_year"]),
+                "end": int(record["end_year"]),
+                "start_confidence": "low",
+                "end_confidence": "low",
+                "weight_by_era": {int(record["start_year"]): 1.0},
+                "weight_imputed": True,
+                "prominence_score": 0,
+                "visibility_tier": "detailed",
+                "eligibility": "review",
+                "notes": "Kept as a separate entity during Seshat reconciliation; requires canonical review.",
+                "sources": ["seshat"],
+            }
+            separate_drafts.append(draft)
+            polity_path = polities_dir / f"{polity_id}.yaml"
+            if not polity_path.exists():
+                polity_path.write_text(
+                    yaml.safe_dump(draft, sort_keys=False, allow_unicode=True), encoding="utf-8"
+                )
             rejected += 1
             continue
         if decision["decision"] != "accept":
