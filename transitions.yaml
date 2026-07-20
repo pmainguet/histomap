@@ -1,0 +1,13 @@
+- id: partition_of_francia
+  year: 843
+  kind: split
+  from:
+  - francia
+  to:
+  - east_francia
+  - middle_francia
+  - west_francia
+  label: Partition of the Carolingian Empire at the Treaty of Verdun
+  notes: Curated split connecting the canonical Francia successor records.
+  source_urls:
+  - https://en.wikipedia.org/wiki/Treaty_of_Verdun

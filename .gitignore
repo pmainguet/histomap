@@ -7,3 +7,4 @@ sources/*
 *.parquet
 *.duckdb
 data.json
+transitions.json

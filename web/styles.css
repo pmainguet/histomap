@@ -86,6 +86,8 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .band.is-related { stroke: #8c422d; stroke-width: 1.5; }
 .axis-label { fill: #6f685c; font: 11px system-ui, sans-serif; }
 .grid-line { stroke: #d8d1c2; stroke-width: 1; }
+.transition-line { stroke: #8c422d; stroke-width: 1.5; stroke-dasharray: 3 2; }
+.transition-node { fill: #8c422d; }
 .swimlane { fill: #f5f0e5; stroke: #ded6c7; stroke-width: 1; }
 .swimlane-toggle { cursor: pointer; fill: transparent; }
 .swimlane-toggle:hover, .swimlane-toggle:focus { fill: rgb(140 66 45 / 8%); outline: none; }

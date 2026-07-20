@@ -1,9 +1,9 @@
 import unittest
 
-from build import find_parent_cycles
+from build import find_parent_cycles, validate_transitions
 from pydantic import ValidationError
 
-from schema import Geography, Polity
+from schema import Geography, Polity, Transition
 
 
 def polity(polity_id: str, parent: str | None = None) -> Polity:
@@ -34,6 +34,35 @@ class BuildRelationshipValidationTests(unittest.TestCase):
     def test_primary_continent_must_be_in_continent_list(self) -> None:
         with self.assertRaises(ValidationError):
             Geography(continents=["asia"], primary_continent="europe")
+
+    def test_split_transition_shape_and_references(self) -> None:
+        transition = Transition.model_validate(
+            {
+                "id": "division",
+                "year": 10,
+                "kind": "split",
+                "from": ["first"],
+                "to": ["second", "third"],
+                "label": "Division",
+            }
+        )
+        validate_transitions(
+            [transition], [polity("first"), polity("second"), polity("third")]
+        )
+
+    def test_transition_rejects_unknown_polity(self) -> None:
+        transition = Transition.model_validate(
+            {
+                "id": "continuity",
+                "year": 10,
+                "kind": "succession",
+                "from": ["first"],
+                "to": ["missing"],
+                "label": "Continuity",
+            }
+        )
+        with self.assertRaisesRegex(ValueError, "unknown polity IDs: missing"):
+            validate_transitions([transition], [polity("first")])
 
 
 if __name__ == "__main__":

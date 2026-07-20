@@ -26,6 +26,7 @@ const geographyColors = {
 };
 const geographyOrder = ["africa", "asia", "europe", "north_america", "south_america", "oceania", "antarctica", "unknown"];
 let polities = [];
+let transitions = [];
 let detailTrigger = null;
 let selectedPolity = null;
 let focusedPolityId = null;
@@ -284,6 +285,24 @@ function render() {
     svg.append(label);
   }
 
+  const visibleIds = new Set(visible.map((polity) => polity.id));
+  for (const transition of transitions) {
+    if (transition.year < yearStart || transition.year > yearEnd) continue;
+    const endpoints = [...transition.from, ...transition.to].filter((id) => visibleIds.has(id));
+    if (!transition.from.some((id) => visibleIds.has(id)) || !transition.to.some((id) => visibleIds.has(id))) continue;
+    const ys = endpoints.map((id) => rowCenters.get(id)).filter(Number.isFinite);
+    if (ys.length < 2) continue;
+    const transitionX = x(transition.year);
+    const group = svgElement("g", { class: `transition transition-${transition.kind}` });
+    const title = svgElement("title");
+    title.textContent = `${transition.label} (${formatYear(transition.year)})`;
+    group.append(title);
+    group.append(svgElement("line", { x1: transitionX, x2: transitionX, y1: Math.min(...ys), y2: Math.max(...ys), class: "transition-line" }));
+    for (const y of ys) group.append(svgElement("line", { x1: transitionX - 7, x2: transitionX + 7, y1: y, y2: y, class: "transition-line" }));
+    group.append(svgElement("circle", { cx: transitionX, cy: rowCenters.get(transition.from.find((id) => visibleIds.has(id))), r: 3, class: "transition-node" }));
+    svg.append(group);
+  }
+
   visible.forEach((polity, index) => {
     const start = Math.max(yearStart, polity.start);
     const end = Math.min(yearEnd, polity.end ?? yearEnd);
@@ -464,9 +483,10 @@ function populateSelect(select, values, formatter = (value) => value) {
 }
 
 try {
-  const response = await fetch("/data.json");
+  const [response, transitionResponse] = await Promise.all([fetch("/data.json"), fetch("/transitions.json")]);
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   polities = await response.json();
+  transitions = transitionResponse.ok ? await transitionResponse.json() : [];
   for (const name of [...new Set(polities.map((polity) => polity.canonical_name))].sort()) {
     const option = document.createElement("option");
     option.value = name;

@@ -1,5 +1,6 @@
 import re
 from enum import Enum
+from typing import Literal
 
 from pydantic import BaseModel, Field, field_validator, model_validator
 
@@ -140,4 +141,30 @@ class Polity(BaseModel):
                 raise ValueError(f"weight_by_era value {w} at year {year} must be in [1, 10]")
             if not (YEAR_MIN <= year <= YEAR_MAX):
                 raise ValueError(f"weight_by_era year {year} out of range")
+        return self
+
+
+class Transition(BaseModel):
+    id: str
+    year: int = Field(ge=YEAR_MIN, le=YEAR_MAX)
+    kind: Literal["split", "merge", "succession"]
+    from_ids: list[str] = Field(alias="from", min_length=1)
+    to_ids: list[str] = Field(alias="to", min_length=1)
+    label: str
+    notes: str = ""
+    source_urls: list[str] = Field(default_factory=list)
+
+    @field_validator("id")
+    @classmethod
+    def _transition_id(cls, value: str) -> str:
+        if not ID_PATTERN.match(value):
+            raise ValueError("transition id must be snake_case")
+        return value
+
+    @model_validator(mode="after")
+    def _shape_matches_kind(self) -> "Transition":
+        if self.kind == "split" and (len(self.from_ids) != 1 or len(self.to_ids) < 2):
+            raise ValueError("a split requires one source and at least two targets")
+        if self.kind == "merge" and (len(self.from_ids) < 2 or len(self.to_ids) != 1):
+            raise ValueError("a merge requires at least two sources and one target")
         return self

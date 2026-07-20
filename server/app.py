@@ -126,6 +126,13 @@ def create_app(root: Path = ROOT) -> FastAPI:
             raise HTTPException(404, "Run the build action first")
         return FileResponse(path)
 
+    @application.get("/transitions.json", include_in_schema=False)
+    async def transitions() -> FileResponse:
+        path = root / "transitions.json"
+        if not path.exists():
+            raise HTTPException(404, "Run the build action first")
+        return FileResponse(path)
+
     @application.get("/api/reviews")
     async def reviews(offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)) -> dict:
         queue = pending_records(review_path, decisions_path, polities_dir)

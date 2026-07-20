@@ -19,6 +19,7 @@ class UnifiedServerTests(unittest.TestCase):
         for name in ("index.html", "review.html", "styles.css", "app.js", "review.js"):
             (self.root / "web" / name).write_text(name, encoding="utf-8")
         (self.root / "data.json").write_text("[]", encoding="utf-8")
+        (self.root / "transitions.json").write_text("[]", encoding="utf-8")
         polity = {
             "id": "candidate",
             "canonical_name": "Candidate",
@@ -64,6 +65,7 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(self.client.get("/").status_code, 200)
         self.assertEqual(self.client.get("/review").status_code, 200)
         self.assertEqual(self.client.get("/data.json").json(), [])
+        self.assertEqual(self.client.get("/transitions.json").json(), [])
 
     def test_lists_and_accepts_a_valid_candidate(self) -> None:
         payload = self.client.get("/api/reviews").json()

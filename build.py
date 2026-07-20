@@ -4,11 +4,13 @@ from pathlib import Path
 
 import yaml
 
-from schema import Polity
+from schema import Polity, Transition
 
 ROOT = Path(__file__).parent
 POLITIES_DIR = ROOT / "polities"
 OUT_PATH = ROOT / "data.json"
+TRANSITIONS_PATH = ROOT / "transitions.yaml"
+TRANSITIONS_OUT_PATH = ROOT / "transitions.json"
 
 
 def find_parent_cycles(polities: list[Polity]) -> list[list[str]]:
@@ -55,8 +57,37 @@ def load_all() -> list[Polity]:
     return polities
 
 
+def load_transitions(polities: list[Polity]) -> list[Transition]:
+    if not TRANSITIONS_PATH.exists():
+        return []
+    transitions = [
+        Transition.model_validate(item)
+        for item in (yaml.safe_load(TRANSITIONS_PATH.read_text(encoding="utf-8")) or [])
+    ]
+    validate_transitions(transitions, polities)
+    return transitions
+
+
+def validate_transitions(transitions: list[Transition], polities: list[Polity]) -> None:
+    known_ids = {polity.id for polity in polities}
+    transition_ids = [transition.id for transition in transitions]
+    if len(transition_ids) != len(set(transition_ids)):
+        raise ValueError("transition IDs must be unique")
+    unknown = sorted(
+        {
+            item
+            for transition in transitions
+            for item in transition.from_ids + transition.to_ids
+            if item not in known_ids
+        }
+    )
+    if unknown:
+        raise ValueError(f"transitions reference unknown polity IDs: {', '.join(unknown)}")
+
+
 def main() -> None:
     polities = load_all()
+    transitions = load_transitions(polities)
     OUT_PATH.write_text(
         json.dumps(
             [p.model_dump(mode="json") for p in polities],
@@ -65,7 +96,15 @@ def main() -> None:
         ),
         encoding="utf-8",
     )
-    print(f"OK  validated and wrote {len(polities)} polities to {OUT_PATH.name}")
+    TRANSITIONS_OUT_PATH.write_text(
+        json.dumps(
+            [item.model_dump(mode="json", by_alias=True) for item in transitions],
+            indent=2,
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    print(f"OK  validated and wrote {len(polities)} polities and {len(transitions)} transitions")
 
 
 if __name__ == "__main__":
