@@ -386,7 +386,7 @@ function greedyOrder(items) {
   return ordered;
 }
 
-function orderGlobalLane(items) {
+function orderLaneEntities(items) {
   if (items.length < 2) return [...items];
   const components = relationshipComponents(items).map(greedyOrder);
   components.sort((a, b) => a[0].start - b[0].start || a[0].canonical_name.localeCompare(b[0].canonical_name));
@@ -435,9 +435,7 @@ function render() {
       const items = matched.filter((polity) => geographyGroup(polity) === name);
       return {
         name,
-        items: visibilityInput.value === "global"
-          ? orderGlobalLane(items)
-          : items.sort((a, b) => a.start - b.start || a.canonical_name.localeCompare(b.canonical_name)),
+        items: orderLaneEntities(items),
       };
     })
     .filter((group) => group.items.length);
