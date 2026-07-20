@@ -104,10 +104,14 @@ def normalize_workbook(input_path: Path) -> tuple[pd.DataFrame, pd.DataFrame]:
         except ValueError as exc:
             rejected.append((row.get("PolID"), str(exc)))
             continue
+        long_name = row.get("LongName")
+        if long_name is None or pd.isna(long_name) or not str(long_name).strip():
+            long_name = row["PolName"]
         polity_rows.append(
             {
                 "seshat_id": str(row["PolID"]),
                 "canonical_name": str(row["PolName"]),
+                "long_name": str(long_name),
                 "nga": str(row["NGA"]),
                 "world_region": str(row["World Region"]),
                 "start_year": start.year,

@@ -34,6 +34,7 @@ class SeshatWorkbookTests(unittest.TestCase):
                         {
                             "NGA": "Test NGA",
                             "PolName": "Test Kingdom",
+                            "LongName": "The Long Test Kingdom",
                             "PolID": "TsKing",
                             "Start": "c. 500 BCE",
                             "End": 100,
@@ -58,6 +59,7 @@ class SeshatWorkbookTests(unittest.TestCase):
             self.assertEqual(len(polities), 1)
             self.assertEqual(polities.iloc[0]["start_year"], -500)
             self.assertEqual(polities.iloc[0]["start_confidence"], "medium")
+            self.assertEqual(polities.iloc[0]["long_name"], "The Long Test Kingdom")
             self.assertEqual(polities.iloc[0]["ngas"], ["Test NGA"])
             self.assertEqual(timeseries.iloc[0]["social_complexity_index"], 6.5)
 

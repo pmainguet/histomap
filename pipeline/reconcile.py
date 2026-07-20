@@ -92,13 +92,23 @@ def _names(document: dict) -> list[str]:
     return values
 
 
+def _seshat_names(seshat: dict) -> list[str]:
+    return [
+        str(value)
+        for value in (seshat.get("canonical_name"), seshat.get("long_name"))
+        if value is not None and str(value).strip() and str(value).lower() != "nan"
+    ]
+
+
 def score_candidate(seshat: dict, document: dict) -> CandidateScore:
     normalized_seshat_name = normalize_name(str(seshat["canonical_name"]))
     normalized_canonical_name = normalize_name(str(document["canonical_name"]))
     exact_name_match = normalized_seshat_name == normalized_canonical_name
     seshat_names = {
-        normalized_seshat_name,
-        normalize_name(str(seshat["canonical_name"]), strip_types=True),
+        normalized
+        for name in _seshat_names(seshat)
+        for normalized in (normalize_name(name), normalize_name(name, strip_types=True))
+        if normalized
     }
     canonical_names = {
         normalized
@@ -225,8 +235,10 @@ def run(apply: bool = True) -> dict[str, int]:
 
     for row in seshat.to_dict(orient="records"):
         query_names = {
-            normalize_name(str(row["canonical_name"])),
-            normalize_name(str(row["canonical_name"]), strip_types=True),
+            normalized
+            for name in _seshat_names(row)
+            for normalized in (normalize_name(name), normalize_name(name, strip_types=True))
+            if normalized
         }
         candidate_ids: set[str] = set()
         for query in query_names:
@@ -261,6 +273,7 @@ def run(apply: bool = True) -> dict[str, int]:
         result = {
             "seshat_id": row["seshat_id"],
             "seshat_name": row["canonical_name"],
+            "seshat_long_name": row.get("long_name"),
             "start_year": int(row["start_year"]),
             "end_year": int(row["end_year"]),
             "peak_population_log10": row.get("peak_population_log10"),

@@ -56,11 +56,12 @@ def clean_json(value: object) -> object:
 
 def add_source_links(record: dict, metadata: dict[str, dict]) -> dict:
     enriched = dict(record)
+    source_name = record.get("seshat_long_name") or record["seshat_name"]
     enriched["source_links"] = [
         {
             "label": "Seshat polity search",
             "url": "https://www.seshat-db.com/api/core/polities/?search="
-            + quote(str(record["seshat_name"])),
+            + quote(str(source_name)),
         },
         {"label": "Equinox 2020 workbook", "url": EQUINOX_URL},
     ]
@@ -92,9 +93,7 @@ def add_source_links(record: dict, metadata: dict[str, dict]) -> dict:
                     + quote(str(document.get("canonical_name", candidate["canonical_name"]))),
                 }
             )
-        comparison_query = (
-            f"{candidate['canonical_name']} vs {record['seshat_name']}"
-        )
+        comparison_query = f"{candidate['canonical_name']} vs {source_name}"
         links.append(
             {
                 "label": "Google comparison",

@@ -63,11 +63,15 @@ async function loadNext() {
     return;
   }
   const parts = current.priority_components;
+  const alternateName = current.seshat_long_name && current.seshat_long_name !== current.seshat_name
+    ? `<dt>Seshat long name</dt><dd>${escapeHtml(current.seshat_long_name)}</dd>`
+    : "";
   card.innerHTML = `<p class="review-rank">Source record to reconcile</p>
     <h2>${escapeHtml(current.seshat_name)}</h2>
     <p class="source-explanation">This name and date range come from the <strong>Seshat Equinox dataset</strong>. Decide whether it represents one of the existing Histomap records below.</p>
     <dl class="source-facts"><dt>Source</dt><dd>Seshat Global History Databank</dd>
       <dt>Seshat polity ID</dt><dd>${escapeHtml(current.seshat_id)}</dd>
+      ${alternateName}
       <dt>Source dates</dt><dd>${formatYear(current.start_year)}&ndash;${formatYear(current.end_year)}</dd>
       <dt>Source pages</dt><dd class="source-links">${sourceLinksMarkup(current.source_links || []) || "No source link available"}</dd></dl>
     <details class="priority-details"><summary>Why this decision appears now (priority ${current.review_priority.toFixed(1)} / 100)</summary>

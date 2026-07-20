@@ -69,6 +69,24 @@ class ReconciliationTests(unittest.TestCase):
         self.assertGreater(score.name_score, score.primary_name_score)
         self.assertLess(score.primary_name_score, 88)
 
+    def test_seshat_long_name_is_used_as_a_matching_alias(self) -> None:
+        seshat = {
+            "canonical_name": "internal phase 2",
+            "long_name": "Zungharian Empire",
+            "start_year": 1695,
+            "end_year": 1745,
+            "world_region": "Central Asia",
+        }
+        canonical = {
+            "id": "dzungar_khanate",
+            "canonical_name": "Zungharian Empire",
+            "names": {},
+            "start": 1695,
+            "end": 1755,
+            "geography": {"continents": ["asia"]},
+        }
+        self.assertEqual(score_candidate(seshat, canonical).name_score, 100)
+
     def test_auto_match_requires_clear_margin(self) -> None:
         first = CandidateScore("one", "One", False, 100, 100, 100, 100, 100, 100)
         close = CandidateScore("two", "Two", False, 99, 99, 100, 100, 100, 98)
