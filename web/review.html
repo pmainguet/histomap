@@ -7,16 +7,25 @@
     <link rel="stylesheet" href="/static/styles.css">
   </head>
   <body>
-    <header>
-      <p class="eyebrow">Editorial workspace</p>
-      <h1>Review queue</h1>
-      <p class="intro">High-value Seshat reconciliation decisions appear first. <a href="/">Return to timeline</a>.</p>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Histomap timeline">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M5 6h7v24H5zM15 11h7v19h-7zM25 3h7v27h-7z"/></svg>
+        <span>Histomap</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/">Timeline</a>
+        <a href="/review" aria-current="page">Review</a>
+        <a href="/docs">API</a>
+      </nav>
+    </header>
+    <section class="review-toolbar">
+      <div><p class="eyebrow">Editorial workspace</p><h1>Reconciliation review</h1></div>
       <div class="controls">
         <button id="apply-decisions" type="button">Apply decisions</button>
         <button id="build-data" type="button">Build data</button>
         <span id="job-status" aria-live="polite"></span>
       </div>
-    </header>
+    </section>
     <main class="review-main">
       <section id="review-card" class="review-card" aria-live="polite">Loading review queue…</section>
       <aside class="details review-progress">

@@ -183,8 +183,8 @@ try {
   );
   populateSelect(countryInput, new Set(polities.flatMap((p) => p.geography?.present_countries || [])));
   if (polities.length) {
-    startInput.value = Math.min(...polities.map((p) => p.start));
-    endInput.value = Math.max(...polities.map((p) => p.end ?? new Date().getFullYear()));
+    startInput.value = Math.max(-8000, Math.min(...polities.map((p) => p.start)));
+    endInput.value = new Date().getFullYear();
   }
   render();
 } catch (error) {

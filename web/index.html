@@ -7,11 +7,19 @@
     <link rel="stylesheet" href="/static/styles.css">
   </head>
   <body>
-    <header>
-      <p class="eyebrow">An atlas of political history</p>
-      <h1>Histomap</h1>
-      <p class="intro">Time runs from left to right. Band thickness reflects each polity’s estimated historical weight.</p>
-      <p><a href="/review">Open reconciliation review</a></p>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Histomap timeline">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M5 6h7v24H5zM15 11h7v19h-7zM25 3h7v27h-7z"/></svg>
+        <span>Histomap</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/" aria-current="page">Timeline</a>
+        <a href="/review">Review</a>
+        <a href="/docs">API</a>
+      </nav>
+    </header>
+    <section class="timeline-toolbar" aria-label="Timeline controls">
+      <p class="toolbar-intro">Time runs left to right; thickness represents estimated historical weight.</p>
       <div class="controls">
         <label>Detail
           <select id="visibility">
@@ -22,8 +30,8 @@
         </label>
         <label>Continent <select id="continent"><option value="">All continents</option></select></label>
         <label>Present country <select id="country"><option value="">All countries</option></select></label>
-        <label>From <input id="year-start" type="number" value="-1000" step="100"></label>
-        <label>To <input id="year-end" type="number" value="2100" step="100"></label>
+        <label>From <input id="year-start" type="number" value="-8000" step="100"></label>
+        <label>To <input id="year-end" type="number" value="2026" step="100"></label>
         <button id="apply" type="button">Redraw</button>
         <span id="summary" aria-live="polite"></span>
       </div>
@@ -34,7 +42,7 @@
         <i class="low"></i> Low
         <i class="legendary"></i> Legendary
       </div>
-    </header>
+    </section>
     <main>
       <div id="chart" class="chart" role="img" aria-label="Horizontal timeline of historical polities"></div>
       <aside id="details" class="details" aria-live="polite">
