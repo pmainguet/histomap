@@ -6,6 +6,11 @@ names:
     State of the Church | States of the Church | Status Ecclesiae
 external_ids:
   wikidata: Q170174
+  seshat:
+  - ItPapHM
+  - ItPapM1
+  - ItPapM2
+  - ItPapRn
 parent: null
 successors:
 - kingdom_of_italy_q172579
@@ -27,6 +32,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 60.98
 visibility_tier: global

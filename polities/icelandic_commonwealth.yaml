@@ -5,6 +5,8 @@ names:
   aliases_en: Free State of Iceland | Icelandic Free State | Þjóðveldið Ísland
 external_ids:
   wikidata: Q62389
+  seshat:
+  - IsCommw
 parent: null
 successors: []
 region: null
@@ -23,6 +25,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 47.02
 visibility_tier: regional

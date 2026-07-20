@@ -5,6 +5,8 @@ names:
   aliases_en: Cappadocia
 external_ids:
   wikidata: Q29654286
+  seshat:
+  - TrCappL
 parent: null
 successors: []
 region: null
@@ -23,6 +25,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 39.52
 visibility_tier: detailed

@@ -8,6 +8,8 @@ names:
     Empire in India | Mughal India | Sultanate of al-Hind
 external_ids:
   wikidata: Q33296
+  seshat:
+  - InMugl*
 parent: null
 successors: []
 region: null
@@ -26,6 +28,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 62.42
 visibility_tier: global

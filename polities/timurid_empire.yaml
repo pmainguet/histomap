@@ -5,6 +5,8 @@ names:
   aliases_en: Gurkani | Timurid empire
 external_ids:
   wikidata: Q484195
+  seshat:
+  - UzTimur
 parent: null
 successors:
 - khanate_of_bukhara
@@ -24,6 +26,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 56.27
 visibility_tier: global

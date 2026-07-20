@@ -122,22 +122,34 @@ def normalize_workbook(input_path: Path) -> tuple[pd.DataFrame, pd.DataFrame]:
                 "is_duplicate": str(row.get("Dupl", "n")).lower() == "y",
             }
         )
-    polities = pd.DataFrame(polity_rows)
+    raw_polities = pd.DataFrame(polity_rows)
+    grouped_rows = []
+    for seshat_id, group in raw_polities.groupby("seshat_id", sort=True):
+        first = group.iloc[0].to_dict()
+        first["ngas"] = sorted(set(group["nga"].astype(str)))
+        first["world_regions"] = sorted(set(group["world_region"].astype(str)))
+        first["start_year"] = int(group["start_year"].min())
+        first["end_year"] = int(group["end_year"].max())
+        first["is_duplicate"] = bool(group["is_duplicate"].any())
+        first["source_row_count"] = len(group)
+        first.pop("nga", None)
+        grouped_rows.append(first)
+    polities = pd.DataFrame(grouped_rows)
 
     aggregate = aggregate.rename(
         columns={"PolID": "seshat_id", "Time": "year", "Pop": "population_log10", "Terr": "area_km2_log10"}
     )
     complexity = complexity.rename(columns={"PolID": "seshat_id", "Time": "year", "SPC": "social_complexity_index"})
-    timeseries = aggregate[["seshat_id", "year", "population_log10", "area_km2_log10"]].merge(
-        complexity[["seshat_id", "year", "social_complexity_index"]],
-        on=["seshat_id", "year"],
+    timeseries = aggregate[["NGA", "seshat_id", "year", "population_log10", "area_km2_log10"]].merge(
+        complexity[["NGA", "seshat_id", "year", "social_complexity_index"]],
+        on=["NGA", "seshat_id", "year"],
         how="outer",
-    )
+    ).rename(columns={"NGA": "nga"})
     timeseries = timeseries.merge(
-        polities[["seshat_id", "canonical_name", "nga", "start_year", "end_year"]],
+        polities[["seshat_id", "canonical_name", "start_year", "end_year"]],
         on="seshat_id",
         how="inner",
-    ).sort_values(["seshat_id", "year"])
+    ).sort_values(["seshat_id", "nga", "year"])
 
     peaks = timeseries.groupby("seshat_id", as_index=False).agg(
         peak_population_log10=("population_log10", "max"),
@@ -160,7 +172,9 @@ def run(input_path: Path = DEFAULT_INPUT) -> tuple[int, int]:
         "# Seshat extraction\n\n"
         f"- Polities: {len(polities):,}\n"
         f"- Time-series rows: {len(timeseries):,}\n"
-        f"- Duplicate-flagged polities retained: {int(polities['is_duplicate'].sum()):,}\n"
+        f"- Source polity rows consolidated: {int(polities['source_row_count'].sum()):,}\n"
+        f"- Repeated cross-NGA rows consolidated: {int((polities['source_row_count'] - 1).sum()):,}\n"
+        f"- Source duplicate flags retained: {int(polities['is_duplicate'].sum()):,}\n"
         f"- Rejected date rows: {len(rejected):,}\n"
         "- Population and territory values are preserved as the workbook's log10 measures.\n",
         encoding="utf-8",

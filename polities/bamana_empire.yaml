@@ -5,6 +5,8 @@ names:
   aliases_en: Bambara | Bambara Empire | Ségou Empire
 external_ids:
   wikidata: Q762084
+  seshat:
+  - MlBaman
 parent: null
 successors: []
 region: null
@@ -23,6 +25,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 44.08
 visibility_tier: detailed

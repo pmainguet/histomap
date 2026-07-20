@@ -4,6 +4,8 @@ names:
   fr: Empire britannique
 external_ids:
   wikidata: Q8680
+  seshat:
+  - GbEmpr2
 parent: null
 successors: []
 region: null
@@ -22,6 +24,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 66.17
 visibility_tier: global

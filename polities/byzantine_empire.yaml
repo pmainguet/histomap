@@ -6,6 +6,9 @@ names:
     Roman Empire | Lower Empire | Romanía
 external_ids:
   wikidata: Q12544
+  seshat:
+  - TrByzM1
+  - TrByzM2
 parent: null
 successors: []
 region: null
@@ -24,6 +27,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 68.97
 visibility_tier: global

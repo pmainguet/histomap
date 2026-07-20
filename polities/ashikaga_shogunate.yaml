@@ -6,6 +6,8 @@ names:
     bakufu
 external_ids:
   wikidata: Q1154406
+  seshat:
+  - JpAshik
 parent: null
 successors:
 - oda_regime
@@ -25,6 +27,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 49.28
 visibility_tier: regional

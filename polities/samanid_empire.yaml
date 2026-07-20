@@ -4,6 +4,8 @@ names:
   fr: empire samanide
 external_ids:
   wikidata: Q12150341
+  seshat:
+  - UzSamnd
 parent: null
 successors: []
 region: null
@@ -22,6 +24,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 47.63
 visibility_tier: regional

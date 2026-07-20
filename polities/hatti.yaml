@@ -5,6 +5,9 @@ names:
   aliases_en: Hittite Empire | Hittite empire
 external_ids:
   wikidata: Q4496560
+  seshat:
+  - TrHatNK
+  - TrHatOK
 parent: null
 successors: []
 region: null
@@ -23,6 +26,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 43.75
 visibility_tier: detailed

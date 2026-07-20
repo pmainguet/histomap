@@ -5,6 +5,8 @@ names:
   aliases_en: Roman monarchy | Rome of Kings
 external_ids:
   wikidata: Q201038
+  seshat:
+  - ItRomRg
 parent: null
 successors:
 - roman_republic_q17167
@@ -24,6 +26,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 57.0
 visibility_tier: global

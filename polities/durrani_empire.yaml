@@ -5,6 +5,8 @@ names:
   aliases_en: Sadozai Kingdom | the last Afghan empire
 external_ids:
   wikidata: Q467627
+  seshat:
+  - AfDurrn
 parent: null
 successors: []
 region: null
@@ -23,6 +25,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 51.7
 visibility_tier: regional

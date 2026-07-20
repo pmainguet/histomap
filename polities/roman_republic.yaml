@@ -6,7 +6,11 @@ names:
   fr: République romaine
 external_ids:
   wikidata: Q1747689
-  seshat: ItRomR
+  seshat:
+  - ItRomER
+  - ItRomLR
+  - ItRomMR
+  - ItRomR
 parent: roman_kingdom
 successors:
 - roman_empire
@@ -37,6 +41,7 @@ text:
 notes: Traditional founding date 509 BCE is legendary; end conventionally 27 BCE with
   the grant of the title Augustus to Octavian.
 sources:
+- seshat
 - wikidata
 prominence_score: 74.17
 visibility_tier: global

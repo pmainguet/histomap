@@ -10,6 +10,9 @@ names:
     Tartar Chinese Empire | Tartar-Manchu dynasty | Tsing dynasty
 external_ids:
   wikidata: Q8733
+  seshat:
+  - CnQingE
+  - CnQingL
 parent: null
 successors:
 - taiwan
@@ -29,6 +32,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 64.32
 visibility_tier: global

@@ -5,6 +5,8 @@ names:
   aliases_en: Gahadvala
 external_ids:
   wikidata: Q1147823
+  seshat:
+  - InGhdvl
 parent: null
 successors:
 - delhi_sultanate
@@ -24,6 +26,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 37.55
 visibility_tier: detailed

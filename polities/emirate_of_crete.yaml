@@ -4,6 +4,8 @@ names:
   fr: émirat de Crète
 external_ids:
   wikidata: Q603771
+  seshat:
+  - GrCrEmr
 parent: null
 successors: []
 region: null
@@ -22,6 +24,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 47.52
 visibility_tier: regional

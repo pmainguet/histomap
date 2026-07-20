@@ -5,6 +5,8 @@ names:
   aliases_en: Hoysala
 external_ids:
   wikidata: Q466581
+  seshat:
+  - InHoysa
 parent: null
 successors:
 - vijayanagara_empire
@@ -24,6 +26,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 51.1
 visibility_tier: regional

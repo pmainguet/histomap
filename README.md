@@ -35,6 +35,7 @@ make extract
 make extract-seshat
 make filter-wikidata-types
 make import-wikidata
+make reconcile
 make compute-prominence
 make enrich-relationships
 make enrich-geography

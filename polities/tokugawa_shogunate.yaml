@@ -5,6 +5,8 @@ names:
   aliases_en: Japan | Edo Japan | Shogunate of Japan | Tokugawa Shogunate
 external_ids:
   wikidata: Q205662
+  seshat:
+  - JpTokgw
 parent: null
 successors:
 - empire_of_japan
@@ -25,6 +27,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 56.42
 visibility_tier: global

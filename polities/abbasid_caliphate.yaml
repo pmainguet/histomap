@@ -5,6 +5,9 @@ names:
   aliases_en: Abbasid Empire | Abbasid period | Abbasides | Abbasids
 external_ids:
   wikidata: Q12536
+  seshat:
+  - IqAbbs1
+  - IqAbbs2
 parent: null
 successors:
 - ilkhanate
@@ -26,6 +29,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 63.34
 visibility_tier: global

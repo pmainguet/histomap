@@ -4,6 +4,8 @@ names:
   fr: royaume d'Ayutthaya
 external_ids:
   wikidata: Q841364
+  seshat:
+  - ThAyuth
 parent: null
 successors:
 - thonburi_kingdom
@@ -23,6 +25,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 54.19
 visibility_tier: regional

@@ -5,6 +5,15 @@ names:
   aliases_en: Susiana | Elamites
 external_ids:
   wikidata: Q128904
+  seshat:
+  - IrAwanE
+  - IrElmCP
+  - IrMElm1
+  - IrMElm2
+  - IrMElm3
+  - IrShima
+  - IrSukkE
+  - IrSukkL
 parent: null
 successors: []
 region: null
@@ -23,6 +32,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 60.36
 visibility_tier: global

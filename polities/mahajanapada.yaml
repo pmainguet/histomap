@@ -6,6 +6,8 @@ names:
     (great states)
 external_ids:
   wikidata: Q846025
+  seshat:
+  - InMahaJ
 parent: null
 successors:
 - maurya_empire
@@ -26,6 +28,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 52.74
 visibility_tier: regional

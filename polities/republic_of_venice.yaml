@@ -9,6 +9,9 @@ names:
     | Venetian Empire | Venetian Republic | Venezia Republic | Venice Republic
 external_ids:
   wikidata: Q4948
+  seshat:
+  - ItVenR3
+  - ItVenR4
 parent: null
 successors:
 - austrian_empire
@@ -28,6 +31,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 61.56
 visibility_tier: global

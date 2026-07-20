@@ -4,6 +4,8 @@ names:
   fr: royaume des Ostrogoths
 external_ids:
   wikidata: Q583038
+  seshat:
+  - ItOstrg
 parent: null
 successors:
 - duchy_of_brescia
@@ -24,6 +26,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 48.23
 visibility_tier: regional

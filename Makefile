@@ -1,4 +1,4 @@
-.PHONY: setup extract extract-seshat filter-wikidata-types import-wikidata compute-prominence enrich-relationships enrich-geography validate build serve test format lint check
+.PHONY: setup extract extract-seshat filter-wikidata-types import-wikidata reconcile compute-prominence enrich-relationships enrich-geography validate build serve test format lint check
 
 setup:
 	uv pip install -r requirements.txt ruff mypy
@@ -14,6 +14,9 @@ filter-wikidata-types:
 
 import-wikidata:
 	python pipeline/wd_to_yaml.py
+
+reconcile:
+	python pipeline/reconcile.py
 
 compute-prominence:
 	python pipeline/compute_prominence.py

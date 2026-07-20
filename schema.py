@@ -31,7 +31,16 @@ class Eligibility(str, Enum):
 
 class ExternalIds(BaseModel):
     wikidata: str | None = None
-    seshat: str | None = None
+    seshat: list[str] = Field(default_factory=list)
+
+    @field_validator("seshat", mode="before")
+    @classmethod
+    def _seshat_list(cls, value: object) -> object:
+        if value is None:
+            return []
+        if isinstance(value, str):
+            return [value]
+        return value
 
     @field_validator("wikidata")
     @classmethod

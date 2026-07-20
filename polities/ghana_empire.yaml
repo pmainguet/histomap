@@ -4,6 +4,9 @@ names:
   fr: Empire du Ghana
 external_ids:
   wikidata: Q206789
+  seshat:
+  - MrWagdL
+  - MrWagdM
 parent: null
 successors: []
 region: null
@@ -22,6 +25,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 57.97
 visibility_tier: global

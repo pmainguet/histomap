@@ -5,6 +5,8 @@ names:
   aliases_en: Guishuang | Kuṣāṇa Empire | Kushana Empire
 external_ids:
   wikidata: Q25979
+  seshat:
+  - AfKushn
 parent: null
 successors: []
 region: null
@@ -23,6 +25,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 59.13
 visibility_tier: global

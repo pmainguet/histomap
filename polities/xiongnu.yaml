@@ -5,6 +5,8 @@ names:
   aliases_en: Xiongnu Empire | Great Hun Empire | Xunnu
 external_ids:
   wikidata: Q188836
+  seshat:
+  - MnXngnL
 parent: null
 successors: []
 region: null
@@ -23,6 +25,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 58.35
 visibility_tier: global

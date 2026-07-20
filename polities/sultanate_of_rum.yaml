@@ -6,6 +6,8 @@ names:
     Rûm
 external_ids:
   wikidata: Q975405
+  seshat:
+  - TrRum**
 parent: null
 successors:
 - beylik_of_adana
@@ -25,6 +27,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 56.33
 visibility_tier: global

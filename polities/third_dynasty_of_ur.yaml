@@ -5,6 +5,8 @@ names:
   aliases_en: Neo-Sumerian Empire | Ur III
 external_ids:
   wikidata: Q723587
+  seshat:
+  - IqUrIII
 parent: null
 successors: []
 region: null
@@ -23,6 +25,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 50.62
 visibility_tier: regional

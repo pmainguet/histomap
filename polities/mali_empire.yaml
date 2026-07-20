@@ -5,6 +5,8 @@ names:
   aliases_en: Empire of Mali | Manden Kurufaba | Nyeni | Manden
 external_ids:
   wikidata: Q184536
+  seshat:
+  - MlMali*
 parent: null
 successors: []
 region: null
@@ -23,6 +25,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 60.56
 visibility_tier: global

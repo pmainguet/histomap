@@ -5,6 +5,8 @@ names:
   aliases_en: Ancient Marathi dynasty
 external_ids:
   wikidata: Q5257
+  seshat:
+  - InSataL
 parent: null
 successors:
 - vakataka_empire
@@ -24,6 +26,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 52.42
 visibility_tier: regional

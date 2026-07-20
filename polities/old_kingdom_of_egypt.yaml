@@ -4,6 +4,8 @@ names:
   fr: Ancien Empire de l'Égypte
 external_ids:
   wikidata: Q177819
+  seshat:
+  - EgOldK1
 parent: null
 successors: []
 region: null
@@ -22,6 +24,7 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
 prominence_score: 57.35
 visibility_tier: global
