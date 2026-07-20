@@ -23,14 +23,16 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Automatically generated from Wikidata; requires review.
+notes: Automatically generated from Wikidata; polity eligibility and geography reviewed.
 sources:
 - wikidata
 prominence_score: 59.35
 visibility_tier: global
-eligibility: review
+eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - asia
+  present_countries:
+  - CN
   centroid: null
-  confidence: null
+  confidence: medium

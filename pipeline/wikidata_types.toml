@@ -47,3 +47,4 @@ Q96 = "accepted"      # Mexico, the sovereign country
 Q1489 = "excluded"    # Mexico City
 Q1524 = "excluded"    # modern Athens
 Q844930 = "accepted"  # Classical Athens
+Q7462 = "accepted"    # Song dynasty; historical polity with dynasty-specific direct types

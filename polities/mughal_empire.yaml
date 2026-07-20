@@ -34,7 +34,12 @@ prominence_score: 62.42
 visibility_tier: global
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - asia
+  present_countries:
+  - AF
+  - BD
+  - IN
+  - PK
   centroid: null
-  confidence: null
+  confidence: medium
