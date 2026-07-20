@@ -64,6 +64,10 @@ def add_source_links(record: dict, metadata: dict[str, dict]) -> dict:
             + quote(str(source_name)),
         },
         {"label": "Equinox 2020 workbook", "url": EQUINOX_URL},
+        {
+            "label": "Google search",
+            "url": "https://www.google.com/search?q=" + quote(str(source_name)),
+        },
     ]
     enriched_candidates = []
     for candidate in record.get("candidates", []):

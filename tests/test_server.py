@@ -72,6 +72,13 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(payload["total"], 1)
         self.assertIn("search=Source", payload["items"][0]["source_links"][0]["url"])
         self.assertEqual(
+            payload["items"][0]["source_links"][-1],
+            {
+                "label": "Google search",
+                "url": "https://www.google.com/search?q=Source",
+            },
+        )
+        self.assertEqual(
             payload["items"][0]["candidates"][0]["source_links"][0]["url"],
             "https://www.wikidata.org/wiki/Q123",
         )
