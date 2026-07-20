@@ -64,6 +64,7 @@ function showDetails(polity, trigger = null) {
   const sources = (polity.sources || []).map(displayTerm);
   const externalLinks = [
     wikidata ? `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(wikidata)}" target="_blank" rel="noopener noreferrer">Wikidata (${escapeHtml(wikidata)}) ↗</a>` : "",
+    seshat.length ? `<a href="https://www.seshat-db.com/api/core/polities/?search=${encodeURIComponent(polity.canonical_name)}" target="_blank" rel="noopener noreferrer">Seshat (${escapeHtml(seshat.join(", "))}) ↗</a>` : "",
     centroid ? `<a href="https://www.openstreetmap.org/?mlat=${centroid.lat}&mlon=${centroid.lon}#map=5/${centroid.lat}/${centroid.lon}" target="_blank" rel="noopener noreferrer">View location ↗</a>` : "",
   ].filter(Boolean);
   details.innerHTML = `<button class="detail-close" type="button" aria-label="Close entity details">×</button>
@@ -84,9 +85,9 @@ function showDetails(polity, trigger = null) {
       <dt>Review status</dt><dd>${escapeHtml(polity.eligibility || "review")}</dd>
       <dt>Date confidence</dt><dd>start ${escapeHtml(polity.start_confidence || "unknown")}; end ${escapeHtml(polity.end_confidence || "unknown")}</dd>
       ${sources.length ? `<dt>Data sources</dt><dd>${escapeHtml(sources.join(", "))}</dd>` : ""}
-      ${seshat.length ? `<dt>Seshat IDs</dt><dd>${escapeHtml(seshat.join(", "))}</dd>` : ""}
+      ${externalLinks.length ? `<dt>External pages</dt><dd class="detail-links">${externalLinks.join("<br>")}</dd>` : ""}
     </dl>
-    ${externalLinks.length ? `<p class="detail-links">${externalLinks.join(" · ")}</p>` : ""}`;
+    `;
   details.querySelectorAll("[data-entity-id]").forEach((button) => {
     button.addEventListener("click", () => {
       const entity = polities.find((candidate) => candidate.id === button.dataset.entityId);
