@@ -39,6 +39,7 @@ make extract-hyde
 make filter-wikidata-types
 make import-wikidata
 make reconcile
+make review
 make spotcheck
 make compute-prominence
 make compute-weights

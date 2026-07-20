@@ -27,6 +27,9 @@ import-wikidata:
 reconcile:
 	python pipeline/reconcile.py
 
+review:
+	python pipeline/review_cli.py
+
 spotcheck:
 	python pipeline/spotcheck.py
 

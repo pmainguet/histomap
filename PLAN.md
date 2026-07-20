@@ -305,6 +305,14 @@ HYDE downloads are slow and rate-limited — do it once and cache aggressively.
 15. Estimate the workload/price of doing this step entirely. We don't want to have something too costly
 15 bis. Write `pipeline/llm_propose.py`: for each candidate polity, send the merged source rows to the ChatGPT API, get back a structured proposal with conflict notes and child/adult reading-level text.
 16. Write `pipeline/review_cli.py`: terminal UI that walks proposals, shows diff vs. existing YAML, accepts with Enter, edits in `$EDITOR`, skips with `s`.
+    The first review pass handles Seshat reconciliation candidates with numbered accept, reject,
+    defer, and resume support. Decisions are tracked in JSONL and reapplied idempotently by the
+    reconciler; structured proposal diffs and editor integration remain later enhancements.
+    Review order uses an auditable editorial-value score: 30% Seshat source importance (population,
+    area, complexity, and duration), 25% canonical prominence, 20% match quality, 10% ambiguity
+    requiring human judgment, 10% visibility tier, and 5% missing Seshat coverage. This puts
+    consequential global-history decisions ahead of obscure or weak matches without letting a bad
+    proposal inherit importance merely because its suggested target is famous.
 17. Run the review. Budget: 5s per polity × ~500 polities = ~40 minutes. Expect to spend longer on disputed dates.
 
 ### Phase 5 — Manual editorial pass

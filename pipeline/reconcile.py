@@ -21,6 +21,7 @@ CROSSWALK_PATH = ROOT / "sources" / "seshat_crosswalk.parquet"
 REVIEW_PATH = ROOT / "reports" / "seshat_reconciliation.jsonl"
 SUMMARY_PATH = ROOT / "reports" / "reconcile_summary.md"
 UNMATCHED_PATH = ROOT / "reports" / "seshat_unmatched_drafts.yaml"
+DECISIONS_PATH = ROOT / "reports" / "seshat_review_decisions.jsonl"
 
 PHASE_WORDS = {"early", "middle", "mid", "late", "old", "new", "first", "second", "third"}
 TYPE_WORDS = {
@@ -175,6 +176,17 @@ def decide(scores: list[CandidateScore], eligibility: dict[str, str]) -> tuple[s
     return "unmatched", best
 
 
+def load_review_decisions(path: Path = DECISIONS_PATH) -> dict[str, dict]:
+    if not path.exists():
+        return {}
+    decisions = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            decision = json.loads(line)
+            decisions[decision["seshat_id"]] = decision
+    return decisions
+
+
 def _load_documents() -> tuple[dict[str, tuple[Path, dict]], dict[str, list[str]]]:
     documents = {}
     name_index: dict[str, list[str]] = defaultdict(list)
@@ -201,6 +213,7 @@ def run(apply: bool = True) -> dict[str, int]:
     crosswalk = []
     unmatched_drafts = []
     matches_by_polity: dict[str, list[str]] = defaultdict(list)
+    manual_decisions = load_review_decisions()
 
     for row in seshat.to_dict(orient="records"):
         query_names = {
@@ -226,11 +239,25 @@ def run(apply: bool = True) -> dict[str, int]:
             if len(scores) == 5:
                 break
         decision, best = decide(scores, eligibility)
+        manual = manual_decisions.get(str(row["seshat_id"]))
+        if manual and manual.get("decision") == "accept":
+            polity_id = manual.get("polity_id")
+            if polity_id not in documents:
+                raise ValueError(f"review decision references unknown polity {polity_id}")
+            best = next((score for score in scores if score.polity_id == polity_id), None)
+            if best is None:
+                best = score_candidate(row, documents[polity_id][1])
+            decision = "manual"
+        elif manual and manual.get("decision") == "reject":
+            decision = "rejected"
         result = {
             "seshat_id": row["seshat_id"],
             "seshat_name": row["canonical_name"],
             "start_year": int(row["start_year"]),
             "end_year": int(row["end_year"]),
+            "peak_population_log10": row.get("peak_population_log10"),
+            "peak_area_km2_log10": row.get("peak_area_km2_log10"),
+            "peak_social_complexity": row.get("peak_social_complexity"),
             "decision": decision,
             "best_polity_id": best.polity_id if best else None,
             "candidates": [asdict(score) for score in scores],
@@ -239,12 +266,12 @@ def run(apply: bool = True) -> dict[str, int]:
         crosswalk.append(
             {
                 "seshat_id": row["seshat_id"],
-                "polity_id": best.polity_id if best and decision == "auto" else None,
+                "polity_id": best.polity_id if best and decision in {"auto", "manual"} else None,
                 "decision": decision,
                 "score": best.total_score if best else 0,
             }
         )
-        if decision == "auto" and best:
+        if decision in {"auto", "manual"} and best:
             matches_by_polity[best.polity_id].append(str(row["seshat_id"]))
         elif decision == "unmatched":
             unmatched_drafts.append(
@@ -307,14 +334,25 @@ def run(apply: bool = True) -> dict[str, int]:
         century = (int(result["start_year"]) // 100) * 100
         by_century[century][result["decision"]] += 1
     lines = ["# Seshat reconciliation", "", "## Decisions", ""]
-    lines.extend(f"- {decision.title()}: {counts[decision]:,}" for decision in ("auto", "review", "unmatched"))
-    lines.extend(["", "## By start century", "", "| Century | Auto | Review | Unmatched |", "|---:|---:|---:|---:|"])
+    decision_order = ("auto", "manual", "review", "rejected", "unmatched")
+    lines.extend(f"- {decision.title()}: {counts[decision]:,}" for decision in decision_order)
+    lines.extend(
+        [
+            "",
+            "## By start century",
+            "",
+            "| Century | Auto | Manual | Review | Rejected | Unmatched |",
+            "|---:|---:|---:|---:|---:|---:|",
+        ]
+    )
     for century, century_counts in sorted(by_century.items()):
         lines.append(
-            f"| {century} | {century_counts['auto']} | {century_counts['review']} | {century_counts['unmatched']} |"
+            f"| {century} | {century_counts['auto']} | {century_counts['manual']} | "
+            f"{century_counts['review']} | {century_counts['rejected']} | "
+            f"{century_counts['unmatched']} |"
         )
     SUMMARY_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    return {key: counts[key] for key in ("auto", "review", "unmatched")}
+    return {key: counts[key] for key in decision_order}
 
 
 def main() -> None:
