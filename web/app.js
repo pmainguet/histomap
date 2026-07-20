@@ -11,6 +11,7 @@ const readingLevelInput = document.querySelector("#reading-level");
 const historicalGroupInput = document.querySelector("#historical-group");
 const continentInput = document.querySelector("#continent");
 const countryInput = document.querySelector("#country");
+const eraPresetInput = document.querySelector("#era-preset");
 const colorLegend = document.querySelector("#color-legend");
 
 const geographyColors = {
@@ -30,6 +31,16 @@ let selectedPolity = null;
 let focusedPolityId = null;
 const collapsedGeographies = new Set();
 const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
+const currentYear = new Date().getFullYear();
+const eraPresets = {
+  full: [-8000, currentYear],
+  bronze: [-3300, -1200],
+  iron: [-1200, -500],
+  classical: [-800, 600],
+  medieval: [500, 1500],
+  "early-modern": [1450, 1800],
+  modern: [1750, currentYear],
+};
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (character) => ({
@@ -118,6 +129,7 @@ function showDetails(polity, trigger = null) {
   ].filter(Boolean);
   details.innerHTML = `<button class="detail-close" type="button" aria-label="Close entity details">×</button>
     <h2>${escapeHtml(polity.canonical_name)}</h2>
+    <div class="detail-actions"><button class="zoom-lifetime" type="button">Zoom to lifetime</button><button class="reset-era" type="button">Full timeline</button></div>
     <p>${escapeHtml(descriptionText)}</p>
     <dl>
       <dt>Dates</dt><dd>${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}${duration ? ` (${duration.toLocaleString()} years)` : ""}</dd>
@@ -147,6 +159,8 @@ function showDetails(polity, trigger = null) {
     });
   });
   details.querySelector(".detail-close").addEventListener("click", closeDetails);
+  details.querySelector(".zoom-lifetime").addEventListener("click", () => zoomToPolity(polity));
+  details.querySelector(".reset-era").addEventListener("click", () => applyEraPreset("full"));
   details.classList.add("is-open");
   detailBackdrop.classList.add("is-open");
   details.setAttribute("aria-hidden", "false");
@@ -342,6 +356,39 @@ readingLevelInput.addEventListener("change", () => {
 historicalGroupInput.addEventListener("change", render);
 continentInput.addEventListener("change", render);
 countryInput.addEventListener("change", render);
+eraPresetInput.addEventListener("change", () => {
+  if (eraPresetInput.value !== "custom") applyEraPreset(eraPresetInput.value);
+});
+startInput.addEventListener("change", () => { eraPresetInput.value = "custom"; });
+endInput.addEventListener("change", () => { eraPresetInput.value = "custom"; });
+
+function applyEraPreset(name) {
+  const range = eraPresets[name];
+  if (!range) return;
+  [startInput.value, endInput.value] = range;
+  eraPresetInput.value = name;
+  render();
+  if (selectedPolity && details.classList.contains("is-open")) {
+    const band = chart.querySelector(`[data-polity-id="${selectedPolity.id}"]`);
+    if (band) detailTrigger = band;
+    highlightRelationships(selectedPolity);
+  }
+}
+
+function zoomToPolity(polity) {
+  const end = polity.end ?? currentYear;
+  const duration = Math.max(1, end - polity.start);
+  const padding = Math.max(25, Math.round(duration * .12));
+  startInput.value = polity.start - padding;
+  endInput.value = end + padding;
+  eraPresetInput.value = "custom";
+  render();
+  const band = chart.querySelector(`[data-polity-id="${polity.id}"]`);
+  if (band) {
+    detailTrigger = band;
+    highlightRelationships(polity);
+  }
+}
 
 function findEntity(query) {
   const needle = query.trim().toLocaleLowerCase();
@@ -377,9 +424,17 @@ function navigateToEntity(polity) {
   continentInput.value = "";
   countryInput.value = "";
   collapsedGeographies.delete(geographyGroup(polity));
-  if (polity.start < Number(startInput.value)) startInput.value = Math.floor(polity.start / 100) * 100;
-  const polityEnd = polity.end ?? new Date().getFullYear();
-  if (polityEnd > Number(endInput.value)) endInput.value = Math.ceil(polityEnd / 100) * 100;
+  let rangeChanged = false;
+  if (polity.start < Number(startInput.value)) {
+    startInput.value = Math.floor(polity.start / 100) * 100;
+    rangeChanged = true;
+  }
+  const polityEnd = polity.end ?? currentYear;
+  if (polityEnd > Number(endInput.value)) {
+    endInput.value = Math.ceil(polityEnd / 100) * 100;
+    rangeChanged = true;
+  }
+  if (rangeChanged) eraPresetInput.value = "custom";
   render();
   const band = chart.querySelector(`[data-polity-id="${polity.id}"]`);
   if (band) {
@@ -426,7 +481,7 @@ try {
   populateSelect(countryInput, new Set(polities.flatMap((p) => p.geography?.present_countries || [])));
   if (polities.length) {
     startInput.value = Math.max(-8000, Math.min(...polities.map((p) => p.start)));
-    endInput.value = new Date().getFullYear();
+    endInput.value = currentYear;
   }
   render();
 } catch (error) {

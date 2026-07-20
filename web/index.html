@@ -41,6 +41,18 @@
         <label>Historical grouping <select id="historical-group"><option value="">All groupings</option></select></label>
         <label>Continent <select id="continent"><option value="">All continents</option></select></label>
         <label>Present country <select id="country"><option value="">All countries</option></select></label>
+        <label>Era
+          <select id="era-preset">
+            <option value="full">Full timeline</option>
+            <option value="bronze">Bronze Age</option>
+            <option value="iron">Iron Age</option>
+            <option value="classical">Classical antiquity</option>
+            <option value="medieval">Medieval</option>
+            <option value="early-modern">Early modern</option>
+            <option value="modern">Modern</option>
+            <option value="custom">Custom range</option>
+          </select>
+        </label>
         <label>From <input id="year-start" type="number" value="-8000" step="100"></label>
         <label>To <input id="year-end" type="number" value="2026" step="100"></label>
         <button id="apply" type="button">Redraw</button>

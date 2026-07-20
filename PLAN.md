@@ -347,6 +347,8 @@ HYDE downloads are slow and rate-limited — do it once and cache aggressively.
     map remain later increments.
     An entity finder searches canonical names, English aliases, and stable IDs; selected lower-tier
     records are temporarily surfaced in context without switching the entire chart to Full dataset.
+    Era presets cover major historical periods, with exact custom year fields and an entity-lifetime
+    zoom action in the detail drawer.
 23. Serve the timeline and editorial workspace from one FastAPI application. Local mode binds to
     `127.0.0.1`; any public deployment must authenticate write actions. Static assets remain
     independently deployable if a read-only public mirror is wanted later.
