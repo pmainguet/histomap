@@ -316,6 +316,7 @@ Compute `weight_by_era` from territory, population, and complexity. The output i
 - Fill `long_en` text for top polities over time. Doing this together is part of the project.
 - Add reading levels 2 and 3 (ages 9–12 / teen) as additional text fields.
 - Add regional zoom views, language toggles, family-history band at the bottom, map integration if interest holds.
+- **Nice-to-have relationship navigation:** make parent, children, predecessors, and successors clickable in the detail card; add breadcrumbs, related-band highlighting, and a small tree centered on the selected polity. Later, allow scrolling to a related band and expanding/collapsing descendants or reviewed display groups. This is intentionally deferred until relationship review has improved the underlying links.
 
 ---
 
