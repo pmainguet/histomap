@@ -26,6 +26,7 @@ const geographyOrder = ["africa", "asia", "europe", "north_america", "south_amer
 let polities = [];
 let detailTrigger = null;
 let selectedPolity = null;
+const collapsedGeographies = new Set();
 const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
 
 function escapeHtml(value) {
@@ -163,7 +164,7 @@ function render() {
   }
   const tierRank = { global: 0, regional: 1, detailed: 2 };
   const selectedRank = tierRank[visibilityInput.value];
-  const visible = polities.filter(
+  const matched = polities.filter(
     (p) =>
       p.eligibility !== "excluded" &&
       (visibilityInput.value === "detailed" || p.eligibility === "accepted") &&
@@ -174,7 +175,7 @@ function render() {
       p.start < yearEnd &&
       (p.end == null || p.end > yearStart),
   );
-  visible.sort((a, b) => {
+  matched.sort((a, b) => {
     const groupDifference = geographyOrder.indexOf(geographyGroup(a)) - geographyOrder.indexOf(geographyGroup(b));
     return groupDifference || a.start - b.start || a.canonical_name.localeCompare(b.canonical_name);
   });
@@ -185,8 +186,9 @@ function render() {
   const pixelsPerYear = Math.max(.2, Math.min(2, 1500 / span));
   const width = Math.max(900, Math.min(4800, span * pixelsPerYear + margin.left + margin.right));
   const groups = geographyOrder
-    .map((name) => ({ name, items: visible.filter((polity) => geographyGroup(polity) === name) }))
+    .map((name) => ({ name, items: matched.filter((polity) => geographyGroup(polity) === name) }))
     .filter((group) => group.items.length);
+  const visible = groups.flatMap((group) => collapsedGeographies.has(group.name) ? [] : group.items);
   const height = Math.max(180, visible.length * rowHeight + groups.length * laneHeaderHeight + margin.top + margin.bottom);
   const innerWidth = width - margin.left - margin.right;
   const x = (year) => margin.left + ((year - yearStart) / span) * innerWidth;
@@ -197,13 +199,34 @@ function render() {
   const rowCenters = new Map();
   let laneY = margin.top;
   for (const group of groups) {
-    const laneHeight = laneHeaderHeight + group.items.length * rowHeight;
+    const collapsed = collapsedGeographies.has(group.name);
+    const laneHeight = laneHeaderHeight + (collapsed ? 0 : group.items.length * rowHeight);
     svg.append(svgElement("rect", { x: margin.left, y: laneY, width: innerWidth, height: laneHeight, class: "swimlane" }));
     svg.append(svgElement("rect", { x: margin.left, y: laneY, width: 4, height: laneHeight, fill: geographyColors[group.name] }));
+    const laneToggle = svgElement("rect", {
+      x: margin.left + 4, y: laneY, width: innerWidth - 4, height: laneHeaderHeight,
+      class: "swimlane-toggle", tabindex: "0", role: "button",
+      "data-geography": group.name,
+      "aria-label": `${collapsed ? "Expand" : "Collapse"} ${displayTerm(group.name)} swimlane`,
+    });
+    const toggleGroup = (restoreFocus = false) => {
+      if (collapsedGeographies.has(group.name)) collapsedGeographies.delete(group.name);
+      else collapsedGeographies.add(group.name);
+      render();
+      if (restoreFocus) chart.querySelector(`[data-geography="${group.name}"]`)?.focus();
+    };
+    laneToggle.addEventListener("click", () => toggleGroup());
+    laneToggle.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleGroup(true);
+      }
+    });
+    svg.append(laneToggle);
     const laneLabel = svgElement("text", { x: margin.left + 11, y: laneY + 18, class: "swimlane-label" });
-    laneLabel.textContent = `${displayTerm(group.name)} · ${group.items.length}`;
+    laneLabel.textContent = `${collapsed ? "▸" : "▾"} ${displayTerm(group.name)} · ${group.items.length}`;
     svg.append(laneLabel);
-    group.items.forEach((polity, index) => rowCenters.set(polity.id, laneY + laneHeaderHeight + index * rowHeight + rowHeight / 2));
+    if (!collapsed) group.items.forEach((polity, index) => rowCenters.set(polity.id, laneY + laneHeaderHeight + index * rowHeight + rowHeight / 2));
     laneY += laneHeight;
   }
 
@@ -273,7 +296,8 @@ function render() {
 
   chart.replaceChildren(svg);
   colorLegend.innerHTML = `<span>Band color</span>${groups.map((group) => `<i style="--legend-color:${geographyColors[group.name]}"></i>${escapeHtml(displayTerm(group.name))}`).join("")}`;
-  summary.textContent = `${visible.length} of ${polities.length} polities visible`;
+  const collapsedCount = groups.filter((group) => collapsedGeographies.has(group.name)).length;
+  summary.textContent = `${matched.length} of ${polities.length} polities matched${collapsedCount ? ` · ${collapsedCount} lane${collapsedCount === 1 ? "" : "s"} collapsed` : ""}`;
 }
 
 document.querySelector("#apply").addEventListener("click", render);

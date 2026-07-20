@@ -333,7 +333,7 @@ HYDE downloads are slow and rate-limited — do it once and cache aggressively.
     - Linked geographic map once historical polygon coverage is sufficient.
     - Confidence shown as opacity or hatching.
     The current timeline implements the horizontal axis, compact weighted bands, confidence styling,
-    geographic swimlanes and legend, visibility/continent/country/historical-grouping filters, and
+    collapsible geographic swimlanes and legend, visibility/continent/country/historical-grouping filters, and
     Adult/Child drawer text with fallbacks. Reviewed relationship groups, transitions, and the linked
     map remain later increments.
 23. Serve the timeline and editorial workspace from one FastAPI application. Local mode binds to
