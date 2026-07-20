@@ -22,11 +22,15 @@ Validate the canonical records and generate `data.json`:
 make build
 ```
 
-Serve the timeline at <http://localhost:8000/web/>:
+Serve the timeline and review workspace at <http://127.0.0.1:8000/>:
 
 ```powershell
 make serve
 ```
+
+On Windows without `make`, run `.\.venv\Scripts\python.exe -m server.app`. The review page is
+available at <http://127.0.0.1:8000/review>. The server binds only to localhost and exposes a fixed
+allowlist of pipeline actions.
 
 ## Wikidata backbone
 

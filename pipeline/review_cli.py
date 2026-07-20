@@ -68,7 +68,11 @@ def review_priority(record: dict, metadata: dict[str, dict]) -> tuple[float, dic
     return round(score, 2), components
 
 
-def pending_records(review_path: Path = REVIEW_PATH, decisions_path: Path = DECISIONS_PATH) -> list[dict]:
+def pending_records(
+    review_path: Path = REVIEW_PATH,
+    decisions_path: Path = DECISIONS_PATH,
+    polities_dir: Path | None = None,
+) -> list[dict]:
     decisions = load_review_decisions(decisions_path)
     records = [
         json.loads(line)
@@ -80,7 +84,7 @@ def pending_records(review_path: Path = REVIEW_PATH, decisions_path: Path = DECI
         for record in records
         if record["decision"] == "review" and record["seshat_id"] not in decisions
     ]
-    metadata = polity_metadata(REVIEW_PATH.parent.parent / "polities")
+    metadata = polity_metadata(polities_dir or REVIEW_PATH.parent.parent / "polities")
     for record in pending:
         score, components = review_priority(record, metadata)
         record["review_priority"] = score

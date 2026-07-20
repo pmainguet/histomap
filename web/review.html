@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Histomap — reconciliation review</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header>
+      <p class="eyebrow">Editorial workspace</p>
+      <h1>Review queue</h1>
+      <p class="intro">High-value Seshat reconciliation decisions appear first. <a href="/">Return to timeline</a>.</p>
+      <div class="controls">
+        <button id="apply-decisions" type="button">Apply decisions</button>
+        <button id="build-data" type="button">Build data</button>
+        <span id="job-status" aria-live="polite"></span>
+      </div>
+    </header>
+    <main class="review-main">
+      <section id="review-card" class="review-card" aria-live="polite">Loading review queue…</section>
+      <aside class="details review-progress">
+        <h2>Progress</h2>
+        <p id="review-progress">Loading…</p>
+        <p>Keyboard: <kbd>1</kbd>–<kbd>5</kbd> accept, <kbd>R</kbd> reject, <kbd>S</kbd> defer.</p>
+      </aside>
+    </main>
+    <script type="module" src="/static/review.js"></script>
+  </body>
+</html>

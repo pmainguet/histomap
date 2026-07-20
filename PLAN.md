@@ -329,7 +329,9 @@ HYDE downloads are slow and rate-limited — do it once and cache aggressively.
     - Collapsible display groups derived from reviewed political relationships.
     - Linked geographic map once historical polygon coverage is sufficient.
     - Confidence shown as opacity or hatching.
-23. Host on Cloudflare Pages (free, static).
+23. Serve the timeline and editorial workspace from one FastAPI application. Local mode binds to
+    `127.0.0.1`; any public deployment must authenticate write actions. Static assets remain
+    independently deployable if a read-only public mirror is wanted later.
 
 ### Phase 7 — Print poster
 24. Write `print/render.py`: master SVG at A1/A0 dimensions, vector text, embedded legend and methodology footer.
@@ -375,7 +377,7 @@ Every Phase produces something complete and useful. None blocks the next.
 | YAML in Git | Same files indexed into DuckDB |
 | Python scripts | Same scripts, more sources |
 | Observable Plot streamgraph | D3 with split/merge animations |
-| Static HTML on Cloudflare Pages | Same, with API if needed |
+| FastAPI serving static UI + review API | Authenticated deployment or read-only static mirror |
 | Print to PDF from browser | Dedicated SVG export with `paged.js` |
 
 The data model is the durable asset. Everything else is regenerable.
@@ -389,7 +391,9 @@ The data model is the durable asset. Everything else is regenerable.
 - **SQLite / DuckDB** as a working store during reconciliation (throwaway).
 - **YAML files in Git** as the canonical dataset.
 - **Observable Plot** (or D3 later) for the web viz.
-- **Static HTML on Cloudflare Pages** for hosting.
+- **FastAPI + Uvicorn** for one local timeline, review, and allowlisted pipeline-action server.
 - **`paged.js` or headless Chromium** for print PDF export.
 
-No Postgres, no FastAPI, no backend, no infrastructure. The whole project runs on a laptop.
+No Postgres or external queue is needed: YAML and JSONL remain the durable stores, and the small
+FastAPI application runs on the laptop. Public write access is deferred until authentication is
+implemented.

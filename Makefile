@@ -51,7 +51,7 @@ validate:
 build: validate
 
 serve: build
-	python -m http.server 8000
+	python -m server.app
 
 test:
 	python -m unittest discover -s tests -v
