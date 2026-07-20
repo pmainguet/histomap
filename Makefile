@@ -1,10 +1,13 @@
-.PHONY: setup extract filter-wikidata-types import-wikidata compute-prominence enrich-relationships enrich-geography validate build serve test format lint check
+.PHONY: setup extract extract-seshat filter-wikidata-types import-wikidata compute-prominence enrich-relationships enrich-geography validate build serve test format lint check
 
 setup:
 	uv pip install -r requirements.txt ruff mypy
 
 extract:
 	python pipeline/extract_wikidata.py
+
+extract-seshat:
+	python pipeline/extract_seshat.py
 
 filter-wikidata-types:
 	python pipeline/filter_wikidata_types.py

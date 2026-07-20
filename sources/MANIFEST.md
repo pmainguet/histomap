@@ -7,6 +7,7 @@ reproduce the canonical dataset.
 |---|---|---|---|
 | Wikidata Query Service | 2026-07-19 | `https://query.wikidata.org/sparql` live data | `wikidata_raw/*.json`, `wikidata.parquet` |
 | Natural Earth Admin 0 Countries | 2026-07-20 | 1:110m GeoJSON, Natural Earth master dataset | `ne_110m_admin_0_countries.geojson` |
+| Seshat Equinox 2020 | 2026-07-20 | `Equinox_on_GitHub_June9_2022.xlsx` from `seshatdb/Equinox_Data` | `seshat_equinox_2022.xlsx` |
 
 ## Wikidata extraction
 
@@ -29,3 +30,10 @@ the YAML converter rejected 207 bindings whose inception value was not a parseab
 project's canonical `natural-earth-vector` repository. The boundaries represent present-day,
 small-scale cartographic country coverage and are used only for centroid fallback assignment;
 they are not historical polity boundaries.
+
+## Seshat Equinox
+
+The archived Equinox workbook is the current reproducible public snapshot linked from Seshat's
+data page. The repository contains a CC0 license file, while its README and the current Seshat
+download page describe the data as CC BY-NC-SA; Histomap conservatively treats the workbook as
+CC BY-NC-SA. The live Seshat download service requires an account and acceptance of current terms.
