@@ -34,6 +34,7 @@ make serve
 make extract
 make extract-seshat
 make extract-maddison
+make map-maddison
 make filter-wikidata-types
 make import-wikidata
 make reconcile
