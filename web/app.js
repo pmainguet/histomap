@@ -1,5 +1,6 @@
 const chart = document.querySelector("#chart");
 const details = document.querySelector("#details");
+const detailBackdrop = document.querySelector("#detail-backdrop");
 const summary = document.querySelector("#summary");
 const startInput = document.querySelector("#year-start");
 const endInput = document.querySelector("#year-end");
@@ -9,6 +10,7 @@ const countryInput = document.querySelector("#country");
 
 const palette = ["#a9563f", "#d0913d", "#59755e", "#51758e", "#725c87", "#9a6f72", "#797044"];
 let polities = [];
+let detailTrigger = null;
 const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
 
 function escapeHtml(value) {
@@ -49,7 +51,8 @@ function weightAt(polity, year) {
   return w0 + (w1 - w0) * ((year - y0) / (y1 - y0));
 }
 
-function showDetails(polity) {
+function showDetails(polity, trigger = null) {
+  if (trigger) detailTrigger = trigger;
   const description = polity.text?.short_adult_en || polity.notes || "Draft record; description pending review.";
   const aliases = [polity.names?.aliases_en?.replaceAll(" | ", ", "), polity.names?.fr].filter(Boolean).join("; ");
   const countries = (polity.geography?.present_countries || []).map((code) => countryNames.of(code) || code);
@@ -63,7 +66,8 @@ function showDetails(polity) {
     wikidata ? `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(wikidata)}" target="_blank" rel="noopener noreferrer">Wikidata (${escapeHtml(wikidata)}) ↗</a>` : "",
     centroid ? `<a href="https://www.openstreetmap.org/?mlat=${centroid.lat}&mlon=${centroid.lon}#map=5/${centroid.lat}/${centroid.lon}" target="_blank" rel="noopener noreferrer">View location ↗</a>` : "",
   ].filter(Boolean);
-  details.innerHTML = `<h2>${escapeHtml(polity.canonical_name)}</h2>
+  details.innerHTML = `<button class="detail-close" type="button" aria-label="Close entity details">×</button>
+    <h2>${escapeHtml(polity.canonical_name)}</h2>
     <p>${escapeHtml(description)}</p>
     <dl>
       <dt>Dates</dt><dd>${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}${duration ? ` (${duration.toLocaleString()} years)` : ""}</dd>
@@ -89,7 +93,24 @@ function showDetails(polity) {
       if (entity) showDetails(entity);
     });
   });
+  details.querySelector(".detail-close").addEventListener("click", closeDetails);
+  details.classList.add("is-open");
+  detailBackdrop.classList.add("is-open");
+  details.setAttribute("aria-hidden", "false");
+  details.querySelector(".detail-close").focus();
 }
+
+function closeDetails() {
+  details.classList.remove("is-open");
+  detailBackdrop.classList.remove("is-open");
+  details.setAttribute("aria-hidden", "true");
+  detailTrigger?.focus();
+}
+
+detailBackdrop.addEventListener("click", closeDetails);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && details.classList.contains("is-open")) closeDetails();
+});
 
 function svgElement(name, attributes = {}) {
   const element = document.createElementNS("http://www.w3.org/2000/svg", name);
@@ -170,8 +191,13 @@ function render() {
       class: `band confidence-${confidence}`,
       tabindex: "0",
     });
-    path.addEventListener("mouseenter", () => showDetails(polity));
-    path.addEventListener("focus", () => showDetails(polity));
+    path.addEventListener("click", () => showDetails(polity, path));
+    path.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        showDetails(polity, path);
+      }
+    });
     const title = svgElement("title");
     title.textContent = `${polity.canonical_name}: ${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}`;
     path.append(title);

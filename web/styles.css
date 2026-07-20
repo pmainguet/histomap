@@ -54,6 +54,7 @@ button { cursor: pointer; background: #343b35; color: white; border-color: #343b
 .confidence-legend .legendary { opacity: .38; border: 1px dashed #27251f; }
 
 main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem); gap: 1.25rem; padding: 1.25rem; }
+.timeline-main { grid-template-columns: minmax(0, 1fr); }
 .chart { min-height: 70vh; overflow: auto; background: var(--paper); border: 1px solid var(--rule); }
 .chart svg { display: block; min-width: 740px; }
 .details { position: sticky; top: 1rem; align-self: start; min-height: 9rem; padding: 1rem; background: var(--paper); border-top: 3px solid #8c422d; }
@@ -62,6 +63,11 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .details dl { display: grid; grid-template-columns: auto 1fr; gap: .3rem .8rem; font: .82rem system-ui, sans-serif; }
 .details dt { color: var(--ink-faint); }
 .details dd { margin: 0; }
+.detail-drawer { position: fixed; z-index: 20; top: 0; right: 0; width: min(28rem, 92vw); height: 100vh; max-height: none; overflow-y: auto; padding: 1.5rem; border-top: 0; border-left: 3px solid #8c422d; box-shadow: -10px 0 35px rgb(39 37 31 / 18%); transform: translateX(105%); visibility: hidden; transition: transform .22s ease, visibility 0s linear .22s; }
+.detail-drawer.is-open { transform: translateX(0); visibility: visible; transition-delay: 0s; }
+.detail-close { float: right; margin: -.5rem -.4rem .5rem .75rem; padding: .2rem .55rem; color: #27251f; background: transparent; border: 0; font: 1.8rem/1 system-ui, sans-serif; }
+.detail-backdrop { position: fixed; z-index: 19; inset: 0; display: block; width: 100%; height: 100%; padding: 0; background: rgb(39 37 31 / 28%); border: 0; opacity: 0; visibility: hidden; transition: opacity .22s ease, visibility 0s linear .22s; }
+.detail-backdrop.is-open { opacity: 1; visibility: visible; transition-delay: 0s; }
 .entity-link { display: inline; padding: 0; color: #8c422d; background: none; border: 0; font: inherit; text-align: left; text-decoration: underline; }
 .detail-links { margin: 1rem 0 0; font: .78rem system-ui, sans-serif; }
 .detail-links a { color: #8c422d; }
@@ -93,5 +99,9 @@ kbd { padding: .1rem .3rem; background: white; border: 1px solid var(--rule); fo
   .brand-mark { width: 1.5rem; height: 1.5rem; }
   .site-header nav a { padding: .4rem .45rem; }
   main { grid-template-columns: 1fr; }
-  .details { position: static; order: -1; }
+  .details:not(.detail-drawer) { position: static; order: -1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-drawer, .detail-backdrop { transition: none; }
 }

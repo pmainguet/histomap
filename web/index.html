@@ -43,11 +43,10 @@
         <i class="legendary"></i> Legendary
       </div>
     </section>
-    <main>
+    <main class="timeline-main">
       <div id="chart" class="chart" role="img" aria-label="Horizontal timeline of historical polities"></div>
-      <aside id="details" class="details" aria-live="polite">
-        <p>Hover or focus a band to inspect a polity.</p>
-      </aside>
+      <button id="detail-backdrop" class="detail-backdrop" type="button" aria-label="Close entity details" tabindex="-1"></button>
+      <aside id="details" class="details detail-drawer" aria-live="polite" aria-hidden="true"></aside>
     </main>
     <script type="module" src="/static/app.js"></script>
   </body>
