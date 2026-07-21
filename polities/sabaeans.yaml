@@ -14,7 +14,7 @@ end: 275
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  -1199: 5
+  -1199: 3
 weight_imputed: true
 icon: null
 text:
@@ -24,8 +24,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 53.57
-visibility_tier: regional
+prominence_score: 27.86
+visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -35,3 +35,20 @@ geography:
   - YE
   centroid: null
   confidence: medium
+entity_type: tribe
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships: []
+manual_overrides:
+- entity_type
+prominence_components:
+  wikidata_reach: 24.94
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 7.92
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 27.86

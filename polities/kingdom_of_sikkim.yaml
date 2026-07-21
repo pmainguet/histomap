@@ -15,12 +15,12 @@ end: 1975
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1700: 9.13
-  1750: 9.29
+  1700: 9.11
+  1750: 9.27
   1800: 9.07
-  1850: 9.4
+  1850: 9.39
   1900: 8.58
-  1950: 9.53
+  1950: 9.51
 weight_imputed: true
 icon: null
 text:
@@ -31,7 +31,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 47.72
+prominence_score: 39.39
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -48,3 +48,25 @@ geography:
     lon: 88.5
   confidence: medium
   primary_continent: asia
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: sikkim
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q3960459
+prominence_components:
+  wikidata_reach: 22.58
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.31
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 39.39

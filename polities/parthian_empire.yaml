@@ -18,9 +18,9 @@ end: 224
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  0: 8.26
-  100: 7.91
-  200: 7.12
+  0: 8.41
+  100: 7.6
+  200: 6.75
 weight_imputed: true
 icon: null
 text:
@@ -32,7 +32,7 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 60.58
+prominence_score: 59.12
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -44,3 +44,25 @@ geography:
     lat: 33.09361111
     lon: 44.58083333
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: sasanian_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1986139
+prominence_components:
+  wikidata_reach: 29.93
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.68
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 59.12

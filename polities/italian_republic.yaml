@@ -25,7 +25,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 41.9
+prominence_score: 27.2
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -37,3 +37,25 @@ geography:
     lat: 45.46666667
     lon: 9.16666667
   confidence: medium
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q472538
+relationships:
+- target: kingdom_of_italy_q223936
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q723118
+prominence_components:
+  wikidata_reach: 23.7
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 7.0
+  longevity: 1.51
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 27.2

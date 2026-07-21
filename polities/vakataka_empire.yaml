@@ -4,6 +4,8 @@ names:
   fr: empire Vakataka
 external_ids:
   wikidata: Q1501306
+  seshat:
+  - InVakat
 parent: null
 successors: []
 region: null
@@ -13,9 +15,9 @@ end: 500
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  300: 10.0
-  400: 9.15
-  500: 9.44
+  300: 8.67
+  400: 8.13
+  500: 9.61
 weight_imputed: true
 icon: null
 text:
@@ -25,9 +27,10 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
+- seshat
 - wikidata
-prominence_score: 46.16
-visibility_tier: regional
+prominence_score: 50.44
+visibility_tier: global
 eligibility: accepted
 geography:
   continents:
@@ -38,3 +41,19 @@ geography:
     lat: 23.466666666
     lon: 77.233333333
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 21.94
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.0
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 50.44

@@ -14,14 +14,14 @@ end: 1795
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1100: 7.74
-  1200: 8.71
-  1300: 9.72
-  1400: 8.58
-  1500: 9.12
-  1600: 9.56
-  1700: 8.87
-  1750: 9.32
+  1100: 7.66
+  1200: 8.78
+  1300: 9.67
+  1400: 8.68
+  1500: 9.13
+  1600: 9.55
+  1700: 8.86
+  1750: 9.3
 weight_imputed: true
 icon: null
 text:
@@ -32,7 +32,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 49.42
+prominence_score: 40.44
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -44,3 +44,25 @@ geography:
     lat: 50.616666666
     lon: 5.933333333
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: french_first_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q697787
+prominence_components:
+  wikidata_reach: 22.78
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 7.16
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 40.44

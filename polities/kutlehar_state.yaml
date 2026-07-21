@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q6448442
 parent: null
-successors: []
+successors:
+- india
 region: null
 culture_group: null
 start: 1803
@@ -24,7 +25,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 22.92
+prominence_score: 12.39
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -36,3 +37,25 @@ geography:
     lat: 31.611667
     lon: 76.112222
   confidence: low
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q1336152
+relationships:
+- target: india
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q6448442
+prominence_components:
+  wikidata_reach: 10.48
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 3.4
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 12.39

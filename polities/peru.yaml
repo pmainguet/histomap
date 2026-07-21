@@ -14,8 +14,8 @@ end: null
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1850: 6.99
-  1900: 6.6
+  1850: 7.01
+  1900: 6.64
   1950: 8.55
   2000: 6.92
 weight_imputed: true
@@ -29,8 +29,8 @@ sources:
 - hyde
 - maddison
 - wikidata
-prominence_score: 54.32
-visibility_tier: regional
+prominence_score: 50.28
+visibility_tier: global
 eligibility: accepted
 geography:
   continents:
@@ -41,3 +41,20 @@ geography:
     lat: -9.4
     lon: -76.0
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3624078
+- Q6256
+relationships: []
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 8
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 5.78
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 50.28

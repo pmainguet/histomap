@@ -27,7 +27,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 51.18
+prominence_score: 36.94
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -39,3 +39,37 @@ geography:
     lat: 52.23
     lon: 21.011111111
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: general_government
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q207272
+- target: polish_people_s_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q207272
+- target: soviet_union
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q207272
+prominence_components:
+  wikidata_reach: 27.49
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 11.09
+  longevity: 3.36
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 36.94

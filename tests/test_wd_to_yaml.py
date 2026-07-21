@@ -5,10 +5,16 @@ from tempfile import TemporaryDirectory
 import pandas as pd
 import yaml
 
-from pipeline.wd_to_yaml import allocate_ids, convert, parse_year, slugify, to_document
+from pipeline.wd_to_yaml import allocate_ids, convert, parse_year, slugify, to_document, valid_label
 
 
 class WikidataToYamlTests(unittest.TestCase):
+    def test_missing_and_placeholder_labels_are_invalid(self) -> None:
+        self.assertFalse(valid_label(float("nan")))
+        self.assertFalse(valid_label("nan"))
+        self.assertFalse(valid_label(None))
+        self.assertTrue(valid_label("Named polity"))
+
     def test_parse_year_handles_wikidata_timestamps_and_bce(self) -> None:
         self.assertEqual(parse_year("+0044-01-01T00:00:00Z"), 44)
         self.assertEqual(parse_year("-0509-01-01T00:00:00Z"), -509)
@@ -83,6 +89,35 @@ class WikidataToYamlTests(unittest.TestCase):
 
             self.assertEqual(result, (1, 0, 1))
             self.assertTrue((root / "polities" / "good.yaml").exists())
+
+    def test_convert_rejects_missing_labels_and_prunes_generated_nan_drafts(self) -> None:
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            output = root / "polities"
+            output.mkdir()
+            invalid_draft = output / "nan_q1.yaml"
+            invalid_draft.write_text(
+                yaml.safe_dump(
+                    {
+                        "canonical_name": "nan",
+                        "external_ids": {"wikidata": "Q1"},
+                        "sources": ["wikidata"],
+                        "notes": "Automatically generated from Wikidata; requires review.",
+                    }
+                ),
+                encoding="utf-8",
+            )
+            parquet = root / "input.parquet"
+            pd.DataFrame(
+                [
+                    {"qid": "Q1", "label_en": float("nan"), "inception": "+0100"},
+                    {"qid": "Q2", "label_en": "Named", "inception": "+0100"},
+                ]
+            ).to_parquet(parquet)
+
+            self.assertEqual(convert(parquet, output), (1, 0, 1))
+            self.assertFalse(invalid_draft.exists())
+            self.assertTrue((output / "named.yaml").exists())
 
     def test_convert_skips_type_exclusions(self) -> None:
         with TemporaryDirectory() as temporary_directory:

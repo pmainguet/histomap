@@ -4,6 +4,8 @@ names:
   fr: Élymaïde
 external_ids:
   wikidata: Q1275158
+  seshat:
+  - IrElym2
 parent: null
 successors:
 - sasanian_empire
@@ -14,9 +16,9 @@ end: 224
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  0: 7.96
-  100: 7.92
-  200: 7.55
+  0: 6.97
+  100: 6.49
+  200: 6.27
 weight_imputed: true
 icon: null
 text:
@@ -26,9 +28,10 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
+- seshat
 - wikidata
-prominence_score: 42.25
-visibility_tier: detailed
+prominence_score: 48.1
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -39,3 +42,26 @@ geography:
     lat: 32.3167
     lon: 48.4333
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+- Q417175
+relationships:
+- target: sasanian_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1275158
+prominence_components:
+  wikidata_reach: 19.18
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.42
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 48.1

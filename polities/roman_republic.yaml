@@ -13,7 +13,7 @@ external_ids:
   - ItRomR
 parent: roman_kingdom
 successors:
-- roman_empire
+- byzantine_empire
 region: italy
 culture_group: latin
 start: -509
@@ -43,7 +43,7 @@ notes: Traditional founding date 509 BCE is legendary; end conventionally 27 BCE
 sources:
 - seshat
 - wikidata
-prominence_score: 74.17
+prominence_score: 81.26
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -55,3 +55,31 @@ geography:
     lat: 41.89
     lon: 12.48
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: roman_kingdom
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1747689
+- target: byzantine_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1747689
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 12
+  historical_evidence: 20
+  relationship_centrality: 5.55
+  longevity: 6.71
+  editorial_work: 7
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -0.0
+  aggregate_penalty: 0
+  total: 81.26

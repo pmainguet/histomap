@@ -15,8 +15,8 @@ end: 1102
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1000: 6.08
-  1100: 5.4
+  1000: 5.74
+  1100: 5.34
 weight_imputed: true
 icon: null
 text:
@@ -27,7 +27,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 49.58
+prominence_score: 42.52
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -39,3 +39,25 @@ geography:
     lat: 44.255369
     lon: 17.302665
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: croatia_in_personal_union_with_hungary
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q858841
+prominence_components:
+  wikidata_reach: 24.35
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 5.63
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 42.52

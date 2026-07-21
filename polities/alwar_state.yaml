@@ -16,9 +16,7 @@ end: 1949
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1800: 9.42
-  1850: 9.88
-  1900: 9.09
+  1770: 5
 weight_imputed: true
 icon: null
 text:
@@ -27,11 +25,10 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
-- hyde
 - wikidata
-prominence_score: 37.67
+prominence_score: 23.38
 visibility_tier: detailed
-eligibility: accepted
+eligibility: review
 geography:
   continents:
   - asia
@@ -41,3 +38,31 @@ geography:
     lat: 27.95
     lon: 76.1
   confidence: medium
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q1336152
+relationships:
+- target: india
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1553143
+- target: united_states_of_matsya
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1553143
+prominence_components:
+  wikidata_reach: 17.19
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 5.55
+  longevity: 5.64
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 23.38

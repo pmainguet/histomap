@@ -25,12 +25,34 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 31.97
+prominence_score: 21.21
 visibility_tier: detailed
-eligibility: accepted
+eligibility: review
 geography:
   continents:
   - europe
   present_countries: []
   centroid: null
   confidence: medium
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q99541706
+relationships:
+- target: ukrainian_soviet_socialist_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q4533605
+prominence_components:
+  wikidata_reach: 18.46
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 7.0
+  longevity: 0.75
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 21.21

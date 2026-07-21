@@ -15,8 +15,8 @@ end: 655
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  500: 4.18
-  600: 3.57
+  500: 5.04
+  600: 3.92
 weight_imputed: true
 icon: null
 text:
@@ -27,7 +27,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 49.58
+prominence_score: 40.48
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -39,3 +39,26 @@ geography:
     lat: 54.0
     lon: -0.5
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+- Q417175
+relationships:
+- target: kingdom_of_northumbria
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q506008
+prominence_components:
+  wikidata_reach: 24.19
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 5.78
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 40.48

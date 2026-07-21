@@ -28,11 +28,37 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - seshat
 - wikidata
-prominence_score: 52.05
+prominence_score: 43.97
 visibility_tier: regional
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - asia
+  primary_continent: asia
+  present_countries:
+  - IQ
+  confidence: high
+manual_overrides:
+- geography
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: achaemenid_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q624887
+prominence_components:
+  wikidata_reach: 26.56
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 5.55
+  longevity: 4.86
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 43.97

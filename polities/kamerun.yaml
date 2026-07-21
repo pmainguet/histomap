@@ -16,7 +16,7 @@ end: 1919
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1900: 5.67
+  1900: 5.72
 weight_imputed: true
 icon: null
 text:
@@ -27,7 +27,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 47.79
+prominence_score: 41.38
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -39,3 +39,31 @@ geography:
     lat: 4.0369
     lon: 9.6858
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: british_cameroons
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q668294
+- target: french_cameroons
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q668294
+prominence_components:
+  wikidata_reach: 24.94
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 3.89
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 41.38

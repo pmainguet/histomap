@@ -27,8 +27,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 56.33
-visibility_tier: global
+prominence_score: 40.06
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -39,3 +39,31 @@ geography:
     lat: 52.52
     lon: 13.375
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: free_city_of_danzig_q216173
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q41304
+- target: nazi_germany
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q41304
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 12.05
+  longevity: 3.01
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 40.06

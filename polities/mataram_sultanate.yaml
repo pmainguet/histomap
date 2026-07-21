@@ -5,6 +5,8 @@ names:
   aliases_en: Mataram | Islamic Mataram Kingdom | Sultanate of Mataram
 external_ids:
   wikidata: Q402145
+  seshat:
+  - IdMatrm
 parent: null
 successors:
 - surakarta_sunanate
@@ -16,9 +18,9 @@ end: 1755
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1600: 7.88
-  1700: 7.14
-  1750: 7.21
+  1600: 1.0
+  1700: 1.78
+  1750: 1.86
 weight_imputed: true
 icon: null
 text:
@@ -28,9 +30,10 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
+- seshat
 - wikidata
-prominence_score: 45.85
-visibility_tier: regional
+prominence_score: 53.73
+visibility_tier: global
 eligibility: accepted
 geography:
   continents:
@@ -41,3 +44,31 @@ geography:
     lat: -7.801388888
     lon: 110.364444444
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: surakarta_sunanate
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q402145
+- target: yogyakarta_sultanate
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q402145
+prominence_components:
+  wikidata_reach: 22.16
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 5.58
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 53.73

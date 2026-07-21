@@ -13,7 +13,7 @@ end: null
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1839: 5
+  1839: 3
 weight_imputed: true
 icon: null
 text:
@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 19.75
+prominence_score: 17.88
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -38,3 +38,19 @@ geography:
     lon: -94.99077778
   confidence: medium
   primary_continent: north_america
+entity_type: tribe
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q7840353
+relationships: []
+prominence_components:
+  wikidata_reach: 17.19
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 5.69
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 17.88

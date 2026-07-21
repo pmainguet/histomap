@@ -14,10 +14,10 @@ end: null
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1850: 3.31
-  1900: 4.17
-  1950: 6.21
-  2000: 4.32
+  1850: 3.36
+  1900: 4.24
+  1950: 6.24
+  2000: 4.33
 weight_imputed: true
 icon: null
 text:
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - maddison
 - wikidata
-prominence_score: 52.53
+prominence_score: 42.67
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -40,3 +40,20 @@ geography:
     lat: 13.668889
     lon: -88.866111
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3624078
+- Q6256
+relationships: []
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 5.67
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 42.67

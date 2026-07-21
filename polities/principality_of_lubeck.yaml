@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 29.39
+prominence_score: 8.38
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -31,3 +31,24 @@ geography:
   present_countries: []
   centroid: null
   confidence: null
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: grand_duchy_of_oldenburg
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1311767
+prominence_components:
+  wikidata_reach: 12.68
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 5.55
+  longevity: 5.16
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 8.38

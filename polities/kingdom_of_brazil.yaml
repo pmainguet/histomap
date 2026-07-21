@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 35.55
+prominence_score: 14.56
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -36,3 +36,30 @@ geography:
   present_countries: []
   centroid: null
   confidence: medium
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: united_kingdom_of_portugal_brazil_and_the_algarves
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q3932042
+- target: united_kingdom_of_portugal_brazil_and_the_algarves
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q3932042
+prominence_components:
+  wikidata_reach: 18.83
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 8.13
+  longevity: 2.6
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 14.56

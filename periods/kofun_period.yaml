@@ -1,0 +1,14 @@
+id: kofun_period
+canonical_name: Kofun period
+kind: protohistorical
+start: 250
+end: 538
+geography:
+  continents: [asia]
+  present_countries: [JP]
+successors: [asuka_period]
+authority: DBpedia/Wikipedia periodization
+external_ids:
+  dbpedia: https://dbpedia.org/resource/Kofun_period
+source_urls:
+  - https://dbpedia.org/resource/Kofun_period

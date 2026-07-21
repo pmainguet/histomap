@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 30.38
+prominence_score: 24.21
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -32,6 +32,22 @@ geography:
   present_countries:
   - PK
   centroid:
-    lat: 34.782777777
-    lon: 72.361944444
+    lat: 35.2416
+    lon: 72.49933
   confidence: medium
+entity_type: civilization
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q28171280
+relationships: []
+prominence_components:
+  wikidata_reach: 24.8
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 4.41
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 24.21

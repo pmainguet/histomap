@@ -15,7 +15,7 @@ end: 1863
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1850: 7.15
+  1850: 7.16
 weight_imputed: true
 icon: null
 text:
@@ -26,8 +26,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 32.87
-visibility_tier: detailed
+prominence_score: 33.85
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -38,3 +38,25 @@ geography:
     lat: 19.43333333
     lon: -99.13333333
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: second_mexican_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q7443295
+prominence_components:
+  wikidata_reach: 16.71
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 3.14
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 33.85

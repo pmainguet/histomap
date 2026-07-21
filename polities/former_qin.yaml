@@ -29,7 +29,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 43.17
+prominence_score: 30.89
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -37,3 +37,49 @@ geography:
   present_countries: []
   centroid: null
   confidence: null
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q50068795
+relationships:
+- target: later_liang
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1471995
+- target: later_qin
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1471995
+- target: later_yan
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1471995
+- target: western_qin
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1471995
+- target: western_yan
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1471995
+prominence_components:
+  wikidata_reach: 21.94
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 9.83
+  longevity: 4.13
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 30.89

@@ -1,0 +1,21 @@
+id: tibet_under_yuan_administrative_rule_period
+canonical_name: Tibet under Yuan administrative rule
+kind: historical
+start: 1270
+end: 1354
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries: []
+  centroid: null
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Wikidata period classification
+external_ids:
+  wikidata: Q3216325
+notes: Period overlay routed from a Wikidata record after editorial role review.
+source_urls:
+- https://www.wikidata.org/wiki/Q3216325

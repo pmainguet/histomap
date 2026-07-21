@@ -1,10 +1,10 @@
 # Wikidata relationship enrichment
 
 - Raw Links: 10,881
-- Internal Links: 7,862
-- Auto Candidates: 1,356
-- Review Candidates: 1,130
-- Parents Applied: 84
-- Successors Applied: 1,188
+- Internal Links: 7,652
+- Auto Candidates: 1,363
+- Review Candidates: 1,066
+- Parents Applied: 2
+- Successors Applied: 7
 - Conflicts: 6
-- Group Candidates: 270
+- Group Candidates: 264

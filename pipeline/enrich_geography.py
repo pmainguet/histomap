@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -20,6 +21,7 @@ PARQUET_PATH = ROOT / "sources" / "wikidata.parquet"
 RELATIONSHIP_CACHE = ROOT / "sources" / "wikidata_relationships.json"
 COUNTRY_CACHE = ROOT / "sources" / "wikidata_country_metadata.json"
 BOUNDARIES_PATH = ROOT / "sources" / "ne_110m_admin_0_countries.geojson"
+HIGH_RES_BOUNDARIES_PATH = ROOT / "sources" / "ne_10m_admin_0_countries.geojson"
 REPORT_PATH = ROOT / "reports" / "geography_coverage.md"
 
 
@@ -28,6 +30,9 @@ def field_locked(document: dict, field: str) -> bool:
 NATURAL_EARTH_URL = (
     "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/"
     "geojson/ne_110m_admin_0_countries.geojson"
+)
+HIGH_RES_BOUNDARIES_URL = (
+    "https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson"
 )
 API_URL = "https://www.wikidata.org/w/api.php"
 USER_AGENT = "histomap/0.1 (https://github.com/pmainguet/histomap)"
@@ -92,16 +97,67 @@ def locate_point(lon: float, lat: float, features: list[dict]) -> tuple[str, str
     return None
 
 
-def load_boundaries(offline: bool = False) -> list[dict]:
-    if not BOUNDARIES_PATH.exists():
+def point_segment_distance(
+    lon: float, lat: float, start: list[float], end: list[float]
+) -> float:
+    """Return an approximate planar distance in degrees for coastal fallback matching."""
+    x1, y1 = start[:2]
+    x2, y2 = end[:2]
+    dx, dy = x2 - x1, y2 - y1
+    if dx == 0 and dy == 0:
+        return math.hypot(lon - x1, lat - y1)
+    amount = max(
+        0.0,
+        min(1.0, ((lon - x1) * dx + (lat - y1) * dy) / (dx * dx + dy * dy)),
+    )
+    return math.hypot(lon - (x1 + amount * dx), lat - (y1 + amount * dy))
+
+
+def locate_near_coast(
+    lon: float, lat: float, features: list[dict], max_distance: float = 0.5
+) -> tuple[str, str] | None:
+    """Find a unique nearby country when coarse polygons leave a small coastal gap."""
+    matches: list[tuple[float, str, str]] = []
+    for feature in features:
+        geometry = feature.get("geometry") or {}
+        polygons = (
+            [geometry.get("coordinates", [])]
+            if geometry.get("type") == "Polygon"
+            else geometry.get("coordinates", [])
+            if geometry.get("type") == "MultiPolygon"
+            else []
+        )
+        distances = [
+            point_segment_distance(lon, lat, ring[index - 1], ring[index])
+            for polygon in polygons
+            for ring in polygon
+            for index in range(len(ring))
+        ]
+        properties = feature.get("properties", {})
+        iso = properties.get("ISO_A2_EH") or properties.get("ISO_A2")
+        continent = str(properties.get("CONTINENT", "")).lower().replace(" ", "_")
+        if distances and iso and len(iso) == 2 and iso != "-99":
+            matches.append((min(distances), iso.upper(), continent))
+    matches.sort()
+    if not matches or matches[0][0] > max_distance:
+        return None
+    if len(matches) > 1 and matches[1][0] - matches[0][0] < 0.05:
+        return None
+    return matches[0][1], matches[0][2]
+
+
+def load_boundaries(offline: bool = False, high_resolution: bool = False) -> list[dict]:
+    path = HIGH_RES_BOUNDARIES_PATH if high_resolution else BOUNDARIES_PATH
+    url = HIGH_RES_BOUNDARIES_URL if high_resolution else NATURAL_EARTH_URL
+    if not path.exists():
         if offline:
             raise ValueError("Natural Earth boundary cache is missing")
-        request = Request(NATURAL_EARTH_URL, headers={"User-Agent": USER_AGENT})
+        request = Request(url, headers={"User-Agent": USER_AGENT})
         with urlopen(request, timeout=120) as response:  # noqa: S310 - fixed HTTPS endpoint
             payload = response.read()
-        BOUNDARIES_PATH.parent.mkdir(parents=True, exist_ok=True)
-        BOUNDARIES_PATH.write_bytes(payload)
-    return json.loads(BOUNDARIES_PATH.read_text(encoding="utf-8"))["features"]
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(payload)
+    return json.loads(path.read_text(encoding="utf-8"))["features"]
 
 
 def _claim_values(entity: dict, prop: str) -> list[object]:
@@ -168,8 +224,18 @@ def country_metadata(qids: set[str], offline: bool = False) -> dict[str, dict]:
     return cache
 
 
-def run(offline: bool = False) -> dict[str, int]:
-    boundaries = load_boundaries(offline)
+def geography_category(geography: dict) -> str:
+    if geography.get("present_countries"):
+        return "country"
+    if geography.get("continents"):
+        return "continent_only"
+    if geography.get("centroid"):
+        return "centroid_only"
+    return "unknown"
+
+
+def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
+    boundaries = load_boundaries(offline, high_resolution=only_missing)
     frame = pd.read_parquet(PARQUET_PATH, columns=["qid", "coords", "country_qid"])
     records = {str(row["qid"]): row for row in frame.to_dict(orient="records")}
     p17: dict[str, set[str]] = {}
@@ -188,18 +254,11 @@ def run(offline: bool = False) -> dict[str, int]:
     for path in POLITIES_DIR.glob("*.yaml"):
         document = yaml.safe_load(path.read_text(encoding="utf-8"))
         existing_geography = document.get("geography") or {}
-        if field_locked(document, "geography"):
-            countries = set(existing_geography.get("present_countries", []))
-            continents = set(existing_geography.get("continents", []))
-            category = (
-                "country"
-                if countries
-                else "continent_only"
-                if continents
-                else "centroid_only"
-                if existing_geography.get("centroid")
-                else "unknown"
-            )
+        missing_with_centroid = bool(existing_geography.get("centroid")) and not any(
+            existing_geography.get(key) for key in ("continents", "present_countries")
+        )
+        if field_locked(document, "geography") or (only_missing and not missing_with_centroid):
+            category = geography_category(existing_geography)
             counts[category] += 1
             tier = document.get("visibility_tier", "detailed")
             by_tier.setdefault(tier, {key: 0 for key in counts})[category] += 1
@@ -207,6 +266,9 @@ def run(offline: bool = False) -> dict[str, int]:
         qid = (document.get("external_ids") or {}).get("wikidata")
         record = records.get(qid, {})
         point = parse_point(record.get("coords"))
+        if point is None and existing_geography.get("centroid"):
+            centroid = existing_geography["centroid"]
+            point = float(centroid["lon"]), float(centroid["lat"])
         countries: set[str] = set()
         continents: set[str] = set()
         for country_qid in p17.get(qid, set()):
@@ -215,6 +277,8 @@ def run(offline: bool = False) -> dict[str, int]:
                 countries.add(info["iso2"])
             continents.update(info.get("continents", []))
         located = locate_point(*point, boundaries) if point else None
+        if located is None and point and only_missing:
+            located = locate_near_coast(*point, boundaries)
         if located:
             countries.add(located[0])
             if located[1]:
@@ -263,8 +327,13 @@ def run(offline: bool = False) -> dict[str, int]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--offline", action="store_true")
+    parser.add_argument(
+        "--only-missing",
+        action="store_true",
+        help="Only fill records with a centroid but no country or continent",
+    )
     args = parser.parse_args()
-    counts = run(offline=args.offline)
+    counts = run(offline=args.offline, only_missing=args.only_missing)
     print("Geography enrichment: " + ", ".join(f"{key}={value}" for key, value in counts.items()))
 
 

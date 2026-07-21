@@ -15,12 +15,12 @@ end: 1859
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1400: 5.8
-  1500: 6.64
-  1600: 6.59
-  1700: 6.36
-  1750: 6.97
-  1800: 7.44
+  1400: 5.77
+  1500: 6.56
+  1600: 6.68
+  1700: 6.41
+  1750: 7.01
+  1800: 7.45
   1850: 7.79
 weight_imputed: true
 icon: null
@@ -32,7 +32,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 48.53
+prominence_score: 39.89
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -44,3 +44,25 @@ geography:
     lat: 44.416666666
     lon: 26.1
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: united_principalities_of_moldavia_and_wallachia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q389004
+prominence_components:
+  wikidata_reach: 22.58
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.81
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 39.89

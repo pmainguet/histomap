@@ -1,0 +1,473 @@
+[
+  {
+    "id": "asuka_period",
+    "canonical_name": "Asuka period",
+    "kind": "historical",
+    "start": 538,
+    "end": 710,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "JP"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "dbpedia": "https://dbpedia.org/resource/Asuka_period"
+    },
+    "notes": "",
+    "source_urls": [
+      "https://dbpedia.org/resource/Asuka_period"
+    ]
+  },
+  {
+    "id": "early_dynastic_mesopotamia",
+    "canonical_name": "Early Dynastic Mesopotamia",
+    "kind": "protohistorical",
+    "start": -2900,
+    "end": -2350,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "IQ"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "dbpedia": "https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)"
+    },
+    "notes": "",
+    "source_urls": [
+      "https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)"
+    ]
+  },
+  {
+    "id": "egyptian_middle_kingdom",
+    "canonical_name": "Middle Kingdom of Egypt",
+    "kind": "historical",
+    "start": -2055,
+    "end": -1650,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "EG"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "dbpedia": "https://dbpedia.org/resource/Middle_Kingdom_of_Egypt"
+    },
+    "notes": "Pilot authority record; dates are conventional and vary by chronology.",
+    "source_urls": [
+      "https://dbpedia.org/resource/Middle_Kingdom_of_Egypt"
+    ]
+  },
+  {
+    "id": "egyptian_old_kingdom",
+    "canonical_name": "Old Kingdom of Egypt",
+    "kind": "historical",
+    "start": -2686,
+    "end": -2181,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "EG"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [
+      "egyptian_middle_kingdom"
+    ],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "wikidata": "Q177819",
+      "dbpedia": "https://dbpedia.org/resource/Old_Kingdom_of_Egypt"
+    },
+    "notes": "Pilot authority record; dates are conventional and vary by chronology.",
+    "source_urls": [
+      "https://dbpedia.org/resource/Old_Kingdom_of_Egypt"
+    ]
+  },
+  {
+    "id": "european_bronze_age",
+    "canonical_name": "Bronze Age Europe",
+    "kind": "protohistorical",
+    "start": -3200,
+    "end": -600,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [
+      "european_iron_age"
+    ],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "dbpedia": "https://dbpedia.org/resource/Bronze_Age_Europe"
+    },
+    "notes": "",
+    "source_urls": [
+      "https://dbpedia.org/resource/Bronze_Age_Europe"
+    ]
+  },
+  {
+    "id": "european_iron_age",
+    "canonical_name": "Iron Age Europe",
+    "kind": "protohistorical",
+    "start": -1200,
+    "end": 800,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "dbpedia": "https://dbpedia.org/resource/Iron_Age_Europe"
+    },
+    "notes": "",
+    "source_urls": [
+      "https://dbpedia.org/resource/Iron_Age_Europe"
+    ]
+  },
+  {
+    "id": "european_neolithic",
+    "canonical_name": "Neolithic Europe",
+    "kind": "prehistorical",
+    "start": -7000,
+    "end": -1700,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "dbpedia": "https://dbpedia.org/resource/Neolithic_Europe"
+    },
+    "notes": "",
+    "source_urls": [
+      "https://dbpedia.org/resource/Neolithic_Europe"
+    ]
+  },
+  {
+    "id": "jomon_period",
+    "canonical_name": "Jōmon period",
+    "kind": "prehistorical",
+    "start": -10000,
+    "end": -300,
+    "start_confidence": "low",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "JP"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [
+      "yayoi_period"
+    ],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "dbpedia": "https://dbpedia.org/resource/J%C5%8Dmon_period"
+    },
+    "notes": "Start is clipped to Histomap's current -10000 year boundary.",
+    "source_urls": [
+      "https://dbpedia.org/resource/J%C5%8Dmon_period"
+    ]
+  },
+  {
+    "id": "kofun_period",
+    "canonical_name": "Kofun period",
+    "kind": "protohistorical",
+    "start": 250,
+    "end": 538,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "JP"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [
+      "asuka_period"
+    ],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "dbpedia": "https://dbpedia.org/resource/Kofun_period"
+    },
+    "notes": "",
+    "source_urls": [
+      "https://dbpedia.org/resource/Kofun_period"
+    ]
+  },
+  {
+    "id": "mesoamerican_classic",
+    "canonical_name": "Mesoamerican Classic period",
+    "kind": "historical",
+    "start": 250,
+    "end": 900,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "present_countries": [
+        "BZ",
+        "GT",
+        "HN",
+        "MX",
+        "SV"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [
+      "mesoamerican_postclassic"
+    ],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "dbpedia": "https://dbpedia.org/resource/Mesoamerican_chronology"
+    },
+    "notes": "",
+    "source_urls": [
+      "https://dbpedia.org/resource/Mesoamerican_chronology"
+    ]
+  },
+  {
+    "id": "mesoamerican_postclassic",
+    "canonical_name": "Mesoamerican Postclassic period",
+    "kind": "historical",
+    "start": 900,
+    "end": 1521,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "present_countries": [
+        "BZ",
+        "GT",
+        "HN",
+        "MX",
+        "SV"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "dbpedia": "https://dbpedia.org/resource/Mesoamerican_chronology"
+    },
+    "notes": "",
+    "source_urls": [
+      "https://dbpedia.org/resource/Mesoamerican_chronology"
+    ]
+  },
+  {
+    "id": "mesoamerican_preclassic",
+    "canonical_name": "Mesoamerican Preclassic period",
+    "kind": "protohistorical",
+    "start": -2000,
+    "end": 250,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "present_countries": [
+        "BZ",
+        "GT",
+        "HN",
+        "MX",
+        "SV"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [
+      "mesoamerican_classic"
+    ],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "dbpedia": "https://dbpedia.org/resource/Mesoamerican_chronology"
+    },
+    "notes": "",
+    "source_urls": [
+      "https://dbpedia.org/resource/Mesoamerican_chronology"
+    ]
+  },
+  {
+    "id": "tibet_under_yuan_administrative_rule_period",
+    "canonical_name": "Tibet under Yuan administrative rule",
+    "kind": "historical",
+    "start": 1270,
+    "end": 1354,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {
+      "wikidata": "Q3216325"
+    },
+    "notes": "Period overlay routed from a Wikidata record after editorial role review.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q3216325"
+    ]
+  },
+  {
+    "id": "uruk_period",
+    "canonical_name": "Uruk period",
+    "kind": "protohistorical",
+    "start": -4000,
+    "end": -3100,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "IQ"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [
+      "early_dynastic_mesopotamia"
+    ],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "dbpedia": "https://dbpedia.org/resource/Uruk_period"
+    },
+    "notes": "",
+    "source_urls": [
+      "https://dbpedia.org/resource/Uruk_period"
+    ]
+  },
+  {
+    "id": "yayoi_period",
+    "canonical_name": "Yayoi period",
+    "kind": "protohistorical",
+    "start": -900,
+    "end": 250,
+    "start_confidence": "low",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "JP"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [
+      "kofun_period"
+    ],
+    "authority": "DBpedia/Wikipedia periodization",
+    "external_ids": {
+      "dbpedia": "https://dbpedia.org/resource/Yayoi_period"
+    },
+    "notes": "",
+    "source_urls": [
+      "https://dbpedia.org/resource/Yayoi_period"
+    ]
+  }
+]

@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 37.72
+prominence_score: 18.71
 visibility_tier: detailed
 eligibility: excluded
 geography:
@@ -35,3 +35,18 @@ geography:
     lat: 49.044166666
     lon: 24.359722222
   confidence: medium
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships: []
+prominence_components:
+  wikidata_reach: 26.78
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 6.93
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 18.71

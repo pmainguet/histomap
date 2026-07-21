@@ -16,7 +16,7 @@ end: 1931
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1900: 6.64
+  1900: 6.67
 weight_imputed: true
 icon: null
 text:
@@ -27,7 +27,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 46.26
+prominence_score: 38.43
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -41,3 +41,25 @@ geography:
     lon: -3.5
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: second_spanish_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1044536
+prominence_components:
+  wikidata_reach: 23.52
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 4.41
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 38.43

@@ -25,7 +25,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 43.66
+prominence_score: 24.81
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -40,3 +40,25 @@ geography:
     lon: 44.38333333
   confidence: medium
   primary_continent: asia
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_iraq
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q146720
+prominence_components:
+  wikidata_reach: 23.52
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 2.78
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 24.81

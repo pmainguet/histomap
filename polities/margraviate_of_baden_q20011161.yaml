@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 13.6
+prominence_score: 10.31
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -32,3 +32,25 @@ geography:
   present_countries: []
   centroid: null
   confidence: medium
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q26830017
+relationships:
+- target: electorate_of_baden
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q20011161
+prominence_components:
+  wikidata_reach: 4.52
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 7.0
+  longevity: 3.8
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 10.31

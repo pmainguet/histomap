@@ -1,0 +1,13 @@
+id: early_dynastic_mesopotamia
+canonical_name: Early Dynastic Mesopotamia
+kind: protohistorical
+start: -2900
+end: -2350
+geography:
+  continents: [asia]
+  present_countries: [IQ]
+authority: DBpedia/Wikipedia periodization
+external_ids:
+  dbpedia: https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)
+source_urls:
+  - https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)

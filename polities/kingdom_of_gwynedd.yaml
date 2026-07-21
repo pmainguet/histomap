@@ -15,14 +15,14 @@ end: 1216
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  500: 4.21
-  600: 3.67
-  700: 4.55
-  800: 4.83
-  900: 5.38
-  1000: 5.62
-  1100: 5.67
-  1200: 7.26
+  500: 5.07
+  600: 4.02
+  700: 4.33
+  800: 4.87
+  900: 5.04
+  1000: 5.25
+  1100: 5.6
+  1200: 7.43
 weight_imputed: true
 icon: null
 text:
@@ -33,7 +33,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 51.42
+prominence_score: 41.65
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -45,3 +45,26 @@ geography:
     lat: 52.833333
     lon: -3.916667
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+- Q417175
+relationships:
+- target: principality_of_wales
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q816814
+prominence_components:
+  wikidata_reach: 23.87
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 7.28
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 41.65

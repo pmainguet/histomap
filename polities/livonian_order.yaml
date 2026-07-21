@@ -23,11 +23,26 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 51.38
-visibility_tier: regional
+prominence_score: 19.58
+visibility_tier: detailed
 eligibility: review
 geography:
   continents: []
   present_countries: []
   centroid: null
   confidence: medium
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships: []
+prominence_components:
+  wikidata_reach: 24.8
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 6.28
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 19.58

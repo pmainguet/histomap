@@ -26,8 +26,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 52.18
-visibility_tier: regional
+prominence_score: 30.09
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -38,3 +38,25 @@ geography:
     lat: 33.049117
     lon: 106.993575
   confidence: medium
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q836688
+relationships:
+- target: qin_dynasty
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q34756
+prominence_components:
+  wikidata_reach: 24.5
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 7.09
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 30.09

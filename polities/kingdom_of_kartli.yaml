@@ -14,10 +14,10 @@ end: 1762
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1500: 5.84
-  1600: 5.76
-  1700: 5.18
-  1750: 5.51
+  1500: 5.73
+  1600: 5.88
+  1700: 5.25
+  1750: 5.57
 weight_imputed: true
 icon: null
 text:
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 47.18
+prominence_score: 41.1
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -40,3 +40,26 @@ geography:
     lat: 41.7225
     lon: 44.7925
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+- Q417175
+relationships:
+- target: kingdom_of_kartli_kakheti
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q195972
+prominence_components:
+  wikidata_reach: 22.37
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 6.18
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 41.1

@@ -23,8 +23,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 47.81
-visibility_tier: regional
+prominence_score: 33.0
+visibility_tier: detailed
 eligibility: excluded
 geography:
   continents:
@@ -37,3 +37,19 @@ geography:
     lon: 10.992777777
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q4115680
+relationships: []
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 8
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 33.0

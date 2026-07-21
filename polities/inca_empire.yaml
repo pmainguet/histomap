@@ -18,7 +18,7 @@ end: 1533
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1500: 4.6
+  1500: 5.81
 weight_imputed: true
 icon: null
 text:
@@ -30,7 +30,7 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 61.11
+prominence_score: 59.5
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -42,3 +42,25 @@ geography:
     lat: -13.51666667
     lon: -71.96666667
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: neo_inca_state
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q28573
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 4.96
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 59.5

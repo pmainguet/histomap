@@ -16,9 +16,9 @@ end: 1744
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1500: 3.86
-  1600: 3.39
-  1700: 2.67
+  1500: 3.68
+  1600: 3.58
+  1700: 2.8
 weight_imputed: true
 icon: null
 text:
@@ -29,7 +29,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 31.03
+prominence_score: 31.41
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -41,3 +41,31 @@ geography:
     lat: 24.733333055
     lon: 46.575556111
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: first_saudi_state
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q56885910
+- target: saudi_arabia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q56885910
+prominence_components:
+  wikidata_reach: 12.68
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 6.19
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 31.41

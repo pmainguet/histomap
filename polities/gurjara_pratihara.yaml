@@ -4,6 +4,8 @@ names:
   fr: Pratihâra
 external_ids:
   wikidata: Q5324
+  seshat:
+  - InGurjr
 parent: null
 successors: []
 region: null
@@ -22,12 +24,33 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 47.79
+prominence_score: 41.46
 visibility_tier: regional
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - asia
+  primary_continent: asia
+  present_countries:
+  - IN
+  confidence: high
+manual_overrides:
+- geography
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 22.97
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 5.55
+  longevity: 5.94
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 41.46

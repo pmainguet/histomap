@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 34.37
+prominence_score: 11.26
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -39,3 +39,24 @@ geography:
     lon: 94.39
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: tuvan_people_s_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q56282586
+prominence_components:
+  wikidata_reach: 18.46
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 5.55
+  longevity: 2.26
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 11.26

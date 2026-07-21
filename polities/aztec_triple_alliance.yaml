@@ -25,8 +25,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 42.4
-visibility_tier: detailed
+prominence_score: 32.64
+visibility_tier: global
 eligibility: accepted
 geography:
   continents:
@@ -37,3 +37,19 @@ geography:
     lat: 19.43333333
     lon: -99.13333333
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 20.7
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 4.93
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 32.64

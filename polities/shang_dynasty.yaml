@@ -7,6 +7,8 @@ names:
     | Yin | Ine
 external_ids:
   wikidata: Q128938
+  seshat:
+  - CnShang
 parent: null
 successors: []
 region: null
@@ -25,9 +27,10 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 60.19
-visibility_tier: global
+prominence_score: 46.89
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -38,3 +41,20 @@ geography:
     lat: 36.12083333
     lon: 114.325
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships: []
+manual_overrides:
+- entity_type
+prominence_components:
+  wikidata_reach: 29.53
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 6.86
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 46.89

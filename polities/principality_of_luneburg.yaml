@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 41.94
+prominence_score: 23.93
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -31,3 +31,25 @@ geography:
   present_countries: []
   centroid: null
   confidence: null
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q26830017
+relationships:
+- target: holy_roman_empire
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q280312
+prominence_components:
+  wikidata_reach: 18.83
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 6.6
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 23.93

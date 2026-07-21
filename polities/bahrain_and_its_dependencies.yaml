@@ -16,10 +16,10 @@ end: 1971
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1800: 2.47
-  1850: 2.9
-  1900: 2.25
-  1950: 3.28
+  1800: 2.53
+  1850: 2.95
+  1900: 2.35
+  1950: 3.36
 weight_imputed: true
 icon: null
 text:
@@ -30,8 +30,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 26.58
-visibility_tier: detailed
+prominence_score: 26.68
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents: []
@@ -40,3 +40,26 @@ geography:
     lat: 26.0675
     lon: 50.551111
   confidence: null
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+- Q417175
+relationships:
+- target: state_of_bahrain
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q17061755
+prominence_components:
+  wikidata_reach: 10.48
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 5.69
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 26.68

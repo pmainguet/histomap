@@ -16,16 +16,16 @@ end: 1918
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1200: 7.99
-  1300: 8.94
-  1400: 8.13
-  1500: 8.49
-  1600: 8.93
+  1200: 8.11
+  1300: 8.9
+  1400: 8.21
+  1500: 8.47
+  1600: 8.94
   1700: 8.07
   1750: 8.46
   1800: 8.51
-  1850: 9.27
-  1900: 8.8
+  1850: 9.26
+  1900: 8.79
 weight_imputed: true
 icon: null
 text:
@@ -36,8 +36,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 56.92
-visibility_tier: global
+prominence_score: 49.56
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -48,3 +48,37 @@ geography:
     lat: 50.0875
     lon: 14.421388888
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: cisleithania
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q42585
+- target: czechoslovakia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q42585
+- target: first_czechoslovak_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q42585
+prominence_components:
+  wikidata_reach: 27.29
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 8.13
+  longevity: 7.14
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 49.56

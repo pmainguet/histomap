@@ -19,6 +19,7 @@ from pydantic import BaseModel
 from rapidfuzz import fuzz
 
 from pipeline.review_cli import pending_records, polity_metadata, save_decision
+from pipeline.backfill_entity_types import relationship_kind
 from schema import Geography
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -55,6 +56,16 @@ class GeographyUpdate(BaseModel):
     continents: list[str]
     primary_continent: str | None = None
     present_countries: list[str]
+
+
+class EntityTypeUpdate(BaseModel):
+    entity_type: Literal[
+        "polity", "civilization", "culture", "people", "tribe", "archaeological_horizon"
+    ]
+
+
+class TimelineRoleUpdate(BaseModel):
+    timeline_role: Literal["entity", "period", "both"]
 
 
 def clean_json(value: object) -> object:
@@ -168,6 +179,8 @@ def create_app(root: Path = ROOT) -> FastAPI:
     reports_dir = root / "reports"
     review_path = reports_dir / "seshat_reconciliation.jsonl"
     decisions_path = reports_dir / "seshat_review_decisions.jsonl"
+    type_review_path = reports_dir / "entity_type_review.jsonl"
+    period_role_review_path = reports_dir / "period_role_review.jsonl"
     polities_dir = root / "polities"
     metadata = polity_metadata(polities_dir)
     country_metadata_path = root / "sources" / "wikidata_country_metadata.json"
@@ -183,6 +196,43 @@ def create_app(root: Path = ROOT) -> FastAPI:
     }
     review_queue = pending_records(review_path, decisions_path, metadata=metadata)
     reviews_by_id = {record["seshat_id"]: record for record in review_queue}
+    type_review_queue = []
+
+    def refresh_type_review_queue() -> None:
+        type_review_queue.clear()
+        if type_review_path.exists():
+            for line in type_review_path.read_text(encoding="utf-8").splitlines():
+                record = json.loads(line)
+                document = metadata.get(record["id"])
+                if document and document.get("entity_type_confidence", "low") != "high":
+                    record["prominence_score"] = document.get("prominence_score", 0)
+                    record["dates"] = [document.get("start"), document.get("end")]
+                    record["sources"] = document.get("sources", [])
+                    record["wikipedia_en"] = (document.get("external_ids") or {}).get("wikipedia_en")
+                    type_review_queue.append(record)
+        type_review_queue.sort(
+            key=lambda item: (
+                0 if item.get("confidence") == "medium" else 1,
+                -float(item.get("prominence_score", 0)),
+                item.get("canonical_name", ""),
+            )
+        )
+
+    refresh_type_review_queue()
+    period_role_queue: list[dict] = []
+
+    def refresh_period_role_queue() -> None:
+        period_role_queue.clear()
+        if not period_role_review_path.exists():
+            return
+        for line in period_role_review_path.read_text(encoding="utf-8").splitlines():
+            record = json.loads(line)
+            document = metadata.get(record["id"])
+            if document and "timeline_role" not in set(document.get("manual_overrides", [])):
+                record["wikipedia_en"] = english_wikipedia_url(document.get("external_ids") or {})
+                period_role_queue.append(record)
+
+    refresh_period_role_queue()
     job = {"status": "idle", "action": None, "output": "", "returncode": None}
     job_lock = asyncio.Lock()
 
@@ -199,6 +249,133 @@ def create_app(root: Path = ROOT) -> FastAPI:
             document = yaml.safe_load(path.read_text(encoding="utf-8"))
             metadata[document["id"]] = document
 
+    def save_entity_type(polity_id: str, entity_type: str) -> dict:
+        document = metadata.get(polity_id)
+        path = polities_dir / f"{polity_id}.yaml"
+        if document is None or not path.exists():
+            raise HTTPException(404, "Unknown Histomap entity")
+
+        def add_typed_relationship(source: dict, target: dict, legacy_kind: str) -> None:
+            kind = relationship_kind(
+                source.get("entity_type", "polity"), target.get("entity_type", "polity"), legacy_kind
+            )
+            relationships = source.setdefault("relationships", [])
+            if any(item.get("kind") == kind and item.get("target") == target["id"] for item in relationships):
+                return
+            qid = (source.get("external_ids") or {}).get("wikidata")
+            relationships.append(
+                {
+                    "target": target["id"],
+                    "kind": kind,
+                    "evidence": "derived",
+                    "confidence": "medium",
+                    "source_urls": [f"https://www.wikidata.org/wiki/{qid}"] if qid else [],
+                }
+            )
+
+        document["entity_type"] = entity_type
+        document["entity_type_confidence"] = "high"
+        document["entity_type_source_qids"] = []
+        document["manual_overrides"] = sorted(
+            set(document.get("manual_overrides", [])) | {"entity_type"}
+        )
+        changed = {polity_id}
+        if document.get("parent"):
+            target = metadata.get(document["parent"])
+            if target:
+                add_typed_relationship(document, target, "parent")
+            if entity_type != "polity" or (target and target.get("entity_type", "polity") != "polity"):
+                document["parent"] = None
+        retained_successors = []
+        for target_id in document.get("successors", []):
+            target = metadata.get(target_id)
+            if target:
+                add_typed_relationship(document, target, "successor")
+            if entity_type == "polity" and target and target.get("entity_type", "polity") == "polity":
+                retained_successors.append(target_id)
+        document["successors"] = retained_successors
+        for candidate_id, candidate in metadata.items():
+            if candidate_id == polity_id:
+                continue
+            candidate_changed = False
+            if candidate.get("parent") == polity_id:
+                add_typed_relationship(candidate, document, "parent")
+                candidate_changed = True
+                if candidate.get("entity_type", "polity") != "polity" or entity_type != "polity":
+                    candidate["parent"] = None
+                    candidate_changed = True
+            if polity_id in (candidate.get("successors") or []):
+                add_typed_relationship(candidate, document, "successor")
+                candidate_changed = True
+                if candidate.get("entity_type", "polity") != "polity" or entity_type != "polity":
+                    candidate["successors"] = [item for item in candidate["successors"] if item != polity_id]
+                    candidate_changed = True
+            if candidate_changed:
+                changed.add(candidate_id)
+        for changed_id in changed:
+            changed_document = metadata[changed_id]
+            (polities_dir / f"{changed_id}.yaml").write_text(
+                yaml.safe_dump(changed_document, sort_keys=False, allow_unicode=True), encoding="utf-8"
+            )
+        metadata[polity_id] = document
+        return document
+
+    def save_timeline_role(polity_id: str, timeline_role: str, period_kinds: list[str]) -> dict:
+        document = metadata.get(polity_id)
+        path = polities_dir / f"{polity_id}.yaml"
+        if document is None or not path.exists():
+            raise HTTPException(404, "Unknown Histomap entity")
+        if timeline_role in {"period", "both"} and document.get("end") is None:
+            raise HTTPException(422, "A period overlay requires a finite end date")
+        document["timeline_role"] = timeline_role
+        document["manual_overrides"] = sorted(
+            set(document.get("manual_overrides", [])) | {"timeline_role"}
+        )
+        path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
+        period_id = None
+        if timeline_role in {"period", "both"}:
+            period_id = f"{polity_id}_period"
+            periods_dir = root / "periods"
+            periods_dir.mkdir(exist_ok=True)
+            qid = (document.get("external_ids") or {}).get("wikidata")
+            period = {
+                "id": period_id,
+                "canonical_name": document["canonical_name"],
+                "kind": "archaeological" if "archaeological" in period_kinds else "historical",
+                "start": document["start"],
+                "end": document["end"],
+                "start_confidence": document.get("start_confidence", "low"),
+                "end_confidence": document.get("end_confidence", "low"),
+                "geography": document.get("geography") or {},
+                "broader_periods": [],
+                "successors": [],
+                "authority": "Wikidata period classification",
+                "external_ids": {"wikidata": qid} if qid else {},
+                "notes": "Period overlay created by an editorial period-role decision.",
+                "source_urls": [f"https://www.wikidata.org/wiki/{qid}"] if qid else [],
+            }
+            (periods_dir / f"{period_id}.yaml").write_text(
+                yaml.safe_dump(period, sort_keys=False, allow_unicode=True), encoding="utf-8"
+            )
+            if timeline_role == "both":
+                links_path = root / "period_links.yaml"
+                links = yaml.safe_load(links_path.read_text(encoding="utf-8")) if links_path.exists() else []
+                if not any(link.get("period_id") == period_id and link.get("entity_id") == polity_id for link in links):
+                    links.append(
+                        {
+                            "period_id": period_id,
+                            "entity_id": polity_id,
+                            "relation": "part_of_periodization",
+                            "evidence": "explicit",
+                            "confidence": "high",
+                            "source_urls": [f"https://www.wikidata.org/wiki/{qid}"] if qid else [],
+                            "notes": "Same Wikidata item has distinct entity and period roles.",
+                        }
+                    )
+                    links_path.write_text(yaml.safe_dump(links, sort_keys=False, allow_unicode=True), encoding="utf-8")
+        metadata[polity_id] = document
+        return {"document": document, "period_id": period_id}
+
     application.mount("/static", StaticFiles(directory=web_dir), name="static")
 
     @application.get("/", include_in_schema=False)
@@ -208,6 +385,14 @@ def create_app(root: Path = ROOT) -> FastAPI:
     @application.get("/review", include_in_schema=False)
     async def review_page() -> FileResponse:
         return FileResponse(web_dir / "review.html")
+
+    @application.get("/type-review", include_in_schema=False)
+    async def type_review_page() -> FileResponse:
+        return FileResponse(web_dir / "type_review.html")
+
+    @application.get("/period-review", include_in_schema=False)
+    async def period_review_page() -> FileResponse:
+        return FileResponse(web_dir / "period_review.html")
 
     @application.get("/data.json", include_in_schema=False)
     async def data() -> FileResponse:
@@ -223,10 +408,61 @@ def create_app(root: Path = ROOT) -> FastAPI:
             raise HTTPException(404, "Run the build action first")
         return FileResponse(path)
 
+    @application.get("/periods.json", include_in_schema=False)
+    async def periods() -> FileResponse:
+        path = root / "periods.json"
+        if not path.exists():
+            raise HTTPException(404, "Run the build action first")
+        return FileResponse(path)
+
+    @application.get("/period_links.json", include_in_schema=False)
+    async def period_links() -> FileResponse:
+        path = root / "period_links.json"
+        if not path.exists():
+            raise HTTPException(404, "Run the build action first")
+        return FileResponse(path)
+
     @application.get("/api/reviews")
     async def reviews(offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)) -> dict:
         items = [add_source_links(record, metadata) for record in review_queue[offset : offset + limit]]
         return clean_json({"total": len(review_queue), "offset": offset, "items": items})
+
+    @application.get("/api/type-reviews")
+    async def type_reviews(offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)) -> dict:
+        refresh_type_review_queue()
+        return clean_json(
+            {"total": len(type_review_queue), "offset": offset, "items": type_review_queue[offset : offset + limit]}
+        )
+
+    @application.post("/api/type-reviews/{polity_id}")
+    async def decide_type_review(polity_id: str, request: EntityTypeUpdate) -> dict:
+        record = next((item for item in type_review_queue if item["id"] == polity_id), None)
+        if record is None:
+            raise HTTPException(404, "Entity type review is not pending")
+        save_entity_type(polity_id, request.entity_type)
+        type_review_queue.remove(record)
+        return {"status": "saved", "polity_id": polity_id, "entity_type": request.entity_type}
+
+    @application.get("/api/period-role-reviews")
+    async def period_role_reviews(offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)) -> dict:
+        refresh_period_role_queue()
+        return clean_json(
+            {"total": len(period_role_queue), "offset": offset, "items": period_role_queue[offset : offset + limit]}
+        )
+
+    @application.post("/api/period-role-reviews/{polity_id}")
+    async def decide_period_role(polity_id: str, request: TimelineRoleUpdate) -> dict:
+        refresh_period_role_queue()
+        record = next((item for item in period_role_queue if item["id"] == polity_id), None)
+        if record is None:
+            raise HTTPException(404, "Period-role review is not pending")
+        result = save_timeline_role(polity_id, request.timeline_role, record.get("period_kinds", []))
+        return {
+            "status": "saved",
+            "polity_id": polity_id,
+            "timeline_role": request.timeline_role,
+            "period_id": result["period_id"],
+        }
 
     @application.get("/api/polities/search")
     async def search_all_polities(
@@ -239,7 +475,19 @@ def create_app(root: Path = ROOT) -> FastAPI:
         return {
             "continents": CONTINENTS,
             "countries": [
-                {"code": code, "label": label}
+                {
+                    "code": code,
+                    "label": label,
+                    "continents": sorted(
+                        {
+                            continent
+                            for info in country_metadata.values()
+                            if info.get("iso2") == code
+                            for continent in info.get("continents", [])
+                            if continent in CONTINENTS
+                        }
+                    ),
+                }
                 for code, label in sorted(country_options.items(), key=lambda item: item[1])
             ],
         }
@@ -278,6 +526,17 @@ def create_app(root: Path = ROOT) -> FastAPI:
             "status": "saved",
             "polity_id": polity_id,
             "geography": geography,
+            "manual_overrides": document["manual_overrides"],
+        }
+
+    @application.patch("/api/polities/{polity_id}/entity-type")
+    async def update_entity_type(polity_id: str, request: EntityTypeUpdate) -> dict:
+        document = save_entity_type(polity_id, request.entity_type)
+        return {
+            "status": "saved",
+            "polity_id": polity_id,
+            "entity_type": request.entity_type,
+            "entity_type_confidence": "high",
             "manual_overrides": document["manual_overrides"],
         }
 

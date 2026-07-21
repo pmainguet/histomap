@@ -15,9 +15,9 @@ end: 1525
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1300: 4.5
-  1400: 4.97
-  1500: 5.27
+  1300: 4.47
+  1400: 4.9
+  1500: 5.13
 weight_imputed: true
 icon: null
 text:
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 51.45
+prominence_score: 41.62
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -40,3 +40,25 @@ geography:
     lat: 54.716666666
     lon: 20.516666666
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: duchy_of_prussia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q156020
+prominence_components:
+  wikidata_reach: 24.94
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.18
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 41.62

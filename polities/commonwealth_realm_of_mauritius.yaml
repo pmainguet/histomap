@@ -25,7 +25,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 29.45
+prominence_score: 16.31
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -35,3 +35,25 @@ geography:
     lat: -20.2
     lon: 57.5
   confidence: null
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: mauritius
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q14759030
+prominence_components:
+  wikidata_reach: 14.31
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 3.49
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 16.31

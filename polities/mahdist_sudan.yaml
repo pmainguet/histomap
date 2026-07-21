@@ -25,7 +25,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 35.47
+prominence_score: 9.9
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -38,3 +38,24 @@ geography:
     lat: 15.648333333
     lon: 32.484166666
   confidence: medium
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: anglo_egyptian_sudan
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q3125368
+prominence_components:
+  wikidata_reach: 18.46
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 2.94
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 9.9

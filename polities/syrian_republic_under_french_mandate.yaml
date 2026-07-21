@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 22.4
+prominence_score: 16.69
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -36,3 +36,25 @@ geography:
     lat: 33.516666666
     lon: 36.3
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: independent_first_syrian_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q108868568
+prominence_components:
+  wikidata_reach: 10.48
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 8.13
+  longevity: 3.08
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 16.69

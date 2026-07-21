@@ -7,6 +7,7 @@ external_ids:
   wikidata: Q188836
   seshat:
   - MnXngnL
+  - MnXngnM
 parent: null
 successors: []
 region: null
@@ -16,12 +17,7 @@ end: 500
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  0: 1.0
-  100: 1.0
-  200: 1.0
-  300: 2.16
-  400: 3.36
-  500: 3.91
+  -300: 3
 weight_imputed: true
 icon: null
 text:
@@ -30,11 +26,10 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
-- hyde
 - seshat
 - wikidata
-prominence_score: 58.35
-visibility_tier: global
+prominence_score: 42.3
+visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -45,3 +40,20 @@ geography:
     lat: 48.0
     lon: 105.0
   confidence: low
+entity_type: people
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships: []
+manual_overrides:
+- entity_type
+prominence_components:
+  wikidata_reach: 28.04
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 7.26
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 42.3

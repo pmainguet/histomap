@@ -8,7 +8,8 @@ external_ids:
   seshat:
   - IqUrIII
 parent: null
-successors: []
+successors:
+- old_babylonian_empire
 region: null
 culture_group: null
 start: -2111
@@ -27,11 +28,37 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - seshat
 - wikidata
-prominence_score: 50.62
+prominence_score: 41.08
 visibility_tier: regional
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - asia
+  primary_continent: asia
+  present_countries:
+  - IQ
+  confidence: high
+manual_overrides:
+- geography
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: old_babylonian_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q723587
+prominence_components:
+  wikidata_reach: 25.48
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 5.09
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 41.08

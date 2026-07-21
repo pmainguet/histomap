@@ -16,11 +16,11 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   1300: 10.0
-  1400: 8.81
-  1500: 9.05
+  1400: 8.92
+  1500: 9.06
   1600: 9.54
-  1700: 8.7
-  1750: 9.05
+  1700: 8.69
+  1750: 9.04
 weight_imputed: true
 icon: null
 text:
@@ -31,7 +31,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 54.33
+prominence_score: 43.37
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -43,3 +43,25 @@ geography:
     lat: 47.056806
     lon: 7.920113
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: helvetic_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q435583
+prominence_components:
+  wikidata_reach: 26.11
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.76
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 43.37

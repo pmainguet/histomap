@@ -25,8 +25,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 45.74
-visibility_tier: regional
+prominence_score: 26.16
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -37,3 +37,25 @@ geography:
     lat: 51.93609
     lon: 8.877296
   confidence: medium
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q26879769
+relationships:
+- target: free_state_of_lippe
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q14551680
+prominence_components:
+  wikidata_reach: 22.37
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 5.28
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 26.16

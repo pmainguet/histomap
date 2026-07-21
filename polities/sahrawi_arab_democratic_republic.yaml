@@ -24,9 +24,9 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 41.34
+prominence_score: 22.77
 visibility_tier: detailed
-eligibility: accepted
+eligibility: review
 geography:
   continents:
   - africa
@@ -37,3 +37,18 @@ geography:
     lat: 25.0
     lon: -13.0
   confidence: medium
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships: []
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 4.27
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 22.77

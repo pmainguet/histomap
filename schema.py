@@ -30,6 +30,46 @@ class Eligibility(str, Enum):
     excluded = "excluded"
 
 
+class EntityType(str, Enum):
+    polity = "polity"
+    civilization = "civilization"
+    culture = "culture"
+    people = "people"
+    tribe = "tribe"
+    archaeological_horizon = "archaeological_horizon"
+
+
+class EntityRelationship(BaseModel):
+    target: str
+    kind: Literal[
+        "political_parent",
+        "political_successor",
+        "cultural_component",
+        "associated_people",
+        "archaeological_sequence",
+        "cultural_sequence",
+        "part_of_civilization",
+    ]
+    evidence: Literal["explicit", "derived", "suggested"] = "explicit"
+    confidence: Confidence = Confidence.medium
+    source_qids: list[str] = Field(default_factory=list)
+    source_urls: list[str] = Field(default_factory=list)
+
+    @field_validator("target")
+    @classmethod
+    def _target_id(cls, value: str) -> str:
+        if not ID_PATTERN.match(value):
+            raise ValueError("relationship target must be a canonical snake_case ID")
+        return value
+
+    @field_validator("source_qids")
+    @classmethod
+    def _source_qids(cls, values: list[str]) -> list[str]:
+        if any(not QID_PATTERN.match(value) for value in values):
+            raise ValueError("relationship source_qids must contain Wikidata QIDs")
+        return sorted(set(values))
+
+
 class ExternalIds(BaseModel):
     wikidata: str | None = None
     wikipedia_en: str | None = None
@@ -98,6 +138,11 @@ class Polity(BaseModel):
     canonical_name: str
     names: dict[str, str] = Field(default_factory=dict)
     external_ids: ExternalIds = Field(default_factory=ExternalIds)
+    entity_type: EntityType = EntityType.polity
+    entity_type_confidence: Confidence = Confidence.low
+    entity_type_source_qids: list[str] = Field(default_factory=list)
+    timeline_role: Literal["entity", "period", "both"] = "entity"
+    relationships: list[EntityRelationship] = Field(default_factory=list)
     parent: str | None = None
     successors: list[str] = Field(default_factory=list)
     region: str | None = None
@@ -111,6 +156,7 @@ class Polity(BaseModel):
     weight_by_era: dict[int, float] = Field(default_factory=dict)
     weight_imputed: bool = False
     prominence_score: float = Field(default=0, ge=0, le=100)
+    prominence_components: dict[str, float] = Field(default_factory=dict)
     visibility_tier: VisibilityTier = VisibilityTier.detailed
     visibility_override: VisibilityTier | None = None
     eligibility: Eligibility = Eligibility.review
@@ -125,6 +171,13 @@ class Polity(BaseModel):
         if not ID_PATTERN.match(v):
             raise ValueError("id must be snake_case starting with a letter")
         return v
+
+    @field_validator("entity_type_source_qids")
+    @classmethod
+    def _entity_type_qids(cls, values: list[str]) -> list[str]:
+        if any(not QID_PATTERN.match(value) for value in values):
+            raise ValueError("entity_type_source_qids must contain Wikidata QIDs")
+        return sorted(set(values))
 
     @field_validator("start", "end")
     @classmethod
@@ -169,3 +222,50 @@ class Transition(BaseModel):
         if self.kind == "merge" and (len(self.from_ids) < 2 or len(self.to_ids) != 1):
             raise ValueError("a merge requires at least two sources and one target")
         return self
+
+
+class Period(BaseModel):
+    id: str
+    canonical_name: str
+    kind: Literal["historical", "archaeological", "protohistorical", "prehistorical"]
+    start: int
+    end: int
+    start_confidence: Confidence = Confidence.medium
+    end_confidence: Confidence = Confidence.medium
+    geography: Geography = Field(default_factory=Geography)
+    broader_periods: list[str] = Field(default_factory=list)
+    successors: list[str] = Field(default_factory=list)
+    authority: str
+    external_ids: dict[str, str] = Field(default_factory=dict)
+    notes: str = ""
+    source_urls: list[str] = Field(default_factory=list, min_length=1)
+
+    @field_validator("id")
+    @classmethod
+    def _period_id(cls, value: str) -> str:
+        if not ID_PATTERN.match(value):
+            raise ValueError("period id must be snake_case starting with a letter")
+        return value
+
+    @field_validator("start", "end")
+    @classmethod
+    def _period_year_range(cls, value: int) -> int:
+        if not YEAR_MIN <= value <= YEAR_MAX:
+            raise ValueError(f"year must be in [{YEAR_MIN}, {YEAR_MAX}]")
+        return value
+
+    @model_validator(mode="after")
+    def _period_dates(self) -> "Period":
+        if self.end <= self.start:
+            raise ValueError("period end must be after start")
+        return self
+
+
+class PeriodLink(BaseModel):
+    period_id: str
+    entity_id: str
+    relation: Literal["context", "part_of_periodization"] = "context"
+    evidence: Literal["explicit", "derived", "suggested"]
+    confidence: Confidence
+    source_urls: list[str] = Field(default_factory=list, min_length=1)
+    notes: str = ""

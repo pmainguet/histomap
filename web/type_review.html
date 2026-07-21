@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Histomap — entity classification review</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Histomap timeline">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M5 6h7v24H5zM15 11h7v19h-7zM25 3h7v27h-7z"/></svg>
+        <span>Histomap</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/">Timeline</a>
+        <a href="/review">Match sources</a>
+        <a href="/type-review" aria-current="page">Classify entities</a>
+        <a href="/period-review">Review periods</a>
+        <a href="/docs">API</a>
+      </nav>
+    </header>
+    <section class="review-toolbar">
+      <div><p class="eyebrow">Editorial workspace</p><h1>Entity classification review</h1></div>
+      <div class="controls"><a class="button-link" href="/">Open timeline</a></div>
+    </section>
+    <p class="workspace-purpose"><strong>This page classifies canonical entities.</strong> Choose what kind of historical subject the record represents. This does not merge it with another record; use “Match sources” for identity reconciliation.</p>
+    <main class="review-main">
+      <section id="type-review-card" class="review-card" aria-live="polite">Loading type review queue…</section>
+      <aside class="details review-progress">
+        <h2>Progress</h2>
+        <p id="type-review-progress">Loading…</p>
+        <p id="type-decision-status" class="decision-status" role="status" aria-live="assertive"></p>
+        <p>Keyboard: <kbd>1</kbd> civilization, <kbd>2</kbd> polity, <kbd>3</kbd> culture, <kbd>4</kbd> people, <kbd>5</kbd> tribe, <kbd>6</kbd> archaeological horizon, <kbd>S</kbd> defer.</p>
+      </aside>
+    </main>
+    <script type="module" src="/static/type_review.js"></script>
+  </body>
+</html>

@@ -4,6 +4,8 @@ names:
   fr: Qataban
 external_ids:
   wikidata: Q748595
+  seshat:
+  - YeQatab
 parent: null
 successors: []
 region: null
@@ -22,12 +24,33 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 48.09
+prominence_score: 36.15
 visibility_tier: regional
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - asia
+  primary_continent: asia
+  present_countries:
+  - YE
+  confidence: high
+manual_overrides:
+- geography
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 21.71
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 7.45
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 36.15

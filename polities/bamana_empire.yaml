@@ -16,7 +16,7 @@ end: 1861
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1750: 1.54
+  1750: 2.36
   1800: 1.0
   1850: 1.0
 weight_imputed: true
@@ -30,8 +30,8 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 44.08
-visibility_tier: detailed
+prominence_score: 45.66
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -42,3 +42,19 @@ geography:
     lat: 13.45
     lon: -6.266666666
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 21.22
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 5.44
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 45.66

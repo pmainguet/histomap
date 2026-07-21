@@ -5,6 +5,9 @@ names:
   aliases_en: Babylonian Kingdom
 external_ids:
   wikidata: Q47690
+  seshat:
+  - IqBabAm
+  - IqBabKs
 parent: null
 successors: []
 region: null
@@ -14,7 +17,7 @@ end: -538
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  -1000: 5.17
+  -1000: 6.56
 weight_imputed: true
 icon: null
 text:
@@ -24,8 +27,9 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
+- seshat
 - wikidata
-prominence_score: 61.89
+prominence_score: 60.27
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -38,3 +42,19 @@ geography:
     lat: 32.5
     lon: 44.5
   confidence: medium
+entity_type: civilization
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q28171280
+relationships: []
+prominence_components:
+  wikidata_reach: 29.93
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 7.84
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 60.27

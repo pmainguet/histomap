@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Histomap — period-role review</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Histomap timeline">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M5 6h7v24H5zM15 11h7v19h-7zM25 3h7v27h-7z"/></svg>
+        <span>Histomap</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/">Timeline</a>
+        <a href="/review">Match sources</a>
+        <a href="/type-review">Classify entities</a>
+        <a href="/period-review" aria-current="page">Review periods</a>
+        <a href="/docs">API</a>
+      </nav>
+    </header>
+    <section class="review-toolbar">
+      <div><p class="eyebrow">Editorial workspace</p><h1>Period-role review</h1></div>
+      <div class="controls"><a class="button-link" href="/">Open timeline</a></div>
+    </section>
+    <p class="workspace-purpose"><strong>This page separates subjects from chronology.</strong> Decide whether a mixed Wikidata item belongs on an entity row, in the period overlay, or in both as two linked records.</p>
+    <main class="review-main">
+      <section id="period-review-card" class="review-card" aria-live="polite">Loading period-role queue…</section>
+      <aside class="details review-progress">
+        <h2>Progress</h2>
+        <p id="period-review-progress">Loading…</p>
+        <p id="period-decision-status" class="decision-status" role="status" aria-live="assertive"></p>
+        <p>Keyboard: <kbd>1</kbd> entity row, <kbd>2</kbd> period overlay, <kbd>3</kbd> both, <kbd>S</kbd> defer.</p>
+      </aside>
+    </main>
+    <script type="module" src="/static/period_review.js"></script>
+  </body>
+</html>

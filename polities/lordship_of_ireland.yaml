@@ -14,10 +14,10 @@ end: 1542
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1200: 5.22
-  1300: 5.59
-  1400: 5.06
-  1500: 5.71
+  1200: 5.52
+  1300: 5.56
+  1400: 4.99
+  1500: 5.59
 weight_imputed: true
 icon: null
 text:
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 49.19
+prominence_score: 42.32
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -40,3 +40,25 @@ geography:
     lat: 53.333333333
     lon: -6.25
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_ireland
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q844250
+prominence_components:
+  wikidata_reach: 23.34
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 6.43
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 42.32

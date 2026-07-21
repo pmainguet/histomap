@@ -26,8 +26,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 47.72
-visibility_tier: regional
+prominence_score: 27.18
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -40,3 +40,25 @@ geography:
     lon: 47.56
   confidence: medium
   primary_continent: asia
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q99541706
+relationships:
+- target: azerbaijan_soviet_socialist_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q206411
+prominence_components:
+  wikidata_reach: 27.49
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 1.19
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 27.18

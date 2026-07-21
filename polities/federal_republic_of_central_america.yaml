@@ -27,7 +27,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 48.82
+prominence_score: 31.42
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -39,3 +39,25 @@ geography:
     lat: 14.616666666
     lon: -90.516666666
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: greater_republic_of_central_america
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q190025
+prominence_components:
+  wikidata_reach: 26.22
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 7.0
+  longevity: 3.2
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 31.42

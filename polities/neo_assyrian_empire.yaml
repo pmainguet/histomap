@@ -4,6 +4,8 @@ names:
   fr: empire néo-assyrien
 external_ids:
   wikidata: Q10914393
+  seshat:
+  - IqNAssr
 parent: null
 successors:
 - neo_babylonian_empire
@@ -23,8 +25,9 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 54.74
+prominence_score: 45.64
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -36,3 +39,26 @@ geography:
     lat: 35.456666666
     lon: 43.2625
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+- Q48349
+relationships:
+- target: neo_babylonian_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q10914393
+prominence_components:
+  wikidata_reach: 26.89
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 5.55
+  longevity: 6.2
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 45.64

@@ -25,6 +25,11 @@ except ModuleNotFoundError:  # pragma: no cover - Python 3.10 and earlier
 import pandas as pd
 import yaml
 
+try:
+    from pipeline.backfill_entity_types import classify_direct_types, effective_direct_types
+except ModuleNotFoundError:  # Direct script execution from the repository root.
+    from backfill_entity_types import classify_direct_types, effective_direct_types
+
 ROOT = Path(__file__).resolve().parent.parent
 PARQUET_PATH = ROOT / "sources" / "wikidata.parquet"
 CACHE_PATH = ROOT / "sources" / "wikidata_direct_types.json"
@@ -94,15 +99,19 @@ def _fetch_batch(batch: list[str]) -> dict[str, dict]:
             result = {}
             for qid in batch:
                 entity = entities.get(qid, {})
-                types = []
+                claims = []
                 for claim in entity.get("claims", {}).get("P31", []):
                     value = claim.get("mainsnak", {}).get("datavalue", {}).get("value", {})
                     if isinstance(value, dict) and value.get("id"):
-                        types.append(value["id"])
-                result[qid] = {
+                        claims.append(
+                            {"qid": value["id"], "rank": claim.get("rank", "normal")}
+                        )
+                metadata = {
                     "label": entity.get("labels", {}).get("en", {}).get("value", qid),
-                    "types": sorted(set(types)),
+                    "claims": claims,
                 }
+                metadata["types"] = sorted(effective_direct_types(metadata))
+                result[qid] = metadata
             return result
         except Exception:
             if attempt == 2:
@@ -117,9 +126,13 @@ def enrich(qids: list[str], cache_path: Path = CACHE_PATH, offline: bool = False
         if cache_path.exists()
         else {}
     )
-    missing = sorted(set(qids) - set(cache))
-    if offline and missing:
-        raise ValueError(f"direct-type cache is missing {len(missing)} QIDs")
+    absent = set(qids) - set(cache)
+    if offline and absent:
+        raise ValueError(f"direct-type cache is missing {len(absent)} QIDs")
+    # Legacy cache rows contain only a flattened type list. Refresh them online
+    # so preferred and deprecated ranks can be applied without breaking offline use.
+    legacy = {qid for qid in qids if qid in cache and "claims" not in cache[qid]}
+    missing = sorted(absent | (set() if offline else legacy))
     batches = [missing[index : index + BATCH_SIZE] for index in range(0, len(missing), BATCH_SIZE)]
     completed = 0
     with ThreadPoolExecutor(max_workers=8) as executor:
@@ -149,9 +162,10 @@ def run(offline: bool = False) -> dict[str, int]:
     for record in frame.to_dict(orient="records"):
         qid = str(record["qid"])
         entity = entities.get(qid, {"label": record.get("label_en") or qid, "types": []})
+        direct_types = effective_direct_types(entity)
         decision = classify(
             qid,
-            set(entity["types"]),
+            direct_types,
             strong_allow_types=strong_allow_types,
             contextual_allow_types=contextual_allow_types,
             deny_types=deny_types,
@@ -159,13 +173,18 @@ def run(offline: bool = False) -> dict[str, int]:
             overrides=overrides,
         )
         counts[decision.decision] += 1
+        entity_type = classify_direct_types(direct_types)
         rows.append(
             {
                 "qid": qid,
                 "label": entity["label"],
-                "direct_types": entity["types"],
+                "direct_types": sorted(direct_types),
                 "decision": decision.decision,
                 "reason": decision.reason,
+                "entity_type": entity_type[0] if entity_type else "polity",
+                "entity_type_confidence": entity_type[1] if entity_type else "low",
+                "entity_type_source_qids": entity_type[2] if entity_type else [],
+                "entity_type_reason": entity_type[3] if entity_type else "no mapped direct type",
             }
         )
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)

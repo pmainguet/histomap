@@ -5,6 +5,8 @@ names:
   aliases_en: Basnaga kingdom | Kampili kingdom
 external_ids:
   wikidata: Q1446192
+  seshat:
+  - InKampi
 parent: null
 successors: []
 region: null
@@ -23,8 +25,9 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 28.75
+prominence_score: 24.41
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -32,3 +35,20 @@ geography:
   present_countries: []
   centroid: null
   confidence: null
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+- Q417175
+relationships: []
+prominence_components:
+  wikidata_reach: 13.55
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 3.86
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 24.41

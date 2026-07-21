@@ -14,17 +14,17 @@ end: 1017
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  0: 8.4
-  100: 8.39
-  200: 8.06
-  300: 7.72
-  400: 6.88
-  500: 6.98
-  600: 7.82
-  700: 8.18
+  0: 8.07
+  100: 8.23
+  200: 7.87
+  300: 8.16
+  400: 8.02
+  500: 7.95
+  600: 7.87
+  700: 8.01
   800: 7.93
-  900: 7.81
-  1000: 7.61
+  900: 7.62
+  1000: 7.4
 weight_imputed: true
 icon: null
 text:
@@ -35,7 +35,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 45.06
+prominence_score: 40.24
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -47,3 +47,25 @@ geography:
     lat: 8.35
     lon: 80.383611
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_polonnaruwa
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1965597
+prominence_components:
+  wikidata_reach: 19.83
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 7.86
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 40.24

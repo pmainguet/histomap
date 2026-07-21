@@ -26,8 +26,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 47.61
-visibility_tier: regional
+prominence_score: 29.33
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -38,3 +38,31 @@ geography:
     lat: 34.266666666
     lon: 108.9
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q50068795
+relationships:
+- target: eastern_wei
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q875305
+- target: western_wei_q1143164
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q875305
+prominence_components:
+  wikidata_reach: 23.34
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 5.55
+  longevity: 5.44
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 29.33

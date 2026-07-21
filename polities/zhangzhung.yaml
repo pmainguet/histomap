@@ -6,8 +6,7 @@ names:
 external_ids:
   wikidata: Q1358851
 parent: null
-successors:
-- tibetan_empire
+successors: []
 region: null
 culture_group: null
 start: -500
@@ -15,7 +14,7 @@ end: 625
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  -500: 5
+  -500: 3
 weight_imputed: true
 icon: null
 text:
@@ -25,11 +24,34 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 47.37
-visibility_tier: regional
+prominence_score: 27.35
+visibility_tier: detailed
 eligibility: accepted
 geography:
   continents: []
   present_countries: []
   centroid: null
   confidence: null
+entity_type: culture
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships:
+- target: tibetan_empire
+  kind: cultural_sequence
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1358851
+manual_overrides:
+- entity_type
+prominence_components:
+  wikidata_reach: 21.22
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 7.63
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 27.35

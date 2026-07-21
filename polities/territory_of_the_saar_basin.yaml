@@ -5,8 +5,7 @@ names:
 external_ids:
   wikidata: Q170361
 parent: null
-successors:
-- nan_q27069436
+successors: []
 region: null
 culture_group: null
 start: 1920
@@ -24,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 42.78
+prominence_score: 10.79
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -36,3 +35,18 @@ geography:
     lat: 49.38333333
     lon: 6.83333333
   confidence: medium
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships: []
+prominence_components:
+  wikidata_reach: 22.78
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 3.01
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 10.79

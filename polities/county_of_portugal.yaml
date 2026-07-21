@@ -15,9 +15,9 @@ end: 1143
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  900: 6.58
-  1000: 6.41
-  1100: 6.02
+  900: 6.31
+  1000: 6.1
+  1100: 5.95
 weight_imputed: true
 icon: null
 text:
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 48.67
+prominence_score: 39.95
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -40,3 +40,25 @@ geography:
     lat: 41.53
     lon: -8.42
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_portugal
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1139807
+prominence_components:
+  wikidata_reach: 23.34
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.1
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 39.95

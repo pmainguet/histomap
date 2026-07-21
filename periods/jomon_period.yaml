@@ -1,0 +1,16 @@
+id: jomon_period
+canonical_name: Jōmon period
+kind: prehistorical
+start: -10000
+end: -300
+start_confidence: low
+geography:
+  continents: [asia]
+  present_countries: [JP]
+successors: [yayoi_period]
+authority: DBpedia/Wikipedia periodization
+external_ids:
+  dbpedia: https://dbpedia.org/resource/J%C5%8Dmon_period
+notes: Start is clipped to Histomap's current -10000 year boundary.
+source_urls:
+  - https://dbpedia.org/resource/J%C5%8Dmon_period

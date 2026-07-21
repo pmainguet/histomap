@@ -19,12 +19,12 @@ weight_by_era:
   1400: 10.0
   1500: 10.0
   1600: 10.0
-  1700: 9.86
+  1700: 9.83
   1750: 10.0
-  1800: 9.76
+  1800: 9.75
   1850: 10.0
-  1900: 9.31
-  1950: 9.92
+  1900: 9.29
+  1950: 9.9
 weight_imputed: true
 icon: null
 text:
@@ -35,7 +35,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 54.07
+prominence_score: 45.27
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -47,3 +47,32 @@ geography:
     lat: 12.3
     lon: 76.65
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+- Q417175
+relationships:
+- target: india
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q266923
+- target: mysore_state
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q266923
+prominence_components:
+  wikidata_reach: 25.86
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 6.85
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 45.27

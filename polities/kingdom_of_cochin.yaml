@@ -17,11 +17,11 @@ end_confidence: low
 weight_by_era:
   1500: 10.0
   1600: 10.0
-  1700: 9.43
-  1750: 9.63
-  1800: 9.4
-  1850: 9.8
-  1900: 8.97
+  1700: 9.4
+  1750: 9.6
+  1800: 9.39
+  1850: 9.78
+  1900: 8.96
 weight_imputed: true
 icon: null
 text:
@@ -32,8 +32,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 44.17
-visibility_tier: detailed
+prominence_score: 41.9
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -44,3 +44,31 @@ geography:
     lat: 9.952777777
     lon: 76.338611111
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: india
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q150056
+- target: travancore_cochin
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q150056
+prominence_components:
+  wikidata_reach: 20.14
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 8.13
+  longevity: 6.63
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 41.9

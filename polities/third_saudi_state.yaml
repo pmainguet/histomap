@@ -25,7 +25,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 11.52
+prominence_score: 6.42
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -35,3 +35,18 @@ geography:
   - SA
   centroid: null
   confidence: medium
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships: []
+prominence_components:
+  wikidata_reach: 12.68
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 5.24
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 6.42

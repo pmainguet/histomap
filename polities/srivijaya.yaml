@@ -15,13 +15,13 @@ end: 1377
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  700: 3.99
-  800: 3.78
-  900: 3.46
-  1000: 3.08
-  1100: 1.89
-  1200: 2.58
-  1300: 2.08
+  700: 3.76
+  800: 3.83
+  900: 3.0
+  1000: 2.5
+  1100: 1.85
+  1200: 3.04
+  1300: 2.05
 weight_imputed: true
 icon: null
 text:
@@ -32,8 +32,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 57.58
-visibility_tier: global
+prominence_score: 45.33
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -46,3 +46,25 @@ geography:
     lon: 102.0
   confidence: medium
   primary_continent: asia
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_palembang
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q234197
+prominence_components:
+  wikidata_reach: 27.68
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 7.16
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 45.33

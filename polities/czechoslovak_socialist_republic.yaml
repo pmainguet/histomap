@@ -17,7 +17,7 @@ end: 1990
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1950: 9.02
+  1950: 9.01
 weight_imputed: true
 icon: null
 text:
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 49.22
+prominence_score: 43.7
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -40,3 +40,25 @@ geography:
     lat: 50.0833
     lon: 14.4667
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: czechoslovak_federative_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q853348
+prominence_components:
+  wikidata_reach: 25.61
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 4.08
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 43.7

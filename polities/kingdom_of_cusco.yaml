@@ -5,6 +5,8 @@ names:
   aliases_en: Kingdom of Cuzco
 external_ids:
   wikidata: Q2314963
+  seshat:
+  - PeCuzL1
 parent: null
 successors:
 - inca_empire
@@ -24,9 +26,10 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 42.59
-visibility_tier: detailed
+prominence_score: 36.29
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -35,3 +38,25 @@ geography:
   - PE
   centroid: null
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: inca_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2314963
+prominence_components:
+  wikidata_reach: 19.83
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 5.96
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 36.29

@@ -1,0 +1,14 @@
+id: uruk_period
+canonical_name: Uruk period
+kind: protohistorical
+start: -4000
+end: -3100
+geography:
+  continents: [asia]
+  present_countries: [IQ]
+successors: [early_dynastic_mesopotamia]
+authority: DBpedia/Wikipedia periodization
+external_ids:
+  dbpedia: https://dbpedia.org/resource/Uruk_period
+source_urls:
+  - https://dbpedia.org/resource/Uruk_period

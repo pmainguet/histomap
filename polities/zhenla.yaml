@@ -7,6 +7,8 @@ names:
     | Kingdom of Zhenla | Zhen La | Zhen-la | Zhenla Kingdom
 external_ids:
   wikidata: Q1057118
+  seshat:
+  - KhChenl
 parent: null
 successors: []
 region: null
@@ -16,8 +18,8 @@ end: 706
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  600: 6.76
-  700: 7.31
+  600: 6.89
+  700: 7.05
 weight_imputed: true
 icon: null
 text:
@@ -27,8 +29,9 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
+- seshat
 - wikidata
-prominence_score: 47.99
+prominence_score: 48.01
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -40,3 +43,19 @@ geography:
     lat: 11.55
     lon: 104.91666667
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 23.52
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 5.49
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 48.01

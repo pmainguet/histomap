@@ -5,6 +5,8 @@ names:
   aliases_en: Kingdom of Lydia
 external_ids:
   wikidata: Q620765
+  seshat:
+  - TrLydia
 parent: null
 successors: []
 region: null
@@ -14,7 +16,7 @@ end: -545
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  -1000: 6.76
+  -1000: 8.78
 weight_imputed: true
 icon: null
 text:
@@ -24,8 +26,9 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
+- seshat
 - wikidata
-prominence_score: 59.63
+prominence_score: 55.06
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -39,3 +42,19 @@ geography:
     lon: 30.0
   confidence: medium
   primary_continent: asia
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 29.02
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 7.04
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 55.06

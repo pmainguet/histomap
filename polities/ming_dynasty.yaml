@@ -6,8 +6,6 @@ names:
     Ming-era | Ming | Empire of the Great Ming | Great Ming
 external_ids:
   wikidata: Q9903
-  seshat:
-  - CnMing*
 parent: null
 successors:
 - qing_dynasty
@@ -20,9 +18,7 @@ end: 1644
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1400: 10.0
-  1500: 10.0
-  1600: 7.33
+  1368: 5
 weight_imputed: true
 icon: null
 text:
@@ -31,12 +27,10 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
-- hyde
-- seshat
 - wikidata
-prominence_score: 62.95
-visibility_tier: global
-eligibility: accepted
+prominence_score: 40.93
+visibility_tier: detailed
+eligibility: review
 geography:
   continents:
   - asia
@@ -46,3 +40,37 @@ geography:
     lat: 32.8
     lon: 103.0833333
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q50068795
+relationships:
+- target: qing_dynasty
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q9903
+- target: shun_dynasty
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q9903
+- target: southern_ming_dynasty
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q9903
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 9.83
+  longevity: 6.11
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 40.93

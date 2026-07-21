@@ -13,7 +13,7 @@ end: 1416
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1324: 5
+  1324: 3
 weight_imputed: true
 icon: null
 text:
@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 25.35
+prominence_score: 10.41
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -31,3 +31,19 @@ geography:
   present_countries: []
   centroid: null
   confidence: null
+entity_type: tribe
+entity_type_confidence: high
+entity_type_source_qids:
+- Q133311
+relationships: []
+prominence_components:
+  wikidata_reach: 10.48
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 4.92
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 10.41

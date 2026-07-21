@@ -15,17 +15,17 @@ end: 1808
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  900: 5.84
-  1000: 5.72
-  1100: 4.97
-  1200: 5.45
-  1300: 5.34
-  1400: 5.88
-  1500: 6.03
-  1600: 6.02
-  1700: 5.61
-  1750: 5.54
-  1800: 5.56
+  900: 5.53
+  1000: 5.35
+  1100: 4.91
+  1200: 5.73
+  1300: 5.3
+  1400: 5.85
+  1500: 5.92
+  1600: 6.12
+  1700: 5.67
+  1750: 5.6
+  1800: 5.59
 weight_imputed: true
 icon: null
 text:
@@ -36,7 +36,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 49.46
+prominence_score: 40.47
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -48,3 +48,25 @@ geography:
     lat: 13.067222222
     lon: 5.247777777
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: sokoto_caliphate
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1591030
+prominence_components:
+  wikidata_reach: 22.58
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 7.4
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 40.47

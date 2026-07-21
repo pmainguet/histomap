@@ -1,0 +1,39 @@
+id: seshat_illinois_confederation_usillin
+canonical_name: Early Illinois Confederation
+external_ids: {}
+parent: null
+successors: []
+region: unclassified
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+start: 1640
+end: 1717
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1640: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources: []
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships: []
+prominence_components:
+  wikidata_reach: 0.0
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 4.73
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 0

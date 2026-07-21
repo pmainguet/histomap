@@ -15,8 +15,8 @@ end: 1960
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1900: 3.84
-  1950: 4.56
+  1900: 3.92
+  1950: 4.62
 weight_imputed: true
 icon: null
 text:
@@ -27,7 +27,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 48.63
+prominence_score: 39.87
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -39,3 +39,25 @@ geography:
     lat: 9.560555555
     lon: 44.054722222
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: state_of_somaliland
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q662653
+prominence_components:
+  wikidata_reach: 24.65
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 4.72
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 39.87

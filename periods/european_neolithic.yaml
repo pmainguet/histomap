@@ -1,0 +1,14 @@
+id: european_neolithic
+canonical_name: Neolithic Europe
+kind: prehistorical
+start: -7000
+end: -1700
+start_confidence: low
+end_confidence: low
+geography:
+  continents: [europe]
+authority: DBpedia/Wikipedia periodization
+external_ids:
+  dbpedia: https://dbpedia.org/resource/Neolithic_Europe
+source_urls:
+  - https://dbpedia.org/resource/Neolithic_Europe

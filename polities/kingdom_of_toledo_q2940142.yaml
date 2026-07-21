@@ -16,8 +16,8 @@ end: 711
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  600: 6.84
-  700: 7.31
+  600: 6.96
+  700: 7.13
 weight_imputed: true
 icon: null
 text:
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 34.88
+prominence_score: 35.15
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -42,3 +42,31 @@ geography:
     lon: -4.025
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: visigothic_kingdom
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2940142
+- target: kingdom_of_asturias
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2940142
+prominence_components:
+  wikidata_reach: 15.62
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 5.53
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 35.15

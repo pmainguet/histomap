@@ -7,6 +7,7 @@ external_ids:
   wikidata: Q877155
 parent: null
 successors:
+- kingdom_of_cochin
 - venad
 region: null
 culture_group: null
@@ -29,7 +30,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 46.85
+prominence_score: 40.91
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -41,3 +42,31 @@ geography:
     lat: 10.2103
     lon: 76.2064
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_cochin
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q877155
+- target: venad
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q877155
+prominence_components:
+  wikidata_reach: 22.16
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 6.2
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 40.91

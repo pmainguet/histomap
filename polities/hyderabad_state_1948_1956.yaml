@@ -25,7 +25,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 34.58
+prominence_score: 22.84
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -37,3 +37,31 @@ geography:
     lat: 17.0
     lon: 78.833333333
   confidence: medium
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q12443800
+relationships:
+- target: andhra_pradesh_19562014
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q4494730
+- target: karnataka
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q4494730
+prominence_components:
+  wikidata_reach: 18.46
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 7.0
+  longevity: 2.39
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 22.84

@@ -25,8 +25,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 58.21
-visibility_tier: global
+prominence_score: 36.22
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -39,3 +39,25 @@ geography:
     lon: 10.0
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q6256
+relationships:
+- target: kingdom_of_denmark
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q35
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 7.72
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 36.22

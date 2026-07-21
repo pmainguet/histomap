@@ -1,9 +1,9 @@
 # HYDE extraction
 
 - NetCDF files: 1
-- Eligible polity centroids: 1,493
-- Polities with estimates: 1,324
-- Polity-year estimates: 26,821
+- Eligible polity centroids: 1,460
+- Polities with estimates: 1,299
+- Polity-year estimates: 26,055
 - Centroid radius: 2.5 degrees
 
 All current estimates are imputed centroid-radius sums. Polygon aggregation will replace

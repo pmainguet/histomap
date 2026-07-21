@@ -13,13 +13,13 @@ end: 1833
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1300: 6.75
-  1400: 6.19
-  1500: 6.47
-  1600: 6.62
-  1700: 5.92
-  1750: 6.18
-  1800: 6.39
+  1300: 6.71
+  1400: 6.18
+  1500: 6.38
+  1600: 6.71
+  1700: 5.97
+  1750: 6.23
+  1800: 6.41
 weight_imputed: true
 icon: null
 text:
@@ -30,8 +30,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 41.14
-visibility_tier: detailed
+prominence_score: 37.51
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -44,3 +44,26 @@ geography:
     lon: -1.329344444
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+- Q417175
+relationships:
+- target: crown_of_castile
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1164500
+prominence_components:
+  wikidata_reach: 18.06
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 6.9
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 37.51

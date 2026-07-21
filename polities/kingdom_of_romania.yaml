@@ -16,7 +16,7 @@ end: 1947
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1900: 7.57
+  1900: 7.59
 weight_imputed: true
 icon: null
 text:
@@ -27,7 +27,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 52.63
+prominence_score: 45.76
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -39,3 +39,31 @@ geography:
     lat: 44.416666666
     lon: 26.1
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: national_legionary_state
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q203493
+- target: romanian_people_s_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q203493
+prominence_components:
+  wikidata_reach: 27.19
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 4.57
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 45.76

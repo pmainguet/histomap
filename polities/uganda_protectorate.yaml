@@ -25,7 +25,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 41.86
+prominence_score: 13.8
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -37,3 +37,24 @@ geography:
     lat: 0.05
     lon: 32.46
   confidence: low
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: commonwealth_realm_of_uganda
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1097943
+prominence_components:
+  wikidata_reach: 20.7
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 4.6
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 13.8

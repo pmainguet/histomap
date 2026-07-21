@@ -18,10 +18,10 @@ end: 843
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  500: 7.05
-  600: 7.64
-  700: 8.03
-  800: 7.77
+  500: 8.03
+  600: 7.7
+  700: 7.86
+  800: 7.78
 weight_imputed: true
 icon: null
 text:
@@ -32,7 +32,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 58.22
+prominence_score: 54.23
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -48,3 +48,37 @@ geography:
     lon: 6.02
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: east_francia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q146246
+- target: middle_francia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q146246
+- target: west_francia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q146246
+prominence_components:
+  wikidata_reach: 28.79
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 12.05
+  longevity: 6.4
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 54.23

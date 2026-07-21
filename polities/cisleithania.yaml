@@ -28,8 +28,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 47.95
-visibility_tier: regional
+prominence_score: 27.62
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -40,3 +40,42 @@ geography:
     lat: 48.5
     lon: 16.383333333
   confidence: medium
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: austriahungary
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q533534
+- target: first_czechoslovak_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q533534
+- target: republic_of_german_austria
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q533534
+- target: second_polish_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q533534
+prominence_components:
+  wikidata_reach: 24.65
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 13.67
+  longevity: 4.29
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 27.62

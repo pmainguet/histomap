@@ -34,7 +34,15 @@ def present(value: object) -> bool:
         missing = pd.isna(value)
     except (TypeError, ValueError):
         return True
-    return isinstance(missing, bool) and not missing
+    try:
+        return not bool(missing)
+    except (TypeError, ValueError):
+        return True
+
+
+def valid_label(value: object) -> bool:
+    """Reject missing values and placeholder strings that cannot name an entity."""
+    return present(value) and str(value).strip().lower() not in {"", "nan", "none", "null"}
 
 
 def parse_year(value: object) -> int | None:
@@ -68,7 +76,7 @@ def aliases(value: object) -> list[str]:
 def allocate_ids(rows: Iterable[dict]) -> list[tuple[dict, str]]:
     """Allocate stable slugs, suffixing every collision with its QID."""
     rows = list(rows)
-    bases = [slugify(str(row.get("label_en") or row["qid"])) for row in rows]
+    bases = [slugify(str(row["label_en"])) for row in rows]
     counts = {base: bases.count(base) for base in set(bases)}
     allocated: list[tuple[dict, str]] = []
     used: set[str] = set()
@@ -83,6 +91,8 @@ def allocate_ids(rows: Iterable[dict]) -> list[tuple[dict, str]]:
 
 def to_document(row: dict, polity_id: str) -> dict:
     qid = str(row["qid"])
+    if not valid_label(row.get("label_en")):
+        raise ValueError(f"{qid} has no usable English label")
     start = parse_year(row.get("inception"))
     if start is None:
         raise ValueError(f"{qid} has no parseable inception year")
@@ -103,7 +113,7 @@ def to_document(row: dict, polity_id: str) -> dict:
 
     return {
         "id": polity_id,
-        "canonical_name": str(row.get("label_en") or qid),
+        "canonical_name": str(row["label_en"]).strip(),
         "names": names,
         "external_ids": external_ids,
         "parent": None,
@@ -138,22 +148,34 @@ def convert(
 
     output_dir.mkdir(parents=True, exist_ok=True)
     decisions: dict[str, str] = {}
+    type_metadata: dict[str, dict] = {}
     if type_report is not None and type_report.exists():
         for line in type_report.read_text(encoding="utf-8").splitlines():
             row = json.loads(line)
             decisions[row["qid"]] = row["decision"]
+            type_metadata[row["qid"]] = row
     existing_qids: dict[str, str | None] = {}
     for path in output_dir.glob("*.yaml"):
         try:
             document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+            if (
+                not valid_label(document.get("canonical_name"))
+                and "wikidata" in set(document.get("sources", []))
+                and str(document.get("notes", "")).startswith("Automatically generated from Wikidata")
+            ):
+                path.unlink()
+                continue
             existing_qids[path.stem] = (document.get("external_ids") or {}).get("wikidata")
         except (OSError, yaml.YAMLError):
             # Validation reports malformed canonical files; the importer only needs
             # to avoid overwriting a path it cannot confidently identify.
             existing_qids[path.stem] = None
 
-    written = preserved = rejected = 0
-    for row, polity_id in allocate_ids(frame.to_dict(orient="records")):
+    written = preserved = 0
+    records = frame.to_dict(orient="records")
+    valid_records = [row for row in records if valid_label(row.get("label_en"))]
+    rejected = len(records) - len(valid_records)
+    for row, polity_id in allocate_ids(valid_records):
         qid = str(row["qid"])
         if decisions.get(qid) == "excluded":
             rejected += 1
@@ -171,6 +193,10 @@ def convert(
             rejected += 1
             continue
         document["eligibility"] = decisions.get(qid, "review")
+        metadata = type_metadata.get(qid, {})
+        document["entity_type"] = metadata.get("entity_type", "polity")
+        document["entity_type_confidence"] = metadata.get("entity_type_confidence", "low")
+        document["entity_type_source_qids"] = metadata.get("entity_type_source_qids", [])
         destination.write_text(
             yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
         )

@@ -17,13 +17,13 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   1500: 10.0
-  1600: 9.6
+  1600: 10.0
   1700: 10.0
   1750: 10.0
-  1800: 9.87
+  1800: 10.0
   1850: 10.0
-  1900: 6.7
-  1950: 7.41
+  1900: 6.73
+  1950: 7.43
 weight_imputed: true
 icon: null
 text:
@@ -35,7 +35,7 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 61.46
+prominence_score: 59.4
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -49,3 +49,25 @@ geography:
     lon: -3.68333333
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: iberian_union
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q80702
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.9
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 59.4

@@ -14,7 +14,9 @@
       </a>
       <nav aria-label="Main navigation">
         <a href="/" aria-current="page">Timeline</a>
-        <a href="/review">Review</a>
+        <a href="/review">Match sources</a>
+        <a href="/type-review">Classify entities</a>
+        <a href="/period-review">Review periods</a>
         <a href="/docs">API</a>
       </nav>
     </header>
@@ -39,8 +41,27 @@
           </select>
         </label>
         <label>Historical grouping <select id="historical-group"><option value="">All groupings</option></select></label>
+        <label>Entity type <select id="entity-type"><option value="">All entity types</option></select></label>
+        <label>Type confidence
+          <select id="entity-type-confidence">
+            <option value="">Any confidence</option>
+            <option value="low">Needs type review</option>
+            <option value="medium">Conflicting/indirect</option>
+            <option value="high">Directly classified</option>
+          </select>
+        </label>
         <label>Continent <select id="continent"><option value="">All continents</option></select></label>
         <label>Present country <select id="country"><option value="">All countries</option></select></label>
+        <label class="period-toggle"><input id="show-periods" type="checkbox" checked> Period context</label>
+        <label>Period type
+          <select id="period-kind">
+            <option value="">All period types</option>
+            <option value="historical">Historical</option>
+            <option value="protohistorical">Protohistorical</option>
+            <option value="prehistorical">Prehistorical</option>
+          </select>
+        </label>
+        <label>Historical period <select id="period"><option value="">All periods</option></select></label>
         <label>Era
           <select id="era-preset">
             <option value="full">Full timeline</option>
@@ -66,7 +87,9 @@
         <i class="legendary"></i> Legendary
       </div>
       <div id="color-legend" class="color-legend" aria-label="Geographic color legend"></div>
+      <div class="entity-type-legend"><span>Entity treatment</span><i class="polity"></i> Polity <i class="civilization"></i> Civilization <i class="context"></i> Culture, people, tribe, or archaeological horizon</div>
       <div class="transition-legend"><i></i> Curated split, merge, or succession</div>
+      <div class="period-legend"><span>Period context</span><i class="historical"></i> Historical <i class="protohistorical"></i> Protohistorical <i class="prehistorical"></i> Prehistorical</div>
     </section>
     <main class="timeline-main">
       <div id="chart" class="chart" role="img" aria-label="Horizontal timeline of historical polities"></div>

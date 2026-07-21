@@ -14,7 +14,7 @@ end: 1552
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1500: 3.24
+  1500: 3.03
 weight_imputed: true
 icon: null
 text:
@@ -25,7 +25,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 54.52
+prominence_score: 43.42
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -39,3 +39,25 @@ geography:
     lon: 49.15
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kazan_kingdom
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q186537
+prominence_components:
+  wikidata_reach: 27.77
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 5.15
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 43.42

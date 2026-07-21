@@ -16,7 +16,7 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   1950: 10.0
-  2000: 9.26
+  2000: 9.24
 weight_imputed: true
 icon: null
 text:
@@ -28,7 +28,7 @@ sources:
 - hyde
 - maddison
 - wikidata
-prominence_score: 54.81
+prominence_score: 46.05
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -42,3 +42,20 @@ geography:
     lon: 29.0
   confidence: medium
   primary_continent: africa
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3624078
+- Q6256
+relationships: []
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 8
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 5.05
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 46.05

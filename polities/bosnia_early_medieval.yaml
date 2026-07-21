@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 33.86
+prominence_score: 19.07
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -34,3 +34,25 @@ geography:
   - BA
   centroid: null
   confidence: medium
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q11458389
+relationships:
+- target: banate_of_bosnia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q25340956
+prominence_components:
+  wikidata_reach: 14.31
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 6.25
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 19.07

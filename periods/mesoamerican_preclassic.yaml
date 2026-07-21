@@ -1,0 +1,14 @@
+id: mesoamerican_preclassic
+canonical_name: Mesoamerican Preclassic period
+kind: protohistorical
+start: -2000
+end: 250
+geography:
+  continents: [north_america]
+  present_countries: [MX, GT, BZ, HN, SV]
+successors: [mesoamerican_classic]
+authority: DBpedia/Wikipedia periodization
+external_ids:
+  dbpedia: https://dbpedia.org/resource/Mesoamerican_chronology
+source_urls:
+  - https://dbpedia.org/resource/Mesoamerican_chronology

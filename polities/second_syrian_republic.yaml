@@ -15,7 +15,7 @@ end: 1963
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1950: 6.55
+  1950: 6.58
 weight_imputed: true
 icon: null
 text:
@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 45.03
+prominence_score: 41.17
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -38,3 +38,31 @@ geography:
     lat: 35.0
     lon: 38.0
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: syrian_arab_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q146885
+- target: united_arab_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q146885
+prominence_components:
+  wikidata_reach: 23.34
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 3.83
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 41.17

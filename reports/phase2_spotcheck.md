@@ -9,7 +9,7 @@ Warnings identify incomplete source or present-country coverage but do not fail 
 | Akkad | PASS | dates and geography pass |
 | Achaemenid | PASS | dates and geography pass |
 | Han | PASS | not linked to Seshat |
-| Sasanian | PASS | not linked to Seshat |
+| Sasanian | PASS | dates and geography pass |
 | Abbasid | PASS | dates and geography pass |
 | Song | PASS | not linked to Seshat |
 | Mongol | PASS | dates and geography pass |

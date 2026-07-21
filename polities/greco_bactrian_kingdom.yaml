@@ -6,6 +6,8 @@ names:
     Kingdom
 external_ids:
   wikidata: Q488880
+  seshat:
+  - AfGrBct
 parent: null
 successors: []
 region: null
@@ -24,9 +26,10 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 51.71
-visibility_tier: regional
+prominence_score: 38.24
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -37,3 +40,20 @@ geography:
     lat: 36.75
     lon: 66.916667
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships: []
+manual_overrides:
+- entity_type
+prominence_components:
+  wikidata_reach: 25.99
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 5.25
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 38.24

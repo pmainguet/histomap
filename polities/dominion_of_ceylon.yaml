@@ -15,7 +15,7 @@ end: 1972
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1950: 7.82
+  1950: 7.83
 weight_imputed: true
 icon: null
 text:
@@ -26,8 +26,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 42.15
-visibility_tier: detailed
+prominence_score: 35.93
+visibility_tier: global
 eligibility: accepted
 geography:
   continents: []
@@ -36,3 +36,25 @@ geography:
     lat: 6.934444444
     lon: 79.842777777
   confidence: null
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: sri_lanka
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2670092
+prominence_components:
+  wikidata_reach: 21.94
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 3.49
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 35.93

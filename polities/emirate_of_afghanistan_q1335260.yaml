@@ -14,8 +14,8 @@ end: 1926
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1850: 6.92
-  1900: 6.34
+  1850: 6.93
+  1900: 6.38
 weight_imputed: true
 icon: null
 text:
@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 49.15
+prominence_score: 40.19
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -38,3 +38,25 @@ geography:
     lat: 34.54
     lon: 69.13
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_afghanistan
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1335260
+prominence_components:
+  wikidata_reach: 24.65
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 5.04
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 40.19

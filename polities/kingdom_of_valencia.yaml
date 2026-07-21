@@ -15,11 +15,11 @@ end: 1707
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1300: 6.79
-  1400: 6.23
-  1500: 6.5
-  1600: 6.66
-  1700: 5.66
+  1300: 6.75
+  1400: 6.22
+  1500: 6.42
+  1600: 6.75
+  1700: 5.72
 weight_imputed: true
 icon: null
 text:
@@ -30,7 +30,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 52.26
+prominence_score: 42.12
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -42,3 +42,26 @@ geography:
     lat: 39.47
     lon: -0.3764
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+- Q417175
+relationships:
+- target: crown_of_aragon
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q142417
+prominence_components:
+  wikidata_reach: 24.94
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.68
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 42.12

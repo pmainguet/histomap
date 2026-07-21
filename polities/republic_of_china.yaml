@@ -18,7 +18,7 @@ end: 1971
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1950: 6.92
+  1950: 6.95
 weight_imputed: true
 icon: null
 text:
@@ -29,7 +29,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 53.55
+prominence_score: 46.31
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -41,3 +41,31 @@ geography:
     lat: 40.0
     lon: 110.0
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_shunzheng
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q13426199
+- target: people_s_republic_of_china
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q13426199
+prominence_components:
+  wikidata_reach: 27.86
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 4.45
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 46.31

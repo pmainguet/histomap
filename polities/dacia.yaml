@@ -13,8 +13,8 @@ end: 106
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  0: 7.2
-  100: 7.22
+  0: 6.92
+  100: 7.09
 weight_imputed: true
 icon: null
 text:
@@ -25,7 +25,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 53.15
+prominence_score: 39.11
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -37,3 +37,19 @@ geography:
     lat: 45.7
     lon: 26.5
   confidence: medium
+entity_type: civilization
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q28171280
+relationships: []
+prominence_components:
+  wikidata_reach: 26.56
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 5.55
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 39.11

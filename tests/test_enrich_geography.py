@@ -1,6 +1,12 @@
 import unittest
 
-from pipeline.enrich_geography import field_locked, locate_point, parse_point, point_in_polygon
+from pipeline.enrich_geography import (
+    field_locked,
+    locate_near_coast,
+    locate_point,
+    parse_point,
+    point_in_polygon,
+)
 
 
 class GeographyEnrichmentTests(unittest.TestCase):
@@ -30,6 +36,19 @@ class GeographyEnrichmentTests(unittest.TestCase):
             }
         ]
         self.assertEqual(locate_point(2, 2, features), ("FR", "europe"))
+
+    def test_near_coast_requires_a_clear_nearby_country(self) -> None:
+        features = [
+            {
+                "properties": {"ISO_A2_EH": "NL", "CONTINENT": "Europe"},
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [[[4, 51], [5, 51], [5, 52], [4, 52], [4, 51]]],
+                },
+            }
+        ]
+        self.assertEqual(locate_near_coast(3.8, 51.5, features), ("NL", "europe"))
+        self.assertIsNone(locate_near_coast(2, 51.5, features))
 
 
 if __name__ == "__main__":

@@ -13,7 +13,7 @@ end: 1894
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1700: 5
+  1700: 3
 weight_imputed: true
 icon: null
 text:
@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 30.29
+prominence_score: 13.4
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -31,3 +31,20 @@ geography:
   present_countries: []
   centroid: null
   confidence: null
+entity_type: people
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q3024240
+- Q41710
+relationships: []
+prominence_components:
+  wikidata_reach: 12.68
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 5.73
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 13.4

@@ -15,7 +15,7 @@ end: 1852
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1850: 9.22
+  1850: 9.21
 weight_imputed: true
 icon: null
 text:
@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 48.12
+prominence_score: 41.49
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -42,3 +42,25 @@ geography:
     lon: 2.483333333
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: second_french_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q58326
+prominence_components:
+  wikidata_reach: 27.19
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 1.75
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 41.49

@@ -6,8 +6,7 @@ names:
 external_ids:
   wikidata: Q28567
 parent: null
-successors:
-- kingdom_of_new_spain
+successors: []
 region: null
 culture_group: null
 start: -2000
@@ -25,11 +24,37 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 65.81
-visibility_tier: global
-eligibility: accepted
+prominence_score: 36.5
+visibility_tier: detailed
+eligibility: review
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - north_america
+  primary_continent: north_america
+  present_countries:
+  - MX
+  confidence: high
+manual_overrides:
+- geography
+entity_type: civilization
+entity_type_confidence: high
+entity_type_source_qids:
+- Q8432
+relationships:
+- target: kingdom_of_new_spain
+  kind: cultural_sequence
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q28567
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 8
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 36.5

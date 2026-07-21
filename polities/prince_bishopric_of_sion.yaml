@@ -25,7 +25,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 26.19
+prominence_score: 14.49
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -37,3 +37,25 @@ geography:
     lat: 46.23375
     lon: 7.35917
   confidence: low
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q463742
+relationships:
+- target: helvetic_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2498804
+prominence_components:
+  wikidata_reach: 9.03
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 6.96
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 14.49

@@ -26,11 +26,39 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 49.59
-visibility_tier: regional
+prominence_score: 30.47
+visibility_tier: detailed
 eligibility: review
 geography:
   continents: []
   present_countries: []
   centroid: null
   confidence: null
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q331644
+relationships:
+- target: eastern_turkic_khaganate
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q15146034
+- target: western_turkic_khaganate
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q15146034
+prominence_components:
+  wikidata_reach: 25.61
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 5.55
+  longevity: 4.31
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 30.47

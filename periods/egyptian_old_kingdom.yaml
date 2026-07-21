@@ -1,0 +1,16 @@
+id: egyptian_old_kingdom
+canonical_name: Old Kingdom of Egypt
+kind: historical
+start: -2686
+end: -2181
+geography:
+  continents: [africa]
+  present_countries: [EG]
+successors: [egyptian_middle_kingdom]
+authority: DBpedia/Wikipedia periodization
+external_ids:
+  wikidata: Q177819
+  dbpedia: https://dbpedia.org/resource/Old_Kingdom_of_Egypt
+notes: Pilot authority record; dates are conventional and vary by chronology.
+source_urls:
+  - https://dbpedia.org/resource/Old_Kingdom_of_Egypt

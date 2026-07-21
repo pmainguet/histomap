@@ -15,7 +15,7 @@ end: 933
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  900: 7.71
+  900: 7.52
 weight_imputed: true
 icon: null
 text:
@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 41.6
+prominence_score: 35.63
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -42,3 +42,25 @@ geography:
     lon: 5.53013
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_arles
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q33235
+prominence_components:
+  wikidata_reach: 20.97
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 4.16
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 35.63

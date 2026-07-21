@@ -1,0 +1,14 @@
+id: egyptian_middle_kingdom
+canonical_name: Middle Kingdom of Egypt
+kind: historical
+start: -2055
+end: -1650
+geography:
+  continents: [africa]
+  present_countries: [EG]
+authority: DBpedia/Wikipedia periodization
+external_ids:
+  dbpedia: https://dbpedia.org/resource/Middle_Kingdom_of_Egypt
+notes: Pilot authority record; dates are conventional and vary by chronology.
+source_urls:
+  - https://dbpedia.org/resource/Middle_Kingdom_of_Egypt

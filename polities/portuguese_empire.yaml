@@ -14,14 +14,14 @@ end: 1999
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1500: 5.46
-  1600: 5.9
-  1700: 5.7
-  1750: 5.91
-  1800: 6.13
-  1850: 6.61
-  1900: 6.34
-  1950: 7.03
+  1500: 5.34
+  1600: 6.01
+  1700: 5.76
+  1750: 5.97
+  1800: 6.15
+  1850: 6.63
+  1900: 6.38
+  1950: 7.06
 weight_imputed: true
 icon: null
 text:
@@ -32,8 +32,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 59.92
-visibility_tier: global
+prominence_score: 46.73
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -44,3 +44,25 @@ geography:
     lat: 38.71666667
     lon: -9.13333333
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: iberian_union
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q200464
+prominence_components:
+  wikidata_reach: 29.31
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.92
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 46.73

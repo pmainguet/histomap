@@ -5,6 +5,8 @@ names:
   aliases_en: Roman Empire
 external_ids:
   wikidata: Q42834
+  seshat:
+  - ItRomWe
 parent: null
 successors:
 - francia
@@ -17,7 +19,7 @@ end: 476
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  400: 7.36
+  400: 9.53
 weight_imputed: true
 icon: null
 text:
@@ -27,8 +29,9 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
+- seshat
 - wikidata
-prominence_score: 57.55
+prominence_score: 63.72
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -43,3 +46,37 @@ geography:
     lon: 12.482777777
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: francia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q42834
+- target: kingdom_of_italy_q3755547
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q42834
+- target: romain_gaul_domain_of_soissons
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q42834
+prominence_components:
+  wikidata_reach: 29.93
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 10.0
+  longevity: 4.78
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 63.72

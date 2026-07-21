@@ -15,8 +15,8 @@ end: 680
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  500: 4.03
-  600: 3.51
+  500: 4.88
+  600: 3.86
 weight_imputed: true
 icon: null
 text:
@@ -27,7 +27,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 39.13
+prominence_score: 34.21
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -39,3 +39,25 @@ geography:
     lat: 53.2333
     lon: -4.0166
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_seisyllwg
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2578706
+prominence_components:
+  wikidata_reach: 18.06
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 5.64
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 34.21

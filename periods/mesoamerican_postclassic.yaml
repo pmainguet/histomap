@@ -1,0 +1,13 @@
+id: mesoamerican_postclassic
+canonical_name: Mesoamerican Postclassic period
+kind: historical
+start: 900
+end: 1521
+geography:
+  continents: [north_america]
+  present_countries: [MX, GT, BZ, HN, SV]
+authority: DBpedia/Wikipedia periodization
+external_ids:
+  dbpedia: https://dbpedia.org/resource/Mesoamerican_chronology
+source_urls:
+  - https://dbpedia.org/resource/Mesoamerican_chronology

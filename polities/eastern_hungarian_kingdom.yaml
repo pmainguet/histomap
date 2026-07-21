@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 43.17
+prominence_score: 24.57
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -33,3 +33,20 @@ geography:
   present_countries: []
   centroid: null
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+- Q417175
+relationships: []
+prominence_components:
+  wikidata_reach: 21.94
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 4.13
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 24.57

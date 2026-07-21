@@ -1,0 +1,15 @@
+id: european_bronze_age
+canonical_name: Bronze Age Europe
+kind: protohistorical
+start: -3200
+end: -600
+start_confidence: low
+end_confidence: low
+geography:
+  continents: [europe]
+successors: [european_iron_age]
+authority: DBpedia/Wikipedia periodization
+external_ids:
+  dbpedia: https://dbpedia.org/resource/Bronze_Age_Europe
+source_urls:
+  - https://dbpedia.org/resource/Bronze_Age_Europe

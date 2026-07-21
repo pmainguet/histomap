@@ -6,6 +6,8 @@ names:
     Empire | Khwarezmian Empire
 external_ids:
   wikidata: Q63134381
+  seshat:
+  - UzKhw01
 parent: null
 successors: []
 region: null
@@ -15,8 +17,8 @@ end: 1231
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1100: 3.16
-  1200: 3.68
+  1100: 1.0
+  1200: 1.0
 weight_imputed: true
 icon: null
 text:
@@ -26,9 +28,10 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
+- seshat
 - wikidata
-prominence_score: 52.07
-visibility_tier: regional
+prominence_score: 50.46
+visibility_tier: global
 eligibility: accepted
 geography:
   continents:
@@ -39,3 +42,19 @@ geography:
     lat: 36.213333333
     lon: 58.795833333
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 25.99
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 5.48
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 50.46

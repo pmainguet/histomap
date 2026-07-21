@@ -26,8 +26,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 47.45
-visibility_tier: regional
+prominence_score: 21.77
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -38,3 +38,36 @@ geography:
     lat: 47.466666666
     lon: 19.05
   confidence: medium
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: austriahungary
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q696970
+- target: first_czechoslovak_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q696970
+- target: kingdom_of_hungary_q600018
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q696970
+prominence_components:
+  wikidata_reach: 24.35
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 8.13
+  longevity: 4.29
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 21.77

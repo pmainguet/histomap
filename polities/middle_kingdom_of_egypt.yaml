@@ -4,6 +4,8 @@ names:
   fr: Moyen Empire
 external_ids:
   wikidata: Q191324
+  seshat:
+  - EgMidKg
 parent: null
 successors: []
 region: null
@@ -13,7 +15,7 @@ end: -1781
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  -2000: 7.47
+  -2000: 10.0
 weight_imputed: true
 icon: null
 text:
@@ -23,9 +25,10 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
+- seshat
 - wikidata
-prominence_score: 54.64
-visibility_tier: regional
+prominence_score: 52.02
+visibility_tier: global
 eligibility: accepted
 geography:
   continents:
@@ -36,3 +39,19 @@ geography:
     lat: 25.720556
     lon: 32.610278
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 26.99
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 6.03
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 52.02

@@ -24,8 +24,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 55.42
-visibility_tier: global
+prominence_score: 28.54
+visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -36,3 +36,19 @@ geography:
     lat: 35.798056
     lon: 36.798611
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 26.34
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 7.2
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 28.54

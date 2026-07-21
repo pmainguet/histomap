@@ -7,6 +7,8 @@ names:
     Empire | Sassanian Persia | Sassanid Empire | Sassanid Persia
 external_ids:
   wikidata: Q83891
+  seshat:
+  - IrSasn2
 parent: null
 successors:
 - rashidun_caliphate
@@ -17,10 +19,10 @@ end: 651
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  300: 5.56
-  400: 4.88
-  500: 4.74
-  600: 5.15
+  300: 7.72
+  400: 7.23
+  500: 8.5
+  600: 10.0
 weight_imputed: true
 icon: null
 text:
@@ -30,8 +32,9 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
+- seshat
 - wikidata
-prominence_score: 61.36
+prominence_score: 62.58
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -45,3 +48,25 @@ geography:
     lon: 53.0
   confidence: medium
   primary_continent: asia
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: rashidun_caliphate
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q83891
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 6.58
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 62.58

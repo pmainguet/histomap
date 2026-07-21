@@ -27,7 +27,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 39.09
+prominence_score: 24.12
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -39,3 +39,31 @@ geography:
     lat: 18.975
     lon: 72.825833333
   confidence: medium
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q12443800
+relationships:
+- target: gujarat
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2627082
+- target: maharashtra
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2627082
+prominence_components:
+  wikidata_reach: 20.7
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 5.55
+  longevity: 2.87
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 24.12

@@ -13,10 +13,10 @@ end: 1967
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1800: 4.77
-  1850: 4.96
-  1900: 4.3
-  1950: 4.92
+  1800: 4.81
+  1850: 4.99
+  1900: 4.37
+  1950: 4.98
 weight_imputed: true
 icon: null
 text:
@@ -27,7 +27,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 33.9
+prominence_score: 27.56
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -41,3 +41,19 @@ geography:
     lon: 46.5
   confidence: medium
   primary_continent: asia
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 15.0
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 5.56
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 27.56

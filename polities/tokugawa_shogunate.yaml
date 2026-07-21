@@ -18,10 +18,10 @@ end: 1867
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1700: 8.84
-  1750: 8.88
-  1800: 5.75
-  1850: 5.91
+  1700: 9.49
+  1750: 9.54
+  1800: 7.01
+  1850: 7.18
 weight_imputed: true
 icon: null
 text:
@@ -33,7 +33,7 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 56.42
+prominence_score: 60.1
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -45,3 +45,31 @@ geography:
     lat: 35.683888888
     lon: 139.774444444
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: empire_of_japan
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q205662
+- target: government_of_meiji_japan
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q205662
+prominence_components:
+  wikidata_reach: 28.04
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 6.06
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 60.1

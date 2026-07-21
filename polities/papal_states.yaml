@@ -23,19 +23,19 @@ end: 1870
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  800: 2.75
-  900: 2.61
-  1000: 3.82
-  1100: 3.04
-  1200: 2.88
-  1300: 1.0
-  1400: 1.0
-  1500: 1.29
+  800: 2.8
+  900: 3.85
+  1000: 5.44
+  1100: 5.1
+  1200: 3.7
+  1300: 2.46
+  1400: 2.27
+  1500: 2.37
   1600: 1.0
-  1700: 1.82
-  1750: 2.19
-  1800: 1.0
-  1850: 1.0
+  1700: 2.63
+  1750: 3.0
+  1800: 1.29
+  1850: 1.74
 weight_imputed: true
 icon: null
 text:
@@ -47,7 +47,7 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 60.98
+prominence_score: 64.13
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -59,3 +59,37 @@ geography:
     lat: 41.9
     lon: 12.4875
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_italy_q172579
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q170174
+- target: roman_republic_q1072140
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q170174
+- target: vatican_city
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q170174
+prominence_components:
+  wikidata_reach: 29.39
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 8.13
+  longevity: 7.62
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 64.13

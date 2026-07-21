@@ -15,7 +15,7 @@ end: 1804
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1800: 8.71
+  1800: 8.7
 weight_imputed: true
 icon: null
 text:
@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 50.89
+prominence_score: 50.19
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -42,3 +42,25 @@ geography:
     lon: 2.327222222
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: first_french_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q58296
+prominence_components:
+  wikidata_reach: 27.86
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 12.55
+  longevity: 2.78
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 50.19

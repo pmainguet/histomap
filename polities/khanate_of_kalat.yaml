@@ -16,12 +16,12 @@ end: 1955
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1700: 4.37
-  1750: 4.61
-  1800: 4.96
-  1850: 5.15
-  1900: 4.32
-  1950: 4.94
+  1700: 4.46
+  1750: 4.69
+  1800: 5.0
+  1850: 5.18
+  1900: 4.39
+  1950: 5.0
 weight_imputed: true
 icon: null
 text:
@@ -32,7 +32,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 45.38
+prominence_score: 37.98
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -44,3 +44,25 @@ geography:
     lat: 29.02583333
     lon: 66.59
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: dominion_of_pakistan
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q139948
+prominence_components:
+  wikidata_reach: 21.22
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.26
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 37.98

@@ -1,0 +1,15 @@
+id: yayoi_period
+canonical_name: Yayoi period
+kind: protohistorical
+start: -900
+end: 250
+start_confidence: low
+geography:
+  continents: [asia]
+  present_countries: [JP]
+successors: [kofun_period]
+authority: DBpedia/Wikipedia periodization
+external_ids:
+  dbpedia: https://dbpedia.org/resource/Yayoi_period
+source_urls:
+  - https://dbpedia.org/resource/Yayoi_period

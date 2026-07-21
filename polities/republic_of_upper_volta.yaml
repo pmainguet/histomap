@@ -25,8 +25,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 48.2
-visibility_tier: regional
+prominence_score: 27.56
+visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -38,3 +38,25 @@ geography:
     lat: 12.1
     lon: -1.7
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: burkina_faso
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q797422
+prominence_components:
+  wikidata_reach: 25.48
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 3.58
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 27.56

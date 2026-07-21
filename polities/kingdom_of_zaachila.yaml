@@ -22,8 +22,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 20.76
-visibility_tier: detailed
+prominence_score: 7.67
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -32,3 +32,19 @@ geography:
   - MX
   centroid: null
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 7.16
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 5.52
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 7.67

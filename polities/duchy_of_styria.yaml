@@ -14,16 +14,7 @@ end: 1918
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1200: 7.75
-  1300: 8.55
-  1400: 7.73
-  1500: 8.17
-  1600: 8.23
-  1700: 7.39
-  1750: 7.81
-  1800: 7.9
-  1850: 8.56
-  1900: 8.08
+  1180: 5
 weight_imputed: true
 icon: null
 text:
@@ -32,11 +23,10 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
-- hyde
 - wikidata
-prominence_score: 50.97
-visibility_tier: regional
-eligibility: accepted
+prominence_score: 19.37
+visibility_tier: detailed
+eligibility: review
 geography:
   continents:
   - europe
@@ -46,3 +36,24 @@ geography:
     lat: 47.066666666
     lon: 15.433333333
   confidence: medium
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: cisleithania
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q580447
+prominence_components:
+  wikidata_reach: 23.7
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 7.17
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 19.37

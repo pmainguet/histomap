@@ -15,9 +15,9 @@ end: 1806
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1400: 8.0
-  1500: 8.34
-  1600: 8.83
+  1400: 8.08
+  1500: 8.32
+  1600: 8.84
   1700: 8.04
   1750: 8.5
   1800: 8.46
@@ -31,7 +31,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 53.31
+prominence_score: 42.75
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -43,3 +43,25 @@ geography:
     lat: 51.033333
     lon: 13.733333
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_saxony
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q156199
+prominence_components:
+  wikidata_reach: 25.61
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.64
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 42.75

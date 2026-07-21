@@ -6,9 +6,7 @@ names:
 external_ids:
   wikidata: Q12060881
 parent: null
-successors:
-- mongolia
-- republic_of_china
+successors: []
 region: null
 culture_group: null
 start: -219
@@ -16,28 +14,28 @@ end: 1912
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  0: 7.49
-  100: 7.15
-  200: 6.4
-  300: 4.81
-  400: 4.66
-  500: 4.82
-  600: 5.81
-  700: 6.03
-  800: 5.25
-  900: 5.26
-  1000: 4.72
-  1100: 5.74
-  1200: 6.34
-  1300: 5.39
-  1400: 5.47
-  1500: 5.95
-  1600: 5.62
-  1700: 5.22
-  1750: 6.35
-  1800: 7.08
-  1850: 7.08
-  1900: 6.18
+  0: 7.21
+  100: 7.02
+  200: 6.26
+  300: 5.55
+  400: 5.96
+  500: 5.71
+  600: 6.0
+  700: 5.83
+  800: 5.28
+  900: 4.92
+  1000: 4.27
+  1100: 5.68
+  1200: 6.56
+  1300: 5.36
+  1400: 5.42
+  1500: 5.85
+  1600: 5.74
+  1700: 5.29
+  1750: 6.39
+  1800: 7.09
+  1850: 7.1
+  1900: 6.22
 weight_imputed: true
 icon: null
 text:
@@ -48,7 +46,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 50.29
+prominence_score: 43.52
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -60,3 +58,32 @@ geography:
     lat: 40.0
     lon: 110.0
   confidence: low
+entity_type: civilization
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships:
+- target: mongolia
+  kind: cultural_sequence
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q12060881
+- target: republic_of_china
+  kind: cultural_sequence
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q12060881
+manual_overrides:
+- entity_type
+prominence_components:
+  wikidata_reach: 22.97
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 8
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 43.52

@@ -15,7 +15,7 @@ end: 1801
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1750: 8.26
+  1750: 8.27
   1800: 8.27
 weight_imputed: true
 icon: null
@@ -27,8 +27,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 56.89
-visibility_tier: global
+prominence_score: 48.33
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -39,3 +39,25 @@ geography:
     lat: 51.5
     lon: -0.13333333
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: united_kingdom_of_great_britain_and_ireland
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q161885
+prominence_components:
+  wikidata_reach: 29.39
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 4.94
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 48.33

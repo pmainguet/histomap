@@ -28,8 +28,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 53.43
-visibility_tier: regional
+prominence_score: 24.2
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -45,3 +45,36 @@ geography:
     lon: 35.236666666
   confidence: medium
   primary_continent: asia
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: all_palestine_government
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q193714
+- target: israel
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q193714
+- target: jordan
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q193714
+prominence_components:
+  wikidata_reach: 28.55
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 7.0
+  longevity: 3.66
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 24.2

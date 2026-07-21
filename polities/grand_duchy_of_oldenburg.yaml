@@ -25,8 +25,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 46.69
-visibility_tier: regional
+prominence_score: 20.21
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -37,3 +37,24 @@ geography:
     lat: 53.143888888
     lon: 8.213888888
   confidence: medium
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: free_state_of_oldenburg
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q693669
+prominence_components:
+  wikidata_reach: 23.16
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 7.0
+  longevity: 5.05
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 20.21

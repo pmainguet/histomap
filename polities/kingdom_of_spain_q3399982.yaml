@@ -15,10 +15,10 @@ end: 1873
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1700: 6.38
-  1750: 6.63
-  1800: 6.8
-  1850: 7.17
+  1700: 6.42
+  1750: 6.66
+  1800: 6.82
+  1850: 7.18
 weight_imputed: true
 icon: null
 text:
@@ -29,7 +29,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 24.01
+prominence_score: 29.76
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -43,3 +43,25 @@ geography:
     lon: -3.5
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: first_spanish_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q3399982
+prominence_components:
+  wikidata_reach: 9.03
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 8.13
+  longevity: 5.6
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 29.76

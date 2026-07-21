@@ -24,12 +24,33 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 47.71
-visibility_tier: regional
-eligibility: accepted
+prominence_score: 19.32
+visibility_tier: detailed
+eligibility: review
 geography:
   continents:
   - europe
   present_countries: []
   centroid: null
   confidence: medium
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: prussia
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q161036
+prominence_components:
+  wikidata_reach: 25.08
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 5.55
+  longevity: 3.69
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 19.32

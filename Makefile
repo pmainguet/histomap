@@ -1,10 +1,13 @@
-.PHONY: setup extract extract-seshat extract-maddison extract-hyde map-maddison filter-wikidata-types import-wikidata reconcile apply-reviews spotcheck compute-prominence enrich-relationships enrich-geography validate build serve test format lint check
+.PHONY: setup extract audit-civilizations extract-seshat extract-maddison extract-hyde map-maddison filter-wikidata-types cache-wikidata-type-ancestors classify-entity-types import-wikidata reconcile apply-reviews spotcheck compute-prominence enrich-relationships enrich-geography enrich-missing-geography period-pilot validate build serve test format lint check
 
 setup:
 	uv pip install -r requirements.txt ruff mypy
 
 extract:
 	python pipeline/extract_wikidata.py
+
+audit-civilizations:
+	python -m pipeline.audit_civilizations
 
 extract-seshat:
 	python pipeline/extract_seshat.py
@@ -20,6 +23,12 @@ extract-hyde:
 
 filter-wikidata-types:
 	python pipeline/filter_wikidata_types.py
+
+cache-wikidata-type-ancestors:
+	python -m pipeline.cache_wikidata_type_ancestors
+
+classify-entity-types:
+	python -m pipeline.backfill_entity_types
 
 import-wikidata:
 	python pipeline/wd_to_yaml.py
@@ -47,6 +56,12 @@ enrich-relationships:
 
 enrich-geography:
 	python pipeline/enrich_geography.py
+
+enrich-missing-geography:
+	python pipeline/enrich_geography.py --only-missing
+
+period-pilot: validate
+	python -m pipeline.report_period_pilot
 
 validate:
 	python build.py

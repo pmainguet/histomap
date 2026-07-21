@@ -14,11 +14,11 @@ end: 1946
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1700: 3.68
-  1750: 3.94
-  1800: 4.58
-  1850: 5.59
-  1900: 5.89
+  1700: 3.79
+  1750: 4.04
+  1800: 4.61
+  1850: 5.62
+  1900: 5.93
 weight_imputed: true
 icon: null
 text:
@@ -29,7 +29,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 40.75
+prominence_score: 35.2
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -43,3 +43,25 @@ geography:
     lon: 99.0
   confidence: medium
   primary_continent: asia
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: indonesia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2030015
+prominence_components:
+  wikidata_reach: 18.46
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.25
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 35.2

@@ -17,8 +17,8 @@ end: 1927
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1850: 9.71
-  1900: 9.46
+  1850: 9.7
+  1900: 9.45
 weight_imputed: true
 icon: null
 text:
@@ -29,8 +29,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 56.13
-visibility_tier: global
+prominence_score: 49.93
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -41,3 +41,37 @@ geography:
     lat: 51.507222222
     lon: -0.1275
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: ireland
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q174193
+- target: irish_free_state
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q174193
+- target: irish_republic_q1140152
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q174193
+prominence_components:
+  wikidata_reach: 28.63
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 9.05
+  longevity: 5.26
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 49.93

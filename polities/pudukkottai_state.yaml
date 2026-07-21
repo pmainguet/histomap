@@ -14,11 +14,11 @@ end: 1948
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1700: 9.98
+  1700: 9.94
   1750: 10.0
-  1800: 9.82
+  1800: 9.8
   1850: 10.0
-  1900: 9.31
+  1900: 9.3
 weight_imputed: true
 icon: null
 text:
@@ -29,7 +29,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 32.3
+prominence_score: 30.12
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -41,3 +41,25 @@ geography:
     lat: 10.3833
     lon: 78.7833
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: india
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q3535371
+prominence_components:
+  wikidata_reach: 13.55
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.07
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 30.12

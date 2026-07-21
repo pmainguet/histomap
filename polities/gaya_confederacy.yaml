@@ -14,11 +14,11 @@ end: 562
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  100: 3.61
-  200: 4.07
-  300: 4.47
-  400: 4.36
-  500: 4.69
+  100: 3.56
+  200: 3.99
+  300: 5.24
+  400: 5.68
+  500: 5.57
 weight_imputed: true
 icon: null
 text:
@@ -29,7 +29,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 50.92
+prominence_score: 37.82
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -41,3 +41,19 @@ geography:
     lat: 35.16
     lon: 128.23
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 24.03
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 6.79
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 37.82

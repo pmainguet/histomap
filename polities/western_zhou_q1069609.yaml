@@ -8,6 +8,8 @@ names:
     Kingdom
 external_ids:
   wikidata: Q1069609
+  seshat:
+  - CnWZhou
 parent: zhou_dynasty
 successors:
 - eastern_zhou_q307066
@@ -27,12 +29,42 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 49.82
-visibility_tier: regional
+prominence_score: 42.68
+visibility_tier: detailed
 eligibility: review
 geography:
   continents: []
   present_countries: []
   centroid: null
   confidence: null
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships:
+- target: zhou_dynasty
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1069609
+- target: eastern_zhou_q307066
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1069609
+manual_overrides:
+- entity_type
+prominence_components:
+  wikidata_reach: 24.03
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 5.55
+  longevity: 6.1
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 42.68

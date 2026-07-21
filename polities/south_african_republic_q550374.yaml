@@ -15,7 +15,7 @@ end: 1902
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1900: 4.44
+  1900: 4.51
 weight_imputed: true
 icon: null
 text:
@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 50.73
+prominence_score: 37.61
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -38,3 +38,19 @@ geography:
     lat: -25.71666667
     lon: 28.23333333
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 26.34
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 4.27
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 37.61

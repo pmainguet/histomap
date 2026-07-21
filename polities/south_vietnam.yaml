@@ -25,8 +25,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 55.07
-visibility_tier: global
+prominence_score: 33.72
+visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -37,3 +37,25 @@ geography:
     lat: 10.776944444
     lon: 106.695277777
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: provisional_revolutionary_government_of_the_republic_of_south_vietnam
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q180573
+prominence_components:
+  wikidata_reach: 29.87
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 5.55
+  longevity: 3.31
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 33.72

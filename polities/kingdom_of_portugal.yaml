@@ -15,16 +15,16 @@ end: 1910
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1200: 4.73
-  1300: 5.08
-  1400: 4.76
-  1500: 5.41
-  1600: 5.85
-  1700: 5.65
-  1750: 5.87
-  1800: 6.09
-  1850: 6.57
-  1900: 6.12
+  1200: 5.06
+  1300: 5.04
+  1400: 4.67
+  1500: 5.28
+  1600: 5.96
+  1700: 5.71
+  1750: 5.92
+  1800: 6.11
+  1850: 6.58
+  1900: 6.16
 weight_imputed: true
 icon: null
 text:
@@ -35,8 +35,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 56.36
-visibility_tier: global
+prominence_score: 48.1
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -52,3 +52,32 @@ geography:
     lon: -9.18333333
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+- Q417175
+relationships:
+- target: united_kingdom_of_portugal_brazil_and_the_algarves
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q45670
+- target: first_portuguese_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q45670
+prominence_components:
+  wikidata_reach: 26.89
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 7.22
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 48.1

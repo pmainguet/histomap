@@ -17,7 +17,7 @@ end: 1949
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1900: 9.03
+  1900: 9.02
 weight_imputed: true
 icon: null
 text:
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 50.49
+prominence_score: 46.53
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -40,3 +40,37 @@ geography:
     lat: 52.52
     lon: 13.375
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: german_democratic_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1206012
+- target: germany
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1206012
+- target: west_germany
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1206012
+prominence_components:
+  wikidata_reach: 25.74
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 9.05
+  longevity: 4.74
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 46.53

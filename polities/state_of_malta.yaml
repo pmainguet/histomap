@@ -24,8 +24,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 38.21
-visibility_tier: detailed
+prominence_score: 21.53
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents: []
@@ -34,3 +34,25 @@ geography:
     lat: 35.883333333
     lon: 14.45
   confidence: null
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: malta
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q7603765
+prominence_components:
+  wikidata_reach: 20.43
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 2.6
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 21.53

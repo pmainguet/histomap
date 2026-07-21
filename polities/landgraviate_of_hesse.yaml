@@ -14,8 +14,8 @@ end: 1567
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1300: 9.3
-  1400: 8.31
+  1300: 9.26
+  1400: 8.4
   1500: 8.75
 weight_imputed: true
 icon: null
@@ -27,7 +27,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 46.86
+prominence_score: 38.86
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -39,3 +39,25 @@ geography:
     lat: 51.319722
     lon: 9.497778
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: landgraviate_of_hesse_kassel
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q695322
+prominence_components:
+  wikidata_reach: 22.16
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.21
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 38.86

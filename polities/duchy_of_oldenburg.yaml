@@ -15,8 +15,8 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   1800: 8.49
-  1850: 9.29
-  1900: 8.98
+  1850: 9.28
+  1900: 8.97
 weight_imputed: true
 icon: null
 text:
@@ -27,8 +27,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 43.59
-visibility_tier: detailed
+prominence_score: 38.92
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -39,3 +39,25 @@ geography:
     lat: 53.143888888
     lon: 8.213888888
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: grand_duchy_of_oldenburg
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q697084
+prominence_components:
+  wikidata_reach: 20.97
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 5.4
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 38.92

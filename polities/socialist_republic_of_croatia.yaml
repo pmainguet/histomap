@@ -26,8 +26,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 49.55
-visibility_tier: regional
+prominence_score: 18.4
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -39,3 +39,24 @@ geography:
     lat: 45.816111111
     lon: 15.974166666
   confidence: medium
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: croatia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q209062
+prominence_components:
+  wikidata_reach: 25.74
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 4.16
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 18.4

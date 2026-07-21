@@ -4,6 +4,8 @@ names:
   fr: Khamag Mongol
 external_ids:
   wikidata: Q3875016
+  seshat:
+  - MnMongE
 parent: null
 successors: []
 region: null
@@ -22,8 +24,9 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 43.13
+prominence_score: 33.07
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -31,3 +34,20 @@ geography:
   present_countries: []
   centroid: null
   confidence: null
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships: []
+manual_overrides:
+- entity_type
+prominence_components:
+  wikidata_reach: 21.22
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 4.85
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 33.07

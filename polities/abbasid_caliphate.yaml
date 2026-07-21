@@ -8,6 +8,7 @@ external_ids:
   seshat:
   - IqAbbs1
   - IqAbbs2
+  - PkSind1
 parent: null
 successors:
 - ilkhanate
@@ -21,10 +22,10 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   800: 10.0
-  900: 10.0
-  1000: 10.0
-  1100: 10.0
-  1200: 8.62
+  900: 5.23
+  1000: 6.27
+  1100: 5.21
+  1200: 8.85
 weight_imputed: true
 icon: null
 text:
@@ -36,7 +37,7 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 63.34
+prominence_score: 63.89
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -48,3 +49,37 @@ geography:
     lat: 33.315277777
     lon: 44.366111111
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: ilkhanate
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q12536
+- target: mamluk_sultanate_of_egypt
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q12536
+- target: ottoman_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q12536
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 8.13
+  longevity: 6.77
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 63.89

@@ -22,18 +22,18 @@ end: 1797
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  700: 8.19
+  700: 9.33
   800: 8.45
-  900: 8.6
-  1000: 9.25
-  1100: 9.54
-  1200: 9.72
-  1300: 9.71
-  1400: 8.03
-  1500: 9.18
-  1600: 7.74
-  1700: 7.59
-  1750: 7.92
+  900: 9.12
+  1000: 10.0
+  1100: 10.0
+  1200: 9.8
+  1300: 10.0
+  1400: 9.27
+  1500: 9.34
+  1600: 8.54
+  1700: 8.27
+  1750: 8.59
 weight_imputed: true
 icon: null
 text:
@@ -45,7 +45,7 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 61.56
+prominence_score: 59.84
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -57,3 +57,25 @@ geography:
     lat: 45.583
     lon: 12.683
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: austrian_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q4948
+prominence_components:
+  wikidata_reach: 29.73
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 7.6
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 59.84

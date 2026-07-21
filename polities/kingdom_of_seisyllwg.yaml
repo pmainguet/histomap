@@ -15,9 +15,9 @@ end: 920
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  700: 4.41
-  800: 4.66
-  900: 5.17
+  700: 4.19
+  800: 4.7
+  900: 4.82
 weight_imputed: true
 icon: null
 text:
@@ -28,8 +28,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 41.5
-visibility_tier: detailed
+prominence_score: 37.68
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -40,3 +40,25 @@ geography:
     lat: 53.233333333
     lon: -4.016666666
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_deheubarth
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2456191
+prominence_components:
+  wikidata_reach: 19.18
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 5.96
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 37.68

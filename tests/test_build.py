@@ -1,17 +1,18 @@
 import unittest
 
-from build import find_parent_cycles, validate_transitions
+from build import find_parent_cycles, validate_entity_relationships, validate_transitions
 from pydantic import ValidationError
 
-from schema import Geography, Polity, Transition
+from schema import Geography, Period, PeriodLink, Polity, Transition
 
 
-def polity(polity_id: str, parent: str | None = None) -> Polity:
+def polity(polity_id: str, parent: str | None = None, entity_type: str = "polity") -> Polity:
     return Polity.model_validate(
         {
             "id": polity_id,
             "canonical_name": polity_id,
             "parent": parent,
+            "entity_type": entity_type,
             "start": 1,
             "end": 2,
             "start_confidence": "low",
@@ -21,6 +22,37 @@ def polity(polity_id: str, parent: str | None = None) -> Polity:
 
 
 class BuildRelationshipValidationTests(unittest.TestCase):
+    def test_period_requires_ordered_dates_and_a_source(self) -> None:
+        with self.assertRaises(ValidationError):
+            Period.model_validate(
+                {
+                    "id": "bad_period",
+                    "canonical_name": "Bad period",
+                    "kind": "historical",
+                    "start": 200,
+                    "end": 100,
+                    "authority": "Test",
+                    "source_urls": [],
+                }
+            )
+
+    def test_period_link_records_evidence(self) -> None:
+        link = PeriodLink.model_validate(
+            {
+                "period_id": "test_period",
+                "entity_id": "test_entity",
+                "evidence": "derived",
+                "confidence": "medium",
+                "source_urls": ["https://example.test/source"],
+            }
+        )
+        self.assertEqual(link.evidence, "derived")
+
+    def test_political_parent_rejects_non_polity_endpoint(self) -> None:
+        child = polity("child", "parent", "culture")
+        errors = validate_entity_relationships([child, polity("parent")])
+        self.assertIn("child: political parent requires polity → polity", errors)
+
     def test_acyclic_parents_pass(self) -> None:
         self.assertEqual(find_parent_cycles([polity("child", "parent"), polity("parent")]), [])
 
@@ -77,6 +109,22 @@ class BuildRelationshipValidationTests(unittest.TestCase):
         )
         with self.assertRaisesRegex(ValueError, "outside source first dates"):
             validate_transitions([transition], [polity("first"), polity("second")])
+
+    def test_transition_rejects_cultural_endpoint(self) -> None:
+        transition = Transition.model_validate(
+            {
+                "id": "not_political",
+                "year": 2,
+                "kind": "succession",
+                "from": ["first"],
+                "to": ["culture"],
+                "label": "Cultural sequence",
+            }
+        )
+        with self.assertRaisesRegex(ValueError, "require polity endpoints: culture"):
+            validate_transitions(
+                [transition], [polity("first"), polity("culture", entity_type="culture")]
+            )
 
 
 if __name__ == "__main__":

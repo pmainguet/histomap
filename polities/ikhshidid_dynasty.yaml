@@ -5,6 +5,8 @@ names:
   aliases_en: Ikhshidids Dynasty | Dynasty of Egyptian monarchs | Ikhshidid Egyptians
 external_ids:
   wikidata: Q828665
+  seshat:
+  - EgTulIk
 parent: null
 successors: []
 region: null
@@ -23,12 +25,33 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 46.76
+prominence_score: 35.21
 visibility_tier: regional
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - africa
+  primary_continent: africa
+  present_countries:
+  - EG
+  confidence: high
+manual_overrides:
+- geography
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 24.35
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 3.86
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 35.21

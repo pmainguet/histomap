@@ -18,9 +18,9 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   1750: 1.0
-  1800: 1.4
-  1850: 2.53
-  1900: 2.28
+  1800: 1.47
+  1850: 2.59
+  1900: 2.39
 weight_imputed: true
 icon: null
 text:
@@ -31,8 +31,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 63.94
-visibility_tier: global
+prominence_score: 49.74
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -45,3 +45,32 @@ geography:
     lon: 70.1167
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+- Q3624078
+relationships:
+- target: kingdom_of_poland_q696908
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q34266
+- target: russian_republic_q139319
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q34266
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 5.74
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 49.74

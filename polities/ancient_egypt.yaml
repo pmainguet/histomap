@@ -5,6 +5,18 @@ names:
   aliases_en: Egypt, Ancient | Ta-Kemet | Ta-Meri | Ta-Ui
 external_ids:
   wikidata: Q11768
+  seshat:
+  - EgDyn1*
+  - EgDyn2*
+  - EgIntOc
+  - EgNKRam
+  - EgNKThu
+  - EgNaqa3
+  - EgRegns
+  - EgSaite
+  - EgThebH
+  - EgThebL
+  - SdKusht
 parent: null
 successors: []
 region: null
@@ -16,8 +28,8 @@ end_confidence: low
 weight_by_era:
   -4000: 1.0
   -3000: 10.0
-  -2000: 10.0
-  -1000: 7.57
+  -2000: 7.5
+  -1000: 8.84
 weight_imputed: true
 icon: null
 text:
@@ -27,8 +39,9 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
+- seshat
 - wikidata
-prominence_score: 69.08
+prominence_score: 57.0
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -42,3 +55,19 @@ geography:
     lon: 31.3
   confidence: medium
   primary_continent: africa
+entity_type: civilization
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q28171280
+relationships: []
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 8
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 57.0

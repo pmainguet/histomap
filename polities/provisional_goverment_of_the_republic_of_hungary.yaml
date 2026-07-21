@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 32.59
+prominence_score: 20.13
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -36,3 +36,25 @@ geography:
     lat: 47.48333333
     lon: 19.03333333
   confidence: low
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q99541706
+relationships:
+- target: kingdom_of_hungary_q600018
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q16985296
+prominence_components:
+  wikidata_reach: 18.83
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 5.55
+  longevity: 0.75
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 20.13

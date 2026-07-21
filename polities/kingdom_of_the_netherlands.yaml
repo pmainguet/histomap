@@ -14,8 +14,8 @@ end: null
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1850: 7.14
-  1900: 7.27
+  1850: 7.15
+  1900: 7.29
   1950: 8.38
   2000: 6.22
 weight_imputed: true
@@ -28,8 +28,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - maddison
 - wikidata
-prominence_score: 42.14
-visibility_tier: detailed
+prominence_score: 42.82
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -45,3 +45,21 @@ geography:
     lon: 4.883333333
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3624078
+- Q417175
+- Q6256
+relationships: []
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 5.82
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 42.82

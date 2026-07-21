@@ -17,8 +17,8 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   1300: 1.0
-  1400: 2.14
-  1500: 2.47
+  1400: 1.92
+  1500: 2.23
 weight_imputed: true
 icon: null
 text:
@@ -29,7 +29,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 49.98
+prominence_score: 44.24
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -41,3 +41,37 @@ geography:
     lat: 57.0
     lon: 25.0
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: duchy_of_courland_and_semigallia_q156038
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2458532
+- target: duchy_of_estonia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2458532
+- target: duchy_of_livonia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2458532
+prominence_components:
+  wikidata_reach: 23.87
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 6.38
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 44.24

@@ -9,8 +9,13 @@ const endInput = document.querySelector("#year-end");
 const visibilityInput = document.querySelector("#visibility");
 const readingLevelInput = document.querySelector("#reading-level");
 const historicalGroupInput = document.querySelector("#historical-group");
+const entityTypeInput = document.querySelector("#entity-type");
+const entityTypeConfidenceInput = document.querySelector("#entity-type-confidence");
 const continentInput = document.querySelector("#continent");
 const countryInput = document.querySelector("#country");
+const showPeriodsInput = document.querySelector("#show-periods");
+const periodKindInput = document.querySelector("#period-kind");
+const periodInput = document.querySelector("#period");
 const eraPresetInput = document.querySelector("#era-preset");
 const colorLegend = document.querySelector("#color-legend");
 
@@ -27,8 +32,11 @@ const geographyColors = {
 const geographyOrder = ["africa", "asia", "europe", "north_america", "south_america", "oceania", "antarctica", "unknown"];
 let polities = [];
 let transitions = [];
+let periods = [];
+let periodLinks = [];
 let detailTrigger = null;
 let selectedPolity = null;
+let selectedPeriod = null;
 let focusedPolityId = null;
 let geographyOptions = { continents: [], countries: [] };
 const collapsedGeographies = new Set();
@@ -60,6 +68,26 @@ function entityLink(id) {
   return entity ? `<button class="entity-link" type="button" data-entity-id="${escapeHtml(id)}">${escapeHtml(label)}</button>` : escapeHtml(label);
 }
 
+function periodLink(id) {
+  const period = periods.find((candidate) => candidate.id === id);
+  const label = period?.canonical_name || displayTerm(id);
+  return period ? `<button class="entity-link" type="button" data-period-id="${escapeHtml(id)}">${escapeHtml(label)}</button>` : escapeHtml(label);
+}
+
+function linkedPeriods(entityId) {
+  return periodLinks
+    .filter((link) => link.entity_id === entityId)
+    .map((link) => ({ ...link, period: periods.find((period) => period.id === link.period_id) }))
+    .filter((link) => link.period);
+}
+
+function linkedPeriodEntities(periodId) {
+  return periodLinks
+    .filter((link) => link.period_id === periodId)
+    .map((link) => ({ ...link, entity: polities.find((polity) => polity.id === link.entity_id) }))
+    .filter((link) => link.entity);
+}
+
 function relatedEntities(polity) {
   return {
     children: polities.filter((candidate) => candidate.parent === polity.id),
@@ -69,11 +97,17 @@ function relatedEntities(polity) {
 
 function highlightRelationships(polity) {
   const { children, predecessors } = relatedEntities(polity);
+  const typedTargets = (polity.relationships || []).map((relationship) => relationship.target);
+  const typedSources = polities
+    .filter((candidate) => (candidate.relationships || []).some((relationship) => relationship.target === polity.id))
+    .map((candidate) => candidate.id);
   const relatedIds = new Set([
     polity.parent,
     ...(polity.successors || []),
     ...children.map((entity) => entity.id),
     ...predecessors.map((entity) => entity.id),
+    ...typedTargets,
+    ...typedSources,
   ].filter(Boolean));
   chart.classList.add("relationship-focus");
   chart.querySelectorAll("[data-polity-id]").forEach((element) => {
@@ -144,9 +178,26 @@ function geographyEditorMarkup(polity) {
     <fieldset><legend>Present countries</legend>
       <input class="country-filter" type="search" placeholder="Filter countries…" aria-label="Filter country list">
       <div class="country-checklist">${countries.map((country) => `<label data-country-search="${escapeHtml(`${country.label} ${country.code}`.toLowerCase())}"><input type="checkbox" name="country" value="${escapeHtml(country.code)}" ${selectedCountries.has(country.code) ? "checked" : ""}> ${escapeHtml(country.label)} <small>${escapeHtml(country.code)}</small></label>`).join("")}</div>
+      <small>Choosing countries automatically updates the continents above.</small>
     </fieldset>
     <div class="geography-editor-actions"><button type="button" class="save-geography">Save geography</button><button type="button" class="cancel-geography">Cancel</button><span class="geography-save-status" role="status"></span></div>
   </section>`;
+}
+
+function syncContinentsFromCountries(editor) {
+  const selectedCountries = new Set(
+    [...editor.querySelectorAll('input[name="country"]:checked')].map((input) => input.value),
+  );
+  const inferred = new Set(
+    geographyOptions.countries
+      .filter((country) => selectedCountries.has(country.code))
+      .flatMap((country) => country.continents || []),
+  );
+  editor.querySelectorAll('input[name="continent"]').forEach((input) => {
+    input.checked = inferred.has(input.value);
+  });
+  const primary = editor.querySelector('[name="primary_continent"]');
+  if (primary.value && !inferred.has(primary.value)) primary.value = "";
 }
 
 async function saveGeography(polity) {
@@ -184,8 +235,38 @@ async function saveGeography(polity) {
   }
 }
 
+async function saveEntityType(polity) {
+  const editor = details.querySelector("#entity-type-editor");
+  const status = editor.querySelector(".entity-type-save-status");
+  const button = editor.querySelector(".save-entity-type");
+  button.disabled = true;
+  status.textContent = "Saving…";
+  try {
+    const response = await fetch(`/api/polities/${encodeURIComponent(polity.id)}/entity-type`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ entity_type: editor.querySelector("select").value }),
+    });
+    if (!response.ok) throw new Error((await response.json()).detail || await response.text());
+    const payload = await response.json();
+    polity.entity_type = payload.entity_type;
+    polity.entity_type_confidence = payload.entity_type_confidence;
+    polity.entity_type_source_qids = [];
+    polity.manual_overrides = payload.manual_overrides;
+    render();
+    showDetails(polity, chart.querySelector(`[data-polity-id="${polity.id}"]`) || detailTrigger);
+    const saved = details.querySelector(".entity-type-save-status");
+    saved.textContent = "Saved and locked against automatic type updates.";
+    details.querySelector("#entity-type-editor").hidden = false;
+  } catch (error) {
+    status.textContent = `Could not save: ${error.message}`;
+    button.disabled = false;
+  }
+}
+
 function showDetails(polity, trigger = null) {
   selectedPolity = polity;
+  selectedPeriod = null;
   if (trigger) detailTrigger = trigger;
   const description = readingLevelInput.value === "child"
     ? polity.text?.short_child_en || polity.text?.short_adult_en || polity.notes
@@ -201,7 +282,24 @@ function showDetails(polity, trigger = null) {
   const wikipedia = polity.external_ids?.wikipedia_en || (wikidata ? `https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/${encodeURIComponent(wikidata)}` : "");
   const seshat = polity.external_ids?.seshat || [];
   const sources = (polity.sources || []).map(displayTerm);
+  const prominenceLabels = {
+    wikidata_reach: "Wikidata reach",
+    authority_coverage: "Authoritative sources",
+    historical_evidence: "Historical evidence",
+    relationship_centrality: "Relationship centrality",
+    longevity: "Longevity",
+    editorial_work: "Editorial work",
+    type_uncertainty_penalty: "Type uncertainty",
+    date_uncertainty_penalty: "Date uncertainty",
+    aggregate_penalty: "Aggregate record",
+  };
+  const prominenceBreakdown = Object.entries(polity.prominence_components || {})
+    .filter(([key, value]) => key !== "total" && Number(value) !== 0)
+    .map(([key, value]) => `${escapeHtml(prominenceLabels[key] || displayTerm(key))}: ${Number(value) > 0 ? "+" : ""}${Number(value).toFixed(2)}`)
+    .join("<br>");
   const relevantTransitions = transitions.filter((transition) => [...transition.from, ...transition.to].includes(polity.id));
+  const relevantPeriods = linkedPeriods(polity.id);
+  const typedRelationships = polity.relationships || [];
   const hasRelationships = polity.parent || children.length || predecessors.length || successors.length;
   const externalLinks = [
     wikidata ? `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(wikidata)}" target="_blank" rel="noopener noreferrer">Wikidata (${escapeHtml(wikidata)}) ↗</a>` : "",
@@ -211,10 +309,12 @@ function showDetails(polity, trigger = null) {
   ].filter(Boolean);
   details.innerHTML = `<button class="detail-close" type="button" aria-label="Close entity details">×</button>
     <h2>${escapeHtml(polity.canonical_name)}</h2>
-    <div class="detail-actions"><button class="zoom-lifetime" type="button">Zoom to lifetime</button><button class="reset-era" type="button">Full timeline</button><button class="edit-geography" type="button">Edit geography</button></div>
+    <div class="detail-actions"><button class="zoom-lifetime" type="button">Zoom to lifetime</button><button class="reset-era" type="button">Full timeline</button><button class="edit-geography" type="button">Edit geography</button><button class="edit-entity-type" type="button">Edit entity type</button></div>
     <p>${escapeHtml(descriptionText)}</p>
     <dl>
       <dt>Dates</dt><dd>${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}${duration ? ` (${duration.toLocaleString()} years)` : ""}</dd>
+      <dt>Entity type</dt><dd>${escapeHtml(displayTerm(polity.entity_type || "polity"))} (${escapeHtml(polity.entity_type_confidence || "low")} confidence)</dd>
+      ${(polity.entity_type_source_qids || []).length ? `<dt>Type evidence</dt><dd class="detail-links">${polity.entity_type_source_qids.map((qid) => `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(qid)}" target="_blank" rel="noopener noreferrer">Wikidata type ${escapeHtml(qid)} ↗</a>`).join("<br>")}</dd>` : ""}
       ${aliases ? `<dt>Other names</dt><dd>${escapeHtml(aliases)}</dd>` : ""}
       <dt>Historical grouping</dt><dd>${escapeHtml(polity.region || "unclassified")}</dd>
       ${polity.parent ? `<dt>Part of</dt><dd>${entityLink(polity.parent)}</dd>` : ""}
@@ -227,6 +327,7 @@ function showDetails(polity, trigger = null) {
       <dt>Geography confidence</dt><dd>${escapeHtml(polity.geography?.confidence || "unknown")}</dd>
       ${(polity.manual_overrides || []).includes("geography") ? "<dt>Automatic geography updates</dt><dd>Locked (manual edit)</dd>" : ""}
       <dt>Prominence</dt><dd>${Number(polity.prominence_score || 0).toFixed(2)} / 100 (${escapeHtml(polity.visibility_tier || "detailed")})</dd>
+      ${prominenceBreakdown ? `<dt>Score details</dt><dd><details><summary>How this was calculated</summary>${prominenceBreakdown}</details></dd>` : ""}
       <dt>Historical weight</dt><dd>${polity.weight_imputed ? "estimated" : "source-based"}</dd>
       <dt>Review status</dt><dd>${escapeHtml(polity.eligibility || "review")}</dd>
       <dt>Date confidence</dt><dd>start ${escapeHtml(polity.start_confidence || "unknown")}; end ${escapeHtml(polity.end_confidence || "unknown")}</dd>
@@ -235,8 +336,18 @@ function showDetails(polity, trigger = null) {
         const label = `${formatYear(transition.year)}: ${escapeHtml(transition.label)}`;
         return transition.source_urls?.[0] ? `<a href="${escapeHtml(transition.source_urls[0])}" target="_blank" rel="noopener noreferrer">${label} ↗</a>` : label;
       }).join("<br>")}</dd>` : ""}
+      ${relevantPeriods.length ? `<dt>Historical periods</dt><dd class="detail-links">${relevantPeriods.map((link) => `${periodLink(link.period_id)} <small>${escapeHtml(link.evidence)}, ${escapeHtml(link.confidence)}</small>`).join("<br>")}</dd>` : ""}
+      ${typedRelationships.length ? `<dt>Typed relationships</dt><dd class="detail-links">${typedRelationships.map((relationship) => `${escapeHtml(displayTerm(relationship.kind))}: ${entityLink(relationship.target)} <small>${escapeHtml(relationship.evidence)}, ${escapeHtml(relationship.confidence)}</small>`).join("<br>")}</dd>` : ""}
       ${externalLinks.length ? `<dt>External pages</dt><dd class="detail-links">${externalLinks.join("<br>")}</dd>` : ""}
     </dl>
+    <section id="entity-type-editor" class="geography-editor" hidden>
+      <h3>Edit entity type</h3>
+      <label>Controlled type
+        <select>${["polity", "civilization", "culture", "people", "tribe", "archaeological_horizon"].map((type) => `<option value="${type}" ${type === (polity.entity_type || "polity") ? "selected" : ""}>${escapeHtml(displayTerm(type))}</option>`).join("")}</select>
+      </label>
+      <p>This manual decision is locked against later Wikidata backfills.</p>
+      <div class="geography-editor-actions"><button type="button" class="save-entity-type">Save entity type</button><button type="button" class="cancel-entity-type">Cancel</button><span class="entity-type-save-status" role="status"></span></div>
+    </section>
     ${geographyEditorMarkup(polity)}
     ${hasRelationships ? `<p class="relationship-hint">Related visible bands are outlined on the timeline. Select a related name to navigate to it.</p>` : ""}
     `;
@@ -246,16 +357,31 @@ function showDetails(polity, trigger = null) {
       if (entity) navigateToEntity(entity);
     });
   });
+  details.querySelectorAll("[data-period-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const period = periods.find((candidate) => candidate.id === button.dataset.periodId);
+      if (period) showPeriodDetails(period, button);
+    });
+  });
   details.querySelector(".detail-close").addEventListener("click", closeDetails);
   details.querySelector(".zoom-lifetime").addEventListener("click", () => zoomToPolity(polity));
   details.querySelector(".reset-era").addEventListener("click", () => applyEraPreset("full"));
   const geographyEditor = details.querySelector("#geography-editor");
+  const entityTypeEditor = details.querySelector("#entity-type-editor");
   details.querySelector(".edit-geography").addEventListener("click", () => {
     geographyEditor.hidden = !geographyEditor.hidden;
     if (!geographyEditor.hidden) geographyEditor.querySelector(".country-filter").focus();
   });
   geographyEditor.querySelector(".cancel-geography").addEventListener("click", () => { geographyEditor.hidden = true; });
+  details.querySelector(".edit-entity-type").addEventListener("click", () => {
+    entityTypeEditor.hidden = !entityTypeEditor.hidden;
+  });
+  entityTypeEditor.querySelector(".cancel-entity-type").addEventListener("click", () => { entityTypeEditor.hidden = true; });
+  entityTypeEditor.querySelector(".save-entity-type").addEventListener("click", () => saveEntityType(polity));
   geographyEditor.querySelector(".save-geography").addEventListener("click", () => saveGeography(polity));
+  geographyEditor.querySelector(".country-checklist").addEventListener("change", (event) => {
+    if (event.target.matches('input[name="country"]')) syncContinentsFromCountries(geographyEditor);
+  });
   geographyEditor.querySelector(".country-filter").addEventListener("input", (event) => {
     const query = event.target.value.trim().toLowerCase();
     geographyEditor.querySelectorAll("[data-country-search]").forEach((label) => {
@@ -267,6 +393,67 @@ function showDetails(polity, trigger = null) {
   details.setAttribute("aria-hidden", "false");
   details.querySelector(".detail-close").focus();
   highlightRelationships(polity);
+}
+
+function showPeriodDetails(period, trigger = null) {
+  selectedPolity = null;
+  selectedPeriod = period;
+  if (trigger) detailTrigger = trigger;
+  const countries = (period.geography?.present_countries || []).map((code) => countryNames.of(code) || code);
+  const linked = linkedPeriodEntities(period.id);
+  const contained = periods.filter((candidate) => (candidate.broader_periods || []).includes(period.id));
+  const predecessors = periods.filter((candidate) => (candidate.successors || []).includes(period.id));
+  const externalLinks = Object.entries(period.external_ids || {}).map(([source, value]) => {
+    const url = String(value).startsWith("http") ? value
+      : source === "wikidata" ? `https://www.wikidata.org/wiki/${encodeURIComponent(value)}` : "";
+    return url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(displayTerm(source))} ↗</a>` : "";
+  }).filter(Boolean);
+  externalLinks.push(...(period.source_urls || []).map((url, index) =>
+    `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Source ${index + 1} ↗</a>`));
+  details.innerHTML = `<button class="detail-close" type="button" aria-label="Close period details">×</button>
+    <p class="detail-kicker">Historical-period context</p>
+    <h2>${escapeHtml(period.canonical_name)}</h2>
+    <div class="detail-actions"><button class="zoom-period" type="button">Zoom to period</button><button class="reset-era" type="button">Full timeline</button></div>
+    <p>${escapeHtml(period.notes || "Sourced chronological context; this record is not a polity.")}</p>
+    <dl>
+      <dt>Dates</dt><dd>${formatYear(period.start)}–${formatYear(period.end)}</dd>
+      <dt>Period type</dt><dd>${escapeHtml(displayTerm(period.kind))}</dd>
+      <dt>Authority</dt><dd>${escapeHtml(period.authority)}</dd>
+      <dt>Continents</dt><dd>${escapeHtml((period.geography?.continents || []).map(displayTerm).join(", ") || "unknown")}</dd>
+      <dt>Present countries</dt><dd>${escapeHtml(countries.join(", ") || "unknown")}</dd>
+      ${(period.broader_periods || []).length ? `<dt>Part of periodization</dt><dd>${period.broader_periods.map(periodLink).join(", ")}</dd>` : ""}
+      ${contained.length ? `<dt>Contains periods</dt><dd>${contained.map((item) => periodLink(item.id)).join(", ")}</dd>` : ""}
+      ${predecessors.length ? `<dt>Preceded by</dt><dd>${predecessors.map((item) => periodLink(item.id)).join(", ")}</dd>` : ""}
+      ${(period.successors || []).length ? `<dt>Followed by</dt><dd>${period.successors.map(periodLink).join(", ")}</dd>` : ""}
+      ${linked.length ? `<dt>Linked entities</dt><dd class="detail-links">${linked.map((link) => `${entityLink(link.entity_id)} <small>${escapeHtml(link.evidence)}, ${escapeHtml(link.confidence)}</small>`).join("<br>")}</dd>` : ""}
+      ${externalLinks.length ? `<dt>External pages</dt><dd class="detail-links">${externalLinks.join("<br>")}</dd>` : ""}
+    </dl>
+    <p class="relationship-hint">Period links provide chronological context only; they do not create polity parent/child relationships.</p>`;
+  details.querySelector(".detail-close").addEventListener("click", closeDetails);
+  details.querySelector(".zoom-period").addEventListener("click", () => {
+    startInput.value = period.start;
+    endInput.value = period.end;
+    eraPresetInput.value = "custom";
+    render();
+  });
+  details.querySelector(".reset-era").addEventListener("click", () => applyEraPreset("full"));
+  details.querySelectorAll("[data-entity-id]").forEach((button) => button.addEventListener("click", () => {
+    const entity = polities.find((candidate) => candidate.id === button.dataset.entityId);
+    if (entity) navigateToEntity(entity);
+  }));
+  details.querySelectorAll("[data-period-id]").forEach((button) => button.addEventListener("click", () => {
+    const linkedPeriod = periods.find((candidate) => candidate.id === button.dataset.periodId);
+    if (linkedPeriod) showPeriodDetails(linkedPeriod, button);
+  }));
+  details.classList.add("is-open");
+  detailBackdrop.classList.add("is-open");
+  details.setAttribute("aria-hidden", "false");
+  details.querySelector(".detail-close").focus();
+  chart.classList.add("relationship-focus");
+  chart.querySelectorAll(".period-band").forEach((element) => {
+    element.classList.toggle("is-selected", element.dataset.periodId === period.id);
+  });
+  linked.forEach((link) => chart.querySelectorAll(`[data-polity-id="${link.entity_id}"]`).forEach((element) => element.classList.add("is-related")));
 }
 
 function showTransitionDetails(transition, trigger = null) {
@@ -301,6 +488,7 @@ function showTransitionDetails(transition, trigger = null) {
 }
 
 function closeDetails() {
+  selectedPeriod = null;
   details.classList.remove("is-open");
   detailBackdrop.classList.remove("is-open");
   details.setAttribute("aria-hidden", "true");
@@ -337,6 +525,8 @@ function directlyRelated(left, right) {
   if (left.parent === right.id || right.parent === left.id) return true;
   if (left.parent && left.parent === right.parent) return true;
   if ((left.successors || []).includes(right.id) || (right.successors || []).includes(left.id)) return true;
+  if ((left.relationships || []).some((relationship) => relationship.target === right.id)
+    || (right.relationships || []).some((relationship) => relationship.target === left.id)) return true;
   return transitions.some((transition) => {
     const ids = new Set([...transition.from, ...transition.to]);
     return ids.has(left.id) && ids.has(right.id);
@@ -428,12 +618,21 @@ function render() {
       p.eligibility !== "excluded" &&
       (p.id === focusedPolityId || visibilityInput.value === "detailed" || p.eligibility === "accepted") &&
       (!historicalGroupInput.value || p.region === historicalGroupInput.value) &&
+      (!entityTypeInput.value || (p.entity_type || "polity") === entityTypeInput.value) &&
+      (!entityTypeConfidenceInput.value || (p.entity_type_confidence || "low") === entityTypeConfidenceInput.value) &&
       (!continentInput.value || (p.geography?.continents || []).includes(continentInput.value)) &&
       (!countryInput.value || (p.geography?.present_countries || []).includes(countryInput.value)) &&
       (p.id === focusedPolityId || tierRank[p.visibility_tier || "detailed"] <= selectedRank) &&
       p.start < yearEnd &&
       (p.end == null || p.end > yearStart),
   );
+  const contextPeriods = showPeriodsInput.checked ? periods.filter((period) =>
+    (!periodKindInput.value || period.kind === periodKindInput.value) &&
+    (!periodInput.value || period.id === periodInput.value) &&
+    (!continentInput.value || (period.geography?.continents || []).includes(continentInput.value)) &&
+    (!countryInput.value || (period.geography?.present_countries || []).includes(countryInput.value)) &&
+    period.start < yearEnd && period.end > yearStart
+  ) : [];
   matched.sort((a, b) => {
     const groupDifference = geographyOrder.indexOf(geographyGroup(a)) - geographyOrder.indexOf(geographyGroup(b));
     return groupDifference || a.start - b.start || a.canonical_name.localeCompare(b.canonical_name);
@@ -442,6 +641,7 @@ function render() {
   const rowHeight = 25;
   const laneHeaderHeight = 27;
   const countryHeaderHeight = 22;
+  const periodRowHeight = 20;
   const margin = { top: 48, right: 24, bottom: 24, left: 24 };
   const pixelsPerYear = Math.max(.2, Math.min(2, 1500 / span));
   const width = Math.max(900, Math.min(4800, span * pixelsPerYear + margin.left + margin.right));
@@ -460,6 +660,9 @@ function render() {
         name,
         countryGroups,
         items: countryGroups.flatMap((countryGroup) => countryGroup.items),
+        periods: contextPeriods
+          .filter((period) => (period.geography?.continents || []).includes(name))
+          .sort((a, b) => a.start - b.start || a.canonical_name.localeCompare(b.canonical_name)),
       };
     })
     .filter((group) => group.items.length);
@@ -468,7 +671,9 @@ function render() {
     (count, group) => count + (collapsedGeographies.has(group.name) ? 0 : group.countryGroups.length), 0,
   );
   const height = Math.max(180, visible.length * rowHeight + groups.length * laneHeaderHeight
-    + visibleCountryLanes * countryHeaderHeight + margin.top + margin.bottom);
+    + visibleCountryLanes * countryHeaderHeight
+    + groups.reduce((total, group) => total + (collapsedGeographies.has(group.name) ? 0 : group.periods.length * periodRowHeight), 0)
+    + margin.top + margin.bottom);
   const innerWidth = width - margin.left - margin.right;
   const x = (year) => margin.left + ((year - yearStart) / span) * innerWidth;
   const svg = svgElement("svg", { viewBox: `0 0 ${width} ${height}`, width, height });
@@ -480,7 +685,8 @@ function render() {
   for (const group of groups) {
     const collapsed = collapsedGeographies.has(group.name);
     const laneHeight = laneHeaderHeight + (collapsed ? 0
-      : group.items.length * rowHeight + group.countryGroups.length * countryHeaderHeight);
+      : group.items.length * rowHeight + group.countryGroups.length * countryHeaderHeight
+        + group.periods.length * periodRowHeight);
     svg.append(svgElement("rect", { x: margin.left, y: laneY, width: innerWidth, height: laneHeight, class: "swimlane" }));
     svg.append(svgElement("rect", { x: margin.left, y: laneY, width: 4, height: laneHeight, fill: geographyColors[group.name] }));
     const laneToggle = svgElement("rect", {
@@ -508,6 +714,55 @@ function render() {
     svg.append(laneLabel);
     if (!collapsed) {
       let countryY = laneY + laneHeaderHeight;
+      if (group.periods.length) {
+        svg.append(svgElement("rect", {
+          x: margin.left + 4,
+          y: countryY,
+          width: innerWidth - 4,
+          height: group.periods.length * periodRowHeight,
+          class: "period-context-area",
+        }));
+        group.periods.forEach((period, periodIndex) => {
+          const start = Math.max(yearStart, period.start);
+          const end = Math.min(yearEnd, period.end);
+          const bandX = x(start);
+          const bandWidth = Math.max(2, x(end) - bandX);
+          const center = countryY + periodIndex * periodRowHeight + periodRowHeight / 2;
+          const band = svgElement("rect", {
+            x: bandX,
+            y: center - 7,
+            width: bandWidth,
+            height: 14,
+            rx: 1,
+            class: `period-band period-band-${period.kind}`,
+            tabindex: "0",
+            role: "button",
+            "data-period-id": period.id,
+            "aria-label": `${period.canonical_name}, ${formatYear(period.start)} to ${formatYear(period.end)}`,
+          });
+          band.addEventListener("click", () => showPeriodDetails(period, band));
+          band.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              showPeriodDetails(period, band);
+            }
+          });
+          const title = svgElement("title");
+          title.textContent = `${period.canonical_name}: ${formatYear(period.start)}–${formatYear(period.end)}`;
+          band.append(title);
+          svg.append(band);
+          if (bandWidth >= 40) {
+            const label = svgElement("text", {
+              x: bandX + 5,
+              y: center + 3.5,
+              class: "period-label",
+            });
+            label.textContent = period.canonical_name;
+            svg.append(label);
+          }
+        });
+        countryY += group.periods.length * periodRowHeight;
+      }
       group.countryGroups.forEach((countryGroup, countryIndex) => {
         const countryLaneHeight = countryHeaderHeight + countryGroup.items.length * rowHeight;
         svg.append(svgElement("rect", {
@@ -571,7 +826,9 @@ function render() {
     const start = Math.max(yearStart, polity.start);
     const end = Math.min(yearEnd, polity.end ?? yearEnd);
     const mid = start + (end - start) / 2;
-    const bandHeight = Math.min(rowHeight - 3, 6 + weightAt(polity, mid) * 1.55);
+    const entityType = polity.entity_type || "polity";
+    const contextual = ["culture", "people", "tribe", "archaeological_horizon"].includes(entityType);
+    const bandHeight = contextual ? 7 : Math.min(rowHeight - 3, 6 + weightAt(polity, mid) * 1.55);
     const center = rowCenters.get(polity.id);
     const bandX = x(start);
     const bandWidth = Math.max(2, x(end) - bandX);
@@ -584,7 +841,7 @@ function render() {
       rx: "1",
       fill: geographyColors[geographyGroup(polity)] || geographyColors.unknown,
       opacity: { high: .92, medium: .74, low: .52, legendary: .38 }[confidence],
-      class: `band confidence-${confidence}`,
+      class: `band confidence-${confidence} entity-${entityType}`,
       tabindex: "0",
       "data-polity-id": polity.id,
     });
@@ -628,7 +885,7 @@ function render() {
   chart.replaceChildren(svg);
   colorLegend.innerHTML = `<span>Band color</span>${groups.map((group) => `<i style="--legend-color:${geographyColors[group.name]}"></i>${escapeHtml(displayTerm(group.name))}`).join("")}`;
   const collapsedCount = groups.filter((group) => collapsedGeographies.has(group.name)).length;
-  summary.textContent = `${matched.length} of ${polities.length} polities matched${collapsedCount ? ` · ${collapsedCount} lane${collapsedCount === 1 ? "" : "s"} collapsed` : ""}`;
+  summary.textContent = `${matched.length} of ${polities.length} polities matched · ${contextPeriods.length} period${contextPeriods.length === 1 ? "" : "s"} shown${collapsedCount ? ` · ${collapsedCount} lane${collapsedCount === 1 ? "" : "s"} collapsed` : ""}`;
 }
 
 document.querySelector("#apply").addEventListener("click", render);
@@ -637,8 +894,13 @@ readingLevelInput.addEventListener("change", () => {
   if (selectedPolity && details.classList.contains("is-open")) showDetails(selectedPolity);
 });
 historicalGroupInput.addEventListener("change", render);
+entityTypeInput.addEventListener("change", render);
+entityTypeConfidenceInput.addEventListener("change", render);
 continentInput.addEventListener("change", render);
 countryInput.addEventListener("change", render);
+showPeriodsInput.addEventListener("change", render);
+periodKindInput.addEventListener("change", render);
+periodInput.addEventListener("change", render);
 eraPresetInput.addEventListener("change", () => {
   if (eraPresetInput.value !== "custom") applyEraPreset(eraPresetInput.value);
 });
@@ -747,12 +1009,18 @@ function populateSelect(select, values, formatter = (value) => value) {
 }
 
 try {
-  const [response, transitionResponse, geographyResponse] = await Promise.all([
-    fetch("/data.json"), fetch("/transitions.json"), fetch("/api/options/geography"),
+  const [response, transitionResponse, periodResponse, periodLinkResponse, geographyResponse] = await Promise.all([
+    fetch("/data.json"),
+    fetch("/transitions.json"),
+    fetch("/periods.json"),
+    fetch("/period_links.json"),
+    fetch("/api/options/geography"),
   ]);
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   polities = await response.json();
   transitions = transitionResponse.ok ? await transitionResponse.json() : [];
+  periods = periodResponse.ok ? await periodResponse.json() : [];
+  periodLinks = periodLinkResponse.ok ? await periodLinkResponse.json() : [];
   geographyOptions = geographyResponse.ok ? await geographyResponse.json() : { continents: geographyOrder.slice(0, -1), countries: [] };
   for (const name of [...new Set(polities.map((polity) => polity.canonical_name))].sort()) {
     const option = document.createElement("option");
@@ -765,6 +1033,13 @@ try {
     (value) => value.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase()),
   );
   populateSelect(historicalGroupInput, new Set(polities.map((p) => p.region).filter(Boolean)), displayTerm);
+  populateSelect(entityTypeInput, new Set(polities.map((p) => p.entity_type || "polity")), displayTerm);
+  for (const period of [...periods].sort((a, b) => a.canonical_name.localeCompare(b.canonical_name))) {
+    const option = document.createElement("option");
+    option.value = period.id;
+    option.textContent = period.canonical_name;
+    periodInput.append(option);
+  }
   populateSelect(
     countryInput,
     new Set(polities.flatMap((p) => p.geography?.present_countries || [])),

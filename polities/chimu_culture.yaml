@@ -14,7 +14,7 @@ end: 1470
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1100: 5
+  1100: 3
 weight_imputed: true
 icon: null
 text:
@@ -24,8 +24,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 49.48
-visibility_tier: regional
+prominence_score: 24.95
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -36,3 +36,20 @@ geography:
     lat: -8.108888888
     lon: -79.075
   confidence: medium
+entity_type: culture
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships: []
+manual_overrides:
+- entity_type
+prominence_components:
+  wikidata_reach: 23.52
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 6.42
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 24.95

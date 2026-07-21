@@ -27,8 +27,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 53.72
-visibility_tier: regional
+prominence_score: 30.91
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -42,3 +42,25 @@ geography:
     lon: 74.6
   confidence: medium
   primary_continent: asia
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q236036
+relationships:
+- target: kyrgyzstan
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q130276
+prominence_components:
+  wikidata_reach: 28.04
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 4.37
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 30.91

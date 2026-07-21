@@ -15,13 +15,13 @@ end: 1918
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1400: 8.13
-  1500: 8.49
-  1600: 8.93
+  1400: 8.21
+  1500: 8.47
+  1600: 8.94
   1700: 8.07
   1750: 8.46
   1800: 8.51
-  1850: 9.27
+  1850: 9.26
   1900: 8.79
 weight_imputed: true
 icon: null
@@ -33,7 +33,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 48.31
+prominence_score: 39.76
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -45,3 +45,25 @@ geography:
     lat: 50.08333333
     lon: 14.41666667
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: first_czechoslovak_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q686971
+prominence_components:
+  wikidata_reach: 22.37
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.89
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 39.76

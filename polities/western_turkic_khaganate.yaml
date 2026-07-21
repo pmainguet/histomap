@@ -5,6 +5,8 @@ names:
   aliases_en: in Azerbaijan
 external_ids:
   wikidata: Q874357
+  seshat:
+  - KgWTurk
 parent: null
 successors: []
 region: null
@@ -23,12 +25,30 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 46.8
-visibility_tier: regional
+prominence_score: 38.77
+visibility_tier: detailed
 eligibility: review
 geography:
   continents: []
   present_countries: []
   centroid: null
   confidence: null
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships: []
+manual_overrides:
+- entity_type
+prominence_components:
+  wikidata_reach: 23.52
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 4.74
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 38.77

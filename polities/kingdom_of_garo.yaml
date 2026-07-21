@@ -5,6 +5,8 @@ names:
   aliases_en: Bosha
 external_ids:
   wikidata: Q1623936
+  seshat:
+  - InGaroE
 parent: null
 successors: []
 region: null
@@ -14,11 +16,11 @@ end: 1883
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1600: 4.5
-  1700: 4.91
-  1750: 6.23
-  1800: 6.99
-  1850: 7.38
+  1600: 1.0
+  1700: 1.0
+  1750: 1.0
+  1800: 1.0
+  1850: 1.0
 weight_imputed: true
 icon: null
 text:
@@ -28,9 +30,10 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
+- seshat
 - wikidata
-prominence_score: 36.98
-visibility_tier: detailed
+prominence_score: 41.44
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -41,3 +44,19 @@ geography:
     lat: 7.5
     lon: 37.16666667
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 16.19
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 6.25
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 41.44

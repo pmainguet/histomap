@@ -4,6 +4,8 @@ names:
   fr: Tabal
 external_ids:
   wikidata: Q727710
+  seshat:
+  - TrTabal
 parent: null
 successors: []
 region: null
@@ -22,12 +24,29 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 41.74
-visibility_tier: detailed
+prominence_score: 32.27
+visibility_tier: global
 eligibility: accepted
 geography:
   continents: []
   present_countries: []
   centroid: null
   confidence: null
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 19.52
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 5.76
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 32.27

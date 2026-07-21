@@ -15,16 +15,16 @@ end: 1946
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1000: 6.6
-  1100: 6.22
-  1200: 7.46
-  1300: 7.71
-  1400: 7.25
-  1500: 7.53
-  1600: 7.6
-  1700: 6.99
-  1750: 7.55
-  1800: 7.82
+  1000: 6.3
+  1100: 6.16
+  1200: 7.62
+  1300: 7.67
+  1400: 7.28
+  1500: 7.48
+  1600: 7.66
+  1700: 7.02
+  1750: 7.57
+  1800: 7.83
   1850: 8.49
   1900: 8.11
 weight_imputed: true
@@ -37,8 +37,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 58.64
-visibility_tier: global
+prominence_score: 48.03
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -49,3 +49,25 @@ geography:
     lat: 47.0
     lon: 19.0
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: second_hungarian_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q171150
+prominence_components:
+  wikidata_reach: 28.04
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 7.44
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 48.03

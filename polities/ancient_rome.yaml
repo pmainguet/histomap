@@ -6,6 +6,8 @@ names:
     | Roman antiquity | Roman culture
 external_ids:
   wikidata: Q1747689
+  seshat:
+  - ItRomPr
 parent: null
 successors: []
 region: null
@@ -16,10 +18,10 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   0: 10.0
-  100: 9.69
-  200: 9.05
-  300: 8.44
-  400: 7.35
+  100: 10.0
+  200: 10.0
+  300: 10.0
+  400: 10.0
 weight_imputed: true
 icon: null
 text:
@@ -29,8 +31,9 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
+- seshat
 - wikidata
-prominence_score: 67.44
+prominence_score: 59.72
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -42,3 +45,19 @@ geography:
     lat: 41.89
     lon: 12.48
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 3.0
+  longevity: 7.72
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 59.72

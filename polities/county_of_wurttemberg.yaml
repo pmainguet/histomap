@@ -14,10 +14,10 @@ end: 1495
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1100: 7.09
-  1200: 8.15
-  1300: 9.12
-  1400: 8.14
+  1100: 7.01
+  1200: 8.26
+  1300: 9.08
+  1400: 8.22
 weight_imputed: true
 icon: null
 text:
@@ -28,8 +28,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 43.52
-visibility_tier: detailed
+prominence_score: 36.87
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -40,3 +40,25 @@ geography:
     lat: 48.783333333
     lon: 9.183333333
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: duchy_of_wurttemberg
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2991474
+prominence_components:
+  wikidata_reach: 19.83
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.54
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 36.87

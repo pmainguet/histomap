@@ -18,13 +18,13 @@ end: 1897
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1400: 7.8
-  1500: 7.9
-  1600: 8.12
-  1700: 7.83
+  1400: 7.86
+  1500: 7.87
+  1600: 8.16
+  1700: 7.84
   1750: 8.45
   1800: 8.77
-  1850: 8.85
+  1850: 8.84
 weight_imputed: true
 icon: null
 text:
@@ -35,8 +35,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 58.92
-visibility_tier: global
+prominence_score: 49.62
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -47,3 +47,25 @@ geography:
     lat: 37.58
     lon: 126.9775
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: korean_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q28179
+prominence_components:
+  wikidata_reach: 28.86
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 7.0
+  longevity: 6.76
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 49.62

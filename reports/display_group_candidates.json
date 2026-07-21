@@ -23,6 +23,7 @@
       "Q101242375",
       "Q1028095",
       "Q104151568",
+      "Q104151575",
       "Q104151601",
       "Q104152096",
       "Q104152097",
@@ -31,10 +32,10 @@
       "Q104152103",
       "Q104152104",
       "Q104152105",
+      "Q104152106",
       "Q104152108",
       "Q104152110",
       "Q104152111",
-      "Q104152114",
       "Q104152246",
       "Q104152343",
       "Q1060520",
@@ -131,6 +132,7 @@
       "Q1728782",
       "Q17297442",
       "Q17298275",
+      "Q17311418",
       "Q17319155",
       "Q17342164",
       "Q17399594",
@@ -152,6 +154,7 @@
       "Q180235",
       "Q1806438",
       "Q18111824",
+      "Q18126183",
       "Q18126222",
       "Q18126687",
       "Q18126780",
@@ -244,6 +247,7 @@
       "Q6416549",
       "Q642037",
       "Q6427080",
+      "Q6448442",
       "Q649310",
       "Q6503547",
       "Q657861",
@@ -309,27 +313,10 @@
     "status": "review"
   },
   {
-    "suggested_name": "nan / Kingdom of Ossory",
-    "members": [
-      "Q101511100",
-      "Q199383"
-    ],
-    "status": "review"
-  },
-  {
     "suggested_name": "Malawi / Commonwealth realm of Malawi",
     "members": [
       "Q1020",
       "Q6741448"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Counani Free State / nan / Republic of Independent Guyana",
-    "members": [
-      "Q102460360",
-      "Q102461243",
-      "Q2975232"
     ],
     "status": "review"
   },
@@ -436,14 +423,6 @@
     "status": "review"
   },
   {
-    "suggested_name": "nan / Kingdom of Western Georgia",
-    "members": [
-      "Q104164157",
-      "Q56089236"
-    ],
-    "status": "review"
-  },
-  {
     "suggested_name": "Territory of Nauru / Trust Territory of Nauru / Nauru",
     "members": [
       "Q104177909",
@@ -529,6 +508,7 @@
       "Q207162",
       "Q207272",
       "Q209857",
+      "Q21077045",
       "Q211274",
       "Q212",
       "Q2162698",
@@ -553,13 +533,13 @@
       "Q243652",
       "Q245160",
       "Q2454585",
+      "Q252268",
       "Q253094",
       "Q25395037",
       "Q2577303",
       "Q2629137",
       "Q265",
       "Q2670751",
-      "Q2674433",
       "Q2684394",
       "Q268970",
       "Q2719360",
@@ -621,6 +601,7 @@
       "Q583038",
       "Q58326",
       "Q58856346",
+      "Q58942549",
       "Q5919137",
       "Q599613",
       "Q600018",
@@ -653,6 +634,7 @@
       "Q774783",
       "Q783684",
       "Q813",
+      "Q832888",
       "Q836676",
       "Q848383",
       "Q853348",
@@ -661,7 +643,8 @@
       "Q877619",
       "Q907112",
       "Q9301958",
-      "Q940741"
+      "Q940741",
+      "Q95950649"
     ],
     "status": "review"
   },
@@ -969,7 +952,6 @@
       "Q1322181",
       "Q132868834",
       "Q132869051",
-      "Q132869361",
       "Q17",
       "Q188712",
       "Q205662",
@@ -1158,10 +1140,12 @@
     "status": "review"
   },
   {
-    "suggested_name": "Principality of Girona / County of Osona / Duchy of Girona",
+    "suggested_name": "Principality of Girona / County of Besalú / County of Osona",
     "members": [
       "Q112042482",
+      "Q1541642",
       "Q1541779",
+      "Q2037817",
       "Q58481205"
     ],
     "status": "review"
@@ -1281,6 +1265,14 @@
     "status": "review"
   },
   {
+    "suggested_name": "Jin / Mahan confederacy",
+    "members": [
+      "Q1155101",
+      "Q704278"
+    ],
+    "status": "review"
+  },
+  {
     "suggested_name": "Ghana / Gold Coast Colony / Dominion of Ghana",
     "members": [
       "Q117",
@@ -1300,10 +1292,15 @@
     "status": "review"
   },
   {
-    "suggested_name": "Gupta Empire / Empire of Harsha",
+    "suggested_name": "Gupta Empire / Western Chalukya Empire / Empire of Harsha",
     "members": [
       "Q11774",
-      "Q20732380"
+      "Q14624218",
+      "Q20732380",
+      "Q5324",
+      "Q5790",
+      "Q668412",
+      "Q856691"
     ],
     "status": "review"
   },
@@ -1334,11 +1331,10 @@
     "status": "review"
   },
   {
-    "suggested_name": "Tasik / Dutch Empire / nan",
+    "suggested_name": "Tasik / Dutch Empire / Dutch East Indies",
     "members": [
       "Q11950939",
       "Q130654",
-      "Q15788609",
       "Q188161",
       "Q19746028",
       "Q2030015",
@@ -1347,7 +1343,6 @@
       "Q25227",
       "Q26273",
       "Q2988765",
-      "Q3403538",
       "Q4969562",
       "Q523435",
       "Q892292"
@@ -1361,7 +1356,6 @@
       "Q1311767",
       "Q170390",
       "Q23000637",
-      "Q23001290",
       "Q2372248",
       "Q310650",
       "Q326029",
@@ -1434,14 +1428,6 @@
     "status": "review"
   },
   {
-    "suggested_name": "Italian Eritrea / nan",
-    "members": [
-      "Q1232988",
-      "Q16678194"
-    ],
-    "status": "review"
-  },
-  {
     "suggested_name": "Rashidun Caliphate / Abbasid Caliphate / Ottoman Empire",
     "members": [
       "Q12490507",
@@ -1468,6 +1454,22 @@
       "Q26234937",
       "Q3087763",
       "Q370173"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Duklja / Principality of Zeta",
+    "members": [
+      "Q1252942",
+      "Q178085"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Byzantine Empire / Roman Republic",
+    "members": [
+      "Q12544",
+      "Q1747689"
     ],
     "status": "review"
   },
@@ -1502,7 +1504,8 @@
       "Q403",
       "Q616992",
       "Q684030",
-      "Q838261"
+      "Q838261",
+      "Q878319"
     ],
     "status": "review"
   },
@@ -1724,15 +1727,6 @@
     "status": "review"
   },
   {
-    "suggested_name": "Western Chalukya Empire / Seuna Dynasty / Rashtrakuta dynasty",
-    "members": [
-      "Q14624218",
-      "Q5790",
-      "Q856691"
-    ],
-    "status": "review"
-  },
-  {
     "suggested_name": "Mandatory Iraq / Kingdom of Iraq",
     "members": [
       "Q146720",
@@ -1820,6 +1814,14 @@
     "members": [
       "Q1493766",
       "Q202687"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Samo's realm / Great Moravia",
+    "members": [
+      "Q149427",
+      "Q193152"
     ],
     "status": "review"
   },
@@ -2158,22 +2160,6 @@
     "status": "review"
   },
   {
-    "suggested_name": "Shaki Khanate / nan",
-    "members": [
-      "Q1703449",
-      "Q23501404"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Territory of the Saar Basin / nan",
-    "members": [
-      "Q170361",
-      "Q27069436"
-    ],
-    "status": "review"
-  },
-  {
     "suggested_name": "Roman Republic / Roman Kingdom",
     "members": [
       "Q17167",
@@ -2269,6 +2255,14 @@
     "members": [
       "Q189",
       "Q62567"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Kingdom of Persia / Pars",
+    "members": [
+      "Q19276517",
+      "Q24089916"
     ],
     "status": "review"
   },
@@ -2408,14 +2402,6 @@
     "members": [
       "Q21005050",
       "Q2253783"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Landgraviate of Upper Alsace / county of Sundgau",
-    "members": [
-      "Q21077045",
-      "Q252268"
     ],
     "status": "review"
   },
@@ -2799,26 +2785,10 @@
     "status": "review"
   },
   {
-    "suggested_name": "Liechtenstein / nan",
-    "members": [
-      "Q347",
-      "Q66087897"
-    ],
-    "status": "review"
-  },
-  {
     "suggested_name": "Denmark / Kingdom of Denmark",
     "members": [
       "Q35",
       "Q756617"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Emirate of Almathami / nan",
-    "members": [
-      "Q35583423",
-      "Q6534768"
     ],
     "status": "review"
   },
@@ -2851,14 +2821,6 @@
     "members": [
       "Q40362",
       "Q689837"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Autonomous Government of Inner Mongolia / nan",
-    "members": [
-      "Q4056388",
-      "Q4120907"
     ],
     "status": "review"
   },
@@ -2905,9 +2867,10 @@
     "status": "review"
   },
   {
-    "suggested_name": "Babylonia / Old Babylonian Empire",
+    "suggested_name": "Babylonia / Third Dynasty of Ur / Old Babylonian Empire",
     "members": [
       "Q47690",
+      "Q723587",
       "Q733897"
     ],
     "status": "review"
@@ -2990,14 +2953,6 @@
     "status": "review"
   },
   {
-    "suggested_name": "Landgraviate of Lower Alsace / county of Nordgau",
-    "members": [
-      "Q58942549",
-      "Q832888"
-    ],
-    "status": "review"
-  },
-  {
     "suggested_name": "Kingdom of Zimbabwe / Kingdom of Mutapa / Kingdom of Butua",
     "members": [
       "Q596092",
@@ -3024,11 +2979,10 @@
     "status": "review"
   },
   {
-    "suggested_name": "Vanuatu / New Hebrides / nan",
+    "suggested_name": "Vanuatu / New Hebrides",
     "members": [
       "Q686",
-      "Q752431",
-      "Q99868017"
+      "Q752431"
     ],
     "status": "review"
   },
@@ -3086,6 +3040,14 @@
     "members": [
       "Q798431",
       "Q862701"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Kingdom of Italy / Kingdom of the Lombards",
+    "members": [
+      "Q838931",
+      "Q854415"
     ],
     "status": "review"
   },

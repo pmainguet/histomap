@@ -1,0 +1,223 @@
+{"seshat_id": "AfGhurd", "decision": "accept", "polity_id": "ghurid_empire"}
+{"seshat_id": "AfGrBct", "decision": "accept", "polity_id": "greco_bactrian_kingdom"}
+{"seshat_id": "AfHepht", "decision": "accept", "polity_id": "hephthalites"}
+{"seshat_id": "AfKidar", "decision": "accept", "polity_id": "kidarites"}
+{"seshat_id": "CnEHan*", "decision": "accept", "polity_id": "eastern_han"}
+{"seshat_id": "CnErJin", "decision": "accept", "polity_id": "western_jin_dynasty"}
+{"seshat_id": "CnHChin", "decision": "accept", "polity_id": "seshat_hmong_cnhqngl"}
+{"seshat_id": "CnHQngL", "decision": "reject"}
+{"seshat_id": "CnJinSA", "decision": "accept", "polity_id": "jin_q912043"}
+{"seshat_id": "CnLrJin", "decision": "accept", "polity_id": "later_jin_1616_1636"}
+{"seshat_id": "CnNSong", "decision": "accept", "polity_id": "northern_song_dynasty"}
+{"seshat_id": "CnNWei*", "decision": "reject"}
+{"seshat_id": "CnShang", "decision": "accept", "polity_id": "shang_dynasty"}
+{"seshat_id": "CnSui**", "decision": "reject"}
+{"seshat_id": "CnTangE", "decision": "accept", "polity_id": "tang_dynasty"}
+{"seshat_id": "CnTangL", "decision": "accept", "polity_id": "tang_dynasty"}
+{"seshat_id": "CnWHan*", "decision": "accept", "polity_id": "western_han"}
+{"seshat_id": "CnWZhou", "decision": "accept", "polity_id": "western_zhou_q1069609"}
+{"seshat_id": "CnWeiWS", "decision": "accept", "polity_id": "wei_q912052"}
+{"seshat_id": "CnYngsh", "decision": "reject"}
+{"seshat_id": "CoNahua", "decision": "reject"}
+{"seshat_id": "CoTairo", "decision": "reject"}
+{"seshat_id": "EcJivaE", "decision": "reject"}
+{"seshat_id": "EcJivaL", "decision": "reject"}
+{"seshat_id": "EgDyn1*", "decision": "accept", "polity_id": "ancient_egypt"}
+{"seshat_id": "EgDyn2*", "decision": "accept", "polity_id": "ancient_egypt"}
+{"seshat_id": "EgIntOc", "decision": "accept", "polity_id": "ancient_egypt"}
+{"seshat_id": "EgMamBh", "decision": "reject"}
+{"seshat_id": "EgMamBu", "decision": "accept", "polity_id": "seshat_egypt_egmambh"}
+{"seshat_id": "EgMamCP", "decision": "accept", "polity_id": "seshat_egypt_egmambh"}
+{"seshat_id": "EgMidKg", "decision": "accept", "polity_id": "middle_kingdom_of_egypt"}
+{"seshat_id": "EgNKRam", "decision": "accept", "polity_id": "ancient_egypt"}
+{"seshat_id": "EgNKThu", "decision": "accept", "polity_id": "ancient_egypt"}
+{"seshat_id": "EgNaqa1", "decision": "reject"}
+{"seshat_id": "EgNaqa3", "decision": "accept", "polity_id": "ancient_egypt"}
+{"seshat_id": "EgOldK2", "decision": "accept", "polity_id": "old_kingdom_of_egypt"}
+{"seshat_id": "EgPtol1", "decision": "accept", "polity_id": "ptolemaic_kingdom"}
+{"seshat_id": "EgPtol2", "decision": "reject"}
+{"seshat_id": "EgRegns", "decision": "accept", "polity_id": "ancient_egypt"}
+{"seshat_id": "EgSaite", "decision": "accept", "polity_id": "ancient_egypt"}
+{"seshat_id": "EgThebH", "decision": "accept", "polity_id": "ancient_egypt"}
+{"seshat_id": "EgThebL", "decision": "accept", "polity_id": "ancient_egypt"}
+{"seshat_id": "EgTulIk", "decision": "accept", "polity_id": "ikhshidid_dynasty"}
+{"seshat_id": "EtAksm1", "decision": "reject"}
+{"seshat_id": "FmTrukE", "decision": "reject"}
+{"seshat_id": "FmTrukL", "decision": "reject"}
+{"seshat_id": "FrBeakr", "decision": "reject"}
+{"seshat_id": "FrBurbE", "decision": "accept", "polity_id": "kingdom_of_france"}
+{"seshat_id": "FrBurbL", "decision": "accept", "polity_id": "kingdom_of_france"}
+{"seshat_id": "FrCaptE", "decision": "accept", "polity_id": "kingdom_of_france"}
+{"seshat_id": "FrCaptL", "decision": "accept", "polity_id": "kingdom_of_france"}
+{"seshat_id": "FrCarlE", "decision": "accept", "polity_id": "carolingian_empire"}
+{"seshat_id": "FrCarlL", "decision": "accept", "polity_id": "carolingian_empire"}
+{"seshat_id": "FrHallA", "decision": "reject"}
+{"seshat_id": "FrHallB", "decision": "reject"}
+{"seshat_id": "FrHallC", "decision": "reject"}
+{"seshat_id": "FrHallD", "decision": "reject"}
+{"seshat_id": "FrMervE", "decision": "accept", "polity_id": "france"}
+{"seshat_id": "FrMervL", "decision": "reject"}
+{"seshat_id": "FrMervM", "decision": "accept", "polity_id": "france"}
+{"seshat_id": "FrTeneA", "decision": "reject"}
+{"seshat_id": "FrTeneB", "decision": "reject"}
+{"seshat_id": "FrTeneC", "decision": "reject"}
+{"seshat_id": "FrValoE", "decision": "accept", "polity_id": "kingdom_of_france"}
+{"seshat_id": "FrValoL", "decision": "accept", "polity_id": "kingdom_of_france"}
+{"seshat_id": "GhAshnE", "decision": "accept", "polity_id": "ashanti_empire"}
+{"seshat_id": "GrCrArc", "decision": "reject"}
+{"seshat_id": "GrCrCls", "decision": "reject"}
+{"seshat_id": "GrCrFPa", "decision": "reject"}
+{"seshat_id": "GrCrHel", "decision": "reject"}
+{"seshat_id": "Hawaii1", "decision": "reject"}
+{"seshat_id": "Hawaii3", "decision": "reject"}
+{"seshat_id": "IdBrokE", "decision": "reject"}
+{"seshat_id": "IdBrokL", "decision": "reject"}
+{"seshat_id": "IdCJBun", "decision": "reject"}
+{"seshat_id": "IdKalin", "decision": "accept", "polity_id": "heling"}
+{"seshat_id": "IdKedir", "decision": "accept", "polity_id": "kediri"}
+{"seshat_id": "IdMedng", "decision": "reject"}
+{"seshat_id": "IlCanaa", "decision": "accept", "polity_id": "phoenicia"}
+{"seshat_id": "IlYisrl", "decision": "accept", "polity_id": "united_kingdom_of_israel"}
+{"seshat_id": "InAyodE", "decision": "reject"}
+{"seshat_id": "InChaBd", "decision": "accept", "polity_id": "chalukya_dynasty"}
+{"seshat_id": "InChaKl", "decision": "accept", "polity_id": "chalukya_dynasty"}
+{"seshat_id": "InDecIA", "decision": "reject"}
+{"seshat_id": "InDecKg", "decision": "reject"}
+{"seshat_id": "InGangC", "decision": "reject"}
+{"seshat_id": "InGaroE", "decision": "accept", "polity_id": "kingdom_of_garo"}
+{"seshat_id": "InGaroL", "decision": "reject"}
+{"seshat_id": "InGupta", "decision": "accept", "polity_id": "gupta_empire"}
+{"seshat_id": "InGurjr", "decision": "accept", "polity_id": "gurjara_pratihara"}
+{"seshat_id": "InKadam", "decision": "accept", "polity_id": "kadamba_dynasty"}
+{"seshat_id": "InKampi", "decision": "accept", "polity_id": "kampili"}
+{"seshat_id": "InKanau", "decision": "accept", "polity_id": "varman_dynasty_of_kannauj"}
+{"seshat_id": "InRasht", "decision": "accept", "polity_id": "rashtrakuta_dynasty"}
+{"seshat_id": "InVakat", "decision": "accept", "polity_id": "vakataka_empire"}
+{"seshat_id": "IqBabAm", "decision": "accept", "polity_id": "babylonia"}
+{"seshat_id": "IqBabKs", "decision": "accept", "polity_id": "babylonia"}
+{"seshat_id": "IqBazi*", "decision": "reject"}
+{"seshat_id": "IqDynE*", "decision": "reject"}
+{"seshat_id": "IqIsin2", "decision": "accept", "polity_id": "babylon"}
+{"seshat_id": "IqUruk*", "decision": "accept", "polity_id": "uruk"}
+{"seshat_id": "IrAkKoy", "decision": "accept", "polity_id": "aq_qoyunlu"}
+{"seshat_id": "IrArcha", "decision": "reject"}
+{"seshat_id": "IrBuyid", "decision": "accept", "polity_id": "buyid_dynasty"}
+{"seshat_id": "IrElym2", "decision": "accept", "polity_id": "elymais"}
+{"seshat_id": "IrIlkhn", "decision": "accept", "polity_id": "ilkhanate"}
+{"seshat_id": "IrKhzL*", "decision": "reject"}
+{"seshat_id": "IrKhzM*", "decision": "reject"}
+{"seshat_id": "IrNElm1", "decision": "accept", "polity_id": "elam"}
+{"seshat_id": "IrNElm2", "decision": "accept", "polity_id": "elam"}
+{"seshat_id": "IrNElm3", "decision": "accept", "polity_id": "elam"}
+{"seshat_id": "IrQajar", "decision": "accept", "polity_id": "qajar_iran"}
+{"seshat_id": "IrSafvd", "decision": "accept", "polity_id": "safavid_iran"}
+{"seshat_id": "IrSasn1", "decision": "reject"}
+{"seshat_id": "IrSasn2", "decision": "accept", "polity_id": "sasanian_empire"}
+{"seshat_id": "IrSeljq", "decision": "accept", "polity_id": "seljuk_empire"}
+{"seshat_id": "ItLatBA", "decision": "reject"}
+{"seshat_id": "ItLatCA", "decision": "reject"}
+{"seshat_id": "ItLatIA", "decision": "reject"}
+{"seshat_id": "ItPapEM", "decision": "reject"}
+{"seshat_id": "ItRav**", "decision": "reject"}
+{"seshat_id": "ItRomPr", "decision": "accept", "polity_id": "ancient_rome"}
+{"seshat_id": "ItStPet", "decision": "reject"}
+{"seshat_id": "JpAsuka", "decision": "reject"}
+{"seshat_id": "JpAzMom", "decision": "reject"}
+{"seshat_id": "JpHeian", "decision": "reject"}
+{"seshat_id": "JpJomo5", "decision": "reject"}
+{"seshat_id": "JpJomo6", "decision": "reject"}
+{"seshat_id": "JpKofun", "decision": "reject"}
+{"seshat_id": "JpNara*", "decision": "reject"}
+{"seshat_id": "JpSengk", "decision": "reject"}
+{"seshat_id": "JpYayoi", "decision": "reject"}
+{"seshat_id": "KgKarKh", "decision": "accept", "polity_id": "karakhanid_khanate"}
+{"seshat_id": "KgWTurk", "decision": "accept", "polity_id": "western_turkic_khaganate"}
+{"seshat_id": "KhAngkC", "decision": "reject"}
+{"seshat_id": "KhAngkE", "decision": "reject"}
+{"seshat_id": "KhCambd", "decision": "accept", "polity_id": "khmer_empire"}
+{"seshat_id": "KhChenl", "decision": "accept", "polity_id": "zhenla"}
+{"seshat_id": "KhFunaE", "decision": "accept", "polity_id": "kingdom_of_funan"}
+{"seshat_id": "KhFunaL", "decision": "accept", "polity_id": "kingdom_of_funan"}
+{"seshat_id": "KhMekIA", "decision": "reject"}
+{"seshat_id": "LbAcPho", "decision": "reject"}
+{"seshat_id": "MlJeJe1", "decision": "reject"}
+{"seshat_id": "MlJeJe2", "decision": "reject"}
+{"seshat_id": "MlJeJe3", "decision": "reject"}
+{"seshat_id": "MlJeJe4", "decision": "reject"}
+{"seshat_id": "MlSegou", "decision": "reject"}
+{"seshat_id": "MnETurk", "decision": "reject"}
+{"seshat_id": "MnKhitn", "decision": "accept", "polity_id": "liao_dynasty"}
+{"seshat_id": "MnMongE", "decision": "accept", "polity_id": "khamag_mongol"}
+{"seshat_id": "MnMongL", "decision": "reject"}
+{"seshat_id": "MnTurk2", "decision": "accept", "polity_id": "second_turkic_khaganate"}
+{"seshat_id": "MnXianb", "decision": "accept", "polity_id": "xianbei_state"}
+{"seshat_id": "MnXngnE", "decision": "reject"}
+{"seshat_id": "MnXngnM", "decision": "accept", "polity_id": "xiongnu"}
+{"seshat_id": "MnZungh", "decision": "accept", "polity_id": "dzungar_khanate"}
+{"seshat_id": "MxAlb1E", "decision": "reject"}
+{"seshat_id": "MxAlb1L", "decision": "reject"}
+{"seshat_id": "MxAlb3A", "decision": "reject"}
+{"seshat_id": "MxAlb5*", "decision": "reject"}
+{"seshat_id": "MxClass", "decision": "reject"}
+{"seshat_id": "MxEpicl", "decision": "reject"}
+{"seshat_id": "MxFormE", "decision": "reject"}
+{"seshat_id": "MxFormM", "decision": "reject"}
+{"seshat_id": "MxPostM", "decision": "reject"}
+{"seshat_id": "MxRosar", "decision": "reject"}
+{"seshat_id": "MxSanGu", "decision": "reject"}
+{"seshat_id": "MxTieLa", "decision": "reject"}
+{"seshat_id": "MxToltc", "decision": "accept", "polity_id": "toltec_empire"}
+{"seshat_id": "PeCuzE1", "decision": "reject"}
+{"seshat_id": "PeCuzE2", "decision": "reject"}
+{"seshat_id": "PeCuzL1", "decision": "accept", "polity_id": "kingdom_of_cusco"}
+{"seshat_id": "PeCuzL2", "decision": "reject"}
+{"seshat_id": "PeCuzLF", "decision": "reject"}
+{"seshat_id": "PgOrokE", "decision": "reject"}
+{"seshat_id": "PgOrokL", "decision": "reject"}
+{"seshat_id": "PkIndGr", "decision": "reject"}
+{"seshat_id": "PkPostU", "decision": "reject"}
+{"seshat_id": "PkProto", "decision": "accept", "polity_id": "kashi_q12660335"}
+{"seshat_id": "PkSind1", "decision": "accept", "polity_id": "abbasid_caliphate"}
+{"seshat_id": "PkSind2", "decision": "reject"}
+{"seshat_id": "RuYakuE", "decision": "accept", "polity_id": "sakha"}
+{"seshat_id": "RuYakuL", "decision": "reject"}
+{"seshat_id": "SdKusht", "decision": "accept", "polity_id": "ancient_egypt"}
+{"seshat_id": "TrBrzL2", "decision": "reject"}
+{"seshat_id": "TrByzM3", "decision": "accept", "polity_id": "byzantine_empire"}
+{"seshat_id": "TrERom*", "decision": "accept", "polity_id": "byzantine_empire"}
+{"seshat_id": "TrHatNK", "decision": "accept", "polity_id": "hatti"}
+{"seshat_id": "TrHatOK", "decision": "accept", "polity_id": "hatti"}
+{"seshat_id": "TrLydia", "decision": "accept", "polity_id": "lydia"}
+{"seshat_id": "TrLysim", "decision": "reject"}
+{"seshat_id": "TrNHitt", "decision": "reject"}
+{"seshat_id": "TrOttm1", "decision": "accept", "polity_id": "ottoman_empire"}
+{"seshat_id": "TrOttm2", "decision": "accept", "polity_id": "ottoman_empire"}
+{"seshat_id": "TrOttm3", "decision": "accept", "polity_id": "ottoman_caliphate"}
+{"seshat_id": "TrPhryg", "decision": "reject"}
+{"seshat_id": "TrRomDm", "decision": "reject"}
+{"seshat_id": "TrTabal", "decision": "accept", "polity_id": "tabal"}
+{"seshat_id": "USCahoE", "decision": "reject"}
+{"seshat_id": "USCahoL", "decision": "reject"}
+{"seshat_id": "USIllin", "decision": "reject"}
+{"seshat_id": "USKameh", "decision": "reject"}
+{"seshat_id": "USMisEW", "decision": "reject"}
+{"seshat_id": "USMisME", "decision": "reject"}
+{"seshat_id": "USMisRo", "decision": "reject"}
+{"seshat_id": "USMisSd", "decision": "reject"}
+{"seshat_id": "USMisSp", "decision": "reject"}
+{"seshat_id": "USOneot", "decision": "reject"}
+{"seshat_id": "UsIroqE", "decision": "reject"}
+{"seshat_id": "UsIroqL", "decision": "reject"}
+{"seshat_id": "UsIroqP", "decision": "reject"}
+{"seshat_id": "UzKhw01", "decision": "accept", "polity_id": "khwarazmian_empire"}
+{"seshat_id": "UzSogdi", "decision": "reject"}
+{"seshat_id": "YeHmyr1", "decision": "accept", "polity_id": "himyarite_kingdom"}
+{"seshat_id": "YeHmyr2", "decision": "accept", "polity_id": "himyarite_kingdom"}
+{"seshat_id": "YeLBA**", "decision": "reject"}
+{"seshat_id": "YeNeoL*", "decision": "reject"}
+{"seshat_id": "YeQasmi", "decision": "reject"}
+{"seshat_id": "YeQatab", "decision": "accept", "polity_id": "qataban"}
+{"seshat_id": "YeSaRay", "decision": "reject"}
+{"seshat_id": "YeSabaC", "decision": "reject"}
+{"seshat_id": "YeWarLd", "decision": "reject"}
+{"seshat_id": "YeZiyad", "decision": "reject"}

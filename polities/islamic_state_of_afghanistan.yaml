@@ -26,8 +26,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 44.49
-visibility_tier: detailed
+prominence_score: 39.34
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -38,3 +38,25 @@ geography:
     lat: 37.1175
     lon: 70.579722222
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: transitional_islamic_state_of_afghanistan
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1415585
+prominence_components:
+  wikidata_reach: 24.19
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 2.6
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 39.34

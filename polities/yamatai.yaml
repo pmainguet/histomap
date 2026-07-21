@@ -15,9 +15,9 @@ end: 300
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  100: 4.51
-  200: 4.94
-  300: 5.51
+  100: 4.43
+  200: 4.83
+  300: 6.18
 weight_imputed: true
 icon: null
 text:
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 45.77
+prominence_score: 38.19
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -40,3 +40,25 @@ geography:
     lat: 34.516666666
     lon: 135.85
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: yamato_kinship
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q844295
+prominence_components:
+  wikidata_reach: 21.94
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 5.76
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 38.19

@@ -15,9 +15,9 @@ end: 1547
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1300: 4.37
-  1400: 4.86
-  1500: 5.39
+  1300: 4.34
+  1400: 4.78
+  1500: 5.27
 weight_imputed: true
 icon: null
 text:
@@ -28,8 +28,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 56.84
-visibility_tier: global
+prominence_score: 46.9
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -40,3 +40,25 @@ geography:
     lat: 55.750555555
     lon: 37.6175
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: tsardom_of_russia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q170770
+prominence_components:
+  wikidata_reach: 28.21
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 6.14
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 46.9

@@ -31,7 +31,7 @@ PARQUET_OUT = ROOT / "sources" / "wikidata.parquet"
 
 ENDPOINT = "https://query.wikidata.org/sparql"
 USER_AGENT = "histomap/0.1 (https://github.com/pmainguet/histomap) python-SPARQLWrapper"
-PAGE_SIZE = 2000
+PAGE_SIZE = 500
 SLEEP_BETWEEN_PAGES = 1.0
 
 # Polity-adjacent Wikidata classes. Labels are for logging/cache filenames only.
@@ -96,9 +96,26 @@ def _run_query(sparql: SPARQLWrapper, class_qid: str, offset: int, limit: int) -
             result = sparql.query().convert()
             return result["results"]["bindings"]
         except HTTPError as exc:
-            if exc.code == 429 and attempt < 2:
-                wait = 70
-                print(f"    HTTP 429; sleeping {wait}s then retrying...", flush=True)
+            if exc.code in {429, 502, 503, 504} and attempt < 2:
+                wait = 70 if exc.code == 429 else 10 * (attempt + 1)
+                print(
+                    f"    HTTP {exc.code}; sleeping {wait}s then retrying...",
+                    flush=True,
+                )
+                time.sleep(wait)
+                continue
+            raise
+        except Exception as exc:
+            # WDQS commonly wraps server-side timeouts as EndPointInternalError
+            # rather than HTTPError. Retrying smaller pages is safe because the
+            # query has deterministic ordering and the cache is written atomically
+            # only after the class finishes.
+            if attempt < 2:
+                wait = 10 * (attempt + 1)
+                print(
+                    f"    {type(exc).__name__}; sleeping {wait}s then retrying...",
+                    flush=True,
+                )
                 time.sleep(wait)
                 continue
             raise
@@ -194,6 +211,22 @@ def merge_into(rows_by_qid: dict[str, dict], flat: dict) -> None:
             existing[k] = v
 
 
+def retain_candidates(frame: pd.DataFrame) -> tuple[pd.DataFrame, int]:
+    """Keep dateless civilizations for completeness review.
+
+    Most broad polity candidates without an inception date are low-value noise, but
+    civilizations are often modelled without P571 on Wikidata.  They must survive
+    extraction so the type/audit stages can review them, even though the canonical
+    schema still requires a start year before import.
+    """
+    has_inception = frame["inception"].notna()
+    is_civilization = frame["wd_classes"].apply(
+        lambda values: "Q8432" in values if isinstance(values, (list, tuple, set)) else False
+    )
+    retained = frame[has_inception | is_civilization].reset_index(drop=True)
+    return retained, len(frame) - len(retained)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -223,9 +256,14 @@ def main() -> None:
         print("No rows. Exiting.")
         return
 
-    before = len(df)
-    df = df.dropna(subset=["inception"]).reset_index(drop=True)
-    print(f"Dropped {before - len(df)} entries with no inception date; kept {len(df)}.")
+    df, dropped = retain_candidates(df)
+    dateless_civilizations = int(
+        ((df["inception"].isna()) & df["wd_classes"].apply(lambda values: "Q8432" in values)).sum()
+    )
+    print(
+        f"Dropped {dropped} non-civilization entries with no inception date; kept {len(df)} "
+        f"candidates ({dateless_civilizations} dateless civilizations retained for review)."
+    )
 
     PARQUET_OUT.parent.mkdir(parents=True, exist_ok=True)
     df.to_parquet(PARQUET_OUT, index=False)

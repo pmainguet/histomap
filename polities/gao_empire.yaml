@@ -14,13 +14,13 @@ end: 1464
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  800: 4.18
-  900: 3.92
-  1000: 3.61
-  1100: 2.48
-  1200: 3.1
-  1300: 2.71
-  1400: 3.66
+  800: 4.22
+  900: 3.49
+  1000: 3.07
+  1100: 2.43
+  1200: 3.53
+  1300: 2.68
+  1400: 3.52
 weight_imputed: true
 icon: null
 text:
@@ -31,7 +31,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 36.29
+prominence_score: 32.56
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -43,3 +43,25 @@ geography:
     lat: 15.349
     lon: 0.76
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: songhai_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1493766
+prominence_components:
+  wikidata_reach: 15.0
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 7.06
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 32.56

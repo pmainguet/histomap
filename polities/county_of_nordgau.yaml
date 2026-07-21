@@ -16,12 +16,12 @@ end: 1200
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  700: 8.2
-  800: 7.92
-  900: 7.84
-  1000: 7.67
-  1100: 7.57
-  1200: 8.54
+  700: 8.04
+  800: 7.93
+  900: 7.65
+  1000: 7.46
+  1100: 7.49
+  1200: 8.63
 weight_imputed: true
 icon: null
 text:
@@ -32,7 +32,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 33.38
+prominence_score: 30.8
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -44,3 +44,25 @@ geography:
     lat: 48.563888888
     lon: 7.581111111
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: landgraviate_of_lower_alsace
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q832888
+prominence_components:
+  wikidata_reach: 13.55
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.75
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 30.8

@@ -4,6 +4,8 @@ names:
   fr: Royaume de Kediri
 external_ids:
   wikidata: Q756895
+  seshat:
+  - IdKedir
 parent: null
 successors: []
 region: null
@@ -22,9 +24,10 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 46.28
-visibility_tier: regional
+prominence_score: 34.99
+visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -34,3 +37,19 @@ geography:
   - ID
   centroid: null
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 22.37
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 5.62
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 34.99

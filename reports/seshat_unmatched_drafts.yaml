@@ -76,19 +76,6 @@ notes: Seshat-only draft; requires review before canonical import.
 sources:
 - seshat
 ---
-id: seshat_naqada_ii_egnaqa2
-canonical_name: Naqada II
-external_ids:
-  seshat:
-  - EgNaqa2
-start: -3550
-end: -3301
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
 id: seshat_atlantic_complex_fratlba
 canonical_name: Atlantic Complex
 external_ids:
@@ -167,19 +154,6 @@ notes: Seshat-only draft; requires review before canonical import.
 sources:
 - seshat
 ---
-id: seshat_postpalatial_crete_grcrppa
-canonical_name: Postpalatial Crete
-external_ids:
-  seshat:
-  - GrCrPPa
-start: -1300
-end: -1201
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
 id: seshat_prepalatial_crete_grcrpre
 canonical_name: Prepalatial Crete
 external_ids:
@@ -193,19 +167,6 @@ notes: Seshat-only draft; requires review before canonical import.
 sources:
 - seshat
 ---
-id: seshat_hawaii_ii_hawaii2
-canonical_name: Hawaii II
-external_ids:
-  seshat:
-  - Hawaii2
-start: 1200
-end: 1649
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
 id: seshat_yehuda_iljudea
 canonical_name: Yehuda
 external_ids:
@@ -213,19 +174,6 @@ external_ids:
   - IlJudea
 start: -103
 end: -62
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_deccan_indecnl
-canonical_name: Deccan - Neolithic
-external_ids:
-  seshat:
-  - InDecNL
-start: -2700
-end: -1201
 start_confidence: high
 end_confidence: high
 notes: Seshat-only draft; requires review before canonical import.
@@ -323,32 +271,6 @@ notes: Seshat-only draft; requires review before canonical import.
 sources:
 - seshat
 ---
-id: seshat_susiana_a_irkhze*
-canonical_name: Susiana A
-external_ids:
-  seshat:
-  - IrKhzE*
-start: -6000
-end: -5701
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_susiana_b_irkhzem
-canonical_name: Susiana B
-external_ids:
-  seshat:
-  - IrKhzEM
-start: -5700
-end: -5101
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
 id: seshat_pre_ceramic_period_irprcer
 canonical_name: Pre-Ceramic Period
 external_ids:
@@ -427,58 +349,6 @@ notes: Seshat-only draft; requires review before canonical import.
 sources:
 - seshat
 ---
-id: seshat_jomon_jpjomo3
-canonical_name: Early Jomon
-external_ids:
-  seshat:
-  - JpJomo3
-start: -5300
-end: -3501
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_jomon_jpjomo4
-canonical_name: 'Middle Jomon '
-external_ids:
-  seshat:
-  - JpJomo4
-start: -3500
-end: -2501
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_angkor_khangkl
-canonical_name: Late Angkor
-external_ids:
-  seshat:
-  - KhAngkL
-start: 1220
-end: 1431
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_bronze_age_cambodia_khmekba
-canonical_name: Bronze Age Cambodia
-external_ids:
-  seshat:
-  - KhMekBA
-start: -1200
-end: -501
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
 id: seshat_andronovo_kzandro
 canonical_name: Andronovo
 external_ids:
@@ -505,32 +375,6 @@ notes: Seshat-only draft; requires review before canonical import.
 sources:
 - seshat
 ---
-id: seshat_monte_alban_ii_mxalb2*
-canonical_name: Monte Alban II
-external_ids:
-  seshat:
-  - MxAlb2*
-start: -100
-end: 199
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_monte_alban_iiib_iv_mxalb3b
-canonical_name: Monte Alban IIIB and IV
-external_ids:
-  seshat:
-  - MxAlb3B
-start: 500
-end: 899
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
 id: seshat_archaic_basin_mexico_mxarch*
 canonical_name: Archaic Basin of Mexico
 external_ids:
@@ -538,123 +382,6 @@ external_ids:
   - MxArch*
 start: -6000
 end: -2001
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_formative_basin_mexico_mxforml
-canonical_name: Late Formative Basin of Mexico
-external_ids:
-  seshat:
-  - MxFormL
-start: -400
-end: -101
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_terminal_formative_basin_mexico_mxformt
-canonical_name: Terminal Formative Basin of Mexico
-external_ids:
-  seshat:
-  - MxFormT
-start: -100
-end: 99
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_initial_formative_basin_mexico_mxinitl
-canonical_name: Initial Formative Basin of Mexico
-external_ids:
-  seshat:
-  - MxInitl
-start: -2000
-end: -1201
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_kachi_plain_pkacern
-canonical_name: Kachi Plain - Aceramic Neolithic
-external_ids:
-  seshat:
-  - PkAcerN
-start: -7500
-end: -5501
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_kachi_plain_pkceran
-canonical_name: Kachi Plain - Ceramic Neolithic
-external_ids:
-  seshat:
-  - PkCeraN
-start: -5500
-end: -4001
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_kachi_plain_pkchalc
-canonical_name: Kachi Plain - Chalcolithic
-external_ids:
-  seshat:
-  - PkChalc
-start: -4000
-end: -3201
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_kachi_plain_pkpreur
-canonical_name: Kachi Plain - Pre-Urban Period
-external_ids:
-  seshat:
-  - PkPreUr
-start: -3200
-end: -2501
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_kachi_plain_pkurbn1
-canonical_name: Kachi Plain - Urban Period I
-external_ids:
-  seshat:
-  - PkUrbn1
-start: -2500
-end: -2101
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_kachi_plain_pkurbn2
-canonical_name: Kachi Plain - Urban Period II
-external_ids:
-  seshat:
-  - PkUrbn2
-start: -2100
-end: -1801
 start_confidence: high
 end_confidence: high
 notes: Seshat-only draft; requires review before canonical import.
@@ -674,19 +401,6 @@ notes: Seshat-only draft; requires review before canonical import.
 sources:
 - seshat
 ---
-id: seshat_konya_plain_trbrzer
-canonical_name: Konya Plain - Early Bronze Age
-external_ids:
-  seshat:
-  - TrBrzER
-start: -3000
-end: -2001
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
 id: seshat_bronze_age_in_central_anatolia_trbrzmd
 canonical_name: Middle Bronze Age in Central Anatolia
 external_ids:
@@ -694,110 +408,6 @@ external_ids:
   - TrBrzMD
 start: -2000
 end: -1700
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_konya_plain_trclcer
-canonical_name: Konya Plain - Early Chalcolithic
-external_ids:
-  seshat:
-  - TrClcER
-start: -6000
-end: -5001
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_konya_plain_trclclt
-canonical_name: Konya Plain - Late Chalcolithic
-external_ids:
-  seshat:
-  - TrClcLT
-start: -5000
-end: -3001
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_konya_plain_trneocr
-canonical_name: Konya Plain - Ceramic Neolithic
-external_ids:
-  seshat:
-  - TrNeoCR
-start: -7000
-end: -6601
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_konya_plain_trneoer
-canonical_name: Konya Plain - Early Neolithic
-external_ids:
-  seshat:
-  - TrNeoER
-start: -9600
-end: -7001
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_konya_plain_trneolt
-canonical_name: Konya Plain - Late Neolithic
-external_ids:
-  seshat:
-  - TrNeoLT
-start: -6600
-end: -6001
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_cahokia_usmismw
-canonical_name: Cahokia - Middle Woodland
-external_ids:
-  seshat:
-  - USMisMW
-start: -150
-end: 299
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_cahokia_usmismu
-canonical_name: Cahokia - Late Woodland II
-external_ids:
-  seshat:
-  - USMisMu
-start: 450
-end: 599
-start_confidence: high
-end_confidence: high
-notes: Seshat-only draft; requires review before canonical import.
-sources:
-- seshat
----
-id: seshat_cahokia_usmispa
-canonical_name: Cahokia - Late Woodland III
-external_ids:
-  seshat:
-  - USMisPa
-start: 600
-end: 749
 start_confidence: high
 end_confidence: high
 notes: Seshat-only draft; requires review before canonical import.

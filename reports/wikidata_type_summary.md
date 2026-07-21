@@ -1,8 +1,8 @@
 # Wikidata direct-type filter
 
-Total candidates: 5,000
+Total candidates: 5,088
 
-## Accepted: 3,144
+## Accepted: 3,126
 
 - Neo-Assyrian Empire (`Q10914393`): strong direct political type: Q3024240, Q48349
 - Serbian Empire (`Q1406298`): strong direct political type: Q3024240, Q48349
@@ -28,7 +28,7 @@ Total candidates: 5,000
 - Gibraltar (`Q1410`): direct non-polity type: Q515
 - Athens (`Q1524`): explicit QID override
 
-## Review: 1,842
+## Review: 1,948
 
 - Q101104073 (`Q101104073`): no direct allow or deny type
 - Varsoda State (`Q101242375`): no direct allow or deny type

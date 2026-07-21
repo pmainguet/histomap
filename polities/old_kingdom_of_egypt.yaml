@@ -6,6 +6,7 @@ external_ids:
   wikidata: Q177819
   seshat:
   - EgOldK1
+  - EgOldK2
 parent: null
 successors: []
 region: null
@@ -26,8 +27,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - seshat
 - wikidata
-prominence_score: 57.35
-visibility_tier: global
+prominence_score: 41.68
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -38,3 +39,19 @@ geography:
     lat: 29.844667
     lon: 31.250917
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 27.95
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 6.73
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 41.68

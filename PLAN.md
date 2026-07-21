@@ -246,6 +246,23 @@ Get ~3,000 polities into draft YAML and render them. Quality is bad on purpose �
 5a. **Direct-type eligibility filter.** The broad `wdt:P31/wdt:P279*` class traversal is useful for discovery but leaks cities, administrative regions, archaeological sites, fictional states, and organizations into the polity set. Fetch and retain every entity's direct `P31` (`instance of`) values, then classify records before YAML generation:
    - Exclude cities, towns, settlements, archaeological sites, buildings/fortresses, organizations, fictional entities, and modern first-/second-level administrative subdivisions.
    - Do not infer eligibility from the English label: names such as “Mexico” may denote a valid sovereign country, while “Athens” may refer to the modern city rather than the historical polity.
+5b. **Typed historical entities.** Canonical records now distinguish `polity`, `civilization`,
+   `culture`, `people`, `tribe`, and `archaeological_horizon`. Classification first honors
+   preferred-rank Wikidata `P31` statements, then consults a cached, rank-aware `P279` subclass
+   hierarchy when a direct class is more specific than the controlled vocabulary. Direct matches
+   are high confidence; inherited paths remain reviewable and retain their source QIDs and
+   explanation. A specific contextual branch may supersede a generic polity branch, preventing
+   classes such as `historical country` from hiding `civilization`. Conflicting and unmapped cases go to
+   `reports/entity_type_review.jsonl`. Political parent/successor fields are restricted to polity
+   endpoints, while evidence-bearing typed relationships represent political containment and
+   succession, cultural sequence/components, associated peoples, archaeological sequence, and
+   civilization membership. Prominence, demographic weight, filters, timeline styling, and detail
+   text are type-aware; cultures, peoples, tribes, and archaeological horizons render as context
+   bands rather than population-weighted political bands. `entity_type` manual overrides remain
+   locked against later automated backfills. A dedicated `/type-review` workspace presents the
+   confidence-prioritized classification queue with source links, definitions, keyboard decisions,
+   and immediate locked saves; `/review` remains exclusively for Seshat-to-Histomap identity
+   reconciliation so the two editorial questions stay distinct.
    - Permit genuine sovereign city-states and historical poleis only when a direct type or authoritative source supports political independence. Prefer a distinct historical entity such as Classical Athens over reusing the modern-city item.
    - Put ambiguous mixed-type records into `reports/type_review_queue.jsonl` with their direct types, dates, and matched broad classes; never silently discard them.
    - Maintain versioned allow/deny type lists in `pipeline/wikidata_types.toml`. Manual per-QID overrides handle exceptional entities without weakening the global rules.
@@ -264,12 +281,12 @@ Get ~3,000 polities into draft YAML and render them. Quality is bad on purpose �
    details, transitions, filters, and zoom. It still serves the original purpose of making coverage
    gaps and modern-data density visible.
 
-7a. **Prominence and visibility tiers.** Keep the complete canonical dataset, but prevent obscure entities and administrative subdivisions from overwhelming the default chart. `pipeline/compute_prominence.py` combines Wikidata sitelink reach, longevity, authoritative-source coverage, editorial work, and a parent-country penalty for still-extant entities. (For extinct polities, Wikidata's country field often means present-day location rather than political subordination.) It writes a reproducible `prominence_score` and one of three display tiers:
-   - `global`: the few hundred polities suitable for a world-history overview.
+7a. **Prominence and visibility tiers.** Keep the complete canonical dataset, but prevent obscure entities and administrative subdivisions from overwhelming the default chart. `pipeline/compute_prominence.py` now computes an auditable score from six independently capped components: Wikidata reach (30), authoritative-source coverage (20), historical-weight evidence (20), relationship/transition centrality (15), longevity (8), and editorial work (7). Low-confidence types and dates are explicit penalties. Wikidata aggregate/sequence records are penalized, and present-country geography is deliberately not treated as political subordination. Every component is stored in `prominence_components` alongside the total score.
+   - `global`: a balanced shortlist of major polities and civilizations suitable for a world-history overview.
    - `regional`: important regional polities, visible when the reader asks for more detail.
    - `detailed`: the full research dataset, including minor and disputed entities.
 
-   Thresholds are global and deterministic, but the renderer may additionally cap active bands per region/century to prevent well-documented regions from crowding out others. Manual editorial text, icons, and Seshat coverage can promote a polity; no automated score deletes canonical data.
+   Assignment is deterministic but not one global threshold: an absolute shortlist is combined with quotas for every continent/historical-era stratum, preventing well-documented regions and eras from crowding out others. Unreviewed or low-type-confidence records remain detailed; cultures, peoples, tribes, and archaeological horizons are contextual bands and cannot be promoted automatically to the global tier. Manual overrides still win, and no automated score deletes canonical data.
    A versioned `visibility_override` may promote or demote exceptional records when the automated
    score clearly conflicts with their editorial world-history importance. Prominence recomputation
    preserves this override rather than silently reverting the decision.
@@ -413,6 +430,21 @@ HYDE downloads are slow and rate-limited — do it once and cache aggressively.
 - Fill `long_en` text for top polities over time. Doing this together is part of the project.
 - Add reading levels 2 and 3 (ages 9–12 / teen) as additional text fields.
 - Add regional zoom views, language toggles, family-history band at the bottom, map integration if interest holds.
+- **Historical-period context pilot:** model periods separately from polities so chronology never
+  implies political parenthood. Start with Egypt/Mesopotamia, Japan, Mesoamerica, and European
+  prehistory. Each period records its kind (`historical`, `protohistorical`, `prehistorical`),
+  temporal bounds, geographic scope, broader/following periods, source authority, and optional
+  Wikidata, DBpedia, and PeriodO identifiers. Polity-to-period links are many-to-many and carry an
+  evidence level (`explicit`, `derived`, or `suggested`); date overlap alone is never sufficient.
+  Validate and publish `periods.json` and `period_links.json` first. A background-band/filter UI is
+  deferred until the four-region pilot demonstrates useful coverage without misleading global
+  periodization.
+  The pilot is implemented end to end: 14 sourced authority records and 10 evidence-bearing links
+  are schema-validated, published by the build and unified server, and summarized in
+  `reports/period_pilot_summary.md`. The timeline renders a separately styled period-context layer
+  within the relevant continental lanes, with type/record controls, source-rich period details,
+  period navigation, and reciprocal evidence labels on linked entity details. Expanding and
+  curating global authority coverage remains ongoing dataset work, not a UI blocker.
 - **Nice-to-have relationship navigation:** make parent, children, predecessors, and successors clickable in the detail card; add breadcrumbs, related-band highlighting, and a small tree centered on the selected polity. Later, allow scrolling to a related band and expanding/collapsing descendants or reviewed display groups. This is intentionally deferred until relationship review has improved the underlying links.
   The first increment now exposes all four relationship directions, highlights the selected entity's
   visible neighborhood, and lets related links surface and scroll to lower-tier records. Breadcrumbs,

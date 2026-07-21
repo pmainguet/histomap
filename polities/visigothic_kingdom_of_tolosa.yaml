@@ -14,7 +14,7 @@ end: 507
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  500: 6.83
+  500: 7.79
 weight_imputed: true
 icon: null
 text:
@@ -25,8 +25,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 32.82
-visibility_tier: detailed
+prominence_score: 32.43
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -41,3 +41,31 @@ geography:
     lon: 1.44388889
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: visigothic_kingdom
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q3307686
+- target: empire_of_theodoric_the_great
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q3307686
+prominence_components:
+  wikidata_reach: 15.0
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 4.89
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 32.43

@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 37.84
+prominence_score: 11.4
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -36,3 +36,24 @@ geography:
     lat: -9.43509
     lon: 159.951
   confidence: low
+entity_type: polity
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: solomon_islands
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q13410267
+prominence_components:
+  wikidata_reach: 18.06
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 3.5
+  longevity: 4.84
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 11.4

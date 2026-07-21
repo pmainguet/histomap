@@ -21,10 +21,16 @@ class UnifiedServerTests(unittest.TestCase):
             json.dumps({"Q142": {"iso2": "FR", "label": "France", "continents": ["europe"]}}),
             encoding="utf-8",
         )
-        for name in ("index.html", "review.html", "styles.css", "app.js", "review.js"):
+        for name in (
+            "index.html", "review.html", "type_review.html", "period_review.html", "styles.css", "app.js", "review.js",
+            "type_review.js", "period_review.js",
+        ):
             (self.root / "web" / name).write_text(name, encoding="utf-8")
         (self.root / "data.json").write_text("[]", encoding="utf-8")
         (self.root / "transitions.json").write_text("[]", encoding="utf-8")
+        (self.root / "periods.json").write_text("[]", encoding="utf-8")
+        (self.root / "period_links.json").write_text("[]", encoding="utf-8")
+        (self.root / "period_links.yaml").write_text("[]\n", encoding="utf-8")
         polity = {
             "id": "candidate",
             "canonical_name": "Candidate",
@@ -61,6 +67,36 @@ class UnifiedServerTests(unittest.TestCase):
         (self.root / "reports" / "seshat_review_decisions.jsonl").write_text(
             "", encoding="utf-8"
         )
+        (self.root / "reports" / "entity_type_review.jsonl").write_text(
+            json.dumps(
+                {
+                    "id": "candidate",
+                    "canonical_name": "Candidate",
+                    "wikidata": "Q123",
+                    "proposed_type": "polity",
+                    "confidence": "low",
+                    "source_qids": [],
+                    "reason": "no mapped direct type",
+                }
+            ) + "\n",
+            encoding="utf-8",
+        )
+        (self.root / "reports" / "period_role_review.jsonl").write_text(
+            json.dumps(
+                {
+                    "id": "candidate",
+                    "canonical_name": "Candidate",
+                    "wikidata": "Q123",
+                    "entity_type": "civilization",
+                    "period_kinds": ["historical"],
+                    "direct_type_qids": ["Q11514315", "Q8432"],
+                    "dates": [90, 210],
+                    "prominence_score": 70,
+                    "reason": "mixed role",
+                }
+            ) + "\n",
+            encoding="utf-8",
+        )
         self.client = TestClient(create_app(self.root))
 
     def tearDown(self) -> None:
@@ -69,8 +105,11 @@ class UnifiedServerTests(unittest.TestCase):
     def test_serves_timeline_review_and_data(self) -> None:
         self.assertEqual(self.client.get("/").status_code, 200)
         self.assertEqual(self.client.get("/review").status_code, 200)
+        self.assertEqual(self.client.get("/type-review").status_code, 200)
         self.assertEqual(self.client.get("/data.json").json(), [])
         self.assertEqual(self.client.get("/transitions.json").json(), [])
+        self.assertEqual(self.client.get("/periods.json").json(), [])
+        self.assertEqual(self.client.get("/period_links.json").json(), [])
 
     def test_lists_and_accepts_a_valid_candidate(self) -> None:
         payload = self.client.get("/api/reviews").json()
@@ -156,7 +195,10 @@ class UnifiedServerTests(unittest.TestCase):
     def test_lists_and_updates_geography_with_controlled_values(self) -> None:
         options = self.client.get("/api/options/geography").json()
         self.assertIn("europe", options["continents"])
-        self.assertIn({"code": "FR", "label": "France"}, options["countries"])
+        self.assertIn(
+            {"code": "FR", "label": "France", "continents": ["europe"]},
+            options["countries"],
+        )
         response = self.client.patch(
             "/api/polities/candidate/geography",
             json={
@@ -179,6 +221,45 @@ class UnifiedServerTests(unittest.TestCase):
             json={"continents": ["atlantis"], "present_countries": ["ZZ"]},
         )
         self.assertEqual(response.status_code, 422)
+
+    def test_updates_and_locks_entity_type(self) -> None:
+        response = self.client.patch(
+            "/api/polities/candidate/entity-type", json={"entity_type": "culture"}
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["entity_type"], "culture")
+        saved = yaml.safe_load(
+            (self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8")
+        )
+        self.assertEqual(saved["entity_type_confidence"], "high")
+        self.assertIn("entity_type", saved["manual_overrides"])
+
+    def test_lists_and_saves_entity_type_review(self) -> None:
+        payload = self.client.get("/api/type-reviews").json()
+        self.assertEqual(payload["total"], 1)
+        self.assertEqual(payload["items"][0]["id"], "candidate")
+        response = self.client.post(
+            "/api/type-reviews/candidate", json={"entity_type": "civilization"}
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["entity_type"], "civilization")
+        self.assertEqual(self.client.get("/api/type-reviews").json()["total"], 0)
+
+    def test_lists_and_saves_period_role_as_linked_records(self) -> None:
+        payload = self.client.get("/api/period-role-reviews").json()
+        self.assertEqual(payload["total"], 1)
+        response = self.client.post(
+            "/api/period-role-reviews/candidate", json={"timeline_role": "both"}
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["period_id"], "candidate_period")
+        entity = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(entity["timeline_role"], "both")
+        self.assertIn("timeline_role", entity["manual_overrides"])
+        self.assertTrue((self.root / "periods" / "candidate_period.yaml").exists())
+        links = yaml.safe_load((self.root / "period_links.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(links[-1]["entity_id"], "candidate")
+        self.assertEqual(self.client.get("/api/period-role-reviews").json()["total"], 0)
 
 
 if __name__ == "__main__":

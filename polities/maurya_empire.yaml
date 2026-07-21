@@ -28,8 +28,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - seshat
 - wikidata
-prominence_score: 58.0
-visibility_tier: global
+prominence_score: 49.02
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -40,3 +40,25 @@ geography:
     lat: 25.61
     lon: 85.141388888
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: shunga_empire
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q62943
+prominence_components:
+  wikidata_reach: 29.67
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 7.0
+  longevity: 5.35
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 49.02

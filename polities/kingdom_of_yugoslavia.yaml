@@ -27,8 +27,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 52.08
-visibility_tier: regional
+prominence_score: 35.42
+visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -39,3 +39,43 @@ geography:
     lat: 44.809722222
     lon: 20.463055555
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: yugoslavia
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q191077
+- target: democratic_federal_yugoslavia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q191077
+- target: governorate_of_montenegro
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q191077
+- target: independent_state_of_croatia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q191077
+prominence_components:
+  wikidata_reach: 28.3
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 9.05
+  longevity: 3.08
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 35.42

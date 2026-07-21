@@ -16,7 +16,7 @@ end: 1858
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1850: 4.85
+  1850: 4.89
 weight_imputed: true
 icon: null
 text:
@@ -27,8 +27,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 44.08
-visibility_tier: detailed
+prominence_score: 39.14
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -39,3 +39,25 @@ geography:
     lat: 4.65
     lon: -74.05
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: granadine_confederation
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q630882
+prominence_components:
+  wikidata_reach: 22.97
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 3.62
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 39.14

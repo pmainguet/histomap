@@ -32,7 +32,7 @@ notes: Canonical political record uses Wikidata Q4496560 (Hatti); the English Wi
 sources:
 - seshat
 - wikidata
-prominence_score: 43.75
+prominence_score: 38.52
 visibility_tier: global
 visibility_override: global
 eligibility: accepted
@@ -47,3 +47,19 @@ geography:
     lon: 34.615277777
   confidence: medium
   primary_continent: asia
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 19.83
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 6.69
+  editorial_work: 5
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 38.52

@@ -14,23 +14,23 @@ end: 1500
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  -1000: 4.86
-  0: 8.15
-  100: 8.14
-  200: 7.81
-  300: 7.22
-  400: 6.18
-  500: 5.92
-  600: 6.23
-  700: 6.9
-  800: 6.7
-  900: 6.61
-  1000: 6.45
-  1100: 4.98
-  1200: 5.67
-  1300: 5.64
-  1400: 5.45
-  1500: 5.6
+  -1000: 6.03
+  0: 7.83
+  100: 7.99
+  200: 7.63
+  300: 7.71
+  400: 7.37
+  500: 6.85
+  600: 6.39
+  700: 6.71
+  800: 6.72
+  900: 6.35
+  1000: 6.14
+  1100: 4.92
+  1200: 5.94
+  1300: 5.6
+  1400: 5.4
+  1500: 5.48
 weight_imputed: true
 icon: null
 text:
@@ -41,8 +41,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 58.58
-visibility_tier: global
+prominence_score: 42.95
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -55,3 +55,19 @@ geography:
     lon: 27.278369
   confidence: medium
   primary_continent: asia
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q148837
+relationships: []
+prominence_components:
+  wikidata_reach: 27.95
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 8
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 42.95

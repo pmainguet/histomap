@@ -13,16 +13,16 @@ end: 1705
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  800: 6.53
-  900: 6.38
-  1000: 6.16
-  1100: 5.26
-  1200: 5.55
-  1300: 4.94
-  1400: 5.0
-  1500: 5.05
-  1600: 5.25
-  1700: 4.04
+  800: 6.55
+  900: 6.1
+  1000: 5.83
+  1100: 5.2
+  1200: 5.83
+  1300: 4.9
+  1400: 4.92
+  1500: 4.91
+  1600: 5.38
+  1700: 4.14
 weight_imputed: true
 icon: null
 text:
@@ -33,7 +33,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 54.25
+prominence_score: 39.86
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -48,3 +48,19 @@ geography:
     lon: 7.0
   confidence: medium
   primary_continent: africa
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 25.35
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 7.5
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 39.86

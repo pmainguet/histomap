@@ -15,9 +15,9 @@ end: 1198
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  900: 7.3
-  1000: 7.16
-  1100: 6.96
+  900: 7.08
+  1000: 6.91
+  1100: 6.89
 weight_imputed: true
 icon: null
 text:
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 48.67
+prominence_score: 39.95
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -40,3 +40,25 @@ geography:
     lat: 50.0875
     lon: 14.421388888
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_bohemia
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2162698
+prominence_components:
+  wikidata_reach: 23.16
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 6.29
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 39.95

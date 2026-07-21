@@ -17,8 +17,8 @@ end: 1507
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1400: 7.2
-  1500: 7.98
+  1400: 10.0
+  1500: 9.31
 weight_imputed: true
 icon: null
 text:
@@ -30,7 +30,7 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 56.27
+prominence_score: 56.48
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -42,3 +42,25 @@ geography:
     lat: 34.341
     lon: 62.203
   confidence: low
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: khanate_of_bukhara
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q484195
+prominence_components:
+  wikidata_reach: 28.63
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 3.5
+  longevity: 5.35
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 56.48

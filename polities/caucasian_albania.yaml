@@ -14,11 +14,11 @@ end: 461
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  0: 6.43
-  100: 6.56
-  200: 6.3
-  300: 6.04
-  400: 5.34
+  0: 6.19
+  100: 6.44
+  200: 6.16
+  300: 6.66
+  400: 6.59
 weight_imputed: true
 icon: null
 text:
@@ -29,8 +29,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 55.47
-visibility_tier: global
+prominence_score: 40.55
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -43,3 +43,19 @@ geography:
     lon: 46.882222
   confidence: medium
   primary_continent: asia
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 26.89
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 6.66
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 40.55

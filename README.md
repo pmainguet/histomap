@@ -36,6 +36,7 @@ allowlist of pipeline actions.
 
 ```powershell
 make extract
+make audit-civilizations
 make extract-seshat
 make extract-maddison
 make map-maddison

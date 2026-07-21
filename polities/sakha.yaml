@@ -5,6 +5,8 @@ names:
   aliases_en: Yakutiya | Yakutia | Sakha Republic | Republic of Sakha | Sakha (Yakutia)
 external_ids:
   wikidata: Q6605
+  seshat:
+  - RuYakuE
 parent: null
 successors: []
 region: null
@@ -23,8 +25,9 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 42.75
+prominence_score: 40.92
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -38,3 +41,20 @@ geography:
     lon: 129.166666666
   confidence: medium
   primary_continent: europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships: []
+manual_overrides:
+- entity_type
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 3.92
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 40.92

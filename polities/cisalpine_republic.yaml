@@ -14,7 +14,7 @@ end: 1802
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1800: 8.64
+  1800: 8.63
 weight_imputed: true
 icon: null
 text:
@@ -25,8 +25,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 43.95
-visibility_tier: detailed
+prominence_score: 38.99
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -37,3 +37,25 @@ geography:
     lat: 45.46666667
     lon: 9.16666667
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: italian_republic
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q213353
+prominence_components:
+  wikidata_reach: 24.5
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 1.95
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 38.99

@@ -5,6 +5,8 @@ names:
   aliases_en: Sima Jin
 external_ids:
   wikidata: Q1145470
+  seshat:
+  - CnErJin
 parent: jin_dynasty_q7352
 successors:
 - cheng_han
@@ -27,8 +29,9 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 38.83
+prominence_score: 40.97
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -36,3 +39,50 @@ geography:
   present_countries: []
   centroid: null
   confidence: null
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships:
+- target: jin_dynasty_q7352
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1145470
+- target: cheng_han
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1145470
+- target: eastern_jin_dynasty
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1145470
+- target: former_liang
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1145470
+- target: han_zhao
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1145470
+manual_overrides:
+- entity_type
+prominence_components:
+  wikidata_reach: 19.18
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 10.5
+  longevity: 4.29
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 40.97

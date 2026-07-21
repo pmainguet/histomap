@@ -5,6 +5,8 @@ names:
   aliases_en: Sianbi | Xianbei confederation
 external_ids:
   wikidata: Q4783395
+  seshat:
+  - MnXianb
 parent: null
 successors: []
 region: null
@@ -23,12 +25,29 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 32.49
-visibility_tier: detailed
+prominence_score: 26.71
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents: []
   present_countries: []
   centroid: null
   confidence: null
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 14.31
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 5.4
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 26.71

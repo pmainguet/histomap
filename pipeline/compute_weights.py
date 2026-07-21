@@ -155,6 +155,18 @@ def run() -> dict[str, int]:
     updated = 0
     measured = 0
     for path, document in documents:
+        if document.get("entity_type", "polity") in {
+            "culture", "people", "tribe", "archaeological_horizon"
+        }:
+            document["weight_by_era"] = {int(document["start"]): 3}
+            document["weight_imputed"] = True
+            document["sources"] = sorted(
+                set(document.get("sources", [])) - {"hyde", "maddison"}
+            )
+            path.write_text(
+                yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
+            )
+            continue
         rows = by_polity.get(document["id"])
         if rows is None:
             generated_sources = {"hyde", "maddison"} & set(document.get("sources", []))

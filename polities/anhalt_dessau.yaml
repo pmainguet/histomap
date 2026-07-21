@@ -13,13 +13,13 @@ end: 1853
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1400: 7.9
-  1500: 8.34
-  1600: 8.78
-  1700: 8.06
+  1400: 7.97
+  1500: 8.32
+  1600: 8.8
+  1700: 8.07
   1750: 8.59
   1800: 8.72
-  1850: 9.26
+  1850: 9.25
 weight_imputed: true
 icon: null
 text:
@@ -30,8 +30,8 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 46.82
-visibility_tier: regional
+prominence_score: 35.36
+visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -42,3 +42,19 @@ geography:
     lat: 51.82138
     lon: 12.24233
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 21.71
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 0.0
+  longevity: 6.65
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 35.36

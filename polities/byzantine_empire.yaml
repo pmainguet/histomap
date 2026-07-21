@@ -9,6 +9,8 @@ external_ids:
   seshat:
   - TrByzM1
   - TrByzM2
+  - TrByzM3
+  - TrERom*
 parent: null
 successors: []
 region: null
@@ -18,17 +20,17 @@ end: 1453
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  400: 10.0
+  400: 8.67
   500: 10.0
   600: 10.0
-  700: 9.0
-  800: 9.57
-  900: 9.45
+  700: 10.0
+  800: 9.86
+  900: 10.0
   1000: 10.0
   1100: 10.0
   1200: 10.0
-  1300: 8.78
-  1400: 7.14
+  1300: 9.79
+  1400: 9.28
 weight_imputed: true
 icon: null
 text:
@@ -40,7 +42,7 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 68.97
+prominence_score: 63.06
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -53,3 +55,19 @@ geography:
     lat: 41.0125
     lon: 28.98
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships: []
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 16
+  historical_evidence: 8
+  relationship_centrality: 6.5
+  longevity: 7.56
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 63.06

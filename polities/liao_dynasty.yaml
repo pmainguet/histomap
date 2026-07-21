@@ -6,6 +6,8 @@ names:
     | Mos diau-d kitai | Mos Jælud | Qidan State | Liao State
 external_ids:
   wikidata: Q4958
+  seshat:
+  - MnKhitn
 parent: null
 successors:
 - jin_dynasty_q5066
@@ -27,9 +29,10 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 53.74
-visibility_tier: regional
+prominence_score: 47.6
+visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -42,3 +45,38 @@ geography:
   - RU
   centroid: null
   confidence: medium
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships:
+- target: jin_dynasty_q5066
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q4958
+- target: northern_liao_q2214985
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q4958
+- target: qara_khitai
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q4958
+manual_overrides:
+- entity_type
+prominence_components:
+  wikidata_reach: 26.67
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 8.13
+  longevity: 5.81
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 47.6

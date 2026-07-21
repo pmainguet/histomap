@@ -1,0 +1,13 @@
+id: asuka_period
+canonical_name: Asuka period
+kind: historical
+start: 538
+end: 710
+geography:
+  continents: [asia]
+  present_countries: [JP]
+authority: DBpedia/Wikipedia periodization
+external_ids:
+  dbpedia: https://dbpedia.org/resource/Asuka_period
+source_urls:
+  - https://dbpedia.org/resource/Asuka_period
