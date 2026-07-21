@@ -41,7 +41,7 @@ geography:
     lon: 16.383333333
   confidence: medium
 entity_type: polity
-entity_type_confidence: low
+entity_type_confidence: high
 entity_type_source_qids: []
 relationships:
 - target: austriahungary
@@ -79,3 +79,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 27.62
+manual_overrides:
+- entity_type

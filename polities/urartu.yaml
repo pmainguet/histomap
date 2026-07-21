@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q185068
 parent: null
-successors: []
+successors:
+- satrapy_of_armenia
 region: null
 culture_group: null
 start: -860
@@ -38,13 +39,12 @@ geography:
     lon: 43.3425
   confidence: medium
   primary_continent: asia
-entity_type: civilization
-entity_type_confidence: medium
-entity_type_source_qids:
-- Q28171280
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids: []
 relationships:
 - target: satrapy_of_armenia
-  kind: cultural_sequence
+  kind: political_successor
   evidence: derived
   confidence: medium
   source_urls:
@@ -60,3 +60,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 33.21
+manual_overrides:
+- entity_type

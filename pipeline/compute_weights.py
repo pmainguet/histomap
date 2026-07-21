@@ -156,7 +156,7 @@ def run() -> dict[str, int]:
     measured = 0
     for path, document in documents:
         if document.get("entity_type", "polity") in {
-            "culture", "people", "tribe", "archaeological_horizon"
+            "subdivision", "micronation", "culture", "people", "tribe", "archaeological_horizon"
         }:
             document["weight_by_era"] = {int(document["start"]): 3}
             document["weight_imputed"] = True

@@ -3,6 +3,7 @@ import unittest
 from pipeline.backfill_entity_types import (
     classify_direct_types,
     classify_entity,
+    classify_automated_entity,
     classify_inherited_types,
     effective_direct_types,
     normalized_relationship_kind,
@@ -11,6 +12,30 @@ from pipeline.backfill_entity_types import (
 
 
 class EntityTypeBackfillTests(unittest.TestCase):
+    def test_administrative_subdivision_is_a_distinct_type(self) -> None:
+        result = classify_direct_types({"Q56061"})
+
+        self.assertEqual(result[:3], ("subdivision", "high", ["Q56061"]))
+
+    def test_manual_polity_can_still_be_a_subdivision_candidate(self) -> None:
+        document = {
+            "entity_type": "polity",
+            "manual_overrides": ["entity_type"],
+            "external_ids": {"wikidata": "Q_entity"},
+        }
+        cache = {"Q_entity": {"claims": [{"qid": "Q_specific", "rank": "normal"}]}}
+        ancestry = {"Q_specific": {"Q56061": 1}}
+
+        self.assertEqual(classify_entity(document, cache, ancestry)[0], "polity")
+        self.assertEqual(
+            classify_automated_entity(document, cache, ancestry)[:2],
+            ("subdivision", "medium"),
+        )
+    def test_micronation_is_a_distinct_high_confidence_type(self) -> None:
+        result = classify_direct_types({"Q188443"})
+
+        self.assertEqual(result[:3], ("micronation", "high", ["Q188443"]))
+
     def test_direct_archaeological_type_is_high_confidence(self) -> None:
         self.assertEqual(
             classify_direct_types({"Q465299"}),

@@ -35,9 +35,8 @@ geography:
   centroid: null
   confidence: null
 entity_type: polity
-entity_type_confidence: medium
-entity_type_source_qids:
-- Q99541706
+entity_type_confidence: high
+entity_type_source_qids: []
 relationships:
 - target: byelorussian_soviet_socialist_republic
   kind: political_successor
@@ -62,3 +61,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 26.65
+manual_overrides:
+- entity_type

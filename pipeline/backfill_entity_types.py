@@ -12,19 +12,38 @@ ROOT = Path(__file__).resolve().parents[1]
 POLITIES_DIR = ROOT / "polities"
 TYPE_CACHE = ROOT / "sources" / "wikidata_direct_types.json"
 ANCESTRY_CACHE = ROOT / "sources" / "wikidata_type_ancestors.json"
+COUNTRY_CACHE = ROOT / "sources" / "wikidata_country_metadata.json"
 REPORT_PATH = ROOT / "reports" / "entity_type_review.jsonl"
 SUMMARY_PATH = ROOT / "reports" / "entity_type_summary.md"
 
 TYPE_QIDS = {
     "polity": {"Q6256", "Q3624078", "Q3024240", "Q48349", "Q417175", "Q1790360", "Q133442", "Q148837", "Q50068795"},
     "civilization": {"Q8432"},
+    "subdivision": {"Q56061"},
+    "micronation": {"Q188443"},
     "culture": {"Q465299"},
     "people": {"Q41710"},
     "tribe": {"Q133311"},
     "archaeological_horizon": {"Q1636205"},
 }
-TYPE_PRIORITY = ["archaeological_horizon", "culture", "tribe", "people", "civilization", "polity"]
-CONTEXT_TYPES = {"culture", "people", "tribe", "archaeological_horizon"}
+TYPE_PRIORITY = [
+    "archaeological_horizon",
+    "culture",
+    "tribe",
+    "people",
+    "subdivision",
+    "micronation",
+    "civilization",
+    "polity",
+]
+CONTEXT_TYPES = {
+    "subdivision",
+    "micronation",
+    "culture",
+    "people",
+    "tribe",
+    "archaeological_horizon",
+}
 
 
 def effective_direct_types(metadata: dict) -> set[str]:
@@ -89,16 +108,9 @@ def classify_inherited_types(
     return entity_type, confidence, direct_qids, reason
 
 
-def classify_entity(
+def classify_automated_entity(
     document: dict, cached: dict, ancestry: dict[str, dict[str, int]] | None = None
 ) -> tuple[str, str, list[str], str]:
-    if "entity_type" in set(document.get("manual_overrides", [])):
-        return (
-            document.get("entity_type", "polity"),
-            document.get("entity_type_confidence", "high"),
-            document.get("entity_type_source_qids", []),
-            "manual override",
-        )
     qid = (document.get("external_ids") or {}).get("wikidata")
     direct = effective_direct_types(cached.get(qid) or {})
     classified = classify_direct_types(direct)
@@ -117,7 +129,22 @@ def classify_entity(
     return "polity", "low", [], "no mapped direct type"
 
 
+def classify_entity(
+    document: dict, cached: dict, ancestry: dict[str, dict[str, int]] | None = None
+) -> tuple[str, str, list[str], str]:
+    if "entity_type" in set(document.get("manual_overrides", [])):
+        return (
+            document.get("entity_type", "polity"),
+            document.get("entity_type_confidence", "high"),
+            document.get("entity_type_source_qids", []),
+            "manual override",
+        )
+    return classify_automated_entity(document, cached, ancestry)
+
+
 def relationship_kind(source_type: str, target_type: str, legacy_kind: str) -> str:
+    if legacy_kind == "parent" and source_type == "subdivision" and target_type == "polity":
+        return "administrative_part_of"
     if source_type == target_type == "polity":
         return "political_parent" if legacy_kind == "parent" else "political_successor"
     if legacy_kind == "successor":
@@ -137,6 +164,8 @@ def normalized_relationship_kind(source_type: str, target_type: str, current_kin
     legacy_kind = "successor" if current_kind in sequence_kinds else "parent"
     expected = relationship_kind(source_type, target_type, legacy_kind)
     if current_kind == "associated_people" and target_type in {"people", "tribe"}:
+        return current_kind
+    if current_kind == "administrative_part_of" and source_type == "subdivision" and target_type == "polity":
         return current_kind
     if current_kind == "part_of_civilization" and target_type == "civilization":
         return current_kind
@@ -160,26 +189,74 @@ def run() -> dict[str, int]:
     counts: Counter[str] = Counter()
     for path in sorted(POLITIES_DIR.glob("*.yaml")):
         document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-        entity_type, confidence, source_qids, reason = classify_entity(document, cache, ancestry)
+        inferred_type, inferred_confidence, inferred_qids, inferred_reason = (
+            classify_automated_entity(document, cache, ancestry)
+        )
+        reviewed_against = set(document.get("entity_type_reviewed_against", []))
+        manual_type = "entity_type" in set(document.get("manual_overrides", []))
+        pending_subdivision = (
+            inferred_type == "subdivision"
+            and "subdivision" not in reviewed_against
+            and not (document.get("entity_type") == "subdivision" and document.get("parent"))
+        )
+        if pending_subdivision:
+            entity_type = document.get("entity_type", "polity")
+            confidence = document.get("entity_type_confidence", "low")
+            source_qids = document.get("entity_type_source_qids", [])
+            reason = "existing classification retained until a parent polity is confirmed"
+        else:
+            entity_type, confidence, source_qids, reason = classify_entity(
+                document, cache, ancestry
+            )
         document["entity_type"] = entity_type
         document["entity_type_confidence"] = confidence
         document["entity_type_source_qids"] = source_qids
         documents.append((path, document))
         counts[entity_type] += 1
-        if confidence != "high":
+        reconsider_subdivision = pending_subdivision and manual_type and entity_type == "polity"
+        if confidence != "high" or pending_subdivision:
             review_rows.append(
                 {
                     "id": document["id"],
                     "canonical_name": document["canonical_name"],
                     "wikidata": (document.get("external_ids") or {}).get("wikidata"),
-                    "proposed_type": entity_type,
-                    "confidence": confidence,
-                    "source_qids": source_qids,
-                    "reason": reason,
+                    "proposed_type": inferred_type if pending_subdivision else entity_type,
+                    "confidence": inferred_confidence if pending_subdivision else confidence,
+                    "source_qids": inferred_qids if pending_subdivision else source_qids,
+                    "reason": (
+                        "Previously reviewed as polity; reconsider now that subdivision is "
+                        f"available. {inferred_reason}"
+                        if reconsider_subdivision
+                        else (
+                            f"Subdivision requires an enclosing polity. {inferred_reason}"
+                            if pending_subdivision
+                            else reason
+                        )
+                    ),
+                    "reconsideration": reconsider_subdivision,
+                    "requires_parent_review": pending_subdivision,
                 }
             )
 
     by_id = {document["id"]: document for _, document in documents}
+    country_metadata = (
+        json.loads(COUNTRY_CACHE.read_text(encoding="utf-8")) if COUNTRY_CACHE.exists() else {}
+    )
+    parent_by_country = {}
+    for _, document in documents:
+        qid = (document.get("external_ids") or {}).get("wikidata")
+        iso2 = (country_metadata.get(qid) or {}).get("iso2")
+        if iso2 and document.get("entity_type") == "polity" and document.get("end") is None:
+            parent_by_country[iso2] = document["id"]
+    for row in review_rows:
+        if row["proposed_type"] != "subdivision":
+            continue
+        document = by_id[row["id"]]
+        countries = (document.get("geography") or {}).get("present_countries", [])
+        if len(countries) == 1:
+            proposed_parent = parent_by_country.get(countries[0])
+            if proposed_parent and proposed_parent != row["id"]:
+                row["proposed_parent"] = proposed_parent
     migrated = 0
     for path, document in documents:
         source_type = document["entity_type"]
@@ -229,7 +306,9 @@ def run() -> dict[str, int]:
             document["sources"] = sorted(
                 set(document.get("sources", [])) - {"hyde", "maddison"}
             )
-        if source_type != "polity" or (parent and by_id.get(parent, {}).get("entity_type") != "polity"):
+        if source_type not in {"polity", "subdivision"} or (
+            parent and by_id.get(parent, {}).get("entity_type") != "polity"
+        ):
             document["parent"] = None
         document["successors"] = [
             target for target in document.get("successors", [])

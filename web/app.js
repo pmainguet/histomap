@@ -343,7 +343,7 @@ function showDetails(polity, trigger = null) {
     <section id="entity-type-editor" class="geography-editor" hidden>
       <h3>Edit entity type</h3>
       <label>Controlled type
-        <select>${["polity", "civilization", "culture", "people", "tribe", "archaeological_horizon"].map((type) => `<option value="${type}" ${type === (polity.entity_type || "polity") ? "selected" : ""}>${escapeHtml(displayTerm(type))}</option>`).join("")}</select>
+        <select>${["polity", "civilization", "subdivision", "micronation", "culture", "people", "tribe", "archaeological_horizon"].map((type) => `<option value="${type}" ${type === (polity.entity_type || "polity") ? "selected" : ""}>${escapeHtml(displayTerm(type))}</option>`).join("")}</select>
       </label>
       <p>This manual decision is locked against later Wikidata backfills.</p>
       <div class="geography-editor-actions"><button type="button" class="save-entity-type">Save entity type</button><button type="button" class="cancel-entity-type">Cancel</button><span class="entity-type-save-status" role="status"></span></div>
@@ -827,7 +827,7 @@ function render() {
     const end = Math.min(yearEnd, polity.end ?? yearEnd);
     const mid = start + (end - start) / 2;
     const entityType = polity.entity_type || "polity";
-    const contextual = ["culture", "people", "tribe", "archaeological_horizon"].includes(entityType);
+    const contextual = ["subdivision", "micronation", "culture", "people", "tribe", "archaeological_horizon"].includes(entityType);
     const bandHeight = contextual ? 7 : Math.min(rowHeight - 3, 6 + weightAt(polity, mid) * 1.55);
     const center = rowCenters.get(polity.id);
     const bandX = x(start);

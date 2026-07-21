@@ -27,7 +27,9 @@ GLOBAL_ABSOLUTE_COUNT = 60
 GLOBAL_PER_STRATUM = 2
 REGIONAL_ABSOLUTE_COUNT = 600
 REGIONAL_PER_STRATUM = 20
-CONTEXT_TYPES = {"culture", "people", "tribe", "archaeological_horizon"}
+CONTEXT_TYPES = {
+    "subdivision", "micronation", "culture", "people", "tribe", "archaeological_horizon"
+}
 NORMAL_TYPES = {"polity", "civilization"}
 
 

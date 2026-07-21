@@ -37,9 +37,8 @@ geography:
     lon: 10.393055555
   confidence: low
 entity_type: polity
-entity_type_confidence: medium
-entity_type_source_qids:
-- Q1798550
+entity_type_confidence: high
+entity_type_source_qids: []
 relationships:
 - target: kingdom_of_norway_q2196956
   kind: political_successor
@@ -58,3 +57,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 4.1
+manual_overrides:
+- entity_type

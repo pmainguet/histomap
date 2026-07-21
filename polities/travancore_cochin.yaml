@@ -36,9 +36,8 @@ geography:
     lon: 76.9167
   confidence: medium
 entity_type: polity
-entity_type_confidence: medium
-entity_type_source_qids:
-- Q12443800
+entity_type_confidence: high
+entity_type_source_qids: []
 relationships: []
 prominence_components:
   wikidata_reach: 17.64
@@ -51,3 +50,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 20.45
+manual_overrides:
+- entity_type

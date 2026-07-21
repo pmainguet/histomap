@@ -25,8 +25,8 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 18.74
-visibility_tier: detailed
+prominence_score: 28.74
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -39,11 +39,11 @@ geography:
     lon: 10.32644723
   confidence: high
 manual_overrides:
+- entity_type
 - geography
 entity_type: civilization
-entity_type_confidence: low
-entity_type_source_qids:
-- Q28171280
+entity_type_confidence: high
+entity_type_source_qids: []
 relationships: []
 prominence_components:
   wikidata_reach: 26.67
@@ -52,7 +52,7 @@ prominence_components:
   relationship_centrality: 0.0
   longevity: 7.06
   editorial_work: 0
-  type_uncertainty_penalty: -10
+  type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 18.74
+  total: 28.74

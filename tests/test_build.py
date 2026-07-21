@@ -51,7 +51,22 @@ class BuildRelationshipValidationTests(unittest.TestCase):
     def test_political_parent_rejects_non_polity_endpoint(self) -> None:
         child = polity("child", "parent", "culture")
         errors = validate_entity_relationships([child, polity("parent")])
-        self.assertIn("child: political parent requires polity → polity", errors)
+        self.assertIn("child: parent requires polity or subdivision → polity", errors)
+
+    def test_subdivision_requires_parent_polity(self) -> None:
+        child = polity("child", "parent", "subdivision")
+        self.assertEqual(
+            validate_entity_relationships([child, polity("parent")]), []
+        )
+        pending = polity("pending", entity_type="subdivision")
+        self.assertEqual(validate_entity_relationships([pending]), [])
+        confirmed = pending.model_copy(
+            update={"id": "confirmed", "subdivision_parent_status": "confirmed"}
+        )
+        self.assertIn(
+            "confirmed: confirmed subdivision requires a parent polity",
+            validate_entity_relationships([confirmed]),
+        )
 
     def test_acyclic_parents_pass(self) -> None:
         self.assertEqual(find_parent_cycles([polity("child", "parent"), polity("parent")]), [])

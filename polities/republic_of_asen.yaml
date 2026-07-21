@@ -13,7 +13,7 @@ end: null
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1918: 5
+  1918: 3
 weight_imputed: true
 icon: null
 text:
@@ -35,8 +35,8 @@ geography:
     lat: 59.48676667
     lon: 12.58483056
   confidence: medium
-entity_type: polity
-entity_type_confidence: medium
+entity_type: micronation
+entity_type_confidence: high
 entity_type_source_qids:
 - Q188443
 relationships: []

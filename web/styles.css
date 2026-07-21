@@ -26,6 +26,16 @@ body { margin: 0; }
 .site-header nav { display: flex; gap: .25rem; font: .82rem system-ui, sans-serif; }
 .site-header nav a { padding: .45rem .65rem; color: var(--ink-faint); text-decoration: none; border-radius: 2px; }
 .site-header nav a:hover, .site-header nav a[aria-current="page"] { color: #27251f; background: #eee9de; }
+.nav-menu { position: relative; }
+.nav-menu summary { list-style: none; cursor: pointer; padding: .45rem .65rem; color: var(--ink-faint); border-radius: 2px; }
+.nav-menu summary::-webkit-details-marker { display: none; }
+.nav-menu summary::after { content: " ▾"; font-size: .7em; }
+.nav-menu summary:hover, .nav-menu.has-current summary { color: #27251f; background: #eee9de; }
+.nav-menu div { position: absolute; z-index: 50; top: calc(100% + .2rem); left: 0; min-width: 12rem; padding: .3rem; background: #faf7ef; border: 1px solid var(--line); box-shadow: 0 .4rem 1rem #2b21151f; }
+.nav-menu div a { display: block; white-space: nowrap; }
+.parent-search { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.parent-search > div:first-of-type { display: flex; gap: .5rem; margin: .35rem 0 .75rem; }
+.parent-search input { flex: 1; min-width: 10rem; padding: .55rem; }
 
 .timeline-toolbar { padding: .75rem clamp(1rem, 4vw, 3.5rem) .7rem; border-bottom: 1px solid var(--rule); background: var(--paper); }
 .toolbar-intro { margin: 0 0 .65rem; color: var(--ink-faint); font-size: .9rem; }
@@ -116,7 +126,7 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .band.is-selected { stroke: #27251f; stroke-width: 2.5; }
 .band.is-related { stroke: #8c422d; stroke-width: 1.5; }
 .band.entity-civilization { stroke: #3f4b3f; stroke-width: 1.5; }
-.band.entity-culture, .band.entity-archaeological_horizon { opacity: .42 !important; stroke: #403b33; stroke-width: 1.2; stroke-dasharray: 5 3; }
+.band.entity-subdivision, .band.entity-micronation, .band.entity-culture, .band.entity-archaeological_horizon { opacity: .42 !important; stroke: #403b33; stroke-width: 1.2; stroke-dasharray: 5 3; }
 .band.entity-people, .band.entity-tribe { opacity: .48 !important; stroke: #403b33; stroke-width: 1; stroke-dasharray: 2 3; }
 .axis-label { fill: #6f685c; font: 11px system-ui, sans-serif; }
 .grid-line { stroke: #d8d1c2; stroke-width: 1; }

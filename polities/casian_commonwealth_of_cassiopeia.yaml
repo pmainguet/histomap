@@ -12,7 +12,7 @@ end: null
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1991: 5
+  1991: 3
 weight_imputed: true
 icon: null
 text:
@@ -32,7 +32,7 @@ geography:
   - JP
   centroid: null
   confidence: medium
-entity_type: polity
+entity_type: micronation
 entity_type_confidence: medium
 entity_type_source_qids:
 - Q11342433

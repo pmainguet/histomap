@@ -44,8 +44,16 @@ def validate_entity_relationships(polities: list[Polity]) -> list[str]:
             target = known.get(entity.parent)
             if target is None:
                 errors.append(f"{entity.id}: unknown parent {entity.parent}")
-            elif entity.entity_type.value != "polity" or target.entity_type.value != "polity":
-                errors.append(f"{entity.id}: political parent requires polity → polity")
+            elif not (
+                target.entity_type.value == "polity"
+                and entity.entity_type.value in {"polity", "subdivision"}
+            ):
+                errors.append(f"{entity.id}: parent requires polity or subdivision → polity")
+        elif (
+            entity.entity_type.value == "subdivision"
+            and entity.subdivision_parent_status == "confirmed"
+        ):
+            errors.append(f"{entity.id}: confirmed subdivision requires a parent polity")
         for successor_id in entity.successors:
             target = known.get(successor_id)
             if target is None:
@@ -67,6 +75,10 @@ def validate_entity_relationships(polities: list[Polity]) -> list[str]:
             target_type = target.entity_type.value
             if relationship.kind.startswith("political_") and (source_type != "polity" or target_type != "polity"):
                 errors.append(f"{entity.id}: {relationship.kind} requires polity → polity")
+            elif relationship.kind == "administrative_part_of" and (
+                source_type != "subdivision" or target_type != "polity"
+            ):
+                errors.append(f"{entity.id}: administrative_part_of requires subdivision → polity")
             elif relationship.kind == "associated_people" and target_type not in {"people", "tribe"}:
                 errors.append(f"{entity.id}: associated_people target must be people or tribe")
             elif relationship.kind == "part_of_civilization" and target_type != "civilization":
@@ -201,9 +213,17 @@ def main() -> None:
     transitions = load_transitions(polities)
     periods = load_periods()
     period_links = load_period_links(periods, polities)
+    published_polities = [
+        polity
+        for polity in polities
+        if not (
+            polity.entity_type.value == "subdivision"
+            and polity.subdivision_parent_status == "pending"
+        )
+    ]
     OUT_PATH.write_text(
         json.dumps(
-            [p.model_dump(mode="json") for p in polities],
+            [p.model_dump(mode="json") for p in published_polities],
             indent=2,
             ensure_ascii=False,
         ),
@@ -226,7 +246,8 @@ def main() -> None:
         encoding="utf-8",
     )
     print(
-        f"OK  validated and wrote {len(polities)} polities, {len(transitions)} transitions, "
+        f"OK  validated {len(polities)} and wrote {len(published_polities)} entities, "
+        f"{len(transitions)} transitions, "
         f"{len(periods)} periods, and {len(period_links)} period links"
     )
 

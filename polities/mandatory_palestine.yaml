@@ -46,7 +46,7 @@ geography:
   confidence: medium
   primary_continent: asia
 entity_type: polity
-entity_type_confidence: low
+entity_type_confidence: high
 entity_type_source_qids: []
 relationships:
 - target: all_palestine_government
@@ -78,3 +78,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 24.2
+manual_overrides:
+- entity_type

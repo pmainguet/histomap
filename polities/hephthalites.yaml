@@ -39,11 +39,11 @@ geography:
   - AF
   confidence: high
 manual_overrides:
+- entity_type
 - geography
 entity_type: people
-entity_type_confidence: medium
-entity_type_source_qids:
-- Q4204501
+entity_type_confidence: high
+entity_type_source_qids: []
 relationships: []
 prominence_components:
   wikidata_reach: 27.09

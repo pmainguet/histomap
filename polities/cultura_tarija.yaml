@@ -12,7 +12,7 @@ end: 1470
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  -500: 5
+  -500: 3
 weight_imputed: true
 icon: null
 text:
@@ -30,11 +30,9 @@ geography:
   present_countries: []
   centroid: null
   confidence: null
-entity_type: civilization
-entity_type_confidence: medium
-entity_type_source_qids:
-- Q3024240
-- Q8432
+entity_type: culture
+entity_type_confidence: high
+entity_type_source_qids: []
 relationships: []
 prominence_components:
   wikidata_reach: 4.52
@@ -47,3 +45,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 7.52
+manual_overrides:
+- entity_type

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Histomap — subdivision review</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Histomap timeline">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M5 6h7v24H5zM15 11h7v19h-7zM25 3h7v27h-7z"/></svg>
+        <span>Histomap</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/">Timeline</a>
+        <details class="nav-menu has-current"><summary>Reviews</summary><div>
+          <a href="/review">Match sources</a><a href="/type-review">Classify entities</a>
+          <a href="/subdivision-review" aria-current="page">Link subdivisions</a><a href="/period-review">Review periods</a>
+        </div></details>
+        <a href="/docs">API</a>
+      </nav>
+    </header>
+    <section class="review-toolbar">
+      <div><p class="eyebrow">Editorial workspace</p><h1>Subdivision parent review</h1></div>
+      <div class="controls"><a class="button-link" href="/type-review">Classify entities</a></div>
+    </section>
+    <p class="workspace-purpose"><strong>This page links confirmed subdivisions to an enclosing polity.</strong> Wikidata and canonical geography provide ranked suggestions; every link still requires confirmation.</p>
+    <main class="review-main">
+      <section id="subdivision-review-card" class="review-card" aria-live="polite">Loading subdivision queue…</section>
+      <aside class="details review-progress">
+        <h2>Progress</h2>
+        <p id="subdivision-review-progress">Loading…</p>
+        <p id="subdivision-decision-status" class="decision-status" role="status" aria-live="assertive"></p>
+        <p>Keyboard: <kbd>1</kbd>–<kbd>9</kbd> choose a suggested parent, <kbd>Enter</kbd> confirms the first suggestion, <kbd>S</kbd> defers.</p>
+      </aside>
+    </main>
+    <script type="module" src="/static/subdivision_review.js"></script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 const card = document.querySelector("#type-review-card");
 const progress = document.querySelector("#type-review-progress");
 const status = document.querySelector("#type-decision-status");
-const types = ["civilization", "polity", "culture", "people", "tribe", "archaeological_horizon"];
+const types = ["civilization", "polity", "subdivision", "micronation", "culture", "people", "tribe", "archaeological_horizon"];
 let current = null;
 let total = 0;
 let deferredOffset = 0;
@@ -26,6 +26,8 @@ function typeExplanation(type) {
   return {
     civilization: "A broad and long-lived societal complex that may contain several cultures and polities. Examples: Ancient Egypt, Maya civilization.",
     polity: "A governed political organization, state, kingdom, empire, or comparable political unit. Examples: Roman Empire, Achaemenid Empire.",
+    subdivision: "A canton, province, state, department, governorate, or other unit inside a larger political entity.",
+    micronation: "A self-declared political project that lacks broad diplomatic recognition and is not treated as an ordinary sovereign polity.",
     culture: "A cultural or archaeological classification, not necessarily a state or a single people. Examples: Bell Beaker culture, Clovis culture.",
     people: "An ethnocultural population connected by shared identity, origin, language, or traditions. Examples: Franks, Māori.",
     tribe: "A socially or politically organized people without assuming sovereign statehood. Examples: Cherokee, Suebi.",
@@ -39,7 +41,8 @@ async function loadNext() {
   const payload = await response.json();
   total = payload.total;
   current = payload.items[0] || null;
-  progress.textContent = `${total} type decisions remaining${deferredOffset ? ` · ${deferredOffset} deferred this session` : ""}`;
+  const proposedGroup = current ? ` · Reviewing proposed ${displayTerm(current.proposed_type)} entities` : "";
+  progress.textContent = `${total} type decisions remaining${proposedGroup}${deferredOffset ? ` · ${deferredOffset} deferred this session` : ""}`;
   if (!current) {
     card.innerHTML = "<h2>Queue complete</h2><p>All currently ambiguous entities have a reviewed type.</p>";
     return;
@@ -108,7 +111,7 @@ async function defer() {
 
 document.addEventListener("keydown", (event) => {
   if (!current || submitting || event.target.matches("input, textarea, button, a, summary")) return;
-  if (/^[1-6]$/.test(event.key)) {
+  if (/^[1-8]$/.test(event.key)) {
     event.preventDefault();
     decide(types[Number(event.key) - 1]);
   } else if (event.key.toLowerCase() === "s") {

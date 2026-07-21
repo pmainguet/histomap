@@ -12,7 +12,7 @@ end: null
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  2014: 5
+  2014: 3
 weight_imputed: true
 icon: null
 text:
@@ -31,8 +31,8 @@ geography:
   - AU
   centroid: null
   confidence: medium
-entity_type: polity
-entity_type_confidence: medium
+entity_type: micronation
+entity_type_confidence: high
 entity_type_source_qids:
 - Q188443
 relationships: []

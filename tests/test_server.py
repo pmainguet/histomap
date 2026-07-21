@@ -6,10 +6,67 @@ from pathlib import Path
 import yaml
 from fastapi.testclient import TestClient
 
-from server.app import create_app
+from server.app import create_app, entity_type_review_sort_key
 
 
 class UnifiedServerTests(unittest.TestCase):
+    def test_type_reviews_group_civilizations_before_polities(self) -> None:
+        reviews = [
+            {"canonical_name": "Culture", "proposed_type": "culture", "confidence": "medium"},
+            {"canonical_name": "Polity", "proposed_type": "polity", "confidence": "medium"},
+            {"canonical_name": "Civilization", "proposed_type": "civilization", "confidence": "low"},
+        ]
+
+        ordered = sorted(reviews, key=entity_type_review_sort_key)
+
+        self.assertEqual(
+            [review["proposed_type"] for review in ordered],
+            ["civilization", "polity", "culture"],
+        )
+
+    def test_accepts_micronation_entity_type(self) -> None:
+        response = self.client.patch(
+            "/api/polities/candidate/entity-type", json={"entity_type": "micronation"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["entity_type"], "micronation")
+
+    def test_accepts_subdivision_entity_type(self) -> None:
+        response = self.client.patch(
+            "/api/polities/candidate/entity-type",
+            json={"entity_type": "subdivision"},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["entity_type"], "subdivision")
+        saved = yaml.safe_load(
+            (self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8")
+        )
+        self.assertEqual(saved["subdivision_parent_status"], "pending")
+        queue = self.client.get("/api/subdivision-reviews").json()
+        self.assertEqual(queue["items"][0]["id"], "candidate")
+        self.assertEqual(queue["items"][0]["candidates"][0]["id"], "container")
+        linked = self.client.post(
+            "/api/subdivision-reviews/candidate", json={"parent_id": "container"}
+        )
+        self.assertEqual(linked.status_code, 200)
+        saved = yaml.safe_load(
+            (self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8")
+        )
+        self.assertEqual(saved["parent"], "container")
+        self.assertEqual(saved["subdivision_parent_status"], "confirmed")
+
+    def test_rejects_invalid_subdivision_parent(self) -> None:
+        self.client.patch(
+            "/api/polities/candidate/entity-type", json={"entity_type": "subdivision"}
+        )
+        response = self.client.post(
+            "/api/subdivision-reviews/candidate", json={"parent_id": "missing"}
+        )
+
+        self.assertEqual(response.status_code, 422)
+
     def setUp(self) -> None:
         self.temporary = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary.name)
@@ -21,9 +78,14 @@ class UnifiedServerTests(unittest.TestCase):
             json.dumps({"Q142": {"iso2": "FR", "label": "France", "continents": ["europe"]}}),
             encoding="utf-8",
         )
+        (self.root / "sources" / "wikidata_relationships.json").write_text(
+            json.dumps([{"source": "Q123", "property": "P17", "target": "Q999"}]),
+            encoding="utf-8",
+        )
         for name in (
             "index.html", "review.html", "type_review.html", "period_review.html", "styles.css", "app.js", "review.js",
-            "type_review.js", "period_review.js",
+            "type_review.js", "subdivision_review.js", "period_review.js",
+            "subdivision_review.html",
         ):
             (self.root / "web" / name).write_text(name, encoding="utf-8")
         (self.root / "data.json").write_text("[]", encoding="utf-8")
@@ -43,6 +105,19 @@ class UnifiedServerTests(unittest.TestCase):
         }
         (self.root / "polities" / "candidate.yaml").write_text(
             yaml.safe_dump(polity), encoding="utf-8"
+        )
+        (self.root / "polities" / "container.yaml").write_text(
+            yaml.safe_dump(
+                {
+                    **polity,
+                    "id": "container",
+                    "canonical_name": "Container",
+                    "external_ids": {"wikidata": "Q999"},
+                    "entity_type": "polity",
+                    "entity_type_confidence": "high",
+                }
+            ),
+            encoding="utf-8",
         )
         review = {
             "seshat_id": "S1",
@@ -106,6 +181,7 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(self.client.get("/").status_code, 200)
         self.assertEqual(self.client.get("/review").status_code, 200)
         self.assertEqual(self.client.get("/type-review").status_code, 200)
+        self.assertEqual(self.client.get("/subdivision-review").status_code, 200)
         self.assertEqual(self.client.get("/data.json").json(), [])
         self.assertEqual(self.client.get("/transitions.json").json(), [])
         self.assertEqual(self.client.get("/periods.json").json(), [])
@@ -243,6 +319,10 @@ class UnifiedServerTests(unittest.TestCase):
         )
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["entity_type"], "civilization")
+        saved = yaml.safe_load(
+            (self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8")
+        )
+        self.assertIn("polity", saved["entity_type_reviewed_against"])
         self.assertEqual(self.client.get("/api/type-reviews").json()["total"], 0)
 
     def test_lists_and_saves_period_role_as_linked_records(self) -> None:

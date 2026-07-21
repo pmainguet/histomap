@@ -14,7 +14,7 @@ end: 1890
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1888: 5
+  1888: 3
 weight_imputed: true
 icon: null
 text:
@@ -36,9 +36,10 @@ geography:
     lat: 14.383333
     lon: 107.983333
   confidence: low
-entity_type: polity
-entity_type_confidence: high
+entity_type: micronation
+entity_type_confidence: medium
 entity_type_source_qids:
+- Q188443
 - Q3024240
 relationships: []
 prominence_components:

@@ -15,7 +15,7 @@ end: 1969
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1968: 5
+  1968: 3
 weight_imputed: true
 icon: null
 text:
@@ -38,9 +38,10 @@ geography:
     lat: 44.180277777
     lon: 12.622222222
   confidence: medium
-entity_type: polity
-entity_type_confidence: high
+entity_type: micronation
+entity_type_confidence: medium
 entity_type_source_qids:
+- Q188443
 - Q3024240
 relationships: []
 prominence_components:

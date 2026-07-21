@@ -14,9 +14,10 @@
       </a>
       <nav aria-label="Main navigation">
         <a href="/">Timeline</a>
-        <a href="/review">Match sources</a>
-        <a href="/type-review" aria-current="page">Classify entities</a>
-        <a href="/period-review">Review periods</a>
+        <details class="nav-menu has-current"><summary>Reviews</summary><div>
+          <a href="/review">Match sources</a><a href="/type-review" aria-current="page">Classify entities</a>
+          <a href="/subdivision-review">Link subdivisions</a><a href="/period-review">Review periods</a>
+        </div></details>
         <a href="/docs">API</a>
       </nav>
     </header>
@@ -24,14 +25,14 @@
       <div><p class="eyebrow">Editorial workspace</p><h1>Entity classification review</h1></div>
       <div class="controls"><a class="button-link" href="/">Open timeline</a></div>
     </section>
-    <p class="workspace-purpose"><strong>This page classifies canonical entities.</strong> Choose what kind of historical subject the record represents. This does not merge it with another record; use “Match sources” for identity reconciliation.</p>
+    <p class="workspace-purpose"><strong>This page only classifies canonical entities.</strong> Subdivisions move to a separate workspace where their parent polity is confirmed.</p>
     <main class="review-main">
       <section id="type-review-card" class="review-card" aria-live="polite">Loading type review queue…</section>
       <aside class="details review-progress">
         <h2>Progress</h2>
         <p id="type-review-progress">Loading…</p>
         <p id="type-decision-status" class="decision-status" role="status" aria-live="assertive"></p>
-        <p>Keyboard: <kbd>1</kbd> civilization, <kbd>2</kbd> polity, <kbd>3</kbd> culture, <kbd>4</kbd> people, <kbd>5</kbd> tribe, <kbd>6</kbd> archaeological horizon, <kbd>S</kbd> defer.</p>
+        <p>Keyboard: <kbd>1</kbd> civilization, <kbd>2</kbd> polity, <kbd>3</kbd> subdivision, <kbd>4</kbd> micronation, <kbd>5</kbd> culture, <kbd>6</kbd> people, <kbd>7</kbd> tribe, <kbd>8</kbd> archaeological horizon, <kbd>S</kbd> defer.</p>
       </aside>
     </main>
     <script type="module" src="/static/type_review.js"></script>
