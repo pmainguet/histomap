@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Histomap — entity consolidation review</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Histomap timeline"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M5 6h7v24H5zM15 11h7v19h-7zM25 3h7v27h-7z"/></svg><span>Histomap</span></a>
+      <nav aria-label="Main navigation"><a href="/">Timeline</a><a href="/reviews" aria-current="page">Reviews</a><a href="/docs">API</a></nav>
+    </header>
+    <section class="review-toolbar"><div><p class="eyebrow">Editorial workspace</p><h1>Entity consolidation review</h1></div><div class="controls"><a class="button-link" href="/reviews">All reviews</a></div></section>
+    <p class="workspace-purpose"><strong>This page resolves identity before classification.</strong> Keep genuinely independent subjects, retire true duplicates into a canonical entity, or preserve a dated phase/aspect as a linked period.</p>
+    <main class="review-main">
+      <section id="consolidation-review-card" class="review-card" aria-live="polite">Loading consolidation queue…</section>
+      <aside class="details review-progress"><h2>Progress</h2><p id="consolidation-review-progress">Loading…</p><p id="consolidation-decision-status" class="decision-status" role="status" aria-live="assertive"></p><p><strong>Same entity</strong> merges identity and retires the duplicate. <strong>Phase/aspect</strong> creates a dated period linked to the target. Keyboard: <kbd>K</kbd> keep independent, <kbd>S</kbd> defer.</p></aside>
+    </main>
+    <script type="module" src="/static/consolidation_review.js"></script>
+  </body>
+</html>

@@ -216,7 +216,8 @@ def main() -> None:
     published_polities = [
         polity
         for polity in polities
-        if not (
+        if polity.timeline_role != "retired"
+        and not (
             polity.entity_type.value == "subdivision"
             and polity.subdivision_parent_status == "pending"
         )

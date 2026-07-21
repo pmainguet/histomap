@@ -35,6 +35,33 @@ function typeExplanation(type) {
   }[type];
 }
 
+function wikidataTypeLinks(qids) {
+  return qids.map((qid) =>
+    `<a data-type-qid="${escapeHtml(qid)}" href="https://www.wikidata.org/wiki/${encodeURIComponent(qid)}" target="_blank" rel="noopener noreferrer">${escapeHtml(qid)} ↗</a>`
+  ).join(", ");
+}
+
+async function loadWikidataTypeLabels(reviewId, qids) {
+  if (!qids.length) return;
+  try {
+    const parameters = new URLSearchParams({
+      action: "wbgetentities", format: "json", formatversion: "2",
+      ids: qids.join("|"), props: "labels", languages: "en", origin: "*",
+    });
+    const response = await fetch(`https://www.wikidata.org/w/api.php?${parameters}`);
+    if (!response.ok) return;
+    const entities = (await response.json()).entities || {};
+    if (!current || current.id !== reviewId) return;
+    qids.forEach((qid) => {
+      const link = card.querySelector(`[data-type-qid="${qid}"]`);
+      const label = entities[qid]?.labels?.en?.value;
+      if (link && label) link.textContent = `${label} (${qid}) ↗`;
+    });
+  } catch (_) {
+    // QID links remain usable when Wikidata is unavailable.
+  }
+}
+
 async function loadNext() {
   const response = await fetch(`/api/type-reviews?limit=1&offset=${deferredOffset}`);
   if (!response.ok) throw new Error(await response.text());
@@ -53,6 +80,7 @@ async function loadNext() {
     ? ` · <a href="${escapeHtml(current.wikipedia_en)}" target="_blank" rel="noopener noreferrer">Wikipedia (English) ↗</a>` : "";
   const evidence = (current.source_qids || []).map((qid) =>
     `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(qid)}" target="_blank" rel="noopener noreferrer">${escapeHtml(qid)} ↗</a>`).join(", ");
+  const directTypeQids = current.direct_type_qids || [];
   card.innerHTML = `<p class="review-rank">Canonical Histomap entity to classify</p>
     <h2>${escapeHtml(current.canonical_name)}</h2>
     <p class="source-explanation">Choose the semantic type of this existing entity. The current proposal is <strong>${escapeHtml(displayTerm(current.proposed_type))}</strong> with ${escapeHtml(current.confidence)} confidence.</p>
@@ -62,6 +90,7 @@ async function loadNext() {
       <dt>Prominence</dt><dd>${Number(current.prominence_score || 0).toFixed(1)} / 100</dd>
       <dt>Record sources</dt><dd>${escapeHtml((current.sources || []).join(", ") || "not recorded")}</dd>
       <dt>External pages</dt><dd class="source-links">${wikidata}${wikipedia}</dd>
+      <dt>Instance of (Wikidata)</dt><dd class="source-links">${wikidataTypeLinks(directTypeQids) || "Not recorded"}</dd>
       <dt>Classification evidence</dt><dd class="source-links">${evidence || "No mapped direct Wikidata type"}</dd>
       <dt>Why review is needed</dt><dd>${escapeHtml(current.reason)}</dd>
     </dl>
@@ -70,6 +99,7 @@ async function loadNext() {
     <div class="review-actions"><button id="defer-type" type="button">Defer</button></div>`;
   card.querySelectorAll(".type-choice").forEach((button) => button.addEventListener("click", () => decide(button.dataset.entityType)));
   card.querySelector("#defer-type").addEventListener("click", defer);
+  loadWikidataTypeLabels(current.id, directTypeQids);
 }
 
 function disable(disabled) {

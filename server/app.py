@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 import json
 import math
+import re
 import sys
 from pathlib import Path
 from typing import Literal
@@ -100,6 +101,11 @@ class TimelineRoleUpdate(BaseModel):
     timeline_role: Literal["entity", "period", "both"]
 
 
+class ConsolidationDecision(BaseModel):
+    decision: Literal["independent", "same_entity", "phase_of"]
+    target_id: str | None = None
+
+
 def clean_json(value: object) -> object:
     if isinstance(value, float) and not math.isfinite(value):
         return None
@@ -170,7 +176,7 @@ def search_polities(query: str, metadata: dict[str, dict], limit: int = 10) -> l
     query = query.strip()
     ranked = []
     for polity_id, document in metadata.items():
-        if document.get("eligibility") == "excluded":
+        if document.get("eligibility") == "excluded" or document.get("timeline_role") == "retired":
             continue
         names = [str(document.get("canonical_name", "")), polity_id]
         for key, value in (document.get("names") or {}).items():
@@ -215,6 +221,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
     type_review_path = reports_dir / "entity_type_review.jsonl"
     period_role_review_path = reports_dir / "period_role_review.jsonl"
     relationship_cache_path = root / "sources" / "wikidata_relationships.json"
+    direct_types_path = root / "sources" / "wikidata_direct_types.json"
     polities_dir = root / "polities"
     metadata = polity_metadata(polities_dir)
     country_metadata_path = root / "sources" / "wikidata_country_metadata.json"
@@ -233,6 +240,11 @@ def create_app(root: Path = ROOT) -> FastAPI:
         if relationship_cache_path.exists()
         else []
     )
+    direct_types = (
+        json.loads(direct_types_path.read_text(encoding="utf-8"))
+        if direct_types_path.exists()
+        else {}
+    )
     review_queue = pending_records(review_path, decisions_path, metadata=metadata)
     reviews_by_id = {record["seshat_id"]: record for record in review_queue}
     type_review_queue = []
@@ -243,15 +255,23 @@ def create_app(root: Path = ROOT) -> FastAPI:
             for line in type_review_path.read_text(encoding="utf-8").splitlines():
                 record = json.loads(line)
                 document = metadata.get(record["id"])
-                if document and (
+                reviewed_types = set(document.get("entity_type_reviewed_against", [])) if document else set()
+                proposal_already_reviewed = record.get("proposed_type") in reviewed_types
+                if document and document.get("timeline_role", "entity") != "retired" and (
                     document.get("entity_type_confidence", "low") != "high"
-                    or record.get("reconsideration")
-                    or record.get("requires_parent_review")
+                    or (
+                        (record.get("reconsideration") or record.get("requires_parent_review"))
+                        and not proposal_already_reviewed
+                    )
                 ):
                     record["prominence_score"] = document.get("prominence_score", 0)
                     record["dates"] = [document.get("start"), document.get("end")]
                     record["sources"] = document.get("sources", [])
                     record["wikipedia_en"] = (document.get("external_ids") or {}).get("wikipedia_en")
+                    wikidata_qid = (document.get("external_ids") or {}).get("wikidata")
+                    record["direct_type_qids"] = sorted(
+                        set((direct_types.get(wikidata_qid) or {}).get("types", []))
+                    )
                     type_review_queue.append(record)
         type_review_queue.sort(key=entity_type_review_sort_key)
 
@@ -265,7 +285,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
         for line in period_role_review_path.read_text(encoding="utf-8").splitlines():
             record = json.loads(line)
             document = metadata.get(record["id"])
-            if document and "timeline_role" not in set(document.get("manual_overrides", [])):
+            if document and document.get("timeline_role", "entity") != "retired" and "timeline_role" not in set(document.get("manual_overrides", [])):
                 record["wikipedia_en"] = english_wikipedia_url(document.get("external_ids") or {})
                 period_role_queue.append(record)
 
@@ -348,6 +368,8 @@ def create_app(root: Path = ROOT) -> FastAPI:
     def subdivision_review_queue() -> list[dict]:
         queue = []
         for document in metadata.values():
+            if document.get("timeline_role", "entity") == "retired":
+                continue
             if document.get("entity_type") != "subdivision":
                 continue
             if document.get("subdivision_parent_status", "pending") == "confirmed":
@@ -370,6 +392,183 @@ def create_app(root: Path = ROOT) -> FastAPI:
             )
         )
         return queue
+
+    consolidation_stopwords = {
+        "ancient", "caliphate", "confederation", "county", "democratic", "duchy",
+        "dynasty", "empire", "federation", "government", "great", "kingdom",
+        "northern", "people", "principality", "province", "republic", "southern",
+        "state", "sultanate", "united", "western", "eastern",
+        "califat", "comte", "duche", "dynastie", "etat", "gouvernement", "publique",
+        "royaume", "sultanat",
+    }
+
+    def consolidation_tokens(document: dict) -> set[str]:
+        names = [document.get("canonical_name", "")]
+        names.extend((document.get("names") or {}).values())
+        return {
+            token
+            for name in names
+            for token in re.findall(r"[a-z0-9]+", str(name).casefold())
+            if len(token) >= 4 and token not in consolidation_stopwords
+        }
+
+    def consolidation_review_queue() -> list[dict]:
+        active = {
+            entity_id: document
+            for entity_id, document in metadata.items()
+            if document.get("timeline_role", "entity") != "retired"
+            and document.get("eligibility") != "excluded"
+            and not document.get("consolidation_status")
+        }
+        token_index: dict[str, set[str]] = {}
+        tokens_by_id = {}
+        for entity_id, document in active.items():
+            tokens = consolidation_tokens(document)
+            tokens_by_id[entity_id] = tokens
+            for token in tokens:
+                token_index.setdefault(token, set()).add(entity_id)
+        queue = []
+        for entity_id, document in active.items():
+            possible = {
+                other_id
+                for token in tokens_by_id[entity_id]
+                if len(token_index[token]) <= 12
+                for other_id in token_index[token]
+                if other_id != entity_id
+            }
+            candidates = []
+            source_name = str(document.get("canonical_name", entity_id))
+            source_prominence = float(document.get("prominence_score", 0))
+            source_countries = set((document.get("geography") or {}).get("present_countries", []))
+            for other_id in possible:
+                other = active[other_id]
+                other_prominence = float(other.get("prominence_score", 0))
+                if other_prominence < source_prominence:
+                    continue
+                name_score = float(fuzz.WRatio(source_name, str(other.get("canonical_name", other_id))))
+                if name_score < 60:
+                    continue
+                other_countries = set((other.get("geography") or {}).get("present_countries", []))
+                geography_match = bool(source_countries & other_countries)
+                date_contains = (
+                    other.get("start") is not None
+                    and document.get("start") is not None
+                    and other["start"] <= document["start"]
+                    and (other.get("end") is None or (document.get("end") is not None and other["end"] >= document["end"]))
+                )
+                source_end = document.get("end") if document.get("end") is not None else 2100
+                other_end = other.get("end") if other.get("end") is not None else 2100
+                date_overlap = document.get("start") is not None and other.get("start") is not None and max(document["start"], other["start"]) < min(source_end, other_end)
+                shared_tokens = tokens_by_id[entity_id] & tokens_by_id[other_id]
+                rarity_bonus = max(
+                    (max(4, 16 - len(token_index[token])) for token in shared_tokens),
+                    default=0,
+                )
+                score = name_score + rarity_bonus + (8 if geography_match else 0) + (8 if date_contains else 0) + (6 if date_overlap else 0)
+                candidates.append(
+                    {
+                        "id": other_id,
+                        "canonical_name": other.get("canonical_name", other_id),
+                        "entity_type": other.get("entity_type", "polity"),
+                        "dates": [other.get("start"), other.get("end")],
+                        "wikidata": (other.get("external_ids") or {}).get("wikidata"),
+                        "score": round(score, 1),
+                        "name_score": round(name_score, 1),
+                        "geography_match": geography_match,
+                        "date_contains": date_contains,
+                        "date_overlap": date_overlap,
+                    }
+                )
+            candidates.sort(key=lambda item: (-item["score"], item["canonical_name"]))
+            if candidates:
+                queue.append(
+                    {
+                        "id": entity_id,
+                        "canonical_name": source_name,
+                        "entity_type": document.get("entity_type", "polity"),
+                        "dates": [document.get("start"), document.get("end")],
+                        "wikidata": (document.get("external_ids") or {}).get("wikidata"),
+                        "prominence_score": source_prominence,
+                        "candidates": candidates[:5],
+                    }
+                )
+        queue.sort(key=lambda item: (-item["candidates"][0]["score"], -item["prominence_score"], item["canonical_name"]))
+        return queue
+
+    def save_consolidation(entity_id: str, decision: str, target_id: str | None) -> dict:
+        document = metadata.get(entity_id)
+        if not document or document.get("timeline_role") == "retired" or document.get("consolidation_status"):
+            raise HTTPException(404, "Consolidation review is not pending")
+        if decision == "independent":
+            document["consolidation_status"] = "independent"
+            document["manual_overrides"] = sorted(set(document.get("manual_overrides", [])) | {"consolidation"})
+            (polities_dir / f"{entity_id}.yaml").write_text(
+                yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
+            )
+            return document
+        target = metadata.get(target_id or "")
+        if not target or target_id == entity_id or target.get("timeline_role") == "retired":
+            raise HTTPException(422, "target_id must identify another active entity")
+        if decision == "phase_of" and document.get("end") is None:
+            raise HTTPException(422, "A phase/aspect requires a finite end date")
+
+        document["timeline_role"] = "retired"
+        document["consolidation_status"] = decision
+        document["consolidated_into"] = target_id
+        document["manual_overrides"] = sorted(set(document.get("manual_overrides", [])) | {"consolidation"})
+        if decision == "same_entity":
+            aliases = {
+                item.strip()
+                for item in str((target.get("names") or {}).get("aliases_en", "")).split("|")
+                if item.strip()
+            }
+            aliases.add(document["canonical_name"])
+            target.setdefault("names", {})["aliases_en"] = " | ".join(sorted(aliases))
+            target["sources"] = sorted(set(target.get("sources", [])) | set(document.get("sources", [])))
+            target["manual_overrides"] = sorted(set(target.get("manual_overrides", [])) | {"consolidation"})
+            (polities_dir / f"{target_id}.yaml").write_text(
+                yaml.safe_dump(target, sort_keys=False, allow_unicode=True), encoding="utf-8"
+            )
+        else:
+            period_id = f"{entity_id}_period"
+            qid = (document.get("external_ids") or {}).get("wikidata")
+            source_urls = [f"https://www.wikidata.org/wiki/{qid}"] if qid else [f"https://histomap.local/entity/{entity_id}"]
+            period = {
+                "id": period_id,
+                "canonical_name": document["canonical_name"],
+                "kind": "historical",
+                "start": document["start"],
+                "end": document["end"],
+                "start_confidence": document.get("start_confidence", "low"),
+                "end_confidence": document.get("end_confidence", "low"),
+                "geography": document.get("geography") or {},
+                "broader_periods": [], "successors": [],
+                "authority": "Histomap editorial consolidation",
+                "external_ids": {"wikidata": qid} if qid else {},
+                "notes": f"Editorially identified as a phase or aspect of {target['canonical_name']}.",
+                "source_urls": source_urls,
+            }
+            periods_dir = root / "periods"
+            periods_dir.mkdir(exist_ok=True)
+            (periods_dir / f"{period_id}.yaml").write_text(
+                yaml.safe_dump(period, sort_keys=False, allow_unicode=True), encoding="utf-8"
+            )
+            links_path = root / "period_links.yaml"
+            links = yaml.safe_load(links_path.read_text(encoding="utf-8")) if links_path.exists() else []
+            if not any(link.get("period_id") == period_id and link.get("entity_id") == target_id for link in links):
+                links.append({
+                    "period_id": period_id, "entity_id": target_id,
+                    "relation": "part_of_periodization", "evidence": "explicit",
+                    "confidence": "high", "source_urls": source_urls,
+                    "notes": "Created by an editorial entity-consolidation decision.",
+                })
+                links_path.write_text(yaml.safe_dump(links, sort_keys=False, allow_unicode=True), encoding="utf-8")
+        (polities_dir / f"{entity_id}.yaml").write_text(
+            yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
+        )
+        metadata[entity_id] = document
+        metadata[target_id] = target
+        return document
 
     def save_entity_type(
         polity_id: str,
@@ -573,6 +772,14 @@ def create_app(root: Path = ROOT) -> FastAPI:
     async def review_page() -> FileResponse:
         return FileResponse(web_dir / "review.html")
 
+    @application.get("/reviews", include_in_schema=False)
+    async def reviews_home_page() -> FileResponse:
+        return FileResponse(web_dir / "reviews.html")
+
+    @application.get("/consolidation-review", include_in_schema=False)
+    async def consolidation_review_page() -> FileResponse:
+        return FileResponse(web_dir / "consolidation_review.html")
+
     @application.get("/type-review", include_in_schema=False)
     async def type_review_page() -> FileResponse:
         return FileResponse(web_dir / "type_review.html")
@@ -617,6 +824,41 @@ def create_app(root: Path = ROOT) -> FastAPI:
     async def reviews(offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)) -> dict:
         items = [add_source_links(record, metadata) for record in review_queue[offset : offset + limit]]
         return clean_json({"total": len(review_queue), "offset": offset, "items": items})
+
+    @application.get("/api/review-dashboard")
+    async def review_dashboard() -> dict:
+        refresh_type_review_queue()
+        refresh_period_role_queue()
+        consolidation_total = len(consolidation_review_queue())
+        return {
+            "pipelines": {
+                "consolidation": consolidation_total,
+                "entity_type": len(type_review_queue),
+                "subdivision_parent": sum(
+                    1 for document in metadata.values()
+                    if document.get("timeline_role", "entity") != "retired"
+                    and document.get("entity_type") == "subdivision"
+                    and document.get("subdivision_parent_status", "pending") != "confirmed"
+                ),
+                "period_role": len(period_role_queue),
+                "source_matching": len(review_queue),
+            }
+        }
+
+    @application.get("/api/consolidation-reviews")
+    async def consolidation_reviews(
+        offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)
+    ) -> dict:
+        queue = consolidation_review_queue()
+        return clean_json({"total": len(queue), "offset": offset, "items": queue[offset : offset + limit]})
+
+    @application.post("/api/consolidation-reviews/{entity_id}")
+    async def decide_consolidation_review(entity_id: str, request: ConsolidationDecision) -> dict:
+        document = save_consolidation(entity_id, request.decision, request.target_id)
+        return {
+            "status": "saved", "entity_id": entity_id,
+            "decision": request.decision, "target_id": document.get("consolidated_into"),
+        }
 
     @application.get("/api/type-reviews")
     async def type_reviews(offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)) -> dict:

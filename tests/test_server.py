@@ -82,10 +82,14 @@ class UnifiedServerTests(unittest.TestCase):
             json.dumps([{"source": "Q123", "property": "P17", "target": "Q999"}]),
             encoding="utf-8",
         )
+        (self.root / "sources" / "wikidata_direct_types.json").write_text(
+            json.dumps({"Q123": {"types": ["Q111", "Q222"]}}), encoding="utf-8"
+        )
         for name in (
             "index.html", "review.html", "type_review.html", "period_review.html", "styles.css", "app.js", "review.js",
             "type_review.js", "subdivision_review.js", "period_review.js",
             "subdivision_review.html",
+            "reviews.html", "reviews.js", "consolidation_review.html", "consolidation_review.js",
         ):
             (self.root / "web" / name).write_text(name, encoding="utf-8")
         (self.root / "data.json").write_text("[]", encoding="utf-8")
@@ -182,10 +186,56 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(self.client.get("/review").status_code, 200)
         self.assertEqual(self.client.get("/type-review").status_code, 200)
         self.assertEqual(self.client.get("/subdivision-review").status_code, 200)
+        self.assertEqual(self.client.get("/reviews").status_code, 200)
+        self.assertEqual(self.client.get("/consolidation-review").status_code, 200)
         self.assertEqual(self.client.get("/data.json").json(), [])
         self.assertEqual(self.client.get("/transitions.json").json(), [])
         self.assertEqual(self.client.get("/periods.json").json(), [])
         self.assertEqual(self.client.get("/period_links.json").json(), [])
+
+    def test_review_dashboard_lists_pipeline_counts(self) -> None:
+        payload = self.client.get("/api/review-dashboard").json()["pipelines"]
+
+        self.assertEqual(payload["entity_type"], 1)
+        self.assertEqual(payload["source_matching"], 1)
+        self.assertIn("consolidation", payload)
+        self.assertIn("subdivision_parent", payload)
+        self.assertIn("period_role", payload)
+
+    def test_keeps_consolidation_candidate_independent(self) -> None:
+        response = self.client.post(
+            "/api/consolidation-reviews/candidate", json={"decision": "independent"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        saved = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(saved["consolidation_status"], "independent")
+
+    def test_converts_entity_phase_to_period_linked_to_target(self) -> None:
+        response = self.client.post(
+            "/api/consolidation-reviews/candidate",
+            json={"decision": "phase_of", "target_id": "container"},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        saved = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(saved["timeline_role"], "retired")
+        self.assertEqual(saved["consolidated_into"], "container")
+        self.assertTrue((self.root / "periods" / "candidate_period.yaml").exists())
+        links = yaml.safe_load((self.root / "period_links.yaml").read_text(encoding="utf-8"))
+        self.assertTrue(any(link["period_id"] == "candidate_period" and link["entity_id"] == "container" for link in links))
+
+    def test_merges_duplicate_identity_without_deleting_source(self) -> None:
+        response = self.client.post(
+            "/api/consolidation-reviews/candidate",
+            json={"decision": "same_entity", "target_id": "container"},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        source = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        target = yaml.safe_load((self.root / "polities" / "container.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(source["consolidation_status"], "same_entity")
+        self.assertIn("Candidate", target["names"]["aliases_en"])
 
     def test_lists_and_accepts_a_valid_candidate(self) -> None:
         payload = self.client.get("/api/reviews").json()
@@ -314,6 +364,7 @@ class UnifiedServerTests(unittest.TestCase):
         payload = self.client.get("/api/type-reviews").json()
         self.assertEqual(payload["total"], 1)
         self.assertEqual(payload["items"][0]["id"], "candidate")
+        self.assertEqual(payload["items"][0]["direct_type_qids"], ["Q111", "Q222"])
         response = self.client.post(
             "/api/type-reviews/candidate", json={"entity_type": "civilization"}
         )
@@ -324,6 +375,20 @@ class UnifiedServerTests(unittest.TestCase):
         )
         self.assertIn("polity", saved["entity_type_reviewed_against"])
         self.assertEqual(self.client.get("/api/type-reviews").json()["total"], 0)
+
+    def test_saved_reconsideration_does_not_immediately_reappear(self) -> None:
+        review_path = self.root / "reports" / "entity_type_review.jsonl"
+        review = json.loads(review_path.read_text(encoding="utf-8"))
+        review.update({"proposed_type": "subdivision", "reconsideration": True})
+        review_path.write_text(json.dumps(review) + "\n", encoding="utf-8")
+        client = TestClient(create_app(self.root))
+
+        response = client.post(
+            "/api/type-reviews/candidate", json={"entity_type": "subdivision"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(client.get("/api/type-reviews").json()["total"], 0)
 
     def test_lists_and_saves_period_role_as_linked_records(self) -> None:
         payload = self.client.get("/api/period-role-reviews").json()

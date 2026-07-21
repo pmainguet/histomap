@@ -149,6 +149,15 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .period-label { fill: #302d27; font: 600 10px system-ui, sans-serif; pointer-events: none; }
 .empty, .error { padding: 2rem; color: var(--ink-faint); }
 .review-main { grid-template-columns: minmax(0, 52rem) minmax(15rem, 22rem); justify-content: center; }
+.review-dashboard-main { display: block; max-width: 74rem; margin: 0 auto; }
+.review-dashboard { display: grid; gap: .75rem; }
+.review-pipeline-card { display: flex; justify-content: space-between; gap: 2rem; align-items: center; padding: 1.1rem 1.25rem; color: #27251f; background: var(--paper); border: 1px solid var(--rule); text-decoration: none; }
+.review-pipeline-card:hover, .review-pipeline-card:focus { border-color: #8c422d; }
+.review-pipeline-card span { display: grid; gap: .35rem; }
+.review-pipeline-card span > strong { font-size: 1.15rem; }
+.review-pipeline-card small { color: var(--ink-faint); font: .8rem/1.45 system-ui, sans-serif; }
+.review-pipeline-card > b { min-width: 6rem; color: #8c422d; font: 500 1.7rem Georgia, serif; text-align: right; }
+.review-pipeline-card > b small { display: block; font-size: .68rem; text-transform: uppercase; }
 .review-card { padding: clamp(1rem, 4vw, 2.5rem); background: var(--paper); border: 1px solid var(--rule); }
 .review-card h2 { margin: .2rem 0; font-size: 2rem; font-weight: 500; }
 .review-rank, .score-breakdown { color: var(--ink-faint); font: .8rem system-ui, sans-serif; }

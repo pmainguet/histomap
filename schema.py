@@ -146,7 +146,9 @@ class Polity(BaseModel):
     entity_type_source_qids: list[str] = Field(default_factory=list)
     entity_type_reviewed_against: list[EntityType] = Field(default_factory=list)
     subdivision_parent_status: Literal["pending", "confirmed"] | None = None
-    timeline_role: Literal["entity", "period", "both"] = "entity"
+    timeline_role: Literal["entity", "period", "both", "retired"] = "entity"
+    consolidation_status: Literal["independent", "same_entity", "phase_of"] | None = None
+    consolidated_into: str | None = None
     relationships: list[EntityRelationship] = Field(default_factory=list)
     parent: str | None = None
     successors: list[str] = Field(default_factory=list)
@@ -193,6 +195,8 @@ class Polity(BaseModel):
 
     @model_validator(mode="after")
     def _check(self) -> "Polity":
+        if self.consolidation_status in {"same_entity", "phase_of"} and not self.consolidated_into:
+            raise ValueError("a consolidated entity requires consolidated_into")
         if self.entity_type == EntityType.subdivision:
             if self.subdivision_parent_status is None:
                 self.subdivision_parent_status = "pending"
