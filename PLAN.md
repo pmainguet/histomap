@@ -321,7 +321,37 @@ Get ~3,000 polities into draft YAML and render them. Quality is bad on purpose �
 
    Emit a coverage report by century and visibility tier. Missing geography remains explicit rather than being guessed. The web view uses these fields for continent/country filters and, later, a linked map.
 
-**Done when:** the streamgraph renders all imported polities at the selected visibility tier; strong parent/successor relationships can be grouped or expanded; and the geography report shows continent and present-country coverage, with unknowns visible for Phase 2 to improve.
+7d. **Entity consolidation.** The Wikidata `wdt:P31/wdt:P279*` traversal and Seshat-only draft
+   materialization both leave near-duplicates in the canonical set: the same polity imported under two
+   labels, or a short-lived phase of a larger polity that Wikidata treats as its own item. The
+   consolidation dashboard (`/consolidation-review`) walks every active, non-excluded record with no
+   `consolidation_status` yet and proposes up to five candidates, scored on shared Wikidata QID, exact
+   name/alias match, shared identity tokens (name minus stopwords such as "empire," "kingdom,"
+   "dynasty" and their French equivalents), present-country overlap, and date containment/overlap. A
+   pairing is only proposed when it shares a QID or exact name, or clears a combined date, geography,
+   and name-similarity bar, and only against records of equal or higher prominence, so a low-prominence
+   duplicate always points at its more prominent sibling rather than the reverse.
+
+   Reviewers resolve each record as independent; the same entity as the candidate (folds its name into
+   the survivor's aliases and merges its sources); a phase or constituent part of the candidate
+   (retires the entity and regenerates it as a `periods/*.yaml` context record linked back to the
+   candidate via a `phase_of` period link); or discarded entirely as out of Histomap's scope. Decisions
+   are durable (`consolidation_status`, `manual_overrides`) and, like Seshat review, must not be
+   overwritten by pipeline reruns. This is the largest live review queue: 333 of 4,669 active records
+   triaged, 4,336 still untouched.
+
+7e. **Subdivision classification.** Entities marked `entity_type: subdivision` in the entity-type
+   review queue (administrative regions rather than sovereign polities) need a governing polity rather
+   than a `parent`/`successor` chain. The subdivision dashboard (`/subdivision-review`) proposes parent
+   polities by walking Wikidata containment statements (`P131` administrative unit, `P361` part of,
+   `P17` country) up to three hops with depth-decayed scoring, adding present-country geography as a
+   fallback signal and any already-set canonical `parent` as a strong prior; only targets whose own
+   `entity_type` is `polity` are proposed. Confirming a parent sets `subdivision_parent_status:
+   confirmed` and records an `administrative_part_of` relationship, keeping subdivisions out of the
+   main political parent/successor graph while still anchoring them geographically. New and barely
+   started: 4 records reviewed.
+
+**Done when:** the streamgraph renders all imported polities at the selected visibility tier; strong parent/successor relationships can be grouped or expanded; the geography report shows continent and present-country coverage, with unknowns visible for Phase 2 to improve; and the consolidation and subdivision queues are empty enough that duplicate or misclassified records no longer clutter the default view.
 
 ### Phase 2 — Authoritative overlay
 
@@ -451,12 +481,23 @@ HYDE downloads are slow and rate-limited — do it once and cache aggressively.
   Validate and publish `periods.json` and `period_links.json` first. A background-band/filter UI is
   deferred until the four-region pilot demonstrates useful coverage without misleading global
   periodization.
-  The pilot is implemented end to end: 14 sourced authority records and 10 evidence-bearing links
-  are schema-validated, published by the build and unified server, and summarized in
-  `reports/period_pilot_summary.md`. The timeline renders a separately styled period-context layer
-  within the relevant continental lanes, with type/record controls, source-rich period details,
-  period navigation, and reciprocal evidence labels on linked entity details. Expanding and
-  curating global authority coverage remains ongoing dataset work, not a UI blocker.
+  The pilot is implemented end to end: the original 14 sourced authority records and 10
+  evidence-bearing links are schema-validated, published by the build and unified server, and
+  summarized in `reports/period_pilot_summary.md`. The timeline renders a separately styled
+  period-context layer within the relevant continental lanes, with type/record controls,
+  source-rich period details, period navigation, and reciprocal evidence labels on linked entity
+  details.
+
+  Two more mechanisms now generate `periods/*.yaml` records beyond that hand-curated set: a
+  `phase_of`/`part_of` consolidation decision (item 7d, Entity consolidation, above) retires the
+  reviewed entity and regenerates it as a period linked back to its parent polity, and a
+  `timeline_role` decision of `period` or `both` (the `/period-review` queue, backed by
+  `reports/period_role_review.jsonl`) marks a Wikidata item whose canonical entity band should
+  also, or instead, render as a period-context band — `both` keeps the political entity and adds a
+  `part_of_periodization` link back to itself. Together these have grown the period set from 14 to
+  102 records, with 94 more awaiting a role decision. Expanding and curating global authority
+  coverage, and reconciling the growing auto-generated set against the original hand-curated
+  periodization, remain ongoing dataset work, not a UI blocker.
 - **Nice-to-have relationship navigation:** make parent, children, predecessors, and successors clickable in the detail card; add breadcrumbs, related-band highlighting, and a small tree centered on the selected polity. Later, allow scrolling to a related band and expanding/collapsing descendants or reviewed display groups. This is intentionally deferred until relationship review has improved the underlying links.
   The first increment now exposes all four relationship directions, highlights the selected entity's
   visible neighborhood, and lets related links surface and scroll to lower-tier records. Breadcrumbs,
