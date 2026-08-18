@@ -50,3 +50,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 32.45
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: ayyubid_dynasty
+manual_overrides:
+- consolidation

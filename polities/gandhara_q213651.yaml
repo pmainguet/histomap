@@ -2,6 +2,7 @@ id: gandhara_q213651
 canonical_name: Gandhara
 names:
   fr: Gandhâra
+  aliases_en: Gandhāra
 external_ids:
   wikidata: Q213651
 parent: null
@@ -51,3 +52,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 30.36
+manual_overrides:
+- consolidation

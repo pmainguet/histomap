@@ -29,27 +29,13 @@ eligibility: review
 geography:
   continents:
   - africa
-  - antarctica
-  - asia
-  - europe
-  - north_america
-  - oceania
+  primary_continent: africa
   present_countries:
-  - BE
-  - ES
-  - FR
-  - GB
-  - IT
   - MA
-  - NL
-  - PT
-  - SE
-  - US
   centroid:
     lat: 35.740125
     lon: -5.811507
-  confidence: medium
-  primary_continent: africa
+  confidence: high
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []
@@ -65,3 +51,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 8.93
+manual_overrides:
+- geography

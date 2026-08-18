@@ -2,8 +2,8 @@ id: sui_dynasty
 canonical_name: Sui dynasty
 names:
   fr: dynastie Sui
-  aliases_en: Sui | Sui Dynasty | China under the Sui | China under the Sui Dynasty
-    | Sui China | Sui Empire
+  aliases_en: China under the Sui | China under the Sui Dynasty | Sui | Sui China
+    | Sui Dynasty | Sui Empire
 external_ids:
   wikidata: Q7405
 parent: null
@@ -56,3 +56,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 35.7
+manual_overrides:
+- consolidation

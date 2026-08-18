@@ -2,6 +2,7 @@ id: starodub_principality_q16701789
 canonical_name: Starodub Principality
 names:
   fr: principauté de Starodoub
+  aliases_en: Starodub Principality
 external_ids:
   wikidata: Q16701789
 parent: null
@@ -47,3 +48,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 12.93
+manual_overrides:
+- consolidation

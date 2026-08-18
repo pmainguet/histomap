@@ -1,0 +1,20 @@
+id: commonwealth_realm_of_guyana_period
+canonical_name: Commonwealth realm of Guyana
+kind: historical
+start: 1966
+end: 1970
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q5622720
+notes: Editorially identified as a phase or aspect of Guyana.
+source_urls:
+- https://www.wikidata.org/wiki/Q5622720

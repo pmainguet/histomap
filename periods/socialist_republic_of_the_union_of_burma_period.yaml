@@ -1,0 +1,24 @@
+id: socialist_republic_of_the_union_of_burma_period
+canonical_name: Socialist Republic of the Union of Burma
+kind: historical
+start: 1962
+end: 1988
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - MM
+  centroid:
+    lat: 16.85
+    lon: 96.183333333
+  confidence: low
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q13072974
+notes: Editorially identified as a phase or aspect of Myanmar.
+source_urls:
+- https://www.wikidata.org/wiki/Q13072974

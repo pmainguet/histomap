@@ -1,0 +1,20 @@
+id: kenya_19631964_period
+canonical_name: Kenya (1963–1964)
+kind: historical
+start: 1963
+end: 1964
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q6392538
+notes: Editorially identified as a phase or aspect of Kenya.
+source_urls:
+- https://www.wikidata.org/wiki/Q6392538

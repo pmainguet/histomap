@@ -1,0 +1,21 @@
+id: kingdom_of_hungary_q16056854_period
+canonical_name: Kingdom of Hungary
+kind: historical
+start: 1301
+end: 1526
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries: []
+  centroid: null
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q16056854
+notes: Editorially identified as a phase or aspect of Kingdom of Hungary.
+source_urls:
+- https://www.wikidata.org/wiki/Q16056854

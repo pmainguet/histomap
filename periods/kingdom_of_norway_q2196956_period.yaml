@@ -1,0 +1,22 @@
+id: kingdom_of_norway_q2196956_period
+canonical_name: Kingdom of Norway
+kind: historical
+start: 872
+end: 1397
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  primary_continent: europe
+  present_countries:
+  - 'NO'
+  confidence: high
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q2196956
+notes: Editorially identified as a phase or aspect of Norway.
+source_urls:
+- https://www.wikidata.org/wiki/Q2196956

@@ -1,0 +1,20 @@
+id: kingdom_of_poland_q1649871_period
+canonical_name: Kingdom of Poland
+kind: historical
+start: 1386
+end: 1569
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q1649871
+notes: Editorially identified as a phase or aspect of Kingdom of Poland.
+source_urls:
+- https://www.wikidata.org/wiki/Q1649871

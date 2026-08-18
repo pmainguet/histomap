@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Histomap — reconciliation review</title>
+    <title>Histomap — Seshat import matching</title>
     <link rel="stylesheet" href="/static/styles.css">
   </head>
   <body>
@@ -19,14 +19,14 @@
       </nav>
     </header>
     <section class="review-toolbar">
-      <div><p class="eyebrow">Editorial workspace</p><h1>Reconciliation review</h1></div>
+      <div><p class="eyebrow">Seshat → Histomap</p><h1>Import matching</h1></div>
       <div class="controls">
         <button id="apply-decisions" class="action-button" type="button">Apply review decisions</button>
         <button id="build-data" class="action-button" type="button">Rebuild timeline</button>
         <span id="job-status" aria-live="polite"></span>
       </div>
     </section>
-    <p class="workspace-purpose"><strong>This page matches source records.</strong> It decides whether a Seshat record and an existing Histomap entity describe the same historical subject. It does not decide whether that subject is a polity, culture, civilization, people, or tribe.</p>
+    <p class="workspace-purpose"><strong>This compares an incoming Seshat record with existing Histomap entities.</strong> Accepting a match attaches the source record to its canonical Histomap subject; “no match” keeps it separate for later import.</p>
     <main class="review-main">
       <section id="review-card" class="review-card" aria-live="polite">Loading review queue…</section>
       <aside class="details review-progress">

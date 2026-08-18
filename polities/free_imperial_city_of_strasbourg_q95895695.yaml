@@ -2,7 +2,7 @@ id: free_imperial_city_of_strasbourg_q95895695
 canonical_name: Free Imperial City of Strasbourg
 names:
   fr: ville impériale libre de Strasbourg
-  aliases_en: Imperial City of Strassburg
+  aliases_en: Imperial City of Strassburg | free imperial city of Strasbourg
 external_ids:
   wikidata: Q95895695
 parent: null
@@ -56,3 +56,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 18.07
+manual_overrides:
+- consolidation

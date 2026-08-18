@@ -54,12 +54,16 @@ def classify(
     *,
     strong_allow_types: set[str],
     contextual_allow_types: set[str],
+    hard_deny_types: set[str],
     deny_types: set[str],
     review_types: set[str],
     overrides: dict[str, str],
 ) -> Decision:
     if qid in overrides:
         return Decision(overrides[qid], "explicit QID override")
+    hard_denied = sorted(direct_types & hard_deny_types)
+    if hard_denied:
+        return Decision("excluded", f"hard non-entity type: {', '.join(hard_denied)}")
     strong = sorted(direct_types & strong_allow_types)
     contextual = sorted(direct_types & contextual_allow_types)
     denied = sorted(direct_types & deny_types)
@@ -154,6 +158,7 @@ def run(offline: bool = False) -> dict[str, int]:
     rules = tomllib.loads(RULES_PATH.read_text(encoding="utf-8"))
     strong_allow_types = set(rules["allow"]["strong_qids"])
     contextual_allow_types = set(rules["allow"]["contextual_qids"])
+    hard_deny_types = set(rules["deny"].get("hard_qids", []))
     deny_types = set(rules["deny"]["qids"])
     review_types = set(rules["review"]["qids"])
     overrides = dict(rules.get("overrides", {}))
@@ -168,6 +173,7 @@ def run(offline: bool = False) -> dict[str, int]:
             direct_types,
             strong_allow_types=strong_allow_types,
             contextual_allow_types=contextual_allow_types,
+            hard_deny_types=hard_deny_types,
             deny_types=deny_types,
             review_types=review_types,
             overrides=overrides,

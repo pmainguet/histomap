@@ -1,0 +1,24 @@
+id: first_mexican_republic_period
+canonical_name: First Mexican Republic
+kind: historical
+start: 1823
+end: 1835
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - MX
+  centroid:
+    lat: 19.43333333
+    lon: -99.13333333
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q1109279
+notes: Editorially identified as a phase or aspect of Mexico.
+source_urls:
+- https://www.wikidata.org/wiki/Q1109279

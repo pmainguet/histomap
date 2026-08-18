@@ -1,6 +1,7 @@
 id: northern_liao_q110491318
 canonical_name: Northern Liao
-names: {}
+names:
+  aliases_en: Northern Liao
 external_ids:
   wikidata: Q110491318
 parent: null
@@ -46,3 +47,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 10.75
+manual_overrides:
+- consolidation

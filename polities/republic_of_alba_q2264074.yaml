@@ -2,6 +2,7 @@ id: republic_of_alba_q2264074
 canonical_name: Republic of Alba
 names:
   fr: République d'Alba
+  aliases_en: Republic of Alba
 external_ids:
   wikidata: Q2264074
 parent: null
@@ -53,4 +54,5 @@ prominence_components:
   aggregate_penalty: 0
   total: 20.42
 manual_overrides:
+- consolidation
 - entity_type

@@ -5,7 +5,7 @@ names:
   aliases_en: Mexico | Edomex | Edomexico | Mexico state | Mexico, Mexico
 external_ids:
   wikidata: Q82112
-parent: null
+parent: mexico
 successors: []
 region: null
 culture_group: null
@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 20.77
+prominence_score: 34.27
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -36,18 +36,31 @@ geography:
     lat: 19.354166666
     lon: -99.630833333
   confidence: medium
-entity_type: polity
-entity_type_confidence: low
+entity_type: subdivision
+entity_type_confidence: high
 entity_type_source_qids: []
-relationships: []
+relationships:
+- target: mexico
+  kind: administrative_part_of
+  evidence: derived
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q82112
 prominence_components:
   wikidata_reach: 30
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
+  relationship_centrality: 3.5
   longevity: 5.77
   editorial_work: 0
-  type_uncertainty_penalty: -10
+  type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 20.77
+  total: 34.27
+manual_overrides:
+- entity_type
+- subdivision_parent
+entity_type_reviewed_against:
+- subdivision
+subdivision_parent_status: confirmed
+consolidation_status: part_of

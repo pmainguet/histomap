@@ -47,3 +47,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 5.43
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: islamic_state_q2429253
+manual_overrides:
+- consolidation

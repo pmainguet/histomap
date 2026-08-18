@@ -147,7 +147,7 @@ class Polity(BaseModel):
     entity_type_reviewed_against: list[EntityType] = Field(default_factory=list)
     subdivision_parent_status: Literal["pending", "confirmed"] | None = None
     timeline_role: Literal["entity", "period", "both", "retired"] = "entity"
-    consolidation_status: Literal["independent", "same_entity", "phase_of"] | None = None
+    consolidation_status: Literal["independent", "same_entity", "phase_of", "part_of", "discarded"] | None = None
     consolidated_into: str | None = None
     relationships: list[EntityRelationship] = Field(default_factory=list)
     parent: str | None = None
@@ -278,7 +278,7 @@ class Period(BaseModel):
 class PeriodLink(BaseModel):
     period_id: str
     entity_id: str
-    relation: Literal["context", "part_of_periodization"] = "context"
+    relation: Literal["context", "part_of_periodization", "phase_of"] = "context"
     evidence: Literal["explicit", "derived", "suggested"]
     confidence: Confidence
     source_urls: list[str] = Field(default_factory=list, min_length=1)

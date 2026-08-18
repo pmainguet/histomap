@@ -56,3 +56,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 32.17
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: denmark
+manual_overrides:
+- consolidation

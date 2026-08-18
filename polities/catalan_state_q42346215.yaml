@@ -49,3 +49,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 10.41
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: catalan_state_q42346134
+manual_overrides:
+- consolidation

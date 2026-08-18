@@ -2,7 +2,7 @@ id: republic_of_crimea_q15966495
 canonical_name: Republic of Crimea
 names:
   fr: république de Crimée
-  aliases_en: Crimea
+  aliases_en: Crimea | Republic of Crimea
 external_ids:
   wikidata: Q15966495
 parent: null
@@ -53,3 +53,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 17.78
+manual_overrides:
+- consolidation

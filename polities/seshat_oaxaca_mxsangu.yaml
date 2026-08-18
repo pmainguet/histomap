@@ -16,7 +16,7 @@ end_confidence: low
 weight_by_era:
   -1150: 1.0
 weight_imputed: true
-prominence_score: 0
+prominence_score: 1.63
 visibility_tier: detailed
 eligibility: review
 notes: Kept as a separate entity during Seshat reconciliation; requires canonical
@@ -33,10 +33,10 @@ prominence_components:
   relationship_centrality: 0.0
   longevity: 6.63
   editorial_work: 0
-  type_uncertainty_penalty: -10
+  type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 0
+  total: 1.63
 manual_overrides:
 - entity_type
 entity_type_reviewed_against:

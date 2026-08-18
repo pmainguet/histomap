@@ -1,0 +1,24 @@
+id: kingdom_of_yugoslavia_period
+canonical_name: Kingdom of Yugoslavia
+kind: historical
+start: 1929
+end: 1945
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - RS
+  centroid:
+    lat: 44.809722222
+    lon: 20.463055555
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q191077
+notes: Editorially identified as a phase or aspect of Yugoslavia.
+source_urls:
+- https://www.wikidata.org/wiki/Q191077

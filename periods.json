@@ -1,5 +1,71 @@
 [
   {
+    "id": "albanian_kingdom_q1048340_period",
+    "canonical_name": "Albanian Kingdom",
+    "kind": "historical",
+    "start": 1928,
+    "end": 1939,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "AL"
+      ],
+      "centroid": {
+        "lat": 41.0,
+        "lon": 20.0
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1048340"
+    },
+    "notes": "Editorially identified as a phase or aspect of Albania.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1048340"
+    ]
+  },
+  {
+    "id": "albanian_republic_period",
+    "canonical_name": "Albanian Republic",
+    "kind": "historical",
+    "start": 1925,
+    "end": 1928,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "AL"
+      ],
+      "centroid": {
+        "lat": 41.0,
+        "lon": 20.0
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1923781"
+    },
+    "notes": "Editorially identified as a phase or aspect of Albania.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1923781"
+    ]
+  },
+  {
     "id": "asuka_period",
     "canonical_name": "Asuka period",
     "kind": "historical",
@@ -30,6 +96,503 @@
     ]
   },
   {
+    "id": "ayyubid_sultanate_period",
+    "canonical_name": "Ayyubid Sultanate",
+    "kind": "historical",
+    "start": 1171,
+    "end": 1250,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q63135869"
+    },
+    "notes": "Editorially identified as a phase or aspect of Ayyubid dynasty.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q63135869"
+    ]
+  },
+  {
+    "id": "aztec_triple_alliance_period",
+    "canonical_name": "Aztec Triple Alliance",
+    "kind": "historical",
+    "start": 1428,
+    "end": 1521,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "present_countries": [
+        "MX"
+      ],
+      "centroid": {
+        "lat": 19.43333333,
+        "lon": -99.13333333
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q794210"
+    },
+    "notes": "Editorially identified as a phase or aspect of Aztec Empire.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q794210"
+    ]
+  },
+  {
+    "id": "ba_athist_iraq_period",
+    "canonical_name": "Ba'athist Iraq",
+    "kind": "historical",
+    "start": 1968,
+    "end": 2003,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "IQ"
+      ],
+      "centroid": {
+        "lat": 33.333333,
+        "lon": 44.433333
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q3108185"
+    },
+    "notes": "Editorially identified as a phase or aspect of Iraq.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q3108185"
+    ]
+  },
+  {
+    "id": "batavian_commonwealth_period",
+    "canonical_name": "Batavian Commonwealth",
+    "kind": "historical",
+    "start": 1801,
+    "end": 1806,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q13134747"
+    },
+    "notes": "Editorially identified as a phase or aspect of Batavian Republic.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q13134747"
+    ]
+  },
+  {
+    "id": "byelorussian_soviet_socialist_republic_period",
+    "canonical_name": "Byelorussian Soviet Socialist Republic",
+    "kind": "historical",
+    "start": 1919,
+    "end": 1991,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia",
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "BY",
+        "SU"
+      ],
+      "centroid": {
+        "lat": 54.0,
+        "lon": 29.0
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q2895"
+    },
+    "notes": "Editorially identified as a phase or aspect of Socialist Soviet Republic of Byelorussia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q2895"
+    ]
+  },
+  {
+    "id": "chola_empire_period",
+    "canonical_name": "Chola Empire",
+    "kind": "historical",
+    "start": 848,
+    "end": 1279,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q6806806"
+    },
+    "notes": "Editorially identified as a phase or aspect of Chola dynasty.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q6806806"
+    ]
+  },
+  {
+    "id": "commonwealth_realm_of_guyana_period",
+    "canonical_name": "Commonwealth realm of Guyana",
+    "kind": "historical",
+    "start": 1966,
+    "end": 1970,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q5622720"
+    },
+    "notes": "Editorially identified as a phase or aspect of Guyana.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q5622720"
+    ]
+  },
+  {
+    "id": "commonwealth_realm_of_malawi_period",
+    "canonical_name": "Commonwealth realm of Malawi",
+    "kind": "historical",
+    "start": 1964,
+    "end": 1966,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "MW"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q6741448"
+    },
+    "notes": "Editorially identified as a phase or aspect of Malawi.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q6741448"
+    ]
+  },
+  {
+    "id": "commonwealth_realm_of_mauritius_period",
+    "canonical_name": "Commonwealth realm of Mauritius",
+    "kind": "historical",
+    "start": 1968,
+    "end": 1992,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": {
+        "lat": -20.2,
+        "lon": 57.5
+      },
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q14759030"
+    },
+    "notes": "Editorially identified as a phase or aspect of Mauritius.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q14759030"
+    ]
+  },
+  {
+    "id": "commonwealth_realm_of_the_gambia_period",
+    "canonical_name": "Commonwealth realm of the Gambia",
+    "kind": "historical",
+    "start": 1965,
+    "end": 1970,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "GM"
+      ],
+      "centroid": {
+        "lat": 13.5,
+        "lon": -15.5
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q7735661"
+    },
+    "notes": "Editorially identified as a phase or aspect of The Gambia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q7735661"
+    ]
+  },
+  {
+    "id": "commonwealth_realm_of_uganda_period",
+    "canonical_name": "Commonwealth realm of Uganda",
+    "kind": "historical",
+    "start": 1962,
+    "end": 1963,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "UG"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q7877575"
+    },
+    "notes": "Editorially identified as a phase or aspect of Uganda.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q7877575"
+    ]
+  },
+  {
+    "id": "crown_of_castile_period",
+    "canonical_name": "Crown of Castile",
+    "kind": "historical",
+    "start": 1230,
+    "end": 1715,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "ES"
+      ],
+      "centroid": {
+        "lat": 40.4175,
+        "lon": -3.715
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q217196"
+    },
+    "notes": "Editorially identified as a phase or aspect of Kingdom of Castile.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q217196"
+    ]
+  },
+  {
+    "id": "crown_of_the_kingdom_of_poland_period",
+    "canonical_name": "Crown of the Kingdom of Poland",
+    "kind": "historical",
+    "start": 1386,
+    "end": 1795,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q171348"
+    },
+    "notes": "Editorially identified as a phase or aspect of Kingdom of Poland.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q171348"
+    ]
+  },
+  {
+    "id": "czechoslovak_republic_period",
+    "canonical_name": "Czechoslovak Republic",
+    "kind": "historical",
+    "start": 1948,
+    "end": 1960,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q11178782"
+    },
+    "notes": "Editorially identified as a phase or aspect of Czechoslovak Socialist Republic.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q11178782"
+    ]
+  },
+  {
+    "id": "democratic_republic_of_the_congo_19651971_period",
+    "canonical_name": "Democratic Republic of the Congo (1965–1971)",
+    "kind": "historical",
+    "start": 1965,
+    "end": 1971,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "CD"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q60852075"
+    },
+    "notes": "Editorially identified as a phase or aspect of Democratic Republic of the Congo.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q60852075"
+    ]
+  },
+  {
+    "id": "dominion_of_ghana_period",
+    "canonical_name": "Dominion of Ghana",
+    "kind": "historical",
+    "start": 1957,
+    "end": 1960,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q5555325"
+    },
+    "notes": "Editorially identified as a phase or aspect of Ghana.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q5555325"
+    ]
+  },
+  {
+    "id": "duchy_of_poland_q616915_period",
+    "canonical_name": "Duchy of Poland",
+    "kind": "historical",
+    "start": 1138,
+    "end": 1320,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q616915"
+    },
+    "notes": "Editorially identified as a phase or aspect of Kingdom of Poland.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q616915"
+    ]
+  },
+  {
     "id": "early_dynastic_mesopotamia",
     "canonical_name": "Early Dynastic Mesopotamia",
     "kind": "protohistorical",
@@ -57,6 +620,36 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)"
+    ]
+  },
+  {
+    "id": "east_punjab_period",
+    "canonical_name": "East Punjab",
+    "kind": "historical",
+    "start": 1950,
+    "end": 1966,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "IN"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q2354639"
+    },
+    "notes": "Editorially identified as a phase or aspect of Punjab.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q2354639"
     ]
   },
   {
@@ -153,6 +746,32 @@
     ]
   },
   {
+    "id": "european_hun_empire_period",
+    "canonical_name": "European Hun Empire",
+    "kind": "historical",
+    "start": 378,
+    "end": 470,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q12836180"
+    },
+    "notes": "Editorially identified as a phase or aspect of Hunnic Empire.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q12836180"
+    ]
+  },
+  {
     "id": "european_iron_age",
     "canonical_name": "Iron Age Europe",
     "kind": "protohistorical",
@@ -209,6 +828,238 @@
     ]
   },
   {
+    "id": "first_mexican_republic_period",
+    "canonical_name": "First Mexican Republic",
+    "kind": "historical",
+    "start": 1823,
+    "end": 1835,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "present_countries": [
+        "MX"
+      ],
+      "centroid": {
+        "lat": 19.43333333,
+        "lon": -99.13333333
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1109279"
+    },
+    "notes": "Editorially identified as a phase or aspect of Mexico.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1109279"
+    ]
+  },
+  {
+    "id": "first_republic_of_austria_period",
+    "canonical_name": "First Republic of Austria",
+    "kind": "historical",
+    "start": 1919,
+    "end": 1934,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "AT"
+      ],
+      "centroid": {
+        "lat": 48.2,
+        "lon": 16.36666667
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q518101"
+    },
+    "notes": "Editorially identified as a phase or aspect of Austria.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q518101"
+    ]
+  },
+  {
+    "id": "free_city_of_danzig_q901974_period",
+    "canonical_name": "Free City of Danzig",
+    "kind": "historical",
+    "start": 1807,
+    "end": 1814,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "PL"
+      ],
+      "centroid": {
+        "lat": 54.35,
+        "lon": 18.6667
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q901974"
+    },
+    "notes": "Editorially identified as a phase or aspect of Free City of Danzig.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q901974"
+    ]
+  },
+  {
+    "id": "german_reich_period",
+    "canonical_name": "German Reich",
+    "kind": "historical",
+    "start": 1871,
+    "end": 1949,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "DE"
+      ],
+      "centroid": {
+        "lat": 52.52,
+        "lon": 13.375
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1206012"
+    },
+    "notes": "Editorially identified as a phase or aspect of German Empire.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1206012"
+    ]
+  },
+  {
+    "id": "han_dynasty_period",
+    "canonical_name": "Han dynasty",
+    "kind": "historical",
+    "start": -205,
+    "end": 220,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "CN"
+      ],
+      "centroid": {
+        "lat": 34.304444444,
+        "lon": 108.857222222
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q7209"
+    },
+    "notes": "Editorially identified as a phase or aspect of Han.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q7209"
+    ]
+  },
+  {
+    "id": "hispanic_monarchy_period",
+    "canonical_name": "Hispanic Monarchy",
+    "kind": "historical",
+    "start": 1479,
+    "end": 1700,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "ES"
+      ],
+      "centroid": {
+        "lat": 40.2,
+        "lon": -3.5
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q766543"
+    },
+    "notes": "Editorially identified as a phase or aspect of Spain.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q766543"
+    ]
+  },
+  {
+    "id": "italian_protectorate_of_albania_period",
+    "canonical_name": "Italian protectorate of Albania",
+    "kind": "historical",
+    "start": 1939,
+    "end": 1943,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "AL"
+      ],
+      "centroid": {
+        "lat": 41.53499985,
+        "lon": 19.81999969
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1448131"
+    },
+    "notes": "Editorially identified as a phase or aspect of Albania.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1448131"
+    ]
+  },
+  {
     "id": "jomon_period",
     "canonical_name": "Jōmon period",
     "kind": "prehistorical",
@@ -241,6 +1092,573 @@
     ]
   },
   {
+    "id": "kenya_19631964_period",
+    "canonical_name": "Kenya (1963–1964)",
+    "kind": "historical",
+    "start": 1963,
+    "end": 1964,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q6392538"
+    },
+    "notes": "Editorially identified as a phase or aspect of Kenya.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q6392538"
+    ]
+  },
+  {
+    "id": "kingdom_of_afghanistan_period",
+    "canonical_name": "Kingdom of Afghanistan",
+    "kind": "historical",
+    "start": 1926,
+    "end": 1973,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "AF"
+      ],
+      "centroid": {
+        "lat": 33.0,
+        "lon": 65.0
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1138904"
+    },
+    "notes": "Editorially identified as a phase or aspect of Afghanistan.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1138904"
+    ]
+  },
+  {
+    "id": "kingdom_of_burgundy_q530670_period",
+    "canonical_name": "Kingdom of Burgundy",
+    "kind": "historical",
+    "start": 411,
+    "end": 1030,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "FR"
+      ],
+      "centroid": {
+        "lat": 45.0,
+        "lon": 6.0
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q530670"
+    },
+    "notes": "Editorially identified as a phase or aspect of County of Burgundy.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q530670"
+    ]
+  },
+  {
+    "id": "kingdom_of_cambodia_period",
+    "canonical_name": "Kingdom of Cambodia",
+    "kind": "historical",
+    "start": 1953,
+    "end": 1970,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "KH"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q2638486"
+    },
+    "notes": "Editorially identified as a phase or aspect of Cambodia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q2638486"
+    ]
+  },
+  {
+    "id": "kingdom_of_hungary_q16056854_period",
+    "canonical_name": "Kingdom of Hungary",
+    "kind": "historical",
+    "start": 1301,
+    "end": 1526,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q16056854"
+    },
+    "notes": "Editorially identified as a phase or aspect of Kingdom of Hungary.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q16056854"
+    ]
+  },
+  {
+    "id": "kingdom_of_hungary_q171150_period",
+    "canonical_name": "Kingdom of Hungary",
+    "kind": "historical",
+    "start": 1000,
+    "end": 1946,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "HU"
+      ],
+      "centroid": {
+        "lat": 47.0,
+        "lon": 19.0
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q171150"
+    },
+    "notes": "Editorially identified as a phase or aspect of Hungary.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q171150"
+    ]
+  },
+  {
+    "id": "kingdom_of_hungary_q253094_period",
+    "canonical_name": "Kingdom of Hungary",
+    "kind": "historical",
+    "start": 1526,
+    "end": 1867,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q253094"
+    },
+    "notes": "Editorially identified as a phase or aspect of Kingdom of Hungary.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q253094"
+    ]
+  },
+  {
+    "id": "kingdom_of_hungary_q25395037_period",
+    "canonical_name": "Kingdom of Hungary",
+    "kind": "historical",
+    "start": 1867,
+    "end": 1918,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q25395037"
+    },
+    "notes": "Editorially identified as a phase or aspect of Kingdom of Hungary.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q25395037"
+    ]
+  },
+  {
+    "id": "kingdom_of_italy_q172579_period",
+    "canonical_name": "Kingdom of Italy",
+    "kind": "historical",
+    "start": 1861,
+    "end": 1946,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "IT"
+      ],
+      "centroid": {
+        "lat": 41.9,
+        "lon": 12.5
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q172579"
+    },
+    "notes": "Editorially identified as a phase or aspect of Italy.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q172579"
+    ]
+  },
+  {
+    "id": "kingdom_of_navarre_beyond_the_pyrenees_period",
+    "canonical_name": "Kingdom of Navarre beyond the Pyrenees",
+    "kind": "historical",
+    "start": 1512,
+    "end": 1620,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q63021609"
+    },
+    "notes": "Editorially identified as a phase or aspect of Kingdom of Navarre.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q63021609"
+    ]
+  },
+  {
+    "id": "kingdom_of_norway_q2196956_period",
+    "canonical_name": "Kingdom of Norway",
+    "kind": "historical",
+    "start": 872,
+    "end": 1397,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "NO"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q2196956"
+    },
+    "notes": "Editorially identified as a phase or aspect of Norway.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q2196956"
+    ]
+  },
+  {
+    "id": "kingdom_of_poland_q1649871_period",
+    "canonical_name": "Kingdom of Poland",
+    "kind": "historical",
+    "start": 1386,
+    "end": 1569,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1649871"
+    },
+    "notes": "Editorially identified as a phase or aspect of Kingdom of Poland.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1649871"
+    ]
+  },
+  {
+    "id": "kingdom_of_poland_q3446214_period",
+    "canonical_name": "Kingdom of Poland",
+    "kind": "historical",
+    "start": 1320,
+    "end": 1386,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q3446214"
+    },
+    "notes": "Editorially identified as a phase or aspect of Kingdom of Poland.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q3446214"
+    ]
+  },
+  {
+    "id": "kingdom_of_poland_q577867_period",
+    "canonical_name": "Kingdom of Poland",
+    "kind": "historical",
+    "start": 1025,
+    "end": 1385,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q577867"
+    },
+    "notes": "Editorially identified as a phase or aspect of Kingdom of Poland.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q577867"
+    ]
+  },
+  {
+    "id": "kingdom_of_sicily_q3932079_period",
+    "canonical_name": "Kingdom of Sicily",
+    "kind": "historical",
+    "start": 1734,
+    "end": 1816,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q3932079"
+    },
+    "notes": "Editorially identified as a phase or aspect of Kingdom of Sicily.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q3932079"
+    ]
+  },
+  {
+    "id": "kingdom_of_spain_q15238138_period",
+    "canonical_name": "Kingdom of Spain",
+    "kind": "historical",
+    "start": 1814,
+    "end": 1833,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "europe"
+      ],
+      "primary_continent": null,
+      "present_countries": [
+        "ES"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q15238138"
+    },
+    "notes": "Editorially identified as a phase or aspect of Kingdom of Spain.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q15238138"
+    ]
+  },
+  {
+    "id": "kingdom_of_spain_q3399982_period",
+    "canonical_name": "Kingdom of Spain",
+    "kind": "historical",
+    "start": 1700,
+    "end": 1873,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "ES"
+      ],
+      "centroid": {
+        "lat": 40.2,
+        "lon": -3.5
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q3399982"
+    },
+    "notes": "Editorially identified as a phase or aspect of Spain.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q3399982"
+    ]
+  },
+  {
+    "id": "kingdom_of_wurttemberg_period",
+    "canonical_name": "Kingdom of Württemberg",
+    "kind": "historical",
+    "start": 1806,
+    "end": 1918,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "DE"
+      ],
+      "centroid": {
+        "lat": 48.7775,
+        "lon": 9.18
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q159631"
+    },
+    "notes": "Editorially identified as a phase or aspect of Württemberg.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q159631"
+    ]
+  },
+  {
+    "id": "kingdom_of_yugoslavia_period",
+    "canonical_name": "Kingdom of Yugoslavia",
+    "kind": "historical",
+    "start": 1929,
+    "end": 1945,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "RS"
+      ],
+      "centroid": {
+        "lat": 44.809722222,
+        "lon": 20.463055555
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q191077"
+    },
+    "notes": "Editorially identified as a phase or aspect of Yugoslavia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q191077"
+    ]
+  },
+  {
     "id": "kofun_period",
     "canonical_name": "Kofun period",
     "kind": "protohistorical",
@@ -270,6 +1688,130 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Kofun_period"
+    ]
+  },
+  {
+    "id": "latvian_socialist_soviet_republic_period",
+    "canonical_name": "Latvian Socialist Soviet Republic",
+    "kind": "historical",
+    "start": 1918,
+    "end": 1920,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q2300296"
+    },
+    "notes": "Editorially identified as a phase or aspect of Latvia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q2300296"
+    ]
+  },
+  {
+    "id": "lebanese_republic_under_french_mandate_period",
+    "canonical_name": "Lebanese Republic under French mandate",
+    "kind": "historical",
+    "start": 1926,
+    "end": 1943,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "asia",
+        "europe",
+        "north_america",
+        "oceania",
+        "south_america"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "LB"
+      ],
+      "centroid": {
+        "lat": 33.83333,
+        "lon": 35.76667
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q108865218"
+    },
+    "notes": "Editorially identified as a phase or aspect of French mandate of Lebanon.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q108865218"
+    ]
+  },
+  {
+    "id": "macedonian_empire_period",
+    "canonical_name": "Macedonian Empire",
+    "kind": "historical",
+    "start": -335,
+    "end": -300,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q13405524"
+    },
+    "notes": "Editorially identified as a phase or aspect of Macedonia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q13405524"
+    ]
+  },
+  {
+    "id": "mamluk_sultanate_of_egypt_period",
+    "canonical_name": "Mamluk Sultanate of Egypt",
+    "kind": "historical",
+    "start": 1250,
+    "end": 1517,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "asia"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "EG"
+      ],
+      "centroid": {
+        "lat": 30.0833,
+        "lon": 31.3667
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q282428"
+    },
+    "notes": "Editorially identified as a phase or aspect of Medieval Egypt.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q282428"
     ]
   },
   {
@@ -379,6 +1921,965 @@
     ]
   },
   {
+    "id": "nationalist_zone_period",
+    "canonical_name": "Nationalist zone",
+    "kind": "historical",
+    "start": 1936,
+    "end": 1939,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "europe"
+      ],
+      "primary_continent": null,
+      "present_countries": [
+        "ES"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q5560770"
+    },
+    "notes": "Editorially identified as a phase or aspect of Spain.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q5560770"
+    ]
+  },
+  {
+    "id": "nazi_germany_period",
+    "canonical_name": "Nazi Germany",
+    "kind": "historical",
+    "start": 1933,
+    "end": 1945,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "DE"
+      ],
+      "centroid": {
+        "lat": 52.511111111,
+        "lon": 13.379722222
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q7318"
+    },
+    "notes": "Editorially identified as a phase or aspect of German Reich.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q7318"
+    ]
+  },
+  {
+    "id": "people_s_republic_of_albania_period",
+    "canonical_name": "People's Republic of Albania",
+    "kind": "historical",
+    "start": 1946,
+    "end": 1976,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q19915237"
+    },
+    "notes": "Editorially identified as a phase or aspect of Albania.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q19915237"
+    ]
+  },
+  {
+    "id": "peruvian_republic_q28517256_period",
+    "canonical_name": "Peruvian Republic",
+    "kind": "historical",
+    "start": 1838,
+    "end": 1839,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "south_america"
+      ],
+      "primary_continent": "south_america",
+      "present_countries": [
+        "PE"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q28517256"
+    },
+    "notes": "Editorially identified as a phase or aspect of Peruvian Republic.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q28517256"
+    ]
+  },
+  {
+    "id": "principality_of_lippe_period",
+    "canonical_name": "Principality of Lippe",
+    "kind": "historical",
+    "start": 1789,
+    "end": 1918,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "DE"
+      ],
+      "centroid": {
+        "lat": 51.93609,
+        "lon": 8.877296
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q14551680"
+    },
+    "notes": "Editorially identified as a phase or aspect of Lippe.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q14551680"
+    ]
+  },
+  {
+    "id": "reign_of_amadeo_i_of_spain_period",
+    "canonical_name": "reign of Amadeo I of Spain",
+    "kind": "historical",
+    "start": 1871,
+    "end": 1873,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "europe"
+      ],
+      "primary_continent": null,
+      "present_countries": [
+        "ES"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q6104643"
+    },
+    "notes": "Editorially identified as a phase or aspect of Spain.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q6104643"
+    ]
+  },
+  {
+    "id": "republic_of_afghanistan_q2067309_period",
+    "canonical_name": "Republic of Afghanistan",
+    "kind": "historical",
+    "start": 1987,
+    "end": 1992,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q2067309"
+    },
+    "notes": "Editorially identified as a phase or aspect of Democratic Republic of Afghanistan.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q2067309"
+    ]
+  },
+  {
+    "id": "republic_of_cuba_period",
+    "canonical_name": "Republic of Cuba",
+    "kind": "historical",
+    "start": 1902,
+    "end": 1959,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "present_countries": [
+        "CU"
+      ],
+      "centroid": {
+        "lat": 22.0,
+        "lon": -79.5
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q14905932"
+    },
+    "notes": "Editorially identified as a phase or aspect of Cuba.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q14905932"
+    ]
+  },
+  {
+    "id": "republic_of_egypt_period",
+    "canonical_name": "Republic of Egypt",
+    "kind": "historical",
+    "start": 1953,
+    "end": 1958,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "EG"
+      ],
+      "centroid": {
+        "lat": 30.05,
+        "lon": 31.216666666
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q3087763"
+    },
+    "notes": "Editorially identified as a phase or aspect of Egypt.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q3087763"
+    ]
+  },
+  {
+    "id": "republic_of_equatorial_guinea_period",
+    "canonical_name": "Republic of Equatorial Guinea",
+    "kind": "historical",
+    "start": 1968,
+    "end": 1979,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "GQ"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q138028374"
+    },
+    "notes": "Editorially identified as a phase or aspect of Equatorial Guinea.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q138028374"
+    ]
+  },
+  {
+    "id": "republic_of_seychelles_period",
+    "canonical_name": "Republic of Seychelles",
+    "kind": "historical",
+    "start": 1977,
+    "end": 2004,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "SC"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q117089833"
+    },
+    "notes": "Editorially identified as a phase or aspect of Seychelles.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q117089833"
+    ]
+  },
+  {
+    "id": "republic_of_sudan_q3486796_period",
+    "canonical_name": "Republic of Sudan",
+    "kind": "historical",
+    "start": 1956,
+    "end": 1969,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "SD"
+      ],
+      "centroid": {
+        "lat": 15.633333333,
+        "lon": 32.533333333
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q3486796"
+    },
+    "notes": "Editorially identified as a phase or aspect of Sudan.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q3486796"
+    ]
+  },
+  {
+    "id": "republic_of_sudan_q5866720_period",
+    "canonical_name": "Republic of Sudan",
+    "kind": "historical",
+    "start": 1985,
+    "end": 2019,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "SD"
+      ],
+      "centroid": {
+        "lat": 15.633333333,
+        "lon": 32.533333333
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q5866720"
+    },
+    "notes": "Editorially identified as a phase or aspect of Sudan.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q5866720"
+    ]
+  },
+  {
+    "id": "republic_of_the_congo_leopoldville_period",
+    "canonical_name": "Republic of the Congo (Léopoldville)",
+    "kind": "historical",
+    "start": 1960,
+    "end": 1971,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "CD"
+      ],
+      "centroid": {
+        "lat": -4.4,
+        "lon": 15.4
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q618399"
+    },
+    "notes": "Editorially identified as a phase or aspect of Democratic Republic of the Congo.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q618399"
+    ]
+  },
+  {
+    "id": "republic_of_venezuela_period",
+    "canonical_name": "Republic of Venezuela",
+    "kind": "historical",
+    "start": 1953,
+    "end": 1999,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "south_america"
+      ],
+      "primary_continent": "south_america",
+      "present_countries": [
+        "VE"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q21296156"
+    },
+    "notes": "Editorially identified as a phase or aspect of Venezuela.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q21296156"
+    ]
+  },
+  {
+    "id": "rhodes_q104383185_period",
+    "canonical_name": "Rhodes",
+    "kind": "historical",
+    "start": -407,
+    "end": -333,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q104383185"
+    },
+    "notes": "Editorially identified as a phase or aspect of Rhodes.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q104383185"
+    ]
+  },
+  {
+    "id": "russian_empire_period",
+    "canonical_name": "Russian Empire",
+    "kind": "historical",
+    "start": 1721,
+    "end": 1917,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "north_america"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "RU"
+      ],
+      "centroid": {
+        "lat": 58.65,
+        "lon": 70.1167
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q34266"
+    },
+    "notes": "Editorially identified as a phase or aspect of Russia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q34266"
+    ]
+  },
+  {
+    "id": "saar_protectorate_period",
+    "canonical_name": "Saar Protectorate",
+    "kind": "historical",
+    "start": 1947,
+    "end": 1956,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "DE"
+      ],
+      "centroid": {
+        "lat": 49.383333333,
+        "lon": 6.883333333
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q310293"
+    },
+    "notes": "Editorially identified as a phase or aspect of Saarland.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q310293"
+    ]
+  },
+  {
+    "id": "second_hellenic_republic_period",
+    "canonical_name": "Second Hellenic Republic",
+    "kind": "historical",
+    "start": 1924,
+    "end": 1935,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "GR"
+      ],
+      "centroid": {
+        "lat": 39.0,
+        "lon": 22.0
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q265824"
+    },
+    "notes": "Editorially identified as a phase or aspect of Greece.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q265824"
+    ]
+  },
+  {
+    "id": "second_spanish_republic_period",
+    "canonical_name": "Second Spanish Republic",
+    "kind": "historical",
+    "start": 1931,
+    "end": 1939,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "ES"
+      ],
+      "centroid": {
+        "lat": 40.2,
+        "lon": -3.5
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q178038"
+    },
+    "notes": "Editorially identified as a phase or aspect of Spain.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q178038"
+    ]
+  },
+  {
+    "id": "socialist_republic_of_the_union_of_burma_period",
+    "canonical_name": "Socialist Republic of the Union of Burma",
+    "kind": "historical",
+    "start": 1962,
+    "end": 1988,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "MM"
+      ],
+      "centroid": {
+        "lat": 16.85,
+        "lon": 96.183333333
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q13072974"
+    },
+    "notes": "Editorially identified as a phase or aspect of Myanmar.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q13072974"
+    ]
+  },
+  {
+    "id": "socialist_soviet_republic_of_georgia_period",
+    "canonical_name": "Socialist Soviet Republic of Georgia",
+    "kind": "historical",
+    "start": 1921,
+    "end": 1936,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia",
+        "europe"
+      ],
+      "primary_continent": null,
+      "present_countries": [
+        "SU"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q55659450"
+    },
+    "notes": "Editorially identified as a phase or aspect of Georgian SSR.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q55659450"
+    ]
+  },
+  {
+    "id": "spain_under_joseph_bonaparte_period",
+    "canonical_name": "Spain under Joseph Bonaparte",
+    "kind": "historical",
+    "start": 1808,
+    "end": 1813,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "europe"
+      ],
+      "primary_continent": null,
+      "present_countries": [
+        "ES"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1709185"
+    },
+    "notes": "Editorially identified as a phase or aspect of Spain.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1709185"
+    ]
+  },
+  {
+    "id": "spain_under_the_restoration_period",
+    "canonical_name": "Spain under the Restoration",
+    "kind": "historical",
+    "start": 1874,
+    "end": 1931,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "ES"
+      ],
+      "centroid": {
+        "lat": 40.2,
+        "lon": -3.5
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1044536"
+    },
+    "notes": "Editorially identified as a phase or aspect of Spain.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1044536"
+    ]
+  },
+  {
+    "id": "state_of_greater_lebanon_period",
+    "canonical_name": "State of Greater Lebanon",
+    "kind": "historical",
+    "start": 1920,
+    "end": 1926,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "asia",
+        "europe",
+        "north_america",
+        "oceania",
+        "south_america"
+      ],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q108865226"
+    },
+    "notes": "Editorially identified as a phase or aspect of French mandate of Lebanon.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q108865226"
+    ]
+  },
+  {
+    "id": "state_of_vietnam_period",
+    "canonical_name": "State of Vietnam",
+    "kind": "historical",
+    "start": 1949,
+    "end": 1955,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "antarctica",
+        "asia",
+        "europe",
+        "oceania"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "FR",
+        "VN"
+      ],
+      "centroid": {
+        "lat": 10.8,
+        "lon": 106.65
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1193879"
+    },
+    "notes": "Editorially identified as a phase or aspect of Vietnam.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1193879"
+    ]
+  },
+  {
+    "id": "syrakousai_period",
+    "canonical_name": "Syrakousai",
+    "kind": "historical",
+    "start": -732,
+    "end": -210,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q3979194"
+    },
+    "notes": "Editorially identified as a phase or aspect of Syracuse.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q3979194"
+    ]
+  },
+  {
+    "id": "syrian_arab_republic_period",
+    "canonical_name": "Syrian Arab Republic",
+    "kind": "historical",
+    "start": 1963,
+    "end": 2024,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "SY"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q131404661"
+    },
+    "notes": "Editorially identified as a phase or aspect of Syria.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q131404661"
+    ]
+  },
+  {
+    "id": "taifa_of_mallorca_q104178581_period",
+    "canonical_name": "Taifa of Mallorca",
+    "kind": "historical",
+    "start": 1158,
+    "end": 1203,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q104178581"
+    },
+    "notes": "Editorially identified as a phase or aspect of Taifa of Majorca.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q104178581"
+    ]
+  },
+  {
+    "id": "taifa_of_murcia_q104178103_period",
+    "canonical_name": "Taifa of Murcia",
+    "kind": "historical",
+    "start": 1145,
+    "end": 1172,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q104178103"
+    },
+    "notes": "Editorially identified as a phase or aspect of Taifa of Murcia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q104178103"
+    ]
+  },
+  {
+    "id": "taifa_of_murcia_q104178238_period",
+    "canonical_name": "Taifa of Murcia",
+    "kind": "historical",
+    "start": 1228,
+    "end": 1266,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q104178238"
+    },
+    "notes": "Editorially identified as a phase or aspect of Taifa of Murcia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q104178238"
+    ]
+  },
+  {
     "id": "tibet_under_yuan_administrative_rule_period",
     "canonical_name": "Tibet under Yuan administrative rule",
     "kind": "historical",
@@ -404,6 +2905,133 @@
     "notes": "Period overlay routed from a Wikidata record after editorial role review.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q3216325"
+    ]
+  },
+  {
+    "id": "union_of_south_africa_period",
+    "canonical_name": "Union of South Africa",
+    "kind": "historical",
+    "start": 1910,
+    "end": 1961,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "ZA"
+      ],
+      "centroid": {
+        "lat": -29.0,
+        "lon": 24.0
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q193619"
+    },
+    "notes": "Editorially identified as a phase or aspect of South Africa.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q193619"
+    ]
+  },
+  {
+    "id": "united_principalities_of_moldavia_and_wallachia_period",
+    "canonical_name": "United Principalities of Moldavia and Wallachia",
+    "kind": "historical",
+    "start": 1859,
+    "end": 1881,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q958291"
+    },
+    "notes": "Editorially identified as a phase or aspect of Romania.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q958291"
+    ]
+  },
+  {
+    "id": "united_provinces_of_central_america_period",
+    "canonical_name": "United Provinces of Central America",
+    "kind": "historical",
+    "start": 1823,
+    "end": 1824,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "present_countries": [
+        "GT"
+      ],
+      "centroid": {
+        "lat": 14.61666667,
+        "lon": -90.51666667
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q9063401"
+    },
+    "notes": "Editorially identified as a phase or aspect of Federal Republic of Central America.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q9063401"
+    ]
+  },
+  {
+    "id": "united_states_of_venezuela_period",
+    "canonical_name": "United States of Venezuela",
+    "kind": "historical",
+    "start": 1864,
+    "end": 1953,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "south_america"
+      ],
+      "primary_continent": "south_america",
+      "present_countries": [
+        "VE"
+      ],
+      "centroid": {
+        "lat": 8.0,
+        "lon": -67.0
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q5848651"
+    },
+    "notes": "Editorially identified as a phase or aspect of Venezuela.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q5848651"
     ]
   },
   {
@@ -436,6 +3064,32 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Uruk_period"
+    ]
+  },
+  {
+    "id": "western_zhou_q1069609_period",
+    "canonical_name": "Western Zhou",
+    "kind": "historical",
+    "start": -1045,
+    "end": -770,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1069609"
+    },
+    "notes": "Editorially identified as a phase or aspect of Zhou dynasty.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1069609"
     ]
   },
   {

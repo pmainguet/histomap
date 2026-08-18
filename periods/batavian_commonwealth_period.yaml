@@ -1,0 +1,20 @@
+id: batavian_commonwealth_period
+canonical_name: Batavian Commonwealth
+kind: historical
+start: 1801
+end: 1806
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q13134747
+notes: Editorially identified as a phase or aspect of Batavian Republic.
+source_urls:
+- https://www.wikidata.org/wiki/Q13134747

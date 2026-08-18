@@ -1,0 +1,20 @@
+id: western_zhou_q1069609_period
+canonical_name: Western Zhou
+kind: historical
+start: -1045
+end: -770
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q1069609
+notes: Editorially identified as a phase or aspect of Zhou dynasty.
+source_urls:
+- https://www.wikidata.org/wiki/Q1069609

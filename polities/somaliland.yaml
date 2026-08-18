@@ -2,7 +2,7 @@ id: somaliland
 canonical_name: Somaliland
 names:
   fr: Somaliland
-  aliases_en: Republic of Somaliland
+  aliases_en: Republic of Somaliland | State of Somaliland
 external_ids:
   wikidata: Q34754
 parent: null
@@ -52,3 +52,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 28.89
+manual_overrides:
+- consolidation

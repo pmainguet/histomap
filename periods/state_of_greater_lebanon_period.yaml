@@ -1,0 +1,27 @@
+id: state_of_greater_lebanon_period
+canonical_name: State of Greater Lebanon
+kind: historical
+start: 1920
+end: 1926
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - asia
+  - europe
+  - north_america
+  - oceania
+  - south_america
+  primary_continent: null
+  present_countries: []
+  centroid: null
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q108865226
+notes: Editorially identified as a phase or aspect of French mandate of Lebanon.
+source_urls:
+- https://www.wikidata.org/wiki/Q108865226

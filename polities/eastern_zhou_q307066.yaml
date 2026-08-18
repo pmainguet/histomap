@@ -2,10 +2,10 @@ id: eastern_zhou_q307066
 canonical_name: Eastern Zhou
 names:
   fr: Dynastie Zhou orientale
-  aliases_en: Dong Zhou | Tung Chou | Chou Empire | Chou Kingdom | Kingdom of Zhou
-    | Zhou Empire | Zhou Kingdom | Dongzhou | Chou Dynasty | Eastern Chou | Eastern
-    Chou Dynasty | Eastern Chou Period | Eastern Zhou Dynasty | Eastern Zhou period
-    | Tung-chou | Zhou Dynasty
+  aliases_en: Chou Dynasty | Chou Empire | Chou Kingdom | Dong Zhou | Dongzhou | Eastern
+    Chou | Eastern Chou Dynasty | Eastern Chou Period | Eastern Zhou | Eastern Zhou
+    Dynasty | Eastern Zhou period | Kingdom of Zhou | Tung Chou | Tung-chou | Zhou
+    Dynasty | Zhou Empire | Zhou Kingdom
 external_ids:
   wikidata: Q307066
 parent: zhou_dynasty
@@ -58,4 +58,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 29.91
 manual_overrides:
+- consolidation
 - entity_type
+- timeline_role
+timeline_role: entity
+consolidation_status: independent

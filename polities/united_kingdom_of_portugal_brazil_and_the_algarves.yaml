@@ -2,6 +2,7 @@ id: united_kingdom_of_portugal_brazil_and_the_algarves
 canonical_name: United Kingdom of Portugal, Brazil and the Algarves
 names:
   fr: Royaume uni de Portugal, du Brésil et des Algarves
+  aliases_en: Kingdom of Brazil
 external_ids:
   wikidata: Q903779
 parent: null
@@ -58,3 +59,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 30.0
+manual_overrides:
+- consolidation

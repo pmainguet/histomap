@@ -1,0 +1,20 @@
+id: taifa_of_murcia_q104178238_period
+canonical_name: Taifa of Murcia
+kind: historical
+start: 1228
+end: 1266
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q104178238
+notes: Editorially identified as a phase or aspect of Taifa of Murcia.
+source_urls:
+- https://www.wikidata.org/wiki/Q104178238

@@ -2,7 +2,7 @@ id: duchy_of_oldenburg
 canonical_name: Duchy of Oldenburg
 names:
   fr: duché d'Oldenbourg
-  aliases_en: Oldenburg | Herzogtum Oldenburg
+  aliases_en: Grand Duchy of Oldenburg | Herzogtum Oldenburg | Oldenburg
 external_ids:
   wikidata: Q697084
 parent: grand_duchy_of_oldenburg
@@ -61,3 +61,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 38.92
+manual_overrides:
+- consolidation

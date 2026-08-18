@@ -1,0 +1,22 @@
+id: commonwealth_realm_of_mauritius_period
+canonical_name: Commonwealth realm of Mauritius
+kind: historical
+start: 1968
+end: 1992
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid:
+    lat: -20.2
+    lon: 57.5
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q14759030
+notes: Editorially identified as a phase or aspect of Mauritius.
+source_urls:
+- https://www.wikidata.org/wiki/Q14759030

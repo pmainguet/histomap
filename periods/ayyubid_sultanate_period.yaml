@@ -1,0 +1,20 @@
+id: ayyubid_sultanate_period
+canonical_name: Ayyubid Sultanate
+kind: historical
+start: 1171
+end: 1250
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q63135869
+notes: Editorially identified as a phase or aspect of Ayyubid dynasty.
+source_urls:
+- https://www.wikidata.org/wiki/Q63135869

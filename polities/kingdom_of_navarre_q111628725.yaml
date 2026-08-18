@@ -57,3 +57,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 0
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: kingdom_of_navarre_q200262
+manual_overrides:
+- consolidation

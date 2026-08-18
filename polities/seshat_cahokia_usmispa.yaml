@@ -1,0 +1,34 @@
+id: seshat_cahokia_usmispa
+canonical_name: Cahokia - Late Woodland III
+external_ids:
+  seshat:
+  - USMisPa
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: 600
+end: 749
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  600: 1.0
+weight_imputed: true
+prominence_score: 2.44
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+prominence_components:
+  wikidata_reach: 0.0
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 5.44
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 2.44

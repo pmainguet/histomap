@@ -2,7 +2,8 @@ id: thebes_q101583
 canonical_name: Thebes
 names:
   fr: Thèbes
-  aliases_en: Ancient Thebes with its Necropolis | Neyout | Niwt | Thēbai | Waset
+  aliases_en: Ancient Thebes with its Necropolis | Neyout | Niwt | Thebes | Thēbai
+    | Waset
 external_ids:
   wikidata: Q101583
 parent: null
@@ -54,4 +55,5 @@ prominence_components:
   aggregate_penalty: 0
   total: 31.79
 manual_overrides:
+- consolidation
 - entity_type

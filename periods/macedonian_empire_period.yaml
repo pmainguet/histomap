@@ -1,0 +1,20 @@
+id: macedonian_empire_period
+canonical_name: Macedonian Empire
+kind: historical
+start: -335
+end: -300
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q13405524
+notes: Editorially identified as a phase or aspect of Macedonia.
+source_urls:
+- https://www.wikidata.org/wiki/Q13405524

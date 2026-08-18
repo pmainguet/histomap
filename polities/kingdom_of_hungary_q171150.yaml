@@ -2,7 +2,7 @@ id: kingdom_of_hungary_q171150
 canonical_name: Kingdom of Hungary
 names:
   fr: royaume de Hongrie
-  aliases_en: Hungary | Transleithania
+  aliases_en: Hungary | Kingdom of Hungary | Transleithania
 external_ids:
   wikidata: Q171150
 parent: null
@@ -37,7 +37,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 48.03
+prominence_score: 49.48
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -64,10 +64,15 @@ prominence_components:
   wikidata_reach: 28.04
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 5.55
+  relationship_centrality: 7.0
   longevity: 7.44
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 48.03
+  total: 49.48
+manual_overrides:
+- consolidation
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: hungary

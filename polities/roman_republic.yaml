@@ -4,6 +4,7 @@ names:
   la: Res Publica Romana
   it: Repubblica romana
   fr: République romaine
+  aliases_en: Roman Republic
 external_ids:
   wikidata: Q1747689
   seshat:
@@ -83,3 +84,5 @@ prominence_components:
   date_uncertainty_penalty: -0.0
   aggregate_penalty: 0
   total: 81.26
+manual_overrides:
+- consolidation

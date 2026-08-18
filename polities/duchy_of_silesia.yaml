@@ -2,6 +2,7 @@ id: duchy_of_silesia
 canonical_name: Duchy of Silesia
 names:
   fr: duché de Silésie
+  aliases_en: Duchies of Silesia
 external_ids:
   wikidata: Q568638
 parent: null
@@ -57,3 +58,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 34.38
+manual_overrides:
+- consolidation

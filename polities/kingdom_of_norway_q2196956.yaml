@@ -38,6 +38,7 @@ geography:
   - 'NO'
   confidence: high
 manual_overrides:
+- consolidation
 - geography
 entity_type: polity
 entity_type_confidence: high
@@ -55,3 +56,6 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 39.24
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: norway

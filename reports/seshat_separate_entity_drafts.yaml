@@ -238,6 +238,30 @@ notes: Kept as a separate entity during Seshat reconciliation; requires canonica
 sources:
 - seshat
 ---
+id: seshat_naqada_ii_egnaqa2
+canonical_name: Naqada II
+external_ids:
+  seshat:
+  - EgNaqa2
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -3550
+end: -3301
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -3550: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
 id: seshat_ptolemaic_kingdom_ii_egptol2
 canonical_name: Ptolemaic Kingdom II
 external_ids:
@@ -646,6 +670,30 @@ notes: Kept as a separate entity during Seshat reconciliation; requires canonica
 sources:
 - seshat
 ---
+id: seshat_postpalatial_crete_grcrppa
+canonical_name: Postpalatial Crete
+external_ids:
+  seshat:
+  - GrCrPPa
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -1300
+end: -1201
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1300: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
 id: seshat_hawaii_i_hawaii1
 canonical_name: Hawaii I
 external_ids:
@@ -661,6 +709,30 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   1000: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_hawaii_ii_hawaii2
+canonical_name: Hawaii II
+external_ids:
+  seshat:
+  - Hawaii2
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: 1200
+end: 1649
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1200: 1.0
 weight_imputed: true
 prominence_score: 0
 visibility_tier: detailed
@@ -862,6 +934,30 @@ notes: Kept as a separate entity during Seshat reconciliation; requires canonica
 sources:
 - seshat
 ---
+id: seshat_deccan_indecnl
+canonical_name: Deccan - Neolithic
+external_ids:
+  seshat:
+  - InDecNL
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -2700
+end: -1201
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -2700: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
 id: seshat_chalcolithic_ganga_ingangc
 canonical_name: Chalcolithic Middle Ganga
 external_ids:
@@ -973,6 +1069,54 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   -7000: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_susiana_a_irkhze
+canonical_name: Susiana A
+external_ids:
+  seshat:
+  - IrKhzE*
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -6000
+end: -5701
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -6000: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_susiana_b_irkhzem
+canonical_name: Susiana B
+external_ids:
+  seshat:
+  - IrKhzEM
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -5700
+end: -5101
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -5700: 1.0
 weight_imputed: true
 prominence_score: 0
 visibility_tier: detailed
@@ -1270,6 +1414,54 @@ notes: Kept as a separate entity during Seshat reconciliation; requires canonica
 sources:
 - seshat
 ---
+id: seshat_jomon_jpjomo3
+canonical_name: Early Jomon
+external_ids:
+  seshat:
+  - JpJomo3
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -5300
+end: -3501
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -5300: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_jomon_jpjomo4
+canonical_name: 'Middle Jomon '
+external_ids:
+  seshat:
+  - JpJomo4
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -3500
+end: -2501
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -3500: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
 id: seshat_jomon_jpjomo5
 canonical_name: 'Late Jomon '
 external_ids:
@@ -1453,6 +1645,54 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   802: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_angkor_khangkl
+canonical_name: Late Angkor
+external_ids:
+  seshat:
+  - KhAngkL
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: 1220
+end: 1431
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1220: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_bronze_age_cambodia_khmekba
+canonical_name: Bronze Age Cambodia
+external_ids:
+  seshat:
+  - KhMekBA
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -1200
+end: -501
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1200: 1.0
 weight_imputed: true
 prominence_score: 0
 visibility_tier: detailed
@@ -1750,6 +1990,30 @@ notes: Kept as a separate entity during Seshat reconciliation; requires canonica
 sources:
 - seshat
 ---
+id: seshat_monte_alban_ii_mxalb2
+canonical_name: Monte Alban II
+external_ids:
+  seshat:
+  - MxAlb2*
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -100
+end: 199
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -100: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
 id: seshat_monte_alban_iii_mxalb3a
 canonical_name: Monte Alban III
 external_ids:
@@ -1765,6 +2029,30 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   200: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_monte_alban_iiib_iv_mxalb3b
+canonical_name: Monte Alban IIIB and IV
+external_ids:
+  seshat:
+  - MxAlb3B
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: 500
+end: 899
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  500: 1.0
 weight_imputed: true
 prominence_score: 0
 visibility_tier: detailed
@@ -1870,6 +2158,30 @@ notes: Kept as a separate entity during Seshat reconciliation; requires canonica
 sources:
 - seshat
 ---
+id: seshat_formative_basin_mexico_mxforml
+canonical_name: Late Formative Basin of Mexico
+external_ids:
+  seshat:
+  - MxFormL
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -400
+end: -101
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -400: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
 id: seshat_formative_basin_mexico_mxformm
 canonical_name: Middle Formative Basin of Mexico
 external_ids:
@@ -1885,6 +2197,54 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   -800: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_terminal_formative_basin_mexico_mxformt
+canonical_name: Terminal Formative Basin of Mexico
+external_ids:
+  seshat:
+  - MxFormT
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -100
+end: 99
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -100: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_initial_formative_basin_mexico_mxinitl
+canonical_name: Initial Formative Basin of Mexico
+external_ids:
+  seshat:
+  - MxInitl
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -2000
+end: -1201
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -2000: 1.0
 weight_imputed: true
 prominence_score: 0
 visibility_tier: detailed
@@ -2134,6 +2494,78 @@ notes: Kept as a separate entity during Seshat reconciliation; requires canonica
 sources:
 - seshat
 ---
+id: seshat_kachi_plain_pkacern
+canonical_name: Kachi Plain - Aceramic Neolithic
+external_ids:
+  seshat:
+  - PkAcerN
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -7500
+end: -5501
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -7500: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_kachi_plain_pkceran
+canonical_name: Kachi Plain - Ceramic Neolithic
+external_ids:
+  seshat:
+  - PkCeraN
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -5500
+end: -4001
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -5500: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_kachi_plain_pkchalc
+canonical_name: Kachi Plain - Chalcolithic
+external_ids:
+  seshat:
+  - PkChalc
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -4000
+end: -3201
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -4000: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
 id: seshat_indo_greek_kingdom_pkindgr
 canonical_name: Indo-Greek Kingdom
 external_ids:
@@ -2182,6 +2614,30 @@ notes: Kept as a separate entity during Seshat reconciliation; requires canonica
 sources:
 - seshat
 ---
+id: seshat_kachi_plain_pkpreur
+canonical_name: Kachi Plain - Pre-Urban Period
+external_ids:
+  seshat:
+  - PkPreUr
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -3200
+end: -2501
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -3200: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
 id: seshat_sind_pksind2
 canonical_name: Sind - Samma Dynasty
 external_ids:
@@ -2197,6 +2653,54 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   1340: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_kachi_plain_pkurbn1
+canonical_name: Kachi Plain - Urban Period I
+external_ids:
+  seshat:
+  - PkUrbn1
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -2500
+end: -2101
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -2500: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_kachi_plain_pkurbn2
+canonical_name: Kachi Plain - Urban Period II
+external_ids:
+  seshat:
+  - PkUrbn2
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -2100
+end: -1801
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -2100: 1.0
 weight_imputed: true
 prominence_score: 0
 visibility_tier: detailed
@@ -2230,6 +2734,30 @@ notes: Kept as a separate entity during Seshat reconciliation; requires canonica
 sources:
 - seshat
 ---
+id: seshat_konya_plain_trbrzer
+canonical_name: Konya Plain - Early Bronze Age
+external_ids:
+  seshat:
+  - TrBrzER
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -3000
+end: -2001
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -3000: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
 id: seshat_konya_plain_trbrzl2
 canonical_name: Konya Plain - Late Bronze Age II
 external_ids:
@@ -2245,6 +2773,54 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   -1500: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_konya_plain_trclcer
+canonical_name: Konya Plain - Early Chalcolithic
+external_ids:
+  seshat:
+  - TrClcER
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -6000
+end: -5001
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -6000: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_konya_plain_trclclt
+canonical_name: Konya Plain - Late Chalcolithic
+external_ids:
+  seshat:
+  - TrClcLT
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -5000
+end: -3001
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -5000: 1.0
 weight_imputed: true
 prominence_score: 0
 visibility_tier: detailed
@@ -2293,6 +2869,78 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   -1180: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_konya_plain_trneocr
+canonical_name: Konya Plain - Ceramic Neolithic
+external_ids:
+  seshat:
+  - TrNeoCR
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -7000
+end: -6601
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -7000: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_konya_plain_trneoer
+canonical_name: Konya Plain - Early Neolithic
+external_ids:
+  seshat:
+  - TrNeoER
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -9600
+end: -7001
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -9600: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_konya_plain_trneolt
+canonical_name: Konya Plain - Late Neolithic
+external_ids:
+  seshat:
+  - TrNeoLT
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -6600
+end: -6001
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -6600: 1.0
 weight_imputed: true
 prominence_score: 0
 visibility_tier: detailed
@@ -2485,6 +3133,78 @@ start_confidence: low
 end_confidence: low
 weight_by_era:
   900: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_cahokia_usmismw
+canonical_name: Cahokia - Middle Woodland
+external_ids:
+  seshat:
+  - USMisMW
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -150
+end: 299
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -150: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_cahokia_usmismu
+canonical_name: Cahokia - Late Woodland II
+external_ids:
+  seshat:
+  - USMisMu
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: 450
+end: 599
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  450: 1.0
+weight_imputed: true
+prominence_score: 0
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+---
+id: seshat_cahokia_usmispa
+canonical_name: Cahokia - Late Woodland III
+external_ids:
+  seshat:
+  - USMisPa
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: 600
+end: 749
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  600: 1.0
 weight_imputed: true
 prominence_score: 0
 visibility_tier: detailed

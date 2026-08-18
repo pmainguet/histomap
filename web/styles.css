@@ -53,6 +53,7 @@ body { margin: 0; }
 }
 
 .controls { display: flex; flex-wrap: wrap; gap: .8rem; align-items: end; font: .82rem system-ui, sans-serif; }
+.controls [data-build-status] { max-width: 20rem; color: var(--ink-faint); line-height: 1.35; }
 .controls label { display: grid; gap: .2rem; }
 input, select, button { border: 1px solid var(--rule); border-radius: 2px; padding: .45rem .6rem; background: white; }
 input { width: 8rem; }
@@ -146,6 +147,8 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .period-context-area { fill: rgb(255 255 255 / 35%); stroke: #ded6c7; stroke-width: 1; }
 .period-band { cursor: pointer; opacity: .38; stroke: rgb(39 37 31 / 42%); stroke-width: 1; }
 .period-band:hover, .period-band:focus, .period-band.is-selected { opacity: .68; stroke-width: 2; outline: none; }
+.attached-phase { opacity: .82; stroke-width: 1; }
+.attached-phase-label { font-size: 7px; pointer-events: none; }
 .period-label { fill: #302d27; font: 600 10px system-ui, sans-serif; pointer-events: none; }
 .empty, .error { padding: 2rem; color: var(--ink-faint); }
 .review-main { grid-template-columns: minmax(0, 52rem) minmax(15rem, 22rem); justify-content: center; }
@@ -174,6 +177,27 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .match-score strong { font: 700 1rem system-ui, sans-serif; }
 .match-score span { font: .78rem system-ui, sans-serif; }
 .exact-match { justify-self: start; margin: 0; padding: .15rem .35rem; color: #315d3a; background: #edf4e9; font: 700 .7rem system-ui, sans-serif; text-transform: uppercase; letter-spacing: .04em; }
+.record-badge, .evidence-badge { display: inline-block; padding: .14rem .35rem; color: #315d3a; background: #edf4e9; font: 700 .66rem system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
+.record-badge.source { color: #71402f; background: #f5e9df; }
+.evidence-badge.medium { color: #715e24; background: #f7f0d8; }
+.comparison-heading { display: flex; justify-content: space-between; gap: .75rem; align-items: start; }
+.wikidata-description { min-height: 1em; margin: .3rem 0 .65rem; color: var(--ink-faint); font: italic .78rem/1.4 system-ui, sans-serif; }
+.proposal-reason { margin: .6rem 0; padding: .5rem .6rem; background: #f5f0e5; font: .76rem/1.45 system-ui, sans-serif; }
+.period-role-actions { margin: 1rem 0; padding: .8rem; background: #f5f0e5; border: 1px solid var(--rule); }
+.period-role-actions h3, .period-role-actions p { margin: 0 0 .55rem; }
+.period-role-actions p { color: var(--ink-faint); font: .78rem/1.4 system-ui, sans-serif; }
+.comparison-table-wrap { margin: .65rem 0; overflow-x: auto; }
+.comparison-table { width: 100%; border-collapse: collapse; font: .76rem/1.4 system-ui, sans-serif; }
+.comparison-table th, .comparison-table td { padding: .38rem .5rem; border-bottom: 1px solid #e3dccd; text-align: left; vertical-align: top; }
+.comparison-table thead th { color: var(--ink-faint); background: #f5f0e5; font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; }
+.comparison-table tbody th { width: 8rem; color: var(--ink-faint); font-weight: 500; }
+.comparison-table td { width: calc((100% - 8rem) / 2); }
+.comparison-table .comparison-match td { background: #edf4e9; }
+.comparison-table .comparison-review td { background: #f7f0d8; }
+.comparison-table .comparison-conflict td { background: #f8e9e4; }
+.comparison-table .comparison-unknown td { color: var(--ink-faint); background: #f3f0e9; }
+.relationship-directions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.relationship-directions button:first-child { grid-column: 1 / -1; }
 .score-details, .priority-details { font: .78rem/1.4 system-ui, sans-serif; }
 .score-details summary, .priority-details summary { cursor: pointer; color: #8c422d; }
 .source-links { font: .78rem system-ui, sans-serif; }

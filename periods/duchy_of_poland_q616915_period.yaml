@@ -1,0 +1,20 @@
+id: duchy_of_poland_q616915_period
+canonical_name: Duchy of Poland
+kind: historical
+start: 1138
+end: 1320
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q616915
+notes: Editorially identified as a phase or aspect of Kingdom of Poland.
+source_urls:
+- https://www.wikidata.org/wiki/Q616915

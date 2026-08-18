@@ -2,14 +2,14 @@ id: islamic_state_q2429253
 canonical_name: Islamic State
 names:
   fr: État islamique
-  aliases_en: Islamic State in Iraq and Sham | Islamic State in Iraq and the Levant
-    | Islamic State in Iraq ande Sham | Islamic State of Iraq and ash-Sham | Islamic
-    State of Iraq and ash-Shām | Islamic state of Iraq and Sham | Islamic State in
-    Iraq and al-Sham | Islamic State in the Levant | Islamic State of Iraq and Sham
-    | ISIS | IS | ISIL | Daesh | The Islamic State | Daish | Islamic State Group |
-    Islamic State in Iraq and Syria | Islamic State of Iraq and al-Sham | Islamic
-    State of Iraq and Levant | Islamic State of Iraq and Syria | Islamic State of
-    Iraq and the Levant
+  aliases_en: Daesh | Daish | IS | ISIL | ISIS | Islamic State | Islamic State Group
+    | Islamic State in Iraq and Sham | Islamic State in Iraq and Syria | Islamic State
+    in Iraq and al-Sham | Islamic State in Iraq and the Levant | Islamic State in
+    Iraq ande Sham | Islamic State in the Levant | Islamic State of Iraq and Levant
+    | Islamic State of Iraq and Sham | Islamic State of Iraq and Syria | Islamic State
+    of Iraq and al-Sham | Islamic State of Iraq and ash-Sham | Islamic State of Iraq
+    and ash-Shām | Islamic State of Iraq and the Levant | Islamic state of Iraq and
+    Sham | The Islamic State
 external_ids:
   wikidata: Q2429253
 parent: null
@@ -54,3 +54,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 18.62
+manual_overrides:
+- consolidation

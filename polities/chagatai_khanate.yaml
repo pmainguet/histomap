@@ -5,6 +5,8 @@ names:
   aliases_en: Chagatai Horde | Chagatai Ulus
 external_ids:
   wikidata: Q487829
+  seshat:
+  - UzChagt
 parent: null
 successors: []
 region: null
@@ -23,9 +25,10 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 28.96
-visibility_tier: detailed
+prominence_score: 40.96
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -43,7 +46,7 @@ entity_type_source_qids:
 relationships: []
 prominence_components:
   wikidata_reach: 27.29
-  authority_coverage: 0
+  authority_coverage: 12
   historical_evidence: 0
   relationship_centrality: 0.0
   longevity: 6.66
@@ -51,4 +54,4 @@ prominence_components:
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 28.96
+  total: 40.96

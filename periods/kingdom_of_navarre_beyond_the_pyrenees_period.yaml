@@ -1,0 +1,20 @@
+id: kingdom_of_navarre_beyond_the_pyrenees_period
+canonical_name: Kingdom of Navarre beyond the Pyrenees
+kind: historical
+start: 1512
+end: 1620
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q63021609
+notes: Editorially identified as a phase or aspect of Kingdom of Navarre.
+source_urls:
+- https://www.wikidata.org/wiki/Q63021609

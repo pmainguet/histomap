@@ -2,7 +2,7 @@ id: carthage
 canonical_name: Carthage
 names:
   fr: Carthage
-  aliases_en: Carthago | Mint of Carthage | Colonia Julia Carthago
+  aliases_en: Ancient Carthage | Carthago | Colonia Julia Carthago | Mint of Carthage
 external_ids:
   wikidata: Q6343
 parent: null
@@ -52,3 +52,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 32.04
+manual_overrides:
+- consolidation

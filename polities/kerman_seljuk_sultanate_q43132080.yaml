@@ -46,3 +46,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 0.37
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: kerman_seljuk_sultanate_q491790
+manual_overrides:
+- consolidation

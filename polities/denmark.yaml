@@ -2,8 +2,8 @@ id: denmark
 canonical_name: Denmark
 names:
   fr: Danemark
-  aliases_en: Danmark | Dania | TAN | dk | Danemark | Denmark proper | metropolitan
-    Denmark
+  aliases_en: Danemark | Dania | Danmark | Denmark proper | Kingdom of Denmark | TAN
+    | dk | metropolitan Denmark
 external_ids:
   wikidata: Q35
 parent: kingdom_of_denmark
@@ -61,3 +61,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 36.22
+manual_overrides:
+- consolidation

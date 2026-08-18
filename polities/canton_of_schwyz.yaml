@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 22.24
+prominence_score: 32.24
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -47,9 +47,9 @@ prominence_components:
   relationship_centrality: 0.0
   longevity: 7.24
   editorial_work: 0
-  type_uncertainty_penalty: -10
+  type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 22.24
+  total: 32.24
 manual_overrides:
 - entity_type

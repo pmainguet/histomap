@@ -1,0 +1,26 @@
+id: russian_empire_period
+canonical_name: Russian Empire
+kind: historical
+start: 1721
+end: 1917
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  - north_america
+  present_countries:
+  - RU
+  centroid:
+    lat: 58.65
+    lon: 70.1167
+  confidence: medium
+  primary_continent: europe
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q34266
+notes: Editorially identified as a phase or aspect of Russia.
+source_urls:
+- https://www.wikidata.org/wiki/Q34266

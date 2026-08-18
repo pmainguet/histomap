@@ -6,6 +6,7 @@ from pipeline.filter_wikidata_types import classify
 STRONG_ALLOW = {"Q6256", "Q3624078"}
 CONTEXTUAL_ALLOW = {"Q133442", "Q148837"}
 DENY = {"Q515", "Q1549591", "Q839954"}
+HARD_DENY = {"Q33506"}
 
 
 class WikidataTypeFilterTests(unittest.TestCase):
@@ -15,6 +16,7 @@ class WikidataTypeFilterTests(unittest.TestCase):
             types,
             strong_allow_types=STRONG_ALLOW,
             contextual_allow_types=CONTEXTUAL_ALLOW,
+            hard_deny_types=HARD_DENY,
             deny_types=DENY,
             review_types=set(),
             overrides=overrides or {},
@@ -38,6 +40,9 @@ class WikidataTypeFilterTests(unittest.TestCase):
 
     def test_mixed_modern_city_state_goes_to_review(self) -> None:
         self.assertEqual(self.decide("Q64", {"Q133442", "Q515"}), "review")
+
+    def test_museum_is_excluded_even_with_contextual_political_type(self) -> None:
+        self.assertEqual(self.decide("Q12065255", {"Q148837", "Q33506"}), "excluded")
 
     def test_unknown_type_goes_to_review(self) -> None:
         self.assertEqual(self.decide("Q1", {"Q999"}), "review")

@@ -2,7 +2,7 @@ id: kingdom_of_navarre_q200262
 canonical_name: Kingdom of Navarre
 names:
   fr: royaume de Navarre
-  aliases_en: Kingdom of Pamplona
+  aliases_en: Kingdom of Navarre | Kingdom of Pamplona
 external_ids:
   wikidata: Q200262
 parent: null
@@ -60,3 +60,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 44.87
+manual_overrides:
+- consolidation

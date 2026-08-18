@@ -5,10 +5,8 @@ names:
   aliases_en: Transleithania
 external_ids:
   wikidata: Q696970
-parent: austriahungary
-successors:
-- first_czechoslovak_republic
-- kingdom_of_hungary_q600018
+parent: kingdom_of_hungary_q171150
+successors: []
 region: null
 culture_group: null
 start: 1867
@@ -26,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 21.77
+prominence_score: 31.77
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -38,26 +36,26 @@ geography:
     lat: 47.466666666
     lon: 19.05
   confidence: medium
-entity_type: polity
-entity_type_confidence: low
+entity_type: subdivision
+entity_type_confidence: high
 entity_type_source_qids: []
 relationships:
-- target: austriahungary
-  kind: political_parent
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q696970
 - target: first_czechoslovak_republic
-  kind: political_successor
+  kind: cultural_sequence
   evidence: derived
   confidence: medium
   source_urls:
   - https://www.wikidata.org/wiki/Q696970
 - target: kingdom_of_hungary_q600018
-  kind: political_successor
+  kind: cultural_sequence
   evidence: derived
   confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q696970
+- target: kingdom_of_hungary_q171150
+  kind: administrative_part_of
+  evidence: derived
+  confidence: high
   source_urls:
   - https://www.wikidata.org/wiki/Q696970
 prominence_components:
@@ -67,7 +65,14 @@ prominence_components:
   relationship_centrality: 8.13
   longevity: 4.29
   editorial_work: 0
-  type_uncertainty_penalty: -10
+  type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 21.77
+  total: 31.77
+manual_overrides:
+- entity_type
+- subdivision_parent
+entity_type_reviewed_against:
+- subdivision
+subdivision_parent_status: confirmed
+consolidation_status: part_of

@@ -1,0 +1,21 @@
+id: kingdom_of_hungary_q253094_period
+canonical_name: Kingdom of Hungary
+kind: historical
+start: 1526
+end: 1867
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries: []
+  centroid: null
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q253094
+notes: Editorially identified as a phase or aspect of Kingdom of Hungary.
+source_urls:
+- https://www.wikidata.org/wiki/Q253094

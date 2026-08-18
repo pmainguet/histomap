@@ -1,0 +1,24 @@
+id: aztec_triple_alliance_period
+canonical_name: Aztec Triple Alliance
+kind: historical
+start: 1428
+end: 1521
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - MX
+  centroid:
+    lat: 19.43333333
+    lon: -99.13333333
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q794210
+notes: Editorially identified as a phase or aspect of Aztec Empire.
+source_urls:
+- https://www.wikidata.org/wiki/Q794210

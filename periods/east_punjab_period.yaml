@@ -1,0 +1,22 @@
+id: east_punjab_period
+canonical_name: East Punjab
+kind: historical
+start: 1950
+end: 1966
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - IN
+  centroid: null
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q2354639
+notes: Editorially identified as a phase or aspect of Punjab.
+source_urls:
+- https://www.wikidata.org/wiki/Q2354639

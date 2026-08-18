@@ -1,0 +1,24 @@
+id: kingdom_of_spain_q15238138_period
+canonical_name: Kingdom of Spain
+kind: historical
+start: 1814
+end: 1833
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - europe
+  primary_continent: null
+  present_countries:
+  - ES
+  centroid: null
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q15238138
+notes: Editorially identified as a phase or aspect of Kingdom of Spain.
+source_urls:
+- https://www.wikidata.org/wiki/Q15238138

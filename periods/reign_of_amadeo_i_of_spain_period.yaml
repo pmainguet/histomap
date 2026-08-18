@@ -1,0 +1,24 @@
+id: reign_of_amadeo_i_of_spain_period
+canonical_name: reign of Amadeo I of Spain
+kind: historical
+start: 1871
+end: 1873
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - europe
+  primary_continent: null
+  present_countries:
+  - ES
+  centroid: null
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q6104643
+notes: Editorially identified as a phase or aspect of Spain.
+source_urls:
+- https://www.wikidata.org/wiki/Q6104643

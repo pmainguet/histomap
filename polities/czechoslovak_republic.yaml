@@ -61,3 +61,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 16.46
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: czechoslovak_socialist_republic
+manual_overrides:
+- consolidation

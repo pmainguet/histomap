@@ -1,0 +1,24 @@
+id: commonwealth_realm_of_the_gambia_period
+canonical_name: Commonwealth realm of the Gambia
+kind: historical
+start: 1965
+end: 1970
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  present_countries:
+  - GM
+  centroid:
+    lat: 13.5
+    lon: -15.5
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q7735661
+notes: Editorially identified as a phase or aspect of The Gambia.
+source_urls:
+- https://www.wikidata.org/wiki/Q7735661

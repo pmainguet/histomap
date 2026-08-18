@@ -1,0 +1,21 @@
+id: kingdom_of_poland_q577867_period
+canonical_name: Kingdom of Poland
+kind: historical
+start: 1025
+end: 1385
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries: []
+  centroid: null
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q577867
+notes: Editorially identified as a phase or aspect of Kingdom of Poland.
+source_urls:
+- https://www.wikidata.org/wiki/Q577867

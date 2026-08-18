@@ -2,6 +2,7 @@ id: catalan_state_q42346134
 canonical_name: Catalan State
 names:
   fr: État catalan
+  aliases_en: Catalan State
 external_ids:
   wikidata: Q42346134
 parent: null
@@ -51,3 +52,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 10.95
+manual_overrides:
+- consolidation

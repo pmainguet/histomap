@@ -39,6 +39,7 @@ geography:
     lon: 10.32644723
   confidence: high
 manual_overrides:
+- consolidation
 - entity_type
 - geography
 entity_type: civilization
@@ -56,3 +57,6 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 28.74
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: carthage

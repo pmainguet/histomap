@@ -2,7 +2,7 @@ id: syracuse_q13670
 canonical_name: Syracuse
 names:
   fr: Syracuse
-  aliases_en: Syracusa | Siracusa | Syracus | Syracusae | Syracuse, Sicily
+  aliases_en: Siracusa | Syracus | Syracusa | Syracusae | Syracuse | Syracuse, Sicily
 external_ids:
   wikidata: Q13670
 parent: null
@@ -53,3 +53,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 33.0
+manual_overrides:
+- consolidation

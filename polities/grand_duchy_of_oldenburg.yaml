@@ -58,3 +58,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 20.21
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: duchy_of_oldenburg
+manual_overrides:
+- consolidation

@@ -36,6 +36,7 @@ geography:
   - MD
   confidence: high
 manual_overrides:
+- consolidation
 - geography
 entity_type: polity
 entity_type_confidence: high
@@ -59,3 +60,4 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 31.95
+consolidation_status: independent

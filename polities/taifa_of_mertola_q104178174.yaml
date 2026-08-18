@@ -47,4 +47,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 0
 manual_overrides:
+- consolidation
 - entity_type
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: taifa_of_mertola_q2436604

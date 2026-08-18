@@ -30,14 +30,11 @@ visibility_tier: detailed
 eligibility: review
 geography:
   continents:
-  - africa
-  - antarctica
-  - europe
-  - oceania
+  - asia
+  primary_continent: asia
   present_countries:
-  - FR
-  centroid: null
-  confidence: medium
+  - LB
+  confidence: high
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []
@@ -59,3 +56,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 19.15
+manual_overrides:
+- geography

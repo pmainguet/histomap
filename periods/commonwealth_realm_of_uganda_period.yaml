@@ -1,0 +1,22 @@
+id: commonwealth_realm_of_uganda_period
+canonical_name: Commonwealth realm of Uganda
+kind: historical
+start: 1962
+end: 1963
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  present_countries:
+  - UG
+  centroid: null
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q7877575
+notes: Editorially identified as a phase or aspect of Uganda.
+source_urls:
+- https://www.wikidata.org/wiki/Q7877575

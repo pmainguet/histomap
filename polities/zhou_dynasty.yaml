@@ -60,4 +60,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 38.7
 manual_overrides:
+- consolidation
 - entity_type
+- timeline_role
+timeline_role: entity
+consolidation_status: independent

@@ -1,0 +1,34 @@
+id: seshat_susiana_b_irkhzem
+canonical_name: Susiana B
+external_ids:
+  seshat:
+  - IrKhzEM
+parent: null
+successors: []
+region: unclassified
+geography: {}
+start: -5700
+end: -5101
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -5700: 1.0
+weight_imputed: true
+prominence_score: 3.95
+visibility_tier: detailed
+eligibility: review
+notes: Kept as a separate entity during Seshat reconciliation; requires canonical
+  review.
+sources:
+- seshat
+prominence_components:
+  wikidata_reach: 0.0
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 6.95
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 3.95

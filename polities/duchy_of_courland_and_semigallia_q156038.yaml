@@ -2,6 +2,7 @@ id: duchy_of_courland_and_semigallia_q156038
 canonical_name: Duchy of Courland and Semigallia
 names:
   fr: duché de Courlande
+  aliases_en: Duchy of Courland and Semigallia
 external_ids:
   wikidata: Q156038
 parent: null
@@ -54,3 +55,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 41.65
+manual_overrides:
+- consolidation

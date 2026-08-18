@@ -264,6 +264,60 @@ async function saveEntityType(polity) {
   }
 }
 
+async function savePeriodKind(period) {
+  const editor = details.querySelector("#period-kind-editor");
+  const status = editor.querySelector(".period-kind-save-status");
+  const button = editor.querySelector(".save-period-kind");
+  button.disabled = true;
+  status.textContent = "Saving…";
+  try {
+    const response = await fetch(`/api/periods/${encodeURIComponent(period.id)}/kind`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ kind: editor.querySelector("select").value }),
+    });
+    if (!response.ok) throw new Error((await response.json()).detail || await response.text());
+    const payload = await response.json();
+    period.kind = payload.kind;
+    period.manual_overrides = payload.manual_overrides;
+    render();
+    showPeriodDetails(period, chart.querySelector(`[data-period-id="${period.id}"]`) || detailTrigger);
+    const saved = details.querySelector(".period-kind-save-status");
+    saved.textContent = "Saved and locked against automatic period-type updates.";
+    details.querySelector("#period-kind-editor").hidden = false;
+  } catch (error) {
+    status.textContent = `Could not save: ${error.message}`;
+    button.disabled = false;
+  }
+}
+
+async function promotePeriodToEntity(period) {
+  const editor = details.querySelector("#period-promotion-editor");
+  const status = editor.querySelector(".period-promotion-status");
+  const button = editor.querySelector(".promote-period");
+  button.disabled = true;
+  status.textContent = "Converting…";
+  try {
+    const response = await fetch(`/api/periods/${encodeURIComponent(period.id)}/promote-to-entity`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ entity_type: editor.querySelector("select").value }),
+    });
+    if (!response.ok) throw new Error((await response.json()).detail || await response.text());
+    const payload = await response.json();
+    periods = periods.filter((candidate) => candidate.id !== period.id);
+    periodLinks = periodLinks.filter((link) => link.period_id !== period.id);
+    const existingIndex = polities.findIndex((candidate) => candidate.id === payload.entity_id);
+    if (existingIndex >= 0) polities[existingIndex] = payload.entity;
+    else polities.push(payload.entity);
+    render();
+    navigateToEntity(polities.find((candidate) => candidate.id === payload.entity_id));
+  } catch (error) {
+    status.textContent = `Could not convert: ${error.message}`;
+    button.disabled = false;
+  }
+}
+
 function showDetails(polity, trigger = null) {
   selectedPolity = polity;
   selectedPeriod = null;
@@ -410,14 +464,17 @@ function showPeriodDetails(period, trigger = null) {
   }).filter(Boolean);
   externalLinks.push(...(period.source_urls || []).map((url, index) =>
     `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Source ${index + 1} ↗</a>`));
+  const singleLinkedTypeAction = linked.length === 1
+    ? `<button class="edit-linked-entity-type" data-edit-linked-type="${escapeHtml(linked[0].entity_id)}" type="button">Edit linked entity type</button>`
+    : "";
   details.innerHTML = `<button class="detail-close" type="button" aria-label="Close period details">×</button>
     <p class="detail-kicker">Historical-period context</p>
     <h2>${escapeHtml(period.canonical_name)}</h2>
-    <div class="detail-actions"><button class="zoom-period" type="button">Zoom to period</button><button class="reset-era" type="button">Full timeline</button></div>
+    <div class="detail-actions"><button class="zoom-period" type="button">Zoom to period</button><button class="reset-era" type="button">Full timeline</button><button class="edit-period-kind" type="button">Edit period type</button><button class="convert-period" type="button">Convert to entity</button>${singleLinkedTypeAction}</div>
     <p>${escapeHtml(period.notes || "Sourced chronological context; this record is not a polity.")}</p>
     <dl>
       <dt>Dates</dt><dd>${formatYear(period.start)}–${formatYear(period.end)}</dd>
-      <dt>Period type</dt><dd>${escapeHtml(displayTerm(period.kind))}</dd>
+      <dt>Period type</dt><dd>${escapeHtml(displayTerm(period.kind))}${(period.manual_overrides || []).includes("kind") ? " (manual)" : ""}</dd>
       <dt>Authority</dt><dd>${escapeHtml(period.authority)}</dd>
       <dt>Continents</dt><dd>${escapeHtml((period.geography?.continents || []).map(displayTerm).join(", ") || "unknown")}</dd>
       <dt>Present countries</dt><dd>${escapeHtml(countries.join(", ") || "unknown")}</dd>
@@ -425,9 +482,25 @@ function showPeriodDetails(period, trigger = null) {
       ${contained.length ? `<dt>Contains periods</dt><dd>${contained.map((item) => periodLink(item.id)).join(", ")}</dd>` : ""}
       ${predecessors.length ? `<dt>Preceded by</dt><dd>${predecessors.map((item) => periodLink(item.id)).join(", ")}</dd>` : ""}
       ${(period.successors || []).length ? `<dt>Followed by</dt><dd>${period.successors.map(periodLink).join(", ")}</dd>` : ""}
-      ${linked.length ? `<dt>Linked entities</dt><dd class="detail-links">${linked.map((link) => `${entityLink(link.entity_id)} <small>${escapeHtml(link.evidence)}, ${escapeHtml(link.confidence)}</small>`).join("<br>")}</dd>` : ""}
+      ${linked.length ? `<dt>Linked entities</dt><dd class="detail-links">${linked.map((link) => `${entityLink(link.entity_id)} <small>${escapeHtml(link.evidence)}, ${escapeHtml(link.confidence)}</small> <button type="button" class="entity-link edit-linked-type-inline" data-edit-linked-type="${escapeHtml(link.entity_id)}">edit type</button>`).join("<br>")}</dd>` : ""}
       ${externalLinks.length ? `<dt>External pages</dt><dd class="detail-links">${externalLinks.join("<br>")}</dd>` : ""}
     </dl>
+    <section id="period-kind-editor" class="geography-editor" hidden>
+      <h3>Edit period type</h3>
+      <label>Controlled type
+        <select>${["historical", "archaeological", "protohistorical", "prehistorical"].map((kind) => `<option value="${kind}" ${kind === period.kind ? "selected" : ""}>${escapeHtml(displayTerm(kind))}</option>`).join("")}</select>
+      </label>
+      <p>This classifies the period itself, not the entity linked to it.</p>
+      <div class="geography-editor-actions"><button type="button" class="save-period-kind">Save period type</button><button type="button" class="cancel-period-kind">Cancel</button><span class="period-kind-save-status" role="status"></span></div>
+    </section>
+    <section id="period-promotion-editor" class="geography-editor" hidden>
+      <h3>Convert period to entity</h3>
+      <label>Entity type
+        <select>${["polity", "civilization", "subdivision", "micronation", "culture", "people", "tribe", "archaeological_horizon"].map((type) => `<option value="${type}">${escapeHtml(displayTerm(type))}</option>`).join("")}</select>
+      </label>
+      <p>The period overlay will be removed. Its original entity record will be restored when available; otherwise a new entity will be created from this period.</p>
+      <div class="geography-editor-actions"><button type="button" class="promote-period">Convert to entity</button><button type="button" class="cancel-period-promotion">Cancel</button><span class="period-promotion-status" role="status"></span></div>
+    </section>
     <p class="relationship-hint">Period links provide chronological context only; they do not create polity parent/child relationships.</p>`;
   details.querySelector(".detail-close").addEventListener("click", closeDetails);
   details.querySelector(".zoom-period").addEventListener("click", () => {
@@ -437,9 +510,33 @@ function showPeriodDetails(period, trigger = null) {
     render();
   });
   details.querySelector(".reset-era").addEventListener("click", () => applyEraPreset("full"));
+  const periodKindEditor = details.querySelector("#period-kind-editor");
+  details.querySelector(".edit-period-kind").addEventListener("click", () => {
+    periodKindEditor.hidden = !periodKindEditor.hidden;
+    if (!periodKindEditor.hidden) periodKindEditor.querySelector("select").focus();
+  });
+  periodKindEditor.querySelector(".cancel-period-kind").addEventListener("click", () => { periodKindEditor.hidden = true; });
+  periodKindEditor.querySelector(".save-period-kind").addEventListener("click", () => savePeriodKind(period));
+  const promotionEditor = details.querySelector("#period-promotion-editor");
+  details.querySelector(".convert-period").addEventListener("click", () => {
+    promotionEditor.hidden = !promotionEditor.hidden;
+    if (!promotionEditor.hidden) promotionEditor.querySelector("select").focus();
+  });
+  promotionEditor.querySelector(".cancel-period-promotion").addEventListener("click", () => { promotionEditor.hidden = true; });
+  promotionEditor.querySelector(".promote-period").addEventListener("click", () => promotePeriodToEntity(period));
   details.querySelectorAll("[data-entity-id]").forEach((button) => button.addEventListener("click", () => {
     const entity = polities.find((candidate) => candidate.id === button.dataset.entityId);
     if (entity) navigateToEntity(entity);
+  }));
+  details.querySelectorAll("[data-edit-linked-type]").forEach((button) => button.addEventListener("click", () => {
+    const entity = polities.find((candidate) => candidate.id === button.dataset.editLinkedType);
+    if (!entity) return;
+    navigateToEntity(entity);
+    const editor = details.querySelector("#entity-type-editor");
+    if (editor) {
+      editor.hidden = false;
+      editor.querySelector("select").focus();
+    }
   }));
   details.querySelectorAll("[data-period-id]").forEach((button) => button.addEventListener("click", () => {
     const linkedPeriod = periods.find((candidate) => candidate.id === button.dataset.periodId);
@@ -633,6 +730,12 @@ function render() {
     (!countryInput.value || (period.geography?.present_countries || []).includes(countryInput.value)) &&
     period.start < yearEnd && period.end > yearStart
   ) : [];
+  const phaseParentByPeriod = new Map(
+    periodLinks
+      .filter((link) => ["phase_of", "part_of_periodization"].includes(link.relation))
+      .map((link) => [link.period_id, link.entity_id]),
+  );
+  const broadContextPeriods = contextPeriods.filter((period) => !phaseParentByPeriod.has(period.id));
   matched.sort((a, b) => {
     const groupDifference = geographyOrder.indexOf(geographyGroup(a)) - geographyOrder.indexOf(geographyGroup(b));
     return groupDifference || a.start - b.start || a.canonical_name.localeCompare(b.canonical_name);
@@ -660,7 +763,7 @@ function render() {
         name,
         countryGroups,
         items: countryGroups.flatMap((countryGroup) => countryGroup.items),
-        periods: contextPeriods
+        periods: broadContextPeriods
           .filter((period) => (period.geography?.continents || []).includes(name))
           .sort((a, b) => a.start - b.start || a.canonical_name.localeCompare(b.canonical_name)),
       };
@@ -882,10 +985,64 @@ function render() {
     }
   });
 
+  const visibleEntityIds = new Set(visible.map((polity) => polity.id));
+  const attachedPhases = contextPeriods.filter((period) => {
+    const parentId = phaseParentByPeriod.get(period.id);
+    return parentId && visibleEntityIds.has(parentId);
+  });
+  attachedPhases.forEach((period, index) => {
+    const parentId = phaseParentByPeriod.get(period.id);
+    const center = rowCenters.get(parentId);
+    if (!Number.isFinite(center)) return;
+    const start = Math.max(yearStart, period.start);
+    const end = Math.min(yearEnd, period.end);
+    const bandX = x(start);
+    const bandWidth = Math.max(2, x(end) - bandX);
+    const phaseY = center + rowHeight / 2 - 5;
+    const band = svgElement("rect", {
+      x: bandX,
+      y: phaseY,
+      width: bandWidth,
+      height: 6,
+      rx: 1,
+      class: `period-band attached-phase period-band-${period.kind}`,
+      tabindex: "0",
+      role: "button",
+      "data-period-id": period.id,
+      "data-parent-entity-id": parentId,
+      "aria-label": `${period.canonical_name}, phase of ${polities.find((entity) => entity.id === parentId)?.canonical_name || parentId}, ${formatYear(period.start)} to ${formatYear(period.end)}`,
+    });
+    band.addEventListener("click", () => showPeriodDetails(period, band));
+    band.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        showPeriodDetails(period, band);
+      }
+    });
+    const title = svgElement("title");
+    title.textContent = `${period.canonical_name}: phase of ${polities.find((entity) => entity.id === parentId)?.canonical_name || displayTerm(parentId)} (${formatYear(period.start)}–${formatYear(period.end)})`;
+    band.append(title);
+    svg.append(band);
+    if (bandWidth >= 55) {
+      const label = svgElement("text", {
+        x: bandX + 4,
+        y: phaseY + 5,
+        class: "period-label attached-phase-label",
+        "clip-path": `url(#attached-phase-label-${index})`,
+      });
+      const clipPath = svgElement("clipPath", { id: `attached-phase-label-${index}` });
+      clipPath.append(svgElement("rect", { x: bandX + 2, y: phaseY - 1, width: Math.max(0, bandWidth - 4), height: 8 }));
+      definitions.append(clipPath);
+      label.textContent = period.canonical_name;
+      svg.append(label);
+    }
+  });
+
   chart.replaceChildren(svg);
   colorLegend.innerHTML = `<span>Band color</span>${groups.map((group) => `<i style="--legend-color:${geographyColors[group.name]}"></i>${escapeHtml(displayTerm(group.name))}`).join("")}`;
   const collapsedCount = groups.filter((group) => collapsedGeographies.has(group.name)).length;
-  summary.textContent = `${matched.length} of ${polities.length} polities matched · ${contextPeriods.length} period${contextPeriods.length === 1 ? "" : "s"} shown${collapsedCount ? ` · ${collapsedCount} lane${collapsedCount === 1 ? "" : "s"} collapsed` : ""}`;
+  const shownPeriodCount = broadContextPeriods.length + attachedPhases.length;
+  summary.textContent = `${matched.length} of ${polities.length} polities matched · ${shownPeriodCount} period${shownPeriodCount === 1 ? "" : "s"} shown${collapsedCount ? ` · ${collapsedCount} lane${collapsedCount === 1 ? "" : "s"} collapsed` : ""}`;
 }
 
 document.querySelector("#apply").addEventListener("click", render);

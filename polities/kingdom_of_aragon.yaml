@@ -67,3 +67,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 48.93
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: crown_of_aragon
+manual_overrides:
+- consolidation

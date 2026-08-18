@@ -33,7 +33,7 @@ prominence_components:
   relationship_centrality: 0.0
   longevity: 4.43
   editorial_work: 0
-  type_uncertainty_penalty: -10
+  type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 0

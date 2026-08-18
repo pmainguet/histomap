@@ -57,3 +57,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 13.24
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: malawi
+manual_overrides:
+- consolidation

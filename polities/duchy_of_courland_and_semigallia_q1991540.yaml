@@ -51,3 +51,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 21.56
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: duchy_of_courland_and_semigallia_q156038
+manual_overrides:
+- consolidation

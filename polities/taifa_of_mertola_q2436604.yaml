@@ -2,7 +2,7 @@ id: taifa_of_mertola_q2436604
 canonical_name: Taifa of Mértola
 names:
   fr: taïfa de Mertola
-  aliases_en: Taifa of Mertola
+  aliases_en: Taifa of Mertola | Taifa of Mértola
 external_ids:
   wikidata: Q2436604
 parent: null
@@ -53,3 +53,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 29.83
+manual_overrides:
+- consolidation

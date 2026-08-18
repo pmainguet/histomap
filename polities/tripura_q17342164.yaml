@@ -58,4 +58,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 19.49
 manual_overrides:
+- consolidation
 - entity_type
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: tripura_q1363

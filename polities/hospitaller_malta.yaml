@@ -2,8 +2,9 @@ id: hospitaller_malta
 canonical_name: Hospitaller Malta
 names:
   fr: ordre de Saint-Jean de Jérusalem à Malte
-  aliases_en: Knights' Period | Malta under the Order of Saint John history | Monastic
-    State of the Order of Malta | Order of Saint John of Malta
+  aliases_en: Hospitaller-controlled Malta | Knights' Period | Malta under the Order
+    of Saint John history | Monastic State of the Order of Malta | Order of Saint
+    John of Malta
 external_ids:
   wikidata: Q3355522
 parent: null
@@ -49,3 +50,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 18.72
+manual_overrides:
+- consolidation

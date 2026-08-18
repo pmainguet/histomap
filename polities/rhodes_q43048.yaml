@@ -2,7 +2,7 @@ id: rhodes_q43048
 canonical_name: Rhodes
 names:
   fr: Rhodes
-  aliases_en: Rhodos | Rodos | Rodou | Ρόδος
+  aliases_en: Rhodes | Rhodos | Rodos | Rodou | Ρόδος
 external_ids:
   wikidata: Q43048
 parent: null
@@ -23,8 +23,9 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- hyde
 - wikidata
-prominence_score: 33.0
+prominence_score: 45.0
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -43,12 +44,14 @@ entity_type_source_qids:
 relationships: []
 prominence_components:
   wikidata_reach: 30
-  authority_coverage: 0
-  historical_evidence: 0
+  authority_coverage: 4
+  historical_evidence: 8
   relationship_centrality: 0.0
   longevity: 8
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 33.0
+  total: 45.0
+manual_overrides:
+- consolidation

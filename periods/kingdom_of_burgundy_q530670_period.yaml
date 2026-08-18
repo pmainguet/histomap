@@ -1,0 +1,24 @@
+id: kingdom_of_burgundy_q530670_period
+canonical_name: Kingdom of Burgundy
+kind: historical
+start: 411
+end: 1030
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - FR
+  centroid:
+    lat: 45.0
+    lon: 6.0
+  confidence: low
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q530670
+notes: Editorially identified as a phase or aspect of County of Burgundy.
+source_urls:
+- https://www.wikidata.org/wiki/Q530670

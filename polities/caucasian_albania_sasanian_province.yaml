@@ -5,7 +5,7 @@ names:
   aliases_en: Albania | Arran | Ardhan
 external_ids:
   wikidata: Q3607864
-parent: null
+parent: caucasian_albania
 successors: []
 region: null
 culture_group: null
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 29.65
+prominence_score: 33.15
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -40,19 +40,31 @@ geography:
     lat: 40.98138889
     lon: 47.84583333
   confidence: low
-entity_type: polity
+entity_type: subdivision
 entity_type_confidence: high
-entity_type_source_qids:
-- Q3024240
-relationships: []
+entity_type_source_qids: []
+relationships:
+- target: caucasian_albania
+  kind: administrative_part_of
+  evidence: derived
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q3607864
 prominence_components:
   wikidata_reach: 16.19
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 0.0
+  relationship_centrality: 3.5
   longevity: 6.46
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 29.65
+  total: 33.15
+manual_overrides:
+- entity_type
+- subdivision_parent
+entity_type_reviewed_against:
+- subdivision
+subdivision_parent_status: confirmed
+consolidation_status: part_of

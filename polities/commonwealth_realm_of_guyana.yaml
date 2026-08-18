@@ -55,3 +55,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 15.87
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: guyana
+manual_overrides:
+- consolidation

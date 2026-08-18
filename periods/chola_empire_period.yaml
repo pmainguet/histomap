@@ -1,0 +1,20 @@
+id: chola_empire_period
+canonical_name: Chola Empire
+kind: historical
+start: 848
+end: 1279
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q6806806
+notes: Editorially identified as a phase or aspect of Chola dynasty.
+source_urls:
+- https://www.wikidata.org/wiki/Q6806806

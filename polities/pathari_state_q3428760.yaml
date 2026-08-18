@@ -1,6 +1,7 @@
 id: pathari_state_q3428760
 canonical_name: Pathari state
-names: {}
+names:
+  aliases_en: Pathari State
 external_ids:
   wikidata: Q3428760
 parent: null
@@ -50,4 +51,5 @@ prominence_components:
   aggregate_penalty: 0
   total: 14.02
 manual_overrides:
+- consolidation
 - entity_type

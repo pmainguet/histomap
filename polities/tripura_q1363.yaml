@@ -2,7 +2,7 @@ id: tripura_q1363
 canonical_name: Tripura
 names:
   fr: Tripura
-  aliases_en: IN-TR
+  aliases_en: IN-TR | Tripura
 external_ids:
   wikidata: Q1363
 parent: null
@@ -53,4 +53,5 @@ prominence_components:
   aggregate_penalty: 0
   total: 29.35
 manual_overrides:
+- consolidation
 - entity_type

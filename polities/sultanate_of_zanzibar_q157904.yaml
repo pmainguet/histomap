@@ -2,7 +2,7 @@ id: sultanate_of_zanzibar_q157904
 canonical_name: Sultanate of Zanzibar
 names:
   fr: sultanat de Zanzibar
-  aliases_en: Zanzibar Sultanate
+  aliases_en: Sultanate of Zanzibar | Zanzibar Sultanate
 external_ids:
   wikidata: Q157904
 parent: null
@@ -49,3 +49,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 25.96
+manual_overrides:
+- consolidation

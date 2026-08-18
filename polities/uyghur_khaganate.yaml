@@ -6,6 +6,8 @@ names:
     Country | Toquz Tughluq | Uighur Khaganate | Uyghur Empire
 external_ids:
   wikidata: Q831218
+  seshat:
+  - MnUigur
 parent: null
 successors: []
 region: null
@@ -24,9 +26,10 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
+- seshat
 - wikidata
-prominence_score: 26.42
-visibility_tier: detailed
+prominence_score: 38.42
+visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -44,7 +47,7 @@ entity_type_source_qids:
 relationships: []
 prominence_components:
   wikidata_reach: 26.45
-  authority_coverage: 0
+  authority_coverage: 12
   historical_evidence: 0
   relationship_centrality: 0.0
   longevity: 4.97
@@ -52,4 +55,4 @@ prominence_components:
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 26.42
+  total: 38.42

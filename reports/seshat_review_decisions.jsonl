@@ -8,6 +8,7 @@
 {"seshat_id": "CnHQngL", "decision": "reject"}
 {"seshat_id": "CnJinSA", "decision": "accept", "polity_id": "jin_q912043"}
 {"seshat_id": "CnLrJin", "decision": "accept", "polity_id": "later_jin_1616_1636"}
+{"seshat_id": "CnMing*", "decision": "accept", "polity_id": "ming_dynasty"}
 {"seshat_id": "CnNSong", "decision": "accept", "polity_id": "northern_song_dynasty"}
 {"seshat_id": "CnNWei*", "decision": "reject"}
 {"seshat_id": "CnShang", "decision": "accept", "polity_id": "shang_dynasty"}
@@ -18,6 +19,7 @@
 {"seshat_id": "CnWZhou", "decision": "accept", "polity_id": "western_zhou_q1069609"}
 {"seshat_id": "CnWeiWS", "decision": "accept", "polity_id": "wei_q912052"}
 {"seshat_id": "CnYngsh", "decision": "reject"}
+{"seshat_id": "CnYuan*", "decision": "accept", "polity_id": "yuan_dynasty"}
 {"seshat_id": "CoNahua", "decision": "reject"}
 {"seshat_id": "CoTairo", "decision": "reject"}
 {"seshat_id": "EcJivaE", "decision": "reject"}
@@ -32,6 +34,7 @@
 {"seshat_id": "EgNKRam", "decision": "accept", "polity_id": "ancient_egypt"}
 {"seshat_id": "EgNKThu", "decision": "accept", "polity_id": "ancient_egypt"}
 {"seshat_id": "EgNaqa1", "decision": "reject"}
+{"seshat_id": "EgNaqa2", "decision": "reject"}
 {"seshat_id": "EgNaqa3", "decision": "accept", "polity_id": "ancient_egypt"}
 {"seshat_id": "EgOldK2", "decision": "accept", "polity_id": "old_kingdom_of_egypt"}
 {"seshat_id": "EgPtol1", "decision": "accept", "polity_id": "ptolemaic_kingdom"}
@@ -68,7 +71,9 @@
 {"seshat_id": "GrCrCls", "decision": "reject"}
 {"seshat_id": "GrCrFPa", "decision": "reject"}
 {"seshat_id": "GrCrHel", "decision": "reject"}
+{"seshat_id": "GrCrPPa", "decision": "reject"}
 {"seshat_id": "Hawaii1", "decision": "reject"}
+{"seshat_id": "Hawaii2", "decision": "reject"}
 {"seshat_id": "Hawaii3", "decision": "reject"}
 {"seshat_id": "IdBrokE", "decision": "reject"}
 {"seshat_id": "IdBrokL", "decision": "reject"}
@@ -83,11 +88,13 @@
 {"seshat_id": "InChaKl", "decision": "accept", "polity_id": "chalukya_dynasty"}
 {"seshat_id": "InDecIA", "decision": "reject"}
 {"seshat_id": "InDecKg", "decision": "reject"}
+{"seshat_id": "InDecNL", "decision": "reject"}
 {"seshat_id": "InGangC", "decision": "reject"}
 {"seshat_id": "InGaroE", "decision": "accept", "polity_id": "kingdom_of_garo"}
 {"seshat_id": "InGaroL", "decision": "reject"}
 {"seshat_id": "InGupta", "decision": "accept", "polity_id": "gupta_empire"}
 {"seshat_id": "InGurjr", "decision": "accept", "polity_id": "gurjara_pratihara"}
+{"seshat_id": "InHoysa", "decision": "accept", "polity_id": "hoysala_empire"}
 {"seshat_id": "InKadam", "decision": "accept", "polity_id": "kadamba_dynasty"}
 {"seshat_id": "InKampi", "decision": "accept", "polity_id": "kampili"}
 {"seshat_id": "InKanau", "decision": "accept", "polity_id": "varman_dynasty_of_kannauj"}
@@ -104,6 +111,8 @@
 {"seshat_id": "IrBuyid", "decision": "accept", "polity_id": "buyid_dynasty"}
 {"seshat_id": "IrElym2", "decision": "accept", "polity_id": "elymais"}
 {"seshat_id": "IrIlkhn", "decision": "accept", "polity_id": "ilkhanate"}
+{"seshat_id": "IrKhzE*", "decision": "reject"}
+{"seshat_id": "IrKhzEM", "decision": "reject"}
 {"seshat_id": "IrKhzL*", "decision": "reject"}
 {"seshat_id": "IrKhzM*", "decision": "reject"}
 {"seshat_id": "IrNElm1", "decision": "accept", "polity_id": "elam"}
@@ -124,6 +133,8 @@
 {"seshat_id": "JpAsuka", "decision": "reject"}
 {"seshat_id": "JpAzMom", "decision": "reject"}
 {"seshat_id": "JpHeian", "decision": "reject"}
+{"seshat_id": "JpJomo3", "decision": "reject"}
+{"seshat_id": "JpJomo4", "decision": "reject"}
 {"seshat_id": "JpJomo5", "decision": "reject"}
 {"seshat_id": "JpJomo6", "decision": "reject"}
 {"seshat_id": "JpKofun", "decision": "reject"}
@@ -134,10 +145,12 @@
 {"seshat_id": "KgWTurk", "decision": "accept", "polity_id": "western_turkic_khaganate"}
 {"seshat_id": "KhAngkC", "decision": "reject"}
 {"seshat_id": "KhAngkE", "decision": "reject"}
+{"seshat_id": "KhAngkL", "decision": "reject"}
 {"seshat_id": "KhCambd", "decision": "accept", "polity_id": "khmer_empire"}
 {"seshat_id": "KhChenl", "decision": "accept", "polity_id": "zhenla"}
 {"seshat_id": "KhFunaE", "decision": "accept", "polity_id": "kingdom_of_funan"}
 {"seshat_id": "KhFunaL", "decision": "accept", "polity_id": "kingdom_of_funan"}
+{"seshat_id": "KhMekBA", "decision": "reject"}
 {"seshat_id": "KhMekIA", "decision": "reject"}
 {"seshat_id": "LbAcPho", "decision": "reject"}
 {"seshat_id": "MlJeJe1", "decision": "reject"}
@@ -150,18 +163,24 @@
 {"seshat_id": "MnMongE", "decision": "accept", "polity_id": "khamag_mongol"}
 {"seshat_id": "MnMongL", "decision": "reject"}
 {"seshat_id": "MnTurk2", "decision": "accept", "polity_id": "second_turkic_khaganate"}
+{"seshat_id": "MnUigur", "decision": "accept", "polity_id": "uyghur_khaganate"}
 {"seshat_id": "MnXianb", "decision": "accept", "polity_id": "xianbei_state"}
 {"seshat_id": "MnXngnE", "decision": "reject"}
 {"seshat_id": "MnXngnM", "decision": "accept", "polity_id": "xiongnu"}
 {"seshat_id": "MnZungh", "decision": "accept", "polity_id": "dzungar_khanate"}
 {"seshat_id": "MxAlb1E", "decision": "reject"}
 {"seshat_id": "MxAlb1L", "decision": "reject"}
+{"seshat_id": "MxAlb2*", "decision": "reject"}
 {"seshat_id": "MxAlb3A", "decision": "reject"}
+{"seshat_id": "MxAlb3B", "decision": "reject"}
 {"seshat_id": "MxAlb5*", "decision": "reject"}
 {"seshat_id": "MxClass", "decision": "reject"}
 {"seshat_id": "MxEpicl", "decision": "reject"}
 {"seshat_id": "MxFormE", "decision": "reject"}
+{"seshat_id": "MxFormL", "decision": "reject"}
 {"seshat_id": "MxFormM", "decision": "reject"}
+{"seshat_id": "MxFormT", "decision": "reject"}
+{"seshat_id": "MxInitl", "decision": "reject"}
 {"seshat_id": "MxPostM", "decision": "reject"}
 {"seshat_id": "MxRosar", "decision": "reject"}
 {"seshat_id": "MxSanGu", "decision": "reject"}
@@ -174,22 +193,34 @@
 {"seshat_id": "PeCuzLF", "decision": "reject"}
 {"seshat_id": "PgOrokE", "decision": "reject"}
 {"seshat_id": "PgOrokL", "decision": "reject"}
+{"seshat_id": "PkAcerN", "decision": "reject"}
+{"seshat_id": "PkCeraN", "decision": "reject"}
+{"seshat_id": "PkChalc", "decision": "reject"}
 {"seshat_id": "PkIndGr", "decision": "reject"}
 {"seshat_id": "PkPostU", "decision": "reject"}
+{"seshat_id": "PkPreUr", "decision": "reject"}
 {"seshat_id": "PkProto", "decision": "accept", "polity_id": "kashi_q12660335"}
 {"seshat_id": "PkSind1", "decision": "accept", "polity_id": "abbasid_caliphate"}
 {"seshat_id": "PkSind2", "decision": "reject"}
+{"seshat_id": "PkUrbn1", "decision": "reject"}
+{"seshat_id": "PkUrbn2", "decision": "reject"}
 {"seshat_id": "RuYakuE", "decision": "accept", "polity_id": "sakha"}
 {"seshat_id": "RuYakuL", "decision": "reject"}
 {"seshat_id": "SdKusht", "decision": "accept", "polity_id": "ancient_egypt"}
+{"seshat_id": "TrBrzER", "decision": "reject"}
 {"seshat_id": "TrBrzL2", "decision": "reject"}
 {"seshat_id": "TrByzM3", "decision": "accept", "polity_id": "byzantine_empire"}
+{"seshat_id": "TrClcER", "decision": "reject"}
+{"seshat_id": "TrClcLT", "decision": "reject"}
 {"seshat_id": "TrERom*", "decision": "accept", "polity_id": "byzantine_empire"}
 {"seshat_id": "TrHatNK", "decision": "accept", "polity_id": "hatti"}
 {"seshat_id": "TrHatOK", "decision": "accept", "polity_id": "hatti"}
 {"seshat_id": "TrLydia", "decision": "accept", "polity_id": "lydia"}
 {"seshat_id": "TrLysim", "decision": "reject"}
 {"seshat_id": "TrNHitt", "decision": "reject"}
+{"seshat_id": "TrNeoCR", "decision": "reject"}
+{"seshat_id": "TrNeoER", "decision": "reject"}
+{"seshat_id": "TrNeoLT", "decision": "reject"}
 {"seshat_id": "TrOttm1", "decision": "accept", "polity_id": "ottoman_empire"}
 {"seshat_id": "TrOttm2", "decision": "accept", "polity_id": "ottoman_empire"}
 {"seshat_id": "TrOttm3", "decision": "accept", "polity_id": "ottoman_caliphate"}
@@ -202,6 +233,9 @@
 {"seshat_id": "USKameh", "decision": "reject"}
 {"seshat_id": "USMisEW", "decision": "reject"}
 {"seshat_id": "USMisME", "decision": "reject"}
+{"seshat_id": "USMisMW", "decision": "reject"}
+{"seshat_id": "USMisMu", "decision": "reject"}
+{"seshat_id": "USMisPa", "decision": "reject"}
 {"seshat_id": "USMisRo", "decision": "reject"}
 {"seshat_id": "USMisSd", "decision": "reject"}
 {"seshat_id": "USMisSp", "decision": "reject"}
@@ -209,6 +243,7 @@
 {"seshat_id": "UsIroqE", "decision": "reject"}
 {"seshat_id": "UsIroqL", "decision": "reject"}
 {"seshat_id": "UsIroqP", "decision": "reject"}
+{"seshat_id": "UzChagt", "decision": "accept", "polity_id": "chagatai_khanate"}
 {"seshat_id": "UzKhw01", "decision": "accept", "polity_id": "khwarazmian_empire"}
 {"seshat_id": "UzSogdi", "decision": "reject"}
 {"seshat_id": "YeHmyr1", "decision": "accept", "polity_id": "himyarite_kingdom"}

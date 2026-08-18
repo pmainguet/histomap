@@ -1,0 +1,21 @@
+id: crown_of_the_kingdom_of_poland_period
+canonical_name: Crown of the Kingdom of Poland
+kind: historical
+start: 1386
+end: 1795
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries: []
+  centroid: null
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q171348
+notes: Editorially identified as a phase or aspect of Kingdom of Poland.
+source_urls:
+- https://www.wikidata.org/wiki/Q171348

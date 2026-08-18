@@ -56,3 +56,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 50.57
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: han_q1574130
+manual_overrides:
+- consolidation

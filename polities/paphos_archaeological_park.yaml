@@ -21,12 +21,13 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Automatically generated from Wikidata; requires review.
+notes: Automatically generated from Wikidata; requires review. Editorially discarded
+  as outside Histomap scope.
 sources:
 - wikidata
 prominence_score: 17.17
 visibility_tier: detailed
-eligibility: accepted
+eligibility: excluded
 geography:
   continents:
   - asia
@@ -53,3 +54,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 17.17
+timeline_role: retired
+consolidation_status: discarded
+manual_overrides:
+- consolidation
+- eligibility

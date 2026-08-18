@@ -2,6 +2,7 @@ id: siberian_republic_q1606043
 canonical_name: Siberian Republic
 names:
   fr: République sibérienne
+  aliases_en: Siberian Republic
 external_ids:
   wikidata: Q1606043
 parent: null
@@ -47,3 +48,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 17.29
+manual_overrides:
+- consolidation

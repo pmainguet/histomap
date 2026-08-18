@@ -54,3 +54,8 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 0
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: duchy_of_montalto_q3715868
+manual_overrides:
+- consolidation

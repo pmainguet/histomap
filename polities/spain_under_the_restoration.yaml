@@ -32,15 +32,14 @@ visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
-  - africa
   - europe
+  primary_continent: europe
   present_countries:
   - ES
   centroid:
     lat: 40.2
     lon: -3.5
-  confidence: medium
-  primary_continent: europe
+  confidence: high
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
@@ -63,3 +62,9 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 38.43
+timeline_role: retired
+manual_overrides:
+- consolidation
+- geography
+consolidation_status: phase_of
+consolidated_into: spain

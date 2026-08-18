@@ -1,0 +1,26 @@
+id: second_spanish_republic_period
+canonical_name: Second Spanish Republic
+kind: historical
+start: 1931
+end: 1939
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - europe
+  primary_continent: europe
+  present_countries:
+  - ES
+  centroid:
+    lat: 40.2
+    lon: -3.5
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q178038
+notes: Editorially identified as a phase or aspect of Spain.
+source_urls:
+- https://www.wikidata.org/wiki/Q178038

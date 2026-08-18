@@ -2,7 +2,7 @@ id: russian_republic_q139319
 canonical_name: Russian Republic
 names:
   fr: République russe
-  aliases_en: Republic of Russia
+  aliases_en: Republic of Russia | Russian republic
 external_ids:
   wikidata: Q139319
 parent: null
@@ -54,3 +54,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 30.17
+manual_overrides:
+- consolidation

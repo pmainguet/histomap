@@ -93,6 +93,17 @@ class EntityTypeUpdate(BaseModel):
     ]
 
 
+class PeriodKindUpdate(BaseModel):
+    kind: Literal["historical", "archaeological", "protohistorical", "prehistorical"]
+
+
+class PeriodPromotionUpdate(BaseModel):
+    entity_type: Literal[
+        "polity", "civilization", "subdivision", "micronation", "culture", "people",
+        "tribe", "archaeological_horizon",
+    ]
+
+
 class SubdivisionParentUpdate(BaseModel):
     parent_id: str
 
@@ -102,7 +113,10 @@ class TimelineRoleUpdate(BaseModel):
 
 
 class ConsolidationDecision(BaseModel):
-    decision: Literal["independent", "same_entity", "phase_of"]
+    decision: Literal[
+        "independent", "same_entity", "phase_of", "part_of",
+        "candidate_phase_of", "candidate_part_of", "period", "discarded",
+    ]
     target_id: str | None = None
 
 
@@ -412,21 +426,45 @@ def create_app(root: Path = ROOT) -> FastAPI:
             if len(token) >= 4 and token not in consolidation_stopwords
         }
 
+    def consolidation_names(document: dict) -> set[str]:
+        values = [document.get("canonical_name", "")]
+        for key, value in (document.get("names") or {}).items():
+            values.extend(str(value).split("|") if key == "aliases_en" else [value])
+        return {
+            re.sub(r"[^a-z0-9]+", " ", str(value).casefold()).strip()
+            for value in values if str(value).strip()
+        }
+
     def consolidation_review_queue() -> list[dict]:
+        refresh_period_role_queue()
         active = {
             entity_id: document
             for entity_id, document in metadata.items()
-            if document.get("timeline_role", "entity") != "retired"
+            if document.get("timeline_role", "entity") not in {"retired", "period"}
             and document.get("eligibility") != "excluded"
             and not document.get("consolidation_status")
         }
         token_index: dict[str, set[str]] = {}
+        name_index: dict[str, set[str]] = {}
+        qid_index: dict[str, set[str]] = {}
         tokens_by_id = {}
+        canonical_tokens_by_id = {}
+        names_by_id = {}
         for entity_id, document in active.items():
             tokens = consolidation_tokens(document)
             tokens_by_id[entity_id] = tokens
+            canonical_tokens_by_id[entity_id] = {
+                token for token in re.findall(r"[a-z0-9]+", str(document.get("canonical_name", "")).casefold())
+                if len(token) >= 4 and token not in consolidation_stopwords
+            }
+            names_by_id[entity_id] = consolidation_names(document)
             for token in tokens:
                 token_index.setdefault(token, set()).add(entity_id)
+            for name in names_by_id[entity_id]:
+                name_index.setdefault(name, set()).add(entity_id)
+            qid = (document.get("external_ids") or {}).get("wikidata")
+            if qid:
+                qid_index.setdefault(qid, set()).add(entity_id)
         queue = []
         for entity_id, document in active.items():
             possible = {
@@ -436,6 +474,12 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 for other_id in token_index[token]
                 if other_id != entity_id
             }
+            possible.update(
+                other_id for name in names_by_id[entity_id]
+                for other_id in name_index[name] if other_id != entity_id
+            )
+            source_qid = (document.get("external_ids") or {}).get("wikidata")
+            possible.update(other_id for other_id in qid_index.get(source_qid, set()) if other_id != entity_id)
             candidates = []
             source_name = str(document.get("canonical_name", entity_id))
             source_prominence = float(document.get("prominence_score", 0))
@@ -446,10 +490,9 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 if other_prominence < source_prominence:
                     continue
                 name_score = float(fuzz.WRatio(source_name, str(other.get("canonical_name", other_id))))
-                if name_score < 60:
-                    continue
                 other_countries = set((other.get("geography") or {}).get("present_countries", []))
                 geography_match = bool(source_countries & other_countries)
+                geography_compatible = geography_match or not source_countries or not other_countries
                 date_contains = (
                     other.get("start") is not None
                     and document.get("start") is not None
@@ -460,11 +503,34 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 other_end = other.get("end") if other.get("end") is not None else 2100
                 date_overlap = document.get("start") is not None and other.get("start") is not None and max(document["start"], other["start"]) < min(source_end, other_end)
                 shared_tokens = tokens_by_id[entity_id] & tokens_by_id[other_id]
+                shared_canonical_tokens = canonical_tokens_by_id[entity_id] & canonical_tokens_by_id[other_id]
+                exact_name_match = bool(names_by_id[entity_id] & names_by_id[other_id])
+                same_wikidata = bool(source_qid and source_qid == (other.get("external_ids") or {}).get("wikidata"))
+                if not (
+                    same_wikidata
+                    or exact_name_match
+                    or (
+                        date_overlap and geography_compatible
+                        and ((shared_canonical_tokens and name_score >= 60) or name_score >= 88)
+                    )
+                ):
+                    continue
                 rarity_bonus = max(
                     (max(4, 16 - len(token_index[token])) for token in shared_tokens),
                     default=0,
                 )
-                score = name_score + rarity_bonus + (8 if geography_match else 0) + (8 if date_contains else 0) + (6 if date_overlap else 0)
+                type_match = document.get("entity_type", "polity") == other.get("entity_type", "polity")
+                score = name_score + rarity_bonus + (20 if same_wikidata else 0) + (12 if exact_name_match else 0) + (8 if geography_match else 0) + (8 if date_contains else 0) + (6 if date_overlap else 0) + (4 if type_match else 0)
+                reasons = []
+                if same_wikidata: reasons.append("same Wikidata item")
+                if exact_name_match: reasons.append("exact canonical name or alias")
+                if shared_canonical_tokens: reasons.append(f"shared identity term: {', '.join(sorted(shared_canonical_tokens))}")
+                if geography_match: reasons.append("shared present-day geography")
+                elif not geography_compatible: reasons.append("conflicting geography")
+                if date_contains: reasons.append("target dates contain source")
+                elif date_overlap: reasons.append("dates overlap")
+                else: reasons.append("dates do not overlap")
+                if not type_match: reasons.append("different entity types")
                 candidates.append(
                     {
                         "id": other_id,
@@ -477,6 +543,13 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         "geography_match": geography_match,
                         "date_contains": date_contains,
                         "date_overlap": date_overlap,
+                        "exact_name_match": exact_name_match,
+                        "same_wikidata": same_wikidata,
+                        "type_match": type_match,
+                        "confidence": "high" if same_wikidata or (exact_name_match and geography_compatible) else "medium",
+                        "reasons": reasons,
+                        "present_countries": sorted(other_countries),
+                        "direct_type_qids": sorted(set((direct_types.get((other.get("external_ids") or {}).get("wikidata")) or {}).get("types", []))),
                     }
                 )
             candidates.sort(key=lambda item: (-item["score"], item["canonical_name"]))
@@ -489,10 +562,40 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         "dates": [document.get("start"), document.get("end")],
                         "wikidata": (document.get("external_ids") or {}).get("wikidata"),
                         "prominence_score": source_prominence,
+                        "present_countries": sorted(source_countries),
+                        "direct_type_qids": sorted(set((direct_types.get(source_qid) or {}).get("types", []))),
                         "candidates": candidates[:5],
                     }
                 )
-        queue.sort(key=lambda item: (-item["candidates"][0]["score"], -item["prominence_score"], item["canonical_name"]))
+        queue_by_id = {item["id"]: item for item in queue}
+        for period_record in period_role_queue:
+            document = active.get(period_record["id"])
+            if not document:
+                continue
+            item = queue_by_id.get(period_record["id"])
+            if item is None:
+                qid = (document.get("external_ids") or {}).get("wikidata")
+                item = {
+                    "id": document["id"], "canonical_name": document["canonical_name"],
+                    "entity_type": document.get("entity_type", "polity"),
+                    "dates": [document.get("start"), document.get("end")],
+                    "wikidata": qid,
+                    "prominence_score": float(document.get("prominence_score", 0)),
+                    "present_countries": sorted((document.get("geography") or {}).get("present_countries", [])),
+                    "direct_type_qids": sorted(set((direct_types.get(qid) or {}).get("types", []))),
+                    "candidates": [],
+                }
+                queue.append(item)
+                queue_by_id[item["id"]] = item
+            item["period_role_candidate"] = True
+            item["period_kinds"] = period_record.get("period_kinds", [])
+            item["period_reason"] = period_record.get("reason", "Ambiguous entity and period role")
+        queue.sort(key=lambda item: (
+            0 if item["candidates"] and item["candidates"][0]["confidence"] == "high" else 1,
+            0 if item["candidates"] else 1,
+            -(item["candidates"][0]["score"] if item["candidates"] else 0),
+            -item["prominence_score"], item["canonical_name"],
+        ))
         return queue
 
     def save_consolidation(entity_id: str, decision: str, target_id: str | None) -> dict:
@@ -505,6 +608,22 @@ def create_app(root: Path = ROOT) -> FastAPI:
             (polities_dir / f"{entity_id}.yaml").write_text(
                 yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
             )
+            return document
+        if decision == "discarded":
+            document["timeline_role"] = "retired"
+            document["eligibility"] = "excluded"
+            document["consolidation_status"] = "discarded"
+            document["manual_overrides"] = sorted(
+                set(document.get("manual_overrides", [])) | {"consolidation", "eligibility"}
+            )
+            document["notes"] = (
+                document.get("notes", "").rstrip()
+                + " Editorially discarded as outside Histomap scope."
+            ).strip()
+            (polities_dir / f"{entity_id}.yaml").write_text(
+                yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
+            )
+            metadata[entity_id] = document
             return document
         target = metadata.get(target_id or "")
         if not target or target_id == entity_id or target.get("timeline_role") == "retired":
@@ -558,9 +677,9 @@ def create_app(root: Path = ROOT) -> FastAPI:
             if not any(link.get("period_id") == period_id and link.get("entity_id") == target_id for link in links):
                 links.append({
                     "period_id": period_id, "entity_id": target_id,
-                    "relation": "part_of_periodization", "evidence": "explicit",
+                    "relation": "phase_of", "evidence": "explicit",
                     "confidence": "high", "source_urls": source_urls,
-                    "notes": "Created by an editorial entity-consolidation decision.",
+                    "notes": "Reviewed record is a dated phase of this canonical polity.",
                 })
                 links_path.write_text(yaml.safe_dump(links, sort_keys=False, allow_unicode=True), encoding="utf-8")
         (polities_dir / f"{entity_id}.yaml").write_text(
@@ -633,6 +752,11 @@ def create_app(root: Path = ROOT) -> FastAPI:
             if candidate_id == polity_id:
                 continue
             candidate_changed = False
+            if any(
+                relationship.get("target") == polity_id
+                for relationship in candidate.get("relationships") or []
+            ):
+                candidate_changed = True
             if candidate.get("parent") == polity_id:
                 add_typed_relationship(candidate, document, "parent")
                 candidate_changed = True
@@ -649,6 +773,23 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 changed.add(candidate_id)
         for changed_id in changed:
             changed_document = metadata[changed_id]
+            normalized_relationships = []
+            seen_relationships = set()
+            for relationship in changed_document.get("relationships") or []:
+                relationship = dict(relationship)
+                target = metadata.get(relationship.get("target"))
+                if target:
+                    relationship["kind"] = normalized_relationship_kind(
+                        changed_document.get("entity_type", "polity"),
+                        target.get("entity_type", "polity"),
+                        relationship["kind"],
+                    )
+                key = (relationship.get("kind"), relationship.get("target"))
+                if key in seen_relationships:
+                    continue
+                seen_relationships.add(key)
+                normalized_relationships.append(relationship)
+            changed_document["relationships"] = normalized_relationships
             (polities_dir / f"{changed_id}.yaml").write_text(
                 yaml.safe_dump(changed_document, sort_keys=False, allow_unicode=True), encoding="utf-8"
             )
@@ -789,8 +930,8 @@ def create_app(root: Path = ROOT) -> FastAPI:
         return FileResponse(web_dir / "subdivision_review.html")
 
     @application.get("/period-review", include_in_schema=False)
-    async def period_review_page() -> FileResponse:
-        return FileResponse(web_dir / "period_review.html")
+    async def period_review_page() -> RedirectResponse:
+        return RedirectResponse("/consolidation-review", status_code=307)
 
     @application.get("/data.json", include_in_schema=False)
     async def data() -> FileResponse:
@@ -829,10 +970,10 @@ def create_app(root: Path = ROOT) -> FastAPI:
     async def review_dashboard() -> dict:
         refresh_type_review_queue()
         refresh_period_role_queue()
-        consolidation_total = len(consolidation_review_queue())
+        consolidation_queue = consolidation_review_queue()
         return {
             "pipelines": {
-                "consolidation": consolidation_total,
+                "consolidation": len(consolidation_queue),
                 "entity_type": len(type_review_queue),
                 "subdivision_parent": sum(
                     1 for document in metadata.values()
@@ -840,9 +981,15 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     and document.get("entity_type") == "subdivision"
                     and document.get("subdivision_parent_status", "pending") != "confirmed"
                 ),
-                "period_role": len(period_role_queue),
                 "source_matching": len(review_queue),
-            }
+            },
+            "breakdowns": {
+                "consolidation": {
+                    "high": sum(1 for item in consolidation_queue if item["candidates"] and item["candidates"][0]["confidence"] == "high"),
+                    "medium": sum(1 for item in consolidation_queue if item["candidates"] and item["candidates"][0]["confidence"] == "medium"),
+                    "period_role": sum(1 for item in consolidation_queue if item.get("period_role_candidate")),
+                }
+            },
         }
 
     @application.get("/api/consolidation-reviews")
@@ -854,6 +1001,60 @@ def create_app(root: Path = ROOT) -> FastAPI:
 
     @application.post("/api/consolidation-reviews/{entity_id}")
     async def decide_consolidation_review(entity_id: str, request: ConsolidationDecision) -> dict:
+        refresh_period_role_queue()
+        period_record = next((item for item in period_role_queue if item["id"] == entity_id), None)
+        if request.decision in {"candidate_phase_of", "candidate_part_of"}:
+            candidate_id = request.target_id or ""
+            candidate = metadata.get(candidate_id)
+            reviewed = metadata.get(entity_id)
+            if not candidate or not reviewed or candidate_id == entity_id:
+                raise HTTPException(422, "target_id must identify another active entity")
+            if request.decision == "candidate_phase_of":
+                save_consolidation(candidate_id, "phase_of", entity_id)
+            else:
+                if reviewed.get("entity_type", "polity") != "polity":
+                    raise HTTPException(422, "A constituent-part parent must be a polity")
+                save_entity_type(candidate_id, "subdivision", "subdivision")
+                candidate = save_subdivision_parent(candidate_id, entity_id)
+                candidate["consolidation_status"] = "part_of"
+                (polities_dir / f"{candidate_id}.yaml").write_text(
+                    yaml.safe_dump(candidate, sort_keys=False, allow_unicode=True), encoding="utf-8"
+                )
+                metadata[candidate_id] = candidate
+            if period_record is not None:
+                save_timeline_role(entity_id, "entity", period_record.get("period_kinds", []))
+            save_consolidation(entity_id, "independent", None)
+            return {
+                "status": "saved", "entity_id": entity_id,
+                "decision": request.decision, "target_id": candidate_id,
+            }
+        if request.decision == "period":
+            result = save_timeline_role(
+                entity_id,
+                request.decision,
+                period_record.get("period_kinds", []) if period_record else [],
+            )
+            return {
+                "status": "saved", "entity_id": entity_id, "decision": request.decision,
+                "target_id": None, "period_id": result["period_id"],
+            }
+        if request.decision == "independent" and period_record is not None:
+            save_timeline_role(entity_id, "entity", period_record.get("period_kinds", []))
+        if request.decision == "part_of":
+            target = metadata.get(request.target_id or "")
+            if not target or target.get("entity_type", "polity") != "polity":
+                raise HTTPException(422, "Part-of target must be a canonical polity")
+            save_entity_type(entity_id, "subdivision", "subdivision")
+            document = save_subdivision_parent(entity_id, request.target_id)
+            document["consolidation_status"] = "part_of"
+            (polities_dir / f"{entity_id}.yaml").write_text(
+                yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
+            )
+            metadata[entity_id] = document
+            return {
+                "status": "saved", "entity_id": entity_id, "decision": "part_of",
+                "target_id": request.target_id,
+            }
         document = save_consolidation(entity_id, request.decision, request.target_id)
         return {
             "status": "saved", "entity_id": entity_id,
@@ -998,6 +1199,101 @@ def create_app(root: Path = ROOT) -> FastAPI:
             "entity_type": request.entity_type,
             "entity_type_confidence": "high",
             "manual_overrides": document["manual_overrides"],
+        }
+
+    @application.patch("/api/periods/{period_id}/kind")
+    async def update_period_kind(period_id: str, request: PeriodKindUpdate) -> dict:
+        path = root / "periods" / f"{period_id}.yaml"
+        if not path.exists():
+            raise HTTPException(404, "Unknown Histomap period")
+        document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        if document.get("id") != period_id:
+            raise HTTPException(409, "Period file ID does not match requested period")
+        document["kind"] = request.kind
+        manual_overrides = set(document.get("manual_overrides", []))
+        manual_overrides.add("kind")
+        document["manual_overrides"] = sorted(manual_overrides)
+        path.write_text(
+            yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
+        )
+        return {
+            "status": "saved",
+            "period_id": period_id,
+            "kind": request.kind,
+            "manual_overrides": document["manual_overrides"],
+        }
+
+    @application.post("/api/periods/{period_id}/promote-to-entity")
+    async def promote_period_to_entity(period_id: str, request: PeriodPromotionUpdate) -> dict:
+        period_path = root / "periods" / f"{period_id}.yaml"
+        if not period_path.exists():
+            raise HTTPException(404, "Unknown Histomap period")
+        period = yaml.safe_load(period_path.read_text(encoding="utf-8")) or {}
+        if period.get("id") != period_id:
+            raise HTTPException(409, "Period file ID does not match requested period")
+
+        entity_id = period_id.removesuffix("_period")
+        entity_path = polities_dir / f"{entity_id}.yaml"
+        if entity_path.exists():
+            entity = yaml.safe_load(entity_path.read_text(encoding="utf-8")) or {}
+        else:
+            qid = (period.get("external_ids") or {}).get("wikidata")
+            entity = {
+                "id": entity_id,
+                "canonical_name": period["canonical_name"],
+                "names": {},
+                "external_ids": {"wikidata": qid} if qid else {},
+                "parent": None,
+                "successors": [],
+                "region": None,
+                "culture_group": None,
+                "start": period["start"],
+                "end": period["end"],
+                "start_confidence": period.get("start_confidence", "low"),
+                "end_confidence": period.get("end_confidence", "low"),
+                "weight_by_era": {},
+                "weight_imputed": True,
+                "icon": None,
+                "text": {"short_child_en": "", "short_adult_en": "", "long_en": ""},
+                "notes": period.get("notes", "Promoted from a Histomap period."),
+                "sources": ["wikidata"] if qid else ["histomap_editorial"],
+                "prominence_score": 0,
+                "visibility_tier": "detailed",
+                "eligibility": "accepted",
+                "geography": period.get("geography") or {},
+                "relationships": [],
+            }
+        entity.update({
+            "entity_type": request.entity_type,
+            "entity_type_confidence": "high",
+            "entity_type_source_qids": [],
+            "timeline_role": "entity",
+            "eligibility": "accepted",
+        })
+        entity.pop("consolidation_status", None)
+        entity.pop("consolidated_into", None)
+        entity["manual_overrides"] = sorted(
+            set(entity.get("manual_overrides", [])) | {"consolidation", "entity_type", "timeline_role"}
+        )
+        if request.entity_type == "subdivision":
+            entity["subdivision_parent_status"] = "pending"
+        else:
+            entity.pop("subdivision_parent_status", None)
+        entity_path.write_text(
+            yaml.safe_dump(entity, sort_keys=False, allow_unicode=True), encoding="utf-8"
+        )
+        metadata[entity_id] = entity
+
+        links_path = root / "period_links.yaml"
+        links = yaml.safe_load(links_path.read_text(encoding="utf-8")) if links_path.exists() else []
+        links = [link for link in (links or []) if link.get("period_id") != period_id]
+        links_path.write_text(yaml.safe_dump(links, sort_keys=False, allow_unicode=True), encoding="utf-8")
+        period_path.unlink()
+        return {
+            "status": "saved",
+            "period_id": period_id,
+            "entity_id": entity_id,
+            "entity": entity,
         }
 
     @application.post("/api/reviews/{seshat_id}")

@@ -73,6 +73,7 @@ class UnifiedServerTests(unittest.TestCase):
         (self.root / "web").mkdir()
         (self.root / "reports").mkdir()
         (self.root / "polities").mkdir()
+        (self.root / "periods").mkdir()
         (self.root / "sources").mkdir()
         (self.root / "sources" / "wikidata_country_metadata.json").write_text(
             json.dumps({"Q142": {"iso2": "FR", "label": "France", "continents": ["europe"]}}),
@@ -90,6 +91,7 @@ class UnifiedServerTests(unittest.TestCase):
             "type_review.js", "subdivision_review.js", "period_review.js",
             "subdivision_review.html",
             "reviews.html", "reviews.js", "consolidation_review.html", "consolidation_review.js",
+            "review_build.js",
         ):
             (self.root / "web" / name).write_text(name, encoding="utf-8")
         (self.root / "data.json").write_text("[]", encoding="utf-8")
@@ -194,13 +196,66 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(self.client.get("/period_links.json").json(), [])
 
     def test_review_dashboard_lists_pipeline_counts(self) -> None:
-        payload = self.client.get("/api/review-dashboard").json()["pipelines"]
+        response = self.client.get("/api/review-dashboard").json()
+        payload = response["pipelines"]
 
         self.assertEqual(payload["entity_type"], 1)
         self.assertEqual(payload["source_matching"], 1)
         self.assertIn("consolidation", payload)
         self.assertIn("subdivision_parent", payload)
-        self.assertIn("period_role", payload)
+        self.assertNotIn("period_role", payload)
+        self.assertIn("consolidation", response["breakdowns"])
+        self.assertEqual(response["breakdowns"]["consolidation"]["period_role"], 1)
+
+    def test_combined_identity_queue_handles_period_only_decision(self) -> None:
+        queue = self.client.get("/api/consolidation-reviews").json()["items"]
+        candidate = next(item for item in queue if item["id"] == "candidate")
+        self.assertTrue(candidate["period_role_candidate"])
+
+        response = self.client.post(
+            "/api/consolidation-reviews/candidate", json={"decision": "period"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        saved = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(saved["timeline_role"], "period")
+        self.assertTrue((self.root / "periods" / "candidate_period.yaml").exists())
+
+    def test_combined_identity_queue_allows_broad_period_without_old_period_flag(self) -> None:
+        response = self.client.post(
+            "/api/consolidation-reviews/container", json={"decision": "period"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        saved = yaml.safe_load((self.root / "polities" / "container.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(saved["timeline_role"], "period")
+        self.assertTrue((self.root / "periods" / "container_period.yaml").exists())
+
+    def test_consolidation_uses_identity_evidence_not_alias_token_noise(self) -> None:
+        base = {
+            "entity_type": "polity", "entity_type_confidence": "high",
+            "start_confidence": "low", "end_confidence": "low",
+            "sources": ["wikidata"], "eligibility": "accepted",
+        }
+        documents = [
+            {**base, "id": "rhodes_old", "canonical_name": "Rhodes", "names": {"aliases_en": "Ancient Rhodes"}, "start": -407, "end": 500, "prominence_score": 20, "geography": {"present_countries": ["GR"]}},
+            {**base, "id": "rhodes_main", "canonical_name": "Rhodes", "names": {"aliases_en": "Rhodos"}, "start": -1600, "end": None, "prominence_score": 30, "geography": {"present_countries": ["GR"]}},
+            {**base, "id": "appenzell", "canonical_name": "Canton of Appenzell Ausserrhoden", "names": {"aliases_en": "Appenzell Outer Rhodes"}, "start": 1513, "end": None, "prominence_score": 25, "geography": {"present_countries": ["CH"]}},
+            {**base, "id": "ottoman_caliphate", "canonical_name": "Ottoman Caliphate", "start": 1517, "end": 1924, "prominence_score": 20, "geography": {"present_countries": []}},
+            {**base, "id": "ottoman_empire", "canonical_name": "Ottoman Empire", "start": 1299, "end": 1922, "prominence_score": 40, "geography": {"present_countries": ["TR"]}},
+        ]
+        for document in documents:
+            (self.root / "polities" / f"{document['id']}.yaml").write_text(
+                yaml.safe_dump(document), encoding="utf-8"
+            )
+        client = TestClient(create_app(self.root))
+        queue = client.get("/api/consolidation-reviews", params={"limit": 100}).json()["items"]
+
+        rhodes = next(item for item in queue if item["id"] == "rhodes_old")
+        self.assertIn("rhodes_main", [item["id"] for item in rhodes["candidates"]])
+        self.assertNotIn("appenzell", [item["id"] for item in rhodes["candidates"]])
+        ottoman = next(item for item in queue if item["id"] == "ottoman_caliphate")
+        self.assertIn("ottoman_empire", [item["id"] for item in ottoman["candidates"]])
 
     def test_keeps_consolidation_candidate_independent(self) -> None:
         response = self.client.post(
@@ -210,6 +265,18 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         saved = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
         self.assertEqual(saved["consolidation_status"], "independent")
+
+    def test_discards_out_of_scope_entity_without_deleting_audit_record(self) -> None:
+        response = self.client.post(
+            "/api/consolidation-reviews/candidate", json={"decision": "discarded"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        saved = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(saved["eligibility"], "excluded")
+        self.assertEqual(saved["timeline_role"], "retired")
+        self.assertEqual(saved["consolidation_status"], "discarded")
+        self.assertFalse(any(item["id"] == "candidate" for item in self.client.get("/api/consolidation-reviews").json()["items"]))
 
     def test_converts_entity_phase_to_period_linked_to_target(self) -> None:
         response = self.client.post(
@@ -223,7 +290,50 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(saved["consolidated_into"], "container")
         self.assertTrue((self.root / "periods" / "candidate_period.yaml").exists())
         links = yaml.safe_load((self.root / "period_links.yaml").read_text(encoding="utf-8"))
-        self.assertTrue(any(link["period_id"] == "candidate_period" and link["entity_id"] == "container" for link in links))
+        phase_link = next(link for link in links if link["period_id"] == "candidate_period" and link["entity_id"] == "container")
+        self.assertEqual(phase_link["relation"], "phase_of")
+
+    def test_keeps_constituent_as_subdivision_of_candidate(self) -> None:
+        response = self.client.post(
+            "/api/consolidation-reviews/candidate",
+            json={"decision": "part_of", "target_id": "container"},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        saved = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(saved["entity_type"], "subdivision")
+        self.assertEqual(saved["parent"], "container")
+        self.assertEqual(saved["subdivision_parent_status"], "confirmed")
+        self.assertEqual(saved["consolidation_status"], "part_of")
+        self.assertTrue(any(item["kind"] == "administrative_part_of" and item["target"] == "container" for item in saved["relationships"]))
+
+    def test_marks_candidate_as_phase_of_reviewed_entity(self) -> None:
+        response = self.client.post(
+            "/api/consolidation-reviews/candidate",
+            json={"decision": "candidate_phase_of", "target_id": "container"},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        candidate = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        inverse = yaml.safe_load((self.root / "polities" / "container.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(candidate["consolidation_status"], "independent")
+        self.assertEqual(inverse["consolidated_into"], "candidate")
+        links = yaml.safe_load((self.root / "period_links.yaml").read_text(encoding="utf-8"))
+        self.assertTrue(any(link["period_id"] == "container_period" and link["entity_id"] == "candidate" and link["relation"] == "phase_of" for link in links))
+
+    def test_marks_candidate_as_constituent_part_of_reviewed_entity(self) -> None:
+        response = self.client.post(
+            "/api/consolidation-reviews/candidate",
+            json={"decision": "candidate_part_of", "target_id": "container"},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        candidate = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        inverse = yaml.safe_load((self.root / "polities" / "container.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(candidate["consolidation_status"], "independent")
+        self.assertEqual(inverse["entity_type"], "subdivision")
+        self.assertEqual(inverse["parent"], "candidate")
+        self.assertEqual(inverse["consolidation_status"], "part_of")
 
     def test_merges_duplicate_identity_without_deleting_source(self) -> None:
         response = self.client.post(
@@ -359,6 +469,61 @@ class UnifiedServerTests(unittest.TestCase):
         )
         self.assertEqual(saved["entity_type_confidence"], "high")
         self.assertIn("entity_type", saved["manual_overrides"])
+
+    def test_updates_and_locks_period_kind(self) -> None:
+        period_path = self.root / "periods" / "test_period.yaml"
+        period_path.write_text(
+            yaml.safe_dump({"id": "test_period", "canonical_name": "Test", "kind": "historical"}),
+            encoding="utf-8",
+        )
+
+        response = self.client.patch(
+            "/api/periods/test_period/kind", json={"kind": "archaeological"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["kind"], "archaeological")
+        saved = yaml.safe_load(period_path.read_text(encoding="utf-8"))
+        self.assertEqual(saved["kind"], "archaeological")
+        self.assertIn("kind", saved["manual_overrides"])
+
+    def test_rejects_unknown_period_kind_update(self) -> None:
+        response = self.client.patch(
+            "/api/periods/missing/kind", json={"kind": "historical"}
+        )
+
+        self.assertEqual(response.status_code, 404)
+
+    def test_promotes_period_by_restoring_original_entity(self) -> None:
+        period_path = self.root / "periods" / "candidate_period.yaml"
+        period_path.write_text(
+            yaml.safe_dump({
+                "id": "candidate_period", "canonical_name": "Candidate", "kind": "historical",
+                "start": 90, "end": 210, "authority": "Editorial", "source_urls": ["https://example.test"],
+            }),
+            encoding="utf-8",
+        )
+        entity_path = self.root / "polities" / "candidate.yaml"
+        entity = yaml.safe_load(entity_path.read_text(encoding="utf-8"))
+        entity.update({"timeline_role": "retired", "consolidation_status": "phase_of", "consolidated_into": "container"})
+        entity_path.write_text(yaml.safe_dump(entity), encoding="utf-8")
+        (self.root / "period_links.yaml").write_text(
+            yaml.safe_dump([{"period_id": "candidate_period", "entity_id": "container"}]), encoding="utf-8"
+        )
+
+        response = self.client.post(
+            "/api/periods/candidate_period/promote-to-entity", json={"entity_type": "civilization"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["entity_id"], "candidate")
+        saved = yaml.safe_load(entity_path.read_text(encoding="utf-8"))
+        self.assertEqual(saved["timeline_role"], "entity")
+        self.assertEqual(saved["entity_type"], "civilization")
+        self.assertNotIn("consolidation_status", saved)
+        self.assertNotIn("consolidated_into", saved)
+        self.assertFalse(period_path.exists())
+        self.assertEqual(yaml.safe_load((self.root / "period_links.yaml").read_text(encoding="utf-8")), [])
 
     def test_lists_and_saves_entity_type_review(self) -> None:
         payload = self.client.get("/api/type-reviews").json()

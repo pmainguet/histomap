@@ -1,0 +1,24 @@
+id: german_reich_period
+canonical_name: German Reich
+kind: historical
+start: 1871
+end: 1949
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - DE
+  centroid:
+    lat: 52.52
+    lon: 13.375
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q1206012
+notes: Editorially identified as a phase or aspect of German Empire.
+source_urls:
+- https://www.wikidata.org/wiki/Q1206012

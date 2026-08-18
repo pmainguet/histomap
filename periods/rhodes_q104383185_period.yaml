@@ -1,0 +1,20 @@
+id: rhodes_q104383185_period
+canonical_name: Rhodes
+kind: historical
+start: -407
+end: -333
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q104383185
+notes: Editorially identified as a phase or aspect of Rhodes.
+source_urls:
+- https://www.wikidata.org/wiki/Q104383185

@@ -1,0 +1,25 @@
+id: union_of_south_africa_period
+canonical_name: Union of South Africa
+kind: historical
+start: 1910
+end: 1961
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  primary_continent: africa
+  present_countries:
+  - ZA
+  centroid:
+    lat: -29.0
+    lon: 24.0
+  confidence: low
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q193619
+notes: Editorially identified as a phase or aspect of South Africa.
+source_urls:
+- https://www.wikidata.org/wiki/Q193619

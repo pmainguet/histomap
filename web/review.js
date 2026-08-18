@@ -67,7 +67,7 @@ async function loadNext() {
   const alternateName = current.seshat_long_name && current.seshat_long_name !== current.seshat_name
     ? `<dt>Seshat long name</dt><dd>${escapeHtml(current.seshat_long_name)}</dd>`
     : "";
-  card.innerHTML = `<p class="review-rank">Source record to reconcile</p>
+  card.innerHTML = `<p class="review-rank"><span class="record-badge source">Seshat source</span> Incoming record to reconcile</p>
     <h2>${escapeHtml(current.seshat_name)}</h2>
     <p class="source-explanation">This name and date range come from the <strong>Seshat Equinox dataset</strong>. Decide whether it represents one of the existing Histomap records below.</p>
     <dl class="source-facts"><dt>Source</dt><dd>Seshat Global History Databank</dd>
@@ -80,7 +80,7 @@ async function loadNext() {
       <dt>Impact of proposed candidates</dt><dd>${parts.candidate_impact.toFixed(0)} / 100</dd>
       <dt>Best match quality</dt><dd>${parts.quality.toFixed(0)} / 100</dd>
       <dt>Ambiguity requiring review</dt><dd>${parts.ambiguity.toFixed(0)} / 100</dd></dl></details>
-    <h3 class="candidate-heading">Possible existing Histomap records</h3>
+    <h3 class="candidate-heading"><span class="record-badge">Histomap entities</span> Possible canonical matches</h3>
     <div class="candidate-list">${current.candidates.map(candidateMarkup).join("")}</div>
     <section class="all-entity-search">
       <h3>Search all Histomap entities</h3>

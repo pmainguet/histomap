@@ -1,0 +1,24 @@
+id: principality_of_lippe_period
+canonical_name: Principality of Lippe
+kind: historical
+start: 1789
+end: 1918
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - DE
+  centroid:
+    lat: 51.93609
+    lon: 8.877296
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q14551680
+notes: Editorially identified as a phase or aspect of Lippe.
+source_urls:
+- https://www.wikidata.org/wiki/Q14551680

@@ -2,7 +2,8 @@ id: donetsk_people_s_republic_q16150196
 canonical_name: Donetsk People's Republic
 names:
   fr: république populaire de Donetsk
-  aliases_en: DPR | Donetsk Republic | the Donetsk People's Republic
+  aliases_en: DPR | Donetsk People's Republic | Donetsk Republic | the Donetsk People's
+    Republic
 external_ids:
   wikidata: Q16150196
 parent: null
@@ -54,3 +55,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 16.75
+manual_overrides:
+- consolidation

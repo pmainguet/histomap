@@ -1,8 +1,8 @@
 # Prominence and visibility
 
 - Global: 97
-- Regional: 699
-- Detailed: 3,843
+- Regional: 700
+- Detailed: 3,872
 - Global absolute shortlist: 60
 - Global per continent/era: 2
 - Regional absolute shortlist: 600

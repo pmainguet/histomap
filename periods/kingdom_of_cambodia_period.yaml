@@ -1,0 +1,22 @@
+id: kingdom_of_cambodia_period
+canonical_name: Kingdom of Cambodia
+kind: historical
+start: 1953
+end: 1970
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - KH
+  centroid: null
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q2638486
+notes: Editorially identified as a phase or aspect of Cambodia.
+source_urls:
+- https://www.wikidata.org/wiki/Q2638486

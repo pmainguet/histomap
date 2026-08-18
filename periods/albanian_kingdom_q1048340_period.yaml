@@ -1,0 +1,24 @@
+id: albanian_kingdom_q1048340_period
+canonical_name: Albanian Kingdom
+kind: historical
+start: 1928
+end: 1939
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - AL
+  centroid:
+    lat: 41.0
+    lon: 20.0
+  confidence: low
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q1048340
+notes: Editorially identified as a phase or aspect of Albania.
+source_urls:
+- https://www.wikidata.org/wiki/Q1048340

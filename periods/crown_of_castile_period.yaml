@@ -1,0 +1,26 @@
+id: crown_of_castile_period
+canonical_name: Crown of Castile
+kind: historical
+start: 1230
+end: 1715
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - europe
+  primary_continent: europe
+  present_countries:
+  - ES
+  centroid:
+    lat: 40.4175
+    lon: -3.715
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q217196
+notes: Editorially identified as a phase or aspect of Kingdom of Castile.
+source_urls:
+- https://www.wikidata.org/wiki/Q217196

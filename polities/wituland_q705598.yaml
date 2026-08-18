@@ -2,7 +2,7 @@ id: wituland_q705598
 canonical_name: Wituland
 names:
   fr: Swahililand
-  aliases_en: Vitu | Witu | Swahililand | Witu Protectorate
+  aliases_en: Swahililand | Vitu | Witu | Witu Protectorate | Wituland
 external_ids:
   wikidata: Q705598
 parent: null
@@ -48,3 +48,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 19.22
+manual_overrides:
+- consolidation

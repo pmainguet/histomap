@@ -2,8 +2,8 @@ id: qi_q837855
 canonical_name: Qi
 names:
   fr: État Qí
-  aliases_en: Chi | Ch'i | Tsi | State of Qi | Ch'i-kuo | Chi-kuo | Kingdom of Qi
-    | Qiguo
+  aliases_en: Ch'i | Ch'i-kuo | Chi | Chi-kuo | Kingdom of Qi | Qi | Qiguo | State
+    of Qi | Tsi
 external_ids:
   wikidata: Q837855
 parent: null
@@ -54,3 +54,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 42.81
+manual_overrides:
+- consolidation

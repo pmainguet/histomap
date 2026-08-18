@@ -46,4 +46,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 15.34
 manual_overrides:
+- consolidation
 - entity_type
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: eastern_zhou_q307066

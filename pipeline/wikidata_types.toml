@@ -20,6 +20,9 @@ contextual_qids = [
 [deny]
 # Direct place/non-polity types. Descendant expansion can be added after the
 # direct-type review report shows which additional roots are safe.
+hard_qids = [
+  "Q33506",     # museum; never a historical polity even with a contextual political type
+]
 qids = [
   "Q515",       # city
   "Q1549591",   # big city
