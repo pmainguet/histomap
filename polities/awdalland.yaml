@@ -27,12 +27,13 @@ prominence_score: 3.76
 visibility_tier: detailed
 eligibility: review
 geography:
-  continents: []
+  continents:
+  - africa
   present_countries: []
   centroid:
-    lat: 9.933055555
-    lon: 43.181666666
-  confidence: null
+    lat: 9.9330555555556
+    lon: 43.181666666667
+  confidence: medium
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []

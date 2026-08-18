@@ -5,10 +5,12 @@ parent: null
 successors: []
 region: unclassified
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - asia
+  present_countries:
+  - IR
   centroid: null
-  confidence: null
+  confidence: medium
 start: -7000
 end: -6001
 start_confidence: low

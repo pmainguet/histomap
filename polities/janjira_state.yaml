@@ -28,12 +28,13 @@ prominence_score: 23.22
 visibility_tier: detailed
 eligibility: review
 geography:
-  continents: []
+  continents:
+  - asia
   present_countries: []
   centroid:
     lat: 18.3
-    lon: 73.0
-  confidence: null
+    lon: 73
+  confidence: medium
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids: []

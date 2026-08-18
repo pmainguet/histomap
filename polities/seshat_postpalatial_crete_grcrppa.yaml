@@ -6,7 +6,13 @@ external_ids:
 parent: null
 successors: []
 region: unclassified
-geography: {}
+geography:
+  continents:
+  - europe
+  present_countries:
+  - GR
+  centroid: null
+  confidence: medium
 start: -1300
 end: -1201
 start_confidence: low
