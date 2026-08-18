@@ -28,9 +28,24 @@ Serve the timeline and review workspace at <http://127.0.0.1:8000/>:
 make serve
 ```
 
-On Windows without `make`, run `.\.venv\Scripts\python.exe -m server.app`. The review page is
-available at <http://127.0.0.1:8000/review>. The server binds only to localhost and exposes a fixed
-allowlist of pipeline actions.
+The review page is available at <http://127.0.0.1:8000/review>. The server binds only to
+localhost and exposes a fixed allowlist of pipeline actions.
+
+## Windows without `make`
+
+`make` isn't available by default on Windows. Run the same actions with the venv's Python
+directly (`py = .\.venv\Scripts\python.exe`):
+
+```powershell
+$py = ".\.venv\Scripts\python.exe"
+
+& $py build.py                            # make validate
+& $py -m pipeline.rebuild_timeline        # make build
+& $py -m server.app                       # make serve (build + serve)
+& $py -m unittest discover -s tests -v    # make test
+ruff format .; ruff check --fix .         # make format
+ruff check .; & $py -m mypy .             # make lint
+```
 
 ## Wikidata backbone
 
@@ -51,6 +66,27 @@ make compute-weights
 make enrich-relationships
 make enrich-geography
 make validate
+```
+
+The same sequence without `make` (`$py = .\.venv\Scripts\python.exe`):
+
+```powershell
+& $py pipeline/extract_wikidata.py
+& $py -m pipeline.audit_civilizations
+& $py pipeline/extract_seshat.py
+& $py pipeline/extract_maddison.py
+& $py pipeline/map_maddison.py
+& $py pipeline/extract_hyde.py
+& $py pipeline/filter_wikidata_types.py
+& $py pipeline/wd_to_yaml.py
+& $py pipeline/reconcile.py
+& $py pipeline/review_cli.py
+& $py pipeline/spotcheck.py
+& $py pipeline/compute_prominence.py
+& $py pipeline/compute_weights.py
+& $py pipeline/enrich_relationships.py
+& $py pipeline/enrich_geography.py
+& $py build.py
 ```
 
 Raw downloads and generated `data.json` are gitignored. Existing canonical YAML files are
