@@ -7,10 +7,7 @@ const entityOptions = document.querySelector("#entity-options");
 const startInput = document.querySelector("#year-start");
 const endInput = document.querySelector("#year-end");
 const visibilityInput = document.querySelector("#visibility");
-const readingLevelInput = document.querySelector("#reading-level");
-const historicalGroupInput = document.querySelector("#historical-group");
 const entityTypeInput = document.querySelector("#entity-type");
-const entityTypeConfidenceInput = document.querySelector("#entity-type-confidence");
 const continentInput = document.querySelector("#continent");
 const countryInput = document.querySelector("#country");
 const showPeriodsInput = document.querySelector("#show-periods");
@@ -322,9 +319,7 @@ function showDetails(polity, trigger = null) {
   selectedPolity = polity;
   selectedPeriod = null;
   if (trigger) detailTrigger = trigger;
-  const description = readingLevelInput.value === "child"
-    ? polity.text?.short_child_en || polity.text?.short_adult_en || polity.notes
-    : polity.text?.short_adult_en || polity.text?.long_en || polity.notes;
+  const description = polity.text?.short_adult_en || polity.text?.long_en || polity.notes;
   const descriptionText = description || "Draft record; description pending review.";
   const aliases = [polity.names?.aliases_en?.replaceAll(" | ", ", "), polity.names?.fr].filter(Boolean).join("; ");
   const countries = (polity.geography?.present_countries || []).map((code) => countryNames.of(code) || code);
@@ -714,9 +709,7 @@ function render() {
     (p) =>
       p.eligibility !== "excluded" &&
       (p.id === focusedPolityId || visibilityInput.value === "detailed" || p.eligibility === "accepted") &&
-      (!historicalGroupInput.value || p.region === historicalGroupInput.value) &&
       (!entityTypeInput.value || (p.entity_type || "polity") === entityTypeInput.value) &&
-      (!entityTypeConfidenceInput.value || (p.entity_type_confidence || "low") === entityTypeConfidenceInput.value) &&
       (!continentInput.value || (p.geography?.continents || []).includes(continentInput.value)) &&
       (!countryInput.value || (p.geography?.present_countries || []).includes(countryInput.value)) &&
       (p.id === focusedPolityId || tierRank[p.visibility_tier || "detailed"] <= selectedRank) &&
@@ -1047,12 +1040,7 @@ function render() {
 
 document.querySelector("#apply").addEventListener("click", render);
 visibilityInput.addEventListener("change", render);
-readingLevelInput.addEventListener("change", () => {
-  if (selectedPolity && details.classList.contains("is-open")) showDetails(selectedPolity);
-});
-historicalGroupInput.addEventListener("change", render);
 entityTypeInput.addEventListener("change", render);
-entityTypeConfidenceInput.addEventListener("change", render);
 continentInput.addEventListener("change", render);
 countryInput.addEventListener("change", render);
 showPeriodsInput.addEventListener("change", render);
@@ -1122,7 +1110,6 @@ function selectEntity() {
 function navigateToEntity(polity) {
   focusedPolityId = polity.id;
   entitySearchInput.value = polity.canonical_name;
-  historicalGroupInput.value = "";
   continentInput.value = "";
   countryInput.value = "";
   collapsedGeographies.delete(geographyGroup(polity));
@@ -1189,7 +1176,6 @@ try {
     new Set(polities.flatMap((p) => p.geography?.continents || [])),
     (value) => value.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase()),
   );
-  populateSelect(historicalGroupInput, new Set(polities.map((p) => p.region).filter(Boolean)), displayTerm);
   populateSelect(entityTypeInput, new Set(polities.map((p) => p.entity_type || "polity")), displayTerm);
   for (const period of [...periods].sort((a, b) => a.canonical_name.localeCompare(b.canonical_name))) {
     const option = document.createElement("option");
