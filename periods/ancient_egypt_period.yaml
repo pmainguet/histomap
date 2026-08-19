@@ -1,0 +1,28 @@
+id: ancient_egypt_period
+canonical_name: Ancient Egypt
+kind: historical
+start: -4000
+end: -29
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - asia
+  present_countries:
+  - EG
+  centroid:
+    lat: 29.8
+    lon: 31.3
+  confidence: medium
+  primary_continent: africa
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: civilization-as-backdrop'
+external_ids:
+  wikidata: Q11768
+notes: Ancient Egypt spans several distinct political phases; rendered as period context
+  so those phases (not this civilization-level record) carry the chart's political
+  weight.
+source_urls:
+- https://www.wikidata.org/wiki/Q11768

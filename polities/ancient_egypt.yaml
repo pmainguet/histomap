@@ -72,3 +72,5 @@ prominence_components:
   total: 57.0
 manual_overrides:
 - entity_type
+- timeline_role
+timeline_role: period

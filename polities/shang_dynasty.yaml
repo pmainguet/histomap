@@ -47,6 +47,7 @@ entity_type_source_qids: []
 relationships: []
 manual_overrides:
 - entity_type
+- visibility_override
 prominence_components:
   wikidata_reach: 29.53
   authority_coverage: 12
@@ -58,3 +59,4 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 46.89
+visibility_override: global

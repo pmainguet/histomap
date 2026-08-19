@@ -54,3 +54,5 @@ prominence_components:
   total: 32.04
 manual_overrides:
 - consolidation
+- visibility_override
+visibility_override: global

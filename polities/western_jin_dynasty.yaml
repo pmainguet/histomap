@@ -75,6 +75,7 @@ relationships:
   - https://www.wikidata.org/wiki/Q1145470
 manual_overrides:
 - entity_type
+- visibility_override
 prominence_components:
   wikidata_reach: 19.18
   authority_coverage: 12
@@ -86,3 +87,4 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 40.97
+visibility_override: global

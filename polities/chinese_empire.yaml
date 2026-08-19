@@ -76,6 +76,7 @@ relationships:
   - https://www.wikidata.org/wiki/Q12060881
 manual_overrides:
 - entity_type
+- timeline_role
 prominence_components:
   wikidata_reach: 22.97
   authority_coverage: 4
@@ -87,3 +88,4 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 43.52
+timeline_role: period

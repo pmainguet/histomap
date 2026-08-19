@@ -63,5 +63,7 @@ manual_overrides:
 - consolidation
 - entity_type
 - timeline_role
+- visibility_override
 timeline_role: entity
 consolidation_status: independent
+visibility_override: global

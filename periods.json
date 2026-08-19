@@ -66,6 +66,40 @@
     ]
   },
   {
+    "id": "ancient_egypt_period",
+    "canonical_name": "Ancient Egypt",
+    "kind": "historical",
+    "start": -4000,
+    "end": -29,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "asia"
+      ],
+      "primary_continent": "africa",
+      "present_countries": [
+        "EG"
+      ],
+      "centroid": {
+        "lat": 29.8,
+        "lon": 31.3
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: civilization-as-backdrop",
+    "external_ids": {
+      "wikidata": "Q11768"
+    },
+    "notes": "Ancient Egypt spans several distinct political phases; rendered as period context so those phases (not this civilization-level record) carry the chart's political weight.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q11768"
+    ]
+  },
+  {
     "id": "asuka_period",
     "canonical_name": "Asuka period",
     "kind": "historical",
@@ -188,6 +222,39 @@
     ]
   },
   {
+    "id": "babylonia_period",
+    "canonical_name": "Babylonia",
+    "kind": "historical",
+    "start": -1900,
+    "end": -538,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "IQ"
+      ],
+      "centroid": {
+        "lat": 32.5,
+        "lon": 44.5
+      },
+      "confidence": "high"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: civilization-as-backdrop",
+    "external_ids": {
+      "wikidata": "Q47690"
+    },
+    "notes": "Babylonia spans several distinct political phases; rendered as period context so those phases (not this civilization-level record) carry the chart's political weight.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q47690"
+    ]
+  },
+  {
     "id": "batavian_commonwealth_period",
     "canonical_name": "Batavian Commonwealth",
     "kind": "historical",
@@ -246,6 +313,39 @@
     "notes": "Editorially identified as a phase or aspect of Socialist Soviet Republic of Byelorussia.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q2895"
+    ]
+  },
+  {
+    "id": "chinese_empire_period",
+    "canonical_name": "Chinese Empire",
+    "kind": "historical",
+    "start": -219,
+    "end": 1912,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "CN"
+      ],
+      "centroid": {
+        "lat": 40.0,
+        "lon": 110.0
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: civilization-as-backdrop",
+    "external_ids": {
+      "wikidata": "Q12060881"
+    },
+    "notes": "Chinese Empire spans several distinct political phases; rendered as period context so those phases (not this civilization-level record) carry the chart's political weight.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q12060881"
     ]
   },
   {

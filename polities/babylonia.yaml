@@ -35,13 +35,13 @@ eligibility: accepted
 geography:
   continents:
   - asia
+  primary_continent: asia
   present_countries:
   - IQ
-  - IR
   centroid:
     lat: 32.5
     lon: 44.5
-  confidence: medium
+  confidence: high
 entity_type: civilization
 entity_type_confidence: high
 entity_type_source_qids: []
@@ -59,3 +59,6 @@ prominence_components:
   total: 60.27
 manual_overrides:
 - entity_type
+- geography
+- timeline_role
+timeline_role: period
