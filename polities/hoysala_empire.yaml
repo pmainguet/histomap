@@ -10,8 +10,6 @@ external_ids:
 parent: null
 successors:
 - vijayanagara_empire
-region: null
-culture_group: null
 start: 1026
 end: 1343
 start_confidence: low

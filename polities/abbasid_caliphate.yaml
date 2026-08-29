@@ -14,8 +14,6 @@ successors:
 - ilkhanate
 - mamluk_sultanate_of_egypt
 - ottoman_empire
-region: null
-culture_group: null
 start: 750
 end: 1258
 start_confidence: low

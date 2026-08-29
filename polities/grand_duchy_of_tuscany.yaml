@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - united_provinces_of_central_italy
-region: null
-culture_group: null
 start: 1569
 end: 1860
 start_confidence: low

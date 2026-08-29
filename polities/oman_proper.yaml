@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - oman
-region: null
-culture_group: null
 start: 751
 end: 1970
 start_confidence: low

@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - mongol_military_government
-region: null
-culture_group: null
 start: 1933
 end: 1936
 start_confidence: low

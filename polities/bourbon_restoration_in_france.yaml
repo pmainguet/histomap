@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - july_monarchy
-region: null
-culture_group: null
 start: 1815
 end: 1830
 start_confidence: low

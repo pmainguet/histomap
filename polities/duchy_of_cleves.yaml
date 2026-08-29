@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - grand_duchy_of_berg
-region: null
-culture_group: null
 start: 1092
 end: 1795
 start_confidence: low

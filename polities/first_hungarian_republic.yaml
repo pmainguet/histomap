@@ -9,8 +9,6 @@ parent: null
 successors:
 - hungarian_soviet_republic
 - provisional_goverment_of_the_republic_of_hungary
-region: null
-culture_group: null
 start: 1918
 end: 1919
 start_confidence: low

@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - maurya_empire
-region: null
-culture_group: null
 start: -344
 end: -320
 start_confidence: low

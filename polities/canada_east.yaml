@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - quebec
-region: null
-culture_group: null
 start: 1841
 end: 1867
 start_confidence: low

@@ -16,8 +16,6 @@ successors:
 - kingdom_of_italy_q172579
 - roman_republic_q1072140
 - vatican_city
-region: null
-culture_group: null
 start: 754
 end: 1870
 start_confidence: low

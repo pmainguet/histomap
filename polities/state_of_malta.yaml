@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - malta
-region: null
-culture_group: null
 start: 1964
 end: 1974
 start_confidence: low

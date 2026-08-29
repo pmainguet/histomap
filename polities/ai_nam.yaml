@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - empire_of_vietnam
-region: null
-culture_group: null
 start: 1839
 end: 1945
 start_confidence: low

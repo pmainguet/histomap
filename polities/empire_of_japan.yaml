@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - japan
-region: null
-culture_group: null
 start: 1868
 end: 1947
 start_confidence: low

@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_georgia
-region: null
-culture_group: null
 start: 778
 end: 1008
 start_confidence: low

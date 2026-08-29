@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_granada
-region: null
-culture_group: null
 start: 1238
 end: 1492
 start_confidence: low

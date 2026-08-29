@@ -15,8 +15,6 @@ external_ids:
 parent: roman_kingdom
 successors:
 - byzantine_empire
-region: italy
-culture_group: latin
 start: -509
 end: -27
 start_confidence: medium

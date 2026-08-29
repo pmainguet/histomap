@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - kura_khanate
-region: null
-culture_group: null
 start: 1400
 end: 1812
 start_confidence: low

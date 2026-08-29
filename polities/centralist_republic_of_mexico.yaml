@@ -12,8 +12,6 @@ successors:
 - republic_of_the_rio_grande
 - republic_of_yucatan
 - second_federal_republic_of_mexico
-region: null
-culture_group: null
 start: 1835
 end: 1846
 start_confidence: low

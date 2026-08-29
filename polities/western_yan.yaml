@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - later_yan
-region: null
-culture_group: null
 start: 384
 end: 394
 start_confidence: low

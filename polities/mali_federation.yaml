@@ -9,8 +9,6 @@ parent: null
 successors:
 - mali
 - senegal
-region: null
-culture_group: null
 start: 1959
 end: 1960
 start_confidence: low

@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - italian_republic
-region: null
-culture_group: null
 start: 1797
 end: 1802
 start_confidence: low

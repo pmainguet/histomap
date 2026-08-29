@@ -10,8 +10,6 @@ external_ids:
 parent: null
 successors:
 - shunga_empire
-region: null
-culture_group: null
 start: -321
 end: -184
 start_confidence: low

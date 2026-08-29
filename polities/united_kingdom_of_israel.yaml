@@ -11,8 +11,6 @@ parent: null
 successors:
 - kingdom_of_israel
 - kingdom_of_judah
-region: null
-culture_group: null
 start: -1049
 end: -929
 start_confidence: low

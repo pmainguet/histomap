@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - western_han
-region: null
-culture_group: null
 start: -207
 end: -199
 start_confidence: low

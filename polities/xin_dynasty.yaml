@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - eastern_han
-region: null
-culture_group: null
 start: 9
 end: 23
 start_confidence: low

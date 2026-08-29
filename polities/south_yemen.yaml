@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - yemen
-region: null
-culture_group: null
 start: 1967
 end: 1990
 start_confidence: low

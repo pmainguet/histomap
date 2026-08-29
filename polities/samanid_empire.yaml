@@ -8,8 +8,6 @@ external_ids:
   - UzSamnd
 parent: null
 successors: []
-region: null
-culture_group: null
 start: 819
 end: 999
 start_confidence: low

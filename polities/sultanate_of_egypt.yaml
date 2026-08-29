@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_egypt
-region: null
-culture_group: null
 start: 1914
 end: 1922
 start_confidence: low

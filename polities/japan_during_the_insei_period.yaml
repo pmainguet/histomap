@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - taira_administration
-region: null
-culture_group: null
 start: 1086
 end: 1167
 start_confidence: low

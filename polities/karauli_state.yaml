@@ -8,8 +8,6 @@ parent: null
 successors:
 - india
 - united_states_of_matsya
-region: null
-culture_group: null
 start: 1348
 end: 1948
 start_confidence: low

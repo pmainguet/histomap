@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_aragon
-region: null
-culture_group: null
 start: 724
 end: 1045
 start_confidence: low

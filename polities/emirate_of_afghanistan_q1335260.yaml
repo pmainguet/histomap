@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_afghanistan
-region: null
-culture_group: null
 start: 1823
 end: 1926
 start_confidence: low

@@ -7,8 +7,6 @@ parent: null
 successors:
 - margraviate_of_baden_baden
 - margraviate_of_baden_durlach
-region: null
-culture_group: null
 start: 1112
 end: 1535
 start_confidence: low

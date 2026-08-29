@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - later_silla
-region: null
-culture_group: null
 start: -36
 end: 668
 start_confidence: low

@@ -10,8 +10,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_new_spain
-region: null
-culture_group: null
 start: 1325
 end: 1521
 start_confidence: low

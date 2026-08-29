@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - grand_duchy_of_mecklenburg_schwerin
-region: null
-culture_group: null
 start: 1701
 end: 1815
 start_confidence: low

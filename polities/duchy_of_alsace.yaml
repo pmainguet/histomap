@@ -10,8 +10,6 @@ successors:
 - duchy_of_swabia
 - landgraviate_of_lower_alsace
 - landgraviate_of_upper_alsace
-region: null
-culture_group: null
 start: 700
 end: 800
 start_confidence: low

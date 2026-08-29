@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - principality_of_wales
-region: null
-culture_group: null
 start: 920
 end: 1197
 start_confidence: low

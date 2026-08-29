@@ -10,8 +10,6 @@ parent: null
 successors:
 - moldova
 - pridnestrovian_moldavian_soviet_socialist_republic
-region: null
-culture_group: null
 start: 1940
 end: 1991
 start_confidence: low

@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - austrian_netherlands
-region: null
-culture_group: null
 start: 1581
 end: 1714
 start_confidence: low

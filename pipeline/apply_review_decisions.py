@@ -46,7 +46,6 @@ def apply_review_decisions(
                 "external_ids": {"seshat": [seshat_id]},
                 "parent": None,
                 "successors": [],
-                "region": "unclassified",
                 "geography": {},
                 "start": int(record["start_year"]),
                 "end": int(record["end_year"]),

@@ -12,8 +12,6 @@ successors:
 - kingdom_of_saxony
 - kingdom_of_wurttemberg
 - principality_of_nassau_orange_fulda
-region: null
-culture_group: null
 start: 962
 end: 1806
 start_confidence: low

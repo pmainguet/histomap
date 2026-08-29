@@ -9,8 +9,6 @@ parent: null
 successors:
 - galuh_kingdom
 - sunda_kingdom
-region: null
-culture_group: null
 start: 450
 end: 669
 start_confidence: low

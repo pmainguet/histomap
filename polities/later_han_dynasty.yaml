@@ -8,8 +8,6 @@ parent: null
 successors:
 - later_zhou_dynasty
 - northern_han
-region: null
-culture_group: null
 start: 947
 end: 951
 start_confidence: low

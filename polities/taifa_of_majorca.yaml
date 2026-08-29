@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_majorca
-region: null
-culture_group: null
 start: 1076
 end: 1203
 start_confidence: low

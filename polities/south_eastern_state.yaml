@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - cross_river_state
-region: null
-culture_group: null
 start: 1967
 end: 1976
 start_confidence: low

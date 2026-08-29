@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - patani_kingdom
-region: null
-culture_group: null
 start: 100
 end: 1500
 start_confidence: low

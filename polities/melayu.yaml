@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - pagaruyung_kingdom
-region: null
-culture_group: null
 start: 671
 end: 1347
 start_confidence: low

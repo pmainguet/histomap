@@ -15,8 +15,6 @@ external_ids:
 parent: null
 successors:
 - french_constitutional_monarchy
-region: null
-culture_group: null
 start: 987
 end: 1791
 start_confidence: low

@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - ran_wei
-region: null
-culture_group: null
 start: 319
 end: 351
 start_confidence: low

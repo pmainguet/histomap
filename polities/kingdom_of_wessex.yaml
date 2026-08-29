@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_england
-region: null
-culture_group: null
 start: 519
 end: 927
 start_confidence: low

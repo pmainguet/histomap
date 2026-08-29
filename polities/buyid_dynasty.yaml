@@ -9,8 +9,6 @@ external_ids:
   - IrBuyid
 parent: null
 successors: []
-region: null
-culture_group: null
 start: 934
 end: 1062
 start_confidence: low

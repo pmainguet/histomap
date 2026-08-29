@@ -9,8 +9,6 @@ parent: null
 successors:
 - montenegro
 - serbia
-region: null
-culture_group: null
 start: 2003
 end: 2006
 start_confidence: low

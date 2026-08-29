@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_dambadeniya
-region: null
-culture_group: null
 start: 1017
 end: 1236
 start_confidence: low

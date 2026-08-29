@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_arles
-region: null
-culture_group: null
 start: 855
 end: 933
 start_confidence: low

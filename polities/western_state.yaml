@@ -9,8 +9,6 @@ successors:
 - ogun_state
 - ondo_state
 - oyo_state
-region: null
-culture_group: null
 start: 1967
 end: 1976
 start_confidence: low

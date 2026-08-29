@@ -10,8 +10,6 @@ parent: dutch_empire
 successors:
 - indonesia
 - united_states_of_indonesia
-region: null
-culture_group: null
 start: 1800
 end: 1949
 start_confidence: low

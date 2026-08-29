@@ -8,8 +8,6 @@ external_ids:
   - GrCrEmr
 parent: null
 successors: []
-region: null
-culture_group: null
 start: 820
 end: 961
 start_confidence: low

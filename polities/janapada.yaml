@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - mahajanapada
-region: null
-culture_group: null
 start: -1100
 end: -600
 start_confidence: low

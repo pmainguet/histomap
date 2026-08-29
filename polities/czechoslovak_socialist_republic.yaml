@@ -10,8 +10,6 @@ external_ids:
 parent: null
 successors:
 - czechoslovak_federative_republic
-region: null
-culture_group: null
 start: 1948
 end: 1990
 start_confidence: low

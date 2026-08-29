@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - second_mexican_empire
-region: null
-culture_group: null
 start: 1846
 end: 1863
 start_confidence: low

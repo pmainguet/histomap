@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - league_of_lezhe
-region: null
-culture_group: null
 start: 1432
 end: 1444
 start_confidence: low

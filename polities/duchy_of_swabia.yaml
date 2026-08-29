@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - republic_of_mulhouse
-region: null
-culture_group: null
 start: 917
 end: 1313
 start_confidence: low

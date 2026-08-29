@@ -26,8 +26,6 @@ successors:
 - yin_q11125624
 - yong
 - zhai
-region: null
-culture_group: null
 start: -220
 end: -205
 start_confidence: low

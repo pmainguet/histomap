@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - granadine_confederation
-region: null
-culture_group: null
 start: 1831
 end: 1858
 start_confidence: low

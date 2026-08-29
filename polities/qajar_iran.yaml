@@ -11,8 +11,6 @@ external_ids:
 parent: null
 successors:
 - pahlavi_iran
-region: null
-culture_group: null
 start: 1789
 end: 1925
 start_confidence: low

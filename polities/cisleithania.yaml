@@ -11,8 +11,6 @@ successors:
 - first_czechoslovak_republic
 - republic_of_german_austria
 - second_polish_republic
-region: null
-culture_group: null
 start: 1867
 end: 1918
 start_confidence: low

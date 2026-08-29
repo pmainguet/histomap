@@ -10,8 +10,6 @@ external_ids:
 parent: null
 successors:
 - kenmu_restoration
-region: null
-culture_group: null
 start: 1200
 end: 1333
 start_confidence: low

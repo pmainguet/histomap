@@ -8,8 +8,6 @@ parent: null
 successors:
 - poland
 - second_polish_republic
-region: null
-culture_group: null
 start: 1917
 end: 1918
 start_confidence: low

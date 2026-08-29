@@ -9,8 +9,6 @@ external_ids:
   - PkProto
 parent: null
 successors: []
-region: null
-culture_group: null
 start: -1000
 end: -600
 start_confidence: low

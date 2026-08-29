@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_polonnaruwa
-region: null
-culture_group: null
 start: -376
 end: 1017
 start_confidence: low

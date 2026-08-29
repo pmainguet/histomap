@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - weimar_republic
-region: null
-culture_group: null
 start: 1871
 end: 1918
 start_confidence: low

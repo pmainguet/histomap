@@ -11,8 +11,6 @@ external_ids:
 parent: null
 successors:
 - oda_regime
-region: null
-culture_group: null
 start: 1336
 end: 1573
 start_confidence: low

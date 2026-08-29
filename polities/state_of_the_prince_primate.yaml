@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_bavaria
-region: null
-culture_group: null
 start: 1806
 end: 1810
 start_confidence: low

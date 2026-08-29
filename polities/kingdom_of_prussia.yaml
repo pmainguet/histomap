@@ -7,8 +7,6 @@ external_ids:
 parent: prussia
 successors:
 - free_state_of_prussia
-region: null
-culture_group: null
 start: 1701
 end: 1918
 start_confidence: low

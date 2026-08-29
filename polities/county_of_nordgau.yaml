@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - landgraviate_of_lower_alsace
-region: null
-culture_group: null
 start: 700
 end: 1200
 start_confidence: low

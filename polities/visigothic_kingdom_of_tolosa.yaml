@@ -7,8 +7,6 @@ external_ids:
 parent: visigothic_kingdom
 successors:
 - empire_of_theodoric_the_great
-region: null
-culture_group: null
 start: 418
 end: 507
 start_confidence: low

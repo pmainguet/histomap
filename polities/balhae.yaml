@@ -9,8 +9,6 @@ parent: null
 successors:
 - goryeo
 - liao_dynasty
-region: null
-culture_group: null
 start: 698
 end: 926
 start_confidence: low

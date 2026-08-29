@@ -365,7 +365,6 @@ function showDetails(polity, trigger = null) {
       <dt>Entity type</dt><dd>${escapeHtml(displayTerm(polity.entity_type || "polity"))} (${escapeHtml(polity.entity_type_confidence || "low")} confidence)</dd>
       ${(polity.entity_type_source_qids || []).length ? `<dt>Type evidence</dt><dd class="detail-links">${polity.entity_type_source_qids.map((qid) => `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(qid)}" target="_blank" rel="noopener noreferrer">Wikidata type ${escapeHtml(qid)} ↗</a>`).join("<br>")}</dd>` : ""}
       ${aliases ? `<dt>Other names</dt><dd>${escapeHtml(aliases)}</dd>` : ""}
-      <dt>Historical grouping</dt><dd>${escapeHtml(polity.region || "unclassified")}</dd>
       ${polity.parent ? `<dt>Part of</dt><dd>${entityLink(polity.parent)}</dd>` : ""}
       ${children.length ? `<dt>Contains</dt><dd>${children.map((entity) => entityLink(entity.id)).join(", ")}</dd>` : ""}
       ${predecessors.length ? `<dt>Preceded by</dt><dd>${predecessors.map((entity) => entityLink(entity.id)).join(", ")}</dd>` : ""}
@@ -640,9 +639,8 @@ function orderingCost(left, right) {
   if (directlyRelated(left, right)) return -800000 + temporalGap(left, right);
   const leftCountries = new Set(left.geography?.present_countries || []);
   const sharedCountry = (right.geography?.present_countries || []).some((country) => leftCountries.has(country));
-  const sameHistoricalGroup = left.region && left.region !== "unclassified" && left.region === right.region;
   return temporalGap(left, right) + Math.abs(left.start - right.start) * .05
-    - (sharedCountry ? 5000 : 0) - (sameHistoricalGroup ? 2000 : 0);
+    - (sharedCountry ? 5000 : 0);
 }
 
 function relationshipComponents(items) {

@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - tanganyika_territory
-region: null
-culture_group: null
 start: 1885
 end: 1919
 start_confidence: low

@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - first_french_empire
-region: null
-culture_group: null
 start: 1797
 end: 1805
 start_confidence: low

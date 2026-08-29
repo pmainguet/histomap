@@ -11,8 +11,6 @@ external_ids:
 parent: null
 successors:
 - sasanian_empire
-region: null
-culture_group: null
 start: -246
 end: 224
 start_confidence: low

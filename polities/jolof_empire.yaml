@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_jolof
-region: null
-culture_group: null
 start: 1350
 end: 1549
 start_confidence: low

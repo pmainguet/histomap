@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - venetian_cyprus
-region: null
-culture_group: null
 start: 1192
 end: 1489
 start_confidence: low

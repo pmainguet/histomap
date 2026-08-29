@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - livonian_order
-region: null
-culture_group: null
 start: 1202
 end: 1237
 start_confidence: low

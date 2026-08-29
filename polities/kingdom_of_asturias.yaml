@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_leon
-region: null
-culture_group: null
 start: 718
 end: 924
 start_confidence: low

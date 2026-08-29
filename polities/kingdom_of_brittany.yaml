@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - duchy_of_brittany
-region: null
-culture_group: null
 start: 851
 end: 939
 start_confidence: low

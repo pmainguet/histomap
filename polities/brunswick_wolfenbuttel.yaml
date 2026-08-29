@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - duchy_of_brunswick
-region: null
-culture_group: null
 start: 1269
 end: 1815
 start_confidence: low

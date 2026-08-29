@@ -11,8 +11,6 @@ parent: null
 successors:
 - later_jin_dynasty
 - later_shu
-region: null
-culture_group: null
 start: 923
 end: 936
 start_confidence: low

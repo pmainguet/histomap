@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - avar_khaganate
-region: null
-culture_group: null
 start: 454
 end: 567
 start_confidence: low

@@ -9,8 +9,6 @@ successors:
 - ukraine
 - ukrainian_soviet_socialist_republic
 - ukrainian_state
-region: null
-culture_group: null
 start: 1917
 end: 1921
 start_confidence: low

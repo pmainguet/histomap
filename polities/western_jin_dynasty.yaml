@@ -13,8 +13,6 @@ successors:
 - eastern_jin_dynasty
 - former_liang
 - han_zhao
-region: null
-culture_group: null
 start: 265
 end: 316
 start_confidence: low

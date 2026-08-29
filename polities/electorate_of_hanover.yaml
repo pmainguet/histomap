@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_hanover
-region: null
-culture_group: null
 start: 1692
 end: 1814
 start_confidence: low

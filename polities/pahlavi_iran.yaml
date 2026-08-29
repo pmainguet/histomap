@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - iran
-region: null
-culture_group: null
 start: 1925
 end: 1979
 start_confidence: low

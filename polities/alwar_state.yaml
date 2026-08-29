@@ -9,8 +9,6 @@ parent: null
 successors:
 - india
 - united_states_of_matsya
-region: null
-culture_group: null
 start: 1770
 end: 1949
 start_confidence: low

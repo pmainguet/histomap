@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - johor_sultanate
-region: null
-culture_group: null
 start: 1400
 end: 1511
 start_confidence: low

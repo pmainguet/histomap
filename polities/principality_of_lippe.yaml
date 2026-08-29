@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - free_state_of_lippe
-region: null
-culture_group: null
 start: 1789
 end: 1918
 start_confidence: low

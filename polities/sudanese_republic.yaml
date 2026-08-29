@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - mali_federation
-region: null
-culture_group: null
 start: 1958
 end: 1959
 start_confidence: low

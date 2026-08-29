@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_portugal
-region: null
-culture_group: null
 start: 868
 end: 1143
 start_confidence: low

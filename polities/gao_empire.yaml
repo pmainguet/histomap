@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - songhai_empire
-region: null
-culture_group: null
 start: 800
 end: 1464
 start_confidence: low

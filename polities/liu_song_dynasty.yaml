@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - southern_qi
-region: null
-culture_group: null
 start: 420
 end: 479
 start_confidence: low

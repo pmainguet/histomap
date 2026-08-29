@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_the_iberians
-region: null
-culture_group: null
 start: 588
 end: 888
 start_confidence: low

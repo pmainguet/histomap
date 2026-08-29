@@ -11,8 +11,6 @@ parent: null
 successors:
 - surakarta_sunanate
 - yogyakarta_sultanate
-region: null
-culture_group: null
 start: 1586
 end: 1755
 start_confidence: low

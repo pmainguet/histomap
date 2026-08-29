@@ -10,8 +10,6 @@ successors:
 - first_czechoslovak_republic
 - first_republic_of_austria
 - state_of_slovenes_croats_and_serbs
-region: null
-culture_group: null
 start: 1918
 end: 1919
 start_confidence: low

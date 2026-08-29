@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - democratic_federal_yugoslavia
-region: null
-culture_group: null
 start: 1941
 end: 1945
 start_confidence: low

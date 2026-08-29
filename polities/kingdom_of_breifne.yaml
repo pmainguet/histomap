@@ -8,8 +8,6 @@ parent: null
 successors:
 - east_breifne
 - west_breifne
-region: null
-culture_group: null
 start: 700
 end: 1256
 start_confidence: low

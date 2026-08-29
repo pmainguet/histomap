@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_brazil
-region: null
-culture_group: null
 start: 1621
 end: 1815
 start_confidence: low

@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - novgorod_republic
-region: null
-culture_group: null
 start: 882
 end: 1136
 start_confidence: low

@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - united_states_of_central_america
-region: null
-culture_group: null
 start: 1896
 end: 1898
 start_confidence: low

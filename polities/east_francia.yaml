@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - holy_roman_empire
-region: null
-culture_group: null
 start: 843
 end: 962
 start_confidence: low

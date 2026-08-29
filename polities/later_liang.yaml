@@ -8,8 +8,6 @@ parent: null
 successors:
 - northern_liang
 - southern_liang
-region: null
-culture_group: null
 start: 386
 end: 403
 start_confidence: low

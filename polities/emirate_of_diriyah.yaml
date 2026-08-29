@@ -9,8 +9,6 @@ parent: null
 successors:
 - first_saudi_state
 - saudi_arabia
-region: null
-culture_group: null
 start: 1446
 end: 1744
 start_confidence: low

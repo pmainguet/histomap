@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - republic_of_hawaii
-region: null
-culture_group: null
 start: 1893
 end: 1894
 start_confidence: low

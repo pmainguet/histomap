@@ -11,8 +11,6 @@ external_ids:
 parent: null
 successors:
 - later_tang
-region: null
-culture_group: null
 start: 907
 end: 925
 start_confidence: low

@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - india
-region: null
-culture_group: null
 start: 1128
 end: 1949
 start_confidence: low

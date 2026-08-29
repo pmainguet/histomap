@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - estado_de_occidente
-region: null
-culture_group: null
 start: 1565
 end: 1821
 start_confidence: low

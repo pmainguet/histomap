@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - herodian_kingdom_of_judea
-region: null
-culture_group: null
 start: -139
 end: -36
 start_confidence: low

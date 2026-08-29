@@ -10,8 +10,6 @@ successors:
 - general_government
 - polish_people_s_republic
 - soviet_union
-region: null
-culture_group: null
 start: 1918
 end: 1939
 start_confidence: low

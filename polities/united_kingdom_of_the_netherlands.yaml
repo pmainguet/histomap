@@ -8,8 +8,6 @@ parent: null
 successors:
 - belgium
 - duchy_of_limburg_q376009
-region: null
-culture_group: null
 start: 1815
 end: 1839
 start_confidence: low

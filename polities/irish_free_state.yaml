@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - ireland
-region: null
-culture_group: null
 start: 1922
 end: 1937
 start_confidence: low

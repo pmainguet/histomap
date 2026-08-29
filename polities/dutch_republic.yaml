@@ -11,8 +11,6 @@ external_ids:
 parent: null
 successors:
 - batavian_republic
-region: null
-culture_group: null
 start: 1581
 end: 1795
 start_confidence: low

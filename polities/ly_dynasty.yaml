@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - tran_dynasty
-region: null
-culture_group: null
 start: 1009
 end: 1226
 start_confidence: low

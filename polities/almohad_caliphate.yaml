@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_seville
-region: null
-culture_group: null
 start: 1121
 end: 1269
 start_confidence: low

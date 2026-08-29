@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - federalism_in_switzerland
-region: null
-culture_group: null
 start: 1814
 end: 1848
 start_confidence: low

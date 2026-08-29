@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - principality_of_minden
-region: null
-culture_group: null
 start: 1180
 end: 1648
 start_confidence: low

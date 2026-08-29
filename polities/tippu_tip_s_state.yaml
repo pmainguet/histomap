@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - congo_free_state
-region: null
-culture_group: null
 start: 1860
 end: 1887
 start_confidence: low

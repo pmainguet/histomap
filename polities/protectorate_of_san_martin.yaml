@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - peru
-region: null
-culture_group: null
 start: 1821
 end: 1822
 start_confidence: low

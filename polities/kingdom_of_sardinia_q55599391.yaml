@@ -7,8 +7,6 @@ external_ids:
 parent: crown_of_aragon
 successors:
 - kingdom_of_sardinia_and_corsica
-region: null
-culture_group: null
 start: 1324
 end: 1713
 start_confidence: low

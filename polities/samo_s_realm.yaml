@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - great_moravia
-region: null
-culture_group: null
 start: 623
 end: 658
 start_confidence: low

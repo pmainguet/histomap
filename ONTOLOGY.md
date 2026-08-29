@@ -256,18 +256,28 @@ Authored two different ways, deliberately:
   a legitimate future addition, added the hand-curated way once someone wants to invest
   the research.
 
-## What this doesn't replace
+## What replaced `region`/`culture_group`
 
 `Polity.region` / `Polity.culture_group` were meant to be a "historical grouping"
 layer per the original schema sketch in `PLAN.md`, but were never populated at scale
-(null on 4,521/4,671 and 4,670/4,671 records respectively as of 2026-08-29). They stay
-unpopulated and unremoved — but the regional-era tier does **not** replace their
-intended purpose the way an earlier draft of this document claimed. Regional era is a
-*temporal* classification ("Mediterranean Classical Antiquity" — a time window in one
-tradition); `region`/`culture_group` were meant to be *spatial*/*cultural*
-classifications ("Persia," "the Sahel," "Iranian") independent of time. A polity's
-regional era does not tell you its historical region, any more than "Classical and
-Imperial Worlds" tells you a polity is in Persia rather than Gaul.
+(null on 4,521/4,671 and 4,670/4,671 records respectively as of 2026-08-29). Removed
+from `schema.py` entirely on 2026-08-29, along with every reference to them: `region`
+had live (if practically inert) UI wiring — `web/app.js`'s detail drawer showed it as
+"Historical grouping," and a `sameHistoricalGroup` scoring heuristic referenced it,
+though with only one record ever holding a real, non-placeholder value, that heuristic
+could never actually fire against another record — both removed along with the field.
+`culture_group` had zero code references anywhere; purely dead. Also removed: the
+`"unclassified"`/`None` default-setting code in `pipeline/apply_review_decisions.py`,
+`pipeline/wd_to_yaml.py`, and `server/app.py` that populated these fields on newly
+created records, and the fields themselves from all 4,671 `polities/*.yaml` files.
+
+Their intended purpose does **not** carry over to the regional-era tier, despite an
+earlier draft of this document claiming it did. Regional era is a *temporal*
+classification ("Mediterranean Classical Antiquity" — a time window in one tradition);
+`region`/`culture_group` were meant to be *spatial*/*cultural* classifications
+("Persia," "the Sahel," "Iranian") independent of time. A polity's regional era does
+not tell you its historical region, any more than "Classical and Imperial Worlds"
+tells you a polity is in Persia rather than Gaul.
 
 Continents are too coarse for West Asia vs. the Sahel vs. the Andes vs. Mesoamerica vs.
 Southeast Asia. Closed by `Geography.historical_regions`/`primary_historical_region`

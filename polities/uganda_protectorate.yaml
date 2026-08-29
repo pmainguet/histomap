@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - commonwealth_realm_of_uganda
-region: null
-culture_group: null
 start: 1894
 end: 1962
 start_confidence: low

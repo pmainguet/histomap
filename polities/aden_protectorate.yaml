@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - protectorate_of_south_arabia
-region: null
-culture_group: null
 start: 1869
 end: 1963
 start_confidence: low

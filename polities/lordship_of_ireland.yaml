@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_ireland
-region: null
-culture_group: null
 start: 1171
 end: 1542
 start_confidence: low

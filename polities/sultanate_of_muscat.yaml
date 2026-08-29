@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - muscat_and_oman
-region: null
-culture_group: null
 start: 1650
 end: 1820
 start_confidence: low

@@ -9,8 +9,6 @@ external_ids:
   - MnRourn
 parent: null
 successors: []
-region: null
-culture_group: null
 start: 330
 end: 555
 start_confidence: low

@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - republic_of_formosa
-region: null
-culture_group: null
 start: 1683
 end: 1895
 start_confidence: low

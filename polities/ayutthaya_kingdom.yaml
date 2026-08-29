@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - thonburi_kingdom
-region: null
-culture_group: null
 start: 1350
 end: 1767
 start_confidence: low

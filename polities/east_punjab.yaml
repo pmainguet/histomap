@@ -9,8 +9,6 @@ parent: null
 successors:
 - haryana
 - punjab
-region: null
-culture_group: null
 start: 1950
 end: 1966
 start_confidence: low

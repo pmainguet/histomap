@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - state_of_grao_para_and_maranhao
-region: null
-culture_group: null
 start: 1621
 end: 1654
 start_confidence: low

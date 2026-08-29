@@ -7,8 +7,6 @@ external_ids:
   wikipedia_en: https://en.wikipedia.org/wiki/European_Union
 parent: null
 successors: []
-region: null
-culture_group: null
 start: 1993
 end: null
 start_confidence: high
@@ -22,11 +20,11 @@ text:
   short_adult_en: ''
   long_en: ''
 notes: Hand-added via live Wikidata lookup (Q458) to close a gap against the classic
-  Histomap reference poster. Wikidata classifies the EU as a supranational union
-  (Q1335818), not a sovereign state -- entity_type=polity and eligibility=accepted
-  are a deliberate editorial call to depict it as a political-weight actor, matching
-  how the reference poster treats it, rather than an automated type-eligibility
-  match. Founded by the Maastricht Treaty, 1 Nov 1993.
+  Histomap reference poster. Wikidata classifies the EU as a supranational union (Q1335818),
+  not a sovereign state -- entity_type=polity and eligibility=accepted are a deliberate
+  editorial call to depict it as a political-weight actor, matching how the reference
+  poster treats it, rather than an automated type-eligibility match. Founded by the
+  Maastricht Treaty, 1 Nov 1993.
 sources:
 - wikidata
 prominence_score: 33.83

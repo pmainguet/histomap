@@ -9,8 +9,6 @@ external_ids:
   - MlSong2
 parent: null
 successors: []
-region: null
-culture_group: null
 start: 1464
 end: 1591
 start_confidence: low

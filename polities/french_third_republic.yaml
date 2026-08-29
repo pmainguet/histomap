@@ -10,8 +10,6 @@ external_ids:
 parent: null
 successors:
 - vichy_france
-region: null
-culture_group: null
 start: 1870
 end: 1940
 start_confidence: low

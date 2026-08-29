@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - grand_principality_of_moscow
-region: null
-culture_group: null
 start: 1213
 end: 1263
 start_confidence: low

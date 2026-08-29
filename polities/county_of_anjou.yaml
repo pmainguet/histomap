@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - duchy_of_anjou
-region: null
-culture_group: null
 start: 930
 end: 1360
 start_confidence: low

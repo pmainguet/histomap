@@ -9,8 +9,6 @@ parent: cisleithania
 successors:
 - czechoslovakia
 - first_czechoslovak_republic
-region: null
-culture_group: null
 start: 1198
 end: 1918
 start_confidence: low

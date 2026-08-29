@@ -11,8 +11,6 @@ successors:
 - east_francia
 - middle_francia
 - west_francia
-region: null
-culture_group: null
 start: 481
 end: 843
 start_confidence: low

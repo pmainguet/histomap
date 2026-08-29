@@ -9,8 +9,6 @@ external_ids:
   - KgWTurk
 parent: null
 successors: []
-region: null
-culture_group: null
 start: 581
 end: 659
 start_confidence: low

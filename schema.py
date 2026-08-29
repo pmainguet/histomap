@@ -152,8 +152,6 @@ class Polity(BaseModel):
     relationships: list[EntityRelationship] = Field(default_factory=list)
     parent: str | None = None
     successors: list[str] = Field(default_factory=list)
-    region: str | None = None
-    culture_group: str | None = None
     geography: Geography = Field(default_factory=Geography)
     manual_overrides: list[str] = Field(default_factory=list)
     start: int

@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - french_first_republic
-region: null
-culture_group: null
 start: 1071
 end: 1794
 start_confidence: low

@@ -1245,8 +1245,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 "external_ids": {"wikidata": qid} if qid else {},
                 "parent": None,
                 "successors": [],
-                "region": None,
-                "culture_group": None,
                 "start": period["start"],
                 "end": period["end"],
                 "start_confidence": period.get("start_confidence", "low"),

@@ -11,8 +11,6 @@ successors:
 - bourbon_restoration_in_france
 - genoese_republic
 - sovereign_principality_of_the_united_netherlands
-region: null
-culture_group: null
 start: 1804
 end: 1815
 start_confidence: low

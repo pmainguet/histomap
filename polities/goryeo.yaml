@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - joseon
-region: null
-culture_group: null
 start: 918
 end: 1392
 start_confidence: low

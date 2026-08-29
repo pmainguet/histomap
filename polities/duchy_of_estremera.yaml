@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - duchy_of_pastrana
-region: null
-culture_group: null
 start: 1568
 end: 1572
 start_confidence: low

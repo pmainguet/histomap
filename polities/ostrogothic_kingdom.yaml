@@ -10,8 +10,6 @@ parent: null
 successors:
 - duchy_of_brescia
 - duchy_of_rome
-region: null
-culture_group: null
 start: 493
 end: 553
 start_confidence: low

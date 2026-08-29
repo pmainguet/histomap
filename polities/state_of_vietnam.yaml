@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - south_vietnam
-region: null
-culture_group: null
 start: 1949
 end: 1955
 start_confidence: low

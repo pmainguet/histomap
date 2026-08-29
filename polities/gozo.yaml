@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - malta_protectorate
-region: null
-culture_group: null
 start: 1798
 end: 1800
 start_confidence: low

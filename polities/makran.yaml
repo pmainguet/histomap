@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - dominion_of_pakistan
-region: null
-culture_group: null
 start: 1701
 end: 1955
 start_confidence: low

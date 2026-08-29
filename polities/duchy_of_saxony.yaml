@@ -9,8 +9,6 @@ parent: null
 successors:
 - duchy_of_saxe_wittenberg
 - saxe_lauenburg
-region: null
-culture_group: null
 start: 804
 end: 1296
 start_confidence: low

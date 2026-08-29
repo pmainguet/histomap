@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - state_of_vietnam
-region: null
-culture_group: null
 start: 1948
 end: 1949
 start_confidence: low

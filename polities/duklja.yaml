@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - principality_of_zeta
-region: null
-culture_group: null
 start: 854
 end: 1252
 start_confidence: low

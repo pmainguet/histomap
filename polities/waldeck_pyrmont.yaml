@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - free_state_of_waldeck_pyrmont
-region: null
-culture_group: null
 start: 1849
 end: 1918
 start_confidence: low

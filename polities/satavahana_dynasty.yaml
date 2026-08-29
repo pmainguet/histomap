@@ -10,8 +10,6 @@ external_ids:
 parent: null
 successors:
 - vakataka_empire
-region: null
-culture_group: null
 start: -229
 end: 220
 start_confidence: low

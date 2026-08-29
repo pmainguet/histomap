@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - state_of_bahrain
-region: null
-culture_group: null
 start: 1783
 end: 1971
 start_confidence: low

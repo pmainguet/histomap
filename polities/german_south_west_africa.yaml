@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - south_west_africa
-region: null
-culture_group: null
 start: 1884
 end: 1915
 start_confidence: low

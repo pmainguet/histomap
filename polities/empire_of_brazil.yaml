@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - first_brazilian_republic
-region: null
-culture_group: null
 start: 1822
 end: 1889
 start_confidence: low

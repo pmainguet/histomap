@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - people_s_republic_of_bulgaria
-region: null
-culture_group: null
 start: 1908
 end: 1946
 start_confidence: low

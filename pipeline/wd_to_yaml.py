@@ -118,8 +118,6 @@ def to_document(row: dict, polity_id: str) -> dict:
         "external_ids": external_ids,
         "parent": None,
         "successors": [],
-        "region": None,
-        "culture_group": None,
         "start": start,
         "end": end,
         "start_confidence": "low",

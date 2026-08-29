@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - panama
-region: null
-culture_group: null
 start: 1863
 end: 1886
 start_confidence: low

@@ -15,8 +15,6 @@ external_ids:
 parent: null
 successors:
 - austrian_empire
-region: null
-culture_group: null
 start: 697
 end: 1797
 start_confidence: low

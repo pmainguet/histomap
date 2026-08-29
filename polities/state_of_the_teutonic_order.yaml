@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - duchy_of_prussia
-region: null
-culture_group: null
 start: 1230
 end: 1525
 start_confidence: low

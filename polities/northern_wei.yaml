@@ -9,8 +9,6 @@ parent: null
 successors:
 - eastern_wei
 - western_wei_q1143164
-region: null
-culture_group: null
 start: 386
 end: 535
 start_confidence: low

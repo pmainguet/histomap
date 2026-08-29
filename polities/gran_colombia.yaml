@@ -10,8 +10,6 @@ successors:
 - ecuador
 - federal_republic_of_central_america
 - republic_of_new_granada
-region: null
-culture_group: null
 start: 1819
 end: 1831
 start_confidence: low

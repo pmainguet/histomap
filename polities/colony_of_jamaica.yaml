@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - jamaica
-region: null
-culture_group: null
 start: 1655
 end: 1962
 start_confidence: low

@@ -12,8 +12,6 @@ successors:
 - dominion_of_india
 - dominion_of_pakistan
 - india
-region: null
-culture_group: null
 start: 1858
 end: 1947
 start_confidence: low

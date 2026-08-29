@@ -11,8 +11,6 @@ parent: null
 successors:
 - empire_of_japan
 - government_of_meiji_japan
-region: null
-culture_group: null
 start: 1603
 end: 1867
 start_confidence: low

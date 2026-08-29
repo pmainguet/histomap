@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - greater_hesse
-region: null
-culture_group: null
 start: 1918
 end: 1945
 start_confidence: low

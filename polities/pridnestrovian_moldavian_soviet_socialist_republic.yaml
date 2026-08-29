@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - transnistria
-region: null
-culture_group: null
 start: 1990
 end: 1991
 start_confidence: low

@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - sikkim
-region: null
-culture_group: null
 start: 1642
 end: 1975
 start_confidence: low

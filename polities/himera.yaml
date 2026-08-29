@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - thermai_himeraiai
-region: null
-culture_group: null
 start: -647
 end: -408
 start_confidence: low

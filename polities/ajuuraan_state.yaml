@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - hiraab_imamate
-region: null
-culture_group: null
 start: 1201
 end: 1700
 start_confidence: low

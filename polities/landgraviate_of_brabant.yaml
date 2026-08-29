@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - duchy_of_brabant
-region: null
-culture_group: null
 start: 1085
 end: 1183
 start_confidence: low

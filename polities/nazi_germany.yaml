@@ -9,8 +9,6 @@ external_ids:
 parent: weimar_republic
 successors:
 - germany
-region: null
-culture_group: null
 start: 1933
 end: 1945
 start_confidence: high
@@ -26,8 +24,8 @@ text:
   long_en: ''
 notes: Hand-added via live Wikidata lookup (Q7318) to close a gap against the classic
   Histomap reference poster. weimar_republic.yaml already listed this id as a successor.
-  successors points straight to germany.yaml (1949-) since the 1945-1949 Allied
-  occupation isn't modeled as its own polity yet.
+  successors points straight to germany.yaml (1949-) since the 1945-1949 Allied occupation
+  isn't modeled as its own polity yet.
 sources:
 - wikidata
 prominence_score: 32.78

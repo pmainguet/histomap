@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - lordship_of_brecknock
-region: null
-culture_group: null
 start: 450
 end: 1045
 start_confidence: low

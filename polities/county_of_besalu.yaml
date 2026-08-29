@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - duchy_of_girona
-region: null
-culture_group: null
 start: 988
 end: 1111
 start_confidence: low

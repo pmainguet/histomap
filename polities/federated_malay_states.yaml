@@ -7,8 +7,6 @@ external_ids:
 parent: british_malaya
 successors:
 - malayan_union
-region: null
-culture_group: null
 start: 1895
 end: 1946
 start_confidence: low

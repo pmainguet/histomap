@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - galicia_in_the_visigothic_kingdom
-region: null
-culture_group: null
 start: 409
 end: 585
 start_confidence: low

@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - principality_of_catalonia
-region: null
-culture_group: null
 start: 812
 end: 1172
 start_confidence: low

@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - county_of_molise
-region: null
-culture_group: null
 start: 550
 end: 1223
 start_confidence: low

@@ -8,8 +8,6 @@ external_ids:
   - MnTurk2
 parent: null
 successors: []
-region: null
-culture_group: null
 start: 682
 end: 744
 start_confidence: low

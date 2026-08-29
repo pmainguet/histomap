@@ -7,8 +7,6 @@ parent: null
 successors:
 - kingdom_of_butua
 - kingdom_of_mutapa
-region: null
-culture_group: null
 start: 1220
 end: 1450
 start_confidence: low

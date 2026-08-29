@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - griqualand_west
-region: null
-culture_group: null
 start: 1870
 end: 1871
 start_confidence: low

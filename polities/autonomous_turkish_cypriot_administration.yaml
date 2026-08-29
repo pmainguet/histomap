@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - turkish_federated_state_of_cyprus
-region: null
-culture_group: null
 start: 1974
 end: 1975
 start_confidence: low

@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_greece
-region: null
-culture_group: null
 start: 1822
 end: 1832
 start_confidence: low

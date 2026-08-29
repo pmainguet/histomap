@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - duchy_of_bremen_and_verden
-region: null
-culture_group: null
 start: 787
 end: 1648
 start_confidence: low

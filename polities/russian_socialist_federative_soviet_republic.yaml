@@ -11,8 +11,6 @@ parent: null
 successors:
 - russian_soviet_federative_socialist_republic
 - soviet_union
-region: null
-culture_group: null
 start: 1917
 end: 1922
 start_confidence: low

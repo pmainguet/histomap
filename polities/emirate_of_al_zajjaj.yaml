@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - emirate_of_ayash
-region: null
-culture_group: null
 start: 1065
 end: 1067
 start_confidence: low

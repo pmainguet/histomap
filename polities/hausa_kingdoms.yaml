@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - sokoto_caliphate
-region: null
-culture_group: null
 start: 900
 end: 1808
 start_confidence: low

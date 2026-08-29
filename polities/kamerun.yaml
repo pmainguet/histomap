@@ -9,8 +9,6 @@ parent: null
 successors:
 - british_cameroons
 - french_cameroons
-region: null
-culture_group: null
 start: 1884
 end: 1919
 start_confidence: low

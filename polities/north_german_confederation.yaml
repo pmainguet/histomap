@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - german_reich
-region: null
-culture_group: null
 start: 1867
 end: 1870
 start_confidence: low

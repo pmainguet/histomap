@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - republic_of_cuba
-region: null
-culture_group: null
 start: 1898
 end: 1902
 start_confidence: low

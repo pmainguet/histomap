@@ -15,8 +15,6 @@ parent: null
 successors:
 - later_liang_dynasty
 - yang_wu
-region: null
-culture_group: null
 start: 618
 end: 907
 start_confidence: low

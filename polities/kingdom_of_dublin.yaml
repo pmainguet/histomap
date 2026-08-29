@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - lordship_of_ireland
-region: null
-culture_group: null
 start: 839
 end: 1171
 start_confidence: low

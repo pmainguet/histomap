@@ -196,8 +196,6 @@ external_ids:
   seshat: IrAchae
 parent: median_empire             # what it succeeded
 successors: [macedonian_empire]
-region: persia                     # displayed as "Historical grouping"
-culture_group: iranian
 geography:
   continents: [asia]
   present_countries: [IR, IQ, TR]
@@ -227,6 +225,11 @@ sources:
 ```
 
 Validated by `schema.py` (Pydantic). Anything failing schema is rejected at commit time.
+
+This sketch originally had `region`/`culture_group` fields (as shown above); removed
+from `schema.py` on 2026-08-29 — never populated at scale (>99% null), and their
+intended purpose (a fine-grained historical-region classification, "Persia" rather than
+just "asia") is superseded by `Geography.historical_regions` — see `ONTOLOGY.md`.
 
 ---
 

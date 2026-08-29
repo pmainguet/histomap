@@ -10,8 +10,6 @@ successors:
 - german_democratic_republic
 - germany
 - west_germany
-region: null
-culture_group: null
 start: 1871
 end: 1949
 start_confidence: low

@@ -10,8 +10,6 @@ successors:
 - emirate_of_al_zajjaj
 - emirate_of_ayash
 - uyunid_emirate
-region: null
-culture_group: null
 start: 899
 end: 1077
 start_confidence: low

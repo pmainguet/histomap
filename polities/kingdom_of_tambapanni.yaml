@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - anuradhapura_kingdom
-region: null
-culture_group: null
 start: -542
 end: -436
 start_confidence: low

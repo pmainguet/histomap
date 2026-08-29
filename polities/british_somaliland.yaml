@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - state_of_somaliland
-region: null
-culture_group: null
 start: 1884
 end: 1960
 start_confidence: low

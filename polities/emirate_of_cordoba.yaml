@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - caliphate_of_cordoba
-region: null
-culture_group: null
 start: 756
 end: 929
 start_confidence: low

@@ -9,8 +9,6 @@ parent: null
 successors:
 - finnish_socialist_workers_republic
 - kingdom_of_finland
-region: null
-culture_group: null
 start: 1809
 end: 1917
 start_confidence: low

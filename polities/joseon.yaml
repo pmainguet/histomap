@@ -11,8 +11,6 @@ external_ids:
 parent: null
 successors:
 - korean_empire
-region: null
-culture_group: null
 start: 1392
 end: 1897
 start_confidence: low

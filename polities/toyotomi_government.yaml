@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - tokugawa_shogunate
-region: null
-culture_group: null
 start: 1580
 end: 1603
 start_confidence: low

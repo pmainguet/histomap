@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - free_state_of_mecklenburg
-region: null
-culture_group: null
 start: 1918
 end: 1933
 start_confidence: low

@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_alba
-region: null
-culture_group: null
 start: 498
 end: 843
 start_confidence: low

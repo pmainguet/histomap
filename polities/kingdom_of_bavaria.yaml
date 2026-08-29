@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - bavaria
-region: null
-culture_group: null
 start: 1806
 end: 1918
 start_confidence: low

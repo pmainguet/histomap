@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_bosnia
-region: null
-culture_group: null
 start: 1136
 end: 1377
 start_confidence: low

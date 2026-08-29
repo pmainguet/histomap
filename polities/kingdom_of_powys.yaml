@@ -9,8 +9,6 @@ parent: null
 successors:
 - powys_fadog
 - powys_wenwynwyn
-region: null
-culture_group: null
 start: 500
 end: 1160
 start_confidence: low

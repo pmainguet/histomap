@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - palmyrene_empire
-region: null
-culture_group: null
 start: 260
 end: 270
 start_confidence: low

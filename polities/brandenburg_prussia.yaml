@@ -7,8 +7,6 @@ external_ids:
 parent: prussia
 successors:
 - kingdom_of_prussia
-region: null
-culture_group: null
 start: 1618
 end: 1701
 start_confidence: low

@@ -11,8 +11,6 @@ successors:
 - byelorussian_soviet_socialist_republic
 - republic_of_central_lithuania
 - socialist_soviet_republic_of_byelorussia
-region: null
-culture_group: null
 start: 1919
 end: 1920
 start_confidence: low

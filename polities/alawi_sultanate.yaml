@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - french_protectorate_in_morocco
-region: null
-culture_group: null
 start: 1660
 end: 1912
 start_confidence: low

@@ -8,8 +8,6 @@ parent: null
 successors:
 - syrian_arab_republic
 - united_arab_republic
-region: null
-culture_group: null
 start: 1930
 end: 1963
 start_confidence: low

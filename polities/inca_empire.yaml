@@ -11,8 +11,6 @@ external_ids:
 parent: null
 successors:
 - neo_inca_state
-region: null
-culture_group: null
 start: 1438
 end: 1533
 start_confidence: low

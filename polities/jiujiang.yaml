@@ -6,8 +6,6 @@ external_ids:
 parent: null
 successors:
 - western_chu
-region: null
-culture_group: null
 start: -205
 end: -203
 start_confidence: low

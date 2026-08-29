@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_deheubarth
-region: null
-culture_group: null
 start: 680
 end: 920
 start_confidence: low

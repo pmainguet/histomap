@@ -8,8 +8,6 @@ external_ids:
 parent: imperial_court_of_japan
 successors:
 - ashikaga_shogunate
-region: null
-culture_group: null
 start: 1333
 end: 1336
 start_confidence: low

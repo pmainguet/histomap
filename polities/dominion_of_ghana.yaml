@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - ghana
-region: null
-culture_group: null
 start: 1957
 end: 1960
 start_confidence: low

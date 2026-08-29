@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - uyunid_emirate
-region: null
-culture_group: null
 start: 1067
 end: 1077
 start_confidence: low

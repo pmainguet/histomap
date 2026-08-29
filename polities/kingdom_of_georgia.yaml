@@ -9,8 +9,6 @@ parent: null
 successors:
 - kingdom_of_kakheti
 - kingdom_of_kartli
-region: null
-culture_group: null
 start: 1008
 end: 1466
 start_confidence: low

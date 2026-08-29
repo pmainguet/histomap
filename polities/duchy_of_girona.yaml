@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - principality_of_girona
-region: null
-culture_group: null
 start: 1351
 end: 1416
 start_confidence: low

@@ -8,8 +8,6 @@ external_ids:
 parent: french_mandate_of_lebanon
 successors:
 - lebanese_republic_under_french_mandate
-region: null
-culture_group: null
 start: 1920
 end: 1926
 start_confidence: low

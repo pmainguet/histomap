@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - duchy_of_mantua
-region: null
-culture_group: null
 start: 1433
 end: 1530
 start_confidence: low

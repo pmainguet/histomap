@@ -8,8 +8,6 @@ parent: null
 successors:
 - andhra_pradesh
 - andhra_pradesh_19562014
-region: null
-culture_group: null
 start: 1953
 end: 1956
 start_confidence: low

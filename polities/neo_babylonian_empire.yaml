@@ -10,8 +10,6 @@ external_ids:
 parent: null
 successors:
 - achaemenid_empire
-region: null
-culture_group: null
 start: -625
 end: -538
 start_confidence: low

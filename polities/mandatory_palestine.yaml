@@ -11,8 +11,6 @@ successors:
 - all_palestine_government
 - israel
 - jordan
-region: null
-culture_group: null
 start: 1920
 end: 1948
 start_confidence: low

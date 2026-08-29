@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - united_kingdom_of_great_britain_and_ireland
-region: null
-culture_group: null
 start: 1707
 end: 1801
 start_confidence: low

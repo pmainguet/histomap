@@ -9,8 +9,6 @@ external_ids:
 parent: null
 successors:
 - ostrogothic_kingdom
-region: null
-culture_group: null
 start: 476
 end: 493
 start_confidence: low

@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - eastern_hungarian_kingdom
-region: null
-culture_group: null
 start: 1301
 end: 1526
 start_confidence: low

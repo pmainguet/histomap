@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - mongol_empire
-region: null
-culture_group: null
 start: 1124
 end: 1218
 start_confidence: low

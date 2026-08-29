@@ -16,8 +16,6 @@ external_ids:
 parent: null
 successors:
 - taiwan
-region: null
-culture_group: null
 start: 1636
 end: 1912
 start_confidence: low

@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - malawi
-region: null
-culture_group: null
 start: 1964
 end: 1966
 start_confidence: low

@@ -8,8 +8,6 @@ parent: null
 successors:
 - emirate_of_cyrenaica
 - kingdom_of_libya
-region: null
-culture_group: null
 start: 1943
 end: 1951
 start_confidence: low

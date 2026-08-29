@@ -10,8 +10,6 @@ successors:
 - bauchi_state
 - borno_state
 - gongola_state
-region: null
-culture_group: null
 start: 1967
 end: 1976
 start_confidence: low

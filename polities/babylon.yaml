@@ -9,8 +9,6 @@ external_ids:
   - IqIsin2
 parent: null
 successors: []
-region: null
-culture_group: null
 start: -2200
 end: 1
 start_confidence: low

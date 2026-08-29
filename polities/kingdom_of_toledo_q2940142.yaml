@@ -9,8 +9,6 @@ external_ids:
 parent: visigothic_kingdom
 successors:
 - kingdom_of_asturias
-region: null
-culture_group: null
 start: 549
 end: 711
 start_confidence: low

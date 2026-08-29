@@ -12,8 +12,6 @@ parent: dutch_empire
 successors:
 - aruba
 - sint_maarten
-region: null
-culture_group: null
 start: 1954
 end: 2010
 start_confidence: low

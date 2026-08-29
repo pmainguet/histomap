@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - kazan_kingdom
-region: null
-culture_group: null
 start: 1438
 end: 1552
 start_confidence: low

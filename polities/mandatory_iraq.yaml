@@ -8,8 +8,6 @@ external_ids:
 parent: null
 successors:
 - kingdom_of_iraq
-region: null
-culture_group: null
 start: 1920
 end: 1932
 start_confidence: low

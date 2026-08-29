@@ -12,8 +12,6 @@ parent: null
 successors:
 - maurya_empire
 - nanda_empire
-region: null
-culture_group: null
 start: -599
 end: -344
 start_confidence: low

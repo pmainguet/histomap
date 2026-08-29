@@ -12,8 +12,6 @@ successors:
 - later_yan
 - western_qin
 - western_yan
-region: null
-culture_group: null
 start: 350
 end: 394
 start_confidence: low

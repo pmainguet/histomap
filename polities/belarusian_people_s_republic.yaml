@@ -9,8 +9,6 @@ parent: null
 successors:
 - byelorussian_soviet_socialist_republic
 - socialist_soviet_republic_of_byelorussia
-region: null
-culture_group: null
 start: 1918
 end: 1919
 start_confidence: low

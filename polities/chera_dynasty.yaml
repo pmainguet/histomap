@@ -9,8 +9,6 @@ parent: null
 successors:
 - kingdom_of_cochin
 - venad
-region: null
-culture_group: null
 start: 800
 end: 1102
 start_confidence: low

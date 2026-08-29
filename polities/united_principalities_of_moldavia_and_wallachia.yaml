@@ -9,8 +9,6 @@ parent: null
 successors:
 - kingdom_of_romania
 - romania
-region: null
-culture_group: null
 start: 1859
 end: 1881
 start_confidence: low

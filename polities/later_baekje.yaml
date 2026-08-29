@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - goryeo
-region: null
-culture_group: null
 start: 892
 end: 936
 start_confidence: low

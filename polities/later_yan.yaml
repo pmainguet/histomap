@@ -8,8 +8,6 @@ parent: null
 successors:
 - northern_yan
 - southern_yan
-region: null
-culture_group: null
 start: 384
 end: 409
 start_confidence: low

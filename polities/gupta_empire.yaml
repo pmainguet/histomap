@@ -13,8 +13,6 @@ successors:
 - gurjara_pratihara
 - pala_empire
 - rashtrakuta_dynasty
-region: null
-culture_group: null
 start: 320
 end: 550
 start_confidence: low

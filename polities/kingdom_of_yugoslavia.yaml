@@ -10,8 +10,6 @@ successors:
 - democratic_federal_yugoslavia
 - governorate_of_montenegro
 - independent_state_of_croatia
-region: null
-culture_group: null
 start: 1929
 end: 1945
 start_confidence: low

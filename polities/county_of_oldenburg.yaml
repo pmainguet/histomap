@@ -7,8 +7,6 @@ external_ids:
 parent: null
 successors:
 - duchy_of_oldenburg
-region: null
-culture_group: null
 start: 1091
 end: 1774
 start_confidence: low
