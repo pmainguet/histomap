@@ -1,0 +1,19 @@
+id: south_asian_classical_era
+canonical_name: South Asian Classical Antiquity
+kind: historical
+tier: regional_era
+start: -600
+end: 500
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+broader_periods:
+- macro_classical_imperial_worlds
+successors: []
+authority: 'Histomap editorial: regional-era starter set'
+external_ids: {}
+notes: The Mahajanapadas through the Gupta Empire.
+source_urls:
+- https://en.wikipedia.org/wiki/South_Asian_Classical_Antiquity

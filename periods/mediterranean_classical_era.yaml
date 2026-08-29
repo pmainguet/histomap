@@ -1,0 +1,19 @@
+id: mediterranean_classical_era
+canonical_name: Mediterranean Classical Antiquity
+kind: historical
+tier: regional_era
+start: -1200
+end: 500
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+broader_periods:
+- macro_classical_imperial_worlds
+successors: []
+authority: 'Histomap editorial: regional-era starter set'
+external_ids: {}
+notes: Greek Dark Age through the fall of the Western Roman Empire.
+source_urls:
+- https://en.wikipedia.org/wiki/Mediterranean_Classical_Antiquity

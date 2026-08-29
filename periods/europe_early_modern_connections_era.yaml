@@ -1,0 +1,20 @@
+id: europe_early_modern_connections_era
+canonical_name: Europe, Early Modern Connections
+kind: historical
+tier: regional_era
+start: 1500
+end: 1800
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+broader_periods:
+- macro_early_modern_connections
+successors: []
+authority: 'Histomap editorial: auto-generated continent x chapter node'
+external_ids: {}
+notes: Auto-generated placeholder -- continent-level grain only, no historical research.
+  A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace
+  this once someone wants to invest that research; see ONTOLOGY.md.
+source_urls: []

@@ -1,0 +1,19 @@
+id: medieval_europe_era
+canonical_name: Medieval Europe
+kind: historical
+tier: regional_era
+start: 500
+end: 1500
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+broader_periods:
+- macro_postclassical_worlds
+successors: []
+authority: 'Histomap editorial: regional-era starter set'
+external_ids: {}
+notes: Early, High, and Late Middle Ages, including the Byzantine Empire.
+source_urls:
+- https://en.wikipedia.org/wiki/Medieval_Europe

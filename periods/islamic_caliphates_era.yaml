@@ -1,0 +1,21 @@
+id: islamic_caliphates_era
+canonical_name: Islamic Caliphates and Sultanates
+kind: historical
+tier: regional_era
+start: 622
+end: 1500
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  - africa
+broader_periods:
+- macro_postclassical_worlds
+successors: []
+authority: 'Histomap editorial: regional-era starter set'
+external_ids: {}
+notes: Rashidun Caliphate through the rise of the Ottoman, Safavid, and Mughal gunpowder
+  empires.
+source_urls:
+- https://en.wikipedia.org/wiki/Islamic_Caliphates_and_Sultanates

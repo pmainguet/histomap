@@ -1,0 +1,252 @@
+"""One-shot authoring script for the hand-curated regional-era starter set
+(macro chapters 1-5 only -- Task 4 Part A of the period-ontology plan). Run
+once; re-running is safe (overwrites its own files with the same content).
+Not part of the recurring pipeline sequence.
+
+# TODO: a few of the auto-built source_urls below (built from canonical_name)
+# won't resolve to a real Wikipedia article -- known rough edge, not blocking
+# (schema only checks the URL is a string). Fix opportunistically."""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+import yaml
+
+ROOT = Path(__file__).resolve().parent.parent
+PERIODS_DIR = ROOT / "periods"
+
+# (id, canonical_name, macro_chapter_id, start, end, continents, notes)
+REGIONAL_ERAS: list[dict] = [
+    dict(
+        id="african_paleolithic_era",
+        canonical_name="African Paleolithic",
+        broader_periods=["macro_human_origins_paleolithic"],
+        start=-3000000,
+        end=-10000,
+        continents=["africa"],
+        notes="Earliest stone tools and the origin of Homo sapiens.",
+    ),
+    dict(
+        id="eurasian_paleolithic_era",
+        canonical_name="Eurasian Paleolithic",
+        broader_periods=["macro_human_origins_paleolithic"],
+        start=-1800000,
+        end=-10000,
+        continents=["europe", "asia"],
+        notes="From the first Homo erectus dispersal out of Africa (Dmanisi, "
+        "~1.8 million years ago) through the end of the last Ice Age.",
+    ),
+    dict(
+        id="fertile_crescent_neolithic_era",
+        canonical_name="Fertile Crescent Neolithic",
+        broader_periods=["macro_agricultural_transitions"],
+        start=-10000,
+        end=-3500,
+        continents=["asia"],
+        notes="Earliest agriculture (Levant, Anatolia, Mesopotamia).",
+    ),
+    dict(
+        id="nile_valley_neolithic_era",
+        canonical_name="Nile Valley Neolithic",
+        broader_periods=["macro_agricultural_transitions"],
+        start=-8800,
+        end=-3500,
+        continents=["africa"],
+        notes="Pre-dynastic Egyptian and Nubian farming cultures.",
+    ),
+    dict(
+        id="east_asian_neolithic_era",
+        canonical_name="East Asian Neolithic",
+        broader_periods=["macro_agricultural_transitions"],
+        start=-7000,
+        end=-3500,
+        continents=["asia"],
+        notes="Yellow and Yangtze river valley farming cultures (e.g. Jiahu, "
+        "Hemudu, Yangshao).",
+    ),
+    dict(
+        id="mesoamerican_archaic_era",
+        canonical_name="Mesoamerican Archaic",
+        broader_periods=["macro_agricultural_transitions"],
+        start=-8000,
+        end=-2000,
+        continents=["north_america"],
+        notes="Maize domestication and early sedentism. Ends -2000, well past "
+        "this chapter's nominal -3500 boundary -- chapter membership is "
+        "editorial, not a date-containment claim; see ONTOLOGY.md.",
+    ),
+    dict(
+        id="andean_archaic_era",
+        canonical_name="Andean Archaic",
+        broader_periods=["macro_agricultural_transitions"],
+        start=-7000,
+        end=-2000,
+        continents=["south_america"],
+        notes="Early Andean and coastal Peruvian farming/fishing settlements "
+        "(e.g. Norte Chico). Ends -2000, past this chapter's nominal -3500 "
+        "boundary -- see the note on mesoamerican_archaic_era.",
+    ),
+    dict(
+        id="mesopotamian_early_states_era",
+        canonical_name="Mesopotamian Early States",
+        broader_periods=["macro_early_cities_states"],
+        start=-3500,
+        end=-1200,
+        continents=["asia"],
+        notes="Uruk period through the Bronze Age Collapse.",
+    ),
+    dict(
+        id="egyptian_early_states_era",
+        canonical_name="Egyptian Early States",
+        broader_periods=["macro_early_cities_states"],
+        start=-3100,
+        end=-1070,
+        continents=["africa"],
+        notes="Early Dynastic through the New Kingdom. Ends -1070, past this "
+        "chapter's nominal -1200 boundary -- editorial placement, not "
+        "date-containment; see ONTOLOGY.md.",
+    ),
+    dict(
+        id="east_asian_bronze_age_era",
+        canonical_name="East Asian Bronze Age",
+        broader_periods=["macro_early_cities_states"],
+        start=-2000,
+        end=-1046,
+        continents=["asia"],
+        notes="Erlitou culture through the end of the Shang dynasty.",
+    ),
+    dict(
+        id="european_bronze_age_era",
+        canonical_name="European Bronze Age",
+        broader_periods=["macro_early_cities_states"],
+        start=-3200,
+        end=-1200,
+        continents=["europe"],
+        notes="Aegean, Central European, and Atlantic Bronze Age cultures.",
+    ),
+    dict(
+        id="mediterranean_classical_era",
+        canonical_name="Mediterranean Classical Antiquity",
+        broader_periods=["macro_classical_imperial_worlds"],
+        start=-1200,
+        end=500,
+        continents=["europe"],
+        notes="Greek Dark Age through the fall of the Western Roman Empire.",
+    ),
+    dict(
+        id="east_asian_classical_era",
+        canonical_name="East Asian Classical Antiquity",
+        broader_periods=["macro_classical_imperial_worlds"],
+        start=-1046,
+        end=500,
+        continents=["asia"],
+        notes="Zhou dynasty through the Northern and Southern dynasties.",
+    ),
+    dict(
+        id="south_asian_classical_era",
+        canonical_name="South Asian Classical Antiquity",
+        broader_periods=["macro_classical_imperial_worlds"],
+        start=-600,
+        end=500,
+        continents=["asia"],
+        notes="The Mahajanapadas through the Gupta Empire.",
+    ),
+    dict(
+        id="mesoamerican_formative_classic_era",
+        canonical_name="Mesoamerican Formative and Classic Periods",
+        broader_periods=["macro_classical_imperial_worlds"],
+        start=-1200,
+        end=900,
+        continents=["north_america"],
+        notes="Olmec civilization through the Classic Maya collapse. Ends "
+        "900 CE, 400 years past this chapter's nominal 500 CE boundary -- "
+        "editorial placement, not date-containment; see ONTOLOGY.md.",
+    ),
+    dict(
+        id="andean_early_civilizations_era",
+        canonical_name="Early Andean Civilizations",
+        broader_periods=["macro_classical_imperial_worlds"],
+        start=-1200,
+        end=600,
+        continents=["south_america"],
+        notes="Chavin culture through the Moche and Nazca. Ends 600 CE, past "
+        "this chapter's nominal 500 CE boundary -- see the note on "
+        "mesoamerican_formative_classic_era.",
+    ),
+    dict(
+        id="sub_saharan_african_iron_age_era",
+        canonical_name="Sub-Saharan African Iron Age",
+        broader_periods=["macro_classical_imperial_worlds"],
+        start=-600,
+        end=500,
+        continents=["africa"],
+        notes="Nok culture and the early Bantu expansion ironworking "
+        "tradition.",
+    ),
+    dict(
+        id="medieval_europe_era",
+        canonical_name="Medieval Europe",
+        broader_periods=["macro_postclassical_worlds"],
+        start=500,
+        end=1500,
+        continents=["europe"],
+        notes="Early, High, and Late Middle Ages, including the Byzantine "
+        "Empire.",
+    ),
+    dict(
+        id="islamic_caliphates_era",
+        canonical_name="Islamic Caliphates and Sultanates",
+        broader_periods=["macro_postclassical_worlds"],
+        start=622,
+        end=1500,
+        continents=["asia", "africa"],
+        notes="Rashidun Caliphate through the rise of the Ottoman, Safavid, "
+        "and Mughal gunpowder empires.",
+    ),
+    dict(
+        id="east_asian_imperial_era",
+        canonical_name="East Asian Imperial Dynasties (Post-Classical)",
+        broader_periods=["macro_postclassical_worlds"],
+        start=500,
+        end=1500,
+        continents=["asia"],
+        notes="Tang through Ming China; Heian through Muromachi Japan; "
+        "Goryeo Korea.",
+    ),
+]
+
+
+def build_period(row: dict) -> dict:
+    return {
+        "id": row["id"],
+        "canonical_name": row["canonical_name"],
+        "kind": "historical",
+        "tier": "regional_era",
+        "start": row["start"],
+        "end": row["end"],
+        "start_confidence": "low",
+        "end_confidence": "low",
+        "geography": {"continents": row["continents"]},
+        "broader_periods": row["broader_periods"],
+        "successors": [],
+        "authority": "Histomap editorial: regional-era starter set",
+        "external_ids": {},
+        "notes": row["notes"],
+        "source_urls": ["https://en.wikipedia.org/wiki/" + row["canonical_name"].replace(" ", "_")],
+    }
+
+
+def main() -> None:
+    for row in REGIONAL_ERAS:
+        document = build_period(row)
+        path = PERIODS_DIR / f"{row['id']}.yaml"
+        path.write_text(
+            yaml.safe_dump(document, sort_keys=False, allow_unicode=True),
+            encoding="utf-8",
+        )
+    print(f"wrote {len(REGIONAL_ERAS)} regional-era period files")
+
+
+if __name__ == "__main__":
+    main()

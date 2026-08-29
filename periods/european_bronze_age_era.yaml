@@ -1,0 +1,19 @@
+id: european_bronze_age_era
+canonical_name: European Bronze Age
+kind: historical
+tier: regional_era
+start: -3200
+end: -1200
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+broader_periods:
+- macro_early_cities_states
+successors: []
+authority: 'Histomap editorial: regional-era starter set'
+external_ids: {}
+notes: Aegean, Central European, and Atlantic Bronze Age cultures.
+source_urls:
+- https://en.wikipedia.org/wiki/European_Bronze_Age

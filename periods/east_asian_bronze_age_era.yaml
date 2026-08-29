@@ -1,0 +1,19 @@
+id: east_asian_bronze_age_era
+canonical_name: East Asian Bronze Age
+kind: historical
+tier: regional_era
+start: -2000
+end: -1046
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+broader_periods:
+- macro_early_cities_states
+successors: []
+authority: 'Histomap editorial: regional-era starter set'
+external_ids: {}
+notes: Erlitou culture through the end of the Shang dynasty.
+source_urls:
+- https://en.wikipedia.org/wiki/East_Asian_Bronze_Age

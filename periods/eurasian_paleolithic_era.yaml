@@ -1,0 +1,21 @@
+id: eurasian_paleolithic_era
+canonical_name: Eurasian Paleolithic
+kind: historical
+tier: regional_era
+start: -1800000
+end: -10000
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  - asia
+broader_periods:
+- macro_human_origins_paleolithic
+successors: []
+authority: 'Histomap editorial: regional-era starter set'
+external_ids: {}
+notes: From the first Homo erectus dispersal out of Africa (Dmanisi, ~1.8 million
+  years ago) through the end of the last Ice Age.
+source_urls:
+- https://en.wikipedia.org/wiki/Eurasian_Paleolithic

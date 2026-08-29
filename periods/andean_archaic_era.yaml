@@ -1,0 +1,20 @@
+id: andean_archaic_era
+canonical_name: Andean Archaic
+kind: historical
+tier: regional_era
+start: -7000
+end: -2000
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - south_america
+broader_periods:
+- macro_agricultural_transitions
+successors: []
+authority: 'Histomap editorial: regional-era starter set'
+external_ids: {}
+notes: Early Andean and coastal Peruvian farming/fishing settlements (e.g. Norte Chico).
+  Ends -2000, past this chapter's nominal -3500 boundary -- see the note on mesoamerican_archaic_era.
+source_urls:
+- https://en.wikipedia.org/wiki/Andean_Archaic

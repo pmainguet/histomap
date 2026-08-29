@@ -251,7 +251,7 @@ class Period(BaseModel):
     authority: str
     external_ids: dict[str, str] = Field(default_factory=dict)
     notes: str = ""
-    source_urls: list[str] = Field(default_factory=list, min_length=1)
+    source_urls: list[str] = Field(default_factory=list)
 
     @field_validator("id")
     @classmethod

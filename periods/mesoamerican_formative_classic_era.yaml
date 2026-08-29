@@ -1,0 +1,21 @@
+id: mesoamerican_formative_classic_era
+canonical_name: Mesoamerican Formative and Classic Periods
+kind: historical
+tier: regional_era
+start: -1200
+end: 900
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - north_america
+broader_periods:
+- macro_classical_imperial_worlds
+successors: []
+authority: 'Histomap editorial: regional-era starter set'
+external_ids: {}
+notes: Olmec civilization through the Classic Maya collapse. Ends 900 CE, 400 years
+  past this chapter's nominal 500 CE boundary -- editorial placement, not date-containment;
+  see ONTOLOGY.md.
+source_urls:
+- https://en.wikipedia.org/wiki/Mesoamerican_Formative_and_Classic_Periods

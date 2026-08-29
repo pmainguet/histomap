@@ -1,0 +1,20 @@
+id: asia_world_wars_reordering_era
+canonical_name: Asia, World Wars Reordering
+kind: historical
+tier: regional_era
+start: 1914
+end: 1945
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+broader_periods:
+- macro_world_wars_reordering
+successors: []
+authority: 'Histomap editorial: auto-generated continent x chapter node'
+external_ids: {}
+notes: Auto-generated placeholder -- continent-level grain only, no historical research.
+  A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace
+  this once someone wants to invest that research; see ONTOLOGY.md.
+source_urls: []

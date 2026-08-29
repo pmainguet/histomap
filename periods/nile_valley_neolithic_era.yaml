@@ -1,0 +1,19 @@
+id: nile_valley_neolithic_era
+canonical_name: Nile Valley Neolithic
+kind: historical
+tier: regional_era
+start: -8800
+end: -3500
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+broader_periods:
+- macro_agricultural_transitions
+successors: []
+authority: 'Histomap editorial: regional-era starter set'
+external_ids: {}
+notes: Pre-dynastic Egyptian and Nubian farming cultures.
+source_urls:
+- https://en.wikipedia.org/wiki/Nile_Valley_Neolithic

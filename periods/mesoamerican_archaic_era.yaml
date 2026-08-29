@@ -1,0 +1,21 @@
+id: mesoamerican_archaic_era
+canonical_name: Mesoamerican Archaic
+kind: historical
+tier: regional_era
+start: -8000
+end: -2000
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - north_america
+broader_periods:
+- macro_agricultural_transitions
+successors: []
+authority: 'Histomap editorial: regional-era starter set'
+external_ids: {}
+notes: Maize domestication and early sedentism. Ends -2000, well past this chapter's
+  nominal -3500 boundary -- chapter membership is editorial, not a date-containment
+  claim; see ONTOLOGY.md.
+source_urls:
+- https://en.wikipedia.org/wiki/Mesoamerican_Archaic

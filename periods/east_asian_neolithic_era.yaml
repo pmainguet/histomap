@@ -1,0 +1,19 @@
+id: east_asian_neolithic_era
+canonical_name: East Asian Neolithic
+kind: historical
+tier: regional_era
+start: -7000
+end: -3500
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+broader_periods:
+- macro_agricultural_transitions
+successors: []
+authority: 'Histomap editorial: regional-era starter set'
+external_ids: {}
+notes: Yellow and Yangtze river valley farming cultures (e.g. Jiahu, Hemudu, Yangshao).
+source_urls:
+- https://en.wikipedia.org/wiki/East_Asian_Neolithic
