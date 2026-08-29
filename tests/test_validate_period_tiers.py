@@ -72,6 +72,12 @@ class ValidatePeriodTiersTests(unittest.TestCase):
         errors = validate_period_tiers(periods)
         self.assertTrue(any("cycle" in e for e in errors))
 
+    def test_period_with_no_broader_periods_is_valid(self) -> None:
+        self.assertEqual(validate_period_tiers([period("period_a", "period")]), [])
+
+    def test_regional_era_with_no_broader_periods_is_valid(self) -> None:
+        self.assertEqual(validate_period_tiers([period("regional_a", "regional_era")]), [])
+
 
 if __name__ == "__main__":
     unittest.main()

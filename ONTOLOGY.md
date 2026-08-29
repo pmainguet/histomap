@@ -134,9 +134,7 @@ the linking mechanism already exists, this just gives it a name for this specifi
 
 ### `broader_periods`: single parent by convention, not by schema type
 
-The field stays typed `list[str]` (matches the existing schema — no type change), but
-every period authored under this plan uses exactly one entry. This resolves two
-things at once:
+The field stays typed `list[str]` (matches the existing schema — no type change). Empty is allowed — the current 117 pre-existing periods all have zero `broader_periods`, and the code allows new periods to be authored the same way (standalone, until reviewed into the hierarchy). When a period IS hierarchically placed (broader_periods is set), it uses exactly one entry. This resolves two things at once:
 
 - **Breadcrumbs stay unambiguous.** `ancestors()` walks a single chain; there's never
   a "which parent do I show" question for the UI, because there's only ever one.
@@ -190,8 +188,8 @@ build-time check alongside that:
 | A period with tier... | ...must have `broader_periods` that is | Cycle check |
 |---|---|---|
 | `macro_chapter` | empty | — |
-| `regional_era` | exactly one id, whose tier is `macro_chapter` | reject if the chain ever revisits an id |
-| `period` | exactly one id, whose tier is `macro_chapter`, `regional_era`, or `period` | same |
+| `regional_era` | empty, or exactly one id whose tier is `macro_chapter` | reject if the chain ever revisits an id |
+| `period` | empty, or exactly one id whose tier is `macro_chapter`, `regional_era`, or `period` | same |
 
 `children()` orders results by `start` ascending — the same rule `macro_chapters()`
 already uses. There's no authored "editorial order" field, and start-date order is
