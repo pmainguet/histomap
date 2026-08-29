@@ -1,0 +1,18 @@
+id: macro_early_modern_connections
+canonical_name: Early Modern Global Connections
+kind: historical
+tier: macro_chapter
+start: 1500
+end: 1800
+start_confidence: high
+end_confidence: high
+geography:
+  continents: []
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: global macro-chapter backbone'
+external_ids: {}
+notes: Editorial navigation chapter. Maritime expansion, gunpowder empires,
+  the Columbian Exchange, and the Scientific Revolution and Enlightenment.
+source_urls:
+- https://en.wikipedia.org/wiki/Early_modern_period

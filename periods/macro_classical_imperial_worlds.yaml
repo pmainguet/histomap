@@ -1,0 +1,19 @@
+id: macro_classical_imperial_worlds
+canonical_name: Classical and Imperial Worlds
+kind: historical
+tier: macro_chapter
+start: -1200
+end: 500
+start_confidence: medium
+end_confidence: low
+geography:
+  continents: []
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: global macro-chapter backbone'
+external_ids: {}
+notes: Editorial navigation chapter. Covers the Iron Age plus the classical
+  and early imperial civilizations of the Mediterranean, Persia, India, and
+  China, through the fall of the Western Roman Empire.
+source_urls:
+- https://en.wikipedia.org/wiki/Classical_antiquity

@@ -1,0 +1,21 @@
+id: macro_agricultural_transitions
+canonical_name: Agricultural Transitions and Settled Societies
+kind: archaeological
+tier: macro_chapter
+start: -10000
+end: -3500
+start_confidence: medium
+end_confidence: low
+geography:
+  continents: []
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: global macro-chapter backbone'
+external_ids: {}
+notes: Editorial navigation chapter. The Neolithic transition happened at very
+  different times on different continents (roughly 10,000 BCE in the Fertile
+  Crescent, much later in the Americas) -- this chapter's dates are a global
+  envelope, not a claim of simultaneity. See regional_era records for
+  per-region dates.
+source_urls:
+- https://en.wikipedia.org/wiki/Neolithic_Revolution

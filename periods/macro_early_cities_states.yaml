@@ -1,0 +1,19 @@
+id: macro_early_cities_states
+canonical_name: Early Cities and States
+kind: historical
+tier: macro_chapter
+start: -3500
+end: -1200
+start_confidence: medium
+end_confidence: low
+geography:
+  continents: []
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: global macro-chapter backbone'
+external_ids: {}
+notes: Editorial navigation chapter covering the first urban civilizations
+  (Mesopotamia, Egypt, Indus Valley, early China) through the Late Bronze
+  Age Collapse.
+source_urls:
+- https://en.wikipedia.org/wiki/Bronze_Age

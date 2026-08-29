@@ -1,0 +1,19 @@
+id: macro_industrial_imperial_world
+canonical_name: Industrial and Imperial World
+kind: historical
+tier: macro_chapter
+start: 1800
+end: 1914
+start_confidence: high
+end_confidence: high
+geography:
+  continents: []
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: global macro-chapter backbone'
+external_ids: {}
+notes: Editorial navigation chapter. Industrialization, high imperialism, and
+  the revolutionary/national movements of the 19th century, through the
+  outbreak of the First World War.
+source_urls:
+- https://en.wikipedia.org/wiki/19th_century

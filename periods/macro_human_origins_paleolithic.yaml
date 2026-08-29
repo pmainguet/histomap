@@ -1,0 +1,23 @@
+id: macro_human_origins_paleolithic
+canonical_name: Human Origins and Paleolithic Worlds
+kind: archaeological
+tier: macro_chapter
+start: -3000000
+end: -10000
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: global macro-chapter backbone'
+external_ids: {}
+notes: Editorial navigation chapter, not a claim that every society developed
+  identically. Start is an open lower bound (earliest known stone tools keep
+  pushing backward as of 2026); -3,000,000 is a round, citable ballpark
+  (Lomekwian/Oldowan toolmaking), not a precise date. Empty continents list
+  means deliberately global -- valid only at tier=macro_chapter, see
+  ONTOLOGY.md. Dates use astronomical year numbering (year 0 exists),
+  inherited from Wikidata via pipeline/wd_to_yaml.py's parse_year().
+source_urls:
+- https://en.wikipedia.org/wiki/Stone_Age

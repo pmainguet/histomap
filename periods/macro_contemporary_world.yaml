@@ -1,0 +1,21 @@
+id: macro_contemporary_world
+canonical_name: Contemporary World
+kind: historical
+tier: macro_chapter
+start: 1945
+end: 2100
+start_confidence: high
+end_confidence: low
+geography:
+  continents: []
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: global macro-chapter backbone'
+external_ids: {}
+notes: Editorial navigation chapter, 1945-present. end=2100 is schema.py's
+  YEAR_MAX ceiling standing in for "open present" -- Period.end is required
+  (unlike Polity.end), so an explicit far-future value is the least surprising
+  way to represent "still ongoing." Covers the Cold War, decolonization, the
+  post-Cold War era, and the 21st century.
+source_urls:
+- https://en.wikipedia.org/wiki/Contemporary_history
