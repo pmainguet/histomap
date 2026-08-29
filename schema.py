@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, field_validator, model_validator
 ID_PATTERN = re.compile(r"^[a-z][a-z0-9_]*$")
 QID_PATTERN = re.compile(r"^Q\d+$")
 
-YEAR_MIN = -10000
+YEAR_MIN = -3_000_000
 YEAR_MAX = 2100
 
 
@@ -240,6 +240,7 @@ class Period(BaseModel):
     id: str
     canonical_name: str
     kind: Literal["historical", "archaeological", "protohistorical", "prehistorical"]
+    tier: Literal["macro_chapter", "regional_era", "period"] = "period"
     start: int
     end: int
     start_confidence: Confidence = Confidence.medium
