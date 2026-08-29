@@ -287,7 +287,7 @@ class Period(BaseModel):
 class PeriodLink(BaseModel):
     period_id: str
     entity_id: str
-    relation: Literal["context", "part_of_periodization", "phase_of"] = "context"
+    relation: Literal["context", "part_of_periodization", "phase_of", "defines"] = "context"
     evidence: Literal["explicit", "derived", "suggested"]
     confidence: Confidence
     source_urls: list[str] = Field(default_factory=list, min_length=1)

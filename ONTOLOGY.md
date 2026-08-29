@@ -282,7 +282,7 @@ Southeast Asia. Closed by `Geography.historical_regions`/`primary_historical_reg
 (implementation plan Task 9) — a standalone spatial field mirroring
 `continents`/`primary_continent`'s exact shape, derived from `present_countries` via a
 curated ISO-country lookup table (`pipeline/historical_regions.py`, a starter set of
-~24 regions and ~110 countries, growable the same way every other reference list in
+23 regions and ~180 countries, growable the same way every other reference list in
 this project grows). Deliberately **not** a `Period.tier` value or a replacement for
 `region`/`culture_group` — same reasoning as the rest of this section: spatial
 classification, referenced by geography, independent of the temporal tree.
@@ -347,8 +347,10 @@ into `Period` to make it a tree level would repeat the exact mistake already avo
 twice above (documentary status, geological chronology): a non-temporal classification
 becoming a level of a temporal hierarchy. It belongs in its own structure — continent →
 region → subregion, referenced by (not nesting) both polities and periods, the same
-relationship geography already has to everything else. Still the open gap noted above;
-solving it doesn't mean growing the `Period` tree.
+relationship geography already has to everything else. Closed by
+`Geography.historical_regions`/`primary_historical_region` as described above — a
+starter, growable lookup, not exhaustive, but no longer an open gap; solving it never
+meant growing the `Period` tree.
 
 ## How a future timeline UI should read this
 

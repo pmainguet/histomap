@@ -58,7 +58,7 @@ def main() -> None:
         f"- Polities updated this run: {polity_updated} / {polity_total}\n"
         f"- Periods updated this run: {period_updated} / {period_total}\n\n"
         "Derived only from present_countries via pipeline/historical_regions.py's "
-        "starter lookup table (24 regions, ~110 country codes) -- records with no "
+        "starter lookup table (23 regions, ~180 country codes) -- records with no "
         "present_countries, or whose countries aren't in the table yet, are left "
         "unset rather than guessed. Growing the table is cheap and safe to rerun.\n",
         encoding="utf-8",

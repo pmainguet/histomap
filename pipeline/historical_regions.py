@@ -1,9 +1,10 @@
 """Curated ISO alpha-2 country -> historical region lookup. A starter set,
-not exhaustive -- a country missing from this table falls back to continent
-in derive_historical_regions.py, same "cheap default, grow the table later"
-pattern as every other reference list in this project. Region ids are not
-Period.tier citizens (see ONTOLOGY.md's "Tree, lanes, graph" section) --
-this is a standalone spatial classification, referenced by geography.
+not exhaustive -- a country missing from this table falls back to nothing
+(left unclassified) in derive_historical_regions.py, never guessed via
+continent, same "cheap default, grow the table later" pattern as every
+other reference list in this project. Region ids are not Period.tier
+citizens (see ONTOLOGY.md's "Tree, lanes, graph" section) -- this is a
+standalone spatial classification, referenced by geography.
 """
 
 from __future__ import annotations

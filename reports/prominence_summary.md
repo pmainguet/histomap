@@ -1,9 +1,8 @@
-# Prominence and visibility
+# Prominence scores
 
-- Global: 97
-- Regional: 700
-- Detailed: 3,872
-- Global absolute shortlist: 60
-- Global per continent/era: 2
-- Regional absolute shortlist: 600
-- Regional per continent/era: 20
+- Records scored: 4,671
+- Score range: 0.0 - 81.3
+- Mean score: 20.8
+
+visibility_tier is not touched by this script -- it was frozen when the competitive balanced_visibility() pass was retired (see ONTOLOGY.md,
+'Ranking and sizing'). Browsing/ranking now uses pipeline/period_hierarchy.py's top_entities() instead.

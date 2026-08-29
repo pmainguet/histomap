@@ -63,6 +63,7 @@ make import-wikidata
 make reconcile
 make review
 make spotcheck
+make compute-prominence
 make compute-weights
 make enrich-relationships
 make enrich-geography
@@ -83,6 +84,7 @@ The same sequence without `make` (`$py = .\.venv\Scripts\python.exe`):
 & $py pipeline/reconcile.py
 & $py pipeline/review_cli.py
 & $py pipeline/spotcheck.py
+& $py pipeline/compute_prominence.py   # updates prominence_score only; visibility_tier is frozen
 & $py pipeline/compute_weights.py
 & $py pipeline/enrich_relationships.py
 & $py pipeline/enrich_geography.py
@@ -93,5 +95,8 @@ Raw downloads and generated `data.json` are gitignored. Existing canonical YAML 
 preserved during import unless `pipeline/wd_to_yaml.py --overwrite` is explicitly requested.
 Direct Wikidata types are classified as accepted, excluded, or review before import; the rules
 live in `pipeline/wikidata_types.toml` and ambiguous entities remain visible only in Full dataset.
-The prominence stage keeps every record but assigns `global`, `regional`, or `detailed` visibility;
-the web view defaults to the compact global tier.
+The prominence stage keeps every record and (re)computes `prominence_score`, but no longer assigns
+`visibility_tier` — that field is frozen and only changes via a manual `visibility_override`.
+Browsing/ranking now happens through `pipeline/period_hierarchy.py`'s `top_entities()`, scoped to
+wherever in the tree you're browsing (see ONTOLOGY.md's "Ranking and sizing" section); the web view
+defaults to the compact global tier.

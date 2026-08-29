@@ -95,6 +95,19 @@ class TopEntitiesTests(unittest.TestCase):
         hierarchy = build_hierarchy(polities)
         self.assertEqual(hierarchy.top_entities("macro_a", limit=1), ["polity_1"])
 
+    def test_ties_break_deterministically_by_entity_id(self) -> None:
+        polities = [
+            {"id": "polity_4", "prominence_score": 50},
+            {"id": "polity_3", "prominence_score": 50},
+            {"id": "polity_2", "prominence_score": 50},
+            {"id": "polity_1", "prominence_score": 50},
+        ]
+        hierarchy = build_hierarchy(polities)
+        self.assertEqual(
+            hierarchy.top_entities("macro_a", limit=4),
+            ["polity_1", "polity_2", "polity_3", "polity_4"],
+        )
+
 
 class MacroChaptersTests(unittest.TestCase):
     def test_orders_by_start(self) -> None:

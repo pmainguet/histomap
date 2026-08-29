@@ -64,10 +64,10 @@ class PeriodHierarchy:
     def top_entities(self, period_id: str, limit: int) -> list[str]:
         entity_ids = self.entities_under(period_id)
 
-        def sort_key(entity_id: str) -> tuple[int, float]:
+        def sort_key(entity_id: str) -> tuple[int, float, str]:
             polity = self._polities.get(entity_id, {})
             pinned = 0 if polity.get("visibility_override") else 1
-            return (pinned, -polity.get("prominence_score", 0))
+            return (pinned, -polity.get("prominence_score", 0), entity_id)
 
         return sorted(entity_ids, key=sort_key)[:limit]
 
@@ -96,7 +96,16 @@ def load() -> PeriodHierarchy:
 
 if __name__ == "__main__":
     hierarchy = load()
+    total_entities = 0
     for chapter_id in hierarchy.macro_chapters():
         count = len(hierarchy.entities_under(chapter_id))
+        total_entities += count
         top = hierarchy.top_entities(chapter_id, limit=3)
         print(f"{chapter_id}: {count} linked entities, top 3: {top}")
+    if total_entities == 0:
+        print(
+            "\nAll counts are 0 -- expected today. The 117 pre-existing periods aren't "
+            "linked into the tier hierarchy yet (see reports/regional_era_suggestions.jsonl "
+            "and reports/period_link_suggestions.jsonl -- both are human-review queues, "
+            "never auto-applied). This will fill in as those queues get worked."
+        )
