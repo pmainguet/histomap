@@ -542,6 +542,22 @@ Total ongoing manual time after Phase 5: a few hours per year.
 - **Seshat is sparse.** It covers ~35 Natural Geographic Areas, not the whole world. Regions outside Seshat coverage rely on Wikidata only and stay at `confidence: low`.
 - **Pre-3000 BCE is mostly archaeological cultures, not polities.** Represent them as broad bands ("Bronze Age Mesopotamia"), not as crisp entities.
 - **Source disagreements are normal.** Keep them in the `notes` field rather than pretending they don't exist. The `*_confidence` fields are the right place to surface this in the viz.
+- **`geography.continents` has a real bug affecting ~50+ polities: `antarctica` is
+  incorrectly present alongside their genuine continent(s).** Discovered 2026-08-30 as a
+  side effect of the period-ontology plan's Task 4 (a continent x macro-chapter regional-era
+  generator found real polities in every one of 7 continents x 4 modern chapters,
+  including four spurious `antarctica_*_era.yaml` nodes). Affected records include major,
+  clearly non-Antarctic entities — France, Norway, British Raj, Duchy of Normandy, Cape
+  Colony, Caliphate of Córdoba — each carrying a `continents` list that always includes
+  the same odd cluster (typically `africa`, `antarctica`, `asia`, `europe`, `oceania`
+  together), suggesting a systematic bug in one enrichment batch rather than scattered
+  bad data. Two genuine Antarctic micronations (`westarctica`, `grand_duchy_of_flandrensis`)
+  are correctly tagged and not part of the bug. Not fixed as part of that plan — root
+  cause is in `pipeline/enrich_geography.py`/`pipeline/backfill_missing_geography.py`,
+  a separate pipeline this plan doesn't touch. Whoever picks this up next: start from
+  the polity list in that plan's Task 4 report, find what those records have in common
+  in the enrichment source data, and re-run affected records rather than hand-editing —
+  same as any other enrichment queue in this project.
 
 ---
 
