@@ -36,6 +36,9 @@ geography:
     lat: 44.8167
     lon: 20.4667
   confidence: low
+  historical_regions:
+  - balkans
+  primary_historical_region: balkans
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

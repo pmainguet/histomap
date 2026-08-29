@@ -35,6 +35,9 @@ geography:
     lat: 45.7
     lon: 26.5
   confidence: medium
+  historical_regions:
+  - eastern_europe
+  primary_historical_region: eastern_europe
 entity_type: civilization
 entity_type_confidence: high
 entity_type_source_qids: []

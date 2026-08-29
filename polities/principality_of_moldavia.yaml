@@ -33,6 +33,9 @@ geography:
   present_countries:
   - MD
   confidence: high
+  historical_regions:
+  - eastern_europe
+  primary_historical_region: eastern_europe
 manual_overrides:
 - consolidation
 - geography

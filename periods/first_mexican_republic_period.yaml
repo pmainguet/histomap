@@ -14,6 +14,9 @@ geography:
     lat: 19.43333333
     lon: -99.13333333
   confidence: medium
+  historical_regions:
+  - mesoamerica
+  primary_historical_region: mesoamerica
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

@@ -34,6 +34,9 @@ geography:
     lat: 17.54583333
     lon: 74.375
   confidence: low
+  historical_regions:
+  - south_asia
+  primary_historical_region: south_asia
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids: []

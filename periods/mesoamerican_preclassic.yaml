@@ -4,11 +4,21 @@ kind: protohistorical
 start: -2000
 end: 250
 geography:
-  continents: [north_america]
-  present_countries: [MX, GT, BZ, HN, SV]
-successors: [mesoamerican_classic]
+  continents:
+  - north_america
+  present_countries:
+  - MX
+  - GT
+  - BZ
+  - HN
+  - SV
+  historical_regions:
+  - mesoamerica
+  primary_historical_region: mesoamerica
+successors:
+- mesoamerican_classic
 authority: DBpedia/Wikipedia periodization
 external_ids:
   dbpedia: https://dbpedia.org/resource/Mesoamerican_chronology
 source_urls:
-  - https://dbpedia.org/resource/Mesoamerican_chronology
+- https://dbpedia.org/resource/Mesoamerican_chronology

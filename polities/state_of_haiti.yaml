@@ -34,6 +34,9 @@ geography:
     lat: 19.1
     lon: -72.333333055
   confidence: low
+  historical_regions:
+  - caribbean
+  primary_historical_region: caribbean
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

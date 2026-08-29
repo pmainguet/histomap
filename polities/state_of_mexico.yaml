@@ -34,6 +34,9 @@ geography:
     lat: 19.354166666
     lon: -99.630833333
   confidence: medium
+  historical_regions:
+  - mesoamerica
+  primary_historical_region: mesoamerica
 entity_type: subdivision
 entity_type_confidence: high
 entity_type_source_qids: []

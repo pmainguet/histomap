@@ -12,6 +12,9 @@ geography:
   - PK
   centroid: null
   confidence: medium
+  historical_regions:
+  - south_asia
+  primary_historical_region: south_asia
 start: -4000
 end: -3201
 start_confidence: low

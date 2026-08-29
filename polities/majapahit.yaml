@@ -42,6 +42,9 @@ geography:
     lon: 112.5
   confidence: medium
   primary_continent: asia
+  historical_regions:
+  - southeast_asia
+  primary_historical_region: southeast_asia
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

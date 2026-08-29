@@ -34,6 +34,9 @@ geography:
     lat: -28.515
     lon: 31.8486
   confidence: low
+  historical_regions:
+  - southern_africa
+  primary_historical_region: southern_africa
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

@@ -10,6 +10,9 @@ geography:
   - PE
   centroid: null
   confidence: medium
+  historical_regions:
+  - andes
+  primary_historical_region: andes
 start: 1
 end: 199
 start_confidence: low

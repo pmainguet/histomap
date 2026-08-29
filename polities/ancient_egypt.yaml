@@ -53,6 +53,9 @@ geography:
     lon: 31.3
   confidence: medium
   primary_continent: africa
+  historical_regions:
+  - north_africa
+  primary_historical_region: north_africa
 entity_type: civilization
 entity_type_confidence: high
 entity_type_source_qids: []

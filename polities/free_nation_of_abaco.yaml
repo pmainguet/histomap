@@ -32,6 +32,9 @@ geography:
     lat: 26.5383
     lon: -77.061
   confidence: medium
+  historical_regions:
+  - caribbean
+  primary_historical_region: caribbean
 entity_type: micronation
 entity_type_confidence: high
 entity_type_source_qids:

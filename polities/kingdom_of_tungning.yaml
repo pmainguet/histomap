@@ -36,6 +36,9 @@ geography:
     lat: 23.104444444
     lon: 120.208055555
   confidence: low
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

@@ -6,13 +6,19 @@ end: -1800
 start_confidence: medium
 end_confidence: medium
 geography:
-  continents: [asia]
-  present_countries: [IN, PK]
+  continents:
+  - asia
+  present_countries:
+  - IN
+  - PK
+  historical_regions:
+  - south_asia
+  primary_historical_region: south_asia
 authority: Wikidata
 external_ids:
   wikidata: Q42534
 notes: Indus script is undeciphered, hence protohistorical. No matching polities/
-  record -- distributed across major urban centers (Harappa, Mohenjo-daro...),
-  not a single political actor.
+  record -- distributed across major urban centers (Harappa, Mohenjo-daro...), not
+  a single political actor.
 source_urls:
 - https://www.wikidata.org/wiki/Q42534

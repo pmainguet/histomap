@@ -10,6 +10,9 @@ geography:
   - MX
   centroid: null
   confidence: medium
+  historical_regions:
+  - mesoamerica
+  primary_historical_region: mesoamerica
 start: -1200
 end: -801
 start_confidence: low

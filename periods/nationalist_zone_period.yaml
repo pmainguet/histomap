@@ -13,6 +13,9 @@ geography:
   - ES
   centroid: null
   confidence: medium
+  historical_regions:
+  - southern_europe
+  primary_historical_region: southern_europe
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

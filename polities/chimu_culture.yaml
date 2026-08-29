@@ -34,6 +34,9 @@ geography:
     lat: -8.108888888
     lon: -79.075
   confidence: medium
+  historical_regions:
+  - andes
+  primary_historical_region: andes
 entity_type: culture
 entity_type_confidence: high
 entity_type_source_qids: []

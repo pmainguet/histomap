@@ -34,6 +34,9 @@ geography:
     lat: 37.663333333
     lon: 62.176388888
   confidence: low
+  historical_regions:
+  - central_asia
+  primary_historical_region: central_asia
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []

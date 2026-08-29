@@ -38,6 +38,9 @@ geography:
     lat: 40.98138889
     lon: 47.84583333
   confidence: low
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
 entity_type: subdivision
 entity_type_confidence: high
 entity_type_source_qids: []

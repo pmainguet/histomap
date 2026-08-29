@@ -38,6 +38,9 @@ geography:
     lat: 50.089
     lon: 18.2101
   confidence: low
+  historical_regions:
+  - eastern_europe
+  primary_historical_region: eastern_europe
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

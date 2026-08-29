@@ -20,6 +20,9 @@ geography:
     lon: 35.76667
   confidence: medium
   primary_continent: asia
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

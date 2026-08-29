@@ -32,6 +32,9 @@ geography:
     lat: -23.25
     lon: 155.533333333
   confidence: medium
+  historical_regions:
+  - oceania_pacific
+  primary_historical_region: oceania_pacific
 entity_type: micronation
 entity_type_confidence: medium
 entity_type_source_qids:

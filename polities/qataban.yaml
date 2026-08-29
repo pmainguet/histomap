@@ -34,6 +34,9 @@ geography:
   present_countries:
   - YE
   confidence: high
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
 manual_overrides:
 - geography
 entity_type: polity

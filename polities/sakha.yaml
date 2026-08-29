@@ -39,6 +39,9 @@ geography:
     lon: 129.166666666
   confidence: medium
   primary_continent: europe
+  historical_regions:
+  - eastern_europe
+  primary_historical_region: eastern_europe
 entity_type: subdivision
 entity_type_confidence: high
 entity_type_source_qids: []

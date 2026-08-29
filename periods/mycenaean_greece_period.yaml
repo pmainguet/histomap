@@ -6,14 +6,19 @@ end: -1100
 start_confidence: medium
 end_confidence: medium
 geography:
-  continents: [europe]
-  present_countries: [GR]
+  continents:
+  - europe
+  present_countries:
+  - GR
+  historical_regions:
+  - southern_europe
+  primary_historical_region: southern_europe
 authority: Wikidata
 external_ids:
   wikidata: Q181264
 notes: Late Bronze Age Greek civilization; Linear B gives economic records but no
-  historiography, hence protohistorical. No matching polities/ record -- power
-  was distributed across palace-centers (Mycenae, Pylos, Tiryns...), not a single
-  political actor.
+  historiography, hence protohistorical. No matching polities/ record -- power was
+  distributed across palace-centers (Mycenae, Pylos, Tiryns...), not a single political
+  actor.
 source_urls:
 - https://www.wikidata.org/wiki/Q181264

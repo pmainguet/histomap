@@ -6,15 +6,21 @@ end: 1066
 start_confidence: medium
 end_confidence: medium
 geography:
-  continents: [europe]
-  present_countries: [DK, 'NO', SE]
+  continents:
+  - europe
+  present_countries:
+  - DK
+  - 'NO'
+  - SE
+  historical_regions:
+  - northern_europe
+  primary_historical_region: northern_europe
 authority: Wikidata
 external_ids:
   wikidata: Q213649
-notes: 793 is the Lindisfarne raid, conventionally marking the start; 1066 the
-  Battle of Stamford Bridge / Norman Conquest, conventionally marking the end.
-  No matching polities/ record -- raiding, trading and settlement rather than a
-  single political actor; jorvik.yaml already covers the one durable Viking
-  polity (Viking York).
+notes: 793 is the Lindisfarne raid, conventionally marking the start; 1066 the Battle
+  of Stamford Bridge / Norman Conquest, conventionally marking the end. No matching
+  polities/ record -- raiding, trading and settlement rather than a single political
+  actor; jorvik.yaml already covers the one durable Viking polity (Viking York).
 source_urls:
 - https://www.wikidata.org/wiki/Q213649

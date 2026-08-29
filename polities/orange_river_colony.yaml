@@ -36,6 +36,9 @@ geography:
     lon: 26.216666666
   confidence: medium
   primary_continent: africa
+  historical_regions:
+  - southern_africa
+  - western_europe
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

@@ -14,6 +14,9 @@ geography:
     lat: 41.53499985
     lon: 19.81999969
   confidence: medium
+  historical_regions:
+  - balkans
+  primary_historical_region: balkans
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

@@ -14,6 +14,9 @@ geography:
     lat: 16.85
     lon: 96.183333333
   confidence: low
+  historical_regions:
+  - southeast_asia
+  primary_historical_region: southeast_asia
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

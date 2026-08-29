@@ -35,6 +35,9 @@ geography:
   present_countries:
   - KH
   confidence: high
+  historical_regions:
+  - southeast_asia
+  primary_historical_region: southeast_asia
 manual_overrides:
 - geography
 entity_type: polity

@@ -14,6 +14,9 @@ geography:
     lat: 15.633333333
     lon: 32.533333333
   confidence: medium
+  historical_regions:
+  - north_africa
+  primary_historical_region: north_africa
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

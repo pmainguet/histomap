@@ -31,6 +31,9 @@ geography:
   - AU
   centroid: null
   confidence: medium
+  historical_regions:
+  - oceania_pacific
+  primary_historical_region: oceania_pacific
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids: []

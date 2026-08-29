@@ -33,6 +33,9 @@ geography:
     lat: 32.0
     lon: 45.5
   confidence: low
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
 entity_type: culture
 entity_type_confidence: high
 entity_type_source_qids:

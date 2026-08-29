@@ -14,6 +14,9 @@ geography:
     lat: 33.0
     lon: 65.0
   confidence: low
+  historical_regions:
+  - central_asia
+  primary_historical_region: central_asia
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

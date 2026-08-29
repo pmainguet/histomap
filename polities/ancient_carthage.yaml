@@ -36,6 +36,9 @@ geography:
     lat: 36.84391668
     lon: 10.32644723
   confidence: high
+  historical_regions:
+  - north_africa
+  primary_historical_region: north_africa
 manual_overrides:
 - consolidation
 - entity_type

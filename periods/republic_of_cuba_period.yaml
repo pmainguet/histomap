@@ -14,6 +14,9 @@ geography:
     lat: 22.0
     lon: -79.5
   confidence: low
+  historical_regions:
+  - caribbean
+  primary_historical_region: caribbean
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

@@ -36,6 +36,9 @@ geography:
   present_countries:
   - AF
   confidence: high
+  historical_regions:
+  - central_asia
+  primary_historical_region: central_asia
 manual_overrides:
 - entity_type
 - geography

@@ -45,6 +45,10 @@ geography:
     lon: 24.893333
   confidence: medium
   primary_continent: europe
+  historical_regions:
+  - balkans
+  - southern_europe
+  - west_asia
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

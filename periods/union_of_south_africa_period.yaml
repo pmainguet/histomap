@@ -15,6 +15,9 @@ geography:
     lat: -29.0
     lon: 24.0
   confidence: low
+  historical_regions:
+  - southern_africa
+  primary_historical_region: southern_africa
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

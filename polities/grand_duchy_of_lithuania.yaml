@@ -41,6 +41,9 @@ geography:
     lat: 54.68333333
     lon: 25.28333333
   confidence: low
+  historical_regions:
+  - northern_europe
+  primary_historical_region: northern_europe
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

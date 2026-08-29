@@ -4,10 +4,15 @@ kind: protohistorical
 start: -2900
 end: -2350
 geography:
-  continents: [asia]
-  present_countries: [IQ]
+  continents:
+  - asia
+  present_countries:
+  - IQ
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
 authority: DBpedia/Wikipedia periodization
 external_ids:
   dbpedia: https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)
 source_urls:
-  - https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)
+- https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)

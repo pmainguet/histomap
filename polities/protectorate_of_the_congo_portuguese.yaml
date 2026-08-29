@@ -35,6 +35,9 @@ geography:
     lon: 12.3
   confidence: medium
   primary_continent: africa
+  historical_regions:
+  - central_africa
+  primary_historical_region: central_africa
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []

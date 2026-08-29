@@ -36,6 +36,9 @@ geography:
     lat: 6.39527778
     lon: 0.47027778
   confidence: low
+  historical_regions:
+  - west_africa
+  primary_historical_region: west_africa
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

@@ -12,6 +12,9 @@ geography:
   - MW
   centroid: null
   confidence: medium
+  historical_regions:
+  - east_africa
+  primary_historical_region: east_africa
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

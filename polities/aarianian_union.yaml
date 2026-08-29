@@ -35,6 +35,9 @@ geography:
     lon: -80.7665
   confidence: medium
   primary_continent: north_america
+  historical_regions:
+  - north_america
+  primary_historical_region: north_america
 entity_type: micronation
 entity_type_confidence: high
 entity_type_source_qids:

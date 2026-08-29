@@ -32,6 +32,9 @@ geography:
   present_countries:
   - KP
   confidence: high
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
 manual_overrides:
 - entity_type
 - geography

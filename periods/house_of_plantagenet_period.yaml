@@ -6,13 +6,18 @@ end: 1485
 start_confidence: high
 end_confidence: high
 geography:
-  continents: [europe]
-  present_countries: [GB]
+  continents:
+  - europe
+  present_countries:
+  - GB
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
 authority: Wikipedia infobox (reign dates, not the family's 1126 founding)
 external_ids:
   wikidata: Q106151
-notes: 1154 accession of Henry II to 1485 death of Richard III at Bosworth.
-  Linked to kingdom_of_england via period_links.yaml (phase_of) -- that polity
-  already carries this span's political weight.
+notes: 1154 accession of Henry II to 1485 death of Richard III at Bosworth. Linked
+  to kingdom_of_england via period_links.yaml (phase_of) -- that polity already carries
+  this span's political weight.
 source_urls:
 - https://en.wikipedia.org/wiki/House_of_Plantagenet

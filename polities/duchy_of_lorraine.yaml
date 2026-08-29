@@ -42,6 +42,9 @@ geography:
     lat: 48.692778
     lon: 6.183611
   confidence: medium
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

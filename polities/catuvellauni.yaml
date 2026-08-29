@@ -34,6 +34,9 @@ geography:
     lat: 51.78
     lon: 0.06
   confidence: low
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
 entity_type: tribe
 entity_type_confidence: high
 entity_type_source_qids:

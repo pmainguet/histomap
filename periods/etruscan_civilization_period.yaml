@@ -6,14 +6,19 @@ end: -27
 start_confidence: medium
 end_confidence: medium
 geography:
-  continents: [europe]
-  present_countries: [IT]
+  continents:
+  - europe
+  present_countries:
+  - IT
+  historical_regions:
+  - southern_europe
+  primary_historical_region: southern_europe
 authority: Wikipedia infobox
 external_ids:
   wikidata: Q17161
-notes: -900 marks the Villanovan-culture start conventionally linked to Etruscan
-  origins; -27 the formal absorption of the last Etruscan cities by Rome. No
-  matching polities/ record -- the Etruscans were a federation of city-states,
-  not a single political actor.
+notes: -900 marks the Villanovan-culture start conventionally linked to Etruscan origins;
+  -27 the formal absorption of the last Etruscan cities by Rome. No matching polities/
+  record -- the Etruscans were a federation of city-states, not a single political
+  actor.
 source_urls:
 - https://en.wikipedia.org/wiki/Etruscan_civilization

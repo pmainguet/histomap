@@ -14,6 +14,9 @@ geography:
     lat: 45.0
     lon: 6.0
   confidence: low
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

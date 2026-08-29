@@ -36,6 +36,9 @@ geography:
     lon: -94.99077778
   confidence: medium
   primary_continent: north_america
+  historical_regions:
+  - north_america
+  primary_historical_region: north_america
 entity_type: tribe
 entity_type_confidence: medium
 entity_type_source_qids:

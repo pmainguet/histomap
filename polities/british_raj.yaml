@@ -45,6 +45,9 @@ geography:
     lon: 88.337777777
   confidence: medium
   primary_continent: asia
+  historical_regions:
+  - south_asia
+  primary_historical_region: south_asia
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

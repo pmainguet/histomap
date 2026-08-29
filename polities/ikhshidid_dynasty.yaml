@@ -35,6 +35,9 @@ geography:
   present_countries:
   - EG
   confidence: high
+  historical_regions:
+  - north_africa
+  primary_historical_region: north_africa
 manual_overrides:
 - geography
 entity_type: polity

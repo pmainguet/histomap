@@ -40,6 +40,9 @@ geography:
     lat: 2.914889
     lon: 43.300135
   confidence: medium
+  historical_regions:
+  - horn_of_africa
+  primary_historical_region: horn_of_africa
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

@@ -32,6 +32,9 @@ geography:
   present_countries:
   - MX
   confidence: high
+  historical_regions:
+  - mesoamerica
+  primary_historical_region: mesoamerica
 manual_overrides:
 - geography
 entity_type: civilization

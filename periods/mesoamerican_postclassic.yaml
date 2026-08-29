@@ -4,10 +4,19 @@ kind: historical
 start: 900
 end: 1521
 geography:
-  continents: [north_america]
-  present_countries: [MX, GT, BZ, HN, SV]
+  continents:
+  - north_america
+  present_countries:
+  - MX
+  - GT
+  - BZ
+  - HN
+  - SV
+  historical_regions:
+  - mesoamerica
+  primary_historical_region: mesoamerica
 authority: DBpedia/Wikipedia periodization
 external_ids:
   dbpedia: https://dbpedia.org/resource/Mesoamerican_chronology
 source_urls:
-  - https://dbpedia.org/resource/Mesoamerican_chronology
+- https://dbpedia.org/resource/Mesoamerican_chronology

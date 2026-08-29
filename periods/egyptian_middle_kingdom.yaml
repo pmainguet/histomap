@@ -4,11 +4,16 @@ kind: historical
 start: -2055
 end: -1650
 geography:
-  continents: [africa]
-  present_countries: [EG]
+  continents:
+  - africa
+  present_countries:
+  - EG
+  historical_regions:
+  - north_africa
+  primary_historical_region: north_africa
 authority: DBpedia/Wikipedia periodization
 external_ids:
   dbpedia: https://dbpedia.org/resource/Middle_Kingdom_of_Egypt
 notes: Pilot authority record; dates are conventional and vary by chronology.
 source_urls:
-  - https://dbpedia.org/resource/Middle_Kingdom_of_Egypt
+- https://dbpedia.org/resource/Middle_Kingdom_of_Egypt

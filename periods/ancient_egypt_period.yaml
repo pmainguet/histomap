@@ -16,6 +16,9 @@ geography:
     lon: 31.3
   confidence: medium
   primary_continent: africa
+  historical_regions:
+  - north_africa
+  primary_historical_region: north_africa
 broader_periods: []
 successors: []
 authority: 'Histomap editorial: civilization-as-backdrop'

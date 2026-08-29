@@ -12,6 +12,9 @@ geography:
   present_countries:
   - 'NO'
   confidence: high
+  historical_regions:
+  - northern_europe
+  primary_historical_region: northern_europe
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

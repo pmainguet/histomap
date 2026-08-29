@@ -35,6 +35,9 @@ geography:
     lat: 15.6572
     lon: 32.348
   confidence: low
+  historical_regions:
+  - north_africa
+  primary_historical_region: north_africa
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []

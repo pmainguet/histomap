@@ -6,13 +6,18 @@ end: 1603
 start_confidence: high
 end_confidence: high
 geography:
-  continents: [europe]
-  present_countries: [GB]
+  continents:
+  - europe
+  present_countries:
+  - GB
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
 authority: Wikidata
 external_ids:
   wikidata: Q101978
-notes: 1485 Bosworth Field (Henry VII) to 1603 death of Elizabeth I. Linked to
-  kingdom_of_england via period_links.yaml (phase_of) -- that polity already
-  carries this span's political weight.
+notes: 1485 Bosworth Field (Henry VII) to 1603 death of Elizabeth I. Linked to kingdom_of_england
+  via period_links.yaml (phase_of) -- that polity already carries this span's political
+  weight.
 source_urls:
 - https://www.wikidata.org/wiki/Q101978

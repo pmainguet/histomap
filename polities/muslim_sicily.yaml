@@ -37,6 +37,9 @@ geography:
     lat: 37.6425
     lon: 14.1928
   confidence: low
+  historical_regions:
+  - southern_europe
+  primary_historical_region: southern_europe
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

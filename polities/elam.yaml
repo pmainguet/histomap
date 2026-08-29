@@ -49,6 +49,9 @@ geography:
     lat: 29.9
     lon: 52.4
   confidence: low
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
 entity_type: civilization
 entity_type_confidence: high
 entity_type_source_qids: []

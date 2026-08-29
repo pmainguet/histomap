@@ -17,6 +17,9 @@ geography:
     lon: 29.0
   confidence: medium
   primary_continent: europe
+  historical_regions:
+  - eastern_europe
+  primary_historical_region: eastern_europe
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

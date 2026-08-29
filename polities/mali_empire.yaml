@@ -35,6 +35,9 @@ geography:
   present_countries:
   - ML
   confidence: high
+  historical_regions:
+  - west_africa
+  primary_historical_region: west_africa
 manual_overrides:
 - geography
 entity_type: polity

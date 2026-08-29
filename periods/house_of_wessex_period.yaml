@@ -6,15 +6,20 @@ end: 1066
 start_confidence: medium
 end_confidence: medium
 geography:
-  continents: [europe]
-  present_countries: [GB]
+  continents:
+  - europe
+  present_countries:
+  - GB
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
 authority: Wikipedia infobox
 external_ids:
   wikidata: Q511482
-notes: Bounded to kingdom_of_england.yaml's own start year (927, Aethelstan's
-  unification) through 1066 (Norman Conquest). The line was interrupted 1013-1042
-  by Danish rule (Cnut and sons); not modeled as a gap here, only noted. Linked to
-  kingdom_of_england via period_links.yaml (phase_of) -- that polity already
-  carries this span's political weight.
+notes: Bounded to kingdom_of_england.yaml's own start year (927, Aethelstan's unification)
+  through 1066 (Norman Conquest). The line was interrupted 1013-1042 by Danish rule
+  (Cnut and sons); not modeled as a gap here, only noted. Linked to kingdom_of_england
+  via period_links.yaml (phase_of) -- that polity already carries this span's political
+  weight.
 source_urls:
 - https://en.wikipedia.org/wiki/House_of_Wessex

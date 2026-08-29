@@ -36,6 +36,9 @@ geography:
     lon: 7.5479691
   confidence: medium
   primary_continent: europe
+  historical_regions:
+  - northern_europe
+  primary_historical_region: northern_europe
 entity_type: micronation
 entity_type_confidence: high
 entity_type_source_qids:

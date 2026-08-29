@@ -36,6 +36,9 @@ geography:
   present_countries:
   - IQ
   confidence: high
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
 manual_overrides:
 - geography
 - visibility_override

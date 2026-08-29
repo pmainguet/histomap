@@ -32,6 +32,9 @@ geography:
     lat: 14.191938888
     lon: 121.071111111
   confidence: medium
+  historical_regions:
+  - southeast_asia
+  primary_historical_region: southeast_asia
 entity_type: micronation
 entity_type_confidence: high
 entity_type_source_qids:

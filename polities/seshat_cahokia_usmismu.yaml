@@ -12,6 +12,9 @@ geography:
   - US
   centroid: null
   confidence: medium
+  historical_regions:
+  - north_america
+  primary_historical_region: north_america
 start: 450
 end: 599
 start_confidence: low

@@ -6,14 +6,19 @@ end: 1328
 start_confidence: high
 end_confidence: high
 geography:
-  continents: [europe]
-  present_countries: [FR]
-authority: Wikipedia infobox (direct Capetian line only; excludes Valois/Bourbon
-  cadet branches, which ruled France to 1848)
+  continents:
+  - europe
+  present_countries:
+  - FR
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
+authority: Wikipedia infobox (direct Capetian line only; excludes Valois/Bourbon cadet
+  branches, which ruled France to 1848)
 external_ids:
   wikidata: Q179544
-notes: 987 election of Hugh Capet to 1328 death of Charles IV (direct male line
-  extinction). Linked to kingdom_of_france via period_links.yaml (phase_of) --
-  that polity already carries this span's political weight.
+notes: 987 election of Hugh Capet to 1328 death of Charles IV (direct male line extinction).
+  Linked to kingdom_of_france via period_links.yaml (phase_of) -- that polity already
+  carries this span's political weight.
 source_urls:
 - https://en.wikipedia.org/wiki/Capetian_dynasty

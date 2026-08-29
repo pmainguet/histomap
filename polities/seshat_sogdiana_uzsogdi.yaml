@@ -10,6 +10,9 @@ geography:
   - UZ
   centroid: null
   confidence: medium
+  historical_regions:
+  - central_asia
+  primary_historical_region: central_asia
 start: 604
 end: 711
 start_confidence: low

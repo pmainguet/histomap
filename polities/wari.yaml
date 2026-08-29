@@ -32,6 +32,9 @@ geography:
   - PE
   centroid: null
   confidence: medium
+  historical_regions:
+  - andes
+  primary_historical_region: andes
 entity_type: culture
 entity_type_confidence: high
 entity_type_source_qids: []

@@ -10,6 +10,9 @@ geography:
   - JP
   centroid: null
   confidence: medium
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
 start: 794
 end: 1184
 start_confidence: low

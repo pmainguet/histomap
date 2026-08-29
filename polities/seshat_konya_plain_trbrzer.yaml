@@ -12,6 +12,9 @@ geography:
   - TR
   centroid: null
   confidence: medium
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
 start: -3000
 end: -2001
 start_confidence: low

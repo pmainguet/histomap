@@ -12,6 +12,9 @@ geography:
   - PE
   centroid: null
   confidence: medium
+  historical_regions:
+  - andes
+  primary_historical_region: andes
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation
