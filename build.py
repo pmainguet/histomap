@@ -36,6 +36,56 @@ def find_parent_cycles(polities: list[Polity]) -> list[list[str]]:
     return [list(cycle) for cycle in sorted(cycles)]
 
 
+ALLOWED_PARENT_TIERS = {
+    "macro_chapter": set(),
+    "regional_era": {"macro_chapter"},
+    "period": {"macro_chapter", "regional_era", "period"},
+}
+
+
+def validate_period_tiers(periods: list[Period]) -> list[str]:
+    by_id = {p.id: p for p in periods}
+    errors: list[str] = []
+    for p in periods:
+        allowed = ALLOWED_PARENT_TIERS[p.tier]
+        if p.tier == "macro_chapter":
+            if p.broader_periods:
+                errors.append(f"{p.id}: tier=macro_chapter must have no broader_periods")
+            continue
+        if not p.broader_periods:
+            continue  # optional for regional_era and period; they can be standalone
+        if len(p.broader_periods) != 1:
+            errors.append(
+                f"{p.id}: tier={p.tier} must have exactly one broader_periods entry, "
+                f"got {len(p.broader_periods)}"
+            )
+            continue
+        parent_id = p.broader_periods[0]
+        parent = by_id.get(parent_id)
+        if parent is None:
+            continue  # unknown-reference case already reported by load_periods()
+        if parent.tier not in allowed:
+            errors.append(
+                f"{p.id}: tier={p.tier} parent {parent_id!r} has tier={parent.tier!r}, "
+                f"must be one of {sorted(allowed)}"
+            )
+    # cycle detection: walk each period's single-parent chain, watching for revisits
+    for p in periods:
+        seen = {p.id}
+        current = p
+        while current.broader_periods:
+            parent_id = current.broader_periods[0]
+            if parent_id in seen:
+                errors.append(f"{p.id}: broader_periods cycle detected at {parent_id!r}")
+                break
+            seen.add(parent_id)
+            parent = by_id.get(parent_id)
+            if parent is None:
+                break
+            current = parent
+    return errors
+
+
 def validate_entity_relationships(polities: list[Polity]) -> list[str]:
     known = {polity.id: polity for polity in polities}
     errors: list[str] = []
@@ -213,6 +263,11 @@ def main() -> None:
     transitions = load_transitions(polities)
     periods = load_periods()
     period_links = load_period_links(periods, polities)
+    tier_errors = validate_period_tiers(periods)
+    if tier_errors:
+        for e in tier_errors:
+            print(f"ERROR  {e}", file=sys.stderr)
+        sys.exit(1)
     published_polities = [
         polity
         for polity in polities
