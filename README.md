@@ -4,7 +4,9 @@ A data-driven recreation of the 1931 Sparks/Rand McNally *Histomap*: a vertical 
 the relative weight of polities through history. The durable artifact is the validated YAML
 dataset in `polities/`; the web view and future print poster are generated from it.
 
-See [PLAN.md](PLAN.md) for the complete data-source and implementation roadmap.
+See [PLAN.md](PLAN.md) for the complete data-source and implementation roadmap, and
+[ONTOLOGY.md](ONTOLOGY.md) for the chronological/documentary/geographic classification
+system the dataset (and any future timeline UI) is organized around.
 
 ## Quickstart
 

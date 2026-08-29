@@ -6,6 +6,12 @@ A modern, data-driven recreation of the 1931 Sparks/Rand McNally *Histomap*: a h
 
 **Core principle:** automate extraction from open historical datasets, reconcile with LLM-assisted review, hand-curate only what genuinely needs human judgment. 
 
+**Companion doc:** [ONTOLOGY.md](ONTOLOGY.md) defines the chronological (macro chapter →
+regional era → period → polity → event), documentary-status (prehistory/history), and
+geographic classification the dataset is organized around — read it before adding new
+period or navigation structure. Its rollout is tracked in
+[docs/plans/2026-08-29-period-ontology.md](docs/plans/2026-08-29-period-ontology.md).
+
 ---
 
 ## Approach summary
