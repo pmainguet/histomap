@@ -86,9 +86,28 @@ Two design choices that keep this additive to the existing schema rather than a
 parallel structure:
 
 - **Tiers 1-3+ are all just `Period` records at different `tier` values, chained via
-  the existing `broader_periods` field.** No new foreign-key fields, no new file type.
-  Every one of the 117 pre-existing period files defaults to `tier: period` and needs
-  no edits.
+  the existing `broader_periods` field.** No `MacroChapter` file type, no `RegionalEra`
+  file type — one `Period` class, one `periods/` folder, for all of it. Concretely:
+
+  ```yaml
+  # macro_classical_imperial_worlds.yaml -- tier 1, root of its branch
+  tier: macro_chapter
+  broader_periods: []
+
+  # mediterranean_classical_era.yaml -- tier 2, points at its parent
+  tier: regional_era
+  broader_periods: [macro_classical_imperial_worlds]
+
+  # viking_age_period.yaml -- tier 3+, points at its parent
+  tier: period                                  # the default -- didn't need writing
+  broader_periods: [medieval_europe_era]
+  ```
+
+  "3+" because a `period`-tier record can point at *another* `period`-tier record, not
+  just at a `regional_era` — chains go as deep as `broader_periods` is followed, no
+  hardcoded "tier 4." Because `tier` defaults to `"period"`, every one of the 117
+  pre-existing period files is already a valid, correctly-classified tier-3 record with
+  zero edits — they had the right shape all along; this just builds the tree above them.
 - **Entities (polities) are never nested inside a period.** They link *into* the
   hierarchy via the existing `period_links.yaml` (`period_id` + `entity_id` +
   `relation`), same mechanism already used for e.g. `house_of_tudor_period → phase_of →
