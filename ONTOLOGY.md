@@ -325,6 +325,12 @@ solving it doesn't mean growing the `Period` tree.
 
 ## How a future timeline UI should read this
 
+Implementation plan:
+[`docs/plans/2026-08-29-explore-timeline-ui.md`](docs/plans/2026-08-29-explore-timeline-ui.md)
+— a new `/explore` page, starting at the World zoom level (the 9 macro chapters) with a
+geological reference band shown alongside per the "Tree, lanes, graph" section above;
+deeper zoom levels are scoped as a roadmap there, not yet task-level.
+
 Query through `pipeline/period_hierarchy.py`, not by re-deriving `broader_periods` or
 `period_links.yaml` traversal, or `visibility_tier`, in the UI layer:
 
