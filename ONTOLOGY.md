@@ -250,11 +250,15 @@ classifications ("Persia," "the Sahel," "Iranian") independent of time. A polity
 regional era does not tell you its historical region, any more than "Classical and
 Imperial Worlds" tells you a polity is in Persia rather than Gaul.
 
-This is a real, still-open gap: continents are too coarse for West Asia vs. the Sahel
-vs. the Andes vs. Mesoamerica vs. Southeast Asia, and nothing in this plan fixes it.
-Worth a dedicated historical-region field/gazetteer before authoring much more content
-that depends on fine-grained place, not just continent — flagged here as future work,
-not solved by anything above.
+Continents are too coarse for West Asia vs. the Sahel vs. the Andes vs. Mesoamerica vs.
+Southeast Asia. Closed by `Geography.historical_regions`/`primary_historical_region`
+(implementation plan Task 9) — a standalone spatial field mirroring
+`continents`/`primary_continent`'s exact shape, derived from `present_countries` via a
+curated ISO-country lookup table (`pipeline/historical_regions.py`, a starter set of
+~24 regions and ~110 countries, growable the same way every other reference list in
+this project grows). Deliberately **not** a `Period.tier` value or a replacement for
+`region`/`culture_group` — same reasoning as the rest of this section: spatial
+classification, referenced by geography, independent of the temporal tree.
 
 ## Ranking and sizing: scope-local, not global-competitive
 

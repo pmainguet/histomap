@@ -54,7 +54,10 @@ Full rationale lives in [`ONTOLOGY.md`](../../ONTOLOGY.md). Summary of what it m
 - Create: `reports/period_link_suggestions.jsonl`, `reports/period_link_suggestion_summary.md` (Task 6 output)
 - Create: `pipeline/period_hierarchy.py` + `tests/test_period_hierarchy.py` (Task 7)
 - Modify: `pipeline/compute_prominence.py`, `tests/test_compute_prominence.py` (Task 8)
-- Modify: `Makefile`, `PLAN.md`, `README.md` (Task 9)
+- Modify: `schema.py` — `Geography.historical_regions`/`primary_historical_region` (Task 9)
+- Create: `pipeline/historical_regions.py`, `pipeline/derive_historical_regions.py` + tests (Task 9)
+- Create: `reports/historical_region_coverage.md` (Task 9 output)
+- Modify: `Makefile`, `PLAN.md`, `README.md` (Task 10)
 
 ---
 
@@ -2116,7 +2119,274 @@ tree is in view instead of a cross-dataset quota pass. See ONTOLOGY.md's
 
 ---
 
-## Task 9: Wire into the Makefile, README, and PLAN.md
+## Task 9: Historical region, derived from present-day country
+
+**Files:**
+- Modify: `schema.py` — `Geography.historical_regions`/`primary_historical_region`
+- Create: `pipeline/historical_regions.py` — curated ISO-country → historical-region lookup table
+- Create: `pipeline/derive_historical_regions.py` — applies the table to `polities/*.yaml` and `periods/*.yaml`
+- Create: `tests/test_historical_regions.py`, `tests/test_derive_historical_regions.py`
+- Create (script output): `reports/historical_region_coverage.md`
+
+**Interfaces:**
+- Produces: `Geography.historical_regions: list[str]` / `primary_historical_region: str | None` — same shape as the existing `continents`/`primary_continent` pair, deliberately, so nothing that already reads `Geography` needs new branching logic to find this
+- Produces: `historical_region_for_country(iso_code: str) -> str | None`
+- Produces: `derive(polities_dir, periods_dir) -> dict[str, int]` (coverage counts)
+
+This closes the gap flagged in `ONTOLOGY.md` ("What this doesn't replace") — a spatial classification finer than continent (West Asia vs. the Sahel vs. the Andes vs. Mesoamerica vs. Southeast Asia), independent of the `Period` tree per the "Tree, lanes, graph" section. Measured before writing this: `geography.present_countries` is populated on 2,992 of 4,671 polities (64%) — a solid base for a lookup-table derivation, better coverage than `continents` had before the August geography backfill.
+
+- [ ] **Step 1: Write the failing test for the lookup table**
+
+Create `tests/test_historical_regions.py`:
+
+```python
+import unittest
+
+from pipeline.historical_regions import HISTORICAL_REGIONS, historical_region_for_country
+
+
+class HistoricalRegionForCountryTests(unittest.TestCase):
+    def test_known_country_resolves(self) -> None:
+        self.assertEqual(historical_region_for_country("IR"), "west_asia")
+        self.assertEqual(historical_region_for_country("PE"), "andes")
+        self.assertEqual(historical_region_for_country("MX"), "mesoamerica")
+
+    def test_unknown_country_returns_none(self) -> None:
+        self.assertIsNone(historical_region_for_country("ZZ"))
+
+    def test_every_country_code_maps_to_exactly_one_region(self) -> None:
+        seen: dict[str, str] = {}
+        for region_id, countries in HISTORICAL_REGIONS.items():
+            for country in countries:
+                self.assertNotIn(
+                    country, seen, f"{country} assigned to both {seen.get(country)} and {region_id}"
+                )
+                seen[country] = region_id
+
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+- [ ] **Step 2: Run test to verify it fails**
+
+Run: `.venv/Scripts/python.exe -m unittest tests.test_historical_regions -v`
+Expected: `ImportError`.
+
+- [ ] **Step 3: Write the lookup table**
+
+Create `pipeline/historical_regions.py`:
+
+```python
+"""Curated ISO alpha-2 country -> historical region lookup. A starter set,
+not exhaustive -- a country missing from this table falls back to continent
+in derive_historical_regions.py, same "cheap default, grow the table later"
+pattern as every other reference list in this project. Region ids are not
+Period.tier citizens (see ONTOLOGY.md's "Tree, lanes, graph" section) --
+this is a standalone spatial classification, referenced by geography.
+"""
+
+from __future__ import annotations
+
+HISTORICAL_REGIONS: dict[str, list[str]] = {
+    "west_asia": ["IR", "IQ", "TR", "SY", "JO", "LB", "IL", "PS", "SA", "YE",
+                  "OM", "AE", "QA", "BH", "KW", "CY", "GE", "AM", "AZ"],
+    "central_asia": ["KZ", "UZ", "TM", "TJ", "KG", "AF"],
+    "south_asia": ["IN", "PK", "BD", "LK", "NP", "BT", "MV"],
+    "east_asia": ["CN", "JP", "KR", "KP", "MN", "TW", "HK", "MO"],
+    "southeast_asia": ["ID", "MY", "TH", "VN", "PH", "MM", "KH", "LA", "SG", "BN", "TL"],
+    "western_europe": ["FR", "DE", "BE", "NL", "LU", "GB", "IE", "CH", "AT", "MC", "LI"],
+    "northern_europe": ["SE", "NO", "DK", "FI", "IS", "EE", "LV", "LT"],
+    "southern_europe": ["IT", "ES", "PT", "GR", "MT", "SM", "VA", "AD"],
+    "eastern_europe": ["RU", "UA", "BY", "PL", "CZ", "SK", "HU", "RO", "BG", "MD"],
+    "balkans": ["SI", "HR", "BA", "RS", "ME", "MK", "AL", "XK"],
+    "north_africa": ["EG", "LY", "TN", "DZ", "MA", "SD", "SS"],
+    "horn_of_africa": ["ET", "ER", "DJ", "SO"],
+    "west_africa": ["NG", "GH", "CI", "SN", "ML", "BF", "NE", "GN", "BJ", "TG",
+                     "SL", "LR", "MR", "GM", "GW", "CV"],
+    "central_africa": ["CD", "CG", "CM", "CF", "GA", "GQ", "TD", "AO", "ST"],
+    "east_africa": ["KE", "TZ", "UG", "RW", "BI", "MW", "ZM", "MZ"],
+    "southern_africa": ["ZA", "NA", "BW", "ZW", "LS", "SZ"],
+    "north_america": ["US", "CA"],
+    "mesoamerica": ["MX", "GT", "BZ", "HN", "SV", "NI", "CR", "PA"],
+    "caribbean": ["CU", "JM", "HT", "DO", "PR", "TT", "BS", "BB"],
+    "andes": ["PE", "BO", "EC", "CO"],
+    "southern_cone": ["AR", "CL", "UY", "PY"],
+    "brazil_amazonia": ["BR"],
+    "oceania_pacific": ["AU", "NZ", "PG", "FJ", "SB", "VU", "WS", "TO"],
+}
+
+
+def historical_region_for_country(iso_code: str) -> str | None:
+    for region_id, countries in HISTORICAL_REGIONS.items():
+        if iso_code in countries:
+            return region_id
+    return None
+```
+
+- [ ] **Step 4: Run test to verify it passes**
+
+Run: `.venv/Scripts/python.exe -m unittest tests.test_historical_regions -v`
+Expected: PASS.
+
+- [ ] **Step 5: Add the schema fields**
+
+In `schema.py`'s `Geography` model, mirroring `continents`/`primary_continent` exactly:
+
+```python
+    historical_regions: list[str] = Field(default_factory=list)
+    primary_historical_region: str | None = None
+```
+
+Extend the existing `_primary_is_a_known_continent` validator (rename it or add a twin) so `primary_historical_region` must appear in `historical_regions`, same rule as the continent pair:
+
+```python
+    @model_validator(mode="after")
+    def _primary_is_a_known_historical_region(self) -> "Geography":
+        if self.primary_historical_region is not None and self.primary_historical_region not in self.historical_regions:
+            raise ValueError("primary_historical_region must also appear in historical_regions")
+        if self.primary_historical_region is None and len(self.historical_regions) == 1:
+            self.primary_historical_region = self.historical_regions[0]
+        return self
+```
+
+- [ ] **Step 6: Write the failing test for the derivation script**
+
+Create `tests/test_derive_historical_regions.py`:
+
+```python
+import unittest
+
+from pipeline.derive_historical_regions import region_for_document
+
+
+class RegionForDocumentTests(unittest.TestCase):
+    def test_derives_from_present_countries(self) -> None:
+        document = {"geography": {"present_countries": ["IR", "IQ"], "continents": ["asia"]}}
+        self.assertEqual(region_for_document(document), ["west_asia"])
+
+    def test_multiple_countries_can_span_multiple_regions(self) -> None:
+        document = {"geography": {"present_countries": ["FR", "DE"], "continents": ["europe"]}}
+        self.assertEqual(sorted(region_for_document(document)), ["western_europe"])
+
+    def test_falls_back_to_nothing_when_country_unmapped_and_absent(self) -> None:
+        document = {"geography": {"present_countries": [], "continents": ["europe"]}}
+        self.assertEqual(region_for_document(document), [])
+
+    def test_unmapped_country_is_silently_skipped_not_an_error(self) -> None:
+        document = {"geography": {"present_countries": ["AQ"], "continents": ["antarctica"]}}
+        self.assertEqual(region_for_document(document), [])
+
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+- [ ] **Step 7: Run test to verify it fails**
+
+Run: `.venv/Scripts/python.exe -m unittest tests.test_derive_historical_regions -v`
+Expected: `ImportError`.
+
+- [ ] **Step 8: Write the derivation script**
+
+Create `pipeline/derive_historical_regions.py`:
+
+```python
+"""Pipeline step: derive historical_regions/primary_historical_region from
+present_countries (falling back to nothing, never to continent -- continent
+is much coarser and a wrong specific region is worse than an honestly-empty
+one). Only fills gaps; never overwrites a manually-set value (checks
+manual_overrides, same convention as enrich_geography.py)."""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+import yaml
+
+from pipeline.historical_regions import historical_region_for_country
+
+ROOT = Path(__file__).resolve().parent.parent
+POLITIES_DIR = ROOT / "polities"
+PERIODS_DIR = ROOT / "periods"
+REPORT_PATH = ROOT / "reports" / "historical_region_coverage.md"
+
+
+def region_for_document(document: dict) -> list[str]:
+    countries = (document.get("geography") or {}).get("present_countries") or []
+    regions = {historical_region_for_country(c) for c in countries}
+    regions.discard(None)
+    return sorted(regions)
+
+
+def _apply(directory: Path) -> tuple[int, int]:
+    updated = 0
+    total = 0
+    for path in sorted(directory.glob("*.yaml")):
+        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        total += 1
+        if "geography" not in document:
+            continue
+        if "historical_region" in (document.get("manual_overrides") or []):
+            continue
+        if document["geography"].get("historical_regions"):
+            continue
+        regions = region_for_document(document)
+        if not regions:
+            continue
+        document["geography"]["historical_regions"] = regions
+        if len(regions) == 1:
+            document["geography"]["primary_historical_region"] = regions[0]
+        path.write_text(
+            yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
+        )
+        updated += 1
+    return updated, total
+
+
+def main() -> None:
+    polity_updated, polity_total = _apply(POLITIES_DIR)
+    period_updated, period_total = _apply(PERIODS_DIR)
+    REPORT_PATH.write_text(
+        "# Historical region coverage\n\n"
+        f"- Polities updated this run: {polity_updated} / {polity_total}\n"
+        f"- Periods updated this run: {period_updated} / {period_total}\n\n"
+        "Derived only from present_countries via pipeline/historical_regions.py's "
+        "starter lookup table (24 regions, ~110 country codes) -- records with no "
+        "present_countries, or whose countries aren't in the table yet, are left "
+        "unset rather than guessed. Growing the table is cheap and safe to rerun.\n",
+        encoding="utf-8",
+    )
+    print(f"polities: {polity_updated}/{polity_total} updated; periods: {period_updated}/{period_total} updated")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+- [ ] **Step 9: Run test, then the script**
+
+Run: `.venv/Scripts/python.exe -m unittest tests.test_derive_historical_regions -v`
+Expected: PASS.
+
+Run: `.venv/Scripts/python.exe -m pipeline.derive_historical_regions`
+Expected: prints update counts; given 2,992 polities already have `present_countries`, expect several hundred to over a thousand successfully classified depending on how well the starter table's ~110 country codes cover what's actually in the dataset (rarer/historical-only country codes won't be in the table yet — that's fine, same "starter set, grows over time" pattern).
+
+- [ ] **Step 10: Run build and full suite**
+
+Run: `.venv/Scripts/python.exe build.py` — counts unchanged (existing records only gained an optional field).
+Run: `.venv/Scripts/python.exe -m unittest discover -s tests -v` — all green.
+
+- [ ] **Step 11: Commit**
+
+```bash
+git add schema.py pipeline/historical_regions.py pipeline/derive_historical_regions.py tests/test_historical_regions.py tests/test_derive_historical_regions.py polities/*.yaml periods/*.yaml reports/historical_region_coverage.md
+git commit -m "geography: derive historical_regions from present_countries (starter table)"
+```
+
+---
+
+## Task 10: Wire into the Makefile, README, and PLAN.md
 
 **Files:**
 - Modify: `Makefile`
@@ -2142,9 +2412,12 @@ suggest-period-links:
 
 period-hierarchy-report:
 	python -m pipeline.period_hierarchy
+
+derive-historical-regions:
+	python -m pipeline.derive_historical_regions
 ```
 
-Add these five names to the `.PHONY` line at the top of the file. **Remove** `compute-prominence` from the documented "Wikidata backbone" sequence in `README.md` if it's listed there as a routine step — running it is now optional (updates `prominence_score` only) rather than part of the standard pipeline.
+Add these six names to the `.PHONY` line at the top of the file. **Remove** `compute-prominence` from the documented "Wikidata backbone" sequence in `README.md` if it's listed there as a routine step — running it is now optional (updates `prominence_score` only) rather than part of the standard pipeline.
 
 - [ ] **Step 2: Add a status entry to PLAN.md**
 
@@ -2172,13 +2445,13 @@ git commit -m "docs: wire period-ontology targets into Makefile, README, PLAN.md
 
 **Placeholder scan** — no TBD/"add appropriate handling" left in. Known rough edges are called out explicitly with a stated reason they're not blocking (auto-generated `source_urls` possibly not resolving in Task 4 Part A; the `min_length=1` schema relaxation needed for Task 4 Part B's placeholder rows).
 
-**Type consistency** — `tier` values (`macro_chapter`, `regional_era`, `period` — three, not four; no separate `subperiod`) match across Tasks 1-7. `PeriodHierarchy`'s five public methods are defined once in Task 7 and used with consistent names in Task 9's Makefile comment and `ONTOLOGY.md`.
+**Type consistency** — `tier` values (`macro_chapter`, `regional_era`, `period` — three, not four; no separate `subperiod`) match across Tasks 1-7. `PeriodHierarchy`'s five public methods are defined once in Task 7 and used with consistent names in Task 10's Makefile comment and `ONTOLOGY.md`. `Geography.historical_regions`/`primary_historical_region` (Task 9) mirror `continents`/`primary_continent`'s exact field shape and validator pattern.
 
 ## Explicitly out of scope
 
 - The actual timeline UI (`web/`, `server/`), including any parallel-lane rendering — computed at render time from data this plan already produces, not a data-layer task.
 - The Holocene/geological-epoch display layer — a static UI asset, not a `Period`-tree citizen (see `ONTOLOGY.md`).
-- A fine-grained historical-region field (West Asia vs. Sahel vs. Andes vs. Mesoamerica...) — flagged in `ONTOLOGY.md` as a real, still-open gap, not solved by the regional-era tier, and explicitly not to be added as a new `Period.tier` value later.
+- Exhaustive country coverage in `pipeline/historical_regions.py`'s lookup table (Task 9 ships a ~110-country starter set; the remaining countries fall back to unset, not a wrong guess) — growing it is cheap, incremental, future work.
 - Working the two review queues to completion — ongoing curation, same as Seshat/consolidation/type-eligibility.
 - Hand-curated sub-continental regional eras for 1500-present — Task 4 Part B's auto-generated continent-level nodes are a placeholder for this.
 - Refining `weight_by_era` via a better multi-source pipeline — per `ONTOLOGY.md`, this becomes ordinary editorial curation, not a pipeline investment.
