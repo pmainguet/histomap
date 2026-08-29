@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Give the dataset an explicit, curated chronological hierarchy (macro chapter → regional era → period → subperiod/polity) and a binary documentary-status axis (prehistory/history), so a future timeline UI can start simple (9 macro chapters) and zoom to the existing 4,671 polities without redesigning the data model.
+**Goal:** Give the dataset an explicit, curated chronological hierarchy (macro chapter → regional era → named period) that a future timeline UI can browse, scoped ranking (`top_entities`) that replaces the retired global competitive visibility-tier algorithm, and no leftover dead code implying the old algorithm is still authoritative.
 
-**Architecture:** Extend the existing `Period` model rather than replace it. `periods/*.yaml` already has `broader_periods` (parent-chain) and `period_links.yaml` already links polities into periods — this plan adds two new tiers of `Period` records (`macro_chapter`, `regional_era`) sitting above the 117 existing periods, adds `documentary_status`/`evidence_basis` fields (superseding the ambiguous `kind` enum for navigation purposes, without deleting it), and ships semi-automated tagging scripts that queue their suggestions for review rather than claiming to classify all 4,671 polities in one pass — matching how every other queue in this project (Seshat, consolidation, type-eligibility) already works.
+**Architecture:** Extend the existing `Period` model rather than replace it. `periods/*.yaml` already has `broader_periods` (parent-chain) and `period_links.yaml` already links polities into periods — this plan adds two new tiers of `Period` records (`macro_chapter`, `regional_era`) sitting above the 117 existing periods, a build-time validator enforcing which tier can parent which, and a scope-local ranking helper. It also removes `compute_prominence.py`'s competitive `balanced_visibility()` quota algorithm outright (not just stops calling it) — see `ONTOLOGY.md`'s "Ranking and sizing" section for why freezing in place isn't enough.
 
 **Tech Stack:** Python 3.12, Pydantic 2 (`schema.py`), PyYAML, `unittest` (project's existing test runner — not pytest).
 
@@ -12,45 +12,48 @@
 
 ## Global Constraints
 
-- Do not delete or rename any existing field, YAML file, or id. Every one of the 4,671 `polities/*.yaml` and 117 `periods/*.yaml` files must still validate unchanged after this plan (new fields are optional with safe defaults).
+- Do not delete or rename any existing field, YAML file, or id, **except** the functions named in Task 8 (`balanced_visibility`, `_top_per_stratum`, `visibility_stratum`, `historical_era`, `tier_for` in `pipeline/compute_prominence.py`) and their dedicated tests — those are a deliberate, scoped removal, not collateral damage.
+- Every one of the 4,671 `polities/*.yaml` and 117 `periods/*.yaml` files must still validate unchanged after every task except Task 8, which changes what `compute_prominence.py` writes but is not required to run against the full dataset (see Task 8, Step 5).
 - `python -m unittest discover -s tests` must stay green after every task (137 tests today).
 - `python build.py` must keep printing `OK` and its validated/written counts after every task.
-- No task hand-classifies more than ~25 records by hand. Anything larger becomes a heuristic-suggestion script + a reviewable report under `reports/`, following the existing pattern in `pipeline/classify_period_roles.py` and `pipeline/review_cli.py`. Full classification of the backlog is out of scope for this plan — it's ongoing curation, like the other queues.
-- This plan stops at the data layer. It does not touch `web/` or `server/`. The payoff is that a future "new timeline page" plan can query `pipeline/period_hierarchy.py` (Task 7) instead of inventing its own grouping logic.
+- No task hand-classifies more than ~25 records by hand. Anything larger becomes a heuristic-suggestion script + a reviewable report under `reports/`, following the existing pattern in `pipeline/classify_period_roles.py` and `pipeline/review_cli.py`.
+- This plan stops at the data layer. It does not touch `web/` or `server/`, and does not build the Holocene/geological display layer (per `ONTOLOGY.md`, that's a static UI asset for the future timeline plan, not a `Period`-tree citizen).
+- No documentary-status/evidence-basis fields anywhere — dropped after review (see `ONTOLOGY.md`'s "Why this exists").
 
 ---
 
-## Design decisions
+## Design summary
 
-Full rationale lives in [`ONTOLOGY.md`](../../ONTOLOGY.md) — read that first if you're implementing this and haven't already. Summary of what it means for the schema, since that's what the tasks below touch:
+Full rationale lives in [`ONTOLOGY.md`](../../ONTOLOGY.md). Summary of what it means for the schema:
 
-1. Chronological hierarchy = a chain of `Period` records using the already-existing (but barely-used) `broader_periods` field, tagged by a new `tier: Literal["macro_chapter", "regional_era", "period", "subperiod"] = "period"` field. No new foreign-key fields; every one of the 117 existing period files stays valid untouched under the default.
-2. Entities keep linking into the hierarchy via the existing `period_links.yaml` — unchanged mechanism, Task 6 just grows its coverage.
-3. `documentary_status`/`evidence_basis` (new fields) supersede `kind` for navigation purposes without deleting it — see `ONTOLOGY.md`'s derivation table for the exact evidence_basis → documentary_status mapping.
-4. The new `regional_era` tier keys off `geography.continents`/`primary_continent` (72% populated), not `region`/`culture_group` (>99% null, dead fields from the original schema sketch — see `ONTOLOGY.md` for the measurement).
-5. `YEAR_MIN` moves from -10,000 to -3,000,000 so the Paleolithic macro chapter can express its real start date. This only widens the allowed range — every existing record stays valid.
+1. Chronological hierarchy = a chain of `Period` records using the already-existing `broader_periods` field, tagged by a new `tier: Literal["macro_chapter", "regional_era", "period"] = "period"` field. Every existing period file stays valid untouched under the default.
+2. `broader_periods` holds **exactly one entry** for every period this plan authors (schema type stays `list[str]` for flexibility, but the convention is single-parent, enforced by Task 2's build-time validator). A parent pointer is editorial placement, not a date-range containment claim — periods may (and several do) run past their parent's boundary.
+3. Entities keep linking into the hierarchy via the existing `period_links.yaml`, plus a new `relation: "defines"` value for the "this period exists specifically to give this polity a period-tier presence" case.
+4. `Period.kind` is untouched and not deprecated — nothing in this plan replaces its evidentiary role.
+5. `YEAR_MIN` moves from -10,000 to -3,000,000 so the Paleolithic macro chapter can express its real start date. This only widens the allowed range.
+6. `compute_prominence.py`'s competitive `balanced_visibility()` quota algorithm is deleted (Task 8), not frozen. `prominence_score` computation stays. Scoped ranking moves to `pipeline/period_hierarchy.py`'s new `top_entities()`.
+7. Only `tier: macro_chapter` may have `geography.continents: []`; everywhere else that means "unknown," never "global."
 
 ---
 
 ## File structure
 
-- Modify: `schema.py` — new fields on `Period` and `Polity`, `YEAR_MIN` change (Task 1)
-- Create: `tests/test_schema.py` — first dedicated schema test file (Task 1)
-- Create: `periods/macro_*.yaml` × 9 (Task 2)
-- Create: `pipeline/seed_regional_eras.py` — one-shot authoring script + its 20-row data table (Task 3)
-- Create: `periods/*_era.yaml` × 20 (generated by Task 3's script)
-- Create: `pipeline/backfill_documentary_status.py` — migrates existing 117 periods' `kind` → `documentary_status`/`evidence_basis` (Task 4)
-- Create: `tests/test_backfill_documentary_status.py` (Task 4)
-- Create: `pipeline/suggest_regional_eras.py` — heuristic suggester + review report for the 117 existing periods (Task 5)
-- Create: `tests/test_suggest_regional_eras.py` (Task 5)
+- Modify: `schema.py` — `Period.tier`, `YEAR_MIN` change (Task 1)
+- Create: `tests/test_schema.py` (Task 1)
+- Modify: `build.py` — `validate_period_tiers()` (Task 2)
+- Create: `tests/test_validate_period_tiers.py` (Task 2)
+- Create: `periods/macro_*.yaml` × 9 (Task 3)
+- Create: `pipeline/seed_regional_eras.py` — 20-row hand-curated table + writer (Task 4)
+- Create: `pipeline/generate_modern_regional_eras.py` — data-driven continent×chapter generator for macro chapters 6-9 (Task 4)
+- Create: `tests/test_seed_regional_eras.py`, `tests/test_generate_modern_regional_eras.py` (Task 4)
+- Create: `periods/*_era.yaml` × 20 + however many the generator produces (Task 4 output)
+- Create: `pipeline/suggest_regional_eras.py` + `tests/test_suggest_regional_eras.py` (Task 5)
 - Create: `reports/regional_era_suggestions.jsonl`, `reports/regional_era_summary.md` (Task 5 output)
-- Create: `pipeline/suggest_period_links.py` — heuristic suggester + review report for polity → period linking (Task 6)
-- Create: `tests/test_suggest_period_links.py` (Task 6)
+- Create: `pipeline/suggest_period_links.py` + `tests/test_suggest_period_links.py` (Task 6)
 - Create: `reports/period_link_suggestions.jsonl`, `reports/period_link_suggestion_summary.md` (Task 6 output)
-- Create: `pipeline/period_hierarchy.py` — the query layer a future timeline UI reads (Task 7)
-- Create: `tests/test_period_hierarchy.py` (Task 7)
-- Modify: `Makefile` — new targets (each task adds its own line)
-- Modify: `PLAN.md` — final task links this plan in from the main status doc
+- Create: `pipeline/period_hierarchy.py` + `tests/test_period_hierarchy.py` (Task 7)
+- Modify: `pipeline/compute_prominence.py`, `tests/test_compute_prominence.py` (Task 8)
+- Modify: `Makefile`, `PLAN.md`, `README.md` (Task 9)
 
 ---
 
@@ -61,12 +64,8 @@ Full rationale lives in [`ONTOLOGY.md`](../../ONTOLOGY.md) — read that first i
 - Create: `tests/test_schema.py`
 
 **Interfaces:**
-- Produces: `Period.tier: Literal["macro_chapter", "regional_era", "period", "subperiod"] = "period"`
-- Produces: `Period.documentary_status: Literal["prehistory", "history"] | None = None`
-- Produces: `Period.evidence_basis: Literal["archaeological_only", "external_written", "local_written", "mixed"] | None = None`
-- Produces: `Polity.documentary_status` / `Polity.evidence_basis` — same shape, for entities classified directly rather than through a period link
+- Produces: `Period.tier: Literal["macro_chapter", "regional_era", "period"] = "period"`
 - Produces: `YEAR_MIN = -3_000_000` (was `-10_000`)
-- Consumes: nothing (first task)
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -75,7 +74,7 @@ Create `tests/test_schema.py`:
 ```python
 import unittest
 
-from schema import Period, Polity
+from schema import Period
 
 
 def period_kwargs(**overrides: object) -> dict:
@@ -92,19 +91,6 @@ def period_kwargs(**overrides: object) -> dict:
     return value
 
 
-def polity_kwargs(**overrides: object) -> dict:
-    value = {
-        "id": "test_polity",
-        "canonical_name": "Test Polity",
-        "start": 1000,
-        "end": 1500,
-        "start_confidence": "medium",
-        "end_confidence": "medium",
-    }
-    value.update(overrides)
-    return value
-
-
 class PeriodTierTests(unittest.TestCase):
     def test_tier_defaults_to_period(self) -> None:
         period = Period(**period_kwargs())
@@ -116,42 +102,7 @@ class PeriodTierTests(unittest.TestCase):
 
     def test_invalid_tier_rejected(self) -> None:
         with self.assertRaises(ValueError):
-            Period(**period_kwargs(tier="nonsense"))
-
-
-class DocumentaryStatusTests(unittest.TestCase):
-    def test_defaults_to_none(self) -> None:
-        period = Period(**period_kwargs())
-        self.assertIsNone(period.documentary_status)
-        self.assertIsNone(period.evidence_basis)
-
-    def test_evidence_basis_archaeological_only_implies_prehistory(self) -> None:
-        period = Period(**period_kwargs(evidence_basis="archaeological_only"))
-        self.assertEqual(period.documentary_status, "prehistory")
-
-    def test_evidence_basis_external_written_implies_history(self) -> None:
-        period = Period(**period_kwargs(evidence_basis="external_written"))
-        self.assertEqual(period.documentary_status, "history")
-
-    def test_explicit_documentary_status_is_kept(self) -> None:
-        period = Period(
-            **period_kwargs(evidence_basis="mixed", documentary_status="history")
-        )
-        self.assertEqual(period.documentary_status, "history")
-
-    def test_explicit_documentary_status_conflicting_with_evidence_basis_rejected(
-        self,
-    ) -> None:
-        with self.assertRaises(ValueError):
-            Period(
-                **period_kwargs(
-                    evidence_basis="archaeological_only", documentary_status="history"
-                )
-            )
-
-    def test_polity_has_the_same_fields(self) -> None:
-        polity = Polity(**polity_kwargs(evidence_basis="local_written"))
-        self.assertEqual(polity.documentary_status, "history")
+            Period(**period_kwargs(tier="subperiod"))  # not a tier value; see design summary #1
 
 
 class YearFloorTests(unittest.TestCase):
@@ -168,10 +119,12 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
+Note: `tier` has exactly three values (`macro_chapter`, `regional_era`, `period`) — no separate `subperiod` value. A recursively-nested named period is still `tier: period`; its depth comes from how many hops its `broader_periods` chain takes, not from a distinct tier (see `ONTOLOGY.md`).
+
 - [ ] **Step 2: Run tests to verify they fail**
 
 Run: `.venv/Scripts/python.exe -m unittest tests.test_schema -v`
-Expected: `AttributeError` / `ValidationError` failures — `tier`, `documentary_status`, `evidence_basis` don't exist yet, and `YEAR_MIN` is still -10,000.
+Expected: failures — `tier` doesn't exist yet, `YEAR_MIN` is still -10,000.
 
 - [ ] **Step 3: Implement the schema changes**
 
@@ -182,106 +135,215 @@ YEAR_MIN = -3_000_000
 YEAR_MAX = 2100
 ```
 
-Add a helper near the top (after `Confidence`, before `Geography`):
+On `Period`, add the field (after `kind`):
 
 ```python
-class DocumentaryStatus(str, Enum):
-    prehistory = "prehistory"
-    history = "history"
-
-
-class EvidenceBasis(str, Enum):
-    archaeological_only = "archaeological_only"
-    external_written = "external_written"
-    local_written = "local_written"
-    mixed = "mixed"
-
-
-_EVIDENCE_IMPLIES_HISTORY = {
-    EvidenceBasis.external_written,
-    EvidenceBasis.local_written,
-    EvidenceBasis.mixed,
-}
-
-
-def _resolve_documentary_status(
-    documentary_status: DocumentaryStatus | None,
-    evidence_basis: EvidenceBasis | None,
-) -> DocumentaryStatus | None:
-    if evidence_basis is None:
-        return documentary_status
-    implied = (
-        DocumentaryStatus.history
-        if evidence_basis in _EVIDENCE_IMPLIES_HISTORY
-        else DocumentaryStatus.prehistory
-    )
-    if documentary_status is not None and documentary_status != implied:
-        raise ValueError(
-            f"documentary_status={documentary_status!r} conflicts with "
-            f"evidence_basis={evidence_basis!r} (implies {implied!r})"
-        )
-    return implied
-```
-
-On `Period`, add fields (after `kind`, which stays but gets a default so new macro/regional records don't need to fill in a meaningless value):
-
-```python
-    kind: Literal["historical", "archaeological", "protohistorical", "prehistorical"] = "historical"
-    """Legacy evidentiary/tier field, superseded by tier + documentary_status/evidence_basis
-    for anything authored after 2026-08-29. Kept for the 117 pre-existing records; do not
-    remove without migrating them (see pipeline/backfill_documentary_status.py)."""
-    tier: Literal["macro_chapter", "regional_era", "period", "subperiod"] = "period"
-    documentary_status: DocumentaryStatus | None = None
-    evidence_basis: EvidenceBasis | None = None
-```
-
-and a validator (alongside `_period_dates`):
-
-```python
-    @model_validator(mode="after")
-    def _resolve_documentary_status_period(self) -> "Period":
-        self.documentary_status = _resolve_documentary_status(
-            self.documentary_status, self.evidence_basis
-        )
-        return self
-```
-
-On `Polity`, add the same two fields (after `eligibility`) and an analogous validator:
-
-```python
-    documentary_status: DocumentaryStatus | None = None
-    evidence_basis: EvidenceBasis | None = None
-```
-
-```python
-    @model_validator(mode="after")
-    def _resolve_documentary_status_polity(self) -> "Polity":
-        self.documentary_status = _resolve_documentary_status(
-            self.documentary_status, self.evidence_basis
-        )
-        return self
+    tier: Literal["macro_chapter", "regional_era", "period"] = "period"
 ```
 
 - [ ] **Step 4: Run tests to verify they pass**
 
 Run: `.venv/Scripts/python.exe -m unittest tests.test_schema -v`
-Expected: all `PeriodTierTests`, `DocumentaryStatusTests`, `YearFloorTests` pass.
+Expected: all pass.
 
 - [ ] **Step 5: Run the full suite and build**
 
-Run: `.venv/Scripts/python.exe -m unittest discover -s tests -v` — expect 137 + new tests, all passing (new fields are optional, so nothing existing breaks).
-Run: `.venv/Scripts/python.exe build.py` — expect the same `OK validated 4667 ... 117 periods, and 102 period links` as before this task (no data changed yet).
+Run: `.venv/Scripts/python.exe -m unittest discover -s tests -v` — expect 137 + new tests, all passing.
+Run: `.venv/Scripts/python.exe build.py` — expect the same counts as before this task (no data changed yet).
 
 - [ ] **Step 6: Commit**
 
 ```bash
 git add schema.py tests/test_schema.py
-git commit -m "schema: add tier/documentary_status/evidence_basis, widen YEAR_MIN to -3M"
+git commit -m "schema: add Period.tier, widen YEAR_MIN to -3M"
 ```
 
 ---
 
-## Task 2: Author the 9 macro chapters
+## Task 2: Build-time period-tier hierarchy validation
+
+**Files:**
+- Modify: `build.py`
+- Create: `tests/test_validate_period_tiers.py`
+
+**Interfaces:**
+- Consumes: `Period.tier`, `Period.broader_periods` from Task 1
+- Produces: `validate_period_tiers(periods: list[Period]) -> list[str]` (list of error strings, empty if valid), called from `build.py`'s `main()` alongside the existing `load_periods()`/`load_period_links()` calls, fatal on any error (matches `load_all()`'s existing fail-fast pattern for polities)
+
+This can't be a per-record Pydantic validator — it needs to know the tier of the *referenced* period, which means seeing the whole dataset, same reason `find_parent_cycles()` (for polities) already lives in `build.py` rather than `schema.py`.
+
+- [ ] **Step 1: Write the failing test**
+
+Create `tests/test_validate_period_tiers.py`:
+
+```python
+import unittest
+
+from build import validate_period_tiers
+from schema import Period
+
+
+def period(id_: str, tier: str, broader: list[str] | None = None) -> Period:
+    return Period(
+        id=id_,
+        canonical_name=id_,
+        kind="historical",
+        tier=tier,
+        start=1000,
+        end=1500,
+        authority="test",
+        source_urls=["https://example.com"],
+        broader_periods=broader or [],
+    )
+
+
+class ValidatePeriodTiersTests(unittest.TestCase):
+    def test_valid_three_tier_chain_has_no_errors(self) -> None:
+        periods = [
+            period("macro_a", "macro_chapter"),
+            period("regional_a", "regional_era", ["macro_a"]),
+            period("period_a", "period", ["regional_a"]),
+        ]
+        self.assertEqual(validate_period_tiers(periods), [])
+
+    def test_period_may_point_straight_at_macro_chapter(self) -> None:
+        periods = [
+            period("macro_a", "macro_chapter"),
+            period("period_a", "period", ["macro_a"]),
+        ]
+        self.assertEqual(validate_period_tiers(periods), [])
+
+    def test_macro_chapter_with_a_parent_is_an_error(self) -> None:
+        periods = [
+            period("macro_a", "macro_chapter"),
+            period("macro_b", "macro_chapter", ["macro_a"]),
+        ]
+        errors = validate_period_tiers(periods)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("macro_b", errors[0])
+
+    def test_regional_era_with_two_parents_is_an_error(self) -> None:
+        periods = [
+            period("macro_a", "macro_chapter"),
+            period("macro_b", "macro_chapter"),
+            period("regional_a", "regional_era", ["macro_a", "macro_b"]),
+        ]
+        errors = validate_period_tiers(periods)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("regional_a", errors[0])
+
+    def test_regional_era_parented_to_a_period_is_an_error(self) -> None:
+        periods = [
+            period("macro_a", "macro_chapter"),
+            period("period_a", "period", ["macro_a"]),
+            period("regional_a", "regional_era", ["period_a"]),
+        ]
+        errors = validate_period_tiers(periods)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("regional_a", errors[0])
+
+    def test_cycle_is_an_error(self) -> None:
+        periods = [
+            period("macro_a", "macro_chapter"),
+            period("period_a", "period", ["period_b"]),
+            period("period_b", "period", ["period_a"]),
+        ]
+        errors = validate_period_tiers(periods)
+        self.assertTrue(any("cycle" in e for e in errors))
+
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+- [ ] **Step 2: Run test to verify it fails**
+
+Run: `.venv/Scripts/python.exe -m unittest tests.test_validate_period_tiers -v`
+Expected: `ImportError` — `validate_period_tiers` doesn't exist in `build.py` yet.
+
+- [ ] **Step 3: Implement the validator**
+
+Add to `build.py`, near `find_parent_cycles`:
+
+```python
+ALLOWED_PARENT_TIERS = {
+    "macro_chapter": set(),
+    "regional_era": {"macro_chapter"},
+    "period": {"macro_chapter", "regional_era", "period"},
+}
+
+
+def validate_period_tiers(periods: list[Period]) -> list[str]:
+    by_id = {p.id: p for p in periods}
+    errors: list[str] = []
+    for p in periods:
+        allowed = ALLOWED_PARENT_TIERS[p.tier]
+        if p.tier == "macro_chapter":
+            if p.broader_periods:
+                errors.append(f"{p.id}: tier=macro_chapter must have no broader_periods")
+            continue
+        if len(p.broader_periods) != 1:
+            errors.append(
+                f"{p.id}: tier={p.tier} must have exactly one broader_periods entry, "
+                f"got {len(p.broader_periods)}"
+            )
+            continue
+        parent_id = p.broader_periods[0]
+        parent = by_id.get(parent_id)
+        if parent is None:
+            continue  # unknown-reference case already reported by load_periods()
+        if parent.tier not in allowed:
+            errors.append(
+                f"{p.id}: tier={p.tier} parent {parent_id!r} has tier={parent.tier!r}, "
+                f"must be one of {sorted(allowed)}"
+            )
+    # cycle detection: walk each period's single-parent chain, watching for revisits
+    for p in periods:
+        seen = {p.id}
+        current = p
+        while current.broader_periods:
+            parent_id = current.broader_periods[0]
+            if parent_id in seen:
+                errors.append(f"{p.id}: broader_periods cycle detected at {parent_id!r}")
+                break
+            seen.add(parent_id)
+            parent = by_id.get(parent_id)
+            if parent is None:
+                break
+            current = parent
+    return errors
+```
+
+Wire it into `main()` right after the existing `period_links = load_period_links(periods, polities)` line:
+
+```python
+    tier_errors = validate_period_tiers(periods)
+    if tier_errors:
+        for e in tier_errors:
+            print(f"ERROR  {e}", file=sys.stderr)
+        sys.exit(1)
+```
+
+- [ ] **Step 4: Run test to verify it passes**
+
+Run: `.venv/Scripts/python.exe -m unittest tests.test_validate_period_tiers -v`
+Expected: all pass.
+
+- [ ] **Step 5: Run build and full suite**
+
+Run: `.venv/Scripts/python.exe build.py` — the 117 existing periods are all `tier: period` with empty `broader_periods` (no tier-mismatch possible yet), so this should still print `OK` with unchanged counts.
+Run: `.venv/Scripts/python.exe -m unittest discover -s tests -v` — all green.
+
+- [ ] **Step 6: Commit**
+
+```bash
+git add build.py tests/test_validate_period_tiers.py
+git commit -m "build: validate period tier hierarchy (allowed parents, cycles)"
+```
+
+---
+
+## Task 3: Author the 9 macro chapters
 
 **Files:**
 - Create: `periods/macro_human_origins_paleolithic.yaml`
@@ -296,8 +358,8 @@ git commit -m "schema: add tier/documentary_status/evidence_basis, widen YEAR_MI
 - Test: `tests/test_macro_chapters.py`
 
 **Interfaces:**
-- Consumes: `Period.tier` from Task 1
-- Produces: 9 period ids with `tier: macro_chapter`, spanning -3,000,000 to present with no gaps, that Task 3's regional eras and Task 5's suggester point at via `broader_periods`
+- Consumes: `Period.tier` from Task 1, `validate_period_tiers` from Task 2 (these 9 records must pass it: `tier=macro_chapter`, empty `broader_periods`)
+- Produces: 9 period ids spanning -3,000,000 to 2100 with no gaps, that Task 4's regional eras point at via `broader_periods`
 
 - [ ] **Step 1: Write the failing test**
 
@@ -336,14 +398,11 @@ class MacroChapterTests(unittest.TestCase):
             data = yaml.safe_load(path.read_text(encoding="utf-8"))
             self.chapters.append(Period.model_validate(data))
 
-    def test_all_nine_exist_with_macro_chapter_tier(self) -> None:
+    def test_all_nine_exist_with_macro_chapter_tier_and_no_parent(self) -> None:
         self.assertEqual(len(self.chapters), 9)
         for chapter in self.chapters:
             self.assertEqual(chapter.tier, "macro_chapter")
-
-    def test_no_documentary_status_at_macro_tier(self) -> None:
-        for chapter in self.chapters:
-            self.assertIsNone(chapter.documentary_status)
+            self.assertEqual(chapter.broader_periods, [])
 
     def test_chapters_are_contiguous_with_no_gap_or_overlap(self) -> None:
         ordered = sorted(self.chapters, key=lambda c: c.start)
@@ -358,6 +417,10 @@ class MacroChapterTests(unittest.TestCase):
         ordered = sorted(self.chapters, key=lambda c: c.start)
         self.assertEqual(ordered[0].start, -3_000_000)
         self.assertEqual(ordered[-1].end, 2100)  # open-ended, modeled as YEAR_MAX
+
+    def test_only_macro_chapters_may_have_empty_continents(self) -> None:
+        for chapter in self.chapters:
+            self.assertEqual(chapter.geography.continents, [])
 
 
 if __name__ == "__main__":
@@ -385,15 +448,16 @@ end_confidence: low
 geography:
   continents: []
 broader_periods: []
-successors:
-- macro_agricultural_transitions
+successors: []
 authority: 'Histomap editorial: global macro-chapter backbone'
 external_ids: {}
 notes: Editorial navigation chapter, not a claim that every society developed
   identically. Start is an open lower bound (earliest known stone tools keep
   pushing backward as of 2026); -3,000,000 is a round, citable ballpark
   (Lomekwian/Oldowan toolmaking), not a precise date. Empty continents list
-  means deliberately global, not unknown.
+  means deliberately global -- valid only at tier=macro_chapter, see
+  ONTOLOGY.md. Dates use astronomical year numbering (year 0 exists),
+  inherited from Wikidata via pipeline/wd_to_yaml.py's parse_year().
 source_urls:
 - https://en.wikipedia.org/wiki/Stone_Age
 ```
@@ -412,8 +476,7 @@ end_confidence: low
 geography:
   continents: []
 broader_periods: []
-successors:
-- macro_early_cities_states
+successors: []
 authority: 'Histomap editorial: global macro-chapter backbone'
 external_ids: {}
 notes: Editorial navigation chapter. The Neolithic transition happened at very
@@ -439,8 +502,7 @@ end_confidence: low
 geography:
   continents: []
 broader_periods: []
-successors:
-- macro_classical_imperial_worlds
+successors: []
 authority: 'Histomap editorial: global macro-chapter backbone'
 external_ids: {}
 notes: Editorial navigation chapter covering the first urban civilizations
@@ -464,8 +526,7 @@ end_confidence: low
 geography:
   continents: []
 broader_periods: []
-successors:
-- macro_postclassical_worlds
+successors: []
 authority: 'Histomap editorial: global macro-chapter backbone'
 external_ids: {}
 notes: Editorial navigation chapter. Covers the Iron Age plus the classical
@@ -489,8 +550,7 @@ end_confidence: high
 geography:
   continents: []
 broader_periods: []
-successors:
-- macro_early_modern_connections
+successors: []
 authority: 'Histomap editorial: global macro-chapter backbone'
 external_ids: {}
 notes: 'Editorial navigation chapter. Deliberately named "post-classical" rather
@@ -515,8 +575,7 @@ end_confidence: high
 geography:
   continents: []
 broader_periods: []
-successors:
-- macro_industrial_imperial_world
+successors: []
 authority: 'Histomap editorial: global macro-chapter backbone'
 external_ids: {}
 notes: Editorial navigation chapter. Maritime expansion, gunpowder empires,
@@ -539,8 +598,7 @@ end_confidence: high
 geography:
   continents: []
 broader_periods: []
-successors:
-- macro_world_wars_reordering
+successors: []
 authority: 'Histomap editorial: global macro-chapter backbone'
 external_ids: {}
 notes: Editorial navigation chapter. Industrialization, high imperialism, and
@@ -564,8 +622,7 @@ end_confidence: high
 geography:
   continents: []
 broader_periods: []
-successors:
-- macro_contemporary_world
+successors: []
 authority: 'Histomap editorial: global macro-chapter backbone'
 external_ids: {}
 notes: Editorial navigation chapter spanning the First World War through the
@@ -621,18 +678,18 @@ git commit -m "periods: author the 9 global macro chapters"
 
 ---
 
-## Task 3: Author the regional-era starter set
+## Task 4: Regional eras, two speeds
 
 **Files:**
-- Create: `pipeline/seed_regional_eras.py`
-- Test: `tests/test_seed_regional_eras.py`
-- Create (by running the script): 20 `periods/*_era.yaml` files
+- Create: `pipeline/seed_regional_eras.py` + `tests/test_seed_regional_eras.py` (hand-curated, chapters 1-5)
+- Create: `pipeline/generate_modern_regional_eras.py` + `tests/test_generate_modern_regional_eras.py` (auto-generated, chapters 6-9)
+- Create (by running both scripts): `periods/*_era.yaml` — 20 hand-curated + however many continent/chapter combinations the generator finds real polities for
 
 **Interfaces:**
-- Consumes: the 9 macro chapter ids from Task 2 (as `broader_periods` targets)
-- Produces: 20 `Period` records with `tier: regional_era`, each pointing at exactly one macro chapter
+- Consumes: the 9 macro chapter ids from Task 3; for the generator, every `Polity`'s `geography.primary_continent`/`continents` and `start`/`end`
+- Produces: `Period` records with `tier: regional_era`, each with exactly one `broader_periods` entry pointing at a macro chapter (satisfying Task 2's validator)
 
-This is a starter set, not full coverage — scoped to macro chapters 1-5 (deep past through ~1500 CE), where "Bronze Age Europe" and "Bronze Age China" genuinely need separate nodes. From 1500 onward the dataset's `geography.primary_continent` (72% populated already) plays the role of "regional era" for now; bespoke sub-continental regional eras there (Latin America, Southeast Asia, colonial Sub-Saharan Africa...) are a natural follow-up once this layer is proven out, not authored here.
+### Part A: hand-curated starter set (chapters 1-5)
 
 - [ ] **Step 1: Write the failing test**
 
@@ -666,6 +723,10 @@ class SeedRegionalErasTests(unittest.TestCase):
         for row in REGIONAL_ERAS:
             self.assertIn(row["broader_periods"][0], VALID_MACRO_CHAPTERS)
 
+    def test_every_row_has_exactly_one_parent(self) -> None:
+        for row in REGIONAL_ERAS:
+            self.assertEqual(len(row["broader_periods"]), 1)
+
     def test_ids_are_unique(self) -> None:
         ids = [row["id"] for row in REGIONAL_ERAS]
         self.assertEqual(len(ids), len(set(ids)))
@@ -686,16 +747,21 @@ if __name__ == "__main__":
 - [ ] **Step 2: Run test to verify it fails**
 
 Run: `.venv/Scripts/python.exe -m unittest tests.test_seed_regional_eras -v`
-Expected: `ImportError` — `pipeline/seed_regional_eras.py` doesn't exist yet.
+Expected: `ImportError`.
 
 - [ ] **Step 3: Write the seed script**
 
 Create `pipeline/seed_regional_eras.py`:
 
 ```python
-"""One-shot authoring script for the regional-era starter set (Task 3 of the
-period-ontology plan). Run once; re-running is safe (overwrites its own files
-with the same content). Not part of the recurring pipeline sequence."""
+"""One-shot authoring script for the hand-curated regional-era starter set
+(macro chapters 1-5 only -- Task 4 Part A of the period-ontology plan). Run
+once; re-running is safe (overwrites its own files with the same content).
+Not part of the recurring pipeline sequence.
+
+# TODO: a few of the auto-built source_urls below (built from canonical_name)
+# won't resolve to a real Wikipedia article -- known rough edge, not blocking
+# (schema only checks the URL is a string). Fix opportunistically."""
 
 from __future__ import annotations
 
@@ -762,8 +828,9 @@ REGIONAL_ERAS: list[dict] = [
         start=-8000,
         end=-2000,
         continents=["north_america"],
-        notes="Maize domestication and early sedentism; extends past 3500 BCE "
-        "into the following macro chapter, intentionally.",
+        notes="Maize domestication and early sedentism. Ends -2000, well past "
+        "this chapter's nominal -3500 boundary -- chapter membership is "
+        "editorial, not a date-containment claim; see ONTOLOGY.md.",
     ),
     dict(
         id="andean_archaic_era",
@@ -773,7 +840,8 @@ REGIONAL_ERAS: list[dict] = [
         end=-2000,
         continents=["south_america"],
         notes="Early Andean and coastal Peruvian farming/fishing settlements "
-        "(e.g. Norte Chico); extends past 3500 BCE intentionally.",
+        "(e.g. Norte Chico). Ends -2000, past this chapter's nominal -3500 "
+        "boundary -- see the note on mesoamerican_archaic_era.",
     ),
     dict(
         id="mesopotamian_early_states_era",
@@ -791,8 +859,9 @@ REGIONAL_ERAS: list[dict] = [
         start=-3100,
         end=-1070,
         continents=["africa"],
-        notes="Early Dynastic through the New Kingdom; end extends slightly "
-        "past this chapter's nominal -1200 boundary, intentionally.",
+        notes="Early Dynastic through the New Kingdom. Ends -1070, past this "
+        "chapter's nominal -1200 boundary -- editorial placement, not "
+        "date-containment; see ONTOLOGY.md.",
     ),
     dict(
         id="east_asian_bronze_age_era",
@@ -846,8 +915,9 @@ REGIONAL_ERAS: list[dict] = [
         start=-1200,
         end=900,
         continents=["north_america"],
-        notes="Olmec civilization through the Classic Maya collapse; end "
-        "extends past this chapter's nominal 500 CE boundary, intentionally.",
+        notes="Olmec civilization through the Classic Maya collapse. Ends "
+        "900 CE, 400 years past this chapter's nominal 500 CE boundary -- "
+        "editorial placement, not date-containment; see ONTOLOGY.md.",
     ),
     dict(
         id="andean_early_civilizations_era",
@@ -856,7 +926,9 @@ REGIONAL_ERAS: list[dict] = [
         start=-1200,
         end=600,
         continents=["south_america"],
-        notes="Chavin culture through the Moche and Nazca.",
+        notes="Chavin culture through the Moche and Nazca. Ends 600 CE, past "
+        "this chapter's nominal 500 CE boundary -- see the note on "
+        "mesoamerican_formative_classic_era.",
     ),
     dict(
         id="sub_saharan_african_iron_age_era",
@@ -944,88 +1016,70 @@ Expected: `wrote 20 regional-era period files`
 Run: `.venv/Scripts/python.exe -m unittest tests.test_seed_regional_eras -v`
 Expected: PASS.
 
-Note: a couple of the auto-built `source_urls` (built from `canonical_name`) will 404 or point at a disambiguation page — e.g. "Early_Andean_Civilizations" isn't a real Wikipedia title. This is a known rough edge of the generator, not a validation failure (schema only checks the URL is a string, not that it resolves). Leave a `# TODO: verify source_urls resolve` comment at the top of `seed_regional_eras.py`; fixing each one by hand is out of scope for this task.
+### Part B: auto-generated modern regional eras (chapters 6-9)
 
-- [ ] **Step 5: Run build and full suite**
+- [ ] **Step 5: Write the failing test**
 
-Run: `.venv/Scripts/python.exe build.py`
-Expected: `126 periods` becomes `146 periods` (126 + 20).
-Run: `.venv/Scripts/python.exe -m unittest discover -s tests -v`
-Expected: all green.
-
-- [ ] **Step 6: Commit**
-
-```bash
-git add pipeline/seed_regional_eras.py periods/*_era.yaml tests/test_seed_regional_eras.py
-git commit -m "periods: seed 20 starter regional eras (macro chapters 1-5 only)"
-```
-
----
-
-## Task 4: Backfill documentary_status/evidence_basis on the 117 existing periods
-
-**Files:**
-- Create: `pipeline/backfill_documentary_status.py`
-- Test: `tests/test_backfill_documentary_status.py`
-- Modify: 117 pre-existing `periods/*.yaml` files (run by the script, not by hand)
-
-**Interfaces:**
-- Consumes: `Period.kind` (legacy field), `Period.tier == "period"` (only period/subperiod tier gets tagged; Task 2/3's macro/regional records are skipped)
-- Produces: `evidence_basis` set on every `tier: period` record; `documentary_status` follows automatically via the Task 1 validator
-
-Mapping (deterministic, matches the reasoning in "Design decisions" point 3):
-
-| existing `kind` | `evidence_basis` | resulting `documentary_status` |
-|---|---|---|
-| `historical` | `local_written` | `history` |
-| `protohistorical` | `external_written` | `history` |
-| `archaeological` | `archaeological_only` | `prehistory` |
-| `prehistorical` | `archaeological_only` | `prehistory` |
-
-This is a blunt default, not a final judgment — `protohistorical` today always maps to `external_written`/`history` even though a specific record's actual evidence might be `mixed` or arguably `archaeological_only`. Flag it: any of the 11 records that were `protohistorical` deserve a human glance later (they're listed in the script's printed output), but this plan doesn't block on that — it's a one-line-per-record review, cheap to do whenever, and getting `documentary_status` populated at all is the actual unblock for navigation.
-
-- [ ] **Step 1: Write the failing test**
-
-Create `tests/test_backfill_documentary_status.py`:
+Create `tests/test_generate_modern_regional_eras.py`:
 
 ```python
 import unittest
 
-from pipeline.backfill_documentary_status import evidence_basis_for_kind
+from pipeline.generate_modern_regional_eras import (
+    MODERN_MACRO_CHAPTERS,
+    combinations_with_polities,
+    era_id,
+)
 
 
-class BackfillDocumentaryStatusTests(unittest.TestCase):
-    def test_historical_maps_to_local_written(self) -> None:
-        self.assertEqual(evidence_basis_for_kind("historical"), "local_written")
+class EraIdTests(unittest.TestCase):
+    def test_builds_a_stable_id(self) -> None:
+        self.assertEqual(
+            era_id("europe", "macro_industrial_imperial_world"),
+            "europe_industrial_imperial_world_era",
+        )
 
-    def test_protohistorical_maps_to_external_written(self) -> None:
-        self.assertEqual(evidence_basis_for_kind("protohistorical"), "external_written")
 
-    def test_archaeological_maps_to_archaeological_only(self) -> None:
-        self.assertEqual(evidence_basis_for_kind("archaeological"), "archaeological_only")
+class CombinationsWithPolitiesTests(unittest.TestCase):
+    def test_only_combinations_with_at_least_one_polity_are_returned(self) -> None:
+        polities = [
+            {"start": 1850, "end": 1900, "geography": {"continents": ["europe"]}},
+            {"start": 1000, "end": 1100, "geography": {"continents": ["europe"]}},  # wrong era
+            {"start": 1850, "end": None, "geography": {"continents": []}},  # no geography
+        ]
+        combos = combinations_with_polities(polities, MODERN_MACRO_CHAPTERS)
+        self.assertIn(("europe", "macro_industrial_imperial_world"), combos)
+        self.assertNotIn(("unknown", "macro_industrial_imperial_world"), combos)
 
-    def test_prehistorical_maps_to_archaeological_only(self) -> None:
-        self.assertEqual(evidence_basis_for_kind("prehistorical"), "archaeological_only")
+    def test_a_polity_spanning_two_chapters_counts_for_both(self) -> None:
+        polities = [
+            {"start": 1900, "end": 1950, "geography": {"continents": ["asia"]}},
+        ]
+        combos = combinations_with_polities(polities, MODERN_MACRO_CHAPTERS)
+        self.assertIn(("asia", "macro_industrial_imperial_world"), combos)
+        self.assertIn(("asia", "macro_world_wars_reordering"), combos)
+        self.assertIn(("asia", "macro_contemporary_world"), combos)
 
 
 if __name__ == "__main__":
     unittest.main()
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [ ] **Step 6: Run test to verify it fails**
 
-Run: `.venv/Scripts/python.exe -m unittest tests.test_backfill_documentary_status -v`
+Run: `.venv/Scripts/python.exe -m unittest tests.test_generate_modern_regional_eras -v`
 Expected: `ImportError`.
 
-- [ ] **Step 3: Write the backfill script**
+- [ ] **Step 7: Write the generator**
 
-Create `pipeline/backfill_documentary_status.py`:
+Create `pipeline/generate_modern_regional_eras.py`:
 
 ```python
-"""Pipeline step: backfill evidence_basis (and, via the schema validator,
-documentary_status) on every tier=period Period record from its legacy `kind`
-field. Idempotent -- rerunning after evidence_basis is already set is a no-op
-for those records."""
+"""Data-driven regional-era generator for macro chapters 6-9 (1500-present).
+Unlike Task 4 Part A's hand-curated set, this creates a bare continent x
+chapter node -- no research, no bespoke naming -- for every combination that
+actually has at least one polity in it. Idempotent: rerunning reflects
+whatever the dataset currently looks like."""
 
 from __future__ import annotations
 
@@ -1034,95 +1088,142 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
+POLITIES_DIR = ROOT / "polities"
 PERIODS_DIR = ROOT / "periods"
 
-KIND_TO_EVIDENCE_BASIS = {
-    "historical": "local_written",
-    "protohistorical": "external_written",
-    "archaeological": "archaeological_only",
-    "prehistorical": "archaeological_only",
-}
+# (macro_chapter_id, start, end) -- must match periods/macro_*.yaml Task 3 authored
+MODERN_MACRO_CHAPTERS = [
+    ("macro_early_modern_connections", 1500, 1800),
+    ("macro_industrial_imperial_world", 1800, 1914),
+    ("macro_world_wars_reordering", 1914, 1945),
+    ("macro_contemporary_world", 1945, 2100),
+]
 
 
-def evidence_basis_for_kind(kind: str) -> str:
-    return KIND_TO_EVIDENCE_BASIS[kind]
+def era_id(continent: str, chapter_id: str) -> str:
+    return f"{continent}_{chapter_id.removeprefix('macro_')}_era"
+
+
+def _overlap(a_start: int, a_end: int, b_start: int, b_end: int) -> bool:
+    return a_start < b_end and b_start < a_end
+
+
+def combinations_with_polities(
+    polities: list[dict], macro_chapters: list[tuple[str, int, int]]
+) -> set[tuple[str, str]]:
+    found: set[tuple[str, str]] = set()
+    for polity in polities:
+        continents = (polity.get("geography") or {}).get("continents") or []
+        if not continents:
+            continue
+        p_start = polity["start"]
+        p_end = polity.get("end") if polity.get("end") is not None else 2026
+        for chapter_id, c_start, c_end in macro_chapters:
+            if _overlap(p_start, p_end, c_start, c_end):
+                for continent in continents:
+                    found.add((continent, chapter_id))
+    return found
+
+
+def build_period(continent: str, chapter_id: str, start: int, end: int) -> dict:
+    return {
+        "id": era_id(continent, chapter_id),
+        "canonical_name": f"{continent.replace('_', ' ').title()}, "
+        f"{chapter_id.removeprefix('macro_').replace('_', ' ').title()}",
+        "kind": "historical",
+        "tier": "regional_era",
+        "start": start,
+        "end": end,
+        "start_confidence": "low",
+        "end_confidence": "low",
+        "geography": {"continents": [continent]},
+        "broader_periods": [chapter_id],
+        "successors": [],
+        "authority": "Histomap editorial: auto-generated continent x chapter node",
+        "external_ids": {},
+        "notes": "Auto-generated placeholder -- continent-level grain only, no "
+        "historical research. A real sub-continental regional era (added by "
+        "hand, the Task 4 Part A way) can replace this once someone wants to "
+        "invest that research; see ONTOLOGY.md.",
+        "source_urls": [],
+    }
+
+
+def load_polities() -> list[dict]:
+    documents = []
+    for path in sorted(POLITIES_DIR.glob("*.yaml")):
+        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if document.get("timeline_role") == "period":
+            continue
+        documents.append(document)
+    return documents
 
 
 def main() -> None:
-    updated = 0
-    flagged_protohistorical: list[str] = []
-    for path in sorted(PERIODS_DIR.glob("*.yaml")):
-        document = yaml.safe_load(path.read_text(encoding="utf-8"))
-        if document.get("tier", "period") != "period":
-            continue
-        if document.get("evidence_basis"):
-            continue
-        kind = document.get("kind", "historical")
-        document["evidence_basis"] = evidence_basis_for_kind(kind)
-        if kind == "protohistorical":
-            flagged_protohistorical.append(document["id"])
+    polities = load_polities()
+    combos = combinations_with_polities(polities, MODERN_MACRO_CHAPTERS)
+    chapter_ranges = {chapter_id: (start, end) for chapter_id, start, end in MODERN_MACRO_CHAPTERS}
+    for continent, chapter_id in sorted(combos):
+        start, end = chapter_ranges[chapter_id]
+        document = build_period(continent, chapter_id, start, end)
+        path = PERIODS_DIR / f"{document['id']}.yaml"
         path.write_text(
             yaml.safe_dump(document, sort_keys=False, allow_unicode=True),
             encoding="utf-8",
         )
-        updated += 1
-    print(f"backfilled evidence_basis on {updated} period records")
-    if flagged_protohistorical:
-        print(
-            f"{len(flagged_protohistorical)} were protohistorical -> "
-            "external_written by default; worth a human glance later: "
-            + ", ".join(flagged_protohistorical)
-        )
+    print(f"wrote {len(combos)} auto-generated regional-era period files")
 
 
 if __name__ == "__main__":
     main()
 ```
 
-- [ ] **Step 4: Run the script, then the test**
+`source_urls: []` deliberately breaks the `Period` schema's `min_length=1` requirement on that field for auto-generated rows without a real source — check `schema.py`'s current `Period.source_urls` definition before running this; if it still says `Field(default_factory=list, min_length=1)`, either relax it to allow empty for auto-generated rows (simplest: drop `min_length=1`, since nothing else in this plan relies on periods always having a source) or generate a placeholder Wikipedia-continent-article URL instead (less honest — prefer relaxing the constraint).
 
-Run: `.venv/Scripts/python.exe -m pipeline.backfill_documentary_status`
-Expected: `backfilled evidence_basis on 117 period records` plus the protohistorical flag list.
+- [ ] **Step 8: Run test, resolve the `source_urls` constraint, then run the generator**
 
-Run: `.venv/Scripts/python.exe -m unittest tests.test_backfill_documentary_status -v`
-Expected: PASS.
+Run: `.venv/Scripts/python.exe -m unittest tests.test_generate_modern_regional_eras -v`
+Expected: PASS (pure logic test, no file I/O, unaffected by the schema question above).
 
-- [ ] **Step 5: Spot-check and run build/full suite**
+If `Period.source_urls` still requires `min_length=1`, edit `schema.py`:
 
-Run:
-```bash
-.venv/Scripts/python.exe -c "
-import yaml
-d = yaml.safe_load(open('periods/viking_age_period.yaml', encoding='utf-8'))
-print(d['evidence_basis'], d['documentary_status'])
-"
+```python
+    source_urls: list[str] = Field(default_factory=list)
 ```
-Expected: `local_written history` (Viking Age was authored as `kind: historical`).
 
-Run: `.venv/Scripts/python.exe build.py` — same counts as after Task 3, no records added/removed.
-Run: `.venv/Scripts/python.exe -m unittest discover -s tests -v` — all green.
+(removing `min_length=1`). This is a real, intentional loosening — auto-generated placeholder rows are explicitly less-sourced than everything else in this dataset, and the field should allow saying so rather than forcing a fake citation.
 
-- [ ] **Step 6: Commit**
+Run: `.venv/Scripts/python.exe -m pipeline.generate_modern_regional_eras`
+Expected: `wrote N auto-generated regional-era period files` (N depends on the live dataset's continent/date coverage — expect somewhere in the 15-25 range given 6 continents x 4 chapters minus combinations with zero polities, e.g. Antarctica).
+
+- [ ] **Step 9: Run build and full suite**
+
+Run: `.venv/Scripts/python.exe build.py`
+Expected: `146 periods` (126 after Task 3 + 20 from Part A) plus however many Part B generated.
+Run: `.venv/Scripts/python.exe -m unittest discover -s tests -v`
+Expected: all green.
+
+- [ ] **Step 10: Commit**
 
 ```bash
-git add pipeline/backfill_documentary_status.py tests/test_backfill_documentary_status.py periods/*.yaml
-git commit -m "periods: backfill evidence_basis/documentary_status from legacy kind"
+git add pipeline/seed_regional_eras.py pipeline/generate_modern_regional_eras.py periods/*_era.yaml tests/test_seed_regional_eras.py tests/test_generate_modern_regional_eras.py schema.py
+git commit -m "periods: author 20 curated + auto-generate modern regional eras"
 ```
 
 ---
 
-## Task 5: Suggest regional-era links for the 117 existing periods
+## Task 5: Suggest regional-era links for the 117 pre-existing periods
 
 **Files:**
 - Create: `pipeline/suggest_regional_eras.py`
 - Test: `tests/test_suggest_regional_eras.py`
-- Create (script output, not hand-written): `reports/regional_era_suggestions.jsonl`, `reports/regional_era_summary.md`
+- Create (script output): `reports/regional_era_suggestions.jsonl`, `reports/regional_era_summary.md`
 
 **Interfaces:**
-- Consumes: `Period.geography.primary_continent`/`continents`, `Period.start`/`end`, the 20 regional eras from Task 3
-- Produces: a JSONL suggestion queue (same shape as `reports/period_role_review.jsonl` from `pipeline/classify_period_roles.py`) — this task does **not** write `broader_periods` directly into the 117 files; it only suggests. Applying suggestions is a manual review step (out of scope here, same as every other review queue in this project).
+- Consumes: `Period.geography.primary_continent`/`continents`, `Period.start`/`end`, all `tier: regional_era` records from Task 4
+- Produces: a JSONL suggestion queue (same shape as `reports/period_role_review.jsonl` from `pipeline/classify_period_roles.py`) — suggests, does not write `broader_periods` directly
 
-Scoring heuristic: a regional era is a candidate for a period if their `continents` overlap and their date ranges overlap by at least one year. Rank candidates by overlap-year count; the top candidate is the suggestion, ties broken alphabetically by id.
+Scoring: continent overlap required, then rank by overlap-year count (ties broken alphabetically by id).
 
 - [ ] **Step 1: Write the failing test**
 
@@ -1190,8 +1291,9 @@ Create `pipeline/suggest_regional_eras.py`:
 
 ```python
 """Pipeline step: suggest a regional_era broader_period for each tier=period
-record, by continent + date-range overlap against the Task 3 starter set.
-Writes a review queue; does not modify periods/*.yaml directly."""
+record that doesn't have one yet, by continent + date-range overlap against
+every tier=regional_era record. Writes a review queue; does not modify
+periods/*.yaml directly."""
 
 from __future__ import annotations
 
@@ -1247,7 +1349,7 @@ def main() -> None:
         if document.get("tier", "period") != "period":
             continue
         if document.get("broader_periods"):
-            continue  # already linked (e.g. the 2 pre-existing egyptian_* periods)
+            continue  # already linked
         ranked = rank_candidates(document, regional_eras)
         if not ranked:
             unmatched += 1
@@ -1267,10 +1369,10 @@ def main() -> None:
     SUMMARY_PATH.write_text(
         "# Regional-era suggestions\n\n"
         f"- Suggested: {len(suggestions)}\n"
-        f"- Unmatched (no continent+date overlap with the 20-row starter set): {unmatched}\n"
-        "\nUnmatched periods are not a bug -- the starter set only covers macro chapters "
-        "1-5. A period entirely in 1500+ or on a continent/era the starter set doesn't "
-        "cover yet will legitimately have no suggestion.\n",
+        f"- Unmatched (no continent+date overlap with any regional era): {unmatched}\n"
+        "\nUnmatched periods are not a bug -- after Task 4 Part B, coverage should be "
+        "close to complete, but any period whose geography is unset, or whose dates "
+        "fall entirely in a gap, will legitimately have no suggestion.\n",
         encoding="utf-8",
     )
     print(f"suggested {len(suggestions)}, unmatched {unmatched}")
@@ -1283,23 +1385,20 @@ if __name__ == "__main__":
 - [ ] **Step 4: Run the script, then the test**
 
 Run: `.venv/Scripts/python.exe -m unittest tests.test_suggest_regional_eras -v`
-Expected: PASS (this test only exercises `overlap_years`/`rank_candidates`, no file I/O).
+Expected: PASS.
 
 Run: `.venv/Scripts/python.exe -m pipeline.suggest_regional_eras`
 Expected: prints `suggested N, unmatched M` and writes the two report files.
 
-- [ ] **Step 5: Read the output**
+- [ ] **Step 5: Read the output, run build and full suite, commit**
 
 Run:
 ```bash
 head -5 reports/regional_era_suggestions.jsonl
 cat reports/regional_era_summary.md
 ```
-Sanity-check a couple of entries by eye (e.g. `viking_age_period` should suggest `medieval_europe_era`).
 
-- [ ] **Step 6: Run build and full suite, then commit**
-
-Run: `.venv/Scripts/python.exe build.py` and `.venv/Scripts/python.exe -m unittest discover -s tests -v` — both green, no data changed (this task only writes reports).
+Run: `.venv/Scripts/python.exe build.py` and `.venv/Scripts/python.exe -m unittest discover -s tests -v` — both green, no data changed (report-only task).
 
 ```bash
 git add pipeline/suggest_regional_eras.py tests/test_suggest_regional_eras.py reports/regional_era_suggestions.jsonl reports/regional_era_summary.md
@@ -1316,10 +1415,10 @@ git commit -m "pipeline: suggest regional-era links for existing periods (review
 - Create (script output): `reports/period_link_suggestions.jsonl`, `reports/period_link_suggestion_summary.md`
 
 **Interfaces:**
-- Consumes: `Polity.geography`, `Polity.start`/`end`, `Polity.visibility_tier`/`visibility_override`, all `Period` records (any tier), existing `period_links.yaml` (to skip already-linked polities)
-- Produces: a review queue ranking, for each unlinked polity, its best-matching period (any tier — preferring the most specific `tier: period` match, falling back to `regional_era` then `macro_chapter`)
+- Consumes: `Polity.geography`, `Polity.start`/`end`, `Polity.visibility_tier`/`visibility_override`, all `Period` records (any tier), existing `period_links.yaml`
+- Produces: a review queue ranking, for each unlinked in-scope polity, its best-matching period (any tier, preferring the most specific)
 
-This is the highest-leverage task in the plan: only 102 of 4,671 polities have a `period_links.yaml` entry today. Full coverage is explicitly not the goal here (that's a large, ongoing review queue like all the others); the goal is that every polity has *at least a macro-chapter-level* suggestion, so nothing falls through the cracks of a future "zoom out" view. Scope this run to the **global and regional visibility tiers only** (`visibility_tier in {"global", "regional"}` or `visibility_override` set) — roughly the few hundred most prominent polities — rather than all 4,671, since those are what a first version of the timeline UI would show at the top zoom levels anyway.
+Scoped to `visibility_tier in {"global", "regional"}` or `visibility_override` set — the few hundred most prominent polities, matching where a first version of the timeline UI would show polities at the top zoom levels. Full coverage of all 4,671 is future work, same as every other review queue.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -1425,7 +1524,7 @@ PERIOD_LINKS_PATH = ROOT / "period_links.yaml"
 REPORT_PATH = ROOT / "reports" / "period_link_suggestions.jsonl"
 SUMMARY_PATH = ROOT / "reports" / "period_link_suggestion_summary.md"
 
-TIER_SPECIFICITY = {"period": 0, "subperiod": 0, "regional_era": 1, "macro_chapter": 2}
+TIER_SPECIFICITY = {"period": 0, "regional_era": 1, "macro_chapter": 2}
 
 
 def in_scope(polity: dict) -> bool:
@@ -1445,7 +1544,9 @@ def best_period_for_polity(polity: dict, periods: list[dict]) -> dict | None:
     candidates = []
     for period in periods:
         period_continents = set((period.get("geography") or {}).get("continents") or [])
-        # macro chapters have continents=[] (deliberately global) -- always geography-eligible
+        # macro chapters have continents=[] (deliberately global, tier-scoped -- see
+        # ONTOLOGY.md) -- always geography-eligible; any other empty-continents period
+        # is unclassified, not global, so it's correctly excluded by this same check.
         if period_continents and not (polity_continents & period_continents):
             continue
         period_range = (period["start"], period["end"])
@@ -1526,7 +1627,7 @@ Run: `.venv/Scripts/python.exe -m unittest tests.test_suggest_period_links -v`
 Expected: PASS.
 
 Run: `.venv/Scripts/python.exe -m pipeline.suggest_period_links`
-Expected: prints `in-scope N, suggested M, unmatched K` and writes the two report files. Given the reference-poster work already promoted several dozen entities to `visibility_override: global`, expect `in-scope` to land somewhere around 60-120.
+Expected: prints `in-scope N, suggested M, unmatched K` and writes the two report files. After Task 4 Part B, `unmatched` should be small — every in-scope polity now has at least a continent/chapter node to fall back to.
 
 - [ ] **Step 5: Read the output, run build and full suite, commit**
 
@@ -1548,14 +1649,13 @@ git commit -m "pipeline: suggest period links for global/regional-tier polities"
 - Test: `tests/test_period_hierarchy.py`
 
 **Interfaces:**
-- Consumes: `periods/*.yaml` (`tier`, `broader_periods`), `period_links.yaml` (`period_id`, `entity_id`)
+- Consumes: `periods/*.yaml` (`tier`, `broader_periods` — single-parent by convention per Task 2/4), `period_links.yaml` (`period_id`, `entity_id`), `polities/*.yaml` (`prominence_score`, `visibility_override`) for `top_entities`
 - Produces:
-  - `PeriodHierarchy.ancestors(period_id: str) -> list[str]` — chain from a period up to its macro chapter, root-first
-  - `PeriodHierarchy.children(period_id: str) -> list[str]` — direct child period ids (inverse of `broader_periods`)
-  - `PeriodHierarchy.entities_under(period_id: str) -> list[str]` — polity ids linked to this period or any period in its subtree, via `period_links.yaml`
+  - `PeriodHierarchy.ancestors(period_id: str) -> list[str]` — single-chain breadcrumb from a period up to its macro chapter, root-first; raises `ValueError` on a cycle instead of hanging
+  - `PeriodHierarchy.children(period_id: str) -> list[str]` — direct child period ids, ordered by `start`
+  - `PeriodHierarchy.entities_under(period_id: str) -> list[str]` — deduplicated polity ids linked to this period or any period in its subtree
+  - `PeriodHierarchy.top_entities(period_id: str, limit: int) -> list[str]` — `entities_under()`, ranked: `visibility_override` set first, then `prominence_score` descending
   - `PeriodHierarchy.macro_chapters() -> list[str]` — the 9 top-level ids, ordered by `start`
-
-This is the module a future timeline-UI plan reads from — it turns "what does the World → Era → Region → Period → Record zoom show at each level" into three tested functions instead of ad hoc queries the UI would otherwise have to invent itself.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -1567,7 +1667,7 @@ import unittest
 from pipeline.period_hierarchy import PeriodHierarchy
 
 
-def build_hierarchy() -> PeriodHierarchy:
+def build_hierarchy(polities: list[dict] | None = None) -> PeriodHierarchy:
     periods = [
         {"id": "macro_a", "tier": "macro_chapter", "start": 0, "broader_periods": []},
         {"id": "regional_a", "tier": "regional_era", "start": 100, "broader_periods": ["macro_a"]},
@@ -1580,15 +1680,13 @@ def build_hierarchy() -> PeriodHierarchy:
         {"period_id": "period_b", "entity_id": "polity_3"},
         {"period_id": "regional_a", "entity_id": "polity_4"},
     ]
-    return PeriodHierarchy(periods=periods, period_links=links)
+    return PeriodHierarchy(periods=periods, period_links=links, polities=polities or [])
 
 
 class AncestorsTests(unittest.TestCase):
     def test_root_first_chain(self) -> None:
         hierarchy = build_hierarchy()
-        self.assertEqual(
-            hierarchy.ancestors("period_a"), ["macro_a", "regional_a"]
-        )
+        self.assertEqual(hierarchy.ancestors("period_a"), ["macro_a", "regional_a"])
 
     def test_macro_chapter_has_no_ancestors(self) -> None:
         hierarchy = build_hierarchy()
@@ -1599,11 +1697,20 @@ class AncestorsTests(unittest.TestCase):
         with self.assertRaises(KeyError):
             hierarchy.ancestors("does_not_exist")
 
+    def test_cycle_raises_instead_of_hanging(self) -> None:
+        periods = [
+            {"id": "loop_a", "tier": "period", "start": 0, "broader_periods": ["loop_b"]},
+            {"id": "loop_b", "tier": "period", "start": 0, "broader_periods": ["loop_a"]},
+        ]
+        hierarchy = PeriodHierarchy(periods=periods, period_links=[], polities=[])
+        with self.assertRaises(ValueError):
+            hierarchy.ancestors("loop_a")
+
 
 class ChildrenTests(unittest.TestCase):
-    def test_direct_children_only(self) -> None:
+    def test_direct_children_ordered_by_start(self) -> None:
         hierarchy = build_hierarchy()
-        self.assertEqual(sorted(hierarchy.children("regional_a")), ["period_a", "period_b"])
+        self.assertEqual(hierarchy.children("regional_a"), ["period_a", "period_b"])
 
     def test_leaf_has_no_children(self) -> None:
         hierarchy = build_hierarchy()
@@ -1615,7 +1722,7 @@ class EntitiesUnderTests(unittest.TestCase):
         hierarchy = build_hierarchy()
         self.assertEqual(sorted(hierarchy.entities_under("period_a")), ["polity_1", "polity_2"])
 
-    def test_ancestor_returns_transitive_links(self) -> None:
+    def test_ancestor_returns_transitive_deduplicated_links(self) -> None:
         hierarchy = build_hierarchy()
         self.assertEqual(
             sorted(hierarchy.entities_under("regional_a")),
@@ -1630,13 +1737,36 @@ class EntitiesUnderTests(unittest.TestCase):
         )
 
 
+class TopEntitiesTests(unittest.TestCase):
+    def test_ranks_by_prominence_score_descending(self) -> None:
+        polities = [
+            {"id": "polity_1", "prominence_score": 10},
+            {"id": "polity_2", "prominence_score": 90},
+            {"id": "polity_3", "prominence_score": 50},
+            {"id": "polity_4", "prominence_score": 30},
+        ]
+        hierarchy = build_hierarchy(polities)
+        self.assertEqual(
+            hierarchy.top_entities("macro_a", limit=2),
+            ["polity_2", "polity_3"],
+        )
+
+    def test_visibility_override_is_pinned_first(self) -> None:
+        polities = [
+            {"id": "polity_1", "prominence_score": 10, "visibility_override": "global"},
+            {"id": "polity_2", "prominence_score": 90},
+        ]
+        hierarchy = build_hierarchy(polities)
+        self.assertEqual(hierarchy.top_entities("macro_a", limit=1), ["polity_1"])
+
+
 class MacroChaptersTests(unittest.TestCase):
     def test_orders_by_start(self) -> None:
         periods = [
             {"id": "macro_b", "tier": "macro_chapter", "start": 500, "broader_periods": []},
             {"id": "macro_a", "tier": "macro_chapter", "start": 0, "broader_periods": []},
         ]
-        hierarchy = PeriodHierarchy(periods=periods, period_links=[])
+        hierarchy = PeriodHierarchy(periods=periods, period_links=[], polities=[])
         self.assertEqual(hierarchy.macro_chapters(), ["macro_a", "macro_b"])
 
 
@@ -1655,8 +1785,9 @@ Create `pipeline/period_hierarchy.py`:
 
 ```python
 """Read-side query layer over the period tier hierarchy (periods/*.yaml +
-period_links.yaml). This is what a future timeline UI/API should import
-instead of re-deriving broader_periods/period_links traversal itself."""
+period_links.yaml + polities/*.yaml). This is what a future timeline UI/API
+should import instead of re-deriving broader_periods/period_links traversal,
+or reading the retired visibility_tier field, itself."""
 
 from __future__ import annotations
 
@@ -1666,26 +1797,36 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 PERIODS_DIR = ROOT / "periods"
+POLITIES_DIR = ROOT / "polities"
 PERIOD_LINKS_PATH = ROOT / "period_links.yaml"
 
 
 class PeriodHierarchy:
-    def __init__(self, periods: list[dict], period_links: list[dict]) -> None:
+    def __init__(
+        self, periods: list[dict], period_links: list[dict], polities: list[dict]
+    ) -> None:
         self._periods = {p["id"]: p for p in periods}
         self._children: dict[str, list[str]] = {}
         for period in periods:
             for parent_id in period.get("broader_periods") or []:
                 self._children.setdefault(parent_id, []).append(period["id"])
+        for parent_id, child_ids in self._children.items():
+            child_ids.sort(key=lambda cid: self._periods[cid]["start"])
         self._direct_links: dict[str, list[str]] = {}
         for link in period_links:
             self._direct_links.setdefault(link["period_id"], []).append(link["entity_id"])
+        self._polities = {p["id"]: p for p in polities}
 
     def ancestors(self, period_id: str) -> list[str]:
         period = self._periods[period_id]  # KeyError on unknown id, by design
         chain: list[str] = []
+        seen = {period_id}
         current = period
         while current.get("broader_periods"):
             parent_id = current["broader_periods"][0]
+            if parent_id in seen:
+                raise ValueError(f"broader_periods cycle detected at {parent_id!r}")
+            seen.add(parent_id)
             chain.append(parent_id)
             current = self._periods[parent_id]
         return list(reversed(chain))
@@ -1706,6 +1847,16 @@ class PeriodHierarchy:
             stack.extend(self._children.get(current_id, []))
         return list(entities)
 
+    def top_entities(self, period_id: str, limit: int) -> list[str]:
+        entity_ids = self.entities_under(period_id)
+
+        def sort_key(entity_id: str) -> tuple[int, float]:
+            polity = self._polities.get(entity_id, {})
+            pinned = 0 if polity.get("visibility_override") else 1
+            return (pinned, -polity.get("prominence_score", 0))
+
+        return sorted(entity_ids, key=sort_key)[:limit]
+
     def macro_chapters(self) -> list[str]:
         chapters = [p for p in self._periods.values() if p.get("tier") == "macro_chapter"]
         chapters.sort(key=lambda p: p["start"])
@@ -1722,14 +1873,19 @@ def load() -> PeriodHierarchy:
         if PERIOD_LINKS_PATH.exists()
         else []
     ) or []
-    return PeriodHierarchy(periods=periods, period_links=period_links)
+    polities = [
+        yaml.safe_load(path.read_text(encoding="utf-8"))
+        for path in sorted(POLITIES_DIR.glob("*.yaml"))
+    ]
+    return PeriodHierarchy(periods=periods, period_links=period_links, polities=polities)
 
 
 if __name__ == "__main__":
     hierarchy = load()
     for chapter_id in hierarchy.macro_chapters():
         count = len(hierarchy.entities_under(chapter_id))
-        print(f"{chapter_id}: {count} linked entities (direct + transitive)")
+        top = hierarchy.top_entities(chapter_id, limit=3)
+        print(f"{chapter_id}: {count} linked entities, top 3: {top}")
 ```
 
 - [ ] **Step 4: Run test to verify it passes**
@@ -1740,7 +1896,7 @@ Expected: PASS.
 - [ ] **Step 5: Run it against the real dataset, run build and full suite**
 
 Run: `.venv/Scripts/python.exe -m pipeline.period_hierarchy`
-Expected: 9 lines, one per macro chapter, with entity counts reflecting however many `period_links.yaml` entries exist after Task 6 (likely still small — this task builds the query layer, it doesn't apply Task 6's suggestions).
+Expected: 9 lines, one per macro chapter, with entity counts reflecting `period_links.yaml`'s current size after Task 6 (this task builds the query layer, it doesn't apply Task 6's suggestions itself).
 
 Run: `.venv/Scripts/python.exe build.py` and `.venv/Scripts/python.exe -m unittest discover -s tests -v` — both green.
 
@@ -1748,15 +1904,222 @@ Run: `.venv/Scripts/python.exe build.py` and `.venv/Scripts/python.exe -m unitte
 
 ```bash
 git add pipeline/period_hierarchy.py tests/test_period_hierarchy.py
-git commit -m "pipeline: add period_hierarchy query layer for future UI consumption"
+git commit -m "pipeline: add period_hierarchy query layer (ancestors/children/top_entities)"
 ```
 
 ---
 
-## Task 8: Wire into the Makefile and PLAN.md
+## Task 8: Retire the competitive visibility-tier algorithm
+
+**Files:**
+- Modify: `pipeline/compute_prominence.py`
+- Modify: `tests/test_compute_prominence.py`
+
+**Interfaces:**
+- Consumes: nothing new
+- Produces: `compute()` still returns updated `prominence_score`/`prominence_components` per record; no longer touches `visibility_tier`. `balanced_visibility`, `_top_per_stratum`, `visibility_stratum`, `historical_era`, `tier_for` are deleted, not deprecated-in-place — `ONTOLOGY.md` explains why freezing in place wasn't enough (dead code implying an algorithm is still authoritative when it isn't).
+
+Read `pipeline/compute_prominence.py` in full before starting — this task edits an existing, working file; know what's around each change before making it.
+
+- [ ] **Step 1: Update the test file first (red)**
+
+Rewrite `tests/test_compute_prominence.py`:
+
+```python
+import tempfile
+import unittest
+from pathlib import Path
+
+import yaml
+
+from pipeline.compute_prominence import compute, prominence_components, score_prominence
+
+
+def document(entity_id: str, score: float, **overrides: object) -> dict:
+    value = {
+        "id": entity_id,
+        "canonical_name": entity_id.replace("_", " ").title(),
+        "start": 1000,
+        "end": 1500,
+        "entity_type": "polity",
+        "entity_type_confidence": "high",
+        "eligibility": "accepted",
+        "geography": {"continents": ["europe"], "primary_continent": "europe"},
+        "prominence_score": score,
+        "prominence_components": {},
+        "visibility_tier": "detailed",
+        "external_ids": {},
+    }
+    value.update(overrides)
+    return value
+
+
+class ProminenceComponentsTests(unittest.TestCase):
+    def test_components_are_capped_and_sum_to_total(self) -> None:
+        components = prominence_components(
+            sitelinks=100_000,
+            start=-10_000,
+            end=None,
+            authority_coverage=50,
+            historical_evidence=50,
+            relationship_degree=1_000,
+            transition_count=20,
+            editorial_score=50,
+        )
+        self.assertEqual(components["wikidata_reach"], 30)
+        self.assertEqual(components["authority_coverage"], 20)
+        self.assertEqual(components["historical_evidence"], 20)
+        self.assertEqual(components["relationship_centrality"], 15)
+        self.assertEqual(components["longevity"], 8)
+        self.assertEqual(components["editorial_work"], 7)
+        self.assertEqual(components["total"], 100)
+
+    def test_present_country_does_not_imply_subordination(self) -> None:
+        common = dict(sitelinks=25, start=1800, end=None, authoritative=False, editorial=False)
+        self.assertEqual(
+            score_prominence(**common, has_parent_country=False),
+            score_prominence(**common, has_parent_country=True),
+        )
+
+    def test_uncertainty_and_aggregate_penalties_are_explicit(self) -> None:
+        certain = prominence_components(sitelinks=50, start=1000, end=1500)
+        uncertain = prominence_components(
+            sitelinks=50,
+            start=1000,
+            end=1500,
+            entity_type_confidence="low",
+            start_confidence="legendary",
+            end_confidence="low",
+            aggregate=True,
+        )
+        self.assertEqual(uncertain["type_uncertainty_penalty"], -10)
+        self.assertEqual(uncertain["date_uncertainty_penalty"], -5)
+        self.assertEqual(uncertain["aggregate_penalty"], -25)
+        self.assertGreater(certain["total"], uncertain["total"])
+
+
+class ComputeDoesNotTouchVisibilityTierTests(unittest.TestCase):
+    def test_visibility_tier_is_left_untouched(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            polities_dir = Path(tmp) / "polities"
+            polities_dir.mkdir()
+            cache_path = Path(tmp) / "sitelinks.json"
+            doc = document("test_polity", score=0)
+            doc["visibility_tier"] = "global"  # deliberately pre-set, no wikidata id -> offline-safe
+            (polities_dir / "test_polity.yaml").write_text(
+                yaml.safe_dump(doc, sort_keys=False), encoding="utf-8"
+            )
+
+            compute(polities_dir=polities_dir, cache_path=cache_path, offline=True)
+
+            written = yaml.safe_load((polities_dir / "test_polity.yaml").read_text(encoding="utf-8"))
+            self.assertEqual(written["visibility_tier"], "global")  # unchanged
+            self.assertIn("prominence_score", written)  # still recomputed
+
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+- [ ] **Step 2: Run tests to verify the compute-side ones fail**
+
+Run: `.venv/Scripts/python.exe -m unittest tests.test_compute_prominence -v`
+Expected: `ProminenceComponentsTests` pass unchanged (nothing about them changed yet). `ComputeDoesNotTouchVisibilityTierTests` currently **fails** — today's `compute()` calls `balanced_visibility()`, which will overwrite `visibility_tier` based on score, not leave the pre-set `"global"` alone.
+
+- [ ] **Step 3: Delete the competitive algorithm from `pipeline/compute_prominence.py`**
+
+Remove these five functions and their supporting module-level constants entirely (not commented out, not renamed — deleted): `tier_for`, `historical_era`, `visibility_stratum`, `_top_per_stratum`, `balanced_visibility`, and the now-unused constants `GLOBAL_ABSOLUTE_COUNT`, `GLOBAL_PER_STRATUM`, `REGIONAL_ABSOLUTE_COUNT`, `REGIONAL_PER_STRATUM`, `CONTEXT_TYPES`, `NORMAL_TYPES` (all only referenced by the deleted functions). Also drop the now-unused `from collections import defaultdict` import **only if** nothing else in the file still uses `defaultdict` — check first, since `compute()`'s `transition_counts`/`inbound` dictionaries also use it and must stay.
+
+In `compute()`, replace:
+
+```python
+    counts = balanced_visibility(documents)
+    for path, document in zip(paths, documents, strict=True):
+        path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
+    REPORT_PATH.write_text(
+        "# Prominence and visibility\n\n"
+        + "\n".join(f"- {name.title()}: {count:,}" for name, count in counts.items())
+        + f"\n- Global absolute shortlist: {GLOBAL_ABSOLUTE_COUNT}\n"
+        + f"- Global per continent/era: {GLOBAL_PER_STRATUM}\n"
+        + f"- Regional absolute shortlist: {REGIONAL_ABSOLUTE_COUNT}\n"
+        + f"- Regional per continent/era: {REGIONAL_PER_STRATUM}\n",
+        encoding="utf-8",
+    )
+    return counts
+```
+
+with:
+
+```python
+    for path, document in zip(paths, documents, strict=True):
+        path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
+    scores = [document["prominence_score"] for document in documents]
+    REPORT_PATH.write_text(
+        "# Prominence scores\n\n"
+        f"- Records scored: {len(scores):,}\n"
+        f"- Score range: {min(scores):.1f} - {max(scores):.1f}\n"
+        f"- Mean score: {sum(scores) / len(scores):.1f}\n\n"
+        "visibility_tier is not touched by this script -- it was frozen when the "
+        "competitive balanced_visibility() pass was retired (see ONTOLOGY.md,\n"
+        "'Ranking and sizing'). Browsing/ranking now uses "
+        "pipeline/period_hierarchy.py's top_entities() instead.\n",
+        encoding="utf-8",
+    )
+    return {"scored": len(scores)}
+```
+
+Update `compute()`'s docstring reference and return type annotation (`-> dict[str, int]` stays accurate — just a different dict shape now) and its module-level docstring:
+
+```python
+"""Compute auditable, type-aware prominence scores. Does not assign
+visibility_tier -- that field is frozen; see ONTOLOGY.md's "Ranking and
+sizing" section. Browsing/ranking uses pipeline/period_hierarchy.py's
+top_entities() instead, scoped to whatever part of the tree is in view."""
+```
+
+Update `main()`:
+
+```python
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--offline", action="store_true", help="Require and use the existing sitelink cache")
+    args = parser.parse_args()
+    result = compute(offline=args.offline)
+    print(f"Scored {result['scored']} records (visibility_tier untouched)")
+```
+
+- [ ] **Step 4: Run tests to verify they pass**
+
+Run: `.venv/Scripts/python.exe -m unittest tests.test_compute_prominence -v`
+Expected: all pass, including `test_visibility_tier_is_left_untouched`.
+
+- [ ] **Step 5: Run the full suite; do NOT run `compute_prominence.py` against the real dataset**
+
+Run: `.venv/Scripts/python.exe -m unittest discover -s tests -v` — all green.
+Run: `.venv/Scripts/python.exe build.py` — unaffected, counts unchanged.
+
+Deliberately skip running `python -m pipeline.compute_prominence` against the live 4,671-file dataset as part of this task. It would rewrite every file's `prominence_score`/`prominence_components` (mostly a no-op content-wise, since the scoring math is unchanged) purely to exercise the new code path — the same "touches all 4,671 files for a mechanical run" concern already avoided earlier in this project's history. The test suite's fixture-based coverage is enough to verify the change; a full-dataset refresh is a separate, deliberate decision for whoever wants updated scores later, not a byproduct of this task.
+
+- [ ] **Step 6: Commit**
+
+```bash
+git add pipeline/compute_prominence.py tests/test_compute_prominence.py
+git commit -m "compute_prominence: remove competitive balanced_visibility algorithm
+
+visibility_tier is now frozen at its last-computed value; visibility_override
+remains the live promotion mechanism. Browsing/ranking moves to
+pipeline/period_hierarchy.py's top_entities(), scoped to whatever part of the
+tree is in view instead of a cross-dataset quota pass. See ONTOLOGY.md's
+'Ranking and sizing' section."
+```
+
+---
+
+## Task 9: Wire into the Makefile, README, and PLAN.md
 
 **Files:**
 - Modify: `Makefile`
+- Modify: `README.md`
 - Modify: `PLAN.md`
 
 - [ ] **Step 1: Add Makefile targets**
@@ -1767,8 +2130,8 @@ Add near the other pipeline targets in `Makefile`:
 seed-regional-eras:
 	python -m pipeline.seed_regional_eras
 
-backfill-documentary-status:
-	python pipeline/backfill_documentary_status.py
+generate-modern-regional-eras:
+	python -m pipeline.generate_modern_regional_eras
 
 suggest-regional-eras:
 	python -m pipeline.suggest_regional_eras
@@ -1780,46 +2143,41 @@ period-hierarchy-report:
 	python -m pipeline.period_hierarchy
 ```
 
-Add these five names to the `.PHONY` line at the top of the file.
+Add these five names to the `.PHONY` line at the top of the file. **Remove** `compute-prominence` from the documented "Wikidata backbone" sequence in `README.md` if it's listed there as a routine step — running it is now optional (updates `prominence_score` only) rather than part of the standard pipeline.
 
 - [ ] **Step 2: Add a status entry to PLAN.md**
 
-Add a new row to the Phase table (after Phase 8) and a matching detail bullet, following the existing style:
+Add a new row to the Phase table (after Phase 8) and a matching detail bullet:
 
 ```markdown
-| 9 — Period ontology | **Foundational layer done** | tier/documentary_status/evidence_basis schema fields, 9 macro chapters, 20 starter regional eras, backfilled documentary_status on all 117 pre-existing periods, suggestion queues for regional-era and polity period-links, tested `pipeline/period_hierarchy.py` query layer | Work the two suggestion queues (`reports/regional_era_suggestions.jsonl`, `reports/period_link_suggestions.jsonl`); extend regional eras past 1500 CE; the timeline UI itself (separate plan, `docs/plans/2026-08-29-period-ontology.md`) |
+| 9 — Period ontology | **Foundational layer done** | `Period.tier` schema field, build-time tier/cycle validation, 9 macro chapters, 20 hand-curated + auto-generated modern regional eras, suggestion queues for regional-era and polity period-links, tested `pipeline/period_hierarchy.py` query layer (`top_entities` replaces the retired competitive visibility-tier algorithm) | Work the two suggestion queues (`reports/regional_era_suggestions.jsonl`, `reports/period_link_suggestions.jsonl`); replace auto-generated modern regional eras with hand-curated sub-continental ones over time; the timeline UI itself (separate plan) reads `pipeline/period_hierarchy.py` |
 ```
 
 - [ ] **Step 3: Run full suite one last time, commit**
 
 Run: `.venv/Scripts/python.exe -m unittest discover -s tests -v` — all green.
-Run: `.venv/Scripts/python.exe build.py` — confirm final counts (146 periods, plus whatever Task 6's suggestions summary reported as already-linked).
+Run: `.venv/Scripts/python.exe build.py` — confirm final period count.
 
 ```bash
-git add Makefile PLAN.md
-git commit -m "docs: wire period-ontology targets into Makefile and PLAN.md"
+git add Makefile README.md PLAN.md
+git commit -m "docs: wire period-ontology targets into Makefile, README, PLAN.md"
 ```
 
 ---
 
 ## Self-review
 
-**Spec coverage** — every point from the conversation is addressed:
-- "Prehistory/History binary, not protohistorical as a primary category" → Task 1's `DocumentaryStatus` enum + Task 4's migration off `kind`.
-- "Preserve the nuance as record metadata" → `evidence_basis` field.
-- "Macro era → regional period → period → subperiod → event, kept separate from geography/documentary axes" → the `tier` field + `broader_periods` chain (Task 1-3) plus `Transition` already modeling events (unchanged).
-- "9 suggested global macro chapters" → Task 2, authored verbatim from the brainstorm's final list.
-- "Bronze Age / Iron Age / Classical antiquity are regional eras, not macro chapters" → Task 3's regional-era starter set uses exactly these as examples (`european_bronze_age_era`, `mediterranean_classical_era`, etc.), each scoped to one continent.
-- "Link entities to period nodes instead of nesting" → explicitly unchanged mechanism (`period_links.yaml`), extended in Task 6.
-- "Keep the data as it is today" → every new field is optional with a safe default; zero existing files require edits except the 117 periods' additive `evidence_basis` backfill (Task 4), which doesn't remove `kind`.
+**Spec coverage** — every design point from `ONTOLOGY.md` has a task: chronological hierarchy (Tasks 1, 3, 4), build-time tier validation (Task 2), single-parent convention (Task 4's data + Task 2's validator), tier-scoped geography emptiness (Task 3's test + Task 6's documented reasoning), naming/`defines` relation convention (documented in `ONTOLOGY.md`; no code required until something actually needs it — noted, not silently dropped), retiring the competitive visibility algorithm (Task 8), scope-local ranking via `top_entities` (Task 7). Not covered here, and explicitly out of scope: the Holocene/geological display layer (UI-only, future plan) and a fine-grained historical-region field (flagged as an open gap in `ONTOLOGY.md`, not solved).
 
-**Placeholder scan** — no TBD/"add appropriate handling" left in; the one known rough edge (auto-generated `source_urls` in Task 3 possibly 404ing) is called out explicitly with a stated reason it's not blocking, not swept under a vague TODO.
+**Placeholder scan** — no TBD/"add appropriate handling" left in. Known rough edges are called out explicitly with a stated reason they're not blocking (auto-generated `source_urls` possibly not resolving in Task 4 Part A; the `min_length=1` schema relaxation needed for Task 4 Part B's placeholder rows).
 
-**Type consistency** — `tier` values (`macro_chapter`, `regional_era`, `period`, `subperiod`) match across Task 1's schema, Task 2/3's authored data, and Task 5-7's scripts. `evidence_basis`/`documentary_status` values match between Task 1's enum and Task 4's mapping table. `PeriodHierarchy`'s three public methods (`ancestors`, `children`, `entities_under`, `macro_chapters`) are defined once in Task 7 and not referenced with different names elsewhere.
+**Type consistency** — `tier` values (`macro_chapter`, `regional_era`, `period` — three, not four; no separate `subperiod`) match across Tasks 1-7. `PeriodHierarchy`'s five public methods are defined once in Task 7 and used with consistent names in Task 9's Makefile comment and `ONTOLOGY.md`.
 
 ## Explicitly out of scope
 
-- The actual timeline UI (`web/`, `server/`) — this plan is the data layer it will read from. A follow-up plan should consume `pipeline/period_hierarchy.py` directly rather than re-deriving grouping logic.
-- Working the two review queues to completion (`reports/regional_era_suggestions.jsonl`, `reports/period_link_suggestions.jsonl`) — ongoing curation, same as Seshat/consolidation/type-eligibility.
-- Regional eras for macro chapters 6-9 (1500-present) — deliberately deferred to `geography.primary_continent` in the interim (see Task 3).
-- Deleting `Period.kind`, `Polity.region`, `Polity.culture_group` — all three are now superseded but removing them would force a rewrite of files that don't need it for zero functional gain.
+- The actual timeline UI (`web/`, `server/`).
+- The Holocene/geological-epoch display layer — a static UI asset, not a `Period`-tree citizen (see `ONTOLOGY.md`).
+- A fine-grained historical-region field (West Asia vs. Sahel vs. Andes vs. Mesoamerica...) — flagged in `ONTOLOGY.md` as a real, still-open gap, not solved by the regional-era tier.
+- Working the two review queues to completion — ongoing curation, same as Seshat/consolidation/type-eligibility.
+- Hand-curated sub-continental regional eras for 1500-present — Task 4 Part B's auto-generated continent-level nodes are a placeholder for this.
+- Refining `weight_by_era` via a better multi-source pipeline — per `ONTOLOGY.md`, this becomes ordinary editorial curation, not a pipeline investment.
