@@ -19,6 +19,7 @@
 - No task hand-classifies more than ~25 records by hand. Anything larger becomes a heuristic-suggestion script + a reviewable report under `reports/`, following the existing pattern in `pipeline/classify_period_roles.py` and `pipeline/review_cli.py`.
 - This plan stops at the data layer. It does not touch `web/` or `server/`, and does not build the Holocene/geological display layer (per `ONTOLOGY.md`, that's a static UI asset for the future timeline plan, not a `Period`-tree citizen).
 - No documentary-status/evidence-basis fields anywhere — dropped after review (see `ONTOLOGY.md`'s "Why this exists").
+- No `overlaps`/`associated_with` relationship schema, and no "parallel display lanes" data structure. Per `ONTOLOGY.md`'s "Tree, lanes, graph" section: the `Period` tree (this plan) answers "where am I in the curated account of history"; a future UI's parallel lanes answer "what else was true at the same time" by computing overlap from `start`/`end`/`geography` at render time — nothing to persist; and "how is this connected to that" is already answered by the existing `Polity.relationships` graph (`political_parent`, `cultural_component`, `associated_people`, ...), unchanged by this plan. All three are deliberately separate concerns; this plan only builds the first.
 
 ---
 
@@ -2175,9 +2176,9 @@ git commit -m "docs: wire period-ontology targets into Makefile, README, PLAN.md
 
 ## Explicitly out of scope
 
-- The actual timeline UI (`web/`, `server/`).
+- The actual timeline UI (`web/`, `server/`), including any parallel-lane rendering — computed at render time from data this plan already produces, not a data-layer task.
 - The Holocene/geological-epoch display layer — a static UI asset, not a `Period`-tree citizen (see `ONTOLOGY.md`).
-- A fine-grained historical-region field (West Asia vs. Sahel vs. Andes vs. Mesoamerica...) — flagged in `ONTOLOGY.md` as a real, still-open gap, not solved by the regional-era tier.
+- A fine-grained historical-region field (West Asia vs. Sahel vs. Andes vs. Mesoamerica...) — flagged in `ONTOLOGY.md` as a real, still-open gap, not solved by the regional-era tier, and explicitly not to be added as a new `Period.tier` value later.
 - Working the two review queues to completion — ongoing curation, same as Seshat/consolidation/type-eligibility.
 - Hand-curated sub-continental regional eras for 1500-present — Task 4 Part B's auto-generated continent-level nodes are a placeholder for this.
 - Refining `weight_by_era` via a better multi-source pipeline — per `ONTOLOGY.md`, this becomes ordinary editorial curation, not a pipeline investment.
