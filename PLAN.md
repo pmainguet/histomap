@@ -542,6 +542,25 @@ Total ongoing manual time after Phase 5: a few hours per year.
 
 ---
 
+## Ideas / deferred design questions
+
+Considered, deliberately not done, with the concrete trigger for revisiting:
+
+- **Split `Period` into separate `MacroChapter`/`RegionalEra`/`Period` Pydantic
+  classes** instead of one `Period` class discriminated by `tier`. Would trade runtime
+  validation (Task 2's `validate_period_tiers()` in the period-ontology plan) for
+  structural safety (a macro chapter simply couldn't have a `broader_periods` value).
+  Not done because it breaks the precedent this schema already set twice
+  (`Polity.entity_type`, `Period.kind` — one class, an enum discriminator, several
+  flavors) and would complicate `pipeline/period_hierarchy.py`'s tree-walking, which
+  currently works because every tier shares one shape. **Revisit if** a field ever needs
+  to exist on `macro_chapter` or `regional_era` that would be actively wrong (not just
+  unused) on a regular `period` — at that point, Pydantic discriminated unions
+  (`Annotated[Union[...], Field(discriminator="tier")]`) would give both the safety and
+  a workable `PeriodHierarchy`. See `ONTOLOGY.md` for the full period-tier design.
+
+---
+
 ## Why this scales
 
 Every Phase produces something complete and useful. None blocks the next.
