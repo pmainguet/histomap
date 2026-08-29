@@ -2451,7 +2451,7 @@ git commit -m "docs: wire period-ontology targets into Makefile, README, PLAN.md
 
 - The actual timeline UI (`web/`, `server/`), including any parallel-lane rendering — computed at render time from data this plan already produces, not a data-layer task.
 - The Holocene/geological-epoch display layer — a static UI asset, not a `Period`-tree citizen (see `ONTOLOGY.md`).
-- Exhaustive country coverage in `pipeline/historical_regions.py`'s lookup table (Task 9 ships a ~110-country starter set; the remaining countries fall back to unset, not a wrong guess) — growing it is cheap, incremental, future work.
+- Exhaustive country coverage in `pipeline/historical_regions.py`'s lookup table (Task 9 ships a 23-region, ~180-country starter set; the remaining countries fall back to unset, not a wrong guess) — growing it is cheap, incremental, future work.
 - Working the two review queues to completion — ongoing curation, same as Seshat/consolidation/type-eligibility.
 - Hand-curated sub-continental regional eras for 1500-present — Task 4 Part B's auto-generated continent-level nodes are a placeholder for this.
 - Refining `weight_by_era` via a better multi-source pipeline — per `ONTOLOGY.md`, this becomes ordinary editorial curation, not a pipeline investment.
