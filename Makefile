@@ -1,4 +1,4 @@
-.PHONY: setup extract audit-civilizations extract-seshat extract-maddison extract-hyde map-maddison filter-wikidata-types cache-wikidata-type-ancestors classify-entity-types import-wikidata reconcile apply-reviews spotcheck compute-prominence enrich-relationships enrich-geography enrich-missing-geography period-pilot validate build serve test format lint check
+.PHONY: setup extract audit-civilizations extract-seshat extract-maddison extract-hyde map-maddison filter-wikidata-types cache-wikidata-type-ancestors classify-entity-types import-wikidata reconcile apply-reviews spotcheck compute-prominence enrich-relationships enrich-geography enrich-missing-geography period-pilot validate build serve test format lint check seed-regional-eras generate-modern-regional-eras suggest-regional-eras suggest-period-links period-hierarchy-report derive-historical-regions
 
 setup:
 	uv pip install -r requirements.txt ruff mypy
@@ -84,3 +84,21 @@ lint:
 	mypy .
 
 check: lint test validate
+
+seed-regional-eras:
+	python -m pipeline.seed_regional_eras
+
+generate-modern-regional-eras:
+	python -m pipeline.generate_modern_regional_eras
+
+suggest-regional-eras:
+	python -m pipeline.suggest_regional_eras
+
+suggest-period-links:
+	python -m pipeline.suggest_period_links
+
+period-hierarchy-report:
+	python -m pipeline.period_hierarchy
+
+derive-historical-regions:
+	python -m pipeline.derive_historical_regions

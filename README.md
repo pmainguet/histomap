@@ -63,7 +63,6 @@ make import-wikidata
 make reconcile
 make review
 make spotcheck
-make compute-prominence
 make compute-weights
 make enrich-relationships
 make enrich-geography
@@ -84,7 +83,6 @@ The same sequence without `make` (`$py = .\.venv\Scripts\python.exe`):
 & $py pipeline/reconcile.py
 & $py pipeline/review_cli.py
 & $py pipeline/spotcheck.py
-& $py pipeline/compute_prominence.py
 & $py pipeline/compute_weights.py
 & $py pipeline/enrich_relationships.py
 & $py pipeline/enrich_geography.py
