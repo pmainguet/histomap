@@ -29,10 +29,13 @@ prominence_score: 31.6
 visibility_tier: regional
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - europe
+  primary_continent: europe
+  present_countries:
+  - BE
+  - NL
+  confidence: high
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
@@ -61,3 +64,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 31.6
+manual_overrides:
+- geography

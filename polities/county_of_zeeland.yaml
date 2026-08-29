@@ -35,12 +35,18 @@ prominence_score: 34.37
 visibility_tier: regional
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - africa
+  - asia
+  - europe
+  - north_america
+  - south_america
+  present_countries:
+  - NL
   centroid:
     lat: 51.666666666
     lon: 3.833333333
-  confidence: null
+  confidence: high
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
@@ -57,3 +63,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 34.37
+manual_overrides:
+- geography

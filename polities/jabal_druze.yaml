@@ -28,10 +28,12 @@ prominence_score: 25.27
 visibility_tier: regional
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - asia
+  primary_continent: asia
+  present_countries:
+  - SY
+  confidence: high
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
@@ -54,3 +56,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 25.27
+manual_overrides:
+- geography

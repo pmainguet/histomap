@@ -29,10 +29,12 @@ prominence_score: 25.56
 visibility_tier: regional
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - north_america
+  primary_continent: north_america
+  present_countries:
+  - CA
+  confidence: high
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
@@ -58,3 +60,4 @@ prominence_components:
 consolidation_status: independent
 manual_overrides:
 - consolidation
+- geography

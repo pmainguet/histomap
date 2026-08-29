@@ -29,12 +29,15 @@ prominence_score: 31.28
 visibility_tier: regional
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - asia
+  primary_continent: asia
+  present_countries:
+  - JP
   centroid:
     lat: 26.116666666
     lon: 127.666666666
-  confidence: null
+  confidence: high
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
@@ -58,3 +61,5 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 31.28
+manual_overrides:
+- geography
