@@ -316,6 +316,64 @@
     ]
   },
   {
+    "id": "capetian_dynasty_period",
+    "canonical_name": "Capetian Dynasty (direct line)",
+    "kind": "historical",
+    "start": 987,
+    "end": 1328,
+    "start_confidence": "high",
+    "end_confidence": "high",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "FR"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikipedia infobox (direct Capetian line only; excludes Valois/Bourbon cadet branches, which ruled France to 1848)",
+    "external_ids": {
+      "wikidata": "Q179544"
+    },
+    "notes": "987 election of Hugh Capet to 1328 death of Charles IV (direct male line extinction). Linked to kingdom_of_france via period_links.yaml (phase_of) -- that polity already carries this span's political weight.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Capetian_dynasty"
+    ]
+  },
+  {
+    "id": "celts_period",
+    "canonical_name": "Celts",
+    "kind": "protohistorical",
+    "start": -800,
+    "end": 100,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikipedia periodization: Celtic Iron Age through Roman absorption",
+    "external_ids": {
+      "wikidata": "Q35966"
+    },
+    "notes": "Span is contested and varies widely by source; -800 marks the conventional Hallstatt-to-La-Tene Celtic floruit, 100 CE the point by which most Celtic territories had been absorbed into the Roman Empire. Never a single political actor -- rendered as period context only, no matching polities/ record.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Celts"
+    ]
+  },
+  {
     "id": "chinese_empire_period",
     "canonical_name": "Chinese Empire",
     "kind": "historical",
@@ -816,6 +874,36 @@
     ]
   },
   {
+    "id": "etruscan_civilization_period",
+    "canonical_name": "Etruscan civilization",
+    "kind": "historical",
+    "start": -900,
+    "end": -27,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "IT"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikipedia infobox",
+    "external_ids": {
+      "wikidata": "Q17161"
+    },
+    "notes": "-900 marks the Villanovan-culture start conventionally linked to Etruscan origins; -27 the formal absorption of the last Etruscan cities by Rome. No matching polities/ record -- the Etruscans were a federation of city-states, not a single political actor.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Etruscan_civilization"
+    ]
+  },
+  {
     "id": "european_bronze_age",
     "canonical_name": "Bronze Age Europe",
     "kind": "protohistorical",
@@ -1124,6 +1212,127 @@
     "notes": "Editorially identified as a phase or aspect of Spain.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q766543"
+    ]
+  },
+  {
+    "id": "house_of_plantagenet_period",
+    "canonical_name": "House of Plantagenet",
+    "kind": "historical",
+    "start": 1154,
+    "end": 1485,
+    "start_confidence": "high",
+    "end_confidence": "high",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "GB"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikipedia infobox (reign dates, not the family's 1126 founding)",
+    "external_ids": {
+      "wikidata": "Q106151"
+    },
+    "notes": "1154 accession of Henry II to 1485 death of Richard III at Bosworth. Linked to kingdom_of_england via period_links.yaml (phase_of) -- that polity already carries this span's political weight.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/House_of_Plantagenet"
+    ]
+  },
+  {
+    "id": "house_of_tudor_period",
+    "canonical_name": "House of Tudor",
+    "kind": "historical",
+    "start": 1485,
+    "end": 1603,
+    "start_confidence": "high",
+    "end_confidence": "high",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "GB"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata",
+    "external_ids": {
+      "wikidata": "Q101978"
+    },
+    "notes": "1485 Bosworth Field (Henry VII) to 1603 death of Elizabeth I. Linked to kingdom_of_england via period_links.yaml (phase_of) -- that polity already carries this span's political weight.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q101978"
+    ]
+  },
+  {
+    "id": "house_of_wessex_period",
+    "canonical_name": "House of Wessex (unified England)",
+    "kind": "historical",
+    "start": 927,
+    "end": 1066,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "GB"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikipedia infobox",
+    "external_ids": {
+      "wikidata": "Q511482"
+    },
+    "notes": "Bounded to kingdom_of_england.yaml's own start year (927, Aethelstan's unification) through 1066 (Norman Conquest). The line was interrupted 1013-1042 by Danish rule (Cnut and sons); not modeled as a gap here, only noted. Linked to kingdom_of_england via period_links.yaml (phase_of) -- that polity already carries this span's political weight.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/House_of_Wessex"
+    ]
+  },
+  {
+    "id": "indus_valley_civilization_period",
+    "canonical_name": "Indus Valley Civilization",
+    "kind": "protohistorical",
+    "start": -3000,
+    "end": -1800,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "present_countries": [
+        "IN",
+        "PK"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata",
+    "external_ids": {
+      "wikidata": "Q42534"
+    },
+    "notes": "Indus script is undeciphered, hence protohistorical. No matching polities/ record -- distributed across major urban centers (Harappa, Mohenjo-daro...), not a single political actor.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q42534"
     ]
   },
   {
@@ -2021,6 +2230,69 @@
     ]
   },
   {
+    "id": "minoan_civilization_period",
+    "canonical_name": "Minoan civilization",
+    "kind": "protohistorical",
+    "start": -2600,
+    "end": -1100,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "GR"
+      ],
+      "centroid": {
+        "lat": 35.309722,
+        "lon": 24.893333
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata description (\"Bronze Age civilization ... c. 2600 to 1100 BC\")",
+    "external_ids": {
+      "wikidata": "Q134178"
+    },
+    "notes": "Linear A is undeciphered, hence protohistorical. No matching polities/ record -- centered on Knossos and other Cretan palace-sites, not a single political actor.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q134178"
+    ]
+  },
+  {
+    "id": "mycenaean_greece_period",
+    "canonical_name": "Mycenaean Greece",
+    "kind": "protohistorical",
+    "start": -1600,
+    "end": -1100,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "GR"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata",
+    "external_ids": {
+      "wikidata": "Q181264"
+    },
+    "notes": "Late Bronze Age Greek civilization; Linear B gives economic records but no historiography, hence protohistorical. No matching polities/ record -- power was distributed across palace-centers (Mycenae, Pylos, Tiryns...), not a single political actor.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q181264"
+    ]
+  },
+  {
     "id": "nationalist_zone_period",
     "canonical_name": "Nationalist zone",
     "kind": "historical",
@@ -2082,6 +2354,66 @@
     "notes": "Editorially identified as a phase or aspect of German Reich.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q7318"
+    ]
+  },
+  {
+    "id": "norman_dynasty_period",
+    "canonical_name": "Norman dynasty (England)",
+    "kind": "historical",
+    "start": 1066,
+    "end": 1135,
+    "start_confidence": "high",
+    "end_confidence": "high",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "GB"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikipedia infobox",
+    "external_ids": {
+      "wikidata": "Q516569"
+    },
+    "notes": "1066 Norman Conquest to 1135, when Stephen of the House of Blois seized the throne. Linked to kingdom_of_england via period_links.yaml (phase_of) -- that polity already carries this span's political weight.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Norman_dynasty"
+    ]
+  },
+  {
+    "id": "olmec_civilization_period",
+    "canonical_name": "Olmec civilization",
+    "kind": "archaeological",
+    "start": -1200,
+    "end": -400,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "present_countries": [
+        "MX"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikipedia infobox",
+    "external_ids": {
+      "wikidata": "Q135364"
+    },
+    "notes": "No deciphered Olmec writing system survives, hence archaeological rather than protohistorical. No matching polities/ record -- centered on sites like San Lorenzo and La Venta, not a single political actor.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Olmecs"
     ]
   },
   {
@@ -3164,6 +3496,38 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Uruk_period"
+    ]
+  },
+  {
+    "id": "viking_age_period",
+    "canonical_name": "Viking Age",
+    "kind": "historical",
+    "start": 793,
+    "end": 1066,
+    "start_confidence": "medium",
+    "end_confidence": "medium",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "present_countries": [
+        "DK",
+        "NO",
+        "SE"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata",
+    "external_ids": {
+      "wikidata": "Q213649"
+    },
+    "notes": "793 is the Lindisfarne raid, conventionally marking the start; 1066 the Battle of Stamford Bridge / Norman Conquest, conventionally marking the end. No matching polities/ record -- raiding, trading and settlement rather than a single political actor; jorvik.yaml already covers the one durable Viking polity (Viking York).",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q213649"
     ]
   },
   {

@@ -1,0 +1,18 @@
+id: indus_valley_civilization_period
+canonical_name: Indus Valley Civilization
+kind: protohistorical
+start: -3000
+end: -1800
+start_confidence: medium
+end_confidence: medium
+geography:
+  continents: [asia]
+  present_countries: [IN, PK]
+authority: Wikidata
+external_ids:
+  wikidata: Q42534
+notes: Indus script is undeciphered, hence protohistorical. No matching polities/
+  record -- distributed across major urban centers (Harappa, Mohenjo-daro...),
+  not a single political actor.
+source_urls:
+- https://www.wikidata.org/wiki/Q42534

@@ -767,3 +767,43 @@
   source_urls:
   - https://www.wikidata.org/wiki/Q178038
   notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: house_of_wessex_period
+  entity_id: kingdom_of_england
+  relation: phase_of
+  evidence: explicit
+  confidence: medium
+  source_urls:
+  - https://en.wikipedia.org/wiki/House_of_Wessex
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: norman_dynasty_period
+  entity_id: kingdom_of_england
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://en.wikipedia.org/wiki/Norman_dynasty
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: house_of_plantagenet_period
+  entity_id: kingdom_of_england
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://en.wikipedia.org/wiki/House_of_Plantagenet
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: house_of_tudor_period
+  entity_id: kingdom_of_england
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q101978
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: capetian_dynasty_period
+  entity_id: kingdom_of_france
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://en.wikipedia.org/wiki/Capetian_dynasty
+  notes: Reviewed record is a dated phase of this canonical polity.

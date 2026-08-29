@@ -1,31 +1,36 @@
 id: nazi_germany
 canonical_name: Nazi Germany
 names:
-  fr: Troisième Reich
-  aliases_en: Greater German Reich | Hitler's Third Reich | Thousand-Year Reich |
-    Third Reich | German Reich | Nazi-Germany
+  fr: Allemagne nazie
+  aliases_en: Third Reich | German Reich (1933-1945)
 external_ids:
   wikidata: Q7318
-parent: german_reich
-successors: []
+  wikipedia_en: https://en.wikipedia.org/wiki/Nazi_Germany
+parent: weimar_republic
+successors:
+- germany
 region: null
 culture_group: null
 start: 1933
 end: 1945
-start_confidence: low
-end_confidence: low
+start_confidence: high
+end_confidence: high
 weight_by_era:
   1933: 5
+  1941: 8
 weight_imputed: true
 icon: null
 text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Automatically generated from Wikidata; requires review.
+notes: Hand-added via live Wikidata lookup (Q7318) to close a gap against the classic
+  Histomap reference poster. weimar_republic.yaml already listed this id as a successor.
+  successors points straight to germany.yaml (1949-) since the 1945-1949 Allied
+  occupation isn't modeled as its own polity yet.
 sources:
 - wikidata
-prominence_score: 35.91
+prominence_score: 32.78
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -34,33 +39,31 @@ geography:
   present_countries:
   - DE
   centroid:
-    lat: 52.511111111
-    lon: 13.379722222
-  confidence: medium
+    lat: 52.511111
+    lon: 13.379722
+  confidence: high
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
 relationships:
-- target: german_reich
+- target: weimar_republic
   kind: political_parent
-  evidence: derived
-  confidence: medium
+  evidence: explicit
+  confidence: high
   source_urls:
   - https://www.wikidata.org/wiki/Q7318
 prominence_components:
-  wikidata_reach: 30
+  wikidata_reach: 30.0
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 8.13
+  relationship_centrality: 0
   longevity: 2.78
   editorial_work: 0
   type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
+  date_uncertainty_penalty: 0
   aggregate_penalty: 0
-  total: 35.91
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: german_reich
+  total: 32.78
 manual_overrides:
-- consolidation
+- visibility_override
+visibility_override: global

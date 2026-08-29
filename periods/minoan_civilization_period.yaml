@@ -1,0 +1,22 @@
+id: minoan_civilization_period
+canonical_name: Minoan civilization
+kind: protohistorical
+start: -2600
+end: -1100
+start_confidence: medium
+end_confidence: medium
+geography:
+  continents: [europe]
+  present_countries: [GR]
+  centroid:
+    lat: 35.309722
+    lon: 24.893333
+  confidence: medium
+authority: Wikidata description ("Bronze Age civilization ... c. 2600 to 1100 BC")
+external_ids:
+  wikidata: Q134178
+notes: Linear A is undeciphered, hence protohistorical. No matching polities/
+  record -- centered on Knossos and other Cretan palace-sites, not a single
+  political actor.
+source_urls:
+- https://www.wikidata.org/wiki/Q134178

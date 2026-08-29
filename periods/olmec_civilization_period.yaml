@@ -1,0 +1,18 @@
+id: olmec_civilization_period
+canonical_name: Olmec civilization
+kind: archaeological
+start: -1200
+end: -400
+start_confidence: medium
+end_confidence: medium
+geography:
+  continents: [north_america]
+  present_countries: [MX]
+authority: Wikipedia infobox
+external_ids:
+  wikidata: Q135364
+notes: No deciphered Olmec writing system survives, hence archaeological rather
+  than protohistorical. No matching polities/ record -- centered on sites like
+  San Lorenzo and La Venta, not a single political actor.
+source_urls:
+- https://en.wikipedia.org/wiki/Olmecs
