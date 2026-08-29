@@ -335,7 +335,7 @@ Run: `.venv/Scripts/python.exe -m server.app` (or however `make serve` invokes i
 - [ ] **Step 6: Commit**
 
 ```bash
-git add web/explore.html web/explore.js web/styles.css server/app.py web/index.html web/review.html web/reviews.html web/consolidation_review.html web/type_review.html web/subdivision_review.html
+git add web/explore.html web/explore.js web/styles.css server/app.py web/index.html web/review.html web/reviews.html web/consolidation_review.html web/type_review.html web/subdivision_review.html web/period_review.html
 git commit -m "web: add /explore World zoom level (9 macro chapter tiles)"
 ```
 
