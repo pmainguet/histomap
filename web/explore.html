@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Histomap — explore human history</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Histomap timeline">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M5 6h7v24H5zM15 11h7v19h-7zM25 3h7v27h-7z"/></svg>
+        <span>Histomap</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/">Timeline</a>
+        <a href="/explore" aria-current="page">Explore</a>
+        <a href="/reviews">Reviews</a>
+        <a href="/docs">API</a>
+      </nav>
+    </header>
+    <section class="explore-intro" aria-label="About this view">
+      <h1>Explore human history</h1>
+      <p>Nine chapters, largest first. Click one to zoom in.</p>
+    </section>
+    <div id="geological-band" aria-hidden="true"></div>
+    <main id="chapter-grid" class="chapter-grid" aria-label="Macro chapters">
+      <p class="loading">Loading…</p>
+    </main>
+    <script src="/static/geological_epochs.js"></script>
+    <script src="/static/explore.js"></script>
+  </body>
+</html>

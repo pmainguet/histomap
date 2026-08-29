@@ -917,6 +917,17 @@ def create_app(root: Path = ROOT) -> FastAPI:
     async def reviews_home_page() -> FileResponse:
         return FileResponse(web_dir / "reviews.html")
 
+    @application.get("/explore", include_in_schema=False)
+    async def explore_page() -> FileResponse:
+        return FileResponse(web_dir / "explore.html")
+
+    @application.get("/explore_index.json", include_in_schema=False)
+    async def explore_index() -> FileResponse:
+        path = root / "explore_index.json"
+        if not path.exists():
+            raise HTTPException(404, "Run the build action first")
+        return FileResponse(path)
+
     @application.get("/consolidation-review", include_in_schema=False)
     async def consolidation_review_page() -> FileResponse:
         return FileResponse(web_dir / "consolidation_review.html")
