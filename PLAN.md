@@ -14,7 +14,7 @@ Build a layered pipeline that extracts from multiple open sources, reconciles di
 
 The dataset itself — YAML files in a Git repo — is the long-term artifact. Everything else (viz, print, reading levels) is regenerable from it.
 
-## Implementation status — 18 August 2026
+## Implementation status — 29 August 2026
 
 This section is the current source of truth. Detailed phase descriptions below retain design context,
 including targets that are not yet complete.
@@ -33,9 +33,18 @@ including targets that are not yet complete.
 
 ### Current measurable state
 
-- **4,669** canonical polities (down from 4,794 as the consolidation pass folds duplicate/phase
-  records into their parents).
-- **137** automated tests passing; `build.py` validates **5** curated transitions.
+- **4,671** canonical polities (down from 4,794 as the consolidation pass folds duplicate/phase
+  records into their parents; up from 4,669 as New Kingdom of Egypt, Nazi Germany, and the
+  European Union were added — see below).
+- **137** automated tests passing; `build.py` validates **5** curated transitions, **117** periods
+  (up from 105), and **102** period links (up from 97).
+- Global-tier reference-poster comparison (started in b0acb2e1): **complete**. All 15 flagged
+  gaps are now filled — 3 as new weight-bearing polities (New Kingdom of Egypt, Nazi Germany,
+  European Union; all `visibility_override: global`, pending the next full
+  `compute_prominence.py` run to materialize), and 12 as `periods/*.yaml` context bands with no
+  competing weight bar (Vikings, Celts, Etruscans, Mycenaean Greece, Minoan Crete, Indus Valley,
+  Olmec, and the Wessex/Norman/Plantagenet/Tudor/Capetian dynasty spans, the last four
+  `phase_of`-linked to `kingdom_of_england`/`kingdom_of_france` via `period_links.yaml`).
 - Seshat reconciliation: **81 auto**, **223 reviewed decisions applied** (109 accept / 149 reject
   across two review sessions, some records touched twice), **35 review pending**, **34 unmatched**.
 - Entity consolidation (new): **333** of 4,669 records triaged — 87 `phase_of`, 44 `same_entity`,
