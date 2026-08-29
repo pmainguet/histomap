@@ -76,13 +76,14 @@ class ComputeDoesNotTouchVisibilityTierTests(unittest.TestCase):
             polities_dir = Path(tmp) / "polities"
             polities_dir.mkdir()
             cache_path = Path(tmp) / "sitelinks.json"
+            report_path = Path(tmp) / "prominence_summary.md"
             doc = document("test_polity", score=0)
             doc["visibility_tier"] = "global"  # deliberately pre-set, no wikidata id -> offline-safe
             (polities_dir / "test_polity.yaml").write_text(
                 yaml.safe_dump(doc, sort_keys=False), encoding="utf-8"
             )
 
-            compute(polities_dir=polities_dir, cache_path=cache_path, offline=True)
+            compute(polities_dir=polities_dir, cache_path=cache_path, offline=True, report_path=report_path)
 
             written = yaml.safe_load((polities_dir / "test_polity.yaml").read_text(encoding="utf-8"))
             self.assertEqual(written["visibility_tier"], "global")  # unchanged

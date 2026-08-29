@@ -8,7 +8,7 @@ class RebuildTimelineTests(unittest.TestCase):
     @patch("pipeline.rebuild_timeline.build.main")
     @patch("pipeline.rebuild_timeline.compute")
     def test_recomputes_prominence_offline_before_building(self, compute, build_main) -> None:
-        compute.return_value = {"global": 1, "regional": 2, "detailed": 3}
+        compute.return_value = {"scored": 6}
 
         rebuild_timeline.main()
 

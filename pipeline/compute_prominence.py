@@ -121,7 +121,12 @@ def fetch_sitelinks(qids: list[str], cache_path: Path = CACHE_PATH) -> dict[str,
     return cache
 
 
-def compute(polities_dir: Path = POLITIES_DIR, cache_path: Path = CACHE_PATH, offline: bool = False) -> dict[str, int]:
+def compute(
+    polities_dir: Path = POLITIES_DIR,
+    cache_path: Path = CACHE_PATH,
+    offline: bool = False,
+    report_path: Path = REPORT_PATH,
+) -> dict[str, int]:
     paths = sorted(polities_dir.glob("*.yaml"))
     documents = [yaml.safe_load(path.read_text(encoding="utf-8")) for path in paths]
     qids = [
@@ -172,7 +177,7 @@ def compute(polities_dir: Path = POLITIES_DIR, cache_path: Path = CACHE_PATH, of
     for path, document in zip(paths, documents, strict=True):
         path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
     scores = [document["prominence_score"] for document in documents]
-    REPORT_PATH.write_text(
+    report_path.write_text(
         "# Prominence scores\n\n"
         f"- Records scored: {len(scores):,}\n"
         f"- Score range: {min(scores):.1f} - {max(scores):.1f}\n"
