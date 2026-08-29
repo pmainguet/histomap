@@ -1,6 +1,10 @@
+import tempfile
 import unittest
+from pathlib import Path
 
-from pipeline.compute_prominence import balanced_visibility, prominence_components, score_prominence, tier_for
+import yaml
+
+from pipeline.compute_prominence import compute, prominence_components, score_prominence
 
 
 def document(entity_id: str, score: float, **overrides: object) -> dict:
@@ -15,12 +19,14 @@ def document(entity_id: str, score: float, **overrides: object) -> dict:
         "geography": {"continents": ["europe"], "primary_continent": "europe"},
         "prominence_score": score,
         "prominence_components": {},
+        "visibility_tier": "detailed",
+        "external_ids": {},
     }
     value.update(overrides)
     return value
 
 
-class ComputeProminenceTests(unittest.TestCase):
+class ProminenceComponentsTests(unittest.TestCase):
     def test_components_are_capped_and_sum_to_total(self) -> None:
         components = prominence_components(
             sitelinks=100_000,
@@ -63,34 +69,24 @@ class ComputeProminenceTests(unittest.TestCase):
         self.assertEqual(uncertain["aggregate_penalty"], -25)
         self.assertGreater(certain["total"], uncertain["total"])
 
-    def test_balancing_represents_a_geographic_era_stratum(self) -> None:
-        documents = [document(f"europe_{index}", 100 - index) for index in range(70)]
-        documents.append(
-            document(
-                "ancient_asia",
-                1,
-                start=-1000,
-                end=-900,
-                geography={"continents": ["asia"], "primary_continent": "asia"},
+
+class ComputeDoesNotTouchVisibilityTierTests(unittest.TestCase):
+    def test_visibility_tier_is_left_untouched(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            polities_dir = Path(tmp) / "polities"
+            polities_dir.mkdir()
+            cache_path = Path(tmp) / "sitelinks.json"
+            doc = document("test_polity", score=0)
+            doc["visibility_tier"] = "global"  # deliberately pre-set, no wikidata id -> offline-safe
+            (polities_dir / "test_polity.yaml").write_text(
+                yaml.safe_dump(doc, sort_keys=False), encoding="utf-8"
             )
-        )
-        balanced_visibility(documents)
-        self.assertEqual(documents[-1]["visibility_tier"], "global")
 
-    def test_context_and_unreviewed_entities_are_not_automatic_global_bands(self) -> None:
-        culture = document("culture", 100, entity_type="culture")
-        review = document("review", 100, eligibility="review")
-        low_type = document("low_type", 100, entity_type_confidence="low")
-        balanced_visibility([culture, review, low_type])
-        self.assertEqual(culture["visibility_tier"], "regional")
-        self.assertEqual(review["visibility_tier"], "detailed")
-        self.assertEqual(low_type["visibility_tier"], "detailed")
+            compute(polities_dir=polities_dir, cache_path=cache_path, offline=True)
 
-    def test_editorial_visibility_override_is_durable(self) -> None:
-        item = document("overridden", 1, visibility_override="global", eligibility="review")
-        balanced_visibility([item])
-        self.assertEqual(item["visibility_tier"], "global")
-        self.assertEqual(tier_for(10, "global"), "global")
+            written = yaml.safe_load((polities_dir / "test_polity.yaml").read_text(encoding="utf-8"))
+            self.assertEqual(written["visibility_tier"], "global")  # unchanged
+            self.assertIn("prominence_score", written)  # still recomputed
 
 
 if __name__ == "__main__":

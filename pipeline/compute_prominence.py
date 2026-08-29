@@ -1,4 +1,7 @@
-"""Compute auditable, type-aware prominence and balanced visibility tiers."""
+"""Compute auditable, type-aware prominence scores. Does not assign
+visibility_tier -- that field is frozen; see ONTOLOGY.md's "Ranking and
+sizing" section. Browsing/ranking uses pipeline/period_hierarchy.py's
+top_entities() instead, scoped to whatever part of the tree is in view."""
 
 from __future__ import annotations
 
@@ -23,14 +26,6 @@ REPORT_PATH = ROOT / "reports" / "prominence_summary.md"
 API_URL = "https://www.wikidata.org/w/api.php"
 USER_AGENT = "histomap/0.1 (https://github.com/pmainguet/histomap)"
 BATCH_SIZE = 50
-GLOBAL_ABSOLUTE_COUNT = 60
-GLOBAL_PER_STRATUM = 2
-REGIONAL_ABSOLUTE_COUNT = 600
-REGIONAL_PER_STRATUM = 20
-CONTEXT_TYPES = {
-    "subdivision", "micronation", "culture", "people", "tribe", "archaeological_horizon"
-}
-NORMAL_TYPES = {"polity", "civilization"}
 
 
 def prominence_components(
@@ -90,89 +85,6 @@ def score_prominence(
         editorial_score=7 if editorial else 0,
         **kwargs,
     )["total"]
-
-
-def tier_for(score: float, override: str | None = None) -> str:
-    """Compatibility helper; production tiers are assigned by balanced_visibility()."""
-    if override is not None:
-        return override
-    if score >= 60:
-        return "global"
-    if score >= 45:
-        return "regional"
-    return "detailed"
-
-
-def historical_era(document: dict) -> str:
-    end = document.get("end") if document.get("end") is not None else 2026
-    midpoint = (int(document["start"]) + int(end)) / 2
-    if midpoint < -3000:
-        return "early_prehistory"
-    if midpoint < 500:
-        return "ancient"
-    if midpoint < 1500:
-        return "medieval"
-    if midpoint < 1800:
-        return "early_modern"
-    if midpoint < 1945:
-        return "modern"
-    return "contemporary"
-
-
-def visibility_stratum(document: dict) -> tuple[str, str]:
-    geography = document.get("geography") or {}
-    continent = geography.get("primary_continent")
-    if not continent:
-        continent = next(iter(geography.get("continents") or []), "unknown")
-    return continent, historical_era(document)
-
-
-def _top_per_stratum(documents: list[dict], count: int) -> set[str]:
-    grouped: dict[tuple[str, str], list[dict]] = defaultdict(list)
-    for document in documents:
-        grouped[visibility_stratum(document)].append(document)
-    selected = set()
-    for items in grouped.values():
-        items.sort(key=lambda item: (-item["prominence_score"], item["canonical_name"], item["id"]))
-        selected.update(item["id"] for item in items[:count])
-    return selected
-
-
-def balanced_visibility(documents: list[dict]) -> dict[str, int]:
-    normal = [
-        document
-        for document in documents
-        if document.get("entity_type", "polity") in NORMAL_TYPES
-        and document.get("eligibility") == "accepted"
-        and document.get("entity_type_confidence", "low") != "low"
-        and not document.get("prominence_components", {}).get("aggregate_penalty")
-    ]
-    ranked = sorted(normal, key=lambda item: (-item["prominence_score"], item["canonical_name"], item["id"]))
-    global_ids = {item["id"] for item in ranked[:GLOBAL_ABSOLUTE_COUNT]}
-    global_ids.update(_top_per_stratum(normal, GLOBAL_PER_STRATUM))
-    regional_ids = set(global_ids)
-    regional_ids.update(item["id"] for item in ranked[:REGIONAL_ABSOLUTE_COUNT])
-    regional_ids.update(_top_per_stratum(normal, REGIONAL_PER_STRATUM))
-
-    counts = {"global": 0, "regional": 0, "detailed": 0}
-    for document in documents:
-        override = document.get("visibility_override")
-        entity_type = document.get("entity_type", "polity")
-        if override:
-            tier = override
-        elif document.get("eligibility") != "accepted" or document.get("entity_type_confidence", "low") == "low":
-            tier = "detailed"
-        elif entity_type in CONTEXT_TYPES:
-            tier = "regional" if document["prominence_score"] >= 45 else "detailed"
-        elif document["id"] in global_ids:
-            tier = "global"
-        elif document["id"] in regional_ids:
-            tier = "regional"
-        else:
-            tier = "detailed"
-        document["visibility_tier"] = tier
-        counts[tier] += 1
-    return counts
 
 
 def _load_cache(path: Path) -> dict[str, int]:
@@ -257,27 +169,29 @@ def compute(polities_dir: Path = POLITIES_DIR, cache_path: Path = CACHE_PATH, of
         document["prominence_components"] = components
         document["prominence_score"] = components["total"]
 
-    counts = balanced_visibility(documents)
     for path, document in zip(paths, documents, strict=True):
         path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
+    scores = [document["prominence_score"] for document in documents]
     REPORT_PATH.write_text(
-        "# Prominence and visibility\n\n"
-        + "\n".join(f"- {name.title()}: {count:,}" for name, count in counts.items())
-        + f"\n- Global absolute shortlist: {GLOBAL_ABSOLUTE_COUNT}\n"
-        + f"- Global per continent/era: {GLOBAL_PER_STRATUM}\n"
-        + f"- Regional absolute shortlist: {REGIONAL_ABSOLUTE_COUNT}\n"
-        + f"- Regional per continent/era: {REGIONAL_PER_STRATUM}\n",
+        "# Prominence scores\n\n"
+        f"- Records scored: {len(scores):,}\n"
+        f"- Score range: {min(scores):.1f} - {max(scores):.1f}\n"
+        f"- Mean score: {sum(scores) / len(scores):.1f}\n\n"
+        "visibility_tier is not touched by this script -- it was frozen when the "
+        "competitive balanced_visibility() pass was retired (see ONTOLOGY.md,\n"
+        "'Ranking and sizing'). Browsing/ranking now uses "
+        "pipeline/period_hierarchy.py's top_entities() instead.\n",
         encoding="utf-8",
     )
-    return counts
+    return {"scored": len(scores)}
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--offline", action="store_true", help="Require and use the existing sitelink cache")
     args = parser.parse_args()
-    counts = compute(offline=args.offline)
-    print("Visibility tiers: " + ", ".join(f"{name}={count}" for name, count in counts.items()))
+    result = compute(offline=args.offline)
+    print(f"Scored {result['scored']} records (visibility_tier untouched)")
 
 
 if __name__ == "__main__":
