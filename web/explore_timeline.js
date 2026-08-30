@@ -56,6 +56,60 @@ function drawSeparator(svg, width, y) {
   svg.append(svgEl("line", { x1: 0, x2: width, y1: y, y2: y, class: "hierarchy-row-separator" }));
 }
 
+// Reserved gutter on the left where a persistent, vertically-written tier
+// label (Chapter / Era / Period / ...) sits for each row-block, so the
+// viewer always knows what a row means without scrolling back to a legend.
+const LEFT_MARGIN = 90;
+
+// The polities row also draws its own per-row region/continent/country
+// content labels inside that same gutter. The rotated "Polities" tier
+// label sits centered at LEFT_MARGIN / 2 with a real (measured) footprint
+// of roughly +-8px around that center, so these start past its right
+// edge to avoid colliding with it.
+const POLITIES_LABEL_X = 58;
+const POLITIES_LABEL_INDENT_X = 66;
+
+function drawTierLabel(svg, text, yStart, yEnd) {
+  const yMid = (yStart + yEnd) / 2;
+  const cx = LEFT_MARGIN / 2;
+  const available = yEnd - yStart;
+  const label = svgEl("text", { x: cx, y: yMid, class: "hierarchy-tier-label", transform: `rotate(-90, ${cx}, ${yMid})` });
+  const words = text.split(" ");
+  const spans = [];
+  if (words.length === 1) {
+    label.textContent = text;
+    spans.push(label);
+  } else {
+    // Multi-word labels ("Geological Epoch") stack as separate lines, one
+    // word per line -- before rotation that's ordinary vertical line
+    // spacing, but after the -90 rotation it becomes *horizontal* spread
+    // (using the margin's spare width), while each line's own text length
+    // becomes the vertical footprint. So a long tier name only needs to
+    // fit its longest single word within a short row-block's height,
+    // rather than the whole phrase.
+    const lineHeight = 12;
+    const startY = yMid - ((words.length - 1) * lineHeight) / 2;
+    words.forEach((word, i) => {
+      const tspan = svgEl("tspan", { x: cx, y: startY + i * lineHeight });
+      tspan.textContent = word;
+      label.append(tspan);
+      spans.push(tspan);
+    });
+  }
+  svg.append(label);
+  // Shrink-to-fit safety net: the longest line's rendered length becomes
+  // the vertical footprint once rotated, so measure it for real (rather
+  // than estimate) and scale the font down if it would still overflow
+  // this block -- clamped at a floor so short row-blocks (like the thin
+  // geological row) never produce illegibly tiny text.
+  const maxLineLength = Math.max(...spans.map((s) => s.getComputedTextLength()));
+  const budget = available - 6;
+  if (maxLineLength > budget && budget > 0) {
+    const scale = Math.max(0.75, budget / maxLineLength);
+    label.style.fontSize = `${0.7 * scale}rem`;
+  }
+}
+
 const POLITY_LANE_HEIGHT = 18;
 const REGION_HEADER_HEIGHT = 16;
 const MAX_POLITIES_PER_REGION = 15;
@@ -152,7 +206,7 @@ function renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, y,
   let rowY = y;
   const getRange = labelAwareFootprint(scale);
   for (const key of regionKeys) {
-    const label = svgEl("text", { x: 4, y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
+    const label = svgEl("text", { x: POLITIES_LABEL_X, y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
     label.textContent = regionLabel(key);
     svg.append(label);
     rowY += REGION_HEADER_HEIGHT;
@@ -240,12 +294,12 @@ function renderCountryRow(svg, scale, tree, structure, laneCounts, y, onZoom) {
   let rowY = y;
   const getRange = labelAwareFootprint(scale);
   for (const { continent, countries } of structure) {
-    const header = svgEl("text", { x: 4, y: rowY + CONTINENT_HEADER_HEIGHT - 5, class: "hierarchy-continent-label" });
+    const header = svgEl("text", { x: POLITIES_LABEL_X, y: rowY + CONTINENT_HEADER_HEIGHT - 5, class: "hierarchy-continent-label" });
     header.textContent = regionLabel(continent);
     svg.append(header);
     rowY += CONTINENT_HEADER_HEIGHT;
     for (const country of countries) {
-      const countryLabel = svgEl("text", { x: 12, y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
+      const countryLabel = svgEl("text", { x: POLITIES_LABEL_INDENT_X, y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
       countryLabel.textContent = countryLaneLabel(country);
       svg.append(countryLabel);
       rowY += REGION_HEADER_HEIGHT;
@@ -276,10 +330,17 @@ function renderCountryRow(svg, scale, tree, structure, laneCounts, y, onZoom) {
 
 function renderHierarchyTimeline(tree, container, groupBy = "historical_region", onZoom = () => {}) {
   const width = Math.max(900, Math.min(4800, window.innerWidth - 80));
-  const scale = createTimeScale(tree.axis.domain_start, tree.axis.domain_end, tree.axis.segment_break, width);
+  const scale = createTimeScale(
+    tree.axis.domain_start, tree.axis.domain_end, tree.axis.segment_break,
+    width - LEFT_MARGIN, 0.1, LEFT_MARGIN,
+  );
 
-  const geoRowHeight = 28;
-  const chapterRowHeight = 36;
+  // geoRowHeight is taller than the band content strictly needs, so the
+  // new "Geological Epoch" tier label (two stacked lines, rotated) has
+  // room to fit without shrinking past a legible floor or bleeding into
+  // the chapter row's own label above it.
+  const geoRowHeight = 48;
+  const chapterRowHeight = 40;
   const eraLaneHeight = 24;
   const periodLaneHeight = 20;
   const rowGap = 6;
@@ -321,6 +382,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   const svg = svgEl("svg", { viewBox: `0 0 ${width} ${height}`, class: "hierarchy-chart" });
 
   let y = 0;
+  let prevSepY = 0;
   const geoEnd = new Date().getFullYear();
   for (const epoch of GEOLOGICAL_EPOCHS) {
     const end = epoch.end === null ? geoEnd : epoch.end;
@@ -331,7 +393,10 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
     });
   }
   y += geoRowHeight + rowGap;
-  drawSeparator(svg, width, y - rowGap / 2);
+  let sepY = y - rowGap / 2;
+  drawSeparator(svg, width, sepY);
+  drawTierLabel(svg, "Geological Epoch", prevSepY, sepY);
+  prevSepY = sepY;
 
   for (const chapter of tree.chapters) {
     bandRect(svg, {
@@ -343,7 +408,10 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
     });
   }
   y += chapterRowHeight + rowGap;
-  drawSeparator(svg, width, y - rowGap / 2);
+  sepY = y - rowGap / 2;
+  drawSeparator(svg, width, sepY);
+  drawTierLabel(svg, "Chapter", prevSepY, sepY);
+  prevSepY = sepY;
 
   chapterLayouts.forEach(({ eraLanes }) => {
     eraLanes.forEach((lane, laneIndex) => {
@@ -358,7 +426,10 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
     });
   });
   y += eraRowHeight + rowGap;
-  drawSeparator(svg, width, y - rowGap / 2);
+  sepY = y - rowGap / 2;
+  drawSeparator(svg, width, sepY);
+  drawTierLabel(svg, "Era", prevSepY, sepY);
+  prevSepY = sepY;
 
   chapterLayouts.forEach(({ periodLanes }) => {
     periodLanes.forEach((lane, laneIndex) => {
@@ -375,9 +446,15 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
     });
   });
   y += periodRowHeight + rowGap;
-  drawSeparator(svg, width, y - rowGap / 2);
+  sepY = y - rowGap / 2;
+  drawSeparator(svg, width, sepY);
+  drawTierLabel(svg, "Period", prevSepY, sepY);
+  prevSepY = sepY;
 
   drawPolitiesRow(y);
+  if (politiesRowHeight > 0) {
+    drawTierLabel(svg, "Polities", prevSepY, height);
+  }
 
   // Year gridlines/axis labels, matching app.js's established treatment
   // (.grid-line spans the full chart height, .axis-label sits near the top),

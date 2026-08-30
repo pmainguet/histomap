@@ -264,6 +264,7 @@ kbd { padding: .1rem .3rem; background: white; border: 1px solid var(--rule); fo
 .hierarchy-continent-label { font: 700 .74rem system-ui, sans-serif; fill: #27251f; }
 .hierarchy-band-label { font: .68rem system-ui, sans-serif; fill: #27251f; pointer-events: none; }
 .hierarchy-row-separator { stroke: var(--ink-faint); stroke-dasharray: 4 3; stroke-width: 1; opacity: .5; }
+.hierarchy-tier-label { font: 700 .7rem system-ui, sans-serif; fill: var(--ink-faint); text-anchor: middle; }
 #zoom-reset { margin-left: auto; color: var(--ink-faint); text-decoration: none; font: .82rem system-ui, sans-serif; }
 #zoom-reset:hover { color: #27251f; }
 .loading { color: var(--ink-faint); padding: 1.5rem clamp(1rem, 4vw, 3.5rem); }

@@ -3,8 +3,10 @@
 // uninformative at true scale -- see docs/plans/2026-08-30-explore-hierarchy-timeline.md
 // Task 2); years after get the rest, at a uniform linear rate. Both segments
 // are individually linear -- proportions are honest within each segment,
-// just not across the break.
-function createTimeScale(domainStart, domainEnd, segmentBreak, innerWidth, deepTimeFraction = 0.1) {
+// just not across the break. `marginLeft` reserves a fixed left-hand gutter
+// (e.g. for persistent axis/tier labels): every x(year) is shifted right by
+// that amount, so callers should pass `innerWidth` already excluding it.
+function createTimeScale(domainStart, domainEnd, segmentBreak, innerWidth, deepTimeFraction = 0.1, marginLeft = 0) {
   const deepTimeWidth = innerWidth * deepTimeFraction;
   const recentWidth = innerWidth - deepTimeWidth;
   const deepSpan = segmentBreak - domainStart;
@@ -13,10 +15,10 @@ function createTimeScale(domainStart, domainEnd, segmentBreak, innerWidth, deepT
   function x(year) {
     if (year <= segmentBreak) {
       const fraction = deepSpan > 0 ? (year - domainStart) / deepSpan : 0;
-      return fraction * deepTimeWidth;
+      return marginLeft + fraction * deepTimeWidth;
     }
     const fraction = recentSpan > 0 ? (year - segmentBreak) / recentSpan : 0;
-    return deepTimeWidth + fraction * recentWidth;
+    return marginLeft + deepTimeWidth + fraction * recentWidth;
   }
 
   function width(start, end) {
