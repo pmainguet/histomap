@@ -8,4 +8,5 @@ sources/*
 *.duckdb
 data.json
 transitions.json
-explore_index.json
+explore_tree.json
+.superpowers/
