@@ -180,4 +180,5 @@ def _polity_entry(polity: dict, curated: bool) -> dict:
         "start": polity["start"],
         "end": polity.get("end"),
         "curated": curated,
+        "present_countries": (polity.get("geography") or {}).get("present_countries") or [],
     }

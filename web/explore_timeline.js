@@ -40,6 +40,20 @@ const POLITY_LANE_HEIGHT = 18;
 const REGION_HEADER_HEIGHT = 16;
 const MAX_POLITIES_PER_REGION = 15;
 
+const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
+
+function countryLaneKey(polity) {
+  const countries = polity.present_countries || [];
+  if (countries.length === 1) return countries[0];
+  return countries.length > 1 ? "__multiple" : "__unknown";
+}
+
+function countryLaneLabel(key) {
+  if (key === "__multiple") return "Multiple present countries";
+  if (key === "__unknown") return "Country unknown";
+  return countryNames.of(key) || key;
+}
+
 function regionLabel(key) {
   if (key === "unclassified") return "Unclassified";
   return key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
@@ -145,6 +159,97 @@ function renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, y,
   return rowY;
 }
 
+// Two-level structure for "present-day country, organised by continent":
+// continent -> sorted list of country keys present anywhere across chapters.
+// Kept as a separate, parallel set of functions from the single-level
+// region/continent grouping above -- not a generalization of it -- so this
+// new mode can't destabilize the working single-level code path.
+function collectCountryStructure(tree) {
+  const structure = new Map();
+  for (const chapter of tree.chapters) {
+    for (const [continent, entries] of Object.entries(chapter.polities_by_continent)) {
+      if (!structure.has(continent)) structure.set(continent, new Set());
+      for (const polity of entries) structure.get(continent).add(countryLaneKey(polity));
+    }
+  }
+  return [...structure.keys()].sort().map((continent) => ({
+    continent,
+    countries: [...structure.get(continent)].sort(),
+  }));
+}
+
+function entriesForCountry(chapter, continent, country) {
+  const all = chapter.polities_by_continent[continent] || [];
+  return all.filter((polity) => countryLaneKey(polity) === country);
+}
+
+function countryLaneCounts(tree, structure) {
+  const counts = new Map();
+  for (const { continent, countries } of structure) {
+    for (const country of countries) {
+      let maxLanes = 1;
+      for (const chapter of tree.chapters) {
+        const entries = entriesForCountry(chapter, continent, country);
+        if (!entries.length) continue;
+        const lanes = packIntoLanes(entries.slice(0, MAX_POLITIES_PER_REGION));
+        maxLanes = Math.max(maxLanes, lanes.length);
+      }
+      counts.set(`${continent}::${country}`, maxLanes);
+    }
+  }
+  return counts;
+}
+
+const CONTINENT_HEADER_HEIGHT = 18;
+
+function measureCountryRowHeight(structure, laneCounts) {
+  let total = 0;
+  for (const { continent, countries } of structure) {
+    total += CONTINENT_HEADER_HEIGHT;
+    for (const country of countries) {
+      total += REGION_HEADER_HEIGHT + laneCounts.get(`${continent}::${country}`) * POLITY_LANE_HEIGHT + 4;
+    }
+  }
+  return total;
+}
+
+function renderCountryRow(svg, scale, tree, structure, laneCounts, y, onZoom) {
+  let rowY = y;
+  for (const { continent, countries } of structure) {
+    const header = svgEl("text", { x: 4, y: rowY + CONTINENT_HEADER_HEIGHT - 5, class: "hierarchy-continent-label" });
+    header.textContent = regionLabel(continent);
+    svg.append(header);
+    rowY += CONTINENT_HEADER_HEIGHT;
+    for (const country of countries) {
+      const countryLabel = svgEl("text", { x: 12, y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
+      countryLabel.textContent = countryLaneLabel(country);
+      svg.append(countryLabel);
+      rowY += REGION_HEADER_HEIGHT;
+      for (const chapter of tree.chapters) {
+        const entries = entriesForCountry(chapter, continent, country);
+        if (!entries.length) continue;
+        const shown = entries.slice(0, MAX_POLITIES_PER_REGION);
+        const lanes = packIntoLanes(shown);
+        lanes.forEach((lane, laneIndex) => {
+          lane.forEach((polity) => {
+            const curatedClass = polity.curated ? "curated" : "heuristic";
+            bandRect(svg, {
+              x: scale.x(polity.start), y: rowY + laneIndex * POLITY_LANE_HEIGHT,
+              width: scale.width(polity.start, polity.end), height: POLITY_LANE_HEIGHT - 2,
+              cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`,
+              title: `${polity.canonical_name} (${countryLaneLabel(country)})`,
+              label: polity.canonical_name,
+              onZoom: { handler: onZoom, start: polity.start, end: polity.end ?? tree.axis.domain_end },
+            });
+          });
+        });
+      }
+      rowY += laneCounts.get(`${continent}::${country}`) * POLITY_LANE_HEIGHT + 4;
+    }
+  }
+  return rowY;
+}
+
 function renderHierarchyTimeline(tree, container, groupBy = "historical_region", onZoom = () => {}) {
   const width = Math.max(900, Math.min(4800, window.innerWidth - 80));
   const scale = createTimeScale(tree.axis.domain_start, tree.axis.domain_end, tree.axis.segment_break, width);
@@ -167,9 +272,24 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
 
   const eraRowHeight = maxEraLanes * eraLaneHeight;
   const periodRowHeight = maxPeriodLanes * periodLaneHeight;
-  const regionKeys = collectRegionKeys(tree, groupBy);
-  const laneCounts = regionLaneCounts(tree, groupBy, regionKeys);
-  const politiesRowHeight = measurePolitiesRowHeight(regionKeys, laneCounts);
+
+  // Both the height number (needed now, before `height`/`svg` exist) and the
+  // deferred drawing closure (called later, once `svg` exists) are prepared
+  // here so the two grouping modes -- single-level region/continent vs.
+  // two-level country-by-continent -- share one control-flow shape.
+  let politiesRowHeight;
+  let drawPolitiesRow;
+  if (groupBy === "country") {
+    const structure = collectCountryStructure(tree);
+    const laneCounts = countryLaneCounts(tree, structure);
+    politiesRowHeight = measureCountryRowHeight(structure, laneCounts);
+    drawPolitiesRow = (rowY) => renderCountryRow(svg, scale, tree, structure, laneCounts, rowY, onZoom);
+  } else {
+    const regionKeys = collectRegionKeys(tree, groupBy);
+    const laneCounts = regionLaneCounts(tree, groupBy, regionKeys);
+    politiesRowHeight = measurePolitiesRowHeight(regionKeys, laneCounts);
+    drawPolitiesRow = (rowY) => renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, rowY, onZoom);
+  }
   const height = geoRowHeight + chapterRowHeight + eraRowHeight + periodRowHeight + politiesRowHeight + rowGap * 5;
 
   const svg = svgEl("svg", { viewBox: `0 0 ${width} ${height}`, class: "hierarchy-chart" });
@@ -227,7 +347,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   });
   y += periodRowHeight + rowGap;
 
-  renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, y, onZoom);
+  drawPolitiesRow(y);
 
   // Year gridlines/axis labels, matching app.js's established treatment
   // (.grid-line spans the full chart height, .axis-label sits near the top),
