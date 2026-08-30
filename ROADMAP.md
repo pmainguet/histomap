@@ -9,20 +9,12 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-1. The "kingdom...", "crown", "house" entries in periods should be moved to polities, but maybe
-   some period could be derived from some — to be seen. The closely related "Republic of"/
-   "Reign of" subset, and most of the "Kingdom of"/"Crown of"/"Duchy of"/"Principality of" set,
-   are done (see STATUS.md). What's intentionally left as-is: the House of Wessex/Plantagenet/
-   Tudor dynasty-span periods specifically were a deliberate earlier design choice (dynasty
-   spans as context bands/sub-polities under the continuously-existing Kingdom of England/
-   France, not separate countries in their own right) rather than a mistake to reverse — they
-   were in fact converted to sub-polities already (see STATUS.md), so this item is really just
-   "check for any other kingdom/crown/house-named periods still needing the same treatment."
-2. Review the whole review workspace to see if it's still aligned with the way we do things
+1. Review the whole review workspace to see if it's still aligned with the way we do things
    given the recent changes. In particular, we should be able to switch an entity from era,
    period, civilization, polity, etc and link things correctly. But maybe that's only to be
    added in the side panel (now built, informational only — see STATUS.md), to be seen.
-2 bis; Do a proper /simplify to see what could be removed, trimmed, simplify: dead code, convoluted logic, very similar data concept that could be merged, etc ...
+2. Do a proper `/simplify` pass to see what could be removed, trimmed, simplified: dead code,
+   convoluted logic, very similar data concepts that could be merged, etc.
 3. **Close out Seshat reconciliation** — only 69 records left (35 review + 34 unmatched); the
    cheapest queue left to finish. Review decisions are durable and must not be overwritten by
    pipeline reruns.

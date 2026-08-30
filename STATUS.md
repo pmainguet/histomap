@@ -63,20 +63,6 @@ commit trail).
 - Auto-generated continent-split placeholder eras (from `generate_modern_regional_eras.py`)
   are hidden from the era row entirely — they carried no real historical distinction beyond
   restating the parent chapter, and duplicated it visually.
-- The polities row supports four groupings: historical region, present-day continent,
-  present-day country (nested under continent, mirroring the main `/` timeline's own
-  country-grouping logic), and hidden.
-- The era and period rows are now also geography-organized: continent-grouped sub-rows
-  (previously one flat, ungrouped row each), with Asia further split into East/West/South/
-  Southeast/Central Asia sub-buckets (the only continent given finer treatment — every other
-  continent stays at continent-level grouping, by explicit choice) — these Asia sub-buckets now
-  also sort adjacent to each other and to plain "asia", instead of scattered alphabetically
-  among unrelated continents.
-- A "Civilizations & Cultures" lane, between the Period and Polities rows: records that are
-  editorially "not a weight-bearing political entity" (`entity_type` in civilization/culture/
-  people/tribe, plus name-matched `periods/*.yaml` civilization records) render here instead of
-  mixed into the ordinary Period/Polities rows. Not continent-grouped — a flat, label-aware
-  packed row, since per-chapter counts are small.
 - Left-margin tier labels ("Epoch"/"Chapter"/.../"Polities") now anchor near the top of their
   row-block instead of the vertical midpoint, so a tall block's label is visible without
   scrolling to find it.
@@ -89,24 +75,102 @@ commit trail).
   No editing actions (`/` keeps those as curation tools; `/explore` is a browse view). Verified
   live in a real browser: chapter/era/period/polity/civilizations-lane bands all open the
   correct panel content, cross-navigation and zoom-then-reset both work, zero console errors.
-- Era row is now flat (not continent-grouped) — there are only ever a handful of eras active
-  at once, so grouping fragmented it for little benefit. Period and Polities rows are
-  unchanged, still continent-grouped. A "Placement" legend explaining the curated (solid) /
-  heuristic (dashed) distinction used throughout every row is now visible on the page itself,
-  not just inferable from behavior.
 
 See [ROADMAP.md](ROADMAP.md) for what's still queued on `/explore` — moved there since it's
-forward-looking, not retrospective.
+forward-looking, not retrospective. See the "geography-grouping unification" section below for
+the current (31 August) state of grouping/coloring — it superseded the four-option toggle and
+curated/heuristic legend described in earlier drafts of this section.
 
 **Known, accepted limitations:**
-- `MAX_POLITIES_PER_REGION = 15` caps each region's shown bands per chapter with no visual
+- `MAX_POLITIES_PER_REGION = 15` caps each geography bucket's shown bands with no visual
   "+N more" affordance — the true count is only visible via tooltip.
-- The polities row still packs lanes per-chapter within a shared region row (not globally, the
-  way era/period/polities-by-region rows were fixed to) — flagged as a residual gap by one
-  review, not user-reported as a live problem.
 - Most of `explore_tree.json`'s era/period/polity placements are heuristic (geography+date
   overlap), not curated — `period_links.yaml`/`broader_periods` coverage is still thin. This is
   by design (the alternative was an empty page) but means placement quality varies.
+
+### `/explore` geography-grouping unification, era-linked colors, and dataset cleanup — 31 August 2026
+
+Driven by the same live-testing-on-the-running-page process as the section above, on branch
+`explore-unified-geography-grouping`.
+
+**Grouping unified across rows:** the Period, Polities, and Civilizations & Cultures rows now
+share one client-side geography-grouping implementation (`geoBucketKey`/`continentGroupedLayout`/
+`geoCountryGroupedLayout` in `web/explore_timeline.js`), replacing the old Polities-only
+four-option toggle (historical region/continent/country/hidden) and the Civilizations row's
+separate always-flat layout. Two independent controls replaced it: a "Show polities" checkbox
+(Civilizations & Cultures stays visible regardless of this checkbox — explicit correction after
+an initial design merged the two rows, then un-merged them back per "in all cases I should see
+the Civilization lane"), and a "Group by" selector with three modes — Continent (with an inline
+"(Country)" label suffix when an item has exactly one `present_countries` value), Country (full
+nested continent→country sub-headers), and None (flat, but still lane-packed in a
+continent-then-country-then-date sort order — see `geoClusterSort` — so same-geography items
+visually cluster even with no group headers drawn). A "Filter to" control (hidden in None mode)
+narrows all three grouped rows to one continent/country at a time. The Asia-sub-split and
+sort-adjacency behavior from the original continent-grouped rows carried over unchanged.
+`pipeline/build_explore_tree.py` gained matching geography fields
+(`primary_continent`/`primary_historical_region`/`present_countries`) on polity and civilization
+entries (previously periods-only) to make this possible.
+
+**Era-linked color coding:** periods (via a new `era_id` field, free from tree nesting) and
+Civilizations & Cultures entries (via a new `linked_era_id` field, `_linked_era_id()` in
+`build_explore_tree.py` — the same date+geography heuristic `rank_candidates` uses to place an
+ordinary period without a curated `broader_periods` link) are colored to match their regional
+era, so e.g. every Mesopotamia-related record reads as one visual group regardless of which row
+it's in. Era bands get colors from the same palette, keyed by their own id. Assignment is by
+sorted-index into an 18-color palette (not a hash — an earlier hash-based version collided
+multiple unrelated eras onto the same color), built once from the full, unzoomed tree so colors
+stay stable across zoom/filter.
+
+**Placement legend retired, dash/solid repurposed:** the curated (sourced link) vs. heuristic
+(date/geography guess) distinction — previously shown as solid vs. dashed borders across every
+row, with its own "Placement" legend — was retired as a visual signal (explicit request: "get
+rid of the placement visual cue"). The same dashed/solid channel is reused, scoped to the
+Civilizations & Cultures row only: solid = plain polity, dashed = civilization/culture/people/
+tribe entry. The legend now reflects this ("Style: Polity (solid) / Civilization, culture,
+people, or tribe (dashed)").
+
+**Mesopotamia reclassification:** `mesopotamia_period.yaml` (new, `authority:
+'Histomap editorial: civilization-as-backdrop'`, mirrors `ancient_egypt_period`) now carries the
+Civilizations & Cultures lane's weight for the region. Sumer, Akkadian Empire, Uruk (an existing
+polity, previously excluded from `/explore` by `visibility_tier: detailed` with no override — the
+same gap the original Sumer visibility fix addressed), and Babylonia (new `polities/babylonia.yaml`,
+replacing the deleted `babylonia_period.yaml`) are now plain polities — reversing the Akkadian
+Empire/Uruk elevation and Sumer's culture classification from the prior section, on explicit,
+direct instruction. `mesopotamian_early_states_era` (the regional_era) is unchanged, still anchors
+Early Dynastic Mesopotamia's placement in the ordinary Period row.
+
+**`egyptian_early_states_era` deleted outright** (not demoted) — redundant with
+`ancient_egypt_period`, and nothing else nested under it (no period pointed `broader_periods` at
+it, and no Egypt-specific period records existed to heuristically match it either). One side
+effect: `ancient_egypt_period`'s `linked_era_id` heuristic now resolves to `neolithic_era` (its
+next-best geography/date match) instead of a dedicated Egypt era — cosmetic, flagged but not
+fixed.
+
+**New overarching regional eras**, same "overarching regional era" pattern as
+`bronze_age_era`/`neolithic_era`/`paleolithic_era` (see ONTOLOGY.md): `iron_age_era` (reparents
+`european_iron_age` and `sub_saharan_african_iron_age_era`, previously unrelated to each other —
+one heuristically nested under Mediterranean Classical Antiquity, the other its own standalone
+regional_era), `copper_age_era` (new — no periods reparented under it yet; flagged transparently
+in its own notes rather than fabricating a period record to fill it), and
+`classical_antiquity_era` (reparents `mediterranean_classical_era`, `east_asian_classical_era`,
+`south_asian_classical_era`, `mesoamerican_formative_classic_era`, and
+`andean_early_civilizations_era` — deliberately excludes Sub-Saharan Africa, whose equivalent is
+`iron_age_era`, not a "classical antiquity").
+
+**Smaller fixes along the way:** `celts_period.yaml` → `polities/celts.yaml` (`entity_type:
+people` — never a single political actor, per the deleted period record's own prior notes);
+ROADMAP.md's "Ideas" section gained a "main events lane" entry (events that define an
+era/chapter/period's start/end, currently only implicit in `start`/`end` dates).
+
+**Kingdom/crown/house audit — closed, nothing left to convert.** The remaining ROADMAP item asking
+to "check for any other kingdom/crown/house-named periods still needing the [period→polity]
+treatment" turned up 11 period records still named "Kingdom"/"Republic" (`albanian_kingdom_q1048340_period`,
+`czechoslovak_republic_period`, `second_spanish_republic_period`, etc.) — but every one of them
+already carries a reviewed `period_links.yaml` `phase_of` relation to its canonical polity
+("Reviewed record is a dated phase of this canonical polity", high confidence), the same
+deliberate context-band-under-a-continuously-existing-polity pattern as the House of
+Wessex/Plantagenet/Tudor precedent this item's own text already called out as correct-as-is.
+Removed from ROADMAP.md.
 
 ### Period/polity dataset cleanup — 30-31 August 2026
 
