@@ -767,6 +767,40 @@
     ]
   },
   {
+    "id": "bronze_age_era",
+    "canonical_name": "Bronze Age",
+    "kind": "historical",
+    "tier": "regional_era",
+    "start": -3200,
+    "end": -1046,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia",
+        "europe"
+      ],
+      "primary_continent": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [
+      "macro_early_cities_states"
+    ],
+    "successors": [],
+    "authority": "Histomap editorial: overarching regional-era consolidation",
+    "external_ids": {},
+    "notes": "Overarching parent for the regional Bronze Age eras, which happened at meaningfully different times in different places -- spans from the start of the European Bronze Age (~-3,200) to the end of the East Asian Bronze Age (~-1,046). See ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes.\"",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Bronze_Age"
+    ]
+  },
+  {
     "id": "byelorussian_soviet_socialist_republic_period",
     "canonical_name": "Byelorussian Soviet Socialist Republic",
     "kind": "historical",
@@ -1339,7 +1373,7 @@
     "id": "east_asian_bronze_age_era",
     "canonical_name": "East Asian Bronze Age",
     "kind": "historical",
-    "tier": "regional_era",
+    "tier": "period",
     "start": -2000,
     "end": -1046,
     "start_confidence": "low",
@@ -1358,7 +1392,7 @@
       "confidence": null
     },
     "broader_periods": [
-      "macro_early_cities_states"
+      "bronze_age_era"
     ],
     "successors": [],
     "authority": "Histomap editorial: regional-era starter set",
@@ -1792,43 +1826,10 @@
     "source_urls": []
   },
   {
-    "id": "european_bronze_age",
-    "canonical_name": "Bronze Age Europe",
-    "kind": "protohistorical",
-    "tier": "period",
-    "start": -3200,
-    "end": -600,
-    "start_confidence": "low",
-    "end_confidence": "low",
-    "geography": {
-      "continents": [
-        "europe"
-      ],
-      "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
-      "centroid": null,
-      "confidence": null
-    },
-    "broader_periods": [],
-    "successors": [
-      "european_iron_age"
-    ],
-    "authority": "DBpedia/Wikipedia periodization",
-    "external_ids": {
-      "dbpedia": "https://dbpedia.org/resource/Bronze_Age_Europe"
-    },
-    "notes": "",
-    "source_urls": [
-      "https://dbpedia.org/resource/Bronze_Age_Europe"
-    ]
-  },
-  {
     "id": "european_bronze_age_era",
     "canonical_name": "European Bronze Age",
     "kind": "historical",
-    "tier": "regional_era",
+    "tier": "period",
     "start": -3200,
     "end": -1200,
     "start_confidence": "low",
@@ -1845,7 +1846,7 @@
       "confidence": null
     },
     "broader_periods": [
-      "macro_early_cities_states"
+      "bronze_age_era"
     ],
     "successors": [],
     "authority": "Histomap editorial: regional-era starter set",

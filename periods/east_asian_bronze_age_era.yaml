@@ -1,7 +1,7 @@
 id: east_asian_bronze_age_era
 canonical_name: East Asian Bronze Age
 kind: historical
-tier: regional_era
+tier: period
 start: -2000
 end: -1046
 start_confidence: low
@@ -13,7 +13,7 @@ geography:
   - east_asia
   primary_historical_region: east_asia
 broader_periods:
-- macro_early_cities_states
+- bronze_age_era
 successors: []
 authority: 'Histomap editorial: regional-era starter set'
 external_ids: {}
