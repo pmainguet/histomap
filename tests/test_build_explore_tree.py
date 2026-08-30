@@ -27,7 +27,7 @@ def named_period(id_: str, start: int, end: int, broader: list[str] | None = Non
 
 
 def polity(id_: str, start: int, end: int | None, continent: str, region: str | None = None,
-           tier: str = "global") -> dict:
+           tier: str = "global", present_countries: list[str] | None = None) -> dict:
     """Build a minimal polity fixture dict."""
     return {
         "id": id_, "canonical_name": id_, "start": start, "end": end,
@@ -35,6 +35,7 @@ def polity(id_: str, start: int, end: int | None, continent: str, region: str | 
         "geography": {
             "primary_continent": continent, "continents": [continent],
             "primary_historical_region": region, "historical_regions": [region] if region else [],
+            "present_countries": present_countries or [],
         },
     }
 
@@ -129,6 +130,15 @@ class BuildExploreTreeTests(unittest.TestCase):
         region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
         entry = next(e for e in region_bucket if e["id"] == "old_kingdom_egypt")
         self.assertTrue(entry["curated"])
+
+    def test_polity_entry_includes_present_countries(self) -> None:
+        """Verify that present_countries values from a polity's geography
+        dict thread through correctly into the output entry."""
+        polities = [polity("old_kingdom_egypt", -2686, -2181, "africa", "north_africa", present_countries=["EG"])]
+        tree = build_explore_tree(polities, self.periods, self.period_links)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        entry = next(e for e in region_bucket if e["id"] == "old_kingdom_egypt")
+        self.assertEqual(entry["present_countries"], ["EG"])
 
 
 if __name__ == "__main__":
