@@ -9,7 +9,10 @@ function svgEl(name, attrs = {}) {
   return el;
 }
 
-function bandRect(svg, { x, y, width, height, cls, title, onZoom }) {
+let clipIdCounter = 0;
+const LABEL_MIN_WIDTH = 30;
+
+function bandRect(svg, { x, y, width, height, cls, title, label, onZoom }) {
   const rect = svgEl("rect", { x, y, width, height, class: cls, rx: 2 });
   if (onZoom) {
     rect.classList.add("zoomable");
@@ -19,6 +22,17 @@ function bandRect(svg, { x, y, width, height, cls, title, onZoom }) {
   titleEl.textContent = title;
   rect.append(titleEl);
   svg.append(rect);
+  if (label && width >= LABEL_MIN_WIDTH) {
+    const clipId = `hierarchy-clip-${clipIdCounter++}`;
+    const clipPath = svgEl("clipPath", { id: clipId });
+    clipPath.append(svgEl("rect", { x, y, width, height }));
+    svg.append(clipPath);
+    const textEl = svgEl("text", {
+      x: x + 4, y: y + height / 2 + 4, class: "hierarchy-band-label", "clip-path": `url(#${clipId})`,
+    });
+    textEl.textContent = label;
+    svg.append(textEl);
+  }
   return rect;
 }
 
@@ -120,6 +134,7 @@ function renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, y,
             width: scale.width(polity.start, polity.end), height: POLITY_LANE_HEIGHT - 2,
             cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`,
             title: `${polity.canonical_name} (${entries.length} in ${regionLabel(key)})`,
+            label: polity.canonical_name,
             onZoom: { handler: onZoom, start: polity.start, end: polity.end ?? tree.axis.domain_end },
           });
         });
@@ -176,6 +191,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
       x: scale.x(chapter.start), y, width: scale.width(chapter.start, chapter.end), height: chapterRowHeight,
       cls: "hierarchy-band hierarchy-band-chapter",
       title: `${chapter.canonical_name} (${formatYear(chapter.start)} - ${formatYear(chapter.end)})`,
+      label: chapter.canonical_name,
       onZoom: { handler: onZoom, start: chapter.start, end: chapter.end },
     });
   }
@@ -187,7 +203,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
         bandRect(svg, {
           x: scale.x(era.start), y: y + laneIndex * eraLaneHeight,
           width: scale.width(era.start, era.end), height: eraLaneHeight - 2,
-          cls: "hierarchy-band hierarchy-band-era", title: era.canonical_name,
+          cls: "hierarchy-band hierarchy-band-era", title: era.canonical_name, label: era.canonical_name,
           onZoom: { handler: onZoom, start: era.start, end: era.end },
         });
       });
@@ -203,6 +219,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
           x: scale.x(period.start), y: y + laneIndex * periodLaneHeight,
           width: scale.width(period.start, period.end), height: periodLaneHeight - 2,
           cls: `hierarchy-band hierarchy-band-period ${curatedClass}`, title: period.canonical_name,
+          label: period.canonical_name,
           onZoom: { handler: onZoom, start: period.start, end: period.end },
         });
       });
