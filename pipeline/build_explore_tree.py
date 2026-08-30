@@ -12,6 +12,8 @@ from pipeline.period_hierarchy import PeriodHierarchy
 from pipeline.suggest_period_links import in_scope
 from pipeline.suggest_regional_eras import rank_candidates
 
+AUTO_GENERATED_AUTHORITY = "Histomap editorial: auto-generated continent x chapter node"
+
 
 def best_chapter_for_polity(polity: dict, chapters: list[dict], open_end: int) -> dict | None:
     """Pick the macro chapter with the most date-overlap against a polity that
@@ -91,6 +93,9 @@ def build_explore_tree(polities: list[dict], periods: list[dict], period_links: 
     if unmatched_periods:
         print(f"build_explore_tree: {unmatched_periods} periods placed under no era (no geography/date match)")
 
+    for cid in chapter_ids:
+        eras_by_chapter[cid] = _merge_auto_generated_eras(eras_by_chapter[cid], chapters_by_id[cid])
+
     chapter_curated_ids: dict[str, set[str]] = {}
     for cid in chapter_ids:
         curated_ids: set[str] = set()
@@ -151,14 +156,43 @@ def build_explore_tree(polities: list[dict], periods: list[dict], period_links: 
 
 
 def _era_entry(era: dict, periods_out: list[dict]) -> dict:
-    """Build a JSON-serializable dict entry for a regional-era node in the explore tree."""
+    """Build a JSON-serializable dict entry for a regional-era node in the
+    explore tree. `auto_generated` flags placeholder eras created by
+    generate_modern_regional_eras.py (one per continent x modern chapter,
+    no real historical distinction) so the display tree can merge them --
+    see build_explore_tree's era-merge step."""
     return {
         "id": era["id"],
         "canonical_name": era["canonical_name"],
         "start": era["start"],
         "end": era["end"],
         "periods": periods_out,
+        "auto_generated": era.get("authority") == AUTO_GENERATED_AUTHORITY,
     }
+
+
+def _merge_auto_generated_eras(eras: list[dict], chapter: dict) -> list[dict]:
+    """Collapse a chapter's auto-generated continent-split eras (all share
+    the chapter's own date range, one per continent, no real historical
+    distinction beyond geography -- see generate_modern_regional_eras.py)
+    into a single combined display row, so the era row doesn't show up to
+    7 visually redundant near-duplicate bands for one chapter. Only
+    reshapes the display tree, after period placement has already
+    happened -- the underlying periods/*.yaml era records and
+    geography-based period placement (rank_candidates) are untouched."""
+    auto = [e for e in eras if e["auto_generated"]]
+    curated = [e for e in eras if not e["auto_generated"]]
+    if len(auto) <= 1:
+        return eras
+    merged = {
+        "id": f"{chapter['id']}_by_continent_era",
+        "canonical_name": f"{chapter['canonical_name']} (by continent)",
+        "start": chapter["start"],
+        "end": chapter["end"],
+        "periods": [period for era in auto for period in era["periods"]],
+        "auto_generated": True,
+    }
+    return curated + [merged]
 
 
 def _period_entry(period: dict, curated: bool) -> dict:
