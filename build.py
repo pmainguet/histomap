@@ -15,7 +15,7 @@ PERIODS_DIR = ROOT / "periods"
 PERIODS_OUT_PATH = ROOT / "periods.json"
 PERIOD_LINKS_PATH = ROOT / "period_links.yaml"
 PERIOD_LINKS_OUT_PATH = ROOT / "period_links.json"
-EXPLORE_INDEX_OUT_PATH = ROOT / "explore_index.json"
+EXPLORE_TREE_OUT_PATH = ROOT / "explore_tree.json"
 
 
 def find_parent_cycles(polities: list[Polity]) -> list[list[str]]:
@@ -302,15 +302,15 @@ def main() -> None:
         json.dumps([item.model_dump(mode="json") for item in period_links], indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
-    from pipeline.build_explore_index import build_explore_index
+    from pipeline.build_explore_tree import build_explore_tree
 
-    explore_index = build_explore_index(
+    explore_tree = build_explore_tree(
         [p.model_dump(mode="json") for p in published_polities],
         [p.model_dump(mode="json") for p in periods],
         [link.model_dump(mode="json") for link in period_links],
     )
-    EXPLORE_INDEX_OUT_PATH.write_text(
-        json.dumps(explore_index, indent=2, ensure_ascii=False), encoding="utf-8"
+    EXPLORE_TREE_OUT_PATH.write_text(
+        json.dumps(explore_tree, indent=2, ensure_ascii=False), encoding="utf-8"
     )
     print(
         f"OK  validated {len(polities)} and wrote {len(published_polities)} entities, "

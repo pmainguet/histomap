@@ -1,0 +1,113 @@
+import unittest
+
+from pipeline.build_explore_tree import best_chapter_for_polity, build_explore_tree
+
+
+def chapter(id_: str, start: int, end: int) -> dict:
+    return {"id": id_, "tier": "macro_chapter", "canonical_name": id_, "start": start, "end": end, "broader_periods": []}
+
+
+def era(id_: str, start: int, end: int, chapter_id: str, continents: list[str], regions: list[str] | None = None) -> dict:
+    return {
+        "id": id_, "tier": "regional_era", "canonical_name": id_, "start": start, "end": end,
+        "broader_periods": [chapter_id],
+        "geography": {"continents": continents, "historical_regions": regions or []},
+    }
+
+
+def named_period(id_: str, start: int, end: int, broader: list[str] | None = None, continents: list[str] | None = None) -> dict:
+    return {
+        "id": id_, "tier": "period", "canonical_name": id_, "start": start, "end": end,
+        "broader_periods": broader or [],
+        "geography": {"continents": continents or [], "historical_regions": []},
+    }
+
+
+def polity(id_: str, start: int, end: int | None, continent: str, region: str | None = None,
+           tier: str = "global") -> dict:
+    return {
+        "id": id_, "canonical_name": id_, "start": start, "end": end,
+        "visibility_tier": tier,
+        "geography": {
+            "primary_continent": continent, "continents": [continent],
+            "primary_historical_region": region, "historical_regions": [region] if region else [],
+        },
+    }
+
+
+class BestChapterForPolityTests(unittest.TestCase):
+    def test_picks_chapter_containing_polity(self) -> None:
+        chapters = [chapter("early", -3500, -1200), chapter("classical", -1200, 500)]
+        best = best_chapter_for_polity(polity("p1", -2000, -1900, "africa"), chapters)
+        self.assertEqual(best["id"], "early")
+
+    def test_returns_none_when_no_overlap(self) -> None:
+        chapters = [chapter("early", -3500, -1200)]
+        self.assertIsNone(best_chapter_for_polity(polity("p1", 1000, 1100, "africa"), chapters))
+
+
+class BuildExploreTreeTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.periods = [
+            chapter("macro_early", -3500, -1200),
+            era("egypt_era", -3100, -1070, "macro_early", ["africa"], ["north_africa"]),
+            era("meso_era", -3500, -1200, "macro_early", ["asia"], ["west_asia"]),
+            named_period("old_kingdom", -2686, -2181, broader=["egypt_era"]),
+            named_period("heuristic_period", -3000, -2800, continents=["africa"]),
+        ]
+        self.period_links = [
+            {"period_id": "old_kingdom", "entity_id": "old_kingdom_egypt", "relation": "part_of_periodization"},
+        ]
+        self.polities = [
+            polity("old_kingdom_egypt", -2686, -2181, "africa", "north_africa"),
+            polity("unlinked_egyptian", -2500, -2400, "africa", "north_africa"),
+            polity("out_of_scope", -2500, -2400, "africa", "north_africa", tier="detailed"),
+        ]
+
+    def test_all_nine_chapter_slots_present_even_with_one_chapter_fixture(self) -> None:
+        tree = build_explore_tree(self.polities, self.periods, self.period_links)
+        self.assertEqual([c["id"] for c in tree["chapters"]], ["macro_early"])
+
+    def test_era_nests_under_its_chapter(self) -> None:
+        tree = build_explore_tree(self.polities, self.periods, self.period_links)
+        chapter_out = tree["chapters"][0]
+        self.assertEqual({e["id"] for e in chapter_out["eras"]}, {"egypt_era", "meso_era"})
+
+    def test_curated_period_nests_under_its_curated_era(self) -> None:
+        tree = build_explore_tree(self.polities, self.periods, self.period_links)
+        egypt_era = next(e for e in tree["chapters"][0]["eras"] if e["id"] == "egypt_era")
+        self.assertIn("old_kingdom", [p["id"] for p in egypt_era["periods"]])
+        curated = next(p for p in egypt_era["periods"] if p["id"] == "old_kingdom")
+        self.assertTrue(curated["curated"])
+
+    def test_heuristic_period_nests_under_best_geography_matched_era(self) -> None:
+        tree = build_explore_tree(self.polities, self.periods, self.period_links)
+        egypt_era = next(e for e in tree["chapters"][0]["eras"] if e["id"] == "egypt_era")
+        heuristic = [p for p in egypt_era["periods"] if p["id"] == "heuristic_period"]
+        self.assertEqual(len(heuristic), 1)
+        self.assertFalse(heuristic[0]["curated"])
+
+    def test_curated_polity_bucketed_by_own_geography_and_flagged_curated(self) -> None:
+        tree = build_explore_tree(self.polities, self.periods, self.period_links)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        curated_entry = next(e for e in region_bucket if e["id"] == "old_kingdom_egypt")
+        self.assertTrue(curated_entry["curated"])
+
+    def test_unlinked_in_scope_polity_placed_heuristically(self) -> None:
+        tree = build_explore_tree(self.polities, self.periods, self.period_links)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        heuristic_entry = next(e for e in region_bucket if e["id"] == "unlinked_egyptian")
+        self.assertFalse(heuristic_entry["curated"])
+
+    def test_out_of_scope_polity_excluded(self) -> None:
+        tree = build_explore_tree(self.polities, self.periods, self.period_links)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        self.assertNotIn("out_of_scope", {e["id"] for e in region_bucket})
+
+    def test_axis_segment_break_is_earliest_chapter_end(self) -> None:
+        tree = build_explore_tree(self.polities, self.periods, self.period_links)
+        self.assertEqual(tree["axis"]["segment_break"], -1200)
+
+
+if __name__ == "__main__":
+    unittest.main()
