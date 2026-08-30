@@ -287,7 +287,8 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   // Pack eras and periods per chapter, left-to-right (chapters don't overlap).
   const getRange = labelAwareFootprint(scale);
   const chapterLayouts = tree.chapters.map((chapter) => {
-    const eraLanes = packIntoLanes([...chapter.eras].sort((a, b) => a.start - b.start), getRange);
+    const visibleEras = chapter.eras.filter((era) => !era.auto_generated);
+    const eraLanes = packIntoLanes([...visibleEras].sort((a, b) => a.start - b.start), getRange);
     const allPeriods = chapter.eras.flatMap((era) => era.periods);
     const periodLanes = packIntoLanes([...allPeriods].sort((a, b) => a.start - b.start), getRange);
     return { chapter, eraLanes, periodLanes };
