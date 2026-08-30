@@ -1,6 +1,6 @@
 import unittest
 
-from pipeline.suggest_period_links import best_period_for_polity, geography_matches, in_scope
+from pipeline.suggest_period_links import best_period_for_polity, in_scope
 
 
 class InScopeTests(unittest.TestCase):
@@ -17,23 +17,6 @@ class InScopeTests(unittest.TestCase):
         self.assertTrue(
             in_scope({"visibility_tier": "detailed", "visibility_override": "global"})
         )
-
-
-class GeographyMatchesTests(unittest.TestCase):
-    def test_historical_region_overlap_wins_over_shared_continent(self) -> None:
-        source = {"continents": ["asia"], "historical_regions": ["west_asia"]}
-        candidate = {"continents": ["asia"], "historical_regions": ["east_asia"]}
-        self.assertFalse(geography_matches(source, candidate))
-
-    def test_falls_back_to_continent_when_either_side_lacks_regions(self) -> None:
-        source = {"continents": ["asia"]}
-        candidate = {"continents": ["asia"], "historical_regions": ["east_asia"]}
-        self.assertTrue(geography_matches(source, candidate))
-
-    def test_empty_candidate_continents_always_matches(self) -> None:
-        source = {"continents": ["asia"], "historical_regions": ["west_asia"]}
-        candidate = {"continents": []}
-        self.assertTrue(geography_matches(source, candidate))
 
 
 class BestPeriodForPolityTests(unittest.TestCase):

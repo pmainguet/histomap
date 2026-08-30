@@ -20,32 +20,12 @@ from pathlib import Path
 
 import yaml
 
+from pipeline.geography_overlap import geography_matches, overlap_years
+
 ROOT = Path(__file__).resolve().parent.parent
 PERIODS_DIR = ROOT / "periods"
 REPORT_PATH = ROOT / "reports" / "regional_era_suggestions.jsonl"
 SUMMARY_PATH = ROOT / "reports" / "regional_era_summary.md"
-
-
-def overlap_years(a: tuple[int, int], b: tuple[int, int]) -> int:
-    lo = max(a[0], b[0])
-    hi = min(a[1], b[1])
-    return max(0, hi - lo)
-
-
-def geography_matches(source_geo: dict, candidate_geo: dict) -> bool:
-    """Historical_region overlap when both sides have it (tighter, preferred);
-    continent overlap otherwise. An empty candidate continents list means
-    deliberately global (a macro chapter) -- always eligible; see ONTOLOGY.md's
-    tier-scoped geography-emptiness rule."""
-    candidate_continents = set(candidate_geo.get("continents") or [])
-    if not candidate_continents:
-        return True
-    source_regions = set(source_geo.get("historical_regions") or [])
-    candidate_regions = set(candidate_geo.get("historical_regions") or [])
-    if source_regions and candidate_regions:
-        return bool(source_regions & candidate_regions)
-    source_continents = set(source_geo.get("continents") or [])
-    return bool(source_continents & candidate_continents)
 
 
 def rank_candidates(period: dict, candidates: list[dict]) -> list[dict]:

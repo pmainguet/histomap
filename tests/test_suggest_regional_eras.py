@@ -1,43 +1,6 @@
 import unittest
 
-from pipeline.suggest_regional_eras import geography_matches, overlap_years, rank_candidates
-
-
-class OverlapYearsTests(unittest.TestCase):
-    def test_full_containment(self) -> None:
-        self.assertEqual(overlap_years((500, 600), (0, 1000)), 100)
-
-    def test_partial_overlap(self) -> None:
-        self.assertEqual(overlap_years((900, 1100), (500, 1000)), 100)
-
-    def test_no_overlap_returns_zero(self) -> None:
-        self.assertEqual(overlap_years((0, 100), (200, 300)), 0)
-
-    def test_touching_ranges_return_zero(self) -> None:
-        self.assertEqual(overlap_years((0, 100), (100, 200)), 0)
-
-
-class GeographyMatchesTests(unittest.TestCase):
-    def test_historical_region_overlap_wins_over_shared_continent(self) -> None:
-        # Same continent (asia), different historical_region -- must not match.
-        source = {"continents": ["asia"], "historical_regions": ["west_asia"]}
-        candidate = {"continents": ["asia"], "historical_regions": ["east_asia"]}
-        self.assertFalse(geography_matches(source, candidate))
-
-    def test_historical_region_overlap_matches(self) -> None:
-        source = {"continents": ["asia"], "historical_regions": ["west_asia"]}
-        candidate = {"continents": ["asia"], "historical_regions": ["west_asia"]}
-        self.assertTrue(geography_matches(source, candidate))
-
-    def test_falls_back_to_continent_when_either_side_lacks_regions(self) -> None:
-        source = {"continents": ["asia"]}  # no historical_regions yet
-        candidate = {"continents": ["asia"], "historical_regions": ["east_asia"]}
-        self.assertTrue(geography_matches(source, candidate))
-
-    def test_empty_candidate_continents_always_matches(self) -> None:
-        source = {"continents": ["asia"], "historical_regions": ["west_asia"]}
-        candidate = {"continents": []}  # macro chapter: deliberately global
-        self.assertTrue(geography_matches(source, candidate))
+from pipeline.suggest_regional_eras import rank_candidates
 
 
 class RankCandidatesTests(unittest.TestCase):

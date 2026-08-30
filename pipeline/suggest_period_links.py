@@ -16,6 +16,8 @@ from pathlib import Path
 
 import yaml
 
+from pipeline.geography_overlap import geography_matches
+
 ROOT = Path(__file__).resolve().parent.parent
 POLITIES_DIR = ROOT / "polities"
 PERIODS_DIR = ROOT / "periods"
@@ -35,24 +37,6 @@ def in_scope(polity: dict) -> bool:
 def _overlap(a: tuple[int, int], b: tuple[int, int]) -> int:
     lo, hi = max(a[0], b[0]), min(a[1], b[1])
     return max(0, hi - lo)
-
-
-def geography_matches(source_geo: dict, candidate_geo: dict) -> bool:
-    """Historical_region overlap when both sides have it (tighter, preferred);
-    continent overlap otherwise. An empty candidate continents list means
-    deliberately global (a macro chapter) -- always eligible; any other
-    empty-continents period is unclassified, not global, and is correctly
-    excluded since it has no continents to overlap on either axis. See
-    ONTOLOGY.md's tier-scoped geography-emptiness rule."""
-    candidate_continents = set(candidate_geo.get("continents") or [])
-    if not candidate_continents:
-        return True
-    source_regions = set(source_geo.get("historical_regions") or [])
-    candidate_regions = set(candidate_geo.get("historical_regions") or [])
-    if source_regions and candidate_regions:
-        return bool(source_regions & candidate_regions)
-    source_continents = set(source_geo.get("continents") or [])
-    return bool(source_continents & candidate_continents)
 
 
 def best_period_for_polity(polity: dict, periods: list[dict]) -> dict | None:
