@@ -9,6 +9,18 @@ function formatYear(year) {
   return year < 0 ? `${Math.abs(year).toLocaleString()} BCE` : `${year.toLocaleString()} CE`;
 }
 
+function renderGeologicalBand() {
+  const band = document.querySelector("#geological-band");
+  const overallStart = GEOLOGICAL_EPOCHS[0].start;
+  const overallEnd = new Date().getFullYear();
+  const span = overallEnd - overallStart;
+  band.innerHTML = GEOLOGICAL_EPOCHS.map((epoch) => {
+    const end = epoch.end === null ? overallEnd : epoch.end;
+    const widthPct = ((end - epoch.start) / span) * 100;
+    return `<div class="geo-segment" style="width:${widthPct}%" title="${escapeHtml(epoch.name)}">${escapeHtml(epoch.name)}</div>`;
+  }).join("");
+}
+
 function renderChapter(chapter) {
   const topNames = chapter.top_entities.map((e) => escapeHtml(e.canonical_name)).join(", ") || "no linked entities yet";
   return `
@@ -22,6 +34,7 @@ function renderChapter(chapter) {
 
 async function main() {
   const grid = document.querySelector("#chapter-grid");
+  renderGeologicalBand();
   try {
     const response = await fetch("/explore_index.json");
     if (!response.ok) throw new Error(`HTTP ${response.status}`);

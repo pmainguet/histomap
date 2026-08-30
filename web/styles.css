@@ -270,3 +270,22 @@ kbd { padding: .1rem .3rem; background: white; border: 1px solid var(--rule); fo
 .chapter-span { margin: 0 0 .2rem; color: var(--ink-faint); font: .82rem system-ui, sans-serif; }
 .chapter-count { margin: 0 0 .5rem; font: 700 .8rem system-ui, sans-serif; color: #8c422d; }
 .chapter-top { margin: 0; font-size: .88rem; }
+
+#geological-band {
+  display: flex;
+  margin: 0 clamp(1rem, 4vw, 3.5rem);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+  font: .72rem system-ui, sans-serif;
+}
+.geo-segment {
+  padding: .3rem .4rem;
+  border-right: 1px solid var(--rule);
+  background: #e4ded0;
+  color: var(--ink-faint);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.geo-segment:last-child { border-right: none; }
