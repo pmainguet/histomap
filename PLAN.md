@@ -148,11 +148,18 @@ commit trail).
 3. **Resolve the 1,948 stuck Wikidata type-eligibility flags** and the 3,222-record entity-type
    classification queue — the other half of "reduce noisy entities," and unmoved since the last
    snapshot.
-4. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
-5. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
-6. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
-7. **Add the linked map**, followed by the print SVG/PDF pipeline.
-8. Treat LLM proposals as optional acceleration after estimating cost; the human review decisions and
+4. **Run a comprehensive polity → period reclassification pass.** The `/period-review` queue
+   (`reports/period_role_review.jsonl`) already handles this decision — a polity whose
+   `timeline_role` should be `period` or `both`, because it's really a cultural sequence,
+   archaeological horizon, or context span rather than a weight-bearing political entity — but
+   it currently only covers 94 records queued from whatever originally seeded it. Look at the
+   full polity set (4,671 records), not just that existing queue, for more candidates the
+   original seeding missed.
+5. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
+6. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
+7. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
+8. **Add the linked map**, followed by the print SVG/PDF pipeline.
+9. Treat LLM proposals as optional acceleration after estimating cost; the human review decisions and
    canonical YAML remain authoritative.
 
 ### Why not full manual curation
