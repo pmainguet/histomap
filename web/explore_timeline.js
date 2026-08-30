@@ -25,7 +25,56 @@ function bandRect(svg, { x, y, width, height, cls, title, href }) {
   return rect;
 }
 
-function renderHierarchyTimeline(tree, container) {
+const POLITY_LANE_HEIGHT = 18;
+const REGION_HEADER_HEIGHT = 16;
+const MAX_POLITIES_PER_REGION = 15;
+
+function regionLabel(key) {
+  if (key === "unclassified") return "Unclassified";
+  return key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function renderPolitiesRow(svg, scale, chapter, groupBy, y) {
+  if (groupBy === "none") return y;
+  const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
+  const regionKeys = Object.keys(buckets).sort();
+  let rowY = y;
+  for (const key of regionKeys) {
+    const entries = buckets[key];
+    const shown = entries.slice(0, MAX_POLITIES_PER_REGION);
+    const lanes = packIntoLanes(shown);
+    const label = svgEl("text", { x: scale.x(chapter.start), y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
+    label.textContent = `${regionLabel(key)} (${entries.length})`;
+    svg.append(label);
+    rowY += REGION_HEADER_HEIGHT;
+    lanes.forEach((lane, laneIndex) => {
+      lane.forEach((polity) => {
+        const curatedClass = polity.curated ? "curated" : "heuristic";
+        bandRect(svg, {
+          x: scale.x(polity.start), y: rowY + laneIndex * POLITY_LANE_HEIGHT,
+          width: scale.width(polity.start, polity.end), height: POLITY_LANE_HEIGHT - 2,
+          cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`, title: polity.canonical_name,
+        });
+      });
+    });
+    rowY += lanes.length * POLITY_LANE_HEIGHT + 4;
+  }
+  return rowY;
+}
+
+function measurePolitiesRowHeight(chapter, groupBy) {
+  if (groupBy === "none") return 0;
+  const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
+  let total = 0;
+  for (const entries of Object.values(buckets)) {
+    const shown = entries.slice(0, MAX_POLITIES_PER_REGION);
+    const lanes = packIntoLanes(shown);
+    total += REGION_HEADER_HEIGHT + lanes.length * POLITY_LANE_HEIGHT + 4;
+  }
+  return total;
+}
+
+function renderHierarchyTimeline(tree, container, groupBy = "historical_region") {
   const width = Math.max(900, Math.min(4800, window.innerWidth - 80));
   const scale = createTimeScale(tree.axis.domain_start, tree.axis.domain_end, tree.axis.segment_break, width);
 
@@ -47,7 +96,8 @@ function renderHierarchyTimeline(tree, container) {
 
   const eraRowHeight = maxEraLanes * eraLaneHeight;
   const periodRowHeight = maxPeriodLanes * periodLaneHeight;
-  const height = geoRowHeight + chapterRowHeight + eraRowHeight + periodRowHeight + rowGap * 4;
+  const politiesRowHeight = Math.max(0, ...tree.chapters.map((c) => measurePolitiesRowHeight(c, groupBy)));
+  const height = geoRowHeight + chapterRowHeight + eraRowHeight + periodRowHeight + politiesRowHeight + rowGap * 5;
 
   const svg = svgEl("svg", { viewBox: `0 0 ${width} ${height}`, class: "hierarchy-chart" });
 
@@ -98,6 +148,11 @@ function renderHierarchyTimeline(tree, container) {
       });
     });
   });
+  y += periodRowHeight + rowGap;
+
+  for (const chapter of tree.chapters) {
+    renderPolitiesRow(svg, scale, chapter, groupBy, y);
+  }
 
   // Year gridlines/axis labels, matching app.js's established treatment
   // (.grid-line spans the full chart height, .axis-label sits near the top),
