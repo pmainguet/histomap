@@ -1,5 +1,5 @@
 id: dacia
-canonical_name: Dacia
+canonical_name: Dacian Kingdom
 names:
   fr: Dacie
 external_ids:
@@ -38,7 +38,7 @@ geography:
   historical_regions:
   - eastern_europe
   primary_historical_region: eastern_europe
-entity_type: civilization
+entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids: []
 relationships: []

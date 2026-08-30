@@ -121,17 +121,6 @@
     "notes": "Created by an editorial entity-consolidation decision."
   },
   {
-    "period_id": "republic_of_equatorial_guinea_period",
-    "entity_id": "equatorial_guinea",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q138028374"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
     "period_id": "rhodes_q104383185_period",
     "entity_id": "rhodes_q43048",
     "relation": "part_of_periodization",
@@ -139,17 +128,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q104383185"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
-    "period_id": "republic_of_cuba_period",
-    "entity_id": "cuba",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q14905932"
     ],
     "notes": "Created by an editorial entity-consolidation decision."
   },
@@ -172,17 +150,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q1193879"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
-    "period_id": "republic_of_seychelles_period",
-    "entity_id": "seychelles",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q117089833"
     ],
     "notes": "Created by an editorial entity-consolidation decision."
   },
@@ -231,17 +198,6 @@
     "notes": "Created by an editorial entity-consolidation decision."
   },
   {
-    "period_id": "democratic_republic_of_the_congo_19651971_period",
-    "entity_id": "democratic_republic_of_the_congo",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q60852075"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
     "period_id": "syrian_arab_republic_period",
     "entity_id": "syria",
     "relation": "part_of_periodization",
@@ -264,17 +220,6 @@
     "notes": "Created by an editorial entity-consolidation decision."
   },
   {
-    "period_id": "republic_of_sudan_q3486796_period",
-    "entity_id": "sudan",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q3486796"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
     "period_id": "kingdom_of_sicily_q3932079_period",
     "entity_id": "kingdom_of_sicily_q188586",
     "relation": "phase_of",
@@ -282,17 +227,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q3932079"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "aztec_triple_alliance_period",
-    "entity_id": "aztec_empire",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q794210"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -319,17 +253,6 @@
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
   {
-    "period_id": "republic_of_sudan_q5866720_period",
-    "entity_id": "sudan",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q5866720"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "czechoslovak_republic_period",
     "entity_id": "czechoslovak_socialist_republic",
     "relation": "phase_of",
@@ -348,28 +271,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q5848651"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "republic_of_venezuela_period",
-    "entity_id": "venezuela",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q21296156"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "republic_of_egypt_period",
-    "entity_id": "egypt",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q3087763"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -403,17 +304,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q1923781"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "first_republic_of_austria_period",
-    "entity_id": "austria",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q518101"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -572,17 +462,6 @@
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
   {
-    "period_id": "republic_of_afghanistan_q2067309_period",
-    "entity_id": "democratic_republic_of_afghanistan",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q2067309"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "kingdom_of_italy_q172579_period",
     "entity_id": "italy",
     "relation": "phase_of",
@@ -590,17 +469,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q172579"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "people_s_republic_of_albania_period",
-    "entity_id": "albania",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q19915237"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -682,17 +550,6 @@
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
   {
-    "period_id": "republic_of_the_congo_leopoldville_period",
-    "entity_id": "democratic_republic_of_the_congo",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q618399"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "han_dynasty_period",
     "entity_id": "han_q1574130",
     "relation": "phase_of",
@@ -700,17 +557,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q7209"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "socialist_soviet_republic_of_georgia_period",
-    "entity_id": "georgian_ssr",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q55659450"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -880,17 +726,6 @@
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
   {
-    "period_id": "socialist_republic_of_the_union_of_burma_period",
-    "entity_id": "myanmar",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q13072974"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "crown_of_castile_period",
     "entity_id": "kingdom_of_castile",
     "relation": "phase_of",
@@ -898,17 +733,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q217196"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "mamluk_sultanate_of_egypt_period",
-    "entity_id": "medieval_egypt",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q282428"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -931,17 +755,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q1709185"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "reign_of_amadeo_i_of_spain_period",
-    "entity_id": "spain",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q6104643"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },

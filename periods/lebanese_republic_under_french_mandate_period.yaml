@@ -7,12 +7,7 @@ start_confidence: low
 end_confidence: low
 geography:
   continents:
-  - africa
   - asia
-  - europe
-  - north_america
-  - oceania
-  - south_america
   present_countries:
   - LB
   centroid:

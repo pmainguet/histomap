@@ -1,18 +1,18 @@
-id: united_arab_republic
-canonical_name: United Arab Republic
+id: socialist_republic_of_the_union_of_burma
+canonical_name: Socialist Republic of the Union of Burma
 names:
-  fr: République arabe unie
-  aliases_en: UAR
+  fr: République socialiste de l'Union de Birmanie
+  aliases_en: Union of Burma | BSPP Period | Socialist Burma
 external_ids:
-  wikidata: Q170468
+  wikidata: Q13072974
 parent: null
 successors: []
-start: 1958
-end: 1971
+start: 1962
+end: 1988
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1958: 5
+  1962: 5
 weight_imputed: true
 icon: null
 text:
@@ -22,34 +22,35 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 32.12
+prominence_score: 16.22
 visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
-  - africa
+  - asia
   present_countries:
-  - EG
+  - MM
   centroid:
-    lat: 30.033333333
-    lon: 31.216666666
+    lat: 16.85
+    lon: 96.183333333
   confidence: low
   historical_regions:
-  - north_africa
-  primary_historical_region: north_africa
+  - southeast_asia
+  primary_historical_region: southeast_asia
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
 relationships: []
 prominence_components:
-  wikidata_reach: 28.71
+  wikidata_reach: 17.64
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 5.55
-  longevity: 2.87
+  relationship_centrality: 0.0
+  longevity: 3.58
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 32.12
+  total: 16.22
+consolidation_status: independent

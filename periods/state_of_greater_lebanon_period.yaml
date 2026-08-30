@@ -7,16 +7,17 @@ start_confidence: low
 end_confidence: low
 geography:
   continents:
-  - africa
   - asia
-  - europe
-  - north_america
-  - oceania
-  - south_america
-  primary_continent: null
-  present_countries: []
-  centroid: null
+  primary_continent: asia
+  present_countries:
+  - LB
+  centroid:
+    lat: 33.83333
+    lon: 35.76667
   confidence: medium
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation

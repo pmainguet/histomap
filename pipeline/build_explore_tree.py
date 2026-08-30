@@ -49,16 +49,32 @@ def best_chapter_for_polity(polity: dict, chapters: list[dict], open_end: int) -
     return _best_chapter_for_range(polity_range, chapters)
 
 
-def _is_civilization_named_period(period: dict) -> bool:
-    """A tier=period record whose canonical_name suggests it represents a
-    civilization/culture rather than a plain historical-period context span
-    -- e.g. "Minoan civilization", "Etruscan civilization". Period has no
-    field for this distinction (unlike Polity.entity_type), so this is a
-    name-pattern heuristic, not a real classification: intentionally narrow
-    (substring match only) and tier=period only -- never regional_era/
-    macro_chapter, which are structural grouping nodes, not entities."""
+# Authority string stamped on a period generated from an entity_type-tagged
+# polity that was demoted to a pure context band (its actual political
+# weight lives in separate phase polities instead, e.g. Ancient Egypt's
+# weight lives in Old/Middle/New Kingdom of Egypt, Babylonia's in
+# Old/Neo-Babylonian Empire) -- see the matching note text in each such
+# period's own file. A real structural signal, unlike the name heuristic
+# below -- added after discovering ancient_egypt_period/babylonia_period/
+# chinese_empire_period had silently fallen out of the Civilizations &
+# Cultures lane once their source polities were deleted (see ONTOLOGY.md's
+# "Polity/period duality" section).
+CIVILIZATION_BACKDROP_AUTHORITY = "Histomap editorial: civilization-as-backdrop"
+
+
+def _is_civilization_lane_period(period: dict) -> bool:
+    """A tier=period record that belongs in the Civilizations & Cultures
+    lane rather than the plain Period row: either it carries
+    CIVILIZATION_BACKDROP_AUTHORITY (a real signal), or its canonical_name
+    suggests civilization/culture -- e.g. "Minoan civilization", "Etruscan
+    civilization" (a name-pattern heuristic/guess, since Period has no
+    entity_type-like field of its own). tier=period only -- never
+    regional_era/macro_chapter, which are structural grouping nodes, not
+    entities."""
     if period.get("tier") != "period":
         return False
+    if period.get("authority") == CIVILIZATION_BACKDROP_AUTHORITY:
+        return True
     name = period.get("canonical_name", "").lower()
     return "civilization" in name or "culture" in name
 
@@ -105,7 +121,7 @@ def build_explore_tree(
     all_eras = [p for p in periods if p.get("tier") == "regional_era"]
 
     def _is_civilization_period(p: dict) -> bool:
-        return _is_civilization_named_period(p) or _civilization_period_source_entity_type(p, civilization_period_sources) is not None
+        return _is_civilization_lane_period(p) or _civilization_period_source_entity_type(p, civilization_period_sources) is not None
 
     all_periods = [p for p in periods if p.get("tier") == "period" and not _is_civilization_period(p)]
     civilization_periods = [p for p in periods if _is_civilization_period(p)]
@@ -330,17 +346,20 @@ def _civilization_polity_entry(polity: dict) -> dict:
 
 def _civilization_period_entry(period: dict, source_entity_type: str | None = None) -> dict:
     """Build a JSON-serializable dict entry for a civilization period in the
-    Civilizations & Cultures lane. `curated` reflects how it got here:
-    True when `source_entity_type` is set (a real, reviewed Polity.entity_type
-    field, via a promoted timeline_role: period companion record), False
-    when it's only a canonical_name substring match
-    (_is_civilization_named_period) -- a guess, not a classification."""
+    Civilizations & Cultures lane. `curated` reflects how it got here: True
+    when `source_entity_type` is set (a real, reviewed Polity.entity_type
+    field, via a promoted timeline_role: period companion record) or the
+    period itself carries CIVILIZATION_BACKDROP_AUTHORITY (also a real,
+    deliberate signal) -- False when it's only a canonical_name substring
+    match (_is_civilization_lane_period's name heuristic) -- a guess, not a
+    classification."""
+    curated = source_entity_type is not None or period.get("authority") == CIVILIZATION_BACKDROP_AUTHORITY
     entry = {
         "id": period["id"],
         "canonical_name": period["canonical_name"],
         "start": period["start"],
         "end": period["end"],
-        "curated": source_entity_type is not None,
+        "curated": curated,
         "source": "period",
     }
     if source_entity_type is not None:

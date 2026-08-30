@@ -1,18 +1,18 @@
-id: united_arab_republic
-canonical_name: United Arab Republic
+id: republic_of_sudan_q3486796
+canonical_name: Republic of Sudan
 names:
-  fr: République arabe unie
-  aliases_en: UAR
+  fr: République du Soudan
+  aliases_en: جمهورية السودان (1956–1969)
 external_ids:
-  wikidata: Q170468
+  wikidata: Q3486796
 parent: null
 successors: []
-start: 1958
-end: 1971
+start: 1956
+end: 1969
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1958: 5
+  1956: 5
 weight_imputed: true
 icon: null
 text:
@@ -22,17 +22,17 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 32.12
+prominence_score: 17.05
 visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
   - africa
   present_countries:
-  - EG
+  - SD
   centroid:
-    lat: 30.033333333
-    lon: 31.216666666
+    lat: 15.633333333
+    lon: 32.533333333
   confidence: low
   historical_regions:
   - north_africa
@@ -43,13 +43,14 @@ entity_type_source_qids:
 - Q3024240
 relationships: []
 prominence_components:
-  wikidata_reach: 28.71
+  wikidata_reach: 19.18
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 5.55
+  relationship_centrality: 0.0
   longevity: 2.87
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 32.12
+  total: 17.05
+consolidation_status: independent

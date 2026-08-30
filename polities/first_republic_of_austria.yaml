@@ -1,19 +1,20 @@
-id: transcaucasian_socialist_federative_soviet_republic
-canonical_name: Transcaucasian Socialist Federative Soviet Republic
+id: first_republic_of_austria
+canonical_name: First Republic of Austria
 names:
-  fr: République socialiste fédérative soviétique de Transcaucasie
-  aliases_en: Transcaucasian SFSR | TSFSR
+  fr: Première République d'Autriche
+  aliases_en: Republic of Austria | Republik Österreich | Erste österreichische Republik
+    | First Austrian Republic
 external_ids:
-  wikidata: Q545205
+  wikidata: Q518101
 parent: null
 successors:
-- soviet_union
-start: 1922
-end: 1936
+- federal_state_of_austria
+start: 1919
+end: 1934
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1922: 5
+  1919: 5
 weight_imputed: true
 icon: null
 text:
@@ -23,43 +24,41 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 31.07
+prominence_score: 26.45
 visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
-  - asia
   - europe
   present_countries:
-  - GE
-  - SU
+  - AT
   centroid:
-    lat: 41.716667
-    lon: 44.783333
+    lat: 48.2
+    lon: 16.36666667
   confidence: medium
-  primary_continent: asia
   historical_regions:
-  - west_asia
-  primary_historical_region: west_asia
+  - western_europe
+  primary_historical_region: western_europe
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
 relationships:
-- target: soviet_union
+- target: federal_state_of_austria
   kind: political_successor
   evidence: derived
   confidence: medium
   source_urls:
-  - https://www.wikidata.org/wiki/Q545205
+  - https://www.wikidata.org/wiki/Q518101
 prominence_components:
-  wikidata_reach: 27.58
+  wikidata_reach: 24.94
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 5.55
-  longevity: 2.94
+  relationship_centrality: 3.5
+  longevity: 3.01
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 31.07
+  total: 26.45
+consolidation_status: independent

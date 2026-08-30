@@ -1,6 +1,11 @@
 import unittest
 
-from pipeline.build_explore_tree import AUTO_GENERATED_AUTHORITY, best_chapter_for_polity, build_explore_tree
+from pipeline.build_explore_tree import (
+    AUTO_GENERATED_AUTHORITY,
+    CIVILIZATION_BACKDROP_AUTHORITY,
+    best_chapter_for_polity,
+    build_explore_tree,
+)
 
 
 def chapter(id_: str, start: int, end: int) -> dict:
@@ -29,12 +34,13 @@ def era(
 
 
 def named_period(id_: str, start: int, end: int, broader: list[str] | None = None, continents: list[str] | None = None,
-                  historical_regions: list[str] | None = None) -> dict:
+                  historical_regions: list[str] | None = None, authority: str | None = None) -> dict:
     """Build a minimal period fixture dict."""
     return {
         "id": id_, "tier": "period", "canonical_name": id_, "start": start, "end": end,
         "broader_periods": broader or [],
         "geography": {"continents": continents or [], "historical_regions": historical_regions or []},
+        "authority": authority,
     }
 
 
@@ -305,12 +311,31 @@ class CivilizationsCultureLaneTests(unittest.TestCase):
         egypt_era = next(e for e in chapter_out["eras"] if e["id"] == "egypt_era")
         self.assertNotIn("minoan_civilization", {p["id"] for p in egypt_era["periods"]})
 
-    def test_lane_period_entry_never_curated(self) -> None:
+    def test_name_matched_lane_period_entry_not_curated(self) -> None:
+        """A name-heuristic match (no CIVILIZATION_BACKDROP_AUTHORITY) is a
+        guess, not a classification -- curated=False."""
         periods = [*self.base_periods, named_period("minoan_civilization", -2700, -1450, continents=["africa"])]
         tree = build_explore_tree([], periods, [])
         entry = tree["chapters"][0]["civilizations"][0]
         self.assertFalse(entry["curated"])
         self.assertEqual(entry["source"], "period")
+
+    def test_civilization_backdrop_authority_routes_to_lane_and_is_curated(self) -> None:
+        """A period carrying CIVILIZATION_BACKDROP_AUTHORITY belongs in the
+        lane even when its canonical_name doesn't contain "civilization"/
+        "culture" (reproduces the babylonia_period/chinese_empire_period
+        case: their source polity was deleted, so the entity_type-lineage
+        path no longer applies, but the authority marker still does) --
+        and, unlike a bare name-match, this is curated=True."""
+        periods = [*self.base_periods, named_period("babylonia", -1900, -1300, continents=["asia"], authority=CIVILIZATION_BACKDROP_AUTHORITY)]
+        tree = build_explore_tree([], periods, [])
+        chapter_out = next(c for c in tree["chapters"] if c["id"] == "macro_early")
+        self.assertEqual([e["id"] for e in chapter_out["civilizations"]], ["babylonia"])
+        entry = chapter_out["civilizations"][0]
+        self.assertTrue(entry["curated"])
+        self.assertEqual(entry["source"], "period")
+        egypt_era = next(e for e in chapter_out["eras"] if e["id"] == "egypt_era")
+        self.assertNotIn("babylonia", {p["id"] for p in egypt_era["periods"]})
 
     def test_culture_named_period_also_matches(self) -> None:
         periods = [*self.base_periods, named_period("nok_culture", -2000, -1500, continents=["africa"])]
@@ -318,7 +343,7 @@ class CivilizationsCultureLaneTests(unittest.TestCase):
         self.assertEqual([e["id"] for e in tree["chapters"][0]["civilizations"]], ["nok_culture"])
 
     def test_regional_era_tier_with_civilization_in_name_not_pulled_into_lane(self) -> None:
-        """Guards the tier check in _is_civilization_named_period: a
+        """Guards the tier check in _is_civilization_lane_period: a
         regional_era is a structural grouping node, not an entity, even if
         its name happens to contain "civilization"."""
         periods = [

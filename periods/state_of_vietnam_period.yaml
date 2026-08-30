@@ -7,13 +7,8 @@ start_confidence: low
 end_confidence: low
 geography:
   continents:
-  - africa
-  - antarctica
   - asia
-  - europe
-  - oceania
   present_countries:
-  - FR
   - VN
   centroid:
     lat: 10.8
@@ -22,7 +17,7 @@ geography:
   primary_continent: asia
   historical_regions:
   - southeast_asia
-  - western_europe
+  primary_historical_region: southeast_asia
 broader_periods: []
 successors: []
 authority: Histomap editorial consolidation
