@@ -621,25 +621,53 @@ Total ongoing manual time after Phase 5: a few hours per year.
 - **Seshat is sparse.** It covers ~35 Natural Geographic Areas, not the whole world. Regions outside Seshat coverage rely on Wikidata only and stay at `confidence: low`.
 - **Pre-3000 BCE is mostly archaeological cultures, not polities.** Represent them as broad bands ("Bronze Age Mesopotamia"), not as crisp entities.
 - **Source disagreements are normal.** Keep them in the `notes` field rather than pretending they don't exist. The `*_confidence` fields are the right place to surface this in the viz.
-- **`geography.continents` multi-continent bug — root-caused 2026-08-30, fix + repair in
-  progress.** First noticed as "`antarctica` incorrectly present alongside genuine
-  continent(s)" during the period-ontology plan's Task 4, but that was one symptom of a wider
-  bug: 97 polities (`alawite_territory`, `basutoland`, `british_raj`, `caliphate_of_cordoba`,
-  and others — France, Norway, Duchy of Normandy, Cape Colony from the original sighting are
-  in this same set) carry 4-6 continents each, always `present_countries: []`. Root cause,
-  confirmed by tracing `alawite_territory`'s Wikidata data: `pipeline/enrich_geography.py`
-  resolves each polity's Wikidata P17 ("country") claim to derive geography, but unions in
-  the target's continent claims *unconditionally* — even when that target has no valid ISO2
-  country code and therefore isn't a real country. Alawite Territory's P17 claim resolves to
-  Q179023, "French colonial empire," which correctly has no ISO2 code but (correctly, on its
-  own terms) has Wikidata continent claims for everywhere France ever held colonial territory
-  — all 6 non-Antarctic continents get unioned in. Fix: gate the continent union behind the
-  same ISO2-validity check that already gates the country-code union. Two genuine Antarctic
-  micronations (`westarctica`, `grand_duchy_of_flandrensis`) are unrelated and correctly
-  tagged. Separately, 3 `periods/*.yaml` records (Lebanon x2, Vietnam) show the same
-  multi-continent symptom but carry `authority: "Histomap editorial consolidation"`, not this
-  bug's raw-import path — `enrich_geography.py` only touches `polities/*.yaml`, so their root
-  cause is untraced and still open; see the `/explore` status section above.
+- **`geography.continents` multi-continent bug — turned out to be two separate bugs.** First
+  noticed as "`antarctica` incorrectly present alongside genuine continent(s)" during the
+  period-ontology plan's Task 4.
+  - **Bug A — fixed 2026-08-30, 103 polities repaired.** `pipeline/enrich_geography.py`
+    resolved each polity's Wikidata P17 ("country") claim to derive geography, unioning in the
+    target's continent claims *unconditionally* — even when the target had no valid ISO2 code
+    and therefore wasn't a real country. `alawite_territory`'s P17 claim resolved to Q179023,
+    "French colonial empire," which correctly has no ISO2 code but (on its own terms) has
+    Wikidata continent claims for everywhere France ever held colonial territory — all 6
+    non-Antarctic continents got unioned in, with `present_countries: []` since no valid
+    country ever contributed. Fixed by gating the continent union behind the same
+    ISO2-validity check that already gated the country-code union. Repair (a fresh
+    `--offline` run after the fix) was independently re-derived twice against the
+    `fe20b481`-baseline snapshot before being trusted — confirmed to correctly and completely
+    fix exactly 103 polities, every one narrower-or-equal, zero `manual_overrides`-locked
+    files touched. Two genuine Antarctic micronations (`westarctica`,
+    `grand_duchy_of_flandrensis`) were unrelated and correctly tagged throughout.
+  - **Bug B — found 2026-08-30, root cause understood, fix not yet attempted.** A different
+    ~60 polities (`france`, `caliphate_of_cordoba`, `duchy_of_normandy`, and others) are
+    unaffected by Bug A's fix because their P17 resolves to one or more *real*, valid-ISO2
+    countries — `caliphate_of_cordoba` has 9 P17 targets (Spain, Portugal, Morocco, Algeria,
+    Gibraltar, Andorra, France, Italy, Switzerland — implausibly broad for a state centered on
+    Iberia, itself a Wikidata data-quality issue upstream of this pipeline). Since every target
+    passes the ISO2 gate, Bug A's fix has no effect. Compounding it: some targets are modern
+    states whose *own* Wikidata continent claims are legitimately multi-continental because of
+    real overseas territories — `france` (Q142) genuinely has Wikidata P30 claims for Africa,
+    Antarctica, Europe, and Oceania (French Guiana, Réunion, French Polynesia, French Southern
+    and Antarctic Lands), which is accurate for modern France but not useful for deriving a
+    *historical* polity's extent. A real fix likely means using each P17 target's *primary*
+    continent rather than its full continent set — not implemented, needs its own careful pass
+    (this whole area has proven fragile — see below).
+  - Separately, 3 `periods/*.yaml` records (Lebanon x2, Vietnam) show the same multi-continent
+    symptom but carry `authority: "Histomap editorial consolidation"`, not either bug's
+    raw-import path — `enrich_geography.py` only touches `polities/*.yaml`, so their root cause
+    is untraced and still open; see the `/explore` status section above.
+  - **Process note, for whoever picks up Bug B:** the first attempt at Bug A's repair caused a
+    real data-loss incident (an overly broad "revert collateral changes" step destroyed 7
+    files' worth of unrelated uncommitted edits — recovered where the exact diff had been seen
+    earlier in-session, unrecoverable for the rest) and a second attempt left the branch in a
+    confusing half-finished state (a stray `git reset` silently dropped an unrelated already-committed
+    commit, recovered from `reflog`). The classification logic that separates "real geography fix"
+    from "collateral noise from the script's unrelated `historical_regions`-dropping write-path bug"
+    is the exact step that went wrong both times — write it carefully, diff every changed file
+    against a real pre-change baseline (not against a partially-repaired working tree), and verify
+    exhaustively (subset-only continents, `historical_regions` preserved, `manual_overrides`
+    respected, zero overlap with anything already known-uncommitted-for-other-reasons) before
+    trusting any bulk classification of "safe to discard."
 
 ---
 
