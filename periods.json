@@ -250,7 +250,9 @@
       },
       "confidence": "medium"
     },
-    "broader_periods": [],
+    "broader_periods": [
+      "egyptian_early_states_era"
+    ],
     "successors": [],
     "authority": "Histomap editorial: civilization-as-backdrop",
     "external_ids": {
@@ -5732,7 +5734,9 @@
       "centroid": null,
       "confidence": null
     },
-    "broader_periods": [],
+    "broader_periods": [
+      "mesopotamian_early_states_era"
+    ],
     "successors": [
       "early_dynastic_mesopotamia"
     ],

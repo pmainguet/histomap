@@ -11,6 +11,8 @@ geography:
   historical_regions:
   - west_asia
   primary_historical_region: west_asia
+broader_periods:
+- mesopotamian_early_states_era
 successors:
 - early_dynastic_mesopotamia
 authority: DBpedia/Wikipedia periodization
