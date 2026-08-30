@@ -69,24 +69,8 @@ commit trail).
   Southeast/Central Asia sub-buckets (the only continent given finer treatment — every other
   continent stays at continent-level grouping, by explicit choice).
 
-**Queued, not yet started:**
-- Close the matching regional-era coverage gap for `european_iron_age` (raw import with no
-  hand-curated era counterpart, unlike its Nile Valley/Fertile Crescent/East Asian peers).
-  The Bronze Age and Neolithic clusters are done: `european_bronze_age` (duplicate of
-  `european_bronze_age_era`) is retired, and new overarching `bronze_age_era` /
-  `neolithic_era` regional eras now parent all regional siblings in both clusters -- see
-  ONTOLOGY.md's "Overarching regional eras for genuinely cross-regional themes."
-- Disambiguate the 8 same-named period records (4× "Kingdom of Hungary", 2× "Kingdom of
-  Poland", 2× "Kingdom of Spain" — distinct historical regimes, currently indistinguishable in
-  any list).
-- Correct the `continents` field on 3 mistagged periods (`lebanese_republic_under_french_mandate_period`,
-  `state_of_greater_lebanon_period`, `state_of_vietnam_period` — all clearly Asian, tagged with
-  5-6 continents). Root cause not yet traced (these carry `authority: "Histomap editorial
-  consolidation"`, not the raw-import path behind the polity bug below).
-- A detail side-panel on click, matching `/`'s existing panel — informational fields only
-  (dates, authority, geography, links), not the editing actions (`/` also lets you edit period
-  type, convert to entity, edit geography — those stay on `/` as curation tools; `/explore` is
-  a browse view).
+See [ROADMAP.md](ROADMAP.md) for what's still queued on `/explore` — moved there since it's
+forward-looking, not retrospective.
 
 **Known, accepted limitations:**
 - `MAX_POLITIES_PER_REGION = 15` caps each region's shown bands per chapter with no visual

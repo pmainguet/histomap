@@ -172,6 +172,28 @@ def load_all() -> list[Polity]:
     return polities
 
 
+def load_civilization_period_role_sources(polities_dir: Path = POLITIES_DIR) -> dict[str, str]:
+    """Polities promoted to timeline_role: period are excluded from
+    load_all() entirely (see its early skip) since they're already
+    represented by a generated periods/*.yaml companion record -- but that
+    means their entity_type is otherwise invisible to build_explore_tree(),
+    which needs it to route the companion period into the Civilizations &
+    Cultures lane instead of the ordinary Period row (its generated
+    canonical_name is usually just a plain copy of the polity's name, e.g.
+    "Ancient Egypt", so the name-substring heuristic alone won't catch it).
+    A lightweight, independent scan (raw dict reads, no Polity validation)
+    rather than a change to load_all()'s contract, which many other callers
+    depend on."""
+    from pipeline.build_explore_tree import CIVILIZATION_ENTITY_TYPES
+
+    sources: dict[str, str] = {}
+    for path in sorted(polities_dir.glob("*.yaml")):
+        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        if data.get("timeline_role") == "period" and data.get("entity_type") in CIVILIZATION_ENTITY_TYPES:
+            sources[data["id"]] = data["entity_type"]
+    return sources
+
+
 def load_transitions(polities: list[Polity]) -> list[Transition]:
     if not TRANSITIONS_PATH.exists():
         return []
@@ -308,6 +330,7 @@ def main() -> None:
         [p.model_dump(mode="json") for p in published_polities],
         [p.model_dump(mode="json") for p in periods],
         [link.model_dump(mode="json") for link in period_links],
+        load_civilization_period_role_sources(),
     )
     EXPLORE_TREE_OUT_PATH.write_text(
         json.dumps(explore_tree, indent=2, ensure_ascii=False), encoding="utf-8"

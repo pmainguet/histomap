@@ -1,8 +1,16 @@
+import tempfile
 import unittest
+from pathlib import Path
 
-from build import find_parent_cycles, validate_entity_relationships, validate_transitions
+import yaml
 from pydantic import ValidationError
 
+from build import (
+    find_parent_cycles,
+    load_civilization_period_role_sources,
+    validate_entity_relationships,
+    validate_transitions,
+)
 from schema import Geography, Period, PeriodLink, Polity, Transition
 
 
@@ -140,6 +148,33 @@ class BuildRelationshipValidationTests(unittest.TestCase):
             validate_transitions(
                 [transition], [polity("first"), polity("culture", entity_type="culture")]
             )
+
+
+class LoadCivilizationPeriodRoleSourcesTests(unittest.TestCase):
+    def _write(self, directory: Path, filename: str, data: dict) -> None:
+        (directory / filename).write_text(yaml.safe_dump(data), encoding="utf-8")
+
+    def test_finds_civilization_typed_polity_promoted_to_period(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write(root, "ancient_egypt.yaml", {"id": "ancient_egypt", "entity_type": "civilization", "timeline_role": "period"})
+            sources = load_civilization_period_role_sources(root)
+            self.assertEqual(sources, {"ancient_egypt": "civilization"})
+
+    def test_ignores_civilization_typed_polity_still_an_entity(self) -> None:
+        """entity_type=civilization but NOT promoted to timeline_role=period --
+        already handled directly as a polity by build_explore_tree's own
+        CIVILIZATION_ENTITY_TYPES check, not this lookup."""
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write(root, "elam.yaml", {"id": "elam", "entity_type": "civilization", "timeline_role": "entity"})
+            self.assertEqual(load_civilization_period_role_sources(root), {})
+
+    def test_ignores_plain_polity_promoted_to_period(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write(root, "some_kingdom.yaml", {"id": "some_kingdom", "entity_type": "polity", "timeline_role": "period"})
+            self.assertEqual(load_civilization_period_role_sources(root), {})
 
 
 if __name__ == "__main__":

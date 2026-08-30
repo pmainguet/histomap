@@ -1,9 +1,10 @@
 """Build-time step: precompute explore_tree.json, the full period hierarchy
 (macro chapter -> regional era -> named period, plus polities bucketed per
-chapter by historical region and by continent) that /explore renders
-directly. Retires build_explore_index.py's flatter top-N summary -- the new
-hierarchical /explore view needs the whole tree, not just each chapter's
-top 3 entities. See docs/plans/2026-08-30-explore-hierarchy-timeline.md."""
+chapter by historical region and by continent, plus a flat Civilizations &
+Cultures lane per chapter) that /explore renders directly. Retires
+build_explore_index.py's flatter top-N summary -- the new hierarchical
+/explore view needs the whole tree, not just each chapter's top 3 entities.
+See docs/plans/2026-08-30-explore-hierarchy-timeline.md."""
 
 from __future__ import annotations
 
@@ -14,19 +15,23 @@ from pipeline.suggest_regional_eras import rank_candidates
 
 AUTO_GENERATED_AUTHORITY = "Histomap editorial: auto-generated continent x chapter node"
 
+# Polity.entity_type values that mean "not really a weight-bearing political
+# entity" -- these render in the Civilizations & Cultures lane instead of the
+# Polities row. See ROADMAP.md item 4 and the /explore lane-separation design.
+CIVILIZATION_ENTITY_TYPES = {"civilization", "culture", "people", "tribe"}
 
-def best_chapter_for_polity(polity: dict, chapters: list[dict], open_end: int) -> dict | None:
-    """Pick the macro chapter with the most date-overlap against a polity that
-    has no curated period_links.yaml entry. Chapters are mutually exclusive
-    and contiguous in time by construction, so this is a pure date test --
-    no geography_matches call needed at chapter granularity. `open_end` is
-    the fallback end year for a polity with no `end` set (an open-ended
-    entity) -- derived from the tree's own chapters, not hardcoded, so it
-    can never desync from the tree's actual domain."""
-    polity_range = (polity["start"], polity.get("end") if polity.get("end") is not None else open_end)
+
+def _best_chapter_for_range(value_range: tuple[int, int], chapters: list[dict]) -> dict | None:
+    """Pick the macro chapter with the most date-overlap against an arbitrary
+    (start, end) range. Chapters are mutually exclusive and contiguous in
+    time by construction, so this is a pure date test -- no geography_matches
+    call needed at chapter granularity. Shared by best_chapter_for_polity
+    (which derives its range from a polity, handling the open-ended-entity
+    fallback) and the Civilizations & Cultures lane's period placement (which
+    needs no such fallback -- Period.end is never None)."""
     best: tuple[int, dict] | None = None
     for chapter in chapters:
-        years = overlap_years(polity_range, (chapter["start"], chapter["end"]))
+        years = overlap_years(value_range, (chapter["start"], chapter["end"]))
         if years <= 0:
             continue
         if best is None or years > best[0]:
@@ -34,7 +39,53 @@ def best_chapter_for_polity(polity: dict, chapters: list[dict], open_end: int) -
     return best[1] if best else None
 
 
-def build_explore_tree(polities: list[dict], periods: list[dict], period_links: list[dict]) -> dict:
+def best_chapter_for_polity(polity: dict, chapters: list[dict], open_end: int) -> dict | None:
+    """Pick the macro chapter with the most date-overlap against a polity that
+    has no curated period_links.yaml entry. `open_end` is the fallback end
+    year for a polity with no `end` set (an open-ended entity) -- derived
+    from the tree's own chapters, not hardcoded, so it can never desync from
+    the tree's actual domain."""
+    polity_range = (polity["start"], polity.get("end") if polity.get("end") is not None else open_end)
+    return _best_chapter_for_range(polity_range, chapters)
+
+
+def _is_civilization_named_period(period: dict) -> bool:
+    """A tier=period record whose canonical_name suggests it represents a
+    civilization/culture rather than a plain historical-period context span
+    -- e.g. "Minoan civilization", "Etruscan civilization". Period has no
+    field for this distinction (unlike Polity.entity_type), so this is a
+    name-pattern heuristic, not a real classification: intentionally narrow
+    (substring match only) and tier=period only -- never regional_era/
+    macro_chapter, which are structural grouping nodes, not entities."""
+    if period.get("tier") != "period":
+        return False
+    name = period.get("canonical_name", "").lower()
+    return "civilization" in name or "culture" in name
+
+
+def _civilization_period_source_entity_type(period: dict, sources: dict[str, str]) -> str | None:
+    """A period generated from an entity_type-tagged polity that was
+    promoted to timeline_role: period (id convention "<polity_id>_period",
+    from classify_period_roles.py's write_period) is itself eligible for the
+    Civilizations & Cultures lane, even when its canonical_name doesn't
+    literally contain "civilization"/"culture" -- it's usually just a plain
+    copy of the polity's name (e.g. "Ancient Egypt"). `sources` is built by
+    build.load_civilization_period_role_sources(), since those source
+    polities are excluded from build_explore_tree's own `polities` argument
+    (load_all() drops timeline_role: period records before this function
+    ever sees them)."""
+    period_id = period.get("id", "")
+    if not period_id.endswith("_period"):
+        return None
+    return sources.get(period_id[: -len("_period")])
+
+
+def build_explore_tree(
+    polities: list[dict],
+    periods: list[dict],
+    period_links: list[dict],
+    civilization_period_sources: dict[str, str] | None = None,
+) -> dict:
     """Precompute the full Explore page tree: 9 macro chapters, each with its
     curated regional eras, each era's curated-or-heuristic named periods, and
     each chapter's curated-or-heuristic polities bucketed by historical
@@ -48,10 +99,16 @@ def build_explore_tree(polities: list[dict], periods: list[dict], period_links: 
     the raw broader_periods/period_links.yaml data, not the heuristic
     placements this function computes itself. See
     docs/plans/2026-08-30-explore-hierarchy-timeline.md's final-review fix."""
+    civilization_period_sources = civilization_period_sources or {}
     hierarchy = PeriodHierarchy(periods=periods, period_links=period_links, polities=polities)
     periods_by_id = {p["id"]: p for p in periods}
     all_eras = [p for p in periods if p.get("tier") == "regional_era"]
-    all_periods = [p for p in periods if p.get("tier") == "period"]
+
+    def _is_civilization_period(p: dict) -> bool:
+        return _is_civilization_named_period(p) or _civilization_period_source_entity_type(p, civilization_period_sources) is not None
+
+    all_periods = [p for p in periods if p.get("tier") == "period" and not _is_civilization_period(p)]
+    civilization_periods = [p for p in periods if _is_civilization_period(p)]
 
     entities_by_period: dict[str, list[str]] = {}
     for link in period_links:
@@ -105,6 +162,27 @@ def build_explore_tree(polities: list[dict], periods: list[dict], period_links: 
         chapter_curated_ids[cid] = curated_ids
     all_curated_ids: set[str] = set().union(*chapter_curated_ids.values()) if chapter_curated_ids else set()
 
+    # Civilizations & Cultures lane: entity_type-tagged polities and
+    # name-matched civilization periods, placed per chapter by date overlap
+    # alone (no era/region nesting -- the lane is a single flat row, since
+    # per-chapter counts are small). Computed before Pass 2 so its polities
+    # can be excluded from the ordinary polities-by-region/continent buckets.
+    civilizations_by_chapter: dict[str, list[dict]] = {cid: [] for cid in chapter_ids}
+    all_chapters = [chapters_by_id[c] for c in chapter_ids]
+    for period in civilization_periods:
+        best = _best_chapter_for_range((period["start"], period["end"]), all_chapters)
+        if best is not None:
+            source_entity_type = _civilization_period_source_entity_type(period, civilization_period_sources)
+            civilizations_by_chapter[best["id"]].append(_civilization_period_entry(period, source_entity_type))
+    for polity in polities:
+        if polity.get("entity_type") not in CIVILIZATION_ENTITY_TYPES or not in_scope(polity):
+            continue
+        best = best_chapter_for_polity(polity, all_chapters, open_end)
+        if best is not None:
+            civilizations_by_chapter[best["id"]].append(_civilization_polity_entry(polity))
+    for cid in chapter_ids:
+        civilizations_by_chapter[cid].sort(key=lambda e: (e["start"], e["id"]))
+
     # Pass 2: bucket polities per chapter by region, using the curated ids
     # from Pass 1.
     chapters_out = []
@@ -115,6 +193,8 @@ def build_explore_tree(polities: list[dict], periods: list[dict], period_links: 
         for polity in polities:
             if not in_scope(polity):
                 continue
+            if polity.get("entity_type") in CIVILIZATION_ENTITY_TYPES:
+                continue  # handled by the Civilizations & Cultures lane above, not the Polities row
             polity_id = polity["id"]
             is_curated = polity_id in chapter_curated_ids[cid]
             if not is_curated:
@@ -141,6 +221,7 @@ def build_explore_tree(polities: list[dict], periods: list[dict], period_links: 
             "eras": eras_by_chapter[cid],
             "polities_by_historical_region": by_region,
             "polities_by_continent": by_continent,
+            "civilizations": civilizations_by_chapter[cid],
         })
 
     earliest_chapter = min(chapters_out, key=lambda c: c["start"])
@@ -229,3 +310,39 @@ def _polity_entry(polity: dict, curated: bool) -> dict:
         "curated": curated,
         "present_countries": (polity.get("geography") or {}).get("present_countries") or [],
     }
+
+
+def _civilization_polity_entry(polity: dict) -> dict:
+    """Build a JSON-serializable dict entry for a civilization/culture/
+    people/tribe-typed polity in the Civilizations & Cultures lane.
+    `curated` is always True -- entity_type is a reviewed field, not a
+    heuristic guess, unlike the name-matched periods alongside it."""
+    return {
+        "id": polity["id"],
+        "canonical_name": polity["canonical_name"],
+        "start": polity["start"],
+        "end": polity.get("end"),
+        "curated": True,
+        "source": "polity",
+        "entity_type": polity.get("entity_type"),
+    }
+
+
+def _civilization_period_entry(period: dict, source_entity_type: str | None = None) -> dict:
+    """Build a JSON-serializable dict entry for a civilization period in the
+    Civilizations & Cultures lane. `curated` reflects how it got here:
+    True when `source_entity_type` is set (a real, reviewed Polity.entity_type
+    field, via a promoted timeline_role: period companion record), False
+    when it's only a canonical_name substring match
+    (_is_civilization_named_period) -- a guess, not a classification."""
+    entry = {
+        "id": period["id"],
+        "canonical_name": period["canonical_name"],
+        "start": period["start"],
+        "end": period["end"],
+        "curated": source_entity_type is not None,
+        "source": "period",
+    }
+    if source_entity_type is not None:
+        entry["entity_type"] = source_entity_type
+    return entry

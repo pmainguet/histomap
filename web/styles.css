@@ -258,12 +258,15 @@ kbd { padding: .1rem .3rem; background: white; border: 1px solid var(--rule); fo
 .hierarchy-band-chapter { fill: #8c422d; fill-opacity: .18; stroke: #8c422d; }
 .hierarchy-band-era { fill: var(--rule); fill-opacity: .6; stroke: #27251f; stroke-opacity: .35; }
 .hierarchy-band-period.curated { fill: #27251f; fill-opacity: .22; }
-.hierarchy-band-period.heuristic, .hierarchy-band-polity.heuristic { fill-opacity: .07; stroke-dasharray: 3 2; }
+.hierarchy-band-period.heuristic, .hierarchy-band-polity.heuristic, .hierarchy-band-civilization.heuristic { fill-opacity: .07; stroke-dasharray: 3 2; }
 .hierarchy-band-polity.curated { fill: var(--ink-faint); fill-opacity: .28; }
+.hierarchy-band-civilization.curated, .hierarchy-band-civilization.heuristic { fill: #3d6b66; }
+.hierarchy-band-civilization.curated { fill-opacity: .3; }
 .hierarchy-region-label { font: .72rem system-ui, sans-serif; fill: var(--ink-faint); }
 .hierarchy-continent-label { font: 700 .74rem system-ui, sans-serif; fill: #27251f; }
 .hierarchy-band-label { font: .68rem system-ui, sans-serif; fill: #27251f; pointer-events: none; }
-.hierarchy-row-separator { stroke: var(--ink-faint); stroke-dasharray: 4 3; stroke-width: 1; opacity: .5; }
+.hierarchy-row-separator { stroke: var(--ink-faint); stroke-width: 1; opacity: .5; }
+.hierarchy-region-separator { stroke: var(--rule); stroke-dasharray: 3 2; stroke-width: 1; opacity: .7; }
 .hierarchy-tier-label { font: 700 .7rem system-ui, sans-serif; fill: var(--ink-faint); text-anchor: middle; }
 #zoom-reset { margin-left: auto; color: var(--ink-faint); text-decoration: none; font: .82rem system-ui, sans-serif; }
 #zoom-reset:hover { color: #27251f; }
