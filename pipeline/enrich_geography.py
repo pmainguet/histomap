@@ -271,11 +271,13 @@ def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
             point = float(centroid["lon"]), float(centroid["lat"])
         countries: set[str] = set()
         continents: set[str] = set()
+        # A P17 target without a valid ISO2 code isn't reliably a real country (it can be
+        # a colonial empire or other broad entity), so its continent claims aren't trustworthy either.
         for country_qid in p17.get(qid, set()):
             info = metadata.get(country_qid, {})
             if info.get("iso2") and len(info["iso2"]) == 2:
                 countries.add(info["iso2"])
-            continents.update(info.get("continents", []))
+                continents.update(info.get("continents", []))
         located = locate_point(*point, boundaries) if point else None
         if located is None and point and only_missing:
             located = locate_near_coast(*point, boundaries)
