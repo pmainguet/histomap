@@ -128,6 +128,7 @@ def build_explore_tree(polities: list[dict], periods: list[dict], period_links: 
 
 
 def _era_entry(era: dict, periods_out: list[dict]) -> dict:
+    """Build a JSON-serializable dict entry for a regional-era node in the explore tree."""
     return {
         "id": era["id"],
         "canonical_name": era["canonical_name"],
@@ -138,6 +139,7 @@ def _era_entry(era: dict, periods_out: list[dict]) -> dict:
 
 
 def _period_entry(period: dict, curated: bool) -> dict:
+    """Build a JSON-serializable dict entry for a named-period node with its curated/heuristic flag."""
     return {
         "id": period["id"],
         "canonical_name": period["canonical_name"],
@@ -148,6 +150,7 @@ def _period_entry(period: dict, curated: bool) -> dict:
 
 
 def _polity_entry(polity: dict, curated: bool) -> dict:
+    """Build a JSON-serializable dict entry for a polity with its curated/heuristic flag."""
     return {
         "id": polity["id"],
         "canonical_name": polity["canonical_name"],

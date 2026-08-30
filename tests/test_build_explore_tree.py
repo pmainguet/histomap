@@ -4,10 +4,12 @@ from pipeline.build_explore_tree import best_chapter_for_polity, build_explore_t
 
 
 def chapter(id_: str, start: int, end: int) -> dict:
+    """Build a minimal macro-chapter fixture dict."""
     return {"id": id_, "tier": "macro_chapter", "canonical_name": id_, "start": start, "end": end, "broader_periods": []}
 
 
 def era(id_: str, start: int, end: int, chapter_id: str, continents: list[str], regions: list[str] | None = None) -> dict:
+    """Build a minimal regional-era fixture dict."""
     return {
         "id": id_, "tier": "regional_era", "canonical_name": id_, "start": start, "end": end,
         "broader_periods": [chapter_id],
@@ -16,6 +18,7 @@ def era(id_: str, start: int, end: int, chapter_id: str, continents: list[str], 
 
 
 def named_period(id_: str, start: int, end: int, broader: list[str] | None = None, continents: list[str] | None = None) -> dict:
+    """Build a minimal period fixture dict."""
     return {
         "id": id_, "tier": "period", "canonical_name": id_, "start": start, "end": end,
         "broader_periods": broader or [],
@@ -25,6 +28,7 @@ def named_period(id_: str, start: int, end: int, broader: list[str] | None = Non
 
 def polity(id_: str, start: int, end: int | None, continent: str, region: str | None = None,
            tier: str = "global") -> dict:
+    """Build a minimal polity fixture dict."""
     return {
         "id": id_, "canonical_name": id_, "start": start, "end": end,
         "visibility_tier": tier,
