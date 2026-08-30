@@ -176,21 +176,21 @@ function collectRegionKeys(tree, groupBy) {
   return [...keys].sort();
 }
 
-// Row height per region = the max lane count needed by any single chapter
-// for that region, so every chapter's entries fit within the shared row.
+// Row height per region = the lane count needed to pack ALL chapters'
+// entries for that region together, so a real time-span overlap between
+// two different chapters' polities is caught instead of hidden behind
+// independent per-chapter lane indices sharing the same Y-offset.
 function regionLaneCounts(tree, groupBy, regionKeys, scale) {
   const counts = {};
   const getRange = labelAwareFootprint(scale);
   for (const key of regionKeys) {
-    let maxLanes = 1;
-    for (const chapter of tree.chapters) {
+    const allEntries = tree.chapters.flatMap((chapter) => {
       const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
-      const entries = buckets[key];
-      if (!entries) continue;
-      const lanes = packIntoLanes(entries.slice(0, MAX_POLITIES_PER_REGION), getRange);
-      maxLanes = Math.max(maxLanes, lanes.length);
-    }
-    counts[key] = maxLanes;
+      return (buckets[key] || []).slice(0, MAX_POLITIES_PER_REGION);
+    });
+    const sorted = [...allEntries].sort((a, b) => a.start - b.start);
+    const lanes = packIntoLanes(sorted, getRange);
+    counts[key] = lanes.length;
   }
   return counts;
 }
@@ -210,26 +210,29 @@ function renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, y,
     label.textContent = regionLabel(key);
     svg.append(label);
     rowY += REGION_HEADER_HEIGHT;
-    for (const chapter of tree.chapters) {
+    const totalCount = tree.chapters.reduce((sum, chapter) => {
       const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
-      const entries = buckets[key];
-      if (!entries) continue;
-      const shown = entries.slice(0, MAX_POLITIES_PER_REGION);
-      const lanes = packIntoLanes(shown, getRange);
-      lanes.forEach((lane, laneIndex) => {
-        lane.forEach((polity) => {
-          const curatedClass = polity.curated ? "curated" : "heuristic";
-          bandRect(svg, {
-            x: scale.x(polity.start), y: rowY + laneIndex * POLITY_LANE_HEIGHT,
-            width: scale.width(polity.start, polity.end), height: POLITY_LANE_HEIGHT - 2,
-            cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`,
-            title: `${polity.canonical_name} (${entries.length} in ${regionLabel(key)})`,
-            label: polity.canonical_name,
-            onZoom: { handler: onZoom, start: polity.start, end: polity.end ?? tree.axis.domain_end },
-          });
+      return sum + (buckets[key]?.length || 0);
+    }, 0);
+    const allEntries = tree.chapters.flatMap((chapter) => {
+      const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
+      return (buckets[key] || []).slice(0, MAX_POLITIES_PER_REGION);
+    });
+    const sorted = [...allEntries].sort((a, b) => a.start - b.start);
+    const lanes = packIntoLanes(sorted, getRange);
+    lanes.forEach((lane, laneIndex) => {
+      lane.forEach((polity) => {
+        const curatedClass = polity.curated ? "curated" : "heuristic";
+        bandRect(svg, {
+          x: scale.x(polity.start), y: rowY + laneIndex * POLITY_LANE_HEIGHT,
+          width: scale.width(polity.start, polity.end), height: POLITY_LANE_HEIGHT - 2,
+          cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`,
+          title: `${polity.canonical_name} (${totalCount} in ${regionLabel(key)})`,
+          label: polity.canonical_name,
+          onZoom: { handler: onZoom, start: polity.start, end: polity.end ?? tree.axis.domain_end },
         });
       });
-    }
+    });
     rowY += laneCounts[key] * POLITY_LANE_HEIGHT + 4;
   }
   return rowY;
@@ -264,14 +267,10 @@ function countryLaneCounts(tree, structure, scale) {
   const getRange = labelAwareFootprint(scale);
   for (const { continent, countries } of structure) {
     for (const country of countries) {
-      let maxLanes = 1;
-      for (const chapter of tree.chapters) {
-        const entries = entriesForCountry(chapter, continent, country);
-        if (!entries.length) continue;
-        const lanes = packIntoLanes(entries.slice(0, MAX_POLITIES_PER_REGION), getRange);
-        maxLanes = Math.max(maxLanes, lanes.length);
-      }
-      counts.set(`${continent}::${country}`, maxLanes);
+      const allEntries = tree.chapters.flatMap((chapter) => entriesForCountry(chapter, continent, country).slice(0, MAX_POLITIES_PER_REGION));
+      const sorted = [...allEntries].sort((a, b) => a.start - b.start);
+      const lanes = packIntoLanes(sorted, getRange);
+      counts.set(`${continent}::${country}`, lanes.length);
     }
   }
   return counts;
@@ -303,25 +302,22 @@ function renderCountryRow(svg, scale, tree, structure, laneCounts, y, onZoom) {
       countryLabel.textContent = countryLaneLabel(country);
       svg.append(countryLabel);
       rowY += REGION_HEADER_HEIGHT;
-      for (const chapter of tree.chapters) {
-        const entries = entriesForCountry(chapter, continent, country);
-        if (!entries.length) continue;
-        const shown = entries.slice(0, MAX_POLITIES_PER_REGION);
-        const lanes = packIntoLanes(shown, getRange);
-        lanes.forEach((lane, laneIndex) => {
-          lane.forEach((polity) => {
-            const curatedClass = polity.curated ? "curated" : "heuristic";
-            bandRect(svg, {
-              x: scale.x(polity.start), y: rowY + laneIndex * POLITY_LANE_HEIGHT,
-              width: scale.width(polity.start, polity.end), height: POLITY_LANE_HEIGHT - 2,
-              cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`,
-              title: `${polity.canonical_name} (${countryLaneLabel(country)})`,
-              label: polity.canonical_name,
-              onZoom: { handler: onZoom, start: polity.start, end: polity.end ?? tree.axis.domain_end },
-            });
+      const allEntries = tree.chapters.flatMap((chapter) => entriesForCountry(chapter, continent, country).slice(0, MAX_POLITIES_PER_REGION));
+      const sorted = [...allEntries].sort((a, b) => a.start - b.start);
+      const lanes = packIntoLanes(sorted, getRange);
+      lanes.forEach((lane, laneIndex) => {
+        lane.forEach((polity) => {
+          const curatedClass = polity.curated ? "curated" : "heuristic";
+          bandRect(svg, {
+            x: scale.x(polity.start), y: rowY + laneIndex * POLITY_LANE_HEIGHT,
+            width: scale.width(polity.start, polity.end), height: POLITY_LANE_HEIGHT - 2,
+            cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`,
+            title: `${polity.canonical_name} (${countryLaneLabel(country)})`,
+            label: polity.canonical_name,
+            onZoom: { handler: onZoom, start: polity.start, end: polity.end ?? tree.axis.domain_end },
           });
         });
-      }
+      });
       rowY += laneCounts.get(`${continent}::${country}`) * POLITY_LANE_HEIGHT + 4;
     }
   }
@@ -345,20 +341,18 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   const periodLaneHeight = 20;
   const rowGap = 6;
 
-  // Pack eras and periods per chapter, left-to-right (chapters don't overlap).
+  // Pack eras and periods GLOBALLY across all chapters, not per chapter --
+  // an item's real time span can extend past its own chapter's boundary,
+  // so lane assignment needs cross-chapter awareness to avoid a collision
+  // with a neighboring chapter's own lane-0 content.
   const getRange = labelAwareFootprint(scale);
-  const chapterLayouts = tree.chapters.map((chapter) => {
-    const visibleEras = chapter.eras.filter((era) => !era.auto_generated);
-    const eraLanes = packIntoLanes([...visibleEras].sort((a, b) => a.start - b.start), getRange);
-    const allPeriods = chapter.eras.flatMap((era) => era.periods);
-    const periodLanes = packIntoLanes([...allPeriods].sort((a, b) => a.start - b.start), getRange);
-    return { chapter, eraLanes, periodLanes };
-  });
-  const maxEraLanes = Math.max(1, ...chapterLayouts.map((c) => c.eraLanes.length));
-  const maxPeriodLanes = Math.max(1, ...chapterLayouts.map((c) => c.periodLanes.length));
+  const visibleEras = tree.chapters.flatMap((chapter) => chapter.eras.filter((era) => !era.auto_generated));
+  const eraLanes = packIntoLanes([...visibleEras].sort((a, b) => a.start - b.start), getRange);
+  const allPeriods = tree.chapters.flatMap((chapter) => chapter.eras.flatMap((era) => era.periods));
+  const periodLanes = packIntoLanes([...allPeriods].sort((a, b) => a.start - b.start), getRange);
 
-  const eraRowHeight = maxEraLanes * eraLaneHeight;
-  const periodRowHeight = maxPeriodLanes * periodLaneHeight;
+  const eraRowHeight = eraLanes.length * eraLaneHeight;
+  const periodRowHeight = periodLanes.length * periodLaneHeight;
 
   // Both the height number (needed now, before `height`/`svg` exist) and the
   // deferred drawing closure (called later, once `svg` exists) are prepared
@@ -413,15 +407,13 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   drawTierLabel(svg, "Chapter", prevSepY, sepY);
   prevSepY = sepY;
 
-  chapterLayouts.forEach(({ eraLanes }) => {
-    eraLanes.forEach((lane, laneIndex) => {
-      lane.forEach((era) => {
-        bandRect(svg, {
-          x: scale.x(era.start), y: y + laneIndex * eraLaneHeight,
-          width: scale.width(era.start, era.end), height: eraLaneHeight - 2,
-          cls: "hierarchy-band hierarchy-band-era", title: era.canonical_name, label: era.canonical_name,
-          onZoom: { handler: onZoom, start: era.start, end: era.end },
-        });
+  eraLanes.forEach((lane, laneIndex) => {
+    lane.forEach((era) => {
+      bandRect(svg, {
+        x: scale.x(era.start), y: y + laneIndex * eraLaneHeight,
+        width: scale.width(era.start, era.end), height: eraLaneHeight - 2,
+        cls: "hierarchy-band hierarchy-band-era", title: era.canonical_name, label: era.canonical_name,
+        onZoom: { handler: onZoom, start: era.start, end: era.end },
       });
     });
   });
@@ -431,17 +423,15 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   drawTierLabel(svg, "Era", prevSepY, sepY);
   prevSepY = sepY;
 
-  chapterLayouts.forEach(({ periodLanes }) => {
-    periodLanes.forEach((lane, laneIndex) => {
-      lane.forEach((period) => {
-        const curatedClass = period.curated ? "curated" : "heuristic";
-        bandRect(svg, {
-          x: scale.x(period.start), y: y + laneIndex * periodLaneHeight,
-          width: scale.width(period.start, period.end), height: periodLaneHeight - 2,
-          cls: `hierarchy-band hierarchy-band-period ${curatedClass}`, title: period.canonical_name,
-          label: period.canonical_name,
-          onZoom: { handler: onZoom, start: period.start, end: period.end },
-        });
+  periodLanes.forEach((lane, laneIndex) => {
+    lane.forEach((period) => {
+      const curatedClass = period.curated ? "curated" : "heuristic";
+      bandRect(svg, {
+        x: scale.x(period.start), y: y + laneIndex * periodLaneHeight,
+        width: scale.width(period.start, period.end), height: periodLaneHeight - 2,
+        cls: `hierarchy-band hierarchy-band-period ${curatedClass}`, title: period.canonical_name,
+        label: period.canonical_name,
+        onZoom: { handler: onZoom, start: period.start, end: period.end },
       });
     });
   });
