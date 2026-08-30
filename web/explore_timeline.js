@@ -324,9 +324,24 @@ function renderCountryRow(svg, scale, tree, structure, laneCounts, y, onZoom) {
   return rowY;
 }
 
+// Continent-level grouping is the right default (see docs/plans -- the
+// user explicitly confirmed continent granularity is enough in general),
+// but Asia specifically gets a finer split using the already-available
+// primary_historical_region field, since "Asia" alone spans wildly
+// different historical contexts (e.g. Islamic Caliphates vs. Chinese
+// Empire) that continent-level grouping flattens together. Every other
+// continent is untouched by this.
+function eraOrPeriodBucketKey(item) {
+  if (item.primary_continent === "asia" && item.primary_historical_region && item.primary_historical_region !== "unclassified") {
+    return item.primary_historical_region;
+  }
+  return item.primary_continent || "unclassified";
+}
+
 // Continent-grouped layout for the era and period rows: buckets an
 // already-global (post cross-chapter fix), flat item list by
-// primary_continent, then lane-packs each continent's items globally
+// primary_continent (Asia further split by primary_historical_region, see
+// eraOrPeriodBucketKey), then lane-packs each bucket's items globally
 // (across chapters, since these lists already are). Computed once and
 // reused for both the height-measurement pass and the draw pass, so
 // there's no possibility of the two diverging.
@@ -334,7 +349,7 @@ function continentGroupedLayout(items, scale, laneHeight) {
   const getRange = labelAwareFootprint(scale);
   const buckets = new Map();
   for (const item of items) {
-    const key = item.primary_continent || "unclassified";
+    const key = eraOrPeriodBucketKey(item);
     if (!buckets.has(key)) buckets.set(key, []);
     buckets.get(key).push(item);
   }
