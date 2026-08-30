@@ -30,14 +30,12 @@ eligibility: accepted
 geography:
   continents:
   - africa
-  - europe
   present_countries:
   - TZ
   centroid:
     lat: -2.413055555
     lon: 30.543611111
   confidence: medium
-  primary_continent: africa
   historical_regions:
   - east_africa
   primary_historical_region: east_africa

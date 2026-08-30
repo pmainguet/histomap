@@ -27,7 +27,6 @@ visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
-  - asia
   - europe
   present_countries:
   - RU
@@ -35,7 +34,6 @@ geography:
     lat: 59.95
     lon: 30.316666666
   confidence: medium
-  primary_continent: europe
   historical_regions:
   - eastern_europe
   primary_historical_region: eastern_europe

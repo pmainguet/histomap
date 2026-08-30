@@ -31,16 +31,13 @@ visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
-  - africa
   - asia
-  - europe
   present_countries:
   - IQ
   centroid:
     lat: 32.53638889
     lon: 44.42083333
   confidence: medium
-  primary_continent: asia
   historical_regions:
   - west_asia
   primary_historical_region: west_asia

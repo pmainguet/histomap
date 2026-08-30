@@ -29,17 +29,12 @@ eligibility: accepted
 geography:
   continents:
   - africa
-  - antarctica
-  - asia
-  - europe
-  - oceania
   present_countries:
   - LS
   centroid:
     lat: -29.51666667
     lon: 27.8
   confidence: medium
-  primary_continent: africa
   historical_regions:
   - southern_africa
   primary_historical_region: southern_africa

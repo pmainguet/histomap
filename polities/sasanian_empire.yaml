@@ -37,7 +37,6 @@ visibility_tier: global
 eligibility: accepted
 geography:
   continents:
-  - africa
   - asia
   present_countries:
   - IR
@@ -45,7 +44,6 @@ geography:
     lat: 33.0
     lon: 53.0
   confidence: medium
-  primary_continent: asia
   historical_regions:
   - west_asia
   primary_historical_region: west_asia

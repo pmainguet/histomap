@@ -30,18 +30,12 @@ eligibility: accepted
 geography:
   continents:
   - africa
-  - asia
-  - europe
-  - north_america
-  - oceania
-  - south_america
   present_countries:
   - CM
   centroid:
     lat: 3.866419
     lon: 11.520563
   confidence: medium
-  primary_continent: africa
   historical_regions:
   - central_africa
   primary_historical_region: central_africa

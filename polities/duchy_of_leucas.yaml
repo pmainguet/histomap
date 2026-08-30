@@ -26,8 +26,7 @@ prominence_score: 16.71
 visibility_tier: detailed
 eligibility: accepted
 geography:
-  continents:
-  - europe
+  continents: []
   present_countries: []
   centroid:
     lat: 38.717777777

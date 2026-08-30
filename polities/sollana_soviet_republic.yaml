@@ -25,7 +25,6 @@ visibility_tier: detailed
 eligibility: review
 geography:
   continents:
-  - africa
   - europe
   present_countries:
   - ES
@@ -33,7 +32,6 @@ geography:
     lat: 39.2781
     lon: -0.381572
   confidence: medium
-  primary_continent: europe
   historical_regions:
   - southern_europe
   primary_historical_region: southern_europe

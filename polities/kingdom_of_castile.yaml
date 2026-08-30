@@ -28,9 +28,7 @@ eligibility: accepted
 geography:
   continents:
   - africa
-  - asia
   - europe
-  - oceania
   present_countries:
   - ES
   centroid: null

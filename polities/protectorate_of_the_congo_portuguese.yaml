@@ -27,14 +27,12 @@ eligibility: review
 geography:
   continents:
   - africa
-  - europe
   present_countries:
   - AO
   centroid:
     lat: -5.05
     lon: 12.3
   confidence: medium
-  primary_continent: africa
   historical_regions:
   - central_africa
   primary_historical_region: central_africa

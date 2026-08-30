@@ -29,14 +29,12 @@ eligibility: accepted
 geography:
   continents:
   - africa
-  - europe
   present_countries:
   - ER
   centroid:
     lat: 15.333333333
     lon: 38.916666666
   confidence: medium
-  primary_continent: africa
   historical_regions:
   - horn_of_africa
   primary_historical_region: horn_of_africa

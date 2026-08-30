@@ -27,17 +27,13 @@ visibility_tier: detailed
 eligibility: review
 geography:
   continents:
-  - africa
-  - asia
   - europe
-  - oceania
   present_countries:
   - BE
   centroid:
     lat: 50.846680555
     lon: 4.3525
   confidence: medium
-  primary_continent: europe
   historical_regions:
   - western_europe
   primary_historical_region: western_europe

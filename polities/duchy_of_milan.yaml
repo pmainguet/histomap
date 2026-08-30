@@ -31,17 +31,13 @@ visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
-  - africa
-  - asia
   - europe
-  - oceania
   present_countries:
   - IT
   centroid:
     lat: 45.466669444
     lon: 9.166669444
   confidence: medium
-  primary_continent: europe
   historical_regions:
   - southern_europe
   primary_historical_region: southern_europe

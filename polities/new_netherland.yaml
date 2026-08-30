@@ -27,7 +27,6 @@ visibility_tier: global
 eligibility: accepted
 geography:
   continents:
-  - europe
   - north_america
   present_countries:
   - US
@@ -35,7 +34,6 @@ geography:
     lat: 40.76666667
     lon: -73.98333333
   confidence: medium
-  primary_continent: north_america
   historical_regions:
   - north_america
   primary_historical_region: north_america

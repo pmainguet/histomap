@@ -33,14 +33,12 @@ eligibility: accepted
 geography:
   continents:
   - asia
-  - north_america
   present_countries:
   - UZ
   centroid:
     lat: 39.774722222
     lon: 64.428611111
   confidence: medium
-  primary_continent: asia
   historical_regions:
   - central_asia
   primary_historical_region: central_asia

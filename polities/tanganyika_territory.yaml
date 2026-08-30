@@ -29,17 +29,12 @@ eligibility: review
 geography:
   continents:
   - africa
-  - antarctica
-  - asia
-  - europe
-  - oceania
   present_countries:
   - TZ
   centroid:
     lat: -6.8
     lon: 39.283333
   confidence: medium
-  primary_continent: africa
   historical_regions:
   - east_africa
   primary_historical_region: east_africa

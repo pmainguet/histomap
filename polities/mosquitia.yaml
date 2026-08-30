@@ -32,19 +32,13 @@ visibility_tier: global
 eligibility: accepted
 geography:
   continents:
-  - africa
-  - antarctica
-  - asia
-  - europe
   - north_america
-  - oceania
   present_countries:
   - NI
   centroid:
     lat: 12.013125
     lon: -83.764911111
   confidence: medium
-  primary_continent: north_america
   historical_regions:
   - mesoamerica
   primary_historical_region: mesoamerica

@@ -28,16 +28,12 @@ eligibility: accepted
 geography:
   continents:
   - africa
-  - asia
-  - europe
-  - south_america
   present_countries:
   - BI
   centroid:
     lat: -2.7
     lon: 29.9
   confidence: medium
-  primary_continent: africa
   historical_regions:
   - east_africa
   primary_historical_region: east_africa

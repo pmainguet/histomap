@@ -37,15 +37,12 @@ eligibility: accepted
 geography:
   continents:
   - africa
-  - asia
-  - europe
   present_countries:
   - DZ
   centroid:
     lat: 35.0
     lon: 7.0
   confidence: medium
-  primary_continent: africa
   historical_regions:
   - north_africa
   primary_historical_region: north_africa

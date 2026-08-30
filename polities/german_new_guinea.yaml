@@ -27,7 +27,6 @@ visibility_tier: detailed
 eligibility: review
 geography:
   continents:
-  - europe
   - oceania
   present_countries:
   - PG
@@ -35,7 +34,6 @@ geography:
     lat: -4.2
     lon: 152.17
   confidence: medium
-  primary_continent: oceania
   historical_regions:
   - oceania_pacific
   primary_historical_region: oceania_pacific

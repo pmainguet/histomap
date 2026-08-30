@@ -27,16 +27,13 @@ visibility_tier: detailed
 eligibility: review
 geography:
   continents:
-  - asia
   - europe
-  - north_america
   present_countries:
   - RU
   centroid:
     lat: 51.698055555
     lon: 94.39
   confidence: medium
-  primary_continent: europe
   historical_regions:
   - eastern_europe
   primary_historical_region: eastern_europe

@@ -30,14 +30,12 @@ eligibility: accepted
 geography:
   continents:
   - asia
-  - north_america
   present_countries:
   - AZ
   centroid:
     lat: 39.758333333
     lon: 46.748333333
   confidence: medium
-  primary_continent: asia
   historical_regions:
   - west_asia
   primary_historical_region: west_asia

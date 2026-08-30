@@ -29,7 +29,6 @@ eligibility: accepted
 geography:
   continents:
   - africa
-  - asia
   - europe
   present_countries:
   - IT

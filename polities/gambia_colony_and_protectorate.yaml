@@ -27,17 +27,12 @@ eligibility: review
 geography:
   continents:
   - africa
-  - antarctica
-  - asia
-  - europe
-  - oceania
   present_countries:
   - GM
   centroid:
     lat: 13.4531
     lon: -16.5775
   confidence: medium
-  primary_continent: africa
   historical_regions:
   - west_africa
   primary_historical_region: west_africa

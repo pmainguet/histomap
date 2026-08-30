@@ -30,8 +30,7 @@ prominence_score: 41.73
 visibility_tier: global
 eligibility: accepted
 geography:
-  continents:
-  - oceania
+  continents: []
   present_countries: []
   centroid:
     lat: 20.987

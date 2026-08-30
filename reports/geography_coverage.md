@@ -2,28 +2,28 @@
 
 ## Overall
 
-- Country: 2,860
-- Continent Only: 336
-- Centroid Only: 56
-- Unknown: 1,387
+- Country: 2,992
+- Continent Only: 343
+- Centroid Only: 55
+- Unknown: 1,281
 
 ## Detailed
 
-- Country: 2,182
-- Continent Only: 319
-- Centroid Only: 47
-- Unknown: 1,288
+- Country: 2,239
+- Continent Only: 325
+- Centroid Only: 40
+- Unknown: 1,270
 
 ## Global
 
-- Country: 83
-- Continent Only: 4
-- Centroid Only: 1
-- Unknown: 10
+- Country: 92
+- Continent Only: 1
+- Centroid Only: 4
+- Unknown: 0
 
 ## Regional
 
-- Country: 595
-- Continent Only: 13
-- Centroid Only: 8
-- Unknown: 89
+- Country: 661
+- Continent Only: 17
+- Centroid Only: 11
+- Unknown: 11
