@@ -356,20 +356,37 @@ meant growing the `Period` tree.
 
 Implemented in [`docs/plans/2026-08-30-explore-hierarchy-timeline.md`](docs/plans/2026-08-30-explore-hierarchy-timeline.md):
 The `/explore` page renders the full period hierarchy as stacked bands sharing one time
-axis: macro chapter, regional era, named period, plus a polities band the user can group by
+axis: geological epoch (rendered first, for date-reference context on the deepest chapters),
+macro chapter, regional era, named period, plus a polities band the user can group by
 historical region, by present-day continent, or hide. Built by `pipeline/build_explore_tree.py`
-into `explore_tree.json`, served as a static file alongside `periods.json`.
+into `explore_tree.json`, served as a static file alongside `periods.json`. Every band in every
+row is clickable: clicking narrows the rendered time domain to that element's own date range
+(with a small padding margin), re-rendering the same page at a much higher effective
+pixels-per-year so a short-lived chapter or era becomes legible; a "Full timeline" control resets
+the zoom. The scale itself stays exactly as time-proportional as ever — only the visible window
+changes — so short recent chapters are reachable by zooming rather than by breaking
+proportionality.
 
 Curated placement uses `broader_periods` (period hierarchy) and `period_links.yaml` (polity linkage).
-Where the curated tree has no entry for a node, placement falls back to a geography + date
-overlap heuristic — the same fallback the suggestion queues already use (`reports/regional_era_suggestions.jsonl`,
-`reports/period_link_suggestions.jsonl`). This trades some placement accuracy (heuristic entries
+Where the curated tree has no entry for a node, placement falls back to a heuristic, and the
+heuristic differs by tier: a named period's placement under an era reuses the geography + date
+overlap ranking (`rank_candidates`) verbatim from the suggestion queues (`reports/regional_era_suggestions.jsonl`,
+`reports/period_link_suggestions.jsonl`), while a polity's placement under a macro chapter uses a
+simpler, chapter-specific mechanism (`best_chapter_for_polity`): pure date overlap against each
+chapter's own range, with no geography test, because chapters are mutually exclusive and
+contiguous in time by construction. This trades some placement accuracy (heuristic entries
 can be wrong, same caveat documented for the suggestion queues' own output) for a page that's
 useful today while the curation queues are still being worked. Heuristic entries render with
 visibly distinct treatment (dashed border, lower opacity) rather than blending in as curated fact
 — the `"curated"` boolean flag on each entry (`true` for `broader_periods`/`period_links.yaml`
 linked nodes, `false` for heuristic fallback) is the honest way this view stays populated ahead
-of full curation.
+of full curation. This is genuinely functional, not just a design intent: a polity's curated flag
+comes from whether it has a `period_links.yaml` entry into a period that lands under this
+chapter's eras, independent of whether that period's own era nesting is itself curated or
+heuristic. Confirmed via the shipped `explore_tree.json`: curated entries do appear (37 of 786
+placed polities, as of this writing) — the remainder are held back either because their
+`period_links.yaml` entity is out of `in_scope` visibility, or because their linked period fails
+the geography/date heuristic match against every era and so never lands under any chapter.
 
 Query through `pipeline/period_hierarchy.py`, not by re-deriving `broader_periods` or
 `period_links.yaml` traversal, or `visibility_tier`, in the UI layer:
