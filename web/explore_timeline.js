@@ -75,10 +75,8 @@ function drawTierLabel(svg, text, yStart, yEnd) {
   const available = yEnd - yStart;
   const label = svgEl("text", { x: cx, y: yMid, class: "hierarchy-tier-label", transform: `rotate(-90, ${cx}, ${yMid})` });
   const words = text.split(" ");
-  const spans = [];
   if (words.length === 1) {
     label.textContent = text;
-    spans.push(label);
   } else {
     // Multi-word labels ("Geological Epoch") stack as separate lines, one
     // word per line -- before rotation that's ordinary vertical line
@@ -93,16 +91,18 @@ function drawTierLabel(svg, text, yStart, yEnd) {
       const tspan = svgEl("tspan", { x: cx, y: startY + i * lineHeight });
       tspan.textContent = word;
       label.append(tspan);
-      spans.push(tspan);
     });
   }
   svg.append(label);
   // Shrink-to-fit safety net: the longest line's rendered length becomes
-  // the vertical footprint once rotated, so measure it for real (rather
-  // than estimate) and scale the font down if it would still overflow
-  // this block -- clamped at a floor so short row-blocks (like the thin
-  // geological row) never produce illegibly tiny text.
-  const maxLineLength = Math.max(...spans.map((s) => s.getComputedTextLength()));
+  // the vertical footprint once rotated, so estimate it (same character-width
+  // heuristic as labelAwareFootprint -- this `svg` isn't attached to the
+  // document yet at this point in renderHierarchyTimeline, so a real
+  // getComputedTextLength() measurement would silently return 0) and scale
+  // the font down if it would still overflow this block -- clamped at a
+  // floor so short row-blocks (like the thin geological row) never produce
+  // illegibly tiny text.
+  const maxLineLength = Math.max(...words.map((word) => word.length * ESTIMATED_CHAR_WIDTH));
   const budget = available - 6;
   if (maxLineLength > budget && budget > 0) {
     const scale = Math.max(0.75, budget / maxLineLength);
@@ -335,10 +335,10 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
     width - LEFT_MARGIN, 0.1, LEFT_MARGIN,
   );
 
-  // geoRowHeight is taller than the band content strictly needs, so the
-  // new "Geological Epoch" tier label (two stacked lines, rotated) has
-  // room to fit without shrinking past a legible floor or bleeding into
-  // the chapter row's own label above it.
+  // geoRowHeight is taller than the band content strictly needs. The
+  // rotated tier label for this row is just the single word "Epoch", which
+  // doesn't need the extra room, but the slack is harmless and keeps this
+  // row visually distinct from the chapter row below it.
   const geoRowHeight = 48;
   const chapterRowHeight = 40;
   const eraLaneHeight = 24;
