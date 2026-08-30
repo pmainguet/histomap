@@ -259,6 +259,6 @@ kbd { padding: .1rem .3rem; background: white; border: 1px solid var(--rule); fo
 .hierarchy-band-era { fill: #27251f; fill-opacity: .1; }
 .hierarchy-band-period.curated { fill: #27251f; fill-opacity: .16; }
 .hierarchy-band-period.heuristic, .hierarchy-band-polity.heuristic { fill-opacity: .07; stroke-dasharray: 3 2; }
-.hierarchy-band-polity.curated { fill: #34506b; fill-opacity: .22; }
+.hierarchy-band-polity.curated { fill: var(--ink-faint); fill-opacity: .28; }
 .hierarchy-region-label { font: .72rem system-ui, sans-serif; fill: var(--ink-faint); }
 .loading { color: var(--ink-faint); padding: 1.5rem clamp(1rem, 4vw, 3.5rem); }
