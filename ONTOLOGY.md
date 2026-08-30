@@ -354,21 +354,29 @@ meant growing the `Period` tree.
 
 ## How a future timeline UI should read this
 
-Implementation plan:
-[`docs/plans/2026-08-29-explore-timeline-ui.md`](docs/plans/2026-08-29-explore-timeline-ui.md)
-— a new `/explore` page, starting at the World zoom level (the 9 macro chapters) with a
-geological reference band shown alongside per the "Tree, lanes, graph" section above;
-deeper zoom levels are scoped as a roadmap there, not yet task-level.
+Implemented in [`docs/plans/2026-08-30-explore-hierarchy-timeline.md`](docs/plans/2026-08-30-explore-hierarchy-timeline.md):
+The `/explore` page renders the full period hierarchy as stacked bands sharing one time
+axis: macro chapter, regional era, named period, plus a polities band the user can group by
+historical region, by present-day continent, or hide. Built by `pipeline/build_explore_tree.py`
+into `explore_tree.json`, served as a static file alongside `periods.json`.
+
+Curated placement uses `broader_periods` (period hierarchy) and `period_links.yaml` (polity linkage).
+Where the curated tree has no entry for a node, placement falls back to a geography + date
+overlap heuristic — the same fallback the suggestion queues already use (`reports/regional_era_suggestions.jsonl`,
+`reports/period_link_suggestions.jsonl`). This trades some placement accuracy (heuristic entries
+can be wrong, same caveat documented for the suggestion queues' own output) for a page that's
+useful today while the curation queues are still being worked. Heuristic entries render with
+visibly distinct treatment (dashed border, lower opacity) rather than blending in as curated fact
+— the `"curated"` boolean flag on each entry (`true` for `broader_periods`/`period_links.yaml`
+linked nodes, `false` for heuristic fallback) is the honest way this view stays populated ahead
+of full curation.
 
 Query through `pipeline/period_hierarchy.py`, not by re-deriving `broader_periods` or
 `period_links.yaml` traversal, or `visibility_tier`, in the UI layer:
 
-- `macro_chapters()` — the 9 ids, in order → the "World" zoom level.
+- `macro_chapters()` — the 9 ids, in order.
 - `children(period_id)` → what to show one zoom level in, ordered by `start`.
 - `top_entities(period_id, limit)` → the N most prominent polities under a node
-  (`visibility_override` pinned first, then by `prominence_score`) — what to show by
-  default before the user asks to see everything.
-- `entities_under(period_id)` → every polity transitively under a node, deduplicated,
-  unranked — the "show all" behind `top_entities`'s default.
-- `ancestors(period_id)` → single breadcrumb chain back to the macro chapter, for a
-  "Record" view that wants to show where it sits in the hierarchy.
+  (`visibility_override` pinned first, then by `prominence_score`).
+- `entities_under(period_id)` → every polity transitively under a node, deduplicated, unranked.
+- `ancestors(period_id)` → single breadcrumb chain back to the macro chapter.

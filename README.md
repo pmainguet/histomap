@@ -31,11 +31,11 @@ make serve
 ```
 
 The review page is available at <http://127.0.0.1:8000/review>. The curated "Explore" view
-(9 macro chapters, zoom in from there) is available at <http://127.0.0.1:8000/explore> — it
-reads a separate, gitignored build artifact (`explore_index.json`), so it needs at least one
-`make build` (or the equivalent below) to have run before it has anything to show; `make serve`
-already does this for you since it depends on `build`. The server binds only to localhost and
-exposes a fixed allowlist of pipeline actions.
+(macro chapters, regional eras, and periods as stacked bands, with a toggleable polities band) is
+available at <http://127.0.0.1:8000/explore> — it reads a separate, gitignored build artifact
+(`explore_tree.json`), so it needs at least one `make build` (or the equivalent below) to have run
+before it has anything to show; `make serve` already does this for you since it depends on `build`.
+The server binds only to localhost and exposes a fixed allowlist of pipeline actions.
 
 ## Windows without `make`
 
@@ -56,7 +56,7 @@ ruff check .; & $py -m mypy .             # make lint
 `make serve`'s Makefile target depends on `build`, so it always rebuilds first — running
 `$py -m server.app` on its own **skips that rebuild**. If you've started the server directly
 without the `rebuild_timeline` step first, pages that read a build artifact (`data.json`,
-`explore_index.json`, ...) will 404 or show stale data until you run a build and restart.
+`explore_tree.json`, ...) will 404 or show stale data until you run a build and restart.
 
 ## Wikidata backbone
 

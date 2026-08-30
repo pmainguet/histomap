@@ -38,6 +38,16 @@ including targets that are not yet complete.
 | 8 — Grow with the kid | **Ongoing later work** | Adult/Child selector, extensible text model, period pilot grown to 102 records with role review | Substantial content, more reading levels, language UI, family-history layer |
 | 9 — Period ontology | **Foundational layer done** | `Period.tier` schema field, build-time tier/cycle validation, 9 macro chapters, 20 hand-curated + auto-generated modern regional eras, suggestion queues for regional-era and polity period-links, tested `pipeline/period_hierarchy.py` query layer (`top_entities` replaces the retired competitive visibility-tier algorithm), `Geography.historical_regions`/`primary_historical_region` derived from `present_countries` via a starter lookup table | Work the two suggestion queues (`reports/regional_era_suggestions.jsonl`, `reports/period_link_suggestions.jsonl`); grow `pipeline/historical_regions.py`'s ~110-country starter table; replace auto-generated modern regional eras with hand-curated sub-continental ones over time; the timeline UI itself (separate plan) reads `pipeline/period_hierarchy.py` |
 
+### Implementation plans (detailed specifications)
+
+The phases above are implemented via focused implementation plans, each with its own spec and task breakdown:
+
+| Plan | Status | Focus |
+|---|---|---|
+| [`docs/plans/2026-08-29-period-ontology.md`](docs/plans/2026-08-29-period-ontology.md) | **Complete** | Phase 9 — Chronological hierarchy (macro chapter → regional era → period), build-time tier validation, scoped ranking via `top_entities()`, removal of retired competitive visibility-tier algorithm |
+| [`docs/plans/2026-08-29-explore-timeline-ui.md`](docs/plans/2026-08-29-explore-timeline-ui.md) | **Replaced by 2026-08-30** | Initial outline for `/explore` timeline UI (replaced by the plan below once the data layer was ready) |
+| [`docs/plans/2026-08-30-explore-hierarchy-timeline.md`](docs/plans/2026-08-30-explore-hierarchy-timeline.md) | **Complete** | Phase 9 → 6 — Full period hierarchy rendering on `/explore`: macro chapter, regional era, named period, and region-toggleable polities band; heuristic placement for sparse curation |
+
 ### Current measurable state
 
 - **4,671** canonical polities (down from 4,794 as the consolidation pass folds duplicate/phase
