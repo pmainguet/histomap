@@ -12,6 +12,22 @@ function svgEl(name, attrs = {}) {
 let clipIdCounter = 0;
 const LABEL_MIN_WIDTH = 30;
 
+const ESTIMATED_CHAR_WIDTH = 6; // px per character at the .68rem label font -- no live text measurement, just a reasonable estimate
+const LABEL_PADDING = 8;
+
+// Returns a getRange function (for packIntoLanes) that accounts for label
+// width, not just band width, so labels wider than their band don't
+// visually collide with the next item's label in the same lane.
+function labelAwareFootprint(scale) {
+  return (item) => {
+    const bandStart = scale.x(item.start);
+    const bandWidth = scale.width(item.start, item.end);
+    const labelWidth = item.canonical_name.length * ESTIMATED_CHAR_WIDTH + LABEL_PADDING;
+    const footprintWidth = Math.max(bandWidth, labelWidth);
+    return { start: bandStart, end: bandStart + footprintWidth };
+  };
+}
+
 function bandRect(svg, { x, y, width, height, cls, title, label, onZoom }) {
   const rect = svgEl("rect", { x, y, width, height, class: cls, rx: 2 });
   if (onZoom) {
@@ -34,6 +50,10 @@ function bandRect(svg, { x, y, width, height, cls, title, label, onZoom }) {
     svg.append(textEl);
   }
   return rect;
+}
+
+function drawSeparator(svg, width, y) {
+  svg.append(svgEl("line", { x1: 0, x2: width, y1: y, y2: y, class: "hierarchy-row-separator" }));
 }
 
 const POLITY_LANE_HEIGHT = 18;
@@ -104,15 +124,16 @@ function collectRegionKeys(tree, groupBy) {
 
 // Row height per region = the max lane count needed by any single chapter
 // for that region, so every chapter's entries fit within the shared row.
-function regionLaneCounts(tree, groupBy, regionKeys) {
+function regionLaneCounts(tree, groupBy, regionKeys, scale) {
   const counts = {};
+  const getRange = labelAwareFootprint(scale);
   for (const key of regionKeys) {
     let maxLanes = 1;
     for (const chapter of tree.chapters) {
       const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
       const entries = buckets[key];
       if (!entries) continue;
-      const lanes = packIntoLanes(entries.slice(0, MAX_POLITIES_PER_REGION));
+      const lanes = packIntoLanes(entries.slice(0, MAX_POLITIES_PER_REGION), getRange);
       maxLanes = Math.max(maxLanes, lanes.length);
     }
     counts[key] = maxLanes;
@@ -129,6 +150,7 @@ function measurePolitiesRowHeight(regionKeys, laneCounts) {
 function renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, y, onZoom) {
   if (groupBy === "none") return y;
   let rowY = y;
+  const getRange = labelAwareFootprint(scale);
   for (const key of regionKeys) {
     const label = svgEl("text", { x: 4, y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
     label.textContent = regionLabel(key);
@@ -139,7 +161,7 @@ function renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, y,
       const entries = buckets[key];
       if (!entries) continue;
       const shown = entries.slice(0, MAX_POLITIES_PER_REGION);
-      const lanes = packIntoLanes(shown);
+      const lanes = packIntoLanes(shown, getRange);
       lanes.forEach((lane, laneIndex) => {
         lane.forEach((polity) => {
           const curatedClass = polity.curated ? "curated" : "heuristic";
@@ -183,15 +205,16 @@ function entriesForCountry(chapter, continent, country) {
   return all.filter((polity) => countryLaneKey(polity) === country);
 }
 
-function countryLaneCounts(tree, structure) {
+function countryLaneCounts(tree, structure, scale) {
   const counts = new Map();
+  const getRange = labelAwareFootprint(scale);
   for (const { continent, countries } of structure) {
     for (const country of countries) {
       let maxLanes = 1;
       for (const chapter of tree.chapters) {
         const entries = entriesForCountry(chapter, continent, country);
         if (!entries.length) continue;
-        const lanes = packIntoLanes(entries.slice(0, MAX_POLITIES_PER_REGION));
+        const lanes = packIntoLanes(entries.slice(0, MAX_POLITIES_PER_REGION), getRange);
         maxLanes = Math.max(maxLanes, lanes.length);
       }
       counts.set(`${continent}::${country}`, maxLanes);
@@ -215,6 +238,7 @@ function measureCountryRowHeight(structure, laneCounts) {
 
 function renderCountryRow(svg, scale, tree, structure, laneCounts, y, onZoom) {
   let rowY = y;
+  const getRange = labelAwareFootprint(scale);
   for (const { continent, countries } of structure) {
     const header = svgEl("text", { x: 4, y: rowY + CONTINENT_HEADER_HEIGHT - 5, class: "hierarchy-continent-label" });
     header.textContent = regionLabel(continent);
@@ -229,7 +253,7 @@ function renderCountryRow(svg, scale, tree, structure, laneCounts, y, onZoom) {
         const entries = entriesForCountry(chapter, continent, country);
         if (!entries.length) continue;
         const shown = entries.slice(0, MAX_POLITIES_PER_REGION);
-        const lanes = packIntoLanes(shown);
+        const lanes = packIntoLanes(shown, getRange);
         lanes.forEach((lane, laneIndex) => {
           lane.forEach((polity) => {
             const curatedClass = polity.curated ? "curated" : "heuristic";
@@ -261,10 +285,11 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   const rowGap = 6;
 
   // Pack eras and periods per chapter, left-to-right (chapters don't overlap).
+  const getRange = labelAwareFootprint(scale);
   const chapterLayouts = tree.chapters.map((chapter) => {
-    const eraLanes = packIntoLanes([...chapter.eras].sort((a, b) => a.start - b.start));
+    const eraLanes = packIntoLanes([...chapter.eras].sort((a, b) => a.start - b.start), getRange);
     const allPeriods = chapter.eras.flatMap((era) => era.periods);
-    const periodLanes = packIntoLanes([...allPeriods].sort((a, b) => a.start - b.start));
+    const periodLanes = packIntoLanes([...allPeriods].sort((a, b) => a.start - b.start), getRange);
     return { chapter, eraLanes, periodLanes };
   });
   const maxEraLanes = Math.max(1, ...chapterLayouts.map((c) => c.eraLanes.length));
@@ -281,12 +306,12 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   let drawPolitiesRow;
   if (groupBy === "country") {
     const structure = collectCountryStructure(tree);
-    const laneCounts = countryLaneCounts(tree, structure);
+    const laneCounts = countryLaneCounts(tree, structure, scale);
     politiesRowHeight = measureCountryRowHeight(structure, laneCounts);
     drawPolitiesRow = (rowY) => renderCountryRow(svg, scale, tree, structure, laneCounts, rowY, onZoom);
   } else {
     const regionKeys = collectRegionKeys(tree, groupBy);
-    const laneCounts = regionLaneCounts(tree, groupBy, regionKeys);
+    const laneCounts = regionLaneCounts(tree, groupBy, regionKeys, scale);
     politiesRowHeight = measurePolitiesRowHeight(regionKeys, laneCounts);
     drawPolitiesRow = (rowY) => renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, rowY, onZoom);
   }
@@ -305,6 +330,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
     });
   }
   y += geoRowHeight + rowGap;
+  drawSeparator(svg, width, y - rowGap / 2);
 
   for (const chapter of tree.chapters) {
     bandRect(svg, {
@@ -316,6 +342,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
     });
   }
   y += chapterRowHeight + rowGap;
+  drawSeparator(svg, width, y - rowGap / 2);
 
   chapterLayouts.forEach(({ eraLanes }) => {
     eraLanes.forEach((lane, laneIndex) => {
@@ -330,6 +357,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
     });
   });
   y += eraRowHeight + rowGap;
+  drawSeparator(svg, width, y - rowGap / 2);
 
   chapterLayouts.forEach(({ periodLanes }) => {
     periodLanes.forEach((lane, laneIndex) => {
@@ -346,6 +374,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
     });
   });
   y += periodRowHeight + rowGap;
+  drawSeparator(svg, width, y - rowGap / 2);
 
   drawPolitiesRow(y);
 
