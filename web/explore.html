@@ -21,13 +21,23 @@
     </header>
     <section class="explore-intro" aria-label="About this view">
       <h1>Explore human history</h1>
-      <p>Nine chapters, oldest first. Click one to zoom in.</p>
+      <p>Nine chapters, oldest first. Click a chapter to open it on the full timeline.</p>
     </section>
-    <div id="geological-band" aria-hidden="true"></div>
-    <main id="chapter-grid" class="chapter-grid" aria-label="Macro chapters">
+    <div class="hierarchy-controls" aria-label="Polities display">
+      <label for="polities-toggle">Show polities by</label>
+      <select id="polities-toggle">
+        <option value="historical_region">Historical region</option>
+        <option value="continent">Present-day continent</option>
+        <option value="none">Hidden</option>
+      </select>
+    </div>
+    <div id="hierarchy-chart" class="hierarchy-chart-container" aria-label="Period hierarchy timeline">
       <p class="loading">Loading…</p>
-    </main>
+    </div>
     <script src="/static/geological_epochs.js"></script>
+    <script src="/static/timeline_scale.js"></script>
+    <script src="/static/lane_packing.js"></script>
+    <script src="/static/explore_timeline.js"></script>
     <script src="/static/explore.js"></script>
   </body>
 </html>

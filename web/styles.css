@@ -250,43 +250,15 @@ kbd { padding: .1rem .3rem; background: white; border: 1px solid var(--rule); fo
 .explore-intro { padding: 1.5rem clamp(1rem, 4vw, 3.5rem) 0; }
 .explore-intro h1 { margin: 0 0 .3rem; font-size: 2rem; }
 .explore-intro p { margin: 0; color: var(--ink-faint); }
-.chapter-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-  gap: 1rem;
-  padding: 1.5rem clamp(1rem, 4vw, 3.5rem) 3rem;
-}
-.chapter-tile {
-  display: block;
-  padding: 1.1rem;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: 3px;
-  color: inherit;
-  text-decoration: none;
-}
-.chapter-tile:hover { border-color: #8c422d; }
-.chapter-tile h2 { margin: 0 0 .3rem; font-size: 1.15rem; }
-.chapter-span { margin: 0 0 .2rem; color: var(--ink-faint); font: .82rem system-ui, sans-serif; }
-.chapter-count { margin: 0 0 .5rem; font: 700 .8rem system-ui, sans-serif; color: #8c422d; }
-.chapter-top { margin: 0; font-size: .88rem; }
+.hierarchy-controls { display: flex; gap: .6rem; align-items: center; padding: .6rem clamp(1rem, 4vw, 3.5rem); font: .82rem system-ui, sans-serif; color: var(--ink-faint); }
+.hierarchy-chart-container { overflow: auto; padding: 0 clamp(1rem, 4vw, 3.5rem) 2rem; }
+.hierarchy-chart { display: block; min-width: 740px; }
+.hierarchy-band { fill: var(--paper); stroke: var(--rule); cursor: pointer; }
+.hierarchy-band-geo { fill: #eee9de; stroke: none; cursor: default; }
+.hierarchy-band-chapter { fill: #8c422d; fill-opacity: .18; stroke: #8c422d; }
+.hierarchy-band-era { fill: #27251f; fill-opacity: .1; }
+.hierarchy-band-period.curated { fill: #27251f; fill-opacity: .16; }
+.hierarchy-band-period.heuristic, .hierarchy-band-polity.heuristic { fill-opacity: .07; stroke-dasharray: 3 2; }
+.hierarchy-band-polity.curated { fill: #34506b; fill-opacity: .22; }
+.hierarchy-region-label { font: .72rem system-ui, sans-serif; fill: var(--ink-faint); }
 .loading { color: var(--ink-faint); padding: 1.5rem clamp(1rem, 4vw, 3.5rem); }
-
-#geological-band {
-  display: flex;
-  margin: 0 clamp(1rem, 4vw, 3.5rem);
-  border: 1px solid var(--rule);
-  border-radius: 2px;
-  overflow: hidden;
-  font: .72rem system-ui, sans-serif;
-}
-.geo-segment {
-  padding: .3rem .4rem;
-  border-right: 1px solid var(--rule);
-  background: #e4ded0;
-  color: var(--ink-faint);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.geo-segment:last-child { border-right: none; }
