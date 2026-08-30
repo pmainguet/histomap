@@ -324,6 +324,55 @@ function renderCountryRow(svg, scale, tree, structure, laneCounts, y, onZoom) {
   return rowY;
 }
 
+// Continent-grouped layout for the era and period rows: buckets an
+// already-global (post cross-chapter fix), flat item list by
+// primary_continent, then lane-packs each continent's items globally
+// (across chapters, since these lists already are). Computed once and
+// reused for both the height-measurement pass and the draw pass, so
+// there's no possibility of the two diverging.
+function continentGroupedLayout(items, scale, laneHeight) {
+  const getRange = labelAwareFootprint(scale);
+  const buckets = new Map();
+  for (const item of items) {
+    const key = item.primary_continent || "unclassified";
+    if (!buckets.has(key)) buckets.set(key, []);
+    buckets.get(key).push(item);
+  }
+  const continents = [...buckets.keys()].sort();
+  const rows = continents.map((continent) => {
+    const sorted = [...buckets.get(continent)].sort((a, b) => a.start - b.start);
+    const lanes = packIntoLanes(sorted, getRange);
+    return { continent, lanes };
+  });
+  const height = rows.reduce((total, row) => total + REGION_HEADER_HEIGHT + row.lanes.length * laneHeight + 4, 0);
+  return { rows, height };
+}
+
+function drawContinentGroupedRow(svg, scale, rows, y, laneHeight, cls, onZoom) {
+  let rowY = y;
+  for (const { continent, lanes } of rows) {
+    const label = svgEl("text", { x: POLITIES_LABEL_X, y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
+    label.textContent = regionLabel(continent);
+    svg.append(label);
+    rowY += REGION_HEADER_HEIGHT;
+    lanes.forEach((lane, laneIndex) => {
+      lane.forEach((item) => {
+        // Eras have no curated/heuristic distinction (_era_entry carries no
+        // `curated` field) -- only periods do.
+        const curatedClass = item.curated === undefined ? "" : (item.curated ? "curated" : "heuristic");
+        bandRect(svg, {
+          x: scale.x(item.start), y: rowY + laneIndex * laneHeight,
+          width: scale.width(item.start, item.end), height: laneHeight - 2,
+          cls: `hierarchy-band ${cls} ${curatedClass}`.trim(), title: item.canonical_name, label: item.canonical_name,
+          onZoom: { handler: onZoom, start: item.start, end: item.end },
+        });
+      });
+    });
+    rowY += lanes.length * laneHeight + 4;
+  }
+  return rowY;
+}
+
 function renderHierarchyTimeline(tree, container, groupBy = "historical_region", onZoom = () => {}) {
   const width = Math.max(900, Math.min(4800, window.innerWidth - 80));
   const scale = createTimeScale(
@@ -344,15 +393,17 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   // Pack eras and periods GLOBALLY across all chapters, not per chapter --
   // an item's real time span can extend past its own chapter's boundary,
   // so lane assignment needs cross-chapter awareness to avoid a collision
-  // with a neighboring chapter's own lane-0 content.
-  const getRange = labelAwareFootprint(scale);
+  // with a neighboring chapter's own lane-0 content. Additionally grouped
+  // by continent (a fixed granularity, independent of the polities row's
+  // own historical_region/continent/country toggle) so two chronologically
+  // adjacent but geographically unrelated eras/periods don't share a lane.
   const visibleEras = tree.chapters.flatMap((chapter) => chapter.eras.filter((era) => !era.auto_generated));
-  const eraLanes = packIntoLanes([...visibleEras].sort((a, b) => a.start - b.start), getRange);
+  const eraLayout = continentGroupedLayout(visibleEras, scale, eraLaneHeight);
   const allPeriods = tree.chapters.flatMap((chapter) => chapter.eras.flatMap((era) => era.periods));
-  const periodLanes = packIntoLanes([...allPeriods].sort((a, b) => a.start - b.start), getRange);
+  const periodLayout = continentGroupedLayout(allPeriods, scale, periodLaneHeight);
 
-  const eraRowHeight = eraLanes.length * eraLaneHeight;
-  const periodRowHeight = periodLanes.length * periodLaneHeight;
+  const eraRowHeight = eraLayout.height;
+  const periodRowHeight = periodLayout.height;
 
   // Both the height number (needed now, before `height`/`svg` exist) and the
   // deferred drawing closure (called later, once `svg` exists) are prepared
@@ -407,34 +458,14 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   drawTierLabel(svg, "Chapter", prevSepY, sepY);
   prevSepY = sepY;
 
-  eraLanes.forEach((lane, laneIndex) => {
-    lane.forEach((era) => {
-      bandRect(svg, {
-        x: scale.x(era.start), y: y + laneIndex * eraLaneHeight,
-        width: scale.width(era.start, era.end), height: eraLaneHeight - 2,
-        cls: "hierarchy-band hierarchy-band-era", title: era.canonical_name, label: era.canonical_name,
-        onZoom: { handler: onZoom, start: era.start, end: era.end },
-      });
-    });
-  });
+  drawContinentGroupedRow(svg, scale, eraLayout.rows, y, eraLaneHeight, "hierarchy-band-era", onZoom);
   y += eraRowHeight + rowGap;
   sepY = y - rowGap / 2;
   drawSeparator(svg, width, sepY);
   drawTierLabel(svg, "Era", prevSepY, sepY);
   prevSepY = sepY;
 
-  periodLanes.forEach((lane, laneIndex) => {
-    lane.forEach((period) => {
-      const curatedClass = period.curated ? "curated" : "heuristic";
-      bandRect(svg, {
-        x: scale.x(period.start), y: y + laneIndex * periodLaneHeight,
-        width: scale.width(period.start, period.end), height: periodLaneHeight - 2,
-        cls: `hierarchy-band hierarchy-band-period ${curatedClass}`, title: period.canonical_name,
-        label: period.canonical_name,
-        onZoom: { handler: onZoom, start: period.start, end: period.end },
-      });
-    });
-  });
+  drawContinentGroupedRow(svg, scale, periodLayout.rows, y, periodLaneHeight, "hierarchy-band-period", onZoom);
   y += periodRowHeight + rowGap;
   sepY = y - rowGap / 2;
   drawSeparator(svg, width, sepY);
