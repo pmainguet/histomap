@@ -160,7 +160,9 @@ def _era_entry(era: dict, periods_out: list[dict]) -> dict:
     explore tree. `auto_generated` flags placeholder eras created by
     generate_modern_regional_eras.py (one per continent x modern chapter,
     no real historical distinction) so the display tree can merge them --
-    see build_explore_tree's era-merge step."""
+    see build_explore_tree's era-merge step. `primary_continent` lets the
+    /explore era row group by continent."""
+    geo = era.get("geography") or {}
     return {
         "id": era["id"],
         "canonical_name": era["canonical_name"],
@@ -168,6 +170,7 @@ def _era_entry(era: dict, periods_out: list[dict]) -> dict:
         "end": era["end"],
         "periods": periods_out,
         "auto_generated": era.get("authority") == AUTO_GENERATED_AUTHORITY,
+        "primary_continent": geo.get("primary_continent") or (geo.get("continents") or [None])[0] or "unclassified",
     }
 
 
@@ -196,13 +199,17 @@ def _merge_auto_generated_eras(eras: list[dict], chapter: dict) -> list[dict]:
 
 
 def _period_entry(period: dict, curated: bool) -> dict:
-    """Build a JSON-serializable dict entry for a named-period node with its curated/heuristic flag."""
+    """Build a JSON-serializable dict entry for a named-period node with its
+    curated/heuristic flag. `primary_continent` lets the /explore period row
+    group by continent."""
+    geo = period.get("geography") or {}
     return {
         "id": period["id"],
         "canonical_name": period["canonical_name"],
         "start": period["start"],
         "end": period["end"],
         "curated": curated,
+        "primary_continent": geo.get("primary_continent") or (geo.get("continents") or [None])[0] or "unclassified",
     }
 
 
