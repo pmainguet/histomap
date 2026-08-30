@@ -395,7 +395,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   y += geoRowHeight + rowGap;
   let sepY = y - rowGap / 2;
   drawSeparator(svg, width, sepY);
-  drawTierLabel(svg, "Geological Epoch", prevSepY, sepY);
+  drawTierLabel(svg, "Epoch", prevSepY, sepY);
   prevSepY = sepY;
 
   for (const chapter of tree.chapters) {
