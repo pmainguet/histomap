@@ -254,6 +254,38 @@ Authored two different ways, deliberately:
   a legitimate future addition, added the hand-curated way once someone wants to invest
   the research.
 
+### Overarching regional eras for genuinely cross-regional themes
+
+Some themes ("Neolithic," "Bronze Age") happened at meaningfully different times in
+different regions -- the Fertile Crescent's Neolithic starts around -10,000, Europe's
+not until roughly -7,000 and doesn't end until -1,700 -- so no single regional-era
+node can honestly represent the whole theme. Two-speed authoring above already handles
+this at the *tier* level (one node per region, e.g. `fertile_crescent_neolithic_era`
+and a European counterpart); the remaining problem is when hand-curation only
+reaches *some* of a theme's regional siblings and not others, leaving one region a
+proper `regional_era` and its sibling a bare, unparented `period` (or, worse, a raw
+Wikidata/DBpedia import duplicating a hand-curated sibling under a different name and
+tier -- "Bronze Age Europe" vs. "European Bronze Age" was exactly this).
+
+The fix is a fourth node, not a fourth tier: an **overarching regional era** whose
+`start`/`end` is the min/max across every regional sibling it covers (e.g.
+`neolithic_era`: -10,000 to -1,700, spanning Fertile Crescent through Europe), parented
+to whichever macro chapter the siblings already share, with every regional sibling
+demoted from `regional_era` to `period` and reparented under it. This keeps the schema's
+existing 3-tier shape (`macro_chapter` → `regional_era` → `period`) intact --
+`neolithic_era` still validates as an ordinary regional era with one macro-chapter
+parent, and `fertile_crescent_neolithic_era` still validates as an ordinary period with
+one regional-era parent, per the tier rules above -- it's a structural correction to
+which siblings sit at which tier, not a new mechanism.
+
+**Only do this where a real duplication or gap already exists** (a bare period with no
+regional-era home, or two records for the same regional concept at different tiers).
+Two regional eras of the same theme that already both have a proper home
+(`african_paleolithic_era` / `eurasian_paleolithic_era`, both correctly `regional_era`
+under `macro_human_origins_paleolithic`, nothing bare or duplicated) don't need an
+overarching parent invented just for symmetry -- that would be restructuring for its
+own sake, not fixing anything broken.
+
 ## What replaced `region`/`culture_group`
 
 `Polity.region` / `Polity.culture_group` were meant to be a "historical grouping"

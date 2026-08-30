@@ -83,10 +83,12 @@ commit trail).
   continent stays at continent-level grouping, by explicit choice).
 
 **Queued, not yet started:**
-- Retire the `european_bronze_age` period (raw DBpedia import, duplicates the hand-curated
-  `european_bronze_age_era`) and close the matching regional-era coverage gap for
-  `european_neolithic`/`european_iron_age` (raw imports with no hand-curated era counterpart,
-  unlike their Nile Valley/Fertile Crescent/East Asian peers).
+- Close the matching regional-era coverage gap for `european_iron_age` (raw import with no
+  hand-curated era counterpart, unlike its Nile Valley/Fertile Crescent/East Asian peers).
+  The Bronze Age and Neolithic clusters are done: `european_bronze_age` (duplicate of
+  `european_bronze_age_era`) is retired, and new overarching `bronze_age_era` /
+  `neolithic_era` regional eras now parent all regional siblings in both clusters -- see
+  ONTOLOGY.md's "Overarching regional eras for genuinely cross-regional themes."
 - Disambiguate the 8 same-named period records (4× "Kingdom of Hungary", 2× "Kingdom of
   Poland", 2× "Kingdom of Spain" — distinct historical regimes, currently indistinguishable in
   any list).
