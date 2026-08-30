@@ -289,7 +289,7 @@ own sake, not fixing anything broken.
 ## What replaced `region`/`culture_group`
 
 `Polity.region` / `Polity.culture_group` were meant to be a "historical grouping"
-layer per the original schema sketch in `PLAN.md`, but were never populated at scale
+layer per the original schema sketch in `README.md`, but were never populated at scale
 (null on 4,521/4,671 and 4,670/4,671 records respectively as of 2026-08-29). Removed
 from `schema.py` entirely on 2026-08-29, along with every reference to them: `region`
 had live (if practically inert) UI wiring — `web/app.js`'s detail drawer showed it as
@@ -329,7 +329,7 @@ Two existing systems were built to answer "how important/how big is this record"
   (top 60 absolute + top-2 per continent/era stratum) that recomputes across all 4,671
   records whenever it runs.
 - `weight_by_era` — visual band-width weight, mostly `weight_imputed: true` today
-  (per `PLAN.md`: "the large majority of records are still imputed"), computed from
+  (per `STATUS.md`: "the large majority of records are still imputed"), computed from
   sparse Maddison/HYDE/Seshat population and area data.
 
 Now that the ontology tree exists, "what's important here" becomes a **local** question

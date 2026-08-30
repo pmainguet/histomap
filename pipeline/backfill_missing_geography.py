@@ -18,7 +18,7 @@ applied only to active (non-retired), non-locked entities whose geography curren
    several plausible countries and guessing one would be worse than leaving it explicit.
 3. **Live Wikidata fetch.** For entities with a Wikidata id that neither tier above resolved,
    batch-fetch P625 (coordinate), P17 (country), and P131 (located in admin entity, last resort
-   per the caution in PLAN.md 7c) directly from the API. Results are cached to
+   per the caution in STATUS.md 7c) directly from the API. Results are cached to
    `sources/wikidata_geo_supplement.json` so a rerun is free and offline.
 
 Never overwrites a manually locked geography field (`manual_overrides` containing "geography"),
