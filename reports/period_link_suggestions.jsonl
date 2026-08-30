@@ -1,759 +1,759 @@
-{"entity_id": "abbasid_caliphate", "canonical_name": "Abbasid Caliphate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "achaemenid_empire", "canonical_name": "Achaemenid Empire", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "adal_sultanate", "canonical_name": "Adal Sultanate", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "afsharid_iran", "canonical_name": "Afsharid Iran", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "abbasid_caliphate", "canonical_name": "Abbasid Caliphate", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "achaemenid_empire", "canonical_name": "Achaemenid Empire", "suggested_period_id": "celts_period", "suggested_tier": "period"}
+{"entity_id": "adal_sultanate", "canonical_name": "Adal Sultanate", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "afsharid_iran", "canonical_name": "Afsharid Iran", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "aghlabids", "canonical_name": "Aghlabids", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "ahom_kingdom", "canonical_name": "Ahom Kingdom", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "ahom_kingdom", "canonical_name": "Ahom Kingdom", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "aigai", "canonical_name": "Aigai", "suggested_period_id": "celts_period", "suggested_tier": "period"}
-{"entity_id": "ajuuraan_state", "canonical_name": "Ajuuraan state", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "akkadian_empire", "canonical_name": "Akkadian Empire", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "ajuuraan_state", "canonical_name": "Ajuuraan state", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "akkadian_empire", "canonical_name": "Akkadian Empire", "suggested_period_id": "mesopotamian_early_states_era", "suggested_tier": "regional_era"}
 {"entity_id": "akragas", "canonical_name": "Akragas", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
 {"entity_id": "alamannia", "canonical_name": "Alamannia", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
 {"entity_id": "alawite_state", "canonical_name": "Alawite State", "suggested_period_id": "macro_world_wars_reordering", "suggested_tier": "macro_chapter"}
-{"entity_id": "alba_longa", "canonical_name": "Alba Longa", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "alba_longa", "canonical_name": "Alba Longa", "suggested_period_id": "european_bronze_age", "suggested_tier": "period"}
 {"entity_id": "algeria", "canonical_name": "Algeria", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "all_palestine_government", "canonical_name": "All-Palestine Government", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "all_palestine_government", "canonical_name": "All-Palestine Government", "suggested_period_id": "czechoslovak_republic_period", "suggested_tier": "period"}
 {"entity_id": "almohad_caliphate", "canonical_name": "Almohad Caliphate", "suggested_period_id": "capetian_dynasty_period", "suggested_tier": "period"}
 {"entity_id": "alodia", "canonical_name": "Alodia", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "ancient_carthage", "canonical_name": "Ancient Carthage", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
 {"entity_id": "ancient_rome", "canonical_name": "Ancient Rome", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
-{"entity_id": "anga_kingdom", "canonical_name": "Anga Kingdom", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "anga_kingdom", "canonical_name": "Anga Kingdom", "suggested_period_id": "western_zhou_q1069609_period", "suggested_tier": "period"}
 {"entity_id": "anglo_egyptian_sudan", "canonical_name": "Anglo-Egyptian Sudan", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
-{"entity_id": "angola", "canonical_name": "Angola", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "ankole", "canonical_name": "Ankole", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "anshan_persia", "canonical_name": "Anshan Persia", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "angola", "canonical_name": "Angola", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "ankole", "canonical_name": "Ankole", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
+{"entity_id": "anshan_persia", "canonical_name": "Anshan Persia", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
 {"entity_id": "antigua_and_barbuda", "canonical_name": "Antigua and Barbuda", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "anuradhapura_kingdom", "canonical_name": "Anuradhapura Kingdom", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "aq_qoyunlu", "canonical_name": "Aq Qoyunlu", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "aram_damascus", "canonical_name": "Aram-Damascus", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "archduchy_of_austria", "canonical_name": "Archduchy of Austria", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "anuradhapura_kingdom", "canonical_name": "Anuradhapura Kingdom", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "aq_qoyunlu", "canonical_name": "Aq Qoyunlu", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "aram_damascus", "canonical_name": "Aram-Damascus", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
+{"entity_id": "archduchy_of_austria", "canonical_name": "Archduchy of Austria", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "argentina", "canonical_name": "Argentina", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
 {"entity_id": "armenia", "canonical_name": "Armenia", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "armenian_kingdom_of_cilicia", "canonical_name": "Armenian Kingdom of Cilicia", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "armenian_soviet_socialist_republic", "canonical_name": "Armenian Soviet Socialist Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "armenian_kingdom_of_cilicia", "canonical_name": "Armenian Kingdom of Cilicia", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "armenian_soviet_socialist_republic", "canonical_name": "Armenian Soviet Socialist Republic", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "aruba", "canonical_name": "Aruba", "suggested_period_id": "republic_of_venezuela_period", "suggested_tier": "period"}
-{"entity_id": "ashanti_empire", "canonical_name": "Ashanti Empire", "suggested_period_id": "kingdom_of_spain_q3399982_period", "suggested_tier": "period"}
+{"entity_id": "ashanti_empire", "canonical_name": "Ashanti Empire", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "ashikaga_shogunate", "canonical_name": "Ashikaga shogunate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "assyrian_empire", "canonical_name": "Assyrian Empire", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "astrakhan_khanate", "canonical_name": "Astrakhan Khanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "atropatene", "canonical_name": "Atropatene", "suggested_period_id": "yayoi_period", "suggested_tier": "period"}
+{"entity_id": "assyrian_empire", "canonical_name": "Assyrian Empire", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
+{"entity_id": "astrakhan_khanate", "canonical_name": "Astrakhan Khanate", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "atropatene", "canonical_name": "Atropatene", "suggested_period_id": "syrakousai_period", "suggested_tier": "period"}
 {"entity_id": "australia", "canonical_name": "Australia", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
-{"entity_id": "austriahungary", "canonical_name": "Austria–Hungary", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "austrian_empire", "canonical_name": "Austrian Empire", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "ayutthaya_kingdom", "canonical_name": "Ayutthaya Kingdom", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "austriahungary", "canonical_name": "Austria–Hungary", "suggested_period_id": "kingdom_of_hungary_q25395037_period", "suggested_tier": "period"}
+{"entity_id": "austrian_empire", "canonical_name": "Austrian Empire", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "ayutthaya_kingdom", "canonical_name": "Ayutthaya Kingdom", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "ayyubid_sultanate", "canonical_name": "Ayyubid Sultanate", "suggested_period_id": "ayyubid_sultanate_period", "suggested_tier": "period"}
 {"entity_id": "azcapotzalco", "canonical_name": "Azcapotzalco", "suggested_period_id": "mesoamerican_postclassic", "suggested_tier": "period"}
 {"entity_id": "azerbaijan", "canonical_name": "Azerbaijan", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "azerbaijan_soviet_socialist_republic", "canonical_name": "Azerbaijan Soviet Socialist Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "azerbaijan_soviet_socialist_republic", "canonical_name": "Azerbaijan Soviet Socialist Republic", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "aztec_triple_alliance", "canonical_name": "Aztec Triple Alliance", "suggested_period_id": "aztec_triple_alliance_period", "suggested_tier": "period"}
-{"entity_id": "babylon", "canonical_name": "Babylon", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "babylon", "canonical_name": "Babylon", "suggested_period_id": "european_bronze_age", "suggested_tier": "period"}
 {"entity_id": "baekje", "canonical_name": "Baekje", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "bahawalpur_state", "canonical_name": "Bahawalpur State", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "bahrain_and_its_dependencies", "canonical_name": "Bahrain and its Dependencies", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "bahawalpur_state", "canonical_name": "Bahawalpur State", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "bahrain_and_its_dependencies", "canonical_name": "Bahrain and its Dependencies", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "balhae", "canonical_name": "Balhae", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "bamana_empire", "canonical_name": "Bamana Empire", "suggested_period_id": "kingdom_of_spain_q3399982_period", "suggested_tier": "period"}
-{"entity_id": "bangladesh", "canonical_name": "Bangladesh", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
+{"entity_id": "bamana_empire", "canonical_name": "Bamana Empire", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "bangladesh", "canonical_name": "Bangladesh", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "barbados", "canonical_name": "Barbados", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "baroda_state", "canonical_name": "Baroda State", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "baroda_state", "canonical_name": "Baroda State", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "bechuanaland_protectorate", "canonical_name": "Bechuanaland Protectorate", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
-{"entity_id": "belgian_empire", "canonical_name": "Belgian Empire", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "belgium", "canonical_name": "Belgium", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "belgian_empire", "canonical_name": "Belgian Empire", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
+{"entity_id": "belgium", "canonical_name": "Belgium", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
 {"entity_id": "belize", "canonical_name": "Belize", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "benin", "canonical_name": "Benin", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "benin_empire", "canonical_name": "Benin Empire", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "beylik_of_karaman", "canonical_name": "Beylik of Karaman", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "bharatpur_state", "canonical_name": "Bharatpur State", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "bijapur_sultanate", "canonical_name": "Bijapur Sultanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "benin", "canonical_name": "Benin", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "benin_empire", "canonical_name": "Benin Empire", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "beylik_of_karaman", "canonical_name": "Beylik of Karaman", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "bharatpur_state", "canonical_name": "Bharatpur State", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "bijapur_sultanate", "canonical_name": "Bijapur Sultanate", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
 {"entity_id": "bogd_khanate_of_mongolia", "canonical_name": "Bogd Khanate of Mongolia", "suggested_period_id": "latvian_socialist_soviet_republic_period", "suggested_tier": "period"}
 {"entity_id": "boina_kingdom", "canonical_name": "Boina Kingdom", "suggested_period_id": "kingdom_of_spain_q3399982_period", "suggested_tier": "period"}
 {"entity_id": "bolivia", "canonical_name": "Bolivia", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
-{"entity_id": "bornu_empire", "canonical_name": "Bornu Empire", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "bornu_empire", "canonical_name": "Bornu Empire", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "bosnia_and_herzegovina", "canonical_name": "Bosnia and Herzegovina", "suggested_period_id": "europe_contemporary_world_era", "suggested_tier": "regional_era"}
-{"entity_id": "botswana", "canonical_name": "Botswana", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "brandenburg_prussia", "canonical_name": "Brandenburg-Prussia", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "botswana", "canonical_name": "Botswana", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "brandenburg_prussia", "canonical_name": "Brandenburg-Prussia", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "brazil", "canonical_name": "Brazil", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
-{"entity_id": "british_bencoolen", "canonical_name": "British Bencoolen", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "british_cameroons", "canonical_name": "British Cameroons", "suggested_period_id": "union_of_south_africa_period", "suggested_tier": "period"}
-{"entity_id": "british_empire", "canonical_name": "British Empire", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "british_bencoolen", "canonical_name": "British Bencoolen", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "british_cameroons", "canonical_name": "British Cameroons", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "british_empire", "canonical_name": "British Empire", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
 {"entity_id": "british_military_administration", "canonical_name": "British Military Administration", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
-{"entity_id": "british_raj", "canonical_name": "British Raj", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "british_raj", "canonical_name": "British Raj", "suggested_period_id": "kingdom_of_hungary_q25395037_period", "suggested_tier": "period"}
 {"entity_id": "british_somaliland", "canonical_name": "British Somaliland", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
-{"entity_id": "british_togoland", "canonical_name": "British Togoland", "suggested_period_id": "union_of_south_africa_period", "suggested_tier": "period"}
-{"entity_id": "bruneian_sultanate", "canonical_name": "Bruneian Sultanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "brunswick_luneburg", "canonical_name": "Brunswick-Lüneburg", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "buganda", "canonical_name": "Buganda", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "british_togoland", "canonical_name": "British Togoland", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "bruneian_sultanate", "canonical_name": "Bruneian Sultanate", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "brunswick_luneburg", "canonical_name": "Brunswick-Lüneburg", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "buganda", "canonical_name": "Buganda", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "bulgaria", "canonical_name": "Bulgaria", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "burkina_faso", "canonical_name": "Burkina Faso", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "burundi", "canonical_name": "Burundi", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "buyid_dynasty", "canonical_name": "Buyid dynasty", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "burkina_faso", "canonical_name": "Burkina Faso", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "burundi", "canonical_name": "Burundi", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "buyid_dynasty", "canonical_name": "Buyid dynasty", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "byelorussian_soviet_socialist_republic", "canonical_name": "Byelorussian Soviet Socialist Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
 {"entity_id": "byeonhan_confederacy", "canonical_name": "Byeonhan confederacy", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "byzantine_empire", "canonical_name": "Byzantine Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "byzantium", "canonical_name": "Byzantium", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
-{"entity_id": "california_republic", "canonical_name": "California Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "california_republic", "canonical_name": "California Republic", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "caliphate_of_cordoba", "canonical_name": "Caliphate of Córdoba", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "cameroon", "canonical_name": "Cameroon", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "canada", "canonical_name": "Canada", "suggested_period_id": "republic_of_cuba_period", "suggested_tier": "period"}
+{"entity_id": "cameroon", "canonical_name": "Cameroon", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "canada", "canonical_name": "Canada", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "cao_wei", "canonical_name": "Cao Wei", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "cape_colony", "canonical_name": "Cape Colony", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "cara_culture", "canonical_name": "Cara culture", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "carchemish", "canonical_name": "Carchemish", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "carchemish", "canonical_name": "Carchemish", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
 {"entity_id": "carolingian_empire", "canonical_name": "Carolingian Empire", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
 {"entity_id": "carthage", "canonical_name": "Carthage", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "caucasian_albania", "canonical_name": "Caucasian Albania", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "central_african_republic", "canonical_name": "Central African Republic", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
+{"entity_id": "caucasian_albania", "canonical_name": "Caucasian Albania", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
+{"entity_id": "central_african_republic", "canonical_name": "Central African Republic", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
 {"entity_id": "centralist_republic_of_mexico", "canonical_name": "Centralist Republic of Mexico", "suggested_period_id": "macro_industrial_imperial_world", "suggested_tier": "macro_chapter"}
-{"entity_id": "chad", "canonical_name": "Chad", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
+{"entity_id": "chad", "canonical_name": "Chad", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
 {"entity_id": "chagatai_khanate", "canonical_name": "Chagatai Khanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "chaldea", "canonical_name": "Chaldea", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "chalukya_dynasty", "canonical_name": "Chalukya dynasty", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "chera_dynasty", "canonical_name": "Chera dynasty", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "chaldea", "canonical_name": "Chaldea", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
+{"entity_id": "chalukya_dynasty", "canonical_name": "Chalukya dynasty", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "chera_dynasty", "canonical_name": "Chera dynasty", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "chile", "canonical_name": "Chile", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
 {"entity_id": "chuzan", "canonical_name": "Chūzan", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "circassia", "canonical_name": "Circassia", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "cisalpine_republic", "canonical_name": "Cisalpine Republic", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "colchis", "canonical_name": "Colchis", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "circassia", "canonical_name": "Circassia", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "cisalpine_republic", "canonical_name": "Cisalpine Republic", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "colchis", "canonical_name": "Colchis", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
 {"entity_id": "colla_kingdom", "canonical_name": "Colla Kingdom", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "colombia", "canonical_name": "Colombia", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
-{"entity_id": "colony_of_jamaica", "canonical_name": "Colony of Jamaica", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "colophon", "canonical_name": "Colophon", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "comtat_venaissin", "canonical_name": "Comtat Venaissin", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "congo_free_state", "canonical_name": "Congo Free State", "suggested_period_id": "spain_under_the_restoration_period", "suggested_tier": "period"}
+{"entity_id": "colony_of_jamaica", "canonical_name": "Colony of Jamaica", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "colophon", "canonical_name": "Colophon", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
+{"entity_id": "comtat_venaissin", "canonical_name": "Comtat Venaissin", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "congo_free_state", "canonical_name": "Congo Free State", "suggested_period_id": "africa_industrial_imperial_world_era", "suggested_tier": "regional_era"}
 {"entity_id": "cook_islands", "canonical_name": "Cook Islands", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "costa_rica", "canonical_name": "Costa Rica", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
-{"entity_id": "county_of_aragon", "canonical_name": "County of Aragon", "suggested_period_id": "viking_age_period", "suggested_tier": "period"}
-{"entity_id": "county_of_flanders", "canonical_name": "County of Flanders", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "county_of_holland", "canonical_name": "County of Holland", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "costa_rica", "canonical_name": "Costa Rica", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "county_of_aragon", "canonical_name": "County of Aragon", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "county_of_flanders", "canonical_name": "County of Flanders", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "county_of_holland", "canonical_name": "County of Holland", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "county_of_portugal", "canonical_name": "County of Portugal", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "county_of_sicily", "canonical_name": "County of Sicily", "suggested_period_id": "capetian_dynasty_period", "suggested_tier": "period"}
-{"entity_id": "county_of_wurttemberg", "canonical_name": "County of Württemberg", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "county_of_zeeland", "canonical_name": "County of Zeeland", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "cretan_state", "canonical_name": "Cretan State", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
+{"entity_id": "county_of_sicily", "canonical_name": "County of Sicily", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "county_of_wurttemberg", "canonical_name": "County of Württemberg", "suggested_period_id": "house_of_plantagenet_period", "suggested_tier": "period"}
+{"entity_id": "county_of_zeeland", "canonical_name": "County of Zeeland", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "cretan_state", "canonical_name": "Cretan State", "suggested_period_id": "kingdom_of_hungary_q25395037_period", "suggested_tier": "period"}
 {"entity_id": "crimean_khanate", "canonical_name": "Crimean Khanate", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "croatia", "canonical_name": "Croatia", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "crown_of_aragon", "canonical_name": "Crown of Aragon", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "crown_of_aragon", "canonical_name": "Crown of Aragon", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
 {"entity_id": "crown_of_castile", "canonical_name": "Crown of Castile", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "cutch_state", "canonical_name": "Cutch State", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "cutch_state", "canonical_name": "Cutch State", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "cyprus", "canonical_name": "Cyprus", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
 {"entity_id": "czech_republic", "canonical_name": "Czech Republic", "suggested_period_id": "europe_contemporary_world_era", "suggested_tier": "regional_era"}
 {"entity_id": "czechoslovakia", "canonical_name": "Czechoslovakia", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
 {"entity_id": "dacia", "canonical_name": "Dacia", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
-{"entity_id": "dahomey", "canonical_name": "Dahomey", "suggested_period_id": "kingdom_of_spain_q3399982_period", "suggested_tier": "period"}
+{"entity_id": "dahomey", "canonical_name": "Dahomey", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "dal_riata", "canonical_name": "Dál Riata", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "deccan_sultanates", "canonical_name": "Deccan sultanates", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "deccan_sultanates", "canonical_name": "Deccan sultanates", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
 {"entity_id": "delhi_sultanate", "canonical_name": "Delhi Sultanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "denmark", "canonical_name": "Denmark", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "denmarknorway", "canonical_name": "Denmark–Norway", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "der", "canonical_name": "Der", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "dilmun", "canonical_name": "Dilmun", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "djibouti", "canonical_name": "Djibouti", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
+{"entity_id": "denmark", "canonical_name": "Denmark", "suggested_period_id": "kingdom_of_norway_q2196956_period", "suggested_tier": "period"}
+{"entity_id": "denmarknorway", "canonical_name": "Denmark–Norway", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "der", "canonical_name": "Der", "suggested_period_id": "uruk_period", "suggested_tier": "period"}
+{"entity_id": "dilmun", "canonical_name": "Dilmun", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
+{"entity_id": "djibouti", "canonical_name": "Djibouti", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
 {"entity_id": "dominica", "canonical_name": "Dominica", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "dominican_republic", "canonical_name": "Dominican Republic", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
-{"entity_id": "dominion_of_ceylon", "canonical_name": "Dominion of Ceylon", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "dominican_republic", "canonical_name": "Dominican Republic", "suggested_period_id": "republic_of_cuba_period", "suggested_tier": "period"}
+{"entity_id": "dominion_of_ceylon", "canonical_name": "Dominion of Ceylon", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "dominion_of_fiji", "canonical_name": "Dominion of Fiji", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "dominion_of_newfoundland", "canonical_name": "Dominion of Newfoundland", "suggested_period_id": "republic_of_cuba_period", "suggested_tier": "period"}
-{"entity_id": "dominion_of_pakistan", "canonical_name": "Dominion of Pakistan", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_anhalt", "canonical_name": "Duchy of Anhalt", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_athens", "canonical_name": "Duchy of Athens", "suggested_period_id": "house_of_plantagenet_period", "suggested_tier": "period"}
+{"entity_id": "dominion_of_newfoundland", "canonical_name": "Dominion of Newfoundland", "suggested_period_id": "state_of_greater_lebanon_period", "suggested_tier": "period"}
+{"entity_id": "dominion_of_pakistan", "canonical_name": "Dominion of Pakistan", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_anhalt", "canonical_name": "Duchy of Anhalt", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_athens", "canonical_name": "Duchy of Athens", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
 {"entity_id": "duchy_of_austria", "canonical_name": "Duchy of Austria", "suggested_period_id": "house_of_plantagenet_period", "suggested_tier": "period"}
 {"entity_id": "duchy_of_bohemia", "canonical_name": "Duchy of Bohemia", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_brabant", "canonical_name": "Duchy of Brabant", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_brunswick", "canonical_name": "Duchy of Brunswick", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_burgundy", "canonical_name": "Duchy of Burgundy", "suggested_period_id": "kingdom_of_norway_q2196956_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_brabant", "canonical_name": "Duchy of Brabant", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_brunswick", "canonical_name": "Duchy of Brunswick", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_burgundy", "canonical_name": "Duchy of Burgundy", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "duchy_of_courland_and_semigallia_q156038", "canonical_name": "Duchy of Courland and Semigallia", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "duchy_of_estonia", "canonical_name": "Duchy of Estonia", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_guelders", "canonical_name": "Duchy of Guelders", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_limburg_q697787", "canonical_name": "Duchy of Limburg", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_livonia", "canonical_name": "Duchy of Livonia", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_lorraine", "canonical_name": "Duchy of Lorraine", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_luxembourg", "canonical_name": "Duchy of Luxembourg", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_mantua", "canonical_name": "Duchy of Mantua", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_milan", "canonical_name": "Duchy of Milan", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_guelders", "canonical_name": "Duchy of Guelders", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_limburg_q697787", "canonical_name": "Duchy of Limburg", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_livonia", "canonical_name": "Duchy of Livonia", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_lorraine", "canonical_name": "Duchy of Lorraine", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_luxembourg", "canonical_name": "Duchy of Luxembourg", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_mantua", "canonical_name": "Duchy of Mantua", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_milan", "canonical_name": "Duchy of Milan", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "duchy_of_normandy", "canonical_name": "Duchy of Normandy", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_oldenburg", "canonical_name": "Duchy of Oldenburg", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_oldenburg", "canonical_name": "Duchy of Oldenburg", "suggested_period_id": "principality_of_lippe_period", "suggested_tier": "period"}
 {"entity_id": "duchy_of_prussia", "canonical_name": "Duchy of Prussia", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
 {"entity_id": "duchy_of_saxony", "canonical_name": "Duchy of Saxony", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "duchy_of_the_archipelago", "canonical_name": "Duchy of the Archipelago", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "durrani_empire", "canonical_name": "Durrani Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "dutch_east_indies", "canonical_name": "Dutch East Indies", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "duchy_of_the_archipelago", "canonical_name": "Duchy of the Archipelago", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "durrani_empire", "canonical_name": "Durrani Empire", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "dutch_east_indies", "canonical_name": "Dutch East Indies", "suggested_period_id": "principality_of_lippe_period", "suggested_tier": "period"}
 {"entity_id": "dutch_republic", "canonical_name": "Dutch Republic", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "dzungar_khanate", "canonical_name": "Dzungar Khanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "eastern_han", "canonical_name": "Eastern Han", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "eastern_jin_dynasty", "canonical_name": "Eastern Jin dynasty", "suggested_period_id": "european_hun_empire_period", "suggested_tier": "period"}
 {"entity_id": "eastern_turkic_khaganate", "canonical_name": "Eastern Turkic Khaganate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "ecuador", "canonical_name": "Ecuador", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
-{"entity_id": "edom", "canonical_name": "Edom", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "el_salvador", "canonical_name": "El Salvador", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
-{"entity_id": "elam", "canonical_name": "Elam", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "electoral_palatinate", "canonical_name": "Electoral Palatinate", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "electorate_of_mainz", "canonical_name": "Electorate of Mainz", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "electorate_of_saxony", "canonical_name": "Electorate of Saxony", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "electorate_of_trier", "canonical_name": "Electorate of Trier", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "edom", "canonical_name": "Edom", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
+{"entity_id": "el_salvador", "canonical_name": "El Salvador", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "elam", "canonical_name": "Elam", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
+{"entity_id": "electoral_palatinate", "canonical_name": "Electoral Palatinate", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "electorate_of_mainz", "canonical_name": "Electorate of Mainz", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "electorate_of_saxony", "canonical_name": "Electorate of Saxony", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "electorate_of_trier", "canonical_name": "Electorate of Trier", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "elis", "canonical_name": "Elis", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
-{"entity_id": "elymais", "canonical_name": "Elymais", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "emirate_of_afghanistan_q1335260", "canonical_name": "Emirate of Afghanistan", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "emirate_of_bukhara", "canonical_name": "Emirate of Bukhara", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
-{"entity_id": "emirate_of_cordoba", "canonical_name": "Emirate of Córdoba", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "emirate_of_crete", "canonical_name": "Emirate of Crete", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "elymais", "canonical_name": "Elymais", "suggested_period_id": "macro_classical_imperial_worlds", "suggested_tier": "macro_chapter"}
+{"entity_id": "emirate_of_afghanistan_q1335260", "canonical_name": "Emirate of Afghanistan", "suggested_period_id": "state_of_greater_lebanon_period", "suggested_tier": "period"}
+{"entity_id": "emirate_of_bukhara", "canonical_name": "Emirate of Bukhara", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "emirate_of_cordoba", "canonical_name": "Emirate of Córdoba", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "emirate_of_crete", "canonical_name": "Emirate of Crete", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "emirate_of_granada", "canonical_name": "Emirate of Granada", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "emirate_of_nekor", "canonical_name": "Emirate of Nekor", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
+{"entity_id": "emirate_of_nekor", "canonical_name": "Emirate of Nekor", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "empire_of_brazil", "canonical_name": "Empire of Brazil", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
 {"entity_id": "empire_of_japan", "canonical_name": "Empire of Japan", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "empire_of_trebizond", "canonical_name": "Empire of Trebizond", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "estado_novo", "canonical_name": "Estado Novo", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "estonia", "canonical_name": "Estonia", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "estonian_soviet_socialist_republic", "canonical_name": "Estonian Soviet Socialist Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "eswatini", "canonical_name": "Eswatini", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "ethiopia", "canonical_name": "Ethiopia", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "ethiopian_empire", "canonical_name": "Ethiopian Empire", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "empire_of_trebizond", "canonical_name": "Empire of Trebizond", "suggested_period_id": "duchy_of_poland_q616915_period", "suggested_tier": "period"}
+{"entity_id": "estado_novo", "canonical_name": "Estado Novo", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "estonia", "canonical_name": "Estonia", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "estonian_soviet_socialist_republic", "canonical_name": "Estonian Soviet Socialist Republic", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "eswatini", "canonical_name": "Eswatini", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "ethiopia", "canonical_name": "Ethiopia", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "ethiopian_empire", "canonical_name": "Ethiopian Empire", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "european_union", "canonical_name": "European Union", "suggested_period_id": "europe_contemporary_world_era", "suggested_tier": "regional_era"}
 {"entity_id": "fatimid_caliphate", "canonical_name": "Fatimid Caliphate", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "federal_republic_of_yugoslavia", "canonical_name": "Federal Republic of Yugoslavia", "suggested_period_id": "europe_contemporary_world_era", "suggested_tier": "regional_era"}
-{"entity_id": "federated_malay_states", "canonical_name": "Federated Malay States", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "federated_malay_states", "canonical_name": "Federated Malay States", "suggested_period_id": "socialist_soviet_republic_of_georgia_period", "suggested_tier": "period"}
 {"entity_id": "federated_states_of_micronesia", "canonical_name": "Federated States of Micronesia", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "federation_of_arab_republics", "canonical_name": "Federation of Arab Republics", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "federation_of_malaya", "canonical_name": "Federation of Malaya", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "federation_of_malaya", "canonical_name": "Federation of Malaya", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "fiji", "canonical_name": "Fiji", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "finland", "canonical_name": "Finland", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "finland", "canonical_name": "Finland", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "first_brazilian_republic", "canonical_name": "First Brazilian Republic", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
-{"entity_id": "first_bulgarian_empire", "canonical_name": "First Bulgarian Empire", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "first_french_empire", "canonical_name": "First French Empire", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "first_mexican_empire", "canonical_name": "First Mexican Empire", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
+{"entity_id": "first_bulgarian_empire", "canonical_name": "First Bulgarian Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "first_french_empire", "canonical_name": "First French Empire", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "first_mexican_empire", "canonical_name": "First Mexican Empire", "suggested_period_id": "north_america_industrial_imperial_world_era", "suggested_tier": "regional_era"}
 {"entity_id": "first_mexican_republic", "canonical_name": "First Mexican Republic", "suggested_period_id": "first_mexican_republic_period", "suggested_tier": "period"}
-{"entity_id": "first_republic_of_south_korea", "canonical_name": "First Republic of South Korea", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "first_saudi_state", "canonical_name": "First Saudi State", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "first_republic_of_south_korea", "canonical_name": "First Republic of South Korea", "suggested_period_id": "czechoslovak_republic_period", "suggested_tier": "period"}
+{"entity_id": "first_saudi_state", "canonical_name": "First Saudi State", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "fortriu", "canonical_name": "Fortriu", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "france", "canonical_name": "France", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "france", "canonical_name": "France", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
 {"entity_id": "franceville_new_hebrides", "canonical_name": "Franceville, New Hebrides", "suggested_period_id": "oceania_industrial_imperial_world_era", "suggested_tier": "regional_era"}
 {"entity_id": "francia", "canonical_name": "Francia", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "francoist_spain", "canonical_name": "Francoist Spain", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "french_cameroons", "canonical_name": "French Cameroons", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "french_colonial_empire", "canonical_name": "French colonial empire", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "french_first_republic", "canonical_name": "French First Republic", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "french_fourth_republic", "canonical_name": "French Fourth Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "french_indochina", "canonical_name": "French Indochina", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "french_protectorate_of_tunisia", "canonical_name": "French protectorate of Tunisia", "suggested_period_id": "spain_under_the_restoration_period", "suggested_tier": "period"}
-{"entity_id": "french_second_republic", "canonical_name": "French Second Republic", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "french_third_republic", "canonical_name": "French Third Republic", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "french_togoland", "canonical_name": "French Togoland", "suggested_period_id": "union_of_south_africa_period", "suggested_tier": "period"}
-{"entity_id": "gabon", "canonical_name": "Gabon", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "gahadavala", "canonical_name": "Gahadavala", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "francoist_spain", "canonical_name": "Francoist Spain", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "french_cameroons", "canonical_name": "French Cameroons", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
+{"entity_id": "french_colonial_empire", "canonical_name": "French colonial empire", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "french_first_republic", "canonical_name": "French First Republic", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "french_fourth_republic", "canonical_name": "French Fourth Republic", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "french_indochina", "canonical_name": "French Indochina", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "french_protectorate_of_tunisia", "canonical_name": "French protectorate of Tunisia", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "french_second_republic", "canonical_name": "French Second Republic", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "french_third_republic", "canonical_name": "French Third Republic", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
+{"entity_id": "french_togoland", "canonical_name": "French Togoland", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "gabon", "canonical_name": "Gabon", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "gahadavala", "canonical_name": "Gahadavala", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "galician_soviet_socialist_republic", "canonical_name": "Galician Soviet Socialist Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
 {"entity_id": "gaya_confederacy", "canonical_name": "Gaya confederacy", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "georgia_q230", "canonical_name": "Georgia", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
 {"entity_id": "german_colonial_empire", "canonical_name": "German colonial empire", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
-{"entity_id": "german_democratic_republic", "canonical_name": "German Democratic Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "german_east_africa", "canonical_name": "German East Africa", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
-{"entity_id": "german_south_west_africa", "canonical_name": "German South-West Africa", "suggested_period_id": "spain_under_the_restoration_period", "suggested_tier": "period"}
-{"entity_id": "germany", "canonical_name": "Germany", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "german_democratic_republic", "canonical_name": "German Democratic Republic", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "german_east_africa", "canonical_name": "German East Africa", "suggested_period_id": "kingdom_of_hungary_q25395037_period", "suggested_tier": "period"}
+{"entity_id": "german_south_west_africa", "canonical_name": "German South-West Africa", "suggested_period_id": "union_of_south_africa_period", "suggested_tier": "period"}
+{"entity_id": "germany", "canonical_name": "Germany", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "ghana_empire", "canonical_name": "Ghana Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "ghassanids", "canonical_name": "Ghassanids", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "ghaznavid_empire", "canonical_name": "Ghaznavid Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "ghaznavid_empire", "canonical_name": "Ghaznavid Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "goguryeo", "canonical_name": "Goguryeo", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "gold_coast_colony", "canonical_name": "Gold Coast Colony", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "golden_horde", "canonical_name": "Golden Horde", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "gold_coast_colony", "canonical_name": "Gold Coast Colony", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
+{"entity_id": "golden_horde", "canonical_name": "Golden Horde", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
 {"entity_id": "gorgippia", "canonical_name": "Gorgippia", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
-{"entity_id": "gorizia_and_gradisca", "canonical_name": "Gorizia and Gradisca", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "gorizia_and_gradisca", "canonical_name": "Gorizia and Gradisca", "suggested_period_id": "kingdom_of_spain_q3399982_period", "suggested_tier": "period"}
 {"entity_id": "goryeo", "canonical_name": "Goryeo", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "gozo", "canonical_name": "Gozo", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "gran_colombia", "canonical_name": "Gran Colombia", "suggested_period_id": "south_america_industrial_imperial_world_era", "suggested_tier": "regional_era"}
 {"entity_id": "granadine_confederation", "canonical_name": "Granadine Confederation", "suggested_period_id": "south_america_industrial_imperial_world_era", "suggested_tier": "regional_era"}
-{"entity_id": "grand_duchy_of_baden", "canonical_name": "Grand Duchy of Baden", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "grand_duchy_of_finland", "canonical_name": "Grand Duchy of Finland", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "grand_duchy_of_hesse", "canonical_name": "Grand Duchy of Hesse", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "grand_duchy_of_lithuania", "canonical_name": "Grand Duchy of Lithuania", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "grand_duchy_of_mecklenburg_schwerin", "canonical_name": "Grand Duchy of Mecklenburg-Schwerin", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "grand_duchy_of_mecklenburg_strelitz", "canonical_name": "Grand Duchy of Mecklenburg-Strelitz", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "grand_duchy_of_tuscany", "canonical_name": "Grand Duchy of Tuscany", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "grand_principality_of_moscow", "canonical_name": "Grand Principality of Moscow", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "grand_duchy_of_baden", "canonical_name": "Grand Duchy of Baden", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
+{"entity_id": "grand_duchy_of_finland", "canonical_name": "Grand Duchy of Finland", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "grand_duchy_of_hesse", "canonical_name": "Grand Duchy of Hesse", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
+{"entity_id": "grand_duchy_of_lithuania", "canonical_name": "Grand Duchy of Lithuania", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "grand_duchy_of_mecklenburg_schwerin", "canonical_name": "Grand Duchy of Mecklenburg-Schwerin", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
+{"entity_id": "grand_duchy_of_mecklenburg_strelitz", "canonical_name": "Grand Duchy of Mecklenburg-Strelitz", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
+{"entity_id": "grand_duchy_of_tuscany", "canonical_name": "Grand Duchy of Tuscany", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "grand_principality_of_moscow", "canonical_name": "Grand Principality of Moscow", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
 {"entity_id": "grand_principality_of_vladimir", "canonical_name": "Grand Principality of Vladimir", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "great_moravia", "canonical_name": "Great Moravia", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
+{"entity_id": "great_moravia", "canonical_name": "Great Moravia", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "great_socialist_people_s_libyan_arab_jamahiriya", "canonical_name": "Great Socialist People's Libyan Arab Jamahiriya", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
 {"entity_id": "grenada", "canonical_name": "Grenada", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "guatemala", "canonical_name": "Guatemala", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
-{"entity_id": "guinea", "canonical_name": "Guinea", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "guinea_bissau", "canonical_name": "Guinea-Bissau", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "gupta_empire", "canonical_name": "Gupta Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "gurjara_pratihara", "canonical_name": "Gurjara-Pratihara", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "habsburg_monarchy", "canonical_name": "Habsburg monarchy", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "haiti", "canonical_name": "Haiti", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
+{"entity_id": "guatemala", "canonical_name": "Guatemala", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "guinea", "canonical_name": "Guinea", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "guinea_bissau", "canonical_name": "Guinea-Bissau", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "gupta_empire", "canonical_name": "Gupta Empire", "suggested_period_id": "european_hun_empire_period", "suggested_tier": "period"}
+{"entity_id": "gurjara_pratihara", "canonical_name": "Gurjara-Pratihara", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "habsburg_monarchy", "canonical_name": "Habsburg monarchy", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "haiti", "canonical_name": "Haiti", "suggested_period_id": "republic_of_cuba_period", "suggested_tier": "period"}
 {"entity_id": "han_dynasty", "canonical_name": "Han dynasty", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "hatti", "canonical_name": "Hittite Empire", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "hausa_kingdoms", "canonical_name": "Hausa Kingdoms", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "himyarite_kingdom", "canonical_name": "Himyarite kingdom", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "hohenzollern_sigmaringen", "canonical_name": "Hohenzollern-Sigmaringen", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "hatti", "canonical_name": "Hittite Empire", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
+{"entity_id": "hausa_kingdoms", "canonical_name": "Hausa Kingdoms", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "himyarite_kingdom", "canonical_name": "Himyarite kingdom", "suggested_period_id": "european_hun_empire_period", "suggested_tier": "period"}
+{"entity_id": "hohenzollern_sigmaringen", "canonical_name": "Hohenzollern-Sigmaringen", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
 {"entity_id": "hokuzan", "canonical_name": "Hokuzan", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "holy_roman_empire", "canonical_name": "Holy Roman Empire", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "honduras", "canonical_name": "Honduras", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
-{"entity_id": "hoysala_empire", "canonical_name": "Hoysala Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "holy_roman_empire", "canonical_name": "Holy Roman Empire", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "honduras", "canonical_name": "Honduras", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "hoysala_empire", "canonical_name": "Hoysala Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "hungarian_people_s_republic", "canonical_name": "Hungarian People's Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "hyderabad_state", "canonical_name": "Hyderabad State", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "iceland", "canonical_name": "Iceland", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "hyderabad_state", "canonical_name": "Hyderabad State", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "iceland", "canonical_name": "Iceland", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "icelandic_commonwealth", "canonical_name": "Icelandic Commonwealth", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "ifat_sultanate", "canonical_name": "Ifat Sultanate", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "ifriqiya", "canonical_name": "Ifriqiya", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "ifat_sultanate", "canonical_name": "Ifat Sultanate", "suggested_period_id": "duchy_of_poland_q616915_period", "suggested_tier": "period"}
+{"entity_id": "ifriqiya", "canonical_name": "Ifriqiya", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "ikhshidid_dynasty", "canonical_name": "Ikhshidid dynasty", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "ilkhanate", "canonical_name": "Ilkhanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "ilkhanate", "canonical_name": "Ilkhanate", "suggested_period_id": "tibet_under_yuan_administrative_rule_period", "suggested_tier": "period"}
 {"entity_id": "inca_empire", "canonical_name": "Inca Empire", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
-{"entity_id": "india", "canonical_name": "India", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "indo_parthian_kingdom", "canonical_name": "Indo-Parthian kingdom", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "indonesia", "canonical_name": "Indonesia", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "indore_state", "canonical_name": "Indore State", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "india", "canonical_name": "India", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "indo_parthian_kingdom", "canonical_name": "Indo-Parthian kingdom", "suggested_period_id": "south_asian_classical_era", "suggested_tier": "regional_era"}
+{"entity_id": "indonesia", "canonical_name": "Indonesia", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "indore_state", "canonical_name": "Indore State", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "iran", "canonical_name": "Iran", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "ireland", "canonical_name": "Ireland", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "islamic_state_of_afghanistan", "canonical_name": "Islamic State of Afghanistan", "suggested_period_id": "ba_athist_iraq_period", "suggested_tier": "period"}
+{"entity_id": "ireland", "canonical_name": "Ireland", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "islamic_state_of_afghanistan", "canonical_name": "Islamic State of Afghanistan", "suggested_period_id": "asia_contemporary_world_era", "suggested_tier": "regional_era"}
 {"entity_id": "israel", "canonical_name": "Israel", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
 {"entity_id": "italian_empire", "canonical_name": "Italian Empire", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
-{"entity_id": "ivory_coast", "canonical_name": "Ivory Coast", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "jabal_druze", "canonical_name": "Jabal Druze", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "jaipur_state", "canonical_name": "Jaipur State", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "ivory_coast", "canonical_name": "Ivory Coast", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "jabal_druze", "canonical_name": "Jabal Druze", "suggested_period_id": "socialist_soviet_republic_of_georgia_period", "suggested_tier": "period"}
+{"entity_id": "jaipur_state", "canonical_name": "Jaipur State", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "jamaica", "canonical_name": "Jamaica", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "japan", "canonical_name": "Japan", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "johor_sultanate", "canonical_name": "Johor Sultanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "japan", "canonical_name": "Japan", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "johor_sultanate", "canonical_name": "Johor Sultanate", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
 {"entity_id": "jordan", "canonical_name": "Jordan", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
 {"entity_id": "joseon", "canonical_name": "Joseon", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "kalmar_union", "canonical_name": "Kalmar Union", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "kalmar_union", "canonical_name": "Kalmar Union", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "kamakura_shogunate", "canonical_name": "Kamakura shogunate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "kamarina", "canonical_name": "Kamarina", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
-{"entity_id": "kamerun", "canonical_name": "Kamerun", "suggested_period_id": "spain_under_the_restoration_period", "suggested_tier": "period"}
-{"entity_id": "kanem_bornu_empire", "canonical_name": "Kanem-Bornu Empire", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "kamerun", "canonical_name": "Kamerun", "suggested_period_id": "latvian_socialist_soviet_republic_period", "suggested_tier": "period"}
+{"entity_id": "kanem_bornu_empire", "canonical_name": "Kanem-Bornu Empire", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "kanem_empire", "canonical_name": "Kanem Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "karakhanid_khanate", "canonical_name": "Karakhanid Khanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "karakhanid_khanate", "canonical_name": "Karakhanid Khanate", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "kazakh_khanate", "canonical_name": "Kazakh Khanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "kazakh_soviet_socialist_republic", "canonical_name": "Kazakh Soviet Socialist Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "kazakhstan", "canonical_name": "Kazakhstan", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "kedah_sultanate", "canonical_name": "Kedah Sultanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "kazakh_soviet_socialist_republic", "canonical_name": "Kazakh Soviet Socialist Republic", "suggested_period_id": "kingdom_of_afghanistan_period", "suggested_tier": "period"}
+{"entity_id": "kazakhstan", "canonical_name": "Kazakhstan", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
+{"entity_id": "kedah_sultanate", "canonical_name": "Kedah Sultanate", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "kerma_kingdom", "canonical_name": "Kerma kingdom", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "khanate_of_bukhara", "canonical_name": "Khanate of Bukhara", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "khanate_of_kalat", "canonical_name": "Khanate of Kalat", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "khanate_of_khiva", "canonical_name": "Khanate of Khiva", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "khanate_of_kokand", "canonical_name": "Khanate of Kokand", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "khanate_of_qazan", "canonical_name": "Khanate of Qazan", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "khedivate_of_egypt", "canonical_name": "Khedivate of Egypt", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "khmer_empire", "canonical_name": "Khmer Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "khwarazmian_empire", "canonical_name": "Khwarazmian Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "khanate_of_bukhara", "canonical_name": "Khanate of Bukhara", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
+{"entity_id": "khanate_of_kalat", "canonical_name": "Khanate of Kalat", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "khanate_of_khiva", "canonical_name": "Khanate of Khiva", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
+{"entity_id": "khanate_of_kokand", "canonical_name": "Khanate of Kokand", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "khanate_of_qazan", "canonical_name": "Khanate of Qazan", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "khedivate_of_egypt", "canonical_name": "Khedivate of Egypt", "suggested_period_id": "africa_industrial_imperial_world_era", "suggested_tier": "regional_era"}
+{"entity_id": "khmer_empire", "canonical_name": "Khmer Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "khwarazmian_empire", "canonical_name": "Khwarazmian Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "kievan_rus", "canonical_name": "Kievan Rus'", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "kilwa_sultanate", "canonical_name": "Kilwa Sultanate", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_afghanistan", "canonical_name": "Kingdom of Afghanistan", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_aksum", "canonical_name": "Kingdom of Aksum", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_alba", "canonical_name": "Kingdom of Alba", "suggested_period_id": "kingdom_of_norway_q2196956_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_aragon", "canonical_name": "Kingdom of Aragon", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_arles", "canonical_name": "Kingdom of Arles", "suggested_period_id": "kingdom_of_norway_q2196956_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_asturias", "canonical_name": "Kingdom of Asturias", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_bavaria", "canonical_name": "Kingdom of Bavaria", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_afghanistan", "canonical_name": "Kingdom of Afghanistan", "suggested_period_id": "kingdom_of_afghanistan_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_aksum", "canonical_name": "Kingdom of Aksum", "suggested_period_id": "syrakousai_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_alba", "canonical_name": "Kingdom of Alba", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_aragon", "canonical_name": "Kingdom of Aragon", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_arles", "canonical_name": "Kingdom of Arles", "suggested_period_id": "kingdom_of_poland_q577867_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_asturias", "canonical_name": "Kingdom of Asturias", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_bavaria", "canonical_name": "Kingdom of Bavaria", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_bernicia", "canonical_name": "Kingdom of Bernicia", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_bohemia", "canonical_name": "Kingdom of Bohemia", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_bosnia", "canonical_name": "Kingdom of Bosnia", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_burundi", "canonical_name": "Kingdom of Burundi", "suggested_period_id": "kingdom_of_spain_q3399982_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_bosnia", "canonical_name": "Kingdom of Bosnia", "suggested_period_id": "kingdom_of_hungary_q16056854_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_burundi", "canonical_name": "Kingdom of Burundi", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_cappadocia", "canonical_name": "Kingdom of Cappadocia", "suggested_period_id": "celts_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_cochin", "canonical_name": "Kingdom of Cochin", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_cochin", "canonical_name": "Kingdom of Cochin", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_croatia_q858841", "canonical_name": "Kingdom of Croatia", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_cusco", "canonical_name": "Kingdom of Cusco", "suggested_period_id": "duchy_of_poland_q616915_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_cyprus", "canonical_name": "Kingdom of Cyprus", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_cyprus", "canonical_name": "Kingdom of Cyprus", "suggested_period_id": "kingdom_of_poland_q577867_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_deheubarth", "canonical_name": "Kingdom of Deheubarth", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_deira", "canonical_name": "Kingdom of Deira", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_dyfed", "canonical_name": "Kingdom of Dyfed", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_east_anglia", "canonical_name": "Kingdom of East Anglia", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_egypt", "canonical_name": "Kingdom of Egypt", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_egypt", "canonical_name": "Kingdom of Egypt", "suggested_period_id": "socialist_soviet_republic_of_georgia_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_essex", "canonical_name": "Kingdom of Essex", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_funan", "canonical_name": "Kingdom of Funan", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_galicia", "canonical_name": "Kingdom of Galicia", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_funan", "canonical_name": "Kingdom of Funan", "suggested_period_id": "european_hun_empire_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_galicia", "canonical_name": "Kingdom of Galicia", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_galicia_and_lodomeria", "canonical_name": "Kingdom of Galicia and Lodomeria", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_galiciavolhynia", "canonical_name": "Kingdom of Galicia–Volhynia", "suggested_period_id": "house_of_plantagenet_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_garo", "canonical_name": "Kingdom of Garo", "suggested_period_id": "kingdom_of_spain_q3399982_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_georgia", "canonical_name": "Kingdom of Georgia", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_germany", "canonical_name": "Kingdom of Germany", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_great_britain", "canonical_name": "Kingdom of Great Britain", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_greece", "canonical_name": "Kingdom of Greece", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_galiciavolhynia", "canonical_name": "Kingdom of Galicia–Volhynia", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_garo", "canonical_name": "Kingdom of Garo", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_georgia", "canonical_name": "Kingdom of Georgia", "suggested_period_id": "kingdom_of_poland_q577867_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_germany", "canonical_name": "Kingdom of Germany", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_great_britain", "canonical_name": "Kingdom of Great Britain", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_greece", "canonical_name": "Kingdom of Greece", "suggested_period_id": "kingdom_of_italy_q172579_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_gwynedd", "canonical_name": "Kingdom of Gwynedd", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_hanover", "canonical_name": "Kingdom of Hanover", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_hanover", "canonical_name": "Kingdom of Hanover", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_hawaii", "canonical_name": "Kingdom of Hawaiʻi", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_iberia", "canonical_name": "Kingdom of Iberia", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_imereti", "canonical_name": "Kingdom of Imereti", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_iraq", "canonical_name": "Kingdom of Iraq", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_ireland", "canonical_name": "Kingdom of Ireland", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_italy_q172579", "canonical_name": "Kingdom of Italy", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_italy_q838931", "canonical_name": "Kingdom of Italy", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_kakheti", "canonical_name": "Kingdom of Kakheti", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_kartli", "canonical_name": "Kingdom of Kartli", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_kartli_kakheti", "canonical_name": "Kingdom of Kartli-Kakheti", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_iberia", "canonical_name": "Kingdom of Iberia", "suggested_period_id": "european_hun_empire_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_imereti", "canonical_name": "Kingdom of Imereti", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_iraq", "canonical_name": "Kingdom of Iraq", "suggested_period_id": "lebanese_republic_under_french_mandate_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_ireland", "canonical_name": "Kingdom of Ireland", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_italy_q172579", "canonical_name": "Kingdom of Italy", "suggested_period_id": "kingdom_of_italy_q172579_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_italy_q838931", "canonical_name": "Kingdom of Italy", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_kakheti", "canonical_name": "Kingdom of Kakheti", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_kartli", "canonical_name": "Kingdom of Kartli", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_kartli_kakheti", "canonical_name": "Kingdom of Kartli-Kakheti", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_kent", "canonical_name": "Kingdom of Kent", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_khotan", "canonical_name": "Kingdom of Khotan", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_kongo", "canonical_name": "Kingdom of Kongo", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_kongo", "canonical_name": "Kingdom of Kongo", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_kush", "canonical_name": "Kingdom of Kush", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_leon", "canonical_name": "Kingdom of Leon", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_leon", "canonical_name": "Kingdom of Leon", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_libya", "canonical_name": "Kingdom of Libya", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_lunda", "canonical_name": "Kingdom of Lunda", "suggested_period_id": "kingdom_of_spain_q3399982_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_lunda", "canonical_name": "Kingdom of Lunda", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_majorca", "canonical_name": "Kingdom of Majorca", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_makuria", "canonical_name": "Kingdom of Makuria", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_marwar", "canonical_name": "Kingdom of Marwar", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_marwar", "canonical_name": "Kingdom of Marwar", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_mercia", "canonical_name": "Kingdom of Mercia", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_mewar", "canonical_name": "Kingdom of Mewar", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_murcia", "canonical_name": "Kingdom of Murcia", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_mutapa", "canonical_name": "Kingdom of Mutapa", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_mysore", "canonical_name": "Kingdom of Mysore", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_naples_q173065", "canonical_name": "Kingdom of Naples", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_nepal", "canonical_name": "Kingdom of Nepal", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_mewar", "canonical_name": "Kingdom of Mewar", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_murcia", "canonical_name": "Kingdom of Murcia", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_mutapa", "canonical_name": "Kingdom of Mutapa", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_mysore", "canonical_name": "Kingdom of Mysore", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_naples_q173065", "canonical_name": "Kingdom of Naples", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_nepal", "canonical_name": "Kingdom of Nepal", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_nicoya", "canonical_name": "Kingdom of Nicoya", "suggested_period_id": "mesoamerican_postclassic", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_northumbria", "canonical_name": "Kingdom of Northumbria", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_norway_q2196956", "canonical_name": "Kingdom of Norway", "suggested_period_id": "kingdom_of_norway_q2196956_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_nri", "canonical_name": "Kingdom of Nri", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_nri", "canonical_name": "Kingdom of Nri", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_numidia", "canonical_name": "Kingdom of Numidia", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_pacaca", "canonical_name": "Kingdom of Pacaca", "suggested_period_id": "mesoamerican_postclassic", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_poland_q696908", "canonical_name": "Kingdom of Poland", "suggested_period_id": "macro_world_wars_reordering", "suggested_tier": "macro_chapter"}
-{"entity_id": "kingdom_of_pontus", "canonical_name": "Kingdom of Pontus", "suggested_period_id": "yayoi_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_portugal", "canonical_name": "Kingdom of Portugal", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_pontus", "canonical_name": "Kingdom of Pontus", "suggested_period_id": "syrakousai_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_portugal", "canonical_name": "Kingdom of Portugal", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_powys", "canonical_name": "Kingdom of Powys", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_prussia", "canonical_name": "Kingdom of Prussia", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_romania", "canonical_name": "Kingdom of Romania", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_sardinia_q165154", "canonical_name": "Kingdom of Sardinia", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_prussia", "canonical_name": "Kingdom of Prussia", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_romania", "canonical_name": "Kingdom of Romania", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_sardinia_q165154", "canonical_name": "Kingdom of Sardinia", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_sardinia_q2577303", "canonical_name": "Kingdom of Sardinia", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_saxony", "canonical_name": "Kingdom of Saxony", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_scotland", "canonical_name": "Kingdom of Scotland", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_saxony", "canonical_name": "Kingdom of Saxony", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_scotland", "canonical_name": "Kingdom of Scotland", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_seisyllwg", "canonical_name": "Kingdom of Seisyllwg", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_serbia_q241748", "canonical_name": "Kingdom of Serbia", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_sikkim", "canonical_name": "Kingdom of Sikkim", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_serbia_q241748", "canonical_name": "Kingdom of Serbia", "suggested_period_id": "kingdom_of_hungary_q25395037_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_sikkim", "canonical_name": "Kingdom of Sikkim", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_strathclyde", "canonical_name": "Kingdom of Strathclyde", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_sussex", "canonical_name": "Kingdom of Sussex", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_tahiti", "canonical_name": "Kingdom of Tahiti", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_tallo", "canonical_name": "Kingdom of Tallo", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_the_algarve", "canonical_name": "Kingdom of the Algarve", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_tallo", "canonical_name": "Kingdom of Tallo", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_the_algarve", "canonical_name": "Kingdom of the Algarve", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_the_burgundians", "canonical_name": "Kingdom of the Burgundians", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_the_netherlands", "canonical_name": "Kingdom of the Netherlands", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_the_netherlands", "canonical_name": "Kingdom of the Netherlands", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_the_suebi", "canonical_name": "Kingdom of the Suebi", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_the_two_sicilies", "canonical_name": "Kingdom of the Two Sicilies", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_the_two_sicilies", "canonical_name": "Kingdom of the Two Sicilies", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_thiruvithamkoor", "canonical_name": "Kingdom of Thiruvithamkoor", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_tonga", "canonical_name": "Kingdom of Tonga", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_valencia", "canonical_name": "Kingdom of Valencia", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_wessex", "canonical_name": "Kingdom of Wessex", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_wurttemberg", "canonical_name": "Kingdom of Württemberg", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "kingdom_of_yemen", "canonical_name": "Kingdom of Yemen", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_wurttemberg", "canonical_name": "Kingdom of Württemberg", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
+{"entity_id": "kingdom_of_yemen", "canonical_name": "Kingdom of Yemen", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "kingdom_of_zaachila", "canonical_name": "Kingdom of Zaachila", "suggested_period_id": "mesoamerican_postclassic", "suggested_tier": "period"}
 {"entity_id": "kiribati", "canonical_name": "Kiribati", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "knossos", "canonical_name": "Knossos", "suggested_period_id": "european_neolithic", "suggested_tier": "period"}
 {"entity_id": "konbaung_dynasty", "canonical_name": "Konbaung dynasty", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "korean_empire", "canonical_name": "Korean Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "kosala", "canonical_name": "Kosala", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "kourion", "canonical_name": "Kourion", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "kosala", "canonical_name": "Kosala", "suggested_period_id": "syrakousai_period", "suggested_tier": "period"}
+{"entity_id": "kourion", "canonical_name": "Kourion", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
 {"entity_id": "kroton", "canonical_name": "Kroton", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
-{"entity_id": "krusevo_republic", "canonical_name": "Kruševo Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "kuru_kingdom", "canonical_name": "Kuru Kingdom", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "kushan_empire", "canonical_name": "Kushan Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "krusevo_republic", "canonical_name": "Kruševo Republic", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "kuru_kingdom", "canonical_name": "Kuru Kingdom", "suggested_period_id": "western_zhou_q1069609_period", "suggested_tier": "period"}
+{"entity_id": "kushan_empire", "canonical_name": "Kushan Empire", "suggested_period_id": "macro_classical_imperial_worlds", "suggested_tier": "macro_chapter"}
 {"entity_id": "kuwait", "canonical_name": "Kuwait", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "kyrgyzstan", "canonical_name": "Kyrgyzstan", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "lagash", "canonical_name": "Lagash", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "lan_xang", "canonical_name": "Lan Xang", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "land_of_punt", "canonical_name": "Land of Punt", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "landgraviate_of_hesse", "canonical_name": "Landgraviate of Hesse", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "kyrgyzstan", "canonical_name": "Kyrgyzstan", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
+{"entity_id": "lagash", "canonical_name": "Lagash", "suggested_period_id": "early_dynastic_mesopotamia", "suggested_tier": "period"}
+{"entity_id": "lan_xang", "canonical_name": "Lan Xang", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "land_of_punt", "canonical_name": "Land of Punt", "suggested_period_id": "macro_early_cities_states", "suggested_tier": "macro_chapter"}
+{"entity_id": "landgraviate_of_hesse", "canonical_name": "Landgraviate of Hesse", "suggested_period_id": "kingdom_of_hungary_q16056854_period", "suggested_tier": "period"}
 {"entity_id": "lands_of_the_bohemian_crown", "canonical_name": "Lands of the Bohemian Crown", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "lanna", "canonical_name": "Lanna", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "laos", "canonical_name": "Laos", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "latin_league", "canonical_name": "Latin League", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "lazica", "canonical_name": "Lazica", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "lanna", "canonical_name": "Lanna", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "laos", "canonical_name": "Laos", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "latin_league", "canonical_name": "Latin League", "suggested_period_id": "celts_period", "suggested_tier": "period"}
+{"entity_id": "lazica", "canonical_name": "Lazica", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
 {"entity_id": "lebanon", "canonical_name": "Lebanon", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "lesotho", "canonical_name": "Lesotho", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "liberia", "canonical_name": "Liberia", "suggested_period_id": "spain_under_the_restoration_period", "suggested_tier": "period"}
-{"entity_id": "libya", "canonical_name": "Libya", "suggested_period_id": "kingdom_of_spain_q3399982_period", "suggested_tier": "period"}
+{"entity_id": "lesotho", "canonical_name": "Lesotho", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "liberia", "canonical_name": "Liberia", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "libya", "canonical_name": "Libya", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "ligurian_republic", "canonical_name": "Ligurian Republic", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "lithuania", "canonical_name": "Lithuania", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "lordship_of_coinan", "canonical_name": "Lordship of Coinan", "suggested_period_id": "mesoamerican_postclassic", "suggested_tier": "period"}
-{"entity_id": "lordship_of_ireland", "canonical_name": "Lordship of Ireland", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "lordship_of_ireland", "canonical_name": "Lordship of Ireland", "suggested_period_id": "house_of_plantagenet_period", "suggested_tier": "period"}
 {"entity_id": "lower_burgundy", "canonical_name": "Lower Burgundy", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "luxembourg", "canonical_name": "Luxembourg", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "lydia", "canonical_name": "Lydia", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "luxembourg", "canonical_name": "Luxembourg", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
+{"entity_id": "lydia", "canonical_name": "Lydia", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
 {"entity_id": "madagascar", "canonical_name": "Madagascar", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "mahajanapada", "canonical_name": "Mahajanapada", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "mahajanapada", "canonical_name": "Mahajanapada", "suggested_period_id": "syrakousai_period", "suggested_tier": "period"}
 {"entity_id": "mahan_confederacy", "canonical_name": "Mahan confederacy", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "majapahit", "canonical_name": "Majapahit", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "malacca_sultanate", "canonical_name": "Malacca sultanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "malaysia", "canonical_name": "Malaysia", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "mali", "canonical_name": "Mali", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "mali_empire", "canonical_name": "Mali Empire", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "mamluk_sultanate_of_egypt", "canonical_name": "Mamluk Sultanate of Egypt", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "maramures", "canonical_name": "Maramureș", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "majapahit", "canonical_name": "Majapahit", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "malacca_sultanate", "canonical_name": "Malacca sultanate", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "malaysia", "canonical_name": "Malaysia", "suggested_period_id": "socialist_republic_of_the_union_of_burma_period", "suggested_tier": "period"}
+{"entity_id": "mali", "canonical_name": "Mali", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "mali_empire", "canonical_name": "Mali Empire", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "mamluk_sultanate_of_egypt", "canonical_name": "Mamluk Sultanate of Egypt", "suggested_period_id": "mamluk_sultanate_of_egypt_period", "suggested_tier": "period"}
+{"entity_id": "maramures", "canonical_name": "Maramureș", "suggested_period_id": "kingdom_of_hungary_q16056854_period", "suggested_tier": "period"}
 {"entity_id": "margraviate_of_austria", "canonical_name": "Margraviate of Austria", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "margraviate_of_moravia", "canonical_name": "Margraviate of Moravia", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "mari", "canonical_name": "Mari", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "mari", "canonical_name": "Mari", "suggested_period_id": "early_dynastic_mesopotamia", "suggested_tier": "period"}
 {"entity_id": "marshall_islands", "canonical_name": "Marshall Islands", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "mataram_sultanate", "canonical_name": "Mataram Sultanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "mataram_sultanate", "canonical_name": "Mataram Sultanate", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
 {"entity_id": "mauretania", "canonical_name": "Mauretania", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "mauritania", "canonical_name": "Mauritania", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "maurya_empire", "canonical_name": "Maurya empire", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "median_kingdom", "canonical_name": "Median Kingdom", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "mauritania", "canonical_name": "Mauritania", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "maurya_empire", "canonical_name": "Maurya empire", "suggested_period_id": "syrakousai_period", "suggested_tier": "period"}
+{"entity_id": "median_kingdom", "canonical_name": "Median Kingdom", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
 {"entity_id": "merina_kingdom", "canonical_name": "Merina Kingdom", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
 {"entity_id": "meroe", "canonical_name": "Meroë", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
 {"entity_id": "middle_assyrian_empire", "canonical_name": "Middle Assyrian Empire", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
 {"entity_id": "middle_francia", "canonical_name": "Middle Francia", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
 {"entity_id": "miletus", "canonical_name": "Miletus", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
 {"entity_id": "ming_dynasty", "canonical_name": "Ming dynasty", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "moab", "canonical_name": "Moab", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "moab", "canonical_name": "Moab", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
 {"entity_id": "moldova", "canonical_name": "Moldova", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "mongol_empire", "canonical_name": "Mongol Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "mongolia", "canonical_name": "Mongolia", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "mosquitia", "canonical_name": "Mosquitia", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "mozambique", "canonical_name": "Mozambique", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "mughal_empire", "canonical_name": "Mughal Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "mongolia", "canonical_name": "Mongolia", "suggested_period_id": "asia_contemporary_world_era", "suggested_tier": "regional_era"}
+{"entity_id": "mosquitia", "canonical_name": "Mosquitia", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "mozambique", "canonical_name": "Mozambique", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "mughal_empire", "canonical_name": "Mughal Empire", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
 {"entity_id": "muisca_confederations", "canonical_name": "Muisca Confederations", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "muscat_and_oman", "canonical_name": "Muscat and Oman", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "muslim_sicily", "canonical_name": "Muslim Sicily", "suggested_period_id": "viking_age_period", "suggested_tier": "period"}
-{"entity_id": "nabataean_kingdom", "canonical_name": "Nabataean kingdom", "suggested_period_id": "yayoi_period", "suggested_tier": "period"}
-{"entity_id": "namibia", "canonical_name": "Namibia", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "nanda_empire", "canonical_name": "Nanda Empire", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "nanyue", "canonical_name": "Nanyue", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "muscat_and_oman", "canonical_name": "Muscat and Oman", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "muslim_sicily", "canonical_name": "Muslim Sicily", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "nabataean_kingdom", "canonical_name": "Nabataean kingdom", "suggested_period_id": "syrakousai_period", "suggested_tier": "period"}
+{"entity_id": "namibia", "canonical_name": "Namibia", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "nanda_empire", "canonical_name": "Nanda Empire", "suggested_period_id": "syrakousai_period", "suggested_tier": "period"}
+{"entity_id": "nanyue", "canonical_name": "Nanyue", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "nanzan", "canonical_name": "Nanzan", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "nauru", "canonical_name": "Nauru", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "nazi_germany", "canonical_name": "Nazi Germany", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "neo_assyrian_empire", "canonical_name": "Neo-Assyrian Empire", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "neo_babylonian_empire", "canonical_name": "Neo-Babylonian Empire", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "nazi_germany", "canonical_name": "Nazi Germany", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
+{"entity_id": "neo_assyrian_empire", "canonical_name": "Neo-Assyrian Empire", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
+{"entity_id": "neo_babylonian_empire", "canonical_name": "Neo-Babylonian Empire", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
 {"entity_id": "neo_inca_state", "canonical_name": "Neo-Inca State", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
-{"entity_id": "netherlands_antilles", "canonical_name": "Netherlands Antilles", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "new_castile_governorate", "canonical_name": "New Castile Governorate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "new_hebrides", "canonical_name": "New Hebrides", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "netherlands_antilles", "canonical_name": "Netherlands Antilles", "suggested_period_id": "republic_of_venezuela_period", "suggested_tier": "period"}
+{"entity_id": "new_castile_governorate", "canonical_name": "New Castile Governorate", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "new_hebrides", "canonical_name": "New Hebrides", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
 {"entity_id": "new_kingdom_of_egypt", "canonical_name": "New Kingdom of Egypt", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "new_netherland", "canonical_name": "New Netherland", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "new_netherland", "canonical_name": "New Netherland", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "new_zealand", "canonical_name": "New Zealand", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
-{"entity_id": "nguyen_dynasty", "canonical_name": "Nguyen dynasty", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "nicaragua", "canonical_name": "Nicaragua", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
-{"entity_id": "niger", "canonical_name": "Niger", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "nigeria", "canonical_name": "Nigeria", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
+{"entity_id": "nguyen_dynasty", "canonical_name": "Nguyen dynasty", "suggested_period_id": "socialist_soviet_republic_of_georgia_period", "suggested_tier": "period"}
+{"entity_id": "nicaragua", "canonical_name": "Nicaragua", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "niger", "canonical_name": "Niger", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "nigeria", "canonical_name": "Nigeria", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
 {"entity_id": "niue", "canonical_name": "Niue", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "nobatia", "canonical_name": "Nobatia", "suggested_period_id": "european_hun_empire_period", "suggested_tier": "period"}
 {"entity_id": "nogai_horde", "canonical_name": "Nogai Horde", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "north_korea", "canonical_name": "North Korea", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
+{"entity_id": "north_korea", "canonical_name": "North Korea", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "north_macedonia", "canonical_name": "North Macedonia", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "north_vietnam", "canonical_name": "North Vietnam", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "north_vietnam", "canonical_name": "North Vietnam", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "norwegian_jarldom_of_orkney", "canonical_name": "Norwegian Jarldom of Orkney", "suggested_period_id": "kingdom_of_norway_q2196956_period", "suggested_tier": "period"}
 {"entity_id": "novgorod_republic", "canonical_name": "Novgorod Republic", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
 {"entity_id": "odrysian_kingdom", "canonical_name": "Odrysian kingdom", "suggested_period_id": "celts_period", "suggested_tier": "period"}
 {"entity_id": "olbia", "canonical_name": "Olbia", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
-{"entity_id": "old_babylonian_empire", "canonical_name": "Old Babylonian Empire", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "old_swiss_confederacy", "canonical_name": "Old Swiss Confederacy", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "old_babylonian_empire", "canonical_name": "Old Babylonian Empire", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
+{"entity_id": "old_swiss_confederacy", "canonical_name": "Old Swiss Confederacy", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "oman", "canonical_name": "Oman", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "oman_proper", "canonical_name": "Oman proper", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "orange_free_state", "canonical_name": "Orange Free State", "suggested_period_id": "spain_under_the_restoration_period", "suggested_tier": "period"}
-{"entity_id": "osroene", "canonical_name": "Osroene", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "oman_proper", "canonical_name": "Oman proper", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "orange_free_state", "canonical_name": "Orange Free State", "suggested_period_id": "africa_industrial_imperial_world_era", "suggested_tier": "regional_era"}
+{"entity_id": "osroene", "canonical_name": "Osroene", "suggested_period_id": "macro_classical_imperial_worlds", "suggested_tier": "macro_chapter"}
 {"entity_id": "ostrogothic_kingdom", "canonical_name": "Ostrogothic Kingdom", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
 {"entity_id": "ottoman_empire", "canonical_name": "Ottoman Empire", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "oyo_empire", "canonical_name": "Oyo Empire", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "pagan_kingdom", "canonical_name": "Pagan kingdom", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "pahlavi_iran", "canonical_name": "Pahlavi Iran", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "pakistan", "canonical_name": "Pakistan", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "pala_empire", "canonical_name": "Pala Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "oyo_empire", "canonical_name": "Oyo Empire", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "pagan_kingdom", "canonical_name": "Pagan kingdom", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "pahlavi_iran", "canonical_name": "Pahlavi Iran", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "pakistan", "canonical_name": "Pakistan", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "pala_empire", "canonical_name": "Pala Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "palau", "canonical_name": "Palau", "suggested_period_id": "oceania_contemporary_world_era", "suggested_tier": "regional_era"}
 {"entity_id": "palestine", "canonical_name": "Palestine", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
 {"entity_id": "palmares", "canonical_name": "Palmares", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
-{"entity_id": "panama", "canonical_name": "Panama", "suggested_period_id": "republic_of_cuba_period", "suggested_tier": "period"}
-{"entity_id": "papal_states", "canonical_name": "Papal States", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "panama", "canonical_name": "Panama", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
+{"entity_id": "papal_states", "canonical_name": "Papal States", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
 {"entity_id": "papua_new_guinea", "canonical_name": "Papua New Guinea", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "paraguay", "canonical_name": "Paraguay", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
-{"entity_id": "parthian_empire", "canonical_name": "Parthian Empire", "suggested_period_id": "yayoi_period", "suggested_tier": "period"}
-{"entity_id": "patani_kingdom", "canonical_name": "Patani Kingdom", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "pate_island", "canonical_name": "Pate Island", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "patiala_state", "canonical_name": "Patiala State", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "parthian_empire", "canonical_name": "Parthian Empire", "suggested_period_id": "syrakousai_period", "suggested_tier": "period"}
+{"entity_id": "patani_kingdom", "canonical_name": "Patani Kingdom", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
+{"entity_id": "pate_island", "canonical_name": "Pate Island", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "patiala_state", "canonical_name": "Patiala State", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "people_s_committee_of_north_korea", "canonical_name": "People's Committee of North Korea", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "people_s_democratic_republic_of_ethiopia", "canonical_name": "People's Democratic Republic of Ethiopia", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "people_s_republic_of_angola", "canonical_name": "People's Republic of Angola", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "people_s_republic_of_bulgaria", "canonical_name": "People's Republic of Bulgaria", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "people_s_republic_of_china", "canonical_name": "People's Republic of China", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "people_s_socialist_republic_of_albania", "canonical_name": "People's Socialist Republic of Albania", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "people_s_republic_of_china", "canonical_name": "People's Republic of China", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "people_s_socialist_republic_of_albania", "canonical_name": "People's Socialist Republic of Albania", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "peru", "canonical_name": "Peru", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
-{"entity_id": "philippines", "canonical_name": "Philippines", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "phoenicia", "canonical_name": "Phoenicia", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "philippines", "canonical_name": "Philippines", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "phoenicia", "canonical_name": "Phoenicia", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
 {"entity_id": "poland", "canonical_name": "Poland", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
 {"entity_id": "polish_people_s_republic", "canonical_name": "Polish People's Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
 {"entity_id": "polishlithuanian_commonwealth", "canonical_name": "Polish–Lithuanian Commonwealth", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
-{"entity_id": "portuguese_empire", "canonical_name": "Portuguese Empire", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "prince_bishopric_of_liege", "canonical_name": "Prince-Bishopric of Liège", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "portuguese_empire", "canonical_name": "Portuguese Empire", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "prince_bishopric_of_liege", "canonical_name": "Prince-Bishopric of Liège", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "principality_of_albania", "canonical_name": "Principality of Albania", "suggested_period_id": "latvian_socialist_soviet_republic_period", "suggested_tier": "period"}
-{"entity_id": "principality_of_antioch", "canonical_name": "Principality of Antioch", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "principality_of_bulgaria", "canonical_name": "Principality of Bulgaria", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
-{"entity_id": "principality_of_catalonia", "canonical_name": "Principality of Catalonia", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "principality_of_montenegro", "canonical_name": "Principality of Montenegro", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "principality_of_polotsk", "canonical_name": "Principality of Polotsk", "suggested_period_id": "kingdom_of_norway_q2196956_period", "suggested_tier": "period"}
-{"entity_id": "principality_of_serbia_q684030", "canonical_name": "Principality of Serbia", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "principality_of_antioch", "canonical_name": "Principality of Antioch", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "principality_of_bulgaria", "canonical_name": "Principality of Bulgaria", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "principality_of_catalonia", "canonical_name": "Principality of Catalonia", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "principality_of_montenegro", "canonical_name": "Principality of Montenegro", "suggested_period_id": "kingdom_of_hungary_q25395037_period", "suggested_tier": "period"}
+{"entity_id": "principality_of_polotsk", "canonical_name": "Principality of Polotsk", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "principality_of_serbia_q684030", "canonical_name": "Principality of Serbia", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
 {"entity_id": "principality_of_transylvania_q655621", "canonical_name": "Principality of Transylvania", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "principality_of_waldeck", "canonical_name": "Principality of Waldeck", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "principality_of_wales", "canonical_name": "Principality of Wales", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "principality_of_waldeck", "canonical_name": "Principality of Waldeck", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "principality_of_wales", "canonical_name": "Principality of Wales", "suggested_period_id": "house_of_plantagenet_period", "suggested_tier": "period"}
 {"entity_id": "principality_of_wallachia", "canonical_name": "Principality of Wallachia", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "principality_of_zeta", "canonical_name": "Principality of Zeta", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "prussia", "canonical_name": "Prussia", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "pyu_city_states", "canonical_name": "Pyu city-states", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "qajar_iran", "canonical_name": "Qajar Iran", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "qasim_khanate", "canonical_name": "Qasim Khanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "qataban", "canonical_name": "Qataban", "suggested_period_id": "yayoi_period", "suggested_tier": "period"}
-{"entity_id": "qatar", "canonical_name": "Qatar", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "qi_q837855", "canonical_name": "Qi", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "principality_of_zeta", "canonical_name": "Principality of Zeta", "suggested_period_id": "kingdom_of_hungary_q16056854_period", "suggested_tier": "period"}
+{"entity_id": "prussia", "canonical_name": "Prussia", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "pyu_city_states", "canonical_name": "Pyu city-states", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "qajar_iran", "canonical_name": "Qajar Iran", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "qasim_khanate", "canonical_name": "Qasim Khanate", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "qataban", "canonical_name": "Qataban", "suggested_period_id": "syrakousai_period", "suggested_tier": "period"}
+{"entity_id": "qatar", "canonical_name": "Qatar", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
+{"entity_id": "qi_q837855", "canonical_name": "Qi", "suggested_period_id": "jomon_period", "suggested_tier": "period"}
 {"entity_id": "qing_dynasty", "canonical_name": "Qing dynasty", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "rashidun_caliphate", "canonical_name": "Rashidun Caliphate", "suggested_period_id": "asuka_period", "suggested_tier": "period"}
-{"entity_id": "rashtrakuta_dynasty", "canonical_name": "Rashtrakuta dynasty", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "rasulid_dynasty", "canonical_name": "Rasulid dynasty", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "rattanakosin_kingdom", "canonical_name": "Rattanakosin Kingdom", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "real_audiencia_de_quito", "canonical_name": "Real Audiencia de Quito", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "regency_of_algiers", "canonical_name": "Regency of Algiers", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "rashtrakuta_dynasty", "canonical_name": "Rashtrakuta dynasty", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "rasulid_dynasty", "canonical_name": "Rasulid dynasty", "suggested_period_id": "duchy_of_poland_q616915_period", "suggested_tier": "period"}
+{"entity_id": "rattanakosin_kingdom", "canonical_name": "Rattanakosin Kingdom", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "real_audiencia_de_quito", "canonical_name": "Real Audiencia de Quito", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "regency_of_algiers", "canonical_name": "Regency of Algiers", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
 {"entity_id": "republic_of_acre", "canonical_name": "Republic of Acre", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
 {"entity_id": "republic_of_artsakh", "canonical_name": "Republic of Artsakh", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "republic_of_china", "canonical_name": "Republic of China", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "republic_of_china", "canonical_name": "Republic of China", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "republic_of_cuba", "canonical_name": "Republic of Cuba", "suggested_period_id": "republic_of_cuba_period", "suggested_tier": "period"}
-{"entity_id": "republic_of_florence", "canonical_name": "Republic of Florence", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "republic_of_genoa", "canonical_name": "Republic of Genoa", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "republic_of_mountainous_armenia", "canonical_name": "Republic of Mountainous Armenia", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "republic_of_florence", "canonical_name": "Republic of Florence", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "republic_of_genoa", "canonical_name": "Republic of Genoa", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "republic_of_mountainous_armenia", "canonical_name": "Republic of Mountainous Armenia", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
 {"entity_id": "republic_of_new_granada", "canonical_name": "Republic of New Granada", "suggested_period_id": "peruvian_republic_q28517256_period", "suggested_tier": "period"}
-{"entity_id": "republic_of_prekmurje", "canonical_name": "Republic of Prekmurje", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "republic_of_ragusa", "canonical_name": "Republic of Ragusa", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "republic_of_south_maluku", "canonical_name": "Republic of South Maluku", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "republic_of_prekmurje", "canonical_name": "Republic of Prekmurje", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "republic_of_ragusa", "canonical_name": "Republic of Ragusa", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "republic_of_south_maluku", "canonical_name": "Republic of South Maluku", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "republic_of_texas", "canonical_name": "Republic of Texas", "suggested_period_id": "macro_industrial_imperial_world", "suggested_tier": "macro_chapter"}
-{"entity_id": "republic_of_the_congo", "canonical_name": "Republic of the Congo", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
+{"entity_id": "republic_of_the_congo", "canonical_name": "Republic of the Congo", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
 {"entity_id": "republic_of_the_north_solomons", "canonical_name": "Republic of the North Solomons", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "republic_of_the_rio_grande", "canonical_name": "Republic of the Río Grande", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
+{"entity_id": "republic_of_the_rio_grande", "canonical_name": "Republic of the Río Grande", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "republic_of_venezuela", "canonical_name": "Republic of Venezuela", "suggested_period_id": "republic_of_venezuela_period", "suggested_tier": "period"}
-{"entity_id": "republic_of_venice", "canonical_name": "Republic of Venice", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "republic_of_yucatan", "canonical_name": "Republic of Yucatán", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
+{"entity_id": "republic_of_venice", "canonical_name": "Republic of Venice", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "republic_of_yucatan", "canonical_name": "Republic of Yucatán", "suggested_period_id": "north_america_industrial_imperial_world_era", "suggested_tier": "regional_era"}
 {"entity_id": "romain_gaul_domain_of_soissons", "canonical_name": "Romain-Gaul domain of Soissons", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
 {"entity_id": "roman_kingdom", "canonical_name": "Roman Kingdom", "suggested_period_id": "celts_period", "suggested_tier": "period"}
 {"entity_id": "roman_libya", "canonical_name": "Roman Libya", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "roman_republic", "canonical_name": "Roman Republic", "suggested_period_id": "celts_period", "suggested_tier": "period"}
 {"entity_id": "roman_republic_q17167", "canonical_name": "Roman Republic", "suggested_period_id": "celts_period", "suggested_tier": "period"}
 {"entity_id": "rouran_khaganate", "canonical_name": "Rouran Khaganate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "ruanda_urundi", "canonical_name": "Ruanda-Urundi", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "ruanda_urundi", "canonical_name": "Ruanda-Urundi", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
 {"entity_id": "russian_empire", "canonical_name": "Russian Empire", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
 {"entity_id": "russian_soviet_federative_socialist_republic", "canonical_name": "Russian Soviet Federative Socialist Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "rwanda", "canonical_name": "Rwanda", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
+{"entity_id": "rwanda", "canonical_name": "Rwanda", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
 {"entity_id": "ryukyu_kingdom", "canonical_name": "Ryukyu Kingdom", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "saadi_dynasty", "canonical_name": "Saadi dynasty", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "saar_protectorate", "canonical_name": "Saar Protectorate", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "safavid_iran", "canonical_name": "Safavid Iran", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "saadi_dynasty", "canonical_name": "Saadi dynasty", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
+{"entity_id": "saar_protectorate", "canonical_name": "Saar Protectorate", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "safavid_iran", "canonical_name": "Safavid Iran", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
 {"entity_id": "saint_kitts_and_nevis", "canonical_name": "Saint Kitts and Nevis", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "saint_lucia", "canonical_name": "Saint Lucia", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "saint_vincent_and_the_grenadines", "canonical_name": "Saint Vincent and the Grenadines", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "salamis", "canonical_name": "Salamis", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
-{"entity_id": "samanid_empire", "canonical_name": "Samanid Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "samanid_empire", "canonical_name": "Samanid Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "samoa", "canonical_name": "Samoa", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "sasanian_empire", "canonical_name": "Sasanian Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "satavahana_dynasty", "canonical_name": "Satavahana dynasty", "suggested_period_id": "yayoi_period", "suggested_tier": "period"}
-{"entity_id": "saudi_arabia", "canonical_name": "Saudi Arabia", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "saxe_lauenburg", "canonical_name": "Saxe-Lauenburg", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "schaumburg_lippe", "canonical_name": "Schaumburg-Lippe", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "second_bulgarian_empire", "canonical_name": "Second Bulgarian Empire", "suggested_period_id": "house_of_plantagenet_period", "suggested_tier": "period"}
-{"entity_id": "second_empire_of_haiti", "canonical_name": "Second Empire of Haiti", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
-{"entity_id": "second_federal_republic_of_mexico", "canonical_name": "Second Federal Republic of Mexico", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
-{"entity_id": "second_mexican_empire", "canonical_name": "Second Mexican Empire", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
-{"entity_id": "second_polish_republic", "canonical_name": "Second Polish Republic", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
-{"entity_id": "second_saudi_state", "canonical_name": "Second Saudi State", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "second_syrian_republic", "canonical_name": "Second Syrian Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "sasanian_empire", "canonical_name": "Sasanian Empire", "suggested_period_id": "european_hun_empire_period", "suggested_tier": "period"}
+{"entity_id": "satavahana_dynasty", "canonical_name": "Satavahana dynasty", "suggested_period_id": "syrakousai_period", "suggested_tier": "period"}
+{"entity_id": "saudi_arabia", "canonical_name": "Saudi Arabia", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "saxe_lauenburg", "canonical_name": "Saxe-Lauenburg", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "schaumburg_lippe", "canonical_name": "Schaumburg-Lippe", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "second_bulgarian_empire", "canonical_name": "Second Bulgarian Empire", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "second_empire_of_haiti", "canonical_name": "Second Empire of Haiti", "suggested_period_id": "north_america_industrial_imperial_world_era", "suggested_tier": "regional_era"}
+{"entity_id": "second_federal_republic_of_mexico", "canonical_name": "Second Federal Republic of Mexico", "suggested_period_id": "north_america_industrial_imperial_world_era", "suggested_tier": "regional_era"}
+{"entity_id": "second_mexican_empire", "canonical_name": "Second Mexican Empire", "suggested_period_id": "north_america_industrial_imperial_world_era", "suggested_tier": "regional_era"}
+{"entity_id": "second_polish_republic", "canonical_name": "Second Polish Republic", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "second_saudi_state", "canonical_name": "Second Saudi State", "suggested_period_id": "asia_industrial_imperial_world_era", "suggested_tier": "regional_era"}
+{"entity_id": "second_syrian_republic", "canonical_name": "Second Syrian Republic", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "second_turkic_khaganate", "canonical_name": "Second Turkic Khaganate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "seleucid_empire", "canonical_name": "Seleucid Empire", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "seljuk_empire", "canonical_name": "Seljuk Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "senegal", "canonical_name": "Senegal", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
+{"entity_id": "seleucid_empire", "canonical_name": "Seleucid Empire", "suggested_period_id": "syrakousai_period", "suggested_tier": "period"}
+{"entity_id": "seljuk_empire", "canonical_name": "Seljuk Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "senegal", "canonical_name": "Senegal", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
 {"entity_id": "septinsular_republic", "canonical_name": "Septinsular Republic", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
-{"entity_id": "seventeen_provinces", "canonical_name": "Seventeen Provinces", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "seventeen_provinces", "canonical_name": "Seventeen Provinces", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "shaki_khanate", "canonical_name": "Shaki Khanate", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
-{"entity_id": "shang_dynasty", "canonical_name": "Shang dynasty", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "sheba", "canonical_name": "Sheba", "suggested_period_id": "yayoi_period", "suggested_tier": "period"}
-{"entity_id": "shunga_empire", "canonical_name": "Shunga Empire", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "siberian_khanate", "canonical_name": "Siberian Khanate", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "sierra_leone", "canonical_name": "Sierra Leone", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
+{"entity_id": "shang_dynasty", "canonical_name": "Shang dynasty", "suggested_period_id": "jomon_period", "suggested_tier": "period"}
+{"entity_id": "sheba", "canonical_name": "Sheba", "suggested_period_id": "syrakousai_period", "suggested_tier": "period"}
+{"entity_id": "shunga_empire", "canonical_name": "Shunga Empire", "suggested_period_id": "south_asian_classical_era", "suggested_tier": "regional_era"}
+{"entity_id": "siberian_khanate", "canonical_name": "Siberian Khanate", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "sierra_leone", "canonical_name": "Sierra Leone", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
 {"entity_id": "sikh_empire", "canonical_name": "Sikh Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "silla", "canonical_name": "Silla", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "slovakia", "canonical_name": "Slovakia", "suggested_period_id": "europe_contemporary_world_era", "suggested_tier": "regional_era"}
 {"entity_id": "slovenia", "canonical_name": "Slovenia", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "socialist_republic_of_chile", "canonical_name": "Socialist Republic of Chile", "suggested_period_id": "republic_of_venezuela_period", "suggested_tier": "period"}
-{"entity_id": "socialist_republic_of_montenegro", "canonical_name": "Socialist Republic of Montenegro", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "sokoto_caliphate", "canonical_name": "Sokoto Caliphate", "suggested_period_id": "kingdom_of_spain_q3399982_period", "suggested_tier": "period"}
+{"entity_id": "socialist_republic_of_montenegro", "canonical_name": "Socialist Republic of Montenegro", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "sokoto_caliphate", "canonical_name": "Sokoto Caliphate", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "solomon_islands", "canonical_name": "Solomon Islands", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "song_dynasty", "canonical_name": "Song dynasty", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "songhai_empire", "canonical_name": "Songhai Empire", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
-{"entity_id": "south_african_republic_q550374", "canonical_name": "South African Republic", "suggested_period_id": "spain_under_the_restoration_period", "suggested_tier": "period"}
-{"entity_id": "south_korea", "canonical_name": "South Korea", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
+{"entity_id": "songhai_empire", "canonical_name": "Songhai Empire", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "south_african_republic_q550374", "canonical_name": "South African Republic", "suggested_period_id": "africa_industrial_imperial_world_era", "suggested_tier": "regional_era"}
+{"entity_id": "south_korea", "canonical_name": "South Korea", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "south_west_africa", "canonical_name": "South-West Africa", "suggested_period_id": "union_of_south_africa_period", "suggested_tier": "period"}
 {"entity_id": "soviet_union", "canonical_name": "Soviet Union", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "spain_under_the_restoration", "canonical_name": "Spain under the Restoration", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
-{"entity_id": "spanish_empire", "canonical_name": "Spanish Empire", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "spanish_sahara", "canonical_name": "Spanish Sahara", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
+{"entity_id": "spain_under_the_restoration", "canonical_name": "Spain under the Restoration", "suggested_period_id": "kingdom_of_italy_q172579_period", "suggested_tier": "period"}
+{"entity_id": "spanish_empire", "canonical_name": "Spanish Empire", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
+{"entity_id": "spanish_sahara", "canonical_name": "Spanish Sahara", "suggested_period_id": "kingdom_of_italy_q172579_period", "suggested_tier": "period"}
 {"entity_id": "sparta", "canonical_name": "Sparta", "suggested_period_id": "etruscan_civilization_period", "suggested_tier": "period"}
-{"entity_id": "sri_lanka", "canonical_name": "Sri Lanka", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "srivijaya", "canonical_name": "Srivijaya", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "sri_lanka", "canonical_name": "Sri Lanka", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
+{"entity_id": "srivijaya", "canonical_name": "Srivijaya", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "state_of_bahrain", "canonical_name": "State of Bahrain", "suggested_period_id": "ba_athist_iraq_period", "suggested_tier": "period"}
-{"entity_id": "state_of_franklin", "canonical_name": "State of Franklin", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "state_of_malta", "canonical_name": "State of Malta", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "state_of_the_teutonic_order", "canonical_name": "State of the Teutonic Order", "suggested_period_id": "crown_of_castile_period", "suggested_tier": "period"}
+{"entity_id": "state_of_franklin", "canonical_name": "State of Franklin", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
+{"entity_id": "state_of_malta", "canonical_name": "State of Malta", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "state_of_the_teutonic_order", "canonical_name": "State of the Teutonic Order", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
 {"entity_id": "state_of_venezuela", "canonical_name": "State of Venezuela", "suggested_period_id": "peruvian_republic_q28517256_period", "suggested_tier": "period"}
-{"entity_id": "sultanate_of_rum", "canonical_name": "Sultanate of Rum", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "sultanate_of_sulu", "canonical_name": "Sultanate of Sulu", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "suriname_q19901436", "canonical_name": "Suriname", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
+{"entity_id": "sultanate_of_rum", "canonical_name": "Sultanate of Rum", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
+{"entity_id": "sultanate_of_sulu", "canonical_name": "Sultanate of Sulu", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "suriname_q19901436", "canonical_name": "Suriname", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
 {"entity_id": "suriname_q730", "canonical_name": "Suriname", "suggested_period_id": "republic_of_venezuela_period", "suggested_tier": "period"}
-{"entity_id": "switzerland", "canonical_name": "Switzerland", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "tabal", "canonical_name": "Tabal", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "tahirid_sultanate", "canonical_name": "Tahirid Sultanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "tajikistan", "canonical_name": "Tajikistan", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "tamna", "canonical_name": "Tamna", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "switzerland", "canonical_name": "Switzerland", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
+{"entity_id": "tabal", "canonical_name": "Tabal", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
+{"entity_id": "tahirid_sultanate", "canonical_name": "Tahirid Sultanate", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "tajikistan", "canonical_name": "Tajikistan", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
+{"entity_id": "tamna", "canonical_name": "Tamna", "suggested_period_id": "jomon_period", "suggested_tier": "period"}
 {"entity_id": "tang_dynasty", "canonical_name": "Tang dynasty", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
-{"entity_id": "tanzania", "canonical_name": "Tanzania", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "tarumanagara", "canonical_name": "Tarumanagara", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "taungoo_dynasty", "canonical_name": "Taungoo dynasty", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "ternate_sultanate", "canonical_name": "Ternate Sultanate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "terra_mariana", "canonical_name": "Terra Mariana", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "tanzania", "canonical_name": "Tanzania", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "tarumanagara", "canonical_name": "Tarumanagara", "suggested_period_id": "european_hun_empire_period", "suggested_tier": "period"}
+{"entity_id": "taungoo_dynasty", "canonical_name": "Taungoo dynasty", "suggested_period_id": "kingdom_of_navarre_beyond_the_pyrenees_period", "suggested_tier": "period"}
+{"entity_id": "ternate_sultanate", "canonical_name": "Ternate Sultanate", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
+{"entity_id": "terra_mariana", "canonical_name": "Terra Mariana", "suggested_period_id": "kingdom_of_hungary_q16056854_period", "suggested_tier": "period"}
 {"entity_id": "the_bahamas", "canonical_name": "The Bahamas", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "third_dynasty_of_ur", "canonical_name": "Third Dynasty of Ur", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "third_dynasty_of_ur", "canonical_name": "Third Dynasty of Ur", "suggested_period_id": "mesopotamian_early_states_era", "suggested_tier": "regional_era"}
 {"entity_id": "tibetan_empire", "canonical_name": "Tibetan Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "timurid_empire", "canonical_name": "Timurid Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "timurid_empire", "canonical_name": "Timurid Empire", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "tlaxcala_q614072", "canonical_name": "Tlaxcala", "suggested_period_id": "mesoamerican_postclassic", "suggested_tier": "period"}
-{"entity_id": "togo", "canonical_name": "Togo", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
+{"entity_id": "togo", "canonical_name": "Togo", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
 {"entity_id": "tokugawa_shogunate", "canonical_name": "Tokugawa shogunate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "toltec_empire", "canonical_name": "Toltec Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "tonga", "canonical_name": "Tonga", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "tran_dynasty", "canonical_name": "Tran dynasty", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "tran_dynasty", "canonical_name": "Tran dynasty", "suggested_period_id": "duchy_of_poland_q616915_period", "suggested_tier": "period"}
 {"entity_id": "trinidad_and_tobago_q754", "canonical_name": "Trinidad and Tobago", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "trinidad_and_tobago_q7842409", "canonical_name": "Trinidad and Tobago", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
-{"entity_id": "troy", "canonical_name": "Troy", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "trucial_states", "canonical_name": "Trucial States", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "troy", "canonical_name": "Troy", "suggested_period_id": "european_bronze_age", "suggested_tier": "period"}
+{"entity_id": "trucial_states", "canonical_name": "Trucial States", "suggested_period_id": "kingdom_of_wurttemberg_period", "suggested_tier": "period"}
 {"entity_id": "tsardom_of_russia", "canonical_name": "Tsardom of Russia", "suggested_period_id": "crown_of_the_kingdom_of_poland_period", "suggested_tier": "period"}
 {"entity_id": "tui_tonga_empire", "canonical_name": "Tuʻi Tonga Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "tunisia", "canonical_name": "Tunisia", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "turkey", "canonical_name": "Turkey", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "turkmenistan", "canonical_name": "Turkmenistan", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
+{"entity_id": "turkey", "canonical_name": "Turkey", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
+{"entity_id": "turkmenistan", "canonical_name": "Turkmenistan", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "tuvalu", "canonical_name": "Tuvalu", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "ugarit", "canonical_name": "Ugarit", "suggested_period_id": "jomon_period", "suggested_tier": "period"}
+{"entity_id": "ugarit", "canonical_name": "Ugarit", "suggested_period_id": "uruk_period", "suggested_tier": "period"}
 {"entity_id": "ukraine", "canonical_name": "Ukraine", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
 {"entity_id": "ukrainian_soviet_socialist_republic", "canonical_name": "Ukrainian Soviet Socialist Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "umayyad_caliphate", "canonical_name": "Umayyad Caliphate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "union_between_sweden_and_norway", "canonical_name": "Union between Sweden and Norway", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "umayyad_caliphate", "canonical_name": "Umayyad Caliphate", "suggested_period_id": "islamic_caliphates_era", "suggested_tier": "regional_era"}
+{"entity_id": "union_between_sweden_and_norway", "canonical_name": "Union between Sweden and Norway", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
 {"entity_id": "union_of_south_africa", "canonical_name": "Union of South Africa", "suggested_period_id": "union_of_south_africa_period", "suggested_tier": "period"}
 {"entity_id": "united_arab_emirates", "canonical_name": "United Arab Emirates", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "united_kingdom", "canonical_name": "United Kingdom", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "united_kingdom_of_great_britain_and_ireland", "canonical_name": "United Kingdom of Great Britain and Ireland", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "united_kingdom_of_israel", "canonical_name": "United Kingdom of Israel", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "united_kingdom", "canonical_name": "United Kingdom", "suggested_period_id": "principality_of_lippe_period", "suggested_tier": "period"}
+{"entity_id": "united_kingdom_of_great_britain_and_ireland", "canonical_name": "United Kingdom of Great Britain and Ireland", "suggested_period_id": "principality_of_lippe_period", "suggested_tier": "period"}
+{"entity_id": "united_kingdom_of_israel", "canonical_name": "United Kingdom of Israel", "suggested_period_id": "babylonia_period", "suggested_tier": "period"}
 {"entity_id": "united_kingdom_of_portugal_brazil_and_the_algarves", "canonical_name": "United Kingdom of Portugal, Brazil and the Algarves", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
-{"entity_id": "united_kingdom_of_the_netherlands", "canonical_name": "United Kingdom of the Netherlands", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
-{"entity_id": "united_states", "canonical_name": "United States", "suggested_period_id": "russian_empire_period", "suggested_tier": "period"}
+{"entity_id": "united_kingdom_of_the_netherlands", "canonical_name": "United Kingdom of the Netherlands", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
+{"entity_id": "united_states", "canonical_name": "United States", "suggested_period_id": "kingdom_of_sicily_q3932079_period", "suggested_tier": "period"}
 {"entity_id": "united_states_of_colombia", "canonical_name": "United States of Colombia", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
 {"entity_id": "united_states_of_indonesia", "canonical_name": "United States of Indonesia", "suggested_period_id": "czechoslovak_republic_period", "suggested_tier": "period"}
-{"entity_id": "united_states_of_the_ionian_islands", "canonical_name": "United States of the Ionian Islands", "suggested_period_id": "kingdom_of_hungary_q171150_period", "suggested_tier": "period"}
+{"entity_id": "united_states_of_the_ionian_islands", "canonical_name": "United States of the Ionian Islands", "suggested_period_id": "kingdom_of_hungary_q253094_period", "suggested_tier": "period"}
 {"entity_id": "united_states_of_venezuela", "canonical_name": "United States of Venezuela", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
 {"entity_id": "uruguay", "canonical_name": "Uruguay", "suggested_period_id": "united_states_of_venezuela_period", "suggested_tier": "period"}
 {"entity_id": "uyghur_khaganate", "canonical_name": "Uyghur Khaganate", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "uzbek_soviet_socialist_republic", "canonical_name": "Uzbek Soviet Socialist Republic", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "uzbekistan", "canonical_name": "Uzbekistan", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "vakataka_empire", "canonical_name": "Vakataka empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "uzbek_soviet_socialist_republic", "canonical_name": "Uzbek Soviet Socialist Republic", "suggested_period_id": "kingdom_of_afghanistan_period", "suggested_tier": "period"}
+{"entity_id": "uzbekistan", "canonical_name": "Uzbekistan", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
+{"entity_id": "vakataka_empire", "canonical_name": "Vakataka empire", "suggested_period_id": "european_hun_empire_period", "suggested_tier": "period"}
 {"entity_id": "vandal_kingdom", "canonical_name": "Vandal Kingdom", "suggested_period_id": "european_hun_empire_period", "suggested_tier": "period"}
 {"entity_id": "vanuatu", "canonical_name": "Vanuatu", "suggested_period_id": "commonwealth_realm_of_mauritius_period", "suggested_tier": "period"}
-{"entity_id": "vijayanagara_empire", "canonical_name": "Vijayanagara Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "vijayanagara_empire", "canonical_name": "Vijayanagara Empire", "suggested_period_id": "kingdom_of_poland_q1649871_period", "suggested_tier": "period"}
 {"entity_id": "visigothic_kingdom_of_tolosa", "canonical_name": "Visigothic Kingdom of Tolosa", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
-{"entity_id": "volga_bulgaria", "canonical_name": "Volga Bulgaria", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
+{"entity_id": "volga_bulgaria", "canonical_name": "Volga Bulgaria", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "wari_empire", "canonical_name": "Wari Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "weimar_republic", "canonical_name": "Weimar Republic", "suggested_period_id": "german_reich_period", "suggested_tier": "period"}
 {"entity_id": "west_francia", "canonical_name": "West Francia", "suggested_period_id": "kingdom_of_burgundy_q530670_period", "suggested_tier": "period"}
-{"entity_id": "west_germany", "canonical_name": "West Germany", "suggested_period_id": "byelorussian_soviet_socialist_republic_period", "suggested_tier": "period"}
-{"entity_id": "western_chalukya_empire", "canonical_name": "Western Chalukya Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
+{"entity_id": "west_germany", "canonical_name": "West Germany", "suggested_period_id": "people_s_republic_of_albania_period", "suggested_tier": "period"}
+{"entity_id": "western_chalukya_empire", "canonical_name": "Western Chalukya Empire", "suggested_period_id": "chola_empire_period", "suggested_tier": "period"}
 {"entity_id": "western_han", "canonical_name": "Western Han", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "western_jin_dynasty", "canonical_name": "Western Jin dynasty", "suggested_period_id": "macro_classical_imperial_worlds", "suggested_tier": "macro_chapter"}
-{"entity_id": "western_roman_empire", "canonical_name": "Western Roman Empire", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
-{"entity_id": "wey", "canonical_name": "Wey", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
+{"entity_id": "western_roman_empire", "canonical_name": "Western Roman Empire", "suggested_period_id": "european_iron_age", "suggested_tier": "period"}
+{"entity_id": "wey", "canonical_name": "Wey", "suggested_period_id": "jomon_period", "suggested_tier": "period"}
 {"entity_id": "xia_dynasty", "canonical_name": "Xia dynasty", "suggested_period_id": "macro_early_cities_states", "suggested_tier": "macro_chapter"}
 {"entity_id": "xianbei_state", "canonical_name": "Xianbei state", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "yamatai", "canonical_name": "Yamatai", "suggested_period_id": "chinese_empire_period", "suggested_tier": "period"}
 {"entity_id": "yemen", "canonical_name": "Yemen", "suggested_period_id": "syrian_arab_republic_period", "suggested_tier": "period"}
-{"entity_id": "yue", "canonical_name": "Yue", "suggested_period_id": "ancient_egypt_period", "suggested_tier": "period"}
-{"entity_id": "zambia", "canonical_name": "Zambia", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "zhenla", "canonical_name": "Zhenla", "suggested_period_id": "asuka_period", "suggested_tier": "period"}
-{"entity_id": "zimbabwe", "canonical_name": "Zimbabwe", "suggested_period_id": "republic_of_sudan_q5866720_period", "suggested_tier": "period"}
-{"entity_id": "zulu_kingdom", "canonical_name": "Zulu Kingdom", "suggested_period_id": "kingdom_of_spain_q3399982_period", "suggested_tier": "period"}
+{"entity_id": "yue", "canonical_name": "Yue", "suggested_period_id": "jomon_period", "suggested_tier": "period"}
+{"entity_id": "zambia", "canonical_name": "Zambia", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "zhenla", "canonical_name": "Zhenla", "suggested_period_id": "macro_postclassical_worlds", "suggested_tier": "macro_chapter"}
+{"entity_id": "zimbabwe", "canonical_name": "Zimbabwe", "suggested_period_id": "republic_of_seychelles_period", "suggested_tier": "period"}
+{"entity_id": "zulu_kingdom", "canonical_name": "Zulu Kingdom", "suggested_period_id": "africa_industrial_imperial_world_era", "suggested_tier": "regional_era"}

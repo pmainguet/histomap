@@ -9,6 +9,9 @@ end_confidence: low
 geography:
   continents:
   - asia
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
 broader_periods:
 - macro_agricultural_transitions
 successors: []

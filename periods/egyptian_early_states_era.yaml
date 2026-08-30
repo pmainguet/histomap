@@ -9,6 +9,9 @@ end_confidence: low
 geography:
   continents:
   - africa
+  historical_regions:
+  - north_africa
+  primary_historical_region: north_africa
 broader_periods:
 - macro_early_cities_states
 successors: []

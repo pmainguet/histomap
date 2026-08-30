@@ -1,6 +1,13 @@
 """Pipeline step: suggest a period_links.yaml entry for global/regional-tier
 polities that don't have one yet. Writes a review queue; does not modify
-period_links.yaml directly."""
+period_links.yaml directly.
+
+Geography match prefers historical_region overlap (finer-grained, ~23 regions)
+over continent overlap (7 regions) when both sides have historical_regions set
+-- continent-only matching was producing low-quality suggestions for broad
+continents (e.g. abbasid_caliphate matched to chinese_empire_period purely
+because both share the "asia" tag). Falls back to continent overlap when
+either side lacks historical_regions -- most of the dataset still does."""
 
 from __future__ import annotations
 
@@ -30,16 +37,30 @@ def _overlap(a: tuple[int, int], b: tuple[int, int]) -> int:
     return max(0, hi - lo)
 
 
+def geography_matches(source_geo: dict, candidate_geo: dict) -> bool:
+    """Historical_region overlap when both sides have it (tighter, preferred);
+    continent overlap otherwise. An empty candidate continents list means
+    deliberately global (a macro chapter) -- always eligible; any other
+    empty-continents period is unclassified, not global, and is correctly
+    excluded since it has no continents to overlap on either axis. See
+    ONTOLOGY.md's tier-scoped geography-emptiness rule."""
+    candidate_continents = set(candidate_geo.get("continents") or [])
+    if not candidate_continents:
+        return True
+    source_regions = set(source_geo.get("historical_regions") or [])
+    candidate_regions = set(candidate_geo.get("historical_regions") or [])
+    if source_regions and candidate_regions:
+        return bool(source_regions & candidate_regions)
+    source_continents = set(source_geo.get("continents") or [])
+    return bool(source_continents & candidate_continents)
+
+
 def best_period_for_polity(polity: dict, periods: list[dict]) -> dict | None:
-    polity_continents = set((polity.get("geography") or {}).get("continents") or [])
+    polity_geo = polity.get("geography") or {}
     polity_range = (polity["start"], polity.get("end") if polity.get("end") is not None else 2026)
     candidates = []
     for period in periods:
-        period_continents = set((period.get("geography") or {}).get("continents") or [])
-        # macro chapters have continents=[] (deliberately global, tier-scoped -- see
-        # ONTOLOGY.md) -- always geography-eligible; any other empty-continents period
-        # is unclassified, not global, so it's correctly excluded by this same check.
-        if period_continents and not (polity_continents & period_continents):
+        if not geography_matches(polity_geo, period.get("geography") or {}):
             continue
         period_range = (period["start"], period["end"])
         years = _overlap(polity_range, period_range)

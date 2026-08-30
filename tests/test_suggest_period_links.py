@@ -1,6 +1,6 @@
 import unittest
 
-from pipeline.suggest_period_links import best_period_for_polity, in_scope
+from pipeline.suggest_period_links import best_period_for_polity, geography_matches, in_scope
 
 
 class InScopeTests(unittest.TestCase):
@@ -17,6 +17,23 @@ class InScopeTests(unittest.TestCase):
         self.assertTrue(
             in_scope({"visibility_tier": "detailed", "visibility_override": "global"})
         )
+
+
+class GeographyMatchesTests(unittest.TestCase):
+    def test_historical_region_overlap_wins_over_shared_continent(self) -> None:
+        source = {"continents": ["asia"], "historical_regions": ["west_asia"]}
+        candidate = {"continents": ["asia"], "historical_regions": ["east_asia"]}
+        self.assertFalse(geography_matches(source, candidate))
+
+    def test_falls_back_to_continent_when_either_side_lacks_regions(self) -> None:
+        source = {"continents": ["asia"]}
+        candidate = {"continents": ["asia"], "historical_regions": ["east_asia"]}
+        self.assertTrue(geography_matches(source, candidate))
+
+    def test_empty_candidate_continents_always_matches(self) -> None:
+        source = {"continents": ["asia"], "historical_regions": ["west_asia"]}
+        candidate = {"continents": []}
+        self.assertTrue(geography_matches(source, candidate))
 
 
 class BestPeriodForPolityTests(unittest.TestCase):
@@ -63,6 +80,35 @@ class BestPeriodForPolityTests(unittest.TestCase):
     def test_returns_none_when_nothing_overlaps(self) -> None:
         polity = {"start": 2000, "end": 2020, "geography": {"continents": ["europe"]}}
         self.assertIsNone(best_period_for_polity(polity, self.periods))
+
+    def test_historical_region_avoids_wrong_continent_wide_match(self) -> None:
+        # Reproduces the real bug: an Iraqi caliphate used to match a Chinese
+        # empire period purely on sharing the "asia" tag. With both sides'
+        # historical_regions populated, only the correctly-regioned candidate
+        # is eligible at all.
+        periods = [
+            {
+                "id": "chinese_empire_period",
+                "tier": "period",
+                "start": -219,
+                "end": 1912,
+                "geography": {"continents": ["asia"], "historical_regions": ["east_asia"]},
+            },
+            {
+                "id": "islamic_caliphates_era",
+                "tier": "regional_era",
+                "start": 622,
+                "end": 1500,
+                "geography": {"continents": ["asia", "africa"], "historical_regions": ["west_asia", "north_africa"]},
+            },
+        ]
+        polity = {
+            "start": 750,
+            "end": 1258,
+            "geography": {"continents": ["asia"], "historical_regions": ["west_asia"]},
+        }
+        best = best_period_for_polity(polity, periods)
+        self.assertEqual(best["id"], "islamic_caliphates_era")
 
 
 if __name__ == "__main__":

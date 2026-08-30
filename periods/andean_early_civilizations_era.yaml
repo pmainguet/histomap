@@ -9,6 +9,9 @@ end_confidence: low
 geography:
   continents:
   - south_america
+  historical_regions:
+  - andes
+  primary_historical_region: andes
 broader_periods:
 - macro_classical_imperial_worlds
 successors: []

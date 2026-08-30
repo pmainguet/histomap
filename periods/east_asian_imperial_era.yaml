@@ -9,6 +9,9 @@ end_confidence: low
 geography:
   continents:
   - asia
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
 broader_periods:
 - macro_postclassical_worlds
 successors: []

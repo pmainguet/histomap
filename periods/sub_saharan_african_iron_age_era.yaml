@@ -9,6 +9,11 @@ end_confidence: low
 geography:
   continents:
   - africa
+  historical_regions:
+  - west_africa
+  - central_africa
+  - east_africa
+  - southern_africa
 broader_periods:
 - macro_classical_imperial_worlds
 successors: []

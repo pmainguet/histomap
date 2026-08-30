@@ -275,8 +275,10 @@
         "south_america"
       ],
       "primary_continent": "south_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "andes"
+      ],
+      "primary_historical_region": "andes",
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -306,8 +308,10 @@
         "south_america"
       ],
       "primary_continent": "south_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "andes"
+      ],
+      "primary_historical_region": "andes",
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -1345,8 +1349,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -1376,8 +1382,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -1407,8 +1415,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -1438,8 +1448,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -1504,8 +1516,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -1946,8 +1960,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -2348,7 +2364,10 @@
         "africa"
       ],
       "primary_continent": null,
-      "historical_regions": [],
+      "historical_regions": [
+        "west_asia",
+        "north_africa"
+      ],
       "primary_historical_region": null,
       "present_countries": [],
       "centroid": null,
@@ -3549,7 +3568,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
+      "historical_regions": [
+        "southern_europe",
+        "western_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [],
       "centroid": null,
@@ -3580,8 +3602,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -3652,8 +3676,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -3763,8 +3789,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -3941,8 +3969,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -5103,8 +5133,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "south_asia"
+      ],
+      "primary_historical_region": "south_asia",
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -5289,7 +5321,12 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
+      "historical_regions": [
+        "west_africa",
+        "central_africa",
+        "east_africa",
+        "southern_africa"
+      ],
       "primary_historical_region": null,
       "present_countries": [],
       "centroid": null,

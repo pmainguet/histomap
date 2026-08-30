@@ -10,6 +10,9 @@ geography:
   continents:
   - asia
   - africa
+  historical_regions:
+  - west_asia
+  - north_africa
 broader_periods:
 - macro_postclassical_worlds
 successors: []

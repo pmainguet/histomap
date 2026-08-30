@@ -9,6 +9,9 @@ end_confidence: low
 geography:
   continents:
   - europe
+  historical_regions:
+  - southern_europe
+  - western_europe
 broader_periods:
 - macro_classical_imperial_worlds
 successors: []

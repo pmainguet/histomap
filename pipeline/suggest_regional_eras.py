@@ -1,7 +1,17 @@
 """Pipeline step: suggest a regional_era broader_period for each tier=period
-record that doesn't have one yet, by continent + date-range overlap against
+record that doesn't have one yet, by geography + date-range overlap against
 every tier=regional_era record. Writes a review queue; does not modify
-periods/*.yaml directly."""
+periods/*.yaml directly.
+
+Geography match prefers historical_region overlap (finer-grained, ~23 regions)
+over continent overlap (7 regions) when both sides have historical_regions set
+-- continent-only matching was producing low-quality suggestions for broad
+continents (e.g. ancient_egypt_period, continents=[africa, asia], ranking
+mesopotamian_early_states_era over the correct egyptian_early_states_era
+purely because Mesopotamia's date range happened to have more overlap years).
+Falls back to continent overlap when either side lacks historical_regions --
+most of the dataset still does, since Task 9 only derives it from
+present_countries, which most periods don't have."""
 
 from __future__ import annotations
 
@@ -22,13 +32,28 @@ def overlap_years(a: tuple[int, int], b: tuple[int, int]) -> int:
     return max(0, hi - lo)
 
 
+def geography_matches(source_geo: dict, candidate_geo: dict) -> bool:
+    """Historical_region overlap when both sides have it (tighter, preferred);
+    continent overlap otherwise. An empty candidate continents list means
+    deliberately global (a macro chapter) -- always eligible; see ONTOLOGY.md's
+    tier-scoped geography-emptiness rule."""
+    candidate_continents = set(candidate_geo.get("continents") or [])
+    if not candidate_continents:
+        return True
+    source_regions = set(source_geo.get("historical_regions") or [])
+    candidate_regions = set(candidate_geo.get("historical_regions") or [])
+    if source_regions and candidate_regions:
+        return bool(source_regions & candidate_regions)
+    source_continents = set(source_geo.get("continents") or [])
+    return bool(source_continents & candidate_continents)
+
+
 def rank_candidates(period: dict, candidates: list[dict]) -> list[dict]:
-    period_continents = set((period.get("geography") or {}).get("continents") or [])
+    period_geo = period.get("geography") or {}
     period_range = (period["start"], period["end"])
     scored = []
     for candidate in candidates:
-        candidate_continents = set((candidate.get("geography") or {}).get("continents") or [])
-        if not (period_continents & candidate_continents):
+        if not geography_matches(period_geo, candidate.get("geography") or {}):
             continue
         candidate_range = (candidate["start"], candidate["end"])
         years = overlap_years(period_range, candidate_range)

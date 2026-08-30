@@ -9,6 +9,9 @@ end_confidence: low
 geography:
   continents:
   - north_america
+  historical_regions:
+  - mesoamerica
+  primary_historical_region: mesoamerica
 broader_periods:
 - macro_classical_imperial_worlds
 successors: []
