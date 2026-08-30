@@ -6,8 +6,7 @@ names:
 external_ids:
   wikidata: Q204920
 parent: null
-successors:
-- kingdom_of_spain_q3399982
+successors: []
 start: 1162
 end: 1715
 start_confidence: low
@@ -29,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 49.47
+prominence_score: 48.35
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -48,23 +47,17 @@ entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
-relationships:
-- target: kingdom_of_spain_q3399982
-  kind: political_successor
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q204920
+relationships: []
 prominence_components:
   wikidata_reach: 27.49
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 8.13
+  relationship_centrality: 7.0
   longevity: 6.86
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 49.47
+  total: 48.35
 manual_overrides:
 - consolidation

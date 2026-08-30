@@ -18,25 +18,11 @@ PERIODS_DIR = ROOT / "periods"
 
 # (id, canonical_name, macro_chapter_id, start, end, continents, notes)
 REGIONAL_ERAS: list[dict] = [
-    dict(
-        id="african_paleolithic_era",
-        canonical_name="African Paleolithic",
-        broader_periods=["macro_human_origins_paleolithic"],
-        start=-3000000,
-        end=-10000,
-        continents=["africa"],
-        notes="Earliest stone tools and the origin of Homo sapiens.",
-    ),
-    dict(
-        id="eurasian_paleolithic_era",
-        canonical_name="Eurasian Paleolithic",
-        broader_periods=["macro_human_origins_paleolithic"],
-        start=-1800000,
-        end=-10000,
-        continents=["europe", "asia"],
-        notes="From the first Homo erectus dispersal out of Africa (Dmanisi, "
-        "~1.8 million years ago) through the end of the last Ice Age.",
-    ),
+    # african_paleolithic_era and eurasian_paleolithic_era originated here but
+    # were demoted to tier=period (reparented under the new overarching
+    # paleolithic_era) on 2026-08-30 -- see ONTOLOGY.md's "Overarching regional
+    # eras for genuinely cross-regional themes". Removed from this table for
+    # the same reason as the Neolithic/Bronze Age rows below.
     # fertile_crescent_neolithic_era, nile_valley_neolithic_era, and
     # east_asian_neolithic_era originated here but were demoted to tier=period
     # (reparented under the new overarching neolithic_era) on 2026-08-30 -- see

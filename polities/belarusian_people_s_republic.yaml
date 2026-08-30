@@ -7,7 +7,6 @@ external_ids:
   wikidata: Q842199
 parent: null
 successors:
-- byelorussian_soviet_socialist_republic
 - socialist_soviet_republic_of_byelorussia
 start: 1918
 end: 1919
@@ -24,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 26.65
+prominence_score: 24.61
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -36,12 +35,6 @@ entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids: []
 relationships:
-- target: byelorussian_soviet_socialist_republic
-  kind: political_successor
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q842199
 - target: socialist_soviet_republic_of_byelorussia
   kind: political_successor
   evidence: derived
@@ -52,12 +45,12 @@ prominence_components:
   wikidata_reach: 25.35
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 5.55
+  relationship_centrality: 3.5
   longevity: 0.75
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 26.65
+  total: 24.61
 manual_overrides:
 - entity_type

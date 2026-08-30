@@ -5,7 +5,7 @@ names:
   aliases_en: Castile
 external_ids:
   wikidata: Q179293
-parent: crown_of_castile
+parent: null
 successors: []
 start: 1065
 end: 1833
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 33.2
+prominence_score: 29.7
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -40,24 +40,18 @@ entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
-relationships:
-- target: crown_of_castile
-  kind: political_parent
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q179293
+relationships: []
 prominence_components:
   wikidata_reach: 27.49
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 3.5
+  relationship_centrality: 0.0
   longevity: 7.21
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 33.2
+  total: 29.7
 consolidation_status: independent
 manual_overrides:
 - consolidation

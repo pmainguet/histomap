@@ -5,8 +5,7 @@ names:
 external_ids:
   wikidata: Q3173090
 parent: null
-successors:
-- kingdom_of_cambodia
+successors: []
 start: 1863
 end: 1953
 start_confidence: low
@@ -22,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 14.37
+prominence_score: 10.87
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -40,21 +39,15 @@ geography:
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []
-relationships:
-- target: kingdom_of_cambodia
-  kind: political_successor
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q3173090
+relationships: []
 prominence_components:
   wikidata_reach: 20.97
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 3.5
+  relationship_centrality: 0.0
   longevity: 4.9
   editorial_work: 0
   type_uncertainty_penalty: -10
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 14.37
+  total: 10.87

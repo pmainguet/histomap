@@ -1,7 +1,7 @@
 id: eurasian_paleolithic_era
 canonical_name: Eurasian Paleolithic
 kind: historical
-tier: regional_era
+tier: period
 start: -1800000
 end: -10000
 start_confidence: low
@@ -11,7 +11,7 @@ geography:
   - europe
   - asia
 broader_periods:
-- macro_human_origins_paleolithic
+- paleolithic_era
 successors: []
 authority: 'Histomap editorial: regional-era starter set'
 external_ids: {}

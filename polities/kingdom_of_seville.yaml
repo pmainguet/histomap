@@ -4,7 +4,7 @@ names:
   fr: royaume de Séville
 external_ids:
   wikidata: Q1796239
-parent: crown_of_castile
+parent: null
 successors: []
 start: 1248
 end: 1833
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 35.65
+prominence_score: 33.61
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -50,21 +50,15 @@ entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
 - Q417175
-relationships:
-- target: crown_of_castile
-  kind: political_parent
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q1796239
+relationships: []
 prominence_components:
   wikidata_reach: 16.19
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 5.55
+  relationship_centrality: 3.5
   longevity: 6.92
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 35.65
+  total: 33.61

@@ -1,7 +1,7 @@
 id: african_paleolithic_era
 canonical_name: African Paleolithic
 kind: historical
-tier: regional_era
+tier: period
 start: -3000000
 end: -10000
 start_confidence: low
@@ -10,7 +10,7 @@ geography:
   continents:
   - africa
 broader_periods:
-- macro_human_origins_paleolithic
+- paleolithic_era
 successors: []
 authority: 'Histomap editorial: regional-era starter set'
 external_ids: {}

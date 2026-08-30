@@ -5,7 +5,7 @@ names:
   aliases_en: Transleithania
 external_ids:
   wikidata: Q696970
-parent: kingdom_of_hungary_q171150
+parent: null
 successors: []
 start: 1867
 end: 1918
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 31.77
+prominence_score: 29.19
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -53,27 +53,20 @@ relationships:
   confidence: medium
   source_urls:
   - https://www.wikidata.org/wiki/Q696970
-- target: kingdom_of_hungary_q171150
-  kind: administrative_part_of
-  evidence: derived
-  confidence: high
-  source_urls:
-  - https://www.wikidata.org/wiki/Q696970
 prominence_components:
   wikidata_reach: 24.35
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 8.13
+  relationship_centrality: 5.55
   longevity: 4.29
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 31.77
+  total: 29.19
 manual_overrides:
 - entity_type
-- subdivision_parent
 entity_type_reviewed_against:
 - subdivision
-subdivision_parent_status: confirmed
+subdivision_parent_status: pending
 consolidation_status: part_of

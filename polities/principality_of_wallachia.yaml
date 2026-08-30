@@ -6,8 +6,7 @@ names:
 external_ids:
   wikidata: Q389004
 parent: null
-successors:
-- united_principalities_of_moldavia_and_wallachia
+successors: []
 start: 1330
 end: 1859
 start_confidence: low
@@ -30,7 +29,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 39.89
+prominence_score: 36.39
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -49,21 +48,15 @@ entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
-relationships:
-- target: united_principalities_of_moldavia_and_wallachia
-  kind: political_successor
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q389004
+relationships: []
 prominence_components:
   wikidata_reach: 22.58
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 3.5
+  relationship_centrality: 0.0
   longevity: 6.81
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 39.89
+  total: 36.39

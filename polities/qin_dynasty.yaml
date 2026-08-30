@@ -10,7 +10,6 @@ successors:
 - changshan
 - dai_q10884385
 - han_208bc_200bc
-- han_dynasty
 - hengshan
 - jiaodong_kingdom
 - jiujiang
@@ -67,12 +66,6 @@ relationships:
   source_urls:
   - https://www.wikidata.org/wiki/Q7183
 - target: han_208bc_200bc
-  kind: political_successor
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q7183
-- target: han_dynasty
   kind: political_successor
   evidence: derived
   confidence: medium

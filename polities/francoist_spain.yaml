@@ -23,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 40.64
+prominence_score: 37.14
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -49,10 +49,10 @@ prominence_components:
   wikidata_reach: 26.22
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 3.5
+  relationship_centrality: 0.0
   longevity: 3.92
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 40.64
+  total: 37.14

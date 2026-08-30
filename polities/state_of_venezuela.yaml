@@ -5,8 +5,7 @@ names:
 external_ids:
   wikidata: Q39501433
 parent: null
-successors:
-- united_states_of_venezuela
+successors: []
 start: 1830
 end: 1864
 start_confidence: low
@@ -23,7 +22,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 29.36
+prominence_score: 25.86
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -39,21 +38,15 @@ entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
-relationships:
-- target: united_states_of_venezuela
-  kind: political_successor
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q39501433
+relationships: []
 prominence_components:
   wikidata_reach: 15.0
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 3.5
+  relationship_centrality: 0.0
   longevity: 3.86
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 29.36
+  total: 25.86

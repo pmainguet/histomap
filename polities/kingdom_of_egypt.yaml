@@ -6,8 +6,7 @@ names:
 external_ids:
   wikidata: Q124943
 parent: null
-successors:
-- republic_of_egypt
+successors: []
 start: 1922
 end: 1953
 start_confidence: low
@@ -24,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 41.66
+prominence_score: 39.62
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -43,21 +42,15 @@ entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
-relationships:
-- target: republic_of_egypt
-  kind: political_successor
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q124943
+relationships: []
 prominence_components:
   wikidata_reach: 25.35
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 5.55
+  relationship_centrality: 3.5
   longevity: 3.76
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 41.66
+  total: 39.62

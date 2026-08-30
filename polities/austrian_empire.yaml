@@ -8,7 +8,6 @@ external_ids:
 parent: null
 successors:
 - austriahungary
-- kingdom_of_italy_q172579
 start: 1804
 end: 1867
 start_confidence: low
@@ -25,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 51.52
+prominence_score: 50.06
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -51,23 +50,17 @@ relationships:
   confidence: medium
   source_urls:
   - https://www.wikidata.org/wiki/Q131964
-- target: kingdom_of_italy_q172579
-  kind: political_successor
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q131964
 prominence_components:
   wikidata_reach: 30
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 10.0
+  relationship_centrality: 8.55
   longevity: 4.52
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 51.52
+  total: 50.06
 consolidation_status: independent
 manual_overrides:
 - consolidation

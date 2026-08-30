@@ -26,6 +26,7 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    `european_bronze_age_era`) is retired, and new overarching `bronze_age_era` /
    `neolithic_era` regional eras now parent all regional siblings in both clusters — see
    ONTOLOGY.md's "Overarching regional eras for genuinely cross-regional themes."
+4 bis. review the whole review workspace to see if they are still aligned with the way we do things given the recent changes. In particular, we should be able to switch an entity from era, period, civilization, polity, etc and link things correctly. But maybe that's only to be added in the side panel, to be seen.
 5. **Close out Seshat reconciliation** — only 69 records left (35 review + 34 unmatched); the
    cheapest queue left to finish. Review decisions are durable and must not be overwritten by
    pipeline reruns.
@@ -46,6 +47,18 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    as much about applying that field consistently (it's currently under-used) as it is about
    generating new `periods/*.yaml` records; a record correctly typed `entity_type: civilization`
    but still living as a weight-bearing polity band is itself a candidate for this queue.
+   **Constraint:** `prominence_score` ranks polities against each other (most-to-least prominent,
+   scoped by region) for display purposes only — it must never be a signal for `entity_type` or
+   `timeline_role` classification. Those decisions come from Wikidata type evidence and editorial
+   judgment, not from how prominent or well-documented a record happens to be.
+   **Resolved 2026-08-30:** a suspected polity/period duplication (`egyptian_old_kingdom`/
+   `old_kingdom_of_egypt` and their Middle Kingdom counterparts) triggered a full-dataset audit
+   for the same shape (period ↔ polity sharing a Wikidata QID). 91 candidates found; only the
+   Egypt pair was a genuine duplicate (removed, in favor of the already-complete polity
+   records) — the other 90 turned out to be two legitimate, different mechanisms (auto-promoted
+   dormant polities and consolidation-review-retired polities), all removed as inert once their
+   period companion was confirmed the sole active representation. See ONTOLOGY.md's "Polity/period
+   duality: link, don't duplicate" for the full pattern and the audit's outcome.
 9. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
 10. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
 11. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.

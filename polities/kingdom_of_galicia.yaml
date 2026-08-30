@@ -4,7 +4,7 @@ names:
   fr: royaume de Galice
 external_ids:
   wikidata: Q303421
-parent: crown_of_castile
+parent: null
 successors: []
 start: 410
 end: 1833
@@ -36,7 +36,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 43.87
+prominence_score: 40.37
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -58,21 +58,15 @@ entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
 - Q417175
-relationships:
-- target: crown_of_castile
-  kind: political_parent
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q303421
+relationships: []
 prominence_components:
   wikidata_reach: 25.48
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 3.5
+  relationship_centrality: 0.0
   longevity: 7.88
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 43.87
+  total: 40.37

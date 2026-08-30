@@ -278,13 +278,17 @@ parent, and `fertile_crescent_neolithic_era` still validates as an ordinary peri
 one regional-era parent, per the tier rules above -- it's a structural correction to
 which siblings sit at which tier, not a new mechanism.
 
-**Only do this where a real duplication or gap already exists** (a bare period with no
-regional-era home, or two records for the same regional concept at different tiers).
-Two regional eras of the same theme that already both have a proper home
-(`african_paleolithic_era` / `eurasian_paleolithic_era`, both correctly `regional_era`
-under `macro_human_origins_paleolithic`, nothing bare or duplicated) don't need an
-overarching parent invented just for symmetry -- that would be restructuring for its
-own sake, not fixing anything broken.
+**Default to only doing this where a real duplication or gap already exists** (a bare
+period with no regional-era home, or two records for the same regional concept at
+different tiers) -- two regional eras of the same theme that already both have a proper
+home don't *need* an overarching parent invented just for symmetry. That default was
+overridden once, deliberately: `african_paleolithic_era` / `eurasian_paleolithic_era`
+were both correctly `regional_era` under `macro_human_origins_paleolithic`, nothing bare
+or duplicated -- no gap by this section's own criteria -- but were restructured into
+`paleolithic_era` + two demoted `period` children anyway on 2026-08-30, on explicit
+request rather than a discovered defect. Restructuring for organizational preference is
+a legitimate call to make deliberately; the distinction that matters is *whether it was
+made deliberately*, not whether every instance traces back to a bug.
 
 ## What replaced `region`/`culture_group`
 
@@ -318,6 +322,63 @@ curated ISO-country lookup table (`pipeline/historical_regions.py`, a starter se
 this project grows). Deliberately **not** a `Period.tier` value or a replacement for
 `region`/`culture_group` — same reasoning as the rest of this section: spatial
 classification, referenced by geography, independent of the temporal tree.
+
+## Polity/period duality: link, don't duplicate
+
+A polity and a `periods/*.yaml` record can legitimately coexist for the same real-world
+entity — but only when linking (`period_links.yaml`) connects two records that each add
+something the other doesn't. Two different, both-legitimate mechanisms produce this
+coexistence; conflating them (or letting either drift into duplicating the other's
+content) is the failure mode this section exists to prevent.
+
+**Mechanism 1 — auto-promotion (`pipeline/classify_period_roles.py`).** When a Wikidata
+record classifies as period-like with no political-entity branch, the script sets that
+polity's `timeline_role: period` *in place* (rewriting the same file) and generates a
+period companion (`<polity_id>_period`) as the sole active representation.
+`build.load_all()` explicitly skips `timeline_role: period` records, so the polity file
+becomes dormant — present on disk, but never loaded, scored, or rendered. No
+`period_links.yaml` entry is needed or expected, since the polity isn't active. 2026-08-30
+retrospective note: this pattern turned out to have essentially no independent value once
+dormant (only 4 records in the dataset were ever in this exact state) compared to
+Mechanism 2 below, which is far more common and does the same job more durably.
+
+**Mechanism 2 — consolidation review (`/consolidation-review`, Phase 7d).** A human
+reviewer resolves a candidate as a phase or constituent part of another, more prominent
+record: the reviewed record's own polity file is retired (`timeline_role: retired`,
+`manual_overrides: [consolidation]` — a durable, protected decision that pipeline reruns
+must not overwrite) and regenerated as a period record, linked back to the *surviving*
+canonical polity via `period_links.yaml` (`relation: phase_of` or `part_of_periodization`).
+This is the dataset's dominant pattern by far (dozens of records) — e.g. `nazi_germany_period`
+linking to `german_reich`, or `kingdom_of_hungary_q253094_period` linking to a different,
+still-active Hungary-era polity. The period record and its linked polity describe two
+*different* entities (a phase and its broader/successor canonical form), not the same one
+twice — that distinction is what makes the link additive rather than duplicative.
+
+**The failure mode, and why it's now avoided rather than just described:** neither
+mechanism above is meant to produce a period record and a polity record that both
+describe *the same specific entity* with near-identical content (same canonical_name,
+matching Wikidata QID, near-identical dates) — that's not "a period linked to its
+broader context," it's two authority records for one thing. `egyptian_old_kingdom`
+(period) and `old_kingdom_of_egypt` (polity) were exactly this — hand-authored during the
+original 14-record period pilot, before either mechanism above existed, and never
+reconciled. On 2026-08-30, a full-dataset audit for this exact shape (period ↔ polity
+pairs sharing a Wikidata QID) found 91 candidates; the vast majority triaged out as
+correct Mechanism 1/2 output, but the audit surfaced and removed one genuine duplicate
+pair (Old Kingdom/Middle Kingdom of Egypt's periods, in favor of their already-complete
+polity records) alongside deleting the 4 Mechanism-1 dormant files and all 87 Mechanism-2
+retired-consolidation files, since none of those 91 needed to exist as inert `polities/*.yaml`
+records once their period companion was the sole active representation. Deleting a
+Mechanism-2 file loses its `manual_overrides`-protected audit trail — that trade-off was
+made deliberately here, not a precedent to repeat casually; a future pass finding more
+candidates of this shape should re-derive the categorization (dormant vs. retired vs.
+still-active) fresh rather than assuming stale results, and should preserve provenance by
+default unless there's a specific reason not to.
+
+**The `prominence_score` boundary.** `prominence_score` ranks *polities* against each
+other (most-to-least prominent, scoped by region/era stratum) for display purposes only.
+It is never a signal for `entity_type` or `timeline_role` classification — those come from
+Wikidata type evidence and editorial judgment (the two mechanisms above), not from how
+prominent or well-documented a record happens to be.
 
 ## Ranking and sizing: scope-local, not global-competitive
 

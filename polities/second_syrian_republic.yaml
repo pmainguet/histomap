@@ -6,7 +6,6 @@ external_ids:
   wikidata: Q146885
 parent: null
 successors:
-- syrian_arab_republic
 - united_arab_republic
 start: 1930
 end: 1963
@@ -24,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 41.17
+prominence_score: 39.72
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -44,12 +43,6 @@ entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
 relationships:
-- target: syrian_arab_republic
-  kind: political_successor
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q146885
 - target: united_arab_republic
   kind: political_successor
   evidence: derived
@@ -60,10 +53,10 @@ prominence_components:
   wikidata_reach: 23.34
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 7.0
+  relationship_centrality: 5.55
   longevity: 3.83
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 41.17
+  total: 39.72

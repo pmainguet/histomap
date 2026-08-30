@@ -23,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - maddison
 - wikidata
-prominence_score: 45.02
+prominence_score: 41.52
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -48,10 +48,10 @@ prominence_components:
   wikidata_reach: 30
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 3.5
+  relationship_centrality: 0.0
   longevity: 4.52
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 45.02
+  total: 41.52

@@ -5,8 +5,7 @@ names:
 external_ids:
   wikidata: Q2454585
 parent: czechoslovakia
-successors:
-- czechoslovak_republic
+successors: []
 start: 1945
 end: 1948
 start_confidence: low
@@ -22,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 26.67
+prominence_score: 25.21
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -48,20 +47,14 @@ relationships:
   confidence: medium
   source_urls:
   - https://www.wikidata.org/wiki/Q2454585
-- target: czechoslovak_republic
-  kind: political_successor
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q2454585
 prominence_components:
   wikidata_reach: 23.16
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 7.0
+  relationship_centrality: 5.55
   longevity: 1.51
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 26.67
+  total: 25.21

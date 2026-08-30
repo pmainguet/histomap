@@ -119,7 +119,7 @@
     "id": "african_paleolithic_era",
     "canonical_name": "African Paleolithic",
     "kind": "historical",
-    "tier": "regional_era",
+    "tier": "period",
     "start": -3000000,
     "end": -10000,
     "start_confidence": "low",
@@ -136,7 +136,7 @@
       "confidence": null
     },
     "broader_periods": [
-      "macro_human_origins_paleolithic"
+      "paleolithic_era"
     ],
     "successors": [],
     "authority": "Histomap editorial: regional-era starter set",
@@ -1572,79 +1572,6 @@
     ]
   },
   {
-    "id": "egyptian_middle_kingdom",
-    "canonical_name": "Middle Kingdom of Egypt",
-    "kind": "historical",
-    "tier": "period",
-    "start": -2055,
-    "end": -1650,
-    "start_confidence": "medium",
-    "end_confidence": "medium",
-    "geography": {
-      "continents": [
-        "africa"
-      ],
-      "primary_continent": "africa",
-      "historical_regions": [
-        "north_africa"
-      ],
-      "primary_historical_region": "north_africa",
-      "present_countries": [
-        "EG"
-      ],
-      "centroid": null,
-      "confidence": null
-    },
-    "broader_periods": [],
-    "successors": [],
-    "authority": "DBpedia/Wikipedia periodization",
-    "external_ids": {
-      "dbpedia": "https://dbpedia.org/resource/Middle_Kingdom_of_Egypt"
-    },
-    "notes": "Pilot authority record; dates are conventional and vary by chronology.",
-    "source_urls": [
-      "https://dbpedia.org/resource/Middle_Kingdom_of_Egypt"
-    ]
-  },
-  {
-    "id": "egyptian_old_kingdom",
-    "canonical_name": "Old Kingdom of Egypt",
-    "kind": "historical",
-    "tier": "period",
-    "start": -2686,
-    "end": -2181,
-    "start_confidence": "medium",
-    "end_confidence": "medium",
-    "geography": {
-      "continents": [
-        "africa"
-      ],
-      "primary_continent": "africa",
-      "historical_regions": [
-        "north_africa"
-      ],
-      "primary_historical_region": "north_africa",
-      "present_countries": [
-        "EG"
-      ],
-      "centroid": null,
-      "confidence": null
-    },
-    "broader_periods": [],
-    "successors": [
-      "egyptian_middle_kingdom"
-    ],
-    "authority": "DBpedia/Wikipedia periodization",
-    "external_ids": {
-      "wikidata": "Q177819",
-      "dbpedia": "https://dbpedia.org/resource/Old_Kingdom_of_Egypt"
-    },
-    "notes": "Pilot authority record; dates are conventional and vary by chronology.",
-    "source_urls": [
-      "https://dbpedia.org/resource/Old_Kingdom_of_Egypt"
-    ]
-  },
-  {
     "id": "etruscan_civilization_period",
     "canonical_name": "Etruscan civilization",
     "kind": "historical",
@@ -1683,7 +1610,7 @@
     "id": "eurasian_paleolithic_era",
     "canonical_name": "Eurasian Paleolithic",
     "kind": "historical",
-    "tier": "regional_era",
+    "tier": "period",
     "start": -1800000,
     "end": -10000,
     "start_confidence": "low",
@@ -1701,7 +1628,7 @@
       "confidence": null
     },
     "broader_periods": [
-      "macro_human_origins_paleolithic"
+      "paleolithic_era"
     ],
     "successors": [],
     "authority": "Histomap editorial: regional-era starter set",
@@ -3853,7 +3780,7 @@
   },
   {
     "id": "mycenaean_greece_period",
-    "canonical_name": "Mycenaean Greece",
+    "canonical_name": "Mycenaean civilization",
     "kind": "protohistorical",
     "tier": "period",
     "start": -1600,
@@ -4330,6 +4257,39 @@
     "notes": "No deciphered Olmec writing system survives, hence archaeological rather than protohistorical. No matching polities/ record -- centered on sites like San Lorenzo and La Venta, not a single political actor.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Olmecs"
+    ]
+  },
+  {
+    "id": "paleolithic_era",
+    "canonical_name": "Paleolithic",
+    "kind": "historical",
+    "tier": "regional_era",
+    "start": -3000000,
+    "end": -10000,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "asia",
+        "europe"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [
+      "macro_human_origins_paleolithic"
+    ],
+    "successors": [],
+    "authority": "Histomap editorial: overarching regional-era consolidation",
+    "external_ids": {},
+    "notes": "Overarching parent for the regional Paleolithic variants, which cover meaningfully different spans in different places -- from the earliest African stone tools (~-3,000,000) through the end of the last Ice Age everywhere. See ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes.\"",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Paleolithic"
     ]
   },
   {

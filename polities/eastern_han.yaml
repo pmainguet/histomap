@@ -8,7 +8,7 @@ external_ids:
   wikidata: Q1147037
   seshat:
   - CnEHan*
-parent: han_dynasty
+parent: null
 successors:
 - cao_wei
 - eastern_wu
@@ -29,7 +29,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - seshat
 - wikidata
-prominence_score: 41.91
+prominence_score: 40.99
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -48,12 +48,6 @@ entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids: []
 relationships:
-- target: han_dynasty
-  kind: political_parent
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q1147037
 - target: cao_wei
   kind: political_successor
   evidence: derived
@@ -79,11 +73,11 @@ prominence_components:
   wikidata_reach: 20.14
   authority_coverage: 12
   historical_evidence: 0
-  relationship_centrality: 9.05
+  relationship_centrality: 8.13
   longevity: 5.73
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 41.91
+  total: 40.99
 visibility_override: global

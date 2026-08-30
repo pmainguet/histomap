@@ -8,7 +8,6 @@ external_ids:
 parent: null
 successors:
 - lithuanian_soviet_socialist_republic_q173761
-- nazi_germany
 start: 1918
 end: 1940
 start_confidence: low
@@ -24,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 23.13
+prominence_score: 21.09
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -44,20 +43,14 @@ relationships:
   confidence: medium
   source_urls:
   - https://www.wikidata.org/wiki/Q8272919
-- target: nazi_germany
-  kind: political_successor
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q8272919
 prominence_components:
   wikidata_reach: 19.18
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 5.55
+  relationship_centrality: 3.5
   longevity: 3.4
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 23.13
+  total: 21.09

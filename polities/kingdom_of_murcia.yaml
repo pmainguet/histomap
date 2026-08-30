@@ -4,7 +4,7 @@ names:
   fr: royaume de Murcie
 external_ids:
   wikidata: Q1164500
-parent: crown_of_castile
+parent: null
 successors: []
 start: 1258
 end: 1833
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 37.51
+prominence_score: 31.96
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -48,21 +48,15 @@ entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
 - Q417175
-relationships:
-- target: crown_of_castile
-  kind: political_parent
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q1164500
+relationships: []
 prominence_components:
   wikidata_reach: 18.06
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 5.55
+  relationship_centrality: 0.0
   longevity: 6.9
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 37.51
+  total: 31.96

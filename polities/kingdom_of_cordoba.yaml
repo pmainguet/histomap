@@ -5,7 +5,7 @@ names:
   aliases_en: Kingdom of Cordoba
 external_ids:
   wikidata: Q1796198
-parent: crown_of_castile
+parent: null
 successors: []
 start: 1236
 end: 1833
@@ -29,7 +29,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 33.06
+prominence_score: 29.56
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -51,21 +51,15 @@ entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
 - Q417175
-relationships:
-- target: crown_of_castile
-  kind: political_parent
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q1796198
+relationships: []
 prominence_components:
   wikidata_reach: 15.62
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 3.5
+  relationship_centrality: 0.0
   longevity: 6.94
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 33.06
+  total: 29.56

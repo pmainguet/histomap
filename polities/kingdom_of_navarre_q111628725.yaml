@@ -6,7 +6,7 @@ names:
     | Kingdom of Upper Navarre | Upper Navarre | viceroyalty of Navarre
 external_ids:
   wikidata: Q111628725
-parent: crown_of_castile
+parent: null
 successors: []
 start: 1512
 end: 1841
@@ -40,18 +40,12 @@ geography:
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []
-relationships:
-- target: crown_of_castile
-  kind: political_parent
-  evidence: derived
-  confidence: medium
-  source_urls:
-  - https://www.wikidata.org/wiki/Q111628725
+relationships: []
 prominence_components:
   wikidata_reach: 0.0
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 3.5
+  relationship_centrality: 0.0
   longevity: 6.3
   editorial_work: 0
   type_uncertainty_penalty: -10

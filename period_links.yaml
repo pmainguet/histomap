@@ -1,17 +1,3 @@
-- period_id: egyptian_old_kingdom
-  entity_id: old_kingdom_of_egypt
-  relation: part_of_periodization
-  evidence: explicit
-  confidence: high
-  source_urls:
-  - https://dbpedia.org/resource/Old_Kingdom_of_Egypt
-- period_id: egyptian_middle_kingdom
-  entity_id: middle_kingdom_of_egypt
-  relation: part_of_periodization
-  evidence: explicit
-  confidence: high
-  source_urls:
-  - https://dbpedia.org/resource/Middle_Kingdom_of_Egypt
 - period_id: uruk_period
   entity_id: uruk
   relation: context
@@ -319,14 +305,6 @@
   source_urls:
   - https://www.wikidata.org/wiki/Q1649871
   notes: Reviewed record is a dated phase of this canonical polity.
-- period_id: kingdom_of_hungary_q253094_period
-  entity_id: kingdom_of_hungary_q171150
-  relation: phase_of
-  evidence: explicit
-  confidence: high
-  source_urls:
-  - https://www.wikidata.org/wiki/Q253094
-  notes: Reviewed record is a dated phase of this canonical polity.
 - period_id: kingdom_of_poland_q577867_period
   entity_id: kingdom_of_poland_q8890160
   relation: phase_of
@@ -334,22 +312,6 @@
   confidence: high
   source_urls:
   - https://www.wikidata.org/wiki/Q577867
-  notes: Reviewed record is a dated phase of this canonical polity.
-- period_id: kingdom_of_hungary_q16056854_period
-  entity_id: kingdom_of_hungary_q171150
-  relation: phase_of
-  evidence: explicit
-  confidence: high
-  source_urls:
-  - https://www.wikidata.org/wiki/Q16056854
-  notes: Reviewed record is a dated phase of this canonical polity.
-- period_id: kingdom_of_hungary_q25395037_period
-  entity_id: kingdom_of_hungary_q171150
-  relation: phase_of
-  evidence: explicit
-  confidence: high
-  source_urls:
-  - https://www.wikidata.org/wiki/Q25395037
   notes: Reviewed record is a dated phase of this canonical polity.
 - period_id: commonwealth_realm_of_mauritius_period
   entity_id: mauritius
@@ -559,14 +521,6 @@
   source_urls:
   - https://www.wikidata.org/wiki/Q9063401
   notes: Reviewed record is a dated phase of this canonical polity.
-- period_id: nazi_germany_period
-  entity_id: german_reich
-  relation: phase_of
-  evidence: explicit
-  confidence: high
-  source_urls:
-  - https://www.wikidata.org/wiki/Q7318
-  notes: Reviewed record is a dated phase of this canonical polity.
 - period_id: syrakousai_period
   entity_id: syracuse_q13670
   relation: phase_of
@@ -719,14 +673,6 @@
   source_urls:
   - https://www.wikidata.org/wiki/Q1709185
   notes: Reviewed record is a dated phase of this canonical polity.
-- period_id: kingdom_of_spain_q15238138_period
-  entity_id: kingdom_of_spain_q3399982
-  relation: part_of_periodization
-  evidence: explicit
-  confidence: high
-  source_urls:
-  - https://www.wikidata.org/wiki/Q15238138
-  notes: Created by an editorial entity-consolidation decision.
 - period_id: reign_of_amadeo_i_of_spain_period
   entity_id: spain
   relation: phase_of
