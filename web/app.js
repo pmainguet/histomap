@@ -1190,6 +1190,16 @@ try {
     startInput.value = Math.max(-8000, Math.min(...polities.map((p) => p.start)));
     endInput.value = currentYear;
   }
+  const eraId = new URLSearchParams(window.location.search).get("era");
+  const eraPeriod = eraId ? periods.find((period) => period.id === eraId) : null;
+  if (eraPeriod) {
+    startInput.value = eraPeriod.start;
+    endInput.value = eraPeriod.end ?? currentYear;
+    eraPresetInput.value = "custom";
+    if ([...periodInput.options].some((option) => option.value === eraPeriod.id)) {
+      periodInput.value = eraPeriod.id;
+    }
+  }
   render();
 } catch (error) {
   chart.innerHTML = `<p class="error">Could not load data.json (${error.message}). Run the build and serve commands from the repository root.</p>`;
