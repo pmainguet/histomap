@@ -7,7 +7,7 @@ async function main() {
 
   const padded = (start, end) => {
     const span = Math.max(1, end - start);
-    const pad = span * 0.1;
+    const pad = Math.min(span * 0.1, 5000);
     return { start: start - pad, end: end + pad };
   };
 

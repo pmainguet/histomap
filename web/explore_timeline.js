@@ -56,7 +56,7 @@ function filterTreeToRange(tree, start, end) {
       polities_by_continent: filterBuckets(c.polities_by_continent),
     }));
   return {
-    axis: { domain_start: start, domain_end: end, segment_break: Math.max(tree.axis.segment_break, start) },
+    axis: { domain_start: start, domain_end: end, segment_break: start },
     chapters,
   };
 }
@@ -120,7 +120,7 @@ function renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, y,
             width: scale.width(polity.start, polity.end), height: POLITY_LANE_HEIGHT - 2,
             cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`,
             title: `${polity.canonical_name} (${entries.length} in ${regionLabel(key)})`,
-            onZoom: { handler: onZoom, start: polity.start, end: polity.end ?? polity.start + 1 },
+            onZoom: { handler: onZoom, start: polity.start, end: polity.end ?? tree.axis.domain_end },
           });
         });
       });
