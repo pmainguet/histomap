@@ -89,6 +89,11 @@ commit trail).
   No editing actions (`/` keeps those as curation tools; `/explore` is a browse view). Verified
   live in a real browser: chapter/era/period/polity/civilizations-lane bands all open the
   correct panel content, cross-navigation and zoom-then-reset both work, zero console errors.
+- Era row is now flat (not continent-grouped) — there are only ever a handful of eras active
+  at once, so grouping fragmented it for little benefit. Period and Polities rows are
+  unchanged, still continent-grouped. A "Placement" legend explaining the curated (solid) /
+  heuristic (dashed) distinction used throughout every row is now visible on the page itself,
+  not just inferable from behavior.
 
 See [ROADMAP.md](ROADMAP.md) for what's still queued on `/explore` — moved there since it's
 forward-looking, not retrospective.
@@ -102,6 +107,112 @@ forward-looking, not retrospective.
 - Most of `explore_tree.json`'s era/period/polity placements are heuristic (geography+date
   overlap), not curated — `period_links.yaml`/`broader_periods` coverage is still thin. This is
   by design (the alternative was an empty page) but means placement quality varies.
+
+### Period/polity dataset cleanup — 30-31 August 2026
+
+A cluster of data-quality fixes, mostly triggered by live `/explore` testing surfacing
+`period<->polity` naming and duplication issues.
+
+**Same-named period disambiguation.** 9 period records (not 8 — the original count was
+stale; Poland has 3, not 2) shared an identical `canonical_name` within their group (4×
+"Kingdom of Hungary", 3× "Kingdom of Poland", 2× "Kingdom of Spain"). Confirmed via live
+Wikidata lookups that the English *label* is identical within each group too (only the
+descriptions differ), so gave each a verified `(start-end)` date-range parenthetical —
+the same convention `polities/kingdom_of_hungary_10001301.yaml` (canonical_name
+"Kingdom of Hungary (1000-1301)") already established. Note: `kingdom_of_poland_q577867`
+(1025-1385) and `kingdom_of_poland_q3446214` (1320-1386) overlap heavily and may describe
+the same underlying continuity under two Wikidata items — a possible future consolidation
+candidate, not acted on.
+
+**Mistagged period geography.** 3 periods (`lebanese_republic_under_french_mandate_period`,
+`state_of_greater_lebanon_period`, `state_of_vietnam_period` — all clearly Asian) were
+tagged with 5-6 spurious continents; corrected to their real single continent/country.
+Root cause traced: `server/app.py`'s consolidation-review "retire and generate a period"
+endpoint (`~line 663`) copies the source polity's `geography` block verbatim into the
+generated period — not a bug in that copy itself, but a carrier for `enrich_geography.py`'s
+still-open Bug B (see "Honest scope warnings" below) whenever the source polity's own
+geography was already poisoned before being retired. Confirms Bug B's blast radius extends
+to consolidation-generated periods, not just polities.
+
+**`european_iron_age` coverage gap.** Was a bare, unparented period. Rather than promote it
+to its own `regional_era` (which would have duplicated `mediterranean_classical_era`'s
+near-identical scope for the same macro chapter), nested it as `tier: period` under
+`mediterranean_classical_era` instead — matching the day's other bare-period fixes (Old
+Kingdom of Egypt under Egypt's era, Uruk period under Mesopotamia's).
+
+**A real duplicate found, and a full-dataset audit it triggered.** `egyptian_old_kingdom`/
+`old_kingdom_of_egypt` (and their Middle Kingdom counterparts) turned out to be a genuine
+period/polity duplicate — same canonical_name, matching Wikidata QID, near-identical dates,
+no distinct content. Deleted the period pair (the polities already carried the real weight).
+That triggered an audit for the same shape dataset-wide (period<->polity sharing a QID): 91
+candidates found. Only the Egypt pair was a true duplicate; the other 90 were two legitimate,
+different mechanisms — see ONTOLOGY.md's "Polity/period duality: link, don't duplicate" for
+the full pattern. All 91 were deleted in that first pass.
+
+**Follow-up correction: 28 of those 91 were not duplicates at all.** On review, `mamluk_
+sultanate_of_egypt` plus 15 "Republic of"/"Reign of" records (Cuba, Egypt, Venezuela, Sudan
+×2, Congo ×2, Afghanistan, Albania, Austria, Burma, Georgia, Equatorial Guinea, Seychelles,
+Amadeo I of Spain), and separately 22 "Kingdom of"/"Crown of"/"Duchy of"/"Principality of"
+records (including the 9 disambiguated above, plus Burgundy, Cambodia, Italy, Navarre,
+Norway, Sicily, Württemberg, Yugoslavia, Afghanistan, Castile, hispanic_monarchy — a
+dangling `parent` reference surfaced along the way) — all turned out to be genuinely
+distinct, narrower regime-phases within a much broader "the country/kingdom across all its
+eras" umbrella polity that already existed (e.g. "Republic of Egypt" 1953-1958 vs. "Egypt"
+1922-present), not duplicates of it. Restored as independent polities from their
+pre-deletion git history, their now-redundant period companions removed.
+
+House of Wessex/Plantagenet/Tudor, Norman dynasty, and Capetian dynasty needed different
+handling: unlike the 28 above, these never existed as polities — they were hand-authored
+period-context records from the start (earlier reference-poster gap-filling work), and each
+one's own notes explicitly said their parent kingdom (kingdom_of_england/kingdom_of_france)
+"already carries this span's political weight." Created as new sub-polities instead
+(weight_by_era reused from the parent kingdom's own values at each century mark inside the
+dynasty's span, weight_imputed: true, explicit political_parent relationship back to the
+parent kingdom) rather than dropped or left as periods.
+
+A real process failure surfaced mid-cleanup: an independent review dispatched to verify the
+first restoration batch used `git stash -u`/`git stash pop` for its own clean baseline, in
+the same (non-isolated) working directory this session was actively continuing to edit —
+the stash round-trip landed inconsistently and resurrected 23 of the just-deleted period
+files. Caught by a full audit of every record touched (not a spot-check), re-fixed, and
+re-verified clean.
+
+**Smaller fixes along the way:**
+- `aztec_triple_alliance_period` deleted — a genuine duplicate of the already-weight-bearing
+  `aztec_empire` polity (which lists "Triple Alliance" as an alias and already carries real
+  `weight_by_era` data), unlike the 28 above.
+- `dacia` renamed "Dacian Kingdom", `entity_type` changed `civilization` -> `polity` — it had
+  a real, specific unified political actor (documented kings), unlike the Civilizations &
+  Cultures lane's other residents.
+- `akkadian_empire` elevated `entity_type: polity` -> `civilization`, and `uruk_period`
+  renamed "Uruk period" -> "Uruk culture" (a real archaeological synonym) to route it into
+  the lane — both per direct editorial decision, after a contrary technical opinion was
+  raised and heard (this project's `civilization` convention otherwise means "no single
+  political actor," which doesn't describe either record) and the call stood regardless.
+- `sumer` promoted to `visibility_override: global` — `entity_type: culture` already routed
+  it toward the Civilizations & Cultures lane, but `visibility_tier: detailed` excluded it
+  from `/explore` entirely (the same gate the ordinary Polities row uses); its automated
+  score (33.0) clearly undersold its importance.
+- The Civilizations & Cultures lane gained a second, more reliable routing signal
+  (`CIVILIZATION_BACKDROP_AUTHORITY`, checking a period's `authority` field directly) after
+  discovering `ancient_egypt_period`/`babylonia_period`/`chinese_empire_period` had silently
+  fallen out of the lane once their source polities were deleted in the 91-record audit above.
+- `early_dynastic_mesopotamia` given `broader_periods: [mesopotamian_early_states_era]` (was
+  bare) for tree placement — its separate `context`-relation link to the `sumer` polity
+  (via `period_links.yaml`) is untouched and is the more semantically correct relationship,
+  but the schema has no mechanism yet to nest a period under a *polity/civilization* rather
+  than an *era* for tree-placement purposes; see ROADMAP.md's "Ideas" section.
+- `neolithic_era` renamed "Neolithic & Archaic" and extended to cover the Americas: the
+  Mesoamerican and Andean "Archaic" regional eras describe the same underlying
+  agricultural-transition process as the Old World's Neolithic siblings already nested here,
+  just under the Americanist archaeological term ("Archaic," not "Neolithic" — a real
+  terminology difference, not just a regional relabeling, which is why the umbrella kept
+  both names rather than stretching "Neolithic" to cover it). Demoted both to `tier: period`
+  underneath it; no date-range extension was actually needed, both were already within the
+  existing -10,000 to -1,700 span — only `continents` needed the addition.
+
+Verified throughout: `build.py` clean (no dangling `parent`/`successors`/`relationships`/
+`period_links.yaml` references) after every step, full test suite green (238/238 by the end).
 
 ### Current measurable state
 

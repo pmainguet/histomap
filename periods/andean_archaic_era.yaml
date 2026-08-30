@@ -1,7 +1,7 @@
 id: andean_archaic_era
 canonical_name: Andean Archaic
 kind: historical
-tier: regional_era
+tier: period
 start: -7000
 end: -2000
 start_confidence: low
@@ -13,7 +13,7 @@ geography:
   - andes
   primary_historical_region: andes
 broader_periods:
-- macro_agricultural_transitions
+- neolithic_era
 successors: []
 authority: 'Histomap editorial: regional-era starter set'
 external_ids: {}
