@@ -13,19 +13,19 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
   type, convert to entity, edit geography — those stay on `/` as curation tools; `/explore` is
   a browse view).
 2. Disambiguate the 8 same-named period records (4× "Kingdom of Hungary", 2× "Kingdom of
-     Poland", 2× "Kingdom of Spain" — distinct historical regimes, currently indistinguishable
-     in any list).
+   Poland", 2× "Kingdom of Spain" — distinct historical regimes, currently indistinguishable
+   in any list).
 3. Correct the `continents` field on 3 mistagged periods
-     (`lebanese_republic_under_french_mandate_period`, `state_of_greater_lebanon_period`,
-     `state_of_vietnam_period` — all clearly Asian, tagged with 5-6 continents). Root cause not
-     yet traced (these carry `authority: "Histomap editorial consolidation"`, not the
-     raw-import path behind the `enrich_geography.py` polity bug documented in STATUS.md).
+   (`lebanese_republic_under_french_mandate_period`, `state_of_greater_lebanon_period`,
+   `state_of_vietnam_period` — all clearly Asian, tagged with 5-6 continents). Root cause not
+   yet traced (these carry `authority: "Histomap editorial consolidation"`, not the
+   raw-import path behind the `enrich_geography.py` polity bug documented in STATUS.md).
 4. Close the matching regional-era coverage gap for `european_iron_age` (raw import with no
-     hand-curated era counterpart, unlike its Nile Valley/Fertile Crescent/East Asian peers).
-     The Bronze Age and Neolithic clusters are done: `european_bronze_age` (duplicate of
-     `european_bronze_age_era`) is retired, and new overarching `bronze_age_era` /
-     `neolithic_era` regional eras now parent all regional siblings in both clusters — see
-     ONTOLOGY.md's "Overarching regional eras for genuinely cross-regional themes."
+   hand-curated era counterpart, unlike its Nile Valley/Fertile Crescent/East Asian peers).
+   The Bronze Age and Neolithic clusters are done: `european_bronze_age` (duplicate of
+   `european_bronze_age_era`) is retired, and new overarching `bronze_age_era` /
+   `neolithic_era` regional eras now parent all regional siblings in both clusters — see
+   ONTOLOGY.md's "Overarching regional eras for genuinely cross-regional themes."
 5. **Close out Seshat reconciliation** — only 69 records left (35 review + 34 unmatched); the
    cheapest queue left to finish. Review decisions are durable and must not be overwritten by
    pipeline reruns.
@@ -69,9 +69,3 @@ Considered, deliberately not done, with the concrete trigger for revisiting:
   unused) on a regular `period` — at that point, Pydantic discriminated unions
   (`Annotated[Union[...], Field(discriminator="tier")]`) would give both the safety and
   a workable `PeriodHierarchy`. See `ONTOLOGY.md` for the full period-tier design.
-- **Civilization/culture as a separate visual lane on `/explore`**, positioned under the
-  Period row rather than mixed into it — `entity_type: civilization`/`culture` polities and
-  `periods/*.yaml` records both currently render alongside plain historical periods with no
-  visual distinction. Raised in conversation, not yet scoped into a plan. **Revisit** together
-  with item 4 above (the polity → period reclassification pass) — the two are related: a
-  clean reclassification pass makes it obvious which records would populate this lane.

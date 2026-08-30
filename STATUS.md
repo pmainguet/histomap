@@ -55,9 +55,11 @@ commit trail).
   overlap get pushed to separate lanes — applied globally across all chapters, not per-chapter,
   so an item whose real span crosses a chapter boundary no longer collides with a neighboring
   chapter's own content.
-- Visually distinct colors per tier (chapter/era/period/polity), a persistent left-margin
-  gutter with a rotated tier-name label per row-block ("Epoch"/"Chapter"/"Era"/"Period"/
-  "Polities"), and dashed separator lines between row-blocks.
+- Visually distinct colors per tier (chapter/era/period/polity/civilization-culture), a
+  persistent left-margin gutter with a rotated tier-name label per row-block ("Epoch"/
+  "Chapter"/"Era"/"Period"/"Civilizations & Cultures"/"Polities"), and separator lines whose
+  style encodes scale: solid between tier row-blocks, dashed between region/continent
+  sub-groups within one row-block.
 - Auto-generated continent-split placeholder eras (from `generate_modern_regional_eras.py`)
   are hidden from the era row entirely — they carried no real historical distinction beyond
   restating the parent chapter, and duplicated it visually.
@@ -67,7 +69,14 @@ commit trail).
 - The era and period rows are now also geography-organized: continent-grouped sub-rows
   (previously one flat, ungrouped row each), with Asia further split into East/West/South/
   Southeast/Central Asia sub-buckets (the only continent given finer treatment — every other
-  continent stays at continent-level grouping, by explicit choice).
+  continent stays at continent-level grouping, by explicit choice) — these Asia sub-buckets now
+  also sort adjacent to each other and to plain "asia", instead of scattered alphabetically
+  among unrelated continents.
+- A "Civilizations & Cultures" lane, between the Period and Polities rows: records that are
+  editorially "not a weight-bearing political entity" (`entity_type` in civilization/culture/
+  people/tribe, plus name-matched `periods/*.yaml` civilization records) render here instead of
+  mixed into the ordinary Period/Polities rows. Not continent-grouped — a flat, label-aware
+  packed row, since per-chapter counts are small.
 
 See [ROADMAP.md](ROADMAP.md) for what's still queued on `/explore` — moved there since it's
 forward-looking, not retrospective.
