@@ -1,9 +1,3 @@
-function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, (character) => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;",
-  })[character]);
-}
-
 function formatYear(year) {
   if (year === null || year === undefined) return "present";
   return year < 0 ? `${Math.abs(year).toLocaleString()} BCE` : `${year.toLocaleString()} CE`;
@@ -15,13 +9,16 @@ function svgEl(name, attrs = {}) {
   return el;
 }
 
-function bandRect(svg, { x, y, width, height, cls, title, href }) {
-  const group = href ? svgEl("a", { href }) : null;
+function bandRect(svg, { x, y, width, height, cls, title, onZoom }) {
   const rect = svgEl("rect", { x, y, width, height, class: cls, rx: 2 });
+  if (onZoom) {
+    rect.classList.add("zoomable");
+    rect.addEventListener("click", () => onZoom.handler(onZoom.start, onZoom.end));
+  }
   const titleEl = svgEl("title");
   titleEl.textContent = title;
   rect.append(titleEl);
-  if (group) { group.append(rect); svg.append(group); } else { svg.append(rect); }
+  svg.append(rect);
   return rect;
 }
 
@@ -34,47 +31,106 @@ function regionLabel(key) {
   return key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-function renderPolitiesRow(svg, scale, chapter, groupBy, y) {
+// Narrows a tree to a [start, end) window (used when zoomed in) --
+// chapters/eras/periods/polities entirely outside the window are dropped,
+// not just visually clamped, so downstream layout (lane packing, region
+// buckets) only ever sees what's actually visible.
+function filterTreeToRange(tree, start, end) {
+  const overlaps = (s, e) => s < end && (e == null || e > start);
+  const filterBuckets = (buckets) => {
+    const out = {};
+    for (const [key, entries] of Object.entries(buckets)) {
+      const filtered = entries.filter((p) => overlaps(p.start, p.end));
+      if (filtered.length) out[key] = filtered;
+    }
+    return out;
+  };
+  const chapters = tree.chapters
+    .filter((c) => overlaps(c.start, c.end))
+    .map((c) => ({
+      ...c,
+      eras: c.eras
+        .filter((e) => overlaps(e.start, e.end))
+        .map((e) => ({ ...e, periods: e.periods.filter((p) => overlaps(p.start, p.end)) })),
+      polities_by_historical_region: filterBuckets(c.polities_by_historical_region),
+      polities_by_continent: filterBuckets(c.polities_by_continent),
+    }));
+  return {
+    axis: { domain_start: start, domain_end: end, segment_break: Math.max(tree.axis.segment_break, start) },
+    chapters,
+  };
+}
+
+// One global, sorted list of region keys across all chapters, so the same
+// vertical position always means the same region no matter which chapter's
+// band is drawn there -- a horizontal row is otherwise meaningless.
+function collectRegionKeys(tree, groupBy) {
+  if (groupBy === "none") return [];
+  const keys = new Set();
+  for (const chapter of tree.chapters) {
+    const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
+    for (const key of Object.keys(buckets)) keys.add(key);
+  }
+  return [...keys].sort();
+}
+
+// Row height per region = the max lane count needed by any single chapter
+// for that region, so every chapter's entries fit within the shared row.
+function regionLaneCounts(tree, groupBy, regionKeys) {
+  const counts = {};
+  for (const key of regionKeys) {
+    let maxLanes = 1;
+    for (const chapter of tree.chapters) {
+      const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
+      const entries = buckets[key];
+      if (!entries) continue;
+      const lanes = packIntoLanes(entries.slice(0, MAX_POLITIES_PER_REGION));
+      maxLanes = Math.max(maxLanes, lanes.length);
+    }
+    counts[key] = maxLanes;
+  }
+  return counts;
+}
+
+function measurePolitiesRowHeight(regionKeys, laneCounts) {
+  let total = 0;
+  for (const key of regionKeys) total += REGION_HEADER_HEIGHT + laneCounts[key] * POLITY_LANE_HEIGHT + 4;
+  return total;
+}
+
+function renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, y, onZoom) {
   if (groupBy === "none") return y;
-  const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
-  const regionKeys = Object.keys(buckets).sort();
   let rowY = y;
   for (const key of regionKeys) {
-    const entries = buckets[key];
-    const shown = entries.slice(0, MAX_POLITIES_PER_REGION);
-    const lanes = packIntoLanes(shown);
-    const label = svgEl("text", { x: scale.x(chapter.start), y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
-    label.textContent = `${regionLabel(key)} (${entries.length})`;
+    const label = svgEl("text", { x: 4, y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
+    label.textContent = regionLabel(key);
     svg.append(label);
     rowY += REGION_HEADER_HEIGHT;
-    lanes.forEach((lane, laneIndex) => {
-      lane.forEach((polity) => {
-        const curatedClass = polity.curated ? "curated" : "heuristic";
-        bandRect(svg, {
-          x: scale.x(polity.start), y: rowY + laneIndex * POLITY_LANE_HEIGHT,
-          width: scale.width(polity.start, polity.end), height: POLITY_LANE_HEIGHT - 2,
-          cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`, title: polity.canonical_name,
+    for (const chapter of tree.chapters) {
+      const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
+      const entries = buckets[key];
+      if (!entries) continue;
+      const shown = entries.slice(0, MAX_POLITIES_PER_REGION);
+      const lanes = packIntoLanes(shown);
+      lanes.forEach((lane, laneIndex) => {
+        lane.forEach((polity) => {
+          const curatedClass = polity.curated ? "curated" : "heuristic";
+          bandRect(svg, {
+            x: scale.x(polity.start), y: rowY + laneIndex * POLITY_LANE_HEIGHT,
+            width: scale.width(polity.start, polity.end), height: POLITY_LANE_HEIGHT - 2,
+            cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`,
+            title: `${polity.canonical_name} (${entries.length} in ${regionLabel(key)})`,
+            onZoom: { handler: onZoom, start: polity.start, end: polity.end ?? polity.start + 1 },
+          });
         });
       });
-    });
-    rowY += lanes.length * POLITY_LANE_HEIGHT + 4;
+    }
+    rowY += laneCounts[key] * POLITY_LANE_HEIGHT + 4;
   }
   return rowY;
 }
 
-function measurePolitiesRowHeight(chapter, groupBy) {
-  if (groupBy === "none") return 0;
-  const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
-  let total = 0;
-  for (const entries of Object.values(buckets)) {
-    const shown = entries.slice(0, MAX_POLITIES_PER_REGION);
-    const lanes = packIntoLanes(shown);
-    total += REGION_HEADER_HEIGHT + lanes.length * POLITY_LANE_HEIGHT + 4;
-  }
-  return total;
-}
-
-function renderHierarchyTimeline(tree, container, groupBy = "historical_region") {
+function renderHierarchyTimeline(tree, container, groupBy = "historical_region", onZoom = () => {}) {
   const width = Math.max(900, Math.min(4800, window.innerWidth - 80));
   const scale = createTimeScale(tree.axis.domain_start, tree.axis.domain_end, tree.axis.segment_break, width);
 
@@ -96,7 +152,9 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region")
 
   const eraRowHeight = maxEraLanes * eraLaneHeight;
   const periodRowHeight = maxPeriodLanes * periodLaneHeight;
-  const politiesRowHeight = Math.max(0, ...tree.chapters.map((c) => measurePolitiesRowHeight(c, groupBy)));
+  const regionKeys = collectRegionKeys(tree, groupBy);
+  const laneCounts = regionLaneCounts(tree, groupBy, regionKeys);
+  const politiesRowHeight = measurePolitiesRowHeight(regionKeys, laneCounts);
   const height = geoRowHeight + chapterRowHeight + eraRowHeight + periodRowHeight + politiesRowHeight + rowGap * 5;
 
   const svg = svgEl("svg", { viewBox: `0 0 ${width} ${height}`, class: "hierarchy-chart" });
@@ -118,7 +176,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region")
       x: scale.x(chapter.start), y, width: scale.width(chapter.start, chapter.end), height: chapterRowHeight,
       cls: "hierarchy-band hierarchy-band-chapter",
       title: `${chapter.canonical_name} (${formatYear(chapter.start)} - ${formatYear(chapter.end)})`,
-      href: `/?era=${encodeURIComponent(chapter.id)}`,
+      onZoom: { handler: onZoom, start: chapter.start, end: chapter.end },
     });
   }
   y += chapterRowHeight + rowGap;
@@ -130,6 +188,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region")
           x: scale.x(era.start), y: y + laneIndex * eraLaneHeight,
           width: scale.width(era.start, era.end), height: eraLaneHeight - 2,
           cls: "hierarchy-band hierarchy-band-era", title: era.canonical_name,
+          onZoom: { handler: onZoom, start: era.start, end: era.end },
         });
       });
     });
@@ -144,15 +203,14 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region")
           x: scale.x(period.start), y: y + laneIndex * periodLaneHeight,
           width: scale.width(period.start, period.end), height: periodLaneHeight - 2,
           cls: `hierarchy-band hierarchy-band-period ${curatedClass}`, title: period.canonical_name,
+          onZoom: { handler: onZoom, start: period.start, end: period.end },
         });
       });
     });
   });
   y += periodRowHeight + rowGap;
 
-  for (const chapter of tree.chapters) {
-    renderPolitiesRow(svg, scale, chapter, groupBy, y);
-  }
+  renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, y, onZoom);
 
   // Year gridlines/axis labels, matching app.js's established treatment
   // (.grid-line spans the full chart height, .axis-label sits near the top),

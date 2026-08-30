@@ -21,7 +21,7 @@
     </header>
     <section class="explore-intro" aria-label="About this view">
       <h1>Explore human history</h1>
-      <p>Nine chapters, oldest first. Click a chapter to open it on the full timeline.</p>
+      <p>Nine chapters, oldest first. Click any band to zoom in on its date range.</p>
     </section>
     <div class="hierarchy-controls" aria-label="Polities display">
       <label for="polities-toggle">Show polities by</label>
@@ -30,6 +30,7 @@
         <option value="continent">Present-day continent</option>
         <option value="none">Hidden</option>
       </select>
+      <a href="#" id="zoom-reset" hidden>&larr; Full timeline</a>
     </div>
     <div id="hierarchy-chart" class="hierarchy-chart-container" aria-label="Period hierarchy timeline">
       <p class="loading">Loading…</p>
