@@ -1,0 +1,28 @@
+id: iron_age_era
+canonical_name: Iron Age
+kind: historical
+tier: regional_era
+start: -1200
+end: 800
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - europe
+broader_periods:
+- macro_classical_imperial_worlds
+successors: []
+authority: 'Histomap editorial: overarching regional-era consolidation'
+external_ids: {}
+notes: Overarching parent for the regional Iron Age eras (european_iron_age,
+  sub_saharan_african_iron_age_era), which happened at meaningfully different
+  times in different places -- same "overarching regional era" treatment as
+  bronze_age_era/neolithic_era/paleolithic_era. Added 2026-08-31 -- previously
+  european_iron_age had no Iron Age parent at all (it heuristically nested
+  under mediterranean_classical_era instead) and sub_saharan_african_iron_age_era
+  was its own standalone regional_era with no relation to the European one.
+  See ONTOLOGY.md's "Overarching regional eras for genuinely cross-regional
+  themes" and STATUS.md.
+source_urls:
+- https://en.wikipedia.org/wiki/Iron_Age

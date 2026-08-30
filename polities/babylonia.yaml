@@ -1,0 +1,52 @@
+id: babylonia
+canonical_name: Babylonia
+names:
+  fr: Babylonie
+external_ids:
+  wikidata: Q47690
+parent: null
+successors: []
+start: -1900
+end: -538
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -1900: 4
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Hand-authored 2026-08-31, replacing the deleted babylonia_period.yaml
+  ("civilization-as-backdrop" period) -- reclassified from the Civilizations
+  & Cultures lane to a plain polity, alongside Sumer/Akkadian Empire/Uruk;
+  Mesopotamia (mesopotamia_period.yaml) now carries that lane's civilization-
+  level weight for the region instead. Babylonia spans several distinct
+  political phases (Old Babylonian Empire, Neo-Babylonian Empire, both
+  already separate polities); this record is the umbrella entity, the same
+  role Sumer plays for the earlier Sumerian city-states. See STATUS.md.
+sources:
+- editorial
+prominence_score: 0
+visibility_tier: detailed
+visibility_override: global
+manual_overrides:
+- visibility_override
+eligibility: accepted
+geography:
+  continents:
+  - asia
+  present_countries:
+  - IQ
+  centroid:
+    lat: 32.5
+    lon: 44.5
+  confidence: high
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
+entity_type: polity
+entity_type_confidence: low
+relationships: []
+prominence_components: {}

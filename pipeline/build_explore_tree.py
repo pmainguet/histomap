@@ -162,7 +162,7 @@ def build_explore_tree(
         if target_chapter is None:
             continue  # era isn't nested under any chapter -- shouldn't happen for a valid era, but be defensive
         era_entry = next(e for e in eras_by_chapter[target_chapter] if e["id"] == era_id)
-        era_entry["periods"].append(_period_entry(period, curated=curated))
+        era_entry["periods"].append(_period_entry(period, curated=curated, era_id=era_entry["id"]))
     if unmatched_periods:
         print(f"build_explore_tree: {unmatched_periods} periods placed under no era (no geography/date match)")
 
@@ -189,13 +189,13 @@ def build_explore_tree(
         best = _best_chapter_for_range((period["start"], period["end"]), all_chapters)
         if best is not None:
             source_entity_type = _civilization_period_source_entity_type(period, civilization_period_sources)
-            civilizations_by_chapter[best["id"]].append(_civilization_period_entry(period, source_entity_type))
+            civilizations_by_chapter[best["id"]].append(_civilization_period_entry(period, all_eras, source_entity_type))
     for polity in polities:
         if polity.get("entity_type") not in CIVILIZATION_ENTITY_TYPES or not in_scope(polity):
             continue
         best = best_chapter_for_polity(polity, all_chapters, open_end)
         if best is not None:
-            civilizations_by_chapter[best["id"]].append(_civilization_polity_entry(polity))
+            civilizations_by_chapter[best["id"]].append(_civilization_polity_entry(polity, all_eras))
     for cid in chapter_ids:
         civilizations_by_chapter[cid].sort(key=lambda e: (e["start"], e["id"]))
 
@@ -298,12 +298,18 @@ def _merge_auto_generated_eras(eras: list[dict], chapter: dict) -> list[dict]:
     return curated + [merged]
 
 
-def _period_entry(period: dict, curated: bool) -> dict:
+def _period_entry(period: dict, curated: bool, era_id: str) -> dict:
     """Build a JSON-serializable dict entry for a named-period node with its
     curated/heuristic flag. `primary_continent` lets the /explore period row
     group by continent. `primary_historical_region` lets the /explore period
     row further split the Asia continent bucket into finer regional
-    sub-buckets (East Asia, West Asia, etc.)."""
+    sub-buckets (East Asia, West Asia, etc.). `present_countries` lets the
+    period row further sub-group each continent bucket by country (e.g.
+    Jomon and Yayoi both cluster under Japan within the East Asia bucket).
+    `era_id` is the id of the regional_era this period is actually nested
+    under in the tree (known for free at the call site) -- /explore uses it
+    to color the period band to match its era's band, so e.g. every period
+    under Mesopotamian Early States reads as one visual group."""
     geo = period.get("geography") or {}
     return {
         "id": period["id"],
@@ -311,28 +317,63 @@ def _period_entry(period: dict, curated: bool) -> dict:
         "start": period["start"],
         "end": period["end"],
         "curated": curated,
+        "era_id": era_id,
         "primary_continent": geo.get("primary_continent") or (geo.get("continents") or [None])[0] or "unclassified",
         "primary_historical_region": geo.get("primary_historical_region") or (geo.get("historical_regions") or [None])[0] or "unclassified",
+        "present_countries": geo.get("present_countries") or [],
     }
 
 
 def _polity_entry(polity: dict, curated: bool) -> dict:
-    """Build a JSON-serializable dict entry for a polity with its curated/heuristic flag."""
+    """Build a JSON-serializable dict entry for a polity with its curated/heuristic flag.
+    `primary_continent`/`primary_historical_region` mirror era/period entries' own
+    fields (same fallback logic) so the /explore period and polities rows can share
+    one client-side geography-grouping implementation instead of two -- polities were
+    previously only bucketed server-side (`polities_by_continent`/
+    `polities_by_historical_region`), which couldn't be reused for the period row's
+    client-side Asia-split logic."""
+    geo = polity.get("geography") or {}
     return {
         "id": polity["id"],
         "canonical_name": polity["canonical_name"],
         "start": polity["start"],
         "end": polity.get("end"),
         "curated": curated,
-        "present_countries": (polity.get("geography") or {}).get("present_countries") or [],
+        "present_countries": geo.get("present_countries") or [],
+        "primary_continent": geo.get("primary_continent") or (geo.get("continents") or [None])[0] or "unclassified",
+        "primary_historical_region": geo.get("primary_historical_region") or (geo.get("historical_regions") or [None])[0] or "unclassified",
     }
 
 
-def _civilization_polity_entry(polity: dict) -> dict:
+def _linked_era_id(entity: dict, all_eras: list[dict]) -> str | None:
+    """Best-guess regional_era for a Civilizations & Cultures lane entry
+    (polity or period), by the same date+geography overlap heuristic
+    suggest_regional_eras.rank_candidates uses to place an ordinary period
+    that has no curated broader_periods link. Civilizations-lane entries
+    never go through that placement pass themselves (they're routed out of
+    `all_periods`/bucketed by chapter only, not by era -- see
+    build_explore_tree's civilization-lane block above), so this recomputes
+    the same kind of match purely for /explore's era-linked color coding:
+    e.g. Sumer, Akkadian Empire, Uruk culture, and Babylonia all overlap
+    Mesopotamian Early States' date range and West Asia geography, so they
+    all resolve to the same era id and get the same band color. Returns
+    None when nothing overlaps (geography or date) -- the caller falls back
+    to the lane's default (uncolored) styling."""
+    ranked = rank_candidates(entity, all_eras)
+    return ranked[0]["id"] if ranked else None
+
+
+def _civilization_polity_entry(polity: dict, all_eras: list[dict]) -> dict:
     """Build a JSON-serializable dict entry for a civilization/culture/
     people/tribe-typed polity in the Civilizations & Cultures lane.
     `curated` is always True -- entity_type is a reviewed field, not a
-    heuristic guess, unlike the name-matched periods alongside it."""
+    heuristic guess, unlike the name-matched periods alongside it.
+    `primary_continent`/`primary_historical_region`/`present_countries`
+    mirror _period_entry/_polity_entry's own fields so this lane can share
+    the same client-side continent/country grouping. `linked_era_id` is a
+    heuristic era match (see _linked_era_id) used only for era-matched color
+    coding, not for grouping/placement."""
+    geo = polity.get("geography") or {}
     return {
         "id": polity["id"],
         "canonical_name": polity["canonical_name"],
@@ -341,10 +382,14 @@ def _civilization_polity_entry(polity: dict) -> dict:
         "curated": True,
         "source": "polity",
         "entity_type": polity.get("entity_type"),
+        "linked_era_id": _linked_era_id(polity, all_eras),
+        "primary_continent": geo.get("primary_continent") or (geo.get("continents") or [None])[0] or "unclassified",
+        "primary_historical_region": geo.get("primary_historical_region") or (geo.get("historical_regions") or [None])[0] or "unclassified",
+        "present_countries": geo.get("present_countries") or [],
     }
 
 
-def _civilization_period_entry(period: dict, source_entity_type: str | None = None) -> dict:
+def _civilization_period_entry(period: dict, all_eras: list[dict], source_entity_type: str | None = None) -> dict:
     """Build a JSON-serializable dict entry for a civilization period in the
     Civilizations & Cultures lane. `curated` reflects how it got here: True
     when `source_entity_type` is set (a real, reviewed Polity.entity_type
@@ -352,8 +397,10 @@ def _civilization_period_entry(period: dict, source_entity_type: str | None = No
     period itself carries CIVILIZATION_BACKDROP_AUTHORITY (also a real,
     deliberate signal) -- False when it's only a canonical_name substring
     match (_is_civilization_lane_period's name heuristic) -- a guess, not a
-    classification."""
+    classification. See _civilization_polity_entry for the geography/
+    linked_era_id fields shared with the polity-sourced entries."""
     curated = source_entity_type is not None or period.get("authority") == CIVILIZATION_BACKDROP_AUTHORITY
+    geo = period.get("geography") or {}
     entry = {
         "id": period["id"],
         "canonical_name": period["canonical_name"],
@@ -361,6 +408,10 @@ def _civilization_period_entry(period: dict, source_entity_type: str | None = No
         "end": period["end"],
         "curated": curated,
         "source": "period",
+        "linked_era_id": _linked_era_id(period, all_eras),
+        "primary_continent": geo.get("primary_continent") or (geo.get("continents") or [None])[0] or "unclassified",
+        "primary_historical_region": geo.get("primary_historical_region") or (geo.get("historical_regions") or [None])[0] or "unclassified",
+        "present_countries": geo.get("present_countries") or [],
     }
     if source_entity_type is not None:
         entry["entity_type"] = source_entity_type

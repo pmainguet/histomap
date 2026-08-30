@@ -23,20 +23,24 @@
       <h1>Explore human history</h1>
       <p>Nine chapters, oldest first. Click any band to zoom in on its date range.</p>
     </section>
-    <div class="hierarchy-controls" aria-label="Polities display">
-      <label for="polities-toggle">Show polities by</label>
-      <select id="polities-toggle">
-        <option value="historical_region">Historical region</option>
-        <option value="continent">Present-day continent</option>
-        <option value="country">Present-day country</option>
-        <option value="none">Hidden</option>
+    <div class="hierarchy-controls" aria-label="Display options">
+      <label for="show-polities"><input type="checkbox" id="show-polities" checked> Show polities</label>
+      <label for="group-by">Group by</label>
+      <select id="group-by">
+        <option value="continent">Continent</option>
+        <option value="country">Country</option>
+        <option value="none">None</option>
+      </select>
+      <label for="geo-filter" id="geo-filter-label">Filter to</label>
+      <select id="geo-filter">
+        <option value="all">All</option>
       </select>
       <a href="#" id="zoom-reset" hidden>&larr; Full timeline</a>
     </div>
-    <div class="hierarchy-legend" aria-label="Band placement legend">
-      <span>Placement</span>
-      <i class="curated"></i> Curated (sourced link)
-      <i class="heuristic"></i> Heuristic (date/geography match)
+    <div id="hierarchy-legend" class="hierarchy-legend" aria-label="Band style legend">
+      <span>Style</span>
+      <i></i> Polity (solid)
+      <i class="heuristic"></i> Civilization, culture, people, or tribe (dashed)
     </div>
     <div id="hierarchy-chart" class="hierarchy-chart-container" aria-label="Period hierarchy timeline">
       <p class="loading">Loading…</p>

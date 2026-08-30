@@ -22,6 +22,7 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    given the recent changes. In particular, we should be able to switch an entity from era,
    period, civilization, polity, etc and link things correctly. But maybe that's only to be
    added in the side panel (now built, informational only — see STATUS.md), to be seen.
+2 bis; Do a proper /simplify to see what could be removed, trimmed, simplify: dead code, convoluted logic, very similar data concept that could be merged, etc ...
 3. **Close out Seshat reconciliation** — only 69 records left (35 review + 34 unmatched); the
    cheapest queue left to finish. Review decisions are durable and must not be overwritten by
    pipeline reruns.
@@ -87,3 +88,11 @@ Considered, deliberately not done, with the concrete trigger for revisiting:
   conflated into one mechanism. Needs its own design pass: what should the schema/tree
   support, and how should `/explore` display the distinction (a sub-lane under the
   civilization/polity's own band, rather than nested in the ordinary Period row)?
+- **Add a lane for main events** -- the specific events that define the start/end of an
+  era, chapter, or period, starting with those. Today a boundary (e.g. Bronze Age
+  Collapse ending Mesopotamian Early States) is only implicit in a record's `start`/`end`
+  dates; there's no explicit event entity a viewer can click to see what happened, or
+  that a `start_confidence`/`end_confidence` figure can point back to as its actual
+  source. Needs its own design pass: a new entity/schema for events, how an era/chapter/
+  period would reference "the event that ends me," and how `/explore` would display a
+  thin events lane against the existing chapter/era/period rows.

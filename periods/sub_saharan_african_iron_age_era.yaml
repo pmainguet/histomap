@@ -1,7 +1,6 @@
 id: sub_saharan_african_iron_age_era
 canonical_name: Sub-Saharan African Iron Age
 kind: historical
-tier: regional_era
 start: -600
 end: 500
 start_confidence: low
@@ -15,10 +14,14 @@ geography:
   - east_africa
   - southern_africa
 broader_periods:
-- macro_classical_imperial_worlds
+- iron_age_era
 successors: []
 authority: 'Histomap editorial: regional-era starter set'
 external_ids: {}
-notes: Nok culture and the early Bantu expansion ironworking tradition.
+notes: Nok culture and the early Bantu expansion ironworking tradition. Demoted
+  from tier=regional_era to tier=period (default) 2026-08-31, reparented under
+  the new overarching iron_age_era -- same "overarching regional era" treatment
+  east_asian_bronze_age_era/european_bronze_age_era already got under
+  bronze_age_era. See ONTOLOGY.md and STATUS.md.
 source_urls:
 - https://en.wikipedia.org/wiki/Sub-Saharan_African_Iron_Age

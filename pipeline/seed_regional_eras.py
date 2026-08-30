@@ -44,81 +44,30 @@ REGIONAL_ERAS: list[dict] = [
         continents=["asia"],
         notes="Uruk period through the Bronze Age Collapse.",
     ),
-    dict(
-        id="egyptian_early_states_era",
-        canonical_name="Egyptian Early States",
-        broader_periods=["macro_early_cities_states"],
-        start=-3100,
-        end=-1070,
-        continents=["africa"],
-        notes="Early Dynastic through the New Kingdom. Ends -1070, past this "
-        "chapter's nominal -1200 boundary -- editorial placement, not "
-        "date-containment; see ONTOLOGY.md.",
-    ),
+    # egyptian_early_states_era originated here but was deleted outright (not
+    # demoted, unlike the other removed rows below) on 2026-08-31: it was
+    # redundant with ancient_egypt_period, the existing "civilization-as-
+    # backdrop" period already carrying Ancient Egypt's Civilizations &
+    # Cultures lane presence, and nothing else nested under it (no other
+    # period pointed broader_periods at it, and no Egypt-specific period
+    # records existed to heuristically match its geography/dates either).
     # east_asian_bronze_age_era and european_bronze_age_era originated here
     # but were demoted to tier=period (reparented under the new overarching
     # bronze_age_era) on 2026-08-30 -- see ONTOLOGY.md's "Overarching regional
     # eras for genuinely cross-regional themes". Removed from this table for
     # the same reason as the Neolithic trio above.
-    dict(
-        id="mediterranean_classical_era",
-        canonical_name="Mediterranean Classical Antiquity",
-        broader_periods=["macro_classical_imperial_worlds"],
-        start=-1200,
-        end=500,
-        continents=["europe"],
-        notes="Greek Dark Age through the fall of the Western Roman Empire.",
-    ),
-    dict(
-        id="east_asian_classical_era",
-        canonical_name="East Asian Classical Antiquity",
-        broader_periods=["macro_classical_imperial_worlds"],
-        start=-1046,
-        end=500,
-        continents=["asia"],
-        notes="Zhou dynasty through the Northern and Southern dynasties.",
-    ),
-    dict(
-        id="south_asian_classical_era",
-        canonical_name="South Asian Classical Antiquity",
-        broader_periods=["macro_classical_imperial_worlds"],
-        start=-600,
-        end=500,
-        continents=["asia"],
-        notes="The Mahajanapadas through the Gupta Empire.",
-    ),
-    dict(
-        id="mesoamerican_formative_classic_era",
-        canonical_name="Mesoamerican Formative and Classic Periods",
-        broader_periods=["macro_classical_imperial_worlds"],
-        start=-1200,
-        end=900,
-        continents=["north_america"],
-        notes="Olmec civilization through the Classic Maya collapse. Ends "
-        "900 CE, 400 years past this chapter's nominal 500 CE boundary -- "
-        "editorial placement, not date-containment; see ONTOLOGY.md.",
-    ),
-    dict(
-        id="andean_early_civilizations_era",
-        canonical_name="Early Andean Civilizations",
-        broader_periods=["macro_classical_imperial_worlds"],
-        start=-1200,
-        end=600,
-        continents=["south_america"],
-        notes="Chavin culture through the Moche and Nazca. Ends 600 CE, past "
-        "this chapter's nominal 500 CE boundary -- see the note on "
-        "mesoamerican_formative_classic_era.",
-    ),
-    dict(
-        id="sub_saharan_african_iron_age_era",
-        canonical_name="Sub-Saharan African Iron Age",
-        broader_periods=["macro_classical_imperial_worlds"],
-        start=-600,
-        end=500,
-        continents=["africa"],
-        notes="Nok culture and the early Bantu expansion ironworking "
-        "tradition.",
-    ),
+    # mediterranean_classical_era, east_asian_classical_era,
+    # south_asian_classical_era, mesoamerican_formative_classic_era, and
+    # andean_early_civilizations_era originated here but were demoted to
+    # tier=period (reparented under the new overarching classical_antiquity_era)
+    # on 2026-08-31 -- same "overarching regional era" treatment as the
+    # Neolithic/Bronze Age/Paleolithic/Iron Age rows. Removed from this table
+    # for the same reason as those.
+    # sub_saharan_african_iron_age_era originated here but was demoted to
+    # tier=period (reparented under the new overarching iron_age_era) on
+    # 2026-08-31 -- same "overarching regional era" treatment as the
+    # Neolithic/Bronze Age/Paleolithic rows above. Removed from this table for
+    # the same reason as those.
     dict(
         id="medieval_europe_era",
         canonical_name="Medieval Europe",

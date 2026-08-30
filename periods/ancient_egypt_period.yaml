@@ -19,8 +19,7 @@ geography:
   historical_regions:
   - north_africa
   primary_historical_region: north_africa
-broader_periods:
-- egyptian_early_states_era
+broader_periods: []
 successors: []
 authority: 'Histomap editorial: civilization-as-backdrop'
 external_ids:

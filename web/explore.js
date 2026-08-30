@@ -1,8 +1,12 @@
 async function main() {
   const container = document.querySelector("#hierarchy-chart");
-  const toggle = document.querySelector("#polities-toggle");
+  const showPolitiesInput = document.querySelector("#show-polities");
+  const groupBySelect = document.querySelector("#group-by");
+  const geoFilterSelect = document.querySelector("#geo-filter");
+  const geoFilterLabel = document.querySelector("#geo-filter-label");
   const resetLink = document.querySelector("#zoom-reset");
   let fullTree = null;
+  let eraColorMap = null;
   let zoomRange = null;
 
   const padded = (start, end) => {
@@ -21,10 +25,44 @@ async function main() {
     draw();
   };
 
+  // The "Filter to" control (narrow every grouped row down to one continent/
+  // country) only makes sense alongside Continent/Country grouping -- hidden
+  // and reset to "All" when Group by is "None", so it can never silently
+  // apply a stale filter the viewer can no longer see or change.
+  const updateGeoFilterOptions = () => {
+    const groupBy = groupBySelect.value;
+    const hidden = groupBy === "none";
+    geoFilterSelect.hidden = hidden;
+    geoFilterLabel.hidden = hidden;
+    if (hidden) {
+      geoFilterSelect.value = "all";
+      return;
+    }
+    const tree = zoomRange ? filterTreeToRange(fullTree, zoomRange.start, zoomRange.end) : fullTree;
+    const previous = geoFilterSelect.value;
+    const options = collectGeoFilterOptions(tree, groupBy);
+    geoFilterSelect.replaceChildren(
+      new Option("All", "all"),
+      ...options.map((opt) => new Option(opt.label, opt.value)),
+    );
+    // Keep the previous selection if it's still a valid option for the new
+    // grouping mode (e.g. switching Continent -> Country resets to "All"
+    // since a continent key is meaningless as a country key).
+    geoFilterSelect.value = options.some((opt) => opt.value === previous) ? previous : "all";
+  };
+
   const draw = () => {
     const tree = zoomRange ? filterTreeToRange(fullTree, zoomRange.start, zoomRange.end) : fullTree;
     resetLink.hidden = !zoomRange;
-    renderHierarchyTimeline(tree, container, toggle.value, onSelect);
+    renderHierarchyTimeline(tree, container, {
+      groupBy: groupBySelect.value,
+      showPolities: showPolitiesInput.checked,
+      geoFilter: geoFilterSelect.hidden ? null : geoFilterSelect.value,
+      // Built once from the full, unzoomed tree (see below) so era colors
+      // stay stable across zoom/filter re-renders instead of shifting as the
+      // visible era subset changes.
+      eraColorMap,
+    }, onSelect);
   };
 
   // Click opens the detail panel (informational only -- see
@@ -46,6 +84,7 @@ async function main() {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
     }
     fullTree = await treeResponse.json();
+    eraColorMap = buildEraColorMap(fullTree);
     const polities = await politiesResponse.json();
     const periods = await periodsResponse.json();
     const periodLinks = await periodLinksResponse.json();
@@ -57,8 +96,14 @@ async function main() {
       onZoomToRange: zoomToRange,
       onResetZoom: resetZoom,
     };
+    updateGeoFilterOptions();
     draw();
-    toggle.addEventListener("change", draw);
+    showPolitiesInput.addEventListener("change", draw);
+    groupBySelect.addEventListener("change", () => {
+      updateGeoFilterOptions();
+      draw();
+    });
+    geoFilterSelect.addEventListener("change", draw);
     resetLink.addEventListener("click", (event) => {
       event.preventDefault();
       resetZoom();

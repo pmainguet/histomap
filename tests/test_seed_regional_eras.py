@@ -18,15 +18,20 @@ VALID_MACRO_CHAPTERS = {
 
 
 class SeedRegionalErasTests(unittest.TestCase):
-    def test_table_has_eleven_rows(self) -> None:
-        # Was 20; 9 rows (african_paleolithic_era, eurasian_paleolithic_era,
+    def test_table_has_four_rows(self) -> None:
+        # Was 20; 15 rows (african_paleolithic_era, eurasian_paleolithic_era,
         # fertile_crescent_neolithic_era, nile_valley_neolithic_era,
         # east_asian_neolithic_era, east_asian_bronze_age_era, european_bronze_age_era,
-        # mesoamerican_archaic_era, andean_archaic_era) were removed 2026-08-30/31
-        # when demoted to tier=period under new overarching regional eras -- see
+        # mesoamerican_archaic_era, andean_archaic_era, sub_saharan_african_iron_age_era,
+        # mediterranean_classical_era, east_asian_classical_era,
+        # south_asian_classical_era, mesoamerican_formative_classic_era,
+        # andean_early_civilizations_era) were removed 2026-08-30/31 when demoted to
+        # tier=period under new overarching regional eras -- see
         # pipeline/seed_regional_eras.py's comments and ONTOLOGY.md's "Overarching
-        # regional eras for genuinely cross-regional themes".
-        self.assertEqual(len(REGIONAL_ERAS), 11)
+        # regional eras for genuinely cross-regional themes". One more
+        # (egyptian_early_states_era) was removed outright (not demoted) on
+        # 2026-08-31 as redundant with ancient_egypt_period.
+        self.assertEqual(len(REGIONAL_ERAS), 4)
 
     def test_every_row_points_at_a_pre_1500_macro_chapter(self) -> None:
         for row in REGIONAL_ERAS:

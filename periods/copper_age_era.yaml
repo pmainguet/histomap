@@ -1,0 +1,29 @@
+id: copper_age_era
+canonical_name: Copper Age
+kind: historical
+tier: regional_era
+start: -4500
+end: -3200
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  - europe
+broader_periods:
+- macro_agricultural_transitions
+successors:
+- bronze_age_era
+authority: 'Histomap editorial: overarching regional-era consolidation'
+external_ids: {}
+notes: The Chalcolithic/Copper Age transitional period between the Neolithic and
+  the Bronze Age (Bronze Age itself starts -3200, where this ends -- see
+  bronze_age_era). Added 2026-08-31 as a new overarching regional_era, same
+  treatment as bronze_age_era/neolithic_era/paleolithic_era, but currently has
+  no regional period records nested under it via broader_periods -- unlike
+  those three, no Copper Age-specific period (e.g. a Fertile Crescent or
+  European Chalcolithic record) exists yet in this dataset to link. Flagged in
+  ROADMAP.md as follow-up work rather than fabricated here without a real
+  source record.
+source_urls:
+- https://en.wikipedia.org/wiki/Chalcolithic

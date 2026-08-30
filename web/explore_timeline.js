@@ -18,18 +18,27 @@ const LABEL_PADDING = 8;
 // Returns a getRange function (for packIntoLanes) that accounts for label
 // width, not just band width, so labels wider than their band don't
 // visually collide with the next item's label in the same lane.
-function labelAwareFootprint(scale) {
+// `getLabel` defaults to canonical_name, but callers showing a
+// country-suffixed label (see itemDisplayLabel) pass it in so the
+// footprint accounts for the longer displayed text, not just the bare name.
+function labelAwareFootprint(scale, getLabel = (item) => item.canonical_name) {
   return (item) => {
     const bandStart = scale.x(item.start);
     const bandWidth = scale.width(item.start, item.end);
-    const labelWidth = item.canonical_name.length * ESTIMATED_CHAR_WIDTH + LABEL_PADDING;
+    const labelWidth = getLabel(item).length * ESTIMATED_CHAR_WIDTH + LABEL_PADDING;
     const footprintWidth = Math.max(bandWidth, labelWidth);
     return { start: bandStart, end: bandStart + footprintWidth };
   };
 }
 
-function bandRect(svg, { x, y, width, height, cls, title, label, onZoom }) {
+function bandRect(svg, { x, y, width, height, cls, title, label, onZoom, fill }) {
   const rect = svgEl("rect", { x, y, width, height, class: cls, rx: 2 });
+  // Era-linked color coding (see eraColor) is data-driven -- one color per
+  // era id, not a fixed set of CSS classes -- so it's applied as an inline
+  // style, which naturally overrides the class-based `fill` in styles.css
+  // while leaving that class's fill-opacity/stroke-dasharray (the curated
+  // vs heuristic placement signal) untouched.
+  if (fill) rect.style.fill = fill;
   if (onZoom) {
     rect.classList.add("zoomable");
     // Click opens the detail panel (kind/id identify which record), not an
@@ -138,8 +147,8 @@ const MAX_POLITIES_PER_REGION = 15;
 
 const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
 
-function countryLaneKey(polity) {
-  const countries = polity.present_countries || [];
+function countryLaneKey(item) {
+  const countries = item.present_countries || [];
   if (countries.length === 1) return countries[0];
   return countries.length > 1 ? "__multiple" : "__unknown";
 }
@@ -151,8 +160,8 @@ function countryLaneLabel(key) {
 }
 
 // Groups Asia's historical-region sub-splits (east/west/south/southeast/
-// central Asia, from eraOrPeriodBucketKey) adjacent to each other and to
-// plain "asia" in any alphabetically-sorted row, instead of scattered among
+// central Asia, from geoBucketKey) adjacent to each other and to plain
+// "asia" in any alphabetically-sorted row, instead of scattered among
 // unrelated continents/regions purely by string prefix (e.g. "central_asia"
 // sorting next to "central_africa" rather than next to "east_asia"). Used by
 // every row that groups by continent or historical region.
@@ -200,239 +209,264 @@ function filterTreeToRange(tree, start, end) {
   };
 }
 
-// One global, sorted list of region keys across all chapters, so the same
-// vertical position always means the same region no matter which chapter's
-// band is drawn there -- a horizontal row is otherwise meaningless.
-function collectRegionKeys(tree, groupBy) {
-  if (groupBy === "none") return [];
-  const keys = new Set();
-  for (const chapter of tree.chapters) {
-    const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
-    for (const key of Object.keys(buckets)) keys.add(key);
-  }
-  return sortGeoKeys(keys);
+// Era-linked color coding: a period (via `era_id`, known for free from tree
+// nesting) or a Polities & Cultures entry (via `linked_era_id`, a
+// date+geography heuristic match computed server-side -- see
+// build_explore_tree.py's _linked_era_id) is colored to match the era it
+// belongs to, so e.g. Sumer / Akkadian Empire / Uruk / Babylonia all read as
+// one visual group (Mesopotamian Early States), even split across the
+// Polities & Cultures row and the ordinary Period row. Eras themselves get
+// colors from the same palette, keyed by their own id, so the era band and
+// everything linked to it always match.
+//
+// Assignment is by sorted-index into the palette, not a hash: with only a
+// couple dozen era ids total (a curated, slow-growing editorial set, not a
+// per-record field), a hash collision is a real risk -- an earlier hash-based
+// version collided Iron Age with Paleolithic, and 4 separate eras onto one
+// color, defeating the whole point of the feature. Sorted-index assignment
+// guarantees zero collisions as long as the era count stays within the
+// palette size, and only degrades (repeats) gracefully past that. Built once
+// per full (unzoomed) tree load -- see buildEraColorMap -- so it stays stable
+// across zoom/filter re-renders rather than shifting as the visible era
+// subset changes.
+// 18 slots -- comfortably above the ~14 regional_era records that currently
+// exist (a slow-growing, curated set; see build_explore_tree.py), so
+// sorted-index assignment (below) stays collision-free with room to grow.
+const ERA_COLOR_PALETTE = [
+  "#8c422d", "#3d6b66", "#5b6b8c", "#8c7a2d", "#6b3d8c",
+  "#2d8c5e", "#8c2d4f", "#4f8c2d", "#2d5b8c", "#8c5e2d",
+  "#5e2d8c", "#2d8c8c", "#8c2d2d", "#2d8c2d", "#2d4f8c",
+  "#8c6b2d", "#6b2d8c", "#2d8c6b",
+];
+function buildEraColorMap(tree) {
+  const ids = new Set();
+  for (const chapter of tree.chapters) for (const era of chapter.eras) ids.add(era.id);
+  const sorted = [...ids].sort();
+  const map = new Map();
+  sorted.forEach((id, index) => map.set(id, ERA_COLOR_PALETTE[index % ERA_COLOR_PALETTE.length]));
+  return map;
+}
+function eraColor(colorMap, eraId) {
+  if (!eraId || !colorMap) return null;
+  return colorMap.get(eraId) || null;
 }
 
-// Row height per region = the lane count needed to pack ALL chapters'
-// entries for that region together, so a real time-span overlap between
-// two different chapters' polities is caught instead of hidden behind
-// independent per-chapter lane indices sharing the same Y-offset.
-function regionLaneCounts(tree, groupBy, regionKeys, scale) {
-  const counts = {};
-  const getRange = labelAwareFootprint(scale);
-  for (const key of regionKeys) {
-    const allEntries = tree.chapters.flatMap((chapter) => {
-      const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
-      return (buckets[key] || []).slice(0, MAX_POLITIES_PER_REGION);
-    });
-    const sorted = [...allEntries].sort((a, b) => a.start - b.start);
-    const lanes = packIntoLanes(sorted, getRange);
-    counts[key] = lanes.length;
-  }
-  return counts;
-}
-
-function measurePolitiesRowHeight(regionKeys, laneCounts) {
-  let total = 0;
-  for (const key of regionKeys) total += REGION_HEADER_HEIGHT + laneCounts[key] * POLITY_LANE_HEIGHT + 4;
-  return total;
-}
-
-function renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, y, onZoom, width) {
-  if (groupBy === "none") return y;
-  let rowY = y;
-  const getRange = labelAwareFootprint(scale);
-  regionKeys.forEach((key, index) => {
-    if (index > 0) drawRegionSeparator(svg, width, rowY - 2);
-    const label = svgEl("text", { x: POLITIES_LABEL_X, y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
-    label.textContent = regionLabel(key);
-    svg.append(label);
-    rowY += REGION_HEADER_HEIGHT;
-    const totalCount = tree.chapters.reduce((sum, chapter) => {
-      const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
-      return sum + (buckets[key]?.length || 0);
-    }, 0);
-    const allEntries = tree.chapters.flatMap((chapter) => {
-      const buckets = groupBy === "continent" ? chapter.polities_by_continent : chapter.polities_by_historical_region;
-      return (buckets[key] || []).slice(0, MAX_POLITIES_PER_REGION);
-    });
-    const sorted = [...allEntries].sort((a, b) => a.start - b.start);
-    const lanes = packIntoLanes(sorted, getRange);
-    lanes.forEach((lane, laneIndex) => {
-      lane.forEach((polity) => {
-        const curatedClass = polity.curated ? "curated" : "heuristic";
-        bandRect(svg, {
-          x: scale.x(polity.start), y: rowY + laneIndex * POLITY_LANE_HEIGHT,
-          width: scale.width(polity.start, polity.end), height: POLITY_LANE_HEIGHT - 2,
-          cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`,
-          title: `${polity.canonical_name} (${totalCount} in ${regionLabel(key)})`,
-          label: polity.canonical_name,
-          onZoom: { handler: onZoom, kind: "polity", id: polity.id, start: polity.start, end: polity.end ?? tree.axis.domain_end },
-        });
-      });
-    });
-    rowY += laneCounts[key] * POLITY_LANE_HEIGHT + 4;
-  });
-  return rowY;
-}
-
-// Two-level structure for "present-day country, organised by continent":
-// continent -> sorted list of country keys present anywhere across chapters.
-// Kept as a separate, parallel set of functions from the single-level
-// region/continent grouping above -- not a generalization of it -- so this
-// new mode can't destabilize the working single-level code path.
-function collectCountryStructure(tree) {
-  const structure = new Map();
-  for (const chapter of tree.chapters) {
-    for (const [continent, entries] of Object.entries(chapter.polities_by_continent)) {
-      if (!structure.has(continent)) structure.set(continent, new Set());
-      for (const polity of entries) structure.get(continent).add(countryLaneKey(polity));
-    }
-  }
-  return [...structure.keys()].sort().map((continent) => ({
-    continent,
-    countries: [...structure.get(continent)].sort(),
-  }));
-}
-
-function entriesForCountry(chapter, continent, country) {
-  const all = chapter.polities_by_continent[continent] || [];
-  return all.filter((polity) => countryLaneKey(polity) === country);
-}
-
-function countryLaneCounts(tree, structure, scale) {
-  const counts = new Map();
-  const getRange = labelAwareFootprint(scale);
-  for (const { continent, countries } of structure) {
-    for (const country of countries) {
-      const allEntries = tree.chapters.flatMap((chapter) => entriesForCountry(chapter, continent, country).slice(0, MAX_POLITIES_PER_REGION));
-      const sorted = [...allEntries].sort((a, b) => a.start - b.start);
-      const lanes = packIntoLanes(sorted, getRange);
-      counts.set(`${continent}::${country}`, lanes.length);
-    }
-  }
-  return counts;
-}
-
-const CONTINENT_HEADER_HEIGHT = 18;
-
-function measureCountryRowHeight(structure, laneCounts) {
-  let total = 0;
-  for (const { continent, countries } of structure) {
-    total += CONTINENT_HEADER_HEIGHT;
-    for (const country of countries) {
-      total += REGION_HEADER_HEIGHT + laneCounts.get(`${continent}::${country}`) * POLITY_LANE_HEIGHT + 4;
-    }
-  }
-  return total;
-}
-
-function renderCountryRow(svg, scale, tree, structure, laneCounts, y, onZoom, width) {
-  let rowY = y;
-  const getRange = labelAwareFootprint(scale);
-  structure.forEach(({ continent, countries }, continentIndex) => {
-    if (continentIndex > 0) drawRegionSeparator(svg, width, rowY - 2);
-    const header = svgEl("text", { x: POLITIES_LABEL_X, y: rowY + CONTINENT_HEADER_HEIGHT - 5, class: "hierarchy-continent-label" });
-    header.textContent = regionLabel(continent);
-    svg.append(header);
-    rowY += CONTINENT_HEADER_HEIGHT;
-    countries.forEach((country, countryIndex) => {
-      if (countryIndex > 0) drawRegionSeparator(svg, width, rowY - 2);
-      const countryLabel = svgEl("text", { x: POLITIES_LABEL_INDENT_X, y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
-      countryLabel.textContent = countryLaneLabel(country);
-      svg.append(countryLabel);
-      rowY += REGION_HEADER_HEIGHT;
-      const allEntries = tree.chapters.flatMap((chapter) => entriesForCountry(chapter, continent, country).slice(0, MAX_POLITIES_PER_REGION));
-      const sorted = [...allEntries].sort((a, b) => a.start - b.start);
-      const lanes = packIntoLanes(sorted, getRange);
-      lanes.forEach((lane, laneIndex) => {
-        lane.forEach((polity) => {
-          const curatedClass = polity.curated ? "curated" : "heuristic";
-          bandRect(svg, {
-            x: scale.x(polity.start), y: rowY + laneIndex * POLITY_LANE_HEIGHT,
-            width: scale.width(polity.start, polity.end), height: POLITY_LANE_HEIGHT - 2,
-            cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`,
-            title: `${polity.canonical_name} (${countryLaneLabel(country)})`,
-            label: polity.canonical_name,
-            onZoom: { handler: onZoom, kind: "polity", id: polity.id, start: polity.start, end: polity.end ?? tree.axis.domain_end },
-          });
-        });
-      });
-      rowY += laneCounts.get(`${continent}::${country}`) * POLITY_LANE_HEIGHT + 4;
-    });
-  });
-  return rowY;
-}
-
-// Continent-level grouping is the right default (see docs/plans -- the
-// user explicitly confirmed continent granularity is enough in general),
-// but Asia specifically gets a finer split using the already-available
-// primary_historical_region field, since "Asia" alone spans wildly
-// different historical contexts (e.g. Islamic Caliphates vs. Chinese
-// Empire) that continent-level grouping flattens together. Every other
-// continent is untouched by this.
-function eraOrPeriodBucketKey(item) {
+// Continent-level grouping (Asia further split by primary_historical_region,
+// since "Asia" alone spans wildly different historical contexts -- e.g.
+// Islamic Caliphates vs. Chinese Empire -- that continent-level grouping
+// flattens together) is the one geography-grouping concept shared by the
+// Period, Polities, and Civilizations & Cultures rows -- all three entry
+// types carry primary_continent/primary_historical_region for this. The Era
+// row alone stays flat (see flatLaneLayout); every continent besides Asia is
+// untouched by the sub-split.
+function geoBucketKey(item) {
   if (item.primary_continent === "asia" && item.primary_historical_region && item.primary_historical_region !== "unclassified") {
     return item.primary_historical_region;
   }
   return item.primary_continent || "unclassified";
 }
 
-// Continent-grouped layout for the era and period rows: buckets an
-// already-global (post cross-chapter fix), flat item list by
-// primary_continent (Asia further split by primary_historical_region, see
-// eraOrPeriodBucketKey), then lane-packs each bucket's items globally
-// (across chapters, since these lists already are). Computed once and
-// reused for both the height-measurement pass and the draw pass, so
-// there's no possibility of the two diverging.
-function continentGroupedLayout(items, scale, laneHeight) {
-  const getRange = labelAwareFootprint(scale);
+// "Continent" mode shows one flat row per geography bucket with no further
+// visual nesting -- but an item whose present_countries has exactly one
+// value gets a "(Country)" suffix appended to its own label, so e.g. Jomon
+// and Yayoi are still identifiable as both-Japan without "Country" mode's
+// fuller sub-header nesting. Multi-country or unknown-country items are
+// left alone (nothing useful to disambiguate, and it would misleadingly
+// imply a single country).
+function itemDisplayLabel(item, groupBy) {
+  if (groupBy !== "continent") return item.canonical_name;
+  const countries = item.present_countries || [];
+  if (countries.length !== 1) return item.canonical_name;
+  const name = countryNames.of(countries[0]) || countries[0];
+  return `${item.canonical_name} (${name})`;
+}
+
+const CONTINENT_HEADER_HEIGHT = 18;
+
+// Caps each geography bucket's total entry count (not per-chapter, unlike
+// the old server-bucket-driven implementation this replaced) so a single
+// hugely over-represented bucket can't blow up rendering -- the true count
+// stays visible via each band's tooltip title.
+function cappedByBucket(items, getKey, max) {
+  const seen = new Map();
+  return items.filter((item) => {
+    const key = getKey(item);
+    const count = (seen.get(key) || 0) + 1;
+    seen.set(key, count);
+    return count <= max;
+  });
+}
+
+// Narrows a row's items to a single geography bucket (Continent mode) or a
+// single present-day country (Country mode), for the "Filter to" control --
+// hidden and inert when groupBy is "none" (see explore.js), so `geoFilter`
+// is only ever meaningful alongside continent/country grouping.
+function applyGeoFilter(items, groupBy, geoFilter) {
+  if (!geoFilter || geoFilter === "all" || groupBy === "none") return items;
+  if (groupBy === "continent") return items.filter((item) => geoBucketKey(item) === geoFilter);
+  if (groupBy === "country") return items.filter((item) => countryLaneKey(item) === geoFilter);
+  return items;
+}
+
+// Collects every distinct geography-bucket (Continent mode) or country
+// (Country mode) key present across the period, polities, and civilizations
+// rows combined, for populating the "Filter to" control's options -- one
+// shared filter narrows all three grouped rows together (the Era row is
+// unaffected; it never groups). Returns [{value, label}], sorted the same
+// way each mode's own rows are (sortGeoKeys for continents, alphabetical
+// country names for countries).
+function collectGeoFilterOptions(tree, groupBy) {
+  if (groupBy === "none") return [];
+  const periods = tree.chapters.flatMap((chapter) => chapter.eras.flatMap((era) => era.periods));
+  const polities = allPolitiesFlat(tree);
+  const civilizations = tree.chapters.flatMap((chapter) => chapter.civilizations || []);
+  const items = [...periods, ...polities, ...civilizations];
+  if (groupBy === "continent") {
+    const keys = sortGeoKeys(new Set(items.map(geoBucketKey)));
+    return keys.map((key) => ({ value: key, label: regionLabel(key) }));
+  }
+  const keys = [...new Set(items.map(countryLaneKey))].sort((a, b) => countryLaneLabel(a).localeCompare(countryLaneLabel(b)));
+  return keys.map((key) => ({ value: key, label: countryLaneLabel(key) }));
+}
+
+// Flattens every chapter's polities_by_continent buckets into one list. Each
+// in-scope, non-civilization-lane polity is bucketed into exactly one
+// continent (its own primary_continent) in exactly one chapter (Pass 2 in
+// build_explore_tree.py), so this yields each such polity exactly once --
+// safe to use as the canonical "all polities" source for grouping/filtering.
+function allPolitiesFlat(tree) {
+  return tree.chapters.flatMap((chapter) => Object.values(chapter.polities_by_continent).flat());
+}
+
+// Continent-grouped layout ("Continent" mode): buckets an already-global
+// (post cross-chapter-fix), flat item list by geoBucketKey, then lane-packs
+// each bucket's items globally. Used for the Period, Polities, and
+// Civilizations & Cultures rows alike -- all three entry types carry the
+// same geography fields. Computed once and reused for both the
+// height-measurement pass and the draw pass, so the two can't diverge.
+function continentGroupedLayout(items, scale, laneHeight, groupBy) {
+  const getRange = labelAwareFootprint(scale, (item) => itemDisplayLabel(item, groupBy));
+  const capped = cappedByBucket(items, geoBucketKey, MAX_POLITIES_PER_REGION);
   const buckets = new Map();
-  for (const item of items) {
-    const key = eraOrPeriodBucketKey(item);
+  for (const item of capped) {
+    const key = geoBucketKey(item);
     if (!buckets.has(key)) buckets.set(key, []);
     buckets.get(key).push(item);
   }
-  const continents = [...buckets.keys()].sort();
+  const continents = sortGeoKeys(buckets.keys());
   const rows = continents.map((continent) => {
     const sorted = [...buckets.get(continent)].sort((a, b) => a.start - b.start);
     const lanes = packIntoLanes(sorted, getRange);
     return { continent, lanes };
   });
   const height = rows.reduce((total, row) => total + REGION_HEADER_HEIGHT + row.lanes.length * laneHeight + 4, 0);
-  return { rows, height };
+  return { kind: "continent", rows, height };
 }
 
-// Flat (non-grouped) lane layout for the Civilizations & Cultures row: per-
-// chapter counts are small (a handful at most), so continent-grouping it the
-// way era/period rows are would just fragment an already-sparse row into
-// near-empty sub-buckets. One global, label-aware-packed lane set instead.
-function flatLaneLayout(items, scale, laneHeight) {
+// Two-level structure ("Country" mode): geography bucket (continent, Asia
+// sub-split) -> present-day country -> lane-packed items. Same geoBucketKey
+// outer grouping as continentGroupedLayout above, with one more level of
+// sub-grouping by countryLaneKey within each bucket, so e.g. Jomon and
+// Yayoi land in the same "Japan" sub-group under "East Asia". Shared by the
+// Period, Polities, and Civilizations & Cultures rows.
+function geoCountryGroupedLayout(items, scale, laneHeight) {
   const getRange = labelAwareFootprint(scale);
-  const sorted = [...items].sort((a, b) => a.start - b.start);
-  const lanes = packIntoLanes(sorted, getRange);
-  return { lanes, height: lanes.length * laneHeight };
+  const capped = cappedByBucket(items, geoBucketKey, MAX_POLITIES_PER_REGION);
+  const geoBuckets = new Map();
+  for (const item of capped) {
+    const geoKey = geoBucketKey(item);
+    if (!geoBuckets.has(geoKey)) geoBuckets.set(geoKey, new Map());
+    const countryBuckets = geoBuckets.get(geoKey);
+    const countryKey = countryLaneKey(item);
+    if (!countryBuckets.has(countryKey)) countryBuckets.set(countryKey, []);
+    countryBuckets.get(countryKey).push(item);
+  }
+  const geoKeys = sortGeoKeys(geoBuckets.keys());
+  const groups = geoKeys.map((geoKey) => {
+    const countryBuckets = geoBuckets.get(geoKey);
+    const countryKeys = [...countryBuckets.keys()].sort((a, b) => countryLaneLabel(a).localeCompare(countryLaneLabel(b)));
+    const countries = countryKeys.map((countryKey) => {
+      const sorted = [...countryBuckets.get(countryKey)].sort((a, b) => a.start - b.start);
+      const lanes = packIntoLanes(sorted, getRange);
+      return { country: countryKey, lanes };
+    });
+    return { geo: geoKey, countries };
+  });
+  const height = groups.reduce((total, group) => {
+    const groupHeight = group.countries.reduce((sum, c) => sum + REGION_HEADER_HEIGHT + c.lanes.length * laneHeight + 4, 0);
+    return total + CONTINENT_HEADER_HEIGHT + groupHeight;
+  }, 0);
+  return { kind: "country", groups, height };
 }
 
-function drawFlatLaneRow(svg, scale, lanes, y, laneHeight, cls, onZoom, domainEnd) {
+// Flat (non-grouped) lane layout, used for the Era row always (plain
+// start-ascending order, no geography clustering intent), and for the
+// Period/Polities & Cultures rows when groupBy is "none" (geography-
+// clustering sort, see geoClusterSortKey below).
+function flatLaneLayout(items, scale, laneHeight, sortFn = (a, b) => a.start - b.start) {
+  const getRange = labelAwareFootprint(scale);
+  const sorted = [...items].sort(sortFn);
+  const lanes = packIntoLanes(sorted, getRange);
+  return { kind: "flat", lanes, height: lanes.length * laneHeight };
+}
+
+// packIntoLanes' greedy placement only checks real start/end overlap, so
+// feeding it items pre-sorted by geography (continent/Asia sub-split, then
+// country, then start) still produces a fully correct, non-overlapping lane
+// assignment -- but same-geography items now land in the same or adjacent
+// lanes, one after another, giving a visually clustered read even with no
+// group headers drawn (Group by "None" still shows no continent/country
+// labels, per the control's own semantics -- see renderHierarchyTimeline).
+function geoClusterSort(a, b) {
+  const geoA = geoSortKey(geoBucketKey(a));
+  const geoB = geoSortKey(geoBucketKey(b));
+  if (geoA !== geoB) return geoA < geoB ? -1 : 1;
+  const countryA = countryLaneLabel(countryLaneKey(a));
+  const countryB = countryLaneLabel(countryLaneKey(b));
+  if (countryA !== countryB) return countryA < countryB ? -1 : 1;
+  return a.start - b.start; // numeric, so BCE (negative) years compare correctly
+}
+
+// Dispatches to the right layout function for the current groupBy mode.
+// `groupBy` is ignored (always flat) when the caller passes "none" or
+// omits it, matching the Era row's own always-flat behavior.
+function groupedLayoutFor(items, scale, laneHeight, groupBy) {
+  if (groupBy === "continent") return continentGroupedLayout(items, scale, laneHeight, groupBy);
+  if (groupBy === "country") return geoCountryGroupedLayout(items, scale, laneHeight);
+  return flatLaneLayout(items, scale, laneHeight, geoClusterSort);
+}
+
+// `getFill`/`getKind`/`getCls` let one draw function serve every row:
+// `getFill(item)` returns an era-linked color (or null for the row's own
+// default CSS color -- e.g. plain polities, which aren't era-colored),
+// `getKind(item)` returns the detail-panel record kind ("era"/"period"/
+// "polity"), and `getCls(item)` returns the per-item CSS class controlling
+// its default fill/opacity -- all three are fixed per row except the merged
+// Polities & Cultures row, where each entry is itself either a plain polity
+// or a civilization/culture entry sourced from a polity or a period (see
+// `item.source`, only set on civilization-lane entries).
+function drawFlatLaneRow(svg, scale, lanes, y, laneHeight, cls, onZoom, domainEnd, opts = {}) {
+  const getFill = opts.getFill || (() => null);
+  const getKind = opts.getKind || (() => "period");
+  const getCls = opts.getCls || (() => cls);
   lanes.forEach((lane, laneIndex) => {
     lane.forEach((item) => {
-      // Eras have no curated/heuristic distinction (_era_entry carries no
-      // `curated` field, unlike civilizations-lane items) -- no class in
-      // that case, same convention as drawContinentGroupedRow.
-      const curatedClass = item.curated === undefined ? "" : (item.curated ? "curated" : "heuristic");
       bandRect(svg, {
         x: scale.x(item.start), y: y + laneIndex * laneHeight,
         width: scale.width(item.start, item.end), height: laneHeight - 2,
-        cls: `hierarchy-band ${cls} ${curatedClass}`.trim(), title: item.canonical_name, label: item.canonical_name,
-        onZoom: { handler: onZoom, kind: item.source === "polity" ? "polity" : "period", id: item.id, start: item.start, end: item.end ?? domainEnd },
+        cls: `hierarchy-band ${getCls(item)}`.trim(), title: item.canonical_name, label: item.canonical_name,
+        fill: getFill(item),
+        onZoom: { handler: onZoom, kind: getKind(item), id: item.id, start: item.start, end: item.end ?? domainEnd },
       });
     });
   });
   return y + lanes.length * laneHeight;
 }
 
-function drawContinentGroupedRow(svg, scale, rows, y, laneHeight, cls, onZoom, width) {
+function drawContinentGroupedRow(svg, scale, rows, y, laneHeight, cls, onZoom, width, domainEnd, opts = {}) {
+  const getFill = opts.getFill || (() => null);
+  const getKind = opts.getKind || (() => "period");
+  const getCls = opts.getCls || (() => cls);
   let rowY = y;
   rows.forEach(({ continent, lanes }, index) => {
     if (index > 0) drawRegionSeparator(svg, width, rowY - 2);
@@ -442,16 +476,12 @@ function drawContinentGroupedRow(svg, scale, rows, y, laneHeight, cls, onZoom, w
     rowY += REGION_HEADER_HEIGHT;
     lanes.forEach((lane, laneIndex) => {
       lane.forEach((item) => {
-        // Eras have no curated/heuristic distinction (_era_entry carries no
-        // `curated` field) -- only periods do. The same check doubles as the
-        // era/period kind distinction for the detail panel.
-        const isEra = item.curated === undefined;
-        const curatedClass = isEra ? "" : (item.curated ? "curated" : "heuristic");
         bandRect(svg, {
           x: scale.x(item.start), y: rowY + laneIndex * laneHeight,
           width: scale.width(item.start, item.end), height: laneHeight - 2,
-          cls: `hierarchy-band ${cls} ${curatedClass}`.trim(), title: item.canonical_name, label: item.canonical_name,
-          onZoom: { handler: onZoom, kind: isEra ? "era" : "period", id: item.id, start: item.start, end: item.end },
+          cls: `hierarchy-band ${getCls(item)}`.trim(), title: item.canonical_name, label: item.canonical_name,
+          fill: getFill(item),
+          onZoom: { handler: onZoom, kind: getKind(item), id: item.id, start: item.start, end: item.end ?? domainEnd },
         });
       });
     });
@@ -460,7 +490,58 @@ function drawContinentGroupedRow(svg, scale, rows, y, laneHeight, cls, onZoom, w
   return rowY;
 }
 
-function renderHierarchyTimeline(tree, container, groupBy = "historical_region", onZoom = () => {}) {
+function drawGeoCountryGroupedRow(svg, scale, groups, y, laneHeight, cls, onZoom, width, domainEnd, opts = {}) {
+  const getFill = opts.getFill || (() => null);
+  const getKind = opts.getKind || (() => "period");
+  const getCls = opts.getCls || (() => cls);
+  let rowY = y;
+  groups.forEach(({ geo, countries }, groupIndex) => {
+    if (groupIndex > 0) drawRegionSeparator(svg, width, rowY - 2);
+    const header = svgEl("text", { x: POLITIES_LABEL_X, y: rowY + CONTINENT_HEADER_HEIGHT - 5, class: "hierarchy-continent-label" });
+    header.textContent = regionLabel(geo);
+    svg.append(header);
+    rowY += CONTINENT_HEADER_HEIGHT;
+    countries.forEach(({ country, lanes }, countryIndex) => {
+      if (countryIndex > 0) drawRegionSeparator(svg, width, rowY - 2);
+      const countryLabelEl = svgEl("text", { x: POLITIES_LABEL_INDENT_X, y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
+      countryLabelEl.textContent = countryLaneLabel(country);
+      svg.append(countryLabelEl);
+      rowY += REGION_HEADER_HEIGHT;
+      lanes.forEach((lane, laneIndex) => {
+        lane.forEach((item) => {
+          bandRect(svg, {
+            x: scale.x(item.start), y: rowY + laneIndex * laneHeight,
+            width: scale.width(item.start, item.end), height: laneHeight - 2,
+            cls: `hierarchy-band ${getCls(item)}`.trim(),
+            title: `${item.canonical_name} (${countryLaneLabel(country)})`,
+            label: item.canonical_name,
+            fill: getFill(item),
+            onZoom: { handler: onZoom, kind: getKind(item), id: item.id, start: item.start, end: item.end ?? domainEnd },
+          });
+        });
+      });
+      rowY += lanes.length * laneHeight + 4;
+    });
+  });
+  return rowY;
+}
+
+// Dispatches to the right draw function for a layout object produced by
+// groupedLayoutFor -- one call site for every grouped row (Period, Polities,
+// Civilizations & Cultures), each passing its own `opts.getFill`/`getKind`.
+function drawGroupedRow(svg, scale, layout, y, laneHeight, cls, onZoom, width, domainEnd, opts) {
+  if (layout.kind === "continent") return drawContinentGroupedRow(svg, scale, layout.rows, y, laneHeight, cls, onZoom, width, domainEnd, opts);
+  if (layout.kind === "country") return drawGeoCountryGroupedRow(svg, scale, layout.groups, y, laneHeight, cls, onZoom, width, domainEnd, opts);
+  return drawFlatLaneRow(svg, scale, layout.lanes, y, laneHeight, cls, onZoom, domainEnd, opts);
+}
+
+function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {}) {
+  // eraColorMap defaults to being built from the current (possibly zoomed)
+  // tree when the caller doesn't pass one -- callers that zoom/filter should
+  // pass a map built once from the full, unzoomed tree instead (see
+  // explore.js), so era colors stay stable rather than shifting as the
+  // visible era subset changes.
+  const { groupBy = "continent", showPolities = true, geoFilter = null, eraColorMap = buildEraColorMap(tree) } = options;
   const width = Math.max(900, Math.min(4800, window.innerWidth - 80));
   const scale = createTimeScale(
     tree.axis.domain_start, tree.axis.domain_end, tree.axis.segment_break,
@@ -476,55 +557,49 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   const eraLaneHeight = 24;
   const periodLaneHeight = 20;
   const civLaneHeight = 20;
+  const polityLaneHeight = POLITY_LANE_HEIGHT;
   const rowGap = 6;
 
-  // Pack eras and periods GLOBALLY across all chapters, not per chapter --
-  // an item's real time span can extend past its own chapter's boundary,
-  // so lane assignment needs cross-chapter awareness to avoid a collision
-  // with a neighboring chapter's own lane-0 content.
+  // Pack eras, periods, civilizations, and polities GLOBALLY across all
+  // chapters, not per chapter -- an item's real time span can extend past
+  // its own chapter's boundary, so lane assignment needs cross-chapter
+  // awareness to avoid a collision with a neighboring chapter's own lane-0
+  // content.
   //
-  // The era row is flat (not continent-grouped): there are only ever a
+  // The era row is always flat (not grouped): there are only ever a
   // handful of eras active at once, so grouping by continent fragmented it
-  // for little benefit. Periods and polities stay continent-grouped --
-  // there are enough of both, at a finer geographic mix, that grouping
-  // keeps chronologically adjacent but geographically unrelated items from
-  // sharing a lane.
+  // for little benefit. Period, Civilizations & Cultures, and Polities share
+  // one grouping mode (groupBy) -- there are enough entries, at a finer
+  // geographic mix, that grouping keeps chronologically adjacent but
+  // geographically unrelated items from sharing a lane.
   const visibleEras = tree.chapters.flatMap((chapter) => chapter.eras.filter((era) => !era.auto_generated));
   const eraLayout = flatLaneLayout(visibleEras, scale, eraLaneHeight);
-  const allPeriods = tree.chapters.flatMap((chapter) => chapter.eras.flatMap((era) => era.periods));
-  const periodLayout = continentGroupedLayout(allPeriods, scale, periodLaneHeight);
 
-  // Civilizations & Cultures: a flat (non-grouped) row, not continent-grouped
-  // like era/period -- per-chapter counts are small enough that grouping
-  // would just fragment it. See flatLaneLayout.
+  const allPeriods = tree.chapters.flatMap((chapter) => chapter.eras.flatMap((era) => era.periods));
+  const periodLayout = groupedLayoutFor(applyGeoFilter(allPeriods, groupBy, geoFilter), scale, periodLaneHeight, groupBy);
+
+  // Civilizations & Cultures: always shown when it has content, independent
+  // of the "Show polities" checkbox -- civilization/culture/people/tribe
+  // entries (entity_type-tagged polities, civilization-backdrop periods) are
+  // a distinct row from plain polities below, per explicit request ("in all
+  // cases I should see the Civilization lane"). Shares groupBy/geoFilter
+  // with the Period/Polities rows (same grouping mode everywhere).
   const civItems = tree.chapters.flatMap((chapter) => chapter.civilizations || []);
-  const civLayout = flatLaneLayout(civItems, scale, civLaneHeight);
+  const civLayout = groupedLayoutFor(applyGeoFilter(civItems, groupBy, geoFilter), scale, civLaneHeight, groupBy);
+
+  const politiesItems = showPolities ? applyGeoFilter(allPolitiesFlat(tree), groupBy, geoFilter) : [];
+  const politiesLayout = groupedLayoutFor(politiesItems, scale, polityLaneHeight, groupBy);
 
   const eraRowHeight = eraLayout.height;
   const periodRowHeight = periodLayout.height;
-  // Zero when there's nothing to show (e.g. zoomed into a range with no
-  // civilization/culture entries) -- the row (and its separator/tier label)
-  // is skipped entirely rather than drawing an empty band, see below.
+  // Zero when there's nothing to show (e.g. the row is hidden via
+  // showPolities, or zoomed into a range with no entries) -- the row (and
+  // its separator/tier label) is skipped entirely rather than drawing an
+  // empty block, see below.
   const civBlockHeight = civLayout.height > 0 ? civLayout.height + rowGap : 0;
+  const politiesRowHeight = showPolities ? politiesLayout.height : 0;
 
-  // Both the height number (needed now, before `height`/`svg` exist) and the
-  // deferred drawing closure (called later, once `svg` exists) are prepared
-  // here so the two grouping modes -- single-level region/continent vs.
-  // two-level country-by-continent -- share one control-flow shape.
-  let politiesRowHeight;
-  let drawPolitiesRow;
-  if (groupBy === "country") {
-    const structure = collectCountryStructure(tree);
-    const laneCounts = countryLaneCounts(tree, structure, scale);
-    politiesRowHeight = measureCountryRowHeight(structure, laneCounts);
-    drawPolitiesRow = (rowY) => renderCountryRow(svg, scale, tree, structure, laneCounts, rowY, onZoom, width);
-  } else {
-    const regionKeys = collectRegionKeys(tree, groupBy);
-    const laneCounts = regionLaneCounts(tree, groupBy, regionKeys, scale);
-    politiesRowHeight = measurePolitiesRowHeight(regionKeys, laneCounts);
-    drawPolitiesRow = (rowY) => renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, rowY, onZoom, width);
-  }
-  const height = geoRowHeight + chapterRowHeight + eraRowHeight + periodRowHeight + civBlockHeight + politiesRowHeight + rowGap * 5;
+  const height = geoRowHeight + chapterRowHeight + eraRowHeight + periodRowHeight + civBlockHeight + politiesRowHeight + rowGap * 4;
 
   const svg = svgEl("svg", { viewBox: `0 0 ${width} ${height}`, class: "hierarchy-chart" });
 
@@ -560,14 +635,20 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   drawTierLabel(svg, "Chapter", prevSepY, sepY);
   prevSepY = sepY;
 
-  drawFlatLaneRow(svg, scale, eraLayout.lanes, y, eraLaneHeight, "hierarchy-band-era", onZoom, tree.axis.domain_end);
+  drawFlatLaneRow(svg, scale, eraLayout.lanes, y, eraLaneHeight, "hierarchy-band-era", onZoom, tree.axis.domain_end, {
+    getFill: (item) => eraColor(eraColorMap, item.id),
+    getKind: () => "era",
+  });
   y += eraRowHeight + rowGap;
   sepY = y - rowGap / 2;
   drawSeparator(svg, width, sepY);
   drawTierLabel(svg, "Era", prevSepY, sepY);
   prevSepY = sepY;
 
-  drawContinentGroupedRow(svg, scale, periodLayout.rows, y, periodLaneHeight, "hierarchy-band-period", onZoom, width);
+  drawGroupedRow(svg, scale, periodLayout, y, periodLaneHeight, "hierarchy-band-period", onZoom, width, tree.axis.domain_end, {
+    getFill: (item) => eraColor(eraColorMap, item.era_id),
+    getKind: () => "period",
+  });
   y += periodRowHeight + rowGap;
   sepY = y - rowGap / 2;
   drawSeparator(svg, width, sepY);
@@ -575,7 +656,10 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   prevSepY = sepY;
 
   if (civLayout.height > 0) {
-    drawFlatLaneRow(svg, scale, civLayout.lanes, y, civLaneHeight, "hierarchy-band-civilization", onZoom, tree.axis.domain_end);
+    drawGroupedRow(svg, scale, civLayout, y, civLaneHeight, "hierarchy-band-civilization", onZoom, width, tree.axis.domain_end, {
+      getFill: (item) => eraColor(eraColorMap, item.linked_era_id),
+      getKind: (item) => (item.source === "polity" ? "polity" : "period"),
+    });
     y += civLayout.height + rowGap;
     sepY = y - rowGap / 2;
     drawSeparator(svg, width, sepY);
@@ -583,8 +667,10 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
     prevSepY = sepY;
   }
 
-  drawPolitiesRow(y);
-  if (politiesRowHeight > 0) {
+  if (showPolities && politiesRowHeight > 0) {
+    drawGroupedRow(svg, scale, politiesLayout, y, polityLaneHeight, "hierarchy-band-polity", onZoom, width, tree.axis.domain_end, {
+      getKind: () => "polity",
+    });
     drawTierLabel(svg, "Polities", prevSepY, height);
   }
 

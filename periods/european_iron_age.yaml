@@ -8,7 +8,7 @@ end_confidence: low
 geography:
   continents: [europe]
 broader_periods:
-- mediterranean_classical_era
+- iron_age_era
 authority: DBpedia/Wikipedia periodization
 external_ids:
   dbpedia: https://dbpedia.org/resource/Iron_Age_Europe

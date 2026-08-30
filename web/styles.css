@@ -253,19 +253,20 @@ kbd { padding: .1rem .3rem; background: white; border: 1px solid var(--rule); fo
 .hierarchy-controls { display: flex; gap: .6rem; align-items: center; padding: .6rem clamp(1rem, 4vw, 3.5rem); font: .82rem system-ui, sans-serif; color: var(--ink-faint); }
 .hierarchy-legend { padding: 0 clamp(1rem, 4vw, 3.5rem) .5rem; color: var(--ink-faint); font: .76rem system-ui, sans-serif; }
 .hierarchy-legend i { display: inline-block; width: 1.2rem; height: .55rem; margin: 0 .25rem 0 .55rem; background: #27251f; border: 1px solid rgb(39 37 31 / 30%); vertical-align: middle; }
-.hierarchy-legend .curated { opacity: .6; }
-.hierarchy-legend .heuristic { opacity: .15; border-style: dashed; }
+.hierarchy-legend .heuristic { border-style: dashed; }
 .hierarchy-chart-container { overflow: auto; padding: 0 clamp(1rem, 4vw, 3.5rem) 2rem; }
 .hierarchy-chart { display: block; min-width: 740px; }
 .hierarchy-band { fill: var(--paper); stroke: var(--rule); cursor: pointer; }
 .hierarchy-band-geo { fill: #eee9de; stroke: none; cursor: default; }
 .hierarchy-band-chapter { fill: #8c422d; fill-opacity: .18; stroke: #8c422d; }
 .hierarchy-band-era { fill: var(--rule); fill-opacity: .6; stroke: #27251f; stroke-opacity: .35; }
-.hierarchy-band-period.curated { fill: #27251f; fill-opacity: .22; }
-.hierarchy-band-period.heuristic, .hierarchy-band-polity.heuristic, .hierarchy-band-civilization.heuristic { fill-opacity: .07; stroke-dasharray: 3 2; }
-.hierarchy-band-polity.curated { fill: var(--ink-faint); fill-opacity: .28; }
-.hierarchy-band-civilization.curated, .hierarchy-band-civilization.heuristic { fill: #3d6b66; }
-.hierarchy-band-civilization.curated { fill-opacity: .3; }
+.hierarchy-band-period { fill: #27251f; fill-opacity: .2; }
+/* Within Polities & Cultures: solid = plain polity, dashed = civilization/
+   culture/people/tribe entry -- the dash/solid channel used to mean
+   curated-vs-heuristic placement (retired 2026-08-31, see STATUS.md); reused
+   here for a different, more visible distinction instead. */
+.hierarchy-band-polity { fill: var(--ink-faint); fill-opacity: .28; }
+.hierarchy-band-civilization { fill: #3d6b66; fill-opacity: .3; stroke-dasharray: 3 2; }
 .hierarchy-region-label { font: .72rem system-ui, sans-serif; fill: var(--ink-faint); }
 .hierarchy-continent-label { font: 700 .74rem system-ui, sans-serif; fill: #27251f; }
 .hierarchy-band-label { font: .68rem system-ui, sans-serif; fill: #27251f; pointer-events: none; }

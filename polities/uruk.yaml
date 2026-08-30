@@ -21,12 +21,20 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Automatically generated from Wikidata; requires review.
+notes: Automatically generated from Wikidata; requires review. visibility_override
+  added 2026-08-31 -- entity_type is plain polity (not culture/civilization), so
+  it no longer routes through the Civilizations & Cultures lane the way the
+  deleted uruk_period.yaml ("Uruk culture") used to; visibility_tier detailed
+  alone would otherwise exclude it from /explore entirely, same gap the original
+  Sumer visibility fix addressed. See STATUS.md.
 sources:
 - seshat
 - wikidata
 prominence_score: 43.13
 visibility_tier: detailed
+visibility_override: global
+manual_overrides:
+- visibility_override
 eligibility: review
 geography:
   continents:

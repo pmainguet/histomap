@@ -250,9 +250,7 @@
       },
       "confidence": "medium"
     },
-    "broader_periods": [
-      "egyptian_early_states_era"
-    ],
+    "broader_periods": [],
     "successors": [],
     "authority": "Histomap editorial: civilization-as-backdrop",
     "external_ids": {
@@ -300,7 +298,7 @@
     "id": "andean_early_civilizations_era",
     "canonical_name": "Early Andean Civilizations",
     "kind": "historical",
-    "tier": "regional_era",
+    "tier": "period",
     "start": -1200,
     "end": 600,
     "start_confidence": "low",
@@ -319,12 +317,12 @@
       "confidence": null
     },
     "broader_periods": [
-      "macro_classical_imperial_worlds"
+      "classical_antiquity_era"
     ],
     "successors": [],
     "authority": "Histomap editorial: regional-era starter set",
     "external_ids": {},
-    "notes": "Chavin culture through the Moche and Nazca. Ends 600 CE, past this chapter's nominal 500 CE boundary -- see the note on mesoamerican_formative_classic_era.",
+    "notes": "Chavin culture through the Moche and Nazca. Ends 600 CE, past this chapter's nominal 500 CE boundary -- see the note on mesoamerican_formative_classic_era. Demoted from tier=regional_era to tier=period (default) 2026-08-31, reparented under the new overarching classical_antiquity_era -- see ONTOLOGY.md and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Early_Andean_Civilizations"
     ]
@@ -664,44 +662,6 @@
     ]
   },
   {
-    "id": "babylonia_period",
-    "canonical_name": "Babylonia",
-    "kind": "historical",
-    "tier": "period",
-    "start": -1900,
-    "end": -538,
-    "start_confidence": "low",
-    "end_confidence": "low",
-    "geography": {
-      "continents": [
-        "asia"
-      ],
-      "primary_continent": "asia",
-      "historical_regions": [
-        "west_asia"
-      ],
-      "primary_historical_region": "west_asia",
-      "present_countries": [
-        "IQ"
-      ],
-      "centroid": {
-        "lat": 32.5,
-        "lon": 44.5
-      },
-      "confidence": "high"
-    },
-    "broader_periods": [],
-    "successors": [],
-    "authority": "Histomap editorial: civilization-as-backdrop",
-    "external_ids": {
-      "wikidata": "Q47690"
-    },
-    "notes": "Babylonia spans several distinct political phases; rendered as period context so those phases (not this civilization-level record) carry the chart's political weight.",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q47690"
-    ]
-  },
-  {
     "id": "batavian_commonwealth_period",
     "canonical_name": "Batavian Commonwealth",
     "kind": "historical",
@@ -805,37 +765,6 @@
     ]
   },
   {
-    "id": "celts_period",
-    "canonical_name": "Celts",
-    "kind": "protohistorical",
-    "tier": "period",
-    "start": -800,
-    "end": 100,
-    "start_confidence": "low",
-    "end_confidence": "low",
-    "geography": {
-      "continents": [
-        "europe"
-      ],
-      "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
-      "centroid": null,
-      "confidence": null
-    },
-    "broader_periods": [],
-    "successors": [],
-    "authority": "Wikipedia periodization: Celtic Iron Age through Roman absorption",
-    "external_ids": {
-      "wikidata": "Q35966"
-    },
-    "notes": "Span is contested and varies widely by source; -800 marks the conventional Hallstatt-to-La-Tene Celtic floruit, 100 CE the point by which most Celtic territories had been absorbed into the Roman Empire. Never a single political actor -- rendered as period context only, no matching polities/ record.",
-    "source_urls": [
-      "https://en.wikipedia.org/wiki/Celts"
-    ]
-  },
-  {
     "id": "chinese_empire_period",
     "canonical_name": "Chinese Empire",
     "kind": "historical",
@@ -900,6 +829,40 @@
     "notes": "Editorially identified as a phase or aspect of Chola dynasty.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q6806806"
+    ]
+  },
+  {
+    "id": "classical_antiquity_era",
+    "canonical_name": "Classical Antiquity",
+    "kind": "historical",
+    "tier": "regional_era",
+    "start": -1200,
+    "end": 900,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia",
+        "europe",
+        "north_america",
+        "south_america"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [
+      "macro_classical_imperial_worlds"
+    ],
+    "successors": [],
+    "authority": "Histomap editorial: overarching regional-era consolidation",
+    "external_ids": {},
+    "notes": "Overarching parent for the regional Classical Antiquity eras (mediterranean_classical_era, east_asian_classical_era, south_asian_classical_era, mesoamerican_formative_classic_era, andean_early_civilizations_era), which happened at meaningfully different times in different places -- same \"overarching regional era\" treatment as bronze_age_era/neolithic_era/ paleolithic_era/iron_age_era. Spans from the earliest regional start (-1200, shared by Mediterranean/Mesoamerican/Andean) to the latest regional end (900, Mesoamerican). Deliberately excludes Sub-Saharan Africa, whose equivalent-period record is iron_age_era, not a \"classical antiquity\" -- see ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes\" and STATUS.md.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Classical_antiquity"
     ]
   },
   {
@@ -1072,6 +1035,40 @@
     ]
   },
   {
+    "id": "copper_age_era",
+    "canonical_name": "Copper Age",
+    "kind": "historical",
+    "tier": "regional_era",
+    "start": -4500,
+    "end": -3200,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia",
+        "europe"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [
+      "macro_agricultural_transitions"
+    ],
+    "successors": [
+      "bronze_age_era"
+    ],
+    "authority": "Histomap editorial: overarching regional-era consolidation",
+    "external_ids": {},
+    "notes": "The Chalcolithic/Copper Age transitional period between the Neolithic and the Bronze Age (Bronze Age itself starts -3200, where this ends -- see bronze_age_era). Added 2026-08-31 as a new overarching regional_era, same treatment as bronze_age_era/neolithic_era/paleolithic_era, but currently has no regional period records nested under it via broader_periods -- unlike those three, no Copper Age-specific period (e.g. a Fertile Crescent or European Chalcolithic record) exists yet in this dataset to link. Flagged in ROADMAP.md as follow-up work rather than fabricated here without a real source record.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Chalcolithic"
+    ]
+  },
+  {
     "id": "czechoslovak_republic_period",
     "canonical_name": "Czechoslovak Republic",
     "kind": "historical",
@@ -1203,7 +1200,7 @@
     "id": "east_asian_classical_era",
     "canonical_name": "East Asian Classical Antiquity",
     "kind": "historical",
-    "tier": "regional_era",
+    "tier": "period",
     "start": -1046,
     "end": 500,
     "start_confidence": "low",
@@ -1222,12 +1219,12 @@
       "confidence": null
     },
     "broader_periods": [
-      "macro_classical_imperial_worlds"
+      "classical_antiquity_era"
     ],
     "successors": [],
     "authority": "Histomap editorial: regional-era starter set",
     "external_ids": {},
-    "notes": "Zhou dynasty through the Northern and Southern dynasties.",
+    "notes": "Zhou dynasty through the Northern and Southern dynasties. Demoted from tier=regional_era to tier=period (default) 2026-08-31, reparented under the new overarching classical_antiquity_era -- see ONTOLOGY.md and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/East_Asian_Classical_Antiquity"
     ]
@@ -1331,39 +1328,6 @@
     "notes": "Editorially identified as a phase or aspect of Punjab.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q2354639"
-    ]
-  },
-  {
-    "id": "egyptian_early_states_era",
-    "canonical_name": "Egyptian Early States",
-    "kind": "historical",
-    "tier": "regional_era",
-    "start": -3100,
-    "end": -1070,
-    "start_confidence": "low",
-    "end_confidence": "low",
-    "geography": {
-      "continents": [
-        "africa"
-      ],
-      "primary_continent": "africa",
-      "historical_regions": [
-        "north_africa"
-      ],
-      "primary_historical_region": "north_africa",
-      "present_countries": [],
-      "centroid": null,
-      "confidence": null
-    },
-    "broader_periods": [
-      "macro_early_cities_states"
-    ],
-    "successors": [],
-    "authority": "Histomap editorial: regional-era starter set",
-    "external_ids": {},
-    "notes": "Early Dynastic through the New Kingdom. Ends -1070, past this chapter's nominal -1200 boundary -- editorial placement, not date-containment; see ONTOLOGY.md.",
-    "source_urls": [
-      "https://en.wikipedia.org/wiki/Egyptian_Early_States"
     ]
   },
   {
@@ -1630,7 +1594,7 @@
       "confidence": null
     },
     "broader_periods": [
-      "mediterranean_classical_era"
+      "iron_age_era"
     ],
     "successors": [],
     "authority": "DBpedia/Wikipedia periodization",
@@ -1894,6 +1858,38 @@
     "notes": "Indus script is undeciphered, hence protohistorical. No matching polities/ record -- distributed across major urban centers (Harappa, Mohenjo-daro...), not a single political actor.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q42534"
+    ]
+  },
+  {
+    "id": "iron_age_era",
+    "canonical_name": "Iron Age",
+    "kind": "historical",
+    "tier": "regional_era",
+    "start": -1200,
+    "end": 800,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "europe"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [
+      "macro_classical_imperial_worlds"
+    ],
+    "successors": [],
+    "authority": "Histomap editorial: overarching regional-era consolidation",
+    "external_ids": {},
+    "notes": "Overarching parent for the regional Iron Age eras (european_iron_age, sub_saharan_african_iron_age_era), which happened at meaningfully different times in different places -- same \"overarching regional era\" treatment as bronze_age_era/neolithic_era/paleolithic_era. Added 2026-08-31 -- previously european_iron_age had no Iron Age parent at all (it heuristically nested under mediterranean_classical_era instead) and sub_saharan_african_iron_age_era was its own standalone regional_era with no relation to the European one. See ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes\" and STATUS.md.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Iron_Age"
     ]
   },
   {
@@ -2446,7 +2442,7 @@
     "id": "mediterranean_classical_era",
     "canonical_name": "Mediterranean Classical Antiquity",
     "kind": "historical",
-    "tier": "regional_era",
+    "tier": "period",
     "start": -1200,
     "end": 500,
     "start_confidence": "low",
@@ -2466,12 +2462,12 @@
       "confidence": null
     },
     "broader_periods": [
-      "macro_classical_imperial_worlds"
+      "classical_antiquity_era"
     ],
     "successors": [],
     "authority": "Histomap editorial: regional-era starter set",
     "external_ids": {},
-    "notes": "Greek Dark Age through the fall of the Western Roman Empire.",
+    "notes": "Greek Dark Age through the fall of the Western Roman Empire. Demoted from tier=regional_era to tier=period (default) 2026-08-31, reparented under the new overarching classical_antiquity_era -- see ONTOLOGY.md and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Mediterranean_Classical_Antiquity"
     ]
@@ -2554,7 +2550,7 @@
     "id": "mesoamerican_formative_classic_era",
     "canonical_name": "Mesoamerican Formative and Classic Periods",
     "kind": "historical",
-    "tier": "regional_era",
+    "tier": "period",
     "start": -1200,
     "end": 900,
     "start_confidence": "low",
@@ -2573,12 +2569,12 @@
       "confidence": null
     },
     "broader_periods": [
-      "macro_classical_imperial_worlds"
+      "classical_antiquity_era"
     ],
     "successors": [],
     "authority": "Histomap editorial: regional-era starter set",
     "external_ids": {},
-    "notes": "Olmec civilization through the Classic Maya collapse. Ends 900 CE, 400 years past this chapter's nominal 500 CE boundary -- editorial placement, not date-containment; see ONTOLOGY.md.",
+    "notes": "Olmec civilization through the Classic Maya collapse. Ends 900 CE, 400 years past this chapter's nominal 500 CE boundary -- editorial placement, not date-containment; see ONTOLOGY.md. Demoted from tier=regional_era to tier=period (default) 2026-08-31, reparented under the new overarching classical_antiquity_era.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Mesoamerican_Formative_and_Classic_Periods"
     ]
@@ -2661,6 +2657,42 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Mesoamerican_chronology"
+    ]
+  },
+  {
+    "id": "mesopotamia_period",
+    "canonical_name": "Mesopotamia",
+    "kind": "historical",
+    "tier": "period",
+    "start": -4000,
+    "end": -538,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IQ"
+      ],
+      "centroid": {
+        "lat": 33.0,
+        "lon": 44.0
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: civilization-as-backdrop",
+    "external_ids": {},
+    "notes": "Mesopotamia spans several distinct political phases (Uruk, Sumerian city-states, the Akkadian Empire, Babylonia, ...); rendered as period context in the Civilizations & Cultures lane so those phases (now plain polities, not this civilization-level record) carry the chart's political weight. Replaces the earlier arrangement where Sumer/Akkadian Empire/Uruk/Babylonia individually carried civilization-lane weight -- see STATUS.md. mesopotamian_early_states_era (the regional_era) is unchanged and still anchors Early Dynastic Mesopotamia's own placement in the ordinary Period row; this record is the Civilizations & Cultures lane's counterpart to it, the same relationship Ancient Egypt/Babylonia already had to their own eras before Egyptian Early States was retired.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Mesopotamia"
     ]
   },
   {
@@ -3553,7 +3585,7 @@
     "id": "south_asian_classical_era",
     "canonical_name": "South Asian Classical Antiquity",
     "kind": "historical",
-    "tier": "regional_era",
+    "tier": "period",
     "start": -600,
     "end": 500,
     "start_confidence": "low",
@@ -3572,12 +3604,12 @@
       "confidence": null
     },
     "broader_periods": [
-      "macro_classical_imperial_worlds"
+      "classical_antiquity_era"
     ],
     "successors": [],
     "authority": "Histomap editorial: regional-era starter set",
     "external_ids": {},
-    "notes": "The Mahajanapadas through the Gupta Empire.",
+    "notes": "The Mahajanapadas through the Gupta Empire. Demoted from tier=regional_era to tier=period (default) 2026-08-31, reparented under the new overarching classical_antiquity_era -- see ONTOLOGY.md and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/South_Asian_Classical_Antiquity"
     ]
@@ -3737,7 +3769,7 @@
     "id": "sub_saharan_african_iron_age_era",
     "canonical_name": "Sub-Saharan African Iron Age",
     "kind": "historical",
-    "tier": "regional_era",
+    "tier": "period",
     "start": -600,
     "end": 500,
     "start_confidence": "low",
@@ -3759,12 +3791,12 @@
       "confidence": null
     },
     "broader_periods": [
-      "macro_classical_imperial_worlds"
+      "iron_age_era"
     ],
     "successors": [],
     "authority": "Histomap editorial: regional-era starter set",
     "external_ids": {},
-    "notes": "Nok culture and the early Bantu expansion ironworking tradition.",
+    "notes": "Nok culture and the early Bantu expansion ironworking tradition. Demoted from tier=regional_era to tier=period (default) 2026-08-31, reparented under the new overarching iron_age_era -- same \"overarching regional era\" treatment east_asian_bronze_age_era/european_bronze_age_era already got under bronze_age_era. See ONTOLOGY.md and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Sub-Saharan_African_Iron_Age"
     ]
@@ -4092,45 +4124,6 @@
     "notes": "Editorially identified as a phase or aspect of Venezuela.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q5848651"
-    ]
-  },
-  {
-    "id": "uruk_period",
-    "canonical_name": "Uruk culture",
-    "kind": "protohistorical",
-    "tier": "period",
-    "start": -4000,
-    "end": -3100,
-    "start_confidence": "medium",
-    "end_confidence": "medium",
-    "geography": {
-      "continents": [
-        "asia"
-      ],
-      "primary_continent": "asia",
-      "historical_regions": [
-        "west_asia"
-      ],
-      "primary_historical_region": "west_asia",
-      "present_countries": [
-        "IQ"
-      ],
-      "centroid": null,
-      "confidence": null
-    },
-    "broader_periods": [
-      "mesopotamian_early_states_era"
-    ],
-    "successors": [
-      "early_dynastic_mesopotamia"
-    ],
-    "authority": "DBpedia/Wikipedia periodization",
-    "external_ids": {
-      "dbpedia": "https://dbpedia.org/resource/Uruk_period"
-    },
-    "notes": "",
-    "source_urls": [
-      "https://dbpedia.org/resource/Uruk_period"
     ]
   },
   {

@@ -1,0 +1,45 @@
+id: celts
+canonical_name: Celts
+names:
+  fr: Celtes
+external_ids:
+  wikidata: Q35966
+parent: null
+successors: []
+start: -800
+end: 100
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  -800: 3
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Hand-authored 2026-08-31, replacing the deleted celts_period.yaml. Span is
+  contested and varies widely by source -- -800 marks the conventional
+  Hallstatt-to-La-Tene Celtic floruit, 100 CE the point by which most Celtic
+  territories had been absorbed into the Roman Empire. entity_type is people,
+  not polity -- never a single political actor, an ethnolinguistic group spanning
+  many distinct tribes/polities rather than one government, the same reasoning
+  the deleted period record's own notes already gave for why it carried no
+  matching polities/ record before. See STATUS.md.
+sources:
+- editorial
+prominence_score: 0
+visibility_tier: detailed
+visibility_override: global
+manual_overrides:
+- visibility_override
+eligibility: accepted
+geography:
+  continents:
+  - europe
+  present_countries: []
+  confidence: low
+entity_type: people
+entity_type_confidence: medium
+relationships: []
+prominence_components: {}
