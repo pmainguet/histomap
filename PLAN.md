@@ -48,6 +48,67 @@ The phases above are implemented via focused implementation plans, each with its
 | [`docs/plans/2026-08-29-explore-timeline-ui.md`](docs/plans/2026-08-29-explore-timeline-ui.md) | **Replaced by 2026-08-30** | Initial outline for `/explore` timeline UI (replaced by the plan below once the data layer was ready) |
 | [`docs/plans/2026-08-30-explore-hierarchy-timeline.md`](docs/plans/2026-08-30-explore-hierarchy-timeline.md) | **Complete** | Phase 9 → 6 — Full period hierarchy rendering on `/explore`: macro chapter, regional era, named period, and region-toggleable polities band; heuristic placement for sparse curation |
 
+### `/explore` hierarchy timeline — status, 30 August 2026
+
+The plan above shipped the initial version; everything below is post-launch iteration driven
+by live testing on the running page, executed as a sequence of small branches (no separate
+plan doc per change — each was reviewed and merged individually; see `git log` for the full
+commit trail).
+
+**Implemented:**
+- Click-to-zoom on any band (chapter/era/period/polity), narrowing the visible date range in
+  place; a "Full timeline" control resets. Replaced the original chapter-click behavior of
+  navigating to `/` — the `/?era=X` deep link itself still works for anyone who lands on it
+  directly.
+- The curated/heuristic distinction (dashed vs. solid bands) is live and functional — an
+  earlier bug that made every entry heuristic regardless of real `period_links.yaml` curation
+  was found and fixed during the initial plan's final review.
+- On-band visible labels (not just hover tooltips) for every tier, with label-aware lane
+  packing so two adjacent items whose *labels* (not just their date bands) would visually
+  overlap get pushed to separate lanes — applied globally across all chapters, not per-chapter,
+  so an item whose real span crosses a chapter boundary no longer collides with a neighboring
+  chapter's own content.
+- Visually distinct colors per tier (chapter/era/period/polity), a persistent left-margin
+  gutter with a rotated tier-name label per row-block ("Epoch"/"Chapter"/"Era"/"Period"/
+  "Polities"), and dashed separator lines between row-blocks.
+- Auto-generated continent-split placeholder eras (from `generate_modern_regional_eras.py`)
+  are hidden from the era row entirely — they carried no real historical distinction beyond
+  restating the parent chapter, and duplicated it visually.
+- The polities row supports four groupings: historical region, present-day continent,
+  present-day country (nested under continent, mirroring the main `/` timeline's own
+  country-grouping logic), and hidden.
+- The era and period rows are now also geography-organized: continent-grouped sub-rows
+  (previously one flat, ungrouped row each), with Asia further split into East/West/South/
+  Southeast/Central Asia sub-buckets (the only continent given finer treatment — every other
+  continent stays at continent-level grouping, by explicit choice).
+
+**Queued, not yet started:**
+- Retire the `european_bronze_age` period (raw DBpedia import, duplicates the hand-curated
+  `european_bronze_age_era`) and close the matching regional-era coverage gap for
+  `european_neolithic`/`european_iron_age` (raw imports with no hand-curated era counterpart,
+  unlike their Nile Valley/Fertile Crescent/East Asian peers).
+- Disambiguate the 8 same-named period records (4× "Kingdom of Hungary", 2× "Kingdom of
+  Poland", 2× "Kingdom of Spain" — distinct historical regimes, currently indistinguishable in
+  any list).
+- Correct the `continents` field on 3 mistagged periods (`lebanese_republic_under_french_mandate_period`,
+  `state_of_greater_lebanon_period`, `state_of_vietnam_period` — all clearly Asian, tagged with
+  5-6 continents). Root cause not yet traced (these carry `authority: "Histomap editorial
+  consolidation"`, not the raw-import path behind the polity bug below).
+- A detail side-panel on click, matching `/`'s existing panel — informational fields only
+  (dates, authority, geography, links), not the editing actions (`/` also lets you edit period
+  type, convert to entity, edit geography — those stay on `/` as curation tools; `/explore` is
+  a browse view).
+
+**Known, accepted limitations:**
+- `MAX_POLITIES_PER_REGION = 15` caps each region's shown bands per chapter with no visual
+  "+N more" affordance — the true count is only visible via tooltip.
+- The polities row still packs lanes per-chapter within a shared region row (not globally, the
+  way era/period/polities-by-region rows were fixed to) — flagged as a residual gap by one
+  review, not user-reported as a live problem.
+- Most of `explore_tree.json`'s era/period/polity placements are heuristic (geography+date
+  overlap), not curated — `period_links.yaml`/`broader_periods` coverage is still thin. This is
+  by design (the alternative was an empty page) but means placement quality varies.
+
 ### Current measurable state
 
 - **4,671** canonical polities (down from 4,794 as the consolidation pass folds duplicate/phase
@@ -553,22 +614,25 @@ Total ongoing manual time after Phase 5: a few hours per year.
 - **Seshat is sparse.** It covers ~35 Natural Geographic Areas, not the whole world. Regions outside Seshat coverage rely on Wikidata only and stay at `confidence: low`.
 - **Pre-3000 BCE is mostly archaeological cultures, not polities.** Represent them as broad bands ("Bronze Age Mesopotamia"), not as crisp entities.
 - **Source disagreements are normal.** Keep them in the `notes` field rather than pretending they don't exist. The `*_confidence` fields are the right place to surface this in the viz.
-- **`geography.continents` has a real bug affecting ~50+ polities: `antarctica` is
-  incorrectly present alongside their genuine continent(s).** Discovered 2026-08-30 as a
-  side effect of the period-ontology plan's Task 4 (a continent x macro-chapter regional-era
-  generator found real polities in every one of 7 continents x 4 modern chapters,
-  including four spurious `antarctica_*_era.yaml` nodes). Affected records include major,
-  clearly non-Antarctic entities — France, Norway, British Raj, Duchy of Normandy, Cape
-  Colony, Caliphate of Córdoba — each carrying a `continents` list that always includes
-  the same odd cluster (typically `africa`, `antarctica`, `asia`, `europe`, `oceania`
-  together), suggesting a systematic bug in one enrichment batch rather than scattered
-  bad data. Two genuine Antarctic micronations (`westarctica`, `grand_duchy_of_flandrensis`)
-  are correctly tagged and not part of the bug. Not fixed as part of that plan — root
-  cause is in `pipeline/enrich_geography.py`/`pipeline/backfill_missing_geography.py`,
-  a separate pipeline this plan doesn't touch. Whoever picks this up next: start from
-  the polity list in that plan's Task 4 report, find what those records have in common
-  in the enrichment source data, and re-run affected records rather than hand-editing —
-  same as any other enrichment queue in this project.
+- **`geography.continents` multi-continent bug — root-caused 2026-08-30, fix + repair in
+  progress.** First noticed as "`antarctica` incorrectly present alongside genuine
+  continent(s)" during the period-ontology plan's Task 4, but that was one symptom of a wider
+  bug: 97 polities (`alawite_territory`, `basutoland`, `british_raj`, `caliphate_of_cordoba`,
+  and others — France, Norway, Duchy of Normandy, Cape Colony from the original sighting are
+  in this same set) carry 4-6 continents each, always `present_countries: []`. Root cause,
+  confirmed by tracing `alawite_territory`'s Wikidata data: `pipeline/enrich_geography.py`
+  resolves each polity's Wikidata P17 ("country") claim to derive geography, but unions in
+  the target's continent claims *unconditionally* — even when that target has no valid ISO2
+  country code and therefore isn't a real country. Alawite Territory's P17 claim resolves to
+  Q179023, "French colonial empire," which correctly has no ISO2 code but (correctly, on its
+  own terms) has Wikidata continent claims for everywhere France ever held colonial territory
+  — all 6 non-Antarctic continents get unioned in. Fix: gate the continent union behind the
+  same ISO2-validity check that already gates the country-code union. Two genuine Antarctic
+  micronations (`westarctica`, `grand_duchy_of_flandrensis`) are unrelated and correctly
+  tagged. Separately, 3 `periods/*.yaml` records (Lebanon x2, Vietnam) show the same
+  multi-continent symptom but carry `authority: "Histomap editorial consolidation"`, not this
+  bug's raw-import path — `enrich_geography.py` only touches `polities/*.yaml`, so their root
+  cause is untraced and still open; see the `/explore` status section above.
 
 ---
 
