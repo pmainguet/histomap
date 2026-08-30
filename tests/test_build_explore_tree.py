@@ -42,12 +42,12 @@ def polity(id_: str, start: int, end: int | None, continent: str, region: str | 
 class BestChapterForPolityTests(unittest.TestCase):
     def test_picks_chapter_containing_polity(self) -> None:
         chapters = [chapter("early", -3500, -1200), chapter("classical", -1200, 500)]
-        best = best_chapter_for_polity(polity("p1", -2000, -1900, "africa"), chapters)
+        best = best_chapter_for_polity(polity("p1", -2000, -1900, "africa"), chapters, 2100)
         self.assertEqual(best["id"], "early")
 
     def test_returns_none_when_no_overlap(self) -> None:
         chapters = [chapter("early", -3500, -1200)]
-        self.assertIsNone(best_chapter_for_polity(polity("p1", 1000, 1100, "africa"), chapters))
+        self.assertIsNone(best_chapter_for_polity(polity("p1", 1000, 1100, "africa"), chapters, 2100))
 
 
 class BuildExploreTreeTests(unittest.TestCase):
@@ -111,6 +111,24 @@ class BuildExploreTreeTests(unittest.TestCase):
     def test_axis_segment_break_is_earliest_chapter_end(self) -> None:
         tree = build_explore_tree(self.polities, self.periods, self.period_links)
         self.assertEqual(tree["axis"]["segment_break"], -1200)
+
+    def test_heuristic_period_placement_still_yields_curated_polity(self) -> None:
+        """Reproduces the Fix 1 bug: a period placed heuristically (no
+        broader_periods, via rank_candidates) under an era must still yield a
+        curated=true polity entry when period_links.yaml links an entity into
+        that period -- the curated fact lives in the polity-to-period link,
+        not in the period's own era placement."""
+        periods = [
+            chapter("macro_early", -3500, -1200),
+            era("egypt_era", -3100, -1070, "macro_early", ["africa"], ["north_africa"]),
+            named_period("old_kingdom", -2686, -2181, continents=["africa"]),  # no broader_periods -- heuristic placement
+        ]
+        period_links = [{"period_id": "old_kingdom", "entity_id": "old_kingdom_egypt", "relation": "part_of_periodization"}]
+        polities = [polity("old_kingdom_egypt", -2686, -2181, "africa", "north_africa")]
+        tree = build_explore_tree(polities, periods, period_links)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        entry = next(e for e in region_bucket if e["id"] == "old_kingdom_egypt")
+        self.assertTrue(entry["curated"])
 
 
 if __name__ == "__main__":

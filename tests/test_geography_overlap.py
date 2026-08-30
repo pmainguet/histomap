@@ -10,6 +10,12 @@ class OverlapYearsTests(unittest.TestCase):
     def test_no_overlap_returns_zero(self) -> None:
         self.assertEqual(overlap_years((0, 100), (200, 300)), 0)
 
+    def test_partial_overlap(self) -> None:
+        self.assertEqual(overlap_years((900, 1100), (500, 1000)), 100)
+
+    def test_touching_ranges_return_zero(self) -> None:
+        self.assertEqual(overlap_years((0, 100), (100, 200)), 0)
+
 
 class GeographyMatchesTests(unittest.TestCase):
     def test_historical_region_overlap_wins_over_shared_continent(self) -> None:
