@@ -1,0 +1,69 @@
+id: hispanic_monarchy
+canonical_name: Hispanic Monarchy
+names:
+  fr: monarchie catholique espagnole
+  aliases_en: Spain | Crown of Spain | Hispanic Crown | Kingdom of Spains | Kingdom
+    of the Spains | Spains
+external_ids:
+  wikidata: Q766543
+parent: null
+successors:
+- kingdom_of_spain_q3399982
+start: 1479
+end: 1700
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1500: 6.87
+  1600: 7.22
+  1700: 6.14
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- hyde
+- wikidata
+prominence_score: 35.12
+visibility_tier: detailed
+eligibility: accepted
+geography:
+  continents:
+  - africa
+  - europe
+  present_countries:
+  - ES
+  centroid:
+    lat: 40.2
+    lon: -3.5
+  confidence: medium
+  primary_continent: europe
+  historical_regions:
+  - southern_europe
+  primary_historical_region: southern_europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: kingdom_of_spain_q3399982
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q766543
+prominence_components:
+  wikidata_reach: 16.71
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 5.55
+  longevity: 5.87
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 35.12
+consolidation_status: independent

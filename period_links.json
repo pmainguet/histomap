@@ -165,17 +165,6 @@
     "notes": "Created by an editorial entity-consolidation decision."
   },
   {
-    "period_id": "kingdom_of_yugoslavia_period",
-    "entity_id": "yugoslavia",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q191077"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
     "period_id": "ba_athist_iraq_period",
     "entity_id": "iraq",
     "relation": "part_of_periodization",
@@ -183,17 +172,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q3108185"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
-    "period_id": "principality_of_lippe_period",
-    "entity_id": "lippe",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q14551680"
     ],
     "notes": "Created by an editorial entity-consolidation decision."
   },
@@ -218,28 +196,6 @@
       "https://www.wikidata.org/wiki/Q901974"
     ],
     "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
-    "period_id": "kingdom_of_sicily_q3932079_period",
-    "entity_id": "kingdom_of_sicily_q188586",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q3932079"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "kingdom_of_cambodia_period",
-    "entity_id": "cambodia",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q2638486"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
   },
   {
     "period_id": "commonwealth_realm_of_the_gambia_period",
@@ -308,28 +264,6 @@
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
   {
-    "period_id": "kingdom_of_poland_q1649871_period",
-    "entity_id": "kingdom_of_poland_q8890160",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q1649871"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "kingdom_of_poland_q577867_period",
-    "entity_id": "kingdom_of_poland_q8890160",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q577867"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "commonwealth_realm_of_mauritius_period",
     "entity_id": "mauritius",
     "relation": "phase_of",
@@ -337,17 +271,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q14759030"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "kingdom_of_poland_q3446214_period",
-    "entity_id": "kingdom_of_poland_q8890160",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q3446214"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -370,17 +293,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q104178581"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "kingdom_of_afghanistan_period",
-    "entity_id": "afghanistan",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q1138904"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -429,61 +341,6 @@
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
   {
-    "period_id": "kingdom_of_burgundy_q530670_period",
-    "entity_id": "county_of_burgundy",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q530670"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "kingdom_of_navarre_beyond_the_pyrenees_period",
-    "entity_id": "kingdom_of_navarre_q200262",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q63021609"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "kingdom_of_norway_q2196956_period",
-    "entity_id": "norway",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q2196956"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "kingdom_of_italy_q172579_period",
-    "entity_id": "italy",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q172579"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "kingdom_of_wurttemberg_period",
-    "entity_id": "wurttemberg",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q159631"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "russian_empire_period",
     "entity_id": "russia",
     "relation": "phase_of",
@@ -506,17 +363,6 @@
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
   {
-    "period_id": "kingdom_of_hungary_q171150_period",
-    "entity_id": "hungary",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q171150"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "first_mexican_republic_period",
     "entity_id": "mexico",
     "relation": "phase_of",
@@ -535,17 +381,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q2300296"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "crown_of_the_kingdom_of_poland_period",
-    "entity_id": "kingdom_of_poland_q8890160",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q171348"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -579,17 +414,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q3979194"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "duchy_of_poland_q616915_period",
-    "entity_id": "kingdom_of_poland_q8890160",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q616915"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -682,17 +506,6 @@
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
   {
-    "period_id": "hispanic_monarchy_period",
-    "entity_id": "spain",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q766543"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "western_zhou_q1069609_period",
     "entity_id": "zhou_dynasty",
     "relation": "phase_of",
@@ -722,28 +535,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q265824"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "crown_of_castile_period",
-    "entity_id": "kingdom_of_castile",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q217196"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "kingdom_of_spain_q3399982_period",
-    "entity_id": "spain",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q3399982"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -799,61 +590,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q178038"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "house_of_wessex_period",
-    "entity_id": "kingdom_of_england",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "medium",
-    "source_urls": [
-      "https://en.wikipedia.org/wiki/House_of_Wessex"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "norman_dynasty_period",
-    "entity_id": "kingdom_of_england",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://en.wikipedia.org/wiki/Norman_dynasty"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "house_of_plantagenet_period",
-    "entity_id": "kingdom_of_england",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://en.wikipedia.org/wiki/House_of_Plantagenet"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "house_of_tudor_period",
-    "entity_id": "kingdom_of_england",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q101978"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "capetian_dynasty_period",
-    "entity_id": "kingdom_of_france",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://en.wikipedia.org/wiki/Capetian_dynasty"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   }

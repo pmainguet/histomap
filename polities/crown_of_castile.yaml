@@ -1,0 +1,74 @@
+id: crown_of_castile
+canonical_name: Crown of Castile
+names:
+  fr: couronne de Castille
+  aliases_en: Castile
+external_ids:
+  wikidata: Q217196
+parent: hispanic_monarchy
+successors:
+- kingdom_of_spain_q3399982
+start: 1230
+end: 1715
+start_confidence: low
+end_confidence: low
+weight_by_era:
+  1300: 7.3
+  1400: 6.7
+  1500: 6.86
+  1600: 7.21
+  1700: 6.25
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Automatically generated from Wikidata; requires review.
+sources:
+- hyde
+- wikidata
+prominence_score: 52.12
+visibility_tier: global
+eligibility: accepted
+geography:
+  continents:
+  - europe
+  present_countries:
+  - ES
+  centroid:
+    lat: 40.4175
+    lon: -3.715
+  confidence: medium
+  historical_regions:
+  - southern_europe
+  primary_historical_region: southern_europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids:
+- Q3024240
+relationships:
+- target: hispanic_monarchy
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q217196
+- target: kingdom_of_spain_q3399982
+  kind: political_successor
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q217196
+prominence_components:
+  wikidata_reach: 25.08
+  authority_coverage: 4
+  historical_evidence: 8
+  relationship_centrality: 13.33
+  longevity: 6.72
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 52.12
+consolidation_status: independent

@@ -1,0 +1,66 @@
+id: capetian_dynasty
+canonical_name: Capetian Dynasty (direct line)
+names:
+  fr: dynastie captienne directe
+external_ids:
+  wikidata: Q179544
+parent: kingdom_of_france
+successors: []
+start: 987
+end: 1328
+start_confidence: high
+end_confidence: high
+weight_by_era:
+  1000: 1.66
+  1100: 1.0
+  1200: 5.71
+  1300: 9.58
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Converted from a period-context record to a polity (sub-polity of
+  kingdom_of_france) on 2026-08-30. 987 election of Hugh Capet to 1328 death of
+  Charles IV (direct male line extinction; excludes Valois/Bourbon cadet
+  branches, which ruled France to 1848). weight_by_era reuses
+  kingdom_of_france's own values at the century marks (1000, 1100, 1200, 1300)
+  that fall within this span.
+sources:
+- wikidata
+prominence_score: 0
+visibility_tier: detailed
+eligibility: accepted
+geography:
+  continents:
+  - europe
+  present_countries:
+  - FR
+  confidence: low
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids: []
+relationships:
+- target: kingdom_of_france
+  kind: political_parent
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://en.wikipedia.org/wiki/Capetian_dynasty
+prominence_components:
+  wikidata_reach: 0
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0
+  longevity: 0
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: 0
+  aggregate_penalty: 0
+  total: 0
+source_urls:
+- https://en.wikipedia.org/wiki/Capetian_dynasty
