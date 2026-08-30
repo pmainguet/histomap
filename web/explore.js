@@ -34,8 +34,8 @@ function renderChapter(chapter) {
 
 async function main() {
   const grid = document.querySelector("#chapter-grid");
-  renderGeologicalBand();
   try {
+    renderGeologicalBand();
     const response = await fetch("/explore_index.json");
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const chapters = await response.json();

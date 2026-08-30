@@ -8,7 +8,7 @@ from pipeline.period_hierarchy import PeriodHierarchy
 
 
 def build_explore_index(
-    polities: list[dict], periods: list[dict], period_links: list[dict], top_n: int = 8
+    polities: list[dict], periods: list[dict], period_links: list[dict], top_n: int = 3
 ) -> list[dict]:
     hierarchy = PeriodHierarchy(periods=periods, period_links=period_links, polities=polities)
     polities_by_id = {p["id"]: p for p in polities}
