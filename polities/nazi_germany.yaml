@@ -28,7 +28,7 @@ notes: Hand-added via live Wikidata lookup (Q7318) to close a gap against the cl
   isn't modeled as its own polity yet.
 sources:
 - wikidata
-prominence_score: 32.78
+prominence_score: 40.91
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -55,16 +55,16 @@ relationships:
   source_urls:
   - https://www.wikidata.org/wiki/Q7318
 prominence_components:
-  wikidata_reach: 30.0
+  wikidata_reach: 30
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0
+  relationship_centrality: 8.13
   longevity: 2.78
   editorial_work: 0
   type_uncertainty_penalty: 0
-  date_uncertainty_penalty: 0
+  date_uncertainty_penalty: -0.0
   aggregate_penalty: 0
-  total: 32.78
+  total: 40.91
 manual_overrides:
 - visibility_override
 visibility_override: global

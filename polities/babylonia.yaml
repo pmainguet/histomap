@@ -27,7 +27,7 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 60.27
+prominence_score: 56.77
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -51,13 +51,13 @@ prominence_components:
   wikidata_reach: 29.93
   authority_coverage: 16
   historical_evidence: 8
-  relationship_centrality: 3.5
+  relationship_centrality: 0.0
   longevity: 7.84
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 60.27
+  total: 56.77
 manual_overrides:
 - entity_type
 - geography
