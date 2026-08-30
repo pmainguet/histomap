@@ -32,7 +32,10 @@ function bandRect(svg, { x, y, width, height, cls, title, label, onZoom }) {
   const rect = svgEl("rect", { x, y, width, height, class: cls, rx: 2 });
   if (onZoom) {
     rect.classList.add("zoomable");
-    rect.addEventListener("click", () => onZoom.handler(onZoom.start, onZoom.end));
+    // Click opens the detail panel (kind/id identify which record), not an
+    // immediate zoom -- matches "/"'s pattern, where zoom is a button
+    // inside the panel, not the click itself. See explore_details.js.
+    rect.addEventListener("click", () => onZoom.handler(onZoom.kind, onZoom.id, onZoom.start, onZoom.end));
   }
   const titleEl = svgEl("title");
   titleEl.textContent = title;
@@ -264,7 +267,7 @@ function renderPolitiesRow(svg, scale, tree, groupBy, regionKeys, laneCounts, y,
           cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`,
           title: `${polity.canonical_name} (${totalCount} in ${regionLabel(key)})`,
           label: polity.canonical_name,
-          onZoom: { handler: onZoom, start: polity.start, end: polity.end ?? tree.axis.domain_end },
+          onZoom: { handler: onZoom, kind: "polity", id: polity.id, start: polity.start, end: polity.end ?? tree.axis.domain_end },
         });
       });
     });
@@ -351,7 +354,7 @@ function renderCountryRow(svg, scale, tree, structure, laneCounts, y, onZoom, wi
             cls: `hierarchy-band hierarchy-band-polity ${curatedClass}`,
             title: `${polity.canonical_name} (${countryLaneLabel(country)})`,
             label: polity.canonical_name,
-            onZoom: { handler: onZoom, start: polity.start, end: polity.end ?? tree.axis.domain_end },
+            onZoom: { handler: onZoom, kind: "polity", id: polity.id, start: polity.start, end: polity.end ?? tree.axis.domain_end },
           });
         });
       });
@@ -419,7 +422,7 @@ function drawFlatLaneRow(svg, scale, lanes, y, laneHeight, cls, onZoom, domainEn
         x: scale.x(item.start), y: y + laneIndex * laneHeight,
         width: scale.width(item.start, item.end), height: laneHeight - 2,
         cls: `hierarchy-band ${cls} ${curatedClass}`, title: item.canonical_name, label: item.canonical_name,
-        onZoom: { handler: onZoom, start: item.start, end: item.end ?? domainEnd },
+        onZoom: { handler: onZoom, kind: item.source === "polity" ? "polity" : "period", id: item.id, start: item.start, end: item.end ?? domainEnd },
       });
     });
   });
@@ -437,13 +440,15 @@ function drawContinentGroupedRow(svg, scale, rows, y, laneHeight, cls, onZoom, w
     lanes.forEach((lane, laneIndex) => {
       lane.forEach((item) => {
         // Eras have no curated/heuristic distinction (_era_entry carries no
-        // `curated` field) -- only periods do.
-        const curatedClass = item.curated === undefined ? "" : (item.curated ? "curated" : "heuristic");
+        // `curated` field) -- only periods do. The same check doubles as the
+        // era/period kind distinction for the detail panel.
+        const isEra = item.curated === undefined;
+        const curatedClass = isEra ? "" : (item.curated ? "curated" : "heuristic");
         bandRect(svg, {
           x: scale.x(item.start), y: rowY + laneIndex * laneHeight,
           width: scale.width(item.start, item.end), height: laneHeight - 2,
           cls: `hierarchy-band ${cls} ${curatedClass}`.trim(), title: item.canonical_name, label: item.canonical_name,
-          onZoom: { handler: onZoom, start: item.start, end: item.end },
+          onZoom: { handler: onZoom, kind: isEra ? "era" : "period", id: item.id, start: item.start, end: item.end },
         });
       });
     });
@@ -539,7 +544,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
       cls: "hierarchy-band hierarchy-band-chapter",
       title: `${chapter.canonical_name} (${formatYear(chapter.start)} - ${formatYear(chapter.end)})`,
       label: chapter.canonical_name,
-      onZoom: { handler: onZoom, start: chapter.start, end: chapter.end },
+      onZoom: { handler: onZoom, kind: "chapter", id: chapter.id, start: chapter.start, end: chapter.end },
     });
   }
   y += chapterRowHeight + rowGap;

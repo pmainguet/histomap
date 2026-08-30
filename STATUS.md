@@ -77,6 +77,18 @@ commit trail).
   people/tribe, plus name-matched `periods/*.yaml` civilization records) render here instead of
   mixed into the ordinary Period/Polities rows. Not continent-grouped — a flat, label-aware
   packed row, since per-chapter counts are small.
+- Left-margin tier labels ("Epoch"/"Chapter"/.../"Polities") now anchor near the top of their
+  row-block instead of the vertical midpoint, so a tall block's label is visible without
+  scrolling to find it.
+- A detail panel on click (`web/explore_details.js`), matching `/`'s own panel but read-only:
+  dates, authority, geography, related-record links (with click-through cross-navigation
+  between periods and polities), external links (Wikidata/DBpedia/source URLs), and a "Zoom to
+  this" action reusing the existing zoom mechanism. Click now opens the panel instead of
+  zooming immediately (zoom moved into the panel's own button) — matches `/`'s own
+  click-opens-panel interaction rather than /explore's earlier click-to-zoom-directly behavior.
+  No editing actions (`/` keeps those as curation tools; `/explore` is a browse view). Verified
+  live in a real browser: chapter/era/period/polity/civilizations-lane bands all open the
+  correct panel content, cross-navigation and zoom-then-reset both work, zero console errors.
 
 See [ROADMAP.md](ROADMAP.md) for what's still queued on `/explore` — moved there since it's
 forward-looking, not retrospective.

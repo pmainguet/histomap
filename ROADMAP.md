@@ -8,25 +8,24 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 ---
 
 ## Remaining work, in recommended order
-1. A detail side-panel on click, matching `/`'s existing panel — informational fields only
-  (dates, authority, geography, links), not the editing actions (`/` also lets you edit period
-  type, convert to entity, edit geography — those stay on `/` as curation tools; `/explore` is
-  a browse view).
-2. Disambiguate the 8 same-named period records (4× "Kingdom of Hungary", 2× "Kingdom of
+1. Disambiguate the 8 same-named period records (4× "Kingdom of Hungary", 2× "Kingdom of
    Poland", 2× "Kingdom of Spain" — distinct historical regimes, currently indistinguishable
    in any list).
-3. Correct the `continents` field on 3 mistagged periods
+2. Correct the `continents` field on 3 mistagged periods
    (`lebanese_republic_under_french_mandate_period`, `state_of_greater_lebanon_period`,
    `state_of_vietnam_period` — all clearly Asian, tagged with 5-6 continents). Root cause not
    yet traced (these carry `authority: "Histomap editorial consolidation"`, not the
    raw-import path behind the `enrich_geography.py` polity bug documented in STATUS.md).
-4. Close the matching regional-era coverage gap for `european_iron_age` (raw import with no
+3. Close the matching regional-era coverage gap for `european_iron_age` (raw import with no
    hand-curated era counterpart, unlike its Nile Valley/Fertile Crescent/East Asian peers).
    The Bronze Age and Neolithic clusters are done: `european_bronze_age` (duplicate of
    `european_bronze_age_era`) is retired, and new overarching `bronze_age_era` /
    `neolithic_era` regional eras now parent all regional siblings in both clusters — see
    ONTOLOGY.md's "Overarching regional eras for genuinely cross-regional themes."
-4 bis. review the whole review workspace to see if they are still aligned with the way we do things given the recent changes. In particular, we should be able to switch an entity from era, period, civilization, polity, etc and link things correctly. But maybe that's only to be added in the side panel, to be seen.
+4. Review the whole review workspace to see if it's still aligned with the way we do things
+   given the recent changes. In particular, we should be able to switch an entity from era,
+   period, civilization, polity, etc and link things correctly. But maybe that's only to be
+   added in the side panel (now built, informational only — see STATUS.md), to be seen.
 5. **Close out Seshat reconciliation** — only 69 records left (35 review + 34 unmatched); the
    cheapest queue left to finish. Review decisions are durable and must not be overwritten by
    pipeline reruns.

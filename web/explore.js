@@ -11,7 +11,7 @@ async function main() {
     return { start: start - pad, end: end + pad };
   };
 
-  const onZoom = (start, end) => {
+  const zoomToRange = (start, end) => {
     zoomRange = padded(start, end);
     draw();
   };
@@ -24,13 +24,39 @@ async function main() {
   const draw = () => {
     const tree = zoomRange ? filterTreeToRange(fullTree, zoomRange.start, zoomRange.end) : fullTree;
     resetLink.hidden = !zoomRange;
-    renderHierarchyTimeline(tree, container, toggle.value, onZoom);
+    renderHierarchyTimeline(tree, container, toggle.value, onSelect);
+  };
+
+  // Click opens the detail panel (informational only -- see
+  // explore_details.js); zooming happens from a button inside the panel,
+  // matching "/"'s own click-opens-panel pattern.
+  let detailCtx = null;
+  const onSelect = (kind, id) => {
+    if (detailCtx) showExploreDetails(kind, id, detailCtx);
   };
 
   try {
-    const response = await fetch("/explore_tree.json");
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    fullTree = await response.json();
+    const [treeResponse, politiesResponse, periodsResponse, periodLinksResponse] = await Promise.all([
+      fetch("/explore_tree.json"),
+      fetch("/data.json"),
+      fetch("/periods.json"),
+      fetch("/period_links.json"),
+    ]);
+    for (const response of [treeResponse, politiesResponse, periodsResponse, periodLinksResponse]) {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    }
+    fullTree = await treeResponse.json();
+    const polities = await politiesResponse.json();
+    const periods = await periodsResponse.json();
+    const periodLinks = await periodLinksResponse.json();
+    detailCtx = {
+      politiesById: new Map(polities.map((polity) => [polity.id, polity])),
+      periodsById: new Map(periods.map((period) => [period.id, period])),
+      periodLinks,
+      domainEnd: fullTree.axis.domain_end,
+      onZoomToRange: zoomToRange,
+      onResetZoom: resetZoom,
+    };
     draw();
     toggle.addEventListener("change", draw);
     resetLink.addEventListener("click", (event) => {
