@@ -161,7 +161,9 @@ def _era_entry(era: dict, periods_out: list[dict]) -> dict:
     generate_modern_regional_eras.py (one per continent x modern chapter,
     no real historical distinction) so the display tree can merge them --
     see build_explore_tree's era-merge step. `primary_continent` lets the
-    /explore era row group by continent."""
+    /explore era row group by continent. `primary_historical_region` lets
+    the /explore era row further split the Asia continent bucket into
+    finer regional sub-buckets (East Asia, West Asia, etc.)."""
     geo = era.get("geography") or {}
     return {
         "id": era["id"],
@@ -171,6 +173,7 @@ def _era_entry(era: dict, periods_out: list[dict]) -> dict:
         "periods": periods_out,
         "auto_generated": era.get("authority") == AUTO_GENERATED_AUTHORITY,
         "primary_continent": geo.get("primary_continent") or (geo.get("continents") or [None])[0] or "unclassified",
+        "primary_historical_region": geo.get("primary_historical_region") or (geo.get("historical_regions") or [None])[0] or "unclassified",
     }
 
 
@@ -201,7 +204,9 @@ def _merge_auto_generated_eras(eras: list[dict], chapter: dict) -> list[dict]:
 def _period_entry(period: dict, curated: bool) -> dict:
     """Build a JSON-serializable dict entry for a named-period node with its
     curated/heuristic flag. `primary_continent` lets the /explore period row
-    group by continent."""
+    group by continent. `primary_historical_region` lets the /explore period
+    row further split the Asia continent bucket into finer regional
+    sub-buckets (East Asia, West Asia, etc.)."""
     geo = period.get("geography") or {}
     return {
         "id": period["id"],
@@ -210,6 +215,7 @@ def _period_entry(period: dict, curated: bool) -> dict:
         "end": period["end"],
         "curated": curated,
         "primary_continent": geo.get("primary_continent") or (geo.get("continents") or [None])[0] or "unclassified",
+        "primary_historical_region": geo.get("primary_historical_region") or (geo.get("historical_regions") or [None])[0] or "unclassified",
     }
 
 
