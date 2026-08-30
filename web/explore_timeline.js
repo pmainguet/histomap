@@ -417,11 +417,14 @@ function flatLaneLayout(items, scale, laneHeight) {
 function drawFlatLaneRow(svg, scale, lanes, y, laneHeight, cls, onZoom, domainEnd) {
   lanes.forEach((lane, laneIndex) => {
     lane.forEach((item) => {
-      const curatedClass = item.curated ? "curated" : "heuristic";
+      // Eras have no curated/heuristic distinction (_era_entry carries no
+      // `curated` field, unlike civilizations-lane items) -- no class in
+      // that case, same convention as drawContinentGroupedRow.
+      const curatedClass = item.curated === undefined ? "" : (item.curated ? "curated" : "heuristic");
       bandRect(svg, {
         x: scale.x(item.start), y: y + laneIndex * laneHeight,
         width: scale.width(item.start, item.end), height: laneHeight - 2,
-        cls: `hierarchy-band ${cls} ${curatedClass}`, title: item.canonical_name, label: item.canonical_name,
+        cls: `hierarchy-band ${cls} ${curatedClass}`.trim(), title: item.canonical_name, label: item.canonical_name,
         onZoom: { handler: onZoom, kind: item.source === "polity" ? "polity" : "period", id: item.id, start: item.start, end: item.end ?? domainEnd },
       });
     });
@@ -478,12 +481,16 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   // Pack eras and periods GLOBALLY across all chapters, not per chapter --
   // an item's real time span can extend past its own chapter's boundary,
   // so lane assignment needs cross-chapter awareness to avoid a collision
-  // with a neighboring chapter's own lane-0 content. Additionally grouped
-  // by continent (a fixed granularity, independent of the polities row's
-  // own historical_region/continent/country toggle) so two chronologically
-  // adjacent but geographically unrelated eras/periods don't share a lane.
+  // with a neighboring chapter's own lane-0 content.
+  //
+  // The era row is flat (not continent-grouped): there are only ever a
+  // handful of eras active at once, so grouping by continent fragmented it
+  // for little benefit. Periods and polities stay continent-grouped --
+  // there are enough of both, at a finer geographic mix, that grouping
+  // keeps chronologically adjacent but geographically unrelated items from
+  // sharing a lane.
   const visibleEras = tree.chapters.flatMap((chapter) => chapter.eras.filter((era) => !era.auto_generated));
-  const eraLayout = continentGroupedLayout(visibleEras, scale, eraLaneHeight);
+  const eraLayout = flatLaneLayout(visibleEras, scale, eraLaneHeight);
   const allPeriods = tree.chapters.flatMap((chapter) => chapter.eras.flatMap((era) => era.periods));
   const periodLayout = continentGroupedLayout(allPeriods, scale, periodLaneHeight);
 
@@ -553,7 +560,7 @@ function renderHierarchyTimeline(tree, container, groupBy = "historical_region",
   drawTierLabel(svg, "Chapter", prevSepY, sepY);
   prevSepY = sepY;
 
-  drawContinentGroupedRow(svg, scale, eraLayout.rows, y, eraLaneHeight, "hierarchy-band-era", onZoom, width);
+  drawFlatLaneRow(svg, scale, eraLayout.lanes, y, eraLaneHeight, "hierarchy-band-era", onZoom, tree.axis.domain_end);
   y += eraRowHeight + rowGap;
   sepY = y - rowGap / 2;
   drawSeparator(svg, width, sepY);
