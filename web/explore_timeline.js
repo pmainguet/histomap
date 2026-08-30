@@ -79,12 +79,27 @@ const LEFT_MARGIN = 90;
 const POLITIES_LABEL_X = 58;
 const POLITIES_LABEL_INDENT_X = 66;
 
+// Padding between a row-block's own top edge (yStart) and the top of its
+// gutter label's own footprint, once anchored near the top -- see below.
+const TIER_LABEL_TOP_PADDING = 8;
+
 function drawTierLabel(svg, text, yStart, yEnd) {
-  const yMid = (yStart + yEnd) / 2;
   const cx = LEFT_MARGIN / 2;
   const available = yEnd - yStart;
-  const label = svgEl("text", { x: cx, y: yMid, class: "hierarchy-tier-label", transform: `rotate(-90, ${cx}, ${yMid})` });
   const words = text.split(" ");
+  const lineHeight = 12;
+  // Estimated vertical footprint of the label once rotated (same
+  // character-width heuristic as labelAwareFootprint -- this `svg` isn't
+  // attached to the document yet at this point in renderHierarchyTimeline,
+  // so a real getComputedTextLength() measurement would silently return 0).
+  // text-anchor:middle centers each line's own text around the anchor's Y
+  // coordinate (pre-rotation X, which becomes vertical post-rotation), so
+  // anchoring near yStart + half that footprint -- instead of the block's
+  // whole vertical midpoint -- puts the label right at the top of the row,
+  // visible without scrolling down into a tall block (e.g. Polities).
+  const maxLineLength = Math.max(...words.map((word) => word.length * ESTIMATED_CHAR_WIDTH));
+  const anchorY = Math.min(yStart + TIER_LABEL_TOP_PADDING + maxLineLength / 2, yEnd - 4);
+  const label = svgEl("text", { x: cx, y: anchorY, class: "hierarchy-tier-label", transform: `rotate(-90, ${cx}, ${anchorY})` });
   if (words.length === 1) {
     label.textContent = text;
   } else {
@@ -95,8 +110,7 @@ function drawTierLabel(svg, text, yStart, yEnd) {
     // becomes the vertical footprint. So a long tier name only needs to
     // fit its longest single word within a short row-block's height,
     // rather than the whole phrase.
-    const lineHeight = 12;
-    const startY = yMid - ((words.length - 1) * lineHeight) / 2;
+    const startY = anchorY - ((words.length - 1) * lineHeight) / 2;
     words.forEach((word, i) => {
       const tspan = svgEl("tspan", { x: cx, y: startY + i * lineHeight });
       tspan.textContent = word;
@@ -104,16 +118,11 @@ function drawTierLabel(svg, text, yStart, yEnd) {
     });
   }
   svg.append(label);
-  // Shrink-to-fit safety net: the longest line's rendered length becomes
-  // the vertical footprint once rotated, so estimate it (same character-width
-  // heuristic as labelAwareFootprint -- this `svg` isn't attached to the
-  // document yet at this point in renderHierarchyTimeline, so a real
-  // getComputedTextLength() measurement would silently return 0) and scale
-  // the font down if it would still overflow this block -- clamped at a
-  // floor so short row-blocks (like the thin geological row) never produce
-  // illegibly tiny text.
-  const maxLineLength = Math.max(...words.map((word) => word.length * ESTIMATED_CHAR_WIDTH));
-  const budget = available - 6;
+  // Shrink-to-fit safety net: scale the font down if the label's estimated
+  // footprint would still overflow this block -- clamped at a floor so
+  // short row-blocks (like the thin geological row) never produce illegibly
+  // tiny text.
+  const budget = available - TIER_LABEL_TOP_PADDING - 6;
   if (maxLineLength > budget && budget > 0) {
     const scale = Math.max(0.75, budget / maxLineLength);
     label.style.fontSize = `${0.7 * scale}rem`;
