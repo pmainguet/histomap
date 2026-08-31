@@ -1417,6 +1417,93 @@
     "civilization_lane": false
   },
   {
+    "id": "french_first_republic_period",
+    "canonical_name": "French First Republic",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1792,
+    "end": 1804,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "antarctica",
+        "europe",
+        "oceania"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
+      "present_countries": [
+        "FR"
+      ],
+      "centroid": {
+        "lat": 48.865277777,
+        "lon": 2.327222222
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q58296"
+    },
+    "notes": "Editorially identified as a phase or aspect of France.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q58296"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
+    "id": "german_empire_period",
+    "canonical_name": "German Empire",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1871,
+    "end": 1918,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
+      "present_countries": [
+        "DE"
+      ],
+      "centroid": {
+        "lat": 52.518611111,
+        "lon": 13.376111111
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q43287"
+    },
+    "notes": "Editorially identified as a phase or aspect of German Reich.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q43287"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "government_of_national_salvation_period",
     "canonical_name": "Government of National Salvation",
     "kind": "historical",

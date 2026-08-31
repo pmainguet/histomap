@@ -469,6 +469,16 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     and other["start"] <= document["start"]
                     and (other.get("end") is None or (document.get("end") is not None and other["end"] >= document["end"]))
                 )
+                # Mirror of date_contains: the REVIEWED entity's own dates
+                # contain the candidate's (e.g. France 481-present containing
+                # French First Republic 1792-1804) -- the candidate is the
+                # bounded phase here, not the reviewed entity.
+                reverse_date_contains = (
+                    document.get("start") is not None
+                    and other.get("start") is not None
+                    and document["start"] <= other["start"]
+                    and (document.get("end") is None or (other.get("end") is not None and document["end"] >= other["end"]))
+                )
                 source_end = document.get("end") if document.get("end") is not None else 2100
                 other_end = other.get("end") if other.get("end") is not None else 2100
                 date_overlap = document.get("start") is not None and other.get("start") is not None and max(document["start"], other["start"]) < min(source_end, other_end)
@@ -502,6 +512,23 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 documented_successor = bool(
                     source_qid and other_qid and other_qid in succession_qids.get(source_qid, set())
                 )
+                # A genuine same_wikidata match ought to carry matching dates
+                # (both records are pulled from the same Wikidata item's own
+                # start/end). A same_wikidata candidate whose dates diverge by
+                # more than a few years usually means one record has the
+                # WRONG QID -- e.g. this dataset's Roman Republic and Ancient
+                # Rome both carry Q1747689, but cover different centuries.
+                # That's a data bug to fix at the source, not an identity
+                # decision, so it demotes confidence and blocks the
+                # phase_of/same_entity suggestion rather than masquerading as
+                # an ordinary recommendation (found live, 31 August 2026).
+                dates_roughly_equal = (
+                    document.get("start") is not None and other.get("start") is not None
+                    and abs(document["start"] - other["start"]) <= 5
+                    and (document.get("end") is None) == (other.get("end") is None)
+                    and (document.get("end") is None or abs(document["end"] - other["end"]) <= 5)
+                )
+                possible_qid_conflict = same_wikidata and not dates_roughly_equal
                 if not (
                     same_wikidata
                     or (exact_name_match and not coordinate_conflict and not documented_successor)
@@ -519,7 +546,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 score = name_score + rarity_bonus + sum(
                     bonus
                     for bonus, condition in (
-                        (20, same_wikidata),
+                        (20, same_wikidata and not possible_qid_conflict),
                         (12, exact_name_match and not coordinate_conflict and not documented_successor),
                         (8, geography_match),
                         (8, date_contains),
@@ -529,6 +556,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         (4, shared_p131),
                         (-25, coordinate_conflict),
                         (-25, documented_successor),
+                        (-15, possible_qid_conflict),
                     )
                     if condition
                 )
@@ -557,12 +585,38 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     reasons.append("Wikidata: located in the same administrative entity")
                 if date_contains:
                     reasons.append("target dates contain source")
+                elif reverse_date_contains:
+                    reasons.append("reviewed entity's dates contain candidate")
                 elif date_overlap:
                     reasons.append("dates overlap")
                 else:
                     reasons.append("dates do not overlap")
                 if not type_match:
                     reasons.append("different entity types")
+                if possible_qid_conflict:
+                    reasons.append(
+                        "same Wikidata item, but date ranges are too different for genuine identity -- "
+                        "check for a misattributed Wikidata id before deciding"
+                    )
+                # Bakes the same direction-of-nesting judgment a reviewer
+                # would otherwise work out by hand (see Syria/Syrian Arab
+                # Republic, France/French First Republic, German Reich/German
+                # Empire, all resolved live this way) directly into the
+                # suggestion, so it doesn't have to be re-derived manually
+                # every time. Left null wherever the evidence doesn't clearly
+                # point one way -- an ordinary manual review, same as before.
+                if possible_qid_conflict:
+                    suggested_decision = None
+                elif same_wikidata:
+                    suggested_decision = "same_entity"
+                elif documented_successor or coordinate_conflict:
+                    suggested_decision = "independent"
+                elif date_contains and geography_compatible:
+                    suggested_decision = "phase_of"
+                elif reverse_date_contains and geography_compatible:
+                    suggested_decision = "candidate_phase_of"
+                else:
+                    suggested_decision = None
                 candidates.append(
                     {
                         "id": other_id,
@@ -574,6 +628,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         "name_score": round(name_score, 1),
                         "geography_match": geography_match,
                         "date_contains": date_contains,
+                        "reverse_date_contains": reverse_date_contains,
                         "date_overlap": date_overlap,
                         "exact_name_match": exact_name_match,
                         "same_wikidata": same_wikidata,
@@ -582,11 +637,16 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         "coordinate_conflict": coordinate_conflict,
                         "shared_p131": shared_p131,
                         "documented_successor": documented_successor,
+                        "possible_qid_conflict": possible_qid_conflict,
+                        "suggested_decision": suggested_decision,
                         "confidence": (
-                            "high" if same_wikidata
-                            or (
-                                exact_name_match and geography_compatible
-                                and not coordinate_conflict and not documented_successor
+                            "high" if not possible_qid_conflict
+                            and (
+                                same_wikidata
+                                or (
+                                    exact_name_match and geography_compatible
+                                    and not coordinate_conflict and not documented_successor
+                                )
                             )
                             else "medium"
                         ),

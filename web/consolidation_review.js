@@ -18,6 +18,14 @@ function countries(item) { return escapeHtml((item.present_countries || []).join
 function comparisonRow(label, candidateValue, reviewedValue, assessment = "") {
   return `<tr class="${assessment ? `comparison-${assessment}` : ""}"><th scope="row">${label}</th><td>${candidateValue}</td><td>${reviewedValue}</td></tr>`;
 }
+// Highlights the button matching the server's suggested_decision (derived
+// from date-nesting, documented Wikidata succession links, coordinate
+// distance, and same-Wikidata-item-but-mismatched-dates checks) so the
+// direction doesn't have to be worked out by hand each time.
+function recommendableButton(decision, candidate, label) {
+  const recommended = candidate.suggested_decision === decision;
+  return `<button type="button" data-decision="${decision}" data-target="${escapeHtml(candidate.id)}"${recommended ? ' class="recommended-decision"' : ""}>${label}</button>`;
+}
 
 function candidateMarkup(candidate, index) {
   return `<article class="candidate consolidation-candidate">
@@ -33,7 +41,8 @@ function candidateMarkup(candidate, index) {
       ${comparisonRow("Wikidata", `<span class="source-links">${links(candidate)}</span>`, `<span class="source-links">${links(current)}</span>`, candidate.same_wikidata ? "match" : "review")}
     </tbody></table></div>
     <p class="proposal-reason"><strong>Why suggested:</strong> ${escapeHtml(candidate.reasons.join("; "))}.</p>
-    <div class="review-actions relationship-directions"><button type="button" data-decision="same_entity" data-target="${escapeHtml(candidate.id)}">${index + 1}. Same entity</button><button type="button" data-decision="phase_of" data-target="${escapeHtml(candidate.id)}">${phaseKeys[index]}. Reviewed → phase of candidate</button><button type="button" data-decision="candidate_phase_of" data-target="${escapeHtml(candidate.id)}">${inversePhaseKeys[index]}. Candidate → phase of reviewed</button><button type="button" data-decision="part_of" data-target="${escapeHtml(candidate.id)}">${partKeys[index]}. Reviewed → part of candidate</button><button type="button" data-decision="candidate_part_of" data-target="${escapeHtml(candidate.id)}">${inversePartKeys[index]}. Candidate → part of reviewed</button></div>
+    ${candidate.suggested_decision === "independent" ? `<p class="suggested-independent">Suggested: mark independent (see reasons above) -- use the "Independent entity" button below.</p>` : ""}
+    <div class="review-actions relationship-directions">${recommendableButton("same_entity", candidate, `${index + 1}. Same entity`)}${recommendableButton("phase_of", candidate, `${phaseKeys[index]}. Reviewed → phase of candidate`)}${recommendableButton("candidate_phase_of", candidate, `${inversePhaseKeys[index]}. Candidate → phase of reviewed`)}${recommendableButton("part_of", candidate, `${partKeys[index]}. Reviewed → part of candidate`)}${recommendableButton("candidate_part_of", candidate, `${inversePartKeys[index]}. Candidate → part of reviewed`)}</div>
   </article>`;
 }
 

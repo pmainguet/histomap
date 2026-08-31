@@ -186,3 +186,19 @@
   source_urls:
   - https://www.wikidata.org/wiki/Q11178782
   notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: french_first_republic_period
+  entity_id: france
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q58296
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: german_empire_period
+  entity_id: german_reich
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q43287
+  notes: Reviewed record is a dated phase of this canonical polity.

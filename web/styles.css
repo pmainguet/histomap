@@ -200,6 +200,9 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .comparison-table .comparison-unknown td { color: var(--ink-faint); background: #f3f0e9; }
 .relationship-directions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .relationship-directions button:first-child { grid-column: 1 / -1; }
+.relationship-directions button.recommended-decision { position: relative; color: #315d3a; background: #edf4e9; border-color: #315d3a; }
+.relationship-directions button.recommended-decision::after { content: "Suggested"; position: absolute; top: -.55rem; right: .4rem; padding: .08rem .3rem; color: white; background: #315d3a; font: 700 .6rem system-ui, sans-serif; letter-spacing: .03em; text-transform: uppercase; }
+.suggested-independent { color: #315d3a; font-weight: 600; }
 .score-details, .priority-details { font: .78rem/1.4 system-ui, sans-serif; }
 .score-details summary, .priority-details summary { cursor: pointer; color: #8c422d; }
 .source-links { font: .78rem system-ui, sans-serif; }
