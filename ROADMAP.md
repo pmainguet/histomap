@@ -19,22 +19,29 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    handling at all) — build or explicitly accept the loss for each; (4) update README.md (still
    calls `/` the primary workspace root) and the `/reviews`-family nav links (all link to `/`,
    would 404); (5) only then delete `GET /` and `web/index.html`/`web/app.js`.
-1. **Close out Seshat reconciliation** — only 69 records left (35 review + 34 unmatched); the
-   cheapest queue left to finish. Review decisions are durable and must not be overwritten by
-   pipeline reruns.
-2. **Drive down the consolidation queue** (4,336 of 4,669 untriaged) — now the largest backlog and
-   the most direct lever on "noisy entities before expanding the default view," given the
-   duplicate/phase-record rate found in the 333 already reviewed.
-3. **Resolve the 1,948 stuck Wikidata type-eligibility flags** and the 3,222-record entity-type
-   classification queue — the other half of "reduce noisy entities," and unmoved since the last
-   snapshot.
+1. **Decide what to do with the 34 Seshat unmatched drafts** (`reports/seshat_unmatched_drafts.yaml`)
+   — Seshat source records that never matched an existing Histomap entity, held as candidates for
+   import as new entities. The reviewable 35-record "review" sub-queue that used to sit alongside
+   these is now fully cleared (`/review` shows 0 pending, confirmed live 31 August 2026 — decisions
+   grew from 223 to 258, exactly the 35 that were open); these 34 aren't currently surfaced in any
+   review-page queue, so this is really "decide the workflow," not just "work the queue."
+2. **Drive down the consolidation queue** (821 pending as of 31 August 2026, confirmed via
+   `/api/review-dashboard` — 59 high-confidence, 713 medium, 76 flagged as polity→period
+   candidates; down substantially from the 4,336 an earlier snapshot of this file cited, which had
+   gone stale) — still the largest backlog and the most direct lever on "noisy entities before
+   expanding the default view."
+3. **Resolve the 1,948 stuck Wikidata type-eligibility flags** (unchanged, confirmed 31 August
+   2026) and the entity-type classification queue (**3,064 pending**, confirmed live via
+   `/api/review-dashboard`, down from an earlier 3,222) — the other half of "reduce noisy
+   entities."
 4. **Run a comprehensive polity → period reclassification pass.** The consolidation review
    queue's "period"/"both" decision (`/consolidation-review`, backed by
    `reports/period_role_review.jsonl` for the `period_kinds` it seeds) already handles this
    decision — a polity whose `timeline_role` should be `period` or `both`, because it's really a
    cultural sequence, archaeological horizon, or context span rather than a weight-bearing
-   political entity — but it currently only covers 94 records queued from whatever originally
-   seeded it. Look at the full polity set (4,671 records), not just that existing queue, for more
+   political entity — but it currently only covers the 94 records originally seeded into that
+   queue (76 of those still open as of 31 August 2026, confirmed live). Look at the full polity set
+   (**4,663 records**, confirmed 31 August 2026), not just that existing queue, for more
    candidates the original seeding missed. Note that `Polity.entity_type` already distinguishes
    civilization/culture/people/tribe/archaeological_horizon from plain `polity` — this pass is
    as much about applying that field consistently (it's currently under-used) as it is about

@@ -15,14 +15,14 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules, YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 1,948 type-eligibility review flags and 3,222 pending entity-type classifications; work down the consolidation queue (333/4,669 triaged); accept reviewed display groups; improve relationship review |
-| 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, 223 more review decisions applied | Only 35 review + 34 unmatched records left (down from 227 + 64); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules, YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 1,948 type-eligibility review flags and 3,064 pending entity-type classifications; work down the consolidation queue (821 of 4,663 still pending, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
+| 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Prioritized web review, provenance, score explanations, source links, saved decisions, pipeline actions, plus new consolidation/subdivision/period-role review UIs | Complete review pass across all four queues; cost estimator and optional structured LLM proposal/diff workflow |
 | 5 — Editorial pass | **Started** | Validated transition model and 5 curated transitions | Roughly 45 more transitions, icons for top ~50, and polished adult/child copy for top ~50 |
 | 6 — Web view | **Mostly complete** | Unified FastAPI server, horizontal SVG timeline, geographic lanes, filters/search, era zoom, drawer, sources, relationship navigation, transition connectors | Reviewed collapsible display groups, linked map, stronger mobile/visual testing, authentication before public write access |
 | 7 — Print poster | **Not started** | — | A1/A0 SVG renderer, methodology/legend footer, PDF export and print test |
-| 8 — Grow with the kid | **Ongoing later work** | Adult/Child selector, extensible text model, period pilot grown to 102 records with role review | Substantial content, more reading levels, language UI, family-history layer |
+| 8 — Grow with the kid | **Ongoing later work** | Adult/Child selector, extensible text model, period pilot (90 period records as of 31 August 2026 — down from 102 as period→polity conversions removed several) with role review | Substantial content, more reading levels, language UI, family-history layer |
 | 9 — Period ontology | **Foundational layer done** | `Period.tier` schema field, build-time tier/cycle validation, 9 macro chapters, 20 hand-curated + auto-generated modern regional eras, suggestion queues for regional-era and polity period-links, tested `pipeline/period_hierarchy.py` query layer (`top_entities` replaces the retired competitive visibility-tier algorithm), `Geography.historical_regions`/`primary_historical_region` derived from `present_countries` via a starter lookup table | Work the two suggestion queues (`reports/regional_era_suggestions.jsonl`, `reports/period_link_suggestions.jsonl`); grow `pipeline/historical_regions.py`'s ~110-country starter table; replace auto-generated modern regional eras with hand-curated sub-continental ones over time; the timeline UI itself (separate plan) reads `pipeline/period_hierarchy.py` |
 
 ### Implementation plans (detailed specifications)
@@ -472,29 +472,33 @@ Verified throughout: `build.py` clean (no dangling `parent`/`successors`/`relati
 
 ### Current measurable state
 
-- **4,671** canonical polities (down from 4,794 as the consolidation pass folds duplicate/phase
-  records into their parents; up from 4,669 as New Kingdom of Egypt, Nazi Germany, and the
-  European Union were added — see below).
-- **137** automated tests passing; `build.py` validates **5** curated transitions, **117** periods
-  (up from 105), and **102** period links (up from 97).
-- Global-tier reference-poster comparison (started in b0acb2e1): **complete**. All 15 flagged
-  gaps are now filled — 3 as new weight-bearing polities (New Kingdom of Egypt, Nazi Germany,
-  European Union; all `visibility_override: global`, pending the next full
-  `compute_prominence.py` run to materialize), and 12 as `periods/*.yaml` context bands with no
-  competing weight bar (Vikings, Celts, Etruscans, Mycenaean Greece, Minoan Crete, Indus Valley,
-  Olmec, and the Wessex/Norman/Plantagenet/Tudor/Capetian dynasty spans, the last four
-  `phase_of`-linked to `kingdom_of_england`/`kingdom_of_france` via `period_links.yaml`).
-- Seshat reconciliation: **81 auto**, **223 reviewed decisions applied** (109 accept / 149 reject
-  across two review sessions, some records touched twice), **35 review pending**, **34 unmatched**.
-- Entity consolidation (new): **333** of 4,669 records triaged — 87 `phase_of`, 44 `same_entity`,
-  3 `part_of`, 2 `discarded`, 197 confirmed `independent`; **4,336 still untouched**.
-- Wikidata type-eligibility: **5,088** decisions made (3,126 accepted, 14 excluded), but **1,948**
-  still flagged `review` — essentially unchanged since last count.
+*(This block had gone stale — some figures below hadn't been refreshed in a long time, e.g. the
+test count was still off an old 137. Re-measured live 31 August 2026 via the running server's
+`/api/review-dashboard`/`/api/reviews` endpoints, `git`, and direct dataset counts; treat these as
+current until the next re-measurement, and re-measure rather than trust old copies of these
+numbers elsewhere in this file or in ROADMAP.md.)*
+
+- **4,663** canonical polities.
+- **242** automated tests passing; `build.py` validates **5** curated transitions, **90** periods,
+  and **17** period links (down sharply from 102/97 as this session's period→polity conversions —
+  Han dynasty, Tibet, the Commonwealth-realm batch, 29 modern-era `phase_of` companions, etc. —
+  each removed both the `periods/*.yaml` record and its `period_links.yaml` entry).
+- Seshat reconciliation: the reviewable "review" sub-queue is **fully cleared** (0 pending,
+  confirmed live via `/api/reviews` returning `total: 0`); `reports/seshat_review_decisions.jsonl`
+  currently holds **258** decisions (109 accept / 149 reject). **34 unmatched** drafts
+  (`reports/seshat_unmatched_drafts.yaml`) remain, not currently exposed in any review-page
+  queue — still an open "decide the workflow" item, see ROADMAP.md.
+- Entity consolidation: **821 pending** (confirmed via `/api/review-dashboard`: 59 high-confidence,
+  713 medium, 76 flagged as polity→period candidates) — down substantially from the 4,336 this
+  file and ROADMAP.md had both been citing from a much older, unrefreshed snapshot.
+- Wikidata type-eligibility: **5,088** decisions made (3,126 accepted, 14 excluded), **1,948**
+  still flagged `review` — confirmed unchanged.
 - Entity-type classification (polity/civilization/culture/people/tribe/archaeological_horizon):
-  **3,222 pending**.
-- Subdivision-parent classification (new): workflow built, only 4 records reviewed so far.
-- Period pilot: grown from the original 4-region, 14-record pilot to **102** period records;
-  **94 pending** timeline-role review.
+  **3,064 pending** (confirmed live, down from an earlier 3,222).
+- Subdivision-parent classification: **2 pending** (confirmed live via `/api/review-dashboard`).
+- Period-role (polity→period reclassification) queue: **94** ever seeded into
+  `reports/period_role_review.jsonl`, **76 still open** per the live consolidation-queue
+  breakdown — 18 resolved, consistent with this session's period→polity conversion batch.
 - Geography and editorial-coverage figures from the July snapshot have not been re-measured this
   pass; re-run `pipeline/enrich_geography.py`'s coverage report before citing them again.
 
