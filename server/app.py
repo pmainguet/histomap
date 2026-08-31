@@ -30,6 +30,13 @@ ALLOWED_ACTIONS = {
     "compute-weights": ["pipeline/compute_weights.py"],
 }
 CONTINENTS = ["africa", "asia", "europe", "north_america", "south_america", "oceania", "antarctica"]
+# consolidation_review_queue()'s date-containment checks (date_contains,
+# reverse_date_contains) tolerate a boundary this many years off, so a minor
+# start/end-year estimate difference between two records of the same place
+# (e.g. Akragas's own start of 580 BCE vs. Agrigento's record starting 579
+# BCE -- ancient dates rarely agree to the year) doesn't block an otherwise
+# clear phase_of/candidate_phase_of suggestion.
+DATE_CONTAINS_TOLERANCE_YEARS = 10
 ENTITY_TYPE_REVIEW_ORDER = {
     "civilization": 0,
     "polity": 1,
@@ -466,8 +473,11 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 date_contains = (
                     other.get("start") is not None
                     and document.get("start") is not None
-                    and other["start"] <= document["start"]
-                    and (other.get("end") is None or (document.get("end") is not None and other["end"] >= document["end"]))
+                    and other["start"] - DATE_CONTAINS_TOLERANCE_YEARS <= document["start"]
+                    and (
+                        other.get("end") is None
+                        or (document.get("end") is not None and other["end"] + DATE_CONTAINS_TOLERANCE_YEARS >= document["end"])
+                    )
                 )
                 # Mirror of date_contains: the REVIEWED entity's own dates
                 # contain the candidate's (e.g. France 481-present containing
@@ -476,8 +486,11 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 reverse_date_contains = (
                     document.get("start") is not None
                     and other.get("start") is not None
-                    and document["start"] <= other["start"]
-                    and (document.get("end") is None or (other.get("end") is not None and document["end"] >= other["end"]))
+                    and document["start"] - DATE_CONTAINS_TOLERANCE_YEARS <= other["start"]
+                    and (
+                        document.get("end") is None
+                        or (other.get("end") is not None and document["end"] + DATE_CONTAINS_TOLERANCE_YEARS >= other["end"])
+                    )
                 )
                 source_end = document.get("end") if document.get("end") is not None else 2100
                 other_end = other.get("end") if other.get("end") is not None else 2100

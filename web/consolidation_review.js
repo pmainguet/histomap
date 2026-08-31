@@ -40,9 +40,9 @@ function candidateMarkup(candidate, index) {
       ${comparisonRow("Instance of", `<span class="source-links">${typeLinks(candidate)}</span>`, `<span class="source-links">${typeLinks(current)}</span>`)}
       ${comparisonRow("Wikidata", `<span class="source-links">${links(candidate)}</span>`, `<span class="source-links">${links(current)}</span>`, candidate.same_wikidata ? "match" : "review")}
     </tbody></table></div>
+    <div class="review-actions relationship-directions">${recommendableButton("same_entity", candidate, `${index + 1}. Same entity`)}${recommendableButton("phase_of", candidate, `${phaseKeys[index]}. Reviewed → phase of candidate`)}${recommendableButton("candidate_phase_of", candidate, `${inversePhaseKeys[index]}. Candidate → phase of reviewed`)}${recommendableButton("part_of", candidate, `${partKeys[index]}. Reviewed → part of candidate`)}${recommendableButton("candidate_part_of", candidate, `${inversePartKeys[index]}. Candidate → part of reviewed`)}</div>
     <p class="proposal-reason"><strong>Why suggested:</strong> ${escapeHtml(candidate.reasons.join("; "))}.</p>
     ${candidate.suggested_decision === "independent" ? `<p class="suggested-independent">Suggested: mark independent (see reasons above) -- use the "Independent entity" button below.</p>` : ""}
-    <div class="review-actions relationship-directions">${recommendableButton("same_entity", candidate, `${index + 1}. Same entity`)}${recommendableButton("phase_of", candidate, `${phaseKeys[index]}. Reviewed → phase of candidate`)}${recommendableButton("candidate_phase_of", candidate, `${inversePhaseKeys[index]}. Candidate → phase of reviewed`)}${recommendableButton("part_of", candidate, `${partKeys[index]}. Reviewed → part of candidate`)}${recommendableButton("candidate_part_of", candidate, `${inversePartKeys[index]}. Candidate → part of reviewed`)}</div>
   </article>`;
 }
 
