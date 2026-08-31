@@ -1,0 +1,24 @@
+id: seshat_formative_period_irforma
+canonical_name: Formative Period
+external_ids:
+  seshat:
+  - IrForma
+start: -7200
+end: -7001
+start_confidence: high
+end_confidence: high
+sources:
+- seshat
+notes: Seshat-only draft; requires review before canonical import.
+prominence_components:
+  wikidata_reach: 0.0
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 5.75
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -0.0
+  aggregate_penalty: 0
+  total: 7.75
+prominence_score: 7.75

@@ -1,0 +1,24 @@
+id: seshat_initial_jomon_jpjomo2
+canonical_name: Initial Jomon
+external_ids:
+  seshat:
+  - JpJomo2
+start: -9200
+end: -5301
+start_confidence: high
+end_confidence: high
+sources:
+- seshat
+notes: Seshat-only draft; requires review before canonical import.
+prominence_components:
+  wikidata_reach: 0.0
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 8
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -0.0
+  aggregate_penalty: 0
+  total: 10.0
+prominence_score: 10.0

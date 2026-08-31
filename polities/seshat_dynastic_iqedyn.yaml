@@ -1,0 +1,24 @@
+id: seshat_dynastic_iqedyn
+canonical_name: Early Dynastic
+external_ids:
+  seshat:
+  - IqEDyn*
+start: -2900
+end: -2351
+start_confidence: high
+end_confidence: high
+sources:
+- seshat
+notes: Seshat-only draft; requires review before canonical import.
+prominence_components:
+  wikidata_reach: 0.0
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 6.85
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -0.0
+  aggregate_penalty: 0
+  total: 8.85
+prominence_score: 8.85

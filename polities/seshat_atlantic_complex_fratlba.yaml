@@ -1,0 +1,24 @@
+id: seshat_atlantic_complex_fratlba
+canonical_name: Atlantic Complex
+external_ids:
+  seshat:
+  - FrAtlBA
+start: -2200
+end: -1001
+start_confidence: high
+end_confidence: high
+sources:
+- seshat
+notes: Seshat-only draft; requires review before canonical import.
+prominence_components:
+  wikidata_reach: 0.0
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 7.7
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -0.0
+  aggregate_penalty: 0
+  total: 9.7
+prominence_score: 9.7

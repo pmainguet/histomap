@@ -1,0 +1,24 @@
+id: seshat_susa_iii_irsusa3
+canonical_name: Susa III
+external_ids:
+  seshat:
+  - IrSusa3
+start: -3100
+end: -2676
+start_confidence: high
+end_confidence: high
+sources:
+- seshat
+notes: Seshat-only draft; requires review before canonical import.
+prominence_components:
+  wikidata_reach: 0.0
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 6.57
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -0.0
+  aggregate_penalty: 0
+  total: 8.57
+prominence_score: 8.57

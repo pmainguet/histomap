@@ -1,0 +1,24 @@
+id: seshat_palace_crete_grcrnpa
+canonical_name: New Palace Crete
+external_ids:
+  seshat:
+  - GrCrNPa
+start: -1700
+end: -1451
+start_confidence: high
+end_confidence: high
+sources:
+- seshat
+notes: Seshat-only draft; requires review before canonical import.
+prominence_components:
+  wikidata_reach: 0.0
+  authority_coverage: 12
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 5.99
+  editorial_work: 0
+  type_uncertainty_penalty: -10
+  date_uncertainty_penalty: -0.0
+  aggregate_penalty: 0
+  total: 7.99
+prominence_score: 7.99
