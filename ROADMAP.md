@@ -42,16 +42,12 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    `present_countries` but their country isn't yet in `pipeline/historical_regions.py`'s
    ~180-country starter table (cheap and safe to grow incrementally).
 7. **Audit of remaining heuristic/on-the-fly computations — complete (31 August 2026, see
-   STATUS.md).** Macro-chapter placement (item found highest-priority) is now closed: added
-   `Polity.linked_chapter_id`/`Period.linked_chapter_id`, seeded from the current heuristic
-   (`pipeline/seed_linked_chapter_ids.py`), checked first at all three placement sites ahead of
-   both the `period_links.yaml`-curated path and the heuristic — same pattern `linked_era_id`
-   already established. One real gap remains, plus a curation-backlog issue, plus a "fine as-is"
-   set:
-   - **Civilizations & Cultures lane membership for periods** (`_is_civilization_lane_period`)
-     falls back to a name-substring guess ("civilization"/"culture" in the canonical name) when
-     the one real signal (`authority == CIVILIZATION_BACKDROP_AUTHORITY`, a magic string smuggled
-     into a free-text field) isn't set. Candidate for a real `Period.civilization_lane` field.
+   STATUS.md).** Both real gaps found are now closed: `Polity.linked_chapter_id`/
+   `Period.linked_chapter_id` (macro-chapter placement, seeded via
+   `pipeline/seed_linked_chapter_ids.py`) and `Period.civilization_lane` (Civilizations & Cultures
+   lane membership, seeded via `pipeline/seed_civilization_lane_flags.py`) — both checked first at
+   their placement sites, ahead of the old heuristics. One curation-backlog issue remains, plus a
+   "fine as-is" set:
    - **Period → regional-era placement** (`rank_candidates` in `build_explore_tree.py`) already
      has an override field (`Period.broader_periods`) — this is a curation backlog, not a missing
      field. Best fixed with a one-shot seeding pass, same recipe as `seed_linked_era_ids.py`.

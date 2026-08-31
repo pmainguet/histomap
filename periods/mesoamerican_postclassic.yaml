@@ -21,3 +21,5 @@ external_ids:
 source_urls:
 - https://dbpedia.org/resource/Mesoamerican_chronology
 civilization_lane: false
+broader_periods:
+- north_america_early_modern_connections_era

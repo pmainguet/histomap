@@ -21,3 +21,5 @@ notes: Start is clipped to Histomap's current -10000 year boundary.
 source_urls:
 - https://dbpedia.org/resource/J%C5%8Dmon_period
 civilization_lane: false
+broader_periods:
+- neolithic_era

@@ -571,7 +571,9 @@
       "centroid": null,
       "confidence": null
     },
-    "broader_periods": [],
+    "broader_periods": [
+      "classical_antiquity_era"
+    ],
     "successors": [],
     "authority": "DBpedia/Wikipedia periodization",
     "external_ids": {
@@ -1518,7 +1520,9 @@
       "centroid": null,
       "confidence": null
     },
-    "broader_periods": [],
+    "broader_periods": [
+      "neolithic_era"
+    ],
     "successors": [
       "yayoi_period"
     ],
@@ -1559,7 +1563,9 @@
       "centroid": null,
       "confidence": null
     },
-    "broader_periods": [],
+    "broader_periods": [
+      "classical_antiquity_era"
+    ],
     "successors": [
       "asuka_period"
     ],
@@ -2026,7 +2032,9 @@
       "centroid": null,
       "confidence": null
     },
-    "broader_periods": [],
+    "broader_periods": [
+      "classical_antiquity_era"
+    ],
     "successors": [
       "mesoamerican_postclassic"
     ],
@@ -2108,7 +2116,9 @@
       "centroid": null,
       "confidence": null
     },
-    "broader_periods": [],
+    "broader_periods": [
+      "north_america_early_modern_connections_era"
+    ],
     "successors": [],
     "authority": "DBpedia/Wikipedia periodization",
     "external_ids": {
@@ -2151,7 +2161,9 @@
       "centroid": null,
       "confidence": null
     },
-    "broader_periods": [],
+    "broader_periods": [
+      "classical_antiquity_era"
+    ],
     "successors": [
       "mesoamerican_classic"
     ],
@@ -3181,7 +3193,9 @@
       "centroid": null,
       "confidence": null
     },
-    "broader_periods": [],
+    "broader_periods": [
+      "classical_antiquity_era"
+    ],
     "successors": [
       "kofun_period"
     ],

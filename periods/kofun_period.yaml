@@ -19,3 +19,5 @@ external_ids:
 source_urls:
 - https://dbpedia.org/resource/Kofun_period
 civilization_lane: false
+broader_periods:
+- classical_antiquity_era
