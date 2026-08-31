@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (770 of 4,697 still pending after the alias-collision bug fix and a batch of 6 verified phase_of resolutions, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (754 of 4,697 still pending after the alias-collision bug fix, a batch of 6 verified phase_of resolutions, and the Wikidata-succession signal, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -603,6 +603,46 @@ nested under its canonical target via `period_links.yaml` (existing behavior, no
 4649 -> 4643 entities, 90 -> 96 periods, 17 -> 23 period links. `/consolidation-review` "active"
 pending count: 777 -> 770. 239/239 tests pass; zero console errors live on `/explore` and
 `/consolidation-review`.
+
+### Wikidata succession links: relationship re-run, and a new consolidation-queue signal — 31 August 2026
+
+Caught live: Batavian Commonwealth (1801-1806) suggested "high confidence" against Batavian
+Republic (1795-1806) -- unlike the Syria-style cases above, this one turned out to be wrong.
+Batavian Republic's own `aliases_en` carries a "Batavian Commonwealth" entry (genuinely >= 6
+characters, so untouched by the earlier alias-length fix), but checking Wikidata's own P155/P156
+("follows"/"followed by") data showed Republic -> Commonwealth -> Kingdom of Holland documented as
+three distinct, sequential polities, not one entity under two names -- the same succession-chain
+property type used for Roman Republic -> Roman Empire. Resolved `independent`; removed the
+misleading alias from `batavian_republic.yaml` with a dated note explaining why.
+
+That prompted two follow-ups, matching the explicit request to use "follow" links to both link
+polities in the interface and assess identity/chronology automatically:
+
+- **`pipeline/enrich_relationships.py` re-run.** This pipeline already existed to auto-apply
+  successor/parent links from Wikidata's P155/P156/P1365/P1366/P361/P527 properties into the
+  `successors`/`parent` fields `/explore`'s detail panel renders as "Followed by"/"Preceded by" --
+  it just hadn't been re-run against the current, much-changed dataset (confirmed: it correctly
+  added Batavian Commonwealth to Batavian Republic's `successors` once re-run). Doing so surfaced a
+  real gap: the pipeline never checked `entity_type` compatibility before writing, unlike
+  `build.py`'s own validator (successor requires polity -> polity; parent requires
+  polity/subdivision -> polity). The first apply pass wrote 9 invalid links (Maya civilization
+  given a "successor", Old Babylonian Empire given civilization-typed Babylonia as "parent", and
+  others) and failed `build.py`. Manually reverted those 9, fixed the pipeline to filter on
+  `entity_type` exactly like `build.py`'s validator (a new `type_conflicts` metric instead of a
+  write), re-ran clean: 19 parents and 79 successors applied, the same 9 now correctly skipped.
+- **New `documented_successor` consolidation-queue signal.** Mirrors the centroid-conflict signal
+  added earlier: a shared P155/P156/P1365/P1366 link between two candidate QIDs now stops an alias
+  match from auto-qualifying a candidate alone, keeps confidence from reaching "high", and is
+  surfaced as an explicit reason instead of being silently folded into "exact canonical name or
+  alias". Verified live: 119 candidates across the queue carry this flag (France/Kingdom of France,
+  1st/2nd Syrian Republic, Fascist Romania/Kingdom of Romania, and similar genuinely-sequential-
+  regime pairs), all correctly held at medium confidence.
+
+Also resolved via `/consolidation-review` while investigating: Czechoslovak Republic (phase_of
+Czechoslovak Socialist Republic, reviewed live in the browser), East Punjab and Ukrainian Soviet
+Republic (both independent, reviewed live in the browser). `/consolidation-review` "active" pending
+count: 770 -> 754. `build.py`: 4643 -> 4642 entities (one more phase_of retirement), 96 -> 97
+periods, 23 -> 24 period links. 239/239 tests pass; zero console errors live.
 
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
