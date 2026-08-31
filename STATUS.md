@@ -221,6 +221,8 @@ review section should just be corrected so that it works in the new context"):**
   invalid `entity_type`; `manual_overrides` stayed exactly `["notes"]` for a single real change,
   confirming the normalized-comparison fix. 243/243 tests pass.
 
+Merged to `main` (fast-forward, `aeef81c9`). ROADMAP item 1 removed as closed by this work.
+
 ### Period/polity dataset cleanup — 30-31 August 2026
 
 A cluster of data-quality fixes, mostly triggered by live `/explore` testing surfacing

@@ -9,28 +9,33 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-1. Review the whole review workspace to see if it's still aligned with the way we do things
-   given the recent changes. In particular, we should be able to switch an entity from era,
-   period, civilization, polity, etc and link things correctly. But maybe that's only to be
-   added in the side panel (now built, informational only — see STATUS.md), to be seen.
-2. Do a proper `/simplify` pass to see what could be removed, trimmed, simplified: dead code,
+0. **Consider retiring the `/` Timeline page** (and any pipeline/server logic that exists only to
+    support it) if `/explore` has fully superseded it and nothing else depends on that code path.
+    The "browse vs. curate" line that used to justify keeping `/` around has partly dissolved:
+    `web/explore_details.js` is no longer read-only (see STATUS.md) — it now covers entity-type/
+    period-kind edits, polity↔period conversion, and a general raw-field editor, reusing most of
+    the same endpoints `/`'s own drawer calls. What's left to actually check before deleting
+    anything: whether `/`'s geography editor and any other still-`/`-only affordance have a
+    `/explore` equivalent yet, and whether any server route is `/`-only-reachable in practice.
+1. Do a proper `/simplify` pass to see what could be removed, trimmed, simplified: dead code,
    convoluted logic, very similar data concepts that could be merged, etc.
-3. **Close out Seshat reconciliation** — only 69 records left (35 review + 34 unmatched); the
+2. **Close out Seshat reconciliation** — only 69 records left (35 review + 34 unmatched); the
    cheapest queue left to finish. Review decisions are durable and must not be overwritten by
    pipeline reruns.
-4. **Drive down the consolidation queue** (4,336 of 4,669 untriaged) — now the largest backlog and
+3. **Drive down the consolidation queue** (4,336 of 4,669 untriaged) — now the largest backlog and
    the most direct lever on "noisy entities before expanding the default view," given the
    duplicate/phase-record rate found in the 333 already reviewed.
-5. **Resolve the 1,948 stuck Wikidata type-eligibility flags** and the 3,222-record entity-type
+4. **Resolve the 1,948 stuck Wikidata type-eligibility flags** and the 3,222-record entity-type
    classification queue — the other half of "reduce noisy entities," and unmoved since the last
    snapshot.
-6. **Run a comprehensive polity → period reclassification pass.** The `/period-review` queue
-   (`reports/period_role_review.jsonl`) already handles this decision — a polity whose
-   `timeline_role` should be `period` or `both`, because it's really a cultural sequence,
-   archaeological horizon, or context span rather than a weight-bearing political entity — but
-   it currently only covers 94 records queued from whatever originally seeded it. Look at the
-   full polity set (4,671 records), not just that existing queue, for more candidates the
-   original seeding missed. Note that `Polity.entity_type` already distinguishes
+5. **Run a comprehensive polity → period reclassification pass.** The consolidation review
+   queue's "period"/"both" decision (`/consolidation-review`, backed by
+   `reports/period_role_review.jsonl` for the `period_kinds` it seeds) already handles this
+   decision — a polity whose `timeline_role` should be `period` or `both`, because it's really a
+   cultural sequence, archaeological horizon, or context span rather than a weight-bearing
+   political entity — but it currently only covers 94 records queued from whatever originally
+   seeded it. Look at the full polity set (4,671 records), not just that existing queue, for more
+   candidates the original seeding missed. Note that `Polity.entity_type` already distinguishes
    civilization/culture/people/tribe/archaeological_horizon from plain `polity` — this pass is
    as much about applying that field consistently (it's currently under-used) as it is about
    generating new `periods/*.yaml` records; a record correctly typed `entity_type: civilization`
@@ -39,19 +44,12 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    scoped by region) for display purposes only — it must never be a signal for `entity_type` or
    `timeline_role` classification. Those decisions come from Wikidata type evidence and editorial
    judgment, not from how prominent or well-documented a record happens to be.
-7. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
-8. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
-9. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
-10. **Add the linked map**, followed by the print SVG/PDF pipeline.
-11. Treat LLM proposals as optional acceleration after estimating cost; the human review decisions
+6. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
+7. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
+8. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
+9. **Add the linked map**, followed by the print SVG/PDF pipeline.
+10. Treat LLM proposals as optional acceleration after estimating cost; the human review decisions
     and canonical YAML remain authoritative.
-12. **Consider retiring the `/` Timeline page** (and any pipeline/server logic that exists only to
-    support it) if `/explore` has fully superseded it and nothing else depends on that code path.
-    Needs an actual audit first, not an assumption: `web/app.js`'s detail-drawer logic was the
-    direct model for `/explore`'s own panel (`web/explore_details.js`), and some server routes
-    (`/api/polities/*`, `/api/periods/*` editing endpoints) may still be needed for the review
-    workflows even if the plain browsing view itself becomes redundant — separate "browse" from
-    "curate" before deciding what's actually safe to delete.
 
 ## Ideas / deferred design questions
 
