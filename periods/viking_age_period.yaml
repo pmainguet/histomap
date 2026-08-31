@@ -15,12 +15,14 @@ geography:
   historical_regions:
   - northern_europe
   primary_historical_region: northern_europe
-authority: Wikidata
+authority: 'Histomap editorial: civilization-as-backdrop'
 external_ids:
   wikidata: Q213649
 notes: 793 is the Lindisfarne raid, conventionally marking the start; 1066 the Battle
-  of Stamford Bridge / Norman Conquest, conventionally marking the end. No matching
-  polities/ record -- raiding, trading and settlement rather than a single political
-  actor; jorvik.yaml already covers the one durable Viking polity (Viking York).
+  of Stamford Bridge / Norman Conquest, conventionally marking the end. Routed to
+  the Civilizations & Cultures lane 2026-08-31 -- raiding, trading, and settlement
+  rather than a single political actor, the same "civilization-as-backdrop"
+  reasoning as Ancient Egypt/Mesopotamia/Chinese Empire; jorvik.yaml already covers
+  the one durable Viking polity (Viking York) as a plain polity underneath it.
 source_urls:
 - https://www.wikidata.org/wiki/Q213649

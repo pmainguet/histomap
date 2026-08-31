@@ -110,116 +110,6 @@
     "notes": "Created by an editorial entity-consolidation decision."
   },
   {
-    "period_id": "state_of_vietnam_period",
-    "entity_id": "vietnam",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q1193879"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
-    "period_id": "peruvian_republic_q28517256_period",
-    "entity_id": "peruvian_republic_q116847047",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q28517256"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
-    "period_id": "ba_athist_iraq_period",
-    "entity_id": "iraq",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q3108185"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
-    "period_id": "syrian_arab_republic_period",
-    "entity_id": "syria",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q131404661"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
-    "period_id": "free_city_of_danzig_q901974_period",
-    "entity_id": "free_city_of_danzig_q216173",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q901974"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
-    "period_id": "czechoslovak_republic_period",
-    "entity_id": "czechoslovak_socialist_republic",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q11178782"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "united_states_of_venezuela_period",
-    "entity_id": "venezuela",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q5848651"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "italian_protectorate_of_albania_period",
-    "entity_id": "albania",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q1448131"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "albanian_kingdom_q1048340_period",
-    "entity_id": "albania",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q1048340"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "albanian_republic_period",
-    "entity_id": "albania",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q1923781"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "macedonian_empire_period",
     "entity_id": "macedonia",
     "relation": "phase_of",
@@ -242,83 +132,6 @@
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
   {
-    "period_id": "kenya_19631964_period",
-    "entity_id": "kenya",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q6392538"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "dominion_of_ghana_period",
-    "entity_id": "ghana",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q5555325"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "russian_empire_period",
-    "entity_id": "russia",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q34266"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "byelorussian_soviet_socialist_republic_period",
-    "entity_id": "socialist_soviet_republic_of_byelorussia",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q2895"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "first_mexican_republic_period",
-    "entity_id": "mexico",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q1109279"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "latvian_socialist_soviet_republic_period",
-    "entity_id": "latvia",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q2300296"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "united_provinces_of_central_america_period",
-    "entity_id": "federal_republic_of_central_america",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q9063401"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "syrakousai_period",
     "entity_id": "syracuse_q13670",
     "relation": "phase_of",
@@ -326,17 +139,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q3979194"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "german_reich_period",
-    "entity_id": "german_empire",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q1206012"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -363,50 +165,6 @@
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
   {
-    "period_id": "batavian_commonwealth_period",
-    "entity_id": "batavian_republic",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q13134747"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "saar_protectorate_period",
-    "entity_id": "saarland",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q310293"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "lebanese_republic_under_french_mandate_period",
-    "entity_id": "french_mandate_of_lebanon",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q108865218"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "nationalist_zone_period",
-    "entity_id": "spain",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q5560770"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "chola_empire_period",
     "entity_id": "chola_dynasty",
     "relation": "phase_of",
@@ -425,72 +183,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q1069609"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "united_principalities_of_moldavia_and_wallachia_period",
-    "entity_id": "romania",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q958291"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "second_hellenic_republic_period",
-    "entity_id": "greece",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q265824"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "spain_under_joseph_bonaparte_period",
-    "entity_id": "spain",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q1709185"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "spain_under_the_restoration_period",
-    "entity_id": "spain",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q1044536"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "state_of_greater_lebanon_period",
-    "entity_id": "french_mandate_of_lebanon",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q108865226"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "second_spanish_republic_period",
-    "entity_id": "spain",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q178038"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   }

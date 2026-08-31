@@ -1,0 +1,51 @@
+id: byelorussian_soviet_socialist_republic
+canonical_name: Byelorussian Soviet Socialist Republic
+names: {}
+external_ids:
+  wikidata: Q2895
+parent: null
+successors: []
+start: 1919
+end: 1991
+start_confidence: low
+end_confidence: low
+weight_by_era: {}
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Editorially identified as a phase or aspect of Socialist Soviet Republic of
+  Byelorussia.
+sources:
+- wikidata
+prominence_score: 0
+visibility_tier: detailed
+eligibility: accepted
+geography:
+  continents:
+  - asia
+  - europe
+  present_countries:
+  - BY
+  - SU
+  centroid:
+    lat: 54.0
+    lon: 29.0
+  confidence: medium
+  primary_continent: europe
+  historical_regions:
+  - eastern_europe
+  primary_historical_region: eastern_europe
+relationships: []
+entity_type: polity
+entity_type_confidence: high
+entity_type_source_qids: []
+timeline_role: entity
+manual_overrides:
+- consolidation
+- entity_type
+- timeline_role
+- visibility_override
+visibility_override: global
