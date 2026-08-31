@@ -9,14 +9,13 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **Resolve the remaining Wikidata type-eligibility flags (661) and entity-type classification
-   queue (2,682 pending, confirmed live)** — down from 1,948/3,098 after a 31 August 2026
-   rules-table expansion closed a large, genuinely-not-ambiguous gap in `pipeline/
-   wikidata_types.toml`/`backfill_entity_types.py` (see STATUS.md for the analysis). What's left
-   in both queues is now the harder tail: modern administrative subdivisions (deliberately
-   routed to `/subdivision-review` instead), a handful of generically ambiguous Wikidata types
-   ("region," "disputed territory"), and cases needing real per-record judgment — the other half
-   of "reduce noisy entities."
+0. **Work the Wikidata type-eligibility (661) and entity-type classification (2,682) queues** --
+   down from 1,948/3,098 after a 31 August 2026 rules-table expansion closed a large,
+   genuinely-not-ambiguous gap (see STATUS.md). No further safe automation identified: ~350 of
+   the remaining eligibility flags are modern administrative subdivisions correctly gated behind
+   `/subdivision-review`'s parent-confirmation step, and the rest is a long tail of low-count,
+   genuinely ambiguous or obscure types -- ordinary manual review from here, same as any other
+   queue.
 1. **Run a comprehensive polity → period reclassification pass.** The consolidation review
    queue's "period"/"both" decision (`/consolidation-review`, backed by
    `reports/period_role_review.jsonl` for the `period_kinds` it seeds) already handles this
