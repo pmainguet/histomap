@@ -412,6 +412,20 @@ def create_app(root: Path = ROOT) -> FastAPI:
         h = math.sin(d_lat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(d_lon / 2) ** 2
         return 2 * 6371 * math.asin(math.sqrt(min(1, h)))
 
+    def name_is_regime_of(inner_name: str, outer_name: str) -> bool:
+        """True when inner_name reads as "<regime type> of <outer_name>" or
+        "<regime type> of the <outer_name>" -- the common English naming
+        pattern for "a specific government of this place" (Federal People's
+        Republic of Yugoslavia, Islamic Emirate of Afghanistan), distinct
+        from a compound PLACE name that happens to share a word (West
+        Virginia is not "West of Virginia"). Requires an exact trailing
+        match, not just a shared token, so it stays conservative."""
+        inner = re.sub(r"[^a-z0-9 ]+", " ", inner_name.casefold()).strip()
+        outer = re.sub(r"[^a-z0-9 ]+", " ", outer_name.casefold()).strip()
+        if not outer or not inner or inner == outer:
+            return False
+        return inner.endswith(f" of {outer}") or inner.endswith(f" of the {outer}")
+
     def consolidation_review_queue() -> list[dict]:
         refresh_period_role_queue()
         active = {
@@ -552,6 +566,51 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 # from documented_successor, which needs an explicit Wikidata
                 # P155/P156/P1365/P1366 edge -- not every such pair has one.
                 no_overlap_alias_reuse = exact_name_match and not same_wikidata and not date_overlap
+                # Two DISTINCT Wikidata items, DIFFERENT names (no
+                # exact_name_match -- ruling out "same institution, renamed"),
+                # but essentially IDENTICAL date ranges (both starting/ending
+                # together) is the signature of siblings born from the same
+                # founding/partition event rather than one being a phase of
+                # the other -- e.g. Canton of Appenzell Innerrhoden and
+                # Ausserrhoden, both 1513-present, split from the single
+                # original Appenzell canton and never one contained in the
+                # other's timeline. A true phase_of has temporal
+                # precedence (the phase's span nests inside the continuous
+                # polity's own, usually with a DIFFERENT start) -- identical
+                # starts point the other way (found live, 31 August 2026).
+                dates_essentially_identical = (
+                    document.get("start") is not None and other.get("start") is not None
+                    and abs(document["start"] - other["start"]) <= 3
+                    and (document.get("end") is None) == (other.get("end") is None)
+                    and (document.get("end") is None or abs(document["end"] - other["end"]) <= 3)
+                )
+                likely_siblings = (
+                    dates_essentially_identical and not same_wikidata and not exact_name_match
+                )
+                # "<regime type> of <the other record's name>" (Federal
+                # People's Republic of Yugoslavia / Yugoslavia, Islamic
+                # Emirate of Afghanistan / Afghanistan) is a reliable enough
+                # naming pattern for "a specific government of this place" to
+                # stand alongside exact_name_match for the phase_of
+                # direction check below -- it catches genuine phases whose
+                # alias data is incomplete, without reopening the West
+                # Virginia/Virginia false positive (a compound place name,
+                # not this pattern).
+                regime_of_candidate = name_is_regime_of(
+                    str(document.get("canonical_name", "")), str(other.get("canonical_name", ""))
+                )
+                regime_of_reviewed = name_is_regime_of(
+                    str(other.get("canonical_name", "")), str(document.get("canonical_name", ""))
+                )
+                # No strong identity anchor at all -- whatever got this
+                # candidate into the queue was geography + date-overlap +
+                # fuzzy/token name similarity alone, not a shared Wikidata
+                # item, a shared name/alias, or the regime-of-place pattern
+                # above.
+                no_identity_signal = (
+                    not same_wikidata and not exact_name_match
+                    and not regime_of_candidate and not regime_of_reviewed
+                )
                 if not (
                     same_wikidata
                     or (exact_name_match and not coordinate_conflict and not documented_successor)
@@ -571,6 +630,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     for bonus, condition in (
                         (20, same_wikidata and not possible_qid_conflict),
                         (12, exact_name_match and not coordinate_conflict and not documented_successor and not no_overlap_alias_reuse),
+                        (8, regime_of_candidate or regime_of_reviewed),
                         (8, geography_match),
                         (8, date_contains),
                         (6, date_overlap),
@@ -581,6 +641,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         (-25, documented_successor),
                         (-25, no_overlap_alias_reuse),
                         (-15, possible_qid_conflict),
+                        (-15, likely_siblings),
                     )
                     if condition
                 )
@@ -594,8 +655,22 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         else "shares an alias with a distinct Wikidata item and non-overlapping dates -- likely the same name reused for a different era" if no_overlap_alias_reuse
                         else "exact canonical name or alias"
                     )
+                if regime_of_candidate:
+                    reasons.append("reviewed entity's name reads as a specific government of the candidate")
+                if regime_of_reviewed:
+                    reasons.append("candidate's name reads as a specific government of the reviewed entity")
                 if documented_successor:
                     reasons.append("Wikidata: documented successor relationship (follows/followed by or replaces/replaced by)")
+                if likely_siblings:
+                    reasons.append(
+                        "distinct Wikidata items with essentially identical date ranges and different names -- "
+                        "likely siblings from the same founding/partition event, not the same entity"
+                    )
+                elif no_identity_signal:
+                    reasons.append(
+                        "no shared Wikidata item or name/alias match -- likely a different entity, "
+                        "not the same or a phase of it"
+                    )
                 if shared_canonical_tokens:
                     reasons.append(f"shared identity term: {', '.join(sorted(shared_canonical_tokens))}")
                 if geography_match:
@@ -650,12 +725,27 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     suggested_decision = None
                 elif same_wikidata:
                     suggested_decision = "same_entity"
-                elif documented_successor or coordinate_conflict or no_overlap_alias_reuse:
+                elif documented_successor or coordinate_conflict or no_overlap_alias_reuse or likely_siblings:
                     suggested_decision = "independent"
-                elif date_contains and geography_compatible and exact_name_match:
+                elif date_contains and geography_compatible and (exact_name_match or regime_of_candidate):
                     suggested_decision = "phase_of"
-                elif reverse_date_contains and geography_compatible and exact_name_match:
+                elif reverse_date_contains and geography_compatible and (exact_name_match or regime_of_reviewed):
                     suggested_decision = "candidate_phase_of"
+                elif no_identity_signal:
+                    # Reached the queue with no strong identity anchor at all
+                    # (no shared Wikidata item, no shared name/alias) --
+                    # whatever included it was geography + date-overlap +
+                    # fuzzy/token name similarity alone. Every verified
+                    # example of that exact shape this session (West
+                    # Virginia/Virginia, Canton of Appenzell Innerrhoden/
+                    # Ausserrhoden, Kingdom of Wessex/Kingdom of Essex) turned
+                    # out to be genuinely distinct entities. Defaulting to
+                    # "independent" here is the safer direction to be wrong
+                    # in: worst case a reviewer clicks past an overeager
+                    # suggestion, versus the alternative of silently leaving
+                    # the common case unaddressed (found live, 31 August
+                    # 2026).
+                    suggested_decision = "independent"
                 else:
                     suggested_decision = None
                 candidates.append(
@@ -680,6 +770,10 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         "documented_successor": documented_successor,
                         "possible_qid_conflict": possible_qid_conflict,
                         "no_overlap_alias_reuse": no_overlap_alias_reuse,
+                        "likely_siblings": likely_siblings,
+                        "no_identity_signal": no_identity_signal,
+                        "regime_of_candidate": regime_of_candidate,
+                        "regime_of_reviewed": regime_of_reviewed,
                         "suggested_decision": suggested_decision,
                         "confidence": (
                             "high" if not possible_qid_conflict and not no_overlap_alias_reuse
@@ -1070,6 +1164,24 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 )
         metadata[polity_id] = document
         return {"document": document, "period_id": period_id}
+
+    @application.middleware("http")
+    async def no_cache_static(request, call_next):
+        """Force browsers to revalidate (not silently reuse a stale copy of)
+        every /static/* file on each load. Without this, the default
+        StaticFiles response carries only ETag/Last-Modified -- no explicit
+        Cache-Control -- so browsers apply RFC 7234 heuristic freshness and
+        can serve an old cached JS/CSS file for a while after a deploy with
+        no visible sign anything is stale. Bit this session's own live
+        testing repeatedly (explore.js, consolidation_review.js) before
+        being root-caused here rather than worked around with an ignore-
+        cache reload each time. `no-cache` still allows a cheap 304 on an
+        unchanged file -- it forces revalidation, not a full re-download.
+        """
+        response = await call_next(request)
+        if request.url.path.startswith("/static/"):
+            response.headers["Cache-Control"] = "no-cache"
+        return response
 
     application.mount("/static", StaticFiles(directory=web_dir), name="static")
 
