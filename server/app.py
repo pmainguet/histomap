@@ -630,15 +630,31 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 # suggestion, so it doesn't have to be re-derived manually
                 # every time. Left null wherever the evidence doesn't clearly
                 # point one way -- an ordinary manual review, same as before.
+                #
+                # phase_of/candidate_phase_of additionally require
+                # exact_name_match, not just a shared token + date-containment
+                # + geography: West Virginia (candidate: Virginia) has all
+                # three (nested dates, shared "virginia" token, same country,
+                # even a shared P131 target -- West Virginia genuinely was
+                # part of Virginia once), but it is NOT a phase of Virginia --
+                # it seceded in 1863 and both states have coexisted separately
+                # ever since. That partition/split shape is structurally
+                # different from a true phase_of (Bourbon Restoration/Kingdom
+                # of France, Miguel Iglesias government/Peruvian Republic):
+                # in a real phase_of, the candidate's identity IS what the
+                # reviewed entity was called/was during that span, not a
+                # parallel entity it split off from (found live, 31 August
+                # 2026). A shared full name/alias is the reliable
+                # discriminator every verified phase_of case had in common.
                 if possible_qid_conflict:
                     suggested_decision = None
                 elif same_wikidata:
                     suggested_decision = "same_entity"
                 elif documented_successor or coordinate_conflict or no_overlap_alias_reuse:
                     suggested_decision = "independent"
-                elif date_contains and geography_compatible:
+                elif date_contains and geography_compatible and exact_name_match:
                     suggested_decision = "phase_of"
-                elif reverse_date_contains and geography_compatible:
+                elif reverse_date_contains and geography_compatible and exact_name_match:
                     suggested_decision = "candidate_phase_of"
                 else:
                     suggested_decision = None
