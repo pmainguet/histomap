@@ -1,0 +1,31 @@
+id: french_first_republic_period
+canonical_name: French First Republic
+kind: historical
+start: 1792
+end: 1804
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - antarctica
+  - europe
+  - oceania
+  present_countries:
+  - FR
+  centroid:
+    lat: 48.865277777
+    lon: 2.327222222
+  confidence: medium
+  primary_continent: europe
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q58296
+notes: Editorially identified as a phase or aspect of France.
+source_urls:
+- https://www.wikidata.org/wiki/Q58296
