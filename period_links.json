@@ -185,5 +185,71 @@
       "https://www.wikidata.org/wiki/Q1069609"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "syrian_arab_republic_period",
+    "entity_id": "syria",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q131404661"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "united_provinces_of_central_america_period",
+    "entity_id": "federal_republic_of_central_america",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q9063401"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "miguel_iglesias_government_period",
+    "entity_id": "peruvian_republic_q116847047",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q30899490"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "udaipur_state_period",
+    "entity_id": "kingdom_of_mewar",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1457519"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "state_of_greater_lebanon_period",
+    "entity_id": "french_mandate_of_lebanon",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q108865226"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "government_of_national_salvation_period",
+    "entity_id": "territory_of_the_military_commander_in_serbia",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q5589262"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
   }
 ]

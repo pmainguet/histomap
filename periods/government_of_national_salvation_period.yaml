@@ -1,0 +1,28 @@
+id: government_of_national_salvation_period
+canonical_name: Government of National Salvation
+kind: historical
+start: 1941
+end: 1944
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - RS
+  centroid:
+    lat: 44.820555555
+    lon: 20.462222222
+  confidence: low
+  historical_regions:
+  - balkans
+  primary_historical_region: balkans
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q5589262
+notes: Editorially identified as a phase or aspect of Territory of the Military Commander
+  in Serbia.
+source_urls:
+- https://www.wikidata.org/wiki/Q5589262
