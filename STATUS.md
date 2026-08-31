@@ -18,7 +18,7 @@ including targets that are not yet complete.
 | 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules, YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 1,948 type-eligibility review flags and 3,064 pending entity-type classifications; work down the consolidation queue (821 of 4,663 still pending, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
-| 4 — Review workflow | **Partial, in active use** | Prioritized web review, provenance, score explanations, source links, saved decisions, pipeline actions, plus new consolidation/subdivision/period-role review UIs | Complete review pass across all four queues; cost estimator and optional structured LLM proposal/diff workflow |
+| 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
 | 5 — Editorial pass | **Started** | Validated transition model and 5 curated transitions | Roughly 45 more transitions, icons for top ~50, and polished adult/child copy for top ~50 |
 | 6 — Web view | **Mostly complete** | Unified FastAPI server; `/explore`'s hierarchy timeline (chapter/era/period/polity/civilizations-culture bands) is now the sole web view — `/` (the original flat geographic-lane timeline) was retired 31 August 2026, see below; geographic lane grouping, click-to-zoom, side-panel detail drawer with editing, sources, transitions view | `/`'s free-text search, visibility-tier/entity-type/period-kind filters, era presets/manual date-range input, relationship highlighting on the chart, swimlane collapse/expand, and keyboard-operable bands were deliberately not ported (accepted losses, see ROADMAP.md history) — no longer "still required" so much as "decided against"; reviewed collapsible display groups, linked map, stronger mobile/visual testing, authentication before public write access |
 | 7 — Print poster | **Not started** | — | A1/A0 SVG renderer, methodology/legend footer, PDF export and print test |
@@ -400,6 +400,30 @@ confirmed both via curl and in-browser, nav renders correctly, zero console erro
 `/explore`, `/reviews`, `/type-review`.
 
 243/243 tests pass throughout.
+
+### `/review` (Seshat reconciliation) removed — 31 August 2026
+
+Considered removing the whole review workflow, since its main historical role was importing
+Wikidata/Seshat data. Pushed back on the full-removal framing: `/consolidation-review`,
+`/type-review`, and `/subdivision-review` aren't import gates -- they curate the canonical set
+that already exists, independent of any future import, and had real backlogs (832/3,098/2
+pending) that would have had nowhere to go without them. `/review` (the interactive Seshat
+source-vs-candidate matching UI specifically) is genuinely different: import-specific, and its
+queue was already fully cleared (0 pending, confirmed live). Direct decision: remove `/review`,
+keep the other three.
+
+Removed `web/review.html`/`web/review.js`, the `/review` page route, `GET /api/reviews`/
+`POST /api/reviews/{seshat_id}`, `ReviewDecision`, `add_source_links()`, and the
+`review_queue`/`reviews_by_id` state (with its `pending_records()`/`save_decision()` plumbing
+from `pipeline/review_cli.py`). Kept `pipeline/reconcile.py` and
+`pipeline/apply_review_decisions.py` as scripts, and their `ALLOWED_ACTIONS` entries as
+API-triggerable hooks (`POST /api/actions/reconcile`, `/api/actions/apply-reviews`) -- reusable
+groundwork if source data ever needs reconciling again, without rebuilding a dedicated review UI
+first. `refresh_review_queue()` simplified to `refresh_metadata()` (just reloads
+`polities/*.yaml`), still wired to run after a `reconcile` action completes.
+`web/reviews.js`/`.html` and README.md updated to match. Verified live: `/review` 404s,
+`/reviews` renders 3 tiles (was 4) with correct counts, zero console errors. 239/239 tests pass
+(four tests exercising the deleted endpoints removed along with their fixture data).
 
 ### Period/polity dataset cleanup — 30-31 August 2026
 

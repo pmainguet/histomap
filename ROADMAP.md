@@ -31,13 +31,6 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    scoped by region) for display purposes only — it must never be a signal for `entity_type` or
    `timeline_role` classification. Those decisions come from Wikidata type evidence and editorial
    judgment, not from how prominent or well-documented a record happens to be.
-1 bis. Whether to trim the review workflow now that its Seshat/Wikidata import role is mostly
-   done: `/review` (Seshat reconciliation) is import-specific and currently idle (0 pending), but
-   `/consolidation-review`/`/type-review`/`/subdivision-review` are ongoing curation tools for the
-   canonical set, not import gates, and still have real backlogs (832/3,098/2 pending as of
-   31 August 2026) -- not something to remove while those exist. Leaning toward keeping `/review`
-   dormant rather than deleting it (cheap to leave, and re-imports tend to recur without warning),
-   and trimming shared plumbing rather than removing pages. Still open; discuss before acting.
 2. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
 3. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
 4. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
