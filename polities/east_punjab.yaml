@@ -1,0 +1,48 @@
+id: east_punjab
+canonical_name: East Punjab
+names: {}
+external_ids:
+  wikidata: Q2354639
+parent: punjab
+successors: []
+start: 1950
+end: 1966
+start_confidence: low
+end_confidence: low
+weight_by_era: {}
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Editorially identified as a phase or aspect of Punjab.
+sources:
+- wikidata
+prominence_score: 0
+visibility_tier: detailed
+eligibility: accepted
+geography:
+  continents:
+  - asia
+  present_countries:
+  - IN
+  centroid: null
+  confidence: medium
+  historical_regions:
+  - south_asia
+  primary_historical_region: south_asia
+relationships: []
+entity_type: subdivision
+entity_type_confidence: high
+entity_type_source_qids: []
+timeline_role: entity
+manual_overrides:
+- consolidation
+- entity_type
+- parent
+- subdivision_parent_status
+- timeline_role
+- visibility_override
+subdivision_parent_status: confirmed
+visibility_override: global

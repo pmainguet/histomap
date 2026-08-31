@@ -11,8 +11,7 @@ geography:
   historical_regions:
   - west_asia
   primary_historical_region: west_asia
-broader_periods:
-- mesopotamian_early_states_era
+broader_periods: []
 authority: DBpedia/Wikipedia periodization
 external_ids:
   dbpedia: https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)

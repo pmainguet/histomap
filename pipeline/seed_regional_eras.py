@@ -35,15 +35,13 @@ REGIONAL_ERAS: list[dict] = [
     # Archaic" neolithic_era) on 2026-08-31 -- see ONTOLOGY.md's "Overarching
     # regional eras for genuinely cross-regional themes". Removed from this
     # table for the same reason as the Paleolithic/Neolithic/Bronze Age rows.
-    dict(
-        id="mesopotamian_early_states_era",
-        canonical_name="Mesopotamian Early States",
-        broader_periods=["macro_early_cities_states"],
-        start=-3500,
-        end=-1200,
-        continents=["asia"],
-        notes="Uruk period through the Bronze Age Collapse.",
-    ),
+    # mesopotamian_early_states_era originated here but was deleted outright
+    # (not demoted) on 2026-08-31, same reasoning as egyptian_early_states_era
+    # just below: redundant with mesopotamia_period, the existing
+    # "civilization-as-backdrop" period already carrying Mesopotamia's
+    # Civilizations & Cultures lane presence. early_dynastic_mesopotamia (the
+    # one period that pointed broader_periods at it) now falls back to
+    # heuristic era placement instead of a curated one.
     # egyptian_early_states_era originated here but was deleted outright (not
     # demoted, unlike the other removed rows below) on 2026-08-31: it was
     # redundant with ancient_egypt_period, the existing "civilization-as-

@@ -77,17 +77,6 @@
     "notes": "The civilization overlaps the period; the link does not imply exact temporal equivalence."
   },
   {
-    "period_id": "commonwealth_realm_of_malawi_period",
-    "entity_id": "malawi",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q6741448"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
     "period_id": "taifa_of_murcia_q104178238_period",
     "entity_id": "taifa_of_murcia_q921067",
     "relation": "part_of_periodization",
@@ -117,17 +106,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q104383185"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
-  },
-  {
-    "period_id": "commonwealth_realm_of_uganda_period",
-    "entity_id": "uganda",
-    "relation": "part_of_periodization",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q7877575"
     ],
     "notes": "Created by an editorial entity-consolidation decision."
   },
@@ -187,17 +165,6 @@
     "notes": "Created by an editorial entity-consolidation decision."
   },
   {
-    "period_id": "commonwealth_realm_of_the_gambia_period",
-    "entity_id": "the_gambia",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q7735661"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "czechoslovak_republic_period",
     "entity_id": "czechoslovak_socialist_republic",
     "relation": "phase_of",
@@ -253,17 +220,6 @@
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
   {
-    "period_id": "commonwealth_realm_of_mauritius_period",
-    "entity_id": "mauritius",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q14759030"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "macedonian_empire_period",
     "entity_id": "macedonia",
     "relation": "phase_of",
@@ -286,17 +242,6 @@
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
   {
-    "period_id": "east_punjab_period",
-    "entity_id": "punjab",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q2354639"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
     "period_id": "kenya_19631964_period",
     "entity_id": "kenya",
     "relation": "phase_of",
@@ -304,17 +249,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q6392538"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "commonwealth_realm_of_guyana_period",
-    "entity_id": "guyana",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q5622720"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -370,17 +304,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q2300296"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "han_dynasty_period",
-    "entity_id": "han_q1574130",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q7209"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
@@ -546,17 +469,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q1044536"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
-  },
-  {
-    "period_id": "union_of_south_africa_period",
-    "entity_id": "south_africa",
-    "relation": "phase_of",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://www.wikidata.org/wiki/Q193619"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
   },
