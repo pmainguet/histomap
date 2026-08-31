@@ -35,10 +35,11 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    `/subdivision-review`'s parent-confirmation step, and the rest is a long tail of low-count,
    genuinely ambiguous or obscure types -- ordinary manual review from here, same as any other
    queue.
-6. **Close the residual geography gaps** left after the 31 August 2026 continent/region fixes (see
-   STATUS.md): **986** active polities still have no continent at all (no Wikidata QID, or a QID
-   with neither a usable P17 chain nor a direct P30 claim nor a centroid -- every signal built so
-   far has been tried and come up empty; needs a different approach, if one exists); **69** have
+6. **Close the residual geography gaps** left after the 31 August 2026 continent/region fixes,
+   including a further name-matching pass the same day (see STATUS.md): **917** active polities
+   still have no continent at all (no Wikidata QID, or a QID with neither a usable P17 chain nor a
+   direct P30 claim nor a centroid nor an unambiguous name match -- every signal built so far has
+   been tried and come up empty; needs a different approach, if one exists); **73** have
    `present_countries` but their country isn't yet in `pipeline/historical_regions.py`'s
    ~180-country starter table (cheap and safe to grow incrementally).
 7. **A period can subdivide a civilization/polity, not just an era — the schema and tree only

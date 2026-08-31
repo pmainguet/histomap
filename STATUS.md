@@ -477,6 +477,40 @@ section above), these turned out to be a fundamentally different, much safer kin
   239/239 tests pass; build validates cleanly (4,697 entities); zero console errors on `/explore`
   and `/reviews`.
 
+### Name-matched present_countries fix, and a real consolidation-queue false positive caught live — 31 August 2026
+
+While live-testing `/consolidation-review`, caught a concrete example of exactly the unreliability
+documented in the earlier consolidation-queue investigation: a "high confidence" suggested match
+between two "Peruvian Republic" records (`peruvian_republic_q116847047`, 1837-present, and
+`peruvian_republic_q28517256`, 1838-1839) that are genuinely two distinct polities at different
+times, not duplicates -- exact same shape as the earlier Roman Republic/Ancient Rome and East
+Punjab/Punjab false positives. Correct decision: independent, not same_entity. Also noticed the
+candidate's own `present_countries` was empty despite obviously being Peru; fixed by hand.
+
+That specific fix led into a broader pass on ROADMAP item 6's residual gap: polities with no
+continent/country from any automated signal (P17, direct P30, centroid) where the country is
+often obvious from the record's own name. New `pipeline/seed_present_countries_from_name.py`
+(idempotent) matches `canonical_name` against a conservative demonym/country-name table,
+whole-word only, restricted to `entity_type: polity`. Found and fixed a real systematic risk while
+building it: colonial/great-power adjectives (Dutch, Austrian, Italian, Portuguese, Belgian,
+Spanish, Danish, Swedish, Russian, Chinese, Japanese, American, Ottoman) describe a foreign
+power's *control* over a territory as often as they describe that power's own homeland -- an
+early version matched "Dutch Loango-Angola" to the Netherlands, "Austrian Netherlands" to Austria,
+"Italian Ethiopia" to Italy, and "Portuguese Cochin" to Portugal, all wrong. Fixed with two rules:
+a colonial adjective loses to any other distinct-country match in the same name, and a colonial
+adjective with no corroborating match is excluded entirely (no way to tell "colonizer's own home
+front" from "foreign holding" from a name alone). Also excludes names matching two distinct
+non-colonial countries at once (e.g. "Croatia in personal union with Hungary").
+
+Dry-ran first (a separate scratchpad script printing the full match list grouped by country) and
+reviewed every match by hand before applying anything, rather than trusting the heuristic blind --
+same discipline as the consolidation-queue investigation that started this thread. Applied 146
+matches, then ran `pipeline/derive_historical_regions.py` to complete the chain (142 of 146 got a
+real `historical_region`; 4 remain in the still-tracked country-not-in-starter-table gap).
+Continent gap: 986 -> 917; country gap: 672 -> 607.
+
+239/239 tests pass; build validates (4,697 entities); zero console errors live on `/explore`.
+
 ### Comprehensive polity → period reclassification scan — 31 August 2026
 
 Closed ROADMAP's "run a comprehensive scan across the full polity set, not just the 94-record
