@@ -478,27 +478,36 @@ test count was still off an old 137. Re-measured live 31 August 2026 via the run
 current until the next re-measurement, and re-measure rather than trust old copies of these
 numbers elsewhere in this file or in ROADMAP.md.)*
 
-- **4,663** canonical polities.
+- **4,697** canonical polities (4,663 + the 34 Seshat unmatched drafts imported this pass, see
+  below).
 - **242** automated tests passing; `build.py` validates **5** curated transitions, **90** periods,
   and **17** period links (down sharply from 102/97 as this session's period→polity conversions —
   Han dynasty, Tibet, the Commonwealth-realm batch, 29 modern-era `phase_of` companions, etc. —
   each removed both the `periods/*.yaml` record and its `period_links.yaml` entry).
 - Seshat reconciliation: the reviewable "review" sub-queue is **fully cleared** (0 pending,
   confirmed live via `/api/reviews` returning `total: 0`); `reports/seshat_review_decisions.jsonl`
-  currently holds **258** decisions (109 accept / 149 reject). **34 unmatched** drafts
-  (`reports/seshat_unmatched_drafts.yaml`) remain, not currently exposed in any review-page
-  queue — still an open "decide the workflow" item, see ROADMAP.md.
-- Entity consolidation: **821 pending** (confirmed via `/api/review-dashboard`: 59 high-confidence,
-  713 medium, 76 flagged as polity→period candidates) — down substantially from the 4,336 this
-  file and ROADMAP.md had both been citing from a much older, unrefreshed snapshot.
+  currently holds **258** decisions (109 accept / 149 reject). The **34 unmatched** drafts
+  (`reports/seshat_unmatched_drafts.yaml`) are no longer inert — `pipeline/
+  import_seshat_unmatched_drafts.py` (new, idempotent) wrote each as a minimal draft
+  `polities/*.yaml` and queued an honest `/type-review` entry for each (proposed_type
+  `archaeological_horizon`, confidence `low`, reason states plainly there's no automated Wikidata
+  evidence behind the proposal since these records have no Wikidata item at all). Closes the
+  ROADMAP item that used to sit here.
+- Entity consolidation: **832 pending** (confirmed via `/api/review-dashboard`: 59 high-confidence,
+  724 medium, 76 flagged as polity→period candidates; +11 from the Seshat import above) — down
+  substantially from the 4,336 this file and ROADMAP.md had both been citing from a much older,
+  unrefreshed snapshot.
 - Wikidata type-eligibility: **5,088** decisions made (3,126 accepted, 14 excluded), **1,948**
   still flagged `review` — confirmed unchanged.
 - Entity-type classification (polity/civilization/culture/people/tribe/archaeological_horizon):
-  **3,064 pending** (confirmed live, down from an earlier 3,222).
+  **3,098 pending** (confirmed live; +34 from the Seshat import above).
 - Subdivision-parent classification: **2 pending** (confirmed live via `/api/review-dashboard`).
 - Period-role (polity→period reclassification) queue: **94** ever seeded into
   `reports/period_role_review.jsonl`, **76 still open** per the live consolidation-queue
   breakdown — 18 resolved, consistent with this session's period→polity conversion batch.
+- Also recomputed `prominence_score`/`prominence_components` dataset-wide (`pipeline/
+  compute_prominence.py` hadn't run since before this session's period→polity conversions and
+  Seshat import, so ~70 records had stale or never-computed scores) — no other fields touched.
 - Geography and editorial-coverage figures from the July snapshot have not been re-measured this
   pass; re-run `pipeline/enrich_geography.py`'s coverage report before citing them again.
 
