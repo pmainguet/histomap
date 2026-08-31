@@ -248,15 +248,7 @@ function wireEditControls(kind, record, ctx, onSaved) {
   });
 }
 
-function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, (character) => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;",
-  })[character]);
-}
-
-function displayTerm(value) {
-  return String(value).replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
-}
+// escapeHtml, displayTerm live in common.js, loaded first on /explore.
 
 const exploreCountryNames = new Intl.DisplayNames(["en"], { type: "region" });
 

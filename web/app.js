@@ -51,15 +51,9 @@ const eraPresets = {
   modern: [1750, currentYear],
 };
 
-function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, (character) => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;",
-  })[character]);
-}
-
-function displayTerm(value) {
-  return String(value).replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
-}
+// escapeHtml, displayTerm, svgEl (aliased below as svgElement) live in
+// common.js, loaded first on this page -- both this classic-vs-module
+// combination and this module's own top-level scope reach it as a global.
 
 // Mouse click and keyboard activation of the same SVG element, which is not a
 // real button and so gets no free Enter/Space handling from the browser.
@@ -605,11 +599,7 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && details.classList.contains("is-open")) closeDetails();
 });
 
-function svgElement(name, attributes = {}) {
-  const element = document.createElementNS("http://www.w3.org/2000/svg", name);
-  for (const [key, value] of Object.entries(attributes)) element.setAttribute(key, value);
-  return element;
-}
+const svgElement = svgEl; // local name kept so existing call sites in this file are unchanged
 
 function confidenceLevel(polity) {
   const rank = { high: 0, medium: 1, low: 2, legendary: 3 };

@@ -10,8 +10,7 @@ const partKeys = ["Y", "U", "I", "O", "L"];
 const inversePhaseKeys = ["A", "D", "F", "G", "H"];
 const inversePartKeys = ["Z", "C", "V", "B", "N"];
 
-function escapeHtml(value) { return String(value).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"})[c]); }
-function formatYear(year) { return year == null ? "present" : year < 0 ? `${Math.abs(year)} BCE` : `${year} CE`; }
+// escapeHtml, formatYear live in common.js, loaded first on this page.
 function links(item) { return item.wikidata ? `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(item.wikidata)}" target="_blank" rel="noopener noreferrer">Wikidata (${escapeHtml(item.wikidata)}) ↗</a>` : "No Wikidata item"; }
 function typeLinks(item) { return (item.direct_type_qids || []).map((qid) => `<a data-wikidata-label="${escapeHtml(qid)}" href="https://www.wikidata.org/wiki/${encodeURIComponent(qid)}" target="_blank" rel="noopener noreferrer">${escapeHtml(qid)} ↗</a>`).join(", ") || "Not recorded"; }
 function dateRange(item) { return `${formatYear(item.dates[0])}–${formatYear(item.dates[1])}`; }

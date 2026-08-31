@@ -3,11 +3,9 @@ function formatYear(year) {
   return year < 0 ? `${Math.abs(year).toLocaleString()} BCE` : `${year.toLocaleString()} CE`;
 }
 
-function svgEl(name, attrs = {}) {
-  const el = document.createElementNS("http://www.w3.org/2000/svg", name);
-  for (const [key, value] of Object.entries(attrs)) el.setAttribute(key, value);
-  return el;
-}
+// svgEl lives in common.js, loaded first on this page; this file's own
+// formatYear above differs deliberately (adds "present" + BCE/CE handling
+// AND comma-formats large numbers) from common.js's plainer variant.
 
 let clipIdCounter = 0;
 const LABEL_MIN_WIDTH = 30;

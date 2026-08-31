@@ -6,16 +6,7 @@ let total = 0;
 let deferredOffset = 0;
 let submitting = false;
 
-function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, (character) => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;",
-  })[character]);
-}
-
-function formatYear(year) {
-  if (year == null) return "present";
-  return year < 0 ? `${Math.abs(year)} BCE` : `${year} CE`;
-}
+// escapeHtml, formatYear live in common.js, loaded first on this page.
 
 function candidateButton(candidate, index, manual = false) {
   const evidence = manual ? "Manual search result" : (candidate.evidence || []).join("; ");
