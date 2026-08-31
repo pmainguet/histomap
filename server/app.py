@@ -187,6 +187,12 @@ def create_app(root: Path = ROOT) -> FastAPI:
         if direct_types_path.exists()
         else {}
     )
+    # qid -> set of P131 ("located in the administrative territorial entity")
+    # targets, for consolidation_review_queue()'s shared-location signal.
+    p131_by_qid: dict[str, set[str]] = {}
+    for row in relationship_rows:
+        if row.get("property") == "P131" and row.get("source") and row.get("target"):
+            p131_by_qid.setdefault(row["source"], set()).add(row["target"])
     type_review_queue = []
 
     def refresh_type_review_queue() -> None:
@@ -358,13 +364,34 @@ def create_app(root: Path = ROOT) -> FastAPI:
         }
 
     def consolidation_names(document: dict) -> set[str]:
-        values = [document.get("canonical_name", "")]
+        """canonical_name is always included regardless of length -- it's the
+        primary designation, and two records sharing it verbatim is
+        meaningful even when short (e.g. "Peru"). Aliases/translations are
+        filtered to >= 6 normalized characters: they're collision-prone at
+        short lengths -- the State of Qi's alias "Chi" and Chile's alias
+        "CHI" both normalize to "chi", which without this filter marked an
+        unrelated pair "exact name match" (found live, 31 August 2026)."""
+        canonical = re.sub(r"[^a-z0-9]+", " ", str(document.get("canonical_name", "")).casefold()).strip()
+        result = {canonical} if canonical else set()
+        alias_values = []
         for key, value in (document.get("names") or {}).items():
-            values.extend(str(value).split("|") if key == "aliases_en" else [value])
-        return {
-            re.sub(r"[^a-z0-9]+", " ", str(value).casefold()).strip()
-            for value in values if str(value).strip()
-        }
+            alias_values.extend(str(value).split("|") if key == "aliases_en" else [value])
+        for value in alias_values:
+            normalized = re.sub(r"[^a-z0-9]+", " ", str(value).casefold()).strip()
+            if len(normalized) >= 6:
+                result.add(normalized)
+        return result
+
+    def centroid_distance_km(a: dict | None, b: dict | None) -> float | None:
+        """Great-circle distance between two Geography.centroid dicts, or
+        None if either is missing. Coarse (spherical-Earth) approximation --
+        plenty precise for "same city" vs. "different continent"."""
+        if not a or not b or a.get("lat") is None or b.get("lat") is None:
+            return None
+        lat1, lon1, lat2, lon2 = map(math.radians, (a["lat"], a["lon"], b["lat"], b["lon"]))
+        d_lat, d_lon = lat2 - lat1, lon2 - lon1
+        h = math.sin(d_lat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(d_lon / 2) ** 2
+        return 2 * 6371 * math.asin(math.sqrt(min(1, h)))
 
     def consolidation_review_queue() -> list[dict]:
         refresh_period_role_queue()
@@ -437,9 +464,25 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 shared_canonical_tokens = canonical_tokens_by_id[entity_id] & canonical_tokens_by_id[other_id]
                 exact_name_match = bool(names_by_id[entity_id] & names_by_id[other_id])
                 same_wikidata = bool(source_qid and source_qid == (other.get("external_ids") or {}).get("wikidata"))
+                other_qid = (other.get("external_ids") or {}).get("wikidata")
+                # Independent-of-name corroborating signals: do these two records
+                # actually refer to the same place? A shared alias (e.g. "New
+                # Holland" used historically for both Dutch Brazil and colonial
+                # Australia) says nothing about location -- these do.
+                coordinate_km = centroid_distance_km(
+                    (document.get("geography") or {}).get("centroid"),
+                    (other.get("geography") or {}).get("centroid"),
+                )
+                coordinate_conflict = coordinate_km is not None and coordinate_km > 1500
+                coordinate_match = coordinate_km is not None and coordinate_km <= 300
+                shared_p131 = bool(
+                    source_qid and other_qid
+                    and p131_by_qid.get(source_qid) and p131_by_qid.get(other_qid)
+                    and p131_by_qid[source_qid] & p131_by_qid[other_qid]
+                )
                 if not (
                     same_wikidata
-                    or exact_name_match
+                    or (exact_name_match and not coordinate_conflict)
                     or (
                         date_overlap and geography_compatible
                         and ((shared_canonical_tokens and name_score >= 60) or name_score >= 88)
@@ -455,11 +498,14 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     bonus
                     for bonus, condition in (
                         (20, same_wikidata),
-                        (12, exact_name_match),
+                        (12, exact_name_match and not coordinate_conflict),
                         (8, geography_match),
                         (8, date_contains),
                         (6, date_overlap),
+                        (6, coordinate_match),
                         (4, type_match),
+                        (4, shared_p131),
+                        (-25, coordinate_conflict),
                     )
                     if condition
                 )
@@ -467,13 +513,22 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 if same_wikidata:
                     reasons.append("same Wikidata item")
                 if exact_name_match:
-                    reasons.append("exact canonical name or alias")
+                    reasons.append(
+                        "exact canonical name or alias" if not coordinate_conflict
+                        else "shares an alias, but centroids are far apart -- likely coincidental"
+                    )
                 if shared_canonical_tokens:
                     reasons.append(f"shared identity term: {', '.join(sorted(shared_canonical_tokens))}")
                 if geography_match:
                     reasons.append("shared present-day geography")
                 elif not geography_compatible:
                     reasons.append("conflicting geography")
+                if coordinate_conflict:
+                    reasons.append(f"centroids ~{round(coordinate_km):,}km apart")
+                elif coordinate_match:
+                    reasons.append(f"centroids ~{round(coordinate_km)}km apart -- same location")
+                if shared_p131:
+                    reasons.append("Wikidata: located in the same administrative entity")
                 if date_contains:
                     reasons.append("target dates contain source")
                 elif date_overlap:
@@ -497,7 +552,14 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         "exact_name_match": exact_name_match,
                         "same_wikidata": same_wikidata,
                         "type_match": type_match,
-                        "confidence": "high" if same_wikidata or (exact_name_match and geography_compatible) else "medium",
+                        "coordinate_distance_km": round(coordinate_km) if coordinate_km is not None else None,
+                        "coordinate_conflict": coordinate_conflict,
+                        "shared_p131": shared_p131,
+                        "confidence": (
+                            "high" if same_wikidata
+                            or (exact_name_match and geography_compatible and not coordinate_conflict)
+                            else "medium"
+                        ),
                         "reasons": reasons,
                         "present_countries": sorted(other_countries),
                         "direct_type_qids": sorted(set((direct_types.get((other.get("external_ids") or {}).get("wikidata")) or {}).get("types", []))),
