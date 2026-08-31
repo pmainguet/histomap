@@ -64,10 +64,14 @@ def write_period(document: dict, roles: list[str]) -> str | None:
     return value["id"]
 
 
+CONTEXT_ENTITY_TYPES = {"civilization", "culture", "people", "tribe", "archaeological_horizon"}
+
+
 def run() -> dict[str, int]:
     direct_cache = json.loads(DIRECT_TYPES_PATH.read_text(encoding="utf-8"))
     ancestry = json.loads(ANCESTRY_PATH.read_text(encoding="utf-8")).get("ancestors", {})
     queue = []
+    queued_ids = set()
     auto_period = 0
     for path in sorted(POLITIES_DIR.glob("*.yaml")):
         document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
@@ -96,6 +100,42 @@ def run() -> dict[str, int]:
                 "dates": [document.get("start"), document.get("end")],
                 "prominence_score": document.get("prominence_score", 0),
                 "reason": "Wikidata classifies this record as both a period and an entity-like subject.",
+            }
+        )
+        queued_ids.add(document["id"])
+
+    # Second candidate source, independent of Wikidata's own period-type ancestry:
+    # a record already classified entity_type civilization/culture/people/tribe/
+    # archaeological_horizon (a context-type, not a weight-bearing political actor
+    # by the project's own convention) but still modeled as timeline_role: entity.
+    # Deliberately not auto-converted -- entity_type being confirmed only means the
+    # *kind* of thing was confirmed, not that period-vs-entity modeling was decided
+    # (Babylonia is a documented case of "confirmed civilization, deliberately kept
+    # weight-bearing" from this same project). Queued for the same human decision.
+    for path in sorted(POLITIES_DIR.glob("*.yaml")):
+        document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        if document["id"] in queued_ids:
+            continue
+        if document.get("entity_type", "polity") not in CONTEXT_ENTITY_TYPES:
+            continue
+        if document.get("timeline_role", "entity") != "entity":
+            continue
+        if "timeline_role" in set(document.get("manual_overrides", [])):
+            continue
+        queue.append(
+            {
+                "id": document["id"],
+                "canonical_name": document["canonical_name"],
+                "wikidata": (document.get("external_ids") or {}).get("wikidata"),
+                "entity_type": document.get("entity_type", "polity"),
+                "period_kinds": ["historical"],
+                "direct_type_qids": [],
+                "dates": [document.get("start"), document.get("end")],
+                "prominence_score": document.get("prominence_score", 0),
+                "reason": (
+                    f"entity_type is {document.get('entity_type')}, not a weight-bearing "
+                    "political actor by convention, but still modeled as timeline_role: entity."
+                ),
             }
         )
     queue.sort(key=lambda item: (-float(item["prominence_score"]), item["canonical_name"]))
