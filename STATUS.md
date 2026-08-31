@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (827 of 4,697 still pending, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (777 of 4,697 still pending after the alias-collision bug fix, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -536,6 +536,46 @@ Verified live: Babylonia and the others render correctly with the new reason tex
 ("entity_type is civilization, not a weight-bearing political actor by convention, but still
 modeled as timeline_role: entity"), zero console errors. 239/239 tests pass; build validates
 cleanly.
+
+### Consolidation-queue alias-collision bug fixed; centroid and Wikidata-parent signals added — 31 August 2026
+
+The Peruvian Republic false positive above, plus a second live example (Free City of Danzig,
+two distinct polities 130 years apart sharing a name, correctly resolved `independent` the same
+way), prompted trying to generalize "same name, non-overlapping dates -> independent" into an
+automated pass. Doing so via the queue's own `exact_name_match` flag surfaced ~62 candidates
+including clearly unrelated pairs (Dutch Brazil<->Australia, State of Qi<->Chile, Vatican
+City<->Papal States, Romanov Empire<->Russian Empire, Mughal Empire<->India). None were applied --
+root-caused instead to a real bug in `server/app.py`'s `consolidation_names()`: it collected every
+alias/translation string with no minimum length, so "New Holland" (a name genuinely used
+historically for both Dutch Brazil and colonial Australia) and the 3-character collision between
+State of Qi's alias "Chi" and Chile's alias "CHI" both counted as an "exact name match" -- a signal
+strong enough to bypass the geography/date gate entirely and inflate confidence to "high".
+
+Fixed by requiring alias-sourced strings to be >= 6 normalized characters to count as a match
+signal (mirroring `consolidation_tokens()`'s existing >= 4 convention); `canonical_name` itself is
+always included regardless of length, since two records sharing it verbatim is meaningful even
+when short. Also added two corroborating signals independent of name matching, per the specific
+ask to use Wikidata fields like a parent or shared coordinates rather than names alone:
+
+- **Centroid distance** (`geography.centroid`, already derived per-record): an alias match no
+  longer auto-qualifies a candidate when the two centroids are >1500km apart, and confidence can't
+  reach "high" in that case either -- it's now surfaced as a reason line ("centroids ~Nkm apart")
+  rather than silently ignored. Centroids within 300km add a small score bonus and a "same
+  location" reason.
+- **Shared P131** ("located in the administrative territorial entity") target between the two
+  Wikidata items, read from the already-cached `sources/wikidata_relationships.json` (no new
+  fetch needed) -- a small corroborating bonus when both records are documented as sitting inside
+  the same administrative entity.
+
+Verified live: Dutch Brazil<->Australia and Qi<->Chile no longer appear as candidates at all;
+legitimate matches sharing those tokens (Socialist Republic of Chile->Chile, Western/South
+Australia->Australia) remain, scored via genuine token/geography signals rather than the alias
+bug. Re-checked the Danzig/Limburg pattern (exact canonical name, non-overlapping dates, distinct
+Wikidata items) across the corrected queue: zero remaining candidates -- the ~62-candidate list
+was entirely a byproduct of the alias bug, not a real backlog, and both genuine instances found
+this session were already resolved by hand. `/consolidation-review` "active" pending count:
+827 -> 777 (entities whose only signal was the buggy exact-name-match now have no candidates at
+all). 239/239 tests pass; build validates; zero console errors live.
 
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
