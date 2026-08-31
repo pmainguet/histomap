@@ -58,3 +58,4 @@ consolidation_status: same_entity
 consolidated_into: roman_republic
 manual_overrides:
 - consolidation
+linked_era_id: classical_antiquity_era

@@ -164,6 +164,12 @@ class Polity(BaseModel):
     successors: list[str] = Field(default_factory=list)
     geography: Geography = Field(default_factory=Geography)
     manual_overrides: list[str] = Field(default_factory=list)
+    # Explicit, editable era/period id this entity is grouped/colored with on
+    # /explore -- a plain field, not derived from a heuristic. Was seeded
+    # 2026-08-31 from build_explore_tree.py's date+geography match heuristic
+    # (the same one rank_candidates uses elsewhere) as a one-time starting
+    # point; from here on it's curator-set only, no on-the-fly recomputation.
+    linked_era_id: str | None = None
     start: int
     end: int | None = None
     start_confidence: Confidence
@@ -262,6 +268,10 @@ class Period(BaseModel):
     external_ids: dict[str, str] = Field(default_factory=dict)
     notes: str = ""
     source_urls: list[str] = Field(default_factory=list)
+    # See Polity.linked_era_id -- same field, same purpose, for Civilizations
+    # & Cultures lane periods (which never nest under an era via
+    # broader_periods, so have no other era-color signal).
+    linked_era_id: str | None = None
 
     @field_validator("id")
     @classmethod

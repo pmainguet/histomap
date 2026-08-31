@@ -81,13 +81,14 @@ def point_in_polygon(lon: float, lat: float, polygon: list[list[list[float]]]) -
 def locate_point(lon: float, lat: float, features: list[dict]) -> tuple[str, str] | None:
     for feature in features:
         geometry = feature.get("geometry") or {}
-        polygons = (
-            [geometry.get("coordinates", [])]
-            if geometry.get("type") == "Polygon"
-            else geometry.get("coordinates", [])
-            if geometry.get("type") == "MultiPolygon"
-            else []
-        )
+        # Normalize both GeoJSON shapes to a list of polygons (a polygon being
+        # a list of rings), so the scan below has only one case to handle.
+        if geometry.get("type") == "Polygon":
+            polygons = [geometry.get("coordinates", [])]
+        elif geometry.get("type") == "MultiPolygon":
+            polygons = geometry.get("coordinates", [])
+        else:
+            polygons = []
         if any(point_in_polygon(lon, lat, polygon) for polygon in polygons):
             properties = feature.get("properties", {})
             iso = properties.get("ISO_A2_EH") or properties.get("ISO_A2")
@@ -120,13 +121,14 @@ def locate_near_coast(
     matches: list[tuple[float, str, str]] = []
     for feature in features:
         geometry = feature.get("geometry") or {}
-        polygons = (
-            [geometry.get("coordinates", [])]
-            if geometry.get("type") == "Polygon"
-            else geometry.get("coordinates", [])
-            if geometry.get("type") == "MultiPolygon"
-            else []
-        )
+        # Normalize both GeoJSON shapes to a list of polygons (a polygon being
+        # a list of rings), so the scan below has only one case to handle.
+        if geometry.get("type") == "Polygon":
+            polygons = [geometry.get("coordinates", [])]
+        elif geometry.get("type") == "MultiPolygon":
+            polygons = geometry.get("coordinates", [])
+        else:
+            polygons = []
         distances = [
             point_segment_distance(lon, lat, ring[index - 1], ring[index])
             for polygon in polygons
@@ -285,7 +287,12 @@ def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
             countries.add(located[0])
             if located[1]:
                 continents.add(located[1])
-        confidence = "medium" if p17.get(qid) else "low" if located else None
+        if p17.get(qid):
+            confidence = "medium"  # asserted country of origin
+        elif located:
+            confidence = "low"  # inferred from a centroid falling in a boundary
+        else:
+            confidence = None
         if not countries and not continents and not point and any(
             existing_geography.get(key) for key in ("continents", "present_countries", "centroid")
         ):
@@ -303,15 +310,15 @@ def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
                 geography["primary_continent"] = located[1]
         document["geography"] = geography
         path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
-        category = (
-            "country"
-            if countries
-            else "continent_only"
-            if continents
-            else "centroid_only"
-            if point
-            else "unknown"
-        )
+        # Coverage buckets, most to least specific -- each record counts once.
+        if countries:
+            category = "country"
+        elif continents:
+            category = "continent_only"
+        elif point:
+            category = "centroid_only"
+        else:
+            category = "unknown"
         counts[category] += 1
         tier = document.get("visibility_tier", "detailed")
         by_tier.setdefault(tier, {key: 0 for key in counts})[category] += 1

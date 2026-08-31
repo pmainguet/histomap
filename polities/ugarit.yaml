@@ -62,3 +62,4 @@ prominence_components:
 visibility_override: regional
 manual_overrides:
 - visibility_override
+linked_era_id: neolithic_era

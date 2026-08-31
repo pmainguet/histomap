@@ -59,3 +59,4 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 50.1
+linked_era_id: asia_industrial_imperial_world_era

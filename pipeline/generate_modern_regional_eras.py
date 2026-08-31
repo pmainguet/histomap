@@ -10,6 +10,8 @@ from pathlib import Path
 
 import yaml
 
+from pipeline.geography_overlap import overlap_years
+
 ROOT = Path(__file__).resolve().parent.parent
 POLITIES_DIR = ROOT / "polities"
 PERIODS_DIR = ROOT / "periods"
@@ -27,10 +29,6 @@ def era_id(continent: str, chapter_id: str) -> str:
     return f"{continent}_{chapter_id.removeprefix('macro_')}_era"
 
 
-def _overlap(a_start: int, a_end: int, b_start: int, b_end: int) -> bool:
-    return a_start < b_end and b_start < a_end
-
-
 def combinations_with_polities(
     polities: list[dict], macro_chapters: list[tuple[str, int, int]]
 ) -> set[tuple[str, str]]:
@@ -42,7 +40,7 @@ def combinations_with_polities(
         p_start = polity["start"]
         p_end = polity.get("end") if polity.get("end") is not None else 2026
         for chapter_id, c_start, c_end in macro_chapters:
-            if _overlap(p_start, p_end, c_start, c_end):
+            if overlap_years((p_start, p_end), (c_start, c_end)) > 0:
                 for continent in continents:
                     found.add((continent, chapter_id))
     return found

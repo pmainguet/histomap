@@ -26,7 +26,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "africa_early_modern_connections_era",
@@ -55,7 +56,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "africa_industrial_imperial_world_era",
@@ -84,7 +86,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "africa_world_wars_reordering_era",
@@ -113,7 +116,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "african_paleolithic_era",
@@ -144,7 +148,8 @@
     "notes": "Earliest stone tools and the origin of Homo sapiens.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/African_Paleolithic"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "ancient_egypt_period",
@@ -183,7 +188,8 @@
     "notes": "Ancient Egypt spans several distinct political phases; rendered as period context so those phases (not this civilization-level record) carry the chart's political weight.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q11768"
-    ]
+    ],
+    "linked_era_id": "neolithic_era"
   },
   {
     "id": "andean_archaic_era",
@@ -216,7 +222,8 @@
     "notes": "Early Andean and coastal Peruvian farming/fishing settlements (e.g. Norte Chico). Ends -2000, past this chapter's nominal -3500 boundary -- see the note on mesoamerican_archaic_era.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Andean_Archaic"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "andean_early_civilizations_era",
@@ -249,7 +256,8 @@
     "notes": "Chavin culture through the Moche and Nazca. Ends 600 CE, past this chapter's nominal 500 CE boundary -- see the note on mesoamerican_formative_classic_era. Demoted from tier=regional_era to tier=period (default) 2026-08-31, reparented under the new overarching classical_antiquity_era -- see ONTOLOGY.md and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Early_Andean_Civilizations"
-    ]
+    ],
+    "linked_era_id": "classical_antiquity_era"
   },
   {
     "id": "antarctica_contemporary_world_era",
@@ -278,7 +286,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "antarctica_early_modern_connections_era",
@@ -307,7 +316,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "antarctica_industrial_imperial_world_era",
@@ -336,7 +346,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "antarctica_world_wars_reordering_era",
@@ -365,7 +376,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "asia_contemporary_world_era",
@@ -394,7 +406,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "asia_early_modern_connections_era",
@@ -423,7 +436,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "asia_industrial_imperial_world_era",
@@ -452,7 +466,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "asia_world_wars_reordering_era",
@@ -481,7 +496,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "asuka_period",
@@ -516,7 +532,8 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Asuka_period"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "ayyubid_sultanate_period",
@@ -545,7 +562,8 @@
     "notes": "Editorially identified as a phase or aspect of Ayyubid dynasty.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q63135869"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "bronze_age_era",
@@ -562,10 +580,8 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [
-        "east_asia"
-      ],
-      "primary_historical_region": "east_asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
       "present_countries": [],
       "centroid": null,
       "confidence": null
@@ -576,10 +592,11 @@
     "successors": [],
     "authority": "Histomap editorial: overarching regional-era consolidation",
     "external_ids": {},
-    "notes": "Overarching parent for the regional Bronze Age eras, which happened at meaningfully different times in different places -- spans from the start of the European Bronze Age (~-3,200) to the end of the East Asian Bronze Age (~-1,046). See ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes.\"",
+    "notes": "Overarching parent for the regional Bronze Age eras, which happened at meaningfully different times in different places -- spans from the start of the European Bronze Age (~-3,200) to the end of the East Asian Bronze Age (~-1,046). See ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes\". The geography.historical_regions field (formerly just east_asia) was removed 2026-08-31 -- a leftover from the demoted east_asian_bronze_age_era child that wrongly narrowed geography_matches to East Asia only (every other overarching era -- neolithic_era, paleolithic_era, classical_antiquity_era, iron_age_era, copper_age_era -- correctly has none at all, falling back to continent-level matching); this blocked Indus Valley Civilization's linked_era_id seed value, among others.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Bronze_Age"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "chinese_empire_period",
@@ -617,7 +634,8 @@
     "notes": "Chinese Empire spans several distinct political phases; rendered as period context so those phases (not this civilization-level record) carry the chart's political weight.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q12060881"
-    ]
+    ],
+    "linked_era_id": "classical_antiquity_era"
   },
   {
     "id": "chola_empire_period",
@@ -646,7 +664,8 @@
     "notes": "Editorially identified as a phase or aspect of Chola dynasty.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q6806806"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "classical_antiquity_era",
@@ -680,7 +699,8 @@
     "notes": "Overarching parent for the regional Classical Antiquity eras (mediterranean_classical_era, east_asian_classical_era, south_asian_classical_era, mesoamerican_formative_classic_era, andean_early_civilizations_era), which happened at meaningfully different times in different places -- same \"overarching regional era\" treatment as bronze_age_era/neolithic_era/ paleolithic_era/iron_age_era. Spans from the earliest regional start (-1200, shared by Mediterranean/Mesoamerican/Andean) to the latest regional end (900, Mesoamerican). Deliberately excludes Sub-Saharan Africa, whose equivalent-period record is iron_age_era, not a \"classical antiquity\" -- see ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes\" and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Classical_antiquity"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "copper_age_era",
@@ -714,7 +734,8 @@
     "notes": "The Chalcolithic/Copper Age transitional period between the Neolithic and the Bronze Age (Bronze Age itself starts -3200, where this ends -- see bronze_age_era). Added 2026-08-31 as a new overarching regional_era, same treatment as bronze_age_era/neolithic_era/paleolithic_era, but currently has no regional period records nested under it via broader_periods -- unlike those three, no Copper Age-specific period (e.g. a Fertile Crescent or European Chalcolithic record) exists yet in this dataset to link. Flagged in ROADMAP.md as follow-up work rather than fabricated here without a real source record.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Chalcolithic"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "early_dynastic_mesopotamia",
@@ -749,7 +770,8 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "east_asian_bronze_age_era",
@@ -782,7 +804,8 @@
     "notes": "Erlitou culture through the end of the Shang dynasty.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/East_Asian_Bronze_Age"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "east_asian_classical_era",
@@ -815,7 +838,8 @@
     "notes": "Zhou dynasty through the Northern and Southern dynasties. Demoted from tier=regional_era to tier=period (default) 2026-08-31, reparented under the new overarching classical_antiquity_era -- see ONTOLOGY.md and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/East_Asian_Classical_Antiquity"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "east_asian_imperial_era",
@@ -848,7 +872,8 @@
     "notes": "Tang through Ming China; Heian through Muromachi Japan; Goryeo Korea.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/East_Asian_Imperial_Dynasties_(Post-Classical)"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "east_asian_neolithic_era",
@@ -881,7 +906,8 @@
     "notes": "Yellow and Yangtze river valley farming cultures (e.g. Jiahu, Hemudu, Yangshao).",
     "source_urls": [
       "https://en.wikipedia.org/wiki/East_Asian_Neolithic"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "etruscan_civilization_period",
@@ -916,7 +942,8 @@
     "notes": "-900 marks the Villanovan-culture start conventionally linked to Etruscan origins; -27 the formal absorption of the last Etruscan cities by Rome. No matching polities/ record -- the Etruscans were a federation of city-states, not a single political actor.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Etruscan_civilization"
-    ]
+    ],
+    "linked_era_id": "classical_antiquity_era"
   },
   {
     "id": "eurasian_paleolithic_era",
@@ -948,7 +975,8 @@
     "notes": "From the first Homo erectus dispersal out of Africa (Dmanisi, ~1.8 million years ago) through the end of the last Ice Age.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Eurasian_Paleolithic"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "europe_contemporary_world_era",
@@ -977,7 +1005,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "europe_early_modern_connections_era",
@@ -1006,7 +1035,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "europe_industrial_imperial_world_era",
@@ -1035,7 +1065,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "europe_world_wars_reordering_era",
@@ -1064,7 +1095,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "european_bronze_age_era",
@@ -1095,7 +1127,8 @@
     "notes": "Aegean, Central European, and Atlantic Bronze Age cultures.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/European_Bronze_Age"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "european_hun_empire_period",
@@ -1124,7 +1157,8 @@
     "notes": "Editorially identified as a phase or aspect of Hunnic Empire.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q12836180"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "european_iron_age",
@@ -1157,7 +1191,8 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Iron_Age_Europe"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "european_neolithic",
@@ -1190,7 +1225,8 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Neolithic_Europe"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "fertile_crescent_neolithic_era",
@@ -1223,7 +1259,8 @@
     "notes": "Earliest agriculture (Levant, Anatolia, Mesopotamia).",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Fertile_Crescent_Neolithic"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "indus_valley_civilization_period",
@@ -1259,7 +1296,8 @@
     "notes": "Indus script is undeciphered, hence protohistorical. No matching polities/ record -- distributed across major urban centers (Harappa, Mohenjo-daro...), not a single political actor.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q42534"
-    ]
+    ],
+    "linked_era_id": "bronze_age_era"
   },
   {
     "id": "iron_age_era",
@@ -1291,7 +1329,8 @@
     "notes": "Overarching parent for the regional Iron Age eras (european_iron_age, sub_saharan_african_iron_age_era), which happened at meaningfully different times in different places -- same \"overarching regional era\" treatment as bronze_age_era/neolithic_era/paleolithic_era. Added 2026-08-31 -- previously european_iron_age had no Iron Age parent at all (it heuristically nested under mediterranean_classical_era instead) and sub_saharan_african_iron_age_era was its own standalone regional_era with no relation to the European one. See ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes\" and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Iron_Age"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "islamic_caliphates_era",
@@ -1326,7 +1365,8 @@
     "notes": "Rashidun Caliphate through the rise of the Ottoman, Safavid, and Mughal gunpowder empires.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Islamic_Caliphates_and_Sultanates"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "jomon_period",
@@ -1363,7 +1403,8 @@
     "notes": "Start is clipped to Histomap's current -10000 year boundary.",
     "source_urls": [
       "https://dbpedia.org/resource/J%C5%8Dmon_period"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "kofun_period",
@@ -1400,7 +1441,8 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Kofun_period"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "macedonian_empire_period",
@@ -1429,7 +1471,8 @@
     "notes": "Editorially identified as a phase or aspect of Macedonia.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q13405524"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "macro_agricultural_transitions",
@@ -1456,7 +1499,8 @@
     "notes": "Editorial navigation chapter. The Neolithic transition happened at very different times on different continents (roughly 10,000 BCE in the Fertile Crescent, much later in the Americas) -- this chapter's dates are a global envelope, not a claim of simultaneity. See regional_era records for per-region dates.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Neolithic_Revolution"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "macro_classical_imperial_worlds",
@@ -1483,7 +1527,8 @@
     "notes": "Editorial navigation chapter. Covers the Iron Age plus the classical and early imperial civilizations of the Mediterranean, Persia, India, and China, through the fall of the Western Roman Empire.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Classical_antiquity"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "macro_contemporary_world",
@@ -1510,7 +1555,8 @@
     "notes": "Editorial navigation chapter, 1945-present. end=2100 is schema.py's YEAR_MAX ceiling standing in for \"open present\" -- Period.end is required (unlike Polity.end), so an explicit far-future value is the least surprising way to represent \"still ongoing.\" Covers the Cold War, decolonization, the post-Cold War era, and the 21st century.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Contemporary_history"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "macro_early_cities_states",
@@ -1537,7 +1583,8 @@
     "notes": "Editorial navigation chapter covering the first urban civilizations (Mesopotamia, Egypt, Indus Valley, early China) through the Late Bronze Age Collapse.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Bronze_Age"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "macro_early_modern_connections",
@@ -1564,7 +1611,8 @@
     "notes": "Editorial navigation chapter. Maritime expansion, gunpowder empires, the Columbian Exchange, and the Scientific Revolution and Enlightenment.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Early_modern_period"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "macro_human_origins_paleolithic",
@@ -1591,7 +1639,8 @@
     "notes": "Editorial navigation chapter, not a claim that every society developed identically. Start is an open lower bound (earliest known stone tools keep pushing backward as of 2026); -3,000,000 is a round, citable ballpark (Lomekwian/Oldowan toolmaking), not a precise date. Empty continents list means deliberately global -- valid only at tier=macro_chapter, see ONTOLOGY.md. Dates use astronomical year numbering (year 0 exists), inherited from Wikidata via pipeline/wd_to_yaml.py's parse_year().",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Stone_Age"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "macro_industrial_imperial_world",
@@ -1618,7 +1667,8 @@
     "notes": "Editorial navigation chapter. Industrialization, high imperialism, and the revolutionary/national movements of the 19th century, through the outbreak of the First World War.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/19th_century"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "macro_postclassical_worlds",
@@ -1645,7 +1695,8 @@
     "notes": "Editorial navigation chapter. Deliberately named \"post-classical\" rather than \"medieval\" -- medieval is a Eurocentric label that does not describe Byzantine, Islamic, African, South Asian, East Asian, or American history in this window.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Postclassical_Era"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "macro_world_wars_reordering",
@@ -1672,7 +1723,8 @@
     "notes": "Editorial navigation chapter spanning the First World War through the end of the Second World War.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/World_war"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "medieval_europe_era",
@@ -1703,7 +1755,8 @@
     "notes": "Early, High, and Late Middle Ages, including the Byzantine Empire.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Medieval_Europe"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "mediterranean_classical_era",
@@ -1737,7 +1790,8 @@
     "notes": "Greek Dark Age through the fall of the Western Roman Empire. Demoted from tier=regional_era to tier=period (default) 2026-08-31, reparented under the new overarching classical_antiquity_era -- see ONTOLOGY.md and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Mediterranean_Classical_Antiquity"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "mesoamerican_archaic_era",
@@ -1770,7 +1824,8 @@
     "notes": "Maize domestication and early sedentism. Ends -2000, well past this chapter's nominal -3500 boundary -- chapter membership is editorial, not a date-containment claim; see ONTOLOGY.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Mesoamerican_Archaic"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "mesoamerican_classic",
@@ -1811,7 +1866,8 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Mesoamerican_chronology"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "mesoamerican_formative_classic_era",
@@ -1844,7 +1900,8 @@
     "notes": "Olmec civilization through the Classic Maya collapse. Ends 900 CE, 400 years past this chapter's nominal 500 CE boundary -- editorial placement, not date-containment; see ONTOLOGY.md. Demoted from tier=regional_era to tier=period (default) 2026-08-31, reparented under the new overarching classical_antiquity_era.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Mesoamerican_Formative_and_Classic_Periods"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "mesoamerican_postclassic",
@@ -1883,7 +1940,8 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Mesoamerican_chronology"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "mesoamerican_preclassic",
@@ -1924,7 +1982,8 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Mesoamerican_chronology"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "mesopotamia_period",
@@ -1960,7 +2019,8 @@
     "notes": "Mesopotamia spans several distinct political phases (Uruk, Sumerian city-states, the Akkadian Empire, Babylonia, ...); rendered as period context in the Civilizations & Cultures lane so those phases (now plain polities, not this civilization-level record) carry the chart's political weight. Replaces the earlier arrangement where Sumer/Akkadian Empire/Uruk/Babylonia individually carried civilization-lane weight -- see STATUS.md. mesopotamian_early_states_era (the regional_era) was deleted outright 2026-08-31 as a duplicate of this record, same treatment egyptian_early_states_era got against ancient_egypt_period; early_dynastic_mesopotamia (the one period that nested under it) now falls back to heuristic era placement instead.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Mesopotamia"
-    ]
+    ],
+    "linked_era_id": "neolithic_era"
   },
   {
     "id": "minoan_civilization_period",
@@ -1998,7 +2058,8 @@
     "notes": "Linear A is undeciphered, hence protohistorical. No matching polities/ record -- centered on Knossos and other Cretan palace-sites, not a single political actor.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q134178"
-    ]
+    ],
+    "linked_era_id": "classical_antiquity_era"
   },
   {
     "id": "mycenaean_greece_period",
@@ -2033,7 +2094,8 @@
     "notes": "Late Bronze Age Greek civilization; Linear B gives economic records but no historiography, hence protohistorical. No matching polities/ record -- power was distributed across palace-centers (Mycenae, Pylos, Tiryns...), not a single political actor.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q181264"
-    ]
+    ],
+    "linked_era_id": "classical_antiquity_era"
   },
   {
     "id": "neolithic_era",
@@ -2072,7 +2134,8 @@
     "notes": "Overarching parent for the regional agricultural-transition eras, which happened at meaningfully different times, and under different technology packages, in different places -- spans from the Fertile Crescent's earliest agriculture (~-10,000) to the end of Neolithic Europe (~-1,700). Named \"Neolithic & Archaic\" rather than just \"Neolithic\" because the Americas' agricultural transition (mesoamerican_archaic_era, andean_archaic_era) is conventionally called \"Archaic\" in Americanist archaeology, not \"Neolithic\" -- a real terminology difference (different domesticates, no draft animals, a different technology trajectory than the Old World package), not just a regional relabeling of the same thing. See ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes.\"",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Neolithic"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "nile_valley_neolithic_era",
@@ -2105,7 +2168,8 @@
     "notes": "Pre-dynastic Egyptian and Nubian farming cultures.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Nile_Valley_Neolithic"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "north_america_contemporary_world_era",
@@ -2134,7 +2198,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "north_america_early_modern_connections_era",
@@ -2163,7 +2228,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "north_america_industrial_imperial_world_era",
@@ -2192,7 +2258,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "north_america_world_wars_reordering_era",
@@ -2221,7 +2288,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "oceania_contemporary_world_era",
@@ -2250,7 +2318,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "oceania_early_modern_connections_era",
@@ -2279,7 +2348,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "oceania_industrial_imperial_world_era",
@@ -2308,7 +2378,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "oceania_world_wars_reordering_era",
@@ -2337,7 +2408,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "olmec_civilization_period",
@@ -2372,7 +2444,8 @@
     "notes": "No deciphered Olmec writing system survives, hence archaeological rather than protohistorical. No matching polities/ record -- centered on sites like San Lorenzo and La Venta, not a single political actor.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Olmecs"
-    ]
+    ],
+    "linked_era_id": "classical_antiquity_era"
   },
   {
     "id": "paleolithic_era",
@@ -2405,7 +2478,8 @@
     "notes": "Overarching parent for the regional Paleolithic variants, which cover meaningfully different spans in different places -- from the earliest African stone tools (~-3,000,000) through the end of the last Ice Age everywhere. See ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes.\"",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Paleolithic"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "rhodes_q104383185_period",
@@ -2434,7 +2508,8 @@
     "notes": "Editorially identified as a phase or aspect of Rhodes.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q104383185"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "south_america_contemporary_world_era",
@@ -2463,7 +2538,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "south_america_early_modern_connections_era",
@@ -2492,7 +2568,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "south_america_industrial_imperial_world_era",
@@ -2521,7 +2598,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "south_america_world_wars_reordering_era",
@@ -2550,7 +2628,8 @@
     "authority": "Histomap editorial: auto-generated continent x chapter node",
     "external_ids": {},
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
-    "source_urls": []
+    "source_urls": [],
+    "linked_era_id": null
   },
   {
     "id": "south_asian_classical_era",
@@ -2583,7 +2662,8 @@
     "notes": "The Mahajanapadas through the Gupta Empire. Demoted from tier=regional_era to tier=period (default) 2026-08-31, reparented under the new overarching classical_antiquity_era -- see ONTOLOGY.md and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/South_Asian_Classical_Antiquity"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "sub_saharan_african_iron_age_era",
@@ -2619,7 +2699,8 @@
     "notes": "Nok culture and the early Bantu expansion ironworking tradition. Demoted from tier=regional_era to tier=period (default) 2026-08-31, reparented under the new overarching iron_age_era -- same \"overarching regional era\" treatment east_asian_bronze_age_era/european_bronze_age_era already got under bronze_age_era. See ONTOLOGY.md and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Sub-Saharan_African_Iron_Age"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "syrakousai_period",
@@ -2648,7 +2729,8 @@
     "notes": "Editorially identified as a phase or aspect of Syracuse.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q3979194"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "taifa_of_mallorca_q104178581_period",
@@ -2677,7 +2759,8 @@
     "notes": "Editorially identified as a phase or aspect of Taifa of Majorca.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q104178581"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "taifa_of_murcia_q104178103_period",
@@ -2706,7 +2789,8 @@
     "notes": "Editorially identified as a phase or aspect of Taifa of Murcia.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q104178103"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "taifa_of_murcia_q104178238_period",
@@ -2735,7 +2819,8 @@
     "notes": "Editorially identified as a phase or aspect of Taifa of Murcia.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q104178238"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "viking_age_period",
@@ -2772,7 +2857,8 @@
     "notes": "793 is the Lindisfarne raid, conventionally marking the start; 1066 the Battle of Stamford Bridge / Norman Conquest, conventionally marking the end. Routed to the Civilizations & Cultures lane 2026-08-31 -- raiding, trading, and settlement rather than a single political actor, the same \"civilization-as-backdrop\" reasoning as Ancient Egypt/Mesopotamia/Chinese Empire; jorvik.yaml already covers the one durable Viking polity (Viking York) as a plain polity underneath it.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q213649"
-    ]
+    ],
+    "linked_era_id": "medieval_europe_era"
   },
   {
     "id": "western_zhou_q1069609_period",
@@ -2801,7 +2887,8 @@
     "notes": "Editorially identified as a phase or aspect of Zhou dynasty.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q1069609"
-    ]
+    ],
+    "linked_era_id": null
   },
   {
     "id": "yayoi_period",
@@ -2838,6 +2925,7 @@
     "notes": "",
     "source_urls": [
       "https://dbpedia.org/resource/Yayoi_period"
-    ]
+    ],
+    "linked_era_id": null
   }
 ]

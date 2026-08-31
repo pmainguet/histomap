@@ -18,14 +18,13 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Hand-authored 2026-08-31, replacing the deleted babylonia_period.yaml
-  ("civilization-as-backdrop" period) -- reclassified from the Civilizations
-  & Cultures lane to a plain polity, alongside Sumer/Akkadian Empire/Uruk;
-  Mesopotamia (mesopotamia_period.yaml) now carries that lane's civilization-
-  level weight for the region instead. Babylonia spans several distinct
-  political phases (Old Babylonian Empire, Neo-Babylonian Empire, both
-  already separate polities); this record is the umbrella entity, the same
-  role Sumer plays for the earlier Sumerian city-states. See STATUS.md.
+notes: Hand-authored 2026-08-31, replacing the deleted babylonia_period.yaml ("civilization-as-backdrop"
+  period) -- reclassified from the Civilizations & Cultures lane to a plain polity,
+  alongside Sumer/Akkadian Empire/Uruk; Mesopotamia (mesopotamia_period.yaml) now
+  carries that lane's civilization- level weight for the region instead. Babylonia
+  spans several distinct political phases (Old Babylonian Empire, Neo-Babylonian Empire,
+  both already separate polities); this record is the umbrella entity, the same role
+  Sumer plays for the earlier Sumerian city-states. See STATUS.md.
 sources:
 - editorial
 prominence_score: 0
@@ -50,3 +49,4 @@ entity_type: polity
 entity_type_confidence: low
 relationships: []
 prominence_components: {}
+linked_era_id: classical_antiquity_era

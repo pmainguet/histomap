@@ -62,3 +62,4 @@ prominence_components:
 visibility_override: global
 manual_overrides:
 - visibility_override
+linked_era_id: east_asian_imperial_era

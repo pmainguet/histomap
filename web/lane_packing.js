@@ -13,7 +13,6 @@ function packIntoLanes(items, getRange = (item) => ({ start: item.start, end: it
   const lanes = [];
   for (const item of items) {
     const { start, end } = getRange(item);
-    const itemEnd = end ?? Infinity;
     let placed = false;
     for (const lane of lanes) {
       const last = lane[lane.length - 1];

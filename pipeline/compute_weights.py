@@ -2,11 +2,14 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import yaml
+
+from pipeline.backfill_entity_types import CONTEXT_TYPES, sovereign_state_qids
 
 try:
     import tomllib
@@ -108,12 +111,10 @@ def run() -> dict[str, int]:
             "seshat", []
         )
     maddison = pd.read_parquet(MADDISON_PATH)
-    direct_types = yaml.safe_load((ROOT / "sources" / "wikidata_direct_types.json").read_text())
-    sovereign_qids = {
-        qid
-        for qid, metadata in direct_types.items()
-        if {"Q6256", "Q3624078"} & set(metadata.get("types", []))
-    }
+    direct_types = json.loads(
+        (ROOT / "sources" / "wikidata_direct_types.json").read_text(encoding="utf-8")
+    )
+    sovereign_qids = sovereign_state_qids(direct_types)
     maddison_ids = set(maddison["polity_id"])
     unmapped_modern = {
         document["id"]
@@ -155,9 +156,7 @@ def run() -> dict[str, int]:
     updated = 0
     measured = 0
     for path, document in documents:
-        if document.get("entity_type", "polity") in {
-            "subdivision", "micronation", "culture", "people", "tribe", "archaeological_horizon"
-        }:
+        if document.get("entity_type", "polity") in CONTEXT_TYPES:
             document["weight_by_era"] = {int(document["start"]): 3}
             document["weight_imputed"] = True
             document["sources"] = sorted(

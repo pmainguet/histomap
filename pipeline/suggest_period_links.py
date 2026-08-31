@@ -16,7 +16,7 @@ from pathlib import Path
 
 import yaml
 
-from pipeline.geography_overlap import geography_matches
+from pipeline.geography_overlap import geography_matches, overlap_years
 
 ROOT = Path(__file__).resolve().parent.parent
 POLITIES_DIR = ROOT / "polities"
@@ -34,11 +34,6 @@ def in_scope(polity: dict) -> bool:
     return polity.get("visibility_tier") in {"global", "regional"}
 
 
-def _overlap(a: tuple[int, int], b: tuple[int, int]) -> int:
-    lo, hi = max(a[0], b[0]), min(a[1], b[1])
-    return max(0, hi - lo)
-
-
 def best_period_for_polity(polity: dict, periods: list[dict]) -> dict | None:
     polity_geo = polity.get("geography") or {}
     polity_range = (polity["start"], polity.get("end") if polity.get("end") is not None else 2026)
@@ -47,7 +42,7 @@ def best_period_for_polity(polity: dict, periods: list[dict]) -> dict | None:
         if not geography_matches(polity_geo, period.get("geography") or {}):
             continue
         period_range = (period["start"], period["end"])
-        years = _overlap(polity_range, period_range)
+        years = overlap_years(polity_range, period_range)
         if years <= 0:
             continue
         specificity = TIER_SPECIFICITY.get(period.get("tier", "period"), 0)

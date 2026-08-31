@@ -33,11 +33,13 @@ let periods = [];
 let periodLinks = [];
 let detailTrigger = null;
 let selectedPolity = null;
-let selectedPeriod = null;
 let focusedPolityId = null;
 let geographyOptions = { continents: [], countries: [] };
 const collapsedGeographies = new Set();
 const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
+// Controlled vocabularies, mirroring schema.py's EntityType and Period.kind.
+const ENTITY_TYPES = ["polity", "civilization", "subdivision", "micronation", "culture", "people", "tribe", "archaeological_horizon"];
+const PERIOD_KINDS = ["historical", "archaeological", "protohistorical", "prehistorical"];
 const currentYear = new Date().getFullYear();
 const eraPresets = {
   full: [-8000, currentYear],
@@ -57,6 +59,44 @@ function escapeHtml(value) {
 
 function displayTerm(value) {
   return String(value).replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+// Mouse click and keyboard activation of the same SVG element, which is not a
+// real button and so gets no free Enter/Space handling from the browser.
+function onActivate(element, activate) {
+  element.addEventListener("click", () => activate());
+  element.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      activate();
+    }
+  });
+}
+
+// Reveal the detail side panel and move focus into it. Shared by every
+// show*Details function, which each build their own panel body first.
+function openDetailsPanel() {
+  details.classList.add("is-open");
+  detailBackdrop.classList.add("is-open");
+  details.setAttribute("aria-hidden", "false");
+  details.querySelector(".detail-close").focus();
+}
+
+// Make the cross-reference buttons that entityLink()/periodLink() emit into
+// the panel body navigate to their target.
+function wireDetailCrossReferences() {
+  details.querySelectorAll("[data-entity-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const entity = polities.find((candidate) => candidate.id === button.dataset.entityId);
+      if (entity) navigateToEntity(entity);
+    });
+  });
+  details.querySelectorAll("[data-period-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const period = periods.find((candidate) => candidate.id === button.dataset.periodId);
+      if (period) showPeriodDetails(period, button);
+    });
+  });
 }
 
 function entityLink(id) {
@@ -317,7 +357,6 @@ async function promotePeriodToEntity(period) {
 
 function showDetails(polity, trigger = null) {
   selectedPolity = polity;
-  selectedPeriod = null;
   if (trigger) detailTrigger = trigger;
   const description = polity.text?.short_adult_en || polity.text?.long_en || polity.notes;
   const descriptionText = description || "Draft record; description pending review.";
@@ -391,7 +430,7 @@ function showDetails(polity, trigger = null) {
     <section id="entity-type-editor" class="geography-editor" hidden>
       <h3>Edit entity type</h3>
       <label>Controlled type
-        <select>${["polity", "civilization", "subdivision", "micronation", "culture", "people", "tribe", "archaeological_horizon"].map((type) => `<option value="${type}" ${type === (polity.entity_type || "polity") ? "selected" : ""}>${escapeHtml(displayTerm(type))}</option>`).join("")}</select>
+        <select>${ENTITY_TYPES.map((type) => `<option value="${type}" ${type === (polity.entity_type || "polity") ? "selected" : ""}>${escapeHtml(displayTerm(type))}</option>`).join("")}</select>
       </label>
       <p>This manual decision is locked against later Wikidata backfills.</p>
       <div class="geography-editor-actions"><button type="button" class="save-entity-type">Save entity type</button><button type="button" class="cancel-entity-type">Cancel</button><span class="entity-type-save-status" role="status"></span></div>
@@ -399,18 +438,7 @@ function showDetails(polity, trigger = null) {
     ${geographyEditorMarkup(polity)}
     ${hasRelationships ? `<p class="relationship-hint">Related visible bands are outlined on the timeline. Select a related name to navigate to it.</p>` : ""}
     `;
-  details.querySelectorAll("[data-entity-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const entity = polities.find((candidate) => candidate.id === button.dataset.entityId);
-      if (entity) navigateToEntity(entity);
-    });
-  });
-  details.querySelectorAll("[data-period-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const period = periods.find((candidate) => candidate.id === button.dataset.periodId);
-      if (period) showPeriodDetails(period, button);
-    });
-  });
+  wireDetailCrossReferences();
   details.querySelector(".detail-close").addEventListener("click", closeDetails);
   details.querySelector(".zoom-lifetime").addEventListener("click", () => zoomToPolity(polity));
   details.querySelector(".reset-era").addEventListener("click", () => applyEraPreset("full"));
@@ -436,16 +464,12 @@ function showDetails(polity, trigger = null) {
       label.hidden = Boolean(query) && !label.dataset.countrySearch.includes(query);
     });
   });
-  details.classList.add("is-open");
-  detailBackdrop.classList.add("is-open");
-  details.setAttribute("aria-hidden", "false");
-  details.querySelector(".detail-close").focus();
+  openDetailsPanel();
   highlightRelationships(polity);
 }
 
 function showPeriodDetails(period, trigger = null) {
   selectedPolity = null;
-  selectedPeriod = period;
   if (trigger) detailTrigger = trigger;
   const countries = (period.geography?.present_countries || []).map((code) => countryNames.of(code) || code);
   const linked = linkedPeriodEntities(period.id);
@@ -482,7 +506,7 @@ function showPeriodDetails(period, trigger = null) {
     <section id="period-kind-editor" class="geography-editor" hidden>
       <h3>Edit period type</h3>
       <label>Controlled type
-        <select>${["historical", "archaeological", "protohistorical", "prehistorical"].map((kind) => `<option value="${kind}" ${kind === period.kind ? "selected" : ""}>${escapeHtml(displayTerm(kind))}</option>`).join("")}</select>
+        <select>${PERIOD_KINDS.map((kind) => `<option value="${kind}" ${kind === period.kind ? "selected" : ""}>${escapeHtml(displayTerm(kind))}</option>`).join("")}</select>
       </label>
       <p>This classifies the period itself, not the entity linked to it.</p>
       <div class="geography-editor-actions"><button type="button" class="save-period-kind">Save period type</button><button type="button" class="cancel-period-kind">Cancel</button><span class="period-kind-save-status" role="status"></span></div>
@@ -490,7 +514,7 @@ function showPeriodDetails(period, trigger = null) {
     <section id="period-promotion-editor" class="geography-editor" hidden>
       <h3>Convert period to entity</h3>
       <label>Entity type
-        <select>${["polity", "civilization", "subdivision", "micronation", "culture", "people", "tribe", "archaeological_horizon"].map((type) => `<option value="${type}">${escapeHtml(displayTerm(type))}</option>`).join("")}</select>
+        <select>${ENTITY_TYPES.map((type) => `<option value="${type}">${escapeHtml(displayTerm(type))}</option>`).join("")}</select>
       </label>
       <p>The period overlay will be removed. Its original entity record will be restored when available; otherwise a new entity will be created from this period.</p>
       <div class="geography-editor-actions"><button type="button" class="promote-period">Convert to entity</button><button type="button" class="cancel-period-promotion">Cancel</button><span class="period-promotion-status" role="status"></span></div>
@@ -536,10 +560,7 @@ function showPeriodDetails(period, trigger = null) {
     const linkedPeriod = periods.find((candidate) => candidate.id === button.dataset.periodId);
     if (linkedPeriod) showPeriodDetails(linkedPeriod, button);
   }));
-  details.classList.add("is-open");
-  detailBackdrop.classList.add("is-open");
-  details.setAttribute("aria-hidden", "false");
-  details.querySelector(".detail-close").focus();
+  openDetailsPanel();
   chart.classList.add("relationship-focus");
   chart.querySelectorAll(".period-band").forEach((element) => {
     element.classList.toggle("is-selected", element.dataset.periodId === period.id);
@@ -564,22 +585,13 @@ function showTransitionDetails(transition, trigger = null) {
       ${transition.notes ? `<dt>Editorial note</dt><dd>${escapeHtml(transition.notes)}</dd>` : ""}
       ${sourceLinks ? `<dt>Sources</dt><dd class="detail-links">${sourceLinks}</dd>` : ""}
     </dl>`;
-  details.querySelectorAll("[data-entity-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const entity = polities.find((candidate) => candidate.id === button.dataset.entityId);
-      if (entity) navigateToEntity(entity);
-    });
-  });
+  wireDetailCrossReferences();
   details.querySelector(".detail-close").addEventListener("click", closeDetails);
-  details.classList.add("is-open");
-  detailBackdrop.classList.add("is-open");
-  details.setAttribute("aria-hidden", "false");
-  details.querySelector(".detail-close").focus();
+  openDetailsPanel();
   highlightTransition(transition);
 }
 
 function closeDetails() {
-  selectedPeriod = null;
   details.classList.remove("is-open");
   detailBackdrop.classList.remove("is-open");
   details.setAttribute("aria-hidden", "true");
@@ -834,13 +846,7 @@ function render() {
             "data-period-id": period.id,
             "aria-label": `${period.canonical_name}, ${formatYear(period.start)} to ${formatYear(period.end)}`,
           });
-          band.addEventListener("click", () => showPeriodDetails(period, band));
-          band.addEventListener("keydown", (event) => {
-            if (event.key === "Enter" || event.key === " ") {
-              event.preventDefault();
-              showPeriodDetails(period, band);
-            }
-          });
+          onActivate(band, () => showPeriodDetails(period, band));
           const title = svgElement("title");
           title.textContent = `${period.canonical_name}: ${formatYear(period.start)}–${formatYear(period.end)}`;
           band.append(title);
@@ -906,13 +912,7 @@ function render() {
     group.append(svgElement("line", { x1: transitionX, x2: transitionX, y1: Math.min(...ys), y2: Math.max(...ys), class: "transition-line" }));
     for (const y of ys) group.append(svgElement("line", { x1: transitionX - 7, x2: transitionX + 7, y1: y, y2: y, class: "transition-line" }));
     group.append(svgElement("circle", { cx: transitionX, cy: rowCenters.get(transition.from.find((id) => visibleIds.has(id))), r: 3, class: "transition-node" }));
-    group.addEventListener("click", () => showTransitionDetails(transition, group));
-    group.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        showTransitionDetails(transition, group);
-      }
-    });
+    onActivate(group, () => showTransitionDetails(transition, group));
     svg.append(group);
   }
 
@@ -939,13 +939,7 @@ function render() {
       tabindex: "0",
       "data-polity-id": polity.id,
     });
-    path.addEventListener("click", () => showDetails(polity, path));
-    path.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        showDetails(polity, path);
-      }
-    });
+    onActivate(path, () => showDetails(polity, path));
     const title = svgElement("title");
     title.textContent = `${polity.canonical_name}: ${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}`;
     path.append(title);
@@ -1003,13 +997,7 @@ function render() {
       "data-parent-entity-id": parentId,
       "aria-label": `${period.canonical_name}, phase of ${polities.find((entity) => entity.id === parentId)?.canonical_name || parentId}, ${formatYear(period.start)} to ${formatYear(period.end)}`,
     });
-    band.addEventListener("click", () => showPeriodDetails(period, band));
-    band.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        showPeriodDetails(period, band);
-      }
-    });
+    onActivate(band, () => showPeriodDetails(period, band));
     const title = svgElement("title");
     title.textContent = `${period.canonical_name}: phase of ${polities.find((entity) => entity.id === parentId)?.canonical_name || displayTerm(parentId)} (${formatYear(period.start)}–${formatYear(period.end)})`;
     band.append(title);
@@ -1172,7 +1160,7 @@ try {
   populateSelect(
     continentInput,
     new Set(polities.flatMap((p) => p.geography?.continents || [])),
-    (value) => value.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase()),
+    displayTerm,
   );
   populateSelect(entityTypeInput, new Set(polities.map((p) => p.entity_type || "polity")), displayTerm);
   for (const period of [...periods].sort((a, b) => a.canonical_name.localeCompare(b.canonical_name))) {

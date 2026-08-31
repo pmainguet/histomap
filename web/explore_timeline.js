@@ -731,6 +731,10 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
     drawGroupedRow(svg, scale, politiesLayout, y, polityLaneHeight, "hierarchy-band-polity", onZoom, width, tree.axis.domain_end, {
       getKind: () => "polity",
       getLabel: (item) => itemDisplayLabel(item, groupBy),
+      // Plain polities now carry the same curator-editable linked_era_id
+      // field as Civilizations & Cultures entries (see schema.py) -- null
+      // for any polity that's never had one set, same as before.
+      getFill: (item) => eraColor(eraColorMap, item.linked_era_id),
     });
     drawTierLabel(svg, "Polities", prevSepY, height);
   }

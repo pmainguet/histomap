@@ -17,9 +17,9 @@ successors: []
 authority: 'Histomap editorial: regional-era starter set'
 external_ids: {}
 notes: Chavin culture through the Moche and Nazca. Ends 600 CE, past this chapter's
-  nominal 500 CE boundary -- see the note on mesoamerican_formative_classic_era.
-  Demoted from tier=regional_era to tier=period (default) 2026-08-31, reparented
-  under the new overarching classical_antiquity_era -- see ONTOLOGY.md and
-  STATUS.md.
+  nominal 500 CE boundary -- see the note on mesoamerican_formative_classic_era. Demoted
+  from tier=regional_era to tier=period (default) 2026-08-31, reparented under the
+  new overarching classical_antiquity_era -- see ONTOLOGY.md and STATUS.md.
 source_urls:
 - https://en.wikipedia.org/wiki/Early_Andean_Civilizations
+linked_era_id: classical_antiquity_era

@@ -60,3 +60,4 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 23.77
+linked_era_id: north_america_industrial_imperial_world_era

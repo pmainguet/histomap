@@ -317,7 +317,7 @@ function externalLinksForPolity(polity) {
 }
 
 function renderPeriodDetails(period, ctx) {
-  const { periodsById, politiesById, periodLinks, onZoomToRange } = ctx;
+  const { periodsById, politiesById, periodLinks } = ctx;
   const countries = (period.geography?.present_countries || []).map((code) => exploreCountryNames.of(code) || code);
   const contained = [...periodsById.values()].filter((candidate) => (candidate.broader_periods || []).includes(period.id));
   const predecessors = [...periodsById.values()].filter((candidate) => (candidate.successors || []).includes(period.id));
@@ -362,7 +362,7 @@ function renderPeriodDetails(period, ctx) {
 }
 
 function renderPolityDetails(polity, ctx) {
-  const { periodsById, politiesById, periodLinks, onZoomToRange } = ctx;
+  const { periodsById, politiesById, periodLinks } = ctx;
   const description = polity.text?.short_adult_en || polity.text?.long_en || polity.notes;
   const descriptionText = description || "Draft record; description pending review.";
   const aliases = [polity.names?.aliases_en?.replaceAll(" | ", ", "), polity.names?.fr].filter(Boolean).join("; ");

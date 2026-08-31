@@ -11,6 +11,8 @@ import yaml
 from rapidfuzz import fuzz
 from unidecode import unidecode
 
+from pipeline.backfill_entity_types import sovereign_state_qids
+
 ROOT = Path(__file__).resolve().parent.parent
 MADDISON_PATH = ROOT / "sources" / "maddison.parquet"
 BOUNDARIES_PATH = ROOT / "sources" / "ne_110m_admin_0_countries.geojson"
@@ -79,11 +81,7 @@ def run() -> pd.DataFrame:
     maddison = pd.read_parquet(MADDISON_PATH)
     country_codes = iso2_to_iso3()
     direct_types = json.loads(DIRECT_TYPES_PATH.read_text(encoding="utf-8"))
-    sovereign_qids = {
-        qid
-        for qid, metadata in direct_types.items()
-        if {"Q6256", "Q3624078"} & set(metadata.get("types", []))
-    }
+    sovereign_qids = sovereign_state_qids(direct_types)
     frames = []
     decisions = Counter()
     for path in (ROOT / "polities").glob("*.yaml"):

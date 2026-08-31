@@ -44,6 +44,18 @@ CONTEXT_TYPES = {
     "tribe",
     "archaeological_horizon",
 }
+# Wikidata "sovereign state" and "country" -- the two direct P31 types that mark
+# a record as a modern state for the population/GDP extractors.
+SOVEREIGN_QIDS = {"Q6256", "Q3624078"}
+
+
+def sovereign_state_qids(direct_types: dict) -> set[str]:
+    """QIDs from a wikidata_direct_types.json mapping that are sovereign states."""
+    return {
+        qid
+        for qid, metadata in direct_types.items()
+        if SOVEREIGN_QIDS & set(metadata.get("types", []))
+    }
 
 
 def effective_direct_types(metadata: dict) -> set[str]:
@@ -215,6 +227,18 @@ def run() -> dict[str, int]:
         counts[entity_type] += 1
         reconsider_subdivision = pending_subdivision and manual_type and entity_type == "polity"
         if confidence != "high" or pending_subdivision:
+            # A pending subdivision proposes the *inferred* classification for
+            # review while the record keeps its existing one, so every proposal
+            # field below switches on pending_subdivision together.
+            if reconsider_subdivision:
+                review_reason = (
+                    "Previously reviewed as polity; reconsider now that subdivision is "
+                    f"available. {inferred_reason}"
+                )
+            elif pending_subdivision:
+                review_reason = f"Subdivision requires an enclosing polity. {inferred_reason}"
+            else:
+                review_reason = reason
             review_rows.append(
                 {
                     "id": document["id"],
@@ -223,16 +247,7 @@ def run() -> dict[str, int]:
                     "proposed_type": inferred_type if pending_subdivision else entity_type,
                     "confidence": inferred_confidence if pending_subdivision else confidence,
                     "source_qids": inferred_qids if pending_subdivision else source_qids,
-                    "reason": (
-                        "Previously reviewed as polity; reconsider now that subdivision is "
-                        f"available. {inferred_reason}"
-                        if reconsider_subdivision
-                        else (
-                            f"Subdivision requires an enclosing polity. {inferred_reason}"
-                            if pending_subdivision
-                            else reason
-                        )
-                    ),
+                    "reason": review_reason,
                     "reconsideration": reconsider_subdivision,
                     "requires_parent_review": pending_subdivision,
                 }

@@ -60,10 +60,4 @@ visibility_override: global
 manual_overrides:
 - visibility_override
 - entity_type
-# entity_type reverted civilization -> polity 2026-08-31: Akkadian Empire
-# moves out of the Civilizations & Cultures lane into the ordinary Polities
-# row alongside Sumer/Uruk/Babylonia -- Mesopotamia (mesopotamia_period.yaml)
-# now carries that lane's civilization-level weight for the region instead.
-# entity_type_source_qids above (Q3024240) is Wikidata's own classification,
-# left untouched as evidence; this is a deliberate editorial override of it,
-# same as the original elevation was. See STATUS.md.
+linked_era_id: neolithic_era

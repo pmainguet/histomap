@@ -56,10 +56,4 @@ manual_overrides:
 - visibility_override
 - entity_type
 visibility_override: global
-# entity_type reverted culture -> polity 2026-08-31: Sumer moves out of the
-# Civilizations & Cultures lane into the ordinary Polities row alongside
-# Uruk/Akkadian Empire/Babylonia -- Mesopotamia (mesopotamia_period.yaml)
-# now carries that lane's civilization-level weight for the region instead.
-# entity_type_confidence/entity_type_source_qids above are Wikidata's own
-# classification (culture, Q465299), left untouched as evidence; this is a
-# deliberate editorial override of it, not a correction. See STATUS.md.
+linked_era_id: neolithic_era

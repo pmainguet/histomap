@@ -59,3 +59,4 @@ manual_overrides:
 - entity_type
 - visibility_override
 visibility_override: global
+linked_era_id: neolithic_era

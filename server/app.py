@@ -261,28 +261,31 @@ def create_app(root: Path = ROOT) -> FastAPI:
 
     def refresh_type_review_queue() -> None:
         type_review_queue.clear()
-        if type_review_path.exists():
-            for line in type_review_path.read_text(encoding="utf-8").splitlines():
-                record = json.loads(line)
-                document = metadata.get(record["id"])
-                reviewed_types = set(document.get("entity_type_reviewed_against", [])) if document else set()
-                proposal_already_reviewed = record.get("proposed_type") in reviewed_types
-                if document and document.get("timeline_role", "entity") != "retired" and (
-                    document.get("entity_type_confidence", "low") != "high"
-                    or (
-                        (record.get("reconsideration") or record.get("requires_parent_review"))
-                        and not proposal_already_reviewed
-                    )
-                ):
-                    record["prominence_score"] = document.get("prominence_score", 0)
-                    record["dates"] = [document.get("start"), document.get("end")]
-                    record["sources"] = document.get("sources", [])
-                    record["wikipedia_en"] = (document.get("external_ids") or {}).get("wikipedia_en")
-                    wikidata_qid = (document.get("external_ids") or {}).get("wikidata")
-                    record["direct_type_qids"] = sorted(
-                        set((direct_types.get(wikidata_qid) or {}).get("types", []))
-                    )
-                    type_review_queue.append(record)
+        if not type_review_path.exists():
+            return
+        for line in type_review_path.read_text(encoding="utf-8").splitlines():
+            record = json.loads(line)
+            document = metadata.get(record["id"])
+            if not document or document.get("timeline_role", "entity") == "retired":
+                continue
+            proposal_already_reviewed = record.get("proposed_type") in set(
+                document.get("entity_type_reviewed_against", [])
+            )
+            still_open = document.get("entity_type_confidence", "low") != "high" or (
+                (record.get("reconsideration") or record.get("requires_parent_review"))
+                and not proposal_already_reviewed
+            )
+            if not still_open:
+                continue
+            external_ids = document.get("external_ids") or {}
+            record["prominence_score"] = document.get("prominence_score", 0)
+            record["dates"] = [document.get("start"), document.get("end")]
+            record["sources"] = document.get("sources", [])
+            record["wikipedia_en"] = external_ids.get("wikipedia_en")
+            record["direct_type_qids"] = sorted(
+                set((direct_types.get(external_ids.get("wikidata")) or {}).get("types", []))
+            )
+            type_review_queue.append(record)
         type_review_queue.sort(key=entity_type_review_sort_key)
 
     refresh_type_review_queue()
@@ -295,9 +298,12 @@ def create_app(root: Path = ROOT) -> FastAPI:
         for line in period_role_review_path.read_text(encoding="utf-8").splitlines():
             record = json.loads(line)
             document = metadata.get(record["id"])
-            if document and document.get("timeline_role", "entity") != "retired" and "timeline_role" not in set(document.get("manual_overrides", [])):
-                record["wikipedia_en"] = english_wikipedia_url(document.get("external_ids") or {})
-                period_role_queue.append(record)
+            if not document or document.get("timeline_role", "entity") == "retired":
+                continue
+            if "timeline_role" in (document.get("manual_overrides") or []):
+                continue
+            record["wikipedia_en"] = english_wikipedia_url(document.get("external_ids") or {})
+            period_role_queue.append(record)
 
     refresh_period_role_queue()
     job = {"status": "idle", "action": None, "output": "", "returncode": None}
@@ -516,17 +522,37 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     default=0,
                 )
                 type_match = document.get("entity_type", "polity") == other.get("entity_type", "polity")
-                score = name_score + rarity_bonus + (20 if same_wikidata else 0) + (12 if exact_name_match else 0) + (8 if geography_match else 0) + (8 if date_contains else 0) + (6 if date_overlap else 0) + (4 if type_match else 0)
+                score = name_score + rarity_bonus + sum(
+                    bonus
+                    for bonus, condition in (
+                        (20, same_wikidata),
+                        (12, exact_name_match),
+                        (8, geography_match),
+                        (8, date_contains),
+                        (6, date_overlap),
+                        (4, type_match),
+                    )
+                    if condition
+                )
                 reasons = []
-                if same_wikidata: reasons.append("same Wikidata item")
-                if exact_name_match: reasons.append("exact canonical name or alias")
-                if shared_canonical_tokens: reasons.append(f"shared identity term: {', '.join(sorted(shared_canonical_tokens))}")
-                if geography_match: reasons.append("shared present-day geography")
-                elif not geography_compatible: reasons.append("conflicting geography")
-                if date_contains: reasons.append("target dates contain source")
-                elif date_overlap: reasons.append("dates overlap")
-                else: reasons.append("dates do not overlap")
-                if not type_match: reasons.append("different entity types")
+                if same_wikidata:
+                    reasons.append("same Wikidata item")
+                if exact_name_match:
+                    reasons.append("exact canonical name or alias")
+                if shared_canonical_tokens:
+                    reasons.append(f"shared identity term: {', '.join(sorted(shared_canonical_tokens))}")
+                if geography_match:
+                    reasons.append("shared present-day geography")
+                elif not geography_compatible:
+                    reasons.append("conflicting geography")
+                if date_contains:
+                    reasons.append("target dates contain source")
+                elif date_overlap:
+                    reasons.append("dates overlap")
+                else:
+                    reasons.append("dates do not overlap")
+                if not type_match:
+                    reasons.append("different entity types")
                 candidates.append(
                     {
                         "id": other_id,
@@ -594,6 +620,68 @@ def create_app(root: Path = ROOT) -> FastAPI:
         ))
         return queue
 
+    def write_period_record(
+        document: dict,
+        kind: str,
+        authority: str,
+        notes: str,
+        source_urls: list[str],
+    ) -> str:
+        """Write the period-overlay YAML companion of a polity, and return its id."""
+        period_id = f"{document['id']}_period"
+        qid = (document.get("external_ids") or {}).get("wikidata")
+        periods_dir = root / "periods"
+        periods_dir.mkdir(exist_ok=True)
+        period = {
+            "id": period_id,
+            "canonical_name": document["canonical_name"],
+            "kind": kind,
+            "start": document["start"],
+            "end": document["end"],
+            "start_confidence": document.get("start_confidence", "low"),
+            "end_confidence": document.get("end_confidence", "low"),
+            "geography": document.get("geography") or {},
+            "broader_periods": [],
+            "successors": [],
+            "authority": authority,
+            "external_ids": {"wikidata": qid} if qid else {},
+            "notes": notes,
+            "source_urls": source_urls,
+        }
+        (periods_dir / f"{period_id}.yaml").write_text(
+            yaml.safe_dump(period, sort_keys=False, allow_unicode=True), encoding="utf-8"
+        )
+        return period_id
+
+    def append_period_link(
+        period_id: str,
+        entity_id: str,
+        relation: str,
+        source_urls: list[str],
+        notes: str,
+    ) -> None:
+        """Add a period_links.yaml entry unless that period/entity pair is already linked."""
+        links_path = root / "period_links.yaml"
+        links = yaml.safe_load(links_path.read_text(encoding="utf-8")) if links_path.exists() else []
+        links = links or []
+        if any(
+            link.get("period_id") == period_id and link.get("entity_id") == entity_id
+            for link in links
+        ):
+            return
+        links.append(
+            {
+                "period_id": period_id,
+                "entity_id": entity_id,
+                "relation": relation,
+                "evidence": "explicit",
+                "confidence": "high",
+                "source_urls": source_urls,
+                "notes": notes,
+            }
+        )
+        links_path.write_text(yaml.safe_dump(links, sort_keys=False, allow_unicode=True), encoding="utf-8")
+
     def save_consolidation(entity_id: str, decision: str, target_id: str | None) -> dict:
         document = metadata.get(entity_id)
         if not document or document.get("timeline_role") == "retired" or document.get("consolidation_status"):
@@ -645,39 +733,22 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 yaml.safe_dump(target, sort_keys=False, allow_unicode=True), encoding="utf-8"
             )
         else:
-            period_id = f"{entity_id}_period"
             qid = (document.get("external_ids") or {}).get("wikidata")
             source_urls = [f"https://www.wikidata.org/wiki/{qid}"] if qid else [f"https://histomap.local/entity/{entity_id}"]
-            period = {
-                "id": period_id,
-                "canonical_name": document["canonical_name"],
-                "kind": "historical",
-                "start": document["start"],
-                "end": document["end"],
-                "start_confidence": document.get("start_confidence", "low"),
-                "end_confidence": document.get("end_confidence", "low"),
-                "geography": document.get("geography") or {},
-                "broader_periods": [], "successors": [],
-                "authority": "Histomap editorial consolidation",
-                "external_ids": {"wikidata": qid} if qid else {},
-                "notes": f"Editorially identified as a phase or aspect of {target['canonical_name']}.",
-                "source_urls": source_urls,
-            }
-            periods_dir = root / "periods"
-            periods_dir.mkdir(exist_ok=True)
-            (periods_dir / f"{period_id}.yaml").write_text(
-                yaml.safe_dump(period, sort_keys=False, allow_unicode=True), encoding="utf-8"
+            period_id = write_period_record(
+                document,
+                kind="historical",
+                authority="Histomap editorial consolidation",
+                notes=f"Editorially identified as a phase or aspect of {target['canonical_name']}.",
+                source_urls=source_urls,
             )
-            links_path = root / "period_links.yaml"
-            links = yaml.safe_load(links_path.read_text(encoding="utf-8")) if links_path.exists() else []
-            if not any(link.get("period_id") == period_id and link.get("entity_id") == target_id for link in links):
-                links.append({
-                    "period_id": period_id, "entity_id": target_id,
-                    "relation": "phase_of", "evidence": "explicit",
-                    "confidence": "high", "source_urls": source_urls,
-                    "notes": "Reviewed record is a dated phase of this canonical polity.",
-                })
-                links_path.write_text(yaml.safe_dump(links, sort_keys=False, allow_unicode=True), encoding="utf-8")
+            append_period_link(
+                period_id,
+                target_id,
+                relation="phase_of",
+                source_urls=source_urls,
+                notes="Reviewed record is a dated phase of this canonical polity.",
+            )
         (polities_dir / f"{entity_id}.yaml").write_text(
             yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
         )
@@ -857,112 +928,66 @@ def create_app(root: Path = ROOT) -> FastAPI:
         path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
         period_id = None
         if timeline_role in {"period", "both"}:
-            period_id = f"{polity_id}_period"
-            periods_dir = root / "periods"
-            periods_dir.mkdir(exist_ok=True)
             qid = (document.get("external_ids") or {}).get("wikidata")
-            period = {
-                "id": period_id,
-                "canonical_name": document["canonical_name"],
-                "kind": "archaeological" if "archaeological" in period_kinds else "historical",
-                "start": document["start"],
-                "end": document["end"],
-                "start_confidence": document.get("start_confidence", "low"),
-                "end_confidence": document.get("end_confidence", "low"),
-                "geography": document.get("geography") or {},
-                "broader_periods": [],
-                "successors": [],
-                "authority": "Wikidata period classification",
-                "external_ids": {"wikidata": qid} if qid else {},
-                "notes": "Period overlay created by an editorial period-role decision.",
-                "source_urls": [f"https://www.wikidata.org/wiki/{qid}"] if qid else [],
-            }
-            (periods_dir / f"{period_id}.yaml").write_text(
-                yaml.safe_dump(period, sort_keys=False, allow_unicode=True), encoding="utf-8"
+            source_urls = [f"https://www.wikidata.org/wiki/{qid}"] if qid else []
+            period_id = write_period_record(
+                document,
+                kind="archaeological" if "archaeological" in period_kinds else "historical",
+                authority="Wikidata period classification",
+                notes="Period overlay created by an editorial period-role decision.",
+                source_urls=source_urls,
             )
             if timeline_role == "both":
-                links_path = root / "period_links.yaml"
-                links = yaml.safe_load(links_path.read_text(encoding="utf-8")) if links_path.exists() else []
-                if not any(link.get("period_id") == period_id and link.get("entity_id") == polity_id for link in links):
-                    links.append(
-                        {
-                            "period_id": period_id,
-                            "entity_id": polity_id,
-                            "relation": "part_of_periodization",
-                            "evidence": "explicit",
-                            "confidence": "high",
-                            "source_urls": [f"https://www.wikidata.org/wiki/{qid}"] if qid else [],
-                            "notes": "Same Wikidata item has distinct entity and period roles.",
-                        }
-                    )
-                    links_path.write_text(yaml.safe_dump(links, sort_keys=False, allow_unicode=True), encoding="utf-8")
+                append_period_link(
+                    period_id,
+                    polity_id,
+                    relation="part_of_periodization",
+                    source_urls=source_urls,
+                    notes="Same Wikidata item has distinct entity and period roles.",
+                )
         metadata[polity_id] = document
         return {"document": document, "period_id": period_id}
 
     application.mount("/static", StaticFiles(directory=web_dir), name="static")
 
-    @application.get("/", include_in_schema=False)
-    async def timeline() -> FileResponse:
-        return FileResponse(web_dir / "index.html")
+    def register_page(route: str, filename: str) -> None:
+        """Serve one static HTML page from web/."""
 
-    @application.get("/review", include_in_schema=False)
-    async def review_page() -> FileResponse:
-        return FileResponse(web_dir / "review.html")
+        async def page() -> FileResponse:
+            return FileResponse(web_dir / filename)
 
-    @application.get("/reviews", include_in_schema=False)
-    async def reviews_home_page() -> FileResponse:
-        return FileResponse(web_dir / "reviews.html")
+        application.add_api_route(route, page, include_in_schema=False)
 
-    @application.get("/explore", include_in_schema=False)
-    async def explore_page() -> FileResponse:
-        return FileResponse(web_dir / "explore.html")
+    for page_route, page_file in (
+        ("/", "index.html"),
+        ("/review", "review.html"),
+        ("/reviews", "reviews.html"),
+        ("/explore", "explore.html"),
+        ("/consolidation-review", "consolidation_review.html"),
+        ("/type-review", "type_review.html"),
+        ("/subdivision-review", "subdivision_review.html"),
+    ):
+        register_page(page_route, page_file)
 
-    @application.get("/explore_tree.json", include_in_schema=False)
-    async def explore_tree() -> FileResponse:
-        path = root / "explore_tree.json"
-        if not path.exists():
-            raise HTTPException(404, "Run the build action first")
-        return FileResponse(path)
+    def register_build_artifact(filename: str) -> None:
+        """Serve one build output from the repo root, 404ing until it exists."""
 
-    @application.get("/consolidation-review", include_in_schema=False)
-    async def consolidation_review_page() -> FileResponse:
-        return FileResponse(web_dir / "consolidation_review.html")
+        async def artifact() -> FileResponse:
+            path = root / filename
+            if not path.exists():
+                raise HTTPException(404, "Run the build action first")
+            return FileResponse(path)
 
-    @application.get("/type-review", include_in_schema=False)
-    async def type_review_page() -> FileResponse:
-        return FileResponse(web_dir / "type_review.html")
+        application.add_api_route(f"/{filename}", artifact, include_in_schema=False)
 
-    @application.get("/subdivision-review", include_in_schema=False)
-    async def subdivision_review_page() -> FileResponse:
-        return FileResponse(web_dir / "subdivision_review.html")
-
-    @application.get("/data.json", include_in_schema=False)
-    async def data() -> FileResponse:
-        path = root / "data.json"
-        if not path.exists():
-            raise HTTPException(404, "Run the build action first")
-        return FileResponse(path)
-
-    @application.get("/transitions.json", include_in_schema=False)
-    async def transitions() -> FileResponse:
-        path = root / "transitions.json"
-        if not path.exists():
-            raise HTTPException(404, "Run the build action first")
-        return FileResponse(path)
-
-    @application.get("/periods.json", include_in_schema=False)
-    async def periods() -> FileResponse:
-        path = root / "periods.json"
-        if not path.exists():
-            raise HTTPException(404, "Run the build action first")
-        return FileResponse(path)
-
-    @application.get("/period_links.json", include_in_schema=False)
-    async def period_links() -> FileResponse:
-        path = root / "period_links.json"
-        if not path.exists():
-            raise HTTPException(404, "Run the build action first")
-        return FileResponse(path)
+    for artifact_file in (
+        "data.json",
+        "transitions.json",
+        "periods.json",
+        "period_links.json",
+        "explore_tree.json",
+    ):
+        register_build_artifact(artifact_file)
 
     @application.get("/api/reviews")
     async def reviews(offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)) -> dict:
@@ -1210,35 +1235,38 @@ def create_app(root: Path = ROOT) -> FastAPI:
             "timeline_role": timeline_role, "period_id": result["period_id"],
         }
 
-    @application.patch("/api/polities/{polity_id}/fields")
-    async def update_polity_fields(polity_id: str, fields: dict) -> dict:
-        """General-purpose editor: merges an arbitrary subset of fields onto
-        the existing record and validates the result against the full Polity
-        schema before writing -- unlike the single-field endpoints above
-        (entity-type, geography), this can edit anything in the YAML file,
-        including fields with no dedicated UI/endpoint (tier equivalents like
-        timeline_role, dates, weight_by_era, etc.). `id` can never be changed
-        this way (would desync the record from its filename)."""
-        path = polities_dir / f"{polity_id}.yaml"
+    def save_merged_fields(
+        path: Path,
+        record_id: str,
+        fields: dict,
+        model: type[BaseModel],
+        missing_message: str,
+        mismatch_message: str,
+    ) -> tuple[dict, list[str]]:
+        """Merge an arbitrary subset of fields onto a YAML record, validate the
+        result against its full schema, and write it back.
+
+        Returns the merged document and the list of fields that actually
+        changed. `id` can never be changed this way (it would desync the
+        record from its filename)."""
         if not path.exists():
-            raise HTTPException(404, "Unknown Histomap entity")
+            raise HTTPException(404, missing_message)
         document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-        if document.get("id") != polity_id:
-            raise HTTPException(409, "Polity file ID does not match requested polity")
-        merged = {**document, **fields, "id": polity_id}
+        if document.get("id") != record_id:
+            raise HTTPException(409, mismatch_message)
+        merged = {**document, **fields, "id": record_id}
         try:
-            merged_normalized = Polity.model_validate(merged).model_dump(mode="json")
+            merged_normalized = model.model_validate(merged).model_dump(mode="json")
         except ValidationError as exc:
             raise HTTPException(422, str(exc)) from exc
-        # Compares normalized (schema-defaulted) values on both sides, not
-        # the raw dicts -- the panel's raw editor round-trips through
-        # /data.json's fully-expanded model dump, so a field a human never
-        # touched (e.g. tier, implicit in the hand-authored YAML via its
-        # schema default) would otherwise show up as "changed" the moment it
-        # becomes explicit in the submission, falsely bloating
-        # manual_overrides.
+        # Compares normalized (schema-defaulted) values on both sides, not the
+        # raw dicts -- the panel's raw editor round-trips through /data.json's
+        # fully-expanded model dump, so a field a human never touched (e.g.
+        # tier, implicit in the hand-authored YAML via its schema default)
+        # would otherwise show up as "changed" the moment it becomes explicit
+        # in the submission, falsely bloating manual_overrides.
         try:
-            original_normalized = Polity.model_validate(document).model_dump(mode="json")
+            original_normalized = model.model_validate(document).model_dump(mode="json")
         except ValidationError:
             original_normalized = document
         changed = sorted(
@@ -1248,6 +1276,22 @@ def create_app(root: Path = ROOT) -> FastAPI:
         if changed:
             merged["manual_overrides"] = sorted(set(merged.get("manual_overrides") or []) | set(changed))
         path.write_text(yaml.safe_dump(merged, sort_keys=False, allow_unicode=True), encoding="utf-8")
+        return merged, changed
+
+    @application.patch("/api/polities/{polity_id}/fields")
+    async def update_polity_fields(polity_id: str, fields: dict) -> dict:
+        """General-purpose polity editor: unlike the single-field endpoints
+        above (entity-type, geography), this can edit anything in the YAML
+        file, including fields with no dedicated UI/endpoint (timeline_role,
+        dates, weight_by_era, etc.)."""
+        merged, changed = save_merged_fields(
+            polities_dir / f"{polity_id}.yaml",
+            polity_id,
+            fields,
+            Polity,
+            "Unknown Histomap entity",
+            "Polity file ID does not match requested polity",
+        )
         metadata[polity_id] = merged
         return {"status": "saved", "polity_id": polity_id, "changed": changed, "document": merged}
 
@@ -1256,31 +1300,14 @@ def create_app(root: Path = ROOT) -> FastAPI:
         """Period counterpart to update_polity_fields above -- can edit
         anything in a period's YAML file, including `tier` and
         `broader_periods`, neither of which has any other UI/endpoint today."""
-        path = root / "periods" / f"{period_id}.yaml"
-        if not path.exists():
-            raise HTTPException(404, "Unknown Histomap period")
-        document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-        if document.get("id") != period_id:
-            raise HTTPException(409, "Period file ID does not match requested period")
-        merged = {**document, **fields, "id": period_id}
-        try:
-            merged_normalized = Period.model_validate(merged).model_dump(mode="json")
-        except ValidationError as exc:
-            raise HTTPException(422, str(exc)) from exc
-        # See update_polity_fields's comment above -- compares normalized
-        # values so an implicit-default field that becomes explicit through
-        # the raw editor's round-trip doesn't falsely register as "changed".
-        try:
-            original_normalized = Period.model_validate(document).model_dump(mode="json")
-        except ValidationError:
-            original_normalized = document
-        changed = sorted(
-            key for key in fields
-            if key != "id" and original_normalized.get(key) != merged_normalized.get(key)
+        merged, changed = save_merged_fields(
+            root / "periods" / f"{period_id}.yaml",
+            period_id,
+            fields,
+            Period,
+            "Unknown Histomap period",
+            "Period file ID does not match requested period",
         )
-        if changed:
-            merged["manual_overrides"] = sorted(set(merged.get("manual_overrides") or []) | set(changed))
-        path.write_text(yaml.safe_dump(merged, sort_keys=False, allow_unicode=True), encoding="utf-8")
         return {"status": "saved", "period_id": period_id, "changed": changed, "document": merged}
 
     @application.patch("/api/periods/{period_id}/kind")

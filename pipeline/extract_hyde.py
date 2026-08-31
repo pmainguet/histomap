@@ -12,6 +12,8 @@ import pandas as pd
 import xarray as xr
 import yaml
 
+from pipeline.backfill_entity_types import sovereign_state_qids
+
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_INPUT = ROOT / "sources" / "hyde"
 OUTPUT_PATH = ROOT / "sources" / "hyde_pop_by_polity.parquet"
@@ -91,11 +93,7 @@ def radius_cell_indices(
 def polity_points() -> list[dict]:
     points = []
     direct_types = json.loads(DIRECT_TYPES_PATH.read_text(encoding="utf-8"))
-    sovereign_qids = {
-        qid
-        for qid, metadata in direct_types.items()
-        if {"Q6256", "Q3624078"} & set(metadata.get("types", []))
-    }
+    sovereign_qids = sovereign_state_qids(direct_types)
     for path in (ROOT / "polities").glob("*.yaml"):
         document = yaml.safe_load(path.read_text(encoding="utf-8"))
         centroid = (document.get("geography") or {}).get("centroid")

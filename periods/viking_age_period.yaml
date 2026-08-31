@@ -21,8 +21,9 @@ external_ids:
 notes: 793 is the Lindisfarne raid, conventionally marking the start; 1066 the Battle
   of Stamford Bridge / Norman Conquest, conventionally marking the end. Routed to
   the Civilizations & Cultures lane 2026-08-31 -- raiding, trading, and settlement
-  rather than a single political actor, the same "civilization-as-backdrop"
-  reasoning as Ancient Egypt/Mesopotamia/Chinese Empire; jorvik.yaml already covers
-  the one durable Viking polity (Viking York) as a plain polity underneath it.
+  rather than a single political actor, the same "civilization-as-backdrop" reasoning
+  as Ancient Egypt/Mesopotamia/Chinese Empire; jorvik.yaml already covers the one
+  durable Viking polity (Viking York) as a plain polity underneath it.
 source_urls:
 - https://www.wikidata.org/wiki/Q213649
+linked_era_id: medieval_europe_era

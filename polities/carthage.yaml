@@ -57,3 +57,4 @@ manual_overrides:
 - consolidation
 - visibility_override
 visibility_override: global
+linked_era_id: iron_age_era

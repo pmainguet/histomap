@@ -23,14 +23,14 @@ successors: []
 authority: 'Histomap editorial: civilization-as-backdrop'
 external_ids: {}
 notes: Mesopotamia spans several distinct political phases (Uruk, Sumerian city-states,
-  the Akkadian Empire, Babylonia, ...); rendered as period context in the
-  Civilizations & Cultures lane so those phases (now plain polities, not this
-  civilization-level record) carry the chart's political weight. Replaces the
-  earlier arrangement where Sumer/Akkadian Empire/Uruk/Babylonia individually
-  carried civilization-lane weight -- see STATUS.md. mesopotamian_early_states_era
-  (the regional_era) was deleted outright 2026-08-31 as a duplicate of this
-  record, same treatment egyptian_early_states_era got against
-  ancient_egypt_period; early_dynastic_mesopotamia (the one period that
+  the Akkadian Empire, Babylonia, ...); rendered as period context in the Civilizations
+  & Cultures lane so those phases (now plain polities, not this civilization-level
+  record) carry the chart's political weight. Replaces the earlier arrangement where
+  Sumer/Akkadian Empire/Uruk/Babylonia individually carried civilization-lane weight
+  -- see STATUS.md. mesopotamian_early_states_era (the regional_era) was deleted outright
+  2026-08-31 as a duplicate of this record, same treatment egyptian_early_states_era
+  got against ancient_egypt_period; early_dynastic_mesopotamia (the one period that
   nested under it) now falls back to heuristic era placement instead.
 source_urls:
 - https://en.wikipedia.org/wiki/Mesopotamia
+linked_era_id: neolithic_era
