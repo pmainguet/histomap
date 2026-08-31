@@ -407,8 +407,25 @@ function continentGroupedLayout(items, scale, laneHeight, groupBy) {
   }
   const continents = sortGeoKeys(buckets.keys());
   const rows = continents.map((continent) => {
-    const sorted = [...buckets.get(continent)].sort(geoClusterSort);
-    const lanes = packIntoLanes(sorted, getRange);
+    // Pack each present-day country's items into their own lanes, then stack
+    // those lane sets rather than lane-packing the whole continent bucket
+    // together -- a shared pool could put two different countries' items in
+    // the same lane whenever their dates happen not to overlap, reading as
+    // one messy, mixed row. This costs a few more lanes overall (no cross-
+    // country lane sharing) but keeps every row visually one country (or one
+    // "no clear country" group) at a time, even without drawing sub-headers
+    // the way Country mode does. Still as compact as that constraint allows:
+    // each country's own items are packed as tightly as packIntoLanes can.
+    const countryBuckets = new Map();
+    for (const item of buckets.get(continent)) {
+      const key = countryLaneKey(item);
+      if (!countryBuckets.has(key)) countryBuckets.set(key, []);
+      countryBuckets.get(key).push(item);
+    }
+    const lanes = countryKeySort(countryBuckets.keys()).flatMap((countryKey) => {
+      const sorted = [...countryBuckets.get(countryKey)].sort(geoClusterSort);
+      return packIntoLanes(sorted, getRange);
+    });
     return { continent, lanes };
   });
   const height = rows.reduce((total, row) => total + REGION_HEADER_HEIGHT + row.lanes.length * laneHeight + 4, 0);
