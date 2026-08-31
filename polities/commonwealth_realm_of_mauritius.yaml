@@ -25,7 +25,8 @@ eligibility: accepted
 geography:
   continents:
   - africa
-  present_countries: []
+  present_countries:
+  - MU
   centroid:
     lat: -20.2
     lon: 57.5

@@ -28,9 +28,13 @@ eligibility: accepted
 geography:
   continents:
   - oceania
-  present_countries: []
+  present_countries:
+  - FJ
   centroid: null
   confidence: low
+  historical_regions:
+  - oceania_pacific
+  primary_historical_region: oceania_pacific
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []

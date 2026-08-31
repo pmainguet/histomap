@@ -4,10 +4,17 @@ external_ids: {}
 parent: null
 successors: []
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - asia
+  - north_america
+  - oceania
+  present_countries:
+  - US
   centroid: null
-  confidence: null
+  confidence: low
+  historical_regions:
+  - north_america
+  primary_historical_region: north_america
 start: 1000
 end: 1199
 start_confidence: low

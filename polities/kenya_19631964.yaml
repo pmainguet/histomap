@@ -25,9 +25,13 @@ eligibility: accepted
 geography:
   continents:
   - africa
-  present_countries: []
+  present_countries:
+  - KE
   centroid: null
   confidence: low
+  historical_regions:
+  - east_africa
+  primary_historical_region: east_africa
 relationships: []
 entity_type: polity
 entity_type_confidence: high

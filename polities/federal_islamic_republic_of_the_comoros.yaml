@@ -29,7 +29,8 @@ eligibility: accepted
 geography:
   continents:
   - africa
-  present_countries: []
+  present_countries:
+  - KM
   centroid:
     lat: -12.183333
     lon: 44.233333

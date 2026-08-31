@@ -33,9 +33,13 @@ geography:
   - asia
   - europe
   - oceania
-  present_countries: []
+  present_countries:
+  - MY
   centroid: null
-  confidence: medium
+  confidence: low
+  historical_regions:
+  - southeast_asia
+  primary_historical_region: southeast_asia
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

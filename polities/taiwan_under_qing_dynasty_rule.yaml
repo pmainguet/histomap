@@ -28,9 +28,13 @@ eligibility: accepted
 geography:
   continents:
   - asia
-  present_countries: []
+  present_countries:
+  - TW
   centroid: null
-  confidence: medium
+  confidence: low
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

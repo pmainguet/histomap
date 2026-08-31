@@ -4,10 +4,15 @@ external_ids: {}
 parent: null
 successors: []
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - asia
+  present_countries:
+  - JP
   centroid: null
-  confidence: null
+  confidence: low
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
 start: 1568
 end: 1602
 start_confidence: low

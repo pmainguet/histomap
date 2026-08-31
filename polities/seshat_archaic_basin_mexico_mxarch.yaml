@@ -29,3 +29,12 @@ entity_type_source_qids: []
 relationships: []
 successors: []
 government_form: null
+geography:
+  present_countries:
+  - MX
+  continents:
+  - north_america
+  confidence: low
+  historical_regions:
+  - mesoamerica
+  primary_historical_region: mesoamerica

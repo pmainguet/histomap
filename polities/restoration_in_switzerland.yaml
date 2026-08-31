@@ -26,10 +26,15 @@ prominence_score: 22.05
 visibility_tier: detailed
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - europe
+  present_countries:
+  - CH
   centroid: null
-  confidence: null
+  confidence: low
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

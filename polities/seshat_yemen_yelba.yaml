@@ -4,10 +4,16 @@ external_ids: {}
 parent: null
 successors: []
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - africa
+  - asia
+  present_countries:
+  - YE
   centroid: null
-  confidence: null
+  confidence: low
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
 start: -1200
 end: -801
 start_confidence: low

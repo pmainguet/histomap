@@ -4,10 +4,15 @@ external_ids: {}
 parent: null
 successors: []
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - south_america
+  present_countries:
+  - EC
   centroid: null
-  confidence: null
+  confidence: low
+  historical_regions:
+  - andes
+  primary_historical_region: andes
 start: 1831
 end: 1931
 start_confidence: low

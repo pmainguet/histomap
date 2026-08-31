@@ -5,7 +5,17 @@ external_ids:
   - Hawaii2
 parent: null
 successors: []
-geography: {}
+geography:
+  present_countries:
+  - US
+  continents:
+  - asia
+  - north_america
+  - oceania
+  confidence: low
+  historical_regions:
+  - north_america
+  primary_historical_region: north_america
 start: 1200
 end: 1649
 start_confidence: low

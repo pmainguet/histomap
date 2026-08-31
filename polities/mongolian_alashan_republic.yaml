@@ -24,10 +24,15 @@ prominence_score: 6.89
 visibility_tier: detailed
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - asia
+  present_countries:
+  - MN
   centroid: null
-  confidence: null
+  confidence: low
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

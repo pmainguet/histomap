@@ -29,9 +29,13 @@ eligibility: review
 geography:
   continents:
   - africa
-  present_countries: []
+  present_countries:
+  - SO
   centroid: null
-  confidence: medium
+  confidence: low
+  historical_regions:
+  - horn_of_africa
+  primary_historical_region: horn_of_africa
 entity_type: polity
 entity_type_confidence: medium
 entity_type_source_qids:

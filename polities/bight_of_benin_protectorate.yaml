@@ -32,9 +32,13 @@ geography:
   - asia
   - europe
   - oceania
-  present_countries: []
+  present_countries:
+  - BJ
   centroid: null
-  confidence: medium
+  confidence: low
+  historical_regions:
+  - west_africa
+  primary_historical_region: west_africa
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []
