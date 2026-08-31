@@ -503,6 +503,61 @@ Verified live: Babylonia and the others render correctly with the new reason tex
 modeled as timeline_role: entity"), zero console errors. 239/239 tests pass; build validates
 cleanly.
 
+### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
+
+**`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which
+only distinguishes polity/civilization/subdivision/micronation/culture/people/tribe/
+archaeological_horizon with no room to record the specific kind of governed political entity --
+sultanate, khanate, duchy, principality, etc. all just became `entity_type: polity`, same as
+`empire`/`kingdom` already do. `GOVERNMENT_FORM_QIDS` in `pipeline/backfill_entity_types.py` maps
+~35 Wikidata direct types to a controlled vocabulary (reusing the eligibility-rules research from
+earlier the same day), deliberately excluding types describing recognition status or a
+geographic/temporal category rather than an actual form of government. Auto-populated via a
+direct P31 match only (no ancestry inference -- stays `None` rather than guessing), respecting
+`manual_overrides`. No new UI: editable through `/explore`'s existing generic raw-fields side-panel
+editor, confirmed no server/frontend changes were needed (same as `linked_era_id` before any
+dedicated control existed for it).
+
+**Two geography-grouping bugs found via live `/explore` testing, both fixed same day:**
+- **"Unclassified" band** (Byzantine Empire, Ottoman Empire, Tang dynasty, and 1,345 of 4,651
+  active polities, 29%, had no continent at all). Not missing data -- a structural limitation:
+  continent was only ever derived from a polity's Wikidata P17 ("country") claim, but pre-modern
+  dynasties/empires routinely have no usable P17 (Tang dynasty has none; Byzantine Empire's P17
+  resolves to non-country "Roman Empire"; Ottoman Empire's P17 resolves to itself) even though
+  they usually DO carry a direct Wikidata P30 (continent) claim on themselves -- confirmed live via
+  the API before writing code. New `pipeline/enrich_geography.py:fill_self_continent_fallback()`
+  pass fixed 367 records this way (missing-continent count: 1,345 -> 986).
+- **Continent grouping too coarse** ("Byzantine should be in West Asia, not just Asia/Africa").
+  Extended the fix: `resolve_from_centroid()` does point-in-polygon against a centroid, resolving
+  both the ISO2 country and continent `locate_point()` already computed (only the continent half
+  was being used). Filling `present_countries` from this lets
+  `pipeline/derive_historical_regions.py` place the record into a real historical_region
+  afterwards the normal way (Istanbul's centroid resolves to Turkey, already mapped to
+  `west_asia`) -- deriving a region straight from continent instead would be exactly the coarse
+  guess that module's own docstring already rules out. Found and fixed a real latent bug along the
+  way: the "high-resolution" boundaries file uses a different property schema
+  (`ISO3166-1-Alpha-2`, no `CONTINENT` field at all) than the matching code expects, so
+  `--only-missing` has been silently non-functional since it was wired up; the new pass uses the
+  low-resolution file instead, which works. Result: Byzantine Empire and Ottoman Empire now
+  correctly show `primary_continent: asia`, `present_countries: [TR]`,
+  `historical_regions: [west_asia]`. 31 records got `primary_continent` resolved this way, 29 got
+  `present_countries` (and therefore a real region).
+- Separately, also fixed the **"Central Asia" grouping** for Nogai Horde and Kazakh Khanate (and
+  10 similar records): these carry a deliberate `manual_overrides: [geography]` lock leaving
+  `present_countries` empty (correctly -- a shifting steppe khanate doesn't map onto one modern
+  country), so they could never get a historical_region through the normal derivation. Set
+  `historical_regions` by hand for all 12 based on each entity's actual history/geography, with
+  `historical_region` added to `manual_overrides` so the derivation pipeline won't try to
+  overwrite them.
+
+**What's left**, tracked in ROADMAP.md: 986 records still have no continent at all (no Wikidata
+QID, or a QID with neither a usable P17 chain nor a direct P30 claim nor a centroid -- needs a
+different signal than anything built so far); 69 records have `present_countries` but their
+country isn't yet in `pipeline/historical_regions.py`'s ~180-country starter table.
+
+Verified throughout: build validates (4,697 entities), 239/239 tests pass, live chrome-devtools
+checks show zero console errors beyond the pre-existing favicon 404.
+
 ### Period/polity dataset cleanup — 30-31 August 2026
 
 A cluster of data-quality fixes, mostly triggered by live `/explore` testing surfacing

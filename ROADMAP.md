@@ -35,60 +35,50 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    `/subdivision-review`'s parent-confirmation step, and the rest is a long tail of low-count,
    genuinely ambiguous or obscure types -- ordinary manual review from here, same as any other
    queue.
-
-## Ideas / deferred design questions
-
-Considered, deliberately not done, with the concrete trigger for revisiting:
-
-- **A `government_form`/`polity_subtype` field on `Polity`, distinct from `entity_type`.**
-  Surfaced 31 August 2026 while expanding `wikidata_types.toml`'s eligibility rules: sultanate,
-  khanate, duchy, principality, emirate, beylik, protectorate, vassal state, etc. are all
-  conceptually distinct kinds of governed political entity, but the schema's `entity_type` enum
-  is flat (`polity`/`civilization`/`subdivision`/`micronation`/`culture`/`people`/`tribe`/
-  `archaeological_horizon`) with no room to record which — every one of them just becomes
-  `entity_type: polity`, the same as `empire` or `kingdom` already do. Needs its own design pass:
-  is this free text or a controlled vocabulary, does it live on `Polity` directly or as a
-  `notes`-adjacent field, does `/explore` ever display or filter by it? **Revisit if** this
-  distinction becomes something a viewer would actually want to see or filter on, not just an
-  internal classification nicety.
-- **Split `Period` into separate `MacroChapter`/`RegionalEra`/`Period` Pydantic
-  classes** instead of one `Period` class discriminated by `tier`. Would trade runtime
-  validation (Task 2's `validate_period_tiers()` in the period-ontology plan) for
-  structural safety (a macro chapter simply couldn't have a `broader_periods` value).
-  Not done because it breaks the precedent this schema already set twice
-  (`Polity.entity_type`, `Period.kind` — one class, an enum discriminator, several
-  flavors) and would complicate `pipeline/period_hierarchy.py`'s tree-walking, which
-  currently works because every tier shares one shape. **Revisit if** a field ever needs
-  to exist on `macro_chapter` or `regional_era` that would be actively wrong (not just
-  unused) on a regular `period` — at that point, Pydantic discriminated unions
-  (`Annotated[Union[...], Field(discriminator="tier")]`) would give both the safety and
-  a workable `PeriodHierarchy`. See `ONTOLOGY.md` for the full period-tier design.
-- **A period can subdivide a civilization/polity, not just an era — the schema and tree only
-  support the latter today.** Surfaced by `early_dynastic_mesopotamia`: conceptually it's a
-  phase *of Sumer* (the civilization), the same relationship Old Kingdom of Egypt has to
-  Ancient Egypt or Old Babylonian Empire has to Babylonia — but `broader_periods` only
-  resolves against era-tier periods for tree placement, so today that relationship can only
-  be expressed via `period_links.yaml`'s `context` relation, which doesn't affect *where the
-  period nests in the tree* the way `broader_periods` does. Two structurally different kinds
-  of "period subdivision" (era-subdivision vs. civilization/polity-subdivision) are currently
-  conflated into one mechanism. Needs its own design pass: what should the schema/tree
-  support, and how should `/explore` display the distinction (a sub-lane under the
-  civilization/polity's own band, rather than nested in the ordinary Period row)?
-- **Audit remaining heuristic/on-the-fly computations that affect how polities, civilizations,
-  etc. are classified or displayed, and decide which deserve to become explicit persisted
-  fields.** `linked_era_id` was exactly this kind of thing until 31 August 2026 — it used to be
-  recomputed on every build by `_linked_era_id()`'s `rank_candidates()` heuristic in
-  `pipeline/build_explore_tree.py`, silently changing depending on data elsewhere in the set, with
-  no way to correct a bad match short of fighting the heuristic. It's now a plain stored field,
-  seeded once and editable directly. Other candidates likely exist in the same file and in
-  `pipeline/geography_overlap.py`/`pipeline/period_hierarchy.py` (e.g. period tree placement via
-  `broader_periods` + `rank_candidates`, prominence-driven display ordering) — worth listing them
-  out explicitly so each can be judged on its own merits rather than assumed fine by default.
-- **Add a lane for main events** -- the specific events that define the start/end of an
-  era, chapter, or period, starting with those. Today a boundary (e.g. Bronze Age
-  Collapse ending Mesopotamian Early States) is only implicit in a record's `start`/`end`
-  dates; there's no explicit event entity a viewer can click to see what happened, or
-  that a `start_confidence`/`end_confidence` figure can point back to as its actual
-  source. Needs its own design pass: a new entity/schema for events, how an era/chapter/
-  period would reference "the event that ends me," and how `/explore` would display a
-  thin events lane against the existing chapter/era/period rows.
+6. **Close the residual geography gaps** left after the 31 August 2026 continent/region fixes (see
+   STATUS.md): **986** active polities still have no continent at all (no Wikidata QID, or a QID
+   with neither a usable P17 chain nor a direct P30 claim nor a centroid -- every signal built so
+   far has been tried and come up empty; needs a different approach, if one exists); **69** have
+   `present_countries` but their country isn't yet in `pipeline/historical_regions.py`'s
+   ~180-country starter table (cheap and safe to grow incrementally).
+7. **Audit remaining heuristic/on-the-fly computations** that affect how polities, civilizations,
+   etc. are classified or displayed, and decide which deserve to become explicit persisted
+   fields. `linked_era_id` was exactly this kind of thing until 31 August 2026 — it used to be
+   recomputed on every build by `_linked_era_id()`'s `rank_candidates()` heuristic in
+   `pipeline/build_explore_tree.py`, silently changing depending on data elsewhere in the set, with
+   no way to correct a bad match short of fighting the heuristic. It's now a plain stored field,
+   seeded once and editable directly. Other candidates likely exist in the same file and in
+   `pipeline/geography_overlap.py`/`pipeline/period_hierarchy.py` (e.g. period tree placement via
+   `broader_periods` + `rank_candidates`, prominence-driven display ordering) — worth listing them
+   out explicitly so each can be judged on its own merits rather than assumed fine by default.
+8. **A period can subdivide a civilization/polity, not just an era — the schema and tree only
+   support the latter today.** Surfaced by `early_dynastic_mesopotamia`: conceptually it's a
+   phase *of Sumer* (the civilization), the same relationship Old Kingdom of Egypt has to
+   Ancient Egypt or Old Babylonian Empire has to Babylonia — but `broader_periods` only
+   resolves against era-tier periods for tree placement, so today that relationship can only
+   be expressed via `period_links.yaml`'s `context` relation, which doesn't affect *where the
+   period nests in the tree* the way `broader_periods` does. Two structurally different kinds
+   of "period subdivision" (era-subdivision vs. civilization/polity-subdivision) are currently
+   conflated into one mechanism. Needs its own design pass: what should the schema/tree
+   support, and how should `/explore` display the distinction (a sub-lane under the
+   civilization/polity's own band, rather than nested in the ordinary Period row)?
+9. **Add a lane for main events** -- the specific events that define the start/end of an
+   era, chapter, or period, starting with those. Today a boundary (e.g. Bronze Age
+   Collapse ending Mesopotamian Early States) is only implicit in a record's `start`/`end`
+   dates; there's no explicit event entity a viewer can click to see what happened, or
+   that a `start_confidence`/`end_confidence` figure can point back to as its actual
+   source. Needs its own design pass: a new entity/schema for events, how an era/chapter/
+   period would reference "the event that ends me," and how `/explore` would display a
+   thin events lane against the existing chapter/era/period rows.
+10. **Split `Period` into separate `MacroChapter`/`RegionalEra`/`Period` Pydantic
+    classes** instead of one `Period` class discriminated by `tier`. Would trade runtime
+    validation (Task 2's `validate_period_tiers()` in the period-ontology plan) for
+    structural safety (a macro chapter simply couldn't have a `broader_periods` value).
+    Not done because it breaks the precedent this schema already set twice
+    (`Polity.entity_type`, `Period.kind` — one class, an enum discriminator, several
+    flavors) and would complicate `pipeline/period_hierarchy.py`'s tree-walking, which
+    currently works because every tier shares one shape. **Revisit if** a field ever needs
+    to exist on `macro_chapter` or `regional_era` that would be actively wrong (not just
+    unused) on a regular `period` — at that point, Pydantic discriminated unions
+    (`Annotated[Union[...], Field(discriminator="tier")]`) would give both the safety and
+    a workable `PeriodHierarchy`. See `ONTOLOGY.md` for the full period-tier design.
