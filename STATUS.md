@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (754 of 4,697 still pending after the alias-collision bug fix, a batch of 6 verified phase_of resolutions, and the Wikidata-succession signal, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (752 of 4,697 still pending -- now with an automated `suggested_decision` hint on 758 of the remaining candidates, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -643,6 +643,41 @@ Czechoslovak Socialist Republic, reviewed live in the browser), East Punjab and 
 Republic (both independent, reviewed live in the browser). `/consolidation-review` "active" pending
 count: 770 -> 754. `build.py`: 4643 -> 4642 entities (one more phase_of retirement), 96 -> 97
 periods, 23 -> 24 period links. 239/239 tests pass; zero console errors live.
+
+### Consolidation queue now suggests the correct decision automatically — 31 August 2026
+
+Two more candidates caught live needed the SAME reasoning as the Syria/Syrian Arab Republic case,
+but in reverse: France (481-present, reviewed) vs. French First Republic (1792-1804, candidate) --
+the REVIEWED entity is the broad continuous polity here, so the CANDIDATE is the one that should
+become the phase, via the "Candidate -> phase of reviewed" direction. Same shape for German Reich
+(1871-1949, reviewed, the official name spanning Empire/Weimar/Nazi Germany) vs. German Empire
+(1871-1918, candidate, the specific monarchical phase). Both resolved correctly, but only after
+manually checking date-nesting direction, entity types, and QIDs for each -- exactly the repeated,
+mechanical work asked to be folded into the algorithm instead of re-derived by hand every time.
+
+Added to `consolidation_review_queue()`:
+- **`reverse_date_contains`**: the mirror of the existing `date_contains` -- catches the reviewed
+  entity having the broader range, not just the candidate.
+- **`possible_qid_conflict`**: a `same_wikidata` match whose dates diverge by more than a few years
+  usually means one record has the WRONG Wikidata id, not a genuine identity match. Caught live:
+  this dataset's Roman Republic and Ancient Rome both carry `Q1747689` despite covering different
+  centuries -- previously surfaced as a misleading "high confidence" `same_entity` prompt. Now
+  demotes confidence to medium, drops the `same_wikidata` score bonus, and surfaces an explicit
+  "check for a misattributed Wikidata id" warning instead.
+- **`suggested_decision`**: derived from the above plus the existing `documented_successor`/
+  `coordinate_conflict` signals -- `same_entity` when `same_wikidata` genuinely lines up,
+  `phase_of`/`candidate_phase_of` whichever direction the date-nesting actually points,
+  `independent` when a documented successor or centroid conflict argues against identity, `null`
+  wherever the evidence doesn't clearly point one way (an ordinary manual review, same as before).
+  Live distribution across the queue: 445 `phase_of`, 179 `candidate_phase_of`, 134 `independent`,
+  257 `null`.
+
+`/consolidation-review`'s frontend (`web/consolidation_review.js`, `web/styles.css`) highlights the
+matching button with a "Suggested" badge; the independent-only case (no per-candidate button exists
+for it) gets an inline hint pointing at the page-level "Independent entity" control. Verified live:
+West Virginia's "Reviewed -> phase of candidate" button correctly carries the badge; Roman Republic
+now shows medium confidence with no suggestion and the misattributed-QID warning instead of the
+previous misleading high-confidence prompt. 239/239 tests pass.
 
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
