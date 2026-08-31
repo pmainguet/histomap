@@ -2,12 +2,12 @@ id: batavian_republic
 canonical_name: Batavian Republic
 names:
   fr: République batave
-  aliases_en: Batavian Commonwealth | French occupation of the Dutch Republic | French
-    occupation of the Netherlands
+  aliases_en: French occupation of the Dutch Republic | French occupation of the Netherlands
 external_ids:
   wikidata: Q188553
 parent: null
 successors:
+- batavian_commonwealth
 - kingdom_of_holland
 start: 1795
 end: 1806
@@ -21,7 +21,10 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Automatically generated from Wikidata; requires review.
+notes: Automatically generated from Wikidata; requires review. Removed a misleading
+  "Batavian Commonwealth" alias 31 August 2026 -- Wikidata models Batavian Commonwealth
+  (Q13134747) as a distinct, later successor polity (P155/P156 follows/followed by
+  chain), not an alternate name for this record.
 sources:
 - hyde
 - wikidata

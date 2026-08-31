@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q13134747
 parent: null
-successors: []
+successors:
+- kingdom_of_holland
 start: 1801
 end: 1806
 start_confidence: low
@@ -51,3 +52,4 @@ prominence_components:
   total: 5.98
 government_form: client state
 linked_chapter_id: macro_industrial_imperial_world
+consolidation_status: independent
