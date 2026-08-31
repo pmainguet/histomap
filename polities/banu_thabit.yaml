@@ -23,16 +23,17 @@ sources:
 - wikidata
 prominence_score: 10.41
 visibility_tier: detailed
-eligibility: review
+eligibility: accepted
 geography:
   continents: []
   present_countries: []
   centroid: null
   confidence: null
 entity_type: tribe
-entity_type_confidence: high
+entity_type_confidence: medium
 entity_type_source_qids:
 - Q133311
+- Q208500
 relationships: []
 prominence_components:
   wikidata_reach: 10.48

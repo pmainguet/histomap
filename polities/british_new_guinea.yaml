@@ -21,9 +21,9 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 0.87
+prominence_score: 10.87
 visibility_tier: detailed
-eligibility: review
+eligibility: accepted
 geography:
   continents:
   - oceania
@@ -37,8 +37,9 @@ geography:
   - oceania_pacific
   primary_historical_region: oceania_pacific
 entity_type: polity
-entity_type_confidence: low
-entity_type_source_qids: []
+entity_type_confidence: high
+entity_type_source_qids:
+- Q164142
 relationships: []
 prominence_components:
   wikidata_reach: 12.68
@@ -47,7 +48,7 @@ prominence_components:
   relationship_centrality: 0.0
   longevity: 3.2
   editorial_work: 0
-  type_uncertainty_penalty: -10
+  type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 0.87
+  total: 10.87

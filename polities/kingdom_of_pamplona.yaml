@@ -34,6 +34,7 @@ geography:
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
+- Q1250464
 - Q3024240
 - Q417175
 relationships:

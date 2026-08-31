@@ -44,6 +44,7 @@ entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
+- Q3932025
 - Q48349
 relationships: []
 prominence_components:

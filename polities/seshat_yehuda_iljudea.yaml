@@ -17,8 +17,14 @@ prominence_components:
   relationship_centrality: 0.0
   longevity: 4.06
   editorial_work: 0
-  type_uncertainty_penalty: -10
+  type_uncertainty_penalty: 0
   date_uncertainty_penalty: -0.0
   aggregate_penalty: 0
-  total: 6.06
-prominence_score: 6.06
+  total: 16.06
+prominence_score: 16.06
+eligibility: review
+entity_type: polity
+entity_type_confidence: medium
+entity_type_source_qids: []
+relationships: []
+successors: []

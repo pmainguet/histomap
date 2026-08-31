@@ -12,7 +12,7 @@ end: null
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1823: 5
+  1823: 3
 weight_imputed: true
 icon: null
 text:

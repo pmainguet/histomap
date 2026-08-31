@@ -41,7 +41,9 @@ geography:
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
+- Q154547
 - Q3024240
+- Q691981
 relationships: []
 prominence_components:
   wikidata_reach: 19.18

@@ -7,6 +7,60 @@ strong_qids = [
   "Q48349",    # empire
   "Q417175",   # kingdom
   "Q1790360",  # colonial empire
+  # Added 31 August 2026: closed a rules-table gap covering 98% of a stale
+  # 1,948-record "review" backlog -- these were never ambiguous, just never
+  # mapped. Deliberately excludes modern administrative subdivisions (US/
+  # Indian/Nigerian/Mexican/Venezuelan/Russian/Swiss/Malaysian/Australian/
+  # South Sudanese state, Canadian province, German federated state, etc.),
+  # which the rules route to review on purpose -- see [review].qids and
+  # /subdivision-review. Also left in review: generic "region"/"historical
+  # region"/"cultural region", "disputed territory", the bare "state" root
+  # (too broad), and a few Wikidata items with no English label. See
+  # STATUS.md for the full analysis.
+  "Q836688",     # ancient Chinese state
+  "Q1336152",    # princely state
+  "Q208500",     # principality
+  "Q99541706",   # historical unrecognized state
+  "Q154547",     # duchy
+  "Q26830017",   # state in the Holy Roman Empire
+  "Q50068795",   # historical Chinese state
+  "Q1250464",    # realm
+  "Q164142",     # protectorate
+  "Q57979411",   # ducado (Spanish duchy)
+  "Q1798550",    # petty kingdom
+  "Q353344",     # countship
+  "Q21512251",   # self-proclaimed state
+  "Q12759805",   # sultanate
+  "Q12857432",   # Chinese dynasty
+  "Q463742",     # Hochstift (Prince-Bishopric, HRE)
+  "Q1371288",    # vassal state
+  "Q331644",     # khanate
+  "Q10711424",   # state with limited recognition
+  "Q26879769",   # state in the Confederation of the Rhine
+  "Q96354653",   # beylik
+  "Q21479969",   # British protectorate
+  "Q189898",     # Emirate
+  "Q2494447",    # part principality (12th-16th c. Russia/Ukraine)
+  "Q1642488",    # chiefdom
+  "Q23037160",   # quasi-state
+  "Q2962054",    # traditional chiefdom in Cameroon
+  "Q426759",     # League of Nations mandate
+  "Q113136497",  # state of the German Confederation, 1815-1866
+  "Q3932025",    # Hellenistic kingdom
+  "Q111748796",  # District duchy
+  "Q133156",     # colony
+  "Q1621034",    # historical territory (Holy Roman Empire rule structure)
+  "Q3950801",    # satrapy of the Achaemenid Empire
+  "Q217177",     # taifa (Al-Andalus emirate)
+  "Q26879763",   # Napoleonic client state
+  "Q107230986",  # historic state of Italy
+  "Q691981",     # Duchies of Silesia
+  "Q10904438",   # Twelve Vassals (Spring and Autumn period China)
+  "Q20521456",   # electoral principate
+  "Q1625987",    # bantustan of South West Africa
+  "Q18669740",   # South African bantustan
+  "Q208164",     # puppet state
+  "Q472538",     # sister republic
 ]
 
 # These types are political only in context. If an entity is also directly a
@@ -15,6 +69,13 @@ contextual_qids = [
   "Q133442",   # city-state
   "Q148837",   # polis
   "Q188443",   # micronation
+  "Q8432",     # civilization
+  "Q11042",    # culture
+  "Q465299",   # archaeological culture
+  "Q28171280", # ancient civilization
+  "Q41710",    # ethnic group
+  "Q4204501",  # historical ethnic group
+  "Q57318",    # free imperial city (Holy Roman Empire)
 ]
 
 [deny]
@@ -34,6 +95,12 @@ qids = [
   "Q486972",    # human settlement
   "Q43229",     # organization
   "Q811979",    # architectural structure
+  # Added 31 August 2026, alongside the strong/contextual additions above --
+  # these are not polities at all, just mismapped into the candidate set.
+  "Q11514315",  # historical period -- a time span, not a political entity
+  "Q202390",    # pre-Columbian era -- also a time span
+  "Q1292119",   # style -- "manner of expression particular to a period/group"
+  "Q355567",    # noble title -- a title, not an entity that held one
 ]
 
 [review]

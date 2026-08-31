@@ -27,19 +27,19 @@ notes: Hand-authored 2026-08-31, replacing the deleted celts_period.yaml. Span i
   gave for why it carried no matching polities/ record before. See STATUS.md.
 sources:
 - editorial
-prominence_score: 32.39
+prominence_score: 22.39
 visibility_tier: detailed
 visibility_override: global
 manual_overrides:
 - visibility_override
-eligibility: accepted
+eligibility: review
 geography:
   continents:
   - europe
   present_countries: []
   confidence: low
-entity_type: people
-entity_type_confidence: medium
+entity_type: polity
+entity_type_confidence: low
 relationships: []
 prominence_components:
   wikidata_reach: 30
@@ -48,8 +48,9 @@ prominence_components:
   relationship_centrality: 0.0
   longevity: 7.39
   editorial_work: 0
-  type_uncertainty_penalty: 0
+  type_uncertainty_penalty: -10
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 32.39
+  total: 22.39
 linked_era_id: classical_antiquity_era
+entity_type_source_qids: []

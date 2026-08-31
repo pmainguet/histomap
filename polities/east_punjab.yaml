@@ -9,7 +9,8 @@ start: 1950
 end: 1966
 start_confidence: low
 end_confidence: low
-weight_by_era: {}
+weight_by_era:
+  1950: 3
 weight_imputed: true
 icon: null
 text:
@@ -19,9 +20,9 @@ text:
 notes: Editorially identified as a phase or aspect of Punjab.
 sources:
 - wikidata
-prominence_score: 15.72
+prominence_score: 19.22
 visibility_tier: detailed
-eligibility: accepted
+eligibility: review
 geography:
   continents:
   - asia
@@ -32,7 +33,13 @@ geography:
   historical_regions:
   - south_asia
   primary_historical_region: south_asia
-relationships: []
+relationships:
+- target: punjab
+  kind: administrative_part_of
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2354639
 entity_type: subdivision
 entity_type_confidence: high
 entity_type_source_qids: []
@@ -51,10 +58,10 @@ prominence_components:
   wikidata_reach: 17.64
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
+  relationship_centrality: 3.5
   longevity: 3.08
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 15.72
+  total: 19.22

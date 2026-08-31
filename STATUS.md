@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules, YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 1,948 type-eligibility review flags and 3,064 pending entity-type classifications; work down the consolidation queue (821 of 4,663 still pending, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (827 of 4,697 still pending, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -425,6 +425,58 @@ first. `refresh_review_queue()` simplified to `refresh_metadata()` (just reloads
 `/reviews` renders 3 tiles (was 4) with correct counts, zero console errors. 239/239 tests pass
 (four tests exercising the deleted endpoints removed along with their fixture data).
 
+### Wikidata type-eligibility and entity-type rules-table expansion — 31 August 2026
+
+Asked how to automate the 1,948-flag type-eligibility backlog and the 3,098-pending entity-type
+queue. Unlike the consolidation queue (a genuinely unreliable fuzzy-match heuristic, see the
+section above), these turned out to be a fundamentally different, much safer kind of gap:
+
+- **The report itself was stale.** `Q188443` (micronation) was already accepted in
+  `pipeline/wikidata_types.toml`'s rules, but `reports/wikidata_type_decisions.jsonl` predated
+  that edit and still showed the old verdict for every record carrying that type -- 101 records
+  resolved for free just by re-running the existing pipeline with zero rule changes.
+- **98% of the rest (1,909 of 1,948) weren't ambiguous at all** -- they were Wikidata direct
+  types (`P31`) that had simply never been added to the rules table (`classify()`'s "no direct
+  allow or deny type" fallback). Pulled the ~80 most common unmapped types and looked up what
+  each actually is: almost all turned out to be unambiguous historical polity types --
+  principality, duchy, sultanate, khanate, protectorate, vassal state, colony, satrapy, taifa,
+  bantustan, historic Chinese/Italian/German states, and similar -- that nobody had gotten around
+  to classifying. Unlike judging whether two specific records are the same entity (context-
+  dependent, exactly what went wrong with the consolidation queue), classifying a *type*
+  ("does 'principality' mean polity-eligible?") is a stable, one-time, auditable judgment.
+- Added **45 QIDs to `[allow].strong_qids`**, **7 to `[allow].contextual_qids`** (civilization,
+  culture, archaeological culture, ancient civilization, ethnic group, historical ethnic group,
+  free imperial city), and **4 to `[deny].qids`** (historical period, pre-Columbian era, "style,"
+  noble title -- genuinely not polities, just mismapped into the candidate set) in
+  `pipeline/wikidata_types.toml`. Deliberately left modern administrative subdivisions (US/
+  Indian/Nigerian/Mexican/Venezuelan/Russian/Swiss/Malaysian/Australian/South Sudanese state,
+  Canadian province, German federated state) unmapped -- the rules already route those to review
+  on purpose, matching the existing `/subdivision-review` workflow, and this pass didn't
+  second-guess that. Also left a handful of generically ambiguous types ("region," "historical
+  region," "cultural region," "disputed territory") and a few Wikidata items with no English
+  label in review rather than guess.
+- Mirrored the same 45 polity QIDs (plus the 2 civilization/people additions) into
+  `pipeline/backfill_entity_types.py`'s `TYPE_QIDS`, since that dict independently drives the
+  entity-type classification queue -- most of the 3,098 pending there were only "medium"
+  confidence because they were inferred through Wikidata's `P279` subclass ancestry rather than
+  matching a recognized type directly; adding these as recognized roots upgrades many of them
+  from ancestry-guess to direct-match, which resolves them (only non-"high"-confidence records
+  stay queued).
+- User pushed back usefully mid-review: these are all conceptually *sub-types* of polity
+  (sultanate vs. khanate vs. duchy), and asked whether that should be structured rather than
+  flattened. Confirmed neither rules table has anywhere to record that distinction today --
+  `entity_type` is a flat 8-value enum, same as how `empire`/`kingdom` already collapse to plain
+  `polity` -- and added a ROADMAP.md "Ideas" entry for a future `government_form`/`polity_subtype`
+  field rather than solving it inline.
+- Re-ran `pipeline/filter_wikidata_types.py --offline` (eligibility: 1,948 -> 661 still flagged
+  across canonical `polities/*.yaml`) and `pipeline/backfill_entity_types.py` (entity-type queue:
+  3,098 -> 2,682 pending, confirmed live via `/api/review-dashboard` after a server restart) and
+  `pipeline/compute_prominence.py` (relationship counts shifted for many newly-typed records).
+  Spot-checked several reclassified records live (Aceh Sultanate, Principality of Aigues-Mortes,
+  Senarica -> all correctly `entity_type: polity`, confidence `high`, `eligibility: accepted`).
+  239/239 tests pass; build validates cleanly (4,697 entities); zero console errors on `/explore`
+  and `/reviews`.
+
 ### Period/polity dataset cleanup — 30-31 August 2026
 
 A cluster of data-quality fixes, mostly triggered by live `/explore` testing surfacing
@@ -554,21 +606,22 @@ numbers elsewhere in this file or in ROADMAP.md.)*
   `archaeological_horizon`, confidence `low`, reason states plainly there's no automated Wikidata
   evidence behind the proposal since these records have no Wikidata item at all). Closes the
   ROADMAP item that used to sit here.
-- Entity consolidation: **832 pending** (confirmed via `/api/review-dashboard`: 59 high-confidence,
-  724 medium, 76 flagged as polity→period candidates; +11 from the Seshat import above) — down
-  substantially from the 4,336 this file and ROADMAP.md had both been citing from a much older,
-  unrefreshed snapshot.
-- Wikidata type-eligibility: **5,088** decisions made (3,126 accepted, 14 excluded), **1,948**
-  still flagged `review` — confirmed unchanged.
+- Entity consolidation: **827 pending** (confirmed via `/api/review-dashboard`: 60 high-confidence,
+  718 medium, 75 flagged as polity→period candidates) — down substantially from the 4,336 this
+  file and ROADMAP.md had both been citing from a much older, unrefreshed snapshot.
+- Wikidata type-eligibility: **661** still flagged `review` across canonical `polities/*.yaml`,
+  down from 1,948 after the 31 August 2026 rules-table expansion (see above) closed a large
+  not-actually-ambiguous gap.
 - Entity-type classification (polity/civilization/culture/people/tribe/archaeological_horizon):
-  **3,098 pending** (confirmed live; +34 from the Seshat import above).
+  **2,682 pending** (confirmed live), down from 3,098 after the same rules-table expansion.
 - Subdivision-parent classification: **2 pending** (confirmed live via `/api/review-dashboard`).
 - Period-role (polity→period reclassification) queue: **94** ever seeded into
-  `reports/period_role_review.jsonl`, **76 still open** per the live consolidation-queue
-  breakdown — 18 resolved, consistent with this session's period→polity conversion batch.
-- Also recomputed `prominence_score`/`prominence_components` dataset-wide (`pipeline/
-  compute_prominence.py` hadn't run since before this session's period→polity conversions and
-  Seshat import, so ~70 records had stale or never-computed scores) — no other fields touched.
+  `reports/period_role_review.jsonl`, **75 still open** per the live consolidation-queue
+  breakdown.
+- Also recomputed `prominence_score`/`prominence_components` dataset-wide twice this stretch
+  (`pipeline/compute_prominence.py` hadn't run since before this session's period→polity
+  conversions, then again after the type-eligibility/entity-type rules expansion shifted
+  relationship counts for many newly-typed records) — no other fields touched either time.
 - Geography and editorial-coverage figures from the July snapshot have not been re-measured this
   pass; re-run `pipeline/enrich_geography.py`'s coverage report before citing them again.
 

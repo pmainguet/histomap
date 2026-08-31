@@ -17,12 +17,26 @@ REPORT_PATH = ROOT / "reports" / "entity_type_review.jsonl"
 SUMMARY_PATH = ROOT / "reports" / "entity_type_summary.md"
 
 TYPE_QIDS = {
-    "polity": {"Q6256", "Q3624078", "Q3024240", "Q48349", "Q417175", "Q1790360", "Q133442", "Q148837", "Q50068795"},
-    "civilization": {"Q8432"},
+    # Historical political-entity roots added 31 August 2026 alongside the matching
+    # wikidata_types.toml eligibility-rule expansion (see that file's own comment)
+    # -- these were previously only reachable via P279 ancestry inference (medium/low
+    # confidence); mapping them here lets a direct P31 match resolve at "high"
+    # confidence instead. See STATUS.md for the full analysis.
+    "polity": {
+        "Q6256", "Q3624078", "Q3024240", "Q48349", "Q417175", "Q1790360", "Q133442", "Q148837",
+        "Q50068795", "Q836688", "Q1336152", "Q208500", "Q99541706", "Q154547", "Q26830017",
+        "Q1250464", "Q164142", "Q57979411", "Q1798550", "Q353344", "Q21512251", "Q12759805",
+        "Q12857432", "Q463742", "Q1371288", "Q331644", "Q10711424", "Q26879769", "Q96354653",
+        "Q21479969", "Q189898", "Q2494447", "Q1642488", "Q23037160", "Q2962054", "Q426759",
+        "Q113136497", "Q3932025", "Q111748796", "Q133156", "Q1621034", "Q3950801", "Q217177",
+        "Q26879763", "Q107230986", "Q691981", "Q10904438", "Q20521456", "Q1625987", "Q18669740",
+        "Q208164", "Q472538", "Q57318",
+    },
+    "civilization": {"Q8432", "Q28171280"},
     "subdivision": {"Q56061"},
     "micronation": {"Q188443"},
     "culture": {"Q465299"},
-    "people": {"Q41710"},
+    "people": {"Q41710", "Q4204501"},
     "tribe": {"Q133311"},
     "archaeological_horizon": {"Q1636205"},
 }

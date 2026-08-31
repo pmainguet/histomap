@@ -35,6 +35,7 @@ entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
 - Q3024240
+- Q472538
 relationships:
 - target: first_french_empire
   kind: political_successor

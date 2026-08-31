@@ -24,9 +24,9 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 0.33
+prominence_score: 10.33
 visibility_tier: detailed
-eligibility: review
+eligibility: accepted
 geography:
   continents:
   - europe
@@ -38,8 +38,9 @@ geography:
   - western_europe
   primary_historical_region: western_europe
 entity_type: polity
-entity_type_confidence: low
-entity_type_source_qids: []
+entity_type_confidence: high
+entity_type_source_qids:
+- Q21479969
 relationships:
 - target: people_s_republic_of_zanzibar
   kind: political_successor
@@ -54,7 +55,7 @@ prominence_components:
   relationship_centrality: 3.5
   longevity: 4.67
   editorial_work: 0
-  type_uncertainty_penalty: -10
+  type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 0.33
+  total: 10.33

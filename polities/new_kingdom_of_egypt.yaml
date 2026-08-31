@@ -27,9 +27,9 @@ notes: Hand-added via live Wikidata lookup (Q180568) to close a gap against the 
   ~1279-1213 BCE); dates are conventional and vary by chronology.
 sources:
 - wikidata
-prominence_score: 29.83
+prominence_score: 23.33
 visibility_tier: detailed
-eligibility: accepted
+eligibility: review
 geography:
   continents:
   - africa
@@ -43,21 +43,26 @@ geography:
   - north_africa
   primary_historical_region: north_africa
 entity_type: polity
-entity_type_confidence: high
-entity_type_source_qids:
-- Q3024240
-relationships: []
+entity_type_confidence: low
+entity_type_source_qids: []
+relationships:
+- target: middle_kingdom_of_egypt
+  kind: political_parent
+  evidence: derived
+  confidence: medium
+  source_urls:
+  - https://www.wikidata.org/wiki/Q180568
 prominence_components:
   wikidata_reach: 28.13
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
+  relationship_centrality: 3.5
   longevity: 6.71
   editorial_work: 0
-  type_uncertainty_penalty: 0
+  type_uncertainty_penalty: -10
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 29.83
+  total: 23.33
 manual_overrides:
 - visibility_override
 visibility_override: global

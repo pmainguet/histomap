@@ -26,9 +26,9 @@ notes: Converted from a period-context record to a polity (sub-polity of kingdom
   1300, 1400) that fall within this span.
 sources:
 - wikidata
-prominence_score: 37.29
+prominence_score: 27.29
 visibility_tier: detailed
-eligibility: accepted
+eligibility: review
 geography:
   continents:
   - europe
@@ -39,7 +39,7 @@ geography:
   - western_europe
   primary_historical_region: western_europe
 entity_type: polity
-entity_type_confidence: high
+entity_type_confidence: low
 entity_type_source_qids: []
 relationships:
 - target: kingdom_of_england
@@ -55,9 +55,9 @@ prominence_components:
   relationship_centrality: 3.5
   longevity: 6.3
   editorial_work: 0
-  type_uncertainty_penalty: 0
+  type_uncertainty_penalty: -10
   date_uncertainty_penalty: -0.0
   aggregate_penalty: 0
-  total: 37.29
+  total: 27.29
 source_urls:
 - https://en.wikipedia.org/wiki/House_of_Plantagenet

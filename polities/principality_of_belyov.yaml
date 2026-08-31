@@ -21,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 2.67
+prominence_score: 12.67
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -37,8 +37,9 @@ geography:
   - eastern_europe
   primary_historical_region: eastern_europe
 entity_type: polity
-entity_type_confidence: low
-entity_type_source_qids: []
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q1939894
 relationships: []
 prominence_components:
   wikidata_reach: 12.68
@@ -47,7 +48,7 @@ prominence_components:
   relationship_centrality: 0.0
   longevity: 4.99
   editorial_work: 0
-  type_uncertainty_penalty: -10
+  type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 2.67
+  total: 12.67

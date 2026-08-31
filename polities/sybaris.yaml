@@ -23,7 +23,7 @@ sources:
 - wikidata
 prominence_score: 24.45
 visibility_tier: detailed
-eligibility: accepted
+eligibility: excluded
 geography:
   continents:
   - africa

@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 13.32
+prominence_score: 23.32
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -36,8 +36,9 @@ geography:
   - western_europe
   primary_historical_region: western_europe
 entity_type: polity
-entity_type_confidence: low
-entity_type_source_qids: []
+entity_type_confidence: medium
+entity_type_source_qids:
+- Q5311332
 relationships: []
 prominence_components:
   wikidata_reach: 21.22
@@ -46,7 +47,7 @@ prominence_components:
   relationship_centrality: 0.0
   longevity: 7.1
   editorial_work: 0
-  type_uncertainty_penalty: -10
+  type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 13.32
+  total: 23.32

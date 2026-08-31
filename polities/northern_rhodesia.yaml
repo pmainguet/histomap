@@ -22,9 +22,9 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 19.93
+prominence_score: 29.93
 visibility_tier: detailed
-eligibility: review
+eligibility: accepted
 geography:
   continents:
   - africa
@@ -41,8 +41,10 @@ geography:
   - east_africa
   - western_europe
 entity_type: polity
-entity_type_confidence: low
-entity_type_source_qids: []
+entity_type_confidence: high
+entity_type_source_qids:
+- Q164142
+- Q21479969
 relationships:
 - target: zambia
   kind: political_successor
@@ -57,7 +59,7 @@ prominence_components:
   relationship_centrality: 5.55
   longevity: 4.03
   editorial_work: 0
-  type_uncertainty_penalty: -10
+  type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 19.93
+  total: 29.93

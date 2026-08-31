@@ -23,9 +23,9 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 13.8
+prominence_score: 23.8
 visibility_tier: detailed
-eligibility: review
+eligibility: accepted
 geography:
   continents:
   - africa
@@ -39,8 +39,9 @@ geography:
   - west_africa
   primary_historical_region: west_africa
 entity_type: polity
-entity_type_confidence: low
-entity_type_source_qids: []
+entity_type_confidence: high
+entity_type_source_qids:
+- Q164142
 relationships:
 - target: commonwealth_realm_of_sierra_leone
   kind: political_successor
@@ -55,10 +56,10 @@ prominence_components:
   relationship_centrality: 3.5
   longevity: 5.47
   editorial_work: 0
-  type_uncertainty_penalty: -10
+  type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 13.8
+  total: 23.8
 consolidation_status: independent
 manual_overrides:
 - consolidation

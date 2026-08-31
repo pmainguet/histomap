@@ -9,10 +9,14 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **Resolve the 1,948 stuck Wikidata type-eligibility flags** (unchanged, confirmed 31 August
-   2026) and the entity-type classification queue (**3,098 pending**, confirmed live via
-   `/api/review-dashboard` after importing the 34 Seshat unmatched drafts — see STATUS.md) — the
-   other half of "reduce noisy entities."
+0. **Resolve the remaining Wikidata type-eligibility flags (661) and entity-type classification
+   queue (2,682 pending, confirmed live)** — down from 1,948/3,098 after a 31 August 2026
+   rules-table expansion closed a large, genuinely-not-ambiguous gap in `pipeline/
+   wikidata_types.toml`/`backfill_entity_types.py` (see STATUS.md for the analysis). What's left
+   in both queues is now the harder tail: modern administrative subdivisions (deliberately
+   routed to `/subdivision-review` instead), a handful of generically ambiguous Wikidata types
+   ("region," "disputed territory"), and cases needing real per-record judgment — the other half
+   of "reduce noisy entities."
 1. **Run a comprehensive polity → period reclassification pass.** The consolidation review
    queue's "period"/"both" decision (`/consolidation-review`, backed by
    `reports/period_role_review.jsonl` for the `period_kinds` it seeds) already handles this
@@ -32,16 +36,24 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    `timeline_role` classification. Those decisions come from Wikidata type evidence and editorial
    judgment, not from how prominent or well-documented a record happens to be.
 2. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
-3. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
 4. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
 5. **Add the linked map**, followed by the print SVG/PDF pipeline.
-6. Treat LLM proposals as optional acceleration after estimating cost; the human review decisions
-   and canonical YAML remain authoritative.
 
 ## Ideas / deferred design questions
 
 Considered, deliberately not done, with the concrete trigger for revisiting:
 
+- **A `government_form`/`polity_subtype` field on `Polity`, distinct from `entity_type`.**
+  Surfaced 31 August 2026 while expanding `wikidata_types.toml`'s eligibility rules: sultanate,
+  khanate, duchy, principality, emirate, beylik, protectorate, vassal state, etc. are all
+  conceptually distinct kinds of governed political entity, but the schema's `entity_type` enum
+  is flat (`polity`/`civilization`/`subdivision`/`micronation`/`culture`/`people`/`tribe`/
+  `archaeological_horizon`) with no room to record which — every one of them just becomes
+  `entity_type: polity`, the same as `empire` or `kingdom` already do. Needs its own design pass:
+  is this free text or a controlled vocabulary, does it live on `Polity` directly or as a
+  `notes`-adjacent field, does `/explore` ever display or filter by it? **Revisit if** this
+  distinction becomes something a viewer would actually want to see or filter on, not just an
+  internal classification nicety.
 - **Split `Period` into separate `MacroChapter`/`RegionalEra`/`Period` Pydantic
   classes** instead of one `Period` class discriminated by `tier`. Would trade runtime
   validation (Task 2's `validate_period_tiers()` in the period-ontology plan) for

@@ -40,6 +40,7 @@ manual_overrides:
 entity_type: civilization
 entity_type_confidence: high
 entity_type_source_qids:
+- Q28171280
 - Q8432
 relationships:
 - target: kingdom_of_new_spain

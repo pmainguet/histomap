@@ -14,7 +14,7 @@ end: null
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1990: 5
+  1990: 3
 weight_imputed: true
 icon: null
 text:
