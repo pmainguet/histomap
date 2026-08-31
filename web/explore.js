@@ -57,7 +57,7 @@ async function main() {
     resetLink.hidden = !zoomRange;
     renderHierarchyTimeline(tree, container, {
       groupBy: groupBySelect.value,
-      showPolities: showPolitiesInput.checked,
+      showPolities: showPolitiesInput.value === "show",
       geoFilter: geoFilterSelect.hidden ? null : geoFilterSelect.value,
       // Built once from the full, unzoomed tree (see below) so era colors
       // stay stable across zoom/filter re-renders instead of shifting as the
