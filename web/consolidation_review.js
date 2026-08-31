@@ -48,8 +48,11 @@ function locatorMapPlaceholder(item) { return item.wikidata ? `<span data-locato
 function typeLinks(item) { return (item.direct_type_qids || []).map((qid) => `<a data-wikidata-label="${escapeHtml(qid)}" href="https://www.wikidata.org/wiki/${encodeURIComponent(qid)}" target="_blank" rel="noopener noreferrer">${escapeHtml(qid)} ↗</a>`).join(", ") || "Not recorded"; }
 function dateRange(item) { return `${formatYear(item.dates[0])}–${formatYear(item.dates[1])}`; }
 function countries(item) { return escapeHtml((item.present_countries || []).join(", ") || "not recorded"); }
-function comparisonRow(label, candidateValue, reviewedValue, assessment = "") {
-  return `<tr class="${assessment ? `comparison-${assessment}` : ""}"><th scope="row">${label}</th><td>${candidateValue}</td><td>${reviewedValue}</td></tr>`;
+// Reviewed entity first (it's the record actually being decided about),
+// candidate second -- and see the CSS for how that first value column is
+// visually distinguished from the second.
+function comparisonRow(label, reviewedValue, candidateValue, assessment = "") {
+  return `<tr class="${assessment ? `comparison-${assessment}` : ""}"><th scope="row">${label}</th><td>${reviewedValue}</td><td>${candidateValue}</td></tr>`;
 }
 // Highlights the button matching the server's suggested_decision (derived
 // from date-nesting, documented Wikidata succession links, coordinate
@@ -73,23 +76,27 @@ function candidateMarkup(candidate, index) {
   const reviewedOpenEnded = current.dates[1] == null;
   const candidateOpenEnded = candidate.dates[1] == null;
   return `<article class="candidate consolidation-candidate">
-    <p class="candidate-number">Candidate ${index + 1}</p><div class="comparison-heading"><strong>${escapeHtml(candidate.canonical_name)}</strong><span class="evidence-badge ${candidate.confidence}">${escapeHtml(candidate.confidence)} confidence</span></div>
-    <p class="wikidata-description" data-wikidata-description="${escapeHtml(candidate.wikidata || "")}"></p>
-    <div class="comparison-table-wrap"><table class="comparison-table"><thead><tr><th>Field</th><th>Candidate</th><th>Reviewed entity</th></tr></thead><tbody>
-      ${comparisonRow("Name", escapeHtml(candidate.canonical_name), escapeHtml(current.canonical_name), candidate.exact_name_match ? "match" : "review")}
-      ${comparisonRow("Histomap ID", escapeHtml(candidate.id), escapeHtml(current.id))}
-      ${comparisonRow("Type", escapeHtml(candidate.entity_type), escapeHtml(current.entity_type), candidate.type_match ? "match" : "conflict")}
-      ${comparisonRow("Dates", dateRange(candidate), dateRange(current), candidate.date_contains ? "match" : candidate.date_overlap ? "review" : "conflict")}
-      ${comparisonRow("Present countries", countries(candidate), countries(current), candidate.geography_match ? "match" : (!candidate.present_countries.length || !current.present_countries.length) ? "unknown" : "conflict")}
-      ${comparisonRow("Instance of", `<span class="source-links">${typeLinks(candidate)}</span>`, `<span class="source-links">${typeLinks(current)}</span>`)}
-      ${comparisonRow("Wikidata", `<span class="source-links">${links(candidate)}</span>`, `<span class="source-links">${links(current)}</span>`, candidate.same_wikidata ? "match" : "review")}
-      ${comparisonRow("Wikipedia", `<span class="source-links">${wikipediaPlaceholder(candidate)}</span>`, `<span class="source-links">${wikipediaPlaceholder(current)}</span>`)}
-      ${comparisonRow("Locator map", locatorMapPlaceholder(candidate), locatorMapPlaceholder(current))}
-    </tbody></table></div>
-    ${timelineCoverage(candidate, current)}
-    <div class="review-actions relationship-directions">${recommendableButton("same_entity", candidate, index + 1, "Same entity")}${recommendableButton("phase_of", candidate, phaseKeys[index], "Reviewed → phase of candidate", reviewedOpenEnded ? "A phase needs a finite end date on the reviewed entity -- it's still open-ended (present)" : null)}${recommendableButton("candidate_phase_of", candidate, inversePhaseKeys[index], "Candidate → phase of reviewed", candidateOpenEnded ? "A phase needs a finite end date on the candidate -- it's still open-ended (present)" : null)}${recommendableButton("part_of", candidate, partKeys[index], "Reviewed → part of candidate")}${recommendableButton("candidate_part_of", candidate, inversePartKeys[index], "Candidate → part of reviewed")}</div>
-    <div class="review-actions candidate-entity-actions"><button type="button" data-decision="independent"${independentRecommended ? ' class="recommended-decision"' : ""}><kbd>K</kbd> Independent entity</button><button type="button" data-decision="discarded" class="danger"><kbd>X</kbd> Discard from Histomap</button><button type="button" data-action="defer"><kbd>S</kbd> Defer</button></div>
-    <p class="proposal-reason"><strong>Why suggested:</strong> ${escapeHtml(candidate.reasons.join("; "))}.</p>
+    <div class="candidate-main">
+      <p class="candidate-number">Candidate ${index + 1}</p><div class="comparison-heading"><strong>${escapeHtml(candidate.canonical_name)}</strong><span class="evidence-badge ${candidate.confidence}">${escapeHtml(candidate.confidence)} confidence</span></div>
+      <p class="wikidata-description" data-wikidata-description="${escapeHtml(candidate.wikidata || "")}"></p>
+      <div class="comparison-table-wrap"><table class="comparison-table"><thead><tr><th>Field</th><th>Reviewed entity</th><th>Candidate</th></tr></thead><tbody>
+        ${comparisonRow("Name", escapeHtml(current.canonical_name), escapeHtml(candidate.canonical_name), candidate.exact_name_match ? "match" : "review")}
+        ${comparisonRow("Histomap ID", escapeHtml(current.id), escapeHtml(candidate.id))}
+        ${comparisonRow("Type", escapeHtml(current.entity_type), escapeHtml(candidate.entity_type), candidate.type_match ? "match" : "conflict")}
+        ${comparisonRow("Dates", dateRange(current), dateRange(candidate), candidate.date_contains ? "match" : candidate.date_overlap ? "review" : "conflict")}
+        ${comparisonRow("Present countries", countries(current), countries(candidate), candidate.geography_match ? "match" : (!candidate.present_countries.length || !current.present_countries.length) ? "unknown" : "conflict")}
+        ${comparisonRow("Instance of", `<span class="source-links">${typeLinks(current)}</span>`, `<span class="source-links">${typeLinks(candidate)}</span>`)}
+        ${comparisonRow("Wikidata", `<span class="source-links">${links(current)}</span>`, `<span class="source-links">${links(candidate)}</span>`, candidate.same_wikidata ? "match" : "review")}
+        ${comparisonRow("Wikipedia", `<span class="source-links">${wikipediaPlaceholder(current)}</span>`, `<span class="source-links">${wikipediaPlaceholder(candidate)}</span>`)}
+        ${comparisonRow("Locator map", locatorMapPlaceholder(current), locatorMapPlaceholder(candidate))}
+      </tbody></table></div>
+      ${timelineCoverage(candidate, current)}
+      <p class="proposal-reason"><strong>Why suggested:</strong> ${escapeHtml(candidate.reasons.join("; "))}.</p>
+    </div>
+    <div class="candidate-actions-column">
+      <div class="review-actions relationship-directions">${recommendableButton("same_entity", candidate, index + 1, "Same entity")}${recommendableButton("phase_of", candidate, phaseKeys[index], "Reviewed → phase of candidate", reviewedOpenEnded ? "A phase needs a finite end date on the reviewed entity -- it's still open-ended (present)" : null)}${recommendableButton("candidate_phase_of", candidate, inversePhaseKeys[index], "Candidate → phase of reviewed", candidateOpenEnded ? "A phase needs a finite end date on the candidate -- it's still open-ended (present)" : null)}${recommendableButton("part_of", candidate, partKeys[index], "Reviewed → part of candidate")}${recommendableButton("candidate_part_of", candidate, inversePartKeys[index], "Candidate → part of reviewed")}</div>
+      <div class="review-actions candidate-entity-actions"><button type="button" data-decision="independent"${independentRecommended ? ' class="recommended-decision"' : ""}><kbd>K</kbd> Independent entity</button><button type="button" data-decision="discarded" class="danger"><kbd>X</kbd> Discard from Histomap</button><button type="button" data-action="defer"><kbd>S</kbd> Defer</button></div>
+    </div>
   </article>`;
 }
 
@@ -152,7 +159,11 @@ async function loadNext() {
   const candidateSection = current.candidates.length
     ? `<h3 class="candidate-heading">Other canonical Histomap records with compatible evidence</h3><div class="candidate-list">${current.candidates.map(candidateMarkup).join("")}</div>`
     : `<p class="proposal-reason">No compatible canonical target was suggested. Decide whether this is an independent entity or belongs on the period layer.</p><div class="review-actions"><button type="button" data-decision="independent"><kbd>K</kbd> Independent entity</button><button type="button" data-decision="discarded" class="danger"><kbd>X</kbd> Discard from Histomap</button><button type="button" data-action="defer"><kbd>S</kbd> Defer</button></div>`;
-  card.innerHTML = `<p class="review-rank"><span class="record-badge">Histomap entity</span> Canonical record being checked</p><h2>${escapeHtml(current.canonical_name)}</h2><p class="wikidata-description" data-wikidata-description="${escapeHtml(current.wikidata || "")}"></p><dl class="source-facts"><dt>Histomap ID</dt><dd>${escapeHtml(current.id)}</dd><dt>Type</dt><dd>${escapeHtml(current.entity_type)}</dd><dt>Dates</dt><dd>${formatYear(current.dates[0])}–${formatYear(current.dates[1])}</dd><dt>Present countries</dt><dd>${escapeHtml(current.present_countries.join(", ") || "not recorded")}</dd><dt>Instance of</dt><dd class="source-links">${typeLinks(current)}</dd><dt>External page</dt><dd class="source-links">${links(current)}</dd></dl>${candidateSection}`;
+  // Just title + subtitle here -- the rest of what this record is (dates,
+  // type, present countries, Wikidata) already appears as the "Reviewed
+  // entity" column in each candidate's comparison table below, so a second
+  // copy up here was pure duplication.
+  card.innerHTML = `<p class="review-rank"><span class="record-badge">Histomap entity</span> Canonical record being checked</p><h2>${escapeHtml(current.canonical_name)}</h2><p class="wikidata-description" data-wikidata-description="${escapeHtml(current.wikidata || "")}"></p>${candidateSection}`;
   card.querySelectorAll("[data-decision]").forEach((button) => button.addEventListener("click", () => decide(button.dataset.decision, button.dataset.target)));
   card.querySelectorAll('[data-action="defer"]').forEach((button) => button.addEventListener("click", defer));
   loadWikidataEvidence(current);
