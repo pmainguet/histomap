@@ -183,6 +183,14 @@ class Polity(BaseModel):
     # (the same one rank_candidates uses elsewhere) as a one-time starting
     # point; from here on it's curator-set only, no on-the-fly recomputation.
     linked_era_id: str | None = None
+    # Explicit, editable macro-chapter id this entity is grouped under on
+    # /explore -- a plain field, not derived from a heuristic. Was seeded
+    # 2026-08-31 from build_explore_tree.py's best_chapter_for_polity()
+    # date-overlap heuristic as a one-time starting point; from here on it's
+    # curator-set only. Takes precedence over both the period_links.yaml-
+    # curated path and the heuristic when set (an explicit human decision is
+    # the strongest signal there is).
+    linked_chapter_id: str | None = None
     # Specific kind of governed political entity (sultanate, khanate, duchy,
     # principality, ...), distinct from entity_type -- entity_type only
     # distinguishes polity/civilization/subdivision/micronation/culture/
@@ -294,6 +302,10 @@ class Period(BaseModel):
     # & Cultures lane periods (which never nest under an era via
     # broader_periods, so have no other era-color signal).
     linked_era_id: str | None = None
+    # See Polity.linked_chapter_id -- same field, same purpose. Civilizations
+    # & Cultures lane periods currently have no curated chapter path at all
+    # (only the heuristic), so this is their only override.
+    linked_chapter_id: str | None = None
     # See Polity.government_form -- same field, same purpose (e.g. a
     # "phase or aspect of" period like Ayyubid Sultanate benefits from
     # recording it was a sultanate). Not auto-populated for periods today;

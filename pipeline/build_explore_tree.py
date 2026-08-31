@@ -202,14 +202,18 @@ def build_explore_tree(
     civilizations_by_chapter: dict[str, list[dict]] = {cid: [] for cid in chapter_ids}
     all_chapters = [chapters_by_id[c] for c in chapter_ids]
     for period in civilization_periods:
-        best = _best_chapter_for_range((period["start"], period["end"]), all_chapters)
+        best = chapters_by_id.get(period.get("linked_chapter_id")) or _best_chapter_for_range(
+            (period["start"], period["end"]), all_chapters
+        )
         if best is not None:
             source_entity_type = _civilization_period_source_entity_type(period, civilization_period_sources)
             civilizations_by_chapter[best["id"]].append(_civilization_period_entry(period, source_entity_type))
     for polity in polities:
         if polity.get("entity_type") not in CIVILIZATION_ENTITY_TYPES or not in_scope(polity):
             continue
-        best = best_chapter_for_polity(polity, all_chapters, open_end)
+        best = chapters_by_id.get(polity.get("linked_chapter_id")) or best_chapter_for_polity(
+            polity, all_chapters, open_end
+        )
         if best is not None:
             civilizations_by_chapter[best["id"]].append(_civilization_polity_entry(polity))
     for cid in chapter_ids:
@@ -228,13 +232,24 @@ def build_explore_tree(
             if polity.get("entity_type") in CIVILIZATION_ENTITY_TYPES:
                 continue  # handled by the Civilizations & Cultures lane above, not the Polities row
             polity_id = polity["id"]
-            is_curated = polity_id in chapter_curated_ids[cid]
-            if not is_curated:
-                if polity_id in all_curated_ids:
-                    continue  # curated under a *different* chapter
-                best = best_chapter_for_polity(polity, [chapters_by_id[c] for c in chapter_ids], open_end)
-                if best is None or best["id"] != cid:
+            linked_chapter_id = polity.get("linked_chapter_id")
+            # A stale/mistyped id (no longer a real chapter) falls through to the
+            # normal logic below rather than silently vanishing the polity from
+            # every chapter -- only a *valid* explicit id short-circuits it.
+            if linked_chapter_id and linked_chapter_id in chapters_by_id:
+                # An explicit human decision beats both the period_links.yaml-curated
+                # path and the heuristic -- it's the strongest signal there is.
+                if linked_chapter_id != cid:
                     continue
+                is_curated = True
+            else:
+                is_curated = polity_id in chapter_curated_ids[cid]
+                if not is_curated:
+                    if polity_id in all_curated_ids:
+                        continue  # curated under a *different* chapter
+                    best = best_chapter_for_polity(polity, [chapters_by_id[c] for c in chapter_ids], open_end)
+                    if best is None or best["id"] != cid:
+                        continue
             geo = polity.get("geography") or {}
             region = primary_historical_region(geo)
             continent = primary_continent(geo)

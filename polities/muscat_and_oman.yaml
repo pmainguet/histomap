@@ -60,3 +60,4 @@ manual_overrides:
 - geography
 linked_era_id: asia_industrial_imperial_world_era
 government_form: protectorate
+linked_chapter_id: macro_industrial_imperial_world

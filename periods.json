@@ -28,6 +28,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -59,6 +60,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -90,6 +92,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -121,6 +124,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -154,6 +158,7 @@
       "https://en.wikipedia.org/wiki/African_Paleolithic"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -195,6 +200,7 @@
       "https://www.wikidata.org/wiki/Q11768"
     ],
     "linked_era_id": "neolithic_era",
+    "linked_chapter_id": "macro_early_cities_states",
     "government_form": null
   },
   {
@@ -230,6 +236,7 @@
       "https://en.wikipedia.org/wiki/Andean_Archaic"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -265,6 +272,7 @@
       "https://en.wikipedia.org/wiki/Early_Andean_Civilizations"
     ],
     "linked_era_id": "classical_antiquity_era",
+    "linked_chapter_id": "macro_classical_imperial_worlds",
     "government_form": null
   },
   {
@@ -296,6 +304,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -327,6 +336,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -358,6 +368,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -389,6 +400,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -420,6 +432,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -451,6 +464,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -482,6 +496,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -513,6 +528,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -550,6 +566,7 @@
       "https://dbpedia.org/resource/Asuka_period"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -581,6 +598,7 @@
       "https://www.wikidata.org/wiki/Q63135869"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -615,6 +633,7 @@
       "https://en.wikipedia.org/wiki/Bronze_Age"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -655,6 +674,7 @@
       "https://www.wikidata.org/wiki/Q12060881"
     ],
     "linked_era_id": "classical_antiquity_era",
+    "linked_chapter_id": "macro_postclassical_worlds",
     "government_form": null
   },
   {
@@ -686,6 +706,7 @@
       "https://www.wikidata.org/wiki/Q6806806"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -722,6 +743,7 @@
       "https://en.wikipedia.org/wiki/Classical_antiquity"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -758,6 +780,7 @@
       "https://en.wikipedia.org/wiki/Chalcolithic"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -795,6 +818,7 @@
       "https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -830,6 +854,7 @@
       "https://en.wikipedia.org/wiki/East_Asian_Bronze_Age"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -865,6 +890,7 @@
       "https://en.wikipedia.org/wiki/East_Asian_Classical_Antiquity"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -900,6 +926,7 @@
       "https://en.wikipedia.org/wiki/East_Asian_Imperial_Dynasties_(Post-Classical)"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -935,6 +962,7 @@
       "https://en.wikipedia.org/wiki/East_Asian_Neolithic"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -972,6 +1000,7 @@
       "https://en.wikipedia.org/wiki/Etruscan_civilization"
     ],
     "linked_era_id": "classical_antiquity_era",
+    "linked_chapter_id": "macro_classical_imperial_worlds",
     "government_form": null
   },
   {
@@ -1006,6 +1035,7 @@
       "https://en.wikipedia.org/wiki/Eurasian_Paleolithic"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1037,6 +1067,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1068,6 +1099,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1099,6 +1131,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1130,6 +1163,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1163,6 +1197,7 @@
       "https://en.wikipedia.org/wiki/European_Bronze_Age"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1194,6 +1229,7 @@
       "https://www.wikidata.org/wiki/Q12836180"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1229,6 +1265,7 @@
       "https://dbpedia.org/resource/Iron_Age_Europe"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1264,6 +1301,7 @@
       "https://dbpedia.org/resource/Neolithic_Europe"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1299,6 +1337,7 @@
       "https://en.wikipedia.org/wiki/Fertile_Crescent_Neolithic"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1337,6 +1376,7 @@
       "https://www.wikidata.org/wiki/Q42534"
     ],
     "linked_era_id": "bronze_age_era",
+    "linked_chapter_id": "macro_early_cities_states",
     "government_form": null
   },
   {
@@ -1371,6 +1411,7 @@
       "https://en.wikipedia.org/wiki/Iron_Age"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1408,6 +1449,7 @@
       "https://en.wikipedia.org/wiki/Islamic_Caliphates_and_Sultanates"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1447,6 +1489,7 @@
       "https://dbpedia.org/resource/J%C5%8Dmon_period"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1486,6 +1529,7 @@
       "https://dbpedia.org/resource/Kofun_period"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1517,6 +1561,7 @@
       "https://www.wikidata.org/wiki/Q13405524"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1546,6 +1591,7 @@
       "https://en.wikipedia.org/wiki/Neolithic_Revolution"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1575,6 +1621,7 @@
       "https://en.wikipedia.org/wiki/Classical_antiquity"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1604,6 +1651,7 @@
       "https://en.wikipedia.org/wiki/Contemporary_history"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1633,6 +1681,7 @@
       "https://en.wikipedia.org/wiki/Bronze_Age"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1662,6 +1711,7 @@
       "https://en.wikipedia.org/wiki/Early_modern_period"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1691,6 +1741,7 @@
       "https://en.wikipedia.org/wiki/Stone_Age"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1720,6 +1771,7 @@
       "https://en.wikipedia.org/wiki/19th_century"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1749,6 +1801,7 @@
       "https://en.wikipedia.org/wiki/Postclassical_Era"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1778,6 +1831,7 @@
       "https://en.wikipedia.org/wiki/World_war"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1811,6 +1865,7 @@
       "https://en.wikipedia.org/wiki/Medieval_Europe"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1847,6 +1902,7 @@
       "https://en.wikipedia.org/wiki/Mediterranean_Classical_Antiquity"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1882,6 +1938,7 @@
       "https://en.wikipedia.org/wiki/Mesoamerican_Archaic"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1925,6 +1982,7 @@
       "https://dbpedia.org/resource/Mesoamerican_chronology"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -1960,6 +2018,7 @@
       "https://en.wikipedia.org/wiki/Mesoamerican_Formative_and_Classic_Periods"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2001,6 +2060,7 @@
       "https://dbpedia.org/resource/Mesoamerican_chronology"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2044,6 +2104,7 @@
       "https://dbpedia.org/resource/Mesoamerican_chronology"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2082,6 +2143,7 @@
       "https://en.wikipedia.org/wiki/Mesopotamia"
     ],
     "linked_era_id": "neolithic_era",
+    "linked_chapter_id": "macro_early_cities_states",
     "government_form": null
   },
   {
@@ -2122,6 +2184,7 @@
       "https://www.wikidata.org/wiki/Q134178"
     ],
     "linked_era_id": "classical_antiquity_era",
+    "linked_chapter_id": "macro_early_cities_states",
     "government_form": null
   },
   {
@@ -2159,6 +2222,7 @@
       "https://www.wikidata.org/wiki/Q181264"
     ],
     "linked_era_id": "classical_antiquity_era",
+    "linked_chapter_id": "macro_early_cities_states",
     "government_form": null
   },
   {
@@ -2200,6 +2264,7 @@
       "https://en.wikipedia.org/wiki/Neolithic"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2235,6 +2300,7 @@
       "https://en.wikipedia.org/wiki/Nile_Valley_Neolithic"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2266,6 +2332,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2297,6 +2364,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2328,6 +2396,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2359,6 +2428,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2390,6 +2460,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2421,6 +2492,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2452,6 +2524,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2483,6 +2556,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2520,6 +2594,7 @@
       "https://en.wikipedia.org/wiki/Olmecs"
     ],
     "linked_era_id": "classical_antiquity_era",
+    "linked_chapter_id": "macro_classical_imperial_worlds",
     "government_form": null
   },
   {
@@ -2555,6 +2630,7 @@
       "https://en.wikipedia.org/wiki/Paleolithic"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2586,6 +2662,7 @@
       "https://www.wikidata.org/wiki/Q104383185"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2617,6 +2694,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2648,6 +2726,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2679,6 +2758,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2710,6 +2790,7 @@
     "notes": "Auto-generated placeholder -- continent-level grain only, no historical research. A real sub-continental regional era (added by hand, the Task 4 Part A way) can replace this once someone wants to invest that research; see ONTOLOGY.md.",
     "source_urls": [],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2745,6 +2826,7 @@
       "https://en.wikipedia.org/wiki/South_Asian_Classical_Antiquity"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2783,6 +2865,7 @@
       "https://en.wikipedia.org/wiki/Sub-Saharan_African_Iron_Age"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2814,6 +2897,7 @@
       "https://www.wikidata.org/wiki/Q3979194"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2845,6 +2929,7 @@
       "https://www.wikidata.org/wiki/Q104178581"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2876,6 +2961,7 @@
       "https://www.wikidata.org/wiki/Q104178103"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2907,6 +2993,7 @@
       "https://www.wikidata.org/wiki/Q104178238"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -2946,6 +3033,7 @@
       "https://www.wikidata.org/wiki/Q213649"
     ],
     "linked_era_id": "medieval_europe_era",
+    "linked_chapter_id": "macro_postclassical_worlds",
     "government_form": null
   },
   {
@@ -2977,6 +3065,7 @@
       "https://www.wikidata.org/wiki/Q1069609"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   },
   {
@@ -3016,6 +3105,7 @@
       "https://dbpedia.org/resource/Yayoi_period"
     ],
     "linked_era_id": null,
+    "linked_chapter_id": null,
     "government_form": null
   }
 ]
