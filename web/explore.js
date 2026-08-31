@@ -85,13 +85,15 @@ async function main() {
   };
 
   try {
-    const [treeResponse, politiesResponse, periodsResponse, periodLinksResponse] = await Promise.all([
+    const [treeResponse, politiesResponse, periodsResponse, periodLinksResponse, transitionsResponse, geographyOptionsResponse] = await Promise.all([
       fetch("/explore_tree.json"),
       fetch("/data.json"),
       fetch("/periods.json"),
       fetch("/period_links.json"),
+      fetch("/transitions.json"),
+      fetch("/api/options/geography"),
     ]);
-    for (const response of [treeResponse, politiesResponse, periodsResponse, periodLinksResponse]) {
+    for (const response of [treeResponse, politiesResponse, periodsResponse, periodLinksResponse, transitionsResponse, geographyOptionsResponse]) {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
     }
     fullTree = await treeResponse.json();
@@ -99,10 +101,14 @@ async function main() {
     const polities = await politiesResponse.json();
     const periods = await periodsResponse.json();
     const periodLinks = await periodLinksResponse.json();
+    const transitions = await transitionsResponse.json();
+    const geographyOptions = await geographyOptionsResponse.json();
     detailCtx = {
       politiesById: new Map(polities.map((polity) => [polity.id, polity])),
       periodsById: new Map(periods.map((period) => [period.id, period])),
       periodLinks,
+      transitions,
+      geographyOptions,
       domainEnd: fullTree.axis.domain_end,
       onZoomToRange: zoomToRange,
       onResetZoom: resetZoom,

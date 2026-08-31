@@ -117,8 +117,8 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .detail-edit summary { cursor: pointer; font: 700 .82rem system-ui, sans-serif; }
 .detail-edit-row { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin: .5rem 0; }
 .detail-edit-row select { flex: 1; min-width: 0; }
-.detail-raw-edit { margin-top: .7rem; padding-top: .6rem; border-top: 1px solid var(--rule); }
-.detail-raw-edit summary { font-weight: 700; }
+.detail-raw-edit, .detail-geography-edit { margin-top: .7rem; padding-top: .6rem; border-top: 1px solid var(--rule); }
+.detail-raw-edit summary, .detail-geography-edit summary { font-weight: 700; }
 .detail-raw-textarea { box-sizing: border-box; width: 100%; margin-top: .5rem; padding: .5rem; font: .74rem/1.35 ui-monospace, "SF Mono", Consolas, monospace; background: white; border: 1px solid var(--rule); resize: vertical; }
 .detail-edit-status { margin: .5rem 0 0; color: var(--ink-faint); }
 .detail-edit-status.is-error { color: #8c2d2d; }

@@ -43,12 +43,91 @@ function optionsHtml(options, selected) {
   ).join("");
 }
 
+// Geography editor -- polities only (periods have no geography endpoint).
+// Mirrors app.js's geographyEditorMarkup/syncContinentsFromCountries/
+// saveGeography ("/"'s own equivalent) closely enough that the two stay easy
+// to compare, just renamed to this file's detail-* class convention.
+function geographyEditorHtml(polity, geographyOptions) {
+  const selectedContinents = new Set(polity.geography?.continents || []);
+  const selectedCountries = new Set(polity.geography?.present_countries || []);
+  const countries = [...(geographyOptions?.countries || [])].sort((a, b) => {
+    const selectedDifference = Number(selectedCountries.has(b.code)) - Number(selectedCountries.has(a.code));
+    return selectedDifference || a.label.localeCompare(b.label);
+  });
+  return `<details class="detail-geography-edit">
+    <summary>Edit geography</summary>
+    <fieldset><legend>Continents</legend><div class="geography-checkboxes">
+      ${(geographyOptions?.continents || []).map((continent) => `<label><input type="checkbox" name="detail-continent" value="${escapeHtml(continent)}" ${selectedContinents.has(continent) ? "checked" : ""}> ${escapeHtml(displayTerm(continent))}</label>`).join("")}
+    </div></fieldset>
+    <label class="geography-primary">Primary continent / swimlane
+      <select name="detail-primary-continent"><option value="">Automatic</option>${(geographyOptions?.continents || []).map((continent) => `<option value="${escapeHtml(continent)}" ${polity.geography?.primary_continent === continent ? "selected" : ""}>${escapeHtml(displayTerm(continent))}</option>`).join("")}</select>
+    </label>
+    <fieldset><legend>Present countries</legend>
+      <input class="country-filter" type="search" placeholder="Filter countries…" aria-label="Filter country list">
+      <div class="country-checklist">${countries.map((country) => `<label data-country-search="${escapeHtml(`${country.label} ${country.code}`.toLowerCase())}"><input type="checkbox" name="detail-country" value="${escapeHtml(country.code)}" ${selectedCountries.has(country.code) ? "checked" : ""}> ${escapeHtml(country.label)} <small>${escapeHtml(country.code)}</small></label>`).join("")}</div>
+      <small>Choosing countries automatically updates the continents above.</small>
+    </fieldset>
+    <div class="detail-edit-row"><button type="button" class="detail-save-geography">Save geography</button></div>
+  </details>`;
+}
+
+function wireGeographyEditor(polity, ctx, onSaved, setStatus) {
+  const editor = explorePanel.querySelector(".detail-geography-edit");
+  if (!editor) return;
+  const syncContinentsFromCountries = () => {
+    const selectedCountries = new Set(
+      [...editor.querySelectorAll('input[name="detail-country"]:checked')].map((input) => input.value),
+    );
+    const inferred = new Set(
+      (ctx.geographyOptions?.countries || [])
+        .filter((country) => selectedCountries.has(country.code))
+        .flatMap((country) => country.continents || []),
+    );
+    editor.querySelectorAll('input[name="detail-continent"]').forEach((input) => {
+      input.checked = inferred.has(input.value);
+    });
+    const primary = editor.querySelector('[name="detail-primary-continent"]');
+    if (primary.value && !inferred.has(primary.value)) primary.value = "";
+  };
+  editor.querySelectorAll('input[name="detail-country"]').forEach((input) => {
+    input.addEventListener("change", syncContinentsFromCountries);
+  });
+  const filterInput = editor.querySelector(".country-filter");
+  filterInput.addEventListener("input", () => {
+    const query = filterInput.value.trim().toLowerCase();
+    editor.querySelectorAll(".country-checklist label").forEach((label) => {
+      label.hidden = query.length > 0 && !label.dataset.countrySearch.includes(query);
+    });
+  });
+  editor.querySelector(".detail-save-geography").addEventListener("click", async () => {
+    const continents = [...editor.querySelectorAll('input[name="detail-continent"]:checked')].map((input) => input.value);
+    const countries = [...editor.querySelectorAll('input[name="detail-country"]:checked')].map((input) => input.value);
+    const primary = editor.querySelector('[name="detail-primary-continent"]').value || null;
+    if (primary && !continents.includes(primary)) {
+      setStatus("Primary continent must also be checked.", true);
+      return;
+    }
+    try {
+      const payload = await postJson(`/api/polities/${encodeURIComponent(polity.id)}/geography`, "PATCH", {
+        continents, primary_continent: primary, present_countries: countries,
+      });
+      const updated = { ...polity, geography: payload.geography, manual_overrides: payload.manual_overrides };
+      ctx.politiesById.set(polity.id, updated);
+      onSaved(updated);
+      ctx.onEdit?.();
+      setStatus(REBUILD_NOTE, false);
+    } catch (error) {
+      setStatus(error.message, true);
+    }
+  });
+}
+
 // Shared by both renderPolityDetails and renderPeriodDetails: the
 // "Convert to..." + "Edit fields" block, and the wiring for both. `kind`
 // is "polity" or "period"; `record` is the current cached document;
 // `onSaved(updatedRecord)` re-renders the panel with fresh data after any
 // successful save, so the displayed details never go stale.
-function editControlsHtml(kind, record) {
+function editControlsHtml(kind, record, geographyOptions) {
   const convertBlock = kind === "polity"
     ? `<div class="detail-edit-row">
          <select class="detail-entity-type-select" name="entity-type" aria-label="Entity type">${optionsHtml(ENTITY_TYPE_OPTIONS, record.entity_type || "polity")}</select>
@@ -56,7 +135,8 @@ function editControlsHtml(kind, record) {
        </div>
        <div class="detail-edit-row">
          <button class="detail-convert-to-period" type="button">Convert to period</button>
-       </div>`
+       </div>
+       ${geographyEditorHtml(record, geographyOptions)}`
     : `<div class="detail-edit-row">
          <select class="detail-entity-type-select" name="entity-type" aria-label="Entity type">${optionsHtml(ENTITY_TYPE_OPTIONS, "polity")}</select>
          <button class="detail-convert-to-entity" type="button">Convert to entity</button>
@@ -93,6 +173,7 @@ function wireEditControls(kind, record, ctx, onSaved) {
     status.classList.toggle("is-error", Boolean(isError));
   };
   const idPath = kind === "polity" ? `/api/polities/${encodeURIComponent(record.id)}` : `/api/periods/${encodeURIComponent(record.id)}`;
+  if (kind === "polity") wireGeographyEditor(record, ctx, onSaved, setStatus);
 
   if (kind === "polity") {
     explorePanel.querySelector(".detail-convert-entity-type").addEventListener("click", async () => {
@@ -291,6 +372,7 @@ function renderPolityDetails(polity, ctx) {
   const children = [...politiesById.values()].filter((candidate) => candidate.parent === polity.id);
   const predecessors = [...politiesById.values()].filter((candidate) => (candidate.successors || []).includes(polity.id));
   const relevantPeriods = periodLinks.filter((link) => link.entity_id === polity.id);
+  const relevantTransitions = (ctx.transitions || []).filter((transition) => [...transition.from, ...transition.to].includes(polity.id));
   const externalLinks = externalLinksForPolity(polity);
 
   explorePanel.innerHTML = `<button class="detail-close" type="button" aria-label="Close details">×</button>
@@ -311,10 +393,14 @@ function renderPolityDetails(polity, ctx) {
       <dt>Prominence</dt><dd>${Number(polity.prominence_score || 0).toFixed(2)} / 100 (${escapeHtml(polity.visibility_tier || "detailed")})</dd>
       <dt>Historical weight</dt><dd>${polity.weight_imputed ? "estimated" : "source-based"}</dd>
       ${(polity.sources || []).length ? `<dt>Data sources</dt><dd>${escapeHtml(polity.sources.map(displayTerm).join(", "))}</dd>` : ""}
+      ${relevantTransitions.length ? `<dt>Transitions</dt><dd class="detail-links">${relevantTransitions.map((transition) => {
+        const label = `${formatYear(transition.year)}: ${escapeHtml(transition.label)}`;
+        return transition.source_urls?.[0] ? `<a href="${escapeHtml(transition.source_urls[0])}" target="_blank" rel="noopener noreferrer">${label} ↗</a>` : label;
+      }).join("<br>")}</dd>` : ""}
       ${relevantPeriods.length ? `<dt>Historical periods</dt><dd class="detail-links">${relevantPeriods.map((link) => `${periodRefButton(periodsById, link.period_id)} <small>${escapeHtml(link.evidence)}, ${escapeHtml(link.confidence)}</small>`).join("<br>")}</dd>` : ""}
       ${externalLinks.length ? `<dt>External pages</dt><dd class="detail-links">${externalLinks.join("<br>")}</dd>` : ""}
     </dl>
-    ${editControlsHtml("polity", polity)}`;
+    ${editControlsHtml("polity", polity, ctx.geographyOptions)}`;
 
   wireExplorePanel(ctx, polity.start, polity.end ?? ctx.domainEnd);
   wireEditControls("polity", polity, ctx, (updated) => renderPolityDetails(updated, ctx));

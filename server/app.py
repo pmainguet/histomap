@@ -1152,6 +1152,13 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 "primary_continent": request.primary_continent,
                 "present_countries": sorted(set(request.present_countries)),
                 "centroid": existing.get("centroid"),
+                # historical_regions/primary_historical_region aren't edited by
+                # this form (continents/countries are the only controls) --
+                # preserve whatever was already there instead of silently
+                # dropping it, which every save through this endpoint used to
+                # do (found via norwegian_jarldom_of_orkney.yaml, 2026-08-31).
+                "historical_regions": existing.get("historical_regions") or [],
+                "primary_historical_region": existing.get("primary_historical_region"),
                 "confidence": "high",
             }
         ).model_dump(mode="json", exclude_none=True)

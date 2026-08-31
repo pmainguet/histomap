@@ -460,6 +460,33 @@ class UnifiedServerTests(unittest.TestCase):
         )
         self.assertEqual(response.status_code, 422)
 
+    def test_geography_update_preserves_historical_regions(self) -> None:
+        # historical_regions/primary_historical_region aren't part of this
+        # form (continents/countries are the only controls) -- a save used to
+        # silently drop them (found via norwegian_jarldom_of_orkney.yaml).
+        first = self.client.patch(
+            "/api/polities/candidate/geography",
+            json={"continents": ["europe"], "primary_continent": "europe", "present_countries": ["FR"]},
+        )
+        self.assertEqual(first.status_code, 200)
+        path = self.root / "polities" / "candidate.yaml"
+        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        document["geography"]["historical_regions"] = ["western_europe"]
+        document["geography"]["primary_historical_region"] = "western_europe"
+        path.write_text(yaml.safe_dump(document), encoding="utf-8")
+        client = TestClient(create_app(self.root))
+
+        second = client.patch(
+            "/api/polities/candidate/geography",
+            json={"continents": ["europe"], "primary_continent": "europe", "present_countries": ["FR"]},
+        )
+
+        self.assertEqual(second.status_code, 200)
+        self.assertEqual(second.json()["geography"]["historical_regions"], ["western_europe"])
+        saved = yaml.safe_load(path.read_text(encoding="utf-8"))
+        self.assertEqual(saved["geography"]["historical_regions"], ["western_europe"])
+        self.assertEqual(saved["geography"]["primary_historical_region"], "western_europe")
+
     def test_updates_and_locks_entity_type(self) -> None:
         response = self.client.patch(
             "/api/polities/candidate/entity-type", json={"entity_type": "culture"}
