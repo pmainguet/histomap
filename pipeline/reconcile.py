@@ -14,6 +14,8 @@ import yaml
 from rapidfuzz import fuzz, process
 from unidecode import unidecode
 
+from schema import CURRENT_YEAR
+
 ROOT = Path(__file__).resolve().parent.parent
 POLITIES_DIR = ROOT / "polities"
 SESHAT_PATH = ROOT / "sources" / "seshat_polities.parquet"
@@ -73,7 +75,7 @@ def normalize_name(value: str, strip_types: bool = False) -> str:
 
 
 def date_compatibility(left_start: int, left_end: int, right_start: int, right_end: int | None) -> float:
-    right_end = 2026 if right_end is None else right_end
+    right_end = CURRENT_YEAR if right_end is None else right_end
     intersection = max(0, min(left_end, right_end) - max(left_start, right_start) + 1)
     if not intersection:
         return 0.0

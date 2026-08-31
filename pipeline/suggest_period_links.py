@@ -17,6 +17,7 @@ from pathlib import Path
 import yaml
 
 from pipeline.geography_overlap import geography_matches, overlap_years
+from schema import CURRENT_YEAR
 
 ROOT = Path(__file__).resolve().parent.parent
 POLITIES_DIR = ROOT / "polities"
@@ -36,7 +37,7 @@ def in_scope(polity: dict) -> bool:
 
 def best_period_for_polity(polity: dict, periods: list[dict]) -> dict | None:
     polity_geo = polity.get("geography") or {}
-    polity_range = (polity["start"], polity.get("end") if polity.get("end") is not None else 2026)
+    polity_range = (polity["start"], polity.get("end") if polity.get("end") is not None else CURRENT_YEAR)
     candidates = []
     for period in periods:
         if not geography_matches(polity_geo, period.get("geography") or {}):

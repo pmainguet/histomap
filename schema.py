@@ -1,4 +1,5 @@
 import re
+from datetime import datetime, timezone
 from enum import Enum
 from typing import Literal
 
@@ -8,7 +9,19 @@ ID_PATTERN = re.compile(r"^[a-z][a-z0-9_]*$")
 QID_PATTERN = re.compile(r"^Q\d+$")
 
 YEAR_MIN = -3_000_000
+# The dataset's own modeled-timeline ceiling (macro_contemporary_world's own
+# end year, generate_modern_regional_eras.py) -- a fixed domain boundary, not
+# "today". Distinct from CURRENT_YEAR below; conflating the two was a real
+# latent bug risk (found during the 2026-08-31 simplification pass) -- do not
+# merge them into one constant.
 YEAR_MAX = 2100
+# "Today", for computing a still-active entity's current age/duration
+# (compute_prominence.py's longevity component, and the open-ended-polity
+# date-overlap fallbacks in generate_modern_regional_eras.py/reconcile.py/
+# suggest_period_links.py). Computed once at import time rather than
+# hardcoded (it previously was, as a literal `2026` in four separate files)
+# so it can't silently go stale the way a hardcoded year does every January.
+CURRENT_YEAR = datetime.now(timezone.utc).year
 
 
 class Confidence(str, Enum):

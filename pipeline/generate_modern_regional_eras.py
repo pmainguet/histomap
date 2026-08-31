@@ -11,6 +11,7 @@ from pathlib import Path
 import yaml
 
 from pipeline.geography_overlap import overlap_years
+from schema import CURRENT_YEAR
 
 ROOT = Path(__file__).resolve().parent.parent
 POLITIES_DIR = ROOT / "polities"
@@ -38,7 +39,7 @@ def combinations_with_polities(
         if not continents:
             continue
         p_start = polity["start"]
-        p_end = polity.get("end") if polity.get("end") is not None else 2026
+        p_end = polity.get("end") if polity.get("end") is not None else CURRENT_YEAR
         for chapter_id, c_start, c_end in macro_chapters:
             if overlap_years((p_start, p_end), (c_start, c_end)) > 0:
                 for continent in continents:

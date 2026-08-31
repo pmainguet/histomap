@@ -17,6 +17,8 @@ from urllib.request import Request, urlopen
 
 import yaml
 
+from schema import CURRENT_YEAR
+
 ROOT = Path(__file__).resolve().parent.parent
 POLITIES_DIR = ROOT / "polities"
 CACHE_PATH = ROOT / "sources" / "wikidata_sitelinks.json"
@@ -42,7 +44,7 @@ def prominence_components(
     start_confidence: str = "high",
     end_confidence: str = "high",
     aggregate: bool = False,
-    current_year: int = 2026,
+    current_year: int = CURRENT_YEAR,
 ) -> dict[str, float]:
     duration = max(1, (end if end is not None else current_year) - start)
     components = {
