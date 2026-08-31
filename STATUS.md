@@ -679,6 +679,18 @@ West Virginia's "Reviewed -> phase of candidate" button correctly carries the ba
 now shows medium confidence with no suggestion and the misattributed-QID warning instead of the
 previous misleading high-confidence prompt. 239/239 tests pass.
 
+**Follow-up, same day: generalized the "name reused, different era" rule.** Bourbon Restoration in
+France (1815-1830) vs. Kingdom of France (987-1791) still showed "high confidence" -- the same
+Free City of Danzig/Duchy of Limburg shape from earlier this session (shared alias, distinct
+Wikidata items, non-overlapping dates: the restored monarchy was genuinely called "Kingdom of
+France" again, 24 years after the first record's own end date), but that rule had only been coded
+as `documented_successor` (needs an explicit Wikidata succession edge -- this pair has none). Added
+a broader `no_overlap_alias_reuse` signal: `exact_name_match` on two distinct Wikidata items whose
+dates plain don't overlap, independent of whether a Wikidata succession edge exists. Demotes
+confidence, drops the score bonus, sets `suggested_decision` to `independent`. Verified live:
+Bourbon Restoration/Kingdom of France now correctly shows medium confidence with the independent
+suggestion. Queue-wide: `suggested_decision="independent"` count 134 -> 172. 239/239 tests pass.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which
