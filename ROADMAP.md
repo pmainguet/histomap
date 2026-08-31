@@ -11,14 +11,16 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 0. **Still not safe to retire `/` — the 2 blocking gaps are closed, 3 steps remain.** Audited 31
    August 2026 (see STATUS.md); both blocking gaps (geography editing, viewing curated
-   transitions) are now built into `/explore`'s side panel, same day. What's left of the original
-   5-step order: (3) decide on the remaining non-blocking-but-real gaps — free-text entity search,
-   visibility-tier/entity-type/period-kind filters, the named-period picker + `?era=` deep link,
-   era presets/manual date-range input, relationship highlighting on the chart, swimlane
-   collapse/expand, and keyboard-operable bands (`/explore`'s `bandRect` sets no `tabindex`/keydown
-   handling at all) — build or explicitly accept the loss for each; (4) update README.md (still
-   calls `/` the primary workspace root) and the `/reviews`-family nav links (all link to `/`,
-   would 404); (5) only then delete `GET /` and `web/index.html`/`web/app.js`.
+   transitions) are now built into `/explore`'s side panel, same day. `/` cannot be deleted
+   without porting its remaining features to `/explore` first — none of the gaps below get
+   dropped, every one needs a home in `/explore` before `/` goes away. What's left of the
+   original 5-step order: (3) port the remaining non-blocking-but-real gaps to `/explore` —
+   free-text entity search, visibility-tier/entity-type/period-kind filters, the named-period
+   picker + `?era=` deep link, era presets/manual date-range input, relationship highlighting on
+   the chart, swimlane collapse/expand, and keyboard-operable bands (`/explore`'s `bandRect` sets
+   no `tabindex`/keydown handling at all); (4) update README.md (still calls `/` the primary
+   workspace root) and the `/reviews`-family nav links (all link to `/`, would 404); (5) only then
+   delete `GET /` and `web/index.html`/`web/app.js`.
 1. **Decide what to do with the 34 Seshat unmatched drafts** (`reports/seshat_unmatched_drafts.yaml`)
    — Seshat source records that never matched an existing Histomap entity, held as candidates for
    import as new entities. The reviewable 35-record "review" sub-queue that used to sit alongside
