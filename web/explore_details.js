@@ -102,6 +102,7 @@ function wireEditControls(kind, record, ctx, onSaved) {
         const updated = { ...record, entity_type: entityType };
         ctx.politiesById.set(record.id, updated);
         onSaved(updated);
+        ctx.onEdit?.();
         setStatus(REBUILD_NOTE, false);
       } catch (error) {
         setStatus(error.message, true);
@@ -111,6 +112,7 @@ function wireEditControls(kind, record, ctx, onSaved) {
       if (!confirm(`Convert "${record.canonical_name}" to a period? It will stop appearing in the Polities row after the next build.`)) return;
       try {
         const result = await postJson(`${idPath}/convert-to-period`, "POST");
+        ctx.onEdit?.();
         setStatus(`${REBUILD_NOTE} New period id: ${result.period_id}.`, false);
       } catch (error) {
         setStatus(error.message, true);
@@ -122,6 +124,7 @@ function wireEditControls(kind, record, ctx, onSaved) {
       if (!confirm(`Convert "${record.canonical_name}" to a polity (entity type: ${entityType})? The period record will be deleted after the next build.`)) return;
       try {
         const result = await postJson(`${idPath}/promote-to-entity`, "POST", { entity_type: entityType });
+        ctx.onEdit?.();
         setStatus(`${REBUILD_NOTE} New polity id: ${result.entity_id}.`, false);
       } catch (error) {
         setStatus(error.message, true);
@@ -134,6 +137,7 @@ function wireEditControls(kind, record, ctx, onSaved) {
         const updated = { ...record, kind: kindValue };
         ctx.periodsById.set(record.id, updated);
         onSaved(updated);
+        ctx.onEdit?.();
         setStatus(REBUILD_NOTE, false);
       } catch (error) {
         setStatus(error.message, true);
@@ -155,6 +159,7 @@ function wireEditControls(kind, record, ctx, onSaved) {
       if (kind === "polity") ctx.politiesById.set(record.id, result.document);
       else ctx.periodsById.set(record.id, result.document);
       onSaved(result.document);
+      ctx.onEdit?.();
       setStatus(REBUILD_NOTE, false);
     } catch (error) {
       setStatus(error.message, true);

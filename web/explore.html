@@ -22,6 +22,10 @@
     <section class="explore-intro" aria-label="About this view">
       <h1>Explore human history</h1>
       <p>Nine chapters, oldest first. Click any band to zoom in on its date range.</p>
+      <div class="controls">
+        <button type="button" class="action-button" data-build-timeline hidden>Build timeline</button>
+        <span data-build-status aria-live="polite"></span>
+      </div>
     </section>
     <div class="hierarchy-controls" aria-label="Display options">
       <label for="show-polities"><input type="checkbox" id="show-polities" checked> Show polities</label>
@@ -53,5 +57,6 @@
     <script src="/static/explore_timeline.js"></script>
     <script src="/static/explore_details.js"></script>
     <script src="/static/explore.js"></script>
+    <script type="module" src="/static/review_build.js"></script>
   </body>
 </html>

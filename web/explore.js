@@ -5,6 +5,7 @@ async function main() {
   const geoFilterSelect = document.querySelector("#geo-filter");
   const geoFilterLabel = document.querySelector("#geo-filter-label");
   const resetLink = document.querySelector("#zoom-reset");
+  const buildButton = document.querySelector("[data-build-timeline]");
   let fullTree = null;
   let eraColorMap = null;
   let zoomRange = null;
@@ -73,6 +74,16 @@ async function main() {
     if (detailCtx) showExploreDetails(kind, id, detailCtx);
   };
 
+  // The "Build timeline" button (review_build.js, shared with /reviews) is
+  // hidden until the side panel actually saves something -- explore_tree.json
+  // is a separate pre-built artifact, so an edit here has no visible effect
+  // on the chart until a build runs; showing the button unconditionally
+  // would suggest one is always needed, which is only true once something
+  // has actually changed this session.
+  const revealBuildButton = () => {
+    buildButton.hidden = false;
+  };
+
   try {
     const [treeResponse, politiesResponse, periodsResponse, periodLinksResponse] = await Promise.all([
       fetch("/explore_tree.json"),
@@ -95,6 +106,7 @@ async function main() {
       domainEnd: fullTree.axis.domain_end,
       onZoomToRange: zoomToRange,
       onResetZoom: resetZoom,
+      onEdit: revealBuildButton,
     };
     updateGeoFilterOptions();
     draw();
