@@ -80,15 +80,21 @@ CIVILIZATION_BACKDROP_AUTHORITY = "Histomap editorial: civilization-as-backdrop"
 
 def _is_civilization_lane_period(period: dict) -> bool:
     """A tier=period record that belongs in the Civilizations & Cultures
-    lane rather than the plain Period row: either it carries
-    CIVILIZATION_BACKDROP_AUTHORITY (a real signal), or its canonical_name
-    suggests civilization/culture -- e.g. "Minoan civilization", "Etruscan
-    civilization" (a name-pattern heuristic/guess, since Period has no
-    entity_type-like field of its own). tier=period only -- never
-    regional_era/macro_chapter, which are structural grouping nodes, not
-    entities."""
+    lane rather than the plain Period row. `civilization_lane` (explicit,
+    curator-editable, see schema.Period.civilization_lane) is checked first
+    when set -- an explicit human decision beats both of the old fallback
+    signals. Only when it's unset (None, "not yet reviewed") does this fall
+    back to those: either the period carries CIVILIZATION_BACKDROP_AUTHORITY
+    (a real signal), or its canonical_name suggests civilization/culture --
+    e.g. "Minoan civilization", "Etruscan civilization" (a name-pattern
+    heuristic/guess, since Period had no entity_type-like field of its own
+    before this field existed). tier=period only -- never regional_era/
+    macro_chapter, which are structural grouping nodes, not entities."""
     if period.get("tier") != "period":
         return False
+    explicit = period.get("civilization_lane")
+    if explicit is not None:
+        return explicit
     if period.get("authority") == CIVILIZATION_BACKDROP_AUTHORITY:
         return True
     name = period.get("canonical_name", "").lower()

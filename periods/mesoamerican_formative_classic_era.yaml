@@ -18,7 +18,8 @@ authority: 'Histomap editorial: regional-era starter set'
 external_ids: {}
 notes: Olmec civilization through the Classic Maya collapse. Ends 900 CE, 400 years
   past this chapter's nominal 500 CE boundary -- editorial placement, not date-containment;
-  see ONTOLOGY.md. Demoted from tier=regional_era to tier=period (default)
-  2026-08-31, reparented under the new overarching classical_antiquity_era.
+  see ONTOLOGY.md. Demoted from tier=regional_era to tier=period (default) 2026-08-31,
+  reparented under the new overarching classical_antiquity_era.
 source_urls:
 - https://en.wikipedia.org/wiki/Mesoamerican_Formative_and_Classic_Periods
+civilization_lane: false

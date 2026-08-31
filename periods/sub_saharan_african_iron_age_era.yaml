@@ -18,10 +18,10 @@ broader_periods:
 successors: []
 authority: 'Histomap editorial: regional-era starter set'
 external_ids: {}
-notes: Nok culture and the early Bantu expansion ironworking tradition. Demoted
-  from tier=regional_era to tier=period (default) 2026-08-31, reparented under
-  the new overarching iron_age_era -- same "overarching regional era" treatment
-  east_asian_bronze_age_era/european_bronze_age_era already got under
-  bronze_age_era. See ONTOLOGY.md and STATUS.md.
+notes: Nok culture and the early Bantu expansion ironworking tradition. Demoted from
+  tier=regional_era to tier=period (default) 2026-08-31, reparented under the new
+  overarching iron_age_era -- same "overarching regional era" treatment east_asian_bronze_age_era/european_bronze_age_era
+  already got under bronze_age_era. See ONTOLOGY.md and STATUS.md.
 source_urls:
 - https://en.wikipedia.org/wiki/Sub-Saharan_African_Iron_Age
+civilization_lane: false

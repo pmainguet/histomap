@@ -7,11 +7,13 @@ end: -1700
 start_confidence: low
 end_confidence: low
 geography:
-  continents: [europe]
+  continents:
+  - europe
 broader_periods:
 - neolithic_era
 authority: DBpedia/Wikipedia periodization
 external_ids:
   dbpedia: https://dbpedia.org/resource/Neolithic_Europe
 source_urls:
-  - https://dbpedia.org/resource/Neolithic_Europe
+- https://dbpedia.org/resource/Neolithic_Europe
+civilization_lane: false

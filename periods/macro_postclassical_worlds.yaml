@@ -12,9 +12,9 @@ broader_periods: []
 successors: []
 authority: 'Histomap editorial: global macro-chapter backbone'
 external_ids: {}
-notes: 'Editorial navigation chapter. Deliberately named "post-classical" rather
-  than "medieval" -- medieval is a Eurocentric label that does not describe
-  Byzantine, Islamic, African, South Asian, East Asian, or American history in
-  this window.'
+notes: Editorial navigation chapter. Deliberately named "post-classical" rather than
+  "medieval" -- medieval is a Eurocentric label that does not describe Byzantine,
+  Islamic, African, South Asian, East Asian, or American history in this window.
 source_urls:
 - https://en.wikipedia.org/wiki/Postclassical_Era
+civilization_lane: false

@@ -311,6 +311,17 @@ class Period(BaseModel):
     # recording it was a sultanate). Not auto-populated for periods today;
     # editable manually.
     government_form: str | None = None
+    # Whether this period belongs in the Civilizations & Cultures lane rather
+    # than the ordinary Period row. Explicit, editable -- not derived from a
+    # heuristic. Was seeded 2026-08-31 from
+    # pipeline/build_explore_tree.py::_is_civilization_lane_period()'s old
+    # fallback logic (True when authority == CIVILIZATION_BACKDROP_AUTHORITY,
+    # a real signal, OR "civilization"/"culture" appears in canonical_name, a
+    # name-substring guess) as a one-time starting point; from here on it's
+    # curator-set only, checked first ahead of both signals. None means "not
+    # yet reviewed" and falls back to that same old logic during the
+    # transition -- see pipeline/seed_civilization_lane_flags.py.
+    civilization_lane: bool | None = None
 
     @field_validator("id")
     @classmethod

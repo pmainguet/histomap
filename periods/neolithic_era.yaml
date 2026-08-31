@@ -23,14 +23,15 @@ successors: []
 authority: 'Histomap editorial: overarching regional-era consolidation'
 external_ids: {}
 notes: Overarching parent for the regional agricultural-transition eras, which happened
-  at meaningfully different times, and under different technology packages, in
-  different places -- spans from the Fertile Crescent's earliest agriculture
-  (~-10,000) to the end of Neolithic Europe (~-1,700). Named "Neolithic & Archaic"
-  rather than just "Neolithic" because the Americas' agricultural transition
-  (mesoamerican_archaic_era, andean_archaic_era) is conventionally called "Archaic"
-  in Americanist archaeology, not "Neolithic" -- a real terminology difference
-  (different domesticates, no draft animals, a different technology trajectory
-  than the Old World package), not just a regional relabeling of the same thing.
-  See ONTOLOGY.md's "Overarching regional eras for genuinely cross-regional themes."
+  at meaningfully different times, and under different technology packages, in different
+  places -- spans from the Fertile Crescent's earliest agriculture (~-10,000) to the
+  end of Neolithic Europe (~-1,700). Named "Neolithic & Archaic" rather than just
+  "Neolithic" because the Americas' agricultural transition (mesoamerican_archaic_era,
+  andean_archaic_era) is conventionally called "Archaic" in Americanist archaeology,
+  not "Neolithic" -- a real terminology difference (different domesticates, no draft
+  animals, a different technology trajectory than the Old World package), not just
+  a regional relabeling of the same thing. See ONTOLOGY.md's "Overarching regional
+  eras for genuinely cross-regional themes."
 source_urls:
 - https://en.wikipedia.org/wiki/Neolithic
+civilization_lane: false

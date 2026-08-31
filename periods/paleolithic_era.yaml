@@ -17,8 +17,9 @@ successors: []
 authority: 'Histomap editorial: overarching regional-era consolidation'
 external_ids: {}
 notes: Overarching parent for the regional Paleolithic variants, which cover meaningfully
-  different spans in different places -- from the earliest African stone tools
-  (~-3,000,000) through the end of the last Ice Age everywhere. See ONTOLOGY.md's
-  "Overarching regional eras for genuinely cross-regional themes."
+  different spans in different places -- from the earliest African stone tools (~-3,000,000)
+  through the end of the last Ice Age everywhere. See ONTOLOGY.md's "Overarching regional
+  eras for genuinely cross-regional themes."
 source_urls:
 - https://en.wikipedia.org/wiki/Paleolithic
+civilization_lane: false

@@ -6,11 +6,13 @@ end: 800
 start_confidence: low
 end_confidence: low
 geography:
-  continents: [europe]
+  continents:
+  - europe
 broader_periods:
 - iron_age_era
 authority: DBpedia/Wikipedia periodization
 external_ids:
   dbpedia: https://dbpedia.org/resource/Iron_Age_Europe
 source_urls:
-  - https://dbpedia.org/resource/Iron_Age_Europe
+- https://dbpedia.org/resource/Iron_Age_Europe
+civilization_lane: false

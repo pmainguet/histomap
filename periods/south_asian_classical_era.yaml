@@ -17,7 +17,8 @@ successors: []
 authority: 'Histomap editorial: regional-era starter set'
 external_ids: {}
 notes: The Mahajanapadas through the Gupta Empire. Demoted from tier=regional_era
-  to tier=period (default) 2026-08-31, reparented under the new overarching
-  classical_antiquity_era -- see ONTOLOGY.md and STATUS.md.
+  to tier=period (default) 2026-08-31, reparented under the new overarching classical_antiquity_era
+  -- see ONTOLOGY.md and STATUS.md.
 source_urls:
 - https://en.wikipedia.org/wiki/South_Asian_Classical_Antiquity
+civilization_lane: false

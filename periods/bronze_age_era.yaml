@@ -15,16 +15,16 @@ broader_periods:
 successors: []
 authority: 'Histomap editorial: overarching regional-era consolidation'
 external_ids: {}
-notes: Overarching parent for the regional Bronze Age eras, which happened at
-  meaningfully different times in different places -- spans from the start of the
-  European Bronze Age (~-3,200) to the end of the East Asian Bronze Age (~-1,046).
-  See ONTOLOGY.md's "Overarching regional eras for genuinely cross-regional themes".
-  The geography.historical_regions field (formerly just east_asia) was removed
-  2026-08-31 -- a leftover from the demoted east_asian_bronze_age_era child that
-  wrongly narrowed geography_matches to East Asia only (every other overarching
-  era -- neolithic_era, paleolithic_era, classical_antiquity_era, iron_age_era,
-  copper_age_era -- correctly has none at all, falling back to continent-level
-  matching); this blocked Indus Valley Civilization's linked_era_id seed value,
-  among others.
+notes: Overarching parent for the regional Bronze Age eras, which happened at meaningfully
+  different times in different places -- spans from the start of the European Bronze
+  Age (~-3,200) to the end of the East Asian Bronze Age (~-1,046). See ONTOLOGY.md's
+  "Overarching regional eras for genuinely cross-regional themes". The geography.historical_regions
+  field (formerly just east_asia) was removed 2026-08-31 -- a leftover from the demoted
+  east_asian_bronze_age_era child that wrongly narrowed geography_matches to East
+  Asia only (every other overarching era -- neolithic_era, paleolithic_era, classical_antiquity_era,
+  iron_age_era, copper_age_era -- correctly has none at all, falling back to continent-level
+  matching); this blocked Indus Valley Civilization's linked_era_id seed value, among
+  others.
 source_urls:
 - https://en.wikipedia.org/wiki/Bronze_Age
+civilization_lane: false

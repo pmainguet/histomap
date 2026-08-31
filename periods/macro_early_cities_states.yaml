@@ -12,8 +12,8 @@ broader_periods: []
 successors: []
 authority: 'Histomap editorial: global macro-chapter backbone'
 external_ids: {}
-notes: Editorial navigation chapter covering the first urban civilizations
-  (Mesopotamia, Egypt, Indus Valley, early China) through the Late Bronze
-  Age Collapse.
+notes: Editorial navigation chapter covering the first urban civilizations (Mesopotamia,
+  Egypt, Indus Valley, early China) through the Late Bronze Age Collapse.
 source_urls:
 - https://en.wikipedia.org/wiki/Bronze_Age
+civilization_lane: false

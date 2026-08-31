@@ -12,7 +12,8 @@ broader_periods: []
 successors: []
 authority: 'Histomap editorial: global macro-chapter backbone'
 external_ids: {}
-notes: Editorial navigation chapter spanning the First World War through the
-  end of the Second World War.
+notes: Editorial navigation chapter spanning the First World War through the end of
+  the Second World War.
 source_urls:
 - https://en.wikipedia.org/wiki/World_war
+civilization_lane: false

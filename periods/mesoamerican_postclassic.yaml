@@ -20,3 +20,4 @@ external_ids:
   dbpedia: https://dbpedia.org/resource/Mesoamerican_chronology
 source_urls:
 - https://dbpedia.org/resource/Mesoamerican_chronology
+civilization_lane: false

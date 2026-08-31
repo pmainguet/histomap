@@ -17,3 +17,4 @@ external_ids:
   dbpedia: https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)
 source_urls:
 - https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)
+civilization_lane: false
