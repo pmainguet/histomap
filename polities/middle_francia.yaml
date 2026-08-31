@@ -31,6 +31,10 @@ geography:
   primary_continent: europe
   present_countries: []
   confidence: high
+  historical_regions:
+  - western_europe
+  - southern_europe
+  primary_historical_region: western_europe
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
@@ -55,5 +59,6 @@ prominence_components:
   total: 31.13
 manual_overrides:
 - geography
+- historical_region
 linked_era_id: classical_antiquity_era
 government_form: null

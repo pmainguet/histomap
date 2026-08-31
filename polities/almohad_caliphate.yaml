@@ -32,6 +32,10 @@ geography:
   - europe
   present_countries: []
   confidence: high
+  historical_regions:
+  - north_africa
+  - southern_europe
+  primary_historical_region: north_africa
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
@@ -56,5 +60,6 @@ prominence_components:
   total: 29.01
 manual_overrides:
 - geography
+- historical_region
 linked_era_id: islamic_caliphates_era
 government_form: null

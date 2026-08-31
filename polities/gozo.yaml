@@ -29,12 +29,13 @@ prominence_score: 27.88
 visibility_tier: regional
 eligibility: accepted
 geography:
-  continents: []
+  continents:
+  - europe
   present_countries: []
   centroid:
     lat: 36.04333333
     lon: 14.24694444
-  confidence: null
+  confidence: low
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

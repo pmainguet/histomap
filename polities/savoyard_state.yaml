@@ -26,10 +26,11 @@ prominence_score: 10.4
 visibility_tier: detailed
 eligibility: review
 geography:
-  continents: []
+  continents:
+  - europe
   present_countries: []
   centroid: null
-  confidence: null
+  confidence: low
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []

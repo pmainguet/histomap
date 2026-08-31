@@ -236,6 +236,55 @@ def geography_category(geography: dict) -> str:
     return "unknown"
 
 
+def fill_self_continent_fallback(offline: bool = False) -> int:
+    """Second, additive pass: for polities that still have empty geography after
+    the main P17-chain pass, try the entity's OWN direct Wikidata P30 (continent)
+    claim instead of its P17 ("country") target's. Pre-modern dynasties/empires
+    routinely carry no usable P17 at all (Tang dynasty has none; Byzantine
+    Empire's P17 resolves to non-country "Roman Empire"; Ottoman Empire's P17
+    resolves to itself) even though they very often DO carry a direct P30 claim
+    on themselves -- e.g. Byzantine Empire: europe/africa/asia; Tang dynasty:
+    asia. Reuses country_metadata()'s existing cache/fetch machinery unchanged,
+    just querying the entity's own QID instead of a P17 target's. Confidence
+    "low" throughout, same tier as the existing centroid-boundary fallback --
+    a direct continent claim with no accompanying country is coarser than a
+    resolved P17 country.
+    """
+    candidates: dict[Path, dict] = {}
+    for path in POLITIES_DIR.glob("*.yaml"):
+        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if field_locked(document, "geography"):
+            continue
+        geography = document.get("geography") or {}
+        if geography.get("continents") or geography.get("present_countries"):
+            continue
+        qid = (document.get("external_ids") or {}).get("wikidata")
+        if qid:
+            candidates[path] = document
+    if not candidates:
+        return 0
+    qids = {(doc.get("external_ids") or {}).get("wikidata") for doc in candidates.values()}
+    metadata = country_metadata(qids, offline)
+    filled = 0
+    for path, document in candidates.items():
+        qid = (document.get("external_ids") or {}).get("wikidata")
+        continents = sorted((metadata.get(qid) or {}).get("continents", []))
+        if not continents:
+            continue
+        geography = document.get("geography") or {}
+        geography["continents"] = continents
+        geography["confidence"] = "low"
+        # No primary_continent: unlike the main pass (which can point at a
+        # located centroid as the genuinely primary continent), a direct P30
+        # claim carries no ranking among multiple continents -- picking one
+        # arbitrarily (e.g. alphabetically) would misrepresent a real signal
+        # gap as a confident answer.
+        document["geography"] = geography
+        path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
+        filled += 1
+    return filled
+
+
 def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
     boundaries = load_boundaries(offline, high_resolution=only_missing)
     frame = pd.read_parquet(PARQUET_PATH, columns=["qid", "coords", "country_qid"])
@@ -322,6 +371,8 @@ def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
         counts[category] += 1
         tier = document.get("visibility_tier", "detailed")
         by_tier.setdefault(tier, {key: 0 for key in counts})[category] += 1
+
+    counts["self_continent_fallback"] = fill_self_continent_fallback(offline)
 
     lines = ["# Geography coverage", "", "## Overall", ""]
     lines.extend(f"- {key.replace('_', ' ').title()}: {value:,}" for key, value in counts.items())

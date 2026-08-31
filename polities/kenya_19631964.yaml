@@ -23,10 +23,11 @@ prominence_score: 13.81
 visibility_tier: detailed
 eligibility: accepted
 geography:
-  continents: []
+  continents:
+  - africa
   present_countries: []
   centroid: null
-  confidence: null
+  confidence: low
 relationships: []
 entity_type: polity
 entity_type_confidence: high

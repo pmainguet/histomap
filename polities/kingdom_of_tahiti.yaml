@@ -35,6 +35,9 @@ geography:
     lat: -17.53333333
     lon: -149.56666667
   confidence: high
+  historical_regions:
+  - oceania_pacific
+  primary_historical_region: oceania_pacific
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
@@ -53,5 +56,6 @@ prominence_components:
   total: 30.75
 manual_overrides:
 - geography
+- historical_region
 linked_era_id: oceania_industrial_imperial_world_era
 government_form: protectorate
