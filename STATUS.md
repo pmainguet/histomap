@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (749 of 4,697 still pending -- an automated `suggested_decision` hint now covers 174 of the remaining candidates, deliberately conservative after tightening the phase_of signal to require a genuine name/alias match, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (749 of 4,697 still pending -- an automated `suggested_decision` hint now covers essentially the whole active queue after the 1 September 2026 signal pass, mostly toward `independent` now that the algorithm can tell "obviously distinct" from "obviously the same"; confirmed live); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -717,6 +717,70 @@ were riding the same weaker token-only signal that produced the West Virginia fa
 falling back to null (an ordinary manual review, same as before the suggestion feature existed) is
 the right trade-off over surfacing suggestions this unreliable. West Virginia resolved
 `independent`. 239/239 tests pass; zero console errors live.
+
+### Three more consolidation-queue signals, and a full review-UI pass — 1 September 2026
+
+Continued live-testing the suggestion feature turned up three more signal gaps, each closed the
+same way as before: a concrete counterexample first, then a signal generalized from it.
+
+- **`likely_siblings`.** Canton of Appenzell Innerrhoden and Ausserrhoden -- both 1513-present,
+  split from one original Appenzell canton -- showed no suggestion at all, despite being an
+  obvious case by inspection. Distinct Wikidata items, different names, but *essentially
+  identical* date ranges (both starting/ending together) is a distinct signature from ordinary
+  date-containment: a true phase_of nests inside the continuous polity's own span with a
+  *different* start; identical starts point to two things founded at once, not one being a phase
+  of the other. Suggests `independent`.
+- **`no_identity_signal`.** Kingdom of Wessex vs. Kingdom of Essex -- two different, coexisting
+  Anglo-Saxon kingdoms of the Heptarchy -- reached the queue via geography + date-overlap + fuzzy
+  name similarity alone (no shared Wikidata item, no shared name/alias), same shape as West
+  Virginia/Virginia and the Appenzell cantons. Rather than patch each new instance of this shape
+  one at a time, generalized it: whenever a candidate has no strong identity anchor at all,
+  default the suggestion to `independent` -- the safer direction to be wrong in (a reviewer clicks
+  past an overeager suggestion) versus leaving the common case unaddressed. Spot-checked a random
+  sample of 6 of the resulting suggestions; all correct, including one pair (United Provinces of
+  New Granada / Illyrian Provinces -- South America and the Balkans) that had matched purely on
+  the generic shared word "provinces."
+- **`regime_of_candidate`/`regime_of_reviewed`.** The `exact_name_match` requirement above also
+  produced a real false *negative*: Federal People's Republic of Yugoslavia vs. Yugoslavia (a
+  clear phase_of by inspection) stopped being suggested, because "Federal People's Republic of
+  Yugoslavia" isn't a literal alias of "Yugoslavia" anywhere in the data. Added a naming-pattern
+  check -- "`<regime type> of <the other record's name>`" (also matches Islamic Emirate of
+  Afghanistan/Afghanistan) -- as an alternative to `exact_name_match` for the phase_of direction
+  check, conservative enough that it doesn't reopen West Virginia (a compound place name, not this
+  pattern, since "West Virginia" never reads as "West of Virginia").
+
+Queue-wide after all three: `suggested_decision` distribution moved from mostly-null to
+`independent: 924, phase_of: 76, candidate_phase_of: 4, null: 18` -- the queue had far more
+"obviously distinct entities riding a coincidental partial match" than "obviously the same thing,"
+once the algorithm could actually tell the difference.
+
+Also root-caused a real, previously-worked-around bug: every "the button doesn't look updated"
+moment this session traced back to `/static/*` files carrying no explicit `Cache-Control` header,
+so browsers applied RFC 7234 heuristic freshness and could silently serve a stale JS/CSS file
+after a deploy. Added a `Cache-Control: no-cache` middleware on `/static/*` -- forces revalidation
+(still a cheap 304 when nothing changed) instead of a silent stale hit.
+
+**Review-UI pass, same day, driven entirely by live use:**
+- Removed the "Choose another parent polity" manual search section (dead weight once
+  `suggested_decision` covers the common case) and the "Fast keyboard review" reference panel
+  (redundant once every button shows its own shortcut inline).
+- Fixed a real contrast bug: `kbd` had no explicit text color, so on a dark button it inherited
+  white -- invisible against kbd's own white background. Now explicit dark text.
+- Moved Independent/Discard/Defer from a single page-level block into each candidate card's own
+  action row, so the Suggested badge -- previously usable only for same_entity/phase_of/part_of --
+  now also highlights Independent. Confirmed live on the Appenzell and Wessex/Essex examples above.
+- Added Wikipedia (English, falling back to whichever language edition exists) and locator-map
+  (Wikidata P242) evidence rows, fetched in the same batch call already used for labels/
+  descriptions.
+- Added a two-row timeline bar (candidate vs. reviewed entity, shared scale) so date-containment
+  is visible at a glance instead of read out of two separate table cells.
+- phase_of/candidate_phase_of now disable with a tooltip -- instead of submitting and bouncing off
+  a rejected-decision error -- when the relevant entity has no finite end date (a phase_of decision
+  writes a Period record, which needs one). Caught live on Realm of New Zealand (open-ended) vs.
+  New Zealand; the same guard already existed for the keyboard-shortcut path and the pre-existing
+  "Broad period/era" button, just not for these two.
+
+239/239 tests pass; zero console errors live beyond the pre-existing unrelated favicon 404.
 
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
