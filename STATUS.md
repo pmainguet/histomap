@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (777 of 4,697 still pending after the alias-collision bug fix, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (770 of 4,697 still pending after the alias-collision bug fix and a batch of 6 verified phase_of resolutions, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -576,6 +576,33 @@ was entirely a byproduct of the alias bug, not a real backlog, and both genuine 
 this session were already resolved by hand. `/consolidation-review` "active" pending count:
 827 -> 777 (entities whose only signal was the buggy exact-name-match now have no candidates at
 all). 239/239 tests pass; build validates; zero console errors live.
+
+### Six phase_of consolidation candidates resolved — 31 August 2026
+
+Caught live on `/consolidation-review`: Syrian Arab Republic (1963-2024) suggested against Syria
+(1920-present) as "high confidence" -- unlike the alias-collision false positives above, this one
+is genuine (Syria's own Wikidata aliases legitimately include its official name "Syrian Arab
+Republic") and structurally an obvious phase relationship, not a duplicate: target dates fully
+contain source, present-day geography matches, entity types are compatible. Resolved as `phase_of`
+Syria via the existing API, then scanned the corrected queue for the exact same pattern
+(`date_contains` + `geography_match` + `type_match` + `confidence: high`) and found 5 more, each
+checked against known history before applying:
+
+- United Provinces of Central America (1823-1824) -- renamed Federal Republic of Central America
+  in 1824
+- Miguel Iglesias government (1882-1885) -- a specific administration within the Peruvian Republic
+- Udaipur State (1818-1948) -- the colonial-era name for the same Kingdom of Mewar dynasty
+- State of Greater Lebanon (1920-1926) -- the initial polity name under the French mandate of
+  Lebanon
+- Government of National Salvation (1941-1944) -- Nedic's collaborationist administration under
+  German military occupation, exactly coinciding with the Territory of the Military Commander in
+  Serbia
+
+Each `phase_of` decision retires the reviewed polity record and rewrites it as a dated period
+nested under its canonical target via `period_links.yaml` (existing behavior, not new). `build.py`:
+4649 -> 4643 entities, 90 -> 96 periods, 17 -> 23 period links. `/consolidation-review` "active"
+pending count: 777 -> 770. 239/239 tests pass; zero console errors live on `/explore` and
+`/consolidation-review`.
 
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
