@@ -809,6 +809,41 @@
     "civilization_lane": false
   },
   {
+    "id": "czechoslovak_republic_period",
+    "canonical_name": "Czechoslovak Republic",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1948,
+    "end": 1960,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q11178782"
+    },
+    "notes": "Editorially identified as a phase or aspect of Czechoslovak Socialist Republic.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q11178782"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "early_dynastic_mesopotamia",
     "canonical_name": "Early Dynastic Mesopotamia",
     "kind": "protohistorical",

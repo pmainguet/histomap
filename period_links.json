@@ -251,5 +251,16 @@
       "https://www.wikidata.org/wiki/Q5589262"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "czechoslovak_republic_period",
+    "entity_id": "czechoslovak_socialist_republic",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q11178782"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
   }
 ]

@@ -190,9 +190,21 @@ def create_app(root: Path = ROOT) -> FastAPI:
     # qid -> set of P131 ("located in the administrative territorial entity")
     # targets, for consolidation_review_queue()'s shared-location signal.
     p131_by_qid: dict[str, set[str]] = {}
+    # qid -> set of qids linked by a documented Wikidata succession statement
+    # (P155 follows, P156 followed by, P1365 replaces, P1366 replaced by),
+    # both directions folded together -- for consolidation_review_queue()'s
+    # "these are two distinct, sequential polities" signal. Same cache
+    # pipeline.enrich_relationships.py already uses to populate `successors`.
+    succession_qids: dict[str, set[str]] = {}
     for row in relationship_rows:
-        if row.get("property") == "P131" and row.get("source") and row.get("target"):
-            p131_by_qid.setdefault(row["source"], set()).add(row["target"])
+        source, prop, target = row.get("source"), row.get("property"), row.get("target")
+        if not source or not target:
+            continue
+        if prop == "P131":
+            p131_by_qid.setdefault(source, set()).add(target)
+        elif prop in {"P155", "P156", "P1365", "P1366"}:
+            succession_qids.setdefault(source, set()).add(target)
+            succession_qids.setdefault(target, set()).add(source)
     type_review_queue = []
 
     def refresh_type_review_queue() -> None:
@@ -480,9 +492,19 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     and p131_by_qid.get(source_qid) and p131_by_qid.get(other_qid)
                     and p131_by_qid[source_qid] & p131_by_qid[other_qid]
                 )
+                # A documented Wikidata succession statement (follows/followed
+                # by/replaces/replaced by) between the two items is direct
+                # evidence they're two distinct, sequential polities, not one
+                # entity under two names -- e.g. Batavian Republic and Batavian
+                # Commonwealth share a "Batavian Commonwealth" alias, but
+                # Wikidata's own P155/P156 chain documents them as successive
+                # states (found live, 31 August 2026).
+                documented_successor = bool(
+                    source_qid and other_qid and other_qid in succession_qids.get(source_qid, set())
+                )
                 if not (
                     same_wikidata
-                    or (exact_name_match and not coordinate_conflict)
+                    or (exact_name_match and not coordinate_conflict and not documented_successor)
                     or (
                         date_overlap and geography_compatible
                         and ((shared_canonical_tokens and name_score >= 60) or name_score >= 88)
@@ -498,7 +520,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     bonus
                     for bonus, condition in (
                         (20, same_wikidata),
-                        (12, exact_name_match and not coordinate_conflict),
+                        (12, exact_name_match and not coordinate_conflict and not documented_successor),
                         (8, geography_match),
                         (8, date_contains),
                         (6, date_overlap),
@@ -506,6 +528,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         (4, type_match),
                         (4, shared_p131),
                         (-25, coordinate_conflict),
+                        (-25, documented_successor),
                     )
                     if condition
                 )
@@ -514,9 +537,12 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     reasons.append("same Wikidata item")
                 if exact_name_match:
                     reasons.append(
-                        "exact canonical name or alias" if not coordinate_conflict
-                        else "shares an alias, but centroids are far apart -- likely coincidental"
+                        "shares an alias, but centroids are far apart -- likely coincidental" if coordinate_conflict
+                        else "shares an alias, but Wikidata documents them as sequential polities (follows/replaces), not the same entity" if documented_successor
+                        else "exact canonical name or alias"
                     )
+                if documented_successor:
+                    reasons.append("Wikidata: documented successor relationship (follows/followed by or replaces/replaced by)")
                 if shared_canonical_tokens:
                     reasons.append(f"shared identity term: {', '.join(sorted(shared_canonical_tokens))}")
                 if geography_match:
@@ -555,9 +581,13 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         "coordinate_distance_km": round(coordinate_km) if coordinate_km is not None else None,
                         "coordinate_conflict": coordinate_conflict,
                         "shared_p131": shared_p131,
+                        "documented_successor": documented_successor,
                         "confidence": (
                             "high" if same_wikidata
-                            or (exact_name_match and geography_compatible and not coordinate_conflict)
+                            or (
+                                exact_name_match and geography_compatible
+                                and not coordinate_conflict and not documented_successor
+                            )
                             else "medium"
                         ),
                         "reasons": reasons,
