@@ -19,7 +19,7 @@ text:
 notes: Editorially identified as a phase or aspect of Czechoslovak Socialist Republic.
 sources:
 - wikidata
-prominence_score: 0
+prominence_score: 9.46
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -38,3 +38,14 @@ manual_overrides:
 - timeline_role
 - visibility_override
 visibility_override: global
+prominence_components:
+  wikidata_reach: 11.67
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 2.78
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 9.46

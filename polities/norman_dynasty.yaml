@@ -18,14 +18,13 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Converted from a period-context record to a polity (sub-polity of
-  kingdom_of_england) on 2026-08-30. 1066 Norman Conquest to 1135, when Stephen
-  of the House of Blois seized the throne. weight_by_era reuses
-  kingdom_of_england's own value at the one century mark (1100) that falls
-  within this span.
+notes: Converted from a period-context record to a polity (sub-polity of kingdom_of_england)
+  on 2026-08-30. 1066 Norman Conquest to 1135, when Stephen of the House of Blois
+  seized the throne. weight_by_era reuses kingdom_of_england's own value at the one
+  century mark (1100) that falls within this span.
 sources:
 - wikidata
-prominence_score: 0
+prominence_score: 32.46
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -48,15 +47,15 @@ relationships:
   source_urls:
   - https://en.wikipedia.org/wiki/Norman_dynasty
 prominence_components:
-  wikidata_reach: 0
+  wikidata_reach: 24.35
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0
-  longevity: 0
+  relationship_centrality: 3.5
+  longevity: 4.61
   editorial_work: 0
   type_uncertainty_penalty: 0
-  date_uncertainty_penalty: 0
+  date_uncertainty_penalty: -0.0
   aggregate_penalty: 0
-  total: 0
+  total: 32.46
 source_urls:
 - https://en.wikipedia.org/wiki/Norman_dynasty

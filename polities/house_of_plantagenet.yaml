@@ -20,13 +20,13 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Converted from a period-context record to a polity (sub-polity of
-  kingdom_of_england) on 2026-08-30. 1154 accession of Henry II to 1485 death of
-  Richard III at Bosworth. weight_by_era reuses kingdom_of_england's own values
-  at the century marks (1200, 1300, 1400) that fall within this span.
+notes: Converted from a period-context record to a polity (sub-polity of kingdom_of_england)
+  on 2026-08-30. 1154 accession of Henry II to 1485 death of Richard III at Bosworth.
+  weight_by_era reuses kingdom_of_england's own values at the century marks (1200,
+  1300, 1400) that fall within this span.
 sources:
 - wikidata
-prominence_score: 0
+prominence_score: 37.29
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -49,15 +49,15 @@ relationships:
   source_urls:
   - https://en.wikipedia.org/wiki/House_of_Plantagenet
 prominence_components:
-  wikidata_reach: 0
+  wikidata_reach: 27.49
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0
-  longevity: 0
+  relationship_centrality: 3.5
+  longevity: 6.3
   editorial_work: 0
   type_uncertainty_penalty: 0
-  date_uncertainty_penalty: 0
+  date_uncertainty_penalty: -0.0
   aggregate_penalty: 0
-  total: 0
+  total: 37.29
 source_urls:
 - https://en.wikipedia.org/wiki/House_of_Plantagenet

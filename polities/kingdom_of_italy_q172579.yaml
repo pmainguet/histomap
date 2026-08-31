@@ -23,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 51.4
+prominence_score: 41.57
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -47,12 +47,12 @@ prominence_components:
   wikidata_reach: 29.73
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 9.83
+  relationship_centrality: 0.0
   longevity: 4.84
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 51.4
+  total: 41.57
 consolidation_status: independent
 linked_era_id: europe_industrial_imperial_world_era

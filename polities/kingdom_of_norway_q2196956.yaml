@@ -25,7 +25,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - seshat
 - wikidata
-prominence_score: 39.24
+prominence_score: 35.74
 visibility_tier: regional
 eligibility: accepted
 geography:
@@ -49,12 +49,12 @@ prominence_components:
   wikidata_reach: 21.94
   authority_coverage: 12
   historical_evidence: 0
-  relationship_centrality: 3.5
+  relationship_centrality: 0.0
   longevity: 6.8
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 39.24
+  total: 35.74
 consolidation_status: independent
 linked_era_id: medieval_europe_era
