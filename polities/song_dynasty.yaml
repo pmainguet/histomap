@@ -64,3 +64,4 @@ visibility_override: global
 manual_overrides:
 - visibility_override
 linked_era_id: east_asian_imperial_era
+government_form: null

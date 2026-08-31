@@ -57,3 +57,4 @@ consolidation_status: same_entity
 consolidated_into: duchy_of_courland_and_semigallia_q156038
 manual_overrides:
 - consolidation
+government_form: duchy

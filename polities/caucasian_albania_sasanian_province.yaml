@@ -65,3 +65,4 @@ entity_type_reviewed_against:
 - subdivision
 subdivision_parent_status: confirmed
 consolidation_status: part_of
+government_form: null

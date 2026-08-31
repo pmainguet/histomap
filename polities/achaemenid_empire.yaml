@@ -61,3 +61,4 @@ visibility_override: global
 manual_overrides:
 - visibility_override
 linked_era_id: classical_antiquity_era
+government_form: null

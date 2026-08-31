@@ -9,4 +9,4 @@
 - Tribe: 5
 - Review queue: 2,706
 - Typed relationships: 1,191
-- Newly migrated relationships: 2
+- Newly migrated relationships: 0

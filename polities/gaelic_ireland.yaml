@@ -66,3 +66,4 @@ prominence_components:
 manual_overrides:
 - entity_type
 linked_era_id: medieval_europe_era
+government_form: null

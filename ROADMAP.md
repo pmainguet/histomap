@@ -9,13 +9,6 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **Work the Wikidata type-eligibility (661) and entity-type classification (2,682) queues** --
-   down from 1,948/3,098 after a 31 August 2026 rules-table expansion closed a large,
-   genuinely-not-ambiguous gap (see STATUS.md). No further safe automation identified: ~350 of
-   the remaining eligibility flags are modern administrative subdivisions correctly gated behind
-   `/subdivision-review`'s parent-confirmation step, and the rest is a long tail of low-count,
-   genuinely ambiguous or obscure types -- ordinary manual review from here, same as any other
-   queue.
 1. **Work the polity → period reclassification queue (98 pending, `/consolidation-review`'s
    "period"/"both" decision).** The comprehensive full-polity-set scan this item called for is
    done (31 August 2026, see STATUS.md): re-running `pipeline/classify_period_roles.py`'s
@@ -35,6 +28,13 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 2. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
 3. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
 4. **Add the linked map**, followed by the print SVG/PDF pipeline.
+5. **Work the Wikidata type-eligibility (661) and entity-type classification (2,682) queues** --
+   down from 1,948/3,098 after a 31 August 2026 rules-table expansion closed a large,
+   genuinely-not-ambiguous gap (see STATUS.md). No further safe automation identified: ~350 of
+   the remaining eligibility flags are modern administrative subdivisions correctly gated behind
+   `/subdivision-review`'s parent-confirmation step, and the rest is a long tail of low-count,
+   genuinely ambiguous or obscure types -- ordinary manual review from here, same as any other
+   queue.
 
 ## Ideas / deferred design questions
 

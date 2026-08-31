@@ -61,3 +61,4 @@ manual_overrides:
 - visibility_override
 - entity_type
 linked_era_id: neolithic_era
+government_form: null

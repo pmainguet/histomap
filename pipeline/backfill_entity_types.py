@@ -62,6 +62,53 @@ CONTEXT_TYPES = {
 # a record as a modern state for the population/GDP extractors.
 SOVEREIGN_QIDS = {"Q6256", "Q3624078"}
 
+# Specific kind of governed political entity, distinct from entity_type -- see
+# Polity.government_form's own comment. Deliberately excludes types that
+# describe recognition status or a geographic/temporal category rather than a
+# form of government (self-proclaimed state, quasi-state, historical
+# unrecognized state, state with limited recognition, historical territory,
+# ancient/historical Chinese state, historic state of Italy, German
+# Confederation/Confederation of the Rhine state, Twelve Vassals). Synonymous
+# QIDs collapse to one label (e.g. ducado -> duchy). Added 31 August 2026,
+# reusing the same research as the wikidata_types.toml eligibility expansion.
+GOVERNMENT_FORM_QIDS = {
+    "Q48349": "empire",
+    "Q417175": "kingdom",
+    "Q3932025": "kingdom",  # Hellenistic kingdom
+    "Q1336152": "princely state",
+    "Q208500": "principality",
+    "Q2494447": "principality",  # part principality
+    "Q20521456": "electorate",  # electoral principate
+    "Q154547": "duchy",
+    "Q57979411": "duchy",  # ducado
+    "Q111748796": "duchy",  # District duchy
+    "Q691981": "duchy",  # Duchies of Silesia
+    "Q1798550": "petty kingdom",
+    "Q353344": "countship",
+    "Q463742": "prince-bishopric",  # Hochstift
+    "Q12759805": "sultanate",
+    "Q331644": "khanate",
+    "Q189898": "emirate",
+    "Q21479969": "protectorate",  # British protectorate
+    "Q164142": "protectorate",
+    "Q1371288": "vassal state",
+    "Q96354653": "beylik",
+    "Q1642488": "chiefdom",
+    "Q2962054": "chiefdom",  # traditional chiefdom in Cameroon
+    "Q426759": "mandate",  # League of Nations mandate
+    "Q133156": "colony",
+    "Q3950801": "satrapy",
+    "Q217177": "taifa",
+    "Q26879763": "client state",  # Napoleonic client state
+    "Q472538": "client state",  # sister republic
+    "Q1625987": "bantustan",
+    "Q18669740": "bantustan",
+    "Q208164": "puppet state",
+    "Q133442": "city-state",
+    "Q148837": "city-state",  # polis
+    "Q57318": "free imperial city",
+}
+
 
 def sovereign_state_qids(direct_types: dict) -> set[str]:
     """QIDs from a wikidata_direct_types.json mapping that are sovereign states."""
@@ -155,6 +202,17 @@ def classify_automated_entity(
     return "polity", "low", [], "no mapped direct type"
 
 
+def classify_government_form(direct_types: set[str]) -> str | None:
+    """Return the specific kind of governed political entity, if Wikidata's direct
+    type maps to one (GOVERNMENT_FORM_QIDS) -- unlike entity_type, this only
+    matches a direct P31, no ancestry inference; a record with no direct match
+    stays None rather than guessing through the subclass hierarchy."""
+    matches = {GOVERNMENT_FORM_QIDS[qid] for qid in direct_types if qid in GOVERNMENT_FORM_QIDS}
+    if not matches:
+        return None
+    return sorted(matches)[0]
+
+
 def classify_entity(
     document: dict, cached: dict, ancestry: dict[str, dict[str, int]] | None = None
 ) -> tuple[str, str, list[str], str]:
@@ -237,6 +295,10 @@ def run() -> dict[str, int]:
         document["entity_type"] = entity_type
         document["entity_type_confidence"] = confidence
         document["entity_type_source_qids"] = source_qids
+        if "government_form" not in set(document.get("manual_overrides", [])):
+            qid = (document.get("external_ids") or {}).get("wikidata")
+            direct = effective_direct_types(cache.get(qid) or {})
+            document["government_form"] = classify_government_form(direct)
         documents.append((path, document))
         counts[entity_type] += 1
         reconsider_subdivision = pending_subdivision and manual_type and entity_type == "polity"

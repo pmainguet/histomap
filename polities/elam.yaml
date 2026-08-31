@@ -70,3 +70,4 @@ prominence_components:
 manual_overrides:
 - entity_type
 linked_era_id: neolithic_era
+government_form: null

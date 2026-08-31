@@ -35,3 +35,4 @@ entity_type: polity
 entity_type_confidence: medium
 entity_type_source_qids: []
 relationships: []
+government_form: null

@@ -65,3 +65,4 @@ consolidation_status: same_entity
 consolidated_into: duchy_of_oldenburg
 manual_overrides:
 - consolidation
+government_form: null

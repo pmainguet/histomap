@@ -183,6 +183,15 @@ class Polity(BaseModel):
     # (the same one rank_candidates uses elsewhere) as a one-time starting
     # point; from here on it's curator-set only, no on-the-fly recomputation.
     linked_era_id: str | None = None
+    # Specific kind of governed political entity (sultanate, khanate, duchy,
+    # principality, ...), distinct from entity_type -- entity_type only
+    # distinguishes polity/civilization/subdivision/micronation/culture/
+    # people/tribe/archaeological_horizon, with no room to record which kind
+    # of polity. Auto-derived from Wikidata direct type where
+    # pipeline/backfill_entity_types.py's GOVERNMENT_FORM_QIDS has a mapping;
+    # None when it doesn't (a plain "country" or "empire" has no more
+    # specific form to record). Editable like any other field once set.
+    government_form: str | None = None
     start: int
     end: int | None = None
     start_confidence: Confidence
@@ -285,6 +294,11 @@ class Period(BaseModel):
     # & Cultures lane periods (which never nest under an era via
     # broader_periods, so have no other era-color signal).
     linked_era_id: str | None = None
+    # See Polity.government_form -- same field, same purpose (e.g. a
+    # "phase or aspect of" period like Ayyubid Sultanate benefits from
+    # recording it was a sultanate). Not auto-populated for periods today;
+    # editable manually.
+    government_form: str | None = None
 
     @field_validator("id")
     @classmethod

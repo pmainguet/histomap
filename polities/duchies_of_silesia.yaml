@@ -62,3 +62,4 @@ consolidation_status: same_entity
 consolidated_into: duchy_of_silesia
 manual_overrides:
 - consolidation
+government_form: null

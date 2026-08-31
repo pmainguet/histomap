@@ -70,3 +70,4 @@ entity_type_reviewed_against:
 - subdivision
 subdivision_parent_status: pending
 consolidation_status: part_of
+government_form: null

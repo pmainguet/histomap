@@ -52,3 +52,4 @@ consolidation_status: same_entity
 consolidated_into: hospitaller_malta
 manual_overrides:
 - consolidation
+government_form: vassal state

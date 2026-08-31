@@ -54,3 +54,4 @@ prominence_components:
   total: 20.23
 manual_overrides:
 - entity_type
+government_form: countship

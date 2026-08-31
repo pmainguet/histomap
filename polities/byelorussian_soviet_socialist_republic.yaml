@@ -61,3 +61,4 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 28.6
+government_form: null

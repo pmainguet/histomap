@@ -58,3 +58,4 @@ manual_overrides:
 - visibility_override
 visibility_override: global
 linked_era_id: iron_age_era
+government_form: city-state

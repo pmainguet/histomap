@@ -66,3 +66,4 @@ visibility_override: global
 manual_overrides:
 - visibility_override
 linked_era_id: europe_industrial_imperial_world_era
+government_form: null

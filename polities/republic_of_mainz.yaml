@@ -53,3 +53,4 @@ prominence_components:
   total: 20.1
 manual_overrides:
 - entity_type
+government_form: client state

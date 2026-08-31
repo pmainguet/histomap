@@ -60,3 +60,4 @@ manual_overrides:
 - visibility_override
 visibility_override: global
 linked_era_id: neolithic_era
+government_form: null
