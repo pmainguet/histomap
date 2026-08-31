@@ -1,10 +1,9 @@
 const dashboard = document.querySelector("#review-dashboard");
 
 const pipelines = [
-  ["source_matching", "/review", "1. Import matching — Seshat → Histomap", "Match incoming Seshat source records to existing canonical Histomap entities before editing the resulting canonical set."],
-  ["consolidation", "/consolidation-review", "2. Resolve identity and chronology", "Decide whether a record is independent, a duplicate, a phase of a specific polity, or a broad period/era shared by many entities."],
-  ["entity_type", "/type-review", "3. Classify entities", "Choose whether each surviving record is a civilization, polity, subdivision, culture, people, tribe, micronation, or archaeological horizon."],
-  ["subdivision_parent", "/subdivision-review", "4. Link subdivisions", "Confirm the containing polity for records classified as subdivisions."],
+  ["consolidation", "/consolidation-review", "1. Resolve identity and chronology", "Decide whether a record is independent, a duplicate, a phase of a specific polity, or a broad period/era shared by many entities."],
+  ["entity_type", "/type-review", "2. Classify entities", "Choose whether each surviving record is a civilization, polity, subdivision, culture, people, tribe, micronation, or archaeological horizon."],
+  ["subdivision_parent", "/subdivision-review", "3. Link subdivisions", "Confirm the containing polity for records classified as subdivisions."],
 ];
 
 async function loadDashboard() {

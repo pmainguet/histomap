@@ -44,9 +44,11 @@ regional eras, and periods as stacked bands, with a toggleable polities band and
 cultures lane), with side-panel editing for reclassifying and correcting records directly. It
 reads a separate, gitignored build artifact (`explore_tree.json`), so it needs at least one
 `make build` (or the equivalent below) to have run before it has anything to show; `make serve`
-already does this for you since it depends on `build`. The Seshat import-matching page is
-available at <http://127.0.0.1:8000/review>, and the editorial review workspaces (consolidation,
-entity-type, subdivision-parent) at <http://127.0.0.1:8000/reviews>. The server binds only to
+already does this for you since it depends on `build`. The editorial review workspaces
+(consolidation, entity-type, subdivision-parent) are at <http://127.0.0.1:8000/reviews>. The
+Seshat-matching review page was retired 31 August 2026 once its queue emptied out
+(`pipeline/reconcile.py` and `pipeline/apply_review_decisions.py` stay as scripts/API hooks for
+whenever new source data needs reconciling again — see ROADMAP.md). The server binds only to
 localhost and exposes a fixed allowlist of pipeline actions.
 
 ## Windows without `make`

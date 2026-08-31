@@ -89,7 +89,7 @@ class UnifiedServerTests(unittest.TestCase):
         for name in (
             "explore.html", "explore.js", "explore_timeline.js", "explore_details.js",
             "geological_epochs.js", "timeline_scale.js", "lane_packing.js", "common.js",
-            "review.html", "type_review.html", "styles.css", "review.js",
+            "type_review.html", "styles.css",
             "type_review.js", "subdivision_review.js",
             "subdivision_review.html",
             "reviews.html", "reviews.js", "consolidation_review.html", "consolidation_review.js",
@@ -128,29 +128,6 @@ class UnifiedServerTests(unittest.TestCase):
                 }
             ),
             encoding="utf-8",
-        )
-        review = {
-            "seshat_id": "S1",
-            "seshat_name": "Source",
-            "start_year": 100,
-            "end_year": 200,
-            "decision": "review",
-            "candidates": [
-                {
-                    "polity_id": "candidate",
-                    "canonical_name": "Candidate",
-                    "total_score": 80,
-                    "name_score": 85,
-                    "date_score": 90,
-                    "geography_score": 50,
-                }
-            ],
-        }
-        (self.root / "reports" / "seshat_reconciliation.jsonl").write_text(
-            json.dumps(review) + "\n", encoding="utf-8"
-        )
-        (self.root / "reports" / "seshat_review_decisions.jsonl").write_text(
-            "", encoding="utf-8"
         )
         (self.root / "reports" / "entity_type_review.jsonl").write_text(
             json.dumps(
@@ -194,7 +171,7 @@ class UnifiedServerTests(unittest.TestCase):
 
     def test_serves_explore_review_and_data(self) -> None:
         self.assertEqual(self.client.get("/explore").status_code, 200)
-        self.assertEqual(self.client.get("/review").status_code, 200)
+        self.assertEqual(self.client.get("/review").status_code, 404)
         self.assertEqual(self.client.get("/type-review").status_code, 200)
         self.assertEqual(self.client.get("/subdivision-review").status_code, 200)
         self.assertEqual(self.client.get("/reviews").status_code, 200)
@@ -209,7 +186,7 @@ class UnifiedServerTests(unittest.TestCase):
         payload = response["pipelines"]
 
         self.assertEqual(payload["entity_type"], 1)
-        self.assertEqual(payload["source_matching"], 1)
+        self.assertNotIn("source_matching", payload)
         self.assertIn("consolidation", payload)
         self.assertIn("subdivision_parent", payload)
         self.assertNotIn("period_role", payload)
@@ -355,73 +332,6 @@ class UnifiedServerTests(unittest.TestCase):
         target = yaml.safe_load((self.root / "polities" / "container.yaml").read_text(encoding="utf-8"))
         self.assertEqual(source["consolidation_status"], "same_entity")
         self.assertIn("Candidate", target["names"]["aliases_en"])
-
-    def test_lists_and_accepts_a_valid_candidate(self) -> None:
-        payload = self.client.get("/api/reviews").json()
-        self.assertEqual(payload["total"], 1)
-        self.assertIn("search=Source", payload["items"][0]["source_links"][0]["url"])
-        self.assertEqual(
-            payload["items"][0]["source_links"][-1],
-            {
-                "label": "Google search",
-                "url": "https://www.google.com/search?q=Source",
-            },
-        )
-        self.assertEqual(
-            payload["items"][0]["candidates"][0]["source_links"][0]["url"],
-            "https://www.wikidata.org/wiki/Q123",
-        )
-        self.assertEqual(
-            payload["items"][0]["candidates"][0]["source_links"][1]["label"],
-            "Wikipedia (English)",
-        )
-        comparison = payload["items"][0]["candidates"][0]["source_links"][-1]
-        self.assertEqual(comparison["label"], "Google comparison")
-        self.assertEqual(
-            comparison["url"],
-            "https://www.google.com/search?q=Candidate%20vs%20Source",
-        )
-        self.assertEqual(payload["items"][0]["candidates"][0]["canonical_start"], 90)
-        self.assertEqual(payload["items"][0]["candidates"][0]["canonical_end"], 210)
-        self.assertEqual(payload["items"][0]["candidates"][0]["canonical_sources"], ["wikidata"])
-        response = self.client.post(
-            "/api/reviews/S1", json={"decision": "accept", "polity_id": "candidate"}
-        )
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(self.client.get("/api/reviews").json()["total"], 0)
-
-    def test_rejects_unknown_histomap_entity(self) -> None:
-        response = self.client.post(
-            "/api/reviews/S1", json={"decision": "accept", "polity_id": "invented"}
-        )
-        self.assertEqual(response.status_code, 422)
-
-    def test_saved_review_is_removed_from_the_cached_queue(self) -> None:
-        response = self.client.post("/api/reviews/S1", json={"decision": "reject"})
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(self.client.get("/api/reviews").json()["total"], 0)
-        self.assertEqual(
-            self.client.post("/api/reviews/S1", json={"decision": "reject"}).status_code,
-            404,
-        )
-
-    def test_accepts_entity_found_outside_proposed_candidates(self) -> None:
-        other = {
-            "id": "other",
-            "canonical_name": "Other Entity",
-            "eligibility": "accepted",
-            "start": 100,
-            "end": 200,
-        }
-        (self.root / "polities" / "other.yaml").write_text(
-            yaml.safe_dump(other), encoding="utf-8"
-        )
-        client = TestClient(create_app(self.root))
-        response = client.post(
-            "/api/reviews/S1", json={"decision": "accept", "polity_id": "other"}
-        )
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json()["polity_id"], "other")
 
     def test_rejects_unknown_pipeline_action(self) -> None:
         self.assertEqual(self.client.post("/api/actions/arbitrary-command").status_code, 404)

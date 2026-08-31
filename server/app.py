@@ -9,7 +9,6 @@ import re
 import sys
 from pathlib import Path
 from typing import Literal
-from urllib.parse import quote
 
 import yaml
 
@@ -19,7 +18,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ValidationError
 from rapidfuzz import fuzz
 
-from pipeline.review_cli import pending_records, polity_metadata, save_decision
+from pipeline.review_cli import polity_metadata
 from pipeline.backfill_entity_types import normalized_relationship_kind, relationship_kind
 from schema import Geography, Period, Polity
 
@@ -30,10 +29,6 @@ ALLOWED_ACTIONS = {
     "build": ["-m", "pipeline.rebuild_timeline"],
     "compute-weights": ["pipeline/compute_weights.py"],
 }
-EQUINOX_URL = (
-    "https://github.com/seshatdb/Equinox_Data/blob/master/"
-    "Equinox_on_GitHub_June9_2022.xlsx"
-)
 CONTINENTS = ["africa", "asia", "europe", "north_america", "south_america", "oceania", "antarctica"]
 ENTITY_TYPE_REVIEW_ORDER = {
     "civilization": 0,
@@ -67,11 +62,6 @@ def english_wikipedia_url(external_ids: dict) -> str | None:
             f"enwiki/{external_ids['wikidata']}"
         )
     return None
-
-
-class ReviewDecision(BaseModel):
-    decision: Literal["accept", "reject", "defer"]
-    polity_id: str | None = None
 
 
 class GeographyUpdate(BaseModel):
@@ -126,62 +116,6 @@ def clean_json(value: object) -> object:
     return value
 
 
-def add_source_links(record: dict, metadata: dict[str, dict]) -> dict:
-    enriched = dict(record)
-    source_name = record.get("seshat_long_name") or record["seshat_name"]
-    enriched["source_links"] = [
-        {
-            "label": "Seshat polity search",
-            "url": "https://www.seshat-db.com/api/core/polities/?search="
-            + quote(str(source_name)),
-        },
-        {"label": "Equinox 2020 workbook", "url": EQUINOX_URL},
-        {
-            "label": "Google search",
-            "url": "https://www.google.com/search?q=" + quote(str(source_name)),
-        },
-    ]
-    enriched_candidates = []
-    for candidate in record.get("candidates", []):
-        enriched_candidate = dict(candidate)
-        document = metadata.get(candidate["polity_id"], {})
-        external_ids = document.get("external_ids") or {}
-        enriched_candidate["canonical_start"] = document.get("start")
-        enriched_candidate["canonical_end"] = document.get("end")
-        enriched_candidate["canonical_sources"] = document.get("sources", [])
-        enriched_candidate["external_ids"] = external_ids
-        links = []
-        if external_ids.get("wikidata"):
-            links.append(
-                {
-                    "label": "Wikidata",
-                    "url": f"https://www.wikidata.org/wiki/{external_ids['wikidata']}",
-                }
-            )
-        wikipedia_url = english_wikipedia_url(external_ids)
-        if wikipedia_url:
-            links.append({"label": "Wikipedia (English)", "url": wikipedia_url})
-        if external_ids.get("seshat"):
-            links.append(
-                {
-                    "label": "Seshat polity search",
-                    "url": "https://www.seshat-db.com/api/core/polities/?search="
-                    + quote(str(document.get("canonical_name", candidate["canonical_name"]))),
-                }
-            )
-        comparison_query = f"{candidate['canonical_name']} vs {source_name}"
-        links.append(
-            {
-                "label": "Google comparison",
-                "url": "https://www.google.com/search?q=" + quote(comparison_query),
-            }
-        )
-        enriched_candidate["source_links"] = links
-        enriched_candidates.append(enriched_candidate)
-    enriched["candidates"] = enriched_candidates
-    return enriched
-
-
 def search_polities(query: str, metadata: dict[str, dict], limit: int = 10) -> list[dict]:
     query = query.strip()
     ranked = []
@@ -226,8 +160,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
     application = FastAPI(title="Histomap", version="0.1.0")
     web_dir = root / "web"
     reports_dir = root / "reports"
-    review_path = reports_dir / "seshat_reconciliation.jsonl"
-    decisions_path = reports_dir / "seshat_review_decisions.jsonl"
     type_review_path = reports_dir / "entity_type_review.jsonl"
     period_role_review_path = reports_dir / "period_role_review.jsonl"
     relationship_cache_path = root / "sources" / "wikidata_relationships.json"
@@ -255,8 +187,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
         if direct_types_path.exists()
         else {}
     )
-    review_queue = pending_records(review_path, decisions_path, metadata=metadata)
-    reviews_by_id = {record["seshat_id"]: record for record in review_queue}
     type_review_queue = []
 
     def refresh_type_review_queue() -> None:
@@ -309,13 +239,12 @@ def create_app(root: Path = ROOT) -> FastAPI:
     job = {"status": "idle", "action": None, "output": "", "returncode": None}
     job_lock = asyncio.Lock()
 
-    def refresh_review_queue() -> None:
+    def refresh_metadata() -> None:
+        """Reload every polities/*.yaml from disk. Only trigger today is a `reconcile`
+        run (kept as an API-triggerable hook, no dedicated review page anymore --
+        see ROADMAP.md's review-workflow-trim note)."""
         metadata.clear()
         metadata.update(polity_metadata(polities_dir))
-        review_queue.clear()
-        review_queue.extend(pending_records(review_path, decisions_path, metadata=metadata))
-        reviews_by_id.clear()
-        reviews_by_id.update((record["seshat_id"], record) for record in review_queue)
 
     def refresh_separate_entities() -> None:
         for path in polities_dir.glob("seshat_*.yaml"):
@@ -959,7 +888,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
         application.add_api_route(route, page, include_in_schema=False)
 
     for page_route, page_file in (
-        ("/review", "review.html"),
         ("/reviews", "reviews.html"),
         ("/explore", "explore.html"),
         ("/consolidation-review", "consolidation_review.html"),
@@ -988,11 +916,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
     ):
         register_build_artifact(artifact_file)
 
-    @application.get("/api/reviews")
-    async def reviews(offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)) -> dict:
-        items = [add_source_links(record, metadata) for record in review_queue[offset : offset + limit]]
-        return clean_json({"total": len(review_queue), "offset": offset, "items": items})
-
     @application.get("/api/review-dashboard")
     async def review_dashboard() -> dict:
         refresh_type_review_queue()
@@ -1008,7 +931,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     and document.get("entity_type") == "subdivision"
                     and document.get("subdivision_parent_status", "pending") != "confirmed"
                 ),
-                "source_matching": len(review_queue),
             },
             "breakdowns": {
                 "consolidation": {
@@ -1402,24 +1324,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
             "entity": entity,
         }
 
-    @application.post("/api/reviews/{seshat_id}")
-    async def decide_review(seshat_id: str, request: ReviewDecision) -> dict:
-        record = reviews_by_id.get(seshat_id)
-        if record is None:
-            raise HTTPException(404, "Review is not pending")
-        if request.decision == "defer":
-            return {"status": "deferred", "seshat_id": seshat_id}
-        decision = {"seshat_id": seshat_id, "decision": request.decision}
-        if request.decision == "accept":
-            target = metadata.get(request.polity_id or "")
-            if target is None or target.get("eligibility") == "excluded":
-                raise HTTPException(422, "polity_id must identify an eligible Histomap entity")
-            decision["polity_id"] = request.polity_id
-        save_decision(decision, decisions_path)
-        reviews_by_id.pop(seshat_id, None)
-        review_queue.remove(record)
-        return {"status": "saved", **decision}
-
     async def run_action(action: str) -> None:
         async with job_lock:
             job.update(status="running", action=action, output="", returncode=None)
@@ -1437,7 +1341,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 returncode=process.returncode,
             )
             if process.returncode == 0 and action == "reconcile":
-                refresh_review_queue()
+                refresh_metadata()
             elif process.returncode == 0 and action == "apply-reviews":
                 refresh_separate_entities()
 
