@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (752 of 4,697 still pending -- now with an automated `suggested_decision` hint on 758 of the remaining candidates, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (749 of 4,697 still pending -- an automated `suggested_decision` hint now covers 174 of the remaining candidates, deliberately conservative after tightening the phase_of signal to require a genuine name/alias match, confirmed live 31 August 2026); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -690,6 +690,33 @@ dates plain don't overlap, independent of whether a Wikidata succession edge exi
 confidence, drops the score bonus, sets `suggested_decision` to `independent`. Verified live:
 Bourbon Restoration/Kingdom of France now correctly shows medium confidence with the independent
 suggestion. Queue-wide: `suggested_decision="independent"` count 134 -> 172. 239/239 tests pass.
+
+**Second follow-up, same day: date-containment tolerance, and requiring a real name match for
+phase_of.** Two more issues caught live. First: Akragas (the ancient Greek city, 580 BCE-406 CE)
+vs. its own continuous successor Agrigento (579 BCE-present, 3km away, same present country) showed
+no suggestion at all, despite being an obviously clear phase_of case by inspection -- `date_contains`
+required an exact `other.start <= document.start`, and a 1-year difference between the two records'
+own start-year estimates (ordinary for ancient chronology) was enough to fail it. Added
+`DATE_CONTAINS_TOLERANCE_YEARS` (10) to both `date_contains` and `reverse_date_contains`; verified
+live, Akragas/Agrigento now correctly suggests `phase_of` (queue-wide: 445 -> 510). Also reordered
+`candidateMarkup()` per direct feedback: the relationship buttons (with the Suggested badge) now
+render before the "Why suggested" text, not after.
+
+Second, more serious: West Virginia vs. Virginia showed "Reviewed -> phase of candidate" suggested
+-- wrong, West Virginia seceded from Virginia in 1863 and both states have coexisted separately
+ever since; it's a partition, not a phase of Virginia's own identity. The suggestion fired from
+`date_contains` + `geography_compatible` + a shared "virginia" *token* (not a real alias match) --
+the same shape `date_contains` alone was trusted for, on the assumption every previously-verified
+phase_of case also happened to carry a genuine `exact_name_match`. Added that requirement
+explicitly: phase_of/candidate_phase_of now also require `exact_name_match`. Confirmed the two
+suggestions surviving the fix are genuine (Sharifian Empire's own alias is literally "Morocco";
+Republic of Venice's aliases include "Venetian Empire", its maritime-empire period) -- not
+coincidences, the requirement doing its job. Queue-wide this was a large, expected drop: 510
+phase_of + 179 candidate_phase_of -> 2 phase_of + 0 candidate_phase_of -- most prior suggestions
+were riding the same weaker token-only signal that produced the West Virginia false positive;
+falling back to null (an ordinary manual review, same as before the suggestion feature existed) is
+the right trade-off over surfacing suggestions this unreliable. West Virginia resolved
+`independent`. 239/239 tests pass; zero console errors live.
 
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
