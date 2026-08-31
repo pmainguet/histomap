@@ -167,6 +167,49 @@
     "civilization_lane": false
   },
   {
+    "id": "akragas_period",
+    "canonical_name": "Akragas",
+    "kind": "historical",
+    "tier": "period",
+    "start": -580,
+    "end": 406,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
+      "present_countries": [
+        "IT"
+      ],
+      "centroid": {
+        "lat": 37.292327369,
+        "lon": 13.593570883
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q3607380"
+    },
+    "notes": "Editorially identified as a phase or aspect of Agrigento.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q3607380"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "ancient_egypt_period",
     "canonical_name": "Ancient Egypt",
     "kind": "historical",

@@ -202,3 +202,11 @@
   source_urls:
   - https://www.wikidata.org/wiki/Q43287
   notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: akragas_period
+  entity_id: agrigento
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q3607380
+  notes: Reviewed record is a dated phase of this canonical polity.
