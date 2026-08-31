@@ -42,13 +42,12 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    `present_countries` but their country isn't yet in `pipeline/historical_regions.py`'s
    ~180-country starter table (cheap and safe to grow incrementally).
 7. **Audit of remaining heuristic/on-the-fly computations — complete (31 August 2026, see
-   STATUS.md); decide which to act on.** Two real gaps found, plus a curation-backlog issue,
-   plus a "fine as-is" set:
-   - **Macro-chapter placement** (`best_chapter_for_polity` in `pipeline/build_explore_tree.py`)
-     decides which of the 9 chapters a civ/culture/people/tribe entity or ordinary polity lands
-     in, by pure date overlap, with **no override field at all** — structurally identical to what
-     `linked_era_id` used to be. Candidate for a new `linked_chapter_id` field, seeded the same
-     way (`pipeline/seed_linked_era_ids.py` is the template).
+   STATUS.md).** Macro-chapter placement (item found highest-priority) is now closed: added
+   `Polity.linked_chapter_id`/`Period.linked_chapter_id`, seeded from the current heuristic
+   (`pipeline/seed_linked_chapter_ids.py`), checked first at all three placement sites ahead of
+   both the `period_links.yaml`-curated path and the heuristic — same pattern `linked_era_id`
+   already established. One real gap remains, plus a curation-backlog issue, plus a "fine as-is"
+   set:
    - **Civilizations & Cultures lane membership for periods** (`_is_civilization_lane_period`)
      falls back to a name-substring guess ("civilization"/"culture" in the canonical name) when
      the one real signal (`authority == CIVILIZATION_BACKDROP_AUTHORITY`, a magic string smuggled
