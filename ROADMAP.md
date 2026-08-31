@@ -9,18 +9,17 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **Still not safe to retire `/` — the 2 blocking gaps are closed, 3 steps remain.** Audited 31
+0. **Retire `/` — the 2 blocking gaps are closed; accept the loss on the rest.** Audited 31
    August 2026 (see STATUS.md); both blocking gaps (geography editing, viewing curated
-   transitions) are now built into `/explore`'s side panel, same day. `/` cannot be deleted
-   without porting its remaining features to `/explore` first — none of the gaps below get
-   dropped, every one needs a home in `/explore` before `/` goes away. What's left of the
-   original 5-step order: (3) port the remaining non-blocking-but-real gaps to `/explore` —
-   free-text entity search, visibility-tier/entity-type/period-kind filters, the named-period
-   picker + `?era=` deep link, era presets/manual date-range input, relationship highlighting on
-   the chart, swimlane collapse/expand, and keyboard-operable bands (`/explore`'s `bandRect` sets
-   no `tabindex`/keydown handling at all); (4) update README.md (still calls `/` the primary
-   workspace root) and the `/reviews`-family nav links (all link to `/`, would 404); (5) only then
-   delete `GET /` and `web/index.html`/`web/app.js`.
+   transitions) are now built into `/explore`'s side panel, same day. Direct decision: any
+   remaining `/`-only feature not already on `/explore` gets dropped, not ported — free-text
+   entity search, visibility-tier/entity-type/period-kind filters, the named-period picker +
+   `?era=` deep link, era presets/manual date-range input, relationship highlighting on the
+   chart, swimlane collapse/expand, and keyboard-operable bands (`/explore`'s `bandRect` sets no
+   `tabindex`/keydown handling at all) are all accepted losses, no build work needed. What's
+   left: (1) update README.md (still calls `/` the primary workspace root) and the
+   `/reviews`-family nav links (all link to `/`, would 404); (2) delete `GET /` and
+   `web/index.html`/`web/app.js`.
 1. **Drive down the consolidation queue** (821 pending as of 31 August 2026, confirmed via
    `/api/review-dashboard` — 59 high-confidence, 713 medium, 76 flagged as polity→period
    candidates; down substantially from the 4,336 an earlier snapshot of this file cited, which had

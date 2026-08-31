@@ -959,7 +959,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
         application.add_api_route(route, page, include_in_schema=False)
 
     for page_route, page_file in (
-        ("/", "index.html"),
         ("/review", "review.html"),
         ("/reviews", "reviews.html"),
         ("/explore", "explore.html"),
@@ -1458,7 +1457,13 @@ def create_app(root: Path = ROOT) -> FastAPI:
 
     @application.get("/web", include_in_schema=False)
     async def old_web_path() -> RedirectResponse:
-        return RedirectResponse("/")
+        return RedirectResponse("/explore")
+
+    @application.get("/", include_in_schema=False)
+    async def root_redirect() -> RedirectResponse:
+        # The original Timeline page (web/index.html + web/app.js) is retired;
+        # /explore is the primary workspace root now. See ROADMAP.md item 0.
+        return RedirectResponse("/explore")
 
     return application
 

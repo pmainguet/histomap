@@ -33,18 +33,21 @@ Validate the canonical records and generate `data.json`:
 make build
 ```
 
-Serve the timeline and review workspace at <http://127.0.0.1:8000/>:
+Serve the workspace at <http://127.0.0.1:8000/>:
 
 ```powershell
 make serve
 ```
 
-The review page is available at <http://127.0.0.1:8000/review>. The curated "Explore" view
-(macro chapters, regional eras, and periods as stacked bands, with a toggleable polities band) is
-available at <http://127.0.0.1:8000/explore> — it reads a separate, gitignored build artifact
-(`explore_tree.json`), so it needs at least one `make build` (or the equivalent below) to have run
-before it has anything to show; `make serve` already does this for you since it depends on `build`.
-The server binds only to localhost and exposes a fixed allowlist of pipeline actions.
+`/` redirects to `/explore`, the primary workspace — a browsable hierarchy (macro chapters,
+regional eras, and periods as stacked bands, with a toggleable polities band and civilizations/
+cultures lane), with side-panel editing for reclassifying and correcting records directly. It
+reads a separate, gitignored build artifact (`explore_tree.json`), so it needs at least one
+`make build` (or the equivalent below) to have run before it has anything to show; `make serve`
+already does this for you since it depends on `build`. The Seshat import-matching page is
+available at <http://127.0.0.1:8000/review>, and the editorial review workspaces (consolidation,
+entity-type, subdivision-parent) at <http://127.0.0.1:8000/reviews>. The server binds only to
+localhost and exposes a fixed allowlist of pipeline actions.
 
 ## Windows without `make`
 

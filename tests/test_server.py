@@ -87,7 +87,9 @@ class UnifiedServerTests(unittest.TestCase):
             json.dumps({"Q123": {"types": ["Q111", "Q222"]}}), encoding="utf-8"
         )
         for name in (
-            "index.html", "review.html", "type_review.html", "styles.css", "app.js", "review.js",
+            "explore.html", "explore.js", "explore_timeline.js", "explore_details.js",
+            "geological_epochs.js", "timeline_scale.js", "lane_packing.js", "common.js",
+            "review.html", "type_review.html", "styles.css", "review.js",
             "type_review.js", "subdivision_review.js",
             "subdivision_review.html",
             "reviews.html", "reviews.js", "consolidation_review.html", "consolidation_review.js",
@@ -185,8 +187,13 @@ class UnifiedServerTests(unittest.TestCase):
     def tearDown(self) -> None:
         self.temporary.cleanup()
 
-    def test_serves_timeline_review_and_data(self) -> None:
-        self.assertEqual(self.client.get("/").status_code, 200)
+    def test_root_redirects_to_explore(self) -> None:
+        response = self.client.get("/", follow_redirects=False)
+        self.assertEqual(response.status_code, 307)
+        self.assertEqual(response.headers["location"], "/explore")
+
+    def test_serves_explore_review_and_data(self) -> None:
+        self.assertEqual(self.client.get("/explore").status_code, 200)
         self.assertEqual(self.client.get("/review").status_code, 200)
         self.assertEqual(self.client.get("/type-review").status_code, 200)
         self.assertEqual(self.client.get("/subdivision-review").status_code, 200)
