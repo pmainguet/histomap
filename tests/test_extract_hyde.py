@@ -6,7 +6,6 @@ import numpy as np
 import xarray as xr
 
 from pipeline.extract_hyde import (
-    aggregate_radius,
     extract_file,
     inspect_dataset,
     radius_cell_indices,
@@ -23,10 +22,6 @@ class HydeExtractionTests(unittest.TestCase):
 
     def test_inspects_common_hyde_names(self) -> None:
         self.assertEqual(inspect_dataset(self.dataset), ("popc", "lat", "lon", "time"))
-
-    def test_radius_sum_uses_population_counts(self) -> None:
-        values = self.dataset["popc"].sel(time=1000)
-        self.assertEqual(aggregate_radius(values, "lat", "lon", 0, 10, 1.1), 6)
 
     def test_precomputes_the_same_radius_cells(self) -> None:
         cells = radius_cell_indices(

@@ -57,19 +57,6 @@ def year_from_path(path: Path) -> int | None:
     return -year if match.group(2).lower() in {"bc", "bce"} else year
 
 
-def aggregate_radius(
-    values: xr.DataArray, latitude: str, longitude: str, lat: float, lon: float, radius: float
-) -> float:
-    grid_lon = values[longitude]
-    target_lon = lon % 360 if float(grid_lon.max()) > 180 else lon
-    lat_delta = values[latitude] - lat
-    lon_delta = abs(grid_lon - target_lon)
-    if float(grid_lon.max()) > 180:
-        lon_delta = xr.where(lon_delta > 180, 360 - lon_delta, lon_delta)
-    mask = (lat_delta**2 + lon_delta**2) <= radius**2
-    return float(values.where(mask).sum(skipna=True).item())
-
-
 def radius_cell_indices(
     latitudes: np.ndarray,
     longitudes: np.ndarray,

@@ -26,7 +26,7 @@ body { margin: 0; }
 .site-header nav { display: flex; gap: .25rem; font: .82rem system-ui, sans-serif; }
 .site-header nav a { padding: .45rem .65rem; color: var(--ink-faint); text-decoration: none; border-radius: 2px; }
 .site-header nav a:hover, .site-header nav a[aria-current="page"] { color: #27251f; background: #eee9de; }
-.parent-search { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.parent-search { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
 .parent-search > div:first-of-type { display: flex; gap: .5rem; margin: .35rem 0 .75rem; }
 .parent-search input { flex: 1; min-width: 10rem; padding: .55rem; }
 
@@ -104,7 +104,7 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .country-checklist label[hidden] { display: none; }
 .country-checklist small { margin-left: auto; color: var(--ink-faint); }
 .geography-editor-actions { display: flex; flex-wrap: wrap; gap: .45rem; align-items: center; }
-.geography-editor-actions .cancel-geography { color: var(--ink); background: white; border-color: var(--rule); }
+.geography-editor-actions .cancel-geography { color: #27251f; background: white; border-color: var(--rule); }
 .geography-save-status { color: var(--ink-faint); }
 .detail-edit { margin: 1rem 0; padding: .8rem; background: #f5f0e5; border: 1px solid var(--rule); font: .78rem system-ui, sans-serif; }
 .detail-edit summary { cursor: pointer; font: 700 .82rem system-ui, sans-serif; }

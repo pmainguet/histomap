@@ -4,7 +4,7 @@ from pathlib import Path
 
 import yaml
 
-from pipeline.compute_prominence import compute, prominence_components, score_prominence
+from pipeline.compute_prominence import compute, prominence_components
 
 
 def document(entity_id: str, score: float, **overrides: object) -> dict:
@@ -45,13 +45,6 @@ class ProminenceComponentsTests(unittest.TestCase):
         self.assertEqual(components["longevity"], 8)
         self.assertEqual(components["editorial_work"], 7)
         self.assertEqual(components["total"], 100)
-
-    def test_present_country_does_not_imply_subordination(self) -> None:
-        common = dict(sitelinks=25, start=1800, end=None, authoritative=False, editorial=False)
-        self.assertEqual(
-            score_prominence(**common, has_parent_country=False),
-            score_prominence(**common, has_parent_country=True),
-        )
 
     def test_uncertainty_and_aggregate_penalties_are_explicit(self) -> None:
         certain = prominence_components(sitelinks=50, start=1000, end=1500)

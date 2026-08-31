@@ -65,28 +65,6 @@ def prominence_components(
     return {key: round(value, 2) for key, value in components.items()}
 
 
-def score_prominence(
-    *,
-    sitelinks: int,
-    start: int,
-    end: int | None,
-    has_parent_country: bool = False,  # retained for API compatibility; intentionally ignored
-    authoritative: bool = False,
-    editorial: bool = False,
-    entity_type: str = "polity",
-    **kwargs: object,
-) -> float:
-    del has_parent_country, entity_type
-    return prominence_components(
-        sitelinks=sitelinks,
-        start=start,
-        end=end,
-        authority_coverage=20 if authoritative else 0,
-        editorial_score=7 if editorial else 0,
-        **kwargs,
-    )["total"]
-
-
 def _load_cache(path: Path) -> dict[str, int]:
     if not path.exists():
         return {}
