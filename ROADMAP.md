@@ -41,16 +41,25 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    far has been tried and come up empty; needs a different approach, if one exists); **69** have
    `present_countries` but their country isn't yet in `pipeline/historical_regions.py`'s
    ~180-country starter table (cheap and safe to grow incrementally).
-7. **Audit remaining heuristic/on-the-fly computations** that affect how polities, civilizations,
-   etc. are classified or displayed, and decide which deserve to become explicit persisted
-   fields. `linked_era_id` was exactly this kind of thing until 31 August 2026 — it used to be
-   recomputed on every build by `_linked_era_id()`'s `rank_candidates()` heuristic in
-   `pipeline/build_explore_tree.py`, silently changing depending on data elsewhere in the set, with
-   no way to correct a bad match short of fighting the heuristic. It's now a plain stored field,
-   seeded once and editable directly. Other candidates likely exist in the same file and in
-   `pipeline/geography_overlap.py`/`pipeline/period_hierarchy.py` (e.g. period tree placement via
-   `broader_periods` + `rank_candidates`, prominence-driven display ordering) — worth listing them
-   out explicitly so each can be judged on its own merits rather than assumed fine by default.
+7. **Audit of remaining heuristic/on-the-fly computations — complete (31 August 2026, see
+   STATUS.md); decide which to act on.** Two real gaps found, plus a curation-backlog issue,
+   plus a "fine as-is" set:
+   - **Macro-chapter placement** (`best_chapter_for_polity` in `pipeline/build_explore_tree.py`)
+     decides which of the 9 chapters a civ/culture/people/tribe entity or ordinary polity lands
+     in, by pure date overlap, with **no override field at all** — structurally identical to what
+     `linked_era_id` used to be. Candidate for a new `linked_chapter_id` field, seeded the same
+     way (`pipeline/seed_linked_era_ids.py` is the template).
+   - **Civilizations & Cultures lane membership for periods** (`_is_civilization_lane_period`)
+     falls back to a name-substring guess ("civilization"/"culture" in the canonical name) when
+     the one real signal (`authority == CIVILIZATION_BACKDROP_AUTHORITY`, a magic string smuggled
+     into a free-text field) isn't set. Candidate for a real `Period.civilization_lane` field.
+   - **Period → regional-era placement** (`rank_candidates` in `build_explore_tree.py`) already
+     has an override field (`Period.broader_periods`) — this is a curation backlog, not a missing
+     field. Best fixed with a one-shot seeding pass, same recipe as `seed_linked_era_ids.py`.
+   - Everything else audited (subdivision-parent suggestions, consolidation fuzzy-matching,
+     geography gap-filling, search ranking, entity-type P279-ancestry inference, automatic
+     period-role conversion) is already proposal-only behind a real human-confirmation step, or
+     already a stored+override-gated field — fine as pure heuristics, no action needed.
 8. **A period can subdivide a civilization/polity, not just an era — the schema and tree only
    support the latter today.** Surfaced by `early_dynastic_mesopotamia`: conceptually it's a
    phase *of Sumer* (the civilization), the same relationship Old Kingdom of Egypt has to

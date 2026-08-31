@@ -558,6 +558,61 @@ country isn't yet in `pipeline/historical_regions.py`'s ~180-country starter tab
 Verified throughout: build validates (4,697 entities), 239/239 tests pass, live chrome-devtools
 checks show zero console errors beyond the pre-existing favicon 404.
 
+### Heuristic/on-the-fly computation audit — 31 August 2026
+
+Requested earlier the same day (see the `linked_era_id` field-conversion work above): a full
+audit of remaining heuristic/on-the-fly computations affecting how polities, civilizations, etc.
+are classified or displayed, to decide which deserve to become explicit persisted fields the same
+way `linked_era_id`/`government_form` did. Dispatched a dedicated investigation across
+`pipeline/build_explore_tree.py`, `pipeline/geography_overlap.py`, `pipeline/period_hierarchy.py`,
+`pipeline/backfill_entity_types.py`, `pipeline/classify_period_roles.py`, `server/app.py`, and the
+client-side geography-bucket dispatch in `web/explore_timeline.js`. Full results now in ROADMAP.md
+item 7; summary:
+
+- **Macro-chapter placement** (`best_chapter_for_polity`/`_best_chapter_for_range` in
+  `build_explore_tree.py`) decides which of the 9 macro chapters a civ/culture/people/tribe-typed
+  entity or ordinary polity lands in, by pure date overlap, whenever it has no curated route
+  through `period_links.yaml`. **No override field exists at all** -- a curator disagreeing with a
+  borderline pick has nothing to set, only indirect/wrong workarounds (add unrelated curation, or
+  edit `start`/`end`). Structurally the closest match to what `linked_era_id` used to be before
+  31 August 2026's fix. Strongest candidate for a new field.
+- **Civilizations & Cultures lane membership for periods** (`_is_civilization_lane_period`) is
+  true when `authority == CIVILIZATION_BACKDROP_AUTHORITY` (a real signal, but a magic string
+  smuggled into a free-text field rather than a proper typed field) **or** -- the actual heuristic
+  -- when "civilization"/"culture" appears as a substring of the period's `canonical_name`. No
+  field exists for the real cases this fails; the only lever is renaming the record (corrupting
+  the display name to fix classification) or hijacking `authority`'s free text.
+- **Period -> regional-era placement** (`rank_candidates` via `build_explore_tree.py`, the same
+  ranking machinery `linked_era_id` used to use) already has a real override field
+  (`Period.broader_periods`) -- most periods just haven't been curated yet
+  (`reports/regional_era_suggestions.jsonl` is still an open queue). Not a missing-field problem;
+  a one-shot seeding pass (matching `pipeline/seed_linked_era_ids.py`'s recipe: convert today's
+  best-guess picks into real `broader_periods` values) would close most of the gap without a
+  schema change.
+- **Entity-type P279-ancestry inference** (`classify_inherited_types` in
+  `backfill_entity_types.py`) already has the right shape: writes to the real `entity_type` field,
+  gated by `manual_overrides`, with an existing review queue (`/type-review`, ~2,682 pending per
+  ROADMAP item 5). One real gap noted: no diff/alert when a rerun flips an *unreviewed* record's
+  inferred classification out from under it between runs -- a silent-drift risk, not a missing
+  correction path.
+- **Automatic `timeline_role: period` conversion** (`pipeline/classify_period_roles.py`'s
+  unconditional auto-convert branch, `has_entity_branch` false + an end date) writes directly to a
+  real stored field and is gated by `manual_overrides`, but has no dedicated "undo" UI action the
+  way the ambiguous cases (routed to `/consolidation-review`'s period/both decision) do -- lower
+  priority, a UI-affordance gap rather than a structural one.
+- **Everything else audited** -- `subdivision_parent_candidates`, `consolidation_review_queue`'s
+  fuzzy-duplicate matching, `search_polities`'s fuzzy search ranking, geography gap-filling
+  (`enrich_geography.py`/`derive_historical_regions.py`, already field+override-gated the right
+  way, same pattern `linked_era_id` graduated to), and the client-side `geoBucketKey`/
+  `countryLaneKey` dispatch in `web/explore_timeline.js` (pure routing on already-authoritative
+  fields, not itself a guess) -- is either proposal-only behind a mandatory human-confirmation
+  step before anything gets written, or doesn't decide classification at all. Fine as pure
+  heuristics; no action needed.
+
+Deliberately did not act on any of these yet -- this was an audit to inform a decision, not an
+implementation pass; ROADMAP.md item 7 carries the three real candidates forward for a decision
+on which (if any) to build.
+
 ### Period/polity dataset cleanup — 30-31 August 2026
 
 A cluster of data-quality fixes, mostly triggered by live `/explore` testing surfacing
