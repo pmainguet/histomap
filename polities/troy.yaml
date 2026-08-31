@@ -46,6 +46,7 @@ geography:
   historical_regions:
   - west_asia
   primary_historical_region: west_asia
+  primary_continent: asia
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

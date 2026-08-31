@@ -32,11 +32,15 @@ eligibility: accepted
 geography:
   continents:
   - oceania
-  present_countries: []
+  present_countries:
+  - US
   centroid:
     lat: 20.987
     lon: -157.863
   confidence: low
+  historical_regions:
+  - north_america
+  primary_historical_region: north_america
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

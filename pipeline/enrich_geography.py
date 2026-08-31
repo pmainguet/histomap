@@ -236,6 +236,31 @@ def geography_category(geography: dict) -> str:
     return "unknown"
 
 
+def resolve_from_centroid(
+    centroid: dict | None, continents: list[str], boundaries: list[dict]
+) -> tuple[str | None, str | None]:
+    """Point-in-polygon (falling back to nearest-coast) against the centroid,
+    returning (iso2_country, continent) -- either half may be None. The
+    continent half only counts as resolved when it's one of the record's own
+    claimed continents (never a made-up pick); the country half is used to
+    complete the present_countries -> historical_region chain
+    (pipeline/historical_regions.py) the normal way, rather than guessing a
+    region straight from continent, which is much coarser and was the whole
+    reason that module's own docstring rules it out. Returns (None, None) --
+    never a made-up pick -- when there's no centroid or the lookup can't
+    resolve (e.g. a point that genuinely straddles a boundary, like Istanbul
+    on the Bosphorus)."""
+    if not centroid or centroid.get("lat") is None or centroid.get("lon") is None:
+        return None, None
+    lon, lat = float(centroid["lon"]), float(centroid["lat"])
+    located = locate_point(lon, lat, boundaries) or locate_near_coast(lon, lat, boundaries)
+    if not located:
+        return None, None
+    iso2, continent = located
+    resolved_continent = continent if continent in continents else None
+    return iso2, resolved_continent
+
+
 def fill_self_continent_fallback(offline: bool = False) -> int:
     """Second, additive pass: for polities that still have empty geography after
     the main P17-chain pass, try the entity's OWN direct Wikidata P30 (continent)
@@ -274,15 +299,68 @@ def fill_self_continent_fallback(offline: bool = False) -> int:
         geography = document.get("geography") or {}
         geography["continents"] = continents
         geography["confidence"] = "low"
-        # No primary_continent: unlike the main pass (which can point at a
-        # located centroid as the genuinely primary continent), a direct P30
-        # claim carries no ranking among multiple continents -- picking one
-        # arbitrarily (e.g. alphabetically) would misrepresent a real signal
-        # gap as a confident answer.
+        # primary_continent/present_countries are left for backfill_geography_from_centroid()
+        # below, which runs right after this and can resolve it from a centroid
+        # when there is one -- a direct P30 claim alone carries no ranking among
+        # several continents, so this pass alone must not guess one.
         document["geography"] = geography
         path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
         filled += 1
     return filled
+
+
+def backfill_geography_from_centroid(offline: bool = False) -> dict[str, int]:
+    """Third, additive pass: for any unlocked polity with a centroid but still
+    missing primary_continent (among several continents) or present_countries,
+    try resolve_from_centroid() against it. Covers records
+    fill_self_continent_fallback() just filled in this same run, and records
+    an earlier run already gave continents to without ever completing the
+    chain. Filling present_countries here (rather than leaving it as a
+    continent-only result) matters beyond cosmetics: it's what lets
+    pipeline/derive_historical_regions.py place the record into an actual
+    historical_region afterwards (west_asia, central_asia, ...) -- Byzantine
+    Empire's centroid resolves to Turkey, which the region table already maps
+    to west_asia; deriving a region straight from continent instead would be
+    much coarser, exactly what that module's docstring already rules out.
+    Confidence stays whatever it already was for existing continents; a newly
+    set present_countries gets "low" (a resolved point, not an asserted P17
+    country). Deliberately LOW-resolution boundaries (Natural Earth 110m,
+    ISO_A2/CONTINENT properties) rather than the "high-resolution" file --
+    that file (datasets/geo-countries) uses a different property schema
+    (ISO3166-1-Alpha-2, no CONTINENT field at all) that locate_point()/
+    locate_near_coast() have never actually matched against; the
+    --only-missing CLI flag has been silently non-functional for this reason.
+    """
+    boundaries = load_boundaries(offline, high_resolution=False)
+    filled_continent = 0
+    filled_country = 0
+    for path in POLITIES_DIR.glob("*.yaml"):
+        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if field_locked(document, "geography"):
+            continue
+        geography = document.get("geography") or {}
+        continents = geography.get("continents") or []
+        centroid = geography.get("centroid")
+        needs_primary = len(continents) > 1 and not geography.get("primary_continent")
+        needs_country = not geography.get("present_countries")
+        if not centroid or not (needs_primary or needs_country):
+            continue
+        iso2, resolved_continent = resolve_from_centroid(centroid, continents, boundaries)
+        changed = False
+        if needs_primary and resolved_continent:
+            geography["primary_continent"] = resolved_continent
+            filled_continent += 1
+            changed = True
+        if needs_country and iso2:
+            geography["present_countries"] = [iso2]
+            geography["confidence"] = "low"
+            filled_country += 1
+            changed = True
+        if not changed:
+            continue
+        document["geography"] = geography
+        path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
+    return {"primary_continent": filled_continent, "present_countries": filled_country}
 
 
 def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
@@ -373,6 +451,9 @@ def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
         by_tier.setdefault(tier, {key: 0 for key in counts})[category] += 1
 
     counts["self_continent_fallback"] = fill_self_continent_fallback(offline)
+    centroid_backfill = backfill_geography_from_centroid(offline)
+    counts["primary_continent_from_centroid"] = centroid_backfill["primary_continent"]
+    counts["present_countries_from_centroid"] = centroid_backfill["present_countries"]
 
     lines = ["# Geography coverage", "", "## Overall", ""]
     lines.extend(f"- {key.replace('_', ' ').title()}: {value:,}" for key, value in counts.items())

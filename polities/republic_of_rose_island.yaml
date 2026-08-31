@@ -39,6 +39,7 @@ geography:
   historical_regions:
   - southern_europe
   primary_historical_region: southern_europe
+  primary_continent: europe
 entity_type: micronation
 entity_type_confidence: medium
 entity_type_source_qids:

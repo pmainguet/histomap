@@ -48,11 +48,16 @@ geography:
   - africa
   - asia
   - europe
-  present_countries: []
+  present_countries:
+  - TR
   centroid:
     lat: 41.0125
     lon: 28.98
   confidence: low
+  primary_continent: asia
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

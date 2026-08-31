@@ -26,11 +26,15 @@ visibility_tier: detailed
 eligibility: accepted
 geography:
   continents: []
-  present_countries: []
+  present_countries:
+  - JM
   centroid:
     lat: 18.016667
     lon: -78.066667
-  confidence: null
+  confidence: low
+  historical_regions:
+  - caribbean
+  primary_historical_region: caribbean
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids: []
