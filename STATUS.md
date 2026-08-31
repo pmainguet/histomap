@@ -20,7 +20,7 @@ including targets that are not yet complete.
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Prioritized web review, provenance, score explanations, source links, saved decisions, pipeline actions, plus new consolidation/subdivision/period-role review UIs | Complete review pass across all four queues; cost estimator and optional structured LLM proposal/diff workflow |
 | 5 — Editorial pass | **Started** | Validated transition model and 5 curated transitions | Roughly 45 more transitions, icons for top ~50, and polished adult/child copy for top ~50 |
-| 6 — Web view | **Mostly complete** | Unified FastAPI server, horizontal SVG timeline, geographic lanes, filters/search, era zoom, drawer, sources, relationship navigation, transition connectors | Reviewed collapsible display groups, linked map, stronger mobile/visual testing, authentication before public write access |
+| 6 — Web view | **Mostly complete** | Unified FastAPI server; `/explore`'s hierarchy timeline (chapter/era/period/polity/civilizations-culture bands) is now the sole web view — `/` (the original flat geographic-lane timeline) was retired 31 August 2026, see below; geographic lane grouping, click-to-zoom, side-panel detail drawer with editing, sources, transitions view | `/`'s free-text search, visibility-tier/entity-type/period-kind filters, era presets/manual date-range input, relationship highlighting on the chart, swimlane collapse/expand, and keyboard-operable bands were deliberately not ported (accepted losses, see ROADMAP.md history) — no longer "still required" so much as "decided against"; reviewed collapsible display groups, linked map, stronger mobile/visual testing, authentication before public write access |
 | 7 — Print poster | **Not started** | — | A1/A0 SVG renderer, methodology/legend footer, PDF export and print test |
 | 8 — Grow with the kid | **Ongoing later work** | Adult/Child selector, extensible text model, period pilot (90 period records as of 31 August 2026 — down from 102 as period→polity conversions removed several) with role review | Substantial content, more reading levels, language UI, family-history layer |
 | 9 — Period ontology | **Foundational layer done** | `Period.tier` schema field, build-time tier/cycle validation, 9 macro chapters, 20 hand-curated + auto-generated modern regional eras, suggestion queues for regional-era and polity period-links, tested `pipeline/period_hierarchy.py` query layer (`top_entities` replaces the retired competitive visibility-tier algorithm), `Geography.historical_regions`/`primary_historical_region` derived from `present_countries` via a starter lookup table | Work the two suggestion queues (`reports/regional_era_suggestions.jsonl`, `reports/period_link_suggestions.jsonl`); grow `pipeline/historical_regions.py`'s ~110-country starter table; replace auto-generated modern regional eras with hand-curated sub-continental ones over time; the timeline UI itself (separate plan) reads `pipeline/period_hierarchy.py` |
@@ -363,6 +363,43 @@ corrected in the user-facing reply, and actually executed for real in the follow
 (`5f3e1d57`) with an accurate message.
 
 242/242 tests pass; every JS/CSS/pipeline change verified live before commit.
+
+### Seshat unmatched-drafts import, stale-figure audit, and `/` retirement — 31 August 2026
+
+**Stale-figure audit.** ROADMAP.md and STATUS.md had both drifted well behind reality — some
+figures (test count, consolidation queue size, Seshat reconciliation status) had gone unrefreshed
+for a long time, not just from this session's work. Re-measured everything live via the running
+server's `/api/review-dashboard`/`/api/reviews` endpoints plus direct dataset/git counts; see the
+"Current measurable state" section below for the corrected figures.
+
+**Seshat unmatched drafts imported.** `reports/seshat_unmatched_drafts.yaml` (34 Seshat source
+records that never matched an existing Histomap entity) had no consumer anywhere in the pipeline.
+New `pipeline/import_seshat_unmatched_drafts.py` (idempotent) writes each as a minimal draft
+`polities/*.yaml` and queues an honest `/type-review` entry for each (proposed_type
+`archaeological_horizon`, confidence `low`, reason states plainly there's no automated Wikidata
+evidence since these records have no Wikidata item at all). Two ids carried a literal `*` from
+their Seshat NGA code (e.g. `IqEDyn*`); sanitized for the id while keeping the original code in
+`external_ids.seshat`. Also recomputed `prominence_score` dataset-wide while at it (hadn't run
+since before this session's period→polity conversions, so ~70 records had stale or
+never-computed scores).
+
+**`/` retired.** Direct decision: any `/`-only feature not already on `/explore` (free-text
+entity search, visibility-tier/entity-type/period-kind filters, the named-period picker + `?era=`
+deep link, era presets/manual date-range input, relationship highlighting on the chart, swimlane
+collapse/expand, keyboard-operable bands) is an accepted loss, not ported — simpler than building
+parity first. Deleted `web/index.html`/`web/app.js`; removed the `("/", "index.html")` page
+registration in `server/app.py` and added a 307 redirect from `/` to `/explore` instead (so
+bookmarks/typed URLs still land somewhere useful, rather than 404ing); the pre-existing `/web` ->
+`/` legacy redirect now points at `/explore` too. Every remaining page's nav dropped the
+"Timeline" link and repointed the brand-logo link from `/` to `/explore`;
+`type_review.html`'s "Open timeline" button relabeled "Open Explore." README.md's quickstart
+rewritten around `/explore` as the primary workspace. New test `test_root_redirects_to_explore`;
+discovered and fixed a real gap while at it -- `/explore` had no page-serving test coverage at
+all before this (the old test only checked `/`). Verified live via chrome-devtools: redirect
+confirmed both via curl and in-browser, nav renders correctly, zero console errors across
+`/explore`, `/reviews`, `/type-review`.
+
+243/243 tests pass throughout.
 
 ### Period/polity dataset cleanup — 30-31 August 2026
 

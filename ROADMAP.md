@@ -9,27 +9,16 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **Retire `/` — the 2 blocking gaps are closed; accept the loss on the rest.** Audited 31
-   August 2026 (see STATUS.md); both blocking gaps (geography editing, viewing curated
-   transitions) are now built into `/explore`'s side panel, same day. Direct decision: any
-   remaining `/`-only feature not already on `/explore` gets dropped, not ported — free-text
-   entity search, visibility-tier/entity-type/period-kind filters, the named-period picker +
-   `?era=` deep link, era presets/manual date-range input, relationship highlighting on the
-   chart, swimlane collapse/expand, and keyboard-operable bands (`/explore`'s `bandRect` sets no
-   `tabindex`/keydown handling at all) are all accepted losses, no build work needed. What's
-   left: (1) update README.md (still calls `/` the primary workspace root) and the
-   `/reviews`-family nav links (all link to `/`, would 404); (2) delete `GET /` and
-   `web/index.html`/`web/app.js`.
-1. **Drive down the consolidation queue** (821 pending as of 31 August 2026, confirmed via
+0. **Drive down the consolidation queue** (821 pending as of 31 August 2026, confirmed via
    `/api/review-dashboard` — 59 high-confidence, 713 medium, 76 flagged as polity→period
    candidates; down substantially from the 4,336 an earlier snapshot of this file cited, which had
    gone stale) — still the largest backlog and the most direct lever on "noisy entities before
    expanding the default view."
-2. **Resolve the 1,948 stuck Wikidata type-eligibility flags** (unchanged, confirmed 31 August
+1. **Resolve the 1,948 stuck Wikidata type-eligibility flags** (unchanged, confirmed 31 August
    2026) and the entity-type classification queue (**3,098 pending**, confirmed live via
    `/api/review-dashboard` after importing the 34 Seshat unmatched drafts — see STATUS.md) — the
    other half of "reduce noisy entities."
-3. **Run a comprehensive polity → period reclassification pass.** The consolidation review
+2. **Run a comprehensive polity → period reclassification pass.** The consolidation review
    queue's "period"/"both" decision (`/consolidation-review`, backed by
    `reports/period_role_review.jsonl` for the `period_kinds` it seeds) already handles this
    decision — a polity whose `timeline_role` should be `period` or `both`, because it's really a
@@ -38,8 +27,7 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    queue (76 of those still open as of 31 August 2026, confirmed live). Look at the full polity set
    (**4,697 records**, confirmed 31 August 2026 after importing the 34 Seshat unmatched drafts —
    see STATUS.md), not just that existing queue, for more candidates the original seeding missed.
-   Note that
-   `Polity.entity_type` already distinguishes civilization/culture/people/tribe/
+   Note that `Polity.entity_type` already distinguishes civilization/culture/people/tribe/
    archaeological_horizon from plain `polity` — this pass is as much about applying that field
    consistently (it's currently under-used) as it is about generating new `periods/*.yaml`
    records; a record correctly typed `entity_type: civilization` but still living as a
@@ -48,11 +36,11 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    scoped by region) for display purposes only — it must never be a signal for `entity_type` or
    `timeline_role` classification. Those decisions come from Wikidata type evidence and editorial
    judgment, not from how prominent or well-documented a record happens to be.
-4. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
-5. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
-6. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
-7. **Add the linked map**, followed by the print SVG/PDF pipeline.
-8. Treat LLM proposals as optional acceleration after estimating cost; the human review decisions
+3. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
+4. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
+5. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
+6. **Add the linked map**, followed by the print SVG/PDF pipeline.
+7. Treat LLM proposals as optional acceleration after estimating cost; the human review decisions
    and canonical YAML remain authoritative.
 
 ## Ideas / deferred design questions
