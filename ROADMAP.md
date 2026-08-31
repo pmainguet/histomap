@@ -41,21 +41,7 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    far has been tried and come up empty; needs a different approach, if one exists); **69** have
    `present_countries` but their country isn't yet in `pipeline/historical_regions.py`'s
    ~180-country starter table (cheap and safe to grow incrementally).
-7. **Audit of remaining heuristic/on-the-fly computations — complete (31 August 2026, see
-   STATUS.md).** Both real gaps found are now closed: `Polity.linked_chapter_id`/
-   `Period.linked_chapter_id` (macro-chapter placement, seeded via
-   `pipeline/seed_linked_chapter_ids.py`) and `Period.civilization_lane` (Civilizations & Cultures
-   lane membership, seeded via `pipeline/seed_civilization_lane_flags.py`) — both checked first at
-   their placement sites, ahead of the old heuristics. One curation-backlog issue remains, plus a
-   "fine as-is" set:
-   - **Period → regional-era placement** (`rank_candidates` in `build_explore_tree.py`) already
-     has an override field (`Period.broader_periods`) — this is a curation backlog, not a missing
-     field. Best fixed with a one-shot seeding pass, same recipe as `seed_linked_era_ids.py`.
-   - Everything else audited (subdivision-parent suggestions, consolidation fuzzy-matching,
-     geography gap-filling, search ranking, entity-type P279-ancestry inference, automatic
-     period-role conversion) is already proposal-only behind a real human-confirmation step, or
-     already a stored+override-gated field — fine as pure heuristics, no action needed.
-8. **A period can subdivide a civilization/polity, not just an era — the schema and tree only
+7. **A period can subdivide a civilization/polity, not just an era — the schema and tree only
    support the latter today.** Surfaced by `early_dynastic_mesopotamia`: conceptually it's a
    phase *of Sumer* (the civilization), the same relationship Old Kingdom of Egypt has to
    Ancient Egypt or Old Babylonian Empire has to Babylonia — but `broader_periods` only
@@ -66,7 +52,7 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    conflated into one mechanism. Needs its own design pass: what should the schema/tree
    support, and how should `/explore` display the distinction (a sub-lane under the
    civilization/polity's own band, rather than nested in the ordinary Period row)?
-9. **Add a lane for main events** -- the specific events that define the start/end of an
+8. **Add a lane for main events** -- the specific events that define the start/end of an
    era, chapter, or period, starting with those. Today a boundary (e.g. Bronze Age
    Collapse ending Mesopotamian Early States) is only implicit in a record's `start`/`end`
    dates; there's no explicit event entity a viewer can click to see what happened, or
@@ -74,7 +60,7 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    source. Needs its own design pass: a new entity/schema for events, how an era/chapter/
    period would reference "the event that ends me," and how `/explore` would display a
    thin events lane against the existing chapter/era/period rows.
-10. **Split `Period` into separate `MacroChapter`/`RegionalEra`/`Period` Pydantic
+9. **Split `Period` into separate `MacroChapter`/`RegionalEra`/`Period` Pydantic
     classes** instead of one `Period` class discriminated by `tier`. Would trade runtime
     validation (Task 2's `validate_period_tiers()` in the period-ontology plan) for
     structural safety (a macro chapter simply couldn't have a `broader_periods` value).

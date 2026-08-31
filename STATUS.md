@@ -613,6 +613,36 @@ Deliberately did not act on any of these yet -- this was an audit to inform a de
 implementation pass; ROADMAP.md item 7 carries the three real candidates forward for a decision
 on which (if any) to build.
 
+**Follow-up, same day: all three built.**
+- `Polity.linked_chapter_id`/`Period.linked_chapter_id` -- checked first at all three
+  chapter-placement sites in `build_explore_tree.py`, ahead of both the `period_links.yaml`-
+  curated path and the heuristic. `pipeline/seed_linked_chapter_ids.py` runs the real
+  `build_explore_tree()` once against the unseeded dataset and reads back which chapter each
+  entity landed under and whether that was curated or heuristic (rather than re-implementing that
+  distinction independently, which would risk drifting from what the real build does). Seeded 835
+  polities, 10 periods. Verified the seeding is visually a no-op via a live `/explore` screenshot
+  before/after.
+- `Period.civilization_lane` -- checked first in `_is_civilization_lane_period()`, ahead of the
+  `CIVILIZATION_BACKDROP_AUTHORITY` signal and the name-substring guess.
+  `pipeline/seed_civilization_lane_flags.py` seeded all 90 periods (not just the True cases -- an
+  explicit False is just as much a fact worth recording).
+- `Period.broader_periods` -- `pipeline/seed_broader_periods.py` converted 7 ordinary periods'
+  heuristic era placement into real values (10 remain genuinely unmatched, a real data gap, not a
+  curation one). Caught and reverted a real mistake from the first run:
+  `periods/early_dynastic_mesopotamia.yaml` had `broader_periods: []` set *deliberately* earlier
+  this session (its real relationship is "phase of Sumer", which the field can't express -- see
+  the still-open "period can subdivide a civilization/polity" item below), and the seeder can't
+  tell that apart from "just not curated yet" since an empty list and an absent one look the same
+  to it. Documented the caution in the script for any future re-run.
+
+All three raw-YAML seeding scripts hit the same tier-normalization gotcha (a period file omitting
+`tier` reads back `None` from `yaml.safe_load`, not the schema's `"period"` default) --
+`seed_linked_era_ids.py` documented it first; each later script repeats the fix on a throwaway
+normalized copy, never letting it leak into what gets written back to disk. 239/239 tests pass
+throughout; build validates cleanly (4,697 entities) after each step; zero console errors live on
+`/explore` after each rebuild. ROADMAP item 7 (the audit itself) is now fully closed and removed
+from the numbered list.
+
 ### Period/polity dataset cleanup — 30-31 August 2026
 
 A cluster of data-quality fixes, mostly triggered by live `/explore` testing surfacing
