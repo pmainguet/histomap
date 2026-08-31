@@ -113,6 +113,15 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .geography-editor-actions { display: flex; flex-wrap: wrap; gap: .45rem; align-items: center; }
 .geography-editor-actions .cancel-geography { color: var(--ink); background: white; border-color: var(--rule); }
 .geography-save-status { color: var(--ink-faint); }
+.detail-edit { margin: 1rem 0; padding: .8rem; background: #f5f0e5; border: 1px solid var(--rule); font: .78rem system-ui, sans-serif; }
+.detail-edit summary { cursor: pointer; font: 700 .82rem system-ui, sans-serif; }
+.detail-edit-row { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin: .5rem 0; }
+.detail-edit-row select { flex: 1; min-width: 0; }
+.detail-raw-edit { margin-top: .7rem; padding-top: .6rem; border-top: 1px solid var(--rule); }
+.detail-raw-edit summary { font-weight: 700; }
+.detail-raw-textarea { box-sizing: border-box; width: 100%; margin-top: .5rem; padding: .5rem; font: .74rem/1.35 ui-monospace, "SF Mono", Consolas, monospace; background: white; border: 1px solid var(--rule); resize: vertical; }
+.detail-edit-status { margin: .5rem 0 0; color: var(--ink-faint); }
+.detail-edit-status.is-error { color: #8c2d2d; }
 .detail-backdrop { position: fixed; z-index: 19; inset: 0; display: block; width: 100%; height: 100%; padding: 0; background: rgb(39 37 31 / 28%); border: 0; opacity: 0; visibility: hidden; transition: opacity .22s ease, visibility 0s linear .22s; }
 .detail-backdrop.is-open { opacity: 1; visibility: visible; transition-delay: 0s; }
 .entity-link { display: inline; padding: 0; color: #8c422d; background: none; border: 0; font: inherit; text-align: left; text-decoration: underline; }

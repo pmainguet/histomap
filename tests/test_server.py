@@ -87,8 +87,8 @@ class UnifiedServerTests(unittest.TestCase):
             json.dumps({"Q123": {"types": ["Q111", "Q222"]}}), encoding="utf-8"
         )
         for name in (
-            "index.html", "review.html", "type_review.html", "period_review.html", "styles.css", "app.js", "review.js",
-            "type_review.js", "subdivision_review.js", "period_review.js",
+            "index.html", "review.html", "type_review.html", "styles.css", "app.js", "review.js",
+            "type_review.js", "subdivision_review.js",
             "subdivision_review.html",
             "reviews.html", "reviews.js", "consolidation_review.html", "consolidation_review.js",
             "review_build.js",
@@ -107,6 +107,8 @@ class UnifiedServerTests(unittest.TestCase):
             "external_ids": {"wikidata": "Q123"},
             "start": 90,
             "end": 210,
+            "start_confidence": "low",
+            "end_confidence": "low",
             "sources": ["wikidata"],
         }
         (self.root / "polities" / "candidate.yaml").write_text(
@@ -555,11 +557,14 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(client.get("/api/type-reviews").json()["total"], 0)
 
-    def test_lists_and_saves_period_role_as_linked_records(self) -> None:
-        payload = self.client.get("/api/period-role-reviews").json()
-        self.assertEqual(payload["total"], 1)
+    def test_convert_to_period_creates_linked_period_when_keeping_entity(self) -> None:
+        # /period-review (and its dedicated /api/period-role-reviews queue
+        # endpoints) was retired -- this timeline_role: "both" capability
+        # (period_links.yaml-linked period *and* the polity stays visible)
+        # is now reached directly via convert-to-period's keep_entity flag,
+        # not through a review queue. See STATUS.md.
         response = self.client.post(
-            "/api/period-role-reviews/candidate", json={"timeline_role": "both"}
+            "/api/polities/candidate/convert-to-period", params={"keep_entity": "true"}
         )
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["period_id"], "candidate_period")
@@ -569,7 +574,59 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertTrue((self.root / "periods" / "candidate_period.yaml").exists())
         links = yaml.safe_load((self.root / "period_links.yaml").read_text(encoding="utf-8"))
         self.assertEqual(links[-1]["entity_id"], "candidate")
-        self.assertEqual(self.client.get("/api/period-role-reviews").json()["total"], 0)
+
+    def test_convert_to_period_defaults_to_demoting_without_a_link(self) -> None:
+        response = self.client.post("/api/polities/candidate/convert-to-period")
+        self.assertEqual(response.status_code, 200)
+        entity = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(entity["timeline_role"], "period")
+        self.assertTrue((self.root / "periods" / "candidate_period.yaml").exists())
+        links = yaml.safe_load((self.root / "period_links.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(links, [])
+
+    def test_update_polity_fields_edits_arbitrary_fields_without_bloating_overrides(self) -> None:
+        response = self.client.patch(
+            "/api/polities/candidate/fields", json={"notes": "edited via panel"}
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["changed"], ["notes"])
+        entity = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(entity["notes"], "edited via panel")
+        self.assertEqual(entity["manual_overrides"], ["notes"])
+
+    def test_update_polity_fields_rejects_invalid_entity_type(self) -> None:
+        response = self.client.patch(
+            "/api/polities/candidate/fields", json={"entity_type": "not_a_real_type"}
+        )
+        self.assertEqual(response.status_code, 422)
+
+    def test_update_polity_fields_cannot_change_id(self) -> None:
+        response = self.client.patch(
+            "/api/polities/candidate/fields", json={"id": "hijacked"}
+        )
+        self.assertEqual(response.status_code, 200)
+        entity = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(entity["id"], "candidate")
+
+    def test_update_period_fields_can_set_tier_and_broader_periods(self) -> None:
+        period_path = self.root / "periods" / "existing_period.yaml"
+        period_path.write_text(
+            yaml.safe_dump({
+                "id": "existing_period", "canonical_name": "Existing", "kind": "historical",
+                "start": 90, "end": 210, "authority": "Editorial", "source_urls": ["https://example.test"],
+            }),
+            encoding="utf-8",
+        )
+
+        response = self.client.patch(
+            "/api/periods/existing_period/fields",
+            json={"tier": "regional_era", "broader_periods": ["macro_chapter_stub"]},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        document = yaml.safe_load(period_path.read_text(encoding="utf-8"))
+        self.assertEqual(document["tier"], "regional_era")
+        self.assertEqual(document["broader_periods"], ["macro_chapter_stub"])
 
 
 if __name__ == "__main__":

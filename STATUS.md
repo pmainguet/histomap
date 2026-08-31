@@ -172,6 +172,55 @@ deliberate context-band-under-a-continuously-existing-polity pattern as the Hous
 Wessex/Plantagenet/Tudor precedent this item's own text already called out as correct-as-is.
 Removed from ROADMAP.md.
 
+### `/explore` side panel editing, and review workspace alignment — 31 August 2026
+
+Investigated (see agent report, not reproduced here) whether the review workspace still let a
+reviewer reclassify an entity (era/period/civilization/polity) with links staying consistent, per
+ROADMAP item 1. Findings: `entity_type` reclassification was well-built and reachable from
+`/reviews` → `/type-review`. `tier` (macro_chapter/regional_era/period) had zero UI and zero API
+endpoint anywhere — hand-edit-YAML only, exactly the workaround the geography-grouping unification
+section above needed throughout. Polity↔Period conversion existed but was split: Period→Polity
+("promote to entity") was link-consistent but only reachable from `/` (Timeline), not `/reviews`;
+Polity→Period (the consolidation queue's "period" decision) was reachable from `/reviews` but only
+covered `timeline_role: "period"`, not `"both"`. `/period-review` (a dedicated period-role review
+page) was already orphaned — 307-redirecting to `/consolidation-review` — with its one useful
+decision already duplicated via consolidation review's own `P` shortcut.
+
+**Resolution, on direct instruction ("I need to be able to edit things via the side panel. The
+review section should just be corrected so that it works in the new context"):**
+
+- **`/explore`'s side panel (`web/explore_details.js`) gained editing.** No longer read-only: an
+  "Edit" section on every polity/period panel offers (a) the same single-field actions `/`'s own
+  drawer already has (set entity type, set period type — reusing the existing, already link-
+  consistent `PATCH .../entity-type` and `PATCH .../kind` endpoints) and conversion actions
+  ("Convert to period" / "Convert to entity", reusing/adding endpoints below), and (b) a general
+  "Edit fields" raw JSON editor covering anything else in the record with no dedicated control
+  (`tier`, `broader_periods`, dates, `weight_by_era`, ...) — the actual gap behind the hand-edit-
+  YAML pattern. The chart's bands (which row/lane something renders in) come from the separately
+  pre-built `explore_tree.json`, not the live-editable `politiesById`/`periodsById` maps these
+  edits update — every save says so explicitly, since it only takes effect after the next build.
+- **New endpoints:** `POST /api/polities/{id}/convert-to-period` (direct, ungated counterpart to
+  the existing `promote-to-entity`, wrapping the same `save_timeline_role` helper the consolidation
+  queue uses; a `keep_entity` flag selects `timeline_role: "both"` instead of `"period"`, preserving
+  the one capability that was otherwise only reachable through the now-retired `/period-review`).
+  `PATCH /api/polities/{id}/fields` and `PATCH /api/periods/{id}/fields` — general-purpose editors:
+  merge submitted fields onto the existing record, validate against the full `Polity`/`Period`
+  schema before writing (422 on failure), track real changes in `manual_overrides` by comparing
+  *normalized* (schema-defaulted) values on both sides rather than raw dicts — the panel's raw
+  editor round-trips through the fully-expanded `/data.json`/`/periods.json` model dump, so a field
+  a human never touched (e.g. `tier`, implicit via its schema default in the hand-authored YAML)
+  would otherwise falsely register as "changed" the moment it becomes explicit in the submission.
+  `id` can never be changed through either endpoint (would desync the record from its filename).
+- **`/period-review` retired outright**, not fixed: removed the page route, `web/period_review.html`/
+  `.js`, and the `/api/period-role-reviews` GET/POST endpoints + `TimelineRoleUpdate` model. The
+  underlying `period_role_queue`/`refresh_period_role_queue` machinery stays — the consolidation
+  review queue's own "period" decision still reads `period_kinds` from it to pick the created
+  period's `kind`.
+- Verified live: entity-type change, "Convert to period", and raw-field save all round-tripped
+  correctly through a running server (each test reverted via `git checkout` afterward); 422 on
+  invalid `entity_type`; `manual_overrides` stayed exactly `["notes"]` for a single real change,
+  confirming the normalized-comparison fix. 243/243 tests pass.
+
 ### Period/polity dataset cleanup — 30-31 August 2026
 
 A cluster of data-quality fixes, mostly triggered by live `/explore` testing surfacing

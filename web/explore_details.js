@@ -1,11 +1,166 @@
-// Informational detail panel for /explore -- mirrors app.js's showDetails/
-// showPeriodDetails (the "/" timeline's panel) but read-only: dates,
-// authority, geography, links. No editing actions (edit geography, edit
-// entity type, edit period type, convert to entity) -- those stay on "/"
-// as curation tools; /explore is a browse view. See ROADMAP.md.
+// Detail + edit panel for /explore -- mirrors app.js's showDetails/
+// showPeriodDetails (the "/" timeline's panel), plus its own editing
+// actions: convert a polity's entity_type or demote it to a period
+// (POST .../convert-to-period), convert a period to an entity/polity
+// (POST .../promote-to-entity), and a general "Edit fields" raw editor
+// (PATCH .../fields) for anything else in the record (tier,
+// broader_periods, dates, ...) that has no dedicated control. See
+// STATUS.md's "review workspace" section for why this replaced the
+// earlier read-only-only design.
+//
+// IMPORTANT: /explore's chart bands (which row/lane something renders in)
+// come from the separately pre-built explore_tree.json, not from the
+// politiesById/periodsById maps these edits update live -- an edit here
+// updates the detail panel and the in-memory cache immediately, but the
+// chart itself only reflects it after the next `build` run. Every save
+// confirmation says so explicitly.
 
 const explorePanel = document.querySelector("#details");
 const explorePanelBackdrop = document.querySelector("#detail-backdrop");
+
+const ENTITY_TYPE_OPTIONS = [
+  "polity", "civilization", "subdivision", "micronation",
+  "culture", "people", "tribe", "archaeological_horizon",
+];
+const PERIOD_KIND_OPTIONS = ["historical", "archaeological", "protohistorical", "prehistorical"];
+
+const REBUILD_NOTE = "Saved. The record is updated; run a build for /explore's chart bands to reflect it.";
+
+async function postJson(url, method, body) {
+  const response = await fetch(url, {
+    method,
+    headers: body === undefined ? undefined : { "Content-Type": "application/json" },
+    body: body === undefined ? undefined : JSON.stringify(body),
+  });
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(payload.detail || `HTTP ${response.status}`);
+  return payload;
+}
+
+function optionsHtml(options, selected) {
+  return options.map((value) =>
+    `<option value="${escapeHtml(value)}"${value === selected ? " selected" : ""}>${escapeHtml(displayTerm(value))}</option>`
+  ).join("");
+}
+
+// Shared by both renderPolityDetails and renderPeriodDetails: the
+// "Convert to..." + "Edit fields" block, and the wiring for both. `kind`
+// is "polity" or "period"; `record` is the current cached document;
+// `onSaved(updatedRecord)` re-renders the panel with fresh data after any
+// successful save, so the displayed details never go stale.
+function editControlsHtml(kind, record) {
+  const convertBlock = kind === "polity"
+    ? `<div class="detail-edit-row">
+         <select class="detail-entity-type-select" name="entity-type" aria-label="Entity type">${optionsHtml(ENTITY_TYPE_OPTIONS, record.entity_type || "polity")}</select>
+         <button class="detail-convert-entity-type" type="button">Set entity type</button>
+       </div>
+       <div class="detail-edit-row">
+         <button class="detail-convert-to-period" type="button">Convert to period</button>
+       </div>`
+    : `<div class="detail-edit-row">
+         <select class="detail-entity-type-select" name="entity-type" aria-label="Entity type">${optionsHtml(ENTITY_TYPE_OPTIONS, "polity")}</select>
+         <button class="detail-convert-to-entity" type="button">Convert to entity</button>
+       </div>
+       <div class="detail-edit-row">
+         <select class="detail-period-kind-select" name="period-kind" aria-label="Period type">${optionsHtml(PERIOD_KIND_OPTIONS, record.kind || "historical")}</select>
+         <button class="detail-set-period-kind" type="button">Set period type</button>
+       </div>`;
+  return `<details class="detail-edit">
+      <summary>Edit</summary>
+      ${convertBlock}
+      <details class="detail-raw-edit">
+        <summary>Edit fields</summary>
+        <textarea class="detail-raw-textarea" name="raw-fields" aria-label="Raw record fields (JSON)" rows="14" spellcheck="false">${escapeHtml(JSON.stringify(record, null, 2))}</textarea>
+        <div class="detail-edit-row">
+          <button class="detail-raw-save" type="button">Save fields</button>
+        </div>
+      </details>
+      <p class="detail-edit-status" role="status"></p>
+    </details>`;
+}
+
+function wireEditControls(kind, record, ctx, onSaved) {
+  // Re-queries the live element every call rather than capturing it once --
+  // onSaved(updated) fully re-renders the panel (so displayed dates/entity
+  // type/etc. reflect the save), which replaces this element; setting the
+  // message before that re-render would just get wiped by it, so every
+  // handler below calls onSaved() first, then setStatus() against the fresh
+  // element that re-render just created.
+  const setStatus = (message, isError) => {
+    const status = explorePanel.querySelector(".detail-edit-status");
+    if (!status) return;
+    status.textContent = message;
+    status.classList.toggle("is-error", Boolean(isError));
+  };
+  const idPath = kind === "polity" ? `/api/polities/${encodeURIComponent(record.id)}` : `/api/periods/${encodeURIComponent(record.id)}`;
+
+  if (kind === "polity") {
+    explorePanel.querySelector(".detail-convert-entity-type").addEventListener("click", async () => {
+      const entityType = explorePanel.querySelector(".detail-entity-type-select").value;
+      try {
+        await postJson(`${idPath}/entity-type`, "PATCH", { entity_type: entityType });
+        const updated = { ...record, entity_type: entityType };
+        ctx.politiesById.set(record.id, updated);
+        onSaved(updated);
+        setStatus(REBUILD_NOTE, false);
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    });
+    explorePanel.querySelector(".detail-convert-to-period").addEventListener("click", async () => {
+      if (!confirm(`Convert "${record.canonical_name}" to a period? It will stop appearing in the Polities row after the next build.`)) return;
+      try {
+        const result = await postJson(`${idPath}/convert-to-period`, "POST");
+        setStatus(`${REBUILD_NOTE} New period id: ${result.period_id}.`, false);
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    });
+  } else {
+    explorePanel.querySelector(".detail-convert-to-entity").addEventListener("click", async () => {
+      const entityType = explorePanel.querySelector(".detail-entity-type-select").value;
+      if (!confirm(`Convert "${record.canonical_name}" to a polity (entity type: ${entityType})? The period record will be deleted after the next build.`)) return;
+      try {
+        const result = await postJson(`${idPath}/promote-to-entity`, "POST", { entity_type: entityType });
+        setStatus(`${REBUILD_NOTE} New polity id: ${result.entity_id}.`, false);
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    });
+    explorePanel.querySelector(".detail-set-period-kind").addEventListener("click", async () => {
+      const kindValue = explorePanel.querySelector(".detail-period-kind-select").value;
+      try {
+        await postJson(`${idPath}/kind`, "PATCH", { kind: kindValue });
+        const updated = { ...record, kind: kindValue };
+        ctx.periodsById.set(record.id, updated);
+        onSaved(updated);
+        setStatus(REBUILD_NOTE, false);
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    });
+  }
+
+  explorePanel.querySelector(".detail-raw-save").addEventListener("click", async () => {
+    const textarea = explorePanel.querySelector(".detail-raw-textarea");
+    let fields;
+    try {
+      fields = JSON.parse(textarea.value);
+    } catch (error) {
+      setStatus(`Invalid JSON: ${error.message}`, true);
+      return;
+    }
+    try {
+      const result = await postJson(`${idPath}/fields`, "PATCH", fields);
+      if (kind === "polity") ctx.politiesById.set(record.id, result.document);
+      else ctx.periodsById.set(record.id, result.document);
+      onSaved(result.document);
+      setStatus(REBUILD_NOTE, false);
+    } catch (error) {
+      setStatus(error.message, true);
+    }
+  });
+}
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (character) => ({
@@ -101,9 +256,11 @@ function renderPeriodDetails(period, ctx) {
       ${(period.successors || []).length ? `<dt>Followed by</dt><dd>${period.successors.map((id) => periodRefButton(periodsById, id)).join(", ")}</dd>` : ""}
       ${linked.length ? `<dt>Linked entities</dt><dd class="detail-links">${linked.map((link) => `${polityRefButton(politiesById, link.entity_id)} <small>${escapeHtml(link.evidence)}, ${escapeHtml(link.confidence)}</small>`).join("<br>")}</dd>` : ""}
       ${externalLinks.length ? `<dt>External pages</dt><dd class="detail-links">${externalLinks.join("<br>")}</dd>` : ""}
-    </dl>`;
+    </dl>
+    ${editControlsHtml("period", period)}`;
 
   wireExplorePanel(ctx, period.start, period.end);
+  wireEditControls("period", period, ctx, (updated) => renderPeriodDetails(updated, ctx));
   explorePanel.querySelectorAll("[data-explore-period-id]").forEach((button) => {
     button.addEventListener("click", () => {
       const target = periodsById.get(button.dataset.explorePeriodId);
@@ -151,9 +308,11 @@ function renderPolityDetails(polity, ctx) {
       ${(polity.sources || []).length ? `<dt>Data sources</dt><dd>${escapeHtml(polity.sources.map(displayTerm).join(", "))}</dd>` : ""}
       ${relevantPeriods.length ? `<dt>Historical periods</dt><dd class="detail-links">${relevantPeriods.map((link) => `${periodRefButton(periodsById, link.period_id)} <small>${escapeHtml(link.evidence)}, ${escapeHtml(link.confidence)}</small>`).join("<br>")}</dd>` : ""}
       ${externalLinks.length ? `<dt>External pages</dt><dd class="detail-links">${externalLinks.join("<br>")}</dd>` : ""}
-    </dl>`;
+    </dl>
+    ${editControlsHtml("polity", polity)}`;
 
   wireExplorePanel(ctx, polity.start, polity.end ?? ctx.domainEnd);
+  wireEditControls("polity", polity, ctx, (updated) => renderPolityDetails(updated, ctx));
   explorePanel.querySelectorAll("[data-explore-polity-id]").forEach((button) => {
     button.addEventListener("click", () => {
       const target = politiesById.get(button.dataset.explorePolityId);

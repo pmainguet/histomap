@@ -16,12 +16,12 @@ import yaml
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
+from pydantic import BaseModel, ValidationError
 from rapidfuzz import fuzz
 
 from pipeline.review_cli import pending_records, polity_metadata, save_decision
 from pipeline.backfill_entity_types import normalized_relationship_kind, relationship_kind
-from schema import Geography
+from schema import Geography, Period, Polity
 
 ROOT = Path(__file__).resolve().parent.parent
 ALLOWED_ACTIONS = {
@@ -106,10 +106,6 @@ class PeriodPromotionUpdate(BaseModel):
 
 class SubdivisionParentUpdate(BaseModel):
     parent_id: str
-
-
-class TimelineRoleUpdate(BaseModel):
-    timeline_role: Literal["entity", "period", "both"]
 
 
 class ConsolidationDecision(BaseModel):
@@ -940,10 +936,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
     async def subdivision_review_page() -> FileResponse:
         return FileResponse(web_dir / "subdivision_review.html")
 
-    @application.get("/period-review", include_in_schema=False)
-    async def period_review_page() -> RedirectResponse:
-        return RedirectResponse("/consolidation-review", status_code=307)
-
     @application.get("/data.json", include_in_schema=False)
     async def data() -> FileResponse:
         path = root / "data.json"
@@ -1113,27 +1105,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
             "subdivision_parent_status": "confirmed",
         }
 
-    @application.get("/api/period-role-reviews")
-    async def period_role_reviews(offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)) -> dict:
-        refresh_period_role_queue()
-        return clean_json(
-            {"total": len(period_role_queue), "offset": offset, "items": period_role_queue[offset : offset + limit]}
-        )
-
-    @application.post("/api/period-role-reviews/{polity_id}")
-    async def decide_period_role(polity_id: str, request: TimelineRoleUpdate) -> dict:
-        refresh_period_role_queue()
-        record = next((item for item in period_role_queue if item["id"] == polity_id), None)
-        if record is None:
-            raise HTTPException(404, "Period-role review is not pending")
-        result = save_timeline_role(polity_id, request.timeline_role, record.get("period_kinds", []))
-        return {
-            "status": "saved",
-            "polity_id": polity_id,
-            "timeline_role": request.timeline_role,
-            "period_id": result["period_id"],
-        }
-
     @application.get("/api/polities/search")
     async def search_all_polities(
         q: str = Query(..., min_length=2), limit: int = Query(10, ge=1, le=25)
@@ -1211,6 +1182,99 @@ def create_app(root: Path = ROOT) -> FastAPI:
             "entity_type_confidence": "high",
             "manual_overrides": document["manual_overrides"],
         }
+
+    @application.post("/api/polities/{polity_id}/convert-to-period")
+    async def convert_polity_to_period(polity_id: str, keep_entity: bool = False) -> dict:
+        """Direct, ungated counterpart to promote-to-entity below -- demotes a
+        polity to a period-role overlay (mirrors the consolidation review
+        queue's "period" decision via the same save_timeline_role helper, but
+        callable for any polity from the /explore side panel, not just one
+        that happens to be queued for consolidation review). `keep_entity`
+        selects timeline_role "both" instead of "period" -- the polity stays
+        visible as its own entity *and* gets a period_links.yaml-linked
+        period companion, for the rare case where the same Wikidata item
+        genuinely has distinct entity and period roles. This was previously
+        only reachable via the now-retired /period-review page; see
+        STATUS.md."""
+        timeline_role = "both" if keep_entity else "period"
+        result = save_timeline_role(polity_id, timeline_role, [])
+        return {
+            "status": "saved", "polity_id": polity_id,
+            "timeline_role": timeline_role, "period_id": result["period_id"],
+        }
+
+    @application.patch("/api/polities/{polity_id}/fields")
+    async def update_polity_fields(polity_id: str, fields: dict) -> dict:
+        """General-purpose editor: merges an arbitrary subset of fields onto
+        the existing record and validates the result against the full Polity
+        schema before writing -- unlike the single-field endpoints above
+        (entity-type, geography), this can edit anything in the YAML file,
+        including fields with no dedicated UI/endpoint (tier equivalents like
+        timeline_role, dates, weight_by_era, etc.). `id` can never be changed
+        this way (would desync the record from its filename)."""
+        path = polities_dir / f"{polity_id}.yaml"
+        if not path.exists():
+            raise HTTPException(404, "Unknown Histomap entity")
+        document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        if document.get("id") != polity_id:
+            raise HTTPException(409, "Polity file ID does not match requested polity")
+        merged = {**document, **fields, "id": polity_id}
+        try:
+            merged_normalized = Polity.model_validate(merged).model_dump(mode="json")
+        except ValidationError as exc:
+            raise HTTPException(422, str(exc)) from exc
+        # Compares normalized (schema-defaulted) values on both sides, not
+        # the raw dicts -- the panel's raw editor round-trips through
+        # /data.json's fully-expanded model dump, so a field a human never
+        # touched (e.g. tier, implicit in the hand-authored YAML via its
+        # schema default) would otherwise show up as "changed" the moment it
+        # becomes explicit in the submission, falsely bloating
+        # manual_overrides.
+        try:
+            original_normalized = Polity.model_validate(document).model_dump(mode="json")
+        except ValidationError:
+            original_normalized = document
+        changed = sorted(
+            key for key in fields
+            if key != "id" and original_normalized.get(key) != merged_normalized.get(key)
+        )
+        if changed:
+            merged["manual_overrides"] = sorted(set(merged.get("manual_overrides") or []) | set(changed))
+        path.write_text(yaml.safe_dump(merged, sort_keys=False, allow_unicode=True), encoding="utf-8")
+        metadata[polity_id] = merged
+        return {"status": "saved", "polity_id": polity_id, "changed": changed, "document": merged}
+
+    @application.patch("/api/periods/{period_id}/fields")
+    async def update_period_fields(period_id: str, fields: dict) -> dict:
+        """Period counterpart to update_polity_fields above -- can edit
+        anything in a period's YAML file, including `tier` and
+        `broader_periods`, neither of which has any other UI/endpoint today."""
+        path = root / "periods" / f"{period_id}.yaml"
+        if not path.exists():
+            raise HTTPException(404, "Unknown Histomap period")
+        document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        if document.get("id") != period_id:
+            raise HTTPException(409, "Period file ID does not match requested period")
+        merged = {**document, **fields, "id": period_id}
+        try:
+            merged_normalized = Period.model_validate(merged).model_dump(mode="json")
+        except ValidationError as exc:
+            raise HTTPException(422, str(exc)) from exc
+        # See update_polity_fields's comment above -- compares normalized
+        # values so an implicit-default field that becomes explicit through
+        # the raw editor's round-trip doesn't falsely register as "changed".
+        try:
+            original_normalized = Period.model_validate(document).model_dump(mode="json")
+        except ValidationError:
+            original_normalized = document
+        changed = sorted(
+            key for key in fields
+            if key != "id" and original_normalized.get(key) != merged_normalized.get(key)
+        )
+        if changed:
+            merged["manual_overrides"] = sorted(set(merged.get("manual_overrides") or []) | set(changed))
+        path.write_text(yaml.safe_dump(merged, sort_keys=False, allow_unicode=True), encoding="utf-8")
+        return {"status": "saved", "period_id": period_id, "changed": changed, "document": merged}
 
     @application.patch("/api/periods/{period_id}/kind")
     async def update_period_kind(period_id: str, request: PeriodKindUpdate) -> dict:
