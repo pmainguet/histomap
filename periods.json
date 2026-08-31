@@ -327,6 +327,48 @@
     "civilization_lane": true
   },
   {
+    "id": "anhalt_bernburg_schaumburg_hoym_period",
+    "canonical_name": "Anhalt-Bernburg-Schaumburg-Hoym",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1718,
+    "end": 1812,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
+      "present_countries": [
+        "DE"
+      ],
+      "centroid": {
+        "lat": 51.783056,
+        "lon": 11.3
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1843786"
+    },
+    "notes": "Editorially identified as a phase or aspect of Anhalt-Bernburg.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1843786"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "antarctica_contemporary_world_era",
     "canonical_name": "Antarctica, Contemporary World",
     "kind": "historical",
@@ -887,6 +929,48 @@
     "civilization_lane": null
   },
   {
+    "id": "duchy_of_opole_and_raciborz_period",
+    "canonical_name": "Duchy of Opole and Racibórz",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1202,
+    "end": 1532,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "PL"
+      ],
+      "centroid": {
+        "lat": 50.6735,
+        "lon": 17.9217
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q5311376"
+    },
+    "notes": "Editorially identified as a phase or aspect of Duchy of Opole.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q5311376"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "early_dynastic_mesopotamia",
     "canonical_name": "Early Dynastic Mesopotamia",
     "kind": "protohistorical",
@@ -1423,6 +1507,48 @@
     "civilization_lane": false
   },
   {
+    "id": "federal_people_s_republic_of_yugoslavia_period",
+    "canonical_name": "Federal People's Republic of Yugoslavia",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1945,
+    "end": 1963,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "balkans"
+      ],
+      "primary_historical_region": "balkans",
+      "present_countries": [
+        "RS"
+      ],
+      "centroid": {
+        "lat": 45.38333333,
+        "lon": 20.83333333
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1290149"
+    },
+    "notes": "Editorially identified as a phase or aspect of Yugoslavia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1290149"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "fertile_crescent_neolithic_era",
     "canonical_name": "Fertile Crescent Neolithic",
     "kind": "historical",
@@ -1458,6 +1584,48 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false
+  },
+  {
+    "id": "free_state_of_schwarzburg_sondershausen_period",
+    "canonical_name": "Free State of Schwarzburg-Sondershausen",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1918,
+    "end": 1920,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
+      "present_countries": [
+        "DE"
+      ],
+      "centroid": {
+        "lat": 51.366666666,
+        "lon": 10.866666666
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1454729"
+    },
+    "notes": "Editorially identified as a phase or aspect of Schwarzburg-Sondershausen.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1454729"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
   },
   {
     "id": "french_first_republic_period",
@@ -1745,6 +1913,48 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false
+  },
+  {
+    "id": "kingdom_of_laos_period",
+    "canonical_name": "Kingdom of Laos",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1947,
+    "end": 1975,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "southeast_asia"
+      ],
+      "primary_historical_region": "southeast_asia",
+      "present_countries": [
+        "LA"
+      ],
+      "centroid": {
+        "lat": 17.966666666,
+        "lon": 102.6
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q870055"
+    },
+    "notes": "Editorially identified as a phase or aspect of Laos.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q870055"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
   },
   {
     "id": "kofun_period",
@@ -2966,6 +3176,49 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false
+  },
+  {
+    "id": "republic_of_alexandria_period",
+    "canonical_name": "Republic of Alexandria",
+    "kind": "historical",
+    "tier": "period",
+    "start": 816,
+    "end": 827,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "asia"
+      ],
+      "primary_continent": "africa",
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "EG"
+      ],
+      "centroid": {
+        "lat": 31.2,
+        "lon": 29.916667
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q20108771"
+    },
+    "notes": "Editorially identified as a phase or aspect of Alexandria.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q20108771"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
   },
   {
     "id": "rhodes_q104383185_period",

@@ -1,0 +1,29 @@
+id: republic_of_alexandria_period
+canonical_name: Republic of Alexandria
+kind: historical
+start: 816
+end: 827
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - asia
+  present_countries:
+  - EG
+  centroid:
+    lat: 31.2
+    lon: 29.916667
+  confidence: medium
+  primary_continent: africa
+  historical_regions:
+  - north_africa
+  primary_historical_region: north_africa
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q20108771
+notes: Editorially identified as a phase or aspect of Alexandria.
+source_urls:
+- https://www.wikidata.org/wiki/Q20108771

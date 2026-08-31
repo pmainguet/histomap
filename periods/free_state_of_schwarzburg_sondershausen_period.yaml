@@ -1,0 +1,27 @@
+id: free_state_of_schwarzburg_sondershausen_period
+canonical_name: Free State of Schwarzburg-Sondershausen
+kind: historical
+start: 1918
+end: 1920
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - DE
+  centroid:
+    lat: 51.366666666
+    lon: 10.866666666
+  confidence: low
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q1454729
+notes: Editorially identified as a phase or aspect of Schwarzburg-Sondershausen.
+source_urls:
+- https://www.wikidata.org/wiki/Q1454729

@@ -210,3 +210,51 @@
   source_urls:
   - https://www.wikidata.org/wiki/Q3607380
   notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: duchy_of_opole_and_raciborz_period
+  entity_id: duchy_of_opole
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q5311376
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: anhalt_bernburg_schaumburg_hoym_period
+  entity_id: anhalt_bernburg
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1843786
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: federal_people_s_republic_of_yugoslavia_period
+  entity_id: yugoslavia
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1290149
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: republic_of_alexandria_period
+  entity_id: alexandria
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q20108771
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: free_state_of_schwarzburg_sondershausen_period
+  entity_id: schwarzburg_sondershausen
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1454729
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: kingdom_of_laos_period
+  entity_id: laos
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q870055
+  notes: Reviewed record is a dated phase of this canonical polity.
