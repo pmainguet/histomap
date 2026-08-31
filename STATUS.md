@@ -286,6 +286,84 @@ closed.
 244/244 tests pass throughout; every data change rebuilt and verified live in a running browser
 before commit.
 
+### `linked_era_id` made explicit, codebase-wide simplify pass, and JS dedup — 31 August 2026
+
+**`linked_era_id` converted from heuristic to an explicit, editable field.** The
+geography-grouping-unification section above's era-linked coloring relied on `_linked_era_id()`
+recomputing a best-guess era match on every build, via the same `rank_candidates` heuristic used
+for ordinary period placement — silently reshuffling depending on unrelated data changes
+elsewhere in the set, with no way to correct a bad match short of fighting the heuristic (this is
+exactly what surfaced Indus Valley Civilization not sharing Mesopotamia's color, and led to
+finding a real bug: `bronze_age_era.yaml` carried a stray `historical_regions: [east_asia]`
+left over from a demoted child era, blocking `geography_matches()`'s region-overlap preference
+from ever matching non-East-Asian civ-lane items against it — every other overarching era
+correctly has no `historical_regions` at all; fixed by removing the field). Per direct
+instruction ("this link should be editable, not based on heuristic"): added `linked_era_id: str |
+None` to both `Polity` and `Period` in `schema.py`, removed `_linked_era_id()` from
+`build_explore_tree.py` entirely (both civ-lane entry builders now just read the stored field),
+and added a new one-shot `pipeline/seed_linked_era_ids.py` (idempotent — only fills an unset
+field) that seeded roughly 800 polities and 10 periods from the retired heuristic as a starting
+point, so the transition didn't blank out existing coloring. The field is editable through
+`/explore`'s side panel raw-fields JSON editor, same mechanism as any other field with no
+dedicated control.
+
+**Codebase-wide `/simplify` pass**, per direct request to look for dead code, convoluted logic,
+and duplicated concepts across the whole codebase (dispatched to the `code-simplifier` agent, plus
+follow-up decisions made directly against its findings):
+- Deleted `pipeline/backfill_missing_geography.py` (373 lines, zero references repo-wide) and
+  `pipeline/report_period_pilot.py` (54 lines, its one-shot report generator; the historical
+  `reports/period_pilot_summary.md` it produced stays, same treatment as the backfill script's own
+  historical reports).
+- Removed `score_prominence()` (`pipeline/compute_prominence.py`) and `aggregate_radius()`
+  (`pipeline/extract_hyde.py`) — both superseded functions kept alive only by their own tests;
+  deleted alongside their tests.
+- Introduced `CURRENT_YEAR = datetime.now(timezone.utc).year` in `schema.py`, replacing four
+  independent hardcoded `2026` sentinels (`compute_prominence.py`, `generate_modern_regional_eras.py`,
+  `reconcile.py`, `suggest_period_links.py`) that all meant "today, for an open-ended entity's
+  current age" — a genuinely different concept from `YEAR_MAX = 2100`, the dataset's fixed
+  modeled-timeline ceiling, which stays untouched and hardcoded on purpose.
+- Trimmed `seed_regional_eras.py`'s 48-line per-row removal changelog comment down to a 7-line
+  summary pointing at STATUS.md/git history instead.
+- Fixed two live `web/styles.css` rules referencing undefined custom properties (`var(--line)` →
+  `var(--rule)`; `var(--ink)` → a literal color, since `:root` never defines `--ink`).
+- Investigated and deliberately left two things as-is, with reasoning recorded rather than
+  changed: `review.html` still loads `review.js` directly rather than the shared
+  `review_build.js` module the other `/reviews`-family pages use, because `review.js`'s build
+  button shares `startAction`/`pollJob`/`setActionButtonState` machinery with a second, distinct
+  "Apply review decisions" button that `review_build.js` has no equivalent for — consolidating
+  would have risked a functional regression for a cosmetic win. The six Makefile targets the
+  agent flagged as candidates for retirement were kept, also with reasoning recorded.
+- Server-side (`server/app.py`): collapsed 7 near-identical page routes and 5 near-identical
+  build-artifact routes into `register_page`/`register_build_artifact` loops; factored
+  `save_merged_fields()` out from the two `/fields` endpoints and `write_period_record()`/
+  `append_period_link()` out from `save_consolidation`/`save_timeline_role`.
+- Frontend: consolidated `escapeHtml`, `displayTerm`, `svgEl`, and the four byte-identical
+  `/reviews`-family `formatYear` implementations into a new `web/common.js`, a classic
+  (non-module) script loaded first on every page. Both classic scripts (the `/explore` family)
+  and ES modules (`app.js`, the `/reviews` family) reach its globals via normal JS scope-chain
+  lookup with no page needing to change how it loads scripts. `app.js` keeps a local `const
+  svgElement = svgEl` alias so its own call sites needed no renaming. Two `formatYear` variants
+  were deliberately left alone as genuinely different, not accidental duplicates: `app.js`'s own
+  (no null-handling — its callers never pass one) and `explore_timeline.js`'s own (adds
+  locale-formatted thousands separators on top of the shared null/BCE/CE handling). Verified live
+  via chrome-devtools: zero console errors on `/`, `/explore`, `/reviews`, `/consolidation-review`,
+  `/type-review`, and `/subdivision-review`.
+- Deleted dead CSS selectors the agent also flagged: the `.nav-menu` dropdown block (no
+  matching markup anywhere) and `.empty`/`.score-breakdown` (both orphaned).
+
+**Process note.** Dispatching the `code-simplifier` agent without worktree isolation, in the same
+working directory as concurrent uncommitted edits, caused a `git stash`-based collision that
+reverted an in-progress `bronze_age_era.yaml` fix and a `ROADMAP.md` edit — the agent itself
+detected both as out-of-scope changes and reverted them cleanly at its own initiative rather than
+silently keep them, preserving the reasoning in its final report; both were reapplied once it
+finished. Separately, one commit message (`317655ab`) claimed four of the items above (the
+`review.html` decision, `score_prominence`/`aggregate_radius` removal, the `seed_regional_eras.py`
+comment trim) were done when they had only been planned — caught via direct `grep` verification,
+corrected in the user-facing reply, and actually executed for real in the follow-up commit
+(`5f3e1d57`) with an accurate message.
+
+242/242 tests pass; every JS/CSS/pipeline change verified live before commit.
+
 ### Period/polity dataset cleanup — 30-31 August 2026
 
 A cluster of data-quality fixes, mostly triggered by live `/explore` testing surfacing

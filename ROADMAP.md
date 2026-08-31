@@ -19,18 +19,16 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    handling at all) — build or explicitly accept the loss for each; (4) update README.md (still
    calls `/` the primary workspace root) and the `/reviews`-family nav links (all link to `/`,
    would 404); (5) only then delete `GET /` and `web/index.html`/`web/app.js`.
-1. Do a proper `/simplify` pass to see what could be removed, trimmed, simplified: dead code,
-   convoluted logic, very similar data concepts that could be merged, etc.
-2. **Close out Seshat reconciliation** — only 69 records left (35 review + 34 unmatched); the
+1. **Close out Seshat reconciliation** — only 69 records left (35 review + 34 unmatched); the
    cheapest queue left to finish. Review decisions are durable and must not be overwritten by
    pipeline reruns.
-3. **Drive down the consolidation queue** (4,336 of 4,669 untriaged) — now the largest backlog and
+2. **Drive down the consolidation queue** (4,336 of 4,669 untriaged) — now the largest backlog and
    the most direct lever on "noisy entities before expanding the default view," given the
    duplicate/phase-record rate found in the 333 already reviewed.
-4. **Resolve the 1,948 stuck Wikidata type-eligibility flags** and the 3,222-record entity-type
+3. **Resolve the 1,948 stuck Wikidata type-eligibility flags** and the 3,222-record entity-type
    classification queue — the other half of "reduce noisy entities," and unmoved since the last
    snapshot.
-5. **Run a comprehensive polity → period reclassification pass.** The consolidation review
+4. **Run a comprehensive polity → period reclassification pass.** The consolidation review
    queue's "period"/"both" decision (`/consolidation-review`, backed by
    `reports/period_role_review.jsonl` for the `period_kinds` it seeds) already handles this
    decision — a polity whose `timeline_role` should be `period` or `both`, because it's really a
@@ -46,12 +44,12 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    scoped by region) for display purposes only — it must never be a signal for `entity_type` or
    `timeline_role` classification. Those decisions come from Wikidata type evidence and editorial
    judgment, not from how prominent or well-documented a record happens to be.
-6. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
-7. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
-8. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
-9. **Add the linked map**, followed by the print SVG/PDF pipeline.
-10. Treat LLM proposals as optional acceleration after estimating cost; the human review decisions
-    and canonical YAML remain authoritative.
+5. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
+6. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
+7. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
+8. **Add the linked map**, followed by the print SVG/PDF pipeline.
+9. Treat LLM proposals as optional acceleration after estimating cost; the human review decisions
+   and canonical YAML remain authoritative.
 
 ## Ideas / deferred design questions
 
@@ -80,6 +78,16 @@ Considered, deliberately not done, with the concrete trigger for revisiting:
   conflated into one mechanism. Needs its own design pass: what should the schema/tree
   support, and how should `/explore` display the distinction (a sub-lane under the
   civilization/polity's own band, rather than nested in the ordinary Period row)?
+- **Audit remaining heuristic/on-the-fly computations that affect how polities, civilizations,
+  etc. are classified or displayed, and decide which deserve to become explicit persisted
+  fields.** `linked_era_id` was exactly this kind of thing until 31 August 2026 — it used to be
+  recomputed on every build by `_linked_era_id()`'s `rank_candidates()` heuristic in
+  `pipeline/build_explore_tree.py`, silently changing depending on data elsewhere in the set, with
+  no way to correct a bad match short of fighting the heuristic. It's now a plain stored field,
+  seeded once and editable directly. Other candidates likely exist in the same file and in
+  `pipeline/geography_overlap.py`/`pipeline/period_hierarchy.py` (e.g. period tree placement via
+  `broader_periods` + `rank_candidates`, prominence-driven display ordering) — worth listing them
+  out explicitly so each can be judged on its own merits rather than assumed fine by default.
 - **Add a lane for main events** -- the specific events that define the start/end of an
   era, chapter, or period, starting with those. Today a boundary (e.g. Bronze Age
   Collapse ending Mesopotamian Early States) is only implicit in a record's `start`/`end`
