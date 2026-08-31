@@ -529,6 +529,16 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     and (document.get("end") is None or abs(document["end"] - other["end"]) <= 5)
                 )
                 possible_qid_conflict = same_wikidata and not dates_roughly_equal
+                # A shared alias between two DISTINCT Wikidata items whose
+                # dates plain don't overlap is the "reused the name, different
+                # era" shape -- Free City of Danzig/Duchy of Limburg (resolved
+                # by hand earlier this session) and Bourbon Restoration in
+                # France/Kingdom of France (the restored monarchy genuinely
+                # was called "Kingdom of France" again, 24 years after the
+                # first Kingdom of France record's own end date). Distinct
+                # from documented_successor, which needs an explicit Wikidata
+                # P155/P156/P1365/P1366 edge -- not every such pair has one.
+                no_overlap_alias_reuse = exact_name_match and not same_wikidata and not date_overlap
                 if not (
                     same_wikidata
                     or (exact_name_match and not coordinate_conflict and not documented_successor)
@@ -547,7 +557,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     bonus
                     for bonus, condition in (
                         (20, same_wikidata and not possible_qid_conflict),
-                        (12, exact_name_match and not coordinate_conflict and not documented_successor),
+                        (12, exact_name_match and not coordinate_conflict and not documented_successor and not no_overlap_alias_reuse),
                         (8, geography_match),
                         (8, date_contains),
                         (6, date_overlap),
@@ -556,6 +566,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         (4, shared_p131),
                         (-25, coordinate_conflict),
                         (-25, documented_successor),
+                        (-25, no_overlap_alias_reuse),
                         (-15, possible_qid_conflict),
                     )
                     if condition
@@ -567,6 +578,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     reasons.append(
                         "shares an alias, but centroids are far apart -- likely coincidental" if coordinate_conflict
                         else "shares an alias, but Wikidata documents them as sequential polities (follows/replaces), not the same entity" if documented_successor
+                        else "shares an alias with a distinct Wikidata item and non-overlapping dates -- likely the same name reused for a different era" if no_overlap_alias_reuse
                         else "exact canonical name or alias"
                     )
                 if documented_successor:
@@ -609,7 +621,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     suggested_decision = None
                 elif same_wikidata:
                     suggested_decision = "same_entity"
-                elif documented_successor or coordinate_conflict:
+                elif documented_successor or coordinate_conflict or no_overlap_alias_reuse:
                     suggested_decision = "independent"
                 elif date_contains and geography_compatible:
                     suggested_decision = "phase_of"
@@ -638,9 +650,10 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         "shared_p131": shared_p131,
                         "documented_successor": documented_successor,
                         "possible_qid_conflict": possible_qid_conflict,
+                        "no_overlap_alias_reuse": no_overlap_alias_reuse,
                         "suggested_decision": suggested_decision,
                         "confidence": (
-                            "high" if not possible_qid_conflict
+                            "high" if not possible_qid_conflict and not no_overlap_alias_reuse
                             and (
                                 same_wikidata
                                 or (
