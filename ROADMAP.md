@@ -36,8 +36,11 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    `timeline_role` classification. Those decisions come from Wikidata type evidence and editorial
    judgment, not from how prominent or well-documented a record happens to be.
 2. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
+3. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
 4. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
 5. **Add the linked map**, followed by the print SVG/PDF pipeline.
+6. Treat LLM proposals as optional acceleration after estimating cost; the human review decisions
+   and canonical YAML remain authoritative.
 
 ## Ideas / deferred design questions
 
