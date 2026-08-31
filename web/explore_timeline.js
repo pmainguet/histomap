@@ -338,6 +338,58 @@ function allPolitiesFlat(tree) {
   return tree.chapters.flatMap((chapter) => Object.values(chapter.polities_by_continent).flat());
 }
 
+// Whether an item has a single, real present-day country -- used to rank
+// "no clear country" (__unknown/__multiple) entries before named-country
+// entries wherever countries are ordered (both the sub-bucket items within
+// one geography bucket, and Country mode's own country sub-headers).
+function hasCountry(item) {
+  const key = countryLaneKey(item);
+  return key !== "__unknown" && key !== "__multiple";
+}
+function countryKeySort(keys) {
+  return [...keys].sort((a, b) => {
+    const rankA = a === "__unknown" || a === "__multiple" ? 0 : 1;
+    const rankB = b === "__unknown" || b === "__multiple" ? 0 : 1;
+    if (rankA !== rankB) return rankA - rankB;
+    return countryLaneLabel(a).localeCompare(countryLaneLabel(b));
+  });
+}
+
+// A polity/civilization entry's prominence_score (periods carry no such
+// field, so they -- and any polity missing the field -- fall back to 0,
+// which then just falls through to the start-date tiebreak below).
+function prominenceOf(item) {
+  return typeof item.prominence_score === "number" ? item.prominence_score : 0;
+}
+
+// The one sort order used everywhere items share a lane-packed bucket:
+// continent/Asia-sub-region, then present-day country (entries with no
+// single clear country first -- see hasCountry/countryKeySort), then most
+// prominent first, then earliest-start first as the final tiebreak. Used
+// for the per-continent-bucket sort (continentGroupedLayout), the per-
+// country-sub-bucket sort (geoCountryGroupedLayout -- geo/country are
+// already tied within one sub-bucket there, so this only adds the
+// prominence/start ordering), and the flat "None" mode sort
+// (flatLaneLayout) -- so e.g. Jomon and Yayoi (same East Asia bucket, same
+// Japan country) always land in adjacent lanes in every grouping mode, not
+// just "Country" mode's own nested sub-headers.
+function geoClusterSort(a, b) {
+  const geoA = geoSortKey(geoBucketKey(a));
+  const geoB = geoSortKey(geoBucketKey(b));
+  if (geoA !== geoB) return geoA < geoB ? -1 : 1;
+  const hasA = hasCountry(a);
+  const hasB = hasCountry(b);
+  if (hasA !== hasB) return hasA ? 1 : -1;
+  if (hasA) {
+    const countryA = countryLaneLabel(countryLaneKey(a));
+    const countryB = countryLaneLabel(countryLaneKey(b));
+    if (countryA !== countryB) return countryA < countryB ? -1 : 1;
+  }
+  const promDiff = prominenceOf(b) - prominenceOf(a);
+  if (promDiff !== 0) return promDiff;
+  return a.start - b.start; // numeric, so BCE (negative) years compare correctly
+}
+
 // Continent-grouped layout ("Continent" mode): buckets an already-global
 // (post cross-chapter-fix), flat item list by geoBucketKey, then lane-packs
 // each bucket's items globally. Used for the Period, Polities, and
@@ -355,7 +407,7 @@ function continentGroupedLayout(items, scale, laneHeight, groupBy) {
   }
   const continents = sortGeoKeys(buckets.keys());
   const rows = continents.map((continent) => {
-    const sorted = [...buckets.get(continent)].sort((a, b) => a.start - b.start);
+    const sorted = [...buckets.get(continent)].sort(geoClusterSort);
     const lanes = packIntoLanes(sorted, getRange);
     return { continent, lanes };
   });
@@ -384,9 +436,9 @@ function geoCountryGroupedLayout(items, scale, laneHeight) {
   const geoKeys = sortGeoKeys(geoBuckets.keys());
   const groups = geoKeys.map((geoKey) => {
     const countryBuckets = geoBuckets.get(geoKey);
-    const countryKeys = [...countryBuckets.keys()].sort((a, b) => countryLaneLabel(a).localeCompare(countryLaneLabel(b)));
+    const countryKeys = countryKeySort(countryBuckets.keys());
     const countries = countryKeys.map((countryKey) => {
-      const sorted = [...countryBuckets.get(countryKey)].sort((a, b) => a.start - b.start);
+      const sorted = [...countryBuckets.get(countryKey)].sort(geoClusterSort);
       const lanes = packIntoLanes(sorted, getRange);
       return { country: countryKey, lanes };
     });
@@ -402,29 +454,12 @@ function geoCountryGroupedLayout(items, scale, laneHeight) {
 // Flat (non-grouped) lane layout, used for the Era row always (plain
 // start-ascending order, no geography clustering intent), and for the
 // Period/Polities & Cultures rows when groupBy is "none" (geography-
-// clustering sort, see geoClusterSortKey below).
+// clustering sort, see geoClusterSort above).
 function flatLaneLayout(items, scale, laneHeight, sortFn = (a, b) => a.start - b.start) {
   const getRange = labelAwareFootprint(scale);
   const sorted = [...items].sort(sortFn);
   const lanes = packIntoLanes(sorted, getRange);
   return { kind: "flat", lanes, height: lanes.length * laneHeight };
-}
-
-// packIntoLanes' greedy placement only checks real start/end overlap, so
-// feeding it items pre-sorted by geography (continent/Asia sub-split, then
-// country, then start) still produces a fully correct, non-overlapping lane
-// assignment -- but same-geography items now land in the same or adjacent
-// lanes, one after another, giving a visually clustered read even with no
-// group headers drawn (Group by "None" still shows no continent/country
-// labels, per the control's own semantics -- see renderHierarchyTimeline).
-function geoClusterSort(a, b) {
-  const geoA = geoSortKey(geoBucketKey(a));
-  const geoB = geoSortKey(geoBucketKey(b));
-  if (geoA !== geoB) return geoA < geoB ? -1 : 1;
-  const countryA = countryLaneLabel(countryLaneKey(a));
-  const countryB = countryLaneLabel(countryLaneKey(b));
-  if (countryA !== countryB) return countryA < countryB ? -1 : 1;
-  return a.start - b.start; // numeric, so BCE (negative) years compare correctly
 }
 
 // Dispatches to the right layout function for the current groupBy mode.
@@ -467,6 +502,11 @@ function drawContinentGroupedRow(svg, scale, rows, y, laneHeight, cls, onZoom, w
   const getFill = opts.getFill || (() => null);
   const getKind = opts.getKind || (() => "period");
   const getCls = opts.getCls || (() => cls);
+  // Continent mode's "(Country)" label suffix (see itemDisplayLabel) -- the
+  // layout pass already accounts for its width in lane-packing footprint
+  // (labelAwareFootprint's getLabel), but the actual rendered label/title
+  // text needs its own callback here, or the suffix never appears on screen.
+  const getLabel = opts.getLabel || ((item) => item.canonical_name);
   let rowY = y;
   rows.forEach(({ continent, lanes }, index) => {
     if (index > 0) drawRegionSeparator(svg, width, rowY - 2);
@@ -476,10 +516,11 @@ function drawContinentGroupedRow(svg, scale, rows, y, laneHeight, cls, onZoom, w
     rowY += REGION_HEADER_HEIGHT;
     lanes.forEach((lane, laneIndex) => {
       lane.forEach((item) => {
+        const displayLabel = getLabel(item);
         bandRect(svg, {
           x: scale.x(item.start), y: rowY + laneIndex * laneHeight,
           width: scale.width(item.start, item.end), height: laneHeight - 2,
-          cls: `hierarchy-band ${getCls(item)}`.trim(), title: item.canonical_name, label: item.canonical_name,
+          cls: `hierarchy-band ${getCls(item)}`.trim(), title: displayLabel, label: displayLabel,
           fill: getFill(item),
           onZoom: { handler: onZoom, kind: getKind(item), id: item.id, start: item.start, end: item.end ?? domainEnd },
         });
@@ -648,6 +689,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   drawGroupedRow(svg, scale, periodLayout, y, periodLaneHeight, "hierarchy-band-period", onZoom, width, tree.axis.domain_end, {
     getFill: (item) => eraColor(eraColorMap, item.era_id),
     getKind: () => "period",
+    getLabel: (item) => itemDisplayLabel(item, groupBy),
   });
   y += periodRowHeight + rowGap;
   sepY = y - rowGap / 2;
@@ -659,6 +701,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
     drawGroupedRow(svg, scale, civLayout, y, civLaneHeight, "hierarchy-band-civilization", onZoom, width, tree.axis.domain_end, {
       getFill: (item) => eraColor(eraColorMap, item.linked_era_id),
       getKind: (item) => (item.source === "polity" ? "polity" : "period"),
+      getLabel: (item) => itemDisplayLabel(item, groupBy),
     });
     y += civLayout.height + rowGap;
     sepY = y - rowGap / 2;
@@ -670,6 +713,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   if (showPolities && politiesRowHeight > 0) {
     drawGroupedRow(svg, scale, politiesLayout, y, polityLaneHeight, "hierarchy-band-polity", onZoom, width, tree.axis.domain_end, {
       getKind: () => "polity",
+      getLabel: (item) => itemDisplayLabel(item, groupBy),
     });
     drawTierLabel(svg, "Polities", prevSepY, height);
   }
