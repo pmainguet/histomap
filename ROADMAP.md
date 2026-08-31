@@ -9,26 +9,49 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **Consider retiring the `/` Timeline page** (and any pipeline/server logic that exists only to
-    support it) if `/explore` has fully superseded it and nothing else depends on that code path.
-    The "browse vs. curate" line that used to justify keeping `/` around has partly dissolved:
-    `web/explore_details.js` is no longer read-only (see STATUS.md) — it now covers entity-type/
-    period-kind edits, polity↔period conversion, and a general raw-field editor, reusing most of
-    the same endpoints `/`'s own drawer calls. What's left to actually check before deleting
-    anything: whether `/`'s geography editor and any other still-`/`-only affordance have a
-    `/explore` equivalent yet, and whether any server route is `/`-only-reachable in practice.
-1. Do a proper `/simplify` pass to see what could be removed, trimmed, simplified: dead code,
+0. **Not safe to retire `/` yet — audited 31 August 2026, concrete gaps found.** `/explore`'s side
+   panel now matches or beats `/` on the write actions they share (entity-type, period-kind,
+   polity↔period conversion — plus two `/explore`-only additions, convert-to-period and the raw-
+   field editor, that `/` doesn't have). But `/` still has real capability `/explore` doesn't:
+   **blocking** — geography editing (`PATCH /api/polities/{id}/geography` + `/api/options/geography`
+   have no `/explore` UI at all) and viewing curated transitions (`/transitions.json` is never
+   loaded by `/explore` — an entire data type, splits/merges/successions, is invisible there);
+   **non-blocking but real** — free-text entity search, visibility-tier/entity-type/period-kind
+   filters, the named-period picker + `?era=` deep link, era presets/manual date-range input,
+   relationship highlighting on the chart, swimlane collapse/expand, and keyboard-operable bands
+   (`/explore`'s `bandRect` sets no `tabindex`/keydown handling at all). No server route is fully
+   dead either way, but `GET /transitions.json`/`GET /api/options/geography`/
+   `PATCH .../geography` would lose their only UI consumer if `/` were deleted now. Every
+   `/reviews`-family page links to `/` in its nav (would 404), and README.md still calls `/` the
+   primary workspace root. Order to actually retire it: (1) build a geography editor into the
+   `/explore` side panel (reuse `app.js`'s `geographyEditorMarkup`/`saveGeography` pattern), (2)
+   load `/transitions.json` into `/explore` and add a transition detail view, (3) decide on search/
+   filters/era-presets/`?era=`/keyboard-access — build or explicitly accept the loss for each, (4)
+   update README.md and the `/reviews`-family nav links, (5) only then delete `GET /` and
+   `web/index.html`/`web/app.js`.
+1. **Trim the Makefile down to targets actually still used.** `build`/`serve`/`test`/`format`/
+   `lint`/`check`/`validate` are clearly still live; a long tail of one-shot pipeline-extraction
+   targets (`extract`, `extract-seshat`, `extract-maddison`, `extract-hyde`,
+   `filter-wikidata-types`, `cache-wikidata-type-ancestors`, `classify-entity-types`,
+   `import-wikidata`, `reconcile`, `apply-reviews`, `review`, `spotcheck`, `compute-prominence`,
+   `compute-weights`, `enrich-relationships`, `enrich-geography`, `enrich-missing-geography`,
+   `period-pilot`, `audit-civilizations`, `seed-regional-eras`, `generate-modern-regional-eras`,
+   `suggest-regional-eras`, `suggest-period-links`, `period-hierarchy-report`,
+   `derive-historical-regions`) were mostly run once during initial dataset construction and may
+   not be invoked day-to-day anymore. Needs confirmation of which are genuinely dead versus still
+   needed for a future re-import/re-enrichment pass before removing any of them.
+2. Do a proper `/simplify` pass to see what could be removed, trimmed, simplified: dead code,
    convoluted logic, very similar data concepts that could be merged, etc.
-2. **Close out Seshat reconciliation** — only 69 records left (35 review + 34 unmatched); the
+3. **Close out Seshat reconciliation** — only 69 records left (35 review + 34 unmatched); the
    cheapest queue left to finish. Review decisions are durable and must not be overwritten by
    pipeline reruns.
-3. **Drive down the consolidation queue** (4,336 of 4,669 untriaged) — now the largest backlog and
+4. **Drive down the consolidation queue** (4,336 of 4,669 untriaged) — now the largest backlog and
    the most direct lever on "noisy entities before expanding the default view," given the
    duplicate/phase-record rate found in the 333 already reviewed.
-4. **Resolve the 1,948 stuck Wikidata type-eligibility flags** and the 3,222-record entity-type
+5. **Resolve the 1,948 stuck Wikidata type-eligibility flags** and the 3,222-record entity-type
    classification queue — the other half of "reduce noisy entities," and unmoved since the last
    snapshot.
-5. **Run a comprehensive polity → period reclassification pass.** The consolidation review
+6. **Run a comprehensive polity → period reclassification pass.** The consolidation review
    queue's "period"/"both" decision (`/consolidation-review`, backed by
    `reports/period_role_review.jsonl` for the `period_kinds` it seeds) already handles this
    decision — a polity whose `timeline_role` should be `period` or `both`, because it's really a
@@ -44,11 +67,11 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    scoped by region) for display purposes only — it must never be a signal for `entity_type` or
    `timeline_role` classification. Those decisions come from Wikidata type evidence and editorial
    judgment, not from how prominent or well-documented a record happens to be.
-6. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
-7. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
-8. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
-9. **Add the linked map**, followed by the print SVG/PDF pipeline.
-10. Treat LLM proposals as optional acceleration after estimating cost; the human review decisions
+7. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
+8. **Accept display groups** for major historical sequences and expose collapse/expand behavior.
+9. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
+10. **Add the linked map**, followed by the print SVG/PDF pipeline.
+11. Treat LLM proposals as optional acceleration after estimating cost; the human review decisions
     and canonical YAML remain authoritative.
 
 ## Ideas / deferred design questions
