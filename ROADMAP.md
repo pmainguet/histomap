@@ -16,20 +16,18 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    `/subdivision-review`'s parent-confirmation step, and the rest is a long tail of low-count,
    genuinely ambiguous or obscure types -- ordinary manual review from here, same as any other
    queue.
-1. **Run a comprehensive polity → period reclassification pass.** The consolidation review
-   queue's "period"/"both" decision (`/consolidation-review`, backed by
-   `reports/period_role_review.jsonl` for the `period_kinds` it seeds) already handles this
-   decision — a polity whose `timeline_role` should be `period` or `both`, because it's really a
-   cultural sequence, archaeological horizon, or context span rather than a weight-bearing
-   political entity — but it currently only covers the 94 records originally seeded into that
-   queue (76 of those still open as of 31 August 2026, confirmed live). Look at the full polity set
-   (**4,697 records**, confirmed 31 August 2026 after importing the 34 Seshat unmatched drafts —
-   see STATUS.md), not just that existing queue, for more candidates the original seeding missed.
-   Note that `Polity.entity_type` already distinguishes civilization/culture/people/tribe/
-   archaeological_horizon from plain `polity` — this pass is as much about applying that field
-   consistently (it's currently under-used) as it is about generating new `periods/*.yaml`
-   records; a record correctly typed `entity_type: civilization` but still living as a
-   weight-bearing polity band is itself a candidate for this queue.
+1. **Work the polity → period reclassification queue (98 pending, `/consolidation-review`'s
+   "period"/"both" decision).** The comprehensive full-polity-set scan this item called for is
+   done (31 August 2026, see STATUS.md): re-running `pipeline/classify_period_roles.py`'s
+   existing Wikidata-ancestry signal across all 4,697 polities found the queue essentially
+   unchanged (94 -> 80 candidates, so the original seeding wasn't actually missing much), and a
+   new second signal -- entity_type already civilization/culture/people/tribe/
+   archaeological_horizon but still `timeline_role: entity` -- added 23 more (Babylonia, Maya
+   civilization, Gaelic Ireland, Xiongnu, and others). Both signals only *queue* candidates for a
+   human period/both decision, never auto-convert on the entity_type signal alone (entity_type
+   being confirmed doesn't mean period-vs-entity modeling was decided -- Babylonia is a
+   documented case of "confirmed civilization, deliberately kept weight-bearing"). What's left is
+   ordinary manual review of the 98.
    **Constraint:** `prominence_score` ranks polities against each other (most-to-least prominent,
    scoped by region) for display purposes only — it must never be a signal for `entity_type` or
    `timeline_role` classification. Those decisions come from Wikidata type evidence and editorial

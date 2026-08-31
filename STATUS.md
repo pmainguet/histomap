@@ -477,6 +477,32 @@ section above), these turned out to be a fundamentally different, much safer kin
   239/239 tests pass; build validates cleanly (4,697 entities); zero console errors on `/explore`
   and `/reviews`.
 
+### Comprehensive polity → period reclassification scan — 31 August 2026
+
+Closed ROADMAP's "run a comprehensive scan across the full polity set, not just the 94-record
+seed" item. `pipeline/classify_period_roles.py` already scanned every polity for one signal
+(Wikidata's own period-type ancestry, auto-converting the unambiguous cases and queueing the
+mixed ones) -- re-running it, now benefiting from the entity-type rules expansion above, found
+the queue essentially unchanged (94 -> 80 candidates), meaning the original seeding wasn't
+actually missing much on that signal.
+
+Added a second, independent candidate source directly addressing the item's other half: a record
+already classified `entity_type` civilization/culture/people/tribe/archaeological_horizon (a
+context-type, not a weight-bearing political actor by the project's own convention) but still
+modeled `timeline_role: entity`. Found 23 (Babylonia, Maya civilization, Gaelic Ireland, Xiongnu,
+Hephthalites, and others). Deliberately not auto-converted, even though most already carry a
+confirmed `entity_type` manual override -- that override only confirms the *kind* of thing,
+not whether it should be period-vs-entity modeled; Babylonia is a documented case from earlier
+this session of "confirmed civilization, deliberately kept weight-bearing." Queued into the same
+`period_role_review.jsonl` mechanism for the existing human period/both decision in
+`/consolidation-review`.
+
+period_role queue: 80 -> 103 total; live `/consolidation-review` "active" count 75 -> 98 pending.
+Verified live: Babylonia and the others render correctly with the new reason text
+("entity_type is civilization, not a weight-bearing political actor by convention, but still
+modeled as timeline_role: entity"), zero console errors. 239/239 tests pass; build validates
+cleanly.
+
 ### Period/polity dataset cleanup — 30-31 August 2026
 
 A cluster of data-quality fixes, mostly triggered by live `/explore` testing surfacing
@@ -606,8 +632,8 @@ numbers elsewhere in this file or in ROADMAP.md.)*
   `archaeological_horizon`, confidence `low`, reason states plainly there's no automated Wikidata
   evidence behind the proposal since these records have no Wikidata item at all). Closes the
   ROADMAP item that used to sit here.
-- Entity consolidation: **827 pending** (confirmed via `/api/review-dashboard`: 60 high-confidence,
-  718 medium, 75 flagged as polity→period candidates) — down substantially from the 4,336 this
+- Entity consolidation: **845 pending** (confirmed via `/api/review-dashboard`: 60 high-confidence,
+  718 medium, 98 flagged as polity→period candidates) — down substantially from the 4,336 this
   file and ROADMAP.md had both been citing from a much older, unrefreshed snapshot.
 - Wikidata type-eligibility: **661** still flagged `review` across canonical `polities/*.yaml`,
   down from 1,948 after the 31 August 2026 rules-table expansion (see above) closed a large
@@ -615,9 +641,10 @@ numbers elsewhere in this file or in ROADMAP.md.)*
 - Entity-type classification (polity/civilization/culture/people/tribe/archaeological_horizon):
   **2,682 pending** (confirmed live), down from 3,098 after the same rules-table expansion.
 - Subdivision-parent classification: **2 pending** (confirmed live via `/api/review-dashboard`).
-- Period-role (polity→period reclassification) queue: **94** ever seeded into
-  `reports/period_role_review.jsonl`, **75 still open** per the live consolidation-queue
-  breakdown.
+- Period-role (polity→period reclassification) queue: **103** ever seeded into
+  `reports/period_role_review.jsonl` (94 from the original Wikidata-ancestry signal plus 23 from
+  a new entity_type-based signal added 31 August 2026, minus a few already resolved), **98 still
+  open** per the live consolidation-queue breakdown.
 - Also recomputed `prominence_score`/`prominence_components` dataset-wide twice this stretch
   (`pipeline/compute_prominence.py` hadn't run since before this session's period→polity
   conversions, then again after the type-eligibility/entity-type rules expansion shifted
