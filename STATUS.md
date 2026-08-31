@@ -223,6 +223,69 @@ review section should just be corrected so that it works in the new context"):**
 
 Merged to `main` (fast-forward, `aeef81c9`). ROADMAP item 1 removed as closed by this work.
 
+### `/explore` geography editor, transitions view, Makefile trim, and more live-testing fixes — 31 August 2026
+
+Continued live-testing after the merge above surfaced more fixes, a live-testing feedback batch of
+data reclassifications, and closed two of ROADMAP item 0's blocking gaps.
+
+**Continent-mode lane packing fixed:** `continentGroupedLayout` used to lane-pack a whole continent
+bucket's items together, so two different countries' items could land in the same lane whenever
+their dates didn't overlap (unlabeled "Old Kingdom" sharing a row with "Kingdom of Aksum
+(Ethiopia)"). Now packs each present-day-country sub-group separately (no-clear-country groups
+first, via `countryKeySort`) and stacks those lane sets — costs a few more lanes but keeps every
+row visually one country at a time. Country mode was already correct; only Continent mode needed
+this.
+
+**Data reclassifications**, all via the new side-panel convert/fields endpoints or direct YAML
+edits, each reviewed individually: Han dynasty (deleted — its `phase_of` link pointed at the wrong,
+unrelated "Han" state, Q1574130 vs. the real dynasty's Q7209; `western_han`/`eastern_han` polities
+already cover it correctly), Tibet under Yuan administrative rule and 5 Commonwealth realm records
++ Union of South Africa (period → plain polity), East Punjab (period → subdivision polity, parent:
+`punjab`), 29 more modern-era `phase_of`/`part_of_periodization` companion periods from Early
+Modern Global Connections onward (Russian Empire, German Reich, Nazi Germany, Czechoslovak
+Republic, etc. — spot-checked every target for a Han-style mismatch first, none found), Elam and
+Pyu city-states (civilization → polity), Viking Age (routed to civilization level via the same
+explicit `civilization-as-backdrop` authority marker as Ancient Egypt/Mesopotamia/Chinese Empire),
+Mesopotamian Early States era (deleted outright as a duplicate of `mesopotamia_period`, same
+treatment as Egyptian Early States earlier), Norwegian Jarldom of Orkney (geography fix — had
+Antarctica as a continent and Norway instead of the UK as present-day country). Two conversions
+that appeared without a traceable request (`nationalist_zone_period`, `spain_under_joseph_
+bonaparte_period` — likely the user's own side-panel testing) were caught and reverted cleanly,
+including restoring their `period_links.yaml` entries verbatim from HEAD.
+
+**"Build timeline" button** added to `/explore`, reusing `review_build.js` (already shared by
+`/reviews`) — same `/api/actions/build` polling, no new server code. Starts hidden; every
+successful side-panel save (via a new `ctx.onEdit` callback) reveals it, since `explore_tree.json`
+is a separate pre-built artifact and a side-panel edit has no visible effect on the chart until a
+build runs.
+
+**ROADMAP item 0's two blocking gaps closed, same day as the audit:**
+- **Geography editor** in `/explore`'s side panel (polities only), closely mirroring `app.js`'s
+  `geographyEditorMarkup`/`syncContinentsFromCountries`/`saveGeography` — continent checkboxes,
+  primary-continent select, filterable present-country checklist with continent auto-inference.
+  Found and fixed a real bug in the shared `PATCH /api/polities/{id}/geography` endpoint along the
+  way: every save silently dropped `historical_regions`/`primary_historical_region` (discovered via
+  the Orkney fix above) — now preserves whatever was already there. New test:
+  `test_geography_update_preserves_historical_regions`.
+- **Transitions view**: `/explore` now fetches `/transitions.json` (previously never loaded) and
+  shows a Transitions line (year, label, optional source link) on any polity that appears in a
+  transition's `from`/`to`, matching `app.js`'s own inline treatment exactly.
+
+ROADMAP item 0 updated to reflect the 2 closed / 3 remaining steps (non-blocking gaps, README/nav
+updates, then the actual deletion) rather than treating retirement as still fully open.
+
+**Makefile trimmed** to the daily-driver targets only (`setup`/`validate`/`build`/`serve`/`test`/
+`format`/`lint`/`check`) — confirmed with the user that none of the ~24 one-shot pipeline/
+extraction targets (`extract`, `extract-seshat`, `reconcile`, `apply-reviews`, `review`,
+`compute-prominence`, `enrich-*`, `seed-regional-eras`, `suggest-*`, etc.) are still used day to
+day. The underlying `pipeline/*.py` scripts are untouched — only the Make wrappers were removed;
+README.md's "Wikidata backbone" section now shows only the direct-Python form of that sequence
+(previously duplicated as both `make X` and the Python equivalent). ROADMAP item 1 removed as
+closed.
+
+244/244 tests pass throughout; every data change rebuilt and verified live in a running browser
+before commit.
+
 ### Period/polity dataset cleanup — 30-31 August 2026
 
 A cluster of data-quality fixes, mostly triggered by live `/explore` testing surfacing

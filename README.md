@@ -69,26 +69,10 @@ without the `rebuild_timeline` step first, pages that read a build artifact (`da
 
 ## Wikidata backbone
 
-```powershell
-make extract
-make audit-civilizations
-make extract-seshat
-make extract-maddison
-make map-maddison
-make extract-hyde
-make filter-wikidata-types
-make import-wikidata
-make reconcile
-make review
-make spotcheck
-make compute-prominence
-make compute-weights
-make enrich-relationships
-make enrich-geography
-make validate
-```
-
-The same sequence without `make` (`$py = .\.venv\Scripts\python.exe`):
+One-shot data-import/enrichment sequence -- these steps built the initial dataset and are rerun
+only for a fresh import or a full re-enrichment pass, not part of the day-to-day `make` targets
+(`setup`/`validate`/`build`/`serve`/`test`/`format`/`lint`/`check`; see the Makefile). Run directly
+(`$py = .\.venv\Scripts\python.exe`):
 
 ```powershell
 & $py pipeline/extract_wikidata.py
