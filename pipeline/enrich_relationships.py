@@ -205,6 +205,7 @@ def run(force: bool = False, apply: bool = True) -> dict[str, int]:
     documents: dict[str, tuple[Path, dict]] = {}
     names: dict[str, str] = {}
     dates: dict[str, PolityDates] = {}
+    entity_types: dict[str, str] = {}
     for path in POLITIES_DIR.glob("*.yaml"):
         document = yaml.safe_load(path.read_text(encoding="utf-8"))
         qid = (document.get("external_ids") or {}).get("wikidata")
@@ -213,6 +214,7 @@ def run(force: bool = False, apply: bool = True) -> dict[str, int]:
         documents[qid] = (path, document)
         names[qid] = document["canonical_name"]
         dates[qid] = PolityDates(document["start"], document.get("end"))
+        entity_types[qid] = document.get("entity_type", "polity")
 
     raw_links = fetch_relationships(sorted(documents), force=force)
     internal_links = [row for row in raw_links if row["source"] in documents and row["target"] in documents]
@@ -222,15 +224,30 @@ def run(force: bool = False, apply: bool = True) -> dict[str, int]:
         candidate["target_name"] = names[str(candidate["target"])]
 
     auto = [candidate for candidate in candidates if candidate["decision"] == "auto"]
-    applied_parent = applied_successor = conflicts = 0
+    applied_parent = applied_successor = conflicts = type_conflicts = 0
     if apply:
         parents_by_child: dict[str, list[str]] = defaultdict(list)
         successors_by_source: dict[str, list[str]] = defaultdict(list)
         for candidate in auto:
+            source_qid, target_qid = str(candidate["source"]), str(candidate["target"])
+            # Mirror build.py's validate_entity_relationships() exactly: a
+            # successor link requires polity -> polity on both ends; a parent
+            # link requires the child be polity/subdivision and the parent be
+            # polity. Skipping incompatible pairs here (e.g. a civilization- or
+            # subdivision-typed record) instead of writing them and letting
+            # build.py fail keeps this pipeline safe to re-run unattended.
             if candidate["kind"] == "parent":
-                parents_by_child[str(candidate["source"])].append(str(candidate["target"]))
+                child_ok = entity_types.get(source_qid) in {"polity", "subdivision"}
+                parent_ok = entity_types.get(target_qid) == "polity"
+                if not (child_ok and parent_ok):
+                    type_conflicts += 1
+                    continue
+                parents_by_child[source_qid].append(target_qid)
             else:
-                successors_by_source[str(candidate["source"])].append(str(candidate["target"]))
+                if entity_types.get(source_qid) != "polity" or entity_types.get(target_qid) != "polity":
+                    type_conflicts += 1
+                    continue
+                successors_by_source[source_qid].append(target_qid)
         changed: set[str] = set()
         for child_qid, parents in parents_by_child.items():
             path, document = documents[child_qid]
@@ -267,6 +284,7 @@ def run(force: bool = False, apply: bool = True) -> dict[str, int]:
         "parents_applied": applied_parent,
         "successors_applied": applied_successor,
         "conflicts": conflicts,
+        "type_conflicts": type_conflicts,
         "group_candidates": len(groups),
     }
     SUMMARY_PATH.write_text(

@@ -4,7 +4,9 @@ names: {}
 external_ids:
   wikidata: Q958291
 parent: null
-successors: []
+successors:
+- kingdom_of_romania
+- romania
 start: 1859
 end: 1881
 start_confidence: low

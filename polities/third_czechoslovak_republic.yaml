@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q2454585
 parent: czechoslovakia
-successors: []
+successors:
+- czechoslovak_republic
 start: 1945
 end: 1948
 start_confidence: low

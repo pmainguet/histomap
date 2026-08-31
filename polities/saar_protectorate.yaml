@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q310293
 parent: null
-successors: []
+successors:
+- saarland
 start: 1947
 end: 1956
 start_confidence: low

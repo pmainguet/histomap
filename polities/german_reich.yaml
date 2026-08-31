@@ -4,7 +4,10 @@ names: {}
 external_ids:
   wikidata: Q1206012
 parent: null
-successors: []
+successors:
+- german_democratic_republic
+- germany
+- west_germany
 start: 1871
 end: 1949
 start_confidence: low

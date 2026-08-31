@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q39501433
 parent: null
-successors: []
+successors:
+- united_states_of_venezuela
 start: 1830
 end: 1864
 start_confidence: low

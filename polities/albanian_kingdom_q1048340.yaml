@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q1048340
 parent: null
-successors: []
+successors:
+- italian_protectorate_of_albania
 start: 1928
 end: 1939
 start_confidence: low

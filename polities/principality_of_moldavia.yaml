@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q10957559
 parent: null
-successors: []
+successors:
+- united_principalities_of_moldavia_and_wallachia
 start: 1346
 end: 1859
 start_confidence: low

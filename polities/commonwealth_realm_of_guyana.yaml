@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q5622720
 parent: null
-successors: []
+successors:
+- guyana
 start: 1966
 end: 1970
 start_confidence: low

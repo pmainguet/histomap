@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q6741448
 parent: null
-successors: []
+successors:
+- malawi
 start: 1964
 end: 1966
 start_confidence: low

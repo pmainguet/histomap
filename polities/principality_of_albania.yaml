@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q187035
 parent: null
-successors: []
+successors:
+- albanian_republic
 start: 1914
 end: 1925
 start_confidence: low

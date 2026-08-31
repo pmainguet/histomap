@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1470101
 parent: null
-successors: []
+successors:
+- kingdom_of_hungary_q16056854
 start: 1000
 end: 1301
 start_confidence: low

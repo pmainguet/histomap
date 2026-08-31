@@ -3,8 +3,9 @@ canonical_name: Lebanese Republic under French mandate
 names: {}
 external_ids:
   wikidata: Q108865218
-parent: null
-successors: []
+parent: french_mandate_of_lebanon
+successors:
+- lebanon
 start: 1926
 end: 1943
 start_confidence: low

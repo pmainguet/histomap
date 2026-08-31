@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q1109279
 parent: null
-successors: []
+successors:
+- centralist_republic_of_mexico
 start: 1823
 end: 1835
 start_confidence: low

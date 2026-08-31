@@ -432,9 +432,243 @@
     "status": "review"
   },
   {
-    "suggested_name": "Taifa of Murcia / Roman Republic / Kingdom of Navarre",
+    "suggested_name": "Taifa of Valencia (second period) / Taifa of Valencia (third period)",
     "members": [
-      "Q104178238",
+      "Q104192511",
+      "Q104192518"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Sierra Leone / Commonwealth realm of Sierra Leone / Sierra Leone Colony and Protectorate",
+    "members": [
+      "Q1044",
+      "Q14920623",
+      "Q30059027"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Spain under the Restoration / Francoist Spain / Second Spanish Republic",
+    "members": [
+      "Q1044536",
+      "Q13474305",
+      "Q178038"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Albanian Kingdom / Italian protectorate of Albania / Principality of Albania",
+    "members": [
+      "Q1048340",
+      "Q1448131",
+      "Q187035",
+      "Q1923781",
+      "Q1989935",
+      "Q467864",
+      "Q777147"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Kingdom of the Suebi / Galicia in the Visigothic Kingdom",
+    "members": [
+      "Q1048918",
+      "Q12389905"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Kingdom of Wessex / Irish Republic / Kingdom of Great Britain",
+    "members": [
+      "Q105313",
+      "Q1140152",
+      "Q161885",
+      "Q174193",
+      "Q179876",
+      "Q215530",
+      "Q230791",
+      "Q27",
+      "Q31747",
+      "Q436994",
+      "Q844250"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Khmer Republic / Kingdom of Cambodia / French Protectorate of Cambodia",
+    "members": [
+      "Q1054184",
+      "Q2638486",
+      "Q3173090",
+      "Q330988",
+      "Q867778"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Republic of Hawaii / Kingdom of Hawaiʻi / Provisional Government of Hawaii",
+    "members": [
+      "Q1057542",
+      "Q156418",
+      "Q2593459"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Gujarat / Maharashtra / Bombay State",
+    "members": [
+      "Q1061",
+      "Q1191",
+      "Q2627082"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "United States of Colombia / First Mexican Republic / Granadine Confederation",
+    "members": [
+      "Q1061488",
+      "Q1109279",
+      "Q1141215",
+      "Q1439",
+      "Q170588",
+      "Q17557",
+      "Q190025",
+      "Q199821",
+      "Q2014442",
+      "Q2741089",
+      "Q285658",
+      "Q371334",
+      "Q5062192",
+      "Q5788450",
+      "Q630882",
+      "Q671658",
+      "Q736",
+      "Q7443295",
+      "Q804",
+      "Q8842993"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Later Jin (1616-1636) / Later Han dynasty / Liang dynasty",
+    "members": [
+      "Q1062546",
+      "Q1069829",
+      "Q1069868",
+      "Q1069905",
+      "Q1072949",
+      "Q10878917",
+      "Q10884385",
+      "Q10931099",
+      "Q11060334",
+      "Q11125624",
+      "Q11141501",
+      "Q11175560",
+      "Q11180205",
+      "Q1141471",
+      "Q1143126",
+      "Q1143164",
+      "Q1143524",
+      "Q1145470",
+      "Q1147037",
+      "Q1147043",
+      "Q1147897",
+      "Q1154540",
+      "Q1154556",
+      "Q1192067",
+      "Q1192347",
+      "Q1193822",
+      "Q1198071",
+      "Q1198163",
+      "Q12557",
+      "Q1323195",
+      "Q1325075",
+      "Q1326742",
+      "Q13414776",
+      "Q1574107",
+      "Q15895314",
+      "Q15898486",
+      "Q15902270",
+      "Q17030053",
+      "Q17034723",
+      "Q17034965",
+      "Q17036011",
+      "Q17059107",
+      "Q17061544",
+      "Q2214985",
+      "Q2314907",
+      "Q233263",
+      "Q2370784",
+      "Q274488",
+      "Q28057",
+      "Q28179",
+      "Q28208",
+      "Q28233",
+      "Q28278",
+      "Q28322",
+      "Q28370",
+      "Q28428",
+      "Q306928",
+      "Q307066",
+      "Q307069",
+      "Q319460",
+      "Q320925",
+      "Q320930",
+      "Q34756",
+      "Q35216",
+      "Q482705",
+      "Q484104",
+      "Q487687",
+      "Q488521",
+      "Q491559",
+      "Q4958",
+      "Q49697",
+      "Q504759",
+      "Q504769",
+      "Q5066",
+      "Q526507",
+      "Q551067",
+      "Q571453",
+      "Q62454",
+      "Q62456",
+      "Q6821029",
+      "Q698239",
+      "Q699871",
+      "Q715257",
+      "Q7183",
+      "Q7313",
+      "Q7352",
+      "Q7405",
+      "Q7427",
+      "Q7462",
+      "Q783489",
+      "Q827040",
+      "Q845531",
+      "Q849770",
+      "Q862304",
+      "Q865",
+      "Q8733",
+      "Q875305",
+      "Q8959",
+      "Q943392",
+      "Q9683",
+      "Q9903"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Neo-Inca State / Kingdom of Cusco / Inca Empire",
+    "members": [
+      "Q10715354",
+      "Q2314963",
+      "Q28573"
+    ],
+    "status": "review"
+  },
+  {
+    "suggested_name": "Roman Republic / Kingdom of Navarre / Principality of Asturias",
+    "members": [
       "Q1072140",
       "Q111628725",
       "Q111678391",
@@ -459,6 +693,7 @@
       "Q140359",
       "Q142417",
       "Q146246",
+      "Q1470101",
       "Q1508143",
       "Q15180",
       "Q153015",
@@ -473,6 +708,7 @@
       "Q158835",
       "Q159631",
       "Q159856",
+      "Q16056854",
       "Q1617495",
       "Q1639475",
       "Q16410",
@@ -605,6 +841,7 @@
       "Q5919137",
       "Q599613",
       "Q600018",
+      "Q625380",
       "Q637238",
       "Q650370",
       "Q659312",
@@ -645,243 +882,6 @@
       "Q9301958",
       "Q940741",
       "Q95950649"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Taifa of Valencia (second period) / Taifa of Valencia (third period)",
-    "members": [
-      "Q104192511",
-      "Q104192518"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Sierra Leone / Commonwealth realm of Sierra Leone / Sierra Leone Colony and Protectorate",
-    "members": [
-      "Q1044",
-      "Q14920623",
-      "Q30059027"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Spain under the Restoration / Francoist Spain / Second Spanish Republic",
-    "members": [
-      "Q1044536",
-      "Q13474305",
-      "Q178038"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Albanian Kingdom / Italian protectorate of Albania / Principality of Albania",
-    "members": [
-      "Q1048340",
-      "Q1448131",
-      "Q187035",
-      "Q1923781",
-      "Q1989935",
-      "Q467864",
-      "Q777147"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Kingdom of the Suebi / Galicia in the Visigothic Kingdom",
-    "members": [
-      "Q1048918",
-      "Q12389905"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Kingdom of Wessex / Irish Republic / Kingdom of Great Britain",
-    "members": [
-      "Q105313",
-      "Q1140152",
-      "Q161885",
-      "Q174193",
-      "Q179876",
-      "Q215530",
-      "Q230791",
-      "Q27",
-      "Q31747",
-      "Q436994",
-      "Q844250"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Khmer Republic / Kingdom of Cambodia / French Protectorate of Cambodia",
-    "members": [
-      "Q1054184",
-      "Q2638486",
-      "Q3173090",
-      "Q330988",
-      "Q867778"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Republic of Hawaii / Kingdom of Hawaiʻi / Provisional Government of Hawaii",
-    "members": [
-      "Q1057542",
-      "Q156418",
-      "Q2593459"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Gujarat / Maharashtra / Bombay State",
-    "members": [
-      "Q1061",
-      "Q1191",
-      "Q2627082"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "United States of Colombia / First Mexican Republic / Granadine Confederation",
-    "members": [
-      "Q1061488",
-      "Q1109279",
-      "Q1141215",
-      "Q1439",
-      "Q170588",
-      "Q17557",
-      "Q190025",
-      "Q199821",
-      "Q2014442",
-      "Q2741089",
-      "Q285658",
-      "Q371334",
-      "Q5062192",
-      "Q5788450",
-      "Q630882",
-      "Q671658",
-      "Q736",
-      "Q7443295",
-      "Q804",
-      "Q8842993"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Later Jin (1616-1636) / Western Zhou / Later Han dynasty",
-    "members": [
-      "Q1062546",
-      "Q1069609",
-      "Q1069829",
-      "Q1069868",
-      "Q1069905",
-      "Q1072949",
-      "Q10878917",
-      "Q10884385",
-      "Q10931099",
-      "Q11060334",
-      "Q11125624",
-      "Q11141501",
-      "Q11175560",
-      "Q11180205",
-      "Q1141471",
-      "Q1143126",
-      "Q1143164",
-      "Q1143524",
-      "Q1145470",
-      "Q1147037",
-      "Q1147043",
-      "Q1147897",
-      "Q1154540",
-      "Q1154556",
-      "Q1192067",
-      "Q1192347",
-      "Q1193822",
-      "Q1198071",
-      "Q1198163",
-      "Q12557",
-      "Q1323195",
-      "Q1325075",
-      "Q1326742",
-      "Q13414776",
-      "Q1574107",
-      "Q15895314",
-      "Q15898486",
-      "Q15902270",
-      "Q17030053",
-      "Q17034723",
-      "Q17034965",
-      "Q17036011",
-      "Q17059107",
-      "Q17061544",
-      "Q2214985",
-      "Q2314907",
-      "Q233263",
-      "Q2370784",
-      "Q274488",
-      "Q28057",
-      "Q28179",
-      "Q28208",
-      "Q28233",
-      "Q28278",
-      "Q28322",
-      "Q28370",
-      "Q28428",
-      "Q306928",
-      "Q307066",
-      "Q307069",
-      "Q319460",
-      "Q320925",
-      "Q320930",
-      "Q34756",
-      "Q35216",
-      "Q482705",
-      "Q484104",
-      "Q487687",
-      "Q488521",
-      "Q491559",
-      "Q4958",
-      "Q49697",
-      "Q504759",
-      "Q504769",
-      "Q5066",
-      "Q526507",
-      "Q551067",
-      "Q571453",
-      "Q62454",
-      "Q62456",
-      "Q6821029",
-      "Q698239",
-      "Q699871",
-      "Q715257",
-      "Q7183",
-      "Q7209",
-      "Q7313",
-      "Q7352",
-      "Q7405",
-      "Q7427",
-      "Q7462",
-      "Q783489",
-      "Q827040",
-      "Q845531",
-      "Q849770",
-      "Q862304",
-      "Q865",
-      "Q8733",
-      "Q875305",
-      "Q8959",
-      "Q943392",
-      "Q9683",
-      "Q9903"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Neo-Inca State / Kingdom of Cusco / Inca Empire",
-    "members": [
-      "Q10715354",
-      "Q2314963",
-      "Q28573"
     ],
     "status": "review"
   },
@@ -1387,17 +1387,6 @@
     "status": "review"
   },
   {
-    "suggested_name": "Chinese Empire / Republic of China / People's Republic of China",
-    "members": [
-      "Q12060881",
-      "Q13426199",
-      "Q148",
-      "Q15905301",
-      "Q711"
-    ],
-    "status": "review"
-  },
-  {
     "suggested_name": "Kingdom of Kakheti / Kingdom of Georgia / Kingdom of the Iberians",
     "members": [
       "Q1209822",
@@ -1636,6 +1625,15 @@
     "status": "review"
   },
   {
+    "suggested_name": "Republic of China / People's Republic of China / Kingdom Shunzheng",
+    "members": [
+      "Q13426199",
+      "Q148",
+      "Q15905301"
+    ],
+    "status": "review"
+  },
+  {
     "suggested_name": "Duchy of Livonia / Duchy of Courland and Semigallia / Duchy of Estonia",
     "members": [
       "Q1352878",
@@ -1763,15 +1761,6 @@
     "status": "review"
   },
   {
-    "suggested_name": "Kingdom of Hungary (1000–1301) / Kingdom of Hungary / Eastern Hungarian Kingdom",
-    "members": [
-      "Q1470101",
-      "Q16056854",
-      "Q625380"
-    ],
-    "status": "review"
-  },
-  {
     "suggested_name": "Kingdom of Haiti / Second Empire of Haiti / Republic of Haiti (1820–1849)",
     "members": [
       "Q1472105",
@@ -1883,7 +1872,7 @@
     "status": "review"
   },
   {
-    "suggested_name": "Kingdom of Spain / Spain under Joseph Bonaparte",
+    "suggested_name": "Kingdom of Spain (1814–1833) / Spain under Joseph Bonaparte",
     "members": [
       "Q15238138",
       "Q1709185"
@@ -2027,11 +2016,10 @@
     "status": "review"
   },
   {
-    "suggested_name": "Fatimid Caliphate / Aghlabids / Ayyubid Sultanate",
+    "suggested_name": "Fatimid Caliphate / Aghlabids / Rustamid dynasty",
     "members": [
       "Q160307",
       "Q207600",
-      "Q63135869",
       "Q940123"
     ],
     "status": "review"
@@ -2079,12 +2067,14 @@
     "status": "review"
   },
   {
-    "suggested_name": "Kingdom of Poland / Crown of the Kingdom of Poland / Polish–Lithuanian Commonwealth",
+    "suggested_name": "Kingdom of Poland (1386–1569) / Crown of the Kingdom of Poland / Polish–Lithuanian Commonwealth",
     "members": [
       "Q1649871",
       "Q171348",
       "Q172107",
-      "Q49683"
+      "Q3446214",
+      "Q49683",
+      "Q616915"
     ],
     "status": "review"
   },
@@ -2773,14 +2763,6 @@
       "Q3271735",
       "Q33235",
       "Q33242"
-    ],
-    "status": "review"
-  },
-  {
-    "suggested_name": "Kingdom of Poland / Duchy of Poland",
-    "members": [
-      "Q3446214",
-      "Q616915"
     ],
     "status": "review"
   },

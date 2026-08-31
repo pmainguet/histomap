@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q7735661
 parent: null
-successors: []
+successors:
+- the_gambia
 start: 1965
 end: 1970
 start_confidence: low

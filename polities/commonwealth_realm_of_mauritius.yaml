@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q14759030
 parent: null
-successors: []
+successors:
+- mauritius
 start: 1968
 end: 1992
 start_confidence: low

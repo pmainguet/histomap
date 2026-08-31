@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q2300296
 parent: null
-successors: []
+successors:
+- latvia
 start: 1918
 end: 1920
 start_confidence: low

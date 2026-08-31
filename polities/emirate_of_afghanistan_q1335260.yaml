@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q1335260
 parent: null
-successors: []
+successors:
+- kingdom_of_afghanistan
 start: 1823
 end: 1926
 start_confidence: low

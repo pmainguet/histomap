@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q3173090
 parent: null
-successors: []
+successors:
+- kingdom_of_cambodia
 start: 1863
 end: 1953
 start_confidence: low

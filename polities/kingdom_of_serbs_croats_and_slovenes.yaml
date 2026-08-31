@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q15102440
 parent: null
-successors: []
+successors:
+- kingdom_of_yugoslavia
 start: 1918
 end: 1929
 start_confidence: low

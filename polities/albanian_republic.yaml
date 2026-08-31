@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q1923781
 parent: null
-successors: []
+successors:
+- albanian_kingdom_q1048340
 start: 1925
 end: 1928
 start_confidence: low

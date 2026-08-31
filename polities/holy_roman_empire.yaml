@@ -10,6 +10,7 @@ parent: null
 successors:
 - grand_duchy_of_baden
 - kingdom_of_saxony
+- kingdom_of_wurttemberg
 - principality_of_nassau_orange_fulda
 start: 962
 end: 1806

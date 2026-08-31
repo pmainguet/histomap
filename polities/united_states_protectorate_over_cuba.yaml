@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q7891201
 parent: null
-successors: []
+successors:
+- republic_of_cuba
 start: 1898
 end: 1902
 start_confidence: low

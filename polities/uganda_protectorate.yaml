@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q1097943
 parent: null
-successors: []
+successors:
+- commonwealth_realm_of_uganda
 start: 1894
 end: 1962
 start_confidence: low

@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q1709185
 parent: null
-successors: []
+successors:
+- kingdom_of_spain_q15238138
 start: 1808
 end: 1813
 start_confidence: low

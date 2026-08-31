@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q7877575
 parent: null
-successors: []
+successors:
+- uganda
 start: 1962
 end: 1963
 start_confidence: low

@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q1193879
 parent: null
-successors: []
+successors:
+- south_vietnam
 start: 1949
 end: 1955
 start_confidence: low

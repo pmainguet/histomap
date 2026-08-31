@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q6392538
 parent: null
-successors: []
+successors:
+- kenya
 start: 1963
 end: 1964
 start_confidence: low

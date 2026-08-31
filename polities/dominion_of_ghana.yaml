@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q5555325
 parent: null
-successors: []
+successors:
+- ghana
 start: 1957
 end: 1960
 start_confidence: low

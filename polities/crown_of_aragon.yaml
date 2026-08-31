@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q204920
 parent: null
-successors: []
+successors:
+- kingdom_of_spain_q3399982
 start: 1162
 end: 1715
 start_confidence: low

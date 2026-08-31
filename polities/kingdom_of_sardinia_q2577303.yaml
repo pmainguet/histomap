@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q2577303
 parent: null
-successors: []
+successors:
+- kingdom_of_italy_q172579
 start: 1720
 end: 1861
 start_confidence: low

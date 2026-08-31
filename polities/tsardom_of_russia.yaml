@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q186096
 parent: null
-successors: []
+successors:
+- russian_empire
 start: 1547
 end: 1721
 start_confidence: low

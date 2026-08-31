@@ -5,7 +5,8 @@ names:
 external_ids:
   wikidata: Q10748344
 parent: null
-successors: []
+successors:
+- state_of_vietnam
 start: 1948
 end: 1949
 start_confidence: low

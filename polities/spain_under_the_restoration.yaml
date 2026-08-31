@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q1044536
 parent: null
-successors: []
+successors:
+- second_spanish_republic
 start: 1874
 end: 1931
 start_confidence: low

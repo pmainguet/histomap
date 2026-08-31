@@ -4,7 +4,8 @@ names: {}
 external_ids:
   wikidata: Q5848651
 parent: null
-successors: []
+successors:
+- republic_of_venezuela
 start: 1864
 end: 1953
 start_confidence: low

@@ -8,6 +8,7 @@ external_ids:
 parent: null
 successors:
 - grand_duchy_of_baden
+- kingdom_of_wurttemberg
 start: 1803
 end: 1806
 start_confidence: low

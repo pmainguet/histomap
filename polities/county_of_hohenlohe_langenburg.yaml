@@ -6,7 +6,8 @@ names:
 external_ids:
   wikidata: Q700102
 parent: null
-successors: []
+successors:
+- kingdom_of_wurttemberg
 start: 1701
 end: 1806
 start_confidence: low
