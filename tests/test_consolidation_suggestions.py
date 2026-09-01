@@ -438,6 +438,119 @@ class ConsolidationSuggestionTests(unittest.TestCase):
             self.suggestion_for("first_brazilian_republic", "brazil", polities), "phase_of"
         )
 
+    def test_institutional_name_prefix_not_treated_as_regime_of(self) -> None:
+        # "United States Army Military Government in Korea" starts with the
+        # exact words "United States" -- but that's the ARMY's owner, not a
+        # regime OF the United States; the entity's real geographic anchor
+        # is Korea (named at the end). Should not suggest phase_of. Uses the
+        # record's real (buggy) present_countries of ["US"] -- a separate
+        # data error found alongside this one, since the geography match is
+        # what let it reach the candidate pool at all.
+        polities = [
+            {**BASE, "id": "united_states", "canonical_name": "United States",
+             "external_ids": {"wikidata": "Q30"}, "start": 1776, "end": None,
+             "prominence_score": 60, "geography": {"present_countries": ["US"]}},
+            {**BASE, "id": "usamgik", "canonical_name": "United States Army Military Government in Korea",
+             "external_ids": {"wikidata": "Q484104"}, "start": 1945, "end": 1948,
+             "prominence_score": 20, "geography": {"present_countries": ["US"]}},
+        ]
+        self.assertNotEqual(self.suggestion_for("usamgik", "united_states", polities), "phase_of")
+
+    def test_demonym_scan_does_not_match_short_word_against_multiword_name(self) -> None:
+        # The per-token demonym scan is for single-word place names (Syria/
+        # Syrian). "United" alone is a short common word that happens to
+        # prefix several unrelated multi-word country names ("United
+        # Belgian States") -- should not spuriously match. The alias is
+        # only here to force this synthetic pair into the candidate pool at
+        # all (shared "belgian" token) so the naming check under test
+        # actually runs.
+        # Dates overlap only to satisfy the candidate-pool's date_overlap
+        # gate -- the real United Belgian States (1790) and USAMGIK (1945)
+        # are of course from unrelated eras; only the naming-pattern check
+        # under test matters here.
+        polities = [
+            {**BASE, "id": "united_belgian_states", "canonical_name": "United Belgian States",
+             "external_ids": {"wikidata": "Q1210685"}, "start": 1940, "end": 1948,
+             "prominence_score": 25, "geography": {"present_countries": ["US"]}},
+            {**BASE, "id": "usamgik", "canonical_name": "United States Army Military Government in Korea",
+             "names": {"aliases_en": "Belgian-American Occupation Commission"},
+             "external_ids": {"wikidata": "Q484104"}, "start": 1945, "end": 1948,
+             "prominence_score": 20, "geography": {"present_countries": ["US"]}},
+        ]
+        self.assertNotEqual(
+            self.suggestion_for("usamgik", "united_belgian_states", polities), "phase_of"
+        )
+
+    def test_scythia_minor_subdivision_qualifier_suggests_part_of_not_phase_of(self) -> None:
+        # "Scythia Minor" reads as "<qualifier> Scythia" the same way
+        # "Francoist Spain" does -- but "Minor" is a spatial qualifier
+        # (like Asia Minor, Upper Egypt), not a regime/era qualifier. Should
+        # suggest part_of, not phase_of, even with clean date nesting and a
+        # finite end. Scythia Minor's own present_countries isn't recorded
+        # (matching the real data) -- subdivision_part_of_* must inherit
+        # geography compatibility the same way every other naming signal
+        # does, not require a literal overlap that can't exist when one
+        # side has no geography data at all.
+        polities = [
+            {**BASE, "id": "scythia", "canonical_name": "Scythia", "external_ids": {"wikidata": "Q845909"},
+             "start": -800, "end": 200, "prominence_score": 30, "geography": {"present_countries": ["RU"]}},
+            {**BASE, "id": "scythia_minor_crimea", "canonical_name": "Scythia Minor (Crimea)",
+             "external_ids": {"wikidata": "Q16718949"}, "start": -279, "end": 200,
+             "prominence_score": 20, "geography": {"present_countries": []}},
+        ]
+        self.assertEqual(
+            self.suggestion_for("scythia_minor_crimea", "scythia", polities), "part_of"
+        )
+
+    def test_documented_part_of_wins_over_documented_successor(self) -> None:
+        # Latvian Soviet Socialist Republic has BOTH a documented Wikidata
+        # P361 "part of" claim to Latvia AND a documented successor
+        # ("followed by") relationship -- the P361 claim, combined with
+        # exact date nesting, more specifically describes a phase than the
+        # coarser "chronologically sequential" successor claim does, and
+        # should win.
+        polities = [
+            {**BASE, "id": "latvia", "canonical_name": "Latvia", "external_ids": {"wikidata": "Q211"},
+             "start": 1918, "end": None, "prominence_score": 40, "geography": {"present_countries": ["LV"]}},
+            {**BASE, "id": "latvian_soviet_socialist_republic",
+             "canonical_name": "Latvian Soviet Socialist Republic",
+             "external_ids": {"wikidata": "Q192180"}, "start": 1940, "end": 1990,
+             "prominence_score": 25, "geography": {"present_countries": ["LV"]}},
+        ]
+        relationships = [
+            {"source": "Q192180", "property": "P361", "target": "Q211"},
+            {"source": "Q192180", "property": "P1366", "target": "Q211"},
+        ]
+        self.assertEqual(
+            self.suggestion_for(
+                "latvian_soviet_socialist_republic", "latvia", polities, relationships
+            ),
+            "phase_of",
+        )
+
+    def test_documented_relationship_alone_reaches_the_candidate_pool(self) -> None:
+        # A documented Wikidata succession relationship should surface a
+        # candidate even with ZERO name/token overlap between the two
+        # records -- without this, an entity whose real successor has a
+        # completely different name (USAMGIK -> "First Republic of South
+        # Korea") never gets a correct candidate to choose from at all.
+        polities = [
+            {**BASE, "id": "first_republic_of_south_korea", "canonical_name": "First Republic of South Korea",
+             "external_ids": {"wikidata": "Q491559"}, "start": 1948, "end": 1960,
+             "prominence_score": 30, "geography": {"present_countries": ["KR"]}},
+            {**BASE, "id": "usamgik", "canonical_name": "United States Army Military Government in Korea",
+             "external_ids": {"wikidata": "Q484104"}, "start": 1945, "end": 1948,
+             "prominence_score": 20, "geography": {"present_countries": ["KR"]}},
+        ]
+        relationships = [{"source": "Q484104", "property": "P1366", "target": "Q491559"}]
+        client = build_app(self.root, polities, relationships)
+        queue = client.get("/api/consolidation-reviews", params={"limit": 100}).json()["items"]
+        row = next((item for item in queue if item["id"] == "usamgik"), None)
+        self.assertIsNotNone(row, "usamgik did not reach the consolidation queue")
+        self.assertIn(
+            "first_republic_of_south_korea", [c["id"] for c in row["candidates"]]
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

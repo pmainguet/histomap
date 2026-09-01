@@ -429,6 +429,24 @@ def create_app(root: Path = ROOT) -> FastAPI:
     def strip_year_range_suffix(name: str) -> str:
         return YEAR_RANGE_SUFFIX_RE.sub("", name)
 
+    # A place's name appearing as the very first word(s) of a record,
+    # immediately followed by one of these, means "an administrative/military
+    # body OF that place, operating elsewhere" (United States Army Military
+    # Government IN KOREA), not "a specific government OF that place" --
+    # the true geographic anchor is wherever the name says it operated, not
+    # the owning place named up front. Found live, 1 September 2026.
+    REGIME_EXCLUDED_FOLLOWERS = {
+        "army", "navy", "forces", "government", "administration", "command",
+        "occupation", "mission", "legation", "corps", "authority", "garrison",
+    }
+    # "Minor/Lesser/Major/Greater/Upper/Lower/Inner/Outer <place>" (or the
+    # reverse order) denotes a geographic SUBDIVISION of that place (Scythia
+    # Minor is part of Scythia, Asia Minor is part of Asia, Upper Egypt is
+    # part of Egypt) -- a spatial qualifier, not a regime/era qualifier.
+    # Found live, 1 September 2026 (Scythia Minor was wrongly suggested
+    # phase_of Scythia via the general regime-naming check).
+    SUBDIVISION_QUALIFIERS = {"minor", "lesser", "major", "greater", "upper", "lower", "inner", "outer"}
+
     def name_is_regime_of(inner_name: str, outer_name: str) -> bool:
         """True when inner_name reads as a specific government/era of
         outer_name. Two checks, covering the common English shapes
@@ -437,12 +455,19 @@ def create_app(root: Path = ROOT) -> FastAPI:
           boundary -- "Kingdom of Hungary" (suffix), "Francoist Spain"
           (suffix), "Spain under the Restoration" (prefix), "Republic of
           the Congo" (mid-sentence, multi-word outer) all match this one
-          check.
+          check. Excludes a match at the very start when immediately
+          followed by an administrative/military noun (see
+          REGIME_EXCLUDED_FOLLOWERS above) -- that's ownership, not
+          identity.
         - any single word of inner_name is a demonym-style prefix/suffix
-          match of outer_name (Syria/Syrian, Germany/German, Brazil/
+          match of outer_name (Syria/Syrian, Brunei/Bruneian, Brazil/
           Brazilian), catching "Syrian Federation" and "First Brazilian
           Republic" without a full demonym dictionary; irregular demonyms
-          (France/French) aren't caught.
+          (France/French) aren't caught. Only applies when outer_name is a
+          single word -- otherwise a short leading word of a multi-word
+          outer_name (e.g. "United" in "United Belgian States") can
+          spuriously prefix-match an unrelated multi-word name that starts
+          the same way (found live, 1 September 2026).
         Neither check can, by name shape alone, distinguish a genuine
         regime name from a genuinely distinct compound-name/demonym-
         adjacent place that happens to share the shape (West Virginia is
@@ -450,19 +475,52 @@ def create_app(root: Path = ROOT) -> FastAPI:
         "Indiana") -- callers gate on a finite end as the real safety
         rail: real regime names almost always concluded, while a distinct
         place that's still open-ended won't pass that gate even if the
-        name shape matches (found live, 1 September 2026)."""
+        name shape matches (found live, 1 September 2026). See also
+        name_is_subdivision_of_place() for the geographic-qualifier shape,
+        which is deliberately excluded here."""
         inner = re.sub(r"[^a-z0-9 ]+", " ", strip_year_range_suffix(inner_name).casefold()).strip()
         outer = re.sub(r"[^a-z0-9 ]+", " ", strip_year_range_suffix(outer_name).casefold()).strip()
         if not outer or not inner or inner == outer:
             return False
-        if f" {outer} " in f" {inner} ":
-            return True
-        if len(outer) < 4:
+        words = inner.split(" ")
+        outer_words = outer.split(" ")
+        n = len(outer_words)
+        for i in range(len(words) - n + 1):
+            if words[i:i + n] == outer_words:
+                if i == 0 and i + n < len(words) and words[i + n] in REGIME_EXCLUDED_FOLLOWERS:
+                    continue
+                return True
+        if len(outer) < 4 or " " in outer:
             return False
         return any(
             len(word) >= 4 and (word.startswith(outer) or outer.startswith(word))
-            for word in inner.split(" ")
+            for word in words
         )
+
+    def name_is_subdivision_of_place(inner_name: str, outer_name: str) -> bool:
+        """True when inner_name reads as a geographic SUBDIVISION of
+        outer_name via a spatial qualifier -- Minor/Lesser/Major/Greater/
+        Upper/Lower/Inner/Outer immediately next to the place name, in
+        either order (Scythia Minor, Asia Minor, Upper Egypt). Matches even
+        with a trailing disambiguator after the qualifier is removed
+        ("Scythia Minor (Crimea)" -> "scythia crimea" still starts with
+        "scythia"), the same tolerance name_is_regime_of() has for extra
+        surrounding words. Distinct from name_is_regime_of()'s naming
+        shapes, which denote a period of government, not a spatial subset
+        -- callers exclude a subdivision match from counting as regime_of
+        evidence, and count it as part_of evidence instead."""
+        inner = re.sub(r"[^a-z0-9 ]+", " ", strip_year_range_suffix(inner_name).casefold()).strip()
+        outer = re.sub(r"[^a-z0-9 ]+", " ", strip_year_range_suffix(outer_name).casefold()).strip()
+        if not outer or not inner or inner == outer:
+            return False
+        words = inner.split(" ")
+        for i, word in enumerate(words):
+            if word not in SUBDIVISION_QUALIFIERS:
+                continue
+            remainder = " ".join(words[:i] + words[i + 1:])
+            if f" {outer} " in f" {remainder} ":
+                return True
+        return False
 
     def consolidation_review_queue() -> list[dict]:
         refresh_period_role_queue()
@@ -509,6 +567,23 @@ def create_app(root: Path = ROOT) -> FastAPI:
             )
             source_qid = (document.get("external_ids") or {}).get("wikidata")
             possible.update(other_id for other_id in qid_index.get(source_qid, set()) if other_id != entity_id)
+            # A documented Wikidata relationship (P361/P527 part-of, or
+            # P155/P156/P1365/P1366 succession) is real evidence about these
+            # two specific records even with zero name/token overlap --
+            # without this, a record whose name shares nothing with its
+            # documented successor never even reaches the candidate pool
+            # (found live, 1 September 2026: "United States Army Military
+            # Government in Korea" only had "United States" as a candidate,
+            # via an incidental name-prefix match, even though Wikidata
+            # directly documents its real successor, "First Republic of
+            # South Korea" -- a completely different name, so it never
+            # entered the pool without this).
+            possible.update(
+                other_id
+                for related_qid in (part_of_qids.get(source_qid, set()) | succession_qids.get(source_qid, set()))
+                for other_id in qid_index.get(related_qid, set())
+                if other_id != entity_id
+            )
             candidates = []
             source_name = str(document.get("canonical_name", entity_id))
             source_prominence = float(document.get("prominence_score", 0))
@@ -669,12 +744,21 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 # way (regime_of_*_name, unfiltered) for no_identity_signal,
                 # since the two records plainly ARE related even when the
                 # direction is ambiguous.
-                regime_of_candidate_name = name_is_regime_of(
+                # Computed BEFORE regime_of_*_name below so a subdivision
+                # match (Scythia Minor/Scythia) can be subtracted from it --
+                # "Minor" et al. denote a spatial subset, not a regime/era.
+                subdivision_of_candidate_name = name_is_subdivision_of_place(
                     str(document.get("canonical_name", "")), str(other.get("canonical_name", ""))
                 )
-                regime_of_reviewed_name = name_is_regime_of(
+                subdivision_of_reviewed_name = name_is_subdivision_of_place(
                     str(other.get("canonical_name", "")), str(document.get("canonical_name", ""))
                 )
+                regime_of_candidate_name = name_is_regime_of(
+                    str(document.get("canonical_name", "")), str(other.get("canonical_name", ""))
+                ) and not subdivision_of_candidate_name
+                regime_of_reviewed_name = name_is_regime_of(
+                    str(other.get("canonical_name", "")), str(document.get("canonical_name", ""))
+                ) and not subdivision_of_reviewed_name
                 regime_of_candidate = regime_of_candidate_name and document.get("end") is not None
                 regime_of_reviewed = regime_of_reviewed_name and other.get("end") is not None
                 # A direct Wikidata P361 ("part of")/P527 ("has part") claim
@@ -684,13 +768,31 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 # need a finite-end gate the way phase_of does: a part_of
                 # decision writes a subdivision-parent link, not a Period
                 # record. Found live, 1 September 2026 (New Zealand's own
-                # P361 claim names Realm of New Zealand directly).
+                # P361 claim names Realm of New Zealand directly). Kept
+                # Wikidata-only (unlike regime_of_candidate_name) because
+                # it also counts as phase_of naming evidence below --
+                # subdivision_part_of_* deliberately does NOT, since a
+                # naming-only spatial qualifier should never suggest phase_of.
                 reviewed_part_of_candidate = bool(
                     source_qid and other_qid and other_qid in part_of_qids.get(source_qid, set())
                 )
                 candidate_part_of_reviewed = bool(
                     source_qid and other_qid and source_qid in part_of_qids.get(other_qid, set())
                 )
+                # The bare naming-qualifier version of part_of evidence,
+                # gated on geography_compatible (actual overlap, or one side
+                # missing data and inheriting the other's -- same rule as
+                # everywhere else, not a stricter one just because there's no
+                # documented Wikidata claim backing it up the way P361 does:
+                # Scythia Minor's own present_countries isn't recorded, and
+                # requiring a literal overlap wrongly withheld the
+                # suggestion entirely, found live, 1 September 2026).
+                # Deliberately kept separate from reviewed_part_of_candidate/
+                # candidate_part_of_reviewed above -- only used for the
+                # plain part_of/candidate_part_of branches, never as phase_of
+                # naming evidence.
+                subdivision_part_of_candidate = subdivision_of_candidate_name and geography_compatible
+                subdivision_part_of_reviewed = subdivision_of_reviewed_name and geography_compatible
                 # No strong identity anchor at all -- whatever got this
                 # candidate into the queue was geography + date-overlap +
                 # fuzzy/token name similarity alone, not a shared Wikidata
@@ -699,12 +801,21 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 no_identity_signal = (
                     not same_wikidata and not exact_name_match
                     and not regime_of_candidate_name and not regime_of_reviewed_name
+                    and not subdivision_of_candidate_name and not subdivision_of_reviewed_name
                     and not reviewed_part_of_candidate and not candidate_part_of_reviewed
                 )
                 if not (
                     same_wikidata
                     or (exact_name_match and not coordinate_conflict and not documented_successor)
                     or reviewed_part_of_candidate or candidate_part_of_reviewed
+                    or subdivision_part_of_candidate or subdivision_part_of_reviewed
+                    # A documented Wikidata succession claim is itself
+                    # sufficient to warrant a look, even with zero name/
+                    # token overlap or geography match -- otherwise adding
+                    # it to `possible` above achieves nothing, since this
+                    # gate would still reject the pair (found live, 1
+                    # September 2026).
+                    or documented_successor
                     or (
                         date_overlap and geography_compatible
                         and ((shared_canonical_tokens and name_score >= 60) or name_score >= 88)
@@ -723,6 +834,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         (12, exact_name_match and not coordinate_conflict and not documented_successor and not no_overlap_alias_reuse),
                         (8, regime_of_candidate or regime_of_reviewed),
                         (10, reviewed_part_of_candidate or candidate_part_of_reviewed),
+                        (8, subdivision_part_of_candidate or subdivision_part_of_reviewed),
                         (8, geography_match),
                         (8, date_contains),
                         (6, date_overlap),
@@ -755,6 +867,10 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     reasons.append("Wikidata: reviewed entity is directly documented as part of the candidate")
                 if candidate_part_of_reviewed:
                     reasons.append("Wikidata: candidate is directly documented as part of the reviewed entity")
+                if subdivision_part_of_candidate:
+                    reasons.append("reviewed entity's name reads as a geographic subdivision of the candidate")
+                if subdivision_part_of_reviewed:
+                    reasons.append("candidate's name reads as a geographic subdivision of the reviewed entity")
                 if documented_successor:
                     reasons.append("Wikidata: documented successor relationship (follows/followed by or replaces/replaced by)")
                 if likely_siblings:
@@ -837,7 +953,19 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     suggested_decision = None
                 elif same_wikidata:
                     suggested_decision = "same_entity"
-                elif documented_successor or coordinate_conflict or no_overlap_alias_reuse or likely_siblings:
+                elif (
+                    # A "follows/followed by" claim alone means "chronologically
+                    # sequential", which usually does mean two distinct states --
+                    # but a direct P361 "part of" claim to the SAME candidate is a
+                    # more specific structural fact than succession, and wins
+                    # when both are documented (Latvian Soviet Socialist Republic
+                    # has both a P361 claim to Latvia AND a documented successor
+                    # relationship, but the P361 claim plus exact date nesting
+                    # correctly describes a phase, not a distinct successor
+                    # state -- found live, 1 September 2026).
+                    (documented_successor and not reviewed_part_of_candidate and not candidate_part_of_reviewed)
+                    or coordinate_conflict or no_overlap_alias_reuse or likely_siblings
+                ):
                     suggested_decision = "independent"
                 elif (
                     date_contains and geography_compatible
@@ -866,9 +994,9 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     and (exact_name_match or regime_of_reviewed or candidate_part_of_reviewed)
                 ):
                     suggested_decision = "candidate_phase_of"
-                elif reviewed_part_of_candidate:
+                elif reviewed_part_of_candidate or subdivision_part_of_candidate:
                     suggested_decision = "part_of"
-                elif candidate_part_of_reviewed:
+                elif candidate_part_of_reviewed or subdivision_part_of_reviewed:
                     suggested_decision = "candidate_part_of"
                 elif no_identity_signal:
                     # Reached the queue with no strong identity anchor at all
@@ -915,6 +1043,8 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         "regime_of_reviewed": regime_of_reviewed,
                         "reviewed_part_of_candidate": reviewed_part_of_candidate,
                         "candidate_part_of_reviewed": candidate_part_of_reviewed,
+                        "subdivision_part_of_candidate": subdivision_part_of_candidate,
+                        "subdivision_part_of_reviewed": subdivision_part_of_reviewed,
                         "suggested_decision": suggested_decision,
                         "confidence": (
                             "high" if not possible_qid_conflict and not no_overlap_alias_reuse
