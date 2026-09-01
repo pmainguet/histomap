@@ -402,7 +402,8 @@ def create_app(root: Path = ROOT) -> FastAPI:
         short lengths -- the State of Qi's alias "Chi" and Chile's alias
         "CHI" both normalize to "chi", which without this filter marked an
         unrelated pair "exact name match" (found live, 31 August 2026)."""
-        canonical = re.sub(r"[^a-z0-9]+", " ", str(document.get("canonical_name", "")).casefold()).strip()
+        canonical_raw = strip_year_range_suffix(str(document.get("canonical_name", "")))
+        canonical = re.sub(r"[^a-z0-9]+", " ", canonical_raw.casefold()).strip()
         result = {canonical} if canonical else set()
         alias_values = []
         for key, value in (document.get("names") or {}).items():
@@ -424,6 +425,17 @@ def create_app(root: Path = ROOT) -> FastAPI:
         h = math.sin(d_lat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(d_lon / 2) ** 2
         return 2 * 6371 * math.asin(math.sqrt(min(1, h)))
 
+    # Some canonical_name values carry a disambiguating year-range suffix --
+    # "State of Thuringia (1920-1952)", "Kingdom of Hungary (1867-1918)" --
+    # to distinguish them from other Histomap records for the same place.
+    # Left in place, that suffix breaks any trailing-substring name check
+    # (it no longer ends with "of Thuringia") even though the underlying
+    # name plainly does match. Strip it before comparing.
+    YEAR_RANGE_SUFFIX_RE = re.compile(r"\s*\([0-9]{1,4}\s*[-–—]\s*(?:present|[0-9]{1,4})\)\s*$", re.IGNORECASE)
+
+    def strip_year_range_suffix(name: str) -> str:
+        return YEAR_RANGE_SUFFIX_RE.sub("", name)
+
     def name_is_regime_of(inner_name: str, outer_name: str) -> bool:
         """True when inner_name reads as "<regime type> of <outer_name>" or
         "<regime type> of the <outer_name>" -- the common English naming
@@ -432,8 +444,8 @@ def create_app(root: Path = ROOT) -> FastAPI:
         from a compound PLACE name that happens to share a word (West
         Virginia is not "West of Virginia"). Requires an exact trailing
         match, not just a shared token, so it stays conservative."""
-        inner = re.sub(r"[^a-z0-9 ]+", " ", inner_name.casefold()).strip()
-        outer = re.sub(r"[^a-z0-9 ]+", " ", outer_name.casefold()).strip()
+        inner = re.sub(r"[^a-z0-9 ]+", " ", strip_year_range_suffix(inner_name).casefold()).strip()
+        outer = re.sub(r"[^a-z0-9 ]+", " ", strip_year_range_suffix(outer_name).casefold()).strip()
         if not outer or not inner or inner == outer:
             return False
         return inner.endswith(f" of {outer}") or inner.endswith(f" of the {outer}")
@@ -791,13 +803,30 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     suggested_decision = "independent"
                 elif (
                     date_contains and geography_compatible
-                    and (exact_name_match or regime_of_candidate)
+                    and (exact_name_match or regime_of_candidate or reviewed_part_of_candidate)
                     and document.get("end") is not None
                 ):
+                    # A direct P361/P527 relationship counts as phase_of
+                    # naming evidence too, when it comes with clean date
+                    # nesting AND the reviewed side has actually ended: that
+                    # combination -- Wikidata directly relates the two
+                    # records, and one's span sits entirely inside the
+                    # other's, which has since continued past it -- is what
+                    # a genuine phase looks like, even when Wikidata's own
+                    # P361 claim is really describing "this was this place,
+                    # under a different name, for a while" rather than
+                    # literal spatial containment. Czechoslovak Socialist
+                    # Republic (1948-1990) has a P361 claim to Czechoslovakia
+                    # (1918-1992) but is a phase of it, not a physical part
+                    # the way New Zealand is part of the Realm of New
+                    # Zealand (found live, 1 September 2026 -- checked
+                    # before the plain part_of branches below, so a
+                    # genuinely nested, concluded phase wins that
+                    # interpretation over the weaker structural default).
                     suggested_decision = "phase_of"
                 elif (
                     reverse_date_contains and geography_compatible
-                    and (exact_name_match or regime_of_reviewed)
+                    and (exact_name_match or regime_of_reviewed or candidate_part_of_reviewed)
                     and other.get("end") is not None
                 ):
                     suggested_decision = "candidate_phase_of"

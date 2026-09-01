@@ -1,0 +1,297 @@
+"""Regression tests for consolidation_review_queue()'s suggested_decision
+logic in server/app.py.
+
+Each test below is a real example found live during identity-review work:
+a false positive or false negative that got root-caused and fixed. Add a
+case here whenever a new one turns up, so the fix can't silently regress
+the next time the scoring logic is touched.
+"""
+
+import json
+import tempfile
+import unittest
+from pathlib import Path
+
+import yaml
+from fastapi.testclient import TestClient
+
+from server.app import create_app
+
+WEB_FILES = (
+    "explore.html", "explore.js", "explore_timeline.js", "explore_details.js",
+    "geological_epochs.js", "timeline_scale.js", "lane_packing.js", "common.js",
+    "type_review.html", "styles.css",
+    "type_review.js", "subdivision_review.js",
+    "subdivision_review.html",
+    "reviews.html", "reviews.js", "consolidation_review.html", "consolidation_review.js",
+    "review_build.js",
+)
+
+BASE = {
+    "entity_type": "polity", "entity_type_confidence": "high",
+    "start_confidence": "low", "end_confidence": "low",
+    "sources": ["wikidata"], "eligibility": "accepted",
+}
+
+
+def build_app(root: Path, polities: list[dict], relationships: list[dict] | None = None) -> TestClient:
+    """Spin up a minimal histomap server against `root`, seeded with
+    `polities` and (optionally) a Wikidata relationship cache."""
+    (root / "web").mkdir()
+    (root / "reports").mkdir()
+    (root / "polities").mkdir()
+    (root / "periods").mkdir()
+    (root / "sources").mkdir()
+    (root / "sources" / "wikidata_country_metadata.json").write_text("{}", encoding="utf-8")
+    (root / "sources" / "wikidata_relationships.json").write_text(
+        json.dumps(relationships or []), encoding="utf-8"
+    )
+    (root / "sources" / "wikidata_direct_types.json").write_text("{}", encoding="utf-8")
+    for name in WEB_FILES:
+        (root / "web" / name).write_text(name, encoding="utf-8")
+    (root / "data.json").write_text("[]", encoding="utf-8")
+    (root / "transitions.json").write_text("[]", encoding="utf-8")
+    (root / "periods.json").write_text("[]", encoding="utf-8")
+    (root / "period_links.json").write_text("[]", encoding="utf-8")
+    (root / "period_links.yaml").write_text("[]\n", encoding="utf-8")
+    for polity in polities:
+        (root / "polities" / f"{polity['id']}.yaml").write_text(
+            yaml.safe_dump(polity), encoding="utf-8"
+        )
+    return TestClient(create_app(root))
+
+
+class ConsolidationSuggestionTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.temporary = tempfile.TemporaryDirectory()
+        self.root = Path(self.temporary.name)
+
+    def tearDown(self) -> None:
+        self.temporary.cleanup()
+
+    def suggestion_for(
+        self, reviewed_id: str, candidate_id: str, polities: list[dict], relationships=None
+    ) -> str | None:
+        client = build_app(self.root, polities, relationships)
+        queue = client.get("/api/consolidation-reviews", params={"limit": 100}).json()["items"]
+        row = next((item for item in queue if item["id"] == reviewed_id), None)
+        self.assertIsNotNone(row, f"{reviewed_id} did not reach the consolidation queue")
+        candidate = next((c for c in row["candidates"] if c["id"] == candidate_id), None)
+        self.assertIsNotNone(candidate, f"{candidate_id} was not a candidate for {reviewed_id}")
+        return candidate["suggested_decision"]
+
+    def test_syrian_arab_republic_phase_of_syria(self) -> None:
+        # Syria's own Wikidata aliases genuinely include "Syrian Arab
+        # Republic" -- exact_name_match, target dates contain source.
+        polities = [
+            {**BASE, "id": "syria", "canonical_name": "Syria", "external_ids": {"wikidata": "Q858"},
+             "names": {"aliases_en": "Syrian Arab Republic"}, "start": 1920, "end": None,
+             "prominence_score": 40, "geography": {"present_countries": ["SY"]}},
+            {**BASE, "id": "syrian_arab_republic", "canonical_name": "Syrian Arab Republic",
+             "external_ids": {"wikidata": "Q131404661"}, "start": 1963, "end": 2024,
+             "prominence_score": 20, "geography": {"present_countries": ["SY"]}},
+        ]
+        self.assertEqual(self.suggestion_for("syrian_arab_republic", "syria", polities), "phase_of")
+
+    def test_french_first_republic_candidate_phase_of_france(self) -> None:
+        # Reverse direction: the REVIEWED entity (France) is the broad
+        # continuous polity; the CANDIDATE (French First Republic) is the
+        # bounded historical phase. Only ever a *candidate* for another
+        # entity if its own prominence_score is >= the reviewed entity's
+        # (the queue only offers more-or-equally-prominent candidates) --
+        # true in the real data (French First Republic 50.19 > France
+        # 44.97), reproduced here rather than picked arbitrarily.
+        polities = [
+            {**BASE, "id": "france", "canonical_name": "France", "external_ids": {"wikidata": "Q142"},
+             "start": 481, "end": None, "prominence_score": 45, "geography": {"present_countries": ["FR"]}},
+            {**BASE, "id": "french_first_republic", "canonical_name": "French First Republic",
+             "external_ids": {"wikidata": "Q58296"}, "names": {"aliases_en": "France"},
+             "start": 1792, "end": 1804, "prominence_score": 50, "geography": {"present_countries": ["FR"]}},
+        ]
+        self.assertEqual(
+            self.suggestion_for("france", "french_first_republic", polities), "candidate_phase_of"
+        )
+
+    def test_yugoslavia_regime_of_place_with_finite_end(self) -> None:
+        # "Federal People's Republic of Yugoslavia" reads as "<regime type>
+        # of Yugoslavia" and has a finite end (1963) -- a genuine completed
+        # phase, no exact alias needed.
+        polities = [
+            {**BASE, "id": "yugoslavia", "canonical_name": "Yugoslavia", "external_ids": {"wikidata": "Q36704"},
+             "start": 1918, "end": 1992, "prominence_score": 40, "geography": {"present_countries": ["RS", "YU"]}},
+            {**BASE, "id": "federal_peoples_republic_of_yugoslavia",
+             "canonical_name": "Federal People's Republic of Yugoslavia",
+             "external_ids": {"wikidata": "Q1290149"}, "start": 1945, "end": 1963,
+             "prominence_score": 20, "geography": {"present_countries": ["RS"]}},
+        ]
+        self.assertEqual(
+            self.suggestion_for("federal_peoples_republic_of_yugoslavia", "yugoslavia", polities),
+            "phase_of",
+        )
+
+    def test_realm_of_new_zealand_open_ended_regime_of_place_not_suggested(self) -> None:
+        # "Realm of New Zealand" also reads as "<X> of New Zealand", but
+        # unlike Yugoslavia's regime, it's still open-ended (no finite
+        # end) -- the OPPOSITE relationship (a broader container, not a
+        # completed phase). With no Wikidata relationship data either, no
+        # signal should confidently fire.
+        polities = [
+            {**BASE, "id": "new_zealand", "canonical_name": "New Zealand", "external_ids": {"wikidata": "Q664"},
+             "start": 1841, "end": None, "prominence_score": 40, "geography": {"present_countries": ["NZ"]}},
+            {**BASE, "id": "realm_of_new_zealand", "canonical_name": "Realm of New Zealand",
+             "external_ids": {"wikidata": "Q889033"}, "start": 1983, "end": None,
+             "prominence_score": 20, "geography": {"present_countries": ["NZ"]}},
+        ]
+        self.assertIsNone(self.suggestion_for("realm_of_new_zealand", "new_zealand", polities))
+
+    def test_realm_of_new_zealand_documented_part_of(self) -> None:
+        # New Zealand's own Wikidata P361 ("part of") claim names Realm of
+        # New Zealand directly -- should suggest candidate_part_of (New
+        # Zealand is part of the Realm), not phase_of.
+        polities = [
+            {**BASE, "id": "new_zealand", "canonical_name": "New Zealand", "external_ids": {"wikidata": "Q664"},
+             "start": 1841, "end": None, "prominence_score": 40, "geography": {"present_countries": ["NZ"]}},
+            {**BASE, "id": "realm_of_new_zealand", "canonical_name": "Realm of New Zealand",
+             "external_ids": {"wikidata": "Q889033"}, "start": 1983, "end": None,
+             "prominence_score": 20, "geography": {"present_countries": ["NZ"]}},
+        ]
+        relationships = [{"source": "Q664", "property": "P361", "target": "Q889033"}]
+        self.assertEqual(
+            self.suggestion_for("realm_of_new_zealand", "new_zealand", polities, relationships),
+            "candidate_part_of",
+        )
+
+    def test_czechoslovak_socialist_republic_phase_of_wins_over_part_of(self) -> None:
+        # Czechoslovak Socialist Republic has a direct P361 claim to
+        # Czechoslovakia AND its own dates nest cleanly inside
+        # Czechoslovakia's broader span, with a finite end -- that
+        # combination should win as phase_of, not the plain part_of
+        # fallback the raw P361 claim would otherwise suggest. The alias
+        # "Socialist Republic of Czechoslovakia" is real data (not just a
+        # test fixture convenience) -- it's what actually puts this pair in
+        # the queue's candidate pool at all, via the shared "czechoslovakia"
+        # token.
+        polities = [
+            {**BASE, "id": "czechoslovakia", "canonical_name": "Czechoslovakia",
+             "external_ids": {"wikidata": "Q33946"}, "start": 1918, "end": 1992,
+             "prominence_score": 48, "geography": {"present_countries": ["CZ", "SK"]}},
+            {**BASE, "id": "czechoslovak_socialist_republic",
+             "canonical_name": "Czechoslovak Socialist Republic",
+             "names": {"aliases_en": "Socialist Republic of Czechoslovakia"},
+             "external_ids": {"wikidata": "Q853348"}, "start": 1948, "end": 1990,
+             "prominence_score": 42, "geography": {"present_countries": ["CZ", "SK"]}},
+        ]
+        relationships = [{"source": "Q853348", "property": "P361", "target": "Q33946"}]
+        self.assertEqual(
+            self.suggestion_for(
+                "czechoslovak_socialist_republic", "czechoslovakia", polities, relationships
+            ),
+            "phase_of",
+        )
+
+    def test_west_virginia_no_identity_signal_suggests_independent(self) -> None:
+        # West Virginia seceded from Virginia in 1863 and both states have
+        # coexisted separately ever since -- a partition, not a phase.
+        # Matches Virginia only via the shared "virginia" token, no exact
+        # alias, no Wikidata claim -- defaults to suggesting independent.
+        polities = [
+            {**BASE, "id": "virginia", "canonical_name": "Virginia", "external_ids": {"wikidata": "Q1370"},
+             "start": 1788, "end": None, "prominence_score": 40, "geography": {"present_countries": ["US"]}},
+            {**BASE, "id": "west_virginia", "canonical_name": "West Virginia",
+             "external_ids": {"wikidata": "Q1371"}, "start": 1863, "end": None,
+             "prominence_score": 25, "geography": {"present_countries": ["US"]}},
+        ]
+        self.assertEqual(self.suggestion_for("west_virginia", "virginia", polities), "independent")
+
+    def test_appenzell_cantons_likely_siblings_suggest_independent(self) -> None:
+        # Split from one original Appenzell canton in 1513 -- identical
+        # date ranges, different names, distinct Wikidata items: siblings,
+        # not one a phase of the other.
+        polities = [
+            {**BASE, "id": "canton_of_appenzell_innerrhoden",
+             "canonical_name": "Canton of Appenzell Innerrhoden",
+             "external_ids": {"wikidata": "Q12094"}, "start": 1513, "end": None,
+             "prominence_score": 20, "geography": {"present_countries": ["CH"]}},
+            {**BASE, "id": "canton_of_appenzell_ausserrhoden",
+             "canonical_name": "Canton of Appenzell Ausserrhoden",
+             "external_ids": {"wikidata": "Q12079"}, "start": 1513, "end": None,
+             "prominence_score": 20, "geography": {"present_countries": ["CH"]}},
+        ]
+        self.assertEqual(
+            self.suggestion_for(
+                "canton_of_appenzell_ausserrhoden", "canton_of_appenzell_innerrhoden", polities
+            ),
+            "independent",
+        )
+
+    def test_bourbon_restoration_alias_reused_different_era_suggests_independent(self) -> None:
+        # Bourbon Restoration in France carries an alias "Kingdom of
+        # France" -- the restored monarchy genuinely was called that --
+        # but Kingdom of France (987-1791) and Bourbon Restoration
+        # (1815-1830) are distinct Wikidata items with non-overlapping
+        # dates: the same name reused for a different era, not a phase.
+        polities = [
+            {**BASE, "id": "kingdom_of_france", "canonical_name": "Kingdom of France",
+             "external_ids": {"wikidata": "Q70972"}, "start": 987, "end": 1791,
+             "prominence_score": 40, "geography": {"present_countries": ["FR"]}},
+            {**BASE, "id": "bourbon_restoration_in_france", "canonical_name": "Bourbon Restoration in France",
+             "external_ids": {"wikidata": "Q207162"}, "names": {"aliases_en": "Kingdom of France"},
+             "start": 1815, "end": 1830, "prominence_score": 20, "geography": {"present_countries": ["FR"]}},
+        ]
+        self.assertEqual(
+            self.suggestion_for("bourbon_restoration_in_france", "kingdom_of_france", polities),
+            "independent",
+        )
+
+    def test_same_wikidata_item_mismatched_dates_flags_qid_conflict(self) -> None:
+        # Roman Republic and Ancient Rome both carry the same Wikidata QID
+        # in this dataset despite covering very different centuries --
+        # almost certainly one record has a misattributed QID, not a
+        # genuine identity match. Should not suggest same_entity.
+        polities = [
+            {**BASE, "id": "ancient_rome", "canonical_name": "Ancient Rome",
+             "external_ids": {"wikidata": "Q1747689"}, "start": -752, "end": 476,
+             "prominence_score": 59, "geography": {"present_countries": ["IT"]}},
+            {**BASE, "id": "roman_republic", "canonical_name": "Roman Republic",
+             "external_ids": {"wikidata": "Q1747689"}, "start": -509, "end": -27,
+             "prominence_score": 81, "geography": {"present_countries": ["IT"]}},
+        ]
+        self.assertIsNone(self.suggestion_for("ancient_rome", "roman_republic", polities))
+
+    def test_akragas_date_estimate_tolerance(self) -> None:
+        # Akragas's own record starts 580 BCE, Agrigento's starts 579 BCE --
+        # a 1-year difference from independently-estimated dates shouldn't
+        # block an otherwise-clear phase_of.
+        polities = [
+            {**BASE, "id": "agrigento", "canonical_name": "Agrigento", "external_ids": {"wikidata": "Q13678"},
+             "names": {"aliases_en": "Akragas"}, "start": -579, "end": None,
+             "prominence_score": 30, "geography": {"present_countries": ["IT"]}},
+            {**BASE, "id": "akragas", "canonical_name": "Akragas", "external_ids": {"wikidata": "Q3607380"},
+             "start": -580, "end": 406, "prominence_score": 20, "geography": {"present_countries": ["IT"]}},
+        ]
+        self.assertEqual(self.suggestion_for("akragas", "agrigento", polities), "phase_of")
+
+    def test_thuringia_year_range_suffix_still_reads_as_regime_of(self) -> None:
+        # "State of Thuringia (1920-1952)" carries a trailing disambiguator
+        # in its own canonical_name -- stripped naively, "State of
+        # Thuringia" clearly reads as "<regime type> of Thuringia" with a
+        # finite end, but the raw suffix used to break that
+        # endswith(" of thuringia") check and fall through to
+        # no_identity_signal/independent instead.
+        polities = [
+            {**BASE, "id": "thuringia", "canonical_name": "Thuringia",
+             "external_ids": {"wikidata": "Q1197"}, "start": 1920, "end": None,
+             "prominence_score": 30, "geography": {"present_countries": ["DE"]}},
+            {**BASE, "id": "state_of_thuringia_19201952",
+             "canonical_name": "State of Thuringia (1920–1952)",
+             "external_ids": {"wikidata": "Q1585375"}, "start": 1920, "end": 1952,
+             "prominence_score": 20, "geography": {"present_countries": ["DE"]}},
+        ]
+        self.assertEqual(
+            self.suggestion_for("state_of_thuringia_19201952", "thuringia", polities),
+            "phase_of",
+        )
+
+
+if __name__ == "__main__":
+    unittest.main()
