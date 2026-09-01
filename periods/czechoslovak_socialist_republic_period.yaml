@@ -1,0 +1,27 @@
+id: czechoslovak_socialist_republic_period
+canonical_name: Czechoslovak Socialist Republic
+kind: historical
+start: 1948
+end: 1990
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - CZ
+  centroid:
+    lat: 50.0833
+    lon: 14.4667
+  confidence: low
+  historical_regions:
+  - eastern_europe
+  primary_historical_region: eastern_europe
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q853348
+notes: Editorially identified as a phase or aspect of Czechoslovakia.
+source_urls:
+- https://www.wikidata.org/wiki/Q853348

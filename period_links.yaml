@@ -770,3 +770,27 @@
   source_urls:
   - https://www.wikidata.org/wiki/Q199821
   notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: czechoslovak_socialist_republic_period
+  entity_id: czechoslovakia
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q853348
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: coahuila_y_tejas_period
+  entity_id: coahuila
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q949898
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: lands_of_the_bohemian_crown_13481526_period
+  entity_id: lands_of_the_bohemian_crown
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q85775800
+  notes: Reviewed record is a dated phase of this canonical polity.

@@ -940,6 +940,50 @@
     "civilization_lane": false
   },
   {
+    "id": "coahuila_y_tejas_period",
+    "canonical_name": "Coahuila y Tejas",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1824,
+    "end": 1835,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "historical_regions": [
+        "mesoamerica",
+        "north_america"
+      ],
+      "primary_historical_region": null,
+      "present_countries": [
+        "MX",
+        "US"
+      ],
+      "centroid": {
+        "lat": 28.8333,
+        "lon": -99.5
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q949898"
+    },
+    "notes": "Editorially identified as a phase or aspect of Coahuila.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q949898"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "commune_of_the_working_people_of_estonia_period",
     "canonical_name": "Commune of the Working People of Estonia",
     "kind": "historical",
@@ -1078,6 +1122,48 @@
     "notes": "Editorially identified as a phase or aspect of Czechoslovak Socialist Republic.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q11178782"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
+    "id": "czechoslovak_socialist_republic_period",
+    "canonical_name": "Czechoslovak Socialist Republic",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1948,
+    "end": 1990,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "CZ"
+      ],
+      "centroid": {
+        "lat": 50.0833,
+        "lon": 14.4667
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q853348"
+    },
+    "notes": "Editorially identified as a phase or aspect of Czechoslovakia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q853348"
     ],
     "linked_era_id": null,
     "linked_chapter_id": null,
@@ -3272,6 +3358,39 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false
+  },
+  {
+    "id": "lands_of_the_bohemian_crown_13481526_period",
+    "canonical_name": "Lands of the Bohemian Crown (1348–1526)",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1348,
+    "end": 1526,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q85775800"
+    },
+    "notes": "Editorially identified as a phase or aspect of Lands of the Bohemian Crown.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q85775800"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
   },
   {
     "id": "lordship_of_padua_period",

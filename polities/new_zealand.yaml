@@ -5,7 +5,7 @@ names:
   aliases_en: nz | Dominion of New Zealand | Aotearoa New Zealand
 external_ids:
   wikidata: Q664
-parent: null
+parent: realm_of_new_zealand
 successors: []
 start: 1841
 end: null
@@ -41,12 +41,16 @@ geography:
   historical_regions:
   - oceania_pacific
   primary_historical_region: oceania_pacific
-entity_type: polity
+entity_type: subdivision
 entity_type_confidence: high
-entity_type_source_qids:
-- Q3624078
-- Q6256
-relationships: []
+entity_type_source_qids: []
+relationships:
+- target: realm_of_new_zealand
+  kind: administrative_part_of
+  evidence: derived
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q664
 prominence_components:
   wikidata_reach: 30
   authority_coverage: 4
@@ -61,3 +65,10 @@ prominence_components:
 linked_era_id: oceania_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world
+manual_overrides:
+- entity_type
+- subdivision_parent
+entity_type_reviewed_against:
+- subdivision
+subdivision_parent_status: confirmed
+consolidation_status: part_of

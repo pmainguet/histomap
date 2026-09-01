@@ -1,0 +1,20 @@
+id: lands_of_the_bohemian_crown_13481526_period
+canonical_name: Lands of the Bohemian Crown (1348–1526)
+kind: historical
+start: 1348
+end: 1526
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q85775800
+notes: Editorially identified as a phase or aspect of Lands of the Bohemian Crown.
+source_urls:
+- https://www.wikidata.org/wiki/Q85775800
