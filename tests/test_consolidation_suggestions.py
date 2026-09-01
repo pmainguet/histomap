@@ -258,13 +258,29 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         ]
         self.assertIsNone(self.suggestion_for("ancient_rome", "roman_republic", polities))
 
-    def test_akragas_date_estimate_tolerance(self) -> None:
+    def test_akragas_mismatched_estimated_start_blocks_date_contains(self) -> None:
         # Akragas's own record starts 580 BCE, Agrigento's starts 579 BCE --
-        # a 1-year difference from independently-estimated dates shouldn't
-        # block an otherwise-clear phase_of.
+        # independently-estimated ancient dates rarely agree to the year, but
+        # date-containment intentionally has no tolerance for that (an
+        # earlier +/-10-year tolerance masked genuine boundary mismatches
+        # too broadly, found live 1 September 2026): a 1-year gap on the
+        # containing side is enough to withhold the suggestion rather than
+        # guess. A reviewer still has to confirm this one by hand.
         polities = [
             {**BASE, "id": "agrigento", "canonical_name": "Agrigento", "external_ids": {"wikidata": "Q13678"},
              "names": {"aliases_en": "Akragas"}, "start": -579, "end": None,
+             "prominence_score": 30, "geography": {"present_countries": ["IT"]}},
+            {**BASE, "id": "akragas", "canonical_name": "Akragas", "external_ids": {"wikidata": "Q3607380"},
+             "start": -580, "end": 406, "prominence_score": 20, "geography": {"present_countries": ["IT"]}},
+        ]
+        self.assertIsNone(self.suggestion_for("akragas", "agrigento", polities))
+
+    def test_akragas_matching_estimated_start_suggests_phase_of(self) -> None:
+        # Same pair, but with matching start years -- confirms exact
+        # containment (no tolerance) still fires when the boundaries agree.
+        polities = [
+            {**BASE, "id": "agrigento", "canonical_name": "Agrigento", "external_ids": {"wikidata": "Q13678"},
+             "names": {"aliases_en": "Akragas"}, "start": -580, "end": None,
              "prominence_score": 30, "geography": {"present_countries": ["IT"]}},
             {**BASE, "id": "akragas", "canonical_name": "Akragas", "external_ids": {"wikidata": "Q3607380"},
              "start": -580, "end": 406, "prominence_score": 20, "geography": {"present_countries": ["IT"]}},
@@ -291,6 +307,40 @@ class ConsolidationSuggestionTests(unittest.TestCase):
             self.suggestion_for("state_of_thuringia_19201952", "thuringia", polities),
             "phase_of",
         )
+
+    def test_exact_name_match_phase_of_allowed_when_both_sides_open_ended(self) -> None:
+        # A finite end is NOT required for phase_of: an exact alias match
+        # with clean date nesting should suggest phase_of even when the
+        # reviewed entity (the one that would be retired) is itself still
+        # open-ended/"present" -- the backend approximates a missing end
+        # rather than refusing the decision, so the suggestion shouldn't be
+        # more conservative than the backend it feeds.
+        polities = [
+            {**BASE, "id": "sharifian_empire", "canonical_name": "Sharifian Empire",
+             "external_ids": {"wikidata": "Q1234567"}, "names": {"aliases_en": "Morocco"},
+             "start": 1549, "end": None, "prominence_score": 30,
+             "geography": {"present_countries": ["MA"]}},
+            {**BASE, "id": "morocco", "canonical_name": "Morocco", "external_ids": {"wikidata": "Q1028"},
+             "start": 788, "end": None, "prominence_score": 45,
+             "geography": {"present_countries": ["MA"]}},
+        ]
+        self.assertEqual(self.suggestion_for("sharifian_empire", "morocco", polities), "phase_of")
+
+    def test_missing_geography_data_does_not_count_as_compatible(self) -> None:
+        # An exact name match with clean date nesting but no
+        # present_countries recorded on the candidate should NOT be enough
+        # for phase_of on its own -- missing geography data is unknown, not
+        # a green light, so it must not stand in for an actual overlap
+        # (found live, 1 September 2026).
+        polities = [
+            {**BASE, "id": "some_kingdom", "canonical_name": "Some Kingdom",
+             "external_ids": {"wikidata": "Q9000001"}, "names": {"aliases_en": "Testland"},
+             "start": 1200, "end": 1400, "prominence_score": 20,
+             "geography": {"present_countries": ["ZZ"]}},
+            {**BASE, "id": "testland", "canonical_name": "Testland", "external_ids": {"wikidata": "Q9000002"},
+             "start": 900, "end": None, "prominence_score": 25, "geography": {"present_countries": []}},
+        ]
+        self.assertIsNone(self.suggestion_for("some_kingdom", "testland", polities))
 
 
 if __name__ == "__main__":

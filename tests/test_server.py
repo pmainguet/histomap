@@ -227,7 +227,7 @@ class UnifiedServerTests(unittest.TestCase):
             {**base, "id": "rhodes_old", "canonical_name": "Rhodes", "names": {"aliases_en": "Ancient Rhodes"}, "start": -407, "end": 500, "prominence_score": 20, "geography": {"present_countries": ["GR"]}},
             {**base, "id": "rhodes_main", "canonical_name": "Rhodes", "names": {"aliases_en": "Rhodos"}, "start": -1600, "end": None, "prominence_score": 30, "geography": {"present_countries": ["GR"]}},
             {**base, "id": "appenzell", "canonical_name": "Canton of Appenzell Ausserrhoden", "names": {"aliases_en": "Appenzell Outer Rhodes"}, "start": 1513, "end": None, "prominence_score": 25, "geography": {"present_countries": ["CH"]}},
-            {**base, "id": "ottoman_caliphate", "canonical_name": "Ottoman Caliphate", "start": 1517, "end": 1924, "prominence_score": 20, "geography": {"present_countries": []}},
+            {**base, "id": "ottoman_caliphate", "canonical_name": "Ottoman Caliphate", "start": 1517, "end": 1924, "prominence_score": 20, "geography": {"present_countries": ["TR"]}},
             {**base, "id": "ottoman_empire", "canonical_name": "Ottoman Empire", "start": 1299, "end": 1922, "prominence_score": 40, "geography": {"present_countries": ["TR"]}},
         ]
         for document in documents:

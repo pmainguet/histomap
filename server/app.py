@@ -31,13 +31,6 @@ ALLOWED_ACTIONS = {
     "compute-weights": ["pipeline/compute_weights.py"],
 }
 CONTINENTS = ["africa", "asia", "europe", "north_america", "south_america", "oceania", "antarctica"]
-# consolidation_review_queue()'s date-containment checks (date_contains,
-# reverse_date_contains) tolerate a boundary this many years off, so a minor
-# start/end-year estimate difference between two records of the same place
-# (e.g. Akragas's own start of 580 BCE vs. Agrigento's record starting 579
-# BCE -- ancient dates rarely agree to the year) doesn't block an otherwise
-# clear phase_of/candidate_phase_of suggestion.
-DATE_CONTAINS_TOLERANCE_YEARS = 10
 ENTITY_TYPE_REVIEW_ORDER = {
     "civilization": 0,
     "polity": 1,
@@ -507,14 +500,25 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 name_score = float(fuzz.WRatio(source_name, str(other.get("canonical_name", other_id))))
                 other_countries = set((other.get("geography") or {}).get("present_countries", []))
                 geography_match = bool(source_countries & other_countries)
-                geography_compatible = geography_match or not source_countries or not other_countries
+                # Missing present_countries data on either side is unknown,
+                # not a green light -- it must not stand in for an actual
+                # overlap when deciding a suggestion (found live, 1 September
+                # 2026). geography_conflict is the separate, genuinely
+                # informative case: both sides HAVE data and it doesn't
+                # overlap.
+                geography_compatible = geography_match
+                geography_conflict = bool(source_countries and other_countries and not geography_match)
+                # Exact containment, no fuzz -- a start/end year that misses
+                # by even one year does not count (found live, 1 September
+                # 2026: an earlier tolerance here masked genuine boundary
+                # mismatches as well as forgiving real estimate noise).
                 date_contains = (
                     other.get("start") is not None
                     and document.get("start") is not None
-                    and other["start"] - DATE_CONTAINS_TOLERANCE_YEARS <= document["start"]
+                    and other["start"] <= document["start"]
                     and (
                         other.get("end") is None
-                        or (document.get("end") is not None and other["end"] + DATE_CONTAINS_TOLERANCE_YEARS >= document["end"])
+                        or (document.get("end") is not None and other["end"] >= document["end"])
                     )
                 )
                 # Mirror of date_contains: the REVIEWED entity's own dates
@@ -524,10 +528,10 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 reverse_date_contains = (
                     document.get("start") is not None
                     and other.get("start") is not None
-                    and document["start"] - DATE_CONTAINS_TOLERANCE_YEARS <= other["start"]
+                    and document["start"] <= other["start"]
                     and (
                         document.get("end") is None
-                        or (other.get("end") is not None and document["end"] + DATE_CONTAINS_TOLERANCE_YEARS >= other["end"])
+                        or (other.get("end") is not None and document["end"] >= other["end"])
                     )
                 )
                 source_end = document.get("end") if document.get("end") is not None else 2100
@@ -740,7 +744,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     reasons.append(f"shared identity term: {', '.join(sorted(shared_canonical_tokens))}")
                 if geography_match:
                     reasons.append("shared present-day geography")
-                elif not geography_compatible:
+                elif geography_conflict:
                     reasons.append("conflicting geography")
                 if coordinate_conflict:
                     reasons.append(f"centroids ~{round(coordinate_km):,}km apart")
@@ -786,15 +790,22 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 # parallel entity it split off from (found live, 31 August
                 # 2026). A shared full name/alias is the reliable
                 # discriminator every verified phase_of case had in common.
-                # phase_of/candidate_phase_of also require the entity that
-                # would actually be RETIRED (reviewed for phase_of, candidate
-                # for candidate_phase_of) to have a finite end date -- the
-                # decision writes it as a Period record, which the backend
-                # itself refuses without one. Caught live via exact_name_match
-                # too, not just regime_of: Sharifian Empire has a genuine
-                # "Morocco" alias but its own record is open-ended
-                # ("present"), so submitting phase_of bounced off that
-                # validation (found live, 1 September 2026).
+                # phase_of/candidate_phase_of do NOT require a finite end on
+                # the entity that would be retired -- an open-ended phase is
+                # a legitimate outcome (e.g. a country's current-era phase is
+                # still "present"), and the backend approximates a missing
+                # end date rather than refusing the decision. The regime_of_*
+                # naming path still carries its own finite-end requirement
+                # (see name_is_regime_of() gating above): a "<regime> of
+                # <place>" name pattern alone, with no other evidence, is
+                # ambiguous between "a completed phase of that place" and "a
+                # broader, still-ongoing container that happens to share the
+                # naming pattern" (e.g. Realm of New Zealand vs. New Zealand)
+                # -- date_contains and geography_compatible alone can't tell
+                # those apart when both sides are still open, so that
+                # specific path keeps requiring a concluded regime. exact_name_match
+                # and a direct Wikidata part-of relationship carry no such
+                # ambiguity and don't need it (found live, 1 September 2026).
                 if possible_qid_conflict:
                     suggested_decision = None
                 elif same_wikidata:
@@ -804,7 +815,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 elif (
                     date_contains and geography_compatible
                     and (exact_name_match or regime_of_candidate or reviewed_part_of_candidate)
-                    and document.get("end") is not None
                 ):
                     # A direct P361/P527 relationship counts as phase_of
                     # naming evidence too, when it comes with clean date
@@ -827,7 +837,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 elif (
                     reverse_date_contains and geography_compatible
                     and (exact_name_match or regime_of_reviewed or candidate_part_of_reviewed)
-                    and other.get("end") is not None
                 ):
                     suggested_decision = "candidate_phase_of"
                 elif reviewed_part_of_candidate:
