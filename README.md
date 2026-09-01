@@ -128,11 +128,15 @@ coverage for every case below in `tests/test_consolidation_suggestions.py`.
   possible signal.
 - **Exact name match** — one record's canonical name (or an alias/translation) matches the
   other's exactly, after stripping trailing disambiguators like "(1920–1952)".
-- **"X of Y" naming pattern ("regime_of")** — e.g. "Kingdom of Hungary" reads as a regime *of*
-  Hungary. Only counts toward phase_of if the regime side also has a finite end date — otherwise
-  it's read as an open question rather than a completed phase, since a still-ongoing entity that
-  merely matches the naming pattern (e.g. "Realm of New Zealand") is often actually a *broader*
-  container rather than a phase.
+- **Regime/era naming pattern ("regime_of")** — a name ending in the other record's exact name,
+  either via the explicit "X of Y" shape ("Kingdom of Hungary" reads as a regime *of* Hungary) or
+  the more common bare "Qualifier Place" shape ("Francoist Spain", "Nazi Germany", "Meiji Japan").
+  Only counts toward phase_of if the regime side also has a finite end date — this is the signal's
+  real safety rail, since the bare shape alone can't distinguish a genuine regime name from a
+  distinct compound-name place that happens to share the pattern (West Virginia is not a regime of
+  Virginia; a still-open "Realm of New Zealand" is a broader container, not a completed phase of
+  New Zealand). Real regime names have almost always concluded; a genuinely distinct compound-name
+  place almost always hasn't.
 - **Direct Wikidata relationship** — a real "part of" (P361) or successor (P155/P156) claim
   between the two specific Wikidata items, not just a shared parent.
 - **Dates nest exactly** — one record's date range sits entirely inside the other's, with no
