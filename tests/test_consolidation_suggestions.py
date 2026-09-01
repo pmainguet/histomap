@@ -189,11 +189,17 @@ class ConsolidationSuggestionTests(unittest.TestCase):
             "phase_of",
         )
 
-    def test_west_virginia_no_identity_signal_suggests_independent(self) -> None:
+    def test_west_virginia_still_open_ended_withholds_suggestion(self) -> None:
         # West Virginia seceded from Virginia in 1863 and both states have
-        # coexisted separately ever since -- a partition, not a phase.
-        # Matches Virginia only via the shared "virginia" token, no exact
-        # alias, no Wikidata claim -- defaults to suggesting independent.
+        # coexisted separately ever since -- a partition, not a phase. Its
+        # name has the same "<qualifier> <place>" shape as a genuine regime
+        # name (Francoist Spain, Nazi Germany), so the naming pattern alone
+        # can't rule out a phase relationship -- but West Virginia is still
+        # open-ended (no finite end), which real regime names almost never
+        # are, so the algorithm withholds rather than guessing either way.
+        # No documented Wikidata claim either. A human still has to call
+        # this one, same as before, just without a false "independent"
+        # asserted with unwarranted confidence.
         polities = [
             {**BASE, "id": "virginia", "canonical_name": "Virginia", "external_ids": {"wikidata": "Q1370"},
              "start": 1788, "end": None, "prominence_score": 40, "geography": {"present_countries": ["US"]}},
@@ -201,7 +207,22 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "external_ids": {"wikidata": "Q1371"}, "start": 1863, "end": None,
              "prominence_score": 25, "geography": {"present_countries": ["US"]}},
         ]
-        self.assertEqual(self.suggestion_for("west_virginia", "virginia", polities), "independent")
+        self.assertIsNone(self.suggestion_for("west_virginia", "virginia", polities))
+
+    def test_francoist_spain_bare_qualifier_naming_pattern_suggests_phase_of(self) -> None:
+        # "Francoist Spain" doesn't fit the explicit "<regime type> of
+        # <place>" pattern (no "of"), but it's the far more common English
+        # shape for naming a historical regime/era -- and it has a finite
+        # end (1975) plus dates nesting exactly inside Spain's continuous
+        # span (1516-present), unlike West Virginia's open-ended dates.
+        polities = [
+            {**BASE, "id": "spain", "canonical_name": "Spain", "external_ids": {"wikidata": "Q29"},
+             "start": 1516, "end": None, "prominence_score": 45, "geography": {"present_countries": ["ES"]}},
+            {**BASE, "id": "francoist_spain", "canonical_name": "Francoist Spain",
+             "external_ids": {"wikidata": "Q13474305"}, "start": 1939, "end": 1975,
+             "prominence_score": 30, "geography": {"present_countries": ["ES"]}},
+        ]
+        self.assertEqual(self.suggestion_for("francoist_spain", "spain", polities), "phase_of")
 
     def test_appenzell_cantons_likely_siblings_suggest_independent(self) -> None:
         # Split from one original Appenzell canton in 1513 -- identical

@@ -430,18 +430,26 @@ def create_app(root: Path = ROOT) -> FastAPI:
         return YEAR_RANGE_SUFFIX_RE.sub("", name)
 
     def name_is_regime_of(inner_name: str, outer_name: str) -> bool:
-        """True when inner_name reads as "<regime type> of <outer_name>" or
-        "<regime type> of the <outer_name>" -- the common English naming
-        pattern for "a specific government of this place" (Federal People's
-        Republic of Yugoslavia, Islamic Emirate of Afghanistan), distinct
-        from a compound PLACE name that happens to share a word (West
-        Virginia is not "West of Virginia"). Requires an exact trailing
-        match, not just a shared token, so it stays conservative."""
+        """True when inner_name reads as a specific government/era of
+        outer_name -- either the explicit "<regime type> of <outer_name>"
+        pattern (Federal People's Republic of Yugoslavia, Islamic Emirate of
+        Afghanistan) or the more common bare "<qualifier> <outer_name>"
+        pattern (Francoist Spain, Nazi Germany, Soviet Russia, Meiji Japan),
+        distinct from a compound PLACE name that happens to share a word
+        (West Virginia is not a regime of Virginia). Requires an exact
+        trailing match at a word boundary, not just a shared token. The bare
+        pattern alone can't distinguish a genuine regime name from a
+        genuinely distinct compound-name place (East Germany read against a
+        broader "Germany") -- callers gate on a finite end as the safety
+        rail: real regime names almost always concluded, while a distinct
+        compound-name place that's still open-ended (West Virginia, South
+        Africa) won't pass that gate even if the name shape matches (found
+        live, 1 September 2026)."""
         inner = re.sub(r"[^a-z0-9 ]+", " ", strip_year_range_suffix(inner_name).casefold()).strip()
         outer = re.sub(r"[^a-z0-9 ]+", " ", strip_year_range_suffix(outer_name).casefold()).strip()
         if not outer or not inner or inner == outer:
             return False
-        return inner.endswith(f" of {outer}") or inner.endswith(f" of the {outer}")
+        return inner.endswith(f" {outer}")
 
     def consolidation_review_queue() -> list[dict]:
         refresh_period_role_queue()
