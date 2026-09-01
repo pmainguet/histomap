@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (635 of 4,697 still pending, confirmed live 1 September 2026 after several rounds of tightening/relaxing `suggested_decision`'s date/geography/naming rules -- see below; an automated `suggested_decision` hint covers most of the active queue, spanning same_entity/phase_of/candidate_phase_of/part_of/candidate_part_of/independent); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (590 of 4,697 still pending, confirmed live 1 September 2026 after several rounds of tightening/relaxing `suggested_decision`'s date/geography/naming rules -- see below; an automated `suggested_decision` hint covers most of the active queue, spanning same_entity/phase_of/candidate_phase_of/part_of/candidate_part_of/independent); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -887,6 +887,45 @@ queue-wide picked up a confident suggestion from this alone.
 239/239 tests pass throughout; zero console errors live beyond the pre-existing unrelated favicon
 404. `/consolidation-review` "active" pending count: 688 -> 706 (more candidates now surface
 correctly through the relaxed open-ended gate and the broader part_of inclusion criterion).
+
+### Regime-naming pattern generalized to any word-boundary placement, plus a timeline-axis label bug and a real data error found live — 1 September 2026
+
+A rapid-fire batch of real examples, submitted live within minutes of the previous "Qualifier
+Place" broadening, showed it wasn't nearly general enough: "Syrian Federation" (demonym as the
+FIRST word, regime noun last), "Spain under the Restoration" (the exact place name literally
+first, descriptor after), "First Brazilian Republic" (demonym in the MIDDLE of a three-word name),
+"Bruneian Sultanate", "Socialist Republic of Chile", "Bolivian State", "Old Babylonian Empire", and
+others all failed to match the first/last-word-only version. Replaced it with two general checks:
+outer_name's exact words appearing anywhere in inner_name at a word boundary (covers prefix,
+suffix, and mid-sentence placement uniformly with one substring test), plus a per-token demonym
+scan (any single word in inner_name that's a literal prefix/suffix match of outer_name -- Syria/
+Syrian, Brazil/Brazilian, Brunei/Bruneian -- catching regular "place + suffix" demonyms without a
+full demonym dictionary; irregular ones like France/French still aren't caught). Same finite-end
+safety rail as every previous round. Confirmed live via the four hardest of the batch, each added
+as its own regression test. 259/259 tests pass.
+
+**Timeline-axis label bug fixed.** The per-candidate timeline bar's right-edge label showed the
+literal string "2100 CE" for any open-ended ("present") entity -- 2100 is only an internal cap used
+for bar-width math, never a real date, so this was confusing rather than informative. Now reads
+"present" whenever the entity reaching the right edge is itself open-ended.
+
+**Real data error found and fixed, unrelated to the algorithm.** Republic of Benin's
+`present_countries` was recorded as NG (Nigeria) with a Nigeria-based centroid, not BJ (Benin) --
+likely confused during Wikidata extraction with the historical Kingdom of Benin, which really was
+located in what's now Nigeria. Corrected to match the real Benin record's geography.
+
+**Own verification-process bug caught and fixed.** All of this session's browser-based live checks
+had been navigating to `/reviews/consolidation`, which doesn't exist (the real route is
+`/consolidation-review`) -- silently loading a 404 JSON page instead of the actual review UI every
+time. The functional fixes were still verified correctly throughout via direct API calls and the
+user's own screenshots of the real page, but the "zero new console errors" claims from those
+browser checks were about the wrong page. Corrected going forward; re-verified against the real
+route with a genuinely clean console (not even the usual favicon 404 this time).
+
+Applied roughly 46 more consolidation decisions live during this pass, mostly confirming the
+naming-pattern fixes above end to end (Syrian Federation, Spain under the Restoration, First
+Brazilian Republic, Bruneian Sultanate, Socialist Republic of Chile, Old Babylonian Empire, and
+many more historical regime/dynasty-phase records). Live pending count: 635 -> 590.
 
 ### Regime-naming pattern broadened to the bare "Qualifier Place" shape — 1 September 2026
 
