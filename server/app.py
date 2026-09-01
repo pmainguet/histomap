@@ -431,25 +431,38 @@ def create_app(root: Path = ROOT) -> FastAPI:
 
     def name_is_regime_of(inner_name: str, outer_name: str) -> bool:
         """True when inner_name reads as a specific government/era of
-        outer_name -- either the explicit "<regime type> of <outer_name>"
-        pattern (Federal People's Republic of Yugoslavia, Islamic Emirate of
-        Afghanistan) or the more common bare "<qualifier> <outer_name>"
-        pattern (Francoist Spain, Nazi Germany, Soviet Russia, Meiji Japan),
-        distinct from a compound PLACE name that happens to share a word
-        (West Virginia is not a regime of Virginia). Requires an exact
-        trailing match at a word boundary, not just a shared token. The bare
-        pattern alone can't distinguish a genuine regime name from a
-        genuinely distinct compound-name place (East Germany read against a
-        broader "Germany") -- callers gate on a finite end as the safety
+        outer_name. Two checks, covering the common English shapes
+        regardless of where outer_name's own words fall in inner_name:
+        - outer_name's exact words appear anywhere in inner_name at a word
+          boundary -- "Kingdom of Hungary" (suffix), "Francoist Spain"
+          (suffix), "Spain under the Restoration" (prefix), "Republic of
+          the Congo" (mid-sentence, multi-word outer) all match this one
+          check.
+        - any single word of inner_name is a demonym-style prefix/suffix
+          match of outer_name (Syria/Syrian, Germany/German, Brazil/
+          Brazilian), catching "Syrian Federation" and "First Brazilian
+          Republic" without a full demonym dictionary; irregular demonyms
+          (France/French) aren't caught.
+        Neither check can, by name shape alone, distinguish a genuine
+        regime name from a genuinely distinct compound-name/demonym-
+        adjacent place that happens to share the shape (West Virginia is
+        not a regime of Virginia; India is not a regime named by
+        "Indiana") -- callers gate on a finite end as the real safety
         rail: real regime names almost always concluded, while a distinct
-        compound-name place that's still open-ended (West Virginia, South
-        Africa) won't pass that gate even if the name shape matches (found
-        live, 1 September 2026)."""
+        place that's still open-ended won't pass that gate even if the
+        name shape matches (found live, 1 September 2026)."""
         inner = re.sub(r"[^a-z0-9 ]+", " ", strip_year_range_suffix(inner_name).casefold()).strip()
         outer = re.sub(r"[^a-z0-9 ]+", " ", strip_year_range_suffix(outer_name).casefold()).strip()
         if not outer or not inner or inner == outer:
             return False
-        return inner.endswith(f" {outer}")
+        if f" {outer} " in f" {inner} ":
+            return True
+        if len(outer) < 4:
+            return False
+        return any(
+            len(word) >= 4 and (word.startswith(outer) or outer.startswith(word))
+            for word in inner.split(" ")
+        )
 
     def consolidation_review_queue() -> list[dict]:
         refresh_period_role_queue()

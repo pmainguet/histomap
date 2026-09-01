@@ -384,6 +384,60 @@ class ConsolidationSuggestionTests(unittest.TestCase):
             self.suggestion_for("republic_of_georgia_19901992", "georgia", polities), "phase_of"
         )
 
+    def test_syrian_federation_demonym_naming_pattern_suggests_phase_of(self) -> None:
+        # "Syrian Federation" doesn't end with "Syria" (it ends with
+        # "Federation") -- the demonym "Syrian" is the FIRST word instead.
+        # Exact date nesting (1922-1925 inside 1920-present) and matching
+        # geography, plus a finite end, should still suggest phase_of. The
+        # "State of Syria" alias is what actually puts this pair in the
+        # candidate pool at all (shared "syria" token) -- token-sharing is
+        # the pool-entry gate, separate from the naming-pattern signal under
+        # test here.
+        polities = [
+            {**BASE, "id": "syria", "canonical_name": "Syria", "external_ids": {"wikidata": "Q858"},
+             "start": 1920, "end": None, "prominence_score": 40,
+             "geography": {"present_countries": ["SY"]}},
+            {**BASE, "id": "syrian_federation", "canonical_name": "Syrian Federation",
+             "names": {"aliases_en": "State of Syria"},
+             "external_ids": {"wikidata": "Q12183911"}, "start": 1922, "end": 1925,
+             "prominence_score": 20, "geography": {"present_countries": ["SY"]}},
+        ]
+        self.assertEqual(self.suggestion_for("syrian_federation", "syria", polities), "phase_of")
+
+    def test_spain_under_the_restoration_prefix_naming_pattern_suggests_phase_of(self) -> None:
+        # "Spain under the Restoration" starts with the exact outer name
+        # "Spain" followed by a descriptor, rather than ending with it.
+        polities = [
+            {**BASE, "id": "spain", "canonical_name": "Spain", "external_ids": {"wikidata": "Q29"},
+             "start": 1516, "end": None, "prominence_score": 45, "geography": {"present_countries": ["ES"]}},
+            {**BASE, "id": "spain_under_the_restoration", "canonical_name": "Spain under the Restoration",
+             "external_ids": {"wikidata": "Q1044536"}, "start": 1874, "end": 1931,
+             "prominence_score": 25, "geography": {"present_countries": ["ES"]}},
+        ]
+        self.assertEqual(
+            self.suggestion_for("spain_under_the_restoration", "spain", polities), "phase_of"
+        )
+
+    def test_first_brazilian_republic_mid_sentence_demonym_suggests_phase_of(self) -> None:
+        # The demonym "Brazilian" falls in the MIDDLE of "First Brazilian
+        # Republic" -- neither first nor last word alone would catch it;
+        # the per-token demonym scan does. "United States of Brazil" (the
+        # real official English name of Brazil during this era) is what
+        # puts this pair in the candidate pool at all (shared "brazil"
+        # token) -- token-sharing is the pool-entry gate, separate from the
+        # naming-pattern signal under test here.
+        polities = [
+            {**BASE, "id": "brazil", "canonical_name": "Brazil", "external_ids": {"wikidata": "Q155"},
+             "start": 1822, "end": None, "prominence_score": 45, "geography": {"present_countries": ["BR"]}},
+            {**BASE, "id": "first_brazilian_republic", "canonical_name": "First Brazilian Republic",
+             "names": {"aliases_en": "United States of Brazil"},
+             "external_ids": {"wikidata": "Q2414171"}, "start": 1889, "end": 1930,
+             "prominence_score": 25, "geography": {"present_countries": ["BR"]}},
+        ]
+        self.assertEqual(
+            self.suggestion_for("first_brazilian_republic", "brazil", polities), "phase_of"
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

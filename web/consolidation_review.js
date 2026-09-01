@@ -30,11 +30,17 @@ function links(item) { return item.wikidata ? `<a href="https://www.wikidata.org
 // date_contains/date_overlap checks use.
 function timelineCoverage(candidateItem, reviewedItem) {
   const OPEN_END_CAP = 2100;
-  const cStart = candidateItem.dates[0], cEnd = candidateItem.dates[1] ?? OPEN_END_CAP;
-  const rStart = reviewedItem.dates[0], rEnd = reviewedItem.dates[1] ?? OPEN_END_CAP;
+  const cEndRaw = candidateItem.dates[1], rEndRaw = reviewedItem.dates[1];
+  const cStart = candidateItem.dates[0], cEnd = cEndRaw ?? OPEN_END_CAP;
+  const rStart = reviewedItem.dates[0], rEnd = rEndRaw ?? OPEN_END_CAP;
   if (cStart == null || rStart == null) return "";
   const min = Math.min(cStart, rStart);
   const max = Math.max(cEnd, rEnd);
+  // 2100 is only an internal cap for bar-width math, not a real date -- the
+  // axis label should read "present" whenever the entity that reaches the
+  // right edge is itself open-ended, not literally "2100 CE" (found live,
+  // 1 September 2026).
+  const maxIsOpenEnded = (max === cEnd && cEndRaw == null) || (max === rEnd && rEndRaw == null);
   const span = Math.max(1, max - min);
   const pct = (value) => ((value - min) / span) * 100;
   const bar = (start, end, cls, label) => {
@@ -45,7 +51,7 @@ function timelineCoverage(candidateItem, reviewedItem) {
   return `<tr class="timeline-coverage-row-wrap"><td colspan="3"><div class="timeline-coverage">
     ${bar(rStart, rEnd, "timeline-coverage-reviewed", "Reviewed")}
     ${bar(cStart, cEnd, "timeline-coverage-candidate", "Candidate")}
-    <div class="timeline-coverage-axis"><span>${formatYear(min)}</span><span>${formatYear(max)}</span></div>
+    <div class="timeline-coverage-axis"><span>${formatYear(min)}</span><span>${maxIsOpenEnded ? formatYear(null) : formatYear(max)}</span></div>
   </div></td></tr>`;
 }
 // Filled in by loadWikidataEvidence() once sitelinks are fetched -- prefers
