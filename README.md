@@ -110,6 +110,69 @@ defaults to the compact global tier.
 
 ---
 
+## Consolidation review: how `suggested_decision` works
+
+The `/reviews/consolidation` workspace pairs each pending entity with candidate matches and, where
+the evidence is clear enough, proposes one of six outcomes: **same entity**, **phase_of** (the
+reviewed entity is a bounded phase of the candidate — e.g. "Syrian Arab Republic" is a phase of
+"Syria"), **candidate_phase_of** (the reverse direction — the candidate is a phase of the reviewed
+entity), **part_of** / **candidate_part_of** (a subdivision relationship, not a time-bounded phase
+— e.g. New Zealand is part of the Realm of New Zealand), or **independent** (no real relationship).
+When the evidence doesn't clearly point one way, it proposes nothing and leaves it to manual
+review. The logic lives in `consolidation_review_queue()` in `server/app.py`, with regression
+coverage for every case below in `tests/test_consolidation_suggestions.py`.
+
+### The signals
+
+- **Same Wikidata ID** — the two records point to the identical Wikidata item. The strongest
+  possible signal.
+- **Exact name match** — one record's canonical name (or an alias/translation) matches the
+  other's exactly, after stripping trailing disambiguators like "(1920–1952)".
+- **"X of Y" naming pattern ("regime_of")** — e.g. "Kingdom of Hungary" reads as a regime *of*
+  Hungary. Only counts toward phase_of if the regime side also has a finite end date — otherwise
+  it's read as an open question rather than a completed phase, since a still-ongoing entity that
+  merely matches the naming pattern (e.g. "Realm of New Zealand") is often actually a *broader*
+  container rather than a phase.
+- **Direct Wikidata relationship** — a real "part of" (P361) or successor (P155/P156) claim
+  between the two specific Wikidata items, not just a shared parent.
+- **Dates nest exactly** — one record's date range sits entirely inside the other's, with no
+  tolerance for estimate noise: a boundary that misses by even one year does not count. Both sides
+  being open-ended ("present") counts as nesting; a side that has already ended cannot contain a
+  side that's still open.
+- **Geography overlaps** — the two share at least one present-day country. Missing geography data
+  on either side is treated as unknown, not a match — it is never used to satisfy this check.
+  Roughly a third of the dataset has no `present_countries` recorded at all, so those records need
+  a real name/Wikidata signal (not geography) to surface a suggestion.
+- **Coordinate conflict** — the two are centered over 1,500km apart, which rules out a same-entity
+  or phase relationship even if names/dates otherwise look close.
+- **Identical dates, different names, different Wikidata IDs ("likely siblings")** — e.g. two
+  cantons that split from one parent on the same date. Read as independent, not one being a phase
+  of the other.
+- **Same alias, no date overlap, different Wikidata IDs** — a name reused for an unrelated later
+  era (e.g. "Kingdom of France" reused by the Bourbon Restoration). Read as independent.
+- **Same Wikidata ID but wildly different dates** — flags a likely data error (misattributed QID)
+  rather than trusting it as a real match; suggests nothing so a human looks at it.
+
+### The priority order
+
+1. **Suspicious QID reuse** → suggest nothing (flag for a human).
+2. **Same Wikidata ID** → same entity.
+3. **Documented successor / coordinate conflict / alias-reuse / likely-siblings** → independent.
+4. **Dates nest one way, with a name match (exact, "X of Y", or a direct Wikidata relationship)** →
+   phase_of. No finite end is required on either side — the backend approximates a missing end
+   date rather than refusing the decision, so the suggestion isn't more conservative than the
+   backend it feeds. The one case that would need protecting against (an "X of Y"-named but
+   still-open, broader container mistaken for a completed phase) is already covered by the naming
+   pattern's own finite-end requirement above.
+5. **Dates nest the other way, same conditions** → candidate_phase_of.
+6. **Direct Wikidata "part of" relationship alone, without date nesting** → part_of /
+   candidate_part_of.
+7. **None of the above fired, and there's no name/Wikidata signal at all** → independent (the pair
+   only reached the queue via weak token/geography/date matching).
+8. Otherwise → suggest nothing.
+
+---
+
 ## Approach summary
 
 Build a layered pipeline that extracts from multiple open sources, reconciles disagreements via an LLM-assisted review queue, computes visual weights from territory/population/complexity rather than hand-assigning them, and produces both an interactive web view and a print-ready poster from a single canonical dataset.
