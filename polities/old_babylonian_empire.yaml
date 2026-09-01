@@ -52,9 +52,13 @@ prominence_components:
   aggregate_penalty: 0
   total: 27.3
 manual_overrides:
+- consolidation
 - geography
 - visibility_override
 visibility_override: global
 linked_era_id: neolithic_era
 government_form: null
 linked_chapter_id: macro_early_cities_states
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: babylon

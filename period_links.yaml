@@ -882,3 +882,307 @@
   source_urls:
   - https://www.wikidata.org/wiki/Q203493
   notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: francoist_spain_period
+  entity_id: spain
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q13474305
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: third_dominican_republic_period
+  entity_id: dominican_republic
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q51547013
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: ba_athist_iraq_period
+  entity_id: iraq
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q3108185
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: united_kingdom_of_poland_period
+  entity_id: kingdom_of_poland_q8890160
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q9391434
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: first_republic_dominican_republic_period
+  entity_id: dominican_republic
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q51545918
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: nuevo_leon_coahuila_period
+  entity_id: coahuila
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2628583
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: united_kingdom_of_the_netherlands_period
+  entity_id: kingdom_of_the_netherlands
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q15864
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: schaumburg_lippe_period
+  entity_id: lippe
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q310650
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: habsburg_spain_period
+  entity_id: spain
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q600093
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: kingdom_of_new_spain_period
+  entity_id: spain
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q20978063
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: southern_song_dynasty_period
+  entity_id: song_dynasty
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1147043
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: interwar_latvia_period
+  entity_id: latvia
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2369784
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: republic_of_spanish_haiti_period
+  entity_id: haiti
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q11681694
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: republic_of_central_albania_period
+  entity_id: albania
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1562357
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: west_cameroon_period
+  entity_id: cameroon
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q23502675
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: first_syrian_republic_period
+  entity_id: syria
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q26234937
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: french_mandate_for_syria_and_the_lebanon_period
+  entity_id: syria
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q139708
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: second_syrian_republic_period
+  entity_id: syria
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q146885
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: syrian_federation_period
+  entity_id: syria
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q12183911
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: south_vietnam_period
+  entity_id: vietnam
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q180573
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: middle_assyrian_empire_period
+  entity_id: assyrian_empire
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q12642600
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: neo_assyrian_empire_period
+  entity_id: assyrian_empire
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q10914393
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: spain_under_the_restoration_period
+  entity_id: spain
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1044536
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: north_peru_period
+  entity_id: peru
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q654766
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: south_peru_period
+  entity_id: peru
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2145402
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: most_serene_federal_republic_of_montmartre_period
+  entity_id: republic_of_montmartre
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q117422273
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: empire_of_vietnam_period
+  entity_id: vietnam
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q701337
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: first_bulgarian_empire_period
+  entity_id: bulgarian_empire
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q203817
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: first_brazilian_republic_period
+  entity_id: brazil
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2414171
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: western_liang_dynasty_period
+  entity_id: liang_dynasty
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q849770
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: kingdom_of_sardinia_and_corsica_period
+  entity_id: kingdom_of_sardinia_q165154
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q3932080
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: people_s_republic_of_angola_period
+  entity_id: democratic_people_s_republic_of_angola
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2208280
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: republic_of_benin_period
+  entity_id: benin
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q1108659
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: northern_song_dynasty_period
+  entity_id: song_dynasty
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q319460
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: old_babylonian_empire_period
+  entity_id: babylon
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q733897
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: bruneian_sultanate_period
+  entity_id: brunei
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q887803
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: socialist_republic_of_chile_period
+  entity_id: chile
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q2022804
+  notes: Reviewed record is a dated phase of this canonical polity.
+- period_id: free_state_of_schaumburg_lippe_period
+  entity_id: lippe
+  relation: phase_of
+  evidence: explicit
+  confidence: high
+  source_urls:
+  - https://www.wikidata.org/wiki/Q427703
+  notes: Reviewed record is a dated phase of this canonical polity.

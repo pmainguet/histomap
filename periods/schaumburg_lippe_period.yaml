@@ -1,0 +1,25 @@
+id: schaumburg_lippe_period
+canonical_name: Schaumburg-Lippe
+kind: historical
+start: 1643
+end: 1918
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  primary_continent: europe
+  present_countries:
+  - DE
+  confidence: high
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q310650
+notes: Editorially identified as a phase or aspect of Lippe.
+source_urls:
+- https://www.wikidata.org/wiki/Q310650

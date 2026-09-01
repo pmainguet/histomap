@@ -1,0 +1,27 @@
+id: first_bulgarian_empire_period
+canonical_name: First Bulgarian Empire
+kind: historical
+start: 681
+end: 1018
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - BG
+  centroid:
+    lat: 43.36666667
+    lon: 27.11666667
+  confidence: low
+  historical_regions:
+  - eastern_europe
+  primary_historical_region: eastern_europe
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q203817
+notes: Editorially identified as a phase or aspect of Bulgarian Empire.
+source_urls:
+- https://www.wikidata.org/wiki/Q203817

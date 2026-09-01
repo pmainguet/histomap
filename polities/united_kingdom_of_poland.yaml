@@ -51,3 +51,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 10.03
 government_form: null
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: kingdom_of_poland_q8890160
+manual_overrides:
+- consolidation

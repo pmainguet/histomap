@@ -1,0 +1,27 @@
+id: empire_of_vietnam_period
+canonical_name: Empire of Vietnam
+kind: historical
+start: 1945
+end: 2026
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - VN
+  centroid:
+    lat: 16.463611111
+    lon: 107.590833333
+  confidence: low
+  historical_regions:
+  - southeast_asia
+  primary_historical_region: southeast_asia
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q701337
+notes: Editorially identified as a phase or aspect of Vietnam.
+source_urls:
+- https://www.wikidata.org/wiki/Q701337

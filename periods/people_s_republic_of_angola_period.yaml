@@ -1,0 +1,26 @@
+id: people_s_republic_of_angola_period
+canonical_name: People's Republic of Angola
+kind: historical
+start: 1975
+end: 1992
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  primary_continent: africa
+  present_countries:
+  - AO
+  confidence: high
+  historical_regions:
+  - central_africa
+  primary_historical_region: central_africa
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q2208280
+notes: Editorially identified as a phase or aspect of Democratic People's Republic
+  of Angola.
+source_urls:
+- https://www.wikidata.org/wiki/Q2208280

@@ -1,0 +1,27 @@
+id: republic_of_benin_period
+canonical_name: Republic of Benin
+kind: historical
+start: 1967
+end: 2026
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  present_countries:
+  - NG
+  centroid:
+    lat: 6.4499982
+    lon: 7.499998
+  confidence: low
+  historical_regions:
+  - west_africa
+  primary_historical_region: west_africa
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q1108659
+notes: Editorially identified as a phase or aspect of Benin.
+source_urls:
+- https://www.wikidata.org/wiki/Q1108659

@@ -1,0 +1,27 @@
+id: south_peru_period
+canonical_name: South Peru
+kind: historical
+start: 1836
+end: 1839
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - south_america
+  present_countries:
+  - PE
+  centroid:
+    lat: -18.055555555
+    lon: -70.248333333
+  confidence: medium
+  historical_regions:
+  - andes
+  primary_historical_region: andes
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q2145402
+notes: Editorially identified as a phase or aspect of Peru.
+source_urls:
+- https://www.wikidata.org/wiki/Q2145402

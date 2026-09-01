@@ -1,0 +1,25 @@
+id: republic_of_spanish_haiti_period
+canonical_name: Republic of Spanish Haiti
+kind: historical
+start: 1821
+end: 1822
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - HT
+  centroid: null
+  confidence: low
+  historical_regions:
+  - caribbean
+  primary_historical_region: caribbean
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q11681694
+notes: Editorially identified as a phase or aspect of Haiti.
+source_urls:
+- https://www.wikidata.org/wiki/Q11681694

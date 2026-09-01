@@ -51,3 +51,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 11.73
 government_form: null
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: dominican_republic
+manual_overrides:
+- consolidation

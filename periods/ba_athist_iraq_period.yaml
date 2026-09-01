@@ -1,0 +1,27 @@
+id: ba_athist_iraq_period
+canonical_name: Ba'athist Iraq
+kind: historical
+start: 1968
+end: 2003
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - IQ
+  centroid:
+    lat: 33.333333
+    lon: 44.433333
+  confidence: low
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q3108185
+notes: Editorially identified as a phase or aspect of Iraq.
+source_urls:
+- https://www.wikidata.org/wiki/Q3108185

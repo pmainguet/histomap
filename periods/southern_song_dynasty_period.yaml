@@ -1,0 +1,21 @@
+id: southern_song_dynasty_period
+canonical_name: Southern Song dynasty
+kind: historical
+start: 1127
+end: 1279
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries: []
+  centroid: null
+  confidence: low
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q1147043
+notes: Editorially identified as a phase or aspect of Song dynasty.
+source_urls:
+- https://www.wikidata.org/wiki/Q1147043

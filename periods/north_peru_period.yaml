@@ -1,0 +1,27 @@
+id: north_peru_period
+canonical_name: North Peru
+kind: historical
+start: 1836
+end: 1839
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - south_america
+  present_countries:
+  - PE
+  centroid:
+    lat: -12.046057
+    lon: -77.030534
+  confidence: medium
+  historical_regions:
+  - andes
+  primary_historical_region: andes
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q654766
+notes: Editorially identified as a phase or aspect of Peru.
+source_urls:
+- https://www.wikidata.org/wiki/Q654766

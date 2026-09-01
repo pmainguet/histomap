@@ -7,7 +7,7 @@ external_ids:
 parent: null
 successors: []
 start: 1967
-end: null
+end: 2026
 start_confidence: low
 end_confidence: low
 weight_by_era:
@@ -18,7 +18,9 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Automatically generated from Wikidata; requires review.
+notes: Automatically generated from Wikidata; requires review. End date approximated
+  as 2026 (still open-ended/"present" as of this decision) -- revisit if/when this
+  phase actually concludes.
 sources:
 - wikidata
 prominence_score: 20.67
@@ -28,10 +30,10 @@ geography:
   continents:
   - africa
   present_countries:
-  - NG
+  - BJ
   centroid:
-    lat: 6.4499982
-    lon: 7.499998
+    lat: 8.833333333
+    lon: 2.183333333
   confidence: low
   historical_regions:
   - west_africa
@@ -53,3 +55,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 20.67
 government_form: null
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: benin
+manual_overrides:
+- consolidation

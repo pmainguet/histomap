@@ -1,0 +1,26 @@
+id: united_kingdom_of_the_netherlands_period
+canonical_name: United Kingdom of the Netherlands
+kind: historical
+start: 1815
+end: 1839
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  primary_continent: europe
+  present_countries:
+  - BE
+  - NL
+  confidence: high
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q15864
+notes: Editorially identified as a phase or aspect of Kingdom of the Netherlands.
+source_urls:
+- https://www.wikidata.org/wiki/Q15864

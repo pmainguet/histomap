@@ -1,0 +1,29 @@
+id: spain_under_the_restoration_period
+canonical_name: Spain under the Restoration
+kind: historical
+start: 1874
+end: 1931
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - europe
+  primary_continent: europe
+  present_countries:
+  - ES
+  centroid:
+    lat: 40.2
+    lon: -3.5
+  confidence: medium
+  historical_regions:
+  - southern_europe
+  primary_historical_region: southern_europe
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q1044536
+notes: Editorially identified as a phase or aspect of Spain.
+source_urls:
+- https://www.wikidata.org/wiki/Q1044536
