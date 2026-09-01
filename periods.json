@@ -749,6 +749,48 @@
     "civilization_lane": false
   },
   {
+    "id": "brandenburg_prussia_period",
+    "canonical_name": "Brandenburg-Prussia",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1618,
+    "end": 1701,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
+      "present_countries": [
+        "DE"
+      ],
+      "centroid": {
+        "lat": 52.516666666,
+        "lon": 13.4
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q157367"
+    },
+    "notes": "Editorially identified as a phase or aspect of Prussia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q157367"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "bronze_age_era",
     "canonical_name": "Bronze Age",
     "kind": "historical",
@@ -2438,6 +2480,48 @@
     "civilization_lane": null
   },
   {
+    "id": "gran_colombia_period",
+    "canonical_name": "Gran Colombia",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1819,
+    "end": 1831,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "south_america"
+      ],
+      "primary_continent": "south_america",
+      "historical_regions": [
+        "andes"
+      ],
+      "primary_historical_region": "andes",
+      "present_countries": [
+        "CO"
+      ],
+      "centroid": {
+        "lat": 4.65,
+        "lon": -74.05
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q199821"
+    },
+    "notes": "Editorially identified as a phase or aspect of Colombia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q199821"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "indus_valley_civilization_period",
     "canonical_name": "Indus Valley Civilization",
     "kind": "protohistorical",
@@ -2832,6 +2916,48 @@
     "notes": "Editorially identified as a phase or aspect of Cyrene.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q27982794"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
+    "id": "kingdom_of_greece_period",
+    "canonical_name": "Kingdom of Greece",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1832,
+    "end": 1973,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
+      "present_countries": [
+        "GR"
+      ],
+      "centroid": {
+        "lat": 37.972399,
+        "lon": 23.740223
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q209065"
+    },
+    "notes": "Editorially identified as a phase or aspect of Greece.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q209065"
     ],
     "linked_era_id": null,
     "linked_chapter_id": null,

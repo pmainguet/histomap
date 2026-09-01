@@ -62,3 +62,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 32.61
 government_form: puppet state
+consolidation_status: independent
+manual_overrides:
+- consolidation

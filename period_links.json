@@ -1032,5 +1032,38 @@
       "https://www.wikidata.org/wiki/Q4060371"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "kingdom_of_greece_period",
+    "entity_id": "greece",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q209065"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "brandenburg_prussia_period",
+    "entity_id": "prussia",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q157367"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "gran_colombia_period",
+    "entity_id": "colombia",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q199821"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
   }
 ]
