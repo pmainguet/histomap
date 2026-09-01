@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (700 of 4,697 still pending, confirmed live 1 September 2026 -- an automated `suggested_decision` hint covers essentially the whole active queue, spanning same_entity/phase_of/candidate_phase_of/part_of/candidate_part_of/independent); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (441 of 4,697 still pending, confirmed live 1 September 2026 after tightening `suggested_decision`'s date/geography rules -- see below; an automated `suggested_decision` hint covers most of the active queue, spanning same_entity/phase_of/candidate_phase_of/part_of/candidate_part_of/independent, though records with no `present_countries` data -- roughly a third of the dataset -- now need a real name/Wikidata signal rather than geography leniency to surface a candidate at all); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -887,6 +887,42 @@ queue-wide picked up a confident suggestion from this alone.
 239/239 tests pass throughout; zero console errors live beyond the pre-existing unrelated favicon
 404. `/consolidation-review` "active" pending count: 688 -> 706 (more candidates now surface
 correctly through the relaxed open-ended gate and the broader part_of inclusion criterion).
+
+### `suggested_decision` tightened: exact date containment, real geography overlap, no finite-end requirement — 1 September 2026
+
+Direct correction of the plain-language rules summary above (the previous session had just
+written it): three deliberate tightenings, all now documented in [README.md](README.md)'s new
+"Consolidation review" section rather than only here.
+
+- **No date tolerance.** `DATE_CONTAINS_TOLERANCE_YEARS` (was 10) removed entirely --
+  `date_contains`/`reverse_date_contains` now require exact boundary containment. A 1-year gap
+  between two independently-estimated ancient dates (Akragas 580 BCE vs. Agrigento's record
+  starting 579 BCE) now withholds the suggestion instead of guessing through it.
+- **Missing geography is not a match.** `geography_compatible` previously also passed when either
+  side had no `present_countries` recorded -- now it requires an actual overlap. A separate
+  `geography_conflict` signal (both sides have data, no overlap) keeps the "conflicting geography"
+  reason text accurate rather than firing on simply-unknown geography. This is the change with the
+  largest measured effect: roughly a third of the dataset (1,487 of 4,566 records) has no
+  `present_countries` data at all, and those records can no longer reach a phase_of/
+  candidate_phase_of suggestion, or even a weak-token-match candidate pairing, through geography
+  leniency alone -- they need a real name or Wikidata signal instead. Live pending count dropped
+  700 -> 441 as a direct result.
+- **No finite-end requirement.** Dropped `document.get("end")`/`other.get("end")` is-not-None from
+  the phase_of/candidate_phase_of branches. The backend already approximates a missing end rather
+  than refusing the decision (see the earlier open-ended-phase_of section above), so the
+  suggestion shouldn't be more conservative than the backend it feeds. The one case that gate was
+  protecting against -- an "X of Y"-named but still-open, broader container mistaken for a
+  completed phase (Realm of New Zealand vs. New Zealand) -- is already covered by
+  `regime_of_candidate`/`regime_of_reviewed`'s own finite-end requirement on the naming-pattern
+  path specifically; `exact_name_match` and a direct Wikidata part-of relationship carry no such
+  ambiguity.
+
+Updated the Akragas regression test (split into a mismatched-date case that now withholds, and a
+matching-date case that still suggests phase_of) and added two new ones (open-ended-both-sides
+phase_of; missing-geography-data no longer counting as compatible). Fixed one pre-existing test
+fixture (`tests/test_server.py`'s Ottoman Caliphate case) that relied on the geography leniency
+being removed, using its real `present_countries` instead. 254/254 tests pass; zero new console
+errors live.
 
 ### Two live-testing suggestion bugs fixed, a regression test suite added, and six decisions applied — 1 September 2026
 
