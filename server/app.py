@@ -596,12 +596,32 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 # alias data is incomplete, without reopening the West
                 # Virginia/Virginia false positive (a compound place name,
                 # not this pattern).
-                regime_of_candidate = name_is_regime_of(
+                #
+                # The pattern alone is ambiguous, though: "Realm of New
+                # Zealand" also reads as "<X> of New Zealand", but the Realm
+                # is the BROADER constitutional entity New Zealand belongs
+                # to, not a phase of New Zealand's own history -- the
+                # opposite of the Yugoslavia case (found live, 1 September
+                # 2026). The reliable tell is that a genuine regime-of-place
+                # PHASE is, definitionally, a completed episode -- Federal
+                # People's Republic of Yugoslavia ran 1945-1963, then the
+                # country took a new name. Two still-open-ended ("present")
+                # entities matching this naming shape means the "regime"
+                # side is far more likely a broader container. So the
+                # pattern only counts toward suggesting phase_of/
+                # candidate_phase_of when the "regime" side has actually
+                # ended -- but it still counts as identity evidence either
+                # way (regime_of_*_name, unfiltered) for no_identity_signal,
+                # since the two records plainly ARE related even when the
+                # direction is ambiguous.
+                regime_of_candidate_name = name_is_regime_of(
                     str(document.get("canonical_name", "")), str(other.get("canonical_name", ""))
                 )
-                regime_of_reviewed = name_is_regime_of(
+                regime_of_reviewed_name = name_is_regime_of(
                     str(other.get("canonical_name", "")), str(document.get("canonical_name", ""))
                 )
+                regime_of_candidate = regime_of_candidate_name and document.get("end") is not None
+                regime_of_reviewed = regime_of_reviewed_name and other.get("end") is not None
                 # No strong identity anchor at all -- whatever got this
                 # candidate into the queue was geography + date-overlap +
                 # fuzzy/token name similarity alone, not a shared Wikidata
@@ -609,7 +629,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 # above.
                 no_identity_signal = (
                     not same_wikidata and not exact_name_match
-                    and not regime_of_candidate and not regime_of_reviewed
+                    and not regime_of_candidate_name and not regime_of_reviewed_name
                 )
                 if not (
                     same_wikidata
