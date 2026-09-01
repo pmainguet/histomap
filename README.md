@@ -131,18 +131,33 @@ coverage for every case below in `tests/test_consolidation_suggestions.py`.
 - **Regime/era naming pattern ("regime_of")** — either the other record's exact name appearing
   anywhere in this record's name at a word boundary ("Kingdom of Hungary", "Francoist Spain",
   "Spain under the Restoration", "Republic of the Congo" all match against their place name,
-  regardless of whether it's a prefix, suffix, or mid-sentence), or a demonym-style match of any
-  single word (Syria/Syrian in "Syrian Federation", Brazil/Brazilian in "First Brazilian
-  Republic", Brunei/Bruneian in "Bruneian Sultanate" — a literal prefix/suffix relationship,
-  catching regular "place + suffix" demonyms without a full demonym dictionary; irregular ones
-  like France/French aren't caught). Only counts toward phase_of if the regime side also has a
-  finite end date — this is the signal's real safety rail, since neither check can by name shape
-  alone distinguish a genuine regime name from a distinct compound-name/demonym-adjacent place
-  that happens to share the pattern (West Virginia is not a regime of Virginia; a still-open
-  "Realm of New Zealand" is a broader container, not a completed phase of New Zealand). Real
-  regime names have almost always concluded; a genuinely distinct such place almost always hasn't.
-- **Direct Wikidata relationship** — a real "part of" (P361) or successor (P155/P156) claim
-  between the two specific Wikidata items, not just a shared parent.
+  regardless of whether it's a prefix, suffix, or mid-sentence), or a demonym-style match of a
+  single-word place name against any word in the other name (Syria/Syrian in "Syrian Federation",
+  Brazil/Brazilian in "First Brazilian Republic", Brunei/Bruneian in "Bruneian Sultanate" — a
+  literal prefix/suffix relationship, catching regular "place + suffix" demonyms without a full
+  demonym dictionary; irregular ones like France/French aren't caught, and multi-word place names
+  are excluded from this check specifically so a short leading word like "United" can't spuriously
+  prefix-match an unrelated multi-word name). Excludes a match at the very start of a name when
+  immediately followed by an administrative/military noun (Army, Navy, Government, Administration,
+  Command, Occupation, Mission, Legation, Corps, Authority, Garrison) — "United States Army
+  Military Government in Korea" names the army's *owner*, not a regime of the United States; its
+  real geographic anchor (Korea) is at the end. Only counts toward phase_of if the regime side also
+  has a finite end date — this is the signal's real safety rail, since neither check can by name
+  shape alone distinguish a genuine regime name from a distinct compound-name/demonym-adjacent
+  place that happens to share the pattern (West Virginia is not a regime of Virginia; a still-open
+  "Realm of New Zealand" is a broader container, not a completed phase of New Zealand). Real regime
+  names have almost always concluded; a genuinely distinct such place almost always hasn't.
+- **Geographic subdivision qualifier ("subdivision_of_place")** — Minor/Lesser/Major/Greater/
+  Upper/Lower/Inner/Outer next to a place name (Scythia Minor, Asia Minor, Upper Egypt) denotes a
+  spatial subset, not a regime/era — a different naming shape from the one above even though it
+  can look similar ("Scythia Minor" vs. "Francoist Spain"). Excluded from regime_of evidence
+  entirely and counts toward part_of/candidate_part_of instead, gated on geography_compatible.
+- **Direct Wikidata relationship** — a real "part of" (P361) or successor (P155/P156/P1365/P1366)
+  claim between the two specific Wikidata items, not just a shared parent. Sufficient on its own to
+  bring a candidate into the review queue even with zero name/token overlap — otherwise an entity
+  whose real documented successor has a completely different name would never get offered as a
+  candidate at all. A documented "part of" claim to the same candidate is treated as more specific
+  than a documented "successor" claim when both are present (see priority order below).
 - **Dates nest exactly** — one record's date range sits entirely inside the other's, with no
   tolerance for estimate noise: a boundary that misses by even one year does not count. Both sides
   being open-ended ("present") counts as nesting; a side that has already ended cannot contain a
@@ -170,7 +185,11 @@ coverage for every case below in `tests/test_consolidation_suggestions.py`.
 
 1. **Suspicious QID reuse** → suggest nothing (flag for a human).
 2. **Same Wikidata ID** → same entity.
-3. **Documented successor / coordinate conflict / alias-reuse / likely-siblings** → independent.
+3. **Documented successor / coordinate conflict / alias-reuse / likely-siblings** → independent —
+   *unless* a documented "part of" claim to the same candidate is also present, in which case that
+   more specific structural fact wins and the chain continues to step 4 (Latvian Soviet Socialist
+   Republic has both a P361 claim to Latvia and a documented successor relationship, but the P361
+   claim plus exact date nesting correctly describes a phase, not a distinct successor state).
 4. **Dates nest one way, with a name match (exact, "X of Y", or a direct Wikidata relationship)** →
    phase_of. No finite end is required on either side — the backend approximates a missing end
    date rather than refusing the decision, so the suggestion isn't more conservative than the
@@ -178,8 +197,8 @@ coverage for every case below in `tests/test_consolidation_suggestions.py`.
    still-open, broader container mistaken for a completed phase) is already covered by the naming
    pattern's own finite-end requirement above.
 5. **Dates nest the other way, same conditions** → candidate_phase_of.
-6. **Direct Wikidata "part of" relationship alone, without date nesting** → part_of /
-   candidate_part_of.
+6. **Direct Wikidata "part of" relationship, or a geographic-subdivision-qualifier naming match,
+   without date nesting** → part_of / candidate_part_of.
 7. **None of the above fired, and there's no name/Wikidata signal at all** → independent (the pair
    only reached the queue via weak token/geography/date matching).
 8. Otherwise → suggest nothing.

@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (590 of 4,697 still pending, confirmed live 1 September 2026 after several rounds of tightening/relaxing `suggested_decision`'s date/geography/naming rules -- see below; an automated `suggested_decision` hint covers most of the active queue, spanning same_entity/phase_of/candidate_phase_of/part_of/candidate_part_of/independent); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (1,617 of 4,697 still pending, confirmed live 1 September 2026 -- jumped from 590 once documented Wikidata relationships started adding candidates to the pool directly, see below; an automated `suggested_decision` hint covers most of the active queue, spanning same_entity/phase_of/candidate_phase_of/part_of/candidate_part_of/independent); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -887,6 +887,49 @@ queue-wide picked up a confident suggestion from this alone.
 239/239 tests pass throughout; zero console errors live beyond the pre-existing unrelated favicon
 404. `/consolidation-review` "active" pending count: 688 -> 706 (more candidates now surface
 correctly through the relaxed open-ended gate and the broader part_of inclusion criterion).
+
+### Five more real cases fixed: institutional-name exclusion, geographic subdivisions, documented-relationship priority and pool inclusion — 1 September 2026
+
+A further rapid-fire batch of real examples, each root-caused against the live signal data via the
+API rather than guessed from screenshots this time:
+
+- **"United States Army Military Government in Korea" was suggested phase_of "United States."**
+  The name literally starts with "United States," but that names the army's *owner*, not a regime
+  of the United States -- the real geographic anchor (Korea) is at the end. `name_is_regime_of()`
+  now excludes a match at the very start of a name when immediately followed by an administrative/
+  military noun (Army, Navy, Government, Administration, Command, Occupation, Mission, Legation,
+  Corps, Authority, Garrison).
+- **The demonym scan had a real bug**: "united" (a short common word) could prefix-match a
+  completely unrelated multi-word name ("United Belgian States") via the wrong direction of the
+  check. Restricted the demonym scan to single-word `outer_name` only -- demonyms are formed from
+  single-word place names, not multi-word compounds.
+- **"Scythia Minor (Crimea)" was suggested phase_of "Scythia."** "Minor" is a spatial qualifier
+  (Asia Minor, Upper Egypt), not a regime/era qualifier -- entirely different semantics from
+  "Francoist Spain." Added `name_is_subdivision_of_place()` (Minor/Lesser/Major/Greater/Upper/
+  Lower/Inner/Outer next to a place name), excluded from regime_of evidence, wired into part_of/
+  candidate_part_of instead.
+- **Latvian Soviet Socialist Republic was suggested independent** despite a documented Wikidata
+  P361 "part of" claim to Latvia AND exact date nesting, because it also has a documented successor
+  ("followed by") relationship, and that branch was checked first, unconditionally. A "follows/
+  followed by" claim alone usually does mean two distinct states, but a direct P361 claim to the
+  *same* candidate is a more specific structural fact -- `documented_successor` no longer forces
+  independent when `reviewed_part_of_candidate`/`candidate_part_of_reviewed` is also true.
+- **A documented Wikidata relationship now adds the related entity straight into the candidate
+  pool**, not just into scoring once already there. Previously an entity whose real documented
+  successor/part-of target shared zero name/token overlap never got offered as a candidate at all
+  (USAMGIK's real successor, "First Republic of South Korea," is a completely different name).
+  **This is the single largest change in this whole rules-tightening arc**: live pending count
+  jumped 590 -> 1,617, since many entities with a real documented relationship but no naming/
+  geography overlap now correctly surface for review for the first time.
+
+Also fixed a second real data error in the same family as Republic of Benin: USAMGIK's own
+`present_countries` was recorded as US (the administering country) rather than KR (where it
+actually operated) -- corrected geography/continents/historical_regions to match Korea. This was
+also *why* "United States" matched in the first place (identical present_countries made geography
+look compatible).
+
+Six new regression tests, one per case above. 264/264 tests pass; zero console errors live
+(caught and fixed the wrong-route verification bug in the process -- see the previous entry).
 
 ### Regime-naming pattern generalized to any word-boundary placement, plus a timeline-axis label bug and a real data error found live — 1 September 2026
 
