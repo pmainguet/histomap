@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (441 of 4,697 still pending, confirmed live 1 September 2026 after tightening `suggested_decision`'s date/geography rules -- see below; an automated `suggested_decision` hint covers most of the active queue, spanning same_entity/phase_of/candidate_phase_of/part_of/candidate_part_of/independent, though records with no `present_countries` data -- roughly a third of the dataset -- now need a real name/Wikidata signal rather than geography leniency to surface a candidate at all); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (644 of 4,697 still pending, confirmed live 1 September 2026 after tightening then partially relaxing `suggested_decision`'s date/geography rules -- see below; an automated `suggested_decision` hint covers most of the active queue, spanning same_entity/phase_of/candidate_phase_of/part_of/candidate_part_of/independent); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -887,6 +887,29 @@ queue-wide picked up a confident suggestion from this alone.
 239/239 tests pass throughout; zero console errors live beyond the pre-existing unrelated favicon
 404. `/consolidation-review` "active" pending count: 688 -> 706 (more candidates now surface
 correctly through the relaxed open-ended gate and the broader part_of inclusion criterion).
+
+### Geography rule refined: a phase inherits its matched entity's geography when it has none of its own — 1 September 2026
+
+Live-tested the tightening below within minutes of shipping it: "Republic of Georgia (1990-1992)"
+has no `present_countries` of its own, so the newly-strict `geography_compatible` blocked its
+otherwise-exact phase_of match against "Georgia" (regime_of naming pattern, finite end, dates
+nesting exactly). Refined the rule: missing data on *both* sides still isn't a match, but when only
+one side has none while the other does, that's not a conflict either -- a phase reasonably shares
+its matched entity's location. `geography_conflict` (both sides have data, no overlap) is unchanged
+and still blocks a real mismatch.
+
+Known, discussed, and accepted tradeoff: this reopens a narrow risk of a literal name collision
+(e.g. "Georgia" the country vs. "Georgia" the U.S. state) both getting suggested phase_of when the
+reviewed record has no geography of its own to disambiguate with -- confirmed live on exactly that
+pair. Not a silent auto-apply, though: the correct candidate still scores higher (138, high
+confidence) and ranks first ahead of the wrong one (126, medium confidence). Left as-is rather than
+adding cross-candidate disambiguation for what's a rare naming pattern. Two new regression tests
+cover the real Georgia case and the both-sides-missing case. 255/255 tests pass.
+
+Applied four more decisions live during this same pass: Republic of Haiti (1820-1849), State of
+Thuringia (1920-1952) -- the exact record the year-range-suffix fix targeted, confirmed working end
+to end -- Union of Burma (1948-1962), and United Arab Republic (1961-1971), all phase_of their
+respective successor entities. Ran `pipeline.compute_prominence` afterward.
 
 ### `suggested_decision` tightened: exact date containment, real geography overlap, no finite-end requirement — 1 September 2026
 
