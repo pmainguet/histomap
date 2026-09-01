@@ -1,0 +1,24 @@
+id: second_republic_of_venezuela_period
+canonical_name: Second Republic of Venezuela
+kind: historical
+start: 1813
+end: 1814
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - south_america
+  present_countries:
+  - VE
+  centroid:
+    lat: 10.08333333
+    lon: -67.53333333
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q8950
+notes: Editorially identified as a phase or aspect of Venezuela.
+source_urls:
+- https://www.wikidata.org/wiki/Q8950

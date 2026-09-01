@@ -1,0 +1,27 @@
+id: first_empire_of_haiti_period
+canonical_name: First Empire of Haiti
+kind: historical
+start: 1804
+end: 1806
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - HT
+  centroid:
+    lat: 19.1
+    lon: -72.33333333
+  confidence: low
+  historical_regions:
+  - caribbean
+  primary_historical_region: caribbean
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q2006756
+notes: Editorially identified as a phase or aspect of Haiti.
+source_urls:
+- https://www.wikidata.org/wiki/Q2006756

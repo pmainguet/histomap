@@ -40,7 +40,7 @@ relationships: []
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids: []
-timeline_role: entity
+timeline_role: retired
 manual_overrides:
 - consolidation
 - entity_type
@@ -61,3 +61,5 @@ prominence_components:
   total: 20.08
 government_form: null
 linked_chapter_id: macro_contemporary_world
+consolidation_status: phase_of
+consolidated_into: vietnam

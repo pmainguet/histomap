@@ -1,0 +1,21 @@
+id: lordship_of_padua_period
+canonical_name: Lordship of Padua
+kind: historical
+start: 1318
+end: 1405
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries: []
+  centroid: null
+  confidence: low
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q106395492
+notes: Editorially identified as a phase or aspect of Padua.
+source_urls:
+- https://www.wikidata.org/wiki/Q106395492

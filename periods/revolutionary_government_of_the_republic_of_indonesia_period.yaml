@@ -1,0 +1,26 @@
+id: revolutionary_government_of_the_republic_of_indonesia_period
+canonical_name: Revolutionary Government of the Republic of Indonesia
+kind: historical
+start: 1958
+end: 1961
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  - oceania
+  present_countries:
+  - ID
+  centroid: null
+  confidence: medium
+  historical_regions:
+  - southeast_asia
+  primary_historical_region: southeast_asia
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q4271733
+notes: Editorially identified as a phase or aspect of Indonesia.
+source_urls:
+- https://www.wikidata.org/wiki/Q4271733

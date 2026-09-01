@@ -1,0 +1,25 @@
+id: titular_sovereign_people_of_ukraine_period
+canonical_name: Titular Sovereign People of Ukraine
+kind: historical
+start: 2002
+end: 2016
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - UA
+  centroid: null
+  confidence: medium
+  historical_regions:
+  - eastern_europe
+  primary_historical_region: eastern_europe
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q117407216
+notes: Editorially identified as a phase or aspect of Ukraine.
+source_urls:
+- https://www.wikidata.org/wiki/Q117407216

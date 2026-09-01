@@ -1,0 +1,27 @@
+id: kingdom_of_prussia_period
+canonical_name: Kingdom of Prussia
+kind: historical
+start: 1701
+end: 1918
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - DE
+  centroid:
+    lat: 53.0
+    lon: 14.0
+  confidence: medium
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q27306
+notes: Editorially identified as a phase or aspect of Prussia.
+source_urls:
+- https://www.wikidata.org/wiki/Q27306

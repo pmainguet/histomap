@@ -1,0 +1,25 @@
+id: provisional_central_government_of_vietnam_period
+canonical_name: Provisional Central Government of Vietnam
+kind: historical
+start: 1948
+end: 1949
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - VN
+  centroid: null
+  confidence: medium
+  historical_regions:
+  - southeast_asia
+  primary_historical_region: southeast_asia
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q10748344
+notes: Editorially identified as a phase or aspect of Vietnam.
+source_urls:
+- https://www.wikidata.org/wiki/Q10748344

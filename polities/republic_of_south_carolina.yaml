@@ -46,3 +46,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 7.42
 government_form: null
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: south_carolina
+manual_overrides:
+- consolidation

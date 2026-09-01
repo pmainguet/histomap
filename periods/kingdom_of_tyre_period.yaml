@@ -1,0 +1,20 @@
+id: kingdom_of_tyre_period
+canonical_name: Kingdom of Tyre
+kind: historical
+start: -2749
+end: -331
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q138573104
+notes: Editorially identified as a phase or aspect of Tyre.
+source_urls:
+- https://www.wikidata.org/wiki/Q138573104

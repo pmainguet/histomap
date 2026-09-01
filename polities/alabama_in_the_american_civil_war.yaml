@@ -8,9 +8,9 @@ external_ids:
 parent: null
 successors: []
 start: 1861
-end: null
+end: 1865
 start_confidence: low
-end_confidence: low
+end_confidence: medium
 weight_by_era:
   1861: 5
 weight_imputed: true
@@ -19,7 +19,10 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Automatically generated from Wikidata; requires review.
+notes: Automatically generated from Wikidata; requires review. end date fixed 1 September
+  2026 -- the Wikidata import left it null (open-ended), which is wrong for a topical
+  article about a war that ended in 1865; corrected and flagged manual_overrides so
+  it isn't silently reset by a future import.
 sources:
 - wikidata
 prominence_score: 14.1
@@ -53,4 +56,10 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 14.1
+manual_overrides:
+- consolidation
+- dates
 government_form: null
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: alabama

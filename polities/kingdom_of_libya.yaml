@@ -61,7 +61,11 @@ prominence_components:
   aggregate_penalty: 0
   total: 28.96
 manual_overrides:
+- consolidation
 - geography
 linked_era_id: africa_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: libya

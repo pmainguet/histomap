@@ -1,0 +1,27 @@
+id: republic_of_yucatan_period
+canonical_name: Republic of Yucatán
+kind: historical
+start: 1841
+end: 1848
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - MX
+  centroid:
+    lat: 20.96666667
+    lon: -89.61666667
+  confidence: low
+  historical_regions:
+  - mesoamerica
+  primary_historical_region: mesoamerica
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q671658
+notes: Editorially identified as a phase or aspect of Yucatán.
+source_urls:
+- https://www.wikidata.org/wiki/Q671658

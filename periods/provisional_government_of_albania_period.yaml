@@ -1,0 +1,25 @@
+id: provisional_government_of_albania_period
+canonical_name: Provisional Government of Albania
+kind: historical
+start: 1912
+end: 1914
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - AL
+  centroid: null
+  confidence: low
+  historical_regions:
+  - balkans
+  primary_historical_region: balkans
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q1989935
+notes: Editorially identified as a phase or aspect of Albania.
+source_urls:
+- https://www.wikidata.org/wiki/Q1989935

@@ -1,0 +1,27 @@
+id: third_republic_of_south_korea_period
+canonical_name: Third Republic of South Korea
+kind: historical
+start: 1963
+end: 1972
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - KR
+  centroid:
+    lat: 37.5833
+    lon: 127.0
+  confidence: low
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q487687
+notes: Editorially identified as a phase or aspect of South Korea.
+source_urls:
+- https://www.wikidata.org/wiki/Q487687

@@ -1,0 +1,27 @@
+id: alabama_in_the_american_civil_war_period
+canonical_name: Alabama in the American Civil War
+kind: historical
+start: 1861
+end: 1865
+start_confidence: low
+end_confidence: medium
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - US
+  centroid:
+    lat: 32.7
+    lon: -86.7
+  confidence: low
+  historical_regions:
+  - north_america
+  primary_historical_region: north_america
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q4060371
+notes: Editorially identified as a phase or aspect of Alabama.
+source_urls:
+- https://www.wikidata.org/wiki/Q4060371

@@ -1,0 +1,20 @@
+id: county_of_edessa_period
+canonical_name: County of Edessa
+kind: historical
+start: 1098
+end: 1150
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q232806
+notes: Editorially identified as a phase or aspect of Edessa.
+source_urls:
+- https://www.wikidata.org/wiki/Q232806

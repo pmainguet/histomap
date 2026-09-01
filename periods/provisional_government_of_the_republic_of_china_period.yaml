@@ -1,0 +1,21 @@
+id: provisional_government_of_the_republic_of_china_period
+canonical_name: Provisional Government of the Republic of China
+kind: historical
+start: 1937
+end: 1940
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries: []
+  centroid: null
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q704714
+notes: Editorially identified as a phase or aspect of Republic of China.
+source_urls:
+- https://www.wikidata.org/wiki/Q704714

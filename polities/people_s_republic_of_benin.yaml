@@ -53,3 +53,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 25.03
 government_form: null
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: benin
+manual_overrides:
+- consolidation

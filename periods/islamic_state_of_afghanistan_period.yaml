@@ -1,0 +1,27 @@
+id: islamic_state_of_afghanistan_period
+canonical_name: Islamic State of Afghanistan
+kind: historical
+start: 1992
+end: 2002
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - AF
+  centroid:
+    lat: 37.1175
+    lon: 70.579722222
+  confidence: low
+  historical_regions:
+  - central_asia
+  primary_historical_region: central_asia
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q1415585
+notes: Editorially identified as a phase or aspect of Afghanistan.
+source_urls:
+- https://www.wikidata.org/wiki/Q1415585

@@ -1,0 +1,20 @@
+id: kingdom_of_cyrene_period
+canonical_name: Kingdom of Cyrene
+kind: historical
+start: -629
+end: -95
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q27982794
+notes: Editorially identified as a phase or aspect of Cyrene.
+source_urls:
+- https://www.wikidata.org/wiki/Q27982794

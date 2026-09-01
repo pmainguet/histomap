@@ -1,0 +1,22 @@
+id: state_of_the_comoros_period
+canonical_name: State of the Comoros
+kind: historical
+start: 1975
+end: 1978
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  present_countries:
+  - KM
+  centroid: null
+  confidence: low
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q16685842
+notes: Editorially identified as a phase or aspect of Comoros.
+source_urls:
+- https://www.wikidata.org/wiki/Q16685842

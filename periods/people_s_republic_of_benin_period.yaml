@@ -1,0 +1,27 @@
+id: people_s_republic_of_benin_period
+canonical_name: People's Republic of Benin
+kind: historical
+start: 1975
+end: 1990
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  present_countries:
+  - BJ
+  centroid:
+    lat: 6.5
+    lon: 2.6
+  confidence: medium
+  historical_regions:
+  - west_africa
+  primary_historical_region: west_africa
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q862701
+notes: Editorially identified as a phase or aspect of Benin.
+source_urls:
+- https://www.wikidata.org/wiki/Q862701

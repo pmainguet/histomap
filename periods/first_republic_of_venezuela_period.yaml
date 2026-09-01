@@ -1,0 +1,24 @@
+id: first_republic_of_venezuela_period
+canonical_name: First Republic of Venezuela
+kind: historical
+start: 1810
+end: 1812
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - south_america
+  present_countries:
+  - VE
+  centroid:
+    lat: 10.083333333
+    lon: -67.533333333
+  confidence: medium
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q8935
+notes: Editorially identified as a phase or aspect of Venezuela.
+source_urls:
+- https://www.wikidata.org/wiki/Q8935

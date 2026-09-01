@@ -53,3 +53,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 9.52
 government_form: puppet state
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: republic_of_china
+manual_overrides:
+- consolidation

@@ -64,3 +64,8 @@ prominence_components:
 linked_era_id: europe_industrial_imperial_world_era
 government_form: null
 linked_chapter_id: macro_industrial_imperial_world
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: bulgaria
+manual_overrides:
+- consolidation

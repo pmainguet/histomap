@@ -1,0 +1,27 @@
+id: principality_of_taranto_period
+canonical_name: Principality of Taranto
+kind: historical
+start: 1088
+end: 1465
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - IT
+  centroid:
+    lat: 40.466666666
+    lon: 17.233333333
+  confidence: low
+  historical_regions:
+  - southern_europe
+  primary_historical_region: southern_europe
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q1078062
+notes: Editorially identified as a phase or aspect of Taranto.
+source_urls:
+- https://www.wikidata.org/wiki/Q1078062

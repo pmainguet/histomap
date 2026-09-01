@@ -1,0 +1,25 @@
+id: federal_republic_of_cameroon_period
+canonical_name: Federal Republic of Cameroon
+kind: historical
+start: 1961
+end: 1972
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  present_countries:
+  - CM
+  centroid: null
+  confidence: low
+  historical_regions:
+  - central_africa
+  primary_historical_region: central_africa
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q30744169
+notes: Editorially identified as a phase or aspect of Cameroon.
+source_urls:
+- https://www.wikidata.org/wiki/Q30744169

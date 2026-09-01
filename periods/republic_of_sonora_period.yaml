@@ -1,0 +1,20 @@
+id: republic_of_sonora_period
+canonical_name: Republic of Sonora
+kind: historical
+start: 1853
+end: 1854
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q4207384
+notes: Editorially identified as a phase or aspect of Sonora.
+source_urls:
+- https://www.wikidata.org/wiki/Q4207384
