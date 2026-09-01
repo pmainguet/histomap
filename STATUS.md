@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (749 of 4,697 still pending -- an automated `suggested_decision` hint now covers essentially the whole active queue after the 1 September 2026 signal pass, mostly toward `independent` now that the algorithm can tell "obviously distinct" from "obviously the same"; confirmed live); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (688 of 4,697 still pending after a bulk pass resolved ~55 obvious `phase_of` suggestions, confirmed live 1 September 2026; an automated `suggested_decision` hint now covers essentially the whole remaining active queue, mostly toward `independent` now that the algorithm can tell "obviously distinct" from "obviously the same"); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -806,6 +806,41 @@ suggestion when the "regime" side has actually ended. Verified live: Realm of Ne
 Zealand now correctly suggests nothing; Federal People's Republic of Yugoslavia/Yugoslavia and
 Islamic Emirate of Afghanistan/Afghanistan (both finite-ended) still correctly suggest phase_of.
 239/239 tests pass.
+
+### Progress bar, one more phase_of gate, and a bulk-apply pass — 1 September 2026
+
+Small UI follow-up per direct feedback: replaced the plain "N remaining" text with a thin progress
+bar under the header (session-baseline percentage, since there's no fixed all-time denominator to
+compare against) plus a small caption, moved the "This resolves..." explanation to sit as a
+subtitle under the page heading, and reduced the review card's padding for a more compact display.
+
+Asked to bulk-apply every "Reviewed -> phase of candidate" suggestion the queue produced, since the
+ones reviewed by hand had all checked out. Fetching the full list (55 candidates) and sampling it
+found the same clean pattern throughout -- specific historical regime name -> continuous modern
+country or polity (Kingdom of Bulgaria/Bulgaria, the Afghanistan/South Korea/Venezuela/Prussia/
+Albania/Republic of China regime sequences, ancient-city phases like Kingdom of Pergamon/Pergamon
+and County of Edessa/Edessa). Applied all 55 via the API; 54 succeeded, 1 (Sharifian Empire/
+Morocco) correctly bounced off the backend's "a phase/aspect requires a finite end date"
+validation -- Sharifian Empire has a genuine "Morocco" alias but its own record is open-ended.
+
+That failure revealed the same gap the Realm of New Zealand fix closed for `regime_of` still
+existed for `exact_name_match`: the UI's disabled-button guard had been silently masking it (a
+disabled button never carries the Suggested badge, so the bad suggestion was invisible in the
+browser) but going through the API directly exposed it. Fixed the same way: phase_of/
+candidate_phase_of now require the entity that would actually be retired to have a finite end date,
+regardless of which signal is driving the suggestion. Verified live: Sharifian Empire/Morocco now
+correctly suggests nothing.
+
+Also caught and fixed a real data bug while resolving a separate live example (Alabama in the
+American Civil War, flagged by the user as "supposed to be phase_of" but not suggested): its own
+record had `end: null` (open-ended), wrong for a topical article about a war that ended in 1865 --
+a Wikidata import artifact. Corrected to 1865 (`manual_overrides: [dates]`) and resolved as
+phase_of Alabama.
+
+build.py: 4633 -> 4572 entities, 106 -> 167 periods, 33 -> 94 period links (this batch plus several
+further live decisions the user applied in their own browser during the same session).
+`/consolidation-review` "active" pending count: 749 -> 688. 239/239 tests pass; zero console errors
+live.
 
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
