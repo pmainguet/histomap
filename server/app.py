@@ -741,15 +741,32 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 # parallel entity it split off from (found live, 31 August
                 # 2026). A shared full name/alias is the reliable
                 # discriminator every verified phase_of case had in common.
+                # phase_of/candidate_phase_of also require the entity that
+                # would actually be RETIRED (reviewed for phase_of, candidate
+                # for candidate_phase_of) to have a finite end date -- the
+                # decision writes it as a Period record, which the backend
+                # itself refuses without one. Caught live via exact_name_match
+                # too, not just regime_of: Sharifian Empire has a genuine
+                # "Morocco" alias but its own record is open-ended
+                # ("present"), so submitting phase_of bounced off that
+                # validation (found live, 1 September 2026).
                 if possible_qid_conflict:
                     suggested_decision = None
                 elif same_wikidata:
                     suggested_decision = "same_entity"
                 elif documented_successor or coordinate_conflict or no_overlap_alias_reuse or likely_siblings:
                     suggested_decision = "independent"
-                elif date_contains and geography_compatible and (exact_name_match or regime_of_candidate):
+                elif (
+                    date_contains and geography_compatible
+                    and (exact_name_match or regime_of_candidate)
+                    and document.get("end") is not None
+                ):
                     suggested_decision = "phase_of"
-                elif reverse_date_contains and geography_compatible and (exact_name_match or regime_of_reviewed):
+                elif (
+                    reverse_date_contains and geography_compatible
+                    and (exact_name_match or regime_of_reviewed)
+                    and other.get("end") is not None
+                ):
                     suggested_decision = "candidate_phase_of"
                 elif no_identity_signal:
                     # Reached the queue with no strong identity anchor at all
