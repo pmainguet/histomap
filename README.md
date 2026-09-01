@@ -140,9 +140,14 @@ coverage for every case below in `tests/test_consolidation_suggestions.py`.
   being open-ended ("present") counts as nesting; a side that has already ended cannot contain a
   side that's still open.
 - **Geography overlaps** — the two share at least one present-day country. Missing geography data
-  on either side is treated as unknown, not a match — it is never used to satisfy this check.
-  Roughly a third of the dataset has no `present_countries` recorded at all, so those records need
-  a real name/Wikidata signal (not geography) to surface a suggestion.
+  on *both* sides is treated as unknown, not a match — it is never used to satisfy this check on
+  its own. But when only one side has no `present_countries` recorded while the other does (a
+  phase record that never got its own geography populated, e.g. "Republic of Georgia
+  (1990–1992)" vs. "Georgia"), that's not a conflict either — a phase reasonably shares its
+  matched entity's location, so it's treated as compatible. A genuine conflict (both sides have
+  data and it doesn't overlap) is tracked separately and still blocks the match. Roughly a third
+  of the dataset has no `present_countries` recorded at all, so pairs where *neither* side has any
+  geography still need a real name/Wikidata signal to surface a suggestion.
 - **Coordinate conflict** — the two are centered over 1,500km apart, which rules out a same-entity
   or phase relationship even if names/dates otherwise look close.
 - **Identical dates, different names, different Wikidata IDs ("likely siblings")** — e.g. two
