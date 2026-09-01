@@ -128,15 +128,19 @@ coverage for every case below in `tests/test_consolidation_suggestions.py`.
   possible signal.
 - **Exact name match** — one record's canonical name (or an alias/translation) matches the
   other's exactly, after stripping trailing disambiguators like "(1920–1952)".
-- **Regime/era naming pattern ("regime_of")** — a name ending in the other record's exact name,
-  either via the explicit "X of Y" shape ("Kingdom of Hungary" reads as a regime *of* Hungary) or
-  the more common bare "Qualifier Place" shape ("Francoist Spain", "Nazi Germany", "Meiji Japan").
-  Only counts toward phase_of if the regime side also has a finite end date — this is the signal's
-  real safety rail, since the bare shape alone can't distinguish a genuine regime name from a
-  distinct compound-name place that happens to share the pattern (West Virginia is not a regime of
-  Virginia; a still-open "Realm of New Zealand" is a broader container, not a completed phase of
-  New Zealand). Real regime names have almost always concluded; a genuinely distinct compound-name
-  place almost always hasn't.
+- **Regime/era naming pattern ("regime_of")** — either the other record's exact name appearing
+  anywhere in this record's name at a word boundary ("Kingdom of Hungary", "Francoist Spain",
+  "Spain under the Restoration", "Republic of the Congo" all match against their place name,
+  regardless of whether it's a prefix, suffix, or mid-sentence), or a demonym-style match of any
+  single word (Syria/Syrian in "Syrian Federation", Brazil/Brazilian in "First Brazilian
+  Republic", Brunei/Bruneian in "Bruneian Sultanate" — a literal prefix/suffix relationship,
+  catching regular "place + suffix" demonyms without a full demonym dictionary; irregular ones
+  like France/French aren't caught). Only counts toward phase_of if the regime side also has a
+  finite end date — this is the signal's real safety rail, since neither check can by name shape
+  alone distinguish a genuine regime name from a distinct compound-name/demonym-adjacent place
+  that happens to share the pattern (West Virginia is not a regime of Virginia; a still-open
+  "Realm of New Zealand" is a broader container, not a completed phase of New Zealand). Real
+  regime names have almost always concluded; a genuinely distinct such place almost always hasn't.
 - **Direct Wikidata relationship** — a real "part of" (P361) or successor (P155/P156) claim
   between the two specific Wikidata items, not just a shared parent.
 - **Dates nest exactly** — one record's date range sits entirely inside the other's, with no
