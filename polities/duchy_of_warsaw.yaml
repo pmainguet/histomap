@@ -61,3 +61,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 27.98
 government_form: null
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: duchy_of_warsaw_middle_ages
+manual_overrides:
+- consolidation

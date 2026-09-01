@@ -1,0 +1,25 @@
+id: free_lebanon_state_period
+canonical_name: Free Lebanon State
+kind: historical
+start: 1979
+end: 1984
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - LB
+  centroid: null
+  confidence: low
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q11967593
+notes: Editorially identified as a phase or aspect of Lebanon.
+source_urls:
+- https://www.wikidata.org/wiki/Q11967593

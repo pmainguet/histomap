@@ -1,0 +1,25 @@
+id: free_state_of_costa_rica_period
+canonical_name: Free State of Costa Rica
+kind: historical
+start: 1838
+end: 2026
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - CR
+  centroid: null
+  confidence: medium
+  historical_regions:
+  - mesoamerica
+  primary_historical_region: mesoamerica
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q28501433
+notes: Editorially identified as a phase or aspect of Costa Rica.
+source_urls:
+- https://www.wikidata.org/wiki/Q28501433

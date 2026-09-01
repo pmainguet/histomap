@@ -1,0 +1,25 @@
+id: fourth_brazilian_republic_period
+canonical_name: Fourth Brazilian Republic
+kind: historical
+start: 1945
+end: 1964
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - south_america
+  present_countries:
+  - BR
+  centroid: null
+  confidence: low
+  historical_regions:
+  - brazil_amazonia
+  primary_historical_region: brazil_amazonia
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q210542
+notes: Editorially identified as a phase or aspect of Brazil.
+source_urls:
+- https://www.wikidata.org/wiki/Q210542

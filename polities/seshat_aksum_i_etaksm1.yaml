@@ -17,9 +17,9 @@ weight_by_era:
 weight_imputed: true
 prominence_score: 0.2
 visibility_tier: detailed
-eligibility: review
+eligibility: excluded
 notes: Kept as a separate entity during Seshat reconciliation; requires canonical
-  review.
+  review. Editorially discarded as outside Histomap scope.
 sources: []
 entity_type: polity
 entity_type_confidence: high
@@ -37,7 +37,11 @@ prominence_components:
   aggregate_penalty: 0
   total: 0.2
 manual_overrides:
+- consolidation
+- eligibility
 - entity_type
 entity_type_reviewed_against:
 - polity
 government_form: null
+timeline_role: retired
+consolidation_status: discarded

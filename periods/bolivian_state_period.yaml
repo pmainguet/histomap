@@ -1,0 +1,25 @@
+id: bolivian_state_period
+canonical_name: Bolivian State
+kind: historical
+start: 1836
+end: 1839
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - south_america
+  present_countries:
+  - BO
+  centroid: null
+  confidence: low
+  historical_regions:
+  - andes
+  primary_historical_region: andes
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q25413868
+notes: Editorially identified as a phase or aspect of Bolivia.
+source_urls:
+- https://www.wikidata.org/wiki/Q25413868

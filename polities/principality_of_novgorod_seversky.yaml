@@ -2,6 +2,7 @@ id: principality_of_novgorod_seversky
 canonical_name: Principality of Novgorod-Seversky
 names:
   fr: principauté de Novgorod-Severski
+  aliases_en: Principality of Novgorod-Seversk
 external_ids:
   wikidata: Q892631
 parent: null
@@ -52,3 +53,5 @@ prominence_components:
   aggregate_penalty: 0
   total: 8.85
 government_form: principality
+manual_overrides:
+- consolidation

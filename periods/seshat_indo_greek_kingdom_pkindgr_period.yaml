@@ -1,0 +1,19 @@
+id: seshat_indo_greek_kingdom_pkindgr_period
+canonical_name: Indo-Greek Kingdom
+kind: historical
+start: -145
+end: -96
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids: {}
+notes: Editorially identified as a phase or aspect of Indo-Greek Kingdoms.
+source_urls:
+- https://histomap.local/entity/seshat_indo_greek_kingdom_pkindgr

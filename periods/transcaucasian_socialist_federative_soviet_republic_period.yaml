@@ -1,0 +1,31 @@
+id: transcaucasian_socialist_federative_soviet_republic_period
+canonical_name: Transcaucasian Socialist Federative Soviet Republic
+kind: historical
+start: 1922
+end: 1936
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  - europe
+  present_countries:
+  - GE
+  - SU
+  centroid:
+    lat: 41.716667
+    lon: 44.783333
+  confidence: medium
+  primary_continent: asia
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q545205
+notes: Editorially identified as a phase or aspect of Transcaucasian Democratic Federative
+  Republic.
+source_urls:
+- https://www.wikidata.org/wiki/Q545205

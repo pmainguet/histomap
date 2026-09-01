@@ -1,0 +1,21 @@
+id: kerman_seljuk_sultanate_q491790_period
+canonical_name: Kerman Seljuk Sultanate
+kind: historical
+start: 1041
+end: 1187
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries: []
+  centroid: null
+  confidence: low
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q491790
+notes: Editorially identified as a phase or aspect of Seljuk dynasty.
+source_urls:
+- https://www.wikidata.org/wiki/Q491790

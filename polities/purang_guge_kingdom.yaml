@@ -46,3 +46,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 9.04
 government_form: null
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: guge
+manual_overrides:
+- consolidation

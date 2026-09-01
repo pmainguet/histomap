@@ -6,8 +6,7 @@ names:
 external_ids:
   wikidata: Q1048918
 parent: null
-successors:
-- galicia_in_the_visigothic_kingdom
+successors: []
 start: 409
 end: 585
 start_confidence: low
@@ -45,7 +44,7 @@ entity_type_source_qids:
 - Q3024240
 relationships:
 - target: galicia_in_the_visigothic_kingdom
-  kind: political_successor
+  kind: cultural_sequence
   evidence: derived
   confidence: medium
   source_urls:

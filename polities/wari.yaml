@@ -40,6 +40,7 @@ entity_type_confidence: high
 entity_type_source_qids: []
 relationships: []
 manual_overrides:
+- consolidation
 - entity_type
 prominence_components:
   wikidata_reach: 23.7
@@ -54,3 +55,6 @@ prominence_components:
   total: 24.89
 linked_era_id: classical_antiquity_era
 government_form: null
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: wari_empire

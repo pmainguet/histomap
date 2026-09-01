@@ -7,7 +7,7 @@ external_ids:
 parent: null
 successors: []
 start: 1825
-end: null
+end: 2026
 start_confidence: low
 end_confidence: low
 weight_by_era:
@@ -18,7 +18,9 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Automatically generated from Wikidata; requires review.
+notes: Automatically generated from Wikidata; requires review. End date approximated
+  as 2026 (still open-ended/"present" as of this decision) -- revisit if/when this
+  phase actually concludes.
 sources:
 - wikidata
 prominence_score: 7.92
@@ -51,3 +53,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 7.92
 government_form: null
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: peru
+manual_overrides:
+- consolidation

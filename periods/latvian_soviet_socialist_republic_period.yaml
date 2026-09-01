@@ -1,0 +1,30 @@
+id: latvian_soviet_socialist_republic_period
+canonical_name: Latvian Soviet Socialist Republic
+kind: historical
+start: 1940
+end: 1990
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  - europe
+  present_countries:
+  - LV
+  - SU
+  centroid:
+    lat: 56.958055555
+    lon: 24.1025
+  confidence: medium
+  primary_continent: europe
+  historical_regions:
+  - northern_europe
+  primary_historical_region: northern_europe
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q192180
+notes: Editorially identified as a phase or aspect of Latvia.
+source_urls:
+- https://www.wikidata.org/wiki/Q192180

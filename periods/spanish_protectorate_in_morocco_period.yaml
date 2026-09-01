@@ -1,0 +1,30 @@
+id: spanish_protectorate_in_morocco_period
+canonical_name: Spanish protectorate in Morocco
+kind: historical
+start: 1912
+end: 1956
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - europe
+  present_countries:
+  - ES
+  - MA
+  centroid:
+    lat: 35.0
+    lon: -4.5
+  confidence: medium
+  primary_continent: africa
+  historical_regions:
+  - north_africa
+  - southern_europe
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q457242
+notes: Editorially identified as a phase or aspect of Morocco.
+source_urls:
+- https://www.wikidata.org/wiki/Q457242

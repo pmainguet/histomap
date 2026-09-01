@@ -9,6 +9,7 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
+0. The "phase of" and "part of" are bit of the same we just want to say that one entity is a detail of another one. Consider merging the two notions for simplification. Also we need to clarify how to make the details of entities appear: basically we don't want to show the details right away, only if we zoom on the entity itself. The period or part of should be displayed within the entity maybe or below, what's clearer.
 1. **Work the polity → period reclassification queue (98 pending, `/consolidation-review`'s
    "period"/"both" decision).** The comprehensive full-polity-set scan this item called for is
    done (31 August 2026, see STATUS.md): re-running `pipeline/classify_period_roles.py`'s

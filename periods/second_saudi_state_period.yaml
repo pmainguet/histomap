@@ -1,0 +1,27 @@
+id: second_saudi_state_period
+canonical_name: Second Saudi State
+kind: historical
+start: 1818
+end: 1891
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - SA
+  centroid:
+    lat: 23.0
+    lon: 45.5
+  confidence: low
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q146862
+notes: Editorially identified as a phase or aspect of Saudi Arabia.
+source_urls:
+- https://www.wikidata.org/wiki/Q146862

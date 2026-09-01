@@ -65,3 +65,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 14.28
 government_form: null
+consolidation_status: independent
+manual_overrides:
+- consolidation

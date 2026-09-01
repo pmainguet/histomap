@@ -1,0 +1,25 @@
+id: state_of_upper_peru_period
+canonical_name: State of Upper Peru
+kind: historical
+start: 1825
+end: 2026
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - south_america
+  present_countries:
+  - PE
+  centroid: null
+  confidence: low
+  historical_regions:
+  - andes
+  primary_historical_region: andes
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q94995143
+notes: Editorially identified as a phase or aspect of Peru.
+source_urls:
+- https://www.wikidata.org/wiki/Q94995143

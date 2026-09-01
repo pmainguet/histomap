@@ -53,3 +53,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 6.56
 government_form: principality
+timeline_role: retired
+consolidation_status: same_entity
+consolidated_into: principality_of_novgorod_seversky
+manual_overrides:
+- consolidation

@@ -1637,5 +1637,357 @@
       "https://www.wikidata.org/wiki/Q427703"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "bolivian_state_period",
+    "entity_id": "bolivia",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q25413868"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "second_saudi_state_period",
+    "entity_id": "saudi_arabia",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q146862"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "spain_under_joseph_bonaparte_period",
+    "entity_id": "spain",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1709185"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "palatinate_zweibrucken_vohenstrauss_parkstein_period",
+    "entity_id": "palatinate_zweibrucken",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q7126796"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "seshat_indo_greek_kingdom_pkindgr_period",
+    "entity_id": "indo_greek_kingdoms",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://histomap.local/entity/seshat_indo_greek_kingdom_pkindgr"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "fourth_brazilian_republic_period",
+    "entity_id": "brazil",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q210542"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "free_lebanon_state_period",
+    "entity_id": "lebanon",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q11967593"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "second_spanish_republic_period",
+    "entity_id": "spanish_empire",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q178038"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "first_spanish_republic_period",
+    "entity_id": "spanish_empire",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q497777"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "wari_period",
+    "entity_id": "wari_empire",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q605340"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "spanish_protectorate_in_morocco_period",
+    "entity_id": "morocco",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q457242"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "west_ukrainian_people_s_republic_period",
+    "entity_id": "ukrainian_state",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q457167"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "shirvan_khanate_period",
+    "entity_id": "shirvan",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q965466"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "duchy_of_arenberg_meppen_period",
+    "entity_id": "arenberg",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q508488"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "duchy_of_warsaw_period",
+    "entity_id": "duchy_of_warsaw_middle_ages",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q152115"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "purang_guge_kingdom_period",
+    "entity_id": "guge",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q7260839"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "people_s_republic_of_tyre_period",
+    "entity_id": "tyre",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q113480543"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "ukrainian_soviet_socialist_republic_period",
+    "entity_id": "ukrainian_state",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q133356"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "latvian_soviet_socialist_republic_period",
+    "entity_id": "latvia",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q192180"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "free_state_of_costa_rica_period",
+    "entity_id": "costa_rica",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q28501433"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "republic_of_upper_peru_period",
+    "entity_id": "peru",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q91914004"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "state_of_upper_peru_period",
+    "entity_id": "peru",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q94995143"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "emirate_of_qatar_period",
+    "entity_id": "qatar",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q96404668"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "serbian_empire_of_jovan_nenad_period",
+    "entity_id": "serbian_despotate",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q872301"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "transcaucasian_socialist_federative_soviet_republic_period",
+    "entity_id": "transcaucasian_democratic_federative_republic",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q545205"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "japan_during_the_rekkan_politics_period_period",
+    "entity_id": "imperial_court_of_japan",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q132868834"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "second_hungarian_republic_period",
+    "entity_id": "hungarian_soviet_republic",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q940741"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "republic_of_whangamomona_period",
+    "entity_id": "whangamomona",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q2145318"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "kerman_seljuk_sultanate_q491790_period",
+    "entity_id": "seljuk_dynasty",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q491790"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "hungarian_people_s_republic_period",
+    "entity_id": "hungarian_state",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q16410"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "seljuk_state_of_syria_period",
+    "entity_id": "seljuk_empire",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q11308294"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "democratic_republic_of_yemen_period",
+    "entity_id": "yemen",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q2119459"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
   }
 ]

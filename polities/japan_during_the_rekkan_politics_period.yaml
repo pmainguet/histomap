@@ -57,3 +57,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 4.36
 government_form: null
+timeline_role: retired
+consolidation_status: phase_of
+consolidated_into: imperial_court_of_japan
+manual_overrides:
+- consolidation
