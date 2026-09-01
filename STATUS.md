@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (688 of 4,697 still pending after a bulk pass resolved ~55 obvious `phase_of` suggestions, confirmed live 1 September 2026; an automated `suggested_decision` hint now covers essentially the whole remaining active queue, mostly toward `independent` now that the algorithm can tell "obviously distinct" from "obviously the same"); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (706 of 4,697 still pending, confirmed live 1 September 2026 -- an automated `suggested_decision` hint covers essentially the whole active queue, spanning same_entity/phase_of/candidate_phase_of/part_of/candidate_part_of/independent); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -841,6 +841,52 @@ build.py: 4633 -> 4572 entities, 106 -> 167 periods, 33 -> 94 period links (this
 further live decisions the user applied in their own browser during the same session).
 `/consolidation-review` "active" pending count: 749 -> 688. 239/239 tests pass; zero console errors
 live.
+
+### Open-ended phase_of allowed; direct part_of signal; full review-UI overhaul — 1 September 2026
+
+**Cursor fix, then a real capability request.** The mouse cursor showed "wait" (implying "try
+again in a moment") on a permanently-disabled phase_of button -- fixed with a dedicated
+`.ineligible` class and `cursor: not-allowed`. That surfaced the deeper ask directly: allow
+submitting phase_of/candidate_phase_of even when the relevant entity is still open-ended. The
+Period schema genuinely requires a finite end (`Period.end: int`, no `Optional`), so the backend
+now approximates the missing end as the current year (low confidence, with a note explaining the
+approximation) instead of refusing the decision -- a reviewer's judgment is worth more than that
+structural gap. Removed the frontend's matching disabled-button/keyboard guards, since the backend
+no longer rejects the submission.
+
+**Direct part_of signal.** Live inspection of Realm of New Zealand vs. New Zealand's newly-added
+"Part of" table row showed New Zealand's own Wikidata P361 claim names Realm of New Zealand
+directly -- a much stronger, more direct signal than the existing shared_p131 (a shared
+third-party administrative parent). Added `reviewed_part_of_candidate`/`candidate_part_of_reviewed`,
+built from the already-cached P361 ("part of") and P527 ("has part") relationships -- no new
+fetch. Drives a part_of/candidate_part_of suggestion directly (no finite-end gate needed, since
+that decision writes a subdivision-parent link, not a Period record). 46 more candidates
+queue-wide picked up a confident suggestion from this alone.
+
+**Full review-UI overhaul**, driven by a long back-and-forth of direct live feedback:
+- Progress bar repositioned to the toolbar/content boundary with a visible track (not just the
+  fill), so it reads as an actual progress bar even near 0%, instead of a separate strip that
+  blended into the page background at low fill.
+- Table: dropped the redundant Histomap ID row; added Part of (P361) and Contains (P150) rows
+  (same two-step Wikidata label-resolution pattern already used for `direct_type_qids`); reordered
+  to Name / Instance of / Wikidata / Wikipedia / Part of / Contains / Type / Dates / [timeline
+  bar, moved into the table as its own row] / Present countries / Locator map.
+- "Why suggested" promoted from each candidate's own card into a bulleted banner above the
+  candidate list for candidate 1 (the one usually carrying the Suggested badge).
+- Buttons regrouped: Independent entity now sits with Same entity (both are "is this the exact
+  same / totally unrelated" identity calls); Reviewed-> and Candidate-> direction buttons grouped
+  with a divider between each cluster.
+- **Keyboard shortcuts redesigned for AZERTY.** The user's own keyboard is AZERTY (French), which
+  swaps Q<->A and W<->Z from QWERTY -- the original QWERTY-adjacent picks (Q W E R T / A D F G H /
+  Z C V B N) landed on scattered, non-adjacent physical keys for an AZERTY typist, explaining an
+  earlier "the shortcuts are a bit strange" comment. Redesigned around AZERTY's own row layout
+  instead (A Z E R T / Y U I O Q for "Reviewed", D F G H J / W C V B N for "Candidate"), skipping
+  K/P/S/X/digits already claimed by other shortcuts.
+- Compactness: smaller heading, tighter margins around the card and candidate list.
+
+239/239 tests pass throughout; zero console errors live beyond the pre-existing unrelated favicon
+404. `/consolidation-review` "active" pending count: 688 -> 706 (more candidates now surface
+correctly through the relaxed open-ended gate and the broader part_of inclusion criterion).
 
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
