@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import datetime
 import json
 import math
 import re
@@ -203,6 +204,13 @@ def create_app(root: Path = ROOT) -> FastAPI:
     # "these are two distinct, sequential polities" signal. Same cache
     # pipeline.enrich_relationships.py already uses to populate `successors`.
     succession_qids: dict[str, set[str]] = {}
+    # qid -> set of qids it's directly documented as P361 ("part of"), or
+    # that are documented as P527 ("has part") of it -- both mean "this qid
+    # is part of that qid". For consolidation_review_queue()'s part_of/
+    # candidate_part_of suggestion: a direct Wikidata claim between the two
+    # records under review, not just a shared third-party parent the way
+    # p131_by_qid is.
+    part_of_qids: dict[str, set[str]] = {}
     for row in relationship_rows:
         source, prop, target = row.get("source"), row.get("property"), row.get("target")
         if not source or not target:
@@ -212,6 +220,10 @@ def create_app(root: Path = ROOT) -> FastAPI:
         elif prop in {"P155", "P156", "P1365", "P1366"}:
             succession_qids.setdefault(source, set()).add(target)
             succession_qids.setdefault(target, set()).add(source)
+        elif prop == "P361":
+            part_of_qids.setdefault(source, set()).add(target)
+        elif prop == "P527":
+            part_of_qids.setdefault(target, set()).add(source)
     type_review_queue = []
 
     def refresh_type_review_queue() -> None:
@@ -622,6 +634,20 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 )
                 regime_of_candidate = regime_of_candidate_name and document.get("end") is not None
                 regime_of_reviewed = regime_of_reviewed_name and other.get("end") is not None
+                # A direct Wikidata P361 ("part of")/P527 ("has part") claim
+                # BETWEEN the two records under review -- stronger than
+                # shared_p131 (a shared third-party parent), since it's a
+                # documented claim about these two specific items. Doesn't
+                # need a finite-end gate the way phase_of does: a part_of
+                # decision writes a subdivision-parent link, not a Period
+                # record. Found live, 1 September 2026 (New Zealand's own
+                # P361 claim names Realm of New Zealand directly).
+                reviewed_part_of_candidate = bool(
+                    source_qid and other_qid and other_qid in part_of_qids.get(source_qid, set())
+                )
+                candidate_part_of_reviewed = bool(
+                    source_qid and other_qid and source_qid in part_of_qids.get(other_qid, set())
+                )
                 # No strong identity anchor at all -- whatever got this
                 # candidate into the queue was geography + date-overlap +
                 # fuzzy/token name similarity alone, not a shared Wikidata
@@ -630,10 +656,12 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 no_identity_signal = (
                     not same_wikidata and not exact_name_match
                     and not regime_of_candidate_name and not regime_of_reviewed_name
+                    and not reviewed_part_of_candidate and not candidate_part_of_reviewed
                 )
                 if not (
                     same_wikidata
                     or (exact_name_match and not coordinate_conflict and not documented_successor)
+                    or reviewed_part_of_candidate or candidate_part_of_reviewed
                     or (
                         date_overlap and geography_compatible
                         and ((shared_canonical_tokens and name_score >= 60) or name_score >= 88)
@@ -651,6 +679,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         (20, same_wikidata and not possible_qid_conflict),
                         (12, exact_name_match and not coordinate_conflict and not documented_successor and not no_overlap_alias_reuse),
                         (8, regime_of_candidate or regime_of_reviewed),
+                        (10, reviewed_part_of_candidate or candidate_part_of_reviewed),
                         (8, geography_match),
                         (8, date_contains),
                         (6, date_overlap),
@@ -679,6 +708,10 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     reasons.append("reviewed entity's name reads as a specific government of the candidate")
                 if regime_of_reviewed:
                     reasons.append("candidate's name reads as a specific government of the reviewed entity")
+                if reviewed_part_of_candidate:
+                    reasons.append("Wikidata: reviewed entity is directly documented as part of the candidate")
+                if candidate_part_of_reviewed:
+                    reasons.append("Wikidata: candidate is directly documented as part of the reviewed entity")
                 if documented_successor:
                     reasons.append("Wikidata: documented successor relationship (follows/followed by or replaces/replaced by)")
                 if likely_siblings:
@@ -768,6 +801,10 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     and other.get("end") is not None
                 ):
                     suggested_decision = "candidate_phase_of"
+                elif reviewed_part_of_candidate:
+                    suggested_decision = "part_of"
+                elif candidate_part_of_reviewed:
+                    suggested_decision = "candidate_part_of"
                 elif no_identity_signal:
                     # Reached the queue with no strong identity anchor at all
                     # (no shared Wikidata item, no shared name/alias) --
@@ -811,6 +848,8 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         "no_identity_signal": no_identity_signal,
                         "regime_of_candidate": regime_of_candidate,
                         "regime_of_reviewed": regime_of_reviewed,
+                        "reviewed_part_of_candidate": reviewed_part_of_candidate,
+                        "candidate_part_of_reviewed": candidate_part_of_reviewed,
                         "suggested_decision": suggested_decision,
                         "confidence": (
                             "high" if not possible_qid_conflict and not no_overlap_alias_reuse
@@ -966,8 +1005,25 @@ def create_app(root: Path = ROOT) -> FastAPI:
         target = metadata.get(target_id or "")
         if not target or target_id == entity_id or target.get("timeline_role") == "retired":
             raise HTTPException(422, "target_id must identify another active entity")
+        # The Period schema requires a finite end (Period.end: int, no
+        # Optional) -- a phase_of decision writes one, so an open-ended
+        # ("present") entity can't literally keep its null end. Rather than
+        # block the decision outright (a reviewer's judgment that two
+        # records genuinely are the same/a phase relationship is worth more
+        # than that structural gap), approximate the end as the current
+        # year with low confidence and a note -- e.g. Realm of New Zealand
+        # and New Zealand are both still open-ended, and that's fine; the
+        # phase just doesn't have a real end yet (found live, 1 September
+        # 2026, explicit request to allow this).
         if decision == "phase_of" and document.get("end") is None:
-            raise HTTPException(422, "A phase/aspect requires a finite end date")
+            approximate_end = datetime.date.today().year
+            document["end"] = approximate_end
+            document["end_confidence"] = "low"
+            document["notes"] = (
+                document.get("notes", "").rstrip()
+                + f" End date approximated as {approximate_end} (still open-ended/\"present\" as of"
+                + " this decision) -- revisit if/when this phase actually concludes."
+            ).strip()
 
         document["timeline_role"] = "retired"
         document["consolidation_status"] = decision
