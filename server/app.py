@@ -500,13 +500,19 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 name_score = float(fuzz.WRatio(source_name, str(other.get("canonical_name", other_id))))
                 other_countries = set((other.get("geography") or {}).get("present_countries", []))
                 geography_match = bool(source_countries & other_countries)
-                # Missing present_countries data on either side is unknown,
+                # Missing present_countries data on BOTH sides is unknown,
                 # not a green light -- it must not stand in for an actual
                 # overlap when deciding a suggestion (found live, 1 September
-                # 2026). geography_conflict is the separate, genuinely
-                # informative case: both sides HAVE data and it doesn't
-                # overlap.
-                geography_compatible = geography_match
+                # 2026). But when only one side has no geography of its own
+                # (e.g. a phase record that never got present_countries
+                # populated) while the other side does, that's not a
+                # conflict either -- a phase reasonably shares its matched
+                # entity's location, so it's treated as compatible too
+                # (Republic of Georgia 1990-1992 vs. Georgia, found live, 1
+                # September 2026). geography_conflict is the separate,
+                # genuinely informative case: both sides HAVE data and it
+                # doesn't overlap.
+                geography_compatible = geography_match or bool(source_countries) != bool(other_countries)
                 geography_conflict = bool(source_countries and other_countries and not geography_match)
                 # Exact containment, no fuzz -- a start/end year that misses
                 # by even one year does not count (found live, 1 September

@@ -326,21 +326,42 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         ]
         self.assertEqual(self.suggestion_for("sharifian_empire", "morocco", polities), "phase_of")
 
-    def test_missing_geography_data_does_not_count_as_compatible(self) -> None:
+    def test_missing_geography_on_both_sides_does_not_count_as_compatible(self) -> None:
         # An exact name match with clean date nesting but no
-        # present_countries recorded on the candidate should NOT be enough
-        # for phase_of on its own -- missing geography data is unknown, not
-        # a green light, so it must not stand in for an actual overlap
-        # (found live, 1 September 2026).
+        # present_countries recorded on EITHER side should NOT be enough for
+        # phase_of on its own -- with nothing to inherit from, missing
+        # geography data is unknown, not a green light, so it must not stand
+        # in for an actual overlap (found live, 1 September 2026).
         polities = [
             {**BASE, "id": "some_kingdom", "canonical_name": "Some Kingdom",
              "external_ids": {"wikidata": "Q9000001"}, "names": {"aliases_en": "Testland"},
              "start": 1200, "end": 1400, "prominence_score": 20,
-             "geography": {"present_countries": ["ZZ"]}},
+             "geography": {"present_countries": []}},
             {**BASE, "id": "testland", "canonical_name": "Testland", "external_ids": {"wikidata": "Q9000002"},
              "start": 900, "end": None, "prominence_score": 25, "geography": {"present_countries": []}},
         ]
         self.assertIsNone(self.suggestion_for("some_kingdom", "testland", polities))
+
+    def test_republic_of_georgia_inherits_geography_from_matched_country(self) -> None:
+        # "Republic of Georgia (1990-1992)" has no present_countries of its
+        # own, but reads as "<regime> of Georgia" with a finite end, and its
+        # dates (1991-1992) nest exactly inside Georgia's (1991-present).
+        # Since only the phase side is missing geography while the matched
+        # country has it, that's not a conflict -- a phase with no geography
+        # of its own reasonably shares its parent's location (found live, 1
+        # September 2026).
+        polities = [
+            {**BASE, "id": "georgia", "canonical_name": "Georgia", "external_ids": {"wikidata": "Q230"},
+             "start": 1991, "end": None, "prominence_score": 30,
+             "geography": {"present_countries": ["GE"]}},
+            {**BASE, "id": "republic_of_georgia_19901992",
+             "canonical_name": "Republic of Georgia (1990–1992)",
+             "external_ids": {"wikidata": "Q3456400"}, "start": 1991, "end": 1992,
+             "prominence_score": 20, "geography": {"present_countries": []}},
+        ]
+        self.assertEqual(
+            self.suggestion_for("republic_of_georgia_19901992", "georgia", polities), "phase_of"
+        )
 
 
 if __name__ == "__main__":
