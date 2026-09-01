@@ -2524,6 +2524,48 @@
     "civilization_lane": null
   },
   {
+    "id": "government_of_meiji_japan_period",
+    "canonical_name": "Government of Meiji Japan",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1868,
+    "end": 1912,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "JP"
+      ],
+      "centroid": {
+        "lat": 35.68,
+        "lon": 139.77
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q1322181"
+    },
+    "notes": "Editorially identified as a phase or aspect of Empire of Japan.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1322181"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "government_of_national_salvation_period",
     "canonical_name": "Government of National Salvation",
     "kind": "historical",
@@ -2601,6 +2643,45 @@
     "notes": "Editorially identified as a phase or aspect of Colombia.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q199821"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
+    "id": "independent_first_syrian_republic_period",
+    "canonical_name": "independent First Syrian Republic",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1946,
+    "end": 1950,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "SY"
+      ],
+      "centroid": null,
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q108868572"
+    },
+    "notes": "Editorially identified as a phase or aspect of First Syrian Republic.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q108868572"
     ],
     "linked_era_id": null,
     "linked_chapter_id": null,
@@ -3249,6 +3330,48 @@
     "civilization_lane": null
   },
   {
+    "id": "kingdom_of_romania_period",
+    "canonical_name": "Kingdom of Romania",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1881,
+    "end": 1947,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "RO"
+      ],
+      "centroid": {
+        "lat": 44.416666666,
+        "lon": 26.1
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q203493"
+    },
+    "notes": "Editorially identified as a phase or aspect of Romania.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q203493"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "kingdom_of_shirvan_period",
     "canonical_name": "Kingdom of Shirvan",
     "kind": "historical",
@@ -3386,6 +3509,48 @@
     "notes": "Editorially identified as a phase or aspect of Lands of the Bohemian Crown.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q85775800"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
+    "id": "lebanese_republic_under_french_mandate_period",
+    "canonical_name": "Lebanese Republic under French mandate",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1926,
+    "end": 1943,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "LB"
+      ],
+      "centroid": {
+        "lat": 33.83333,
+        "lon": 35.76667
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q108865218"
+    },
+    "notes": "Editorially identified as a phase or aspect of French mandate of Lebanon.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q108865218"
     ],
     "linked_era_id": null,
     "linked_chapter_id": null,
@@ -5036,6 +5201,41 @@
     "civilization_lane": null
   },
   {
+    "id": "republic_of_georgia_19901992_period",
+    "canonical_name": "Republic of Georgia (1990–1992)",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1991,
+    "end": 1992,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q3456400"
+    },
+    "notes": "Editorially identified as a phase or aspect of Georgia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q3456400"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "republic_of_haiti_18201849_period",
     "canonical_name": "Republic of Haiti (1820–1849)",
     "kind": "historical",
@@ -5331,6 +5531,39 @@
     "notes": "Editorially identified as a phase or aspect of Venezuela.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q8950"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
+    "id": "sharifian_empire_period",
+    "canonical_name": "Sharifian Empire",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1510,
+    "end": 2026,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q12183875"
+    },
+    "notes": "Editorially identified as a phase or aspect of Morocco.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q12183875"
     ],
     "linked_era_id": null,
     "linked_chapter_id": null,
@@ -5966,6 +6199,48 @@
     "notes": "Editorially identified as a phase or aspect of Syria.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q131404661"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
+    "id": "syrian_republic_under_french_mandate_period",
+    "canonical_name": "Syrian Republic under French mandate",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1930,
+    "end": 1946,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "SY"
+      ],
+      "centroid": {
+        "lat": 33.516666666,
+        "lon": 36.3
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q108868568"
+    },
+    "notes": "Editorially identified as a phase or aspect of First Syrian Republic.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q108868568"
     ],
     "linked_era_id": null,
     "linked_chapter_id": null,

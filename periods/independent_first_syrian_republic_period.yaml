@@ -1,0 +1,25 @@
+id: independent_first_syrian_republic_period
+canonical_name: independent First Syrian Republic
+kind: historical
+start: 1946
+end: 1950
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - SY
+  centroid: null
+  confidence: low
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q108868572
+notes: Editorially identified as a phase or aspect of First Syrian Republic.
+source_urls:
+- https://www.wikidata.org/wiki/Q108868572

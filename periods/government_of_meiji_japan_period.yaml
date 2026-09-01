@@ -1,0 +1,27 @@
+id: government_of_meiji_japan_period
+canonical_name: Government of Meiji Japan
+kind: historical
+start: 1868
+end: 1912
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - JP
+  centroid:
+    lat: 35.68
+    lon: 139.77
+  confidence: medium
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q1322181
+notes: Editorially identified as a phase or aspect of Empire of Japan.
+source_urls:
+- https://www.wikidata.org/wiki/Q1322181

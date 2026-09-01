@@ -1,0 +1,21 @@
+id: republic_of_georgia_19901992_period
+canonical_name: Republic of Georgia (1990–1992)
+kind: historical
+start: 1991
+end: 1992
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries: []
+  centroid: null
+  confidence: low
+broader_periods: []
+successors: []
+authority: Histomap editorial consolidation
+external_ids:
+  wikidata: Q3456400
+notes: Editorially identified as a phase or aspect of Georgia.
+source_urls:
+- https://www.wikidata.org/wiki/Q3456400

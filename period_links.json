@@ -1142,5 +1142,82 @@
       "https://www.wikidata.org/wiki/Q873634"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "republic_of_georgia_19901992_period",
+    "entity_id": "georgia_q230",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q3456400"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "sharifian_empire_period",
+    "entity_id": "morocco",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q12183875"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "syrian_republic_under_french_mandate_period",
+    "entity_id": "first_syrian_republic",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q108868568"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "independent_first_syrian_republic_period",
+    "entity_id": "first_syrian_republic",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q108868572"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "government_of_meiji_japan_period",
+    "entity_id": "empire_of_japan",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q1322181"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "lebanese_republic_under_french_mandate_period",
+    "entity_id": "french_mandate_of_lebanon",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q108865218"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "kingdom_of_romania_period",
+    "entity_id": "romania",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q203493"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
   }
 ]
