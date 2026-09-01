@@ -1,10 +1,15 @@
 const card = document.querySelector("#consolidation-review-card");
 const progress = document.querySelector("#consolidation-review-progress");
+const progressFill = document.querySelector("#consolidation-progress-fill");
 const status = document.querySelector("#consolidation-decision-status");
 let current = null;
 let total = 0;
 let deferredOffset = 0;
 let submitting = false;
+// The first `total` seen this page load is the bar's 100% baseline -- there's
+// no fixed denominator to compare against otherwise, so this tracks progress
+// made in the current browsing session rather than all-time completion.
+let progressBaseline = null;
 const phaseKeys = ["Q", "W", "E", "R", "T"];
 const partKeys = ["Y", "U", "I", "O", "L"];
 const inversePhaseKeys = ["A", "D", "F", "G", "H"];
@@ -149,6 +154,9 @@ async function loadNext() {
   if (!response.ok) throw new Error(await response.text());
   const payload = await response.json(); total = payload.total; current = payload.items[0] || null;
   progress.textContent = `${total} canonical identity decisions remaining${deferredOffset ? ` · ${deferredOffset} deferred this session` : ""}`;
+  if (progressBaseline === null || total > progressBaseline) progressBaseline = total;
+  const resolvedThisSession = Math.max(0, progressBaseline - total);
+  progressFill.style.width = `${progressBaseline > 0 ? Math.round((resolvedThisSession / progressBaseline) * 100) : 0}%`;
   if (!current) { card.innerHTML = "<h2>Queue complete</h2><p>No unresolved identity or period-role cases remain.</p>"; return; }
   // Independent/Discard/Defer live on each candidate card (candidateMarkup)
   // so they sit next to the evidence that motivates them. With no
