@@ -73,7 +73,12 @@ function recommendableButton(decision, candidate, key, label, disabledReason = n
   // Never badge a disabled button -- recommending an action that can't
   // actually be taken here is more confusing than showing no suggestion.
   const recommended = !disabledReason && candidate.suggested_decision === decision;
-  return `<button type="button" data-decision="${decision}" data-target="${escapeHtml(candidate.id)}"${recommended ? ' class="recommended-decision"' : ""}${disabledReason ? ` disabled title="${escapeHtml(disabledReason)}"` : ""}><kbd>${escapeHtml(String(key))}</kbd> ${label}</button>`;
+  // "ineligible" (see CSS) overrides the generic disabled:wait cursor --
+  // this button isn't temporarily disabled pending a request, it's
+  // permanently disabled until someone fixes the underlying date data, so a
+  // "wait a moment" cursor is actively misleading.
+  const classes = [recommended && "recommended-decision", disabledReason && "ineligible"].filter(Boolean).join(" ");
+  return `<button type="button" data-decision="${decision}" data-target="${escapeHtml(candidate.id)}"${classes ? ` class="${classes}"` : ""}${disabledReason ? ` disabled title="${escapeHtml(disabledReason)}"` : ""}><kbd>${escapeHtml(String(key))}</kbd> ${label}</button>`;
 }
 
 function candidateMarkup(candidate, index) {
