@@ -782,6 +782,31 @@ after a deploy. Added a `Cache-Control: no-cache` middleware on `/static/*` -- f
 
 239/239 tests pass; zero console errors live beyond the pre-existing unrelated favicon 404.
 
+**Layout redesign, same day, per direct feedback.** Trimmed the reviewed-entity header block to just
+title + subtitle (the ID/Type/Dates/Present countries/Instance of/External page block below it
+duplicated the "Reviewed entity" column every candidate card already shows), reordered the
+comparison table to show Reviewed entity first with visual emphasis (bold, accent color) instead
+of two visually-equal columns, and rebuilt each candidate card as two columns -- evidence on the
+left, that candidate's action buttons stacked vertically on the right. Removed the sidebar
+Progress card (pending-count moved inline under the page heading; decision-status moved to a
+full-width banner under the toolbar) and widened the main column (74rem, up from 52rem) with the
+freed space.
+
+**Regime-of-place false positive fixed, same day.** Realm of New Zealand (1983-present) vs. New
+Zealand (1841-present) showed no badge -- correct by accident (the phase_of button was separately
+disabled for lacking a finite end date, which also hides the badge), but the underlying
+`suggested_decision` was still wrong: "Realm of New Zealand" matches the regime-of-place naming
+pattern, but here the Realm is the *broader* constitutional entity New Zealand belongs to, not a
+phase of New Zealand's own history -- the opposite of the Yugoslavia case. The reliable tell: a
+genuine regime-of-place phase is definitionally a completed episode (Federal People's Republic of
+Yugoslavia ran 1945-1963); two still-open-ended entities matching the naming shape means the
+"regime" side is more likely a container. Split the check: the raw naming match still counts as
+identity evidence (the records plainly ARE related) but only drives a phase_of/candidate_phase_of
+suggestion when the "regime" side has actually ended. Verified live: Realm of New Zealand/New
+Zealand now correctly suggests nothing; Federal People's Republic of Yugoslavia/Yugoslavia and
+Islamic Emirate of Afghanistan/Afghanistan (both finite-ended) still correctly suggest phase_of.
+239/239 tests pass.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which
