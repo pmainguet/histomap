@@ -1098,5 +1098,49 @@
       "https://www.wikidata.org/wiki/Q85775800"
     ],
     "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "republic_of_haiti_18201849_period",
+    "entity_id": "haiti",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q95408244"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "united_arab_republic_1961_1971_period",
+    "entity_id": "united_arab_republic",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q137583681"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "union_of_burma_19481962_period",
+    "entity_id": "myanmar",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q7233551"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
+  },
+  {
+    "period_id": "state_of_thuringia_19201952_period",
+    "entity_id": "thuringia",
+    "relation": "phase_of",
+    "evidence": "explicit",
+    "confidence": "high",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q873634"
+    ],
+    "notes": "Reviewed record is a dated phase of this canonical polity."
   }
 ]

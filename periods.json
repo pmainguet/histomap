@@ -5036,6 +5036,45 @@
     "civilization_lane": null
   },
   {
+    "id": "republic_of_haiti_18201849_period",
+    "canonical_name": "Republic of Haiti (1820–1849)",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1820,
+    "end": 1849,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "historical_regions": [
+        "caribbean"
+      ],
+      "primary_historical_region": "caribbean",
+      "present_countries": [
+        "HT"
+      ],
+      "centroid": null,
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q95408244"
+    },
+    "notes": "Editorially identified as a phase or aspect of Haiti.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q95408244"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "republic_of_sonora_period",
     "canonical_name": "Republic of Sonora",
     "kind": "historical",
@@ -5697,6 +5736,49 @@
     "civilization_lane": null
   },
   {
+    "id": "state_of_thuringia_19201952_period",
+    "canonical_name": "State of Thuringia (1920–1952)",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1920,
+    "end": 1952,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
+      "present_countries": [
+        "DD",
+        "DE"
+      ],
+      "centroid": {
+        "lat": 50.981111111,
+        "lon": 11.329444444
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q873634"
+    },
+    "notes": "Editorially identified as a phase or aspect of Thuringia.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q873634"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "state_of_venezuela_period",
     "canonical_name": "State of Venezuela",
     "kind": "historical",
@@ -6260,6 +6342,90 @@
     "notes": "Editorially identified as a phase or aspect of Kingdom of Mewar.",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q1457519"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
+    "id": "union_of_burma_19481962_period",
+    "canonical_name": "Union of Burma (1948–1962)",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1948,
+    "end": 1962,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "southeast_asia"
+      ],
+      "primary_historical_region": "southeast_asia",
+      "present_countries": [
+        "MM"
+      ],
+      "centroid": {
+        "lat": 16.85,
+        "lon": 96.183333333
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q7233551"
+    },
+    "notes": "Editorially identified as a phase or aspect of Myanmar.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q7233551"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
+    "id": "united_arab_republic_1961_1971_period",
+    "canonical_name": "United Arab Republic (1961-1971)",
+    "kind": "historical",
+    "tier": "period",
+    "start": 1961,
+    "end": 1971,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "EG"
+      ],
+      "centroid": {
+        "lat": 26.0,
+        "lon": 30.0
+      },
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial consolidation",
+    "external_ids": {
+      "wikidata": "Q137583681"
+    },
+    "notes": "Editorially identified as a phase or aspect of United Arab Republic.",
+    "source_urls": [
+      "https://www.wikidata.org/wiki/Q137583681"
     ],
     "linked_era_id": null,
     "linked_chapter_id": null,

@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - maddison
 - wikidata
-prominence_score: 42.67
+prominence_score: 46.17
 visibility_tier: global
 eligibility: accepted
 geography:
@@ -55,13 +55,13 @@ prominence_components:
   wikidata_reach: 30
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 0.0
+  relationship_centrality: 3.5
   longevity: 5.67
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 42.67
+  total: 46.17
 linked_era_id: oceania_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world
