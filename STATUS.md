@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (706 of 4,697 still pending, confirmed live 1 September 2026 -- an automated `suggested_decision` hint covers essentially the whole active queue, spanning same_entity/phase_of/candidate_phase_of/part_of/candidate_part_of/independent); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (700 of 4,697 still pending, confirmed live 1 September 2026 -- an automated `suggested_decision` hint covers essentially the whole active queue, spanning same_entity/phase_of/candidate_phase_of/part_of/candidate_part_of/independent); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -887,6 +887,52 @@ queue-wide picked up a confident suggestion from this alone.
 239/239 tests pass throughout; zero console errors live beyond the pre-existing unrelated favicon
 404. `/consolidation-review` "active" pending count: 688 -> 706 (more candidates now surface
 correctly through the relaxed open-ended gate and the broader part_of inclusion criterion).
+
+### Two live-testing suggestion bugs fixed, a regression test suite added, and six decisions applied — 1 September 2026
+
+Two more false suggestions caught via direct live review of the overhauled UI, both traced to gaps
+in the `suggested_decision` priority chain rather than missing signal data:
+
+**Czechoslovak Socialist Republic suggested `part_of` instead of `phase_of`.** It carries a direct
+P361 claim to Czechoslovakia (added the previous session) and its dates (1948-1990) nest cleanly
+inside Czechoslovakia's (1918-1992) with a finite end -- everything a `phase_of` suggestion needs
+except naming evidence, since neither `exact_name_match` nor the "X of Y" `regime_of_candidate`
+pattern fired for this pair. The `reviewed_part_of_candidate`/`candidate_part_of_reviewed` P361/P527
+signal had been added as its own branch, checked *after* phase_of/candidate_phase_of -- so a pair
+with strong date-nesting but no naming match fell straight past phase_of into the weaker part_of
+default. Fixed by accepting a direct P361/P527 relationship as alternative naming evidence *inside*
+the phase_of/candidate_phase_of conditions themselves (still gated on clean date-nesting and a
+finite end), checked before the plain part_of/candidate_part_of fallback. A real P361 claim plus
+clean nesting now wins as phase_of; a P361 claim alone (no date nesting, e.g. Realm of New
+Zealand/New Zealand) still falls through to part_of/candidate_part_of as before.
+
+**State of Thuringia (1920-1952) suggested `independent` instead of `phase_of`.** Its
+`canonical_name` carries a trailing year-range disambiguator -- `"State of Thuringia (1920-1952)"`
+-- which broke the `.endswith(" of thuringia")` check inside `name_is_regime_of()` even though the
+name minus the parenthetical clearly reads as "State of Thuringia". Grepping the dataset for the
+same pattern (`canonical_name` ending in `(YYYY-YYYY)` or `(YYYY-present)`) found six more affected
+records: Kingdom of Hungary, Albertine Duchy of Saxony, Herat, Hyderabad State, Later Jin, Taifa of
+Ceuta, United Arab Republic. Added `strip_year_range_suffix()` (`YEAR_RANGE_SUFFIX_RE`) and applied
+it in both `name_is_regime_of()` and `consolidation_names()`, before any naming comparison runs.
+
+**New regression test suite.** Per explicit request ("bake that into the algo and have tests on the
+different examples given ... so that we can keep improving"), added
+`tests/test_consolidation_suggestions.py` -- one test per real example surfaced during live review,
+covering every branch of the priority chain: same_entity, phase_of (direct alias, regime-of-place,
+direct P361 override, year-range-suffix naming), candidate_phase_of, part_of/candidate_part_of
+(direct P361 without date nesting), independent (no signal, likely-siblings, alias-reused-different-
+era), and the possible_qid_conflict/no_identity_signal null cases. 12 tests, all passing alongside
+the existing 239.
+
+**Six consolidation decisions applied live** during this same review pass: Czechoslovak Socialist
+Republic, Coahuila y Tejas, and Lands of the Bohemian Crown (1348-1526) each resolved `phase_of`
+their broader/successor polity; New Zealand resolved `part_of` Realm of New Zealand (subdivision);
+Peru-Bolivian Confederation, Sweden, and Realm of New Zealand confirmed `independent`. A separate,
+unrelated pair of live decisions on the Syrian Republic records was explicitly reverted per request
+before this batch was committed.
+
+251/251 tests pass throughout; zero console errors live beyond the pre-existing unrelated favicon
+404. `/consolidation-review` "active" pending count: 706 -> 700.
 
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
