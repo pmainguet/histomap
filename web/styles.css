@@ -33,12 +33,16 @@ body { margin: 0; }
 .timeline-toolbar { padding: .75rem clamp(1rem, 4vw, 3.5rem) .7rem; border-bottom: 1px solid var(--rule); background: var(--paper); }
 .toolbar-intro { margin: 0 0 .65rem; color: var(--ink-faint); font-size: .9rem; }
 .review-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; align-items: end; padding: 1rem clamp(1rem, 4vw, 3.5rem); border-bottom: 1px solid var(--rule); background: var(--paper); }
+.review-toolbar-flush { border-bottom: none; padding-block: .65rem; }
 .review-toolbar h1 { margin: .15rem 0 0; font-size: 1.8rem; line-height: 1; }
 .workspace-purpose { max-width: 74rem; margin: .8rem auto 0; padding: 0 1.25rem; color: var(--ink-faint); font: .84rem/1.5 system-ui, sans-serif; }
 .workspace-purpose-inline { margin: .3rem 0 0; max-width: 46rem; color: var(--ink-faint); font: .84rem/1.45 system-ui, sans-serif; }
-.review-progress-bar { height: 4px; background: var(--rule); }
+/* A visible track (not just the fill) so the bar reads as "a progress bar"
+   even at 0-10% -- the earlier version used a fill-only strip that was
+   nearly indistinguishable from an ordinary divider line at low fill. */
+.review-progress-bar { height: 7px; background: var(--paper); border-bottom: 1px solid var(--rule); }
 .review-progress-bar-fill { height: 100%; width: 0; background: #8c422d; transition: width .25s ease; }
-.review-progress-caption { margin: .35rem clamp(1rem, 4vw, 3.5rem) 0; color: var(--ink-faint); font: .78rem system-ui, sans-serif; }
+.review-progress-caption { margin: .3rem clamp(1rem, 4vw, 3.5rem) 0; color: var(--ink-faint); font: .78rem system-ui, sans-serif; }
 .button-link { display: inline-block; padding: .45rem .65rem; color: white; background: #343b35; border-radius: 2px; font: .82rem system-ui, sans-serif; text-decoration: none; }
 
 .eyebrow {
@@ -169,6 +173,11 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .review-pipeline-card > b small { display: block; font-size: .68rem; text-transform: uppercase; }
 .review-card { padding: clamp(1rem, 4vw, 2.5rem); background: var(--paper); border: 1px solid var(--rule); }
 .compact-review-card { padding: .85rem 1.1rem; }
+.compact-review-card h2 { margin: 0; font-size: 1.55rem; }
+.compact-review-card .wikidata-description { margin: .15rem 0 .5rem; }
+.compact-review-card .candidate-heading { margin: 1rem 0 .4rem; }
+.compact-review-card .candidate-list { margin: .5rem 0; gap: .45rem; }
+.compact-review-card .candidate { padding: .55rem .65rem; gap: .25rem; }
 .review-card h2 { margin: .2rem 0; font-size: 2rem; font-weight: 500; }
 .review-rank, .score-breakdown { color: var(--ink-faint); font: .8rem system-ui, sans-serif; }
 .candidate-list { display: grid; gap: .55rem; margin: 1.5rem 0; }
@@ -193,6 +202,8 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .comparison-heading { display: flex; justify-content: space-between; gap: .75rem; align-items: start; }
 .wikidata-description { min-height: 1em; margin: .3rem 0 .65rem; color: var(--ink-faint); font: italic .78rem/1.4 system-ui, sans-serif; }
 .proposal-reason { margin: .6rem 0; padding: .5rem .6rem; background: #f5f0e5; font: .76rem/1.45 system-ui, sans-serif; }
+.proposal-reason-list { margin: .3rem 0 0; padding-left: 1.15rem; }
+.proposal-reason-list li { margin: .12rem 0; }
 .period-role-actions { margin: 1rem 0; padding: .8rem; background: #f5f0e5; border: 1px solid var(--rule); }
 .period-role-actions h3, .period-role-actions p { margin: 0 0 .55rem; }
 .period-role-actions p { color: var(--ink-faint); font: .78rem/1.4 system-ui, sans-serif; }
@@ -217,6 +228,11 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .timeline-coverage-bar.timeline-coverage-reviewed { background: #8c422d; }
 .timeline-coverage-axis { margin-left: 5rem; display: flex; justify-content: space-between; color: var(--ink-faint); font: .68rem system-ui, sans-serif; }
 .relationship-directions { display: flex; flex-direction: column; }
+/* Button order: 1 Same entity | 2-3 Reviewed -> ... | 4-5 Candidate -> ... --
+   a divider after each group instead of uniform spacing. */
+.relationship-directions button:nth-child(1), .relationship-directions button:nth-child(3) {
+  margin-bottom: .6rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--rule);
+}
 .candidate-entity-actions { display: flex; flex-direction: column; padding-top: .6rem; border-top: 1px solid var(--rule); }
 .review-actions button.recommended-decision { position: relative; color: #315d3a; background: #edf4e9; border-color: #315d3a; }
 .review-actions button.recommended-decision::after { content: "Suggested"; position: absolute; top: -.55rem; right: .4rem; padding: .08rem .3rem; color: white; background: #315d3a; font: 700 .6rem system-ui, sans-serif; letter-spacing: .03em; text-transform: uppercase; }
@@ -243,7 +259,6 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .decision-status.success { color: #315d3a; background: #edf4e9; border-color: #66836b; }
 .decision-status.error { color: #7b291d; background: #f8e9e4; border-color: #8c422d; }
 .review-card button:disabled { cursor: wait; opacity: .55; }
-.review-card button.ineligible:disabled { cursor: not-allowed; }
 .danger { background: #8c422d; border-color: #8c422d; }
 kbd { padding: .1rem .3rem; color: #27251f; background: white; border: 1px solid var(--rule); font: .75rem system-ui, sans-serif; }
 

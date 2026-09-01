@@ -10,10 +10,16 @@ let submitting = false;
 // no fixed denominator to compare against otherwise, so this tracks progress
 // made in the current browsing session rather than all-time completion.
 let progressBaseline = null;
-const phaseKeys = ["Q", "W", "E", "R", "T"];
-const partKeys = ["Y", "U", "I", "O", "L"];
-const inversePhaseKeys = ["A", "D", "F", "G", "H"];
-const inversePartKeys = ["Z", "C", "V", "B", "N"];
+// Chosen for AZERTY, not QWERTY: AZERTY swaps Q<->A and W<->Z, so the old
+// QWERTY-adjacent picks (Q W E R T / A D F G H / Z C V B N) landed on
+// scattered, non-adjacent physical keys for an AZERTY typist. These follow
+// AZERTY's own row layout instead -- row 1 (A Z E R T Y U I O) for
+// "Reviewed", row 2/3 (D F G H J / W C V B N) for "Candidate" -- skipping
+// K/P/S/X/digits, which are already claimed by other shortcuts below.
+const phaseKeys = ["A", "Z", "E", "R", "T"];
+const partKeys = ["Y", "U", "I", "O", "Q"];
+const inversePhaseKeys = ["D", "F", "G", "H", "J"];
+const inversePartKeys = ["W", "C", "V", "B", "N"];
 
 // escapeHtml, formatYear live in common.js, loaded first on this page.
 function links(item) { return item.wikidata ? `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(item.wikidata)}" target="_blank" rel="noopener noreferrer">Wikidata (${escapeHtml(item.wikidata)}) ↗</a>` : "No Wikidata item"; }
@@ -36,11 +42,11 @@ function timelineCoverage(candidateItem, reviewedItem) {
     const width = Math.max(0.6, pct(end) - left);
     return `<div class="timeline-coverage-row"><span class="timeline-coverage-label">${escapeHtml(label)}</span><div class="timeline-coverage-track"><div class="timeline-coverage-bar ${cls}" style="left:${left}%;width:${width}%"></div></div></div>`;
   };
-  return `<div class="timeline-coverage">
-    ${bar(cStart, cEnd, "timeline-coverage-candidate", "Candidate")}
+  return `<tr class="timeline-coverage-row-wrap"><td colspan="3"><div class="timeline-coverage">
     ${bar(rStart, rEnd, "timeline-coverage-reviewed", "Reviewed")}
+    ${bar(cStart, cEnd, "timeline-coverage-candidate", "Candidate")}
     <div class="timeline-coverage-axis"><span>${formatYear(min)}</span><span>${formatYear(max)}</span></div>
-  </div>`;
+  </div></td></tr>`;
 }
 // Filled in by loadWikidataEvidence() once sitelinks are fetched -- prefers
 // the English Wikipedia article, falling back to whichever language
@@ -50,7 +56,18 @@ function wikipediaPlaceholder(item) { return item.wikidata ? `<span data-wikiped
 // image) claim, when one exists -- a quick visual geography cross-check
 // alongside the present-countries/centroid-distance fields.
 function locatorMapPlaceholder(item) { return item.wikidata ? `<span data-locator-map="${escapeHtml(item.wikidata)}"></span>` : ""; }
+// Filled in by loadWikidataEvidence() with the Wikidata P361 ("part of") /
+// P150 ("contains administrative territorial entity") claims, when any
+// exist -- direct hierarchy signals alongside the derived shared_p131/
+// geography fields. property is the claim id (P361 or P150); dataAttr is
+// the data-* attribute name the fetch step looks for.
+function claimPlaceholder(item, dataAttr) { return item.wikidata ? `<span data-${dataAttr}="${escapeHtml(item.wikidata)}">Loading…</span>` : "No Wikidata item"; }
+function partOfPlaceholder(item) { return claimPlaceholder(item, "part-of"); }
+function containsPlaceholder(item) { return claimPlaceholder(item, "contains"); }
 function typeLinks(item) { return (item.direct_type_qids || []).map((qid) => `<a data-wikidata-label="${escapeHtml(qid)}" href="https://www.wikidata.org/wiki/${encodeURIComponent(qid)}" target="_blank" rel="noopener noreferrer">${escapeHtml(qid)} ↗</a>`).join(", ") || "Not recorded"; }
+function reasonsBanner(reasons) {
+  return `<div class="proposal-reason"><strong>Why suggested:</strong><ul class="proposal-reason-list">${reasons.map((reason) => `<li>${escapeHtml(reason)}</li>`).join("")}</ul></div>`;
+}
 function dateRange(item) { return `${formatYear(item.dates[0])}–${formatYear(item.dates[1])}`; }
 function countries(item) { return escapeHtml((item.present_countries || []).join(", ") || "not recorded"); }
 // Reviewed entity first (it's the record actually being decided about),
@@ -64,21 +81,15 @@ function comparisonRow(label, reviewedValue, candidateValue, assessment = "") {
 // distance, and same-Wikidata-item-but-mismatched-dates checks) so the
 // direction doesn't have to be worked out by hand each time. key/label
 // render as `<kbd>key</kbd> label`, matching the Independent/Discard/Defer
-// buttons' shortcut display. disabledReason, when given, disables the
-// button with a title tooltip instead of letting the click reach the server
-// and bounce off a rejected-decision error (a phase_of/candidate_phase_of
-// decision writes a Period record, which needs a finite end date -- same
-// reasoning the "Broad period/era" button already applies).
-function recommendableButton(decision, candidate, key, label, disabledReason = null) {
-  // Never badge a disabled button -- recommending an action that can't
-  // actually be taken here is more confusing than showing no suggestion.
-  const recommended = !disabledReason && candidate.suggested_decision === decision;
-  // "ineligible" (see CSS) overrides the generic disabled:wait cursor --
-  // this button isn't temporarily disabled pending a request, it's
-  // permanently disabled until someone fixes the underlying date data, so a
-  // "wait a moment" cursor is actively misleading.
-  const classes = [recommended && "recommended-decision", disabledReason && "ineligible"].filter(Boolean).join(" ");
-  return `<button type="button" data-decision="${decision}" data-target="${escapeHtml(candidate.id)}"${classes ? ` class="${classes}"` : ""}${disabledReason ? ` disabled title="${escapeHtml(disabledReason)}"` : ""}><kbd>${escapeHtml(String(key))}</kbd> ${label}</button>`;
+// buttons' shortcut display. hint, when given, shows as a title tooltip --
+// e.g. phase_of/candidate_phase_of on a still-open-ended ("present") entity
+// still submits fine (the server approximates the missing end date as the
+// current year, low confidence, on a phase_of decision), but is worth
+// flagging so the reviewer isn't surprised by that approximation.
+function recommendableButton(decision, candidate, key, label, hint = null) {
+  const recommended = candidate.suggested_decision === decision;
+  const classes = recommended ? ' class="recommended-decision"' : "";
+  return `<button type="button" data-decision="${decision}" data-target="${escapeHtml(candidate.id)}"${classes}${hint ? ` title="${escapeHtml(hint)}"` : ""}><kbd>${escapeHtml(String(key))}</kbd> ${label}</button>`;
 }
 
 function candidateMarkup(candidate, index) {
@@ -91,21 +102,22 @@ function candidateMarkup(candidate, index) {
       <p class="wikidata-description" data-wikidata-description="${escapeHtml(candidate.wikidata || "")}"></p>
       <div class="comparison-table-wrap"><table class="comparison-table"><thead><tr><th>Field</th><th>Reviewed entity</th><th>Candidate</th></tr></thead><tbody>
         ${comparisonRow("Name", escapeHtml(current.canonical_name), escapeHtml(candidate.canonical_name), candidate.exact_name_match ? "match" : "review")}
-        ${comparisonRow("Histomap ID", escapeHtml(current.id), escapeHtml(candidate.id))}
-        ${comparisonRow("Type", escapeHtml(current.entity_type), escapeHtml(candidate.entity_type), candidate.type_match ? "match" : "conflict")}
-        ${comparisonRow("Dates", dateRange(current), dateRange(candidate), candidate.date_contains ? "match" : candidate.date_overlap ? "review" : "conflict")}
-        ${comparisonRow("Present countries", countries(current), countries(candidate), candidate.geography_match ? "match" : (!candidate.present_countries.length || !current.present_countries.length) ? "unknown" : "conflict")}
         ${comparisonRow("Instance of", `<span class="source-links">${typeLinks(current)}</span>`, `<span class="source-links">${typeLinks(candidate)}</span>`)}
         ${comparisonRow("Wikidata", `<span class="source-links">${links(current)}</span>`, `<span class="source-links">${links(candidate)}</span>`, candidate.same_wikidata ? "match" : "review")}
         ${comparisonRow("Wikipedia", `<span class="source-links">${wikipediaPlaceholder(current)}</span>`, `<span class="source-links">${wikipediaPlaceholder(candidate)}</span>`)}
+        ${comparisonRow("Part of", `<span class="source-links">${partOfPlaceholder(current)}</span>`, `<span class="source-links">${partOfPlaceholder(candidate)}</span>`)}
+        ${comparisonRow("Contains", `<span class="source-links">${containsPlaceholder(current)}</span>`, `<span class="source-links">${containsPlaceholder(candidate)}</span>`)}
+        ${comparisonRow("Type", escapeHtml(current.entity_type), escapeHtml(candidate.entity_type), candidate.type_match ? "match" : "conflict")}
+        ${comparisonRow("Dates", dateRange(current), dateRange(candidate), candidate.date_contains ? "match" : candidate.date_overlap ? "review" : "conflict")}
+        ${timelineCoverage(candidate, current)}
+        ${comparisonRow("Present countries", countries(current), countries(candidate), candidate.geography_match ? "match" : (!candidate.present_countries.length || !current.present_countries.length) ? "unknown" : "conflict")}
         ${comparisonRow("Locator map", locatorMapPlaceholder(current), locatorMapPlaceholder(candidate))}
       </tbody></table></div>
-      ${timelineCoverage(candidate, current)}
-      <p class="proposal-reason"><strong>Why suggested:</strong> ${escapeHtml(candidate.reasons.join("; "))}.</p>
+      ${index === 0 ? "" : reasonsBanner(candidate.reasons)}
     </div>
     <div class="candidate-actions-column">
-      <div class="review-actions relationship-directions">${recommendableButton("same_entity", candidate, index + 1, "Same entity")}${recommendableButton("phase_of", candidate, phaseKeys[index], "Reviewed → phase of candidate", reviewedOpenEnded ? "A phase needs a finite end date on the reviewed entity -- it's still open-ended (present)" : null)}${recommendableButton("candidate_phase_of", candidate, inversePhaseKeys[index], "Candidate → phase of reviewed", candidateOpenEnded ? "A phase needs a finite end date on the candidate -- it's still open-ended (present)" : null)}${recommendableButton("part_of", candidate, partKeys[index], "Reviewed → part of candidate")}${recommendableButton("candidate_part_of", candidate, inversePartKeys[index], "Candidate → part of reviewed")}</div>
-      <div class="review-actions candidate-entity-actions"><button type="button" data-decision="independent"${independentRecommended ? ' class="recommended-decision"' : ""}><kbd>K</kbd> Independent entity</button><button type="button" data-decision="discarded" class="danger"><kbd>X</kbd> Discard from Histomap</button><button type="button" data-action="defer"><kbd>S</kbd> Defer</button></div>
+      <div class="review-actions relationship-directions">${recommendableButton("same_entity", candidate, index + 1, "Same entity")}<button type="button" data-decision="independent"${independentRecommended ? ' class="recommended-decision"' : ""}><kbd>K</kbd> Independent entity</button>${recommendableButton("phase_of", candidate, phaseKeys[index], "Reviewed → phase of candidate", reviewedOpenEnded ? "Reviewed entity is still open-ended (present) -- its end date will be approximated as the current year" : null)}${recommendableButton("part_of", candidate, partKeys[index], "Reviewed → part of candidate")}${recommendableButton("candidate_phase_of", candidate, inversePhaseKeys[index], "Candidate → phase of reviewed", candidateOpenEnded ? "Candidate is still open-ended (present) -- its end date will be approximated as the current year" : null)}${recommendableButton("candidate_part_of", candidate, inversePartKeys[index], "Candidate → part of reviewed")}</div>
+      <div class="review-actions candidate-entity-actions"><button type="button" data-decision="discarded" class="danger"><kbd>X</kbd> Discard from Histomap</button><button type="button" data-action="defer"><kbd>S</kbd> Defer</button></div>
     </div>
   </article>`;
 }
@@ -151,6 +163,45 @@ async function loadWikidataEvidence(item) {
       const fileUrl = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}`;
       element.innerHTML = `<a href="${fileUrl}" target="_blank" rel="noopener noreferrer"><img src="${fileUrl}?width=220" alt="Locator map" loading="lazy" class="locator-map-image"></a>`;
     });
+    // P361 ("part of") and P150 ("contains administrative territorial
+    // entity") claims reference OTHER Wikidata items, whose labels weren't
+    // part of the batch above -- one shared second, lighter fetch (labels
+    // only) resolves both, same two-step pattern typeLinks()'s own
+    // data-wikidata-label elements already rely on for direct_type_qids.
+    const claimRows = [
+      { attr: "part-of", property: "P361" },
+      { attr: "contains", property: "P150" },
+    ].map(({ attr, property }) => {
+      const elements = [...card.querySelectorAll(`[data-${attr}]`)];
+      const targetsBySource = new Map(); // source qid -> [target qid, ...]
+      elements.forEach((element) => {
+        const qid = element.dataset[attr === "part-of" ? "partOf" : attr];
+        const targets = (entities[qid]?.claims?.[property] || [])
+          .map((claim) => claim?.mainsnak?.datavalue?.value?.id)
+          .filter(Boolean);
+        targetsBySource.set(qid, targets);
+      });
+      return { elements, attr, targetsBySource };
+    });
+    const allTargetQids = [...new Set(claimRows.flatMap((row) => [...row.targetsBySource.values()]).flat())];
+    let targetLabels = {};
+    if (allTargetQids.length) {
+      const targetParameters = new URLSearchParams({action:"wbgetentities",format:"json",formatversion:"2",ids:allTargetQids.join("|"),props:"labels",languages:"en",origin:"*"});
+      const targetResponse = await fetch(`https://www.wikidata.org/w/api.php?${targetParameters}`);
+      if (targetResponse.ok && current && current.id === item.id) {
+        targetLabels = (await targetResponse.json()).entities || {};
+      }
+    }
+    claimRows.forEach(({ elements, attr, targetsBySource }) => {
+      elements.forEach((element) => {
+        const qid = element.dataset[attr === "part-of" ? "partOf" : attr];
+        const targets = targetsBySource.get(qid) || [];
+        if (!targets.length) { element.textContent = "Not recorded"; return; }
+        element.innerHTML = targets
+          .map((targetQid) => `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(targetQid)}" target="_blank" rel="noopener noreferrer">${escapeHtml(targetLabels[targetQid]?.labels?.en?.value || targetQid)} ↗</a>`)
+          .join(", ");
+      });
+    });
   } catch (_) { /* Linked QIDs remain available when Wikidata is unavailable. */ }
 }
 
@@ -176,7 +227,12 @@ async function loadNext() {
   // type, present countries, Wikidata) already appears as the "Reviewed
   // entity" column in each candidate's comparison table below, so a second
   // copy up here was pure duplication.
-  card.innerHTML = `<p class="review-rank"><span class="record-badge">Histomap entity</span> Canonical record being checked</p><h2>${escapeHtml(current.canonical_name)}</h2><p class="wikidata-description" data-wikidata-description="${escapeHtml(current.wikidata || "")}"></p>${candidateSection}`;
+  // Candidate 1's reasons move up here as a banner (candidateMarkup skips
+  // rendering its own copy for index 0) -- it's the top-scored candidate,
+  // usually the one carrying whatever Suggested badge is showing, so its
+  // reasoning is worth seeing before scrolling into the comparison table.
+  const topReasonsBanner = current.candidates[0] ? reasonsBanner(current.candidates[0].reasons) : "";
+  card.innerHTML = `<p class="review-rank"><span class="record-badge">Histomap entity</span> Canonical record being checked</p><h2>${escapeHtml(current.canonical_name)}</h2><p class="wikidata-description" data-wikidata-description="${escapeHtml(current.wikidata || "")}"></p>${topReasonsBanner}${candidateSection}`;
   card.querySelectorAll("[data-decision]").forEach((button) => button.addEventListener("click", () => decide(button.dataset.decision, button.dataset.target)));
   card.querySelectorAll('[data-action="defer"]').forEach((button) => button.addEventListener("click", defer));
   loadWikidataEvidence(current);
@@ -203,22 +259,12 @@ document.addEventListener("keydown", (event) => {
     const candidate = current.candidates[phaseKeys.indexOf(event.key.toUpperCase())];
     if (!candidate) return;
     event.preventDefault();
-    if (current.dates[1] == null) {
-      status.className = "decision-status error";
-      status.textContent = "A phase needs a finite end date on the reviewed entity -- it's still open-ended (present).";
-    } else {
-      decide("phase_of", candidate.id);
-    }
+    decide("phase_of", candidate.id);
   } else if (inversePhaseKeys.includes(event.key.toUpperCase())) {
     const candidate = current.candidates[inversePhaseKeys.indexOf(event.key.toUpperCase())];
     if (!candidate) return;
     event.preventDefault();
-    if (candidate.dates[1] == null) {
-      status.className = "decision-status error";
-      status.textContent = "A phase needs a finite end date on the candidate -- it's still open-ended (present).";
-    } else {
-      decide("candidate_phase_of", candidate.id);
-    }
+    decide("candidate_phase_of", candidate.id);
   } else if (partKeys.includes(event.key.toUpperCase())) {
     const candidate = current.candidates[partKeys.indexOf(event.key.toUpperCase())];
     if (!candidate) return;
