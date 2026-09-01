@@ -42,7 +42,10 @@ body { margin: 0; }
    nearly indistinguishable from an ordinary divider line at low fill. */
 .review-progress-bar { height: 7px; background: var(--paper); border-bottom: 1px solid var(--rule); }
 .review-progress-bar-fill { height: 100%; width: 0; background: #8c422d; transition: width .25s ease; }
-.review-progress-caption { margin: .3rem clamp(1rem, 4vw, 3.5rem) 0; color: var(--ink-faint); font: .78rem system-ui, sans-serif; }
+/* Width-matched to .review-main's own content column (74rem, same side
+   padding) and butted directly against the review card below (no
+   border-bottom, no gap) so it reads as that card's own header strip. */
+.review-progress-caption { max-width: 74rem; margin: 0 auto; padding: .5rem clamp(.6rem, 2vw, 1.25rem); background: var(--paper); border: 1px solid var(--rule); border-bottom: none; color: var(--ink-faint); font: .95rem system-ui, sans-serif; }
 .button-link { display: inline-block; padding: .45rem .65rem; color: white; background: #343b35; border-radius: 2px; font: .82rem system-ui, sans-serif; text-decoration: none; }
 
 .eyebrow {
@@ -161,7 +164,7 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .attached-phase-label { font-size: 7px; pointer-events: none; }
 .period-label { fill: #302d27; font: 600 10px system-ui, sans-serif; pointer-events: none; }
 .error { padding: 2rem; color: var(--ink-faint); }
-.review-main { grid-template-columns: minmax(0, 74rem); justify-content: center; padding: .6rem clamp(.6rem, 2vw, 1.25rem); }
+.review-main { grid-template-columns: minmax(0, 74rem); justify-content: center; padding: 0 clamp(.6rem, 2vw, 1.25rem) .6rem; }
 .review-dashboard-main { display: block; max-width: 74rem; margin: 0 auto; }
 .review-dashboard { display: grid; gap: .75rem; }
 .review-pipeline-card { display: flex; justify-content: space-between; gap: 2rem; align-items: center; padding: 1.1rem 1.25rem; color: #27251f; background: var(--paper); border: 1px solid var(--rule); text-decoration: none; }
@@ -227,13 +230,14 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .timeline-coverage-bar.timeline-coverage-candidate { background: #6b8299; }
 .timeline-coverage-bar.timeline-coverage-reviewed { background: #8c422d; }
 .timeline-coverage-axis { margin-left: 5rem; display: flex; justify-content: space-between; color: var(--ink-faint); font: .68rem system-ui, sans-serif; }
-.relationship-directions { display: flex; flex-direction: column; }
-/* Button order: 1 Same entity | 2-3 Reviewed -> ... | 4-5 Candidate -> ... --
-   a divider after each group instead of uniform spacing. */
-.relationship-directions button:nth-child(1), .relationship-directions button:nth-child(3) {
-  margin-bottom: .6rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--rule);
+.relationship-directions { display: flex; flex-direction: column; gap: .55rem; }
+/* Button order: 1-2 Same entity/Independent | 3-4 Reviewed -> ... |
+   5-6 Candidate -> ... -- a divider after each group instead of uniform
+   spacing throughout. */
+.relationship-directions button:nth-child(2), .relationship-directions button:nth-child(4) {
+  margin-bottom: .55rem; padding-bottom: 1.15rem; border-bottom: 1px solid var(--rule);
 }
-.candidate-entity-actions { display: flex; flex-direction: column; padding-top: .6rem; border-top: 1px solid var(--rule); }
+.candidate-entity-actions { display: flex; flex-direction: column; gap: .55rem; padding-top: .6rem; border-top: 1px solid var(--rule); }
 .review-actions button.recommended-decision { position: relative; color: #315d3a; background: #edf4e9; border-color: #315d3a; }
 .review-actions button.recommended-decision::after { content: "Suggested"; position: absolute; top: -.55rem; right: .4rem; padding: .08rem .3rem; color: white; background: #315d3a; font: 700 .6rem system-ui, sans-serif; letter-spacing: .03em; text-transform: uppercase; }
 .score-details, .priority-details { font: .78rem/1.4 system-ui, sans-serif; }
