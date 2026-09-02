@@ -7,7 +7,7 @@ external_ids:
 parent: null
 successors: []
 start: 2002
-end: null
+end: 2002
 start_confidence: low
 end_confidence: low
 weight_by_era:
@@ -19,7 +19,9 @@ text:
   short_adult_en: ''
   long_en: ''
 notes: Automatically generated from Wikidata; requires review. Editorially discarded
-  as outside Histomap scope.
+  as outside Histomap scope. End date corrected from null ("present") to 2002 -- Wikidata
+  records a same-year (or single approximate) dissolution date that was previously
+  misread as invalid (found live, 1 September 2026).
 sources:
 - wikidata
 prominence_score: 0
@@ -41,7 +43,7 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   relationship_centrality: 0.0
-  longevity: 3.49
+  longevity: 0.75
   editorial_work: 0
   type_uncertainty_penalty: -10
   date_uncertainty_penalty: -5.0

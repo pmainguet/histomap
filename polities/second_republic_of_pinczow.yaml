@@ -7,7 +7,7 @@ external_ids:
 parent: null
 successors: []
 start: 1944
-end: null
+end: 1944
 start_confidence: low
 end_confidence: low
 weight_by_era:
@@ -18,10 +18,13 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Automatically generated from Wikidata; requires review.
+notes: Automatically generated from Wikidata; requires review. End date corrected
+  from null ("present") to 1944 -- Wikidata records a same-year (or single approximate)
+  dissolution date that was previously misread as invalid (found live, 1 September
+  2026).
 sources:
 - wikidata
-prominence_score: 8.83
+prominence_score: 4.78
 visibility_tier: detailed
 eligibility: review
 geography:
@@ -45,12 +48,12 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   relationship_centrality: 0.0
-  longevity: 4.8
+  longevity: 0.75
   editorial_work: 0
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
-  total: 8.83
+  total: 4.78
 manual_overrides:
 - entity_type
 government_form: null
