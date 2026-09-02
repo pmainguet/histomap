@@ -1,6 +1,8 @@
 import unittest
 
-from schema import Period
+from pydantic import ValidationError
+
+from schema import Period, Polity
 
 
 def period_kwargs(**overrides: object) -> dict:
@@ -12,6 +14,18 @@ def period_kwargs(**overrides: object) -> dict:
         "end": 1500,
         "authority": "test",
         "source_urls": ["https://example.com"],
+    }
+    value.update(overrides)
+    return value
+
+
+def polity_kwargs(**overrides: object) -> dict:
+    value = {
+        "id": "test_polity",
+        "canonical_name": "Test Polity",
+        "start": 1000,
+        "start_confidence": "low",
+        "end_confidence": "low",
     }
     value.update(overrides)
     return value
@@ -39,6 +53,30 @@ class YearFloorTests(unittest.TestCase):
     def test_below_new_floor_still_rejected(self) -> None:
         with self.assertRaises(ValueError):
             Period(**period_kwargs(start=-3_000_001, end=-3_000_000))
+
+
+class PolityDetailOfTests(unittest.TestCase):
+    def test_polity_accepts_detail_of_and_deprecated(self) -> None:
+        polity = Polity(**polity_kwargs(
+            detail_of="spain",
+            deprecated={
+                "consolidation_status": "phase_of",
+                "consolidated_into": "spain",
+                "period": {"id": "francoist_spain_period", "kind": "historical"},
+            },
+        ))
+        self.assertEqual(polity.detail_of, "spain")
+        self.assertEqual(polity.deprecated["consolidation_status"], "phase_of")
+
+    def test_polity_rejects_retired_consolidation_status_values(self) -> None:
+        with self.assertRaises(ValidationError):
+            Polity(**polity_kwargs(consolidation_status="phase_of"))
+        with self.assertRaises(ValidationError):
+            Polity(**polity_kwargs(consolidation_status="part_of"))
+
+    def test_polity_same_entity_still_requires_consolidated_into(self) -> None:
+        with self.assertRaises(ValidationError):
+            Polity(**polity_kwargs(consolidation_status="same_entity"))
 
 
 if __name__ == "__main__":

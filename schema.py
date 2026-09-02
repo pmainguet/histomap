@@ -1,7 +1,7 @@
 import re
 from datetime import datetime, timezone
 from enum import Enum
-from typing import Literal
+from typing import Any, Literal
 
 from pydantic import BaseModel, Field, field_validator, model_validator
 
@@ -170,8 +170,18 @@ class Polity(BaseModel):
     entity_type_reviewed_against: list[EntityType] = Field(default_factory=list)
     subdivision_parent_status: Literal["pending", "confirmed"] | None = None
     timeline_role: Literal["entity", "period", "both", "retired"] = "entity"
-    consolidation_status: Literal["independent", "same_entity", "phase_of", "part_of", "discarded"] | None = None
+    consolidation_status: Literal["independent", "same_entity", "discarded"] | None = None
     consolidated_into: str | None = None
+    # The id of the entity this one is a detail of -- replaces the old
+    # phase_of (which manufactured a Period record and retired the polity)
+    # and part_of (which retyped entity_type to subdivision) consolidation
+    # mechanisms. See docs/plans/2026-09-01-detail-of-merge-design.md.
+    detail_of: str | None = None
+    # Generic bucket preserving old field values under their original names
+    # for records migrated away from a retired mechanism (phase_of/part_of
+    # consolidation_status) -- a historical record, never read back by
+    # anything live.
+    deprecated: dict[str, Any] | None = None
     relationships: list[EntityRelationship] = Field(default_factory=list)
     parent: str | None = None
     successors: list[str] = Field(default_factory=list)
@@ -239,7 +249,7 @@ class Polity(BaseModel):
 
     @model_validator(mode="after")
     def _check(self) -> "Polity":
-        if self.consolidation_status in {"same_entity", "phase_of"} and not self.consolidated_into:
+        if self.consolidation_status == "same_entity" and not self.consolidated_into:
             raise ValueError("a consolidated entity requires consolidated_into")
         if self.entity_type == EntityType.subdivision:
             if self.subdivision_parent_status is None:
