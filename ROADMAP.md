@@ -9,30 +9,16 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **Data-model half done (1 September 2026, see STATUS.md and
-   `docs/plans/2026-09-01-detail-of-merge-design.md`): phase_of and part_of merged into one
-   `Polity.detail_of` relationship.** 169 records (164 former phase_of, 5 former part_of) migrated;
-   old field values preserved under a new `Polity.deprecated` bucket, never deleted. Consolidation
-   review is down to two buttons (`detail_of`/`candidate_detail_of`) instead of four.
-   **Still open: the `/explore` display half.** A detail entity currently still renders as an
-   ordinary independent top-level band (not hidden by default, no zoom-triggered reveal) --
+0. **`/explore` display half of the phase_of/part_of merge** — hiding a `detail_of` entity by
+   default and revealing it via a badge/zoom-triggered enclosing panel. The data-model half shipped
+   1 September 2026 (see STATUS.md and `docs/plans/2026-09-01-detail-of-merge-design.md`); this is
+   the deliberately-deferred remainder. Needs its own focused design pass —
    `explore_timeline.js`'s three separate grouping-mode layout/draw function pairs
-   (continent/country/flat) have no existing per-item expand concept to build the "hidden unless you
-   zoom into the container" behavior on, so this needs its own focused design pass (see the design
-   doc's "Deferred: `/explore` display" section for what that follow-up needs to cover) rather than
-   being bolted onto the already-landed merge.
-1. **Work the polity → period reclassification queue (98 pending, `/consolidation-review`'s
-   "period"/"both" decision).** The comprehensive full-polity-set scan this item called for is
-   done (31 August 2026, see STATUS.md): re-running `pipeline/classify_period_roles.py`'s
-   existing Wikidata-ancestry signal across all 4,697 polities found the queue essentially
-   unchanged (94 -> 80 candidates, so the original seeding wasn't actually missing much), and a
-   new second signal -- entity_type already civilization/culture/people/tribe/
-   archaeological_horizon but still `timeline_role: entity` -- added 23 more (Babylonia, Maya
-   civilization, Gaelic Ireland, Xiongnu, and others). Both signals only *queue* candidates for a
-   human period/both decision, never auto-convert on the entity_type signal alone (entity_type
-   being confirmed doesn't mean period-vs-entity modeling was decided -- Babylonia is a
-   documented case of "confirmed civilization, deliberately kept weight-bearing"). What's left is
-   ordinary manual review of the 98.
+   (continent/country/flat) have no existing per-item expand concept to build on — see the design
+   doc's "Deferred: `/explore` display" section for what that follow-up needs to cover.
+1. **Work the polity → period reclassification queue (73 pending, confirmed live 1 September 2026,
+   `/consolidation-review`'s "period"/"both" decision).** Full scope-and-seed pass done (see
+   STATUS.md); what's left is ordinary manual review.
    **Constraint:** `prominence_score` ranks polities against each other (most-to-least prominent,
    scoped by region) for display purposes only — it must never be a signal for `entity_type` or
    `timeline_role` classification. Those decisions come from Wikidata type evidence and editorial
@@ -40,18 +26,16 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 2. **Introduce historical polygons** from Seshat/Cliopatria, then recompute geography and weights.
 3. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
 4. **Add the linked map**, followed by the print SVG/PDF pipeline.
-5. **Work the Wikidata type-eligibility (661) and entity-type classification (2,682) queues** --
-   down from 1,948/3,098 after a 31 August 2026 rules-table expansion closed a large,
-   genuinely-not-ambiguous gap (see STATUS.md). No further safe automation identified: ~350 of
-   the remaining eligibility flags are modern administrative subdivisions correctly gated behind
-   `/subdivision-review`'s parent-confirmation step, and the rest is a long tail of low-count,
-   genuinely ambiguous or obscure types -- ordinary manual review from here, same as any other
-   queue.
-6. **Close the residual geography gaps** left after the 31 August 2026 continent/region fixes,
-   including a further name-matching pass the same day (see STATUS.md): **917** active polities
-   still have no continent at all (no Wikidata QID, or a QID with neither a usable P17 chain nor a
-   direct P30 claim nor a centroid nor an unambiguous name match -- every signal built so far has
-   been tried and come up empty; needs a different approach, if one exists); **73** have
+5. **Work the Wikidata type-eligibility (655) and entity-type classification (2,677) queues**
+   (confirmed live 1 September 2026 -- see STATUS.md for how they got here). No further safe
+   automation identified: ~350 of the remaining eligibility flags are modern administrative
+   subdivisions correctly gated behind `/subdivision-review`'s parent-confirmation step, and the
+   rest is a long tail of low-count, genuinely ambiguous or obscure types -- ordinary manual review
+   from here, same as any other queue.
+6. **Close the residual geography gaps** (see STATUS.md for how they got here): **917** active
+   polities still have no continent at all (no Wikidata QID, or a QID with neither a usable P17
+   chain nor a direct P30 claim nor a centroid nor an unambiguous name match -- every signal built
+   so far has been tried and come up empty; needs a different approach, if one exists); **73** have
    `present_countries` but their country isn't yet in `pipeline/historical_regions.py`'s
    ~180-country starter table (cheap and safe to grow incrementally).
 7. **A period can subdivide a civilization/polity, not just an era — the schema and tree only

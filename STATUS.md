@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (1,617 of 4,697 still pending, confirmed live 1 September 2026; an automated `suggested_decision` hint covers most of the active queue, now spanning same_entity/detail_of/candidate_detail_of/independent -- phase_of and part_of merged into detail_of the same day, see below); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 655 remaining type-eligibility review flags and 2,677 pending entity-type classifications; work down the consolidation queue (1,525 of 4,697 still pending, confirmed live 1 September 2026; an automated `suggested_decision` hint covers most of the active queue, now spanning same_entity/detail_of/candidate_detail_of/independent -- phase_of and part_of merged into detail_of the same day, see below); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -717,6 +717,18 @@ were riding the same weaker token-only signal that produced the West Virginia fa
 falling back to null (an ordinary manual review, same as before the suggestion feature existed) is
 the right trade-off over surfacing suggestions this unreliable. West Virginia resolved
 `independent`. 239/239 tests pass; zero console errors live.
+
+### Queue counts refreshed live; ROADMAP trimmed to forward-only — 1 September 2026
+
+End-of-session check requested ("check the roadmap and see if everything is up to date"). Confirmed
+live via `/api/review-dashboard` and direct dataset counts, several figures had drifted from their
+last-measured (31 August 2026) values after this session's consolidation-review work:
+type-eligibility 661 -> 655, entity-type classification 2,682 -> 2,677, subdivision-parent 2 -> 1,
+polity→period reclassification queue 98 -> 73, consolidation queue 1,617 -> 1,525 (all above updated
+in the Phase 1 table and ROADMAP.md). `ROADMAP.md` item 0 (the phase_of/part_of merge) also had its
+"done" half trimmed out in favor of a brief pointer here, per ROADMAP's own stated scope
+("Forward-looking only") -- the full account already lives in this file's dated entries above and
+below, so restating it there was pure duplication.
 
 ### Three more consolidation-queue signals, and a full review-UI pass — 1 September 2026
 
