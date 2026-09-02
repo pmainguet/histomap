@@ -11,15 +11,12 @@ let submitting = false;
 // made in the current browsing session rather than all-time completion.
 let progressBaseline = null;
 // Chosen for AZERTY, not QWERTY: AZERTY swaps Q<->A and W<->Z, so the old
-// QWERTY-adjacent picks (Q W E R T / A D F G H / Z C V B N) landed on
-// scattered, non-adjacent physical keys for an AZERTY typist. These follow
-// AZERTY's own row layout instead -- row 1 (A Z E R T Y U I O) for
-// "Reviewed", row 2/3 (D F G H J / W C V B N) for "Candidate" -- skipping
-// K/P/S/X/digits, which are already claimed by other shortcuts below.
-const phaseKeys = ["A", "Z", "E", "R", "T"];
-const partKeys = ["Y", "U", "I", "O", "Q"];
-const inversePhaseKeys = ["D", "F", "G", "H", "J"];
-const inversePartKeys = ["W", "C", "V", "B", "N"];
+// QWERTY-adjacent picks (Q W E R T / A D F G H) landed on scattered,
+// non-adjacent physical keys for an AZERTY typist. These follow AZERTY's own
+// row layout instead -- row 1 (A Z E R T) for "Reviewed", row 2 (D F G H J)
+// for "Candidate" -- skipping K/P/S/X/digits, already claimed elsewhere.
+const detailKeys = ["A", "Z", "E", "R", "T"];
+const inverseDetailKeys = ["D", "F", "G", "H", "J"];
 
 // escapeHtml, formatYear live in common.js, loaded first on this page.
 function links(item) { return item.wikidata ? `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(item.wikidata)}" target="_blank" rel="noopener noreferrer">Wikidata (${escapeHtml(item.wikidata)}) ↗</a>` : "No Wikidata item"; }
@@ -88,10 +85,10 @@ function comparisonRow(label, reviewedValue, candidateValue, assessment = "") {
 // direction doesn't have to be worked out by hand each time. key/label
 // render as `<kbd>key</kbd> label`, matching the Independent/Discard/Defer
 // buttons' shortcut display. hint, when given, shows as a title tooltip --
-// e.g. phase_of/candidate_phase_of on a still-open-ended ("present") entity
-// still submits fine (the server approximates the missing end date as the
-// current year, low confidence, on a phase_of decision), but is worth
-// flagging so the reviewer isn't surprised by that approximation.
+// e.g. detail_of/candidate_detail_of on a still-open-ended ("present")
+// entity still submits fine (a detail entity keeps its own start/end
+// unchanged, open or not), but is worth flagging so the reviewer isn't
+// surprised either way.
 function recommendableButton(decision, candidate, key, label, hint = null) {
   const recommended = candidate.suggested_decision === decision;
   const classes = recommended ? ' class="recommended-decision"' : "";
@@ -122,7 +119,7 @@ function candidateMarkup(candidate, index) {
       ${index === 0 ? "" : reasonsBanner(candidate.reasons)}
     </div>
     <div class="candidate-actions-column">
-      <div class="review-actions relationship-directions">${recommendableButton("same_entity", candidate, index + 1, "Same entity")}<button type="button" data-decision="independent"${independentRecommended ? ' class="recommended-decision"' : ""}><kbd>K</kbd> Independent entity</button>${recommendableButton("phase_of", candidate, phaseKeys[index], "Reviewed → phase of candidate", reviewedOpenEnded ? "Reviewed entity is still open-ended (present) -- its end date will be approximated as the current year" : null)}${recommendableButton("part_of", candidate, partKeys[index], "Reviewed → part of candidate")}${recommendableButton("candidate_phase_of", candidate, inversePhaseKeys[index], "Candidate → phase of reviewed", candidateOpenEnded ? "Candidate is still open-ended (present) -- its end date will be approximated as the current year" : null)}${recommendableButton("candidate_part_of", candidate, inversePartKeys[index], "Candidate → part of reviewed")}</div>
+      <div class="review-actions relationship-directions">${recommendableButton("same_entity", candidate, index + 1, "Same entity")}<button type="button" data-decision="independent"${independentRecommended ? ' class="recommended-decision"' : ""}><kbd>K</kbd> Independent entity</button>${recommendableButton("detail_of", candidate, detailKeys[index], "Reviewed → detail of candidate", reviewedOpenEnded ? "Reviewed entity is still open-ended (present)" : null)}${recommendableButton("candidate_detail_of", candidate, inverseDetailKeys[index], "Candidate → detail of reviewed", candidateOpenEnded ? "Candidate is still open-ended (present)" : null)}</div>
       <div class="review-actions candidate-entity-actions"><button type="button" data-decision="discarded" class="danger"><kbd>X</kbd> Discard from Histomap</button><button type="button" data-action="defer"><kbd>S</kbd> Defer</button></div>
     </div>
   </article>`;
@@ -261,24 +258,16 @@ document.addEventListener("keydown", (event) => {
     if (!candidate) return;
     event.preventDefault();
     decide("same_entity", candidate.id);
-  } else if (phaseKeys.includes(event.key.toUpperCase())) {
-    const candidate = current.candidates[phaseKeys.indexOf(event.key.toUpperCase())];
+  } else if (detailKeys.includes(event.key.toUpperCase())) {
+    const candidate = current.candidates[detailKeys.indexOf(event.key.toUpperCase())];
     if (!candidate) return;
     event.preventDefault();
-    decide("phase_of", candidate.id);
-  } else if (inversePhaseKeys.includes(event.key.toUpperCase())) {
-    const candidate = current.candidates[inversePhaseKeys.indexOf(event.key.toUpperCase())];
+    decide("detail_of", candidate.id);
+  } else if (inverseDetailKeys.includes(event.key.toUpperCase())) {
+    const candidate = current.candidates[inverseDetailKeys.indexOf(event.key.toUpperCase())];
     if (!candidate) return;
     event.preventDefault();
-    decide("candidate_phase_of", candidate.id);
-  } else if (partKeys.includes(event.key.toUpperCase())) {
-    const candidate = current.candidates[partKeys.indexOf(event.key.toUpperCase())];
-    if (!candidate) return;
-    event.preventDefault(); decide("part_of", candidate.id);
-  } else if (inversePartKeys.includes(event.key.toUpperCase())) {
-    const candidate = current.candidates[inversePartKeys.indexOf(event.key.toUpperCase())];
-    if (!candidate) return;
-    event.preventDefault(); decide("candidate_part_of", candidate.id);
+    decide("candidate_detail_of", candidate.id);
   } else if (event.key.toLowerCase() === "k") {
     event.preventDefault(); decide("independent");
   } else if (event.key.toLowerCase() === "p") {
