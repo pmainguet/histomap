@@ -61,8 +61,47 @@ prominence_components:
   aggregate_penalty: 0
   total: 31.67
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: vietnam
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: vietnam
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: vietnam
+  period:
+    id: south_vietnam_period
+    canonical_name: South Vietnam
+    kind: historical
+    start: 1955
+    end: 1975
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries:
+      - VN
+      centroid:
+        lat: 10.776944444
+        lon: 106.695277777
+      confidence: medium
+      historical_regions:
+      - southeast_asia
+      primary_historical_region: southeast_asia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q180573
+    notes: Editorially identified as a phase or aspect of Vietnam.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q180573
+  period_link:
+    period_id: south_vietnam_period
+    entity_id: vietnam
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q180573
+    notes: Reviewed record is a dated phase of this canonical polity.

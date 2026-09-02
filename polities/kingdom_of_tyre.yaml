@@ -45,8 +45,40 @@ prominence_components:
   aggregate_penalty: 0
   total: 7.52
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: tyre
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: tyre
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: tyre
+  period:
+    id: kingdom_of_tyre_period
+    canonical_name: Kingdom of Tyre
+    kind: historical
+    start: -2749
+    end: -331
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents: []
+      present_countries: []
+      centroid: null
+      confidence: null
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q138573104
+    notes: Editorially identified as a phase or aspect of Tyre.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q138573104
+  period_link:
+    period_id: kingdom_of_tyre_period
+    entity_id: tyre
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q138573104
+    notes: Reviewed record is a dated phase of this canonical polity.

@@ -53,8 +53,48 @@ prominence_components:
   aggregate_penalty: 0
   total: 4.98
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: thuringia
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: thuringia
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: thuringia
+  period:
+    id: state_of_thuringia_19201952_period
+    canonical_name: State of Thuringia (1920–1952)
+    kind: historical
+    start: 1920
+    end: 1952
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - DD
+      - DE
+      centroid:
+        lat: 50.981111111
+        lon: 11.329444444
+      confidence: medium
+      historical_regions:
+      - western_europe
+      primary_historical_region: western_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q873634
+    notes: Editorially identified as a phase or aspect of Thuringia.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q873634
+  period_link:
+    period_id: state_of_thuringia_19201952_period
+    entity_id: thuringia
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q873634
+    notes: Reviewed record is a dated phase of this canonical polity.

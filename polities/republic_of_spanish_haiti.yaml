@@ -52,8 +52,45 @@ prominence_components:
   aggregate_penalty: 0
   total: 11.37
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: haiti
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: haiti
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: haiti
+  period:
+    id: republic_of_spanish_haiti_period
+    canonical_name: Republic of Spanish Haiti
+    kind: historical
+    start: 1821
+    end: 1822
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - north_america
+      present_countries:
+      - HT
+      centroid: null
+      confidence: low
+      historical_regions:
+      - caribbean
+      primary_historical_region: caribbean
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q11681694
+    notes: Editorially identified as a phase or aspect of Haiti.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q11681694
+  period_link:
+    period_id: republic_of_spanish_haiti_period
+    entity_id: haiti
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q11681694
+    notes: Reviewed record is a dated phase of this canonical polity.

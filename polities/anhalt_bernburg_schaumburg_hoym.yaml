@@ -55,8 +55,47 @@ prominence_components:
   aggregate_penalty: 0
   total: 28.65
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: anhalt_bernburg
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: anhalt_bernburg
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: anhalt_bernburg
+  period:
+    id: anhalt_bernburg_schaumburg_hoym_period
+    canonical_name: Anhalt-Bernburg-Schaumburg-Hoym
+    kind: historical
+    start: 1718
+    end: 1812
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - DE
+      centroid:
+        lat: 51.783056
+        lon: 11.3
+      confidence: low
+      historical_regions:
+      - western_europe
+      primary_historical_region: western_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q1843786
+    notes: Editorially identified as a phase or aspect of Anhalt-Bernburg.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1843786
+  period_link:
+    period_id: anhalt_bernburg_schaumburg_hoym_period
+    entity_id: anhalt_bernburg
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1843786
+    notes: Reviewed record is a dated phase of this canonical polity.

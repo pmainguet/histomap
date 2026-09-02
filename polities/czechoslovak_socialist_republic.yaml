@@ -66,8 +66,47 @@ prominence_components:
 linked_era_id: europe_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: czechoslovakia
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: czechoslovakia
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: czechoslovakia
+  period:
+    id: czechoslovak_socialist_republic_period
+    canonical_name: Czechoslovak Socialist Republic
+    kind: historical
+    start: 1948
+    end: 1990
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - CZ
+      centroid:
+        lat: 50.0833
+        lon: 14.4667
+      confidence: low
+      historical_regions:
+      - eastern_europe
+      primary_historical_region: eastern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q853348
+    notes: Editorially identified as a phase or aspect of Czechoslovakia.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q853348
+  period_link:
+    period_id: czechoslovak_socialist_republic_period
+    entity_id: czechoslovakia
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q853348
+    notes: Reviewed record is a dated phase of this canonical polity.

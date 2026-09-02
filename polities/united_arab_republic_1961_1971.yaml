@@ -52,8 +52,47 @@ prominence_components:
   aggregate_penalty: 0
   total: 0
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: united_arab_republic
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: united_arab_republic
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: united_arab_republic
+  period:
+    id: united_arab_republic_1961_1971_period
+    canonical_name: United Arab Republic (1961-1971)
+    kind: historical
+    start: 1961
+    end: 1971
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - africa
+      present_countries:
+      - EG
+      centroid:
+        lat: 26.0
+        lon: 30.0
+      confidence: low
+      historical_regions:
+      - north_africa
+      primary_historical_region: north_africa
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q137583681
+    notes: Editorially identified as a phase or aspect of United Arab Republic.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q137583681
+  period_link:
+    period_id: united_arab_republic_1961_1971_period
+    entity_id: united_arab_republic
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q137583681
+    notes: Reviewed record is a dated phase of this canonical polity.

@@ -54,8 +54,47 @@ prominence_components:
   aggregate_penalty: 0
   total: 19.63
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: haiti
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: haiti
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: haiti
+  period:
+    id: state_of_haiti_period
+    canonical_name: State of Haiti
+    kind: historical
+    start: 1806
+    end: 1811
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - north_america
+      present_countries:
+      - HT
+      centroid:
+        lat: 19.1
+        lon: -72.333333055
+      confidence: low
+      historical_regions:
+      - caribbean
+      primary_historical_region: caribbean
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q2150951
+    notes: Editorially identified as a phase or aspect of Haiti.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2150951
+  period_link:
+    period_id: state_of_haiti_period
+    entity_id: haiti
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2150951
+    notes: Reviewed record is a dated phase of this canonical polity.

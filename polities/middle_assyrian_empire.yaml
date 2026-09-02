@@ -57,8 +57,42 @@ prominence_components:
 linked_era_id: bronze_age_era
 government_form: null
 linked_chapter_id: macro_classical_imperial_worlds
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: assyrian_empire
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: assyrian_empire
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: assyrian_empire
+  period:
+    id: middle_assyrian_empire_period
+    canonical_name: Middle Assyrian Empire
+    kind: historical
+    start: -1362
+    end: -911
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - africa
+      - asia
+      present_countries: []
+      centroid: null
+      confidence: medium
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q12642600
+    notes: Editorially identified as a phase or aspect of Assyrian Empire.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q12642600
+  period_link:
+    period_id: middle_assyrian_empire_period
+    entity_id: assyrian_empire
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q12642600
+    notes: Reviewed record is a dated phase of this canonical polity.

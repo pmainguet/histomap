@@ -58,8 +58,45 @@ prominence_components:
   aggregate_penalty: 0
   total: 16.37
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: cameroon
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: cameroon
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: cameroon
+  period:
+    id: federal_republic_of_cameroon_period
+    canonical_name: Federal Republic of Cameroon
+    kind: historical
+    start: 1961
+    end: 1972
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - africa
+      present_countries:
+      - CM
+      centroid: null
+      confidence: low
+      historical_regions:
+      - central_africa
+      primary_historical_region: central_africa
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q30744169
+    notes: Editorially identified as a phase or aspect of Cameroon.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q30744169
+  period_link:
+    period_id: federal_republic_of_cameroon_period
+    entity_id: cameroon
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q30744169
+    notes: Reviewed record is a dated phase of this canonical polity.

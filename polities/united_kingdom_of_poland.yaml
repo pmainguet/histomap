@@ -51,8 +51,45 @@ prominence_components:
   aggregate_penalty: 0
   total: 10.03
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: kingdom_of_poland_q8890160
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: kingdom_of_poland_q8890160
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: kingdom_of_poland_q8890160
+  period:
+    id: united_kingdom_of_poland_period
+    canonical_name: United Kingdom of Poland
+    kind: historical
+    start: 1320
+    end: 1569
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - PL
+      centroid: null
+      confidence: low
+      historical_regions:
+      - eastern_europe
+      primary_historical_region: eastern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q9391434
+    notes: Editorially identified as a phase or aspect of Kingdom of Poland.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q9391434
+  period_link:
+    period_id: united_kingdom_of_poland_period
+    entity_id: kingdom_of_poland_q8890160
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q9391434
+    notes: Reviewed record is a dated phase of this canonical polity.

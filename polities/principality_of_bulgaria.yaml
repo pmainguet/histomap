@@ -64,8 +64,47 @@ prominence_components:
 linked_era_id: europe_industrial_imperial_world_era
 government_form: null
 linked_chapter_id: macro_industrial_imperial_world
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: bulgaria
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: bulgaria
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: bulgaria
+  period:
+    id: principality_of_bulgaria_period
+    canonical_name: Principality of Bulgaria
+    kind: historical
+    start: 1878
+    end: 1908
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - BG
+      centroid:
+        lat: 42.7
+        lon: 23.33333333
+      confidence: medium
+      historical_regions:
+      - eastern_europe
+      primary_historical_region: eastern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q815731
+    notes: Editorially identified as a phase or aspect of Bulgaria.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q815731
+  period_link:
+    period_id: principality_of_bulgaria_period
+    entity_id: bulgaria
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q815731
+    notes: Reviewed record is a dated phase of this canonical polity.

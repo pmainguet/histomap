@@ -60,8 +60,47 @@ prominence_components:
   aggregate_penalty: 0
   total: 16.69
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: first_syrian_republic
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: first_syrian_republic
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: first_syrian_republic
+  period:
+    id: syrian_republic_under_french_mandate_period
+    canonical_name: Syrian Republic under French mandate
+    kind: historical
+    start: 1930
+    end: 1946
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries:
+      - SY
+      centroid:
+        lat: 33.516666666
+        lon: 36.3
+      confidence: low
+      historical_regions:
+      - west_asia
+      primary_historical_region: west_asia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q108868568
+    notes: Editorially identified as a phase or aspect of First Syrian Republic.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q108868568
+  period_link:
+    period_id: syrian_republic_under_french_mandate_period
+    entity_id: first_syrian_republic
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q108868568
+    notes: Reviewed record is a dated phase of this canonical polity.

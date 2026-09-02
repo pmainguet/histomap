@@ -59,8 +59,49 @@ prominence_components:
 linked_era_id: africa_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: spain
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: spain
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: spain
+  period:
+    id: francoist_spain_period
+    canonical_name: Francoist Spain
+    kind: historical
+    start: 1939
+    end: 1975
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - africa
+      - europe
+      present_countries:
+      - ES
+      centroid:
+        lat: 40.521388888
+        lon: -3.775
+      confidence: medium
+      primary_continent: europe
+      historical_regions:
+      - southern_europe
+      primary_historical_region: southern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q13474305
+    notes: Editorially identified as a phase or aspect of Spain.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q13474305
+  period_link:
+    period_id: francoist_spain_period
+    entity_id: spain
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q13474305
+    notes: Reviewed record is a dated phase of this canonical polity.

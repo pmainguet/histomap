@@ -48,8 +48,41 @@ prominence_components:
   aggregate_penalty: 0
   total: 13.66
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: philippines
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: philippines
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: philippines
+  period:
+    id: third_republic_of_the_philippines_period
+    canonical_name: Third Republic of the Philippines
+    kind: historical
+    start: 1945
+    end: 1973
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries: []
+      centroid: null
+      confidence: low
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q5870215
+    notes: Editorially identified as a phase or aspect of Philippines.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q5870215
+  period_link:
+    period_id: third_republic_of_the_philippines_period
+    entity_id: philippines
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q5870215
+    notes: Reviewed record is a dated phase of this canonical polity.

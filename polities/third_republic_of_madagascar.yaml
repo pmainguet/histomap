@@ -51,8 +51,44 @@ prominence_components:
   aggregate_penalty: 0
   total: 21.87
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: madagascar
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: madagascar
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: madagascar
+  period:
+    id: third_republic_of_madagascar_period
+    canonical_name: Third Republic of Madagascar
+    kind: historical
+    start: 1992
+    end: 2010
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - africa
+      present_countries:
+      - MG
+      centroid:
+        lat: -18.933333333
+        lon: 47.516666666
+      confidence: medium
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q7784940
+    notes: Editorially identified as a phase or aspect of Madagascar.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q7784940
+  period_link:
+    period_id: third_republic_of_madagascar_period
+    entity_id: madagascar
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q7784940
+    notes: Reviewed record is a dated phase of this canonical polity.

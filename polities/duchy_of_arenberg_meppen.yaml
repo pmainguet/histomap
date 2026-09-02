@@ -53,8 +53,40 @@ prominence_components:
   aggregate_penalty: 0
   total: 14.3
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: arenberg
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: arenberg
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: arenberg
+  period:
+    id: duchy_of_arenberg_meppen_period
+    canonical_name: Duchy of Arenberg-Meppen
+    kind: historical
+    start: 1803
+    end: 1810
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents: []
+      present_countries: []
+      centroid: null
+      confidence: null
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q508488
+    notes: Editorially identified as a phase or aspect of Arenberg.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q508488
+  period_link:
+    period_id: duchy_of_arenberg_meppen_period
+    entity_id: arenberg
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q508488
+    notes: Reviewed record is a dated phase of this canonical polity.

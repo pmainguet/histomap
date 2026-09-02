@@ -60,8 +60,47 @@ prominence_components:
 linked_era_id: medieval_europe_era
 government_form: null
 linked_chapter_id: macro_postclassical_worlds
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: bulgarian_empire
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: bulgarian_empire
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: bulgarian_empire
+  period:
+    id: first_bulgarian_empire_period
+    canonical_name: First Bulgarian Empire
+    kind: historical
+    start: 681
+    end: 1018
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - BG
+      centroid:
+        lat: 43.36666667
+        lon: 27.11666667
+      confidence: low
+      historical_regions:
+      - eastern_europe
+      primary_historical_region: eastern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q203817
+    notes: Editorially identified as a phase or aspect of Bulgarian Empire.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q203817
+  period_link:
+    period_id: first_bulgarian_empire_period
+    entity_id: bulgarian_empire
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q203817
+    notes: Reviewed record is a dated phase of this canonical polity.

@@ -65,8 +65,43 @@ prominence_components:
   total: 44.55
 government_form: null
 linked_chapter_id: macro_early_modern_connections
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: prussia
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: prussia
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: prussia
+  period:
+    id: duchy_of_prussia_period
+    canonical_name: Duchy of Prussia
+    kind: historical
+    start: 1525
+    end: 1618
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries: []
+      centroid:
+        lat: 55.733333333
+        lon: 20.483333333
+      confidence: low
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q153091
+    notes: Editorially identified as a phase or aspect of Prussia.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q153091
+  period_link:
+    period_id: duchy_of_prussia_period
+    entity_id: prussia
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q153091
+    notes: Reviewed record is a dated phase of this canonical polity.

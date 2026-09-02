@@ -5,7 +5,6 @@ names:
   aliases_en: Mexico | Edomex | Edomexico | Mexico state | Mexico, Mexico
 external_ids:
   wikidata: Q82112
-parent: mexico
 successors: []
 start: 1823
 end: null
@@ -37,12 +36,12 @@ geography:
   historical_regions:
   - mesoamerica
   primary_historical_region: mesoamerica
-entity_type: subdivision
+entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids: []
 relationships:
 - target: mexico
-  kind: administrative_part_of
+  kind: political_parent
   evidence: derived
   confidence: high
   source_urls:
@@ -63,6 +62,10 @@ manual_overrides:
 - subdivision_parent
 entity_type_reviewed_against:
 - subdivision
-subdivision_parent_status: confirmed
-consolidation_status: part_of
 government_form: null
+detail_of: mexico
+deprecated:
+  consolidation_status: part_of
+  parent: mexico
+  subdivision_parent_status: confirmed
+  entity_type: subdivision

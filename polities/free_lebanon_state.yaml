@@ -50,8 +50,45 @@ prominence_components:
   aggregate_penalty: 0
   total: 5.01
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: lebanon
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: lebanon
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: lebanon
+  period:
+    id: free_lebanon_state_period
+    canonical_name: Free Lebanon State
+    kind: historical
+    start: 1979
+    end: 1984
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries:
+      - LB
+      centroid: null
+      confidence: low
+      historical_regions:
+      - west_asia
+      primary_historical_region: west_asia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q11967593
+    notes: Editorially identified as a phase or aspect of Lebanon.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q11967593
+  period_link:
+    period_id: free_lebanon_state_period
+    entity_id: lebanon
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q11967593
+    notes: Reviewed record is a dated phase of this canonical polity.

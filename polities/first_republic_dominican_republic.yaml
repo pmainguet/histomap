@@ -51,8 +51,45 @@ prominence_components:
   aggregate_penalty: 0
   total: 13.14
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: dominican_republic
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: dominican_republic
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: dominican_republic
+  period:
+    id: first_republic_dominican_republic_period
+    canonical_name: First Republic (Dominican Republic)
+    kind: historical
+    start: 1844
+    end: 1861
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - north_america
+      present_countries:
+      - DO
+      centroid: null
+      confidence: low
+      historical_regions:
+      - caribbean
+      primary_historical_region: caribbean
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q51545918
+    notes: Editorially identified as a phase or aspect of Dominican Republic.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q51545918
+  period_link:
+    period_id: first_republic_dominican_republic_period
+    entity_id: dominican_republic
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q51545918
+    notes: Reviewed record is a dated phase of this canonical polity.

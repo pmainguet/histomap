@@ -58,8 +58,45 @@ prominence_components:
   aggregate_penalty: 0
   total: 16.92
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: haiti
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: haiti
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: haiti
+  period:
+    id: republic_of_haiti_18201849_period
+    canonical_name: Republic of Haiti (1820–1849)
+    kind: historical
+    start: 1820
+    end: 1849
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - north_america
+      present_countries:
+      - HT
+      centroid: null
+      confidence: low
+      historical_regions:
+      - caribbean
+      primary_historical_region: caribbean
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q95408244
+    notes: Editorially identified as a phase or aspect of Haiti.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q95408244
+  period_link:
+    period_id: republic_of_haiti_18201849_period
+    entity_id: haiti
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q95408244
+    notes: Reviewed record is a dated phase of this canonical polity.

@@ -53,8 +53,45 @@ prominence_components:
   aggregate_penalty: 0
   total: 9.78
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: peru
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: peru
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: peru
+  period:
+    id: republic_of_upper_peru_period
+    canonical_name: Republic of Upper Peru
+    kind: historical
+    start: 1828
+    end: 2026
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - south_america
+      present_countries:
+      - PE
+      centroid: null
+      confidence: low
+      historical_regions:
+      - andes
+      primary_historical_region: andes
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q91914004
+    notes: Editorially identified as a phase or aspect of Peru.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q91914004
+  period_link:
+    period_id: republic_of_upper_peru_period
+    entity_id: peru
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q91914004
+    notes: Reviewed record is a dated phase of this canonical polity.

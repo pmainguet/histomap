@@ -63,8 +63,47 @@ prominence_components:
 linked_era_id: north_america_industrial_imperial_world_era
 government_form: null
 linked_chapter_id: macro_industrial_imperial_world
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: yucatan
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: yucatan
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: yucatan
+  period:
+    id: republic_of_yucatan_period
+    canonical_name: Republic of Yucatán
+    kind: historical
+    start: 1841
+    end: 1848
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - north_america
+      present_countries:
+      - MX
+      centroid:
+        lat: 20.96666667
+        lon: -89.61666667
+      confidence: low
+      historical_regions:
+      - mesoamerica
+      primary_historical_region: mesoamerica
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q671658
+    notes: Editorially identified as a phase or aspect of Yucatán.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q671658
+  period_link:
+    period_id: republic_of_yucatan_period
+    entity_id: yucatan
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q671658
+    notes: Reviewed record is a dated phase of this canonical polity.

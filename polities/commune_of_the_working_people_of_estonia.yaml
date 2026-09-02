@@ -53,6 +53,43 @@ manual_overrides:
 - consolidation
 - entity_type
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: estonia
+timeline_role: entity
+detail_of: estonia
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: estonia
+  period:
+    id: commune_of_the_working_people_of_estonia_period
+    canonical_name: Commune of the Working People of Estonia
+    kind: historical
+    start: 1918
+    end: 1919
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - EE
+      centroid: null
+      confidence: medium
+      historical_regions:
+      - northern_europe
+      primary_historical_region: northern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q2182946
+    notes: Editorially identified as a phase or aspect of Estonia.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2182946
+  period_link:
+    period_id: commune_of_the_working_people_of_estonia_period
+    entity_id: estonia
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2182946
+    notes: Reviewed record is a dated phase of this canonical polity.

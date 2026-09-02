@@ -49,8 +49,40 @@ prominence_components:
   aggregate_penalty: 0
   total: 17.4
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: morocco
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: morocco
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: morocco
+  period:
+    id: sharifian_empire_period
+    canonical_name: Sharifian Empire
+    kind: historical
+    start: 1510
+    end: 2026
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents: []
+      present_countries: []
+      centroid: null
+      confidence: null
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q12183875
+    notes: Editorially identified as a phase or aspect of Morocco.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q12183875
+  period_link:
+    period_id: sharifian_empire_period
+    entity_id: morocco
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q12183875
+    notes: Reviewed record is a dated phase of this canonical polity.

@@ -57,8 +57,47 @@ prominence_components:
   aggregate_penalty: 0
   total: 35.15
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: taranto
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: taranto
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: taranto
+  period:
+    id: principality_of_taranto_period
+    canonical_name: Principality of Taranto
+    kind: historical
+    start: 1088
+    end: 1465
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - IT
+      centroid:
+        lat: 40.466666666
+        lon: 17.233333333
+      confidence: low
+      historical_regions:
+      - southern_europe
+      primary_historical_region: southern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q1078062
+    notes: Editorially identified as a phase or aspect of Taranto.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1078062
+  period_link:
+    period_id: principality_of_taranto_period
+    entity_id: taranto
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1078062
+    notes: Reviewed record is a dated phase of this canonical polity.

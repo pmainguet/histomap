@@ -64,6 +64,44 @@ manual_overrides:
 linked_era_id: africa_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: democratic_people_s_republic_of_angola
+timeline_role: entity
+detail_of: democratic_people_s_republic_of_angola
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: democratic_people_s_republic_of_angola
+  period:
+    id: people_s_republic_of_angola_period
+    canonical_name: People's Republic of Angola
+    kind: historical
+    start: 1975
+    end: 1992
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - africa
+      primary_continent: africa
+      present_countries:
+      - AO
+      confidence: high
+      historical_regions:
+      - central_africa
+      primary_historical_region: central_africa
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q2208280
+    notes: Editorially identified as a phase or aspect of Democratic People's Republic
+      of Angola.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2208280
+  period_link:
+    period_id: people_s_republic_of_angola_period
+    entity_id: democratic_people_s_republic_of_angola
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2208280
+    notes: Reviewed record is a dated phase of this canonical polity.

@@ -50,8 +50,45 @@ prominence_components:
   aggregate_penalty: 0
   total: 4.78
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: serbian_despotate
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: serbian_despotate
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: serbian_despotate
+  period:
+    id: serbian_empire_of_jovan_nenad_period
+    canonical_name: Serbian Empire of Jovan Nenad
+    kind: historical
+    start: 1526
+    end: 1527
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - RS
+      centroid: null
+      confidence: low
+      historical_regions:
+      - balkans
+      primary_historical_region: balkans
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q872301
+    notes: Editorially identified as a phase or aspect of Serbian Despotate.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q872301
+  period_link:
+    period_id: serbian_empire_of_jovan_nenad_period
+    entity_id: serbian_despotate
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q872301
+    notes: Reviewed record is a dated phase of this canonical polity.

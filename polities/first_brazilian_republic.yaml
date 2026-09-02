@@ -59,8 +59,47 @@ prominence_components:
 linked_era_id: south_america_industrial_imperial_world_era
 government_form: null
 linked_chapter_id: macro_industrial_imperial_world
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: brazil
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: brazil
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: brazil
+  period:
+    id: first_brazilian_republic_period
+    canonical_name: First Brazilian Republic
+    kind: historical
+    start: 1889
+    end: 1930
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - south_america
+      present_countries:
+      - BR
+      centroid:
+        lat: -14.0
+        lon: -53.0
+      confidence: medium
+      historical_regions:
+      - brazil_amazonia
+      primary_historical_region: brazil_amazonia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q2414171
+    notes: Editorially identified as a phase or aspect of Brazil.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2414171
+  period_link:
+    period_id: first_brazilian_republic_period
+    entity_id: brazil
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2414171
+    notes: Reviewed record is a dated phase of this canonical polity.

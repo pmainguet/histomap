@@ -71,8 +71,47 @@ prominence_components:
 linked_era_id: europe_industrial_imperial_world_era
 government_form: null
 linked_chapter_id: macro_industrial_imperial_world
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: romania
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: romania
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: romania
+  period:
+    id: kingdom_of_romania_period
+    canonical_name: Kingdom of Romania
+    kind: historical
+    start: 1881
+    end: 1947
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - RO
+      centroid:
+        lat: 44.416666666
+        lon: 26.1
+      confidence: low
+      historical_regions:
+      - eastern_europe
+      primary_historical_region: eastern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q203493
+    notes: Editorially identified as a phase or aspect of Romania.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q203493
+  period_link:
+    period_id: kingdom_of_romania_period
+    entity_id: romania
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q203493
+    notes: Reviewed record is a dated phase of this canonical polity.

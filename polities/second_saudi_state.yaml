@@ -64,8 +64,47 @@ prominence_components:
 linked_era_id: asia_industrial_imperial_world_era
 government_form: null
 linked_chapter_id: macro_industrial_imperial_world
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: saudi_arabia
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: saudi_arabia
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: saudi_arabia
+  period:
+    id: second_saudi_state_period
+    canonical_name: Second Saudi State
+    kind: historical
+    start: 1818
+    end: 1891
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries:
+      - SA
+      centroid:
+        lat: 23.0
+        lon: 45.5
+      confidence: low
+      historical_regions:
+      - west_asia
+      primary_historical_region: west_asia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q146862
+    notes: Editorially identified as a phase or aspect of Saudi Arabia.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q146862
+  period_link:
+    period_id: second_saudi_state_period
+    entity_id: saudi_arabia
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q146862
+    notes: Reviewed record is a dated phase of this canonical polity.

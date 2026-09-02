@@ -54,8 +54,48 @@ prominence_components:
   aggregate_penalty: 0
   total: 6.88
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: coahuila
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: coahuila
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: coahuila
+  period:
+    id: coahuila_y_tejas_period
+    canonical_name: Coahuila y Tejas
+    kind: historical
+    start: 1824
+    end: 1835
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - north_america
+      present_countries:
+      - MX
+      - US
+      centroid:
+        lat: 28.8333
+        lon: -99.5
+      confidence: medium
+      historical_regions:
+      - mesoamerica
+      - north_america
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q949898
+    notes: Editorially identified as a phase or aspect of Coahuila.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q949898
+  period_link:
+    period_id: coahuila_y_tejas_period
+    entity_id: coahuila
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q949898
+    notes: Reviewed record is a dated phase of this canonical polity.

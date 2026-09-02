@@ -45,8 +45,40 @@ prominence_components:
   aggregate_penalty: 0
   total: 5.15
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: lands_of_the_bohemian_crown
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: lands_of_the_bohemian_crown
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: lands_of_the_bohemian_crown
+  period:
+    id: lands_of_the_bohemian_crown_13481526_period
+    canonical_name: Lands of the Bohemian Crown (1348–1526)
+    kind: historical
+    start: 1348
+    end: 1526
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents: []
+      present_countries: []
+      centroid: null
+      confidence: null
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q85775800
+    notes: Editorially identified as a phase or aspect of Lands of the Bohemian Crown.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q85775800
+  period_link:
+    period_id: lands_of_the_bohemian_crown_13481526_period
+    entity_id: lands_of_the_bohemian_crown
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q85775800
+    notes: Reviewed record is a dated phase of this canonical polity.

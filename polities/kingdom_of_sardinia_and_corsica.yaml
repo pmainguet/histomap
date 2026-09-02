@@ -59,8 +59,40 @@ prominence_components:
   aggregate_penalty: 0
   total: 16.93
 government_form: vassal state
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: kingdom_of_sardinia_q165154
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: kingdom_of_sardinia_q165154
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: kingdom_of_sardinia_q165154
+  period:
+    id: kingdom_of_sardinia_and_corsica_period
+    canonical_name: Kingdom of Sardinia and Corsica
+    kind: historical
+    start: 1713
+    end: 1720
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents: []
+      present_countries: []
+      centroid: null
+      confidence: null
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q3932080
+    notes: Editorially identified as a phase or aspect of Kingdom of Sardinia.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q3932080
+  period_link:
+    period_id: kingdom_of_sardinia_and_corsica_period
+    entity_id: kingdom_of_sardinia_q165154
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q3932080
+    notes: Reviewed record is a dated phase of this canonical polity.

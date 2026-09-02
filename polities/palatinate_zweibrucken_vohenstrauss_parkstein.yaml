@@ -51,8 +51,47 @@ prominence_components:
   aggregate_penalty: 0
   total: 0
 government_form: principality
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: palatinate_zweibrucken
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: palatinate_zweibrucken
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: palatinate_zweibrucken
+  period:
+    id: palatinate_zweibrucken_vohenstrauss_parkstein_period
+    canonical_name: Palatinate-Zweibrücken-Vohenstrauss-Parkstein
+    kind: historical
+    start: 1569
+    end: 1597
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - DE
+      centroid:
+        lat: 49.616666666
+        lon: 12.333333333
+      confidence: medium
+      historical_regions:
+      - western_europe
+      primary_historical_region: western_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q7126796
+    notes: Editorially identified as a phase or aspect of Palatinate-Zweibrücken.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q7126796
+  period_link:
+    period_id: palatinate_zweibrucken_vohenstrauss_parkstein_period
+    entity_id: palatinate_zweibrucken
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q7126796
+    notes: Reviewed record is a dated phase of this canonical polity.

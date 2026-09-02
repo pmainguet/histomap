@@ -46,8 +46,40 @@ prominence_components:
   aggregate_penalty: 0
   total: 9.04
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: guge
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: guge
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: guge
+  period:
+    id: purang_guge_kingdom_period
+    canonical_name: Purang-Guge Kingdom
+    kind: historical
+    start: 1000
+    end: 1100
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents: []
+      present_countries: []
+      centroid: null
+      confidence: null
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q7260839
+    notes: Editorially identified as a phase or aspect of Guge.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q7260839
+  period_link:
+    period_id: purang_guge_kingdom_period
+    entity_id: guge
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q7260839
+    notes: Reviewed record is a dated phase of this canonical polity.

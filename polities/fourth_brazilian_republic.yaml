@@ -52,8 +52,45 @@ prominence_components:
   aggregate_penalty: 0
   total: 17.08
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: brazil
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: brazil
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: brazil
+  period:
+    id: fourth_brazilian_republic_period
+    canonical_name: Fourth Brazilian Republic
+    kind: historical
+    start: 1945
+    end: 1964
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - south_america
+      present_countries:
+      - BR
+      centroid: null
+      confidence: low
+      historical_regions:
+      - brazil_amazonia
+      primary_historical_region: brazil_amazonia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q210542
+    notes: Editorially identified as a phase or aspect of Brazil.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q210542
+  period_link:
+    period_id: fourth_brazilian_republic_period
+    entity_id: brazil
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q210542
+    notes: Reviewed record is a dated phase of this canonical polity.

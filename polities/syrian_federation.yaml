@@ -60,8 +60,47 @@ prominence_components:
   aggregate_penalty: 0
   total: 20.14
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: syria
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: syria
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: syria
+  period:
+    id: syrian_federation_period
+    canonical_name: Syrian Federation
+    kind: historical
+    start: 1922
+    end: 1925
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries:
+      - SY
+      centroid:
+        lat: 33.516666666
+        lon: 36.3
+      confidence: medium
+      historical_regions:
+      - west_asia
+      primary_historical_region: west_asia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q12183911
+    notes: Editorially identified as a phase or aspect of Syria.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q12183911
+  period_link:
+    period_id: syrian_federation_period
+    entity_id: syria
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q12183911
+    notes: Reviewed record is a dated phase of this canonical polity.

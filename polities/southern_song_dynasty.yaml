@@ -61,8 +61,41 @@ prominence_components:
   aggregate_penalty: 0
   total: 23.08
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: song_dynasty
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: song_dynasty
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: song_dynasty
+  period:
+    id: southern_song_dynasty_period
+    canonical_name: Southern Song dynasty
+    kind: historical
+    start: 1127
+    end: 1279
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries: []
+      centroid: null
+      confidence: low
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q1147043
+    notes: Editorially identified as a phase or aspect of Song dynasty.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1147043
+  period_link:
+    period_id: southern_song_dynasty_period
+    entity_id: song_dynasty
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1147043
+    notes: Reviewed record is a dated phase of this canonical polity.

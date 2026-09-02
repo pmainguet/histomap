@@ -52,8 +52,40 @@ prominence_components:
   aggregate_penalty: 0
   total: 0
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: costa_rica
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: costa_rica
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: costa_rica
+  period:
+    id: state_of_costa_rica_period
+    canonical_name: State of Costa Rica
+    kind: historical
+    start: 1824
+    end: 1838
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents: []
+      present_countries: []
+      centroid: null
+      confidence: medium
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q68256371
+    notes: Editorially identified as a phase or aspect of Costa Rica.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q68256371
+  period_link:
+    period_id: state_of_costa_rica_period
+    entity_id: costa_rica
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q68256371
+    notes: Reviewed record is a dated phase of this canonical polity.

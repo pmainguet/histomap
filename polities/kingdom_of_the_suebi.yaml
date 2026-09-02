@@ -44,7 +44,7 @@ entity_type_source_qids:
 - Q3024240
 relationships:
 - target: galicia_in_the_visigothic_kingdom
-  kind: cultural_sequence
+  kind: political_successor
   evidence: derived
   confidence: medium
   source_urls:

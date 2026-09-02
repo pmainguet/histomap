@@ -63,8 +63,47 @@ prominence_components:
   aggregate_penalty: 0
   total: 27.47
 government_form: princely state
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: kingdom_of_mewar
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: kingdom_of_mewar
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: kingdom_of_mewar
+  period:
+    id: udaipur_state_period
+    canonical_name: Udaipur State
+    kind: historical
+    start: 1818
+    end: 1948
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries:
+      - IN
+      centroid:
+        lat: 22.47
+        lon: 83.22
+      confidence: medium
+      historical_regions:
+      - south_asia
+      primary_historical_region: south_asia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q1457519
+    notes: Editorially identified as a phase or aspect of Kingdom of Mewar.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1457519
+  period_link:
+    period_id: udaipur_state_period
+    entity_id: kingdom_of_mewar
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1457519
+    notes: Reviewed record is a dated phase of this canonical polity.

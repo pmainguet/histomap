@@ -42,6 +42,37 @@ manual_overrides:
 entity_type_reviewed_against:
 - polity
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: indo_greek_kingdoms
+timeline_role: entity
+detail_of: indo_greek_kingdoms
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: indo_greek_kingdoms
+  period:
+    id: seshat_indo_greek_kingdom_pkindgr_period
+    canonical_name: Indo-Greek Kingdom
+    kind: historical
+    start: -145
+    end: -96
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents: []
+      present_countries: []
+      centroid: null
+      confidence: null
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids: {}
+    notes: Editorially identified as a phase or aspect of Indo-Greek Kingdoms.
+    source_urls:
+    - https://histomap.local/entity/seshat_indo_greek_kingdom_pkindgr
+  period_link:
+    period_id: seshat_indo_greek_kingdom_pkindgr_period
+    entity_id: indo_greek_kingdoms
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://histomap.local/entity/seshat_indo_greek_kingdom_pkindgr
+    notes: Reviewed record is a dated phase of this canonical polity.

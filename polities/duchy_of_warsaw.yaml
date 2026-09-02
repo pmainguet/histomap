@@ -61,8 +61,48 @@ prominence_components:
   aggregate_penalty: 0
   total: 27.98
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: duchy_of_warsaw_middle_ages
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: duchy_of_warsaw_middle_ages
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: duchy_of_warsaw_middle_ages
+  period:
+    id: duchy_of_warsaw_period
+    canonical_name: Duchy of Warsaw
+    kind: historical
+    start: 1807
+    end: 1815
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - PL
+      centroid:
+        lat: 52.243055555
+        lon: 21.016666666
+      confidence: medium
+      historical_regions:
+      - eastern_europe
+      primary_historical_region: eastern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q152115
+    notes: Editorially identified as a phase or aspect of Duchy of Warsaw (Middle
+      Ages).
+    source_urls:
+    - https://www.wikidata.org/wiki/Q152115
+  period_link:
+    period_id: duchy_of_warsaw_period
+    entity_id: duchy_of_warsaw_middle_ages
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q152115
+    notes: Reviewed record is a dated phase of this canonical polity.

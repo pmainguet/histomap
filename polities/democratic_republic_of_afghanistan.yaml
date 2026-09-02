@@ -61,8 +61,47 @@ prominence_components:
   aggregate_penalty: 0
   total: 29.94
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: afghanistan
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: afghanistan
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: afghanistan
+  period:
+    id: democratic_republic_of_afghanistan_period
+    canonical_name: Democratic Republic of Afghanistan
+    kind: historical
+    start: 1978
+    end: 1992
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries:
+      - AF
+      centroid:
+        lat: 34.51666667
+        lon: 69.13333333
+      confidence: low
+      historical_regions:
+      - central_asia
+      primary_historical_region: central_asia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q476757
+    notes: Editorially identified as a phase or aspect of Afghanistan.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q476757
+  period_link:
+    period_id: democratic_republic_of_afghanistan_period
+    entity_id: afghanistan
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q476757
+    notes: Reviewed record is a dated phase of this canonical polity.

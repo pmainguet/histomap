@@ -70,8 +70,47 @@ prominence_components:
 linked_era_id: europe_early_modern_connections_era
 government_form: null
 linked_chapter_id: macro_early_modern_connections
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: prussia
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: prussia
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: prussia
+  period:
+    id: brandenburg_prussia_period
+    canonical_name: Brandenburg-Prussia
+    kind: historical
+    start: 1618
+    end: 1701
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - DE
+      centroid:
+        lat: 52.516666666
+        lon: 13.4
+      confidence: low
+      historical_regions:
+      - western_europe
+      primary_historical_region: western_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q157367
+    notes: Editorially identified as a phase or aspect of Prussia.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q157367
+  period_link:
+    period_id: brandenburg_prussia_period
+    entity_id: prussia
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q157367
+    notes: Reviewed record is a dated phase of this canonical polity.

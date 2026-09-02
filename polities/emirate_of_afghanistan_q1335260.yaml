@@ -58,8 +58,47 @@ prominence_components:
 linked_era_id: asia_industrial_imperial_world_era
 government_form: null
 linked_chapter_id: macro_industrial_imperial_world
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: afghanistan
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: afghanistan
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: afghanistan
+  period:
+    id: emirate_of_afghanistan_q1335260_period
+    canonical_name: Emirate of Afghanistan
+    kind: historical
+    start: 1823
+    end: 1926
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries:
+      - AF
+      centroid:
+        lat: 34.54
+        lon: 69.13
+      confidence: medium
+      historical_regions:
+      - central_asia
+      primary_historical_region: central_asia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q1335260
+    notes: Editorially identified as a phase or aspect of Afghanistan.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1335260
+  period_link:
+    period_id: emirate_of_afghanistan_q1335260_period
+    entity_id: afghanistan
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1335260
+    notes: Reviewed record is a dated phase of this canonical polity.

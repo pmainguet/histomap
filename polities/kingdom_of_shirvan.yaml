@@ -48,8 +48,41 @@ prominence_components:
   aggregate_penalty: 0
   total: 20.91
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: shirvan
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: shirvan
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: shirvan
+  period:
+    id: kingdom_of_shirvan_period
+    canonical_name: Kingdom of Shirvan
+    kind: historical
+    start: 861
+    end: 1538
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries: []
+      centroid: null
+      confidence: low
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q17526620
+    notes: Editorially identified as a phase or aspect of Shirvan.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q17526620
+  period_link:
+    period_id: kingdom_of_shirvan_period
+    entity_id: shirvan
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q17526620
+    notes: Reviewed record is a dated phase of this canonical polity.

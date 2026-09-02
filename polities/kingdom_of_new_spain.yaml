@@ -52,8 +52,46 @@ prominence_components:
   aggregate_penalty: 0
   total: 10.64
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: spain
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: spain
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: spain
+  period:
+    id: kingdom_of_new_spain_period
+    canonical_name: Kingdom of New Spain
+    kind: historical
+    start: 1521
+    end: 1535
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - africa
+      - europe
+      present_countries:
+      - ES
+      centroid: null
+      confidence: low
+      historical_regions:
+      - southern_europe
+      primary_historical_region: southern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q20978063
+    notes: Editorially identified as a phase or aspect of Spain.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q20978063
+  period_link:
+    period_id: kingdom_of_new_spain_period
+    entity_id: spain
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q20978063
+    notes: Reviewed record is a dated phase of this canonical polity.

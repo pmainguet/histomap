@@ -53,8 +53,41 @@ prominence_components:
   aggregate_penalty: 0
   total: 12.27
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: lippe
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: lippe
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: lippe
+  period:
+    id: free_state_of_schaumburg_lippe_period
+    canonical_name: Free State of Schaumburg-Lippe
+    kind: historical
+    start: 1918
+    end: 1946
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries: []
+      centroid: null
+      confidence: medium
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q427703
+    notes: Editorially identified as a phase or aspect of Lippe.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q427703
+  period_link:
+    period_id: free_state_of_schaumburg_lippe_period
+    entity_id: lippe
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q427703
+    notes: Reviewed record is a dated phase of this canonical polity.

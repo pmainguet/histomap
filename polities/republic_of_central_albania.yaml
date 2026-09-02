@@ -50,8 +50,45 @@ prominence_components:
   aggregate_penalty: 0
   total: 13.81
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: albania
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: albania
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: albania
+  period:
+    id: republic_of_central_albania_period
+    canonical_name: Republic of Central Albania
+    kind: historical
+    start: 1913
+    end: 1914
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - AL
+      centroid: null
+      confidence: low
+      historical_regions:
+      - balkans
+      primary_historical_region: balkans
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q1562357
+    notes: Editorially identified as a phase or aspect of Albania.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1562357
+  period_link:
+    period_id: republic_of_central_albania_period
+    entity_id: albania
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1562357
+    notes: Reviewed record is a dated phase of this canonical polity.

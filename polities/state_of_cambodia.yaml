@@ -48,6 +48,38 @@ manual_overrides:
 - consolidation
 - entity_type
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: cambodia
+timeline_role: entity
+detail_of: cambodia
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: cambodia
+  period:
+    id: state_of_cambodia_period
+    canonical_name: State of Cambodia
+    kind: historical
+    start: 1989
+    end: 1993
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents: []
+      present_countries: []
+      centroid: null
+      confidence: null
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q2387250
+    notes: Editorially identified as a phase or aspect of Cambodia.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2387250
+  period_link:
+    period_id: state_of_cambodia_period
+    entity_id: cambodia
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2387250
+    notes: Reviewed record is a dated phase of this canonical polity.

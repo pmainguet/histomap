@@ -55,8 +55,47 @@ prominence_components:
   aggregate_penalty: 0
   total: 23.4
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: ukrainian_state
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: ukrainian_state
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: ukrainian_state
+  period:
+    id: west_ukrainian_people_s_republic_period
+    canonical_name: West Ukrainian People's Republic
+    kind: historical
+    start: 1918
+    end: 1923
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - UA
+      centroid:
+        lat: 49.8425
+        lon: 24.032222222
+      confidence: medium
+      historical_regions:
+      - eastern_europe
+      primary_historical_region: eastern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q457167
+    notes: Editorially identified as a phase or aspect of Ukrainian State.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q457167
+  period_link:
+    period_id: west_ukrainian_people_s_republic_period
+    entity_id: ukrainian_state
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q457167
+    notes: Reviewed record is a dated phase of this canonical polity.

@@ -55,6 +55,43 @@ prominence_components:
   total: 24.89
 linked_era_id: classical_antiquity_era
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: wari_empire
+timeline_role: entity
+detail_of: wari_empire
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: wari_empire
+  period:
+    id: wari_period
+    canonical_name: Wari
+    kind: historical
+    start: 600
+    end: 900
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - south_america
+      present_countries:
+      - PE
+      centroid: null
+      confidence: medium
+      historical_regions:
+      - andes
+      primary_historical_region: andes
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q605340
+    notes: Editorially identified as a phase or aspect of Wari Empire.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q605340
+  period_link:
+    period_id: wari_period
+    entity_id: wari_empire
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q605340
+    notes: Reviewed record is a dated phase of this canonical polity.

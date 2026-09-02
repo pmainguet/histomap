@@ -5,7 +5,6 @@ names:
   aliases_en: Transleithania
 external_ids:
   wikidata: Q696970
-parent: austriahungary
 successors: []
 start: 1867
 end: 1918
@@ -37,18 +36,18 @@ geography:
   historical_regions:
   - eastern_europe
   primary_historical_region: eastern_europe
-entity_type: subdivision
+entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids: []
 relationships:
 - target: first_czechoslovak_republic
-  kind: cultural_sequence
+  kind: political_successor
   evidence: derived
   confidence: medium
   source_urls:
   - https://www.wikidata.org/wiki/Q696970
 - target: kingdom_of_hungary_q600018
-  kind: cultural_sequence
+  kind: political_successor
   evidence: derived
   confidence: medium
   source_urls:
@@ -68,6 +67,10 @@ manual_overrides:
 - entity_type
 entity_type_reviewed_against:
 - subdivision
-subdivision_parent_status: pending
-consolidation_status: part_of
 government_form: null
+detail_of: austriahungary
+deprecated:
+  consolidation_status: part_of
+  parent: austriahungary
+  subdivision_parent_status: pending
+  entity_type: subdivision

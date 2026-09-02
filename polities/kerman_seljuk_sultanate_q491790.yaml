@@ -51,6 +51,39 @@ prominence_components:
 manual_overrides:
 - consolidation
 government_form: sultanate
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: seljuk_dynasty
+timeline_role: entity
+detail_of: seljuk_dynasty
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: seljuk_dynasty
+  period:
+    id: kerman_seljuk_sultanate_q491790_period
+    canonical_name: Kerman Seljuk Sultanate
+    kind: historical
+    start: 1041
+    end: 1187
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries: []
+      centroid: null
+      confidence: low
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q491790
+    notes: Editorially identified as a phase or aspect of Seljuk dynasty.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q491790
+  period_link:
+    period_id: kerman_seljuk_sultanate_q491790_period
+    entity_id: seljuk_dynasty
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q491790
+    notes: Reviewed record is a dated phase of this canonical polity.

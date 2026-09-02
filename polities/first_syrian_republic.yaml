@@ -61,8 +61,47 @@ prominence_components:
   aggregate_penalty: 0
   total: 33.32
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: syria
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: syria
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: syria
+  period:
+    id: first_syrian_republic_period
+    canonical_name: First Syrian Republic
+    kind: historical
+    start: 1930
+    end: 1950
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries:
+      - SY
+      centroid:
+        lat: 35.0
+        lon: 38.0
+      confidence: low
+      historical_regions:
+      - west_asia
+      primary_historical_region: west_asia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q26234937
+    notes: Editorially identified as a phase or aspect of Syria.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q26234937
+  period_link:
+    period_id: first_syrian_republic_period
+    entity_id: syria
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q26234937
+    notes: Reviewed record is a dated phase of this canonical polity.

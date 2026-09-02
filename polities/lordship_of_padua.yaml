@@ -46,8 +46,41 @@ prominence_components:
   aggregate_penalty: 0
   total: 4.38
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: padua
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: padua
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: padua
+  period:
+    id: lordship_of_padua_period
+    canonical_name: Lordship of Padua
+    kind: historical
+    start: 1318
+    end: 1405
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries: []
+      centroid: null
+      confidence: low
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q106395492
+    notes: Editorially identified as a phase or aspect of Padua.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q106395492
+  period_link:
+    period_id: lordship_of_padua_period
+    entity_id: padua
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q106395492
+    notes: Reviewed record is a dated phase of this canonical polity.

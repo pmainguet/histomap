@@ -45,8 +45,40 @@ prominence_components:
   aggregate_penalty: 0
   total: 10.21
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: seljuk_empire
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: seljuk_empire
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: seljuk_empire
+  period:
+    id: seljuk_state_of_syria_period
+    canonical_name: Seljuk State of Syria
+    kind: historical
+    start: 1092
+    end: 1117
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents: []
+      present_countries: []
+      centroid: null
+      confidence: null
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q11308294
+    notes: Editorially identified as a phase or aspect of Seljuk Empire.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q11308294
+  period_link:
+    period_id: seljuk_state_of_syria_period
+    entity_id: seljuk_empire
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q11308294
+    notes: Reviewed record is a dated phase of this canonical polity.

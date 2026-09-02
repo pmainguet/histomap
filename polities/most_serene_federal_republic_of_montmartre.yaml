@@ -59,8 +59,50 @@ prominence_components:
   aggregate_penalty: 0
   total: 4.08
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: republic_of_montmartre
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: republic_of_montmartre
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: republic_of_montmartre
+  period:
+    id: most_serene_federal_republic_of_montmartre_period
+    canonical_name: Most Serene Federal Republic of Montmartre
+    kind: historical
+    start: 1960
+    end: 2026
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      - north_america
+      - oceania
+      present_countries:
+      - US
+      centroid:
+        lat: 40.7609406
+        lon: -73.9728297
+      confidence: medium
+      primary_continent: north_america
+      historical_regions:
+      - north_america
+      primary_historical_region: north_america
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q117422273
+    notes: Editorially identified as a phase or aspect of Republic of Montmartre.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q117422273
+  period_link:
+    period_id: most_serene_federal_republic_of_montmartre_period
+    entity_id: republic_of_montmartre
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q117422273
+    notes: Reviewed record is a dated phase of this canonical polity.

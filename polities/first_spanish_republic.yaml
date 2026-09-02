@@ -55,8 +55,49 @@ prominence_components:
   aggregate_penalty: 0
   total: 24.33
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: spanish_empire
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: spanish_empire
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: spanish_empire
+  period:
+    id: first_spanish_republic_period
+    canonical_name: First Spanish Republic
+    kind: historical
+    start: 1873
+    end: 1874
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - africa
+      - europe
+      present_countries:
+      - ES
+      centroid:
+        lat: 40.2
+        lon: -3.5
+      confidence: medium
+      primary_continent: europe
+      historical_regions:
+      - southern_europe
+      primary_historical_region: southern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q497777
+    notes: Editorially identified as a phase or aspect of Spanish Empire.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q497777
+  period_link:
+    period_id: first_spanish_republic_period
+    entity_id: spanish_empire
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q497777
+    notes: Reviewed record is a dated phase of this canonical polity.

@@ -59,8 +59,47 @@ prominence_components:
 linked_era_id: europe_industrial_imperial_world_era
 government_form: kingdom
 linked_chapter_id: macro_industrial_imperial_world
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: greece
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: greece
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: greece
+  period:
+    id: kingdom_of_greece_period
+    canonical_name: Kingdom of Greece
+    kind: historical
+    start: 1832
+    end: 1973
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - GR
+      centroid:
+        lat: 37.972399
+        lon: 23.740223
+      confidence: medium
+      historical_regions:
+      - southern_europe
+      primary_historical_region: southern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q209065
+    notes: Editorially identified as a phase or aspect of Greece.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q209065
+  period_link:
+    period_id: kingdom_of_greece_period
+    entity_id: greece
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q209065
+    notes: Reviewed record is a dated phase of this canonical polity.

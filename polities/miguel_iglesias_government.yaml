@@ -52,8 +52,45 @@ prominence_components:
   aggregate_penalty: 0
   total: 3.66
 government_form: protectorate
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: peruvian_republic_q116847047
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: peruvian_republic_q116847047
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: peruvian_republic_q116847047
+  period:
+    id: miguel_iglesias_government_period
+    canonical_name: Miguel Iglesias government
+    kind: historical
+    start: 1882
+    end: 1885
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - south_america
+      present_countries:
+      - PE
+      centroid: null
+      confidence: medium
+      historical_regions:
+      - andes
+      primary_historical_region: andes
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q30899490
+    notes: Editorially identified as a phase or aspect of Peruvian Republic.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q30899490
+  period_link:
+    period_id: miguel_iglesias_government_period
+    entity_id: peruvian_republic_q116847047
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q30899490
+    notes: Reviewed record is a dated phase of this canonical polity.

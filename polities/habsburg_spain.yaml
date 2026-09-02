@@ -57,8 +57,49 @@ prominence_components:
   aggregate_penalty: 0
   total: 24.86
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: spain
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: spain
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: spain
+  period:
+    id: habsburg_spain_period
+    canonical_name: Habsburg Spain
+    kind: historical
+    start: 1516
+    end: 1700
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - africa
+      - asia
+      - europe
+      - north_america
+      - south_america
+      present_countries:
+      - ES
+      centroid: null
+      confidence: low
+      historical_regions:
+      - southern_europe
+      primary_historical_region: southern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q600093
+    notes: Editorially identified as a phase or aspect of Spain.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q600093
+  period_link:
+    period_id: habsburg_spain_period
+    entity_id: spain
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q600093
+    notes: Reviewed record is a dated phase of this canonical polity.

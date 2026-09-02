@@ -53,8 +53,48 @@ prominence_components:
   aggregate_penalty: 0
   total: 9.48
 government_form: puppet state
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: territory_of_the_military_commander_in_serbia
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: territory_of_the_military_commander_in_serbia
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: territory_of_the_military_commander_in_serbia
+  period:
+    id: government_of_national_salvation_period
+    canonical_name: Government of National Salvation
+    kind: historical
+    start: 1941
+    end: 1944
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - RS
+      centroid:
+        lat: 44.820555555
+        lon: 20.462222222
+      confidence: low
+      historical_regions:
+      - balkans
+      primary_historical_region: balkans
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q5589262
+    notes: Editorially identified as a phase or aspect of Territory of the Military
+      Commander in Serbia.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q5589262
+  period_link:
+    period_id: government_of_national_salvation_period
+    entity_id: territory_of_the_military_commander_in_serbia
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q5589262
+    notes: Reviewed record is a dated phase of this canonical polity.

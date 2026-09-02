@@ -50,8 +50,44 @@ prominence_components:
   aggregate_penalty: 0
   total: 13.39
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: venezuela
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: venezuela
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: venezuela
+  period:
+    id: second_republic_of_venezuela_period
+    canonical_name: Second Republic of Venezuela
+    kind: historical
+    start: 1813
+    end: 1814
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - south_america
+      present_countries:
+      - VE
+      centroid:
+        lat: 10.08333333
+        lon: -67.53333333
+      confidence: medium
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q8950
+    notes: Editorially identified as a phase or aspect of Venezuela.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q8950
+  period_link:
+    period_id: second_republic_of_venezuela_period
+    entity_id: venezuela
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q8950
+    notes: Reviewed record is a dated phase of this canonical polity.

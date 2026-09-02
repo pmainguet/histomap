@@ -55,8 +55,47 @@ prominence_components:
   aggregate_penalty: 0
   total: 25.82
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: yugoslavia
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: yugoslavia
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: yugoslavia
+  period:
+    id: federal_people_s_republic_of_yugoslavia_period
+    canonical_name: Federal People's Republic of Yugoslavia
+    kind: historical
+    start: 1945
+    end: 1963
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - europe
+      present_countries:
+      - RS
+      centroid:
+        lat: 45.38333333
+        lon: 20.83333333
+      confidence: low
+      historical_regions:
+      - balkans
+      primary_historical_region: balkans
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q1290149
+    notes: Editorially identified as a phase or aspect of Yugoslavia.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1290149
+  period_link:
+    period_id: federal_people_s_republic_of_yugoslavia_period
+    entity_id: yugoslavia
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q1290149
+    notes: Reviewed record is a dated phase of this canonical polity.

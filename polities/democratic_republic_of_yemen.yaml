@@ -59,6 +59,47 @@ manual_overrides:
 - consolidation
 - entity_type
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: yemen
+timeline_role: entity
+detail_of: yemen
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: yemen
+  period:
+    id: democratic_republic_of_yemen_period
+    canonical_name: Democratic Republic of Yemen
+    kind: historical
+    start: 1994
+    end: 2026
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - africa
+      - asia
+      present_countries:
+      - YE
+      centroid:
+        lat: 12.8
+        lon: 45.033
+      confidence: medium
+      primary_continent: asia
+      historical_regions:
+      - west_asia
+      primary_historical_region: west_asia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q2119459
+    notes: Editorially identified as a phase or aspect of Yemen.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2119459
+  period_link:
+    period_id: democratic_republic_of_yemen_period
+    entity_id: yemen
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2119459
+    notes: Reviewed record is a dated phase of this canonical polity.

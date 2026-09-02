@@ -49,6 +49,38 @@ manual_overrides:
 - consolidation
 - entity_type
 government_form: kingdom
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: pergamon
+timeline_role: entity
+detail_of: pergamon
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: pergamon
+  period:
+    id: kingdom_of_pergamon_period
+    canonical_name: Kingdom of Pergamon
+    kind: historical
+    start: -281
+    end: -132
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents: []
+      present_countries: []
+      centroid: null
+      confidence: null
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q2022162
+    notes: Editorially identified as a phase or aspect of Pergamon.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2022162
+  period_link:
+    period_id: kingdom_of_pergamon_period
+    entity_id: pergamon
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q2022162
+    notes: Reviewed record is a dated phase of this canonical polity.

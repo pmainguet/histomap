@@ -67,8 +67,50 @@ prominence_components:
 linked_era_id: asia_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: ukrainian_state
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: ukrainian_state
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: ukrainian_state
+  period:
+    id: ukrainian_soviet_socialist_republic_period
+    canonical_name: Ukrainian Soviet Socialist Republic
+    kind: historical
+    start: 1919
+    end: 1991
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      - europe
+      present_countries:
+      - SU
+      - UA
+      centroid:
+        lat: 50.444444444
+        lon: 30.528888888
+      confidence: medium
+      primary_continent: europe
+      historical_regions:
+      - eastern_europe
+      primary_historical_region: eastern_europe
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q133356
+    notes: Editorially identified as a phase or aspect of Ukrainian State.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q133356
+  period_link:
+    period_id: ukrainian_soviet_socialist_republic_period
+    entity_id: ukrainian_state
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q133356
+    notes: Reviewed record is a dated phase of this canonical polity.

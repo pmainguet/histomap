@@ -64,8 +64,47 @@ prominence_components:
 linked_era_id: asia_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: syria
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: syria
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: syria
+  period:
+    id: second_syrian_republic_period
+    canonical_name: Second Syrian Republic
+    kind: historical
+    start: 1930
+    end: 1963
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      present_countries:
+      - SY
+      centroid:
+        lat: 35.0
+        lon: 38.0
+      confidence: low
+      historical_regions:
+      - west_asia
+      primary_historical_region: west_asia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q146885
+    notes: Editorially identified as a phase or aspect of Syria.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q146885
+  period_link:
+    period_id: second_syrian_republic_period
+    entity_id: syria
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q146885
+    notes: Reviewed record is a dated phase of this canonical polity.

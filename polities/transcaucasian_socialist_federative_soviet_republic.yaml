@@ -64,8 +64,51 @@ prominence_components:
   aggregate_penalty: 0
   total: 31.07
 government_form: null
-timeline_role: retired
-consolidation_status: phase_of
-consolidated_into: transcaucasian_democratic_federative_republic
+timeline_role: entity
 manual_overrides:
 - consolidation
+detail_of: transcaucasian_democratic_federative_republic
+deprecated:
+  consolidation_status: phase_of
+  consolidated_into: transcaucasian_democratic_federative_republic
+  period:
+    id: transcaucasian_socialist_federative_soviet_republic_period
+    canonical_name: Transcaucasian Socialist Federative Soviet Republic
+    kind: historical
+    start: 1922
+    end: 1936
+    start_confidence: low
+    end_confidence: low
+    geography:
+      continents:
+      - asia
+      - europe
+      present_countries:
+      - GE
+      - SU
+      centroid:
+        lat: 41.716667
+        lon: 44.783333
+      confidence: medium
+      primary_continent: asia
+      historical_regions:
+      - west_asia
+      primary_historical_region: west_asia
+    broader_periods: []
+    successors: []
+    authority: Histomap editorial consolidation
+    external_ids:
+      wikidata: Q545205
+    notes: Editorially identified as a phase or aspect of Transcaucasian Democratic
+      Federative Republic.
+    source_urls:
+    - https://www.wikidata.org/wiki/Q545205
+  period_link:
+    period_id: transcaucasian_socialist_federative_soviet_republic_period
+    entity_id: transcaucasian_democratic_federative_republic
+    relation: phase_of
+    evidence: explicit
+    confidence: high
+    source_urls:
+    - https://www.wikidata.org/wiki/Q545205
+    notes: Reviewed record is a dated phase of this canonical polity.
