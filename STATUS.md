@@ -931,6 +931,37 @@ look compatible).
 Six new regression tests, one per case above. 264/264 tests pass; zero console errors live
 (caught and fixed the wrong-route verification bug in the process -- see the previous entry).
 
+### Direct edit-fields panel added to /consolidation-review; regime-of-place naming now wins over documented_successor too — 1 September 2026
+
+Two more live catches, right after the `detail_of` merge shipped:
+
+**Editing capability.** Asked directly: "how can i edit entity?" Pointed to `/explore`'s existing
+raw-fields editor, then immediately hit its real limitation live -- a queue entity (State of
+Ecuador) wasn't easy to reach there. Added a proper fix instead of just a workaround: a new `GET
+/api/polities/{id}` endpoint reading straight from server-side `metadata` (always finds an entity
+regardless of publish/visibility status, unlike `/data.json`), a collapsible "Edit fields" raw-JSON
+editor on every entity card in `/consolidation-review` itself (reviewed entity and every candidate),
+saving via the same `PATCH .../fields` endpoint `/explore`'s editor already uses and reloading the
+current queue item afterward so corrected data shows immediately. Also added an "Edit in /explore"
+new-tab link and `?entity=<id>` deep-link support in `explore.js` (zooms to and opens the panel for
+one record on load) for the fuller editing experience when an entity is visible there -- turned out
+State of Ecuador actually did open correctly via the deep link too, just hard to spot visually in
+the dense timeline; both paths work now regardless.
+
+**`documented_successor` priority gap, second instance.** "Commonwealth realm of Mauritius"
+(1968-1992) was suggested independent despite reading as "<regime> of Mauritius" with a finite end
+and dates nesting exactly inside Mauritius's -- because Wikidata also documents a real "followed by"
+relationship to Mauritius itself, and the existing fix (documented P361 claim wins over
+documented_successor, from the Latvian Soviet Socialist Republic case) only recognized a direct
+Wikidata part-of claim as the override evidence, not the regime-of-place naming pattern -- even
+though that signal already carries its own finite-end safety gate, the same kind of "more specific
+fact about this pair" the P361 exception already recognizes. `documented_successor` no longer forces
+independent when `regime_of_candidate`/`regime_of_reviewed` is also true.
+
+283/283 tests pass (2 new: `get_polity` success + 404; 1 new: the Mauritius regression case, using
+real Wikidata data). Verified live: State of Ecuador's raw JSON loads/edits from the review card;
+Commonwealth realm of Mauritius now correctly suggests `detail_of` Mauritius.
+
 ### Same-year start/end bug fixed: a real dissolution date was being read as "still exists" — 1 September 2026
 
 Caught live via the consolidation-review page: "Inner Mongolian People's Republic" showed dates as
