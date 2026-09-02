@@ -256,8 +256,8 @@ class Polity(BaseModel):
                 self.subdivision_parent_status = "pending"
         elif self.subdivision_parent_status is not None:
             raise ValueError("subdivision_parent_status is only valid for subdivisions")
-        if self.end is not None and self.end <= self.start:
-            raise ValueError("end must be > start (or null for still-extant)")
+        if self.end is not None and self.end < self.start:
+            raise ValueError("end must be >= start (or null for still-extant)")
         for year, w in self.weight_by_era.items():
             if not (1 <= w <= 10):
                 raise ValueError(f"weight_by_era value {w} at year {year} must be in [1, 10]")

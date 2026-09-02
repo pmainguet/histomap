@@ -97,7 +97,16 @@ def to_document(row: dict, polity_id: str) -> dict:
     if start is None:
         raise ValueError(f"{qid} has no parseable inception year")
     end = parse_year(row.get("dissolution"))
-    if end is not None and end <= start:
+    # A dissolution year equal to the inception year is a real, common case
+    # at year-level precision -- a state can genuinely start and end within
+    # the same calendar year (Inner Mongolian People's Republic: 1945-09-09
+    # to 1945-11-06), or Wikidata may only record a single approximate date
+    # for both P571/P576 on a poorly-documented ancient entity. Either way,
+    # "existed briefly around this year" is real data, not an error --
+    # silently nulling it made a long-dissolved state look still-extant
+    # today (found live, 1 September 2026). Only a dissolution STRICTLY
+    # before inception is nulled -- that's a genuine data problem.
+    if end is not None and end < start:
         end = None
 
     names: dict[str, str] = {}

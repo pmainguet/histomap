@@ -55,6 +55,20 @@ class YearFloorTests(unittest.TestCase):
             Period(**period_kwargs(start=-3_000_001, end=-3_000_000))
 
 
+class PolityEndDateTests(unittest.TestCase):
+    def test_same_year_start_and_end_is_valid(self) -> None:
+        # A state can genuinely start and end within the same calendar year
+        # at year-level precision (Inner Mongolian People's Republic:
+        # 1945-09-09 to 1945-11-06, both year 1945) -- found live, 1
+        # September 2026.
+        polity = Polity(**polity_kwargs(start=1945, end=1945))
+        self.assertEqual(polity.end, 1945)
+
+    def test_end_strictly_before_start_is_still_rejected(self) -> None:
+        with self.assertRaises(ValidationError):
+            Polity(**polity_kwargs(start=1380, end=1200))
+
+
 class PolityDetailOfTests(unittest.TestCase):
     def test_polity_accepts_detail_of_and_deprecated(self) -> None:
         polity = Polity(**polity_kwargs(

@@ -56,6 +56,34 @@ class WikidataToYamlTests(unittest.TestCase):
         )
         self.assertEqual(document["eligibility"], "review")
 
+    def test_same_year_dissolution_is_kept_not_nulled(self) -> None:
+        # Inner Mongolian People's Republic: inception 1945-09-09, dissolution
+        # 1945-11-06 -- different dates, same calendar year at year-level
+        # precision. A short-lived state, not a still-extant one -- must NOT
+        # be silently nulled to "present" (found live, 1 September 2026).
+        document = to_document(
+            {
+                "qid": "Q4120908", "label_en": "Inner Mongolian People's Republic",
+                "inception": "+1945-09-09T00:00:00Z", "dissolution": "+1945-11-06T00:00:00Z",
+            },
+            "inner_mongolian_peoples_republic",
+        )
+        self.assertEqual(document["start"], 1945)
+        self.assertEqual(document["end"], 1945)
+
+    def test_genuinely_reversed_dissolution_is_still_nulled(self) -> None:
+        # A dissolution year strictly BEFORE inception is a real Wikidata
+        # data error, not a same-year precision artifact -- still nulled.
+        document = to_document(
+            {
+                "qid": "Q1", "label_en": "Reversed Example",
+                "inception": "+1380-01-01T00:00:00Z", "dissolution": "+1200-01-01T00:00:00Z",
+            },
+            "reversed_example",
+        )
+        self.assertEqual(document["start"], 1380)
+        self.assertIsNone(document["end"])
+
     def test_convert_suffixes_slug_occupied_by_another_qid(self) -> None:
         with TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory)
