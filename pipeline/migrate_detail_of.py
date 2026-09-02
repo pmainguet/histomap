@@ -11,6 +11,8 @@ from typing import Any
 
 import yaml
 
+from pipeline.backfill_entity_types import normalized_relationship_kind
+
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -94,11 +96,55 @@ def _migrate_part_of(root: Path, polity_id: str, document: dict[str, Any], *, dr
     _write_polity(root, polity_id, document, dry_run=dry_run)
 
 
+def _renormalize_relationships(
+    root: Path, polities: dict[str, dict[str, Any]], *, dry_run: bool
+) -> int:
+    """part_of migration reverts entity_type from subdivision back to
+    polity -- any relationship whose `kind` was chosen for the old
+    subdivision/polity pairing (administrative_part_of, cultural_sequence)
+    is now invalid for the new pairing, whether the relationship lives on
+    the reverted entity itself (as source) or on another entity that
+    references it (as target). Reuses normalized_relationship_kind(), the
+    exact same rule save_entity_type() applies for a live manual
+    entity-type edit, over every polity's relationships -- not just the
+    migrated ones -- since a third entity can reference a migrated one.
+    Returns the number of polities whose relationships changed."""
+    changed_count = 0
+    for polity_id, document in polities.items():
+        relationships = document.get("relationships") or []
+        if not relationships:
+            continue
+        normalized = []
+        changed = False
+        for relationship in relationships:
+            relationship = dict(relationship)
+            target = polities.get(relationship.get("target"))
+            if target is None:
+                normalized.append(relationship)
+                continue
+            new_kind = normalized_relationship_kind(
+                document.get("entity_type", "polity"),
+                target.get("entity_type", "polity"),
+                relationship.get("kind"),
+            )
+            if new_kind != relationship.get("kind"):
+                changed = True
+            relationship["kind"] = new_kind
+            normalized.append(relationship)
+        if changed:
+            document["relationships"] = normalized
+            changed_count += 1
+            _write_polity(root, polity_id, document, dry_run=dry_run)
+    return changed_count
+
+
 def main(root: Path = ROOT, *, dry_run: bool = False) -> dict[str, int]:
     """Run the one-off phase_of/part_of -> detail_of migration. Returns a
-    summary dict with migrated_phase_of/migrated_part_of counts."""
+    summary dict with migrated_phase_of/migrated_part_of/
+    relationships_renormalized counts."""
     polities = _load_polities(root)
     summary = {"migrated_phase_of": 0, "migrated_part_of": 0}
+    any_part_of = False
     for polity_id, document in polities.items():
         status = document.get("consolidation_status")
         if status == "phase_of":
@@ -107,6 +153,11 @@ def main(root: Path = ROOT, *, dry_run: bool = False) -> dict[str, int]:
         elif status == "part_of":
             _migrate_part_of(root, polity_id, document, dry_run=dry_run)
             summary["migrated_part_of"] += 1
+            any_part_of = True
+    if any_part_of:
+        summary["relationships_renormalized"] = _renormalize_relationships(
+            root, polities, dry_run=dry_run
+        )
     return summary
 
 

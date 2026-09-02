@@ -96,6 +96,45 @@ class MigrateDetailOfTests(unittest.TestCase):
         self.assertEqual(migrated["deprecated"]["parent"], "realm_of_new_zealand")
         self.assertEqual(migrated["deprecated"]["entity_type"], "subdivision")
 
+    def test_renormalizes_stale_relationship_kinds_after_entity_type_reversion(self) -> None:
+        # New Zealand's own administrative_part_of relationship to Realm of
+        # New Zealand was only valid while entity_type was subdivision --
+        # reverting to polity means it must become political_parent (the
+        # polity <-> polity equivalent), matching what save_entity_type()
+        # already does live for a manual entity-type edit. A separate polity
+        # with a relationship pointing AT the migrated entity (not just the
+        # migrated entity's own outgoing relationships) needs the same fix.
+        self.write_polity("realm_of_new_zealand", {
+            "canonical_name": "Realm of New Zealand", "start": 1983, "end": None,
+            "start_confidence": "low", "end_confidence": "low",
+        })
+        self.write_polity("new_zealand", {
+            "canonical_name": "New Zealand", "start": 1841, "end": None,
+            "start_confidence": "low", "end_confidence": "low",
+            "entity_type": "subdivision", "subdivision_parent_status": "confirmed",
+            "parent": "realm_of_new_zealand", "consolidation_status": "part_of",
+            "relationships": [{
+                "target": "realm_of_new_zealand", "kind": "administrative_part_of",
+                "evidence": "derived", "confidence": "high", "source_urls": [],
+            }],
+        })
+        self.write_polity("cook_islands", {
+            "canonical_name": "Cook Islands", "start": 1965, "end": None,
+            "start_confidence": "low", "end_confidence": "low",
+            "relationships": [{
+                "target": "new_zealand", "kind": "cultural_sequence",
+                "evidence": "derived", "confidence": "medium", "source_urls": [],
+            }],
+        })
+
+        summary = main(self.root)
+
+        self.assertEqual(summary["relationships_renormalized"], 2)
+        new_zealand = yaml.safe_load((self.root / "polities" / "new_zealand.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(new_zealand["relationships"][0]["kind"], "political_parent")
+        cook_islands = yaml.safe_load((self.root / "polities" / "cook_islands.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(cook_islands["relationships"][0]["kind"], "political_successor")
+
     def test_leaves_independent_and_same_entity_records_untouched(self) -> None:
         self.write_polity("sweden", {
             "canonical_name": "Sweden", "start": 1523, "end": None,
