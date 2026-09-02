@@ -931,6 +931,41 @@ look compatible).
 Six new regression tests, one per case above. 264/264 tests pass; zero console errors live
 (caught and fixed the wrong-route verification bug in the process -- see the previous entry).
 
+### Same-year start/end bug fixed: a real dissolution date was being read as "still exists" — 1 September 2026
+
+Caught live via the consolidation-review page: "Inner Mongolian People's Republic" showed dates as
+"1945 CE - present," even though it collapsed within two months of forming. The user's own
+hypothesis was exactly right. Root cause: `pipeline/wd_to_yaml.py`'s `to_document()` silently nulled
+any parsed dissolution year that was `<=` the inception year, and `schema.py`'s `Polity` validator
+independently rejected `end <= start` -- but Wikidata records this entity's real inception
+(1945-09-09) and dissolution (1945-11-06) as different dates that both round to the same calendar
+year at year-level precision. That's a genuine short existence, not an error. Both checks now only
+reject `end < start` (a real reversed-date data problem, still correctly nulled/rejected).
+
+The same bug also affected ancient, poorly-documented entities where Wikidata records one single
+approximate date for both P571 (inception) and P576 (dissolution) -- e.g. Hamazi:
+inception == dissolution == -3000-01-01. Previously nulled to "still exists today" too.
+
+Measured the blast radius before touching anything: 197 live records currently affected (`end: null`
+but a real, recoverable Wikidata dissolution year), of which 196 were the same-year case and 1
+(`amurru_kingdom`) was a genuinely reversed dissolution-before-inception -- correctly excluded, a
+real Wikidata data problem rather than this bug. Added `pipeline/fix_same_year_end_dates.py`, a
+one-off remediation recovering the real year from `sources/wikidata.parquet` (the cached raw
+extraction still has the original value even though the imported YAML had it dropped), and ran it
+against the real dataset: 196 records corrected, spanning ancient civilizations (Hamazi, Kizzuwatna,
+...) through well-known modern short-lived states (Bavarian Soviet Republic, Baku Commune,
+California Republic, Arab Federation, ...).
+
+280/280 tests pass (17 new: 2 for `wd_to_yaml.py`, 2 for the schema validator, 6 for the remediation
+script's fixture cases, plus the existing 5-question increment from this session's other work).
+`build.py` validates clean. Verified live: Inner Mongolian People's Republic now shows `[1945, 1945]`
+via the API, confirmed in the browser.
+
+On the side question this also raised -- whether `/consolidation-review` needs its own inline
+data-editing capability for cases like this: `/explore`'s side panel already has a raw-fields JSON
+editor covering that need generically; confirmed with the user that's sufficient for now rather than
+duplicating it into the review flow.
+
 ### phase_of and part_of merged into one detail_of relationship (ROADMAP task 0, data-model half) — 1 September 2026
 
 Brainstormed (including a visual-companion mockup of the intended `/explore` reveal interaction),
