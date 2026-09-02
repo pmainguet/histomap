@@ -10,14 +10,31 @@ async function main() {
   let eraColorMap = null;
   let zoomRange = null;
 
+  // Detail-of reveal state (see explore_timeline.js's DETAIL_PANEL_HEIGHT
+  // section) -- owned here, not by the render function, so it survives the
+  // re-renders that zoom/groupBy/showPolities changes already trigger.
+  // Holds container ids (a Polities-row entry's own id) whose detail panel
+  // is open; no persistence across reload, several can be open at once.
+  const expandedIds = new Set();
+  const isExpanded = (id) => expandedIds.has(id);
+  const toggleExpand = (id) => {
+    if (expandedIds.has(id)) expandedIds.delete(id);
+    else expandedIds.add(id);
+    draw();
+  };
+
   const padded = (start, end) => {
     const span = Math.max(1, end - start);
     const pad = Math.min(span * 0.1, 5000);
     return { start: start - pad, end: end + pad };
   };
 
-  const zoomToRange = (start, end) => {
+  const zoomToRange = (start, end, expandId) => {
     zoomRange = padded(start, end);
+    // Auto-open the enclosing panel for whatever's being zoomed to -- a
+    // detail_of entity's container id (see explore_details.js callers), or
+    // harmlessly an id with no details at all (no-op in that case).
+    if (expandId) expandedIds.add(expandId);
     draw();
   };
 
@@ -63,6 +80,8 @@ async function main() {
       // stay stable across zoom/filter re-renders instead of shifting as the
       // visible era subset changes.
       eraColorMap,
+      isExpanded,
+      onToggleExpand: toggleExpand,
     }, onSelect);
   };
 
@@ -127,7 +146,7 @@ async function main() {
       const record = detailCtx.politiesById.get(entityId) || detailCtx.periodsById.get(entityId);
       if (record) {
         const kind = detailCtx.politiesById.has(entityId) ? "polity" : "period";
-        zoomToRange(record.start, record.end ?? fullTree.axis.domain_end);
+        zoomToRange(record.start, record.end ?? fullTree.axis.domain_end, record.detail_of || entityId);
         onSelect(kind, entityId);
       }
     }

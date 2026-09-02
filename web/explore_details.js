@@ -337,7 +337,7 @@ function renderPeriodDetails(period, ctx) {
     </dl>
     ${editControlsHtml("period", period)}`;
 
-  wireExplorePanel(ctx, period.start, period.end);
+  wireExplorePanel(ctx, period.start, period.end, period.id);
   wireEditControls("period", period, ctx, (updated) => renderPeriodDetails(updated, ctx));
   explorePanel.querySelectorAll("[data-explore-period-id]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -394,7 +394,7 @@ function renderPolityDetails(polity, ctx) {
     </dl>
     ${editControlsHtml("polity", polity, ctx.geographyOptions)}`;
 
-  wireExplorePanel(ctx, polity.start, polity.end ?? ctx.domainEnd);
+  wireExplorePanel(ctx, polity.start, polity.end ?? ctx.domainEnd, polity.detail_of || polity.id);
   wireEditControls("polity", polity, ctx, (updated) => renderPolityDetails(updated, ctx));
   explorePanel.querySelectorAll("[data-explore-polity-id]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -410,11 +410,14 @@ function renderPolityDetails(polity, ctx) {
   });
 }
 
-function wireExplorePanel(ctx, start, end) {
+function wireExplorePanel(ctx, start, end, expandId) {
   explorePanel.querySelector(".detail-close").addEventListener("click", closeExploreDetails);
   explorePanel.querySelector(".zoom-explore").addEventListener("click", () => {
     closeExploreDetails();
-    ctx.onZoomToRange(start, end);
+    // expandId auto-opens the enclosing panel for a detail_of entity's
+    // container (see explore.js's zoomToRange) so "Zoom to this" on a
+    // hidden detail reveals it, not just its neighbourhood.
+    ctx.onZoomToRange(start, end, expandId);
   });
   explorePanel.querySelector(".reset-explore").addEventListener("click", () => {
     closeExploreDetails();

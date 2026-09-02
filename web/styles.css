@@ -309,6 +309,16 @@ kbd { padding: .1rem .3rem; color: #27251f; background: white; border: 1px solid
 .hierarchy-row-separator { stroke: var(--ink-faint); stroke-width: 1; opacity: .5; }
 .hierarchy-region-separator { stroke: var(--rule); stroke-dasharray: 3 2; stroke-width: 1; opacity: .7; }
 .hierarchy-tier-label { font: 700 .7rem system-ui, sans-serif; fill: var(--ink-faint); text-anchor: middle; }
+/* Detail-of reveal (ROADMAP.md item 0 / docs/plans/2026-09-01-detail-of-merge-design.md):
+   a Polities-row item that has absorbed detail_of entities gets a
+   full-height toggle compartment fused to its band's own left edge; toggling
+   it opens a panel directly beneath the item's own band, showing those
+   details as date-positioned lines against the same time scale. */
+.hierarchy-detail-toggle rect { fill: #8c422d; }
+.hierarchy-detail-toggle.is-open rect { fill: #27251f; }
+.hierarchy-detail-toggle text { font: 700 .62rem system-ui, sans-serif; fill: var(--paper); pointer-events: none; }
+.hierarchy-detail-panel { fill: var(--paper); stroke: var(--rule); stroke-dasharray: 2 2; }
+.hierarchy-detail-chip { fill: var(--ink-faint); fill-opacity: .16; stroke: var(--ink-faint); stroke-opacity: .4; cursor: pointer; }
 #zoom-reset { margin-left: auto; color: var(--ink-faint); text-decoration: none; font: .82rem system-ui, sans-serif; }
 #zoom-reset:hover { color: #27251f; }
 .loading { color: var(--ink-faint); padding: 1.5rem clamp(1rem, 4vw, 3.5rem); }

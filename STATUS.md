@@ -1232,6 +1232,58 @@ before this batch was committed.
 251/251 tests pass throughout; zero console errors live beyond the pre-existing unrelated favicon
 404. `/consolidation-review` "active" pending count: 706 -> 700.
 
+### ROADMAP task 0 complete: `/explore` display half of the `detail_of` merge — 3 September 2026
+
+The Python side (`build_explore_tree.py` excluding `detail_of` polities from their own top-level
+band and attaching them as their container's `details` list) shipped 2 September 2026 (commit
+`50f7ee4c`); this closes out the deferred `explore_timeline.js` display half.
+
+**Per-lane variable height.** All three grouping-mode layout/draw function pairs
+(`continentGroupedLayout`/`geoCountryGroupedLayout`/`flatLaneLayout` and their matching
+`drawContinentGroupedRow`/`drawGeoCountryGroupedRow`/`drawFlatLaneRow`) assumed uniform lane height
+(`laneIndex * laneHeight`). Refactored to cumulative per-lane offsets (`laneHeights`/`laneOffsets`/
+`sumLaneHeights`) so a lane holding an expanded item reserves extra room without disturbing its
+neighbors — items sharing one lane never overlap horizontally by construction (`packIntoLanes`), so
+their panels never collide either.
+
+**Interaction, revised twice from the original approved design during live review.** The originally
+approved design (see `docs/plans/2026-09-01-detail-of-merge-design.md`'s "Deferred: `/explore`
+display" section) was a small count badge plus a single row of evenly-divided, non-date-positioned
+chips. Direct feedback against a live mockup (published as a Claude.ai artifact, iterated four times)
+changed this twice: the badge became a full-height toggle compartment fused to the band's own left
+edge ("+ N detail(s)", flipping to "− N detail(s)" when open) instead of a small floating circle —
+sized off a fixed width per digit-count band so it never jitters between rows; and the detail panel
+became one date-positioned line per detail (positioned/sized against the same `scale` as every other
+band, so it lands under its real years) instead of evenly-divided chips, since chips carried no
+positional date information at all. `drawItemBand()` now splits a container's band into the toggle
+compartment plus a name segment, each with its own click target, so toggling the panel never also
+opens the side detail panel and vice versa. `bandRect()` itself lost the badge-drawing code it had
+briefly grown, moved out to a dedicated `drawDetailToggle()`.
+
+**Labels gained inline dates.** Also from live feedback: Continent-mode labels
+(`itemDisplayLabel()`, already the one place a "(Country)" suffix could be appended) now always
+append the item's own date range in text — parent and child alike — since a date-positioned detail
+line still needs its dates spelled out (it isn't drawn against a visible axis of its own the way a
+top-level band is). While in there, fixed a real bug the same feedback surfaced: the "(Country)"
+suffix fired even when the resolved country name just repeated the entity's own name (e.g.
+"Luxembourg (Luxembourg)", "South Korea (South Korea)") — now suppressed via a case-insensitive
+name/country comparison, kept whenever the two differ (e.g. "Turkey (Türkiye)", "Kingdom of the
+Netherlands (Netherlands)").
+
+**CSS:** `.hierarchy-detail-toggle`/`.hierarchy-detail-panel`/`.hierarchy-detail-chip` added to
+`styles.css`, reusing existing `--paper`/`--rule`/`--ink-faint`/`#8c422d` tokens (no new colors
+introduced). Verified live via chrome-devtools against the running server (rebuilt
+`explore_tree.json`/`data.json` first via `python -m pipeline.rebuild_timeline`, since those are
+pre-built artifacts a code change alone doesn't refresh) — deep-linking to `ba_athist_iraq` confirmed
+auto-expand, multi-container expand/collapse, correct date-positioning (including a detail clipping
+out of view when zoomed past its own range, same as any other band), and that clicking the toggle
+vs. the name segment route to the right target. 286/286 tests pass (no Python changed this session;
+re-run for safety).
+
+**Not done, tracked separately:** editing a polity's `detail_of` from the `/explore` side panel
+itself (ROADMAP item "0 bis" — currently only possible via `/consolidation-review` or the raw-JSON
+edit-fields panel).
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which

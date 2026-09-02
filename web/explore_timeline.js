@@ -62,6 +62,91 @@ function bandRect(svg, { x, y, width, height, cls, title, label, onZoom, fill })
   return rect;
 }
 
+// The detail-of toggle: a full-height compartment fused to the band's own
+// left edge (not a floating badge over it) -- its own text carries the
+// count ("+ N detail(s)", flipping to "− N detail(s)" once open) so it
+// reads even next to a long entity name, and the leading +/− still marks
+// it as expand/collapse. Its own click target, entirely separate from the
+// name segment's onZoom rect beside it (see drawItemBand), so toggling never
+// also opens the side detail panel.
+function toggleLabelText(count, expanded) {
+  return `${expanded ? "−" : "+"} ${count} detail${count === 1 ? "" : "s"}`;
+}
+// Fixed width per digit-count band (1-9, 10-99, ...) rather than sized to
+// each row's own exact text -- "+ 1 detail" and "+ 3 details" differ by a
+// character but must still read as the same-shape compartment; only the
+// digit count changing should ever change the width. Sized off the longest
+// possible label for that digit count (all-9s, plural).
+function toggleWidth(count) {
+  const digits = String(count).length;
+  const sample = `− ${"9".repeat(digits)} details`;
+  return sample.length * ESTIMATED_CHAR_WIDTH + TOGGLE_PADDING;
+}
+function drawDetailToggle(svg, { x, y, width, height, count, expanded, onToggle }) {
+  const group = svgEl("g", { class: `hierarchy-detail-toggle${expanded ? " is-open" : ""}` });
+  group.style.cursor = "pointer";
+  group.append(svgEl("rect", { x, y, width, height }));
+  const clipId = `hierarchy-clip-${clipIdCounter++}`;
+  const clipPath = svgEl("clipPath", { id: clipId });
+  clipPath.append(svgEl("rect", { x, y, width, height }));
+  svg.append(clipPath);
+  const text = svgEl("text", { x: x + 5, y: y + height / 2 + 4, "clip-path": `url(#${clipId})` });
+  text.textContent = toggleLabelText(count, expanded);
+  group.append(text);
+  const titleEl = svgEl("title");
+  titleEl.textContent = expanded ? "Collapse details" : "Show details";
+  group.append(titleEl);
+  group.addEventListener("click", () => onToggle());
+  svg.append(group);
+}
+
+// One expanded container's detail lines, directly beneath its own band --
+// each detail gets its own line (stacked top-to-bottom) and is
+// positioned/sized against the SAME time scale as every other band on the
+// chart, so it lands under its real years rather than being evenly divided
+// across the container's width. Two details that overlap in time just get
+// two lines; no lane-packing needed since a line only ever holds one detail.
+function detailPanelHeight(count) {
+  return count * DETAIL_LINE_HEIGHT + (count - 1) * DETAIL_LINE_GAP;
+}
+function drawDetailPanel(svg, { x, y, width, scale, details, onZoom }) {
+  svg.append(svgEl("rect", { x, y, width, height: detailPanelHeight(details.length), class: "hierarchy-detail-panel" }));
+  details.forEach((detail, index) => {
+    const lineY = y + index * (DETAIL_LINE_HEIGHT + DETAIL_LINE_GAP);
+    const detailLabel = `${detail.canonical_name} (${itemDateRange(detail)})`;
+    bandRect(svg, {
+      x: scale.x(detail.start), y: lineY,
+      width: Math.max(4, scale.width(detail.start, detail.end)), height: DETAIL_LINE_HEIGHT,
+      cls: "hierarchy-detail-chip", title: detailLabel, label: detailLabel,
+      onZoom: { handler: onZoom, kind: "polity", id: detail.id, start: detail.start, end: detail.end },
+    });
+  });
+}
+
+// Draws one item's own band, split into a leading toggle compartment plus
+// the name segment beside it when the item carries `details` (see
+// build_explore_tree.py) -- and, when expanded, the detail panel below.
+// Shared by all three draw functions (flat/continent/country) so this logic
+// lives in exactly one place; `isExpanded`/`onToggleExpand` default to
+// no-ops for rows whose items never carry `details` (Era, Period,
+// Civilizations & Cultures).
+function drawItemBand(svg, item, { x, y, width, height, cls, title, label, fill, onZoom, kind, domainEnd, scale, isExpanded = () => false, onToggleExpand = () => {} }) {
+  const zoomTarget = { handler: onZoom, kind, id: item.id, start: item.start, end: item.end ?? domainEnd };
+  const hasDetails = Array.isArray(item.details) && item.details.length > 0;
+  if (!hasDetails) {
+    bandRect(svg, { x, y, width, height, cls, title, label, fill, onZoom: zoomTarget });
+    return;
+  }
+  const count = item.details.length;
+  const expanded = isExpanded(item.id);
+  const toggleW = Math.min(width, toggleWidth(count));
+  drawDetailToggle(svg, { x, y, width: toggleW, height, count, expanded, onToggle: () => onToggleExpand(item.id) });
+  bandRect(svg, { x: x + toggleW, y, width: Math.max(0, width - toggleW), height, cls, title, label, fill, onZoom: zoomTarget });
+  if (expanded) {
+    drawDetailPanel(svg, { x, y: y + height + DETAIL_PANEL_TOP_GAP, width, scale, details: item.details, onZoom });
+  }
+}
+
 // Solid line between tier row-blocks (Chapter/Era/Period/Civilizations &
 // Cultures/Polities) -- a major structural boundary.
 function drawSeparator(svg, width, y) {
@@ -142,6 +227,49 @@ function drawTierLabel(svg, text, yStart, yEnd) {
 const POLITY_LANE_HEIGHT = 18;
 const REGION_HEADER_HEIGHT = 16;
 const MAX_POLITIES_PER_REGION = 15;
+
+// Detail-of reveal (ROADMAP.md item 0 / docs/plans/2026-09-01-detail-of-merge-design.md):
+// a Polities-row item carrying `details` (see build_explore_tree.py) gets a
+// leading toggle compartment; toggling it (or zooming into the
+// container/one of its details -- see explore.js) reveals a panel of
+// date-positioned detail lines directly beneath the item's own band. Only
+// Polities-row items ever carry `details` -- Era/Period/Civilizations &
+// Cultures rows pass no isExpanded/onToggleExpand, so this is a no-op there.
+const DETAIL_LINE_HEIGHT = 16;
+const DETAIL_LINE_GAP = 2;
+const DETAIL_PANEL_TOP_GAP = 3;
+const DETAIL_PANEL_BOTTOM_GAP = 3;
+const TOGGLE_PADDING = 10; // total horizontal padding inside the toggle compartment
+
+// Per-lane extra height a lane needs to reserve for its most demanding
+// expanded item's panel -- lanes are, by construction (packIntoLanes), a set
+// of items that never overlap horizontally, but two *different* items in the
+// same lane can each be expanded at once (they just don't share an X range),
+// so the lane reserves room for whichever expanded item has the most detail
+// lines, not just a fixed height for "any expanded".
+function laneExtraHeight(lane, isExpanded) {
+  const maxDetails = lane.reduce((max, item) => {
+    if (!item.details || !item.details.length || !isExpanded(item.id)) return max;
+    return Math.max(max, item.details.length);
+  }, 0);
+  return maxDetails > 0 ? DETAIL_PANEL_TOP_GAP + detailPanelHeight(maxDetails) + DETAIL_PANEL_BOTTOM_GAP : 0;
+}
+function laneHeights(lanes, laneHeight, isExpanded) {
+  return lanes.map((lane) => laneHeight + laneExtraHeight(lane, isExpanded));
+}
+function sumLaneHeights(lanes, laneHeight, isExpanded) {
+  return laneHeights(lanes, laneHeight, isExpanded).reduce((a, b) => a + b, 0);
+}
+// Cumulative Y offset (relative to the row/group's own top) for each lane --
+// replaces the old uniform `laneIndex * laneHeight` positioning now that a
+// lane's height can vary.
+function laneOffsets(lanes, laneHeight, isExpanded) {
+  const heights = laneHeights(lanes, laneHeight, isExpanded);
+  const offsets = [];
+  let acc = 0;
+  for (const h of heights) { offsets.push(acc); acc += h; }
+  return offsets;
+}
 
 const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
 
@@ -264,19 +392,33 @@ function geoBucketKey(item) {
   return item.primary_continent || "unclassified";
 }
 
+// An item's own date range, formatted the same way as everywhere else on
+// the chart (formatYear already renders null as "present").
+function itemDateRange(item) {
+  return `${formatYear(item.start)}–${formatYear(item.end)}`;
+}
+
 // "Continent" mode shows one flat row per geography bucket with no further
-// visual nesting -- but an item whose present_countries has exactly one
-// value gets a "(Country)" suffix appended to its own label, so e.g. Jomon
-// and Yayoi are still identifiable as both-Japan without "Country" mode's
-// fuller sub-header nesting. Multi-country or unknown-country items are
-// left alone (nothing useful to disambiguate, and it would misleadingly
-// imply a single country).
+// visual nesting -- so, unlike a top-level band elsewhere (whose dates are
+// only ever legible from its X position or its tooltip), a Continent-mode
+// label spells its own date range out in text. It also gets a "(Country)"
+// suffix when present_countries has exactly one value, so e.g. Jomon and
+// Yayoi are still identifiable as both-Japan without "Country" mode's fuller
+// sub-header nesting -- unless that country's name is just the entity's own
+// name repeated (e.g. "Luxembourg (Luxembourg)"), where the suffix would add
+// nothing. Multi-country or unknown-country items skip the suffix entirely
+// (nothing useful to disambiguate, and it would misleadingly imply a single
+// country).
 function itemDisplayLabel(item, groupBy) {
   if (groupBy !== "continent") return item.canonical_name;
+  const dateRange = itemDateRange(item);
   const countries = item.present_countries || [];
-  if (countries.length !== 1) return item.canonical_name;
+  if (countries.length !== 1) return `${item.canonical_name} ${dateRange}`;
   const name = countryNames.of(countries[0]) || countries[0];
-  return `${item.canonical_name} (${name})`;
+  if (name.trim().toLowerCase() === item.canonical_name.trim().toLowerCase()) {
+    return `${item.canonical_name} ${dateRange}`;
+  }
+  return `${item.canonical_name} ${dateRange} (${name})`;
 }
 
 const CONTINENT_HEADER_HEIGHT = 18;
@@ -394,7 +536,7 @@ function geoClusterSort(a, b) {
 // Civilizations & Cultures rows alike -- all three entry types carry the
 // same geography fields. Computed once and reused for both the
 // height-measurement pass and the draw pass, so the two can't diverge.
-function continentGroupedLayout(items, scale, laneHeight, groupBy) {
+function continentGroupedLayout(items, scale, laneHeight, groupBy, isExpanded = () => false) {
   const getRange = labelAwareFootprint(scale, (item) => itemDisplayLabel(item, groupBy));
   const capped = cappedByBucket(items, geoBucketKey, MAX_POLITIES_PER_REGION);
   const buckets = new Map();
@@ -426,7 +568,7 @@ function continentGroupedLayout(items, scale, laneHeight, groupBy) {
     });
     return { continent, lanes };
   });
-  const height = rows.reduce((total, row) => total + REGION_HEADER_HEIGHT + row.lanes.length * laneHeight + 4, 0);
+  const height = rows.reduce((total, row) => total + REGION_HEADER_HEIGHT + sumLaneHeights(row.lanes, laneHeight, isExpanded) + 4, 0);
   return { kind: "continent", rows, height };
 }
 
@@ -436,7 +578,7 @@ function continentGroupedLayout(items, scale, laneHeight, groupBy) {
 // sub-grouping by countryLaneKey within each bucket, so e.g. Jomon and
 // Yayoi land in the same "Japan" sub-group under "East Asia". Shared by the
 // Period, Polities, and Civilizations & Cultures rows.
-function geoCountryGroupedLayout(items, scale, laneHeight) {
+function geoCountryGroupedLayout(items, scale, laneHeight, isExpanded = () => false) {
   const getRange = labelAwareFootprint(scale);
   const capped = cappedByBucket(items, geoBucketKey, MAX_POLITIES_PER_REGION);
   const geoBuckets = new Map();
@@ -460,7 +602,7 @@ function geoCountryGroupedLayout(items, scale, laneHeight) {
     return { geo: geoKey, countries };
   });
   const height = groups.reduce((total, group) => {
-    const groupHeight = group.countries.reduce((sum, c) => sum + REGION_HEADER_HEIGHT + c.lanes.length * laneHeight + 4, 0);
+    const groupHeight = group.countries.reduce((sum, c) => sum + REGION_HEADER_HEIGHT + sumLaneHeights(c.lanes, laneHeight, isExpanded) + 4, 0);
     return total + CONTINENT_HEADER_HEIGHT + groupHeight;
   }, 0);
   return { kind: "country", groups, height };
@@ -470,20 +612,20 @@ function geoCountryGroupedLayout(items, scale, laneHeight) {
 // start-ascending order, no geography clustering intent), and for the
 // Period/Polities & Cultures rows when groupBy is "none" (geography-
 // clustering sort, see geoClusterSort above).
-function flatLaneLayout(items, scale, laneHeight, sortFn = (a, b) => a.start - b.start) {
+function flatLaneLayout(items, scale, laneHeight, sortFn = (a, b) => a.start - b.start, isExpanded = () => false) {
   const getRange = labelAwareFootprint(scale);
   const sorted = [...items].sort(sortFn);
   const lanes = packIntoLanes(sorted, getRange);
-  return { kind: "flat", lanes, height: lanes.length * laneHeight };
+  return { kind: "flat", lanes, height: sumLaneHeights(lanes, laneHeight, isExpanded) };
 }
 
 // Dispatches to the right layout function for the current groupBy mode.
 // `groupBy` is ignored (always flat) when the caller passes "none" or
 // omits it, matching the Era row's own always-flat behavior.
-function groupedLayoutFor(items, scale, laneHeight, groupBy) {
-  if (groupBy === "continent") return continentGroupedLayout(items, scale, laneHeight, groupBy);
-  if (groupBy === "country") return geoCountryGroupedLayout(items, scale, laneHeight);
-  return flatLaneLayout(items, scale, laneHeight, geoClusterSort);
+function groupedLayoutFor(items, scale, laneHeight, groupBy, isExpanded = () => false) {
+  if (groupBy === "continent") return continentGroupedLayout(items, scale, laneHeight, groupBy, isExpanded);
+  if (groupBy === "country") return geoCountryGroupedLayout(items, scale, laneHeight, isExpanded);
+  return flatLaneLayout(items, scale, laneHeight, geoClusterSort, isExpanded);
 }
 
 // `getFill`/`getKind`/`getCls` let one draw function serve every row:
@@ -499,18 +641,20 @@ function drawFlatLaneRow(svg, scale, lanes, y, laneHeight, cls, onZoom, domainEn
   const getFill = opts.getFill || (() => null);
   const getKind = opts.getKind || (() => "period");
   const getCls = opts.getCls || (() => cls);
+  const isExpanded = opts.isExpanded || (() => false);
+  const onToggleExpand = opts.onToggleExpand || (() => {});
+  const offsets = laneOffsets(lanes, laneHeight, isExpanded);
   lanes.forEach((lane, laneIndex) => {
     lane.forEach((item) => {
-      bandRect(svg, {
-        x: scale.x(item.start), y: y + laneIndex * laneHeight,
+      drawItemBand(svg, item, {
+        x: scale.x(item.start), y: y + offsets[laneIndex],
         width: scale.width(item.start, item.end), height: laneHeight - 2,
         cls: `hierarchy-band ${getCls(item)}`.trim(), title: item.canonical_name, label: item.canonical_name,
-        fill: getFill(item),
-        onZoom: { handler: onZoom, kind: getKind(item), id: item.id, start: item.start, end: item.end ?? domainEnd },
+        fill: getFill(item), onZoom, kind: getKind(item), domainEnd, scale, isExpanded, onToggleExpand,
       });
     });
   });
-  return y + lanes.length * laneHeight;
+  return y + sumLaneHeights(lanes, laneHeight, isExpanded);
 }
 
 function drawContinentGroupedRow(svg, scale, rows, y, laneHeight, cls, onZoom, width, domainEnd, opts = {}) {
@@ -522,6 +666,8 @@ function drawContinentGroupedRow(svg, scale, rows, y, laneHeight, cls, onZoom, w
   // (labelAwareFootprint's getLabel), but the actual rendered label/title
   // text needs its own callback here, or the suffix never appears on screen.
   const getLabel = opts.getLabel || ((item) => item.canonical_name);
+  const isExpanded = opts.isExpanded || (() => false);
+  const onToggleExpand = opts.onToggleExpand || (() => {});
   let rowY = y;
   rows.forEach(({ continent, lanes }, index) => {
     if (index > 0) drawRegionSeparator(svg, width, rowY - 2);
@@ -529,19 +675,19 @@ function drawContinentGroupedRow(svg, scale, rows, y, laneHeight, cls, onZoom, w
     label.textContent = regionLabel(continent);
     svg.append(label);
     rowY += REGION_HEADER_HEIGHT;
+    const offsets = laneOffsets(lanes, laneHeight, isExpanded);
     lanes.forEach((lane, laneIndex) => {
       lane.forEach((item) => {
         const displayLabel = getLabel(item);
-        bandRect(svg, {
-          x: scale.x(item.start), y: rowY + laneIndex * laneHeight,
+        drawItemBand(svg, item, {
+          x: scale.x(item.start), y: rowY + offsets[laneIndex],
           width: scale.width(item.start, item.end), height: laneHeight - 2,
           cls: `hierarchy-band ${getCls(item)}`.trim(), title: displayLabel, label: displayLabel,
-          fill: getFill(item),
-          onZoom: { handler: onZoom, kind: getKind(item), id: item.id, start: item.start, end: item.end ?? domainEnd },
+          fill: getFill(item), onZoom, kind: getKind(item), domainEnd, scale, isExpanded, onToggleExpand,
         });
       });
     });
-    rowY += lanes.length * laneHeight + 4;
+    rowY += sumLaneHeights(lanes, laneHeight, isExpanded) + 4;
   });
   return rowY;
 }
@@ -550,6 +696,8 @@ function drawGeoCountryGroupedRow(svg, scale, groups, y, laneHeight, cls, onZoom
   const getFill = opts.getFill || (() => null);
   const getKind = opts.getKind || (() => "period");
   const getCls = opts.getCls || (() => cls);
+  const isExpanded = opts.isExpanded || (() => false);
+  const onToggleExpand = opts.onToggleExpand || (() => {});
   let rowY = y;
   groups.forEach(({ geo, countries }, groupIndex) => {
     if (groupIndex > 0) drawRegionSeparator(svg, width, rowY - 2);
@@ -563,20 +711,20 @@ function drawGeoCountryGroupedRow(svg, scale, groups, y, laneHeight, cls, onZoom
       countryLabelEl.textContent = countryLaneLabel(country);
       svg.append(countryLabelEl);
       rowY += REGION_HEADER_HEIGHT;
+      const offsets = laneOffsets(lanes, laneHeight, isExpanded);
       lanes.forEach((lane, laneIndex) => {
         lane.forEach((item) => {
-          bandRect(svg, {
-            x: scale.x(item.start), y: rowY + laneIndex * laneHeight,
+          drawItemBand(svg, item, {
+            x: scale.x(item.start), y: rowY + offsets[laneIndex],
             width: scale.width(item.start, item.end), height: laneHeight - 2,
             cls: `hierarchy-band ${getCls(item)}`.trim(),
             title: `${item.canonical_name} (${countryLaneLabel(country)})`,
             label: item.canonical_name,
-            fill: getFill(item),
-            onZoom: { handler: onZoom, kind: getKind(item), id: item.id, start: item.start, end: item.end ?? domainEnd },
+            fill: getFill(item), onZoom, kind: getKind(item), domainEnd, scale, isExpanded, onToggleExpand,
           });
         });
       });
-      rowY += lanes.length * laneHeight + 4;
+      rowY += sumLaneHeights(lanes, laneHeight, isExpanded) + 4;
     });
   });
   return rowY;
@@ -597,7 +745,13 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   // pass a map built once from the full, unzoomed tree instead (see
   // explore.js), so era colors stay stable rather than shifting as the
   // visible era subset changes.
-  const { groupBy = "continent", showPolities = true, geoFilter = null, eraColorMap = buildEraColorMap(tree) } = options;
+  const {
+    groupBy = "continent", showPolities = true, geoFilter = null, eraColorMap = buildEraColorMap(tree),
+    // Detail-of reveal state (see DETAIL_LINE_HEIGHT above) -- owned by the
+    // caller (explore.js), not this render function, so it survives across
+    // the re-renders zoom/groupBy/showPolities changes already trigger.
+    isExpanded = () => false, onToggleExpand = () => {},
+  } = options;
   const width = Math.max(900, Math.min(4800, window.innerWidth - 80));
   const scale = createTimeScale(
     tree.axis.domain_start, tree.axis.domain_end, tree.axis.segment_break,
@@ -644,7 +798,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   const civLayout = groupedLayoutFor(applyGeoFilter(civItems, groupBy, geoFilter), scale, civLaneHeight, groupBy);
 
   const politiesItems = showPolities ? applyGeoFilter(allPolitiesFlat(tree), groupBy, geoFilter) : [];
-  const politiesLayout = groupedLayoutFor(politiesItems, scale, polityLaneHeight, groupBy);
+  const politiesLayout = groupedLayoutFor(politiesItems, scale, polityLaneHeight, groupBy, isExpanded);
 
   const eraRowHeight = eraLayout.height;
   const periodRowHeight = periodLayout.height;
@@ -733,6 +887,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
       // field as Civilizations & Cultures entries (see schema.py) -- null
       // for any polity that's never had one set, same as before.
       getFill: (item) => eraColor(eraColorMap, item.linked_era_id),
+      isExpanded, onToggleExpand,
     });
     drawTierLabel(svg, "Polities", prevSepY, height);
   }

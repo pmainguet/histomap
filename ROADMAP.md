@@ -9,13 +9,20 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **`/explore` display half of the phase_of/part_of merge** — hiding a `detail_of` entity by
-   default and revealing it via a badge/zoom-triggered enclosing panel. The data-model half shipped
-   1 September 2026 (see STATUS.md and `docs/plans/2026-09-01-detail-of-merge-design.md`); this is
-   the deliberately-deferred remainder. Needs its own focused design pass —
-   `explore_timeline.js`'s three separate grouping-mode layout/draw function pairs
-   (continent/country/flat) have no existing per-item expand concept to build on — see the design
-   doc's "Deferred: `/explore` display" section for what that follow-up needs to cover.
+0. ~~**`/explore` display half of the phase_of/part_of merge**~~ — done, 3 September 2026 (see
+   STATUS.md). A `detail_of` entity is hidden from its own top-level band by default; its container
+   gets a leading toggle compartment ("+ N detail(s)") that reveals a panel of date-positioned detail
+   lines beneath it (each on its own line, sized/placed against the same time scale as every other
+   band); the deep-link ("Edit in /explore" from `/consolidation-review`) and "Zoom to this" both
+   auto-open it. Continent-mode labels also gained an inline date-range suffix (parent and child
+   alike) and stopped repeating a "(Country)" suffix that just echoed the entity's own name.
+0 bis. On Explore, in side panel should be possible to set a polity as detail of
+0 ter. **Close the residual geography gaps** (see STATUS.md for how they got here): **917** active
+   polities still have no continent at all (no Wikidata QID, or a QID with neither a usable P17
+   chain nor a direct P30 claim nor a centroid nor an unambiguous name match -- every signal built
+   so far has been tried and come up empty; needs a different approach, if one exists); **73** have
+   `present_countries` but their country isn't yet in `pipeline/historical_regions.py`'s
+   ~180-country starter table (cheap and safe to grow incrementally).
 1. **Work the polity → period reclassification queue (73 pending, confirmed live 1 September 2026,
    `/consolidation-review`'s "period"/"both" decision).** Full scope-and-seed pass done (see
    STATUS.md); what's left is ordinary manual review.
@@ -32,12 +39,6 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    subdivisions correctly gated behind `/subdivision-review`'s parent-confirmation step, and the
    rest is a long tail of low-count, genuinely ambiguous or obscure types -- ordinary manual review
    from here, same as any other queue.
-6. **Close the residual geography gaps** (see STATUS.md for how they got here): **917** active
-   polities still have no continent at all (no Wikidata QID, or a QID with neither a usable P17
-   chain nor a direct P30 claim nor a centroid nor an unambiguous name match -- every signal built
-   so far has been tried and come up empty; needs a different approach, if one exists); **73** have
-   `present_countries` but their country isn't yet in `pipeline/historical_regions.py`'s
-   ~180-country starter table (cheap and safe to grow incrementally).
 7. **A period can subdivide a civilization/polity, not just an era — the schema and tree only
    support the latter today.** Surfaced by `early_dynastic_mesopotamia`: conceptually it's a
    phase *of Sumer* (the civilization), the same relationship Old Kingdom of Egypt has to
