@@ -52,5 +52,7 @@ prominence_components:
   aggregate_penalty: 0
   total: 25.08
 manual_overrides:
+- consolidation
 - entity_type
 government_form: countship
+consolidation_status: independent

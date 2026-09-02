@@ -52,5 +52,7 @@ prominence_components:
   aggregate_penalty: 0
   total: 25.45
 manual_overrides:
+- consolidation
 - entity_type
 government_form: null
+detail_of: kingdom_of_kampuchea

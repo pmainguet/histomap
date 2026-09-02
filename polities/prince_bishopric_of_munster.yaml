@@ -53,5 +53,7 @@ prominence_components:
   aggregate_penalty: 0
   total: 23.21
 manual_overrides:
+- consolidation
 - entity_type
 government_form: prince-bishopric
+consolidation_status: independent

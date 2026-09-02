@@ -54,3 +54,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 4.81
 government_form: protectorate
+detail_of: cuba
+manual_overrides:
+- consolidation

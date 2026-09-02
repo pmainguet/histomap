@@ -52,5 +52,7 @@ prominence_components:
   aggregate_penalty: 0
   total: 18.66
 manual_overrides:
+- consolidation
 - entity_type
 government_form: client state
+detail_of: free_city_of_frankfurt

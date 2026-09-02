@@ -47,3 +47,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 15.68
 government_form: satrapy
+consolidation_status: independent
+manual_overrides:
+- consolidation

@@ -51,3 +51,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 8.38
 government_form: principality
+detail_of: history_of_the_free_and_hanseatic_city_of_lubeck
+manual_overrides:
+- consolidation

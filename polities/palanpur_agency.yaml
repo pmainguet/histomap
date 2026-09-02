@@ -54,3 +54,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 22.64
 government_form: null
+detail_of: palanpur_state
+manual_overrides:
+- consolidation

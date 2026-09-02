@@ -59,5 +59,7 @@ prominence_components:
   aggregate_penalty: 0
   total: 14.26
 manual_overrides:
+- consolidation
 - entity_type
 government_form: princely state
+consolidation_status: independent

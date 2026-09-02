@@ -45,3 +45,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 13.26
 government_form: null
+detail_of: karakhanid_khanate
+manual_overrides:
+- consolidation
