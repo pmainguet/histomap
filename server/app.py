@@ -1608,6 +1608,21 @@ def create_app(root: Path = ROOT) -> FastAPI:
     ) -> dict:
         return clean_json({"query": q, "items": search_polities(q, metadata, limit)})
 
+    @application.get("/api/polities/{polity_id}")
+    async def get_polity(polity_id: str) -> dict:
+        """Returns one polity's full raw fields, straight from the
+        in-memory metadata store -- unlike /data.json (the published set,
+        which excludes retired/excluded entities), this always finds any
+        entity still resolvable by id, matching what a reviewer sees in
+        /consolidation-review's queue even when it isn't published/visible
+        in /explore (found live, 1 September 2026 -- a queue entry that
+        wasn't rendered in /explore's tree needed direct editing here
+        instead)."""
+        document = metadata.get(polity_id)
+        if document is None:
+            raise HTTPException(404, "Unknown Histomap entity")
+        return clean_json(document)
+
     @application.get("/api/options/geography")
     async def geography_options() -> dict:
         return {

@@ -315,6 +315,16 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(response.json()["items"][0]["polity_id"], "candidate")
         self.assertEqual(response.json()["items"][0]["search_score"], 100)
 
+    def test_gets_one_politys_full_raw_fields(self) -> None:
+        response = self.client.get("/api/polities/candidate")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["id"], "candidate")
+        self.assertEqual(response.json()["canonical_name"], "Candidate")
+
+    def test_get_polity_404s_for_unknown_id(self) -> None:
+        response = self.client.get("/api/polities/does_not_exist")
+        self.assertEqual(response.status_code, 404)
+
     def test_lists_and_updates_geography_with_controlled_values(self) -> None:
         options = self.client.get("/api/options/geography").json()
         self.assertIn("europe", options["continents"])

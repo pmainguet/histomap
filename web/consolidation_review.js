@@ -95,14 +95,84 @@ function recommendableButton(decision, candidate, key, label, hint = null) {
   return `<button type="button" data-decision="${decision}" data-target="${escapeHtml(candidate.id)}"${classes}${hint ? ` title="${escapeHtml(hint)}"` : ""}><kbd>${escapeHtml(String(key))}</kbd> ${label}</button>`;
 }
 
+// Opens /explore in a new tab, zoomed to and with the detail panel already
+// open on the given entity -- convenient when the entity IS published/
+// visible there (its own geography editor, entity-type dropdown, etc.).
+// Not every queue entry is guaranteed to be, though -- editFieldsMarkup()
+// below is the reliable fallback that works regardless (found live, 1
+// September 2026).
+function exploreLink(id) {
+  return `<a class="explore-edit-link" href="/explore?entity=${encodeURIComponent(id)}" target="_blank" rel="noopener noreferrer">Edit in /explore ↗</a>`;
+}
+
+// A collapsible raw-fields JSON editor, right on the review card -- reads
+// straight from server-side `metadata` (GET /api/polities/{id}), so it
+// always finds the entity even when it isn't published in /data.json (the
+// gap that made the /explore link above insufficient on its own). Lazily
+// fetches on first open, not eagerly for every candidate. Saves via the
+// same PATCH /api/polities/{id}/fields endpoint /explore's own editor
+// uses, then reloads the current queue item so corrected data (dates,
+// suggested_decision, etc.) shows immediately without losing your place.
+function editFieldsMarkup(id) {
+  return `<details class="detail-edit" data-entity-id="${escapeHtml(id)}">
+    <summary>Edit fields</summary>
+    <textarea class="detail-raw-textarea" name="raw-fields" aria-label="Raw record fields (JSON)" rows="14" spellcheck="false">Loading…</textarea>
+    <div class="detail-edit-row"><button type="button" class="raw-edit-save">Save fields</button></div>
+    <p class="detail-edit-status" role="status"></p>
+  </details>`;
+}
+
+function wireEditFields() {
+  card.querySelectorAll(".detail-edit[data-entity-id]").forEach((details) => {
+    const id = details.dataset.entityId;
+    const textarea = details.querySelector(".detail-raw-textarea");
+    const status = details.querySelector(".detail-edit-status");
+    const setStatus = (message, isError) => {
+      status.textContent = message;
+      status.classList.toggle("is-error", Boolean(isError));
+    };
+    details.addEventListener("toggle", async () => {
+      if (!details.open || textarea.dataset.loaded) return;
+      try {
+        const response = await fetch(`/api/polities/${encodeURIComponent(id)}`);
+        if (!response.ok) throw new Error((await response.json()).detail || await response.text());
+        textarea.value = JSON.stringify(await response.json(), null, 2);
+        textarea.dataset.loaded = "true";
+      } catch (error) {
+        setStatus(`Could not load: ${error.message}`, true);
+      }
+    });
+    details.querySelector(".raw-edit-save").addEventListener("click", async () => {
+      let fields;
+      try {
+        fields = JSON.parse(textarea.value);
+      } catch (error) {
+        setStatus(`Invalid JSON: ${error.message}`, true);
+        return;
+      }
+      try {
+        const response = await fetch(`/api/polities/${encodeURIComponent(id)}/fields`, {
+          method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify(fields),
+        });
+        if (!response.ok) throw new Error((await response.json()).detail || await response.text());
+        setStatus("Saved. Reloading…", false);
+        await loadNext();
+      } catch (error) {
+        setStatus(`Not saved: ${error.message}`, true);
+      }
+    });
+  });
+}
+
 function candidateMarkup(candidate, index) {
   const independentRecommended = candidate.suggested_decision === "independent";
   const reviewedOpenEnded = current.dates[1] == null;
   const candidateOpenEnded = candidate.dates[1] == null;
   return `<article class="candidate consolidation-candidate">
     <div class="candidate-main">
-      <p class="candidate-number">Candidate ${index + 1}</p><div class="comparison-heading"><strong>${escapeHtml(candidate.canonical_name)}</strong><span class="evidence-badge ${candidate.confidence}">${escapeHtml(candidate.confidence)} confidence</span></div>
+      <p class="candidate-number">Candidate ${index + 1}</p><div class="comparison-heading"><strong>${escapeHtml(candidate.canonical_name)}</strong><span class="evidence-badge ${candidate.confidence}">${escapeHtml(candidate.confidence)} confidence</span>${exploreLink(candidate.id)}</div>
       <p class="wikidata-description" data-wikidata-description="${escapeHtml(candidate.wikidata || "")}"></p>
+      ${editFieldsMarkup(candidate.id)}
       <div class="comparison-table-wrap"><table class="comparison-table"><thead><tr><th>Field</th><th>Reviewed entity</th><th>Candidate</th></tr></thead><tbody>
         ${comparisonRow("Name", escapeHtml(current.canonical_name), escapeHtml(candidate.canonical_name), candidate.exact_name_match ? "match" : "review")}
         ${comparisonRow("Instance of", `<span class="source-links">${typeLinks(current)}</span>`, `<span class="source-links">${typeLinks(candidate)}</span>`)}
@@ -235,9 +305,10 @@ async function loadNext() {
   // usually the one carrying whatever Suggested badge is showing, so its
   // reasoning is worth seeing before scrolling into the comparison table.
   const topReasonsBanner = current.candidates[0] ? reasonsBanner(current.candidates[0].reasons) : "";
-  card.innerHTML = `<p class="review-rank"><span class="record-badge">Histomap entity</span> Canonical record being checked</p><h2>${escapeHtml(current.canonical_name)}</h2><p class="wikidata-description" data-wikidata-description="${escapeHtml(current.wikidata || "")}"></p>${topReasonsBanner}${candidateSection}`;
+  card.innerHTML = `<p class="review-rank"><span class="record-badge">Histomap entity</span> Canonical record being checked</p><h2>${escapeHtml(current.canonical_name)}${exploreLink(current.id)}</h2><p class="wikidata-description" data-wikidata-description="${escapeHtml(current.wikidata || "")}"></p>${editFieldsMarkup(current.id)}${topReasonsBanner}${candidateSection}`;
   card.querySelectorAll("[data-decision]").forEach((button) => button.addEventListener("click", () => decide(button.dataset.decision, button.dataset.target)));
   card.querySelectorAll('[data-action="defer"]').forEach((button) => button.addEventListener("click", defer));
+  wireEditFields();
   loadWikidataEvidence(current);
 }
 

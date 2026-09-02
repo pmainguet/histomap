@@ -116,6 +116,21 @@ async function main() {
     };
     updateGeoFilterOptions();
     draw();
+    // Deep link for jumping here from elsewhere (e.g. /consolidation-review's
+    // "Edit in /explore" link) straight to one record, zoomed and with its
+    // detail panel already open -- ?entity=<id>, looked up as a polity first
+    // (the common case) then a period. Silently does nothing if the id isn't
+    // found, rather than showing an error -- the rest of the page still
+    // loads and works normally either way.
+    const entityId = new URLSearchParams(location.search).get("entity");
+    if (entityId) {
+      const record = detailCtx.politiesById.get(entityId) || detailCtx.periodsById.get(entityId);
+      if (record) {
+        const kind = detailCtx.politiesById.has(entityId) ? "polity" : "period";
+        zoomToRange(record.start, record.end ?? fullTree.axis.domain_end);
+        onSelect(kind, entityId);
+      }
+    }
     showPolitiesInput.addEventListener("change", draw);
     groupBySelect.addEventListener("change", () => {
       updateGeoFilterOptions();

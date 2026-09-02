@@ -200,6 +200,8 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .match-score span { font: .78rem system-ui, sans-serif; }
 .exact-match { justify-self: start; margin: 0; padding: .15rem .35rem; color: #315d3a; background: #edf4e9; font: 700 .7rem system-ui, sans-serif; text-transform: uppercase; letter-spacing: .04em; }
 .record-badge, .evidence-badge { display: inline-block; padding: .14rem .35rem; color: #315d3a; background: #edf4e9; font: 700 .66rem system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
+.explore-edit-link { display: inline-block; margin-left: .6rem; padding: .12rem .4rem; vertical-align: middle; color: #8c422d; background: #f5efe2; border: 1px solid var(--rule); border-radius: 3px; font: 600 .68rem system-ui, sans-serif; text-decoration: none; white-space: nowrap; }
+.explore-edit-link:hover { background: #efe4d0; }
 .record-badge.source { color: #71402f; background: #f5e9df; }
 .evidence-badge.medium { color: #715e24; background: #f7f0d8; }
 .comparison-heading { display: flex; justify-content: space-between; gap: .75rem; align-items: start; }
