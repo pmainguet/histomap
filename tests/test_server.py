@@ -264,62 +264,30 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(saved["consolidation_status"], "discarded")
         self.assertFalse(any(item["id"] == "candidate" for item in self.client.get("/api/consolidation-reviews").json()["items"]))
 
-    def test_converts_entity_phase_to_period_linked_to_target(self) -> None:
+    def test_marks_entity_as_detail_of_target_without_creating_a_period(self) -> None:
         response = self.client.post(
             "/api/consolidation-reviews/candidate",
-            json={"decision": "phase_of", "target_id": "container"},
+            json={"decision": "detail_of", "target_id": "container"},
         )
 
         self.assertEqual(response.status_code, 200)
         saved = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
-        self.assertEqual(saved["timeline_role"], "retired")
-        self.assertEqual(saved["consolidated_into"], "container")
-        self.assertTrue((self.root / "periods" / "candidate_period.yaml").exists())
-        links = yaml.safe_load((self.root / "period_links.yaml").read_text(encoding="utf-8"))
-        phase_link = next(link for link in links if link["period_id"] == "candidate_period" and link["entity_id"] == "container")
-        self.assertEqual(phase_link["relation"], "phase_of")
+        self.assertNotEqual(saved.get("timeline_role", "entity"), "retired")
+        self.assertEqual(saved["detail_of"], "container")
+        self.assertNotIn("consolidation_status", saved)
+        self.assertFalse((self.root / "periods" / "candidate_period.yaml").exists())
 
-    def test_keeps_constituent_as_subdivision_of_candidate(self) -> None:
+    def test_candidate_detail_of_marks_the_candidate_not_the_reviewed_entity(self) -> None:
         response = self.client.post(
             "/api/consolidation-reviews/candidate",
-            json={"decision": "part_of", "target_id": "container"},
+            json={"decision": "candidate_detail_of", "target_id": "container"},
         )
 
         self.assertEqual(response.status_code, 200)
-        saved = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
-        self.assertEqual(saved["entity_type"], "subdivision")
-        self.assertEqual(saved["parent"], "container")
-        self.assertEqual(saved["subdivision_parent_status"], "confirmed")
-        self.assertEqual(saved["consolidation_status"], "part_of")
-        self.assertTrue(any(item["kind"] == "administrative_part_of" and item["target"] == "container" for item in saved["relationships"]))
-
-    def test_marks_candidate_as_phase_of_reviewed_entity(self) -> None:
-        response = self.client.post(
-            "/api/consolidation-reviews/candidate",
-            json={"decision": "candidate_phase_of", "target_id": "container"},
-        )
-
-        self.assertEqual(response.status_code, 200)
-        candidate = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
-        inverse = yaml.safe_load((self.root / "polities" / "container.yaml").read_text(encoding="utf-8"))
-        self.assertEqual(candidate["consolidation_status"], "independent")
-        self.assertEqual(inverse["consolidated_into"], "candidate")
-        links = yaml.safe_load((self.root / "period_links.yaml").read_text(encoding="utf-8"))
-        self.assertTrue(any(link["period_id"] == "container_period" and link["entity_id"] == "candidate" and link["relation"] == "phase_of" for link in links))
-
-    def test_marks_candidate_as_constituent_part_of_reviewed_entity(self) -> None:
-        response = self.client.post(
-            "/api/consolidation-reviews/candidate",
-            json={"decision": "candidate_part_of", "target_id": "container"},
-        )
-
-        self.assertEqual(response.status_code, 200)
-        candidate = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
-        inverse = yaml.safe_load((self.root / "polities" / "container.yaml").read_text(encoding="utf-8"))
-        self.assertEqual(candidate["consolidation_status"], "independent")
-        self.assertEqual(inverse["entity_type"], "subdivision")
-        self.assertEqual(inverse["parent"], "candidate")
-        self.assertEqual(inverse["consolidation_status"], "part_of")
+        candidate_saved = yaml.safe_load((self.root / "polities" / "container.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(candidate_saved["detail_of"], "candidate")
+        reviewed_saved = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(reviewed_saved["consolidation_status"], "independent")
 
     def test_merges_duplicate_identity_without_deleting_source(self) -> None:
         response = self.client.post(

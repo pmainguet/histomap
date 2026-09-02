@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import asyncio
-import datetime
 import json
 import math
 import re
@@ -101,8 +100,8 @@ class SubdivisionParentUpdate(BaseModel):
 
 class ConsolidationDecision(BaseModel):
     decision: Literal[
-        "independent", "same_entity", "phase_of", "part_of",
-        "candidate_phase_of", "candidate_part_of", "period", "discarded",
+        "independent", "same_entity", "detail_of",
+        "candidate_detail_of", "period", "discarded",
     ]
     target_id: str | None = None
 
@@ -530,6 +529,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
             if document.get("timeline_role", "entity") not in {"retired", "period"}
             and document.get("eligibility") != "excluded"
             and not document.get("consolidation_status")
+            and not document.get("detail_of")
         }
         token_index: dict[str, set[str]] = {}
         name_index: dict[str, set[str]] = {}
@@ -988,16 +988,16 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     # before the plain part_of branches below, so a
                     # genuinely nested, concluded phase wins that
                     # interpretation over the weaker structural default).
-                    suggested_decision = "phase_of"
+                    suggested_decision = "detail_of"
                 elif (
                     reverse_date_contains and geography_compatible
                     and (exact_name_match or regime_of_reviewed or candidate_part_of_reviewed)
                 ):
-                    suggested_decision = "candidate_phase_of"
+                    suggested_decision = "candidate_detail_of"
                 elif reviewed_part_of_candidate or subdivision_part_of_candidate:
-                    suggested_decision = "part_of"
+                    suggested_decision = "detail_of"
                 elif candidate_part_of_reviewed or subdivision_part_of_reviewed:
-                    suggested_decision = "candidate_part_of"
+                    suggested_decision = "candidate_detail_of"
                 elif no_identity_signal:
                     # Reached the queue with no strong identity anchor at all
                     # (no shared Wikidata item, no shared name/alias) --
@@ -1172,7 +1172,10 @@ def create_app(root: Path = ROOT) -> FastAPI:
 
     def save_consolidation(entity_id: str, decision: str, target_id: str | None) -> dict:
         document = metadata.get(entity_id)
-        if not document or document.get("timeline_role") == "retired" or document.get("consolidation_status"):
+        if (
+            not document or document.get("timeline_role") == "retired"
+            or document.get("consolidation_status") or document.get("detail_of")
+        ):
             raise HTTPException(404, "Consolidation review is not pending")
         if decision == "independent":
             document["consolidation_status"] = "independent"
@@ -1180,6 +1183,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
             (polities_dir / f"{entity_id}.yaml").write_text(
                 yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
             )
+            metadata[entity_id] = document
             return document
         if decision == "discarded":
             document["timeline_role"] = "retired"
@@ -1200,31 +1204,11 @@ def create_app(root: Path = ROOT) -> FastAPI:
         target = metadata.get(target_id or "")
         if not target or target_id == entity_id or target.get("timeline_role") == "retired":
             raise HTTPException(422, "target_id must identify another active entity")
-        # The Period schema requires a finite end (Period.end: int, no
-        # Optional) -- a phase_of decision writes one, so an open-ended
-        # ("present") entity can't literally keep its null end. Rather than
-        # block the decision outright (a reviewer's judgment that two
-        # records genuinely are the same/a phase relationship is worth more
-        # than that structural gap), approximate the end as the current
-        # year with low confidence and a note -- e.g. Realm of New Zealand
-        # and New Zealand are both still open-ended, and that's fine; the
-        # phase just doesn't have a real end yet (found live, 1 September
-        # 2026, explicit request to allow this).
-        if decision == "phase_of" and document.get("end") is None:
-            approximate_end = datetime.date.today().year
-            document["end"] = approximate_end
-            document["end_confidence"] = "low"
-            document["notes"] = (
-                document.get("notes", "").rstrip()
-                + f" End date approximated as {approximate_end} (still open-ended/\"present\" as of"
-                + " this decision) -- revisit if/when this phase actually concludes."
-            ).strip()
-
-        document["timeline_role"] = "retired"
-        document["consolidation_status"] = decision
-        document["consolidated_into"] = target_id
-        document["manual_overrides"] = sorted(set(document.get("manual_overrides", [])) | {"consolidation"})
         if decision == "same_entity":
+            document["timeline_role"] = "retired"
+            document["consolidation_status"] = "same_entity"
+            document["consolidated_into"] = target_id
+            document["manual_overrides"] = sorted(set(document.get("manual_overrides", [])) | {"consolidation"})
             aliases = {
                 item.strip()
                 for item in str((target.get("names") or {}).get("aliases_en", "")).split("|")
@@ -1237,29 +1221,27 @@ def create_app(root: Path = ROOT) -> FastAPI:
             (polities_dir / f"{target_id}.yaml").write_text(
                 yaml.safe_dump(target, sort_keys=False, allow_unicode=True), encoding="utf-8"
             )
-        else:
-            qid = (document.get("external_ids") or {}).get("wikidata")
-            source_urls = [f"https://www.wikidata.org/wiki/{qid}"] if qid else [f"https://histomap.local/entity/{entity_id}"]
-            period_id = write_period_record(
-                document,
-                kind="historical",
-                authority="Histomap editorial consolidation",
-                notes=f"Editorially identified as a phase or aspect of {target['canonical_name']}.",
-                source_urls=source_urls,
+            (polities_dir / f"{entity_id}.yaml").write_text(
+                yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
             )
-            append_period_link(
-                period_id,
-                target_id,
-                relation="phase_of",
-                source_urls=source_urls,
-                notes="Reviewed record is a dated phase of this canonical polity.",
+            metadata[entity_id] = document
+            metadata[target_id] = target
+            return document
+        if decision == "detail_of":
+            # No finite-end requirement and no Period record -- a detail
+            # entity stays a live Polity with its own start/end, same as
+            # before the decision. Replaces the old phase_of (which
+            # manufactured a Period and retired the entity) and part_of
+            # (which retyped entity_type to subdivision) mechanisms; see
+            # docs/plans/2026-09-01-detail-of-merge-design.md.
+            document["detail_of"] = target_id
+            document["manual_overrides"] = sorted(set(document.get("manual_overrides", [])) | {"consolidation"})
+            (polities_dir / f"{entity_id}.yaml").write_text(
+                yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
             )
-        (polities_dir / f"{entity_id}.yaml").write_text(
-            yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
-        )
-        metadata[entity_id] = document
-        metadata[target_id] = target
-        return document
+            metadata[entity_id] = document
+            return document
+        raise HTTPException(422, f"Unsupported consolidation decision: {decision}")
 
     def save_entity_type(
         polity_id: str,
@@ -1546,24 +1528,13 @@ def create_app(root: Path = ROOT) -> FastAPI:
     async def decide_consolidation_review(entity_id: str, request: ConsolidationDecision) -> dict:
         refresh_period_role_queue()
         period_record = next((item for item in period_role_queue if item["id"] == entity_id), None)
-        if request.decision in {"candidate_phase_of", "candidate_part_of"}:
+        if request.decision == "candidate_detail_of":
             candidate_id = request.target_id or ""
             candidate = metadata.get(candidate_id)
             reviewed = metadata.get(entity_id)
             if not candidate or not reviewed or candidate_id == entity_id:
                 raise HTTPException(422, "target_id must identify another active entity")
-            if request.decision == "candidate_phase_of":
-                save_consolidation(candidate_id, "phase_of", entity_id)
-            else:
-                if reviewed.get("entity_type", "polity") != "polity":
-                    raise HTTPException(422, "A constituent-part parent must be a polity")
-                save_entity_type(candidate_id, "subdivision", "subdivision")
-                candidate = save_subdivision_parent(candidate_id, entity_id)
-                candidate["consolidation_status"] = "part_of"
-                (polities_dir / f"{candidate_id}.yaml").write_text(
-                    yaml.safe_dump(candidate, sort_keys=False, allow_unicode=True), encoding="utf-8"
-                )
-                metadata[candidate_id] = candidate
+            save_consolidation(candidate_id, "detail_of", entity_id)
             if period_record is not None:
                 save_timeline_role(entity_id, "entity", period_record.get("period_kinds", []))
             save_consolidation(entity_id, "independent", None)
@@ -1583,25 +1554,11 @@ def create_app(root: Path = ROOT) -> FastAPI:
             }
         if request.decision == "independent" and period_record is not None:
             save_timeline_role(entity_id, "entity", period_record.get("period_kinds", []))
-        if request.decision == "part_of":
-            target = metadata.get(request.target_id or "")
-            if not target or target.get("entity_type", "polity") != "polity":
-                raise HTTPException(422, "Part-of target must be a canonical polity")
-            save_entity_type(entity_id, "subdivision", "subdivision")
-            document = save_subdivision_parent(entity_id, request.target_id)
-            document["consolidation_status"] = "part_of"
-            (polities_dir / f"{entity_id}.yaml").write_text(
-                yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
-            )
-            metadata[entity_id] = document
-            return {
-                "status": "saved", "entity_id": entity_id, "decision": "part_of",
-                "target_id": request.target_id,
-            }
         document = save_consolidation(entity_id, request.decision, request.target_id)
         return {
             "status": "saved", "entity_id": entity_id,
-            "decision": request.decision, "target_id": document.get("consolidated_into"),
+            "decision": request.decision,
+            "target_id": document.get("consolidated_into") or document.get("detail_of"),
         }
 
     @application.get("/api/type-reviews")

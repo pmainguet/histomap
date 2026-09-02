@@ -91,7 +91,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "external_ids": {"wikidata": "Q131404661"}, "start": 1963, "end": 2024,
              "prominence_score": 20, "geography": {"present_countries": ["SY"]}},
         ]
-        self.assertEqual(self.suggestion_for("syrian_arab_republic", "syria", polities), "phase_of")
+        self.assertEqual(self.suggestion_for("syrian_arab_republic", "syria", polities), "detail_of")
 
     def test_french_first_republic_candidate_phase_of_france(self) -> None:
         # Reverse direction: the REVIEWED entity (France) is the broad
@@ -109,7 +109,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "start": 1792, "end": 1804, "prominence_score": 50, "geography": {"present_countries": ["FR"]}},
         ]
         self.assertEqual(
-            self.suggestion_for("france", "french_first_republic", polities), "candidate_phase_of"
+            self.suggestion_for("france", "french_first_republic", polities), "candidate_detail_of"
         )
 
     def test_yugoslavia_regime_of_place_with_finite_end(self) -> None:
@@ -126,7 +126,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         ]
         self.assertEqual(
             self.suggestion_for("federal_peoples_republic_of_yugoslavia", "yugoslavia", polities),
-            "phase_of",
+            "detail_of",
         )
 
     def test_realm_of_new_zealand_open_ended_regime_of_place_not_suggested(self) -> None:
@@ -158,7 +158,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         relationships = [{"source": "Q664", "property": "P361", "target": "Q889033"}]
         self.assertEqual(
             self.suggestion_for("realm_of_new_zealand", "new_zealand", polities, relationships),
-            "candidate_part_of",
+            "candidate_detail_of",
         )
 
     def test_czechoslovak_socialist_republic_phase_of_wins_over_part_of(self) -> None:
@@ -186,7 +186,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
             self.suggestion_for(
                 "czechoslovak_socialist_republic", "czechoslovakia", polities, relationships
             ),
-            "phase_of",
+            "detail_of",
         )
 
     def test_west_virginia_still_open_ended_withholds_suggestion(self) -> None:
@@ -222,7 +222,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "external_ids": {"wikidata": "Q13474305"}, "start": 1939, "end": 1975,
              "prominence_score": 30, "geography": {"present_countries": ["ES"]}},
         ]
-        self.assertEqual(self.suggestion_for("francoist_spain", "spain", polities), "phase_of")
+        self.assertEqual(self.suggestion_for("francoist_spain", "spain", polities), "detail_of")
 
     def test_appenzell_cantons_likely_siblings_suggest_independent(self) -> None:
         # Split from one original Appenzell canton in 1513 -- identical
@@ -306,7 +306,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
             {**BASE, "id": "akragas", "canonical_name": "Akragas", "external_ids": {"wikidata": "Q3607380"},
              "start": -580, "end": 406, "prominence_score": 20, "geography": {"present_countries": ["IT"]}},
         ]
-        self.assertEqual(self.suggestion_for("akragas", "agrigento", polities), "phase_of")
+        self.assertEqual(self.suggestion_for("akragas", "agrigento", polities), "detail_of")
 
     def test_thuringia_year_range_suffix_still_reads_as_regime_of(self) -> None:
         # "State of Thuringia (1920-1952)" carries a trailing disambiguator
@@ -326,7 +326,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         ]
         self.assertEqual(
             self.suggestion_for("state_of_thuringia_19201952", "thuringia", polities),
-            "phase_of",
+            "detail_of",
         )
 
     def test_exact_name_match_phase_of_allowed_when_both_sides_open_ended(self) -> None:
@@ -345,7 +345,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "start": 788, "end": None, "prominence_score": 45,
              "geography": {"present_countries": ["MA"]}},
         ]
-        self.assertEqual(self.suggestion_for("sharifian_empire", "morocco", polities), "phase_of")
+        self.assertEqual(self.suggestion_for("sharifian_empire", "morocco", polities), "detail_of")
 
     def test_missing_geography_on_both_sides_does_not_count_as_compatible(self) -> None:
         # An exact name match with clean date nesting but no
@@ -381,7 +381,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "prominence_score": 20, "geography": {"present_countries": []}},
         ]
         self.assertEqual(
-            self.suggestion_for("republic_of_georgia_19901992", "georgia", polities), "phase_of"
+            self.suggestion_for("republic_of_georgia_19901992", "georgia", polities), "detail_of"
         )
 
     def test_syrian_federation_demonym_naming_pattern_suggests_phase_of(self) -> None:
@@ -402,7 +402,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "external_ids": {"wikidata": "Q12183911"}, "start": 1922, "end": 1925,
              "prominence_score": 20, "geography": {"present_countries": ["SY"]}},
         ]
-        self.assertEqual(self.suggestion_for("syrian_federation", "syria", polities), "phase_of")
+        self.assertEqual(self.suggestion_for("syrian_federation", "syria", polities), "detail_of")
 
     def test_spain_under_the_restoration_prefix_naming_pattern_suggests_phase_of(self) -> None:
         # "Spain under the Restoration" starts with the exact outer name
@@ -415,7 +415,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "prominence_score": 25, "geography": {"present_countries": ["ES"]}},
         ]
         self.assertEqual(
-            self.suggestion_for("spain_under_the_restoration", "spain", polities), "phase_of"
+            self.suggestion_for("spain_under_the_restoration", "spain", polities), "detail_of"
         )
 
     def test_first_brazilian_republic_mid_sentence_demonym_suggests_phase_of(self) -> None:
@@ -435,7 +435,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "prominence_score": 25, "geography": {"present_countries": ["BR"]}},
         ]
         self.assertEqual(
-            self.suggestion_for("first_brazilian_republic", "brazil", polities), "phase_of"
+            self.suggestion_for("first_brazilian_republic", "brazil", polities), "detail_of"
         )
 
     def test_institutional_name_prefix_not_treated_as_regime_of(self) -> None:
@@ -454,7 +454,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "external_ids": {"wikidata": "Q484104"}, "start": 1945, "end": 1948,
              "prominence_score": 20, "geography": {"present_countries": ["US"]}},
         ]
-        self.assertNotEqual(self.suggestion_for("usamgik", "united_states", polities), "phase_of")
+        self.assertNotEqual(self.suggestion_for("usamgik", "united_states", polities), "detail_of")
 
     def test_demonym_scan_does_not_match_short_word_against_multiword_name(self) -> None:
         # The per-token demonym scan is for single-word place names (Syria/
@@ -478,7 +478,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "prominence_score": 20, "geography": {"present_countries": ["US"]}},
         ]
         self.assertNotEqual(
-            self.suggestion_for("usamgik", "united_belgian_states", polities), "phase_of"
+            self.suggestion_for("usamgik", "united_belgian_states", polities), "detail_of"
         )
 
     def test_scythia_minor_subdivision_qualifier_suggests_part_of_not_phase_of(self) -> None:
@@ -499,7 +499,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "prominence_score": 20, "geography": {"present_countries": []}},
         ]
         self.assertEqual(
-            self.suggestion_for("scythia_minor_crimea", "scythia", polities), "part_of"
+            self.suggestion_for("scythia_minor_crimea", "scythia", polities), "detail_of"
         )
 
     def test_documented_part_of_wins_over_documented_successor(self) -> None:
@@ -525,7 +525,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
             self.suggestion_for(
                 "latvian_soviet_socialist_republic", "latvia", polities, relationships
             ),
-            "phase_of",
+            "detail_of",
         )
 
     def test_documented_relationship_alone_reaches_the_candidate_pool(self) -> None:
