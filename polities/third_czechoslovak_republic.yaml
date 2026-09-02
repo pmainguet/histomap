@@ -60,3 +60,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 25.21
 government_form: null
+detail_of: czechoslovakia
+manual_overrides:
+- consolidation

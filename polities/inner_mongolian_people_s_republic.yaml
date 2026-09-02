@@ -53,5 +53,7 @@ prominence_components:
   aggregate_penalty: 0
   total: 13.81
 manual_overrides:
+- consolidation
 - entity_type
 government_form: null
+detail_of: mongolian_people_s_republic

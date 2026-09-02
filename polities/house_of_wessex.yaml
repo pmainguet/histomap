@@ -62,3 +62,6 @@ prominence_components:
 source_urls:
 - https://en.wikipedia.org/wiki/House_of_Wessex
 government_form: null
+detail_of: kingdom_of_england
+manual_overrides:
+- consolidation

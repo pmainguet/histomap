@@ -54,3 +54,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 23.13
 government_form: null
+detail_of: vietnam
+manual_overrides:
+- consolidation
