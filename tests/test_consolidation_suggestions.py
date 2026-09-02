@@ -528,6 +528,32 @@ class ConsolidationSuggestionTests(unittest.TestCase):
             "detail_of",
         )
 
+    def test_regime_of_naming_wins_over_documented_successor(self) -> None:
+        # Same shape as the Latvian case above, but the override evidence is
+        # the regime-of-place naming pattern (already gated on its own
+        # finite-end requirement) rather than a documented P361 claim.
+        # "Commonwealth realm of Mauritius" reads as "<regime> of
+        # Mauritius", has a finite end (1992), and its dates nest exactly
+        # inside Mauritius's -- Wikidata also documents a real "followed by"
+        # relationship to Mauritius itself (P1366), which alone would force
+        # independent, but the regime-of-place match is the more specific
+        # fact here too.
+        polities = [
+            {**BASE, "id": "mauritius", "canonical_name": "Mauritius", "external_ids": {"wikidata": "Q1027"},
+             "start": 1968, "end": None, "prominence_score": 30, "geography": {"present_countries": ["MU"]}},
+            {**BASE, "id": "commonwealth_realm_of_mauritius",
+             "canonical_name": "Commonwealth realm of Mauritius",
+             "external_ids": {"wikidata": "Q14759030"}, "start": 1968, "end": 1992,
+             "prominence_score": 15, "geography": {"present_countries": ["MU"]}},
+        ]
+        relationships = [{"source": "Q14759030", "property": "P1366", "target": "Q1027"}]
+        self.assertEqual(
+            self.suggestion_for(
+                "commonwealth_realm_of_mauritius", "mauritius", polities, relationships
+            ),
+            "detail_of",
+        )
+
     def test_documented_relationship_alone_reaches_the_candidate_pool(self) -> None:
         # A documented Wikidata succession relationship should surface a
         # candidate even with ZERO name/token overlap between the two

@@ -956,14 +956,24 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 elif (
                     # A "follows/followed by" claim alone means "chronologically
                     # sequential", which usually does mean two distinct states --
-                    # but a direct P361 "part of" claim to the SAME candidate is a
-                    # more specific structural fact than succession, and wins
-                    # when both are documented (Latvian Soviet Socialist Republic
-                    # has both a P361 claim to Latvia AND a documented successor
+                    # but a more specific structural fact about the SAME pair
+                    # wins when it's also documented: either a direct P361
+                    # "part of" claim (Latvian Soviet Socialist Republic has
+                    # both a P361 claim to Latvia AND a documented successor
                     # relationship, but the P361 claim plus exact date nesting
                     # correctly describes a phase, not a distinct successor
-                    # state -- found live, 1 September 2026).
-                    (documented_successor and not reviewed_part_of_candidate and not candidate_part_of_reviewed)
+                    # state -- found live, 1 September 2026), or the regime-of-
+                    # place naming pattern with its own finite-end gate already
+                    # satisfied (Commonwealth realm of Mauritius reads as "<X>
+                    # of Mauritius", has a finite end (1992), and its dates nest
+                    # exactly inside Mauritius's -- also a phase, not a
+                    # successor state, even though Wikidata separately documents
+                    # a successor claim too -- found live, 1 September 2026).
+                    (
+                        documented_successor
+                        and not reviewed_part_of_candidate and not candidate_part_of_reviewed
+                        and not regime_of_candidate and not regime_of_reviewed
+                    )
                     or coordinate_conflict or no_overlap_alias_reuse or likely_siblings
                 ):
                     suggested_decision = "independent"
