@@ -225,6 +225,27 @@ def build_explore_tree(
     for cid in chapter_ids:
         civilizations_by_chapter[cid].sort(key=lambda e: (e["start"], e["id"]))
 
+    # A detail_of polity (see ROADMAP.md item 0 / docs/plans/2026-09-01-detail-of-merge-design.md)
+    # never gets its own independent Polities-row entry -- it's grouped under
+    # its container's own entry instead (`details`, attached below), which
+    # /explore reveals via a badge/zoom-triggered panel rather than showing
+    # by default. Built once here, independent of chapter/region bucketing,
+    # since a detail's dates/geography don't need to match its container's
+    # own placement -- it shows wherever the container itself lands.
+    details_by_target: dict[str, list[dict]] = {}
+    for polity in polities:
+        target_id = polity.get("detail_of")
+        if not target_id or not in_scope(polity):
+            continue
+        details_by_target.setdefault(target_id, []).append({
+            "id": polity["id"],
+            "canonical_name": polity.get("canonical_name", polity["id"]),
+            "start": polity.get("start"),
+            "end": polity.get("end"),
+        })
+    for details in details_by_target.values():
+        details.sort(key=lambda d: (d["start"] if d["start"] is not None else 0, d["id"]))
+
     # Pass 2: bucket polities per chapter by region, using the curated ids
     # from Pass 1.
     chapters_out = []
@@ -237,6 +258,8 @@ def build_explore_tree(
                 continue
             if polity.get("entity_type") in CIVILIZATION_ENTITY_TYPES:
                 continue  # handled by the Civilizations & Cultures lane above, not the Polities row
+            if polity.get("detail_of"):
+                continue  # attached to its container's entry below, not shown independently
             polity_id = polity["id"]
             linked_chapter_id = polity.get("linked_chapter_id")
             # A stale/mistyped id (no longer a real chapter) falls through to the
@@ -260,6 +283,8 @@ def build_explore_tree(
             region = primary_historical_region(geo)
             continent = primary_continent(geo)
             entry = _polity_entry(polity, curated=is_curated)
+            if polity_id in details_by_target:
+                entry["details"] = details_by_target[polity_id]
             by_region.setdefault(region, []).append(entry)
             by_continent.setdefault(continent, []).append(entry)
 

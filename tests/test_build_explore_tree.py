@@ -45,7 +45,8 @@ def named_period(id_: str, start: int, end: int, broader: list[str] | None = Non
 
 
 def polity(id_: str, start: int, end: int | None, continent: str, region: str | None = None,
-           tier: str = "global", present_countries: list[str] | None = None, entity_type: str | None = None) -> dict:
+           tier: str = "global", present_countries: list[str] | None = None, entity_type: str | None = None,
+           detail_of: str | None = None) -> dict:
     """Build a minimal polity fixture dict."""
     doc = {
         "id": id_, "canonical_name": id_, "start": start, "end": end,
@@ -58,6 +59,8 @@ def polity(id_: str, start: int, end: int | None, continent: str, region: str | 
     }
     if entity_type is not None:
         doc["entity_type"] = entity_type
+    if detail_of is not None:
+        doc["detail_of"] = detail_of
     return doc
 
 
@@ -129,6 +132,30 @@ class BuildExploreTreeTests(unittest.TestCase):
         tree = build_explore_tree(self.polities, self.periods, self.period_links)
         region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
         self.assertNotIn("out_of_scope", {e["id"] for e in region_bucket})
+
+    def test_detail_of_polity_excluded_from_its_own_bucket_entry(self) -> None:
+        polities = [*self.polities, polity(
+            "francoist_spain", -2500, -2400, "africa", "north_africa", detail_of="old_kingdom_egypt",
+        )]
+        tree = build_explore_tree(polities, self.periods, self.period_links)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        self.assertNotIn("francoist_spain", {e["id"] for e in region_bucket})
+
+    def test_detail_of_polity_attached_to_its_container_entry(self) -> None:
+        polities = [*self.polities, polity(
+            "francoist_spain", -2500, -2400, "africa", "north_africa", detail_of="old_kingdom_egypt",
+        )]
+        tree = build_explore_tree(polities, self.periods, self.period_links)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        container = next(e for e in region_bucket if e["id"] == "old_kingdom_egypt")
+        self.assertEqual([d["id"] for d in container["details"]], ["francoist_spain"])
+        self.assertEqual(container["details"][0]["canonical_name"], "francoist_spain")
+
+    def test_container_without_details_has_no_details_key(self) -> None:
+        tree = build_explore_tree(self.polities, self.periods, self.period_links)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        plain = next(e for e in region_bucket if e["id"] == "unlinked_egyptian")
+        self.assertNotIn("details", plain)
 
     def test_axis_segment_break_is_earliest_chapter_end(self) -> None:
         tree = build_explore_tree(self.polities, self.periods, self.period_links)
