@@ -52,3 +52,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 27.5
 government_form: null
+detail_of: comoros
+manual_overrides:
+- consolidation

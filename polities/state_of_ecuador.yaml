@@ -3,14 +3,16 @@ canonical_name: State of Ecuador
 names: {}
 external_ids:
   wikidata: Q65166389
+  wikipedia_en: null
+  seshat: []
 parent: null
 successors: []
 start: 1830
-end: null
+end: 1835
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1830: 5
+  '1830': 5
 weight_imputed: true
 icon: null
 text:
@@ -26,13 +28,14 @@ eligibility: accepted
 geography:
   continents:
   - south_america
+  primary_continent: south_america
+  historical_regions:
+  - andes
+  primary_historical_region: andes
   present_countries:
   - EC
   centroid: null
   confidence: low
-  historical_regions:
-  - andes
-  primary_historical_region: andes
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
@@ -42,11 +45,23 @@ prominence_components:
   wikidata_reach: 4.52
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
+  relationship_centrality: 0
   longevity: 5.74
   editorial_work: 0
   type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
+  date_uncertainty_penalty: -5
   aggregate_penalty: 0
   total: 5.25
 government_form: null
+entity_type_reviewed_against: []
+subdivision_parent_status: null
+timeline_role: entity
+consolidation_status: null
+consolidated_into: null
+detail_of: null
+deprecated: null
+manual_overrides:
+- end
+linked_era_id: null
+linked_chapter_id: null
+visibility_override: null

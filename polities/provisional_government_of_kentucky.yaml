@@ -47,3 +47,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 4.1
 government_form: null
+detail_of: kentucky
+manual_overrides:
+- consolidation

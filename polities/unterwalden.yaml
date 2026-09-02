@@ -53,3 +53,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 15.06
 government_form: null
+detail_of: canton_of_nidwalden
+manual_overrides:
+- consolidation

@@ -53,3 +53,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 0
 government_form: protectorate
+consolidation_status: independent
+manual_overrides:
+- consolidation

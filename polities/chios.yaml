@@ -54,3 +54,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 7.52
 government_form: city-state
+consolidation_status: independent
+manual_overrides:
+- consolidation

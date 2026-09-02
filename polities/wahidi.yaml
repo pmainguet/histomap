@@ -53,3 +53,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 15.71
 government_form: sultanate
+consolidation_status: independent
+manual_overrides:
+- consolidation

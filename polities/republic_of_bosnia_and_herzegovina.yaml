@@ -60,3 +60,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 24.66
 government_form: null
+detail_of: bosnia_and_herzegovina
+manual_overrides:
+- consolidation
