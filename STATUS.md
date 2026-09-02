@@ -15,7 +15,7 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (1,617 of 4,697 still pending, confirmed live 1 September 2026 -- jumped from 590 once documented Wikidata relationships started adding candidates to the pool directly, see below; an automated `suggested_decision` hint covers most of the active queue, spanning same_entity/phase_of/candidate_phase_of/part_of/candidate_part_of/independent); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 661 remaining type-eligibility review flags and 2,682 pending entity-type classifications; work down the consolidation queue (1,617 of 4,697 still pending, confirmed live 1 September 2026; an automated `suggested_decision` hint covers most of the active queue, now spanning same_entity/detail_of/candidate_detail_of/independent -- phase_of and part_of merged into detail_of the same day, see below); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
@@ -930,6 +930,59 @@ look compatible).
 
 Six new regression tests, one per case above. 264/264 tests pass; zero console errors live
 (caught and fixed the wrong-route verification bug in the process -- see the previous entry).
+
+### phase_of and part_of merged into one detail_of relationship (ROADMAP task 0, data-model half) — 1 September 2026
+
+Brainstormed (including a visual-companion mockup of the intended `/explore` reveal interaction),
+designed, and implemented via `docs/plans/2026-09-01-detail-of-merge-design.md`. `phase_of`
+(manufactured a synthetic Period record and retired the polity -- it vanished from the published
+dataset) and `part_of` (retyped the polity to `entity_type: subdivision` and set `parent`) were two
+structurally different mechanisms for the same underlying idea: "this entity is a detail of that
+one." Replaced both with a single `Polity.detail_of: str | None` field -- a detail entity now stays
+a live, published Polity with its own start/end/geography, exactly the shape a `part_of` subdivision
+already had, just without needing to be retyped.
+
+- **Schema**: `Polity.consolidation_status` drops `phase_of`/`part_of` from its `Literal` (keeps
+  `independent`/`same_entity`/`discarded`); new `Polity.deprecated: dict | None` preserves every old
+  field value under its original name, never deleted.
+- **Backend**: `ConsolidationDecision` collapses four decision strings into two
+  (`detail_of`/`candidate_detail_of`). `save_consolidation()`'s new `detail_of` branch just sets the
+  field -- no Period creation, no entity_type retyping, no finite-end approximation (nothing left
+  that needed one). `entity_type: subdivision` is now fully decoupled from this relationship,
+  staying `/subdivision-review`'s own concern for genuine administrative subdivisions.
+  `suggested_decision`'s naming/date/geography/documented-relationship signals are unchanged --
+  only the output strings collapse.
+- **Migration** (`pipeline/migrate_detail_of.py`, one-off): 164 `phase_of` records restored to live
+  Polities (their generated `periods/*_period.yaml` + `period_links.yaml` row snapshotted into
+  `deprecated`, then deleted from their live locations); 5 `part_of` records reverted to
+  `entity_type: polity` with `detail_of` set from the old `parent`. Caught and fixed a real gap
+  during the real run: reverting `entity_type` left stale `relationships[].kind` values
+  (`administrative_part_of`, `cultural_sequence`) both on the migrated entities' own relationships
+  and on *other* entities referencing them -- fixed by reusing `normalized_relationship_kind()`, the
+  same rule a live manual entity-type edit already applies, across every polity's relationships.
+- **Consolidation-review UI**: four buttons collapse to two (Reviewed/Candidate x
+  detail_of); AZERTY shortcut keys collapse from four 5-key rows to two.
+- **A mistake, disclosed**: an earlier migration attempt hit the relationship-kind bug above; fixing
+  it required reverting the buggy attempt's output via `git checkout -- polities/ periods/ ...`
+  before re-running cleanly. That revert also discarded 5 unrelated, uncommitted consolidation
+  decisions that predated this work and had never been committed -- unrecoverable via git (never
+  staged). Those 5 entities are simply back in the `/consolidation-review` queue as unreviewed;
+  nothing else was affected. Lesson: check `git status` for anything beyond your own pending change
+  before a broad `git checkout` on tracked-but-uncommitted paths.
+
+270/270 tests pass (net new: schema validation, the migration script including the
+relationship-renormalization case, updated consolidation-suggestion/server tests). Verified live:
+`/consolidation-review` shows the two-button layout with suggestions working; `build.py` validates
+clean (4,641 entities, up from 4,477, now that 164 formerly Period-only records are live Polities
+again); Francoist Spain spot-checked directly in `data.json` -- `detail_of: "spain"`,
+`timeline_role: "entity"`, full old Period/link snapshot under `deprecated`.
+
+**Still open** (deliberately deferred, not part of this pass): the `/explore` display half -- hiding
+a detail entity by default and revealing it via a badge/zoom-triggered enclosing panel. Today a
+detail entity renders exactly like any other polity, an ordinary independent top-level band; not the
+target end state, but not a regression either (every `phase_of` entity was previously invisible
+outright, and every `part_of` subdivision already rendered as an independent band). See the design
+doc's "Deferred: `/explore` display" section for what that follow-up design pass needs to cover.
 
 ### Regime-naming pattern generalized to any word-boundary placement, plus a timeline-axis label bug and a real data error found live — 1 September 2026
 
