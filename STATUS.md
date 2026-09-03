@@ -1398,6 +1398,23 @@ concrete Seshat geography extraction plan (`sources/seshat_polities.parquet`'s `
 already covers 45 of the remaining no-QID records via a direct `external_ids.seshat` match,
 confirmed live) plus the genuine long tail past that.
 
+### Seshat `world_region` geography extraction implemented: 826 -> 781 — 3 September 2026
+
+Implemented the plan the previous entry's ROADMAP write-up scoped out, same day. New
+`pipeline/enrich_geography_from_seshat.py`: `sources/seshat_polities.parquet`'s `world_region`
+field (10 values) had never been wired into geography before. Built a `world_region -> continent`
+table -- 9 of the 10 straightforward, `CentralEurasia` verified by inspecting every one of its
+records by name (Kushan Empire, Mongol Empire, Xiongnu, Sogdiana, Sakha/Yakutia, ...) rather than
+guessed from the label, confirming it's exclusively Central Asian/Mongolian/Siberian steppe
+entities and never European, so it maps to `asia` alongside the other four Asian world regions.
+Joins on `external_ids.seshat` matching `seshat_polities.parquet`'s `seshat_id` directly, with
+`sources/seshat_crosswalk.parquet` (`seshat_id -> polity_id`, built for the Phase 2 Seshat
+reconciliation overlay) as a fallback for a record with no `external_ids.seshat` of its own --
+in practice every one of this run's matches already carried its own seshat id, so the fallback
+added nothing new this time but stays in place for records that only ever get linked that way.
+8 new tests (`test_enrich_geography_from_seshat.py`), 320/320 total. Applied: filled 45 records
+(matching the write-up's estimate exactly). No-continent count: 826 -> 781.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which

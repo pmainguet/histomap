@@ -5,7 +5,10 @@ external_ids:
   - EgNaqa2
 parent: null
 successors: []
-geography: {}
+geography:
+  continents:
+  - africa
+  confidence: low
 start: -3550
 end: -3301
 start_confidence: low

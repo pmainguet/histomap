@@ -5,7 +5,10 @@ external_ids:
   - KhAngkL
 parent: null
 successors: []
-geography: {}
+geography:
+  continents:
+  - asia
+  confidence: low
 start: 1220
 end: 1431
 start_confidence: low

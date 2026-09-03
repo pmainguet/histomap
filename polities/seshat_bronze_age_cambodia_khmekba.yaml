@@ -5,7 +5,10 @@ external_ids:
   - KhMekBA
 parent: null
 successors: []
-geography: {}
+geography:
+  continents:
+  - asia
+  confidence: low
 start: -1200
 end: -501
 start_confidence: low

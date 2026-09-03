@@ -5,7 +5,10 @@ external_ids:
   - JpJomo3
 parent: null
 successors: []
-geography: {}
+geography:
+  continents:
+  - asia
+  confidence: low
 start: -5300
 end: -3501
 start_confidence: low

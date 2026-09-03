@@ -29,3 +29,7 @@ entity_type_source_qids: []
 relationships: []
 successors: []
 government_form: null
+geography:
+  continents:
+  - asia
+  confidence: low

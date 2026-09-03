@@ -5,7 +5,10 @@ external_ids:
   - MxAlb2*
 parent: null
 successors: []
-geography: {}
+geography:
+  continents:
+  - north_america
+  confidence: low
 start: -100
 end: 199
 start_confidence: low
