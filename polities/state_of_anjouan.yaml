@@ -31,6 +31,9 @@ geography:
   - KM
   centroid: null
   confidence: low
+  historical_regions:
+  - east_africa
+  primary_historical_region: east_africa
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []

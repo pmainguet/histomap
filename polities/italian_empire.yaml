@@ -28,7 +28,8 @@ prominence_score: 37.85
 visibility_tier: regional
 eligibility: accepted
 geography:
-  continents: []
+  continents:
+  - africa
   present_countries:
   - ER
   centroid:

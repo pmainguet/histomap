@@ -33,6 +33,9 @@ geography:
     lat: -5.45
     lon: 71.766666666
   confidence: medium
+  historical_regions:
+  - east_africa
+  primary_historical_region: east_africa
 entity_type: micronation
 entity_type_confidence: high
 entity_type_source_qids:

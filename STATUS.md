@@ -1324,6 +1324,80 @@ match was the stopword); Electorate of Hanover still reaches the queue with its 
 tests pass. Reverted the usual `create_app()`-against-real-root normalization side effects on 11
 unrelated polity YAML files before committing.
 
+### ROADMAP item 0 (geography gaps), four passes: 917/73 -> 826/2 — 3 September 2026
+
+Researched the problem first (a dedicated investigation pass) before writing any code: every
+signal `pipeline/enrich_geography.py` already tries (P17 chain, direct P30, centroid) is
+genuinely exhausted for the no-continent gap -- confirmed empty in the local Wikidata cache, not
+a fetch gap -- but real, unused leverage was sitting in data already fetched for other purposes.
+Four scoped passes, in order:
+
+1. **`backfill_continents_from_present_countries()`** (new function,
+   `pipeline/enrich_geography.py`) -- a real, self-contained bug: 21 records (Byzantium, Aceh
+   Sultanate, the Norwegian petty kingdoms, ...) already had `present_countries` and a real
+   `historical_region` but empty `continents`, because `resolve_from_centroid()`'s continent half
+   only ever counts when it's already among the record's own claimed continents (impossible when
+   that list starts empty) and nothing else ever revisits an already-populated
+   `present_countries`. Fixed 16 (2 more, `AU`/`JM`, skipped -- present in
+   `wikidata_country_metadata.json` but with genuinely empty continents, an upstream Wikidata
+   data-modeling gap not fixed here).
+2. **Grew `pipeline/historical_regions.py`'s starter table** (VE -> andes; MG/KM/SC/MU/IO ->
+   east_africa; YU -> balkans; TV/CK/FM/KI/MH/NR/NU/PW -> oceania_pacific; AW/DM/GD/GY/KN/LC/VC/SR
+   -> caribbean) plus a new one-off `pipeline/fix_ambiguous_country_codes.py` for the handful that
+   can't be a blanket table entry: `SU` (the Soviet Union's own historic code) genuinely spans many
+   regions depending on which constituent republic a record represents, so the 4 records left with
+   ONLY that code got their real modern equivalent instead (Khorezm SSR -> Uzbekistan, Moldavian
+   SSR -> Moldova, the Armenian/Georgian SSRs -> their own countries); `second_czechoslovak_republic`
+   was the one record left with a bare, doubly-overloaded `CS` (meant Czechoslovakia 1993-2003,
+   reused for Serbia and Montenegro 2003-2006) -> corrected to CZ/SK. Also fixed a real data bug
+   found while investigating this: `kingdom_of_tonga` was mistagged `TV` (Tuvalu) instead of `TO`
+   (Tonga). Deliberately left `AQ` (Antarctica) out of the table -- its only holders are 21st-century
+   novelty micronation claims, not real historical polities. Country-not-in-region-table count:
+   73 -> 2 (the 2 are exactly those Antarctica claims).
+3. **New signal: `pipeline/infer_continent_from_relationships.py`.** `sources/wikidata_relationships.json`
+   already carries P361/P527/P155/P156/P1365/P1366 links (fetched for consolidation-review
+   candidate pooling, never consulted for geography) -- when a gap record's relationship
+   neighbors that DO have a known continent all agree on exactly one, that's real, if indirect,
+   evidence. Spot-checked agreement rate against already-resolved records before trusting it:
+   P361/P527 (real containment) agree ~92-97%, P155/P156/P1365/P1366 (succession) ~98% -- strong
+   overall, but a single bad link is a real, demonstrated failure mode: County of Edessa was
+   linked <-P1365/P1366-> the Fatimid Caliphate, a spurious Wikidata claim (Edessa was never the
+   Fatimids' successor), which would have wrongly tagged a Crusader state in Anatolia as African.
+   Added `is_safe()`: a proposal resting on a single succession-only link is excluded from the
+   default `--apply` (`--include-risky` overrides); 187 total proposals, 56 passed the bar and
+   were spot-checked by hand before applying (all geographically correct on inspection -- Korean/
+   Chinese historical states -> asia, German duchies -> europe, the Alawi Sultanate -> africa,
+   ...). All 56 applied.
+4. **Two name clusters, `pipeline/fix_taifa_and_saxe_geography.py`.** Every remaining "Taifa of *"
+   record (11th-century Iberian petty kingdoms) and "Saxe-*" record (Ernestine Saxon duchies) --
+   neither matches `seed_present_countries_from_name.py`'s demonym table ("taifa"/"saxe" aren't
+   country words) and none had any other signal. Verified each by hand (Taifa of Tavira is the one
+   Portuguese taifa in an otherwise all-Spanish cluster). 19 fixed.
+
+No-continent count: 917 -> 826 (net, after the above -- some records fixed by more than one pass
+overlap in the accounting, e.g. a taifa that also needed present_countries did not double-count).
+Along the way, confirmed a known, already-documented, out-of-scope issue (STATUS.md's "Bug B") is
+real and widespread: `wikidata_country_metadata.json` unions continents across every Wikidata QID
+sharing an ISO2 code, so e.g. `ES` legitimately returns `[africa, europe]` (Spain's own Wikidata
+entity carries both, via the Canary Islands/Ceuta/Melilla) even for an 11th-century Iberian
+kingdom that never went near Africa -- FR/NL/US show the same pattern, more severely (up to 5
+continents for NL, because "Kingdom of the Netherlands" and plain "Netherlands" are different
+QIDs sharing one ISO2, unioned together). This is NOT new or introduced by this session's work --
+hundreds of already-existing records (every US state, `france`, `spain`, ...) already carry this
+same contamination -- and fixing it properly needs its own pass (as STATUS.md already said,
+"not implemented, needs its own careful pass"); this session's new writes are consistent with the
+existing (flawed) convention rather than silently diverging from it.
+
+STATUS.md's live-verification discipline held throughout: every write function got a matching
+unit test (`test_enrich_geography.py`, `test_fix_ambiguous_country_codes.py`,
+`test_infer_continent_from_relationships.py`, `test_fix_taifa_and_saxe_geography.py`) using
+`unittest.mock.patch` against a temp directory rather than the real dataset, and every real-dataset
+application was measured before/after via a direct query rather than trusted blind. 312/312 tests
+pass (up from 289 -- 23 new). ROADMAP.md's item 0 rewritten to describe only what's left: a scoped,
+concrete Seshat geography extraction plan (`sources/seshat_polities.parquet`'s `world_region` field
+already covers 45 of the remaining no-QID records via a direct `external_ids.seshat` match,
+confirmed live) plus the genuine long tail past that.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which

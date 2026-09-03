@@ -26,7 +26,9 @@ prominence_score: 22.11
 visibility_tier: detailed
 eligibility: accepted
 geography:
-  continents: []
+  continents:
+  - asia
+  - europe
   present_countries:
   - CY
   centroid:

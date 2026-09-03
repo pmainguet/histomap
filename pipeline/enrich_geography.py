@@ -363,6 +363,51 @@ def backfill_geography_from_centroid(offline: bool = False) -> dict[str, int]:
     return {"primary_continent": filled_continent, "present_countries": filled_country}
 
 
+def backfill_continents_from_present_countries() -> int:
+    """Fourth, additive pass: for any unlocked polity that already has
+    `present_countries` but still has empty `continents`, fill it from the
+    same reverse ISO2 -> continents index seed_present_countries_from_name.py
+    builds for exactly this purpose. `resolve_from_centroid()`'s continent
+    half only ever counts when it's already among the record's own claimed
+    continents (`:260`, never a made-up pick) -- so a record whose
+    `present_countries` came from a centroid resolution, from
+    seed_present_countries_from_name.py, or from any other pass, can be left
+    with a country and (via derive_historical_regions.py) a
+    historical_region, but genuinely empty `continents` forever, since
+    nothing else in this module ever revisits an already-populated
+    `present_countries`. Found live, 3 September 2026: 21 such records
+    (Byzantium, Aceh Sultanate, the Norwegian petty kingdoms, ...). A country
+    absent from the reverse index (e.g. `AU`/`JM` -- their own
+    `wikidata_country_metadata.json` cache entry exists but with empty
+    continents, an upstream Wikidata data-modeling gap, not fixed here) is
+    silently skipped rather than guessed.
+
+    Imports seed_present_countries_from_name locally (not at module level)
+    -- that module imports field_locked from this one, so a top-level
+    import here would be circular.
+    """
+    from pipeline.seed_present_countries_from_name import load_iso2_to_continents
+
+    iso2_to_continents = load_iso2_to_continents()
+    filled = 0
+    for path in POLITIES_DIR.glob("*.yaml"):
+        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if field_locked(document, "geography"):
+            continue
+        geography = document.get("geography") or {}
+        countries = geography.get("present_countries") or []
+        if not countries or geography.get("continents"):
+            continue
+        continents = sorted({c for code in countries for c in iso2_to_continents.get(code, [])})
+        if not continents:
+            continue
+        geography["continents"] = continents
+        document["geography"] = geography
+        path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
+        filled += 1
+    return filled
+
+
 def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
     boundaries = load_boundaries(offline, high_resolution=only_missing)
     frame = pd.read_parquet(PARQUET_PATH, columns=["qid", "coords", "country_qid"])
@@ -454,6 +499,7 @@ def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
     centroid_backfill = backfill_geography_from_centroid(offline)
     counts["primary_continent_from_centroid"] = centroid_backfill["primary_continent"]
     counts["present_countries_from_centroid"] = centroid_backfill["present_countries"]
+    counts["continents_from_present_countries"] = backfill_continents_from_present_countries()
 
     lines = ["# Geography coverage", "", "## Overall", ""]
     lines.extend(f"- {key.replace('_', ' ').title()}: {value:,}" for key, value in counts.items())

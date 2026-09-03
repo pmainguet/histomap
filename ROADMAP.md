@@ -9,13 +9,46 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **Close the residual geography gaps** (see STATUS.md for how they got here): **917** active
-   polities still have no continent at all (no Wikidata QID, or a QID with neither a usable P17
-   chain nor a direct P30 claim nor a centroid nor an unambiguous name match -- every signal built
-   so far has been tried and come up empty; needs a different approach, if one exists); **73** have
-   `present_countries` but their country isn't yet in `pipeline/historical_regions.py`'s
-   ~180-country starter table (cheap and safe to grow incrementally).
-0 bis. remove in the review section the Classify entities and Links subdivisions workflow/code/etc
+0. **Close the residual geography gaps.** Four passes done 3 September 2026 (see STATUS.md):
+   country-code table growth, a centroid-resolved-country-but-empty-continents bug fix, a new
+   Wikidata-relationship-neighbor continent inference, and two name-cluster fixes (Taifa/Saxe).
+   No-continent count: 917 → 826; country-not-in-region-table count: 73 → 2 (the 2 remaining are
+   deliberately unclassified 21st-century Antarctica-claim micronations, not real historical
+   polities). **What's left:**
+   - **A Seshat geography extraction** (see the write-up below) -- the next concrete, already-
+     scoped lever, expected to close on the order of 45 more records outright.
+   - After that, a genuine long tail of low-count, obscure-or-ambiguous polities with no
+     Wikidata geography of any kind and no Seshat coverage either -- ordinary manual review,
+     same as any other queue, unless a new signal turns up.
+
+   **Seshat geography extraction -- what should be done:** `sources/seshat_polities.parquet`
+   already carries a `world_region` field (10 values: Africa, CentralEurasia, EastAsia, Europe,
+   NorthAmerica, Oceania-Australia, SouthAmerica, SouthAsia, SoutheastAsia, SouthwestAsia) and a
+   finer `ngas` (Natural Geographic Area) list per polity -- neither is wired into geography today.
+   Confirmed live, 3 September 2026: 45 of the 110 no-Wikidata-QID gap records already carry an
+   `external_ids.seshat` code that matches this parquet's `seshat_id` directly (no fuzzy matching
+   needed for those). Plan:
+   1. Add a small `world_region -> continent` table (10 entries -- straightforward for 9 of them;
+      `CentralEurasia` needs an editorial call, since Seshat's steppe/Central-Asian world region
+      doesn't map cleanly onto a single continent bucket the way the others do).
+   2. Join it onto any polity whose `external_ids.seshat` matches a `seshat_id` in the parquet,
+      same "only fill what's missing, respect `manual_overrides`" convention as every other pass
+      in `pipeline/enrich_geography.py`. Closes ~45 records outright.
+   3. `sources/seshat_crosswalk.parquet` (`seshat_id -> polity_id`, built for the Phase 2 Seshat
+      reconciliation overlay) covers a handful more (5, confirmed live) that lack an
+      `external_ids.seshat` entry of their own but are still linked via that crosswalk -- join it
+      as a fallback.
+   4. The remaining ~65 no-QID records have no Seshat link at all yet -- closing those would need
+      a name-match pass against `seshat_polities.parquet`'s `canonical_name`/`long_name` (the same
+      "dry-run, review every match by hand" discipline `seed_present_countries_from_name.py` and
+      `infer_continent_from_relationships.py` used, given the real false-positive risk that
+      discipline has already caught twice this session).
+   5. `ngas` could, in principle, also feed a country/historical_region-level signal (finer than
+      `world_region`), but that needs its own, larger curated NGA -> country/region table (Seshat
+      has several dozen NGAs, not 10) -- a stretch goal past the continent-closing win above, not
+      part of this immediate plan.
+0 bis. In consolidation review, entity that only matches on "Mandate", "Government", "Canton", etc) and have non country names or adjectives (or other derivatives), unless they are very close geographically should not be considered as possible matches. This needs to be strenghthen, i gave you some examples in the conversation directly
+0 ter. remove in the review section the Classify entities and Links subdivisions workflow/code/etc
 1. **Work the polity → period reclassification queue (73 pending, confirmed live 1 September 2026,
    `/consolidation-review`'s "period"/"both" decision).** Full scope-and-seed pass done (see
    STATUS.md); what's left is ordinary manual review.
