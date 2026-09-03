@@ -9,17 +9,7 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. ~~**`/explore` display half of the phase_of/part_of merge**~~ — done, 3 September 2026 (see
-   STATUS.md). A `detail_of` entity is hidden from its own top-level band by default; its container
-   gets a leading toggle compartment ("+ N", flipping to "- N" when open) that reveals a panel of
-   date-positioned detail lines beneath it (each on its own line, sized/placed against the same time
-   scale as every other band); the deep-link ("Edit in /explore" from `/consolidation-review`) and
-   "Zoom to this" both auto-open it. Continent-mode labels also gained an inline date-range suffix
-   (parent and child alike) and stopped repeating a "(Country)" suffix that just echoed the entity's
-   own name.
-0 bis. ~~On Explore, in side panel should be possible to set a polity as detail of~~ — done,
-   3 September 2026 (see STATUS.md).
-0 ter. **Close the residual geography gaps** (see STATUS.md for how they got here): **917** active
+0. **Close the residual geography gaps** (see STATUS.md for how they got here): **917** active
    polities still have no continent at all (no Wikidata QID, or a QID with neither a usable P17
    chain nor a direct P30 claim nor a centroid nor an unambiguous name match -- every signal built
    so far has been tried and come up empty; needs a different approach, if one exists); **73** have
