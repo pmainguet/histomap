@@ -17,7 +17,8 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    "Zoom to this" both auto-open it. Continent-mode labels also gained an inline date-range suffix
    (parent and child alike) and stopped repeating a "(Country)" suffix that just echoed the entity's
    own name.
-0 bis. On Explore, in side panel should be possible to set a polity as detail of
+0 bis. ~~On Explore, in side panel should be possible to set a polity as detail of~~ — done,
+   3 September 2026 (see STATUS.md).
 0 ter. **Close the residual geography gaps** (see STATUS.md for how they got here): **917** active
    polities still have no continent at all (no Wikidata QID, or a QID with neither a usable P17
    chain nor a direct P30 claim nor a centroid nor an unambiguous name match -- every signal built

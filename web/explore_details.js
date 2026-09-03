@@ -122,12 +122,106 @@ function wireGeographyEditor(polity, ctx, onSaved, setStatus) {
   });
 }
 
+function detailOfCandidateButton(candidate) {
+  return `<button type="button" class="type-choice detail-of-choice" data-detail-of-id="${escapeHtml(candidate.polity_id)}">
+    <strong>${escapeHtml(candidate.canonical_name)}</strong>
+    <span>Histomap ID: ${escapeHtml(candidate.polity_id)} · ${formatYear(candidate.canonical_start)}–${formatYear(candidate.canonical_end)}</span>
+  </button>`;
+}
+
+// Mirrors subdivision_review.js's searchParents()/confirmParent() almost
+// exactly, PATCHing `detail_of` via the same generic /fields endpoint the
+// raw editor above already uses (it merges rather than replaces, so a bare
+// `{ detail_of: ... }` body is enough). Only rendered (see
+// detailOfEditorHtml) when the record has no `detail_of` yet -- once set,
+// the panel shows a plain "Clear" button instead, no search box.
+function wireDetailOfEditor(polity, ctx, onSaved, setStatus) {
+  const editor = explorePanel.querySelector(".detail-of-edit");
+  if (!editor) return;
+  const saveDetailOf = async (targetId) => {
+    try {
+      const result = await postJson(`/api/polities/${encodeURIComponent(polity.id)}/fields`, "PATCH", { detail_of: targetId });
+      ctx.politiesById.set(polity.id, result.document);
+      onSaved(result.document);
+      ctx.onEdit?.();
+      setStatus(REBUILD_NOTE, false);
+    } catch (error) {
+      setStatus(error.message, true);
+    }
+  };
+  const clearButton = editor.querySelector(".detail-of-clear");
+  if (clearButton) {
+    clearButton.addEventListener("click", () => saveDetailOf(null));
+    return;
+  }
+  const input = editor.querySelector("#detail-of-search");
+  const resultsEl = editor.querySelector(".detail-of-search-results");
+  const runSearch = async () => {
+    const query = input.value.trim();
+    if (query.length < 2) {
+      resultsEl.innerHTML = "<p>Enter at least two characters.</p>";
+      return;
+    }
+    const response = await fetch(`/api/polities/search?q=${encodeURIComponent(query)}&limit=10`);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    const candidates = payload.items.filter((item) => item.polity_id !== polity.id);
+    resultsEl.innerHTML = candidates.length
+      ? candidates.map(detailOfCandidateButton).join("")
+      : "<p>No matches found.</p>";
+    resultsEl.querySelectorAll(".detail-of-choice").forEach((button) => {
+      button.addEventListener("click", () => {
+        const targetId = button.dataset.detailOfId;
+        // A chained detail_of (A detail_of B detail_of C) isn't supported --
+        // build_explore_tree.py's Pass 2 excludes any polity carrying
+        // `detail_of` from its own top-level entry, so B would vanish
+        // entirely (no top-level band to attach A's chip under) rather than
+        // nest two levels deep. Point at the top-level container instead.
+        const target = ctx.politiesById.get(targetId);
+        if (target?.detail_of) {
+          setStatus(`"${target.canonical_name}" is itself a detail of another entity -- pick its own top-level container instead.`, true);
+          return;
+        }
+        saveDetailOf(targetId);
+      });
+    });
+  };
+  editor.querySelector(".detail-of-search-btn").addEventListener("click", () => runSearch().catch((error) => setStatus(error.message, true)));
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      runSearch().catch((error) => setStatus(error.message, true));
+    }
+  });
+}
+
 // Shared by both renderPolityDetails and renderPeriodDetails: the
 // "Convert to..." + "Edit fields" block, and the wiring for both. `kind`
 // is "polity" or "period"; `record` is the current cached document;
 // `onSaved(updatedRecord)` re-renders the panel with fresh data after any
 // successful save, so the displayed details never go stale.
-function editControlsHtml(kind, record, geographyOptions) {
+// ROADMAP.md "0 bis" -- the /consolidation-review "detail_of" decision and
+// the raw edit-fields textarea were previously the only ways to set this
+// field; this gives it a friendly search-and-pick control right in
+// /explore's own side panel, mirroring subdivision_review.js's identical
+// "find another polity" parent-picker (same /api/polities/search endpoint,
+// same .parent-search/.type-choice/.type-choice-list markup and CSS).
+function detailOfEditorHtml(record, politiesById) {
+  const current = record.detail_of ? polityRefButton(politiesById, record.detail_of) : null;
+  return `<details class="detail-of-edit">
+    <summary>Set as detail of</summary>
+    ${current
+      ? `<p>Currently a detail of ${current}. <button class="detail-of-clear" type="button">Clear</button></p>`
+      : `<p>Not currently marked as a detail of another entity.</p>
+         <div class="parent-search">
+           <label for="detail-of-search">Find the container entity</label>
+           <div><input id="detail-of-search" type="search" placeholder="Name or Histomap ID"><button class="detail-of-search-btn" type="button">Search</button></div>
+           <div class="detail-of-search-results type-choice-list"></div>
+         </div>`}
+  </details>`;
+}
+
+function editControlsHtml(kind, record, geographyOptions, politiesById) {
   const convertBlock = kind === "polity"
     ? `<div class="detail-edit-row">
          <select class="detail-entity-type-select" name="entity-type" aria-label="Entity type">${optionsHtml(ENTITY_TYPE_OPTIONS, record.entity_type || "polity")}</select>
@@ -136,6 +230,7 @@ function editControlsHtml(kind, record, geographyOptions) {
        <div class="detail-edit-row">
          <button class="detail-convert-to-period" type="button">Convert to period</button>
        </div>
+       ${detailOfEditorHtml(record, politiesById)}
        ${geographyEditorHtml(record, geographyOptions)}`
     : `<div class="detail-edit-row">
          <select class="detail-entity-type-select" name="entity-type" aria-label="Entity type">${optionsHtml(ENTITY_TYPE_OPTIONS, "polity")}</select>
@@ -173,6 +268,7 @@ function wireEditControls(kind, record, ctx, onSaved) {
     status.classList.toggle("is-error", Boolean(isError));
   };
   const idPath = kind === "polity" ? `/api/polities/${encodeURIComponent(record.id)}` : `/api/periods/${encodeURIComponent(record.id)}`;
+  if (kind === "polity") wireDetailOfEditor(record, ctx, onSaved, setStatus);
   if (kind === "polity") wireGeographyEditor(record, ctx, onSaved, setStatus);
 
   if (kind === "polity") {
@@ -392,7 +488,7 @@ function renderPolityDetails(polity, ctx) {
       ${relevantPeriods.length ? `<dt>Historical periods</dt><dd class="detail-links">${relevantPeriods.map((link) => `${periodRefButton(periodsById, link.period_id)} <small>${escapeHtml(link.evidence)}, ${escapeHtml(link.confidence)}</small>`).join("<br>")}</dd>` : ""}
       ${externalLinks.length ? `<dt>External pages</dt><dd class="detail-links">${externalLinks.join("<br>")}</dd>` : ""}
     </dl>
-    ${editControlsHtml("polity", polity, ctx.geographyOptions)}`;
+    ${editControlsHtml("polity", polity, ctx.geographyOptions, politiesById)}`;
 
   wireExplorePanel(ctx, polity.start, polity.end ?? ctx.domainEnd, polity.detail_of || polity.id);
   wireEditControls("polity", polity, ctx, (updated) => renderPolityDetails(updated, ctx));

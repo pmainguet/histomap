@@ -1251,7 +1251,8 @@ approved design (see `docs/plans/2026-09-01-detail-of-merge-design.md`'s "Deferr
 display" section) was a small count badge plus a single row of evenly-divided, non-date-positioned
 chips. Direct feedback against a live mockup (published as a Claude.ai artifact, iterated four times)
 changed this twice: the badge became a full-height toggle compartment fused to the band's own left
-edge ("+ N detail(s)", flipping to "− N detail(s)" when open) instead of a small floating circle —
+edge ("+ N", flipping to "− N" when open, full "Show/Collapse details" wording moved to the
+tooltip after a later wording-simplification pass) instead of a small floating circle —
 sized off a fixed width per digit-count band so it never jitters between rows; and the detail panel
 became one date-positioned line per detail (positioned/sized against the same `scale` as every other
 band, so it lands under its real years) instead of evenly-divided chips, since chips carried no
@@ -1280,9 +1281,23 @@ out of view when zoomed past its own range, same as any other band), and that cl
 vs. the name segment route to the right target. 286/286 tests pass (no Python changed this session;
 re-run for safety).
 
-**Not done, tracked separately:** editing a polity's `detail_of` from the `/explore` side panel
-itself (ROADMAP item "0 bis" — currently only possible via `/consolidation-review` or the raw-JSON
-edit-fields panel).
+### ROADMAP task "0 bis" complete: set a polity's `detail_of` from `/explore`'s own side panel — 3 September 2026
+
+Immediately followed task 0 above. `/explore`'s side panel gained a "Set as detail of" control in a
+polity's "Edit" section, mirroring `subdivision_review.js`'s existing "find another polity" parent-
+picker almost verbatim (same `/api/polities/search` endpoint, same `.parent-search`/`.type-choice`/
+`.type-choice-list` markup and CSS -- no new CSS needed). When `detail_of` is already set: a plain
+"Currently a detail of X / Clear" line; otherwise a search box whose results are clickable buttons.
+Both write through the existing generic `PATCH /api/polities/{id}/fields` endpoint (it merges rather
+than replaces, so a bare `{ detail_of: ... }`/`{ detail_of: null }` body is enough -- no new backend
+endpoint). Added a chain-prevention guard: `build_explore_tree.py`'s Pass 2 excludes any polity
+carrying `detail_of` from its own top-level entry, so a two-level chain (A detail_of B detail_of C)
+would make B vanish entirely rather than nest two deep -- picking a target that itself already has
+`detail_of` set is refused with an inline message pointing at its own top-level container instead.
+Verified live via chrome-devtools (State of Ecuador): set, clear, and the chain-prevention refusal
+all behaved correctly; reverted the resulting `polities/state_of_ecuador.yaml` test residue (a stray
+`manual_overrides` entry from set-then-clear) before committing, same discipline as the rebuild
+side-effect caught and reverted for task 0 above. 286/286 tests pass (no Python changed).
 
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
