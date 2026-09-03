@@ -64,22 +64,21 @@ function bandRect(svg, { x, y, width, height, cls, title, label, onZoom, fill })
 
 // The detail-of toggle: a full-height compartment fused to the band's own
 // left edge (not a floating badge over it) -- its own text carries the
-// count ("+ N detail(s)", flipping to "− N detail(s)" once open) so it
-// reads even next to a long entity name, and the leading +/− still marks
-// it as expand/collapse. Its own click target, entirely separate from the
-// name segment's onZoom rect beside it (see drawItemBand), so toggling never
-// also opens the side detail panel.
+// count ("+ N", flipping to "− N" once open) so it reads even next to a
+// long entity name, and the leading +/− still marks it as expand/collapse
+// (the tooltip spells out "Show/Collapse details" in full). Its own click
+// target, entirely separate from the name segment's onZoom rect beside it
+// (see drawItemBand), so toggling never also opens the side detail panel.
 function toggleLabelText(count, expanded) {
-  return `${expanded ? "−" : "+"} ${count} detail${count === 1 ? "" : "s"}`;
+  return `${expanded ? "−" : "+"} ${count}`;
 }
 // Fixed width per digit-count band (1-9, 10-99, ...) rather than sized to
-// each row's own exact text -- "+ 1 detail" and "+ 3 details" differ by a
-// character but must still read as the same-shape compartment; only the
-// digit count changing should ever change the width. Sized off the longest
-// possible label for that digit count (all-9s, plural).
+// each row's own exact text -- only the digit count changing should ever
+// change the compartment's width. Sized off the longest possible label for
+// that digit count (all-9s).
 function toggleWidth(count) {
   const digits = String(count).length;
-  const sample = `− ${"9".repeat(digits)} details`;
+  const sample = `− ${"9".repeat(digits)}`;
   return sample.length * ESTIMATED_CHAR_WIDTH + TOGGLE_PADDING;
 }
 function drawDetailToggle(svg, { x, y, width, height, count, expanded, onToggle }) {
