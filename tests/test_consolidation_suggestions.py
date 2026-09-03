@@ -577,6 +577,65 @@ class ConsolidationSuggestionTests(unittest.TestCase):
             "first_republic_of_south_korea", [c["id"] for c in row["candidates"]]
         )
 
+    def not_a_candidate(self, reviewed_id: str, other_id: str, polities: list[dict]) -> None:
+        """Asserts `other_id` never shows up as a candidate for
+        `reviewed_id` -- covers both outcomes an empty candidate pool can
+        produce: the row is absent from the queue entirely (zero candidates
+        at all, see `if candidates: queue.append(...)`), or the row exists
+        with `other_id` simply not among its candidates."""
+        client = build_app(self.root, polities)
+        queue = client.get("/api/consolidation-reviews", params={"limit": 100}).json()["items"]
+        row = next((item for item in queue if item["id"] == reviewed_id), None)
+        if row is None:
+            return
+        self.assertNotIn(other_id, [c["id"] for c in row["candidates"]])
+
+    def test_shared_noble_title_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 3 September 2026: "Margraviate of Brandenburg-Kustrin"
+        # and "Margraviate of Moravia" share nothing but the generic
+        # noble-title word "margraviate" -- no wikidata match, no real name
+        # overlap, no documented relationship. Two unrelated German/Czech
+        # polities that happen to share a title, not evidence of any kind.
+        polities = [
+            {**BASE, "id": "margraviate_of_brandenburg_kustrin",
+             "canonical_name": "Margraviate of Brandenburg-Kustrin",
+             "external_ids": {"wikidata": "Q1900717"}, "start": 1535, "end": 1571,
+             "prominence_score": 20, "geography": {"present_countries": ["DE"]}},
+            {**BASE, "id": "margraviate_of_moravia", "canonical_name": "Margraviate of Moravia",
+             "external_ids": {"wikidata": "Q2670751"}, "start": 1182, "end": 1918,
+             "prominence_score": 20, "geography": {"present_countries": ["CZ"]}},
+        ]
+        self.not_a_candidate("margraviate_of_brandenburg_kustrin", "margraviate_of_moravia", polities)
+
+    def test_shared_parenthetical_disambiguator_alone_is_not_a_candidate(self) -> None:
+        # Found live, 3 September 2026: "Butuan (historical polity)" and
+        # "Tondo (historical polity)" share only "historical"/"polity" --
+        # the generic disambiguator wiki editors append to distinguish a
+        # place from other uses of the same name, not a place name itself.
+        polities = [
+            {**BASE, "id": "butuan_historical_polity", "canonical_name": "Butuan (historical polity)",
+             "external_ids": {"wikidata": "Q4401303"}, "start": 1001, "end": 1521,
+             "prominence_score": 20, "geography": {"present_countries": ["PH"]}},
+            {**BASE, "id": "tondo_historical_polity", "canonical_name": "Tondo (historical polity)",
+             "external_ids": {"wikidata": "Q1642472"}, "start": 900, "end": 1589,
+             "prominence_score": 20, "geography": {"present_countries": ["PH"]}},
+        ]
+        self.not_a_candidate("butuan_historical_polity", "tondo_historical_polity", polities)
+
+    def test_shared_electorate_title_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 3 September 2026: "Electorate of Hanover" and
+        # "Electorate of Mainz" share only the generic title "electorate" --
+        # two different Holy Roman Empire states, not related entities.
+        polities = [
+            {**BASE, "id": "electorate_of_hanover", "canonical_name": "Electorate of Hanover",
+             "external_ids": {"wikidata": "Q706018"}, "start": 1692, "end": 1814,
+             "prominence_score": 20, "geography": {"present_countries": ["DE"]}},
+            {**BASE, "id": "electorate_of_mainz", "canonical_name": "Electorate of Mainz",
+             "external_ids": {"wikidata": "Q284667"}, "start": 780, "end": 1803,
+             "prominence_score": 20, "geography": {"present_countries": ["DE"]}},
+        ]
+        self.not_a_candidate("electorate_of_hanover", "electorate_of_mainz", polities)
+
 
 if __name__ == "__main__":
     unittest.main()

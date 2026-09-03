@@ -374,6 +374,28 @@ def create_app(root: Path = ROOT) -> FastAPI:
         "state", "sultanate", "united", "western", "eastern",
         "califat", "comte", "duche", "dynastie", "etat", "gouvernement", "publique",
         "royaume", "sultanat",
+        # Generic government-form/noble-title nouns and disambiguator words --
+        # the same category as duchy/kingdom/empire/sultanate above, just an
+        # incomplete enumeration until three real false-positive candidate
+        # pairs were found live, 3 September 2026: "Margraviate of
+        # Brandenburg-Kustrin" vs "Margraviate of Moravia" (shared only
+        # "margraviate"), "Butuan (historical polity)" vs "Tondo (historical
+        # polity)" (shared only "historical"/"polity", from the parenthetical
+        # disambiguator wiki editors add to distinguish same-named places, not
+        # a place name itself), and "Electorate of Hanover" vs "Electorate of
+        # Mainz" (shared only "electorate"). Grepping canonical_name across
+        # the dataset for the same class of word found this fuller set, all
+        # verified as genuinely generic (never distinguishing) via a sample of
+        # their real uses (e.g. "Dominion of Ceylon", "Colony of Jamaica",
+        # "Commonwealth of England", "Governorate of Montenegro", "Regency of
+        # Algiers", "Palatinate-Simmern" vs "Palatinate-Neuburg" -- distinct
+        # entities that would otherwise token-match on "palatinate" alone).
+        "archduchy", "autonomy", "banate", "chiefdom", "colony", "commonwealth",
+        "despotate", "dominion", "electorate", "emirate", "exarchate",
+        "governorate", "historical", "imamate", "khanate", "landgraviate",
+        "mandate", "margravate", "margraviate", "marquisate", "oligarchy",
+        "palatinate", "polity", "protectorate", "regency", "satrapy",
+        "shogunate", "tetrarchy", "tsardom", "viscounty",
     }
 
     def consolidation_tokens(document: dict) -> set[str]:

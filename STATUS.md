@@ -1299,6 +1299,31 @@ all behaved correctly; reverted the resulting `polities/state_of_ecuador.yaml` t
 `manual_overrides` entry from set-then-clear) before committing, same discipline as the rebuild
 side-effect caught and reverted for task 0 above. 286/286 tests pass (no Python changed).
 
+### `consolidation_stopwords` extended: generic noble-title/government-form words caused false candidates — 3 September 2026
+
+Three real false positives spotted live in `/consolidation-review`, all the same root cause:
+"Margraviate of Brandenburg-Kustrin" paired with "Margraviate of Moravia" (shared only
+"margraviate"), "Butuan (historical polity)" paired with "Tondo (historical polity)" (shared only
+"historical"/"polity" -- the generic disambiguator wiki editors append to distinguish a place from
+other uses of the same name, not a place name itself), and "Electorate of Hanover" paired with
+"Electorate of Mainz" (shared only "electorate"). `consolidation_stopwords` already excluded
+duchy/kingdom/empire/sultanate/etc. from both the token-index candidate pool and the "shared identity
+term" reasoning shown to reviewers -- it was simply an incomplete enumeration of the same category.
+Grepped `canonical_name` across the dataset for the same class of word (noble/government-form
+titles), sampled real uses of each candidate addition to confirm it's genuinely generic (e.g.
+"Dominion of Ceylon", "Colony of Jamaica", "Palatinate-Simmern" vs. "Palatinate-Neuburg" -- distinct
+entities that would otherwise token-match on "palatinate" alone) before adding 29 more words:
+archduchy, autonomy, banate, chiefdom, colony, commonwealth, despotate, dominion, electorate,
+emirate, exarchate, governorate, historical, imamate, khanate, landgraviate, mandate, margravate,
+margraviate, marquisate, oligarchy, palatinate, polity, protectorate, regency, satrapy, shogunate,
+tetrarchy, tsardom, viscounty. Three new regression tests in `test_consolidation_suggestions.py`
+(one per real pair), verified live against the actual dataset via the running server: Brandenburg-
+Kustrin and Butuan now have zero candidates and no longer reach the queue at all (their only prior
+match was the stopword); Electorate of Hanover still reaches the queue with its real candidates
+(Kingdom of Hanover, Brunswick-Luneburg) but Electorate of Mainz is no longer among them. 289/289
+tests pass. Reverted the usual `create_app()`-against-real-root normalization side effects on 11
+unrelated polity YAML files before committing.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which

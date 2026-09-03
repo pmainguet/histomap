@@ -15,6 +15,7 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    so far has been tried and come up empty; needs a different approach, if one exists); **73** have
    `present_countries` but their country isn't yet in `pipeline/historical_regions.py`'s
    ~180-country starter table (cheap and safe to grow incrementally).
+0 bis. remove in the review section the Classify entities and Links subdivisions workflow/code/etc
 1. **Work the polity → period reclassification queue (73 pending, confirmed live 1 September 2026,
    `/consolidation-review`'s "period"/"both" decision).** Full scope-and-seed pass done (see
    STATUS.md); what's left is ordinary manual review.
