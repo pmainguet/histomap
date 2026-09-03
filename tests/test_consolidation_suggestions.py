@@ -636,6 +636,38 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         ]
         self.not_a_candidate("electorate_of_hanover", "electorate_of_mainz", polities)
 
+    def test_shared_canton_title_word_alone_is_not_a_candidate(self) -> None:
+        # Second stopword sweep, requested directly ("Canton" named
+        # explicitly, 3 September 2026): "Canton of Zurich" and "Canton of
+        # Geneva" share only the generic administrative-unit word "canton"
+        # -- two different Swiss cantons, not related entities. (26 real
+        # cantons in the dataset would otherwise all token-match each
+        # other on this word alone.)
+        polities = [
+            {**BASE, "id": "canton_of_zurich", "canonical_name": "Canton of Zurich",
+             "external_ids": {"wikidata": "Q11943"}, "start": 1351, "end": None,
+             "prominence_score": 20, "geography": {"present_countries": ["CH"]}},
+            {**BASE, "id": "canton_of_geneva", "canonical_name": "Canton of Geneva",
+             "external_ids": {"wikidata": "Q11908"}, "start": 1815, "end": None,
+             "prominence_score": 20, "geography": {"present_countries": ["CH"]}},
+        ]
+        self.not_a_candidate("canton_of_zurich", "canton_of_geneva", polities)
+
+    def test_shared_horde_title_word_alone_is_not_a_candidate(self) -> None:
+        # Same sweep: "Golden Horde" and "White Horde" share only the
+        # generic institutional word "horde" -- distinct Mongol/Central
+        # Asian successor khanates of the Golden Horde's breakup, not the
+        # same entity or a phase of one another.
+        polities = [
+            {**BASE, "id": "golden_horde", "canonical_name": "Golden Horde",
+             "external_ids": {"wikidata": "Q41493"}, "start": 1242, "end": 1502,
+             "prominence_score": 20, "geography": {"present_countries": ["RU"]}},
+            {**BASE, "id": "white_horde", "canonical_name": "White Horde",
+             "external_ids": {"wikidata": "Q1508663"}, "start": 1226, "end": 1360,
+             "prominence_score": 20, "geography": {"present_countries": ["KZ"]}},
+        ]
+        self.not_a_candidate("golden_horde", "white_horde", polities)
+
 
 if __name__ == "__main__":
     unittest.main()

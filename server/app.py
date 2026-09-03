@@ -396,6 +396,18 @@ def create_app(root: Path = ROOT) -> FastAPI:
         "mandate", "margravate", "margraviate", "marquisate", "oligarchy",
         "palatinate", "polity", "protectorate", "regency", "satrapy",
         "shogunate", "tetrarchy", "tsardom", "viscounty",
+        # Second sweep, requested directly ("Mandate", "Government", "Canton"
+        # named explicitly) -- same grep-the-dataset-and-sample-real-uses
+        # discipline as the first sweep found a further batch: "Canton of
+        # Aargau" vs every other "Canton of X" (26 Swiss cantons alone would
+        # all token-match each other on "canton"), "X Horde" (Golden/Blue/
+        # White/Great/Nogai/Bukey/Skewbald -- seven distinct Mongol/Central
+        # Asian hordes), "X Confederacy"/"Beylik of X"/"March of X"/"X
+        # Territory"/"X Union"/"X Oblast"/"X District"/"X Domain"/"X League"
+        # -- all the same pattern: a shared generic institutional-type word
+        # with zero place-name evidence.
+        "beylik", "canton", "confederacy", "district", "domain", "horde",
+        "league", "march", "oblast", "realm", "territory", "union",
     }
 
     def consolidation_tokens(document: dict) -> set[str]:

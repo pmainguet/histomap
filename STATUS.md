@@ -1438,6 +1438,37 @@ Per explicit direction, this closes out the Seshat geography work for now -- the
 ROADMAP.md's item 0 updated: what's left past this is a genuine long tail with no Wikidata
 geography and no Seshat coverage either, ordinary manual review like any other queue.
 
+### `consolidation_stopwords` second sweep: Canton, Horde, Beylik, and 9 more generic words — 3 September 2026
+
+Direct follow-up request, naming "Mandate", "Government", "Canton" as examples ("Mandate" and
+"Government" were already covered by the first sweep -- see the earlier `consolidation_stopwords`
+entry above; "Canton" was not). Same discipline as that first sweep: grepped `canonical_name`
+across the dataset for the same class of word, sampled real uses of each candidate addition before
+trusting it. Found and verified 12 more genuinely generic institutional/administrative-unit words:
+`beylik`, `canton`, `confederacy`, `district`, `domain`, `horde`, `league`, `march`, `oblast`,
+`realm`, `territory`, `union` -- e.g. 26 different "Canton of X" (the Swiss cantons) would all have
+token-matched each other on "canton" alone; 7 distinct Mongol/Central Asian successor khanates
+("Golden Horde", "Blue Horde", "White Horde", "Great Horde", "Nogai Horde", "Bukey Horde",
+"Skewbald Horde") share only "horde".
+
+Two new regression tests (Canton of Zurich/Geneva, Golden/White Horde), 326/326 total. Verified
+live against the actual dataset: `canton_of_zurich` now has zero candidates (its only prior match
+was the stopword); `golden_horde` now surfaces its real candidate (Mongol Empire, a genuine
+successor relationship) instead of the unrelated `white_horde`; `beylik_of_karaman` now surfaces
+`sultanate_of_rum` (a real historical predecessor) instead of `beylik_of_dulkadir`.
+
+Also audited the entire live queue directly for any OTHER remaining "shared identity term" pairs
+with weak/no other evidence, to check whether the "unless very close geographically" gate the
+request also asked for is still needed for anything the stopword sweep doesn't already cover: found
+exactly 2, both genuinely real place-name matches (`all_palestine_protectorate`/`palestine`,
+`nyasaland_districts_protectorate`/`nyasaland` -- a real place name shared verbatim, not a generic
+institutional word), zero false positives of the reported pattern. Stopwording already prevents a
+generic-word-only pair from ever reaching the candidate pool at all, which is a strictly stronger
+guarantee than a geographic-proximity gate would have added on top -- no separate geography check
+needed. ROADMAP.md's "0 bis" item (this request) considered closed; its companion "0 ter" (removing
+the retired Classify entities/Links subdivisions review workflow) renumbered to plain "0", not yet
+started.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which
