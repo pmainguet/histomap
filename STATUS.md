@@ -1415,6 +1415,29 @@ added nothing new this time but stays in place for records that only ever get li
 8 new tests (`test_enrich_geography_from_seshat.py`), 320/320 total. Applied: filled 45 records
 (matching the write-up's estimate exactly). No-continent count: 826 -> 781.
 
+### Seshat extraction extended with a deterministic id-suffix match: 781 -> 713 — 3 September 2026
+
+Asked directly to do the remaining ~65-record name-match pass the previous entry deferred.
+Investigating first (same "understand before automating" discipline as every other pass this
+session) found something better than the planned fuzzy name-match: every one of those records'
+own Histomap `id` already ends in its Seshat id, lowercased with punctuation stripped (e.g.
+`seshat_angkor_khangke` <-> seshat_id `KhAngkE`) -- a leftover from how these ids were originally
+generated, with `external_ids.seshat` simply never populated. This is a deterministic structural
+match, not a fuzzy one: spot-checked all 68 candidates by hand and every single one also had an
+*exact* `canonical_name` match against Seshat's own record (Early Angkor/Early Angkor, Kushan
+Empire/Kushan Empire, ...). Added as `enrich_geography_from_seshat.py`'s third resolution path
+(`continent_via_id_suffix()`), gated on that exact canonical_name match as a safety check since --
+unlike the direct `external_ids.seshat` field or the hand-reconciled crosswalk -- the id-suffix
+alone isn't backed by an authoritative field. Also handles Seshat's trailing `*` markers (uncertain
+dating, e.g. `IqBazi*`) by normalizing both sides before comparing. 4 new tests, 324/324 total.
+Applied: filled 72 (68 active + a few `timeline_role: retired` records the script doesn't
+distinguish, consistent with every other geography pass). No-continent count: 781 -> 713.
+
+Per explicit direction, this closes out the Seshat geography work for now -- the `ngas`
+(finer-grained Natural Geographic Area) stretch goal was considered and deliberately not pursued.
+ROADMAP.md's item 0 updated: what's left past this is a genuine long tail with no Wikidata
+geography and no Seshat coverage either, ordinary manual review like any other queue.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which

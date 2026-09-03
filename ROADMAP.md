@@ -9,26 +9,19 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **Close the residual geography gaps.** Five passes done 3 September 2026 (see STATUS.md):
+0. **Close the residual geography gaps.** Six passes done 3 September 2026 (see STATUS.md):
    country-code table growth, a centroid-resolved-country-but-empty-continents bug fix, a new
    Wikidata-relationship-neighbor continent inference, two name-cluster fixes (Taifa/Saxe), and a
-   Seshat `world_region` extraction (`pipeline/enrich_geography_from_seshat.py`) for records with no
-   Wikidata QID at all. No-continent count: 917 → 781; country-not-in-region-table count: 73 → 2
-   (the 2 remaining are deliberately unclassified 21st-century Antarctica-claim micronations, not
-   real historical polities). **What's left**, no further safe automation identified:
-   - A name-match pass against `seshat_polities.parquet`'s `canonical_name`/`long_name` for the
-     ~65 no-QID records with no `external_ids.seshat` link at all -- same "dry-run, review every
-     match by hand" discipline `seed_present_countries_from_name.py` and
-     `infer_continent_from_relationships.py` used, given the real false-positive risk that
-     discipline has already caught twice this session. Not attempted yet -- fuzzier and riskier
-     than the direct-id join `enrich_geography_from_seshat.py` already does.
-   - `ngas` (Seshat's finer Natural Geographic Area, one level below `world_region`) could, in
-     principle, feed a country/historical_region-level signal too, but needs its own, larger
-     curated NGA → country/region table (Seshat has several dozen NGAs, not 10) -- a stretch goal,
-     not attempted.
-   - Past those two, a genuine long tail of low-count, obscure-or-ambiguous polities with no
-     Wikidata geography of any kind and no Seshat coverage either -- ordinary manual review, same
-     as any other queue, unless a new signal turns up.
+   Seshat `world_region` extraction (`pipeline/enrich_geography_from_seshat.py`, including a
+   deterministic Histomap-id-encodes-the-seshat-id match for records with no Wikidata QID and no
+   `external_ids.seshat` of their own). No-continent count: 917 → 713; country-not-in-region-table
+   count: 73 → 2 (the 2 remaining are deliberately unclassified 21st-century Antarctica-claim
+   micronations, not real historical polities). **What's left:** a genuine long tail of low-count,
+   obscure-or-ambiguous polities with no Wikidata geography of any kind and no Seshat coverage
+   either -- ordinary manual review, same as any other queue, unless a new signal turns up. A
+   fuzzy name-match pass against Seshat's `canonical_name`/`long_name` and Seshat's finer `ngas`
+   field were both considered and deliberately not pursued further (per explicit decision,
+   3 September 2026) -- no further safe automation identified for now.
 0 bis. In consolidation review, entity that only matches on "Mandate", "Government", "Canton", etc) and have non country names or adjectives (or other derivatives), unless they are very close geographically should not be considered as possible matches. This needs to be strenghthen, i gave you some examples in the conversation directly
 0 ter. remove in the review section the Classify entities and Links subdivisions workflow/code/etc
 1. **Work the polity → period reclassification queue (73 pending, confirmed live 1 September 2026,

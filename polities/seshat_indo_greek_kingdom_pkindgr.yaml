@@ -4,7 +4,8 @@ external_ids: {}
 parent: null
 successors: []
 geography:
-  continents: []
+  continents:
+  - asia
   present_countries: []
   centroid: null
   confidence: null
