@@ -424,7 +424,6 @@ def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
     metadata = country_metadata(set().union(*p17.values()) if p17 else set(), offline)
 
     counts = {"country": 0, "continent_only": 0, "centroid_only": 0, "unknown": 0}
-    by_tier: dict[str, dict[str, int]] = {}
     for path in POLITIES_DIR.glob("*.yaml"):
         document = yaml.safe_load(path.read_text(encoding="utf-8"))
         existing_geography = document.get("geography") or {}
@@ -434,8 +433,6 @@ def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
         if field_locked(document, "geography") or (only_missing and not missing_with_centroid):
             category = geography_category(existing_geography)
             counts[category] += 1
-            tier = document.get("visibility_tier", "detailed")
-            by_tier.setdefault(tier, {key: 0 for key in counts})[category] += 1
             continue
         qid = (document.get("external_ids") or {}).get("wikidata")
         record = records.get(qid, {})
@@ -492,8 +489,6 @@ def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
         else:
             category = "unknown"
         counts[category] += 1
-        tier = document.get("visibility_tier", "detailed")
-        by_tier.setdefault(tier, {key: 0 for key in counts})[category] += 1
 
     counts["self_continent_fallback"] = fill_self_continent_fallback(offline)
     centroid_backfill = backfill_geography_from_centroid(offline)
@@ -503,9 +498,6 @@ def run(offline: bool = False, only_missing: bool = False) -> dict[str, int]:
 
     lines = ["# Geography coverage", "", "## Overall", ""]
     lines.extend(f"- {key.replace('_', ' ').title()}: {value:,}" for key, value in counts.items())
-    for tier, values in sorted(by_tier.items()):
-        lines.extend(["", f"## {tier.title()}", ""])
-        lines.extend(f"- {key.replace('_', ' ').title()}: {value:,}" for key, value in values.items())
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return counts

@@ -479,7 +479,7 @@ function renderPolityDetails(polity, ctx) {
       <dt>Continents</dt><dd>${escapeHtml((polity.geography?.continents || []).map(displayTerm).join(", ") || "unknown")}</dd>
       <dt>Present countries</dt><dd>${escapeHtml(countries.join(", ") || "unknown")}</dd>
       ${centroid ? `<dt>Approx. location</dt><dd>${centroid.lat.toFixed(2)}°, ${centroid.lon.toFixed(2)}°</dd>` : ""}
-      <dt>Prominence</dt><dd>${Number(polity.prominence_score || 0).toFixed(2)} / 100 (${escapeHtml(polity.visibility_tier || "detailed")})</dd>
+      <dt>Prominence</dt><dd>${Number(polity.prominence_score || 0).toFixed(2)} / 100</dd>
       <dt>Historical weight</dt><dd>${polity.weight_imputed ? "estimated" : "source-based"}</dd>
       ${(polity.sources || []).length ? `<dt>Data sources</dt><dd>${escapeHtml(polity.sources.map(displayTerm).join(", "))}</dd>` : ""}
       ${relevantTransitions.length ? `<dt>Transitions</dt><dd class="detail-links">${relevantTransitions.map((transition) => {

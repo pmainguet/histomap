@@ -1,7 +1,7 @@
 """Read-side query layer over the period tier hierarchy (periods/*.yaml +
 period_links.yaml + polities/*.yaml). This is what a future timeline UI/API
-should import instead of re-deriving broader_periods/period_links traversal,
-or reading the retired visibility_tier field, itself."""
+should import instead of re-deriving broader_periods/period_links traversal
+itself."""
 
 from __future__ import annotations
 
@@ -64,10 +64,9 @@ class PeriodHierarchy:
     def top_entities(self, period_id: str, limit: int) -> list[str]:
         entity_ids = self.entities_under(period_id)
 
-        def sort_key(entity_id: str) -> tuple[int, float, str]:
+        def sort_key(entity_id: str) -> tuple[float, str]:
             polity = self._polities.get(entity_id, {})
-            pinned = 0 if polity.get("visibility_override") else 1
-            return (pinned, -polity.get("prominence_score", 0), entity_id)
+            return (-polity.get("prominence_score", 0), entity_id)
 
         return sorted(entity_ids, key=sort_key)[:limit]
 

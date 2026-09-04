@@ -87,14 +87,6 @@ class TopEntitiesTests(unittest.TestCase):
             ["polity_2", "polity_3"],
         )
 
-    def test_visibility_override_is_pinned_first(self) -> None:
-        polities = [
-            {"id": "polity_1", "prominence_score": 10, "visibility_override": "global"},
-            {"id": "polity_2", "prominence_score": 90},
-        ]
-        hierarchy = build_hierarchy(polities)
-        self.assertEqual(hierarchy.top_entities("macro_a", limit=1), ["polity_1"])
-
     def test_ties_break_deterministically_by_entity_id(self) -> None:
         polities = [
             {"id": "polity_4", "prominence_score": 50},

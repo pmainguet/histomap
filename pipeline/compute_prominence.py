@@ -1,7 +1,6 @@
-"""Compute auditable, type-aware prominence scores. Does not assign
-visibility_tier -- that field is frozen; see ONTOLOGY.md's "Ranking and
-sizing" section. Browsing/ranking uses pipeline/period_hierarchy.py's
-top_entities() instead, scoped to whatever part of the tree is in view."""
+"""Compute auditable, type-aware prominence scores. Browsing/ranking uses
+pipeline/period_hierarchy.py's top_entities(), scoped to whatever part of
+the tree is in view -- see ONTOLOGY.md's "Ranking and sizing" section."""
 
 from __future__ import annotations
 
@@ -161,11 +160,7 @@ def compute(
         "# Prominence scores\n\n"
         f"- Records scored: {len(scores):,}\n"
         f"- Score range: {min(scores):.1f} - {max(scores):.1f}\n"
-        f"- Mean score: {sum(scores) / len(scores):.1f}\n\n"
-        "visibility_tier is not touched by this script -- it was frozen when the "
-        "competitive balanced_visibility() pass was retired (see ONTOLOGY.md,\n"
-        "'Ranking and sizing'). Browsing/ranking now uses "
-        "pipeline/period_hierarchy.py's top_entities() instead.\n",
+        f"- Mean score: {sum(scores) / len(scores):.1f}\n",
         encoding="utf-8",
     )
     return {"scored": len(scores)}
@@ -176,7 +171,7 @@ def main() -> None:
     parser.add_argument("--offline", action="store_true", help="Require and use the existing sitelink cache")
     args = parser.parse_args()
     result = compute(offline=args.offline)
-    print(f"Scored {result['scored']} records (visibility_tier untouched)")
+    print(f"Scored {result['scored']} records")
 
 
 if __name__ == "__main__":

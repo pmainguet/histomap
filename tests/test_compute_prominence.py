@@ -19,7 +19,6 @@ def document(entity_id: str, score: float, **overrides: object) -> dict:
         "geography": {"continents": ["europe"], "primary_continent": "europe"},
         "prominence_score": score,
         "prominence_components": {},
-        "visibility_tier": "detailed",
         "external_ids": {},
     }
     value.update(overrides)
@@ -61,26 +60,6 @@ class ProminenceComponentsTests(unittest.TestCase):
         self.assertEqual(uncertain["date_uncertainty_penalty"], -5)
         self.assertEqual(uncertain["aggregate_penalty"], -25)
         self.assertGreater(certain["total"], uncertain["total"])
-
-
-class ComputeDoesNotTouchVisibilityTierTests(unittest.TestCase):
-    def test_visibility_tier_is_left_untouched(self) -> None:
-        with tempfile.TemporaryDirectory() as tmp:
-            polities_dir = Path(tmp) / "polities"
-            polities_dir.mkdir()
-            cache_path = Path(tmp) / "sitelinks.json"
-            report_path = Path(tmp) / "prominence_summary.md"
-            doc = document("test_polity", score=0)
-            doc["visibility_tier"] = "global"  # deliberately pre-set, no wikidata id -> offline-safe
-            (polities_dir / "test_polity.yaml").write_text(
-                yaml.safe_dump(doc, sort_keys=False), encoding="utf-8"
-            )
-
-            compute(polities_dir=polities_dir, cache_path=cache_path, offline=True, report_path=report_path)
-
-            written = yaml.safe_load((polities_dir / "test_polity.yaml").read_text(encoding="utf-8"))
-            self.assertEqual(written["visibility_tier"], "global")  # unchanged
-            self.assertIn("prominence_score", written)  # still recomputed
 
 
 if __name__ == "__main__":

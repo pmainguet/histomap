@@ -9,7 +9,7 @@ from pipeline.compute_prominence import compute
 
 def main() -> None:
     counts = compute(offline=True)
-    print(f"Scored {counts['scored']} records (visibility_tier untouched)")
+    print(f"Scored {counts['scored']} records")
     build.main()
 
 

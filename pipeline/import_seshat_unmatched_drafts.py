@@ -17,11 +17,9 @@ honest entry per draft to that file: proposed_type "archaeological_horizon"
 phases like Erligang or Badarian, not single weight-bearing political
 actors) with confidence "low" and a reason that says plainly there is no
 automated evidence behind the proposal, so nothing here misrepresents
-Wikidata evidence that doesn't exist. visibility_tier stays at its default
-(`detailed`, no override), so none of these clutter /explore's default view
-until reviewed. Idempotent: skips any id whose polities/*.yaml already
-exists, and separately skips any id already present in
-entity_type_review.jsonl, so reruns after partial review are safe.
+Wikidata evidence that doesn't exist. Idempotent: skips any id whose
+polities/*.yaml already exists, and separately skips any id already present
+in entity_type_review.jsonl, so reruns after partial review are safe.
 """
 
 from __future__ import annotations

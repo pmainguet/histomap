@@ -68,7 +68,6 @@ class UnifiedServerTests(unittest.TestCase):
             "id": "candidate",
             "canonical_name": "Candidate",
             "prominence_score": 70,
-            "visibility_tier": "global",
             "external_ids": {"wikidata": "Q123"},
             "start": 90,
             "end": 210,
