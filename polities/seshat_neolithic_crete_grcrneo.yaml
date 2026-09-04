@@ -33,3 +33,6 @@ geography:
   continents:
   - europe
   confidence: low
+timeline_role: period
+manual_overrides:
+- timeline_role
