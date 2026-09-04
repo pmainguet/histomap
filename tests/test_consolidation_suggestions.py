@@ -751,6 +751,38 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         ]
         self.not_a_candidate("socialist_republic_of_croatia", "socialist_republic_of_montenegro", polities)
 
+    def test_shared_bronze_age_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 5 September 2026: "Latium - Bronze Age" and "Middle
+        # Bronze Age in Central Anatolia" share only the archaeological
+        # three-age-system chronological-stage word "bronze" -- same
+        # category as "neolithic"/"chalcolithic" above, not a place name.
+        polities = [
+            {**BASE, "id": "latium_bronze_age", "canonical_name": "Latium - Bronze Age",
+             "start": -2000, "end": -1001,
+             "prominence_score": 20, "geography": {"present_countries": ["IT"]}},
+            {**BASE, "id": "middle_bronze_age_central_anatolia",
+             "canonical_name": "Middle Bronze Age in Central Anatolia",
+             "start": -2000, "end": -1700,
+             "prominence_score": 20, "geography": {"present_countries": ["TR"]}},
+        ]
+        self.not_a_candidate("latium_bronze_age", "middle_bronze_age_central_anatolia", polities)
+
+    def test_shared_giudicato_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 5 September 2026: "Giudicato of Logudoro" and
+        # "Giudicato of Gallura" -- different Wikidata QIDs, share only the
+        # generic medieval Sardinian judicial-kingdom title "giudicato" --
+        # same role as "bishopric"/"prince" above. Four real, distinct
+        # Giudicati (Logudoro, Gallura, Cagliari, Arborea) all share the word.
+        polities = [
+            {**BASE, "id": "giudicato_of_logudoro", "canonical_name": "Giudicato of Logudoro",
+             "external_ids": {"wikidata": "Q1761381"}, "start": 800, "end": 1259,
+             "prominence_score": 20, "geography": {"present_countries": ["IT"]}},
+            {**BASE, "id": "giudicato_of_gallura", "canonical_name": "Giudicato of Gallura",
+             "external_ids": {"wikidata": "Q2723760"}, "start": 800, "end": 1296,
+             "prominence_score": 20, "geography": {"present_countries": ["IT"]}},
+        ]
+        self.not_a_candidate("giudicato_of_logudoro", "giudicato_of_gallura", polities)
+
 
 if __name__ == "__main__":
     unittest.main()

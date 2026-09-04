@@ -330,6 +330,16 @@ def create_app(root: Path = ROOT) -> FastAPI:
         "socialist", "soviet", "communist", "fascist", "nationalist", "clan",
         "free", "imperial", "grand", "federal", "sovereign", "independent",
         "royal", "holy", "supreme",
+        # Fifth sweep, found live: "Latium - Bronze Age" vs "Middle Bronze Age
+        # in Central Anatolia" (shared only "bronze" -- same archaeological
+        # three-age-system chronological-stage word as "neolithic"/
+        # "chalcolithic" above, not a place or identity marker) and
+        # "Giudicato of Logudoro" vs "Giudicato of Gallura" (different
+        # Wikidata QIDs, shared only "giudicato" -- a generic medieval
+        # Sardinian judicial-kingdom title, same role as "bishopric"/
+        # "prince" above; 4 real distinct Giudicati -- Logudoro, Gallura,
+        # Cagliari, Arborea -- all share the word).
+        "bronze", "giudicato",
     }
 
     def consolidation_tokens(document: dict) -> set[str]:
