@@ -45,12 +45,11 @@ def named_period(id_: str, start: int, end: int, broader: list[str] | None = Non
 
 
 def polity(id_: str, start: int, end: int | None, continent: str, region: str | None = None,
-           tier: str = "global", present_countries: list[str] | None = None, entity_type: str | None = None,
+           present_countries: list[str] | None = None, entity_type: str | None = None,
            detail_of: str | None = None) -> dict:
     """Build a minimal polity fixture dict."""
     doc = {
         "id": id_, "canonical_name": id_, "start": start, "end": end,
-        "visibility_tier": tier,
         "geography": {
             "primary_continent": continent, "continents": [continent],
             "primary_historical_region": region, "historical_regions": [region] if region else [],
@@ -90,7 +89,6 @@ class BuildExploreTreeTests(unittest.TestCase):
         self.polities = [
             polity("old_kingdom_egypt", -2686, -2181, "africa", "north_africa"),
             polity("unlinked_egyptian", -2500, -2400, "africa", "north_africa"),
-            polity("out_of_scope", -2500, -2400, "africa", "north_africa", tier="detailed"),
         ]
 
     def test_all_nine_chapter_slots_present_even_with_one_chapter_fixture(self) -> None:
@@ -127,11 +125,6 @@ class BuildExploreTreeTests(unittest.TestCase):
         region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
         heuristic_entry = next(e for e in region_bucket if e["id"] == "unlinked_egyptian")
         self.assertFalse(heuristic_entry["curated"])
-
-    def test_out_of_scope_polity_excluded(self) -> None:
-        tree = build_explore_tree(self.polities, self.periods, self.period_links)
-        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
-        self.assertNotIn("out_of_scope", {e["id"] for e in region_bucket})
 
     def test_detail_of_polity_excluded_from_its_own_bucket_entry(self) -> None:
         polities = [*self.polities, polity(

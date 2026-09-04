@@ -10,7 +10,6 @@ from __future__ import annotations
 
 from pipeline.geography_overlap import overlap_years
 from pipeline.period_hierarchy import PeriodHierarchy
-from pipeline.suggest_period_links import in_scope
 from pipeline.suggest_regional_eras import rank_candidates
 
 AUTO_GENERATED_AUTHORITY = "Histomap editorial: auto-generated continent x chapter node"
@@ -215,7 +214,7 @@ def build_explore_tree(
             source_entity_type = _civilization_period_source_entity_type(period, civilization_period_sources)
             civilizations_by_chapter[best["id"]].append(_civilization_period_entry(period, source_entity_type))
     for polity in polities:
-        if polity.get("entity_type") not in CIVILIZATION_ENTITY_TYPES or not in_scope(polity):
+        if polity.get("entity_type") not in CIVILIZATION_ENTITY_TYPES:
             continue
         best = chapters_by_id.get(polity.get("linked_chapter_id")) or best_chapter_for_polity(
             polity, all_chapters, open_end
@@ -235,7 +234,7 @@ def build_explore_tree(
     details_by_target: dict[str, list[dict]] = {}
     for polity in polities:
         target_id = polity.get("detail_of")
-        if not target_id or not in_scope(polity):
+        if not target_id:
             continue
         details_by_target.setdefault(target_id, []).append({
             "id": polity["id"],
@@ -254,8 +253,6 @@ def build_explore_tree(
         by_region: dict[str, list[dict]] = {}
         by_continent: dict[str, list[dict]] = {}
         for polity in polities:
-            if not in_scope(polity):
-                continue
             if polity.get("entity_type") in CIVILIZATION_ENTITY_TYPES:
                 continue  # handled by the Civilizations & Cultures lane above, not the Polities row
             if polity.get("detail_of"):

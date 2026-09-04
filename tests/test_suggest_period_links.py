@@ -1,22 +1,6 @@
 import unittest
 
-from pipeline.suggest_period_links import best_period_for_polity, in_scope
-
-
-class InScopeTests(unittest.TestCase):
-    def test_global_tier_in_scope(self) -> None:
-        self.assertTrue(in_scope({"visibility_tier": "global"}))
-
-    def test_regional_tier_in_scope(self) -> None:
-        self.assertTrue(in_scope({"visibility_tier": "regional"}))
-
-    def test_detailed_tier_out_of_scope_without_override(self) -> None:
-        self.assertFalse(in_scope({"visibility_tier": "detailed"}))
-
-    def test_detailed_tier_with_override_in_scope(self) -> None:
-        self.assertTrue(
-            in_scope({"visibility_tier": "detailed", "visibility_override": "global"})
-        )
+from pipeline.suggest_period_links import best_period_for_polity
 
 
 class BestPeriodForPolityTests(unittest.TestCase):

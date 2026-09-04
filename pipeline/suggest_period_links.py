@@ -1,6 +1,6 @@
-"""Pipeline step: suggest a period_links.yaml entry for global/regional-tier
-polities that don't have one yet. Writes a review queue; does not modify
-period_links.yaml directly.
+"""Pipeline step: suggest a period_links.yaml entry for polities that don't
+have one yet. Writes a review queue; does not modify period_links.yaml
+directly.
 
 Geography match prefers historical_region overlap (finer-grained, ~23 regions)
 over continent overlap (7 regions) when both sides have historical_regions set
@@ -27,12 +27,6 @@ REPORT_PATH = ROOT / "reports" / "period_link_suggestions.jsonl"
 SUMMARY_PATH = ROOT / "reports" / "period_link_suggestion_summary.md"
 
 TIER_SPECIFICITY = {"period": 0, "regional_era": 1, "macro_chapter": 2}
-
-
-def in_scope(polity: dict) -> bool:
-    if polity.get("visibility_override") == "global":
-        return True
-    return polity.get("visibility_tier") in {"global", "regional"}
 
 
 def best_period_for_polity(polity: dict, periods: list[dict]) -> dict | None:
@@ -72,15 +66,13 @@ def main() -> None:
     periods = load_periods()
     already_linked = load_linked_polity_ids()
     suggestions = []
-    in_scope_count = 0
+    candidates_seen = 0
     unmatched = 0
     for path in sorted(POLITIES_DIR.glob("*.yaml")):
         polity = yaml.safe_load(path.read_text(encoding="utf-8"))
         if polity.get("timeline_role") == "period":
             continue
-        if not in_scope(polity):
-            continue
-        in_scope_count += 1
+        candidates_seen += 1
         if polity["id"] in already_linked:
             continue
         best = best_period_for_polity(polity, periods)
@@ -101,13 +93,12 @@ def main() -> None:
     )
     SUMMARY_PATH.write_text(
         "# Polity to period-link suggestions\n\n"
-        f"- In-scope polities (global/regional tier or visibility_override): {in_scope_count}\n"
-        f"- Already linked: {in_scope_count - len(suggestions) - unmatched}\n"
+        f"- Already linked: {candidates_seen - len(suggestions) - unmatched}\n"
         f"- Suggested: {len(suggestions)}\n"
         f"- Unmatched (no geography/date overlap with any period): {unmatched}\n",
         encoding="utf-8",
     )
-    print(f"in-scope {in_scope_count}, suggested {len(suggestions)}, unmatched {unmatched}")
+    print(f"considered {candidates_seen}, suggested {len(suggestions)}, unmatched {unmatched}")
 
 
 if __name__ == "__main__":
