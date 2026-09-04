@@ -1528,6 +1528,61 @@ conquest of Kano, part of the fall of the Sokoto Caliphate) per direct confirmat
 low -> high, and locked via `manual_overrides: [end]` since Wikidata's own record carries no
 dissolution date for this entity -- a future re-extraction would otherwise silently revert it.
 
+### `/type-review` and `/subdivision-review` removed entirely — 3 September 2026
+
+Requested directly, confirmed explicitly ("both whole workflows") after flagging the tradeoff: both
+dedicated review-queue UIs are gone, along with their server routes and the code that only existed
+to serve them.
+
+**`server/app.py`:** removed the `/type-review`/`/subdivision-review` page registrations; the four
+API endpoints (`GET`/`POST /api/type-reviews*`, `GET`/`POST /api/subdivision-reviews*`);
+`type_review_queue`/`refresh_type_review_queue()`, `subdivision_review_queue()`,
+`subdivision_parent_candidates()`, `save_subdivision_parent()`, `entity_type_review_sort_key()`,
+`ENTITY_TYPE_REVIEW_ORDER`, and the `SubdivisionParentUpdate` model. Simplified `/api/review-dashboard`
+to just the consolidation pipeline count. Kept everything actually shared with other features:
+`save_entity_type()` (still backs `PATCH /api/polities/{id}/entity-type`, used by `/explore`'s side
+panel -- its now-dead `reviewed_against` parameter, only ever passed by the removed
+`decide_type_review`, was dropped too), `EntityTypeUpdate`, `refresh_period_role_queue()` (a
+similarly-named but *separate* mechanism feeding `/consolidation-review`'s period/both decision --
+confirmed via a dedicated investigation pass before touching anything, given how easy the two names
+are to conflate), `GET /api/polities/search` (used by `/explore`'s `detail_of` picker too), and
+`normalized_relationship_kind`/`relationship_kind` (used elsewhere in `save_entity_type` itself).
+
+**Web:** deleted `type_review.html`/`.js` and `subdivision_review.html`/`.js` outright. Trimmed
+`reviews.js`'s pipeline list to just consolidation, and `reviews.html`'s copy (it described a
+"consolidate, classify, then connect" three-step flow that no longer exists). Fixed two now-dangling
+comments in `explore_details.js` that referenced the deleted `subdivision_review.js` as "the pattern
+this mirrors."
+
+**Tests:** removed the type-review-only and subdivision-review-only test methods across
+`test_server.py`, trimmed `test_accepts_subdivision_entity_type` to just its shared-PATCH-endpoint
+half, updated both hard-coded web-file fixture lists (`test_server.py`, `test_consolidation_suggestions.py`).
+327/327 pass (down from 331 -- 4 tests removed, none converted, since there was nothing left to
+assert once the routes were gone).
+
+**The one real behavioral consequence, surfaced and confirmed before touching it:**
+`subdivision_parent_status` isn't just review-UI bookkeeping -- `build.py` used it as a publication
+gate (`entity_type: subdivision` + `subdivision_parent_status: "pending"`, the schema default, meant
+permanent exclusion from `data.json`). With the confirmation UI gone, that gate would have silently
+blocked any future subdivision from ever publishing. Per explicit direction ("I want to publish
+everything in the timeline, I check later"), relaxed `build.py`'s publish filter to stop excluding
+pending subdivisions -- everything publishes now regardless of confirmation status. The validation
+check that a *confirmed* subdivision must have a parent (`validate_entity_relationships()`) is
+unrelated and untouched.
+
+**Deliberately not touched:** `pipeline/backfill_entity_types.py` (still writes real `entity_type`
+classifications to `polities/*.yaml` -- kept in full) and `pipeline/import_seshat_unmatched_drafts.py`
+both still write/read `reports/entity_type_review.jsonl`, the queue file nothing reads anymore.
+Harmless (an unread report, not wired into any published output or the Makefile) but not cleaned
+up -- lower priority than the removal itself, noted here rather than risked mid-task.
+
+**Two new ROADMAP items** came out of the conversation this prompted: fixing the polity ↔ period
+conversion friction (converting one to the other is a structural migration today -- new id, new
+file, old one retired -- not a field flip, surfaced live while reclassifying
+`seshat_kachi_plain_pkceran` as a period earlier the same day) and merging the `subdivision`
+mechanism into `detail_of` (the same "nests inside" relationship, expressed a third, separate way).
+Both explicitly deferred to their own design pass, placed at the top of ROADMAP.md's list.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which

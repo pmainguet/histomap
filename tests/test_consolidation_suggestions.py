@@ -20,9 +20,7 @@ from server.app import create_app
 WEB_FILES = (
     "explore.html", "explore.js", "explore_timeline.js", "explore_details.js",
     "geological_epochs.js", "timeline_scale.js", "lane_packing.js", "common.js",
-    "type_review.html", "styles.css",
-    "type_review.js", "subdivision_review.js",
-    "subdivision_review.html",
+    "styles.css",
     "reviews.html", "reviews.js", "consolidation_review.html", "consolidation_review.js",
     "review_build.js",
 )

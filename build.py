@@ -291,15 +291,14 @@ def main() -> None:
         for e in tier_errors:
             print(f"ERROR  {e}", file=sys.stderr)
         sys.exit(1)
-    published_polities = [
-        polity
-        for polity in polities
-        if polity.timeline_role != "retired"
-        and not (
-            polity.entity_type.value == "subdivision"
-            and polity.subdivision_parent_status == "pending"
-        )
-    ]
+    # A subdivision with `subdivision_parent_status: "pending"` used to be
+    # excluded here -- that gate existed to keep an unconfirmed subdivision
+    # off the published timeline until /subdivision-review (removed, see
+    # ROADMAP.md) confirmed its parent. Publishing regardless now, per
+    # explicit direction ("publish everything in the timeline, I check
+    # later") -- an unconfirmed subdivision just has no `parent`/context
+    # yet, same as any other record still needing editorial attention.
+    published_polities = [polity for polity in polities if polity.timeline_role != "retired"]
     OUT_PATH.write_text(
         json.dumps(
             [p.model_dump(mode="json") for p in published_polities],

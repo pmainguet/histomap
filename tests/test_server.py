@@ -6,24 +6,10 @@ from pathlib import Path
 import yaml
 from fastapi.testclient import TestClient
 
-from server.app import create_app, entity_type_review_sort_key
+from server.app import create_app
 
 
 class UnifiedServerTests(unittest.TestCase):
-    def test_type_reviews_group_civilizations_before_polities(self) -> None:
-        reviews = [
-            {"canonical_name": "Culture", "proposed_type": "culture", "confidence": "medium"},
-            {"canonical_name": "Polity", "proposed_type": "polity", "confidence": "medium"},
-            {"canonical_name": "Civilization", "proposed_type": "civilization", "confidence": "low"},
-        ]
-
-        ordered = sorted(reviews, key=entity_type_review_sort_key)
-
-        self.assertEqual(
-            [review["proposed_type"] for review in ordered],
-            ["civilization", "polity", "culture"],
-        )
-
     def test_accepts_micronation_entity_type(self) -> None:
         response = self.client.patch(
             "/api/polities/candidate/entity-type", json={"entity_type": "micronation"}
@@ -44,28 +30,6 @@ class UnifiedServerTests(unittest.TestCase):
             (self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8")
         )
         self.assertEqual(saved["subdivision_parent_status"], "pending")
-        queue = self.client.get("/api/subdivision-reviews").json()
-        self.assertEqual(queue["items"][0]["id"], "candidate")
-        self.assertEqual(queue["items"][0]["candidates"][0]["id"], "container")
-        linked = self.client.post(
-            "/api/subdivision-reviews/candidate", json={"parent_id": "container"}
-        )
-        self.assertEqual(linked.status_code, 200)
-        saved = yaml.safe_load(
-            (self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8")
-        )
-        self.assertEqual(saved["parent"], "container")
-        self.assertEqual(saved["subdivision_parent_status"], "confirmed")
-
-    def test_rejects_invalid_subdivision_parent(self) -> None:
-        self.client.patch(
-            "/api/polities/candidate/entity-type", json={"entity_type": "subdivision"}
-        )
-        response = self.client.post(
-            "/api/subdivision-reviews/candidate", json={"parent_id": "missing"}
-        )
-
-        self.assertEqual(response.status_code, 422)
 
     def setUp(self) -> None:
         self.temporary = tempfile.TemporaryDirectory()
@@ -89,9 +53,7 @@ class UnifiedServerTests(unittest.TestCase):
         for name in (
             "explore.html", "explore.js", "explore_timeline.js", "explore_details.js",
             "geological_epochs.js", "timeline_scale.js", "lane_packing.js", "common.js",
-            "type_review.html", "styles.css",
-            "type_review.js", "subdivision_review.js",
-            "subdivision_review.html",
+            "styles.css",
             "reviews.html", "reviews.js", "consolidation_review.html", "consolidation_review.js",
             "review_build.js",
         ):
@@ -129,20 +91,6 @@ class UnifiedServerTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
-        (self.root / "reports" / "entity_type_review.jsonl").write_text(
-            json.dumps(
-                {
-                    "id": "candidate",
-                    "canonical_name": "Candidate",
-                    "wikidata": "Q123",
-                    "proposed_type": "polity",
-                    "confidence": "low",
-                    "source_qids": [],
-                    "reason": "no mapped direct type",
-                }
-            ) + "\n",
-            encoding="utf-8",
-        )
         (self.root / "reports" / "period_role_review.jsonl").write_text(
             json.dumps(
                 {
@@ -172,8 +120,8 @@ class UnifiedServerTests(unittest.TestCase):
     def test_serves_explore_review_and_data(self) -> None:
         self.assertEqual(self.client.get("/explore").status_code, 200)
         self.assertEqual(self.client.get("/review").status_code, 404)
-        self.assertEqual(self.client.get("/type-review").status_code, 200)
-        self.assertEqual(self.client.get("/subdivision-review").status_code, 200)
+        self.assertEqual(self.client.get("/type-review").status_code, 404)
+        self.assertEqual(self.client.get("/subdivision-review").status_code, 404)
         self.assertEqual(self.client.get("/reviews").status_code, 200)
         self.assertEqual(self.client.get("/consolidation-review").status_code, 200)
         self.assertEqual(self.client.get("/data.json").json(), [])
@@ -185,10 +133,10 @@ class UnifiedServerTests(unittest.TestCase):
         response = self.client.get("/api/review-dashboard").json()
         payload = response["pipelines"]
 
-        self.assertEqual(payload["entity_type"], 1)
+        self.assertNotIn("entity_type", payload)
         self.assertNotIn("source_matching", payload)
         self.assertIn("consolidation", payload)
-        self.assertIn("subdivision_parent", payload)
+        self.assertNotIn("subdivision_parent", payload)
         self.assertNotIn("period_role", payload)
         self.assertIn("consolidation", response["breakdowns"])
         self.assertEqual(response["breakdowns"]["consolidation"]["period_role"], 1)
@@ -448,36 +396,6 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertNotIn("consolidated_into", saved)
         self.assertFalse(period_path.exists())
         self.assertEqual(yaml.safe_load((self.root / "period_links.yaml").read_text(encoding="utf-8")), [])
-
-    def test_lists_and_saves_entity_type_review(self) -> None:
-        payload = self.client.get("/api/type-reviews").json()
-        self.assertEqual(payload["total"], 1)
-        self.assertEqual(payload["items"][0]["id"], "candidate")
-        self.assertEqual(payload["items"][0]["direct_type_qids"], ["Q111", "Q222"])
-        response = self.client.post(
-            "/api/type-reviews/candidate", json={"entity_type": "civilization"}
-        )
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json()["entity_type"], "civilization")
-        saved = yaml.safe_load(
-            (self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8")
-        )
-        self.assertIn("polity", saved["entity_type_reviewed_against"])
-        self.assertEqual(self.client.get("/api/type-reviews").json()["total"], 0)
-
-    def test_saved_reconsideration_does_not_immediately_reappear(self) -> None:
-        review_path = self.root / "reports" / "entity_type_review.jsonl"
-        review = json.loads(review_path.read_text(encoding="utf-8"))
-        review.update({"proposed_type": "subdivision", "reconsideration": True})
-        review_path.write_text(json.dumps(review) + "\n", encoding="utf-8")
-        client = TestClient(create_app(self.root))
-
-        response = client.post(
-            "/api/type-reviews/candidate", json={"entity_type": "subdivision"}
-        )
-
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(client.get("/api/type-reviews").json()["total"], 0)
 
     def test_convert_to_period_creates_linked_period_when_keeping_entity(self) -> None:
         # /period-review (and its dedicated /api/period-role-reviews queue

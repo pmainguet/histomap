@@ -30,27 +30,6 @@ ALLOWED_ACTIONS = {
     "compute-weights": ["pipeline/compute_weights.py"],
 }
 CONTINENTS = ["africa", "asia", "europe", "north_america", "south_america", "oceania", "antarctica"]
-ENTITY_TYPE_REVIEW_ORDER = {
-    "civilization": 0,
-    "polity": 1,
-    "subdivision": 2,
-    "micronation": 3,
-    "culture": 4,
-    "people": 5,
-    "tribe": 6,
-    "archaeological_horizon": 7,
-}
-
-
-def entity_type_review_sort_key(item: dict) -> tuple:
-    """Group reviews by proposed type, then put stronger/high-value cases first."""
-    return (
-        ENTITY_TYPE_REVIEW_ORDER.get(item.get("proposed_type"), len(ENTITY_TYPE_REVIEW_ORDER)),
-        0 if item.get("reconsideration") else 1,
-        0 if item.get("confidence") == "medium" else 1,
-        -float(item.get("prominence_score", 0)),
-        item.get("canonical_name", ""),
-    )
 
 
 def english_wikipedia_url(external_ids: dict) -> str | None:
@@ -92,10 +71,6 @@ class PeriodPromotionUpdate(BaseModel):
         "polity", "civilization", "subdivision", "micronation", "culture", "people",
         "tribe", "archaeological_horizon",
     ]
-
-
-class SubdivisionParentUpdate(BaseModel):
-    parent_id: str
 
 
 class ConsolidationDecision(BaseModel):
@@ -160,7 +135,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
     application = FastAPI(title="Histomap", version="0.1.0")
     web_dir = root / "web"
     reports_dir = root / "reports"
-    type_review_path = reports_dir / "entity_type_review.jsonl"
     period_role_review_path = reports_dir / "period_role_review.jsonl"
     relationship_cache_path = root / "sources" / "wikidata_relationships.json"
     direct_types_path = root / "sources" / "wikidata_direct_types.json"
@@ -216,38 +190,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
             part_of_qids.setdefault(source, set()).add(target)
         elif prop == "P527":
             part_of_qids.setdefault(target, set()).add(source)
-    type_review_queue = []
-
-    def refresh_type_review_queue() -> None:
-        type_review_queue.clear()
-        if not type_review_path.exists():
-            return
-        for line in type_review_path.read_text(encoding="utf-8").splitlines():
-            record = json.loads(line)
-            document = metadata.get(record["id"])
-            if not document or document.get("timeline_role", "entity") == "retired":
-                continue
-            proposal_already_reviewed = record.get("proposed_type") in set(
-                document.get("entity_type_reviewed_against", [])
-            )
-            still_open = document.get("entity_type_confidence", "low") != "high" or (
-                (record.get("reconsideration") or record.get("requires_parent_review"))
-                and not proposal_already_reviewed
-            )
-            if not still_open:
-                continue
-            external_ids = document.get("external_ids") or {}
-            record["prominence_score"] = document.get("prominence_score", 0)
-            record["dates"] = [document.get("start"), document.get("end")]
-            record["sources"] = document.get("sources", [])
-            record["wikipedia_en"] = external_ids.get("wikipedia_en")
-            record["direct_type_qids"] = sorted(
-                set((direct_types.get(external_ids.get("wikidata")) or {}).get("types", []))
-            )
-            type_review_queue.append(record)
-        type_review_queue.sort(key=entity_type_review_sort_key)
-
-    refresh_type_review_queue()
     period_role_queue: list[dict] = []
 
     def refresh_period_role_queue() -> None:
@@ -279,93 +221,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
         for path in polities_dir.glob("seshat_*.yaml"):
             document = yaml.safe_load(path.read_text(encoding="utf-8"))
             metadata[document["id"]] = document
-
-    def subdivision_parent_candidates(document: dict) -> list[dict]:
-        qid_to_id = {
-            (item.get("external_ids") or {}).get("wikidata"): item_id
-            for item_id, item in metadata.items()
-            if (item.get("external_ids") or {}).get("wikidata")
-        }
-        source_qid = (document.get("external_ids") or {}).get("wikidata")
-        scores: dict[str, dict] = {}
-
-        def add(parent_id: str | None, score: int, evidence: str) -> None:
-            parent = metadata.get(parent_id or "")
-            if not parent or parent.get("entity_type", "polity") != "polity":
-                return
-            candidate = scores.setdefault(
-                parent_id,
-                {
-                    "id": parent_id,
-                    "canonical_name": parent.get("canonical_name", parent_id),
-                    "wikidata": (parent.get("external_ids") or {}).get("wikidata"),
-                    "score": 0,
-                    "evidence": [],
-                },
-            )
-            candidate["score"] += score
-            if evidence not in candidate["evidence"]:
-                candidate["evidence"].append(evidence)
-
-        property_scores = {"P131": 100, "P361": 80, "P17": 60}
-        frontier = [(source_qid, [], 0)] if source_qid else []
-        visited = {source_qid}
-        while frontier:
-            current_qid, path_evidence, depth = frontier.pop(0)
-            if depth >= 3:
-                continue
-            for row in relationship_rows:
-                if row.get("source") != current_qid or row.get("property") not in property_scores:
-                    continue
-                prop = row["property"]
-                target_qid = row.get("target")
-                evidence = [*path_evidence, f"Wikidata {prop} → {target_qid}"]
-                target_id = qid_to_id.get(target_qid)
-                add(target_id, max(10, property_scores[prop] - depth * 20), " · ".join(evidence))
-                if target_qid not in visited:
-                    visited.add(target_qid)
-                    frontier.append((target_qid, evidence, depth + 1))
-
-        countries = (document.get("geography") or {}).get("present_countries", [])
-        if len(countries) == 1:
-            iso2 = countries[0]
-            for qid, info in country_metadata.items():
-                if info.get("iso2") == iso2:
-                    add(qid_to_id.get(qid), 40, f"Present-country geography → {iso2}")
-        if document.get("parent"):
-            add(document["parent"], 150, "Existing canonical parent")
-        return sorted(
-            scores.values(),
-            key=lambda item: (-item["score"], item["canonical_name"], item["id"]),
-        )
-
-    def subdivision_review_queue() -> list[dict]:
-        queue = []
-        for document in metadata.values():
-            if document.get("timeline_role", "entity") == "retired":
-                continue
-            if document.get("entity_type") != "subdivision":
-                continue
-            if document.get("subdivision_parent_status", "pending") == "confirmed":
-                continue
-            queue.append(
-                {
-                    "id": document["id"],
-                    "canonical_name": document["canonical_name"],
-                    "wikidata": (document.get("external_ids") or {}).get("wikidata"),
-                    "dates": [document.get("start"), document.get("end")],
-                    "prominence_score": document.get("prominence_score", 0),
-                    "candidates": subdivision_parent_candidates(document),
-                }
-            )
-        queue.sort(
-            key=lambda item: (
-                0 if item["candidates"] else 1,
-                -float(item.get("prominence_score", 0)),
-                item["canonical_name"],
-            )
-        )
-        return queue
 
     consolidation_stopwords = {
         "ancient", "caliphate", "confederation", "county", "democratic", "duchy",
@@ -1354,11 +1209,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
             return document
         raise HTTPException(422, f"Unsupported consolidation decision: {decision}")
 
-    def save_entity_type(
-        polity_id: str,
-        entity_type: str,
-        reviewed_against: str | None = None,
-    ) -> dict:
+    def save_entity_type(polity_id: str, entity_type: str) -> dict:
         document = metadata.get(polity_id)
         path = polities_dir / f"{polity_id}.yaml"
         if document is None or not path.exists():
@@ -1387,10 +1238,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
         document["manual_overrides"] = sorted(
             set(document.get("manual_overrides", [])) | {"entity_type"}
         )
-        if reviewed_against:
-            document["entity_type_reviewed_against"] = sorted(
-                set(document.get("entity_type_reviewed_against", [])) | {reviewed_against}
-            )
         if entity_type == "subdivision":
             document["parent"] = None
             document["subdivision_parent_status"] = "pending"
@@ -1461,56 +1308,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
         metadata[polity_id] = document
         return document
 
-    def save_subdivision_parent(polity_id: str, parent_id: str) -> dict:
-        document = metadata.get(polity_id)
-        parent = metadata.get(parent_id)
-        if document is None or document.get("entity_type") != "subdivision":
-            raise HTTPException(404, "Subdivision review is not pending")
-        if document.get("subdivision_parent_status", "pending") == "confirmed":
-            raise HTTPException(404, "Subdivision review is not pending")
-        if parent is None or parent.get("entity_type", "polity") != "polity":
-            raise HTTPException(422, "parent_id must identify a polity")
-        if parent_id == polity_id:
-            raise HTTPException(422, "A subdivision cannot be its own parent")
-        document["parent"] = parent_id
-        document["subdivision_parent_status"] = "confirmed"
-        document["manual_overrides"] = sorted(
-            set(document.get("manual_overrides", [])) | {"subdivision_parent"}
-        )
-        relationships = []
-        for item in document.get("relationships") or []:
-            target = metadata.get(item.get("target"))
-            if target:
-                item = dict(item)
-                item["kind"] = normalized_relationship_kind(
-                    "subdivision", target.get("entity_type", "polity"), item["kind"]
-                )
-            if not (
-                item.get("kind") == "administrative_part_of"
-                and item.get("target") != parent_id
-            ):
-                relationships.append(item)
-        if not any(
-            item.get("kind") == "administrative_part_of" and item.get("target") == parent_id
-            for item in relationships
-        ):
-            qid = (document.get("external_ids") or {}).get("wikidata")
-            relationships.append(
-                {
-                    "target": parent_id,
-                    "kind": "administrative_part_of",
-                    "evidence": "derived",
-                    "confidence": "high",
-                    "source_urls": [f"https://www.wikidata.org/wiki/{qid}"] if qid else [],
-                }
-            )
-        document["relationships"] = relationships
-        path = polities_dir / f"{polity_id}.yaml"
-        path.write_text(
-            yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
-        )
-        metadata[polity_id] = document
-        return document
 
     def save_timeline_role(polity_id: str, timeline_role: str, period_kinds: list[str]) -> dict:
         document = metadata.get(polity_id)
@@ -1578,8 +1375,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
         ("/reviews", "reviews.html"),
         ("/explore", "explore.html"),
         ("/consolidation-review", "consolidation_review.html"),
-        ("/type-review", "type_review.html"),
-        ("/subdivision-review", "subdivision_review.html"),
     ):
         register_page(page_route, page_file)
 
@@ -1605,19 +1400,11 @@ def create_app(root: Path = ROOT) -> FastAPI:
 
     @application.get("/api/review-dashboard")
     async def review_dashboard() -> dict:
-        refresh_type_review_queue()
         refresh_period_role_queue()
         consolidation_queue = consolidation_review_queue()
         return {
             "pipelines": {
                 "consolidation": len(consolidation_queue),
-                "entity_type": len(type_review_queue),
-                "subdivision_parent": sum(
-                    1 for document in metadata.values()
-                    if document.get("timeline_role", "entity") != "retired"
-                    and document.get("entity_type") == "subdivision"
-                    and document.get("subdivision_parent_status", "pending") != "confirmed"
-                ),
             },
             "breakdowns": {
                 "consolidation": {
@@ -1670,47 +1457,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
             "status": "saved", "entity_id": entity_id,
             "decision": request.decision,
             "target_id": document.get("consolidated_into") or document.get("detail_of"),
-        }
-
-    @application.get("/api/type-reviews")
-    async def type_reviews(offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)) -> dict:
-        refresh_type_review_queue()
-        return clean_json(
-            {"total": len(type_review_queue), "offset": offset, "items": type_review_queue[offset : offset + limit]}
-        )
-
-    @application.post("/api/type-reviews/{polity_id}")
-    async def decide_type_review(polity_id: str, request: EntityTypeUpdate) -> dict:
-        record = next((item for item in type_review_queue if item["id"] == polity_id), None)
-        if record is None:
-            raise HTTPException(404, "Entity type review is not pending")
-        save_entity_type(
-            polity_id,
-            request.entity_type,
-            record.get("proposed_type"),
-        )
-        type_review_queue.remove(record)
-        return {"status": "saved", "polity_id": polity_id, "entity_type": request.entity_type}
-
-    @application.get("/api/subdivision-reviews")
-    async def subdivision_reviews(
-        offset: int = Query(0, ge=0), limit: int = Query(25, ge=1, le=100)
-    ) -> dict:
-        queue = subdivision_review_queue()
-        return clean_json(
-            {"total": len(queue), "offset": offset, "items": queue[offset : offset + limit]}
-        )
-
-    @application.post("/api/subdivision-reviews/{polity_id}")
-    async def decide_subdivision_review(
-        polity_id: str, request: SubdivisionParentUpdate
-    ) -> dict:
-        document = save_subdivision_parent(polity_id, request.parent_id)
-        return {
-            "status": "saved",
-            "polity_id": polity_id,
-            "parent_id": document["parent"],
-            "subdivision_parent_status": "confirmed",
         }
 
     @application.get("/api/polities/search")

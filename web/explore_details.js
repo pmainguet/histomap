@@ -129,8 +129,9 @@ function detailOfCandidateButton(candidate) {
   </button>`;
 }
 
-// Mirrors subdivision_review.js's searchParents()/confirmParent() almost
-// exactly, PATCHing `detail_of` via the same generic /fields endpoint the
+// Search-and-pick-a-parent pattern (the /subdivision-review workflow this
+// once mirrored was removed -- see ROADMAP.md), PATCHing `detail_of` via
+// the same generic /fields endpoint the
 // raw editor above already uses (it merges rather than replaces, so a bare
 // `{ detail_of: ... }` body is enough). Only rendered (see
 // detailOfEditorHtml) when the record has no `detail_of` yet -- once set,
