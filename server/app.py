@@ -378,6 +378,11 @@ def create_app(root: Path = ROOT) -> FastAPI:
         # princely estate of the British Raj (dozens of distinct "X Estate"
         # jagirs/princely estates), same category as "state" above.
         "estate",
+        # Same fifth sweep: "Lamidat de Mindif" vs "Lamidat of Tibati" --
+        # different Wikidata QIDs, share only "lamidat" -- the generic term
+        # for a traditional Fulani chiefdom of northern Cameroon, same
+        # category as "sheikhdom"/"emirate" above.
+        "lamidat",
     }
 
     def consolidation_tokens(document: dict) -> set[str]:

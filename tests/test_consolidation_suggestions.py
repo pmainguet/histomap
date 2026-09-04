@@ -890,6 +890,21 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         ]
         self.not_a_candidate("angadh_estate", "kapshi_estate", polities)
 
+    def test_shared_lamidat_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 5 September 2026: "Lamidat de Mindif" and "Lamidat of
+        # Tibati" -- different Wikidata QIDs, share only the generic term
+        # for a traditional Fulani chiefdom of northern Cameroon, same
+        # category as "sheikhdom"/"emirate" above.
+        polities = [
+            {**BASE, "id": "lamidat_de_mindif", "canonical_name": "Lamidat de Mindif",
+             "external_ids": {"wikidata": "Q139827290"}, "start": 1788, "end": None,
+             "prominence_score": 20, "geography": {"present_countries": ["CM"]}},
+            {**BASE, "id": "lamidat_of_tibati", "canonical_name": "Lamidat of Tibati",
+             "external_ids": {"wikidata": "Q130297924"}, "start": 1808, "end": None,
+             "prominence_score": 20, "geography": {"present_countries": ["CM"]}},
+        ]
+        self.not_a_candidate("lamidat_de_mindif", "lamidat_of_tibati", polities)
+
 
 if __name__ == "__main__":
     unittest.main()
