@@ -29,7 +29,8 @@ class UnifiedServerTests(unittest.TestCase):
         saved = yaml.safe_load(
             (self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8")
         )
-        self.assertEqual(saved["subdivision_parent_status"], "pending")
+        self.assertNotIn("subdivision_parent_status", saved)
+        self.assertNotIn("parent", saved)
 
     def setUp(self) -> None:
         self.temporary = tempfile.TemporaryDirectory()

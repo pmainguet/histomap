@@ -1238,11 +1238,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
         document["manual_overrides"] = sorted(
             set(document.get("manual_overrides", [])) | {"entity_type"}
         )
-        if entity_type == "subdivision":
-            document["parent"] = None
-            document["subdivision_parent_status"] = "pending"
-        else:
-            document.pop("subdivision_parent_status", None)
         changed = {polity_id}
         if document.get("parent"):
             target = metadata.get(document["parent"])
