@@ -36,7 +36,7 @@ class ReviewCliTests(unittest.TestCase):
             pending = pending_records(review_path, decision_path)
         self.assertEqual([record["seshat_id"] for record in pending], ["two"])
 
-    def test_priority_favors_globally_visible_prominent_candidates(self) -> None:
+    def test_priority_favors_prominent_candidates(self) -> None:
         record = {
             "start_year": 100,
             "end_year": 500,
@@ -51,14 +51,14 @@ class ReviewCliTests(unittest.TestCase):
         metadata = {
             "major": {
                 "prominence_score": 75,
-                "visibility_tier": "global",
                 "external_ids": {},
             }
         }
         high, components = review_priority(record, metadata)
         low, _ = review_priority(record, {})
         self.assertGreater(high, low)
-        self.assertEqual(components["tier"], 100)
+        self.assertEqual(components["candidate_impact"], 75)
+        self.assertNotIn("tier", components)
 
 
 if __name__ == "__main__":

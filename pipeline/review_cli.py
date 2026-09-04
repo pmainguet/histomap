@@ -24,7 +24,7 @@ def review_priority(record: dict, metadata: dict[str, dict]) -> tuple[float, dic
     if not candidates:
         return 0.0, {
             key: 0.0
-            for key in ("source_importance", "candidate_impact", "quality", "ambiguity", "tier", "coverage")
+            for key in ("source_importance", "candidate_impact", "quality", "ambiguity", "coverage")
         }
     best = candidates[0]
     document = metadata.get(best["polity_id"], {})
@@ -45,24 +45,19 @@ def review_priority(record: dict, metadata: dict[str, dict]) -> tuple[float, dic
     runner_up = float(candidates[1].get("total_score", 0)) if len(candidates) > 1 else 0.0
     margin = max(0.0, quality - runner_up)
     ambiguity = max(0.0, 100.0 - margin * 8)
-    tier = {"global": 100.0, "regional": 50.0, "detailed": 0.0}.get(
-        document.get("visibility_tier", "detailed"), 0.0
-    )
     coverage = 0.0 if (document.get("external_ids") or {}).get("seshat") else 100.0
     components = {
         "source_importance": source_importance,
         "candidate_impact": candidate_impact,
         "quality": quality,
         "ambiguity": ambiguity,
-        "tier": tier,
         "coverage": coverage,
     }
     score = (
         0.30 * source_importance
-        + 0.25 * candidate_impact
+        + 0.35 * candidate_impact
         + 0.20 * quality
         + 0.10 * ambiguity
-        + 0.10 * tier
         + 0.05 * coverage
     )
     return round(score, 2), components
