@@ -178,7 +178,7 @@ function candidateMarkup(candidate, index) {
         ${comparisonRow("Instance of", `<span class="source-links">${typeLinks(current)}</span>`, `<span class="source-links">${typeLinks(candidate)}</span>`)}
         ${comparisonRow("Wikidata", `<span class="source-links">${links(current)}</span>`, `<span class="source-links">${links(candidate)}</span>`, candidate.same_wikidata ? "match" : "review")}
         ${comparisonRow("Wikipedia", `<span class="source-links">${wikipediaPlaceholder(current)}</span>`, `<span class="source-links">${wikipediaPlaceholder(candidate)}</span>`)}
-        ${comparisonRow("Part of", `<span class="source-links">${partOfPlaceholder(current)}</span>`, `<span class="source-links">${partOfPlaceholder(candidate)}</span>`)}
+        ${comparisonRow("Part of", `<span class="source-links">${partOfPlaceholder(current)}</span>`, `<span class="source-links">${partOfPlaceholder(candidate)}</span>`, (candidate.reviewed_part_of_candidate || candidate.candidate_part_of_reviewed) ? "match" : "")}
         ${comparisonRow("Contains", `<span class="source-links">${containsPlaceholder(current)}</span>`, `<span class="source-links">${containsPlaceholder(candidate)}</span>`)}
         ${comparisonRow("Type", escapeHtml(current.entity_type), escapeHtml(candidate.entity_type), candidate.type_match ? "match" : "conflict")}
         ${comparisonRow("Dates", dateRange(current), dateRange(candidate), candidate.date_contains ? "match" : candidate.date_overlap ? "review" : "conflict")}

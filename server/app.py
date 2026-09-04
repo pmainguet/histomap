@@ -340,6 +340,44 @@ def create_app(root: Path = ROOT) -> FastAPI:
         # "prince" above; 4 real distinct Giudicati -- Logudoro, Gallura,
         # Cagliari, Arborea -- all share the word).
         "bronze", "giudicato",
+        # Same fifth sweep, three more generic government-form/title words
+        # in the same category as "bishopric"/"prince"/"giudicato" above,
+        # each confirmed via differing Wikidata QIDs: "Signoria of Volterra"
+        # vs "Signoria of Milan" (Q95993051 vs Q15890801, "signoria" is the
+        # generic term for a medieval/renaissance Italian city-state
+        # government), "Lordship of Bologna" vs "Lordship of Carpi"
+        # (Q64576860 vs Q3477825), and "Rus' Khaganate" vs "Second Turkic
+        # Khaganate" (Q1618896 vs Q4833446, "khaganate" is the generic term
+        # for a Turkic/Mongolic steppe-empire government, same role as
+        # "sultanate"/"emirate").
+        "signoria", "lordship", "khaganate",
+        # Same fifth sweep: "Calvinist Republic of Brussels" vs "Calvinist
+        # Republic of Ghent" (distinct Wikidata items, near-identical dates
+        # -- siblings from the same 1577-1585 Calvinist Republics of the Low
+        # Countries wave, each in a different Flemish city -- same category
+        # as "socialist"/"communist" above, a political-religious movement
+        # descriptor, not a place).
+        "calvinist",
+        # Same fifth sweep: "Sheikhdom of al-'Irqa" vs "Sheikhdom of
+        # al-Hawra" -- distinct Wikidata items, identical dates (1900-1967,
+        # both South Arabian protectorate-era sheikhdoms) -- "sheikhdom" is
+        # the generic term, same category as "sultanate"/"emirate"/
+        # "khanate" above.
+        "sheikhdom",
+        # Same fifth sweep: "Waldamt Laurenzi" vs "Waldamt Sebaldi" --
+        # distinct administrative departments of the Imperial City of
+        # Nuremberg (named after different city parishes, St. Lorenz vs St.
+        # Sebald), confirmed genuinely distinct despite extra proximity
+        # evidence (~15km apart, same administrative parent) -- expected
+        # for sibling departments of the same city, not evidence of
+        # identity. "waldamt" is the generic German administrative-unit
+        # term, same category as "vassal state"/"historical territory".
+        "waldamt",
+        # Same fifth sweep: "Angadh Estate" vs "Kapshi Estate" -- no shared
+        # Wikidata item, share only "estate" -- the generic term for a
+        # princely estate of the British Raj (dozens of distinct "X Estate"
+        # jagirs/princely estates), same category as "state" above.
+        "estate",
     }
 
     def consolidation_tokens(document: dict) -> set[str]:

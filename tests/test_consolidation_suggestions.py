@@ -783,6 +783,113 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         ]
         self.not_a_candidate("giudicato_of_logudoro", "giudicato_of_gallura", polities)
 
+    def test_shared_signoria_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 5 September 2026: "Signoria of Volterra" and "Signoria
+        # of Milan" -- different Wikidata QIDs, share only the generic
+        # medieval/renaissance Italian city-state government term "signoria".
+        polities = [
+            {**BASE, "id": "signoria_of_volterra", "canonical_name": "Signoria of Volterra",
+             "external_ids": {"wikidata": "Q95993051"}, "start": 1340, "end": 1361,
+             "prominence_score": 20, "geography": {"present_countries": ["IT"]}},
+            {**BASE, "id": "signoria_of_milan", "canonical_name": "Signoria of Milan",
+             "external_ids": {"wikidata": "Q15890801"}, "start": 1259, "end": 1395,
+             "prominence_score": 20, "geography": {"present_countries": ["IT"]}},
+        ]
+        self.not_a_candidate("signoria_of_volterra", "signoria_of_milan", polities)
+
+    def test_shared_lordship_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 5 September 2026: "Lordship of Bologna" and "Lordship
+        # of Carpi" -- different Wikidata QIDs, share only the generic title
+        # "lordship".
+        polities = [
+            {**BASE, "id": "lordship_of_bologna", "canonical_name": "Lordship of Bologna",
+             "external_ids": {"wikidata": "Q64576860"}, "start": 1337, "end": 1506,
+             "prominence_score": 20, "geography": {"present_countries": ["IT"]}},
+            {**BASE, "id": "lordship_of_carpi", "canonical_name": "Lordship of Carpi",
+             "external_ids": {"wikidata": "Q3477825"}, "start": 1336, "end": 1527,
+             "prominence_score": 20, "geography": {"present_countries": ["IT"]}},
+        ]
+        self.not_a_candidate("lordship_of_bologna", "lordship_of_carpi", polities)
+
+    def test_shared_khaganate_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 5 September 2026: "Rus' Khaganate" and "Second Turkic
+        # Khaganate" -- different Wikidata QIDs, share only the generic
+        # Turkic/Mongolic steppe-empire government term "khaganate", same
+        # category as "sultanate"/"emirate" above.
+        polities = [
+            {**BASE, "id": "rus_khaganate", "canonical_name": "Rus' Khaganate",
+             "external_ids": {"wikidata": "Q1618896"}, "start": 700, "end": 900,
+             "prominence_score": 20, "geography": {"present_countries": ["RU"]}},
+            {**BASE, "id": "second_turkic_khaganate", "canonical_name": "Second Turkic Khaganate",
+             "external_ids": {"wikidata": "Q4833446"}, "start": 682, "end": 744,
+             "prominence_score": 20, "geography": {"present_countries": ["MN"]}},
+        ]
+        self.not_a_candidate("rus_khaganate", "second_turkic_khaganate", polities)
+
+    def test_shared_calvinist_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 5 September 2026: "Calvinist Republic of Brussels" and
+        # "Calvinist Republic of Ghent" -- distinct Wikidata items, siblings
+        # from the same 1577-1585 Calvinist Republics of the Low Countries
+        # wave, each in a different Flemish city -- same category as
+        # "socialist"/"communist" above, not a place.
+        polities = [
+            {**BASE, "id": "calvinist_republic_of_brussels", "canonical_name": "Calvinist Republic of Brussels",
+             "external_ids": {"wikidata": "Q26234049"}, "start": 1576, "end": 1585,
+             "prominence_score": 20, "geography": {"present_countries": ["BE"]}},
+            {**BASE, "id": "calvinist_republic_of_ghent", "canonical_name": "Calvinist Republic of Ghent",
+             "external_ids": {"wikidata": "Q1926952"}, "start": 1577, "end": 1584,
+             "prominence_score": 20, "geography": {"present_countries": ["BE"]}},
+        ]
+        self.not_a_candidate("calvinist_republic_of_brussels", "calvinist_republic_of_ghent", polities)
+
+    def test_shared_sheikhdom_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 5 September 2026: "Sheikhdom of al-'Irqa" and
+        # "Sheikhdom of al-Hawra" -- distinct Wikidata items, identical
+        # dates (1900-1967, both South Arabian protectorate-era sheikhdoms)
+        # -- "sheikhdom" is the generic term, same category as
+        # "sultanate"/"emirate"/"khanate" above.
+        polities = [
+            {**BASE, "id": "sheikhdom_of_al_irqa", "canonical_name": "Sheikhdom of al-'Irqa",
+             "external_ids": {"wikidata": "Q65051443"}, "start": 1900, "end": 1967,
+             "prominence_score": 20, "geography": {"present_countries": ["YE"]}},
+            {**BASE, "id": "sheikhdom_of_al_hawra", "canonical_name": "Sheikhdom of al-Hawra",
+             "external_ids": {"wikidata": "Q65050489"}, "start": 1900, "end": 1967,
+             "prominence_score": 20, "geography": {"present_countries": ["YE"]}},
+        ]
+        self.not_a_candidate("sheikhdom_of_al_irqa", "sheikhdom_of_al_hawra", polities)
+
+    def test_shared_waldamt_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 5 September 2026: "Waldamt Laurenzi" and "Waldamt
+        # Sebaldi" -- distinct administrative departments of the Imperial
+        # City of Nuremberg (named after different city parishes), confirmed
+        # genuinely distinct despite extra proximity evidence (~15km apart,
+        # same administrative parent) -- expected for sibling departments of
+        # the same city, not evidence of identity.
+        polities = [
+            {**BASE, "id": "waldamt_laurenzi", "canonical_name": "Waldamt Laurenzi",
+             "external_ids": {"wikidata": "Q62857869"}, "start": 1500, "end": 1790,
+             "prominence_score": 20, "geography": {"present_countries": ["DE"]}},
+            {**BASE, "id": "waldamt_sebaldi", "canonical_name": "Waldamt Sebaldi",
+             "external_ids": {"wikidata": "Q63256959"}, "start": 1500, "end": 1790,
+             "prominence_score": 20, "geography": {"present_countries": ["DE"]}},
+        ]
+        self.not_a_candidate("waldamt_laurenzi", "waldamt_sebaldi", polities)
+
+    def test_shared_estate_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 5 September 2026: "Angadh Estate" and "Kapshi Estate"
+        # -- no shared Wikidata item, share only "estate" -- the generic
+        # term for a princely estate of the British Raj, same category as
+        # "state" above.
+        polities = [
+            {**BASE, "id": "angadh_estate", "canonical_name": "Angadh Estate",
+             "external_ids": {"wikidata": "Q104151568"}, "start": 1874, "end": 1947,
+             "prominence_score": 20, "geography": {"present_countries": ["IN"]}},
+            {**BASE, "id": "kapshi_estate", "canonical_name": "Kapshi Estate",
+             "external_ids": {"wikidata": "Q11929645"}, "start": 1750, "end": 1956,
+             "prominence_score": 20, "geography": {"present_countries": ["IN"]}},
+        ]
+        self.not_a_candidate("angadh_estate", "kapshi_estate", polities)
+
 
 if __name__ == "__main__":
     unittest.main()
