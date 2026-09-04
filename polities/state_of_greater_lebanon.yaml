@@ -3,7 +3,6 @@ canonical_name: State of Greater Lebanon
 names: {}
 external_ids:
   wikidata: Q108865226
-parent: french_mandate_of_lebanon
 successors:
 - lebanese_republic_under_french_mandate
 start: 1920
@@ -103,3 +102,4 @@ deprecated:
     source_urls:
     - https://www.wikidata.org/wiki/Q108865226
     notes: Reviewed record is a dated phase of this canonical polity.
+  parent: french_mandate_of_lebanon

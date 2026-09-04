@@ -4,7 +4,6 @@ names:
   fr: maison Tudor
 external_ids:
   wikidata: Q101978
-parent: kingdom_of_england
 successors: []
 start: 1485
 end: 1603
@@ -61,3 +60,6 @@ prominence_components:
 source_urls:
 - https://www.wikidata.org/wiki/Q101978
 government_form: null
+detail_of: kingdom_of_england
+deprecated:
+  parent: kingdom_of_england

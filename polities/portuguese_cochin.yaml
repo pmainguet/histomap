@@ -4,7 +4,6 @@ names:
   aliases_en: Portuguese Kochin
 external_ids:
   wikidata: Q112062660
-parent: kingdom_of_cochin
 successors: []
 start: 1503
 end: 1663
@@ -56,3 +55,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 4.02
 government_form: protectorate
+detail_of: kingdom_of_cochin
+deprecated:
+  parent: kingdom_of_cochin

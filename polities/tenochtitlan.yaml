@@ -5,7 +5,6 @@ names:
   aliases_en: Mexico-Tenochtitlan | Tenochtitlan [México]
 external_ids:
   wikidata: Q13695
-parent: aztec_empire
 successors: []
 start: 1325
 end: 1521
@@ -60,3 +59,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 33.48
 government_form: city-state
+detail_of: aztec_empire
+deprecated:
+  parent: aztec_empire

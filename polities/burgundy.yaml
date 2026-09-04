@@ -4,7 +4,6 @@ names:
   fr: Bourgogne
 external_ids:
   wikidata: Q357201
-parent: francia
 successors: []
 start: 534
 end: 843
@@ -53,3 +52,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 19.04
 government_form: null
+detail_of: francia
+deprecated:
+  parent: francia

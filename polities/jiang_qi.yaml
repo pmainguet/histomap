@@ -4,7 +4,6 @@ names:
   aliases_en: Tian Qi | Qi guo | Qi state
 external_ids:
   wikidata: Q11091481
-parent: qi_q837855
 successors:
 - tian_qi
 start: -1045
@@ -63,3 +62,6 @@ manual_overrides:
 - entity_type
 government_form: null
 consolidation_status: independent
+detail_of: qi_q837855
+deprecated:
+  parent: qi_q837855

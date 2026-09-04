@@ -4,7 +4,6 @@ names:
   fr: royaume de Sardaigne (1713-1720)
 external_ids:
   wikidata: Q3932080
-parent: kingdom_of_sardinia_q165154
 successors:
 - kingdom_of_sardinia_q2577303
 start: 1713
@@ -96,3 +95,4 @@ deprecated:
     source_urls:
     - https://www.wikidata.org/wiki/Q3932080
     notes: Reviewed record is a dated phase of this canonical polity.
+  parent: kingdom_of_sardinia_q165154

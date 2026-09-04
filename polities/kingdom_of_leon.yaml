@@ -5,7 +5,6 @@ names:
   aliases_en: Kingdom of León | Leonese Kingdom
 external_ids:
   wikidata: Q175276
-parent: crown_of_castile
 successors: []
 start: 910
 end: 1833
@@ -66,3 +65,6 @@ prominence_components:
 linked_era_id: medieval_europe_era
 government_form: null
 linked_chapter_id: macro_postclassical_worlds
+detail_of: crown_of_castile
+deprecated:
+  parent: crown_of_castile

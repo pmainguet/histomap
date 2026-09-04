@@ -5,7 +5,6 @@ names:
   aliases_en: Portuguese Kingdom
 external_ids:
   wikidata: Q45670
-parent: united_kingdom_of_portugal_brazil_and_the_algarves
 successors:
 - first_portuguese_republic
 start: 1139
@@ -80,3 +79,6 @@ prominence_components:
 linked_era_id: medieval_europe_era
 government_form: kingdom
 linked_chapter_id: macro_postclassical_worlds
+detail_of: united_kingdom_of_portugal_brazil_and_the_algarves
+deprecated:
+  parent: united_kingdom_of_portugal_brazil_and_the_algarves

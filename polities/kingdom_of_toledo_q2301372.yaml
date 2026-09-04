@@ -5,7 +5,6 @@ names:
   aliases_en: Castilian Kingdom of Toledo
 external_ids:
   wikidata: Q2301372
-parent: crown_of_castile
 successors: []
 start: 1085
 end: 1833
@@ -57,3 +56,6 @@ consolidation_status: independent
 manual_overrides:
 - consolidation
 government_form: kingdom
+detail_of: crown_of_castile
+deprecated:
+  parent: crown_of_castile

@@ -5,7 +5,6 @@ names:
   aliases_en: Yugoslavia | Jugoslavija
 external_ids:
   wikidata: Q191077
-parent: yugoslavia
 successors:
 - democratic_federal_yugoslavia
 - governorate_of_montenegro
@@ -82,3 +81,6 @@ prominence_components:
   total: 34.5
 consolidation_status: independent
 government_form: null
+detail_of: yugoslavia
+deprecated:
+  parent: yugoslavia

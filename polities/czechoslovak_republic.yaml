@@ -3,7 +3,6 @@ canonical_name: Czechoslovak Republic
 names: {}
 external_ids:
   wikidata: Q11178782
-parent: czechoslovakia
 successors:
 - czechoslovak_socialist_republic
 start: 1948
@@ -17,7 +16,10 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Editorially identified as a phase or aspect of Czechoslovak Socialist Republic.
+notes: 'Editorially identified as a phase or aspect of Czechoslovak Socialist Republic.
+  Migration note (parent/detail_of merge, 4 September 2026): the retired parent field
+  pointed at czechoslovakia, kept detail_of (czechoslovak_socialist_republic) as the
+  deliberately-set value instead.'
 sources:
 - wikidata
 prominence_score: 9.46
@@ -88,3 +90,4 @@ deprecated:
     source_urls:
     - https://www.wikidata.org/wiki/Q11178782
     notes: Reviewed record is a dated phase of this canonical polity.
+  parent: czechoslovakia

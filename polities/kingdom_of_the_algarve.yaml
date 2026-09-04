@@ -5,7 +5,6 @@ names:
   aliases_en: Al-Gharb al-Andalus | Regnum Algarbiorum | Reino dos Algarves
 external_ids:
   wikidata: Q1796196
-parent: united_kingdom_of_portugal_brazil_and_the_algarves
 successors: []
 start: 1242
 end: 1910
@@ -27,7 +26,9 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Automatically generated from Wikidata; requires review.
+notes: 'Automatically generated from Wikidata; requires review. Migration note (parent/detail_of
+  merge, 4 September 2026): the retired parent field pointed at united_kingdom_of_portugal_brazil_and_the_algarves,
+  kept detail_of (kingdom_of_portugal) as the deliberately-set value instead.'
 sources:
 - hyde
 - wikidata
@@ -74,3 +75,5 @@ linked_chapter_id: macro_early_modern_connections
 detail_of: kingdom_of_portugal
 manual_overrides:
 - consolidation
+deprecated:
+  parent: united_kingdom_of_portugal_brazil_and_the_algarves

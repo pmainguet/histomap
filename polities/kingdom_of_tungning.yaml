@@ -7,7 +7,6 @@ names:
     | Tywan | Yanping Kingdom | Zheng clan Kingdom
 external_ids:
   wikidata: Q152855
-parent: ming_zheng
 successors: []
 start: 1661
 end: 1683
@@ -62,3 +61,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 26.41
 government_form: null
+detail_of: ming_zheng
+deprecated:
+  parent: ming_zheng

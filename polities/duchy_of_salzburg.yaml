@@ -5,7 +5,6 @@ names:
   aliases_en: Salzburg
 external_ids:
   wikidata: Q661340
-parent: cisleithania
 successors: []
 start: 1849
 end: 1918
@@ -58,3 +57,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 24.34
 government_form: null
+detail_of: cisleithania
+deprecated:
+  parent: cisleithania

@@ -3,7 +3,6 @@ canonical_name: Gojamidongguk
 names: {}
 external_ids:
   wikidata: Q12584384
-parent: byeonhan_confederacy
 successors: []
 start: -200
 end: 600
@@ -52,3 +51,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 10.27
 government_form: null
+detail_of: byeonhan_confederacy
+deprecated:
+  parent: byeonhan_confederacy

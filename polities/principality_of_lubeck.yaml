@@ -4,7 +4,6 @@ names:
   fr: Principauté de Lübeck
 external_ids:
   wikidata: Q1311767
-parent: grand_duchy_of_oldenburg
 successors: []
 start: 1803
 end: 1918
@@ -18,7 +17,10 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Automatically generated from Wikidata; requires review.
+notes: 'Automatically generated from Wikidata; requires review. Migration note (parent/detail_of
+  merge, 4 September 2026): the retired parent field pointed at grand_duchy_of_oldenburg,
+  kept detail_of (history_of_the_free_and_hanseatic_city_of_lubeck) as the deliberately-set
+  value instead.'
 sources:
 - wikidata
 prominence_score: 8.38
@@ -55,3 +57,5 @@ government_form: principality
 detail_of: history_of_the_free_and_hanseatic_city_of_lubeck
 manual_overrides:
 - consolidation
+deprecated:
+  parent: grand_duchy_of_oldenburg

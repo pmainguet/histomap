@@ -27,14 +27,6 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    same record just changing what it is. Surfaced live, 3 September 2026, while reclassifying
    `seshat_kachi_plain_pkceran` as a period. Needs its own brainstorm/design pass (approaches,
    tradeoffs, a real spec) before touching anything -- not a quick fix.
-0 ter. **Merge `subdivision` (the `entity_type` + `parent` + `subdivision_parent_status`
-   mechanism) into `detail_of`.** Raised live, 3 September 2026: a subdivision is conceptually
-   the same "this entity nests inside that one" relationship `detail_of` already covers (the
-   September 1 merge folded `phase_of` *and* `part_of` into it) -- `subdivision`/`parent` is a
-   third, separate, older mechanism expressing the same idea, used far more broadly than just
-   subdivisions (84 records, only 1 actually typed as a subdivision, 15 already duplicating
-   `detail_of`). Design done, 4 September 2026: `docs/plans/2026-09-04-subdivision-detail-of-merge-design.md`
-   -- awaiting spec review before implementation.
 1. **Work the polity → period reclassification queue (73 pending, confirmed live 1 September 2026,
    `/consolidation-review`'s "period"/"both" decision).** Full scope-and-seed pass done (see
    STATUS.md); what's left is ordinary manual review.

@@ -6,7 +6,6 @@ names:
     | GDL | Lietuva | Lithuanian Empire
 external_ids:
   wikidata: Q49683
-parent: polishlithuanian_commonwealth
 successors: []
 start: 1236
 end: 1795
@@ -69,3 +68,6 @@ prominence_components:
 linked_era_id: europe_early_modern_connections_era
 government_form: null
 linked_chapter_id: macro_early_modern_connections
+detail_of: polishlithuanian_commonwealth
+deprecated:
+  parent: polishlithuanian_commonwealth

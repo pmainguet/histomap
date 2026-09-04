@@ -1583,6 +1583,66 @@ file, old one retired -- not a field flip, surfaced live while reclassifying
 mechanism into `detail_of` (the same "nests inside" relationship, expressed a third, separate way).
 Both explicitly deferred to their own design pass, placed at the top of ROADMAP.md's list.
 
+### `subdivision`/`parent` merged into `detail_of` — 4 September 2026
+
+Implemented the design at `docs/plans/2026-09-04-subdivision-detail-of-merge-design.md` (ROADMAP
+item "0 ter"), following its 5-task plan task-by-task with a full test run and commit after each.
+
+**Task 1 (`schema.py`):** retired `Polity.parent` and `Polity.subdivision_parent_status`; added a
+`detail_of` self-reference guard (`detail_of == id` now raises). Caught and fixed a real defect in
+the plan's own test design while implementing it: `Polity` has no `model_config`/`extra=` override
+anywhere, so it uses Pydantic v2's default `extra="ignore"` -- removing a field declaration makes an
+unknown kwarg silently drop, it does not raise. The plan's two field-retirement tests expected
+`ValidationError`; rewrote them to assert the field is absent from the constructed instance and from
+`Polity.model_fields` instead.
+
+**Task 2 (`build.py`):** replaced `validate_entity_relationships()`'s `parent`-keyed checks with a
+single `detail_of` check (unknown target only -- deliberately no chaining rejection, since
+multi-level nesting is legitimate data, see below). Also fixed a second plan gap found while
+implementing it: `find_parent_cycles()` (wired into `load_all()`'s error reporting) also keyed off
+`Polity.parent` and wasn't mentioned by the plan at all -- renamed to `find_detail_of_cycles()`,
+same cycle-vs-chain distinction (an actual revisit, e.g. A -> B -> A, is still an error; an ordinary
+multi-level chain is not, since the walk only flags a *repeated* id). Removed
+`test_political_parent_rejects_non_polity_endpoint` alongside the plan's own
+`test_subdivision_requires_parent_polity` removal -- both tested the `parent`-specific
+type-restriction check, which `detail_of` deliberately has no equivalent for.
+
+**Task 3 (`server/app.py`):** removed `save_entity_type()`'s `entity_type == "subdivision"` branch
+that reset `parent`/wrote `subdivision_parent_status: "pending"` -- nothing left to reset. The
+older, separate legacy-`parent`-to-typed-relationship conversion logic further down in the same
+function (for records not yet migrated) was deliberately left untouched per the plan; it stops
+*creating* new values, Task 4 cleans up what already exists.
+
+**Task 4 (`pipeline/migrate_parent_to_detail_of.py`):** new one-off migration. For each polity with
+a `parent` value: moves it to `detail_of` unless one is already set (in which case the existing
+`detail_of` wins and, if it disagrees with the retired `parent`, a dated migration note is appended
+to `notes`); always preserves the old values under a `deprecated` bucket
+(`deprecated.parent`/`deprecated.subdivision_parent_status`) rather than discarding them outright.
+Explicitly does not flatten multi-level chains -- corrected mid-design after live pushback ("we
+could have parent entity that can be detail of other parent... that should be handled correctly by
+both the model and the ux"): an earlier draft's `_resolve_flattened_target()` helper, which would
+have collapsed a chain to its ultimate root, was removed entirely once 22 real multi-level chains
+were found in the live data (`kingdom_of_castile -> crown_of_castile -> hispanic_monarchy`,
+`duchy_of_bukovina -> cisleithania -> austriahungary`, and 20 more), confirming chains are
+legitimate structure, not an error to eliminate.
+
+**Task 5 (ran for real):** dry-run confirmed 84 records with a non-null `parent` (re-counted live,
+matching the plan's own 4 September count), 15 already carrying both fields. Ran for real, rebuilt
+(`build.py`, `pipeline.compute_prominence`, `pipeline.rebuild_timeline`) -- zero validation errors,
+confirming zero dangling `detail_of` targets and zero cycles across the whole dataset. Full suite:
+336 tests, 0 failures. Spot-checked the `kingdom_of_castile -> crown_of_castile -> hispanic_monarchy`
+chain migrated unflattened, byte-for-byte matching the design's worked example. Confirmed the chain
+still hits the *already-documented* rendering gap (ROADMAP item 0: `build_explore_tree.py`'s
+`if polity.get("detail_of"): continue` skip is unconditional, so an entity whose `detail_of` target
+itself carries `detail_of` never finds a top-level container to nest under) -- reading the code
+directly confirmed this skip applies regardless of chain depth, so the gap predates this migration;
+the migration just increased how many real records are affected by it (2 known chains before today,
+22 now), which is exactly why ROADMAP item 0 exists as its own follow-up rather than being folded
+into this task.
+
+**ROADMAP item "0 ter" removed** (done). Item 0 (multi-level `detail_of` rendering) stays open --
+now has real production data (22 chains) to design the renderer against.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which

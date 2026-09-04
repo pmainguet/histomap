@@ -5,7 +5,6 @@ names:
   aliases_en: Poland | Kingdom of Poland
 external_ids:
   wikidata: Q171348
-parent: polishlithuanian_commonwealth
 successors: []
 start: 1386
 end: 1795
@@ -59,3 +58,6 @@ prominence_components:
   total: 27.19
 consolidation_status: independent
 government_form: null
+detail_of: polishlithuanian_commonwealth
+deprecated:
+  parent: polishlithuanian_commonwealth

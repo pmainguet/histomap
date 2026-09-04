@@ -4,7 +4,6 @@ names:
   fr: Duché de Saxe (1485-1547)
 external_ids:
   wikidata: Q2219448
-parent: holy_roman_empire
 successors: []
 start: 1485
 end: 1547
@@ -54,3 +53,6 @@ prominence_components:
 manual_overrides:
 - entity_type
 government_form: null
+detail_of: holy_roman_empire
+deprecated:
+  parent: holy_roman_empire

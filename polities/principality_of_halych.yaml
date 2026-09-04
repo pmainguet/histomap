@@ -5,7 +5,6 @@ names:
   aliases_en: Galicia principality | Halych principality | Principality of Galicia
 external_ids:
   wikidata: Q3403551
-parent: kievan_rus
 successors: []
 start: 1124
 end: 1199
@@ -54,3 +53,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 26.22
 government_form: null
+detail_of: kievan_rus
+deprecated:
+  parent: kievan_rus

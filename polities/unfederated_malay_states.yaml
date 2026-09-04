@@ -5,7 +5,6 @@ names:
   aliases_en: Negeri-negeri Melayu Tidak Bersekutu
 external_ids:
   wikidata: Q1973084
-parent: british_malaya
 successors:
 - malayan_union
 start: 1826
@@ -67,3 +66,6 @@ government_form: protectorate
 consolidation_status: independent
 manual_overrides:
 - consolidation
+detail_of: british_malaya
+deprecated:
+  parent: british_malaya

@@ -8,7 +8,6 @@ names:
     Dynasty | Zhou Empire | Zhou Kingdom
 external_ids:
   wikidata: Q307066
-parent: zhou_dynasty
 successors: []
 start: -770
 end: -255
@@ -62,3 +61,6 @@ manual_overrides:
 timeline_role: entity
 consolidation_status: independent
 government_form: null
+detail_of: zhou_dynasty
+deprecated:
+  parent: zhou_dynasty

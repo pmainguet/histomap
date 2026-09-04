@@ -12,7 +12,6 @@ external_ids:
   - ItRomLR
   - ItRomMR
   - ItRomR
-parent: roman_kingdom
 successors:
 - byzantine_empire
 start: -509
@@ -90,3 +89,6 @@ manual_overrides:
 linked_era_id: classical_antiquity_era
 government_form: null
 linked_chapter_id: macro_classical_imperial_worlds
+detail_of: roman_kingdom
+deprecated:
+  parent: roman_kingdom

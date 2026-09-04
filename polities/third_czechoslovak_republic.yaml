@@ -4,7 +4,6 @@ names:
   fr: Troisième République tchécoslovaque
 external_ids:
   wikidata: Q2454585
-parent: czechoslovakia
 successors:
 - czechoslovak_republic
 start: 1945
@@ -63,3 +62,5 @@ government_form: null
 detail_of: czechoslovakia
 manual_overrides:
 - consolidation
+deprecated:
+  parent: czechoslovakia

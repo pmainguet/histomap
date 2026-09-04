@@ -4,7 +4,6 @@ names:
   fr: dynastie captienne directe
 external_ids:
   wikidata: Q179544
-parent: kingdom_of_france
 successors: []
 start: 987
 end: 1328
@@ -64,3 +63,6 @@ prominence_components:
 source_urls:
 - https://en.wikipedia.org/wiki/Capetian_dynasty
 government_form: null
+detail_of: kingdom_of_france
+deprecated:
+  parent: kingdom_of_france

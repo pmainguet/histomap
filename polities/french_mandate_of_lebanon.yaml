@@ -6,7 +6,6 @@ names:
     for the Lebanon | Greater Lebanon
 external_ids:
   wikidata: Q130842
-parent: french_mandate_for_syria_and_the_lebanon
 successors: []
 start: 1920
 end: 1943
@@ -61,3 +60,6 @@ prominence_components:
 manual_overrides:
 - geography
 government_form: mandate
+detail_of: french_mandate_for_syria_and_the_lebanon
+deprecated:
+  parent: french_mandate_for_syria_and_the_lebanon

@@ -8,7 +8,6 @@ external_ids:
   wikidata: Q7313
   seshat:
   - CnYuan*
-parent: mongol_empire
 successors:
 - ming_dynasty
 - northern_yuan_dynasty
@@ -78,3 +77,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 51.03
 government_form: null
+detail_of: mongol_empire
+deprecated:
+  parent: mongol_empire

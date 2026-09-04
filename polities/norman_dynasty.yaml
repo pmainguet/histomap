@@ -4,7 +4,6 @@ names:
   fr: dynastie normande
 external_ids:
   wikidata: Q516569
-parent: kingdom_of_england
 successors: []
 start: 1066
 end: 1135
@@ -60,3 +59,6 @@ prominence_components:
 source_urls:
 - https://en.wikipedia.org/wiki/Norman_dynasty
 government_form: null
+detail_of: kingdom_of_england
+deprecated:
+  parent: kingdom_of_england

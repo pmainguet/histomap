@@ -5,7 +5,6 @@ names:
   aliases_en: Styria
 external_ids:
   wikidata: Q580447
-parent: cisleithania
 successors: []
 start: 1180
 end: 1918
@@ -59,3 +58,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 19.37
 government_form: duchy
+detail_of: cisleithania
+deprecated:
+  parent: cisleithania

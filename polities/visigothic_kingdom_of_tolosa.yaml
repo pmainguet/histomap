@@ -4,7 +4,6 @@ names:
   fr: royaume wisigoth de Toulouse
 external_ids:
   wikidata: Q3307686
-parent: visigothic_kingdom
 successors:
 - empire_of_theodoric_the_great
 start: 418
@@ -76,3 +75,6 @@ linked_chapter_id: macro_classical_imperial_worlds
 consolidation_status: independent
 manual_overrides:
 - consolidation
+detail_of: visigothic_kingdom
+deprecated:
+  parent: visigothic_kingdom

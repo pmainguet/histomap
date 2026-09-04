@@ -3,7 +3,6 @@ canonical_name: Tian Qi
 names: {}
 external_ids:
   wikidata: Q1077538
-parent: qi_q837855
 successors: []
 start: -385
 end: -220
@@ -55,3 +54,6 @@ manual_overrides:
 - entity_type
 consolidation_status: independent
 government_form: null
+detail_of: qi_q837855
+deprecated:
+  parent: qi_q837855

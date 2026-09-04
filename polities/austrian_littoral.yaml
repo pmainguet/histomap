@@ -5,7 +5,6 @@ names:
   aliases_en: Austrian Coastland | Kuestenland | Kustenland
 external_ids:
   wikidata: Q306696
-parent: cisleithania
 successors: []
 start: 1813
 end: 1919
@@ -61,3 +60,6 @@ prominence_components:
 manual_overrides:
 - entity_type
 government_form: null
+detail_of: cisleithania
+deprecated:
+  parent: cisleithania

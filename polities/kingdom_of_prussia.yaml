@@ -4,7 +4,6 @@ names:
   fr: royaume de Prusse
 external_ids:
   wikidata: Q27306
-parent: prussia
 successors:
 - free_state_of_prussia
 start: 1701
@@ -116,3 +115,4 @@ deprecated:
     source_urls:
     - https://www.wikidata.org/wiki/Q27306
     notes: Reviewed record is a dated phase of this canonical polity.
+  parent: prussia

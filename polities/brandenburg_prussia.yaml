@@ -4,7 +4,6 @@ names:
   fr: Brandebourg-Prusse
 external_ids:
   wikidata: Q157367
-parent: prussia
 successors:
 - kingdom_of_prussia
 start: 1618
@@ -114,3 +113,4 @@ deprecated:
     source_urls:
     - https://www.wikidata.org/wiki/Q157367
     notes: Reviewed record is a dated phase of this canonical polity.
+  parent: prussia

@@ -6,7 +6,6 @@ names:
     Council
 external_ids:
   wikidata: Q533534
-parent: austriahungary
 successors:
 - first_czechoslovak_republic
 - republic_of_german_austria
@@ -83,3 +82,6 @@ prominence_components:
 manual_overrides:
 - entity_type
 government_form: null
+detail_of: austriahungary
+deprecated:
+  parent: austriahungary

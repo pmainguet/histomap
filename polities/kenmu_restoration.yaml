@@ -5,7 +5,6 @@ names:
   aliases_en: Kemmu Restoration
 external_ids:
   wikidata: Q826021
-parent: imperial_court_of_japan
 successors:
 - ashikaga_shogunate
 start: 1333
@@ -67,3 +66,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 27.2
 government_form: null
+detail_of: imperial_court_of_japan
+deprecated:
+  parent: imperial_court_of_japan

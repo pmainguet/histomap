@@ -4,7 +4,6 @@ names:
   fr: archiduché d'Autriche
 external_ids:
   wikidata: Q699964
-parent: habsburg_monarchy
 successors: []
 start: 1358
 end: 1918
@@ -69,3 +68,6 @@ prominence_components:
 linked_era_id: europe_early_modern_connections_era
 government_form: null
 linked_chapter_id: macro_early_modern_connections
+detail_of: habsburg_monarchy
+deprecated:
+  parent: habsburg_monarchy

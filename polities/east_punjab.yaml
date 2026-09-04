@@ -3,7 +3,6 @@ canonical_name: East Punjab
 names: {}
 external_ids:
   wikidata: Q2354639
-parent: punjab
 successors: []
 start: 1950
 end: 1966
@@ -51,7 +50,6 @@ manual_overrides:
 - subdivision_parent_status
 - timeline_role
 - visibility_override
-subdivision_parent_status: confirmed
 visibility_override: global
 linked_era_id: asia_contemporary_world_era
 prominence_components:
@@ -68,3 +66,7 @@ prominence_components:
 government_form: null
 linked_chapter_id: macro_contemporary_world
 consolidation_status: independent
+detail_of: punjab
+deprecated:
+  parent: punjab
+  subdivision_parent_status: confirmed

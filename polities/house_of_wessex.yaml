@@ -4,7 +4,6 @@ names:
   fr: maison de Wessex
 external_ids:
   wikidata: Q511482
-parent: kingdom_of_england
 successors: []
 start: 927
 end: 1066
@@ -65,3 +64,5 @@ government_form: null
 detail_of: kingdom_of_england
 manual_overrides:
 - consolidation
+deprecated:
+  parent: kingdom_of_england

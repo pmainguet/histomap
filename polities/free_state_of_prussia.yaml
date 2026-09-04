@@ -5,7 +5,6 @@ names:
   aliases_en: Republic of Prussia
 external_ids:
   wikidata: Q161036
-parent: prussia
 successors: []
 start: 1918
 end: 1947
@@ -91,3 +90,4 @@ deprecated:
     source_urls:
     - https://www.wikidata.org/wiki/Q161036
     notes: Reviewed record is a dated phase of this canonical polity.
+  parent: prussia

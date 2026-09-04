@@ -4,7 +4,6 @@ names:
   fr: Principauté de Lunebourg
 external_ids:
   wikidata: Q280312
-parent: holy_roman_empire
 successors: []
 start: 1269
 end: 1705
@@ -54,3 +53,6 @@ prominence_components:
 manual_overrides:
 - entity_type
 government_form: principality
+detail_of: holy_roman_empire
+deprecated:
+  parent: holy_roman_empire

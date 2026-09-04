@@ -5,7 +5,6 @@ names:
   aliases_en: Princely County of Gorizia and Gradisca
 external_ids:
   wikidata: Q692946
-parent: cisleithania
 successors: []
 start: 1754
 end: 1919
@@ -65,3 +64,6 @@ prominence_components:
 linked_era_id: europe_industrial_imperial_world_era
 government_form: countship
 linked_chapter_id: macro_industrial_imperial_world
+detail_of: cisleithania
+deprecated:
+  parent: cisleithania

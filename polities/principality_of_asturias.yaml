@@ -5,7 +5,6 @@ names:
   aliases_en: Asturias | Principado de Asturias
 external_ids:
   wikidata: Q111678391
-parent: crown_of_castile
 successors: []
 start: 1388
 end: 1835
@@ -52,3 +51,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 0
 government_form: principality
+detail_of: crown_of_castile
+deprecated:
+  parent: crown_of_castile

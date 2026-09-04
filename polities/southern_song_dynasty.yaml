@@ -4,7 +4,6 @@ names:
   fr: Song méridionaux
 external_ids:
   wikidata: Q1147043
-parent: song_dynasty
 successors:
 - yuan_dynasty
 start: 1127
@@ -99,3 +98,4 @@ deprecated:
     source_urls:
     - https://www.wikidata.org/wiki/Q1147043
     notes: Reviewed record is a dated phase of this canonical polity.
+  parent: song_dynasty

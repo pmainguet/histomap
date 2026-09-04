@@ -7,7 +7,6 @@ external_ids:
   wikidata: Q319460
   seshat:
   - CnNSong
-parent: song_dynasty
 successors:
 - jin_dynasty_q5066
 - southern_song_dynasty
@@ -109,3 +108,4 @@ deprecated:
     source_urls:
     - https://www.wikidata.org/wiki/Q319460
     notes: Reviewed record is a dated phase of this canonical polity.
+  parent: song_dynasty

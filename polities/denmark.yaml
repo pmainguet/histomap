@@ -6,7 +6,6 @@ names:
     | dk | metropolitan Denmark
 external_ids:
   wikidata: Q35
-parent: kingdom_of_denmark
 successors: []
 start: 800
 end: null
@@ -68,3 +67,6 @@ linked_era_id: medieval_europe_era
 government_form: null
 linked_chapter_id: macro_postclassical_worlds
 consolidation_status: independent
+detail_of: kingdom_of_denmark
+deprecated:
+  parent: kingdom_of_denmark

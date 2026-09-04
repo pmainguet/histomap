@@ -4,7 +4,6 @@ names:
   fr: royaume de Séville
 external_ids:
   wikidata: Q1796239
-parent: crown_of_castile
 successors: []
 start: 1248
 end: 1833
@@ -63,3 +62,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 33.61
 government_form: kingdom
+detail_of: crown_of_castile
+deprecated:
+  parent: crown_of_castile
