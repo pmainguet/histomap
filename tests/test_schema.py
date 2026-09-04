@@ -93,5 +93,24 @@ class PolityDetailOfTests(unittest.TestCase):
             Polity(**polity_kwargs(consolidation_status="same_entity"))
 
 
+class PolityParentRetirementTests(unittest.TestCase):
+    def test_parent_field_no_longer_accepted(self) -> None:
+        # Pydantic v2 defaults to extra="ignore" (no model_config override in
+        # schema.py), so an unknown kwarg is silently dropped rather than
+        # raising -- construction still succeeds, just without the attribute.
+        polity = Polity(**polity_kwargs(parent="spain"))
+        self.assertFalse(hasattr(polity, "parent"))
+        self.assertNotIn("parent", Polity.model_fields)
+
+    def test_subdivision_parent_status_field_no_longer_accepted(self) -> None:
+        polity = Polity(**polity_kwargs(subdivision_parent_status="pending"))
+        self.assertFalse(hasattr(polity, "subdivision_parent_status"))
+        self.assertNotIn("subdivision_parent_status", Polity.model_fields)
+
+    def test_detail_of_rejects_self_reference(self) -> None:
+        with self.assertRaises(ValidationError):
+            Polity(**polity_kwargs(id="loop", detail_of="loop"))
+
+
 if __name__ == "__main__":
     unittest.main()

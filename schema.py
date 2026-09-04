@@ -168,7 +168,6 @@ class Polity(BaseModel):
     entity_type_confidence: Confidence = Confidence.low
     entity_type_source_qids: list[str] = Field(default_factory=list)
     entity_type_reviewed_against: list[EntityType] = Field(default_factory=list)
-    subdivision_parent_status: Literal["pending", "confirmed"] | None = None
     timeline_role: Literal["entity", "period", "both", "retired"] = "entity"
     consolidation_status: Literal["independent", "same_entity", "discarded"] | None = None
     consolidated_into: str | None = None
@@ -183,7 +182,6 @@ class Polity(BaseModel):
     # anything live.
     deprecated: dict[str, Any] | None = None
     relationships: list[EntityRelationship] = Field(default_factory=list)
-    parent: str | None = None
     successors: list[str] = Field(default_factory=list)
     geography: Geography = Field(default_factory=Geography)
     manual_overrides: list[str] = Field(default_factory=list)
@@ -251,11 +249,8 @@ class Polity(BaseModel):
     def _check(self) -> "Polity":
         if self.consolidation_status == "same_entity" and not self.consolidated_into:
             raise ValueError("a consolidated entity requires consolidated_into")
-        if self.entity_type == EntityType.subdivision:
-            if self.subdivision_parent_status is None:
-                self.subdivision_parent_status = "pending"
-        elif self.subdivision_parent_status is not None:
-            raise ValueError("subdivision_parent_status is only valid for subdivisions")
+        if self.detail_of and self.detail_of == self.id:
+            raise ValueError("detail_of cannot reference the entity's own id")
         if self.end is not None and self.end < self.start:
             raise ValueError("end must be >= start (or null for still-extant)")
         for year, w in self.weight_by_era.items():
