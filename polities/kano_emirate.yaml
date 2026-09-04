@@ -8,9 +8,9 @@ external_ids:
 parent: null
 successors: []
 start: 999
-end: null
+end: 1903
 start_confidence: low
-end_confidence: low
+end_confidence: high
 weight_by_era:
   999: 5
 weight_imputed: true
@@ -19,7 +19,9 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: Automatically generated from Wikidata; requires review.
+notes: 'Automatically generated from Wikidata; requires review. End date corrected
+  from null to 1903 (British conquest of Kano, part of the fall of the Sokoto
+  Caliphate) -- confirmed live, 3 September 2026.'
 sources:
 - wikidata
 prominence_score: 15.21
@@ -54,3 +56,5 @@ prominence_components:
   aggregate_penalty: 0
   total: 15.21
 government_form: emirate
+manual_overrides:
+- end
