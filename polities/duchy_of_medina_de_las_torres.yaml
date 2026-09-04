@@ -51,3 +51,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 6.03
 government_form: duchy
+consolidation_status: independent
+manual_overrides:
+- consolidation

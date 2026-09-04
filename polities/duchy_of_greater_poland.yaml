@@ -51,3 +51,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 17.85
 government_form: null
+detail_of: kingdom_of_poland_q8890160
+manual_overrides:
+- consolidation

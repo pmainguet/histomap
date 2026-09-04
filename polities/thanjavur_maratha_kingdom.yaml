@@ -57,3 +57,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 22.91
 government_form: kingdom
+consolidation_status: independent
+manual_overrides:
+- consolidation

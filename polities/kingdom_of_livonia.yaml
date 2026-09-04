@@ -47,3 +47,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 19.09
 government_form: null
+detail_of: duchy_of_livonia
+manual_overrides:
+- consolidation

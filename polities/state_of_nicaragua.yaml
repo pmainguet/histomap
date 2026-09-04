@@ -52,3 +52,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 0
 government_form: null
+detail_of: nicaragua
+manual_overrides:
+- consolidation

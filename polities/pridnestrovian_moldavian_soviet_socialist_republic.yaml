@@ -60,3 +60,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 17.49
 government_form: null
+detail_of: moldavian_soviet_socialist_republic
+manual_overrides:
+- consolidation

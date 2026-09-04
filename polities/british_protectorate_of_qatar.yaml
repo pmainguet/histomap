@@ -50,3 +50,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 3.89
 government_form: null
+detail_of: qatar
+manual_overrides:
+- consolidation

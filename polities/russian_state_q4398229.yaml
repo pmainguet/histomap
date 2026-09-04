@@ -53,3 +53,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 20.4
 government_form: null
+detail_of: russian_soviet_federative_socialist_republic
+manual_overrides:
+- consolidation

@@ -46,3 +46,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 10.07
 government_form: null
+detail_of: indonesia
+manual_overrides:
+- consolidation

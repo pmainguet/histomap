@@ -51,3 +51,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 24.88
 government_form: null
+detail_of: somalia
+manual_overrides:
+- consolidation

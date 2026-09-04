@@ -51,3 +51,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 5.74
 government_form: null
+detail_of: guinea
+manual_overrides:
+- consolidation

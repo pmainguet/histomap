@@ -48,3 +48,6 @@ prominence_components:
   aggregate_penalty: 0
   total: 20.86
 government_form: null
+detail_of: philippines
+manual_overrides:
+- consolidation
