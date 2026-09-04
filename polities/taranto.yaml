@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 33.0
-visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -59,3 +58,5 @@ government_form: city-state
 consolidation_status: independent
 manual_overrides:
 - consolidation
+deprecated:
+  visibility_tier: detailed

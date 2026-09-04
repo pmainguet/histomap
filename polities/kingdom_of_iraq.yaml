@@ -24,7 +24,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 39.8
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -61,3 +60,5 @@ linked_chapter_id: macro_world_wars_reordering
 consolidation_status: independent
 manual_overrides:
 - consolidation
+deprecated:
+  visibility_tier: regional

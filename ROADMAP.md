@@ -21,6 +21,18 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    renderer against (see `docs/plans/2026-09-04-subdivision-detail-of-merge-design.md`'s
    "Architecture" section for the full context) -- same "defer until there's real data to design
    against" precedent the original `detail_of` merge's own `/explore`-display item followed.
+   **Simplified 5 September 2026:** the "walk past an invisible ancestor" complication this task
+   would otherwise have needed (13 of the 31 known chain leaves rooted at a then-`detailed`-tier,
+   effectively invisible ancestor) no longer applies -- `visibility_tier` was retired entirely
+   (see STATUS.md), so every `detail_of` root is now unconditionally in scope. The remaining work
+   is purely the recursive-nesting rendering fix.
+0 quater. **Dead `polity.parent` reference in `web/explore_details.js`'s "Part of" display row**
+   (line ~475). Unreachable since the 4 September 2026 merge removed `Polity.parent` from the
+   schema and its migration stripped it from every record -- noticed while touching an adjacent
+   line for the `visibility_tier` retirement, not fixed there since it's a separate, pre-existing
+   piece of dead code. Low priority: harmless (the ternary simply never renders), just needs its
+   `Part of` display logic pointed at `detail_of` instead, or removed if `Contains`/other fields
+   already cover the same information.
 0 bis. **Fix the polity ↔ period conversion friction.** Converting one to the other today isn't a
    field flip -- it's a structural migration: a new record with a new id gets created in the
    *other* directory (`polities/` ↔ `periods/`) and the original is retired, rather than the

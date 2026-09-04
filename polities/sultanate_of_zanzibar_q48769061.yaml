@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 0.27
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -54,3 +53,5 @@ consolidated_into: sultanate_of_zanzibar_q157904
 manual_overrides:
 - consolidation
 government_form: kingdom
+deprecated:
+  visibility_tier: detailed

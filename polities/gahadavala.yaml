@@ -27,7 +27,6 @@ sources:
 - seshat
 - wikidata
 prominence_score: 33.23
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -65,3 +64,5 @@ manual_overrides:
 - geography
 government_form: null
 linked_chapter_id: macro_postclassical_worlds
+deprecated:
+  visibility_tier: regional

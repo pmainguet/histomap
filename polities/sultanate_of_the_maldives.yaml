@@ -36,7 +36,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 34.83
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -84,3 +83,5 @@ government_form: protectorate
 consolidation_status: independent
 manual_overrides:
 - consolidation
+deprecated:
+  visibility_tier: detailed

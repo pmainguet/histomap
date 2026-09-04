@@ -24,7 +24,6 @@ notes: Automatically generated from Wikidata; requires review. End date approxim
 sources:
 - wikidata
 prominence_score: 7.92
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -95,3 +94,4 @@ deprecated:
     source_urls:
     - https://www.wikidata.org/wiki/Q94995143
     notes: Reviewed record is a dated phase of this canonical polity.
+  visibility_tier: detailed

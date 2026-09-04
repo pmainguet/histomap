@@ -27,7 +27,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 33.36
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -63,3 +62,5 @@ consolidated_into: duchy_of_silesia
 manual_overrides:
 - consolidation
 government_form: null
+deprecated:
+  visibility_tier: detailed

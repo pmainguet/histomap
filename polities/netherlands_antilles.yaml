@@ -28,7 +28,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 48.39
-visibility_tier: global
 eligibility: accepted
 geography:
   continents:
@@ -86,3 +85,4 @@ linked_chapter_id: macro_contemporary_world
 detail_of: dutch_empire
 deprecated:
   parent: dutch_empire
+  visibility_tier: global

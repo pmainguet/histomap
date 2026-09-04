@@ -28,7 +28,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 40.06
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -61,3 +60,5 @@ prominence_components:
 linked_era_id: africa_early_modern_connections_era
 government_form: protectorate
 linked_chapter_id: macro_early_modern_connections
+deprecated:
+  visibility_tier: regional

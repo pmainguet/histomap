@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 14.56
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -69,3 +68,4 @@ government_form: null
 detail_of: united_kingdom_of_portugal_brazil_and_the_algarves
 deprecated:
   parent: united_kingdom_of_portugal_brazil_and_the_algarves
+  visibility_tier: detailed

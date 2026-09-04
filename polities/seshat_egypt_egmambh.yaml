@@ -20,7 +20,6 @@ weight_by_era:
   1260: 1.0
 weight_imputed: true
 prominence_score: 11.86
-visibility_tier: detailed
 eligibility: review
 notes: Kept as a separate entity during Seshat reconciliation; requires canonical
   review.
@@ -44,3 +43,5 @@ prominence_components:
 manual_overrides:
 - entity_type
 government_form: null
+deprecated:
+  visibility_tier: detailed

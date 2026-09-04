@@ -25,7 +25,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 37.5
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -65,3 +64,5 @@ prominence_components:
 linked_era_id: africa_world_wars_reordering_era
 government_form: colony
 linked_chapter_id: macro_world_wars_reordering
+deprecated:
+  visibility_tier: regional

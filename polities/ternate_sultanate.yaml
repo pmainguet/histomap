@@ -32,7 +32,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 34.23
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -69,3 +68,5 @@ manual_overrides:
 linked_era_id: asia_early_modern_connections_era
 government_form: sultanate
 linked_chapter_id: macro_early_modern_connections
+deprecated:
+  visibility_tier: regional

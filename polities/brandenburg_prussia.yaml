@@ -23,7 +23,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 41.86
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -114,3 +113,4 @@ deprecated:
     - https://www.wikidata.org/wiki/Q157367
     notes: Reviewed record is a dated phase of this canonical polity.
   parent: prussia
+  visibility_tier: regional

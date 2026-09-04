@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 36.22
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -70,3 +69,4 @@ consolidation_status: independent
 detail_of: kingdom_of_denmark
 deprecated:
   parent: kingdom_of_denmark
+  visibility_tier: regional

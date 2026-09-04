@@ -25,7 +25,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 45.82
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -65,3 +64,5 @@ prominence_components:
 linked_era_id: medieval_europe_era
 government_form: kingdom
 linked_chapter_id: macro_postclassical_worlds
+deprecated:
+  visibility_tier: regional

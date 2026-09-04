@@ -1643,6 +1643,85 @@ into this task.
 **ROADMAP item "0 ter" removed** (done). Item 0 (multi-level `detail_of` rendering) stays open --
 now has real production data (22 chains) to design the renderer against.
 
+### `visibility_tier`/`visibility_override` retired completely — 5 September 2026
+
+Implemented the design at `docs/plans/2026-09-05-retire-visibility-tier-design.md`, following its
+6-task plan task-by-task. Raised live mid-brainstorm of ROADMAP item 0 (multi-level `detail_of`
+rendering): the "walk past an invisible ancestor" complication that task would have needed traced
+back to `visibility_tier` -- 13 of 31 known chain leaves rooted at a then-`detailed`-tier,
+effectively invisible ancestor. Direct instruction: retire the concept entirely rather than work
+around it, and do that first, since it simplifies task 0's own design.
+
+**Background:** `visibility_tier` was assigned by a competitive quota algorithm
+(`compute_prominence.py`'s old `balanced_visibility()` pass) retired from routine use back in the
+period-ontology work (see `ONTOLOGY.md`'s "Ranking and sizing" section) -- frozen, unmaintained
+data ever since. `build_explore_tree.py`'s `in_scope()` still used it as a hard publish gate,
+though: only 835 of 4,697 polities (~18%) rendered in `/explore`'s Polities row, and since the
+field was frozen, a newly-added record could never earn its way into scope, only be manually
+pinned one at a time via `visibility_override`.
+
+**Scope, confirmed directly:** full removal -- schema, all ~4,663 affected records, and every code
+path, not just the publish gate. No replacement ranking/capping mechanism ("show everything no
+cap, the detail_of is here to take care of this visual density"). Old values preserved under each
+record's `deprecated` bucket rather than discarded, same pattern Task 4 of the 4 September 2026
+merge established.
+
+**Task 1 (`schema.py`):** removed the `VisibilityTier` enum and `Polity.visibility_tier`/
+`visibility_override`.
+
+**Task 2 (publish gate):** removed `suggest_period_links.py`'s `in_scope()` and its one call site
+(renamed `in_scope_count` to `candidates_seen`, same counting role); removed all three
+`in_scope()` calls plus the import from `build_explore_tree.py`. Every polity is now eligible for
+period-link suggestions and for `/explore` rendering.
+
+**Task 3 (`review_cli.py`):** dropped the `tier` scoring component (global=100/regional=50/
+detailed=0) from `review_priority()`'s composite score entirely rather than replacing it --
+`candidate_impact` in the same formula already tracks current importance via the live
+`prominence_score`, while `tier` read frozen data. Its 0.10 weight rolled entirely into
+`candidate_impact` (0.25 -> 0.35).
+
+**Task 4 (every remaining site):** `period_hierarchy.py`'s `top_entities()` dropped the
+`visibility_override`-pinned-first tiebreak (this function isn't wired into any live path today,
+only its own tests); `compute_prominence.py`/`rebuild_timeline.py` dropped the stale "visibility_
+tier is not touched" docstring/print; `enrich_geography.py` dropped its by-tier report breakdown;
+`apply_review_decisions.py` and `server/app.py` dropped `visibility_tier` from their draft-record
+dicts (also dropping an already-dead `parent: None` key left over from the 4 September 2026 merge,
+found in both while touching these exact dicts); `web/explore_details.js`'s side-panel Prominence
+line dropped its tier parenthetical. Went beyond the plan's own file list once found during the
+pass: `import_seshat_unmatched_drafts.py`'s docstring claimed `visibility_tier` kept its 34
+unmatched-Seshat drafts out of `/explore`'s default view -- no longer true now that Task 2 removed
+the publish gate, so these drafts are genuinely visible now (an intended, if minor, consequence of
+"show everything, no cap" rather than a bug); also dropped now-dead `visibility_tier` fixture keys
+in `test_compute_prominence.py` and `test_server.py`.
+
+**Task 5 (migration):** new `pipeline/migrate_visibility_tier.py`, mirroring
+`migrate_parent_to_detail_of.py`'s exact shape -- moves `visibility_tier`/`visibility_override`
+into `deprecated.visibility_tier`/`deprecated.visibility_override`, preserving an existing
+`deprecated` bucket rather than overwriting it.
+
+**Task 6 (ran for real):** dry-run and real run both migrated exactly 4,663 records (34 relied on
+the implicit schema default and had nothing to preserve). Rebuilt (`build.py`,
+`pipeline.compute_prominence`, `pipeline.rebuild_timeline`) -- zero validation errors. Full suite:
+347 tests, 0 failures. Verified live: `/explore`'s tree now carries 8,321 rendered polity entries
+(civilization-lane and detail-panel entries included), up from 835; the Prominence line no longer
+shows a tier parenthetical; `/consolidation-review` still loads and orders its queue correctly.
+
+**Also fixed this same session, found live via `/consolidation-review` while implementing the
+above:** ten more generic-shared-word stopwords (`bronze`, `giudicato`, `signoria`, `lordship`,
+`khaganate`, `calvinist`, `sheikhdom`, `waldamt`, `estate`, `lamidat`), each confirmed via
+differing Wikidata QIDs or a documented real-sibling-entities pattern, each with a regression
+test. Also fixed a real UI gap: the `Part of` comparison row never highlighted green even when the
+server's own `reviewed_part_of_candidate`/`candidate_part_of_reviewed` evidence (already computed
+and sent to the client) showed a genuine documented relationship (e.g. Kingdom of Artaxerxes
+correctly documented as part of Kingdom of Armenia) -- wired the existing boolean signals into the
+row's assessment, matching how Wikidata/Type/Dates already work.
+
+**Two new ROADMAP items:** item 0 (multi-level `detail_of` rendering) updated to note its
+"invisible ancestor" complication no longer applies; new item "0 quater" tracking
+`web/explore_details.js`'s dead `polity.parent` reference (line ~475, unreachable since the
+4 September 2026 merge, noticed while touching an adjacent line here but out of scope for this
+task).
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which

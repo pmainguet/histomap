@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 25.65
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -63,3 +62,4 @@ government_form: mandate
 detail_of: french_mandate_for_syria_and_the_lebanon
 deprecated:
   parent: french_mandate_for_syria_and_the_lebanon
+  visibility_tier: detailed

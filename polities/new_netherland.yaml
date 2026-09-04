@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 24.91
-visibility_tier: global
 eligibility: accepted
 geography:
   continents:
@@ -56,3 +55,5 @@ prominence_components:
 linked_era_id: north_america_early_modern_connections_era
 government_form: colony
 linked_chapter_id: macro_early_modern_connections
+deprecated:
+  visibility_tier: global

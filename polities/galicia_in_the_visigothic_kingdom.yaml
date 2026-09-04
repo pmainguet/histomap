@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 10.35
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -63,3 +62,4 @@ deprecated:
   parent: visigothic_kingdom
   subdivision_parent_status: confirmed
   entity_type: subdivision
+  visibility_tier: detailed

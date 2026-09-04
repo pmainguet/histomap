@@ -28,7 +28,6 @@ sources:
 - seshat
 - wikidata
 prominence_score: 55.12
-visibility_tier: global
 eligibility: accepted
 geography:
   continents:
@@ -73,3 +72,5 @@ prominence_components:
 linked_era_id: classical_antiquity_era
 government_form: vassal state
 linked_chapter_id: macro_postclassical_worlds
+deprecated:
+  visibility_tier: global

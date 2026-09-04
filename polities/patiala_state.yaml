@@ -26,7 +26,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 36.32
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -66,3 +65,5 @@ prominence_components:
 linked_era_id: asia_industrial_imperial_world_era
 government_form: princely state
 linked_chapter_id: macro_industrial_imperial_world
+deprecated:
+  visibility_tier: regional

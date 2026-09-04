@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 15.06
-visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -56,3 +55,5 @@ government_form: null
 detail_of: canton_of_nidwalden
 manual_overrides:
 - consolidation
+deprecated:
+  visibility_tier: detailed

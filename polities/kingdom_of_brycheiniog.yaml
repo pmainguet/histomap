@@ -30,7 +30,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 35.08
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -68,3 +67,5 @@ prominence_components:
   aggregate_penalty: 0
   total: 35.08
 government_form: kingdom
+deprecated:
+  visibility_tier: detailed

@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 1.19
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -49,3 +48,5 @@ prominence_components:
   aggregate_penalty: 0
   total: 1.19
 government_form: emirate
+deprecated:
+  visibility_tier: detailed

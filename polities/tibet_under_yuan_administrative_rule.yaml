@@ -20,8 +20,6 @@ notes: Period overlay routed from a Wikidata record after editorial role review.
 sources:
 - wikidata
 prominence_score: 17.46
-visibility_tier: detailed
-visibility_override: global
 eligibility: accepted
 geography:
   continents:
@@ -53,3 +51,6 @@ prominence_components:
   total: 17.46
 government_form: vassal state
 linked_chapter_id: macro_postclassical_worlds
+deprecated:
+  visibility_tier: detailed
+  visibility_override: global

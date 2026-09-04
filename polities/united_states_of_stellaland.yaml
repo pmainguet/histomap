@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 9.74
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents: []
@@ -51,3 +50,5 @@ consolidated_into: stellaland
 manual_overrides:
 - consolidation
 government_form: null
+deprecated:
+  visibility_tier: detailed

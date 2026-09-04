@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 34.27
-visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -69,3 +68,4 @@ deprecated:
   parent: mexico
   subdivision_parent_status: confirmed
   entity_type: subdivision
+  visibility_tier: detailed

@@ -27,7 +27,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 37.29
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -79,3 +78,5 @@ prominence_components:
 linked_era_id: europe_industrial_imperial_world_era
 government_form: empire
 linked_chapter_id: macro_industrial_imperial_world
+deprecated:
+  visibility_tier: regional

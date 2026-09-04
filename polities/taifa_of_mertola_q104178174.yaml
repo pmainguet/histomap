@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 0
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents: []
@@ -51,3 +50,5 @@ timeline_role: retired
 consolidation_status: same_entity
 consolidated_into: taifa_of_mertola_q2436604
 government_form: taifa
+deprecated:
+  visibility_tier: detailed

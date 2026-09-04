@@ -2,6 +2,7 @@ id: kuban_black_sea_soviet_republic
 canonical_name: Kuban-Black Sea Soviet Republic
 names:
   fr: République soviétique du Kouban et de la mer Noire
+  aliases_en: Black Sea Soviet Republic
 external_ids:
   wikidata: Q1761355
 parent: null
@@ -25,7 +26,6 @@ notes: Automatically generated from Wikidata; requires review. End date correcte
 sources:
 - wikidata
 prominence_score: 16.46
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -56,3 +56,7 @@ prominence_components:
   aggregate_penalty: 0
   total: 16.46
 government_form: null
+manual_overrides:
+- consolidation
+deprecated:
+  visibility_tier: detailed

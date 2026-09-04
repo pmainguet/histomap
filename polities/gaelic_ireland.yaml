@@ -34,7 +34,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 34.44
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -67,3 +66,5 @@ manual_overrides:
 - entity_type
 linked_era_id: medieval_europe_era
 government_form: null
+deprecated:
+  visibility_tier: detailed

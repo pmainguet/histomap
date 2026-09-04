@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 29.7
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -60,3 +59,4 @@ linked_chapter_id: macro_postclassical_worlds
 detail_of: crown_of_castile
 deprecated:
   parent: crown_of_castile
+  visibility_tier: regional

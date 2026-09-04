@@ -25,7 +25,6 @@ notes: Automatically generated from Wikidata; requires review. End date correcte
 sources:
 - wikidata
 prominence_score: 4.78
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -57,3 +56,5 @@ prominence_components:
 linked_era_id: north_america_early_modern_connections_era
 government_form: petty kingdom
 linked_chapter_id: macro_postclassical_worlds
+deprecated:
+  visibility_tier: regional

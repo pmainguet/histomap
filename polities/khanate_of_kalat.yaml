@@ -31,7 +31,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 37.98
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -71,3 +70,5 @@ prominence_components:
 linked_era_id: asia_early_modern_connections_era
 government_form: princely state
 linked_chapter_id: macro_early_modern_connections
+deprecated:
+  visibility_tier: regional

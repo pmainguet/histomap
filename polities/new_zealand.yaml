@@ -26,7 +26,6 @@ sources:
 - maddison
 - wikidata
 prominence_score: 46.17
-visibility_tier: global
 eligibility: accepted
 geography:
   continents:
@@ -75,3 +74,4 @@ deprecated:
   parent: realm_of_new_zealand
   subdivision_parent_status: confirmed
   entity_type: subdivision
+  visibility_tier: global

@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 16.93
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents: []
@@ -96,3 +95,4 @@ deprecated:
     - https://www.wikidata.org/wiki/Q3932080
     notes: Reviewed record is a dated phase of this canonical polity.
   parent: kingdom_of_sardinia_q165154
+  visibility_tier: detailed

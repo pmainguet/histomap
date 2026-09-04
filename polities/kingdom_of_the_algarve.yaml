@@ -33,7 +33,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 37.99
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -77,3 +76,4 @@ manual_overrides:
 - consolidation
 deprecated:
   parent: united_kingdom_of_portugal_brazil_and_the_algarves
+  visibility_tier: regional

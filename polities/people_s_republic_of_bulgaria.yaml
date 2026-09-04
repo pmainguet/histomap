@@ -25,7 +25,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 40.97
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -61,3 +60,5 @@ linked_chapter_id: macro_contemporary_world
 detail_of: bulgaria
 manual_overrides:
 - consolidation
+deprecated:
+  visibility_tier: regional

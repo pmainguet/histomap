@@ -27,7 +27,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 18.07
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -60,3 +59,5 @@ prominence_components:
 manual_overrides:
 - consolidation
 government_form: free imperial city
+deprecated:
+  visibility_tier: detailed

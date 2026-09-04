@@ -21,7 +21,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 13.17
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -55,4 +54,8 @@ linked_era_id: oceania_world_wars_reordering_era
 government_form: protectorate
 linked_chapter_id: macro_world_wars_reordering
 manual_overrides:
+- consolidation
 - geography
+consolidation_status: independent
+deprecated:
+  visibility_tier: regional

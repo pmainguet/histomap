@@ -21,7 +21,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 9.69
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents: []
@@ -50,3 +49,5 @@ consolidated_into: starodub_principality_q16701789
 manual_overrides:
 - consolidation
 government_form: principality
+deprecated:
+  visibility_tier: detailed

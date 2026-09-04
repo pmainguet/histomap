@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 12.5
-visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -57,3 +56,5 @@ consolidated_into: duchy_of_anhalt
 manual_overrides:
 - consolidation
 government_form: null
+deprecated:
+  visibility_tier: detailed

@@ -17,7 +17,6 @@ weight_by_era:
   -145: 1.0
 weight_imputed: true
 prominence_score: 0
-visibility_tier: detailed
 eligibility: review
 notes: Kept as a separate entity during Seshat reconciliation; requires canonical
   review.
@@ -77,3 +76,4 @@ deprecated:
     source_urls:
     - https://histomap.local/entity/seshat_indo_greek_kingdom_pkindgr
     notes: Reviewed record is a dated phase of this canonical polity.
+  visibility_tier: detailed

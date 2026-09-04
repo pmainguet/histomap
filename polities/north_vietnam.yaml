@@ -24,7 +24,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 39.55
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -60,3 +59,5 @@ linked_chapter_id: macro_contemporary_world
 detail_of: vietnam
 manual_overrides:
 - consolidation
+deprecated:
+  visibility_tier: regional

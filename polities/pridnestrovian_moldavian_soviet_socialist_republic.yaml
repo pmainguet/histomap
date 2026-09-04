@@ -24,7 +24,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 17.49
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -63,3 +62,5 @@ government_form: null
 detail_of: moldavian_soviet_socialist_republic
 manual_overrides:
 - consolidation
+deprecated:
+  visibility_tier: detailed

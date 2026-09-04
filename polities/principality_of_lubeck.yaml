@@ -24,7 +24,6 @@ notes: 'Automatically generated from Wikidata; requires review. Migration note (
 sources:
 - wikidata
 prominence_score: 8.38
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -59,3 +58,4 @@ manual_overrides:
 - consolidation
 deprecated:
   parent: grand_duchy_of_oldenburg
+  visibility_tier: detailed

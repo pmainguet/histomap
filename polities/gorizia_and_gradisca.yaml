@@ -25,7 +25,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 36.48
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -67,3 +66,4 @@ linked_chapter_id: macro_industrial_imperial_world
 detail_of: cisleithania
 deprecated:
   parent: cisleithania
+  visibility_tier: regional

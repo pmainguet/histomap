@@ -20,7 +20,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 18.77
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -57,3 +56,4 @@ government_form: null
 detail_of: qi_q837855
 deprecated:
   parent: qi_q837855
+  visibility_tier: detailed

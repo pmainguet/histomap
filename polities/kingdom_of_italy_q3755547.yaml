@@ -25,7 +25,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 20.88
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -63,3 +62,5 @@ consolidation_status: independent
 manual_overrides:
 - consolidation
 government_form: vassal state
+deprecated:
+  visibility_tier: detailed

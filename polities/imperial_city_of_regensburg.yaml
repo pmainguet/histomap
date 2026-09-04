@@ -21,7 +21,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 9.03
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -50,3 +49,5 @@ government_form: free imperial city
 consolidation_status: independent
 manual_overrides:
 - consolidation
+deprecated:
+  visibility_tier: detailed

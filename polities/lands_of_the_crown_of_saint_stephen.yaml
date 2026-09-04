@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 30.64
-visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -74,3 +73,4 @@ deprecated:
   parent: austriahungary
   subdivision_parent_status: pending
   entity_type: subdivision
+  visibility_tier: detailed

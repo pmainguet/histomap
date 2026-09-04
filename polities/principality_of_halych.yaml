@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 26.22
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -56,3 +55,4 @@ government_form: null
 detail_of: kievan_rus
 deprecated:
   parent: kievan_rus
+  visibility_tier: detailed

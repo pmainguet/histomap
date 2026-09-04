@@ -21,7 +21,6 @@ weight_by_era:
   -4700: 1.0
 weight_imputed: true
 prominence_score: 1.51
-visibility_tier: detailed
 eligibility: excluded
 notes: Kept as a separate entity during Seshat reconciliation; requires canonical
   review. Editorially discarded as outside Histomap scope.
@@ -50,3 +49,5 @@ entity_type_reviewed_against:
 government_form: null
 timeline_role: retired
 consolidation_status: discarded
+deprecated:
+  visibility_tier: detailed

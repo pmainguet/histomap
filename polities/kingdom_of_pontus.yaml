@@ -24,7 +24,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 38.14
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -58,3 +57,5 @@ prominence_components:
 linked_era_id: classical_antiquity_era
 government_form: empire
 linked_chapter_id: macro_classical_imperial_worlds
+deprecated:
+  visibility_tier: regional

@@ -24,7 +24,6 @@ sources:
 - maddison
 - wikidata
 prominence_score: 41.46
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -59,3 +58,5 @@ prominence_components:
 linked_era_id: africa_contemporary_world_era
 government_form: kingdom
 linked_chapter_id: macro_contemporary_world
+deprecated:
+  visibility_tier: regional

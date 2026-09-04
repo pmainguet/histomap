@@ -28,7 +28,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 44.35
-visibility_tier: global
 eligibility: accepted
 geography:
   continents:
@@ -77,3 +76,4 @@ linked_chapter_id: macro_postclassical_worlds
 detail_of: hispanic_monarchy
 deprecated:
   parent: hispanic_monarchy
+  visibility_tier: global

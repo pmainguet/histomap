@@ -24,7 +24,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 35.94
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -63,3 +62,5 @@ manual_overrides:
 linked_era_id: medieval_europe_era
 government_form: null
 linked_chapter_id: macro_postclassical_worlds
+deprecated:
+  visibility_tier: regional

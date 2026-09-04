@@ -27,7 +27,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 40.92
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -71,3 +70,5 @@ prominence_components:
 linked_era_id: africa_industrial_imperial_world_era
 government_form: colony
 linked_chapter_id: macro_industrial_imperial_world
+deprecated:
+  visibility_tier: regional

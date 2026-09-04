@@ -26,7 +26,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 31.68
-visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -57,3 +56,5 @@ prominence_components:
   aggregate_penalty: 0
   total: 31.68
 government_form: city-state
+deprecated:
+  visibility_tier: detailed

@@ -20,7 +20,6 @@ notes: Editorially identified as a phase or aspect of Free City of Danzig.
 sources:
 - wikidata
 prominence_score: 19.63
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -44,7 +43,6 @@ manual_overrides:
 - entity_type
 - timeline_role
 - visibility_override
-visibility_override: global
 linked_era_id: europe_industrial_imperial_world_era
 prominence_components:
   wikidata_reach: 22.37
@@ -60,3 +58,6 @@ prominence_components:
 government_form: client state
 linked_chapter_id: macro_industrial_imperial_world
 consolidation_status: independent
+deprecated:
+  visibility_tier: detailed
+  visibility_override: global

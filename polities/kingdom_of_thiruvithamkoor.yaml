@@ -29,7 +29,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 43.89
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -74,3 +73,5 @@ prominence_components:
   total: 43.89
 government_form: princely state
 linked_chapter_id: macro_industrial_imperial_world
+deprecated:
+  visibility_tier: regional

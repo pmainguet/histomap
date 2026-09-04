@@ -29,7 +29,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 21.55
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -65,3 +64,5 @@ consolidated_into: rhodes_q43048
 manual_overrides:
 - consolidation
 government_form: city-state
+deprecated:
+  visibility_tier: detailed

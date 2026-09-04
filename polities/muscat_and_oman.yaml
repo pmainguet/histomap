@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 25.88
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -61,3 +60,5 @@ manual_overrides:
 linked_era_id: asia_industrial_imperial_world_era
 government_form: protectorate
 linked_chapter_id: macro_industrial_imperial_world
+deprecated:
+  visibility_tier: regional

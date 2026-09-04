@@ -23,7 +23,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 32.43
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -78,3 +77,4 @@ manual_overrides:
 detail_of: visigothic_kingdom
 deprecated:
   parent: visigothic_kingdom
+  visibility_tier: regional

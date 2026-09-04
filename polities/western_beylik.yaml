@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 11.56
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents: []
@@ -47,3 +46,5 @@ prominence_components:
 manual_overrides:
 - entity_type
 government_form: beylik
+deprecated:
+  visibility_tier: detailed

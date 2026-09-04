@@ -26,7 +26,6 @@ sources:
 - seshat
 - wikidata
 prominence_score: 40.92
-visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -63,3 +62,5 @@ entity_type_reviewed_against:
 - subdivision
 subdivision_parent_status: pending
 government_form: null
+deprecated:
+  visibility_tier: detailed

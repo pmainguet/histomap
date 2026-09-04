@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 1.46
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -59,9 +58,10 @@ timeline_role: entity
 consolidation_status: null
 consolidated_into: null
 detail_of: null
-deprecated: null
+deprecated:
+  visibility_tier: detailed
+  visibility_override: null
 manual_overrides:
 - end
 linked_era_id: null
 linked_chapter_id: null
-visibility_override: null

@@ -27,7 +27,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 29.04
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -65,3 +64,5 @@ prominence_components:
   aggregate_penalty: 0
   total: 29.04
 government_form: princely state
+deprecated:
+  visibility_tier: detailed

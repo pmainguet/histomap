@@ -29,7 +29,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 43.57
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -65,3 +64,5 @@ linked_chapter_id: macro_postclassical_worlds
 consolidation_status: independent
 manual_overrides:
 - consolidation
+deprecated:
+  visibility_tier: regional

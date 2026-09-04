@@ -42,7 +42,6 @@ sources:
 - seshat
 - wikidata
 prominence_score: 81.26
-visibility_tier: global
 eligibility: accepted
 geography:
   continents:
@@ -92,3 +91,4 @@ linked_chapter_id: macro_classical_imperial_worlds
 detail_of: roman_kingdom
 deprecated:
   parent: roman_kingdom
+  visibility_tier: global

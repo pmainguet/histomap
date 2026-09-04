@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 33.48
-visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -62,3 +61,4 @@ government_form: city-state
 detail_of: aztec_empire
 deprecated:
   parent: aztec_empire
+  visibility_tier: detailed

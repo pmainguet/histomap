@@ -30,7 +30,6 @@ sources:
 - maddison
 - wikidata
 prominence_score: 50.69
-visibility_tier: global
 eligibility: accepted
 geography:
   continents:
@@ -65,3 +64,5 @@ prominence_components:
 linked_era_id: asia_contemporary_world_era
 government_form: kingdom
 linked_chapter_id: macro_contemporary_world
+deprecated:
+  visibility_tier: global

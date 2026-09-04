@@ -25,7 +25,6 @@ notes: Automatically generated from Wikidata; requires review. End date correcte
 sources:
 - wikidata
 prominence_score: 17.57
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -58,3 +57,5 @@ prominence_components:
 government_form: emirate
 manual_overrides:
 - end
+deprecated:
+  visibility_tier: detailed

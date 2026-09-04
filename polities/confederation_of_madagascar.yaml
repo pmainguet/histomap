@@ -25,7 +25,6 @@ notes: Automatically generated from Wikidata; requires review. Editorially disca
 sources:
 - wikidata
 prominence_score: 0
-visibility_tier: detailed
 eligibility: excluded
 geography:
   continents:
@@ -58,3 +57,5 @@ consolidation_status: discarded
 manual_overrides:
 - consolidation
 - eligibility
+deprecated:
+  visibility_tier: detailed

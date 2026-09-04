@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 9.18
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -55,3 +54,5 @@ prominence_components:
 government_form: taifa
 manual_overrides:
 - geography
+deprecated:
+  visibility_tier: detailed

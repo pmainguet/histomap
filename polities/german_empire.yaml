@@ -26,7 +26,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 47.7
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -62,7 +61,6 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 47.7
-visibility_override: global
 manual_overrides:
 - consolidation
 - visibility_override
@@ -111,3 +109,5 @@ deprecated:
     source_urls:
     - https://www.wikidata.org/wiki/Q43287
     notes: Reviewed record is a dated phase of this canonical polity.
+  visibility_tier: regional
+  visibility_override: global

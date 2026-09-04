@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 20.64
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -59,3 +58,4 @@ government_form: kingdom
 detail_of: crown_of_castile
 deprecated:
   parent: crown_of_castile
+  visibility_tier: detailed

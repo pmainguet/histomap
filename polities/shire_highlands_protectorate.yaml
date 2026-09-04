@@ -21,7 +21,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 0.35
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents: []
@@ -45,3 +44,5 @@ prominence_components:
   aggregate_penalty: 0
   total: 0.35
 government_form: protectorate
+deprecated:
+  visibility_tier: detailed

@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 17.71
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -58,3 +57,5 @@ manual_overrides:
 - geography
 government_form: protectorate
 detail_of: morocco
+deprecated:
+  visibility_tier: detailed

@@ -21,7 +21,6 @@ notes: Editorially identified as a phase or aspect of Vietnam.
 sources:
 - wikidata
 prominence_score: 20.08
-visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -46,7 +45,6 @@ manual_overrides:
 - entity_type
 - timeline_role
 - visibility_override
-visibility_override: global
 linked_era_id: asia_contemporary_world_era
 prominence_components:
   wikidata_reach: 22.97
@@ -103,3 +101,5 @@ deprecated:
     source_urls:
     - https://www.wikidata.org/wiki/Q1193879
     notes: Reviewed record is a dated phase of this canonical polity.
+  visibility_tier: detailed
+  visibility_override: global

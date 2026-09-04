@@ -25,7 +25,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 35.65
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -73,3 +72,5 @@ manual_overrides:
 linked_era_id: islamic_caliphates_era
 government_form: kingdom
 linked_chapter_id: macro_postclassical_worlds
+deprecated:
+  visibility_tier: regional

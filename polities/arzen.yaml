@@ -23,7 +23,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 16.93
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -57,3 +56,5 @@ prominence_components:
   aggregate_penalty: 0
   total: 16.93
 government_form: emirate
+deprecated:
+  visibility_tier: detailed

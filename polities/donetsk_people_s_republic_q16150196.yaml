@@ -24,7 +24,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 16.75
-visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -59,3 +58,5 @@ prominence_components:
 manual_overrides:
 - consolidation
 government_form: null
+deprecated:
+  visibility_tier: detailed

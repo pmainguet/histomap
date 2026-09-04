@@ -27,7 +27,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 32.61
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -65,3 +64,5 @@ government_form: puppet state
 consolidation_status: independent
 manual_overrides:
 - consolidation
+deprecated:
+  visibility_tier: detailed

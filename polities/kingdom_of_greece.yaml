@@ -25,7 +25,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 42.87
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -103,3 +102,4 @@ deprecated:
     source_urls:
     - https://www.wikidata.org/wiki/Q209065
     notes: Reviewed record is a dated phase of this canonical polity.
+  visibility_tier: regional

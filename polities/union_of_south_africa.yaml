@@ -20,7 +20,6 @@ notes: Editorially identified as a phase or aspect of South Africa.
 sources:
 - wikidata
 prominence_score: 26.48
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -45,7 +44,6 @@ manual_overrides:
 - entity_type
 - timeline_role
 - visibility_override
-visibility_override: global
 linked_era_id: africa_world_wars_reordering_era
 prominence_components:
   wikidata_reach: 27.19
@@ -61,3 +59,6 @@ prominence_components:
 government_form: null
 linked_chapter_id: macro_world_wars_reordering
 detail_of: south_africa
+deprecated:
+  visibility_tier: detailed
+  visibility_override: global

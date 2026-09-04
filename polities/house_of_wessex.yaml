@@ -26,7 +26,6 @@ notes: Converted from a period-context record to a polity (sub-polity of kingdom
 sources:
 - wikidata
 prominence_score: 23.06
-visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -66,3 +65,4 @@ manual_overrides:
 - consolidation
 deprecated:
   parent: kingdom_of_england
+  visibility_tier: detailed

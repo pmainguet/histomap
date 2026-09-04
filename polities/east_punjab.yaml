@@ -20,7 +20,6 @@ notes: Editorially identified as a phase or aspect of Punjab.
 sources:
 - wikidata
 prominence_score: 19.22
-visibility_tier: detailed
 eligibility: review
 geography:
   continents:
@@ -50,7 +49,6 @@ manual_overrides:
 - subdivision_parent_status
 - timeline_role
 - visibility_override
-visibility_override: global
 linked_era_id: asia_contemporary_world_era
 prominence_components:
   wikidata_reach: 17.64
@@ -70,3 +68,5 @@ detail_of: punjab
 deprecated:
   parent: punjab
   subdivision_parent_status: confirmed
+  visibility_tier: detailed
+  visibility_override: global

@@ -21,7 +21,6 @@ notes: Editorially identified as a phase or aspect of Albania.
 sources:
 - wikidata
 prominence_score: 18.44
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -45,7 +44,6 @@ manual_overrides:
 - entity_type
 - timeline_role
 - visibility_override
-visibility_override: global
 linked_era_id: europe_world_wars_reordering_era
 prominence_components:
   wikidata_reach: 21.94
@@ -60,3 +58,6 @@ prominence_components:
   total: 18.44
 government_form: null
 linked_chapter_id: macro_world_wars_reordering
+deprecated:
+  visibility_tier: detailed
+  visibility_override: global

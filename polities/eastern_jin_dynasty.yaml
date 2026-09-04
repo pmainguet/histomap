@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 24.42
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -54,8 +53,10 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 24.42
-visibility_override: global
 manual_overrides:
 - visibility_override
 government_form: null
 linked_chapter_id: macro_classical_imperial_worlds
+deprecated:
+  visibility_tier: detailed
+  visibility_override: global

@@ -22,7 +22,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 23.08
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -99,3 +98,4 @@ deprecated:
     - https://www.wikidata.org/wiki/Q1147043
     notes: Reviewed record is a dated phase of this canonical polity.
   parent: song_dynasty
+  visibility_tier: detailed

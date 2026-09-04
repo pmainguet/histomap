@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 2.37
-visibility_tier: detailed
 eligibility: review
 geography:
   continents: []
@@ -53,3 +52,5 @@ government_form: null
 detail_of: australia
 manual_overrides:
 - consolidation
+deprecated:
+  visibility_tier: detailed

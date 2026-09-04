@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 23.13
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents:
@@ -57,3 +56,5 @@ government_form: null
 detail_of: vietnam
 manual_overrides:
 - consolidation
+deprecated:
+  visibility_tier: detailed

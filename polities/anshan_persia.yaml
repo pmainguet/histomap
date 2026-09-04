@@ -32,7 +32,6 @@ sources:
 - hyde
 - wikidata
 prominence_score: 39.19
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -65,3 +64,5 @@ prominence_components:
 linked_era_id: neolithic_era
 government_form: city-state
 linked_chapter_id: macro_early_cities_states
+deprecated:
+  visibility_tier: regional

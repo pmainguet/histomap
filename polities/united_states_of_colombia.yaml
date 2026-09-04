@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 26.15
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -65,3 +64,5 @@ linked_chapter_id: macro_industrial_imperial_world
 detail_of: colombia
 manual_overrides:
 - consolidation
+deprecated:
+  visibility_tier: regional

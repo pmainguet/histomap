@@ -23,7 +23,6 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
 prominence_score: 5.21
-visibility_tier: detailed
 eligibility: accepted
 geography:
   continents: []
@@ -47,3 +46,8 @@ prominence_components:
   aggregate_penalty: 0
   total: 5.21
 government_form: null
+detail_of: kingdom_of_armenia
+manual_overrides:
+- consolidation
+deprecated:
+  visibility_tier: detailed

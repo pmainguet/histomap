@@ -25,7 +25,6 @@ notes: Automatically generated from Wikidata; polity eligibility and geography r
 sources:
 - wikidata
 prominence_score: 38.99
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -60,7 +59,6 @@ prominence_components:
   date_uncertainty_penalty: -5.0
   aggregate_penalty: 0
   total: 38.99
-visibility_override: global
 manual_overrides:
 - consolidation
 - timeline_role
@@ -70,3 +68,6 @@ government_form: null
 linked_chapter_id: macro_postclassical_worlds
 timeline_role: entity
 consolidation_status: independent
+deprecated:
+  visibility_tier: regional
+  visibility_override: global

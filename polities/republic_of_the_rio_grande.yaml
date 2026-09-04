@@ -26,7 +26,6 @@ notes: Automatically generated from Wikidata; requires review. End date correcte
 sources:
 - wikidata
 prominence_score: 20.72
-visibility_tier: regional
 eligibility: accepted
 geography:
   continents:
@@ -59,3 +58,5 @@ prominence_components:
 linked_era_id: north_america_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world
+deprecated:
+  visibility_tier: regional
