@@ -2755,6 +2755,41 @@
     "civilization_lane": false
   },
   {
+    "id": "seshat_kachi_plain_pkceran_period",
+    "canonical_name": "Kachi Plain - Ceramic Neolithic",
+    "kind": "historical",
+    "tier": "period",
+    "start": -5500,
+    "end": -4001,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "south_asia"
+      ],
+      "primary_historical_region": "south_asia",
+      "present_countries": [
+        "PK"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {},
+    "notes": "Period overlay created by an editorial period-role decision.",
+    "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "south_america_contemporary_world_era",
     "canonical_name": "South America, Contemporary World",
     "kind": "historical",

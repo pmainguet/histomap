@@ -45,3 +45,6 @@ entity_type_confidence: medium
 entity_type_source_qids: []
 relationships: []
 government_form: null
+timeline_role: period
+manual_overrides:
+- timeline_role
