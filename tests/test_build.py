@@ -6,7 +6,7 @@ import yaml
 from pydantic import ValidationError
 
 from build import (
-    find_parent_cycles,
+    find_detail_of_cycles,
     load_civilization_period_role_sources,
     validate_entity_relationships,
     validate_transitions,
@@ -14,13 +14,26 @@ from build import (
 from schema import Geography, Period, PeriodLink, Polity, Transition
 
 
-def polity(polity_id: str, parent: str | None = None, entity_type: str = "polity") -> Polity:
+def polity(polity_id: str, entity_type: str = "polity") -> Polity:
     return Polity.model_validate(
         {
             "id": polity_id,
             "canonical_name": polity_id,
-            "parent": parent,
             "entity_type": entity_type,
+            "start": 1,
+            "end": 2,
+            "start_confidence": "low",
+            "end_confidence": "low",
+        }
+    )
+
+
+def detail_polity(polity_id: str, detail_of: str | None = None) -> Polity:
+    return Polity.model_validate(
+        {
+            "id": polity_id,
+            "canonical_name": polity_id,
+            "detail_of": detail_of,
             "start": 1,
             "end": 2,
             "start_confidence": "low",
@@ -56,31 +69,15 @@ class BuildRelationshipValidationTests(unittest.TestCase):
         )
         self.assertEqual(link.evidence, "derived")
 
-    def test_political_parent_rejects_non_polity_endpoint(self) -> None:
-        child = polity("child", "parent", "culture")
-        errors = validate_entity_relationships([child, polity("parent")])
-        self.assertIn("child: parent requires polity or subdivision → polity", errors)
-
-    def test_subdivision_requires_parent_polity(self) -> None:
-        child = polity("child", "parent", "subdivision")
-        self.assertEqual(
-            validate_entity_relationships([child, polity("parent")]), []
-        )
-        pending = polity("pending", entity_type="subdivision")
-        self.assertEqual(validate_entity_relationships([pending]), [])
-        confirmed = pending.model_copy(
-            update={"id": "confirmed", "subdivision_parent_status": "confirmed"}
-        )
-        self.assertIn(
-            "confirmed: confirmed subdivision requires a parent polity",
-            validate_entity_relationships([confirmed]),
-        )
-
     def test_acyclic_parents_pass(self) -> None:
-        self.assertEqual(find_parent_cycles([polity("child", "parent"), polity("parent")]), [])
+        self.assertEqual(
+            find_detail_of_cycles([detail_polity("child", "parent"), detail_polity("parent")]), []
+        )
 
     def test_parent_cycle_is_reported_once(self) -> None:
-        result = find_parent_cycles([polity("first", "second"), polity("second", "first")])
+        result = find_detail_of_cycles(
+            [detail_polity("first", "second"), detail_polity("second", "first")]
+        )
         self.assertEqual(result, [["first", "second"]])
 
     def test_single_continent_becomes_primary(self) -> None:
@@ -148,6 +145,27 @@ class BuildRelationshipValidationTests(unittest.TestCase):
             validate_transitions(
                 [transition], [polity("first"), polity("culture", entity_type="culture")]
             )
+
+
+class DetailOfValidationTests(unittest.TestCase):
+    def test_detail_of_unknown_target_is_reported(self) -> None:
+        errors = validate_entity_relationships([detail_polity("child", "missing_parent")])
+        self.assertIn("child: unknown detail_of target missing_parent", errors)
+
+    def test_detail_of_chain_is_not_an_error(self) -> None:
+        # Multi-level nesting is real, legitimate data (Kingdom of Castile ->
+        # Crown of Castile -> Hispanic Monarchy, found live 4 September 2026)
+        # -- only /explore's interactive picker guards against creating a
+        # NEW one; build validation must not reject one already in the data.
+        grandparent = detail_polity("grandparent")
+        middle = detail_polity("middle", "grandparent")
+        child = detail_polity("child", "middle")
+        self.assertEqual(validate_entity_relationships([grandparent, middle, child]), [])
+
+    def test_detail_of_valid_target_has_no_error(self) -> None:
+        parent = detail_polity("parent")
+        child = detail_polity("child", "parent")
+        self.assertEqual(validate_entity_relationships([parent, child]), [])
 
 
 class LoadCivilizationPeriodRoleSourcesTests(unittest.TestCase):

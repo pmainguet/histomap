@@ -18,14 +18,17 @@ PERIOD_LINKS_OUT_PATH = ROOT / "period_links.json"
 EXPLORE_TREE_OUT_PATH = ROOT / "explore_tree.json"
 
 
-def find_parent_cycles(polities: list[Polity]) -> list[list[str]]:
-    parents = {polity.id: polity.parent for polity in polities}
+def find_detail_of_cycles(polities: list[Polity]) -> list[list[str]]:
+    # Multi-level detail_of chains are legitimate data (Kingdom of Castile ->
+    # Crown of Castile -> Hispanic Monarchy) -- this only flags an actual
+    # revisit (A -> B -> A), never an ordinary chain.
+    targets = {polity.id: polity.detail_of for polity in polities}
     cycles: set[tuple[str, ...]] = set()
-    for start in parents:
+    for start in targets:
         path: list[str] = []
         positions: dict[str, int] = {}
         current: str | None = start
-        while current in parents and current is not None:
+        while current in targets and current is not None:
             if current in positions:
                 cycle = path[positions[current] :]
                 rotations = [tuple(cycle[index:] + cycle[:index]) for index in range(len(cycle))]
@@ -33,7 +36,7 @@ def find_parent_cycles(polities: list[Polity]) -> list[list[str]]:
                 break
             positions[current] = len(path)
             path.append(current)
-            current = parents[current]
+            current = targets[current]
     return [list(cycle) for cycle in sorted(cycles)]
 
 
@@ -91,20 +94,8 @@ def validate_entity_relationships(polities: list[Polity]) -> list[str]:
     known = {polity.id: polity for polity in polities}
     errors: list[str] = []
     for entity in polities:
-        if entity.parent:
-            target = known.get(entity.parent)
-            if target is None:
-                errors.append(f"{entity.id}: unknown parent {entity.parent}")
-            elif not (
-                target.entity_type.value == "polity"
-                and entity.entity_type.value in {"polity", "subdivision"}
-            ):
-                errors.append(f"{entity.id}: parent requires polity or subdivision → polity")
-        elif (
-            entity.entity_type.value == "subdivision"
-            and entity.subdivision_parent_status == "confirmed"
-        ):
-            errors.append(f"{entity.id}: confirmed subdivision requires a parent polity")
+        if entity.detail_of and entity.detail_of not in known:
+            errors.append(f"{entity.id}: unknown detail_of target {entity.detail_of}")
         for successor_id in entity.successors:
             target = known.get(successor_id)
             if target is None:
@@ -162,8 +153,8 @@ def load_all() -> list[Polity]:
             continue
         seen_ids.add(polity.id)
         polities.append(polity)
-    for cycle in find_parent_cycles(polities):
-        errors.append(f"parent relationship cycle: {' -> '.join(cycle + [cycle[0]])}")
+    for cycle in find_detail_of_cycles(polities):
+        errors.append(f"detail_of relationship cycle: {' -> '.join(cycle + [cycle[0]])}")
     errors.extend(validate_entity_relationships(polities))
     if errors:
         for e in errors:
