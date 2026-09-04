@@ -9,22 +9,32 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **Fix the polity ↔ period conversion friction.** Converting one to the other today isn't a
+0. **Support multi-level `detail_of` chains in `/explore`'s rendering.** `build_explore_tree.py`/
+   `web/explore_timeline.js` only hide/nest ONE level today: an entity with `detail_of` set is
+   hidden from its own top-level band and shown as a chip under its target -- but if that target
+   *itself* has `detail_of` set (a real, legitimate shape: `Kingdom of Castile → Crown of Castile →
+   Hispanic Monarchy`, 22 such chains found live 4 September 2026), the target gets hidden too,
+   orphaning the chain's leaf with no visible container to nest under. `/explore`'s "Set as detail
+   of" picker already guards against *creating* a new chain interactively (refuses a target that
+   itself has `detail_of` set) for exactly this reason, but every chain already in the data hits
+   the gap today. Needs its own design pass once real multi-level data exists to design the
+   renderer against (see `docs/plans/2026-09-04-subdivision-detail-of-merge-design.md`'s
+   "Architecture" section for the full context) -- same "defer until there's real data to design
+   against" precedent the original `detail_of` merge's own `/explore`-display item followed.
+0 bis. **Fix the polity ↔ period conversion friction.** Converting one to the other today isn't a
    field flip -- it's a structural migration: a new record with a new id gets created in the
    *other* directory (`polities/` ↔ `periods/`) and the original is retired, rather than the
    same record just changing what it is. Surfaced live, 3 September 2026, while reclassifying
    `seshat_kachi_plain_pkceran` as a period. Needs its own brainstorm/design pass (approaches,
    tradeoffs, a real spec) before touching anything -- not a quick fix.
-0 bis. **Merge `subdivision` (the `entity_type` + `parent` + `subdivision_parent_status`
+0 ter. **Merge `subdivision` (the `entity_type` + `parent` + `subdivision_parent_status`
    mechanism) into `detail_of`.** Raised live, 3 September 2026: a subdivision is conceptually
    the same "this entity nests inside that one" relationship `detail_of` already covers (the
    September 1 merge folded `phase_of` *and* `part_of` into it) -- `subdivision`/`parent` is a
-   third, separate, older mechanism expressing the same idea. `/subdivision-review`, the review
-   UI that used to confirm a subdivision's parent, was removed the same day (see STATUS.md) with
-   `build.py`'s publish-gate on `subdivision_parent_status` relaxed in the meantime (everything
-   publishes now, unconfirmed or not) -- this item is the real, deferred fix: fold the
-   subdivision concept into `detail_of` properly rather than leave two mechanisms doing the same
-   job. Needs its own design pass.
+   third, separate, older mechanism expressing the same idea, used far more broadly than just
+   subdivisions (84 records, only 1 actually typed as a subdivision, 15 already duplicating
+   `detail_of`). Design done, 4 September 2026: `docs/plans/2026-09-04-subdivision-detail-of-merge-design.md`
+   -- awaiting spec review before implementation.
 1. **Work the polity → period reclassification queue (73 pending, confirmed live 1 September 2026,
    `/consolidation-review`'s "period"/"both" decision).** Full scope-and-seed pass done (see
    STATUS.md); what's left is ordinary manual review.
