@@ -446,6 +446,35 @@ def create_app(root: Path = ROOT) -> FastAPI:
         # after a person's title, not evidence of relation to any other
         # "prince"-named entity).
         "abbey", "archbishopric", "bishopric", "diocese", "prince",
+        # Fourth sweep, found live: "Kachi Plain - Ceramic Neolithic" vs
+        # "Neolithic Crete" (shared only "neolithic" -- an archaeological
+        # chronological-stage word, same category as "ancient"/"historical"
+        # above, not a place) and "Socialist Republic of Croatia" vs
+        # "Socialist Republic of Montenegro" (shared only "socialist"/
+        # "republic" -- "republic" already stopworded, "socialist" was not,
+        # despite "democratic" already being covered). Auditing the same
+        # class of word broadly (political-ideology adjectives,
+        # archaeological-period terms, and generic-grandeur/legitimacy
+        # modifiers, the same role "great" already plays above) found a
+        # much larger gap: 77 different "Free City/State of X" records
+        # alone (Menton, Danzig, Krakow, Anhalt, Brunswick, Coburg, Costa
+        # Rica, Fiume, Mecklenburg, Oldenburg, Prussia, Saxe-*, ...), 60
+        # "Soviet" and 49 "Socialist" records (mostly overlapping Soviet
+        # Socialist Republics, but not entirely), 30+ "Imperial"
+        # (17 different "Free Imperial City of X" plus 6 "Imperial City of
+        # X"), 23 "Grand" (17 "Grand Duchy of X", 4 "Grand Principality of
+        # X"), 16 "Federal" ("Federal Republic of X" across Cameroon,
+        # Central America, Yugoslavia, Mindanao, ...), plus smaller but
+        # equally generic categories (sovereign, independent, royal, holy,
+        # supreme, chalcolithic, classical, tribal, fascist, communist,
+        # clan, nationalist, pagan, islamic, early/late/middle as
+        # chronological-stage words). All sampled and verified generic
+        # (never a real place/proper-noun component) before adding.
+        "neolithic", "chalcolithic", "classical", "early", "late", "middle",
+        "islamic", "tribal", "pagan",
+        "socialist", "soviet", "communist", "fascist", "nationalist", "clan",
+        "free", "imperial", "grand", "federal", "sovereign", "independent",
+        "royal", "holy", "supreme",
     }
 
     def consolidation_tokens(document: dict) -> set[str]:

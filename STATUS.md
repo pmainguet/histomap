@@ -1498,6 +1498,36 @@ Three new regression tests, 329/329 total. Verified live: all three reported pai
 candidates (their only prior match was the stopword). Reverted the usual `create_app()`-against-
 real-root normalization side effects on ~40 unrelated polity YAML files before committing.
 
+### `consolidation_stopwords` fourth sweep: Free, Soviet, Socialist, Imperial, Grand, and 19 more — 3 September 2026
+
+Two more false positives found live immediately after the third sweep shipped: "Kachi Plain -
+Ceramic Neolithic" vs "Neolithic Crete" (shared only "neolithic", an archaeological
+chronological-stage word, same category as "ancient"/"historical") and "Socialist Republic of
+Croatia" vs "Socialist Republic of Montenegro" (shared only "socialist"/"republic" -- "republic"
+already stopworded, "socialist" was not, despite "democratic" already covering the same adjective
+category). Broadening the audit (political-ideology adjectives, archaeological-period terms, and
+generic grandeur/legitimacy modifiers -- the same role "great" already plays) found a much larger
+gap than either single report: **77** different "Free City/State of X" records alone (Danzig,
+Krakow, Anhalt, Brunswick, Coburg, Costa Rica, Fiume, Mecklenburg, Oldenburg, Prussia, Saxe-*, the
+17 different "Free Imperial City of X" among them), **60** "Soviet" and **49** "Socialist" (mostly
+overlapping Soviet Socialist Republics, not entirely), **30+** "Imperial", **23** "Grand" (17
+"Grand Duchy of X", 4 "Grand Principality of X"), **16** "Federal" ("Federal Republic of X" across
+Cameroon, Central America, Yugoslavia, Mindanao, ...), plus smaller but equally generic categories:
+sovereign, independent, royal, holy, supreme, chalcolithic, classical, tribal, fascist, communist,
+clan, nationalist, pagan, islamic, and early/late/middle as chronological-stage words. All 24 new
+words sampled and verified generic (never a real place/proper-noun component) before adding.
+
+Two new regression tests, 331/331 total. Verified live: both reported pairs now have zero
+candidates. Reverted the usual real-root normalization side effects on ~20 unrelated polity YAML
+files before committing (kept the separately-made Kano Emirate date correction, see below).
+
+### Kano Emirate's real dissolution date (1903), not still-existing — 3 September 2026
+
+Found live: the record showed "999 CE-present". Corrected `end` from `null` to 1903 (British
+conquest of Kano, part of the fall of the Sokoto Caliphate) per direct confirmation, `end_confidence`
+low -> high, and locked via `manual_overrides: [end]` since Wikidata's own record carries no
+dissolution date for this entity -- a future re-extraction would otherwise silently revert it.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which

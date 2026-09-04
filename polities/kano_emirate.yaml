@@ -19,12 +19,12 @@ text:
   short_child_en: ''
   short_adult_en: ''
   long_en: ''
-notes: 'Automatically generated from Wikidata; requires review. End date corrected
-  from null to 1903 (British conquest of Kano, part of the fall of the Sokoto
-  Caliphate) -- confirmed live, 3 September 2026.'
+notes: Automatically generated from Wikidata; requires review. End date corrected
+  from null to 1903 (British conquest of Kano, part of the fall of the Sokoto Caliphate)
+  -- confirmed live, 3 September 2026.
 sources:
 - wikidata
-prominence_score: 15.21
+prominence_score: 17.57
 visibility_tier: detailed
 eligibility: accepted
 geography:
@@ -49,12 +49,12 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   relationship_centrality: 0.0
-  longevity: 7.53
+  longevity: 7.39
   editorial_work: 0
   type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
+  date_uncertainty_penalty: -2.5
   aggregate_penalty: 0
-  total: 15.21
+  total: 17.57
 government_form: emirate
 manual_overrides:
 - end

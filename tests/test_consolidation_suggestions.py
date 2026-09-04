@@ -721,6 +721,38 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         ]
         self.not_a_candidate("prince_bishopric_of_chur", "prince_bishopric_of_toul", polities)
 
+    def test_shared_neolithic_period_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 3 September 2026: "Kachi Plain - Ceramic Neolithic"
+        # and "Neolithic Crete" share only the archaeological
+        # chronological-stage word "neolithic" -- same category as
+        # "ancient"/"historical" above, not a place name.
+        polities = [
+            {**BASE, "id": "seshat_kachi_plain_pkceran",
+             "canonical_name": "Kachi Plain - Ceramic Neolithic",
+             "external_ids": {"seshat": "PkCeraN"}, "start": -7000, "end": -5500,
+             "prominence_score": 20, "geography": {"present_countries": ["PK"]}},
+            {**BASE, "id": "neolithic_crete", "canonical_name": "Neolithic Crete",
+             "external_ids": {"wikidata": "Q1071736"}, "start": -7000, "end": -3200,
+             "prominence_score": 20, "geography": {"present_countries": ["GR"]}},
+        ]
+        self.not_a_candidate("seshat_kachi_plain_pkceran", "neolithic_crete", polities)
+
+    def test_shared_socialist_republic_words_alone_is_not_a_candidate(self) -> None:
+        # Found live, 3 September 2026: "Socialist Republic of Croatia" and
+        # "Socialist Republic of Montenegro" share only "socialist"/
+        # "republic" -- "republic" already stopworded, "socialist" was not
+        # (despite "democratic" already being covered as the same category
+        # of political-ideology adjective).
+        polities = [
+            {**BASE, "id": "socialist_republic_of_croatia", "canonical_name": "Socialist Republic of Croatia",
+             "external_ids": {"wikidata": "Q209062"}, "start": 1945, "end": 1990,
+             "prominence_score": 20, "geography": {"present_countries": ["HR"]}},
+            {**BASE, "id": "socialist_republic_of_montenegro", "canonical_name": "Socialist Republic of Montenegro",
+             "external_ids": {"wikidata": "Q838291"}, "start": 1945, "end": 1992,
+             "prominence_score": 20, "geography": {"present_countries": ["ME"]}},
+        ]
+        self.not_a_candidate("socialist_republic_of_croatia", "socialist_republic_of_montenegro", polities)
+
 
 if __name__ == "__main__":
     unittest.main()
