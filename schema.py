@@ -31,12 +31,6 @@ class Confidence(str, Enum):
     legendary = "legendary"
 
 
-class VisibilityTier(str, Enum):
-    global_ = "global"
-    regional = "regional"
-    detailed = "detailed"
-
-
 class Eligibility(str, Enum):
     accepted = "accepted"
     review = "review"
@@ -216,8 +210,6 @@ class Polity(BaseModel):
     weight_imputed: bool = False
     prominence_score: float = Field(default=0, ge=0, le=100)
     prominence_components: dict[str, float] = Field(default_factory=dict)
-    visibility_tier: VisibilityTier = VisibilityTier.detailed
-    visibility_override: VisibilityTier | None = None
     eligibility: Eligibility = Eligibility.review
     icon: str | None = None
     text: Text = Field(default_factory=Text)

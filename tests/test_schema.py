@@ -112,5 +112,21 @@ class PolityParentRetirementTests(unittest.TestCase):
             Polity(**polity_kwargs(id="loop", detail_of="loop"))
 
 
+class VisibilityTierRetirementTests(unittest.TestCase):
+    def test_visibility_tier_field_no_longer_accepted(self) -> None:
+        polity = Polity(**polity_kwargs(visibility_tier="global"))
+        self.assertFalse(hasattr(polity, "visibility_tier"))
+        self.assertNotIn("visibility_tier", Polity.model_fields)
+
+    def test_visibility_override_field_no_longer_accepted(self) -> None:
+        polity = Polity(**polity_kwargs(visibility_override="global"))
+        self.assertFalse(hasattr(polity, "visibility_override"))
+        self.assertNotIn("visibility_override", Polity.model_fields)
+
+    def test_visibility_tier_enum_no_longer_exported(self) -> None:
+        import schema
+        self.assertFalse(hasattr(schema, "VisibilityTier"))
+
+
 if __name__ == "__main__":
     unittest.main()
