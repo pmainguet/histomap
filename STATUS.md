@@ -1469,6 +1469,35 @@ needed. ROADMAP.md's "0 bis" item (this request) considered closed; its companio
 the retired Classify entities/Links subdivisions review workflow) renumbered to plain "0", not yet
 started.
 
+### `consolidation_stopwords` third sweep: ordinals, government-type adjectives, ecclesiastical titles — 3 September 2026
+
+Three more real false positives surfaced live, right after the second sweep shipped: "Second
+Portuguese Republic" vs "Second Polish Republic" (shared only the ordinal "second" -- "republic"
+already stopworded, "portuguese"/"polish" don't match), "Mongol Military Government" vs "United
+States Military Government of the Philippine Islands" (shared only "military"/"government" --
+"government" already stopworded, "military" was not), and "Prince-Bishopric of Chur" vs
+"Prince-Bishopric of Toul" (shared only "bishopric"/"prince"). Same discipline each time: grepped
+`canonical_name`, sampled real uses before trusting an addition.
+
+Added: ordinals (`first` through `tenth`, a closed category -- 32 different "First X" records
+alone span Brazil, Bulgaria, Czechoslovakia, Bavaria, Haiti, France, Greece, Hungary, Mexico,
+Nigeria, the Philippines, Portugal, Armenia, Austria, Iraq, Seychelles, South Korea, Venezuela,
+Saudi Arabia, Syria, and Myanmar); government-type adjectives `military`, `provisional`,
+`administration`, `administrative`, `civil`, `colonial`, `revolutionary`, `transitional`,
+`national`, `occupation` (19 different "Provisional Government of X" records alone); ecclesiastical
+titles `abbey`, `archbishopric`, `bishopric`, `diocese`, `prince` (32 different "Prince-Bishopric of
+X" Holy Roman Empire records alone -- "prince" alone verified generic too via "Prince of
+Castelbuono"/"Prince of Leonforte", different Sicilian princedoms, and "Prince Edward Island", a
+place named after a person's title). Deliberately did NOT add `new`/`old` (integral parts of real
+place names -- "New Spain", "New Zealand", "New Granada" -- unlike a pure institutional-type word)
+or `central` (a genuine geographic qualifier like "Central Africa"/"Central America", the same role
+Minor/Major/Upper/Lower/Inner/Outer already play via `SUBDIVISION_QUALIFIERS`, not a content-free
+noun).
+
+Three new regression tests, 329/329 total. Verified live: all three reported pairs now have zero
+candidates (their only prior match was the stopword). Reverted the usual `create_app()`-against-
+real-root normalization side effects on ~40 unrelated polity YAML files before committing.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which

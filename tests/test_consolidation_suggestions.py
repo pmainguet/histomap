@@ -668,6 +668,59 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         ]
         self.not_a_candidate("golden_horde", "white_horde", polities)
 
+    def test_shared_ordinal_word_alone_is_not_a_candidate(self) -> None:
+        # Found live, 3 September 2026: "Second Portuguese Republic" and
+        # "Second Polish Republic" share only the ordinal "second" --
+        # "republic" is already stopworded, "portuguese"/"polish" don't
+        # match. Ordinals (First/Second/.../Tenth) are their own closed,
+        # safe-to-list category -- e.g. 32 different "First X" records span
+        # totally unrelated countries.
+        polities = [
+            {**BASE, "id": "second_portuguese_republic", "canonical_name": "Second Portuguese Republic",
+             "external_ids": {"wikidata": "Q17748736"}, "start": 1926, "end": 1974,
+             "prominence_score": 20, "geography": {"present_countries": ["PT"]}},
+            {**BASE, "id": "second_polish_republic", "canonical_name": "Second Polish Republic",
+             "external_ids": {"wikidata": "Q207272"}, "start": 1918, "end": 1939,
+             "prominence_score": 20, "geography": {"present_countries": ["PL"]}},
+        ]
+        self.not_a_candidate("second_portuguese_republic", "second_polish_republic", polities)
+
+    def test_shared_military_government_words_alone_is_not_a_candidate(self) -> None:
+        # Found live, 3 September 2026: "Mongol Military Government" and
+        # "United States Military Government of the Philippine Islands"
+        # share only "military"/"government" -- "government" is already
+        # stopworded, "military" was not, a generic government-TYPE
+        # adjective describing no place at all.
+        polities = [
+            {**BASE, "id": "mongol_military_government", "canonical_name": "Mongol Military Government",
+             "external_ids": {"wikidata": "Q85883982"}, "start": 1935, "end": 1937,
+             "prominence_score": 20, "geography": {"present_countries": []}},
+            {**BASE, "id": "united_states_military_government_of_the_philippine_islands",
+             "canonical_name": "United States Military Government of the Philippine Islands",
+             "external_ids": {"wikidata": "Q31351948"}, "start": 1898, "end": None,
+             "prominence_score": 20, "geography": {"present_countries": ["PH"]}},
+        ]
+        self.not_a_candidate(
+            "mongol_military_government",
+            "united_states_military_government_of_the_philippine_islands",
+            polities,
+        )
+
+    def test_shared_prince_bishopric_words_alone_is_not_a_candidate(self) -> None:
+        # Found live, 3 September 2026: "Prince-Bishopric of Chur" and
+        # "Prince-Bishopric of Toul" share only "bishopric"/"prince" -- 32
+        # different Holy Roman Empire prince-bishoprics alone would all
+        # token-match each other on this pair of words.
+        polities = [
+            {**BASE, "id": "prince_bishopric_of_chur", "canonical_name": "Prince-Bishopric of Chur",
+             "external_ids": {"wikidata": "Q1176426"}, "start": 1170, "end": 1525,
+             "prominence_score": 20, "geography": {"present_countries": ["CH"]}},
+            {**BASE, "id": "prince_bishopric_of_toul", "canonical_name": "Prince-Bishopric of Toul",
+             "external_ids": {"wikidata": "Q328001"}, "start": 1048, "end": 1801,
+             "prominence_score": 20, "geography": {"present_countries": ["FR"]}},
+        ]
+        self.not_a_candidate("prince_bishopric_of_chur", "prince_bishopric_of_toul", polities)
+
 
 if __name__ == "__main__":
     unittest.main()

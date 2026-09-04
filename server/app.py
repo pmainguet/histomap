@@ -408,6 +408,44 @@ def create_app(root: Path = ROOT) -> FastAPI:
         # with zero place-name evidence.
         "beylik", "canton", "confederacy", "district", "domain", "horde",
         "league", "march", "oblast", "realm", "territory", "union",
+        # Third sweep, found live 3 September 2026: "Second Portuguese
+        # Republic" vs "Second Polish Republic" (shared only the ordinal
+        # "second" -- "republic" already stopworded, "portuguese"/"polish"
+        # don't match) and "Mongol Military Government" vs "United States
+        # Military Government of the Philippine Islands" (shared only
+        # "military"/"government" -- "government" already stopworded,
+        # "military" was not). Ordinals are their own closed, safe-to-list
+        # category (32 "First ..." records alone span Brazil, Bulgaria,
+        # Czechoslovakia, Bavaria, Haiti, France, Greece, Hungary, Mexico,
+        # Nigeria, the Philippines, Portugal, Armenia, Austria, Iraq,
+        # Seychelles, South Korea, Venezuela, Saudi Arabia, Syria, Myanmar
+        # -- all "Nth Republic/Empire/State"-named, none related to each
+        # other). "military"/"provisional"/"administration"/"civil"/
+        # "colonial"/"revolutionary"/"transitional"/"national"/"occupation"
+        # are the same government-TYPE-adjective category as "military" --
+        # verified via the dataset the same way (e.g. 19 different
+        # "Provisional Government of X" records, one per unrelated
+        # country). Deliberately NOT adding "new"/"old" (integral parts of
+        # real place names -- "New Spain", "New Zealand", "New Granada" --
+        # unlike a pure institutional-type word) or "central" (a genuine
+        # geographic qualifier like "Central Africa"/"Central America",
+        # the same role Minor/Major/Upper/Lower/Inner/Outer already have
+        # via SUBDIVISION_QUALIFIERS below, not a content-free noun).
+        "first", "second", "third", "fourth", "fifth", "sixth", "seventh",
+        "eighth", "ninth", "tenth",
+        "military", "provisional", "administration", "administrative",
+        "civil", "colonial", "revolutionary", "transitional", "national",
+        "occupation",
+        # Same batch, found live: "Prince-Bishopric of Chur" vs
+        # "Prince-Bishopric of Toul" (shared only "bishopric"/"prince" --
+        # 32 different Prince-Bishoprics of the Holy Roman Empire alone
+        # would all token-match each other on this pair of words). Verified
+        # "prince" alone is generic too, not just in this compound title,
+        # via "Prince of Castelbuono"/"Prince of Leonforte" (different
+        # Sicilian princedoms) and "Prince Edward Island" (a place named
+        # after a person's title, not evidence of relation to any other
+        # "prince"-named entity).
+        "abbey", "archbishopric", "bishopric", "diocese", "prince",
     }
 
     def consolidation_tokens(document: dict) -> set[str]:
