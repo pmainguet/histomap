@@ -1133,6 +1133,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
         authority: str,
         notes: str,
         source_urls: list[str],
+        promoted_from: str,
     ) -> str:
         """Write the period-overlay YAML companion of a polity, and return its id."""
         period_id = f"{document['id']}_period"
@@ -1154,6 +1155,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
             "external_ids": {"wikidata": qid} if qid else {},
             "notes": notes,
             "source_urls": source_urls,
+            "promoted_from": promoted_from,
         }
         (periods_dir / f"{period_id}.yaml").write_text(
             yaml.safe_dump(period, sort_keys=False, allow_unicode=True), encoding="utf-8"
@@ -1379,6 +1381,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 authority="Wikidata period classification",
                 notes="Period overlay created by an editorial period-role decision.",
                 source_urls=source_urls,
+                promoted_from=polity_id,
             )
             if timeline_role == "both":
                 append_period_link(

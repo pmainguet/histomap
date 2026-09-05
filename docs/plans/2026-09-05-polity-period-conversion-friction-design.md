@@ -5,21 +5,41 @@
 > checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Reclassifying a polity as a period (`/consolidation-review`'s "period"/"both" decision)
-should not silently break other records that reference the original polity, and undoing the
-decision should not leave orphaned data behind. Fix those two concrete defects without merging
-the `Polity`/`Period` schemas.
+should not silently break other records that reference the original polity. Fix that concrete
+defect, and make the id-convention link between a promoted period and its source polity explicit,
+without merging the `Polity`/`Period` schemas.
 
 **Architecture:** `save_timeline_role()` (`server/app.py`) already keeps the original polity file
 in place and generates a companion period record (`write_period_record()`) rather than deleting
 anything -- the "new record, new id, original retired" framing in ROADMAP.md describes the
-*effect*, not a literal file deletion. The actual defects are (1) `build.py`'s `load_all()` drops
+*effect*, not a literal file deletion. The actual defect: `build.py`'s `load_all()` drops
 `timeline_role: period` polities before relationship validation ever sees them, so any other
 record's `detail_of`/`successors`/`relationships.target` pointing at a since-converted id fails
 build with "unknown target" -- not yet triggered in the live dataset only because no such
-cross-reference happens to exist yet; and (2) reverting a promotion (`"period"`/`"both"` back to
-`"entity"`) never deletes the period record it generated, leaving it permanently orphaned. A third,
-smaller gap: the link between a promoted period and its source polity is an implicit filename
-convention (`<polity_id>_period`), not an explicit, schema-validated field.
+cross-reference happens to exist yet. A second, smaller gap: the link between a promoted period
+and its source polity is an implicit filename convention (`<polity_id>_period`), not an explicit,
+schema-validated field.
+
+**Revert already works, and needed no fix -- corrected mid-implementation.** The original design
+(this section, superseded) also targeted "reverting a promotion never deletes the generated period
+record." Implementing it revealed that assumption was wrong: `decide_consolidation_review`'s
+`"independent"`/`"candidate_detail_of"` branches only call `save_timeline_role(id, "entity", ...)`
+when `period_record is not None` (looked up from `period_role_queue`), and
+`refresh_period_role_queue()` excludes any entity whose `manual_overrides` already contains
+`"timeline_role"` -- which the *first* promotion always sets. So that revert path can never fire a
+second time for an already-promoted entity; it was already dead code before this plan, for this
+purpose. The real, reachable "undo a promotion" mechanism is the separate
+`/api/periods/{period_id}/promote-to-entity` endpoint (reachable from `/explore`'s period panel),
+which already restores the original polity record in full (`entity_path.exists()` is always true
+for a `save_timeline_role`-promoted polity, since that file is never deleted) and unconditionally
+deletes the period plus every `period_links.yaml` entry naming it -- correct, since the period
+ceases to exist entirely there, unlike the narrower "something else may now depend on this"
+scenario the abandoned design worried about. Nothing needed fixing; Task 3 below now only adds the
+`promoted_from` field and a regression test confirming this round-trip. The dead branches
+themselves are noted as a new, separate, low-priority ROADMAP item (Task 5) rather than fixed here
+-- fixing them isn't needed to close the reported friction, and doing so isn't free (deciding what
+"revert my own decision while reviewing" should even mean once the entity has left the queue is
+its own small design question).
 
 **Spec:** This document (combined design + plan, this repo's established convention -- see
 `docs/plans/2026-09-01-detail-of-merge-design.md` and `2026-09-04-subdivision-detail-of-merge-design.md`).
@@ -30,8 +50,6 @@ convention (`<polity_id>_period`), not an explicit, schema-validated field.
   (3 September 2026, live): a polity and a period serve structurally different tree roles (a
   polity nests under a chapter/region; a period nests in the era hierarchy via `broader_periods`),
   and unifying them was explicitly rejected in favor of fixing this narrower friction on its own.
-- `Period` has no `manual_overrides` field (confirmed via `schema.py`) and no existing
-  remove-period-link helper (confirmed via grep) -- both must be added fresh, not reused.
 - The exact string match `data.get("timeline_role") == "period"` in `build.py`'s current
   `load_all()` only ever matched pure "period" mode -- `"both"` mode polities were never dropped
   from `load_all()`'s returned list in the first place, so this plan's Task 2 fix only changes
@@ -52,32 +70,28 @@ convention (`<polity_id>_period`), not an explicit, schema-validated field.
    precedent exactly. Verified against the real dataset: all 3 existing `timeline_role: period`
    records already validate cleanly as `Polity` objects (zero Pydantic errors), so this is a safe,
    non-breaking change today; it only prevents a *future* class of bug.
-3. **`server/app.py`:**
-   - `write_period_record()` gains a `promoted_from` parameter, threaded through from
-     `save_timeline_role()`'s call site (the only caller), set to the source polity's id.
-   - New `remove_period_link(period_id, entity_id)` helper: removes one `period_links.yaml` entry
-     matching both ids (mirrors `append_period_link`'s dedup-matching logic).
-   - `save_timeline_role()`'s revert path (`timeline_role == "entity"`, called from
-     `decide_consolidation_review`'s `"candidate_detail_of"` and `"independent"` branches): before
-     writing the reverted polity, check for a period file named `f"{polity_id}_period.yaml"`. If
-     it exists and its `promoted_from` equals `polity_id`, AND no *other*
-     `period_links.yaml` entry references that period_id (only the self-link, if any, from
-     `"both"` mode) -- delete the period file and its self-link entry. If another entry references
-     it (someone linked an unrelated polity into this period after it was generated), leave the
-     period record in place and do not delete it -- deleting it would orphan that unrelated link.
-     Either way, `timeline_role` still reverts to `"entity"` on the polity.
+3. **`server/app.py`:** `write_period_record()` gains a `promoted_from` parameter, threaded
+   through from `save_timeline_role()`'s call site (the only caller), set to the source polity's
+   id. Plus a regression test confirming the existing `promote-to-entity` round-trip still
+   correctly restores the original polity record (see the Architecture section's revert note
+   above -- no server logic changes needed for revert itself, since it already works).
 4. **Backfill:** one-off script, `pipeline/backfill_promoted_from.py`, sets `promoted_from` on the
    3 existing generated period records (`seshat_kachi_plain_pkceran_period`,
    `seshat_neolithic_crete_grcrneo_period`, `seshat_southern_mesopotamia_neolithic_iqsoneo_period`)
    by matching each against the polity id its filename implies (`<id>_period` -> `<id>`), for
    consistency with new conversions going forward. Run once for real, not kept as a routine
    pipeline step.
-5. **Testing:** `tests/test_schema.py` for the new field; `tests/test_build.py` for the
+5. **New ROADMAP item (not fixed here):** `decide_consolidation_review`'s `"candidate_detail_of"`
+   and `"independent"` branches' calls to `save_timeline_role(id, "entity", ...)` are dead code for
+   any entity that has already been promoted once (see Architecture section) -- `/consolidation-
+   review`'s own "independent" button cannot actually undo a prior "period"/"both" decision;
+   `/api/periods/{id}/promote-to-entity` (reachable from `/explore`'s period panel) is the only
+   working undo path today. Worth a small future UX pass, not fixed in this plan.
+6. **Testing:** `tests/test_schema.py` for the new field; `tests/test_build.py` for the
    validation-scope fix (a `detail_of` reference to a `timeline_role: period` polity must not
-   error, and must still be excluded from `published_polities`); `tests/test_server.py` for the
-   revert-cleanup behavior (both the "delete" and "another link exists, keep it" cases) and for
-   `write_period_record()` writing `promoted_from`; a small `tests/test_backfill_promoted_from.py`
-   for the one-off script.
+   error, and must still be excluded from `published_polities`); `tests/test_server.py` for
+   `write_period_record()` writing `promoted_from` and the `promote-to-entity` round-trip; a small
+   `tests/test_backfill_promoted_from.py` for the one-off script.
 
 ## Explicitly out of scope
 
@@ -98,6 +112,19 @@ convention (`<polity_id>_period`), not an explicit, schema-validated field.
 - Retroactively deleting or archiving the original polity file when its role is pure "period" (it
   stays inert to `build.py`'s publication step, exactly as today) -- it remains readable/editable
   via `/explore`'s raw-fields editor, which is useful context to keep, not a bug to fix.
+- Fixing `promote_period_to_entity`'s dead `entity["subdivision_parent_status"] = "pending"` /
+  `entity.pop("subdivision_parent_status", None)` write (~line 1775-1778 as of this writing) --
+  found while reading this endpoint during Task 3's investigation. A field the 4 September 2026
+  subdivision/parent merge removed from the schema entirely; this write is silently dead under
+  this codebase's `extra="ignore"` Pydantic default (same category of bug as the `polity.parent`
+  reference fixed in `web/explore_details.js`, ROADMAP item 0/"0 quater" that same day) --
+  harmless today, but misleading to read. Unrelated to this plan's own scope; worth its own small
+  ROADMAP note.
+- Fixing `decide_consolidation_review`'s dead revert branches (see Architecture section and
+  Design summary point 5) -- the endpoint that actually needs a decision made about it
+  (`promote_period_to_entity`) already works; deciding whether/how `/consolidation-review`'s own
+  "independent" button should also support undoing a prior decision is a separate small UX
+  question, not required to close the reported structural-migration friction.
 
 ---
 
@@ -326,18 +353,27 @@ gate, matching the retired precedent exactly."
 
 ---
 
-### Task 3: `server/app.py` -- explicit back-reference, and clean up on revert
+### Task 3: `server/app.py` -- explicit back-reference (revert already works, verified not fixed)
+
+**Corrected mid-implementation** (see Architecture section's revert note): the originally-planned
+guarded delete-on-revert inside `save_timeline_role()` was written, then found to be dead code --
+its only callers (`decide_consolidation_review`'s `"candidate_detail_of"`/`"independent"`
+branches) can never re-invoke `save_timeline_role(id, "entity", ...)` for an already-promoted
+entity, since `refresh_period_role_queue()` excludes any entity whose `manual_overrides` already
+contains `"timeline_role"` -- which the first promotion always sets. That code (and the
+`remove_period_link()` helper it depended on) was removed again. The real, reachable revert path
+(`/api/periods/{id}/promote-to-entity`) already restores the original polity record fully and
+cleans up unconditionally, and needed no change. What's left, and actually implemented:
 
 **Files:**
-- Modify: `server/app.py` (`write_period_record()` ~line 1130, `save_timeline_role()` ~line 1360,
-  new `remove_period_link()` helper near `append_period_link()` ~line 1163)
+- Modify: `server/app.py` (`write_period_record()` ~line 1130, its one call site inside
+  `save_timeline_role()` ~line 1396)
 - Test: `tests/test_server.py`
 
 **Interfaces:**
 - Consumes: `Period.promoted_from` from Task 1.
 - Produces: `write_period_record(document, kind, authority, notes, source_urls, promoted_from)`
-  (new required parameter, single caller updated); `remove_period_link(period_id, entity_id) ->
-  None`.
+  (new required parameter, single caller updated).
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -352,73 +388,37 @@ Add to `tests/test_server.py` (same `UnifiedServerTests` class, matching its exi
         )
         self.assertEqual(period["promoted_from"], "candidate")
 
-    def test_reverting_period_decision_deletes_the_generated_period(self) -> None:
+    def test_promote_period_to_entity_restores_the_original_polity_record(self) -> None:
+        # The real, reachable "undo a promotion" path is /api/periods/{id}/
+        # promote-to-entity, not decide_consolidation_review's "independent"
+        # decision -- see this design doc's Architecture section for why.
         self.client.post("/api/consolidation-reviews/candidate", json={"decision": "period"})
         self.assertTrue((self.root / "periods" / "candidate_period.yaml").exists())
 
-        self.client.post("/api/consolidation-reviews/candidate", json={"decision": "independent"})
+        response = self.client.post(
+            "/api/periods/candidate_period/promote-to-entity", json={"entity_type": "polity"}
+        )
 
+        self.assertEqual(response.status_code, 200)
         self.assertFalse((self.root / "periods" / "candidate_period.yaml").exists())
         saved = yaml.safe_load(
             (self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8")
         )
         self.assertEqual(saved["timeline_role"], "entity")
-
-    def test_reverting_both_decision_removes_only_the_self_link(self) -> None:
-        # "both" mode is reached via a *different* endpoint --
-        # ConsolidationDecision.decision has no "both" literal (confirmed by
-        # reading it during self-review); the real path is
-        # POST /api/polities/{id}/convert-to-period?keep_entity=true.
-        self.client.post("/api/polities/candidate/convert-to-period?keep_entity=true")
-        period_id = "candidate_period"
-        # A second, unrelated polity gets linked into the same period after
-        # generation -- this link must survive the revert below.
-        links_path = self.root / "period_links.yaml"
-        links = yaml.safe_load(links_path.read_text(encoding="utf-8")) or []
-        links.append({
-            "period_id": period_id, "entity_id": "container",
-            "relation": "part_of_periodization", "confidence": "medium",
-            "evidence": "explicit", "source_urls": [], "notes": "unrelated link",
-        })
-        links_path.write_text(yaml.safe_dump(links, sort_keys=False), encoding="utf-8")
-
-        self.client.post("/api/consolidation-reviews/candidate", json={"decision": "independent"})
-
-        self.assertTrue((self.root / "periods" / f"{period_id}.yaml").exists())
-        remaining = yaml.safe_load(links_path.read_text(encoding="utf-8")) or []
-        self.assertEqual(
-            [link["entity_id"] for link in remaining if link["period_id"] == period_id],
-            ["container"],
-        )
+        # The original file (sources, prominence_score, etc.) is restored,
+        # not synthesized fresh -- the polity file was never deleted by the
+        # promotion in the first place.
+        self.assertEqual(saved["prominence_score"], 70)
+        self.assertEqual(saved["sources"], ["wikidata"])
 ```
 
-(Confirmed during self-review: `ConsolidationDecision.decision`'s `Literal` has no `"both"` value
--- `/api/consolidation-reviews/{entity_id}` only ever reaches `"period"` mode. `"both"` mode is
-reached exclusively via the separate `POST /api/polities/{polity_id}/convert-to-period?keep_entity=true`
-endpoint (`convert_polity_to_period`, ~line 1610) -- already reflected in the test above. Reverting
-still goes through `/api/consolidation-reviews/{id}` with `{"decision": "independent"}`, which
-correctly reaches `save_timeline_role(id, "entity", ...)` for this test's fixture polity since
-`setUp()` already seeds it into `reports/period_role_review.jsonl`, the queue
-`decide_consolidation_review`'s `"independent"` branch checks before calling
-`save_timeline_role`.)
+- [ ] **Step 2: Run tests to verify the first fails, the second already passes**
 
-Also confirmed while reading this code, out of this plan's scope but worth a ROADMAP note (Task 5
-adds it): `promote_period_to_entity` (`/api/periods/{period_id}/promote-to-entity`, the reverse
-period -> polity direction) writes `entity["subdivision_parent_status"] = "pending"` /
-`entity.pop("subdivision_parent_status", None)` (~line 1775-1778) -- a field the 4 September 2026
-subdivision/parent merge removed from the schema entirely. This write is silently dead under this
-codebase's `extra="ignore"` Pydantic default (same category of bug as the `polity.parent`
-reference just fixed in `web/explore_details.js`, ROADMAP item 0/"0 quater") -- harmless today,
-but misleading to read. This plan's own Task 3 does not touch `promote_period_to_entity` at all
-(it already deletes its period + every referencing period_links.yaml entry unconditionally on
-every call, which is correct for its scenario -- the period ceases to exist entirely, unlike
-Task 3's narrower "revert a specific promotion, something else may now depend on it" case), so
-fixing the dead field is left to its own follow-up rather than folded in here.)
-
-- [ ] **Step 2: Run tests to verify they fail**
-
-Run: `.venv/Scripts/python.exe -m unittest tests.test_server.UnifiedServerTests.test_period_conversion_sets_promoted_from tests.test_server.UnifiedServerTests.test_reverting_period_decision_deletes_the_generated_period tests.test_server.UnifiedServerTests.test_reverting_both_decision_removes_only_the_self_link -v`
-Expected: FAIL (no `promoted_from` written yet; period file never deleted on revert)
+Run: `.venv/Scripts/python.exe -m unittest tests.test_server.UnifiedServerTests.test_period_conversion_sets_promoted_from tests.test_server.UnifiedServerTests.test_promote_period_to_entity_restores_the_original_polity_record -v`
+Expected: `test_period_conversion_sets_promoted_from` FAILs (no `promoted_from` written yet);
+`test_promote_period_to_entity_restores_the_original_polity_record` already PASSes -- it's a
+regression guard for existing, correct behavior, not a red-phase reproduction. That's fine; it
+stays in the suite to lock the behavior in.
 
 - [ ] **Step 3: Implement**
 
@@ -461,66 +461,10 @@ Expected: FAIL (no `promoted_from` written yet; period file never deleted on rev
         return period_id
 ```
 
-New helper, next to `append_period_link()`:
+Update `save_timeline_role()`'s call to pass `promoted_from=polity_id` (no other change to that
+function):
 
 ```python
-    def remove_period_link(period_id: str, entity_id: str) -> None:
-        """Remove one period_links.yaml entry matching both ids, if present --
-        mirrors append_period_link's matching logic."""
-        if not period_links_path.exists():
-            return
-        links = yaml.safe_load(period_links_path.read_text(encoding="utf-8")) or []
-        remaining = [
-            link for link in links
-            if not (link["period_id"] == period_id and link["entity_id"] == entity_id)
-        ]
-        if len(remaining) != len(links):
-            period_links_path.write_text(
-                yaml.safe_dump(remaining, sort_keys=False, allow_unicode=True), encoding="utf-8"
-            )
-```
-
-(Use whatever variable name the existing `append_period_link()` uses for the path -- read it
-first; `period_links_path` above is illustrative.)
-
-Update `save_timeline_role()`'s call to `write_period_record()` (pass `promoted_from=polity_id`),
-and add the revert-cleanup branch:
-
-```python
-    def save_timeline_role(polity_id: str, timeline_role: str, period_kinds: list[str]) -> dict:
-        document = metadata.get(polity_id)
-        path = polities_dir / f"{polity_id}.yaml"
-        if document is None or not path.exists():
-            raise HTTPException(404, "Unknown Histomap entity")
-        if timeline_role in {"period", "both"} and document.get("end") is None:
-            raise HTTPException(422, "A period overlay requires a finite end date")
-        if timeline_role == "entity":
-            # Reverting a promotion: clean up what it generated, but only if
-            # nothing else now depends on it (see design doc's Task 3).
-            generated_path = root / "periods" / f"{polity_id}_period.yaml"
-            if generated_path.exists():
-                generated = yaml.safe_load(generated_path.read_text(encoding="utf-8")) or {}
-                if generated.get("promoted_from") == polity_id:
-                    period_id = generated["id"]
-                    links = yaml.safe_load(
-                        (root / "period_links.yaml").read_text(encoding="utf-8")
-                    ) if (root / "period_links.yaml").exists() else []
-                    other_links_exist = any(
-                        link["period_id"] == period_id and link["entity_id"] != polity_id
-                        for link in (links or [])
-                    )
-                    if not other_links_exist:
-                        remove_period_link(period_id, polity_id)
-                        generated_path.unlink()
-        document["timeline_role"] = timeline_role
-        document["manual_overrides"] = sorted(
-            set(document.get("manual_overrides", [])) | {"timeline_role"}
-        )
-        path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
-        period_id = None
-        if timeline_role in {"period", "both"}:
-            qid = (document.get("external_ids") or {}).get("wikidata")
-            source_urls = [f"https://www.wikidata.org/wiki/{qid}"] if qid else []
             period_id = write_period_record(
                 document,
                 kind="archaeological" if "archaeological" in period_kinds else "historical",
@@ -529,22 +473,12 @@ and add the revert-cleanup branch:
                 source_urls=source_urls,
                 promoted_from=polity_id,
             )
-            if timeline_role == "both":
-                append_period_link(
-                    period_id,
-                    polity_id,
-                    relation="part_of_periodization",
-                    source_urls=source_urls,
-                    notes="Same Wikidata item has distinct entity and period roles.",
-                )
-        metadata[polity_id] = document
-        return {"document": document, "period_id": period_id}
 ```
 
 - [ ] **Step 4: Run tests to verify they pass**
 
 Run: `.venv/Scripts/python.exe -m unittest tests.test_server -v`
-Expected: PASS (full file, not just the 3 new tests -- confirms nothing else in this large test
+Expected: PASS (full file, not just the 2 new tests -- confirms nothing else in this large test
 file regressed)
 
 - [ ] **Step 5: Run full suite**
@@ -556,17 +490,7 @@ Expected: PASS
 
 ```bash
 git add server/app.py tests/test_server.py
-git commit -m "fix(server): explicit promoted_from back-reference, clean up on revert
-
-write_period_record() now writes Period.promoted_from, an explicit
-back-reference to the source polity, alongside the existing
-<polity_id>_period filename convention. save_timeline_role()'s revert
-path (period/both -> entity) now deletes the generated period record
-and its self period_links.yaml entry -- but only when nothing else
-now depends on that period (an unrelated period_links.yaml entry
-added after generation is left untouched, and the period record along
-with it), so undoing a promotion no longer leaves orphaned data behind
-without risking a different record's data."
+git commit -m "fix(server): write_period_record() sets Period.promoted_from"
 ```
 
 ---
@@ -776,7 +700,11 @@ Restart the dev server (`server/app.py` changed). Confirm via the API or a live 
 - [ ] **Step 5: Update STATUS.md and ROADMAP.md**
 
 Add a dated STATUS.md entry summarizing what was fixed (mirroring this doc's Architecture
-section), and remove this item from ROADMAP.md's numbered list (renumber the rest).
+section, including the mid-implementation correction on revert). Remove this item from
+ROADMAP.md's numbered list (renumber the rest), and add two new small items for the findings this
+task surfaced but didn't fix (see "Explicitly out of scope" above): the dead
+`subdivision_parent_status` write in `promote_period_to_entity`, and `decide_consolidation_review`'s
+dead revert branches.
 
 - [ ] **Step 6: Commit and push**
 

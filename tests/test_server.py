@@ -165,6 +165,41 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(saved["timeline_role"], "period")
         self.assertTrue((self.root / "periods" / "container_period.yaml").exists())
 
+    def test_period_conversion_sets_promoted_from(self) -> None:
+        self.client.post("/api/consolidation-reviews/candidate", json={"decision": "period"})
+        period = yaml.safe_load(
+            (self.root / "periods" / "candidate_period.yaml").read_text(encoding="utf-8")
+        )
+        self.assertEqual(period["promoted_from"], "candidate")
+
+    def test_promote_period_to_entity_restores_the_original_polity_record(self) -> None:
+        # The real, reachable "undo a promotion" path is /api/periods/{id}/
+        # promote-to-entity, not decide_consolidation_review's "independent"
+        # decision -- confirmed while writing this test: refresh_period_role_
+        # queue() excludes any entity whose manual_overrides already contains
+        # "timeline_role" (which save_timeline_role always sets on the FIRST
+        # decision), so decide_consolidation_review's period_record-gated
+        # revert branches can never fire a second time for an already-
+        # promoted entity. See ROADMAP.md's note on this.
+        self.client.post("/api/consolidation-reviews/candidate", json={"decision": "period"})
+        self.assertTrue((self.root / "periods" / "candidate_period.yaml").exists())
+
+        response = self.client.post(
+            "/api/periods/candidate_period/promote-to-entity", json={"entity_type": "polity"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse((self.root / "periods" / "candidate_period.yaml").exists())
+        saved = yaml.safe_load(
+            (self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8")
+        )
+        self.assertEqual(saved["timeline_role"], "entity")
+        # The original file (sources, prominence_score, etc.) is restored,
+        # not synthesized fresh -- the polity file was never deleted by the
+        # promotion in the first place.
+        self.assertEqual(saved["prominence_score"], 70)
+        self.assertEqual(saved["sources"], ["wikidata"])
+
     def test_consolidation_uses_identity_evidence_not_alias_token_noise(self) -> None:
         base = {
             "entity_type": "polity", "entity_type_confidence": "high",
