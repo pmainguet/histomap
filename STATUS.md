@@ -1762,6 +1762,18 @@ Kingdom of Egypt's `detail_of` relationship to Middle Kingdom of Egypt reverted 
 Sabaeans reclassified `entity_type` tribe -> polity; Incipient Jomon's geography corrected
 (`present_countries`, `primary_continent`, confidence raised to high).
 
+### ROADMAP item "0 quater": dead `polity.parent` reference fixed — 5 September 2026
+
+Picked up right after task 0 above, per direct instruction. `web/explore_details.js`'s "Part of"
+row (`polity.parent`) and the "Contains" row's underlying lookup (`candidate.parent === polity.id`)
+had both been silently dead since the 4 September 2026 subdivision/parent -> detail_of merge --
+`parent` is always undefined on every record now, so both rows simply never rendered. `detail_of`
+was already correctly used elsewhere in this same file (the "Zoom to this" container-expand
+wiring) but never actually displayed. Pointed both at `detail_of` instead. Verified live: Crown of
+Castile now correctly shows "Part of -> Hispanic Monarchy" and "Contains" listing all 10 nested
+kingdoms, each clickable. ROADMAP item 0 removed (done); "0 bis" (polity <-> period conversion
+friction) promoted to item 0.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which

@@ -9,14 +9,7 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **Dead `polity.parent` reference in `web/explore_details.js`'s "Part of" display row**
-   (line ~475). Unreachable since the 4 September 2026 merge removed `Polity.parent` from the
-   schema and its migration stripped it from every record -- noticed while touching an adjacent
-   line for the `visibility_tier` retirement, not fixed there since it's a separate, pre-existing
-   piece of dead code. Low priority: harmless (the ternary simply never renders), just needs its
-   `Part of` display logic pointed at `detail_of` instead, or removed if `Contains`/other fields
-   already cover the same information.
-0 bis. **Fix the polity ↔ period conversion friction.** Converting one to the other today isn't a
+0. **Fix the polity ↔ period conversion friction.** Converting one to the other today isn't a
    field flip -- it's a structural migration: a new record with a new id gets created in the
    *other* directory (`polities/` ↔ `periods/`) and the original is retired, rather than the
    same record just changing what it is. Surfaced live, 3 September 2026, while reclassifying
