@@ -458,7 +458,7 @@ function renderPolityDetails(polity, ctx) {
   const countries = (polity.geography?.present_countries || []).map((code) => exploreCountryNames.of(code) || code);
   const centroid = polity.geography?.centroid;
   const duration = polity.end == null ? null : polity.end - polity.start;
-  const children = [...politiesById.values()].filter((candidate) => candidate.parent === polity.id);
+  const children = [...politiesById.values()].filter((candidate) => candidate.detail_of === polity.id);
   const predecessors = [...politiesById.values()].filter((candidate) => (candidate.successors || []).includes(polity.id));
   const relevantPeriods = periodLinks.filter((link) => link.entity_id === polity.id);
   const relevantTransitions = (ctx.transitions || []).filter((transition) => [...transition.from, ...transition.to].includes(polity.id));
@@ -472,7 +472,7 @@ function renderPolityDetails(polity, ctx) {
       <dt>Dates</dt><dd>${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}${duration ? ` (${duration.toLocaleString()} years)` : ""}</dd>
       <dt>Entity type</dt><dd>${escapeHtml(displayTerm(polity.entity_type || "polity"))}</dd>
       ${aliases ? `<dt>Other names</dt><dd>${escapeHtml(aliases)}</dd>` : ""}
-      ${polity.parent ? `<dt>Part of</dt><dd>${polityRefButton(politiesById, polity.parent)}</dd>` : ""}
+      ${polity.detail_of ? `<dt>Part of</dt><dd>${polityRefButton(politiesById, polity.detail_of)}</dd>` : ""}
       ${children.length ? `<dt>Contains</dt><dd>${children.map((item) => polityRefButton(politiesById, item.id)).join(", ")}</dd>` : ""}
       ${predecessors.length ? `<dt>Preceded by</dt><dd>${predecessors.map((item) => polityRefButton(politiesById, item.id)).join(", ")}</dd>` : ""}
       ${(polity.successors || []).length ? `<dt>Followed by</dt><dd>${polity.successors.map((id) => polityRefButton(politiesById, id)).join(", ")}</dd>` : ""}
