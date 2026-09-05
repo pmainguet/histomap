@@ -142,8 +142,6 @@ def load_all() -> list[Polity]:
     for path in sorted(POLITIES_DIR.glob("*.yaml")):
         try:
             data = yaml.safe_load(path.read_text(encoding="utf-8"))
-            if data.get("timeline_role") == "period":
-                continue
             polity = Polity.model_validate(data)
         except Exception as exc:
             errors.append(f"{path.name}: {exc}")
@@ -165,16 +163,16 @@ def load_all() -> list[Polity]:
 
 def load_civilization_period_role_sources(polities_dir: Path = POLITIES_DIR) -> dict[str, str]:
     """Polities promoted to timeline_role: period are excluded from
-    load_all() entirely (see its early skip) since they're already
-    represented by a generated periods/*.yaml companion record -- but that
-    means their entity_type is otherwise invisible to build_explore_tree(),
-    which needs it to route the companion period into the Civilizations &
-    Cultures lane instead of the ordinary Period row (its generated
-    canonical_name is usually just a plain copy of the polity's name, e.g.
-    "Ancient Egypt", so the name-substring heuristic alone won't catch it).
-    A lightweight, independent scan (raw dict reads, no Polity validation)
-    rather than a change to load_all()'s contract, which many other callers
-    depend on."""
+    *publication* (see main()'s published_polities filter) since they're
+    already represented by a generated periods/*.yaml companion record --
+    but build_explore_tree() only receives the published set, so their
+    entity_type is otherwise invisible to it, which it needs to route the
+    companion period into the Civilizations & Cultures lane instead of the
+    ordinary Period row (its generated canonical_name is usually just a
+    plain copy of the polity's name, e.g. "Ancient Egypt", so the
+    name-substring heuristic alone won't catch it). A lightweight,
+    independent scan (raw dict reads, no Polity validation) rather than a
+    change to load_all()'s contract, which many other callers depend on."""
     from pipeline.build_explore_tree import CIVILIZATION_ENTITY_TYPES
 
     sources: dict[str, str] = {}
@@ -289,7 +287,15 @@ def main() -> None:
     # explicit direction ("publish everything in the timeline, I check
     # later") -- an unconfirmed subdivision just has no `parent`/context
     # yet, same as any other record still needing editorial attention.
-    published_polities = [polity for polity in polities if polity.timeline_role != "retired"]
+    # A timeline_role: period polity stays a valid relationship target for
+    # every other record (see load_all() above and
+    # docs/plans/2026-09-05-polity-period-conversion-friction-design.md) --
+    # it's represented by its own generated period companion record from
+    # here on, so it's excluded from publication specifically, alongside
+    # "retired", not from existing at all.
+    published_polities = [
+        polity for polity in polities if polity.timeline_role not in {"retired", "period"}
+    ]
     OUT_PATH.write_text(
         json.dumps(
             [p.model_dump(mode="json") for p in published_polities],

@@ -30,7 +30,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "africa_early_modern_connections_era",
@@ -63,7 +64,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "africa_industrial_imperial_world_era",
@@ -96,7 +98,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "africa_world_wars_reordering_era",
@@ -129,7 +132,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "african_paleolithic_era",
@@ -164,7 +168,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "ancient_egypt_period",
@@ -207,7 +212,8 @@
     "linked_era_id": "neolithic_era",
     "linked_chapter_id": "macro_early_cities_states",
     "government_form": null,
-    "civilization_lane": true
+    "civilization_lane": true,
+    "promoted_from": null
   },
   {
     "id": "andean_archaic_era",
@@ -244,7 +250,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "andean_early_civilizations_era",
@@ -281,7 +288,8 @@
     "linked_era_id": "classical_antiquity_era",
     "linked_chapter_id": "macro_classical_imperial_worlds",
     "government_form": null,
-    "civilization_lane": true
+    "civilization_lane": true,
+    "promoted_from": null
   },
   {
     "id": "antarctica_contemporary_world_era",
@@ -314,7 +322,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "antarctica_early_modern_connections_era",
@@ -347,7 +356,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "antarctica_industrial_imperial_world_era",
@@ -380,7 +390,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "antarctica_world_wars_reordering_era",
@@ -413,7 +424,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "asia_contemporary_world_era",
@@ -446,7 +458,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "asia_early_modern_connections_era",
@@ -479,7 +492,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "asia_industrial_imperial_world_era",
@@ -512,7 +526,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "asia_world_wars_reordering_era",
@@ -545,7 +560,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "asuka_period",
@@ -586,7 +602,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "ayyubid_sultanate_period",
@@ -619,7 +636,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "bronze_age_era",
@@ -655,7 +673,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "chinese_empire_period",
@@ -697,7 +716,8 @@
     "linked_era_id": "classical_antiquity_era",
     "linked_chapter_id": "macro_postclassical_worlds",
     "government_form": null,
-    "civilization_lane": true
+    "civilization_lane": true,
+    "promoted_from": null
   },
   {
     "id": "chola_empire_period",
@@ -730,7 +750,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "classical_antiquity_era",
@@ -768,7 +789,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "copper_age_era",
@@ -806,7 +828,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "early_dynastic_mesopotamia",
@@ -845,7 +868,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "east_asian_bronze_age_era",
@@ -882,7 +906,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "east_asian_classical_era",
@@ -919,7 +944,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "east_asian_imperial_era",
@@ -956,7 +982,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "east_asian_neolithic_era",
@@ -993,7 +1020,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "etruscan_civilization_period",
@@ -1032,7 +1060,8 @@
     "linked_era_id": "classical_antiquity_era",
     "linked_chapter_id": "macro_classical_imperial_worlds",
     "government_form": null,
-    "civilization_lane": true
+    "civilization_lane": true,
+    "promoted_from": null
   },
   {
     "id": "eurasian_paleolithic_era",
@@ -1068,7 +1097,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "europe_contemporary_world_era",
@@ -1101,7 +1131,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "europe_early_modern_connections_era",
@@ -1134,7 +1165,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "europe_industrial_imperial_world_era",
@@ -1167,7 +1199,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "europe_world_wars_reordering_era",
@@ -1200,7 +1233,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "european_bronze_age_era",
@@ -1235,7 +1269,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "european_hun_empire_period",
@@ -1268,7 +1303,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "european_iron_age",
@@ -1305,7 +1341,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "european_neolithic",
@@ -1342,7 +1379,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "fertile_crescent_neolithic_era",
@@ -1379,7 +1417,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "indus_valley_civilization_period",
@@ -1419,7 +1458,8 @@
     "linked_era_id": "bronze_age_era",
     "linked_chapter_id": "macro_early_cities_states",
     "government_form": null,
-    "civilization_lane": true
+    "civilization_lane": true,
+    "promoted_from": null
   },
   {
     "id": "iron_age_era",
@@ -1455,7 +1495,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "islamic_caliphates_era",
@@ -1494,7 +1535,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "jomon_period",
@@ -1537,7 +1579,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "kofun_period",
@@ -1580,7 +1623,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "macedonian_empire_period",
@@ -1613,7 +1657,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "macro_agricultural_transitions",
@@ -1644,7 +1689,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "macro_classical_imperial_worlds",
@@ -1675,7 +1721,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "macro_contemporary_world",
@@ -1706,7 +1753,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "macro_early_cities_states",
@@ -1737,7 +1785,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "macro_early_modern_connections",
@@ -1768,7 +1817,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "macro_human_origins_paleolithic",
@@ -1799,7 +1849,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "macro_industrial_imperial_world",
@@ -1830,7 +1881,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "macro_postclassical_worlds",
@@ -1861,7 +1913,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "macro_world_wars_reordering",
@@ -1892,7 +1945,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "medieval_europe_era",
@@ -1927,7 +1981,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "mediterranean_classical_era",
@@ -1965,7 +2020,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "mesoamerican_archaic_era",
@@ -2002,7 +2058,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "mesoamerican_classic",
@@ -2049,7 +2106,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "mesoamerican_formative_classic_era",
@@ -2086,7 +2144,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "mesoamerican_postclassic",
@@ -2131,7 +2190,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "mesoamerican_preclassic",
@@ -2178,7 +2238,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "mesopotamia_period",
@@ -2218,7 +2279,8 @@
     "linked_era_id": "neolithic_era",
     "linked_chapter_id": "macro_early_cities_states",
     "government_form": null,
-    "civilization_lane": true
+    "civilization_lane": true,
+    "promoted_from": null
   },
   {
     "id": "minoan_civilization_period",
@@ -2260,7 +2322,8 @@
     "linked_era_id": "classical_antiquity_era",
     "linked_chapter_id": "macro_early_cities_states",
     "government_form": null,
-    "civilization_lane": true
+    "civilization_lane": true,
+    "promoted_from": null
   },
   {
     "id": "mycenaean_greece_period",
@@ -2299,7 +2362,8 @@
     "linked_era_id": "classical_antiquity_era",
     "linked_chapter_id": "macro_early_cities_states",
     "government_form": null,
-    "civilization_lane": true
+    "civilization_lane": true,
+    "promoted_from": null
   },
   {
     "id": "neolithic_era",
@@ -2342,7 +2406,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "nile_valley_neolithic_era",
@@ -2379,7 +2444,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "north_america_contemporary_world_era",
@@ -2412,7 +2478,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "north_america_early_modern_connections_era",
@@ -2445,7 +2512,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "north_america_industrial_imperial_world_era",
@@ -2478,7 +2546,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "north_america_world_wars_reordering_era",
@@ -2511,7 +2580,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "oceania_contemporary_world_era",
@@ -2544,7 +2614,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "oceania_early_modern_connections_era",
@@ -2577,7 +2648,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "oceania_industrial_imperial_world_era",
@@ -2610,7 +2682,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "oceania_world_wars_reordering_era",
@@ -2643,7 +2716,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "olmec_civilization_period",
@@ -2682,7 +2756,8 @@
     "linked_era_id": "classical_antiquity_era",
     "linked_chapter_id": "macro_classical_imperial_worlds",
     "government_form": null,
-    "civilization_lane": true
+    "civilization_lane": true,
+    "promoted_from": null
   },
   {
     "id": "paleolithic_era",
@@ -2719,7 +2794,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "rhodes_q104383185_period",
@@ -2752,7 +2828,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "seshat_kachi_plain_pkceran_period",
@@ -2787,7 +2864,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": null
+    "civilization_lane": null,
+    "promoted_from": null
   },
   {
     "id": "seshat_neolithic_crete_grcrneo_period",
@@ -2818,7 +2896,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": null
+    "civilization_lane": null,
+    "promoted_from": null
   },
   {
     "id": "seshat_southern_mesopotamia_neolithic_iqsoneo_period",
@@ -2849,7 +2928,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": null
+    "civilization_lane": null,
+    "promoted_from": null
   },
   {
     "id": "south_america_contemporary_world_era",
@@ -2882,7 +2962,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "south_america_early_modern_connections_era",
@@ -2915,7 +2996,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "south_america_industrial_imperial_world_era",
@@ -2948,7 +3030,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "south_america_world_wars_reordering_era",
@@ -2981,7 +3064,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "south_asian_classical_era",
@@ -3018,7 +3102,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "sub_saharan_african_iron_age_era",
@@ -3058,7 +3143,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "syrakousai_period",
@@ -3091,7 +3177,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "taifa_of_mallorca_q104178581_period",
@@ -3124,7 +3211,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "taifa_of_murcia_q104178103_period",
@@ -3157,7 +3245,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "taifa_of_murcia_q104178238_period",
@@ -3190,7 +3279,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "viking_age_period",
@@ -3231,7 +3321,8 @@
     "linked_era_id": "medieval_europe_era",
     "linked_chapter_id": "macro_postclassical_worlds",
     "government_form": null,
-    "civilization_lane": true
+    "civilization_lane": true,
+    "promoted_from": null
   },
   {
     "id": "western_zhou_q1069609_period",
@@ -3264,7 +3355,8 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   },
   {
     "id": "yayoi_period",
@@ -3307,6 +3399,7 @@
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
-    "civilization_lane": false
+    "civilization_lane": false,
+    "promoted_from": null
   }
 ]

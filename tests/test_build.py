@@ -167,6 +167,21 @@ class DetailOfValidationTests(unittest.TestCase):
         child = detail_polity("child", "parent")
         self.assertEqual(validate_entity_relationships([parent, child]), [])
 
+    def test_detail_of_reference_to_period_role_polity_is_not_an_error(self) -> None:
+        # A polity converted to timeline_role: period must remain a valid
+        # detail_of/successors/relationships target for every OTHER record --
+        # it's excluded from *publication*, not from *existing*. Reproduces
+        # the bug found live 5 September 2026: build.py's load_all() dropped
+        # timeline_role: period polities before validate_entity_relationships()
+        # ever saw them, so any reference to a since-converted id would fail
+        # build with "unknown detail_of target" the moment one existed.
+        converted = Polity.model_validate({
+            "id": "converted", "canonical_name": "converted", "timeline_role": "period",
+            "start": 1, "end": 2, "start_confidence": "low", "end_confidence": "low",
+        })
+        referencer = detail_polity("referencer", "converted")
+        self.assertEqual(validate_entity_relationships([converted, referencer]), [])
+
 
 class LoadCivilizationPeriodRoleSourcesTests(unittest.TestCase):
     def _write(self, directory: Path, filename: str, data: dict) -> None:
