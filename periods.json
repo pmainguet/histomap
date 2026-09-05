@@ -2865,7 +2865,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
-    "promoted_from": null
+    "promoted_from": "seshat_kachi_plain_pkceran"
   },
   {
     "id": "seshat_neolithic_crete_grcrneo_period",
@@ -2897,7 +2897,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
-    "promoted_from": null
+    "promoted_from": "seshat_neolithic_crete_grcrneo"
   },
   {
     "id": "seshat_southern_mesopotamia_neolithic_iqsoneo_period",
@@ -2929,7 +2929,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
-    "promoted_from": null
+    "promoted_from": "seshat_southern_mesopotamia_neolithic_iqsoneo"
   },
   {
     "id": "south_america_contemporary_world_era",

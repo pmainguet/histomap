@@ -9,12 +9,22 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **Fix the polity ↔ period conversion friction.** Converting one to the other today isn't a
-   field flip -- it's a structural migration: a new record with a new id gets created in the
-   *other* directory (`polities/` ↔ `periods/`) and the original is retired, rather than the
-   same record just changing what it is. Surfaced live, 3 September 2026, while reclassifying
-   `seshat_kachi_plain_pkceran` as a period. Needs its own brainstorm/design pass (approaches,
-   tradeoffs, a real spec) before touching anything -- not a quick fix.
+0. **Dead `subdivision_parent_status` write in `promote_period_to_entity`**
+   (`server/app.py`, ~line 1775-1778). Leftover from the 4 September 2026 subdivision/parent
+   merge, which removed that field from the schema entirely -- this endpoint's
+   `entity["subdivision_parent_status"] = "pending"` / `entity.pop("subdivision_parent_status",
+   None)` is silently dead under this codebase's `extra="ignore"` Pydantic default. Found 5
+   September 2026 while investigating the polity ↔ period conversion friction (see STATUS.md).
+   Harmless today, just misleading to read. Low priority.
+0 bis. **`decide_consolidation_review`'s revert branches are dead code.** The
+   `"candidate_detail_of"`/`"independent"` branches only call `save_timeline_role(id, "entity",
+   ...)` when the entity is still in `period_role_queue` -- but the *first* promotion always adds
+   `"timeline_role"` to `manual_overrides`, which `refresh_period_role_queue()` treats as
+   permanent exclusion. So `/consolidation-review`'s own "independent" button can never actually
+   undo a prior "period"/"both" decision; `/api/periods/{id}/promote-to-entity` (reachable from
+   `/explore`'s period panel) is the only working undo path today. Found 5 September 2026, same
+   investigation as above. Worth a small UX pass deciding whether/how the review queue's own
+   button should support this too -- not required for anything else to work.
 1. **Work the polity → period reclassification queue (73 pending, confirmed live 1 September 2026,
    `/consolidation-review`'s "period"/"both" decision).** Full scope-and-seed pass done (see
    STATUS.md); what's left is ordinary manual review.

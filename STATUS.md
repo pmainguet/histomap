@@ -1774,6 +1774,59 @@ Castile now correctly shows "Part of -> Hispanic Monarchy" and "Contains" listin
 kingdoms, each clickable. ROADMAP item 0 removed (done); "0 bis" (polity <-> period conversion
 friction) promoted to item 0.
 
+### ROADMAP item 0: polity <-> period conversion friction — 5 September 2026
+
+Implemented `docs/plans/2026-09-05-polity-period-conversion-friction-design.md`. Architectural
+classification (schema-adjacent change); user delegated judgment for this queued task ("do as you
+see fit"), so clarifying questions were resolved by reading the actual code rather than asked
+live.
+
+**What "conversion friction" actually is:** `save_timeline_role()` (`server/app.py`) already keeps
+the original polity file in place and generates a companion period record rather than deleting
+anything -- ROADMAP's "new record, new id, original retired" framing describes the *effect*, not
+a literal deletion. The real, confirmed defect: `build.py`'s `load_all()` dropped
+`timeline_role: period` polities before relationship validation ever saw them, so any other
+record's `detail_of`/`successors`/`relationships.target` pointing at a since-converted id would
+fail build with "unknown target" -- not yet triggered live only because no such cross-reference
+happened to exist yet. Fixed by moving the exclusion to `main()`'s existing `published_polities`
+filter (extended from `!= "retired"` to `not in {"retired", "period"}`), the single publication
+gate, matching the "retired" precedent exactly -- `load_all()` itself now validates every polity
+file. Verified against the real dataset: all 3 existing `timeline_role: period` records already
+validated cleanly as `Polity` objects, so this was a safe, non-breaking change; it only closes a
+*future* class of bug. Also added `Period.promoted_from: str | None`, an explicit
+back-reference to the source polity, alongside the existing (still used) `<polity_id>_period`
+filename convention -- backfilled onto the 3 existing conversions
+(`pipeline/backfill_promoted_from.py`, one-off).
+
+**Corrected mid-implementation: reverting a promotion already works, no fix needed.** The original
+design also targeted "reverting a promotion never deletes the generated period record." Writing
+the fix (a guarded delete inside `save_timeline_role()`'s revert path) and its test revealed the
+assumption was wrong: `decide_consolidation_review`'s `"candidate_detail_of"`/`"independent"`
+branches only call `save_timeline_role(id, "entity", ...)` when the entity is still in
+`period_role_queue` -- but `refresh_period_role_queue()` excludes any entity whose
+`manual_overrides` already contains `"timeline_role"`, which the *first* promotion always sets. So
+that revert path can never fire a second time for an already-promoted entity -- it was already
+dead code for this purpose, unrelated to this plan. The real, reachable "undo a promotion"
+mechanism is the separate `/api/periods/{id}/promote-to-entity` endpoint (reachable from
+`/explore`'s period panel): it already restores the original polity record in full (the file was
+never deleted by the promotion) and deletes the period plus every `period_links.yaml` entry
+naming it, unconditionally -- correct, since the period ceases to exist entirely there. The
+guarded-delete code and its `remove_period_link()` helper were removed again; Task 3 ended up only
+adding `promoted_from`, plus a regression test confirming the `promote-to-entity` round-trip
+(new coverage, not new behavior).
+
+Full suite: 356 tests, 0 failures. Rebuilt and verified live: `/consolidation-review` and
+`/api/review-dashboard` still load correctly; `periods.json` carries `promoted_from` on all 3
+backfilled records.
+
+**Two new ROADMAP items** for findings surfaced but not fixed here (neither blocks anything else):
+`promote_period_to_entity`'s dead `subdivision_parent_status` write (leftover from the
+4 September 2026 merge, same silently-dead-under-`extra="ignore"` category as the `polity.parent`
+reference fixed in "0 quater" above); and `decide_consolidation_review`'s now-confirmed-dead
+revert branches (worth a small future UX pass on whether `/consolidation-review`'s own
+"independent" button should support undoing a prior decision too). ROADMAP item 0 (this task)
+removed; item 1 (polity -> period reclassification queue) stays next.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which
