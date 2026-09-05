@@ -105,20 +105,64 @@ function drawDetailToggle(svg, { x, y, width, height, count, expanded, onToggle 
 // chart, so it lands under its real years rather than being evenly divided
 // across the container's width. Two details that overlap in time just get
 // two lines; no lane-packing needed since a line only ever holds one detail.
-function detailPanelHeight(count) {
-  return count * DETAIL_LINE_HEIGHT + (count - 1) * DETAIL_LINE_GAP;
+//
+// A detail can itself carry `details` (see build_explore_tree.py's
+// _attach_nested_details -- ROADMAP.md item 0: multi-level detail_of
+// chains, e.g. Kingdom of Castile -> Crown of Castile -> Hispanic
+// Monarchy, are real data). Both functions below recurse to handle that:
+// a detail with its own nested details gets its own toggle (isExpanded/
+// onToggleExpand keyed by that detail's own id, same Set explore.js
+// already uses for top-level items -- no new state plumbing needed), and
+// its own sub-panel renders directly beneath its line when expanded, at
+// however many levels deep the real chain runs. No x-indentation per
+// depth: every band's x still comes from the shared time scale, same as
+// every other band on the chart -- depth reads purely from vertical
+// stacking and each toggle's own "+ N" nested count, not from
+// artificially offsetting a real polity's true date position.
+function detailPanelHeight(details, isExpanded = () => false) {
+  return details.reduce((total, detail, index) => {
+    const gap = index > 0 ? DETAIL_LINE_GAP : 0;
+    const nestedHeight = (Array.isArray(detail.details) && detail.details.length && isExpanded(detail.id))
+      ? DETAIL_PANEL_TOP_GAP + detailPanelHeight(detail.details, isExpanded)
+      : 0;
+    return total + gap + DETAIL_LINE_HEIGHT + nestedHeight;
+  }, 0);
 }
-function drawDetailPanel(svg, { x, y, width, scale, details, onZoom }) {
-  svg.append(svgEl("rect", { x, y, width, height: detailPanelHeight(details.length), class: "hierarchy-detail-panel" }));
+function drawDetailPanel(svg, { x, y, width, scale, details, onZoom, isExpanded = () => false, onToggleExpand = () => {} }) {
+  svg.append(svgEl("rect", { x, y, width, height: detailPanelHeight(details, isExpanded), class: "hierarchy-detail-panel" }));
+  let cursorY = y;
   details.forEach((detail, index) => {
-    const lineY = y + index * (DETAIL_LINE_HEIGHT + DETAIL_LINE_GAP);
+    if (index > 0) cursorY += DETAIL_LINE_GAP;
+    const lineY = cursorY;
     const detailLabel = `${detail.canonical_name} (${itemDateRange(detail)})`;
-    bandRect(svg, {
-      x: scale.x(detail.start), y: lineY,
-      width: Math.max(4, scale.width(detail.start, detail.end)), height: DETAIL_LINE_HEIGHT,
-      cls: "hierarchy-detail-chip", title: detailLabel, label: detailLabel,
-      onZoom: { handler: onZoom, kind: "polity", id: detail.id, start: detail.start, end: detail.end },
-    });
+    const detailX = scale.x(detail.start);
+    const detailWidth = Math.max(4, scale.width(detail.start, detail.end));
+    const nested = Array.isArray(detail.details) && detail.details.length > 0 ? detail.details : null;
+    const zoomTarget = { handler: onZoom, kind: "polity", id: detail.id, start: detail.start, end: detail.end };
+    if (nested) {
+      const nestedExpanded = isExpanded(detail.id);
+      const toggleW = Math.min(detailWidth, toggleWidth(nested.length));
+      drawDetailToggle(svg, {
+        x: detailX, y: lineY, width: toggleW, height: DETAIL_LINE_HEIGHT,
+        count: nested.length, expanded: nestedExpanded, onToggle: () => onToggleExpand(detail.id),
+      });
+      bandRect(svg, {
+        x: detailX + toggleW, y: lineY, width: Math.max(0, detailWidth - toggleW), height: DETAIL_LINE_HEIGHT,
+        cls: "hierarchy-detail-chip", title: detailLabel, label: detailLabel, onZoom: zoomTarget,
+      });
+      cursorY += DETAIL_LINE_HEIGHT;
+      if (nestedExpanded) {
+        cursorY += DETAIL_PANEL_TOP_GAP;
+        drawDetailPanel(svg, { x, y: cursorY, width, scale, details: nested, onZoom, isExpanded, onToggleExpand });
+        cursorY += detailPanelHeight(nested, isExpanded);
+      }
+    } else {
+      bandRect(svg, {
+        x: detailX, y: lineY, width: detailWidth, height: DETAIL_LINE_HEIGHT,
+        cls: "hierarchy-detail-chip", title: detailLabel, label: detailLabel, onZoom: zoomTarget,
+      });
+      cursorY += DETAIL_LINE_HEIGHT;
+    }
   });
 }
 
@@ -142,7 +186,7 @@ function drawItemBand(svg, item, { x, y, width, height, cls, title, label, fill,
   drawDetailToggle(svg, { x, y, width: toggleW, height, count, expanded, onToggle: () => onToggleExpand(item.id) });
   bandRect(svg, { x: x + toggleW, y, width: Math.max(0, width - toggleW), height, cls, title, label, fill, onZoom: zoomTarget });
   if (expanded) {
-    drawDetailPanel(svg, { x, y: y + height + DETAIL_PANEL_TOP_GAP, width, scale, details: item.details, onZoom });
+    drawDetailPanel(svg, { x, y: y + height + DETAIL_PANEL_TOP_GAP, width, scale, details: item.details, onZoom, isExpanded, onToggleExpand });
   }
 }
 
@@ -247,11 +291,15 @@ const TOGGLE_PADDING = 10; // total horizontal padding inside the toggle compart
 // so the lane reserves room for whichever expanded item has the most detail
 // lines, not just a fixed height for "any expanded".
 function laneExtraHeight(lane, isExpanded) {
-  const maxDetails = lane.reduce((max, item) => {
+  // A nested sub-panel (recursive detail_of chains, ROADMAP.md item 0) can
+  // make one expanded item's panel taller than another with the same
+  // top-level detail count, so this compares actual computed heights, not
+  // detail counts, to find the lane's tallest expanded panel.
+  const maxHeight = lane.reduce((max, item) => {
     if (!item.details || !item.details.length || !isExpanded(item.id)) return max;
-    return Math.max(max, item.details.length);
+    return Math.max(max, detailPanelHeight(item.details, isExpanded));
   }, 0);
-  return maxDetails > 0 ? DETAIL_PANEL_TOP_GAP + detailPanelHeight(maxDetails) + DETAIL_PANEL_BOTTOM_GAP : 0;
+  return maxHeight > 0 ? DETAIL_PANEL_TOP_GAP + maxHeight + DETAIL_PANEL_BOTTOM_GAP : 0;
 }
 function laneHeights(lanes, laneHeight, isExpanded) {
   return lanes.map((lane) => laneHeight + laneExtraHeight(lane, isExpanded));

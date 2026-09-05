@@ -144,6 +144,24 @@ class BuildExploreTreeTests(unittest.TestCase):
         self.assertEqual([d["id"] for d in container["details"]], ["francoist_spain"])
         self.assertEqual(container["details"][0]["canonical_name"], "francoist_spain")
 
+    def test_multi_level_detail_of_chain_nests_recursively(self) -> None:
+        """ROADMAP.md item 0: a detail_of target can itself be a detail_of
+        another entity's detail (Kingdom of Castile -> Crown of Castile ->
+        Hispanic Monarchy, 22 such real chains as of 4 September 2026). The
+        middle entity never gets its own top-level bucket entry, but its own
+        nested detail must still surface -- under the top-level container's
+        details list, recursively, not orphaned."""
+        polities = [*self.polities, polity(
+            "crown_of_castile", -2600, -2400, "africa", "north_africa", detail_of="old_kingdom_egypt",
+        ), polity(
+            "kingdom_of_castile", -2600, -2500, "africa", "north_africa", detail_of="crown_of_castile",
+        )]
+        tree = build_explore_tree(polities, self.periods, self.period_links)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        container = next(e for e in region_bucket if e["id"] == "old_kingdom_egypt")
+        middle = next(d for d in container["details"] if d["id"] == "crown_of_castile")
+        self.assertEqual([d["id"] for d in middle["details"]], ["kingdom_of_castile"])
+
     def test_container_without_details_has_no_details_key(self) -> None:
         tree = build_explore_tree(self.polities, self.periods, self.period_links)
         region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]

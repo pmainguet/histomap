@@ -14,6 +14,32 @@ from pipeline.suggest_regional_eras import rank_candidates
 
 AUTO_GENERATED_AUTHORITY = "Histomap editorial: auto-generated continent x chapter node"
 
+
+def _attach_nested_details(details_by_target: dict[str, list[dict]]) -> None:
+    """Multi-level detail_of chains are real data (ROADMAP.md item 0): an
+    entity can itself be a detail_of another entity's detail (e.g. Kingdom
+    of Castile -> Crown of Castile -> Hispanic Monarchy). Recursively
+    attaches each detail's own details_by_target entry (if any) onto its
+    own dict, so /explore's renderer can walk the nesting to any depth --
+    the rest of this module only ever attaches details_by_target[polity_id]
+    once, at the top-level entry (see build_explore_tree below)."""
+    def attach(detail: dict, seen: frozenset[str]) -> None:
+        detail_id = detail["id"]
+        if detail_id in seen:
+            return  # defensive: build.py's validate_entity_relationships()
+                     # already rejects detail_of cycles, but never recurse
+                     # forever if one somehow slips through.
+        nested = details_by_target.get(detail_id)
+        if not nested:
+            return
+        for child in nested:
+            attach(child, seen | {detail_id})
+        detail["details"] = nested
+
+    for details in details_by_target.values():
+        for detail in details:
+            attach(detail, frozenset())
+
 # Polity.entity_type values that mean "not really a weight-bearing political
 # entity" -- these render in the Civilizations & Cultures lane instead of the
 # Polities row. See ROADMAP.md item 4 and the /explore lane-separation design.
@@ -244,6 +270,7 @@ def build_explore_tree(
         })
     for details in details_by_target.values():
         details.sort(key=lambda d: (d["start"] if d["start"] is not None else 0, d["id"]))
+    _attach_nested_details(details_by_target)
 
     # Pass 2: bucket polities per chapter by region, using the curated ids
     # from Pass 1.
