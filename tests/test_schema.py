@@ -128,5 +128,15 @@ class VisibilityTierRetirementTests(unittest.TestCase):
         self.assertFalse(hasattr(schema, "VisibilityTier"))
 
 
+class PeriodPromotedFromTests(unittest.TestCase):
+    def test_promoted_from_defaults_to_none(self) -> None:
+        period = Period(**period_kwargs())
+        self.assertIsNone(period.promoted_from)
+
+    def test_promoted_from_accepts_source_polity_id(self) -> None:
+        period = Period(**period_kwargs(promoted_from="some_polity"))
+        self.assertEqual(period.promoted_from, "some_polity")
+
+
 if __name__ == "__main__":
     unittest.main()
