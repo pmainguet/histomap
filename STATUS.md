@@ -1722,6 +1722,46 @@ row's assessment, matching how Wikidata/Type/Dates already work.
 4 September 2026 merge, noticed while touching an adjacent line here but out of scope for this
 task).
 
+### ROADMAP item 0: recursive multi-level `detail_of` chain nesting — 5 September 2026
+
+Bounded-path implementation (existing flow, scoped change -- see brainstorming skill), picked
+back up right after the `visibility_tier` retirement above, whose "invisible ancestor" removal
+made this task simpler than originally scoped. Chose **recursive nesting** over two flatter
+alternatives (a single flattened list with a path label, or the same list with indentation only)
+after a direct question: each level of a chain gets its own independently expandable toggle, the
+same interaction the top-level container already has, no matter how many levels deep the real
+chain runs.
+
+`build_explore_tree.py`'s `details_by_target` only ever attached one level: a mid-chain entity
+(itself a `detail_of` another entity's detail -- e.g. `crown_of_castile` in
+`kingdom_of_castile → crown_of_castile → hispanic_monarchy`) never got its own top-level bucket
+entry, so its own nested detail orphaned with no visible container. Added
+`_attach_nested_details()`: recursively attaches each detail's own `details_by_target` entry onto
+itself, with a defensive cycle guard even though `build.py`'s `validate_entity_relationships()`
+already rejects `detail_of` cycles at validation time.
+
+`web/explore_timeline.js`'s `drawDetailPanel`/`detailPanelHeight` became recursive to match: a
+detail with its own nested details gets its own toggle, keyed by its own id (the existing
+`expandedIds` Set in `explore.js` already generalizes to arbitrary ids, so no new state plumbing
+was needed), and its own sub-panel renders beneath its line when expanded, at whatever depth the
+real chain runs. Deliberately no x-indentation per depth: every band's x position stays tied to
+the shared time scale, same as every other band on the chart -- depth reads from vertical
+stacking and each toggle's own "+ N" count, not from artificially offsetting a real polity's true
+date position.
+
+Verified against the real `hispanic_monarchy → crown_of_castile → [10 kingdoms]` chain via a full
+rebuild and the live-served `explore_tree.json`/`explore_timeline.js` (confirmed the nested
+`details` key present at both levels). New 3-level-chain test in `test_build_explore_tree.py`.
+Full suite: 348 tests, 0 failures. ROADMAP item 0 removed (done); the queue renumbered, "0 quater"
+(dead `polity.parent` reference) promoted to item 0.
+
+Also committed separately, found live via `/consolidation-review` and `/explore` while this task
+was in progress (none related to it): Southern Mesopotamia Neolithic reclassified polity -> period
+(same pattern as the Kachi Plain/Neolithic Crete reclassifications, 1/3 September 2026); New
+Kingdom of Egypt's `detail_of` relationship to Middle Kingdom of Egypt reverted to independent;
+Sabaeans reclassified `entity_type` tribe -> polity; Incipient Jomon's geography corrected
+(`present_countries`, `primary_continent`, confidence raised to high).
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which

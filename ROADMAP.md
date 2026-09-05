@@ -9,24 +9,7 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **Support multi-level `detail_of` chains in `/explore`'s rendering.** `build_explore_tree.py`/
-   `web/explore_timeline.js` only hide/nest ONE level today: an entity with `detail_of` set is
-   hidden from its own top-level band and shown as a chip under its target -- but if that target
-   *itself* has `detail_of` set (a real, legitimate shape: `Kingdom of Castile → Crown of Castile →
-   Hispanic Monarchy`, 22 such chains found live 4 September 2026), the target gets hidden too,
-   orphaning the chain's leaf with no visible container to nest under. `/explore`'s "Set as detail
-   of" picker already guards against *creating* a new chain interactively (refuses a target that
-   itself has `detail_of` set) for exactly this reason, but every chain already in the data hits
-   the gap today. Needs its own design pass once real multi-level data exists to design the
-   renderer against (see `docs/plans/2026-09-04-subdivision-detail-of-merge-design.md`'s
-   "Architecture" section for the full context) -- same "defer until there's real data to design
-   against" precedent the original `detail_of` merge's own `/explore`-display item followed.
-   **Simplified 5 September 2026:** the "walk past an invisible ancestor" complication this task
-   would otherwise have needed (13 of the 31 known chain leaves rooted at a then-`detailed`-tier,
-   effectively invisible ancestor) no longer applies -- `visibility_tier` was retired entirely
-   (see STATUS.md), so every `detail_of` root is now unconditionally in scope. The remaining work
-   is purely the recursive-nesting rendering fix.
-0 quater. **Dead `polity.parent` reference in `web/explore_details.js`'s "Part of" display row**
+0. **Dead `polity.parent` reference in `web/explore_details.js`'s "Part of" display row**
    (line ~475). Unreachable since the 4 September 2026 merge removed `Polity.parent` from the
    schema and its migration stripped it from every record -- noticed while touching an adjacent
    line for the `visibility_tier` retirement, not fixed there since it's a separate, pre-existing
