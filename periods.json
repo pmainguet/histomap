@@ -2821,6 +2821,37 @@
     "civilization_lane": null
   },
   {
+    "id": "seshat_southern_mesopotamia_neolithic_iqsoneo_period",
+    "canonical_name": "Southern Mesopotamia Neolithic",
+    "kind": "historical",
+    "tier": "period",
+    "start": -9000,
+    "end": -5501,
+    "start_confidence": "high",
+    "end_confidence": "high",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {},
+    "notes": "Period overlay created by an editorial period-role decision.",
+    "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null
+  },
+  {
     "id": "south_america_contemporary_world_era",
     "canonical_name": "South America, Contemporary World",
     "kind": "historical",

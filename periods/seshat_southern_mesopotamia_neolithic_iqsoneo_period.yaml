@@ -1,0 +1,17 @@
+id: seshat_southern_mesopotamia_neolithic_iqsoneo_period
+canonical_name: Southern Mesopotamia Neolithic
+kind: historical
+start: -9000
+end: -5501
+start_confidence: high
+end_confidence: high
+geography:
+  continents:
+  - asia
+  confidence: low
+broader_periods: []
+successors: []
+authority: Wikidata period classification
+external_ids: {}
+notes: Period overlay created by an editorial period-role decision.
+source_urls: []
