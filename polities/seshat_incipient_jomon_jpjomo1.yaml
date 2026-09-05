@@ -32,4 +32,10 @@ government_form: null
 geography:
   continents:
   - asia
-  confidence: low
+  primary_continent: asia
+  historical_regions: []
+  present_countries:
+  - JP
+  confidence: high
+manual_overrides:
+- geography

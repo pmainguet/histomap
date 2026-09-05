@@ -62,11 +62,12 @@ prominence_components:
   aggregate_penalty: 0
   total: 23.33
 manual_overrides:
+- detail_of
 - visibility_override
 linked_era_id: iron_age_era
 government_form: null
 linked_chapter_id: macro_early_cities_states
-detail_of: middle_kingdom_of_egypt
+detail_of: null
 deprecated:
   parent: middle_kingdom_of_egypt
   visibility_tier: detailed

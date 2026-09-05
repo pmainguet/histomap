@@ -35,7 +35,7 @@ geography:
   historical_regions:
   - west_asia
   primary_historical_region: west_asia
-entity_type: tribe
+entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids: []
 relationships: []
