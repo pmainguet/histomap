@@ -133,6 +133,75 @@ function wireCreateEntityDialog(triggerButton, geographyOptions, { onCreated }) 
   });
 }
 
+// ROADMAP.md item: a search field next to the top controls -- select a
+// result to zoom the timeline to it and open its side panel. Searches
+// polities and periods in parallel (same dual-search pattern
+// wireDetailOfEditor already uses in explore_details.js); events aren't
+// searched here since there's no /api/events/search endpoint (the events
+// review queue and the shared Events lane are the ways to reach one today).
+function wireEntitySearch(detailCtx, zoomToRange, onSelect) {
+  const input = document.querySelector("#entity-search");
+  const resultsEl = document.querySelector(".entity-search-results");
+  if (!input || !resultsEl) return;
+  const searchOneKind = async (url, kind) => {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    return payload.items.map((item) => ({ ...item, kind }));
+  };
+  const closeResults = () => { resultsEl.hidden = true; resultsEl.innerHTML = ""; };
+  const runSearch = async () => {
+    const query = input.value.trim();
+    if (query.length < 2) { closeResults(); return; }
+    const q = encodeURIComponent(query);
+    const [politiesFound, periodsFound] = await Promise.all([
+      searchOneKind(`/api/polities/search?q=${q}&limit=10`, "polity"),
+      searchOneKind(`/api/periods/search?q=${q}&limit=10`, "period"),
+    ]);
+    const candidates = [...politiesFound, ...periodsFound]
+      .sort((a, b) => b.search_score - a.search_score)
+      .slice(0, 10);
+    if (!candidates.length) {
+      resultsEl.hidden = false;
+      resultsEl.innerHTML = "<p>No matches found.</p>";
+      return;
+    }
+    resultsEl.hidden = false;
+    resultsEl.innerHTML = candidates.map((item) => {
+      const id = item.polity_id || item.period_id;
+      return `<button type="button" class="entity-search-choice" data-entity-search-id="${escapeHtml(id)}" data-entity-search-kind="${item.kind}">
+        <strong>${escapeHtml(item.canonical_name)}</strong>
+        <span>${item.kind === "period" ? "Period" : "Polity"} · ${formatYear(item.canonical_start)}–${formatYear(item.canonical_end)}</span>
+      </button>`;
+    }).join("");
+    resultsEl.querySelectorAll("[data-entity-search-id]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const id = button.dataset.entitySearchId;
+        const kind = button.dataset.entitySearchKind;
+        const record = kind === "polity" ? detailCtx.politiesById.get(id) : detailCtx.periodsById.get(id);
+        if (!record) return;
+        zoomToRange(record.start, record.end ?? detailCtx.domainEnd, record.detail_of || id);
+        onSelect(kind, id);
+        input.value = "";
+        closeResults();
+      });
+    });
+  };
+  // Debounced, not a live-as-you-type flood -- one request ~200ms after
+  // typing settles, same idea as any other search-while-typing field.
+  let debounceHandle = null;
+  input.addEventListener("input", () => {
+    window.clearTimeout(debounceHandle);
+    debounceHandle = window.setTimeout(() => { runSearch().catch(() => {}); }, 200);
+  });
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeResults();
+  });
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".entity-search-wrapper")) closeResults();
+  });
+}
+
 async function main() {
   const container = document.querySelector("#hierarchy-chart");
   const showPolitiesInput = document.querySelector("#show-polities");
@@ -209,7 +278,8 @@ async function main() {
     resetLink.hidden = !zoomRange;
     renderHierarchyTimeline(tree, container, {
       groupBy: groupBySelect.value,
-      showPolities: showPolitiesInput.value === "show",
+      // ROADMAP.md item: "all" | "main" | "hide" -- was a boolean show/hide.
+      showPolities: showPolitiesInput.value,
       geoFilter: geoFilterSelect.hidden ? null : geoFilterSelect.value,
       // Built once from the full, unzoomed tree (see below) so era colors
       // stay stable across zoom/filter re-renders instead of shifting as the
@@ -309,6 +379,7 @@ async function main() {
         revealBuildButton();
       },
     });
+    wireEntitySearch(detailCtx, zoomToRange, onSelect);
     showPolitiesInput.addEventListener("change", draw);
     groupBySelect.addEventListener("change", () => {
       updateGeoFilterOptions();
@@ -318,6 +389,18 @@ async function main() {
     resetLink.addEventListener("click", (event) => {
       event.preventDefault();
       resetZoom();
+    });
+    // ROADMAP.md item: an explicit start/end year selector to zoom in/out,
+    // alongside the existing click-a-band and "Zoom to this" panel button
+    // ways to do it.
+    document.querySelector("#zoom-to-years").addEventListener("click", () => {
+      const startValue = document.querySelector("#zoom-start-year").value;
+      const endValue = document.querySelector("#zoom-end-year").value;
+      if (startValue === "" || endValue === "") return;
+      const start = Number(startValue);
+      const end = Number(endValue);
+      if (Number.isNaN(start) || Number.isNaN(end) || end <= start) return;
+      zoomToRange(start, end);
     });
   } catch (error) {
     container.innerHTML = `<p class="error">Could not load explore_tree.json (${error.message}). Run the build command from the repository root.</p>`;

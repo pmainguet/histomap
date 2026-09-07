@@ -19,18 +19,25 @@
       </nav>
     </header>
     <section class="explore-intro" aria-label="About this view">
-      <h1>Explore human history</h1>
-      <p>Nine chapters, oldest first. Click any band to zoom in on its date range.</p>
-      <div class="controls">
-        <button type="button" class="action-button" data-create-entity>+ New entity</button>
-        <button type="button" class="action-button" data-build-timeline hidden>Build timeline</button>
-        <span data-build-status aria-live="polite"></span>
+      <div class="explore-intro-heading">
+        <h1>Explore human history</h1>
+        <div class="controls">
+          <div class="entity-search-wrapper">
+            <input type="search" id="entity-search" placeholder="Find an entity…" aria-label="Find an entity" autocomplete="off">
+            <div class="entity-search-results" hidden></div>
+          </div>
+          <button type="button" class="action-button" data-create-entity>+ New entity</button>
+          <button type="button" class="action-button" data-build-timeline hidden>Build timeline</button>
+          <span data-build-status aria-live="polite"></span>
+        </div>
       </div>
+      <p>Nine chapters, oldest first. Click any band to zoom in on its date range.</p>
     </section>
     <div class="hierarchy-controls" aria-label="Display options">
       <label for="show-polities">Polities</label>
       <select id="show-polities">
-        <option value="show" selected>Show</option>
+        <option value="all" selected>Show All</option>
+        <option value="main">Show Main</option>
         <option value="hide">Hide</option>
       </select>
       <label for="group-by">Group by</label>
@@ -43,6 +50,11 @@
       <select id="geo-filter">
         <option value="all">All</option>
       </select>
+      <label for="zoom-start-year">From year</label>
+      <input type="number" id="zoom-start-year" placeholder="e.g. -500">
+      <label for="zoom-end-year">To year</label>
+      <input type="number" id="zoom-end-year" placeholder="e.g. 500">
+      <button type="button" id="zoom-to-years" class="action-button">Zoom</button>
       <a href="#" id="zoom-reset" hidden>&larr; Full timeline</a>
     </div>
     <div id="hierarchy-legend" class="hierarchy-legend" aria-label="Band style legend">

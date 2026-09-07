@@ -227,6 +227,48 @@ function detailOfEditorHtml(record, ctx) {
   </details>`;
 }
 
+// ROADMAP.md item: "Allow simple edit of the parent era for periods in
+// /explore (dropdown)." Only rendered for tier: "period" records (the
+// default tier, named periods) -- a regional_era's own parent is a
+// macro_chapter, not another era, and a macro_chapter has no parent at
+// all (see ONTOLOGY.md's "chronological hierarchy" table), so this
+// control wouldn't mean the same thing there. Sets broader_periods to
+// exactly one era id, matching ONTOLOGY.md's "single parent by
+// convention" rule -- the same generic /fields PATCH endpoint every
+// other simple editor here already uses.
+function parentEraEditorHtml(period, ctx) {
+  const eras = [...ctx.periodsById.values()]
+    .filter((candidate) => candidate.tier === "regional_era")
+    .sort((a, b) => a.canonical_name.localeCompare(b.canonical_name));
+  const currentParent = (period.broader_periods || [])[0] || "";
+  return `<div class="detail-edit-row">
+    <select class="detail-parent-era-select" aria-label="Parent era">
+      <option value="">No parent era</option>
+      ${eras.map((era) => `<option value="${escapeHtml(era.id)}" ${era.id === currentParent ? "selected" : ""}>${escapeHtml(era.canonical_name)}</option>`).join("")}
+    </select>
+    <button class="detail-save-parent-era" type="button">Set parent era</button>
+  </div>`;
+}
+
+function wireParentEraEditor(period, ctx, onSaved, setStatus) {
+  const button = explorePanel.querySelector(".detail-save-parent-era");
+  if (!button) return;
+  button.addEventListener("click", async () => {
+    const eraId = explorePanel.querySelector(".detail-parent-era-select").value;
+    try {
+      const result = await postJson(`/api/periods/${encodeURIComponent(period.id)}/fields`, "PATCH", {
+        broader_periods: eraId ? [eraId] : [],
+      });
+      ctx.periodsById.set(period.id, result.document);
+      onSaved(result.document);
+      ctx.onEdit?.();
+      setStatus(REBUILD_NOTE, false);
+    } catch (error) {
+      setStatus(error.message, true);
+    }
+  });
+}
+
 function editControlsHtml(kind, record, geographyOptions, ctx) {
   const convertBlock = kind === "polity"
     ? `<div class="detail-edit-row">
@@ -242,6 +284,7 @@ function editControlsHtml(kind, record, geographyOptions, ctx) {
          <select class="detail-entity-type-select" name="entity-type" aria-label="Entity type">${optionsHtml(ENTITY_TYPE_OPTIONS, "polity")}</select>
          <button class="detail-convert-to-entity" type="button">Convert to entity</button>
        </div>
+       ${(record.tier || "period") === "period" ? parentEraEditorHtml(record, ctx) : ""}
        ${detailOfEditorHtml(record, ctx)}`;
   return `<details class="detail-edit">
       <summary>Edit</summary>
@@ -276,6 +319,7 @@ function wireEditControls(kind, record, ctx, onSaved) {
   const idPath = kind === "polity" ? `/api/polities/${encodeURIComponent(record.id)}` : `/api/periods/${encodeURIComponent(record.id)}`;
   wireDetailOfEditor(record, kind, ctx, onSaved, setStatus);
   if (kind === "polity") wireGeographyEditor(record, ctx, onSaved, setStatus);
+  if (kind !== "polity") wireParentEraEditor(record, ctx, onSaved, setStatus);
 
   if (kind === "polity") {
     explorePanel.querySelector(".detail-convert-entity-type").addEventListener("click", async () => {
@@ -606,6 +650,17 @@ function closeExploreDetails() {
 }
 
 explorePanelBackdrop.addEventListener("click", closeExploreDetails);
+// ROADMAP.md item: ESC closes the side panel when it's open. Ignored while
+// a text input/textarea/select inside the panel has focus (e.g. the raw
+// JSON editor, a country filter) -- ESC there is a natural "cancel this
+// edit" keystroke a browser may already handle, not "close the whole panel".
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  if (!explorePanel.classList.contains("is-open")) return;
+  const target = event.target;
+  if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.tagName === "SELECT")) return;
+  closeExploreDetails();
+});
 
 // kind: "chapter" | "era" | "period" -> periodsById; "polity" -> politiesById;
 // "event" -> eventsById (ROADMAP.md item 5). Silently no-ops if the id isn't

@@ -606,9 +606,9 @@ function geoClusterSort(a, b) {
 // Civilizations & Cultures rows alike -- all three entry types carry the
 // same geography fields. Computed once and reused for both the
 // height-measurement pass and the draw pass, so the two can't diverge.
-function continentGroupedLayout(items, scale, laneHeight, groupBy, isExpanded = () => false) {
+function continentGroupedLayout(items, scale, laneHeight, groupBy, isExpanded = () => false, maxPerBucket = MAX_POLITIES_PER_REGION) {
   const getRange = labelAwareFootprint(scale, (item) => itemDisplayLabel(item, groupBy));
-  const capped = cappedByBucket(items, geoBucketKey, MAX_POLITIES_PER_REGION);
+  const capped = cappedByBucket(items, geoBucketKey, maxPerBucket);
   const buckets = new Map();
   for (const item of capped) {
     const key = geoBucketKey(item);
@@ -648,9 +648,9 @@ function continentGroupedLayout(items, scale, laneHeight, groupBy, isExpanded = 
 // sub-grouping by countryLaneKey within each bucket, so e.g. Jomon and
 // Yayoi land in the same "Japan" sub-group under "East Asia". Shared by the
 // Period, Polities, and Civilizations & Cultures rows.
-function geoCountryGroupedLayout(items, scale, laneHeight, isExpanded = () => false) {
+function geoCountryGroupedLayout(items, scale, laneHeight, isExpanded = () => false, maxPerBucket = MAX_POLITIES_PER_REGION) {
   const getRange = labelAwareFootprint(scale);
-  const capped = cappedByBucket(items, geoBucketKey, MAX_POLITIES_PER_REGION);
+  const capped = cappedByBucket(items, geoBucketKey, maxPerBucket);
   const geoBuckets = new Map();
   for (const item of capped) {
     const geoKey = geoBucketKey(item);
@@ -691,10 +691,14 @@ function flatLaneLayout(items, scale, laneHeight, sortFn = (a, b) => a.start - b
 
 // Dispatches to the right layout function for the current groupBy mode.
 // `groupBy` is ignored (always flat) when the caller passes "none" or
-// omits it, matching the Era row's own always-flat behavior.
-function groupedLayoutFor(items, scale, laneHeight, groupBy, isExpanded = () => false) {
-  if (groupBy === "continent") return continentGroupedLayout(items, scale, laneHeight, groupBy, isExpanded);
-  if (groupBy === "country") return geoCountryGroupedLayout(items, scale, laneHeight, isExpanded);
+// omits it, matching the Era row's own always-flat behavior. `maxPerBucket`
+// -- ROADMAP.md item: the Polities dropdown's "Show Main" option -- caps
+// each geography bucket to its single most prominent entry instead of the
+// usual MAX_POLITIES_PER_REGION (15); only meaningful for continent/country
+// grouping (there's no bucket to cap against under "none").
+function groupedLayoutFor(items, scale, laneHeight, groupBy, isExpanded = () => false, maxPerBucket = MAX_POLITIES_PER_REGION) {
+  if (groupBy === "continent") return continentGroupedLayout(items, scale, laneHeight, groupBy, isExpanded, maxPerBucket);
+  if (groupBy === "country") return geoCountryGroupedLayout(items, scale, laneHeight, isExpanded, maxPerBucket);
   return flatLaneLayout(items, scale, laneHeight, geoClusterSort, isExpanded);
 }
 
@@ -852,7 +856,12 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   // explore.js), so era colors stay stable rather than shifting as the
   // visible era subset changes.
   const {
-    groupBy = "continent", showPolities = true, geoFilter = null, eraColorMap = buildEraColorMap(tree),
+    groupBy = "continent",
+    // ROADMAP.md item: "all" | "main" | "hide" -- was a plain boolean
+    // (show/hide); "main" caps each geography bucket to its single most
+    // prominent polity via groupedLayoutFor's maxPerBucket, same idea as
+    // the existing MAX_POLITIES_PER_REGION declutter cap, just tighter.
+    showPolities = "all", geoFilter = null, eraColorMap = buildEraColorMap(tree),
     // Detail-of reveal state (see DETAIL_LINE_HEIGHT above) -- owned by the
     // caller (explore.js), not this render function, so it survives across
     // the re-renders zoom/groupBy/showPolities changes already trigger.
@@ -913,8 +922,11 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   const civItems = tree.chapters.flatMap((chapter) => chapter.civilizations || []);
   const civLayout = groupedLayoutFor(applyGeoFilter(civItems, groupBy, geoFilter), scale, civLaneHeight, groupBy);
 
-  const politiesItems = showPolities ? applyGeoFilter(allPolitiesFlat(tree), groupBy, geoFilter) : [];
-  const politiesLayout = groupedLayoutFor(politiesItems, scale, polityLaneHeight, groupBy, isExpanded);
+  const politiesItems = showPolities !== "hide" ? applyGeoFilter(allPolitiesFlat(tree), groupBy, geoFilter) : [];
+  const politiesLayout = groupedLayoutFor(
+    politiesItems, scale, polityLaneHeight, groupBy, isExpanded,
+    showPolities === "main" ? 1 : MAX_POLITIES_PER_REGION,
+  );
 
   // Events lane: a point marker, not a band, so its lane-packing footprint
   // is start == end == year (labelAwareFootprint's Math.max(bandWidth,
@@ -935,7 +947,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   // its separator/tier label) is skipped entirely rather than drawing an
   // empty block, see below.
   const civBlockHeight = civLayout.height > 0 ? civLayout.height + rowGap : 0;
-  const politiesRowHeight = showPolities ? politiesLayout.height : 0;
+  const politiesRowHeight = showPolities !== "hide" ? politiesLayout.height : 0;
   const eventsBlockHeight = eventLanes.length > 0 ? eventLanes.length * eventLaneHeight + rowGap : 0;
 
   const height = geoRowHeight + chapterRowHeight + eraRowHeight + periodRowHeight + eventsBlockHeight + civBlockHeight + politiesRowHeight + rowGap * 4;
@@ -1018,7 +1030,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
     prevSepY = sepY;
   }
 
-  if (showPolities && politiesRowHeight > 0) {
+  if (showPolities !== "hide" && politiesRowHeight > 0) {
     drawGroupedRow(svg, scale, politiesLayout, y, polityLaneHeight, "hierarchy-band-polity", onZoom, width, tree.axis.domain_end, {
       getKind: () => "polity",
       getLabel: (item) => itemDisplayLabel(item, groupBy),

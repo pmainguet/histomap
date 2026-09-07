@@ -57,6 +57,16 @@ body { margin: 0; }
 }
 
 .controls { display: flex; flex-wrap: wrap; gap: .8rem; align-items: end; font: .82rem system-ui, sans-serif; }
+/* ROADMAP.md item: a search field next to the top controls -- on select,
+   zoom to the entity and open its side panel (see wireEntitySearch). */
+.entity-search-wrapper { position: relative; }
+.entity-search-results { position: absolute; top: 100%; left: 0; z-index: 5; width: max(100%, 20rem); margin-top: .2rem; max-height: 18rem; overflow-y: auto; background: white; border: 1px solid var(--rule); box-shadow: 0 6px 18px rgb(39 37 31 / 15%); }
+.entity-search-results p { margin: 0; padding: .5rem .65rem; color: var(--ink-faint); }
+.entity-search-choice { display: block; width: 100%; padding: .45rem .65rem; text-align: left; background: white; border: 0; border-bottom: 1px solid var(--rule); border-radius: 0; }
+.entity-search-choice:last-child { border-bottom: 0; }
+.entity-search-choice:hover, .entity-search-choice:focus { background: #f5f0e5; }
+.entity-search-choice strong { display: block; }
+.entity-search-choice span { color: var(--ink-faint); font-size: .78rem; }
 .controls [data-build-status] { max-width: 20rem; color: var(--ink-faint); line-height: 1.35; }
 .controls label { display: grid; gap: .2rem; }
 input, select, button { border: 1px solid var(--rule); border-radius: 2px; padding: .45rem .6rem; background: white; }
@@ -297,6 +307,9 @@ kbd { padding: .1rem .3rem; color: #27251f; background: white; border: 1px solid
 }
 
 .explore-intro { padding: 1.5rem clamp(1rem, 4vw, 3.5rem) 0; }
+/* "put new entity and Build timeline on the same line as the title, right
+   align" -- title left, action buttons right, one row. */
+.explore-intro-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .75rem; }
 .explore-intro h1 { margin: 0 0 .3rem; font-size: 2rem; }
 .explore-intro p { margin: 0; color: var(--ink-faint); }
 .hierarchy-controls { display: flex; gap: .6rem; align-items: center; padding: .6rem clamp(1rem, 4vw, 3.5rem); font: .82rem system-ui, sans-serif; color: var(--ink-faint); }
