@@ -9,6 +9,7 @@ from build import (
     find_detail_of_cycles,
     load_civilization_period_role_sources,
     validate_entity_relationships,
+    validate_period_detail_of,
     validate_transitions,
 )
 from schema import Geography, Period, PeriodLink, Polity, Transition
@@ -38,6 +39,20 @@ def detail_polity(polity_id: str, detail_of: str | None = None) -> Polity:
             "end": 2,
             "start_confidence": "low",
             "end_confidence": "low",
+        }
+    )
+
+
+def detail_period(period_id: str, detail_of: str | None = None) -> Period:
+    return Period.model_validate(
+        {
+            "id": period_id,
+            "canonical_name": period_id,
+            "detail_of": detail_of,
+            "kind": "historical",
+            "start": 1,
+            "end": 2,
+            "authority": "test",
         }
     )
 
@@ -181,6 +196,47 @@ class DetailOfValidationTests(unittest.TestCase):
         })
         referencer = detail_polity("referencer", "converted")
         self.assertEqual(validate_entity_relationships([converted, referencer]), [])
+
+
+class PeriodDetailOfValidationTests(unittest.TestCase):
+    def test_period_detail_of_unknown_target_is_reported(self) -> None:
+        errors = validate_period_detail_of([detail_period("initial_jomon", "missing_period")], [])
+        self.assertIn("initial_jomon: unknown detail_of target missing_period", errors)
+
+    def test_period_detail_of_period_target_has_no_error(self) -> None:
+        jomon_period = detail_period("jomon_period")
+        initial_jomon = detail_period("initial_jomon", "jomon_period")
+        self.assertEqual(validate_period_detail_of([jomon_period, initial_jomon], []), [])
+
+    def test_period_detail_of_polity_target_has_no_error(self) -> None:
+        # A period can be a detail of a polity too (not just another
+        # period) -- e.g. a short-lived named phase of a longer-lived state.
+        container = polity("container")
+        phase = detail_period("phase", "container")
+        self.assertEqual(validate_period_detail_of([phase], [container]), [])
+
+    def test_period_detail_of_chain_is_not_an_error(self) -> None:
+        grandparent = detail_period("grandparent")
+        middle = detail_period("middle", "grandparent")
+        child = detail_period("child", "middle")
+        self.assertEqual(validate_period_detail_of([grandparent, middle, child], []), [])
+
+    def test_period_only_cycle_is_reported(self) -> None:
+        loop_a = detail_period("loop_a", "loop_b")
+        loop_b = detail_period("loop_b", "loop_a")
+        cycles = find_detail_of_cycles([], [loop_a, loop_b])
+        self.assertEqual(len(cycles), 1)
+
+    def test_polity_detail_of_cannot_target_a_period(self) -> None:
+        # The reverse direction is never allowed -- a polity's own
+        # detail_of stays polity-only. Already enforced by
+        # validate_entity_relationships (its known-id set is polity ids
+        # only), unaffected by this feature -- this test documents that the
+        # constraint holds even once periods also carry detail_of.
+        period_target = detail_period("some_period")
+        polity_pointing_at_period = detail_polity("confused_polity", "some_period")
+        errors = validate_entity_relationships([polity_pointing_at_period])
+        self.assertIn("confused_polity: unknown detail_of target some_period", errors)
 
 
 class LoadCivilizationPeriodRoleSourcesTests(unittest.TestCase):

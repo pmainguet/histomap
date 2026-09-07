@@ -18,11 +18,19 @@ PERIOD_LINKS_OUT_PATH = ROOT / "period_links.json"
 EXPLORE_TREE_OUT_PATH = ROOT / "explore_tree.json"
 
 
-def find_detail_of_cycles(polities: list[Polity]) -> list[list[str]]:
+def find_detail_of_cycles(polities: list[Polity], periods: list[Period] | None = None) -> list[list[str]]:
     # Multi-level detail_of chains are legitimate data (Kingdom of Castile ->
     # Crown of Castile -> Hispanic Monarchy) -- this only flags an actual
-    # revisit (A -> B -> A), never an ordinary chain.
+    # revisit (A -> B -> A), never an ordinary chain. Periods can also carry
+    # detail_of (a period can be a detail of another period or of a polity;
+    # the reverse is never possible, since Polity.detail_of only ever
+    # resolves against polity ids -- see validate_entity_relationships)
+    # -- `periods` is optional and defaults to none so load_all()'s
+    # polity-only call site (periods aren't loaded yet at that point) stays
+    # unchanged; main() calls this again with both lists once periods are
+    # loaded, to also catch a period-only cycle.
     targets = {polity.id: polity.detail_of for polity in polities}
+    targets.update({period.id: period.detail_of for period in (periods or [])})
     cycles: set[tuple[str, ...]] = set()
     for start in targets:
         path: list[str] = []
@@ -132,6 +140,21 @@ def validate_entity_relationships(polities: list[Polity]) -> list[str]:
                 errors.append(f"{entity.id}: archaeological_sequence requires culture/horizon endpoints")
             elif relationship.kind == "cultural_sequence" and source_type == "polity" and target_type == "polity":
                 errors.append(f"{entity.id}: polity succession must use political_successor")
+    return errors
+
+
+def validate_period_detail_of(periods: list[Period], polities: list[Polity]) -> list[str]:
+    """A period's detail_of target may be another period OR a polity (e.g.
+    Initial Jomon -> Jomon period, or a period -> the polity it's a phase
+    of). The reverse is never allowed -- a polity's own detail_of stays
+    restricted to polity targets only, already enforced by
+    validate_entity_relationships, whose known-id set only ever contains
+    polity ids."""
+    known_ids = {period.id for period in periods} | {polity.id for polity in polities}
+    errors: list[str] = []
+    for period in periods:
+        if period.detail_of and period.detail_of not in known_ids:
+            errors.append(f"{period.id}: unknown detail_of target {period.detail_of}")
     return errors
 
 
@@ -278,6 +301,13 @@ def main() -> None:
     tier_errors = validate_period_tiers(periods)
     if tier_errors:
         for e in tier_errors:
+            print(f"ERROR  {e}", file=sys.stderr)
+        sys.exit(1)
+    detail_of_errors = validate_period_detail_of(periods, polities)
+    for cycle in find_detail_of_cycles(polities, periods):
+        detail_of_errors.append(f"detail_of relationship cycle: {' -> '.join(cycle + [cycle[0]])}")
+    if detail_of_errors:
+        for e in detail_of_errors:
             print(f"ERROR  {e}", file=sys.stderr)
         sys.exit(1)
     # A subdivision with `subdivision_parent_status: "pending"` used to be
