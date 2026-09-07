@@ -31,7 +31,6 @@ geography:
   - europe
   present_countries:
   - LT
-  - SU
   centroid:
     lat: 55.5
     lon: 24.0
@@ -57,6 +56,7 @@ prominence_components:
   total: 31.4
 manual_overrides:
 - entity_type
+- geography
 government_form: null
 deprecated:
   visibility_tier: detailed

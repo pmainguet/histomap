@@ -31,7 +31,6 @@ geography:
   - europe
   present_countries:
   - EE
-  - SU
   centroid:
     lat: 59.435833333
     lon: 24.7375
@@ -62,5 +61,6 @@ linked_chapter_id: macro_contemporary_world
 detail_of: estonia
 manual_overrides:
 - consolidation
+- geography
 deprecated:
   visibility_tier: regional

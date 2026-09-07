@@ -29,7 +29,6 @@ geography:
   - asia
   - europe
   present_countries:
-  - SU
   - TM
   centroid:
     lat: 37.966666666
@@ -56,6 +55,7 @@ prominence_components:
   total: 27.96
 manual_overrides:
 - entity_type
+- geography
 government_form: null
 deprecated:
   visibility_tier: detailed

@@ -430,6 +430,37 @@ class UnifiedServerTests(unittest.TestCase):
         response = self.client.get("/api/polities/does_not_exist")
         self.assertEqual(response.status_code, 404)
 
+    def test_geography_options_exclude_defunct_states(self) -> None:
+        # Found live, 7 September 2026: "Soviet Union" (a dissolved state,
+        # not a valid answer to "which modern country is this territory in
+        # today") showed up in the present-countries picker right next to
+        # "Russia". country_metadata mirrors Wikidata's own country records,
+        # which include defunct states with their own ISO codes -- excluded
+        # here regardless of what the underlying cache contains. YU
+        # (Yugoslavia) is deliberately NOT excluded -- see
+        # historical_regions.py's own docstring for why it's a legitimate
+        # code, unlike SU/CS/DD.
+        (self.root / "sources" / "wikidata_country_metadata.json").write_text(
+            json.dumps({
+                "Q142": {"iso2": "FR", "label": "France", "continents": ["europe"]},
+                "Q15180": {"iso2": "SU", "label": "Soviet Union", "continents": ["europe", "asia"]},
+                "Q33946": {"iso2": "CS", "label": "Czechoslovakia", "continents": ["europe"]},
+                "Q16957": {"iso2": "DD", "label": "German Democratic Republic", "continents": ["europe"]},
+                "Q36704": {"iso2": "YU", "label": "Yugoslavia", "continents": ["europe"]},
+            }),
+            encoding="utf-8",
+        )
+        client = TestClient(create_app(self.root))
+
+        options = client.get("/api/options/geography").json()
+
+        codes = {country["code"] for country in options["countries"]}
+        self.assertNotIn("SU", codes)
+        self.assertNotIn("CS", codes)
+        self.assertNotIn("DD", codes)
+        self.assertIn("YU", codes)
+        self.assertIn("FR", codes)
+
     def test_lists_and_updates_geography_with_controlled_values(self) -> None:
         options = self.client.get("/api/options/geography").json()
         self.assertIn("europe", options["continents"])

@@ -30,7 +30,6 @@ geography:
   continents:
   - europe
   present_countries:
-  - CS
   - ME
   centroid:
     lat: 43.15
@@ -70,3 +69,5 @@ prominence_components:
 government_form: null
 deprecated:
   visibility_tier: detailed
+manual_overrides:
+- geography

@@ -34,7 +34,6 @@ geography:
   - europe
   present_countries:
   - RU
-  - SU
   centroid:
     lat: 62.0
     lon: 100.0
@@ -67,3 +66,4 @@ deprecated:
 detail_of: soviet_union
 manual_overrides:
 - consolidation
+- geography

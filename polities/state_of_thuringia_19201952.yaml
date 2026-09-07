@@ -27,7 +27,6 @@ geography:
   continents:
   - europe
   present_countries:
-  - DD
   - DE
   centroid:
     lat: 50.981111111
@@ -55,6 +54,7 @@ government_form: null
 timeline_role: entity
 manual_overrides:
 - consolidation
+- geography
 detail_of: thuringia
 deprecated:
   consolidation_status: phase_of

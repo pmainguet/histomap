@@ -31,7 +31,6 @@ geography:
   - asia
   - europe
   present_countries:
-  - SU
   - TJ
   centroid:
     lat: 38.533333333
@@ -64,6 +63,7 @@ prominence_components:
   total: 30.95
 manual_overrides:
 - entity_type
+- geography
 government_form: null
 deprecated:
   visibility_tier: detailed

@@ -44,6 +44,17 @@ DETAIL_OF_RELATIONSHIP_KINDS = {
     "political_parent", "administrative_part_of", "cultural_component",
     "archaeological_sequence", "cultural_sequence", "part_of_civilization",
 }
+# present_countries answers "which modern country is this historical
+# territory in today" -- a dissolved state is never a valid answer to
+# that, so these never belong in the picker built from country_metadata
+# (Wikidata's own country records, which include defunct states with
+# their own ISO codes). Found live, 7 September 2026, via a user report
+# ("Soviet Union" showing up next to "Russia"); see
+# pipeline/drop_defunct_country_codes.py for the matching data cleanup.
+# YU (Yugoslavia) deliberately stays OUT of this set -- see
+# historical_regions.py's own docstring for why it's a legitimate code
+# here, unlike SU/CS/DD.
+DEFUNCT_COUNTRY_CODES = {"SU", "CS", "DD"}
 
 
 def english_wikipedia_url(external_ids: dict) -> str | None:
@@ -295,7 +306,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
     country_options = {
         info["iso2"]: info.get("label", info["iso2"])
         for info in country_metadata.values()
-        if info.get("iso2") and len(info["iso2"]) == 2
+        if info.get("iso2") and len(info["iso2"]) == 2 and info["iso2"] not in DEFUNCT_COUNTRY_CODES
     }
     # iso2 -> continents, for derive_geography_for_countries() at creation
     # time -- same reverse index enrich_geography.py's

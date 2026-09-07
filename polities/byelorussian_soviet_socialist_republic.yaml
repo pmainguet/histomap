@@ -28,7 +28,6 @@ geography:
   - europe
   present_countries:
   - BY
-  - SU
   centroid:
     lat: 54.0
     lon: 29.0
@@ -45,6 +44,7 @@ timeline_role: entity
 manual_overrides:
 - consolidation
 - entity_type
+- geography
 - timeline_role
 - visibility_override
 linked_era_id: asia_contemporary_world_era

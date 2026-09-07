@@ -31,7 +31,6 @@ geography:
   - europe
   present_countries:
   - GE
-  - SU
   centroid:
     lat: 41.716667
     lon: 44.783333
@@ -66,6 +65,7 @@ government_form: null
 timeline_role: entity
 manual_overrides:
 - consolidation
+- geography
 detail_of: transcaucasian_democratic_federative_republic
 deprecated:
   consolidation_status: phase_of

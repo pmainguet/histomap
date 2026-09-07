@@ -31,7 +31,6 @@ geography:
   - asia
   - europe
   present_countries:
-  - SU
   - UA
   centroid:
     lat: 50.444444444
@@ -69,6 +68,7 @@ linked_chapter_id: macro_contemporary_world
 timeline_role: entity
 manual_overrides:
 - consolidation
+- geography
 detail_of: ukrainian_state
 deprecated:
   consolidation_status: phase_of

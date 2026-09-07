@@ -30,7 +30,6 @@ geography:
   - europe
   present_countries:
   - AZ
-  - SU
   centroid:
     lat: 39.2
     lon: 45.4
@@ -60,3 +59,4 @@ deprecated:
 consolidation_status: independent
 manual_overrides:
 - consolidation
+- geography
