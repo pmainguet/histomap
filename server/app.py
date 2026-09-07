@@ -815,7 +815,19 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 )
                 if not (
                     same_wikidata
-                    or (exact_name_match and not coordinate_conflict and not documented_successor)
+                    # no_overlap_alias_reuse (exact_name_match, distinct
+                    # Wikidata items, zero date overlap) is excluded here --
+                    # completely disjoint dates on their own already say
+                    # these are independent entities (a name reused for a
+                    # different era), not something needing manual review.
+                    # same_wikidata/documented_successor/part_of matches
+                    # still surface regardless of date overlap via their own
+                    # clauses below -- this only narrows the exact-name-match
+                    # path. Found live, 7 September 2026.
+                    or (
+                        exact_name_match and not coordinate_conflict and not documented_successor
+                        and not no_overlap_alias_reuse
+                    )
                     or reviewed_part_of_candidate or candidate_part_of_reviewed
                     or subdivision_part_of_candidate or subdivision_part_of_reviewed
                     # A documented Wikidata succession claim is itself

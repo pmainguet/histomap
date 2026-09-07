@@ -243,12 +243,16 @@ class ConsolidationSuggestionTests(unittest.TestCase):
             "independent",
         )
 
-    def test_bourbon_restoration_alias_reused_different_era_suggests_independent(self) -> None:
+    def test_bourbon_restoration_alias_reused_different_era_is_not_a_candidate(self) -> None:
         # Bourbon Restoration in France carries an alias "Kingdom of
         # France" -- the restored monarchy genuinely was called that --
         # but Kingdom of France (987-1791) and Bourbon Restoration
         # (1815-1830) are distinct Wikidata items with non-overlapping
         # dates: the same name reused for a different era, not a phase.
+        # Completely disjoint dates alone already say these are independent
+        # entities -- no review needed at all (found live, 7 September
+        # 2026; previously surfaced with a suggested "independent" decision
+        # still requiring a click to confirm).
         polities = [
             {**BASE, "id": "kingdom_of_france", "canonical_name": "Kingdom of France",
              "external_ids": {"wikidata": "Q70972"}, "start": 987, "end": 1791,
@@ -257,10 +261,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "external_ids": {"wikidata": "Q207162"}, "names": {"aliases_en": "Kingdom of France"},
              "start": 1815, "end": 1830, "prominence_score": 20, "geography": {"present_countries": ["FR"]}},
         ]
-        self.assertEqual(
-            self.suggestion_for("bourbon_restoration_in_france", "kingdom_of_france", polities),
-            "independent",
-        )
+        self.not_a_candidate("bourbon_restoration_in_france", "kingdom_of_france", polities)
 
     def test_same_wikidata_item_mismatched_dates_flags_qid_conflict(self) -> None:
         # Roman Republic and Ancient Rome both carry the same Wikidata QID
