@@ -7,8 +7,7 @@
     "confidence": "medium",
     "source_urls": [
       "https://dbpedia.org/resource/Early_Dynastic_Period_(Mesopotamia)"
-    ],
-    "notes": "Chronological and geographic context, not an identity or hierarchy assertion."
+    ]
   },
   {
     "period_id": "yayoi_period",
@@ -18,8 +17,7 @@
     "confidence": "high",
     "source_urls": [
       "https://dbpedia.org/resource/Yayoi_period"
-    ],
-    "notes": ""
+    ]
   },
   {
     "period_id": "kofun_period",
@@ -29,8 +27,7 @@
     "confidence": "high",
     "source_urls": [
       "https://dbpedia.org/resource/Kofun_period"
-    ],
-    "notes": ""
+    ]
   },
   {
     "period_id": "asuka_period",
@@ -40,8 +37,7 @@
     "confidence": "high",
     "source_urls": [
       "https://dbpedia.org/resource/Asuka_period"
-    ],
-    "notes": ""
+    ]
   },
   {
     "period_id": "mesoamerican_classic",
@@ -51,8 +47,7 @@
     "confidence": "medium",
     "source_urls": [
       "https://dbpedia.org/resource/Mesoamerican_chronology"
-    ],
-    "notes": "The civilization overlaps the period; the link does not imply exact temporal equivalence."
+    ]
   },
   {
     "period_id": "taifa_of_murcia_q104178238_period",
@@ -62,8 +57,7 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q104178238"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
+    ]
   },
   {
     "period_id": "taifa_of_murcia_q104178103_period",
@@ -73,8 +67,7 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q104178103"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
+    ]
   },
   {
     "period_id": "rhodes_q104383185_period",
@@ -84,8 +77,7 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q104383185"
-    ],
-    "notes": "Created by an editorial entity-consolidation decision."
+    ]
   },
   {
     "period_id": "macedonian_empire_period",
@@ -95,8 +87,7 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q13405524"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
+    ]
   },
   {
     "period_id": "taifa_of_mallorca_q104178581_period",
@@ -106,8 +97,7 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q104178581"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
+    ]
   },
   {
     "period_id": "syrakousai_period",
@@ -117,8 +107,7 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q3979194"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
+    ]
   },
   {
     "period_id": "european_hun_empire_period",
@@ -128,8 +117,7 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q12836180"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
+    ]
   },
   {
     "period_id": "ayyubid_sultanate_period",
@@ -139,8 +127,7 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q63135869"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
+    ]
   },
   {
     "period_id": "chola_empire_period",
@@ -150,8 +137,7 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q6806806"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
+    ]
   },
   {
     "period_id": "western_zhou_q1069609_period",
@@ -161,7 +147,6 @@
     "confidence": "high",
     "source_urls": [
       "https://www.wikidata.org/wiki/Q1069609"
-    ],
-    "notes": "Reviewed record is a dated phase of this canonical polity."
+    ]
   }
 ]

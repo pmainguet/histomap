@@ -39,4 +39,5 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 10. Polity dropdown should have options Show All, Show Main (the biggest one in terms of score so that only the most important ones), Hide
 11. Check the missing elements appearing https://en.wikipedia.org/wiki/Human_history (like Axial Age), extract wikidata, wikipedia elements and adjust the score if needed (if above the threshold that's enough)
 12. Display more pictures and information from wikipedia on the side panel (even read there instead of wikipedia if possible)
-13. Add a start / end year selector to zoom in/out
+13. Extracft missing data from Histomap and History of Evolution map
+14. Add a start / end year selector to zoom in/out
