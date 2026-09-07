@@ -34,14 +34,18 @@ def era(
 
 
 def named_period(id_: str, start: int, end: int, broader: list[str] | None = None, continents: list[str] | None = None,
-                  historical_regions: list[str] | None = None, authority: str | None = None) -> dict:
+                  historical_regions: list[str] | None = None, authority: str | None = None,
+                  detail_of: str | None = None) -> dict:
     """Build a minimal period fixture dict."""
-    return {
+    doc = {
         "id": id_, "tier": "period", "canonical_name": id_, "start": start, "end": end,
         "broader_periods": broader or [],
         "geography": {"continents": continents or [], "historical_regions": historical_regions or []},
         "authority": authority,
     }
+    if detail_of is not None:
+        doc["detail_of"] = detail_of
+    return doc
 
 
 def polity(id_: str, start: int, end: int | None, continent: str, region: str | None = None,
@@ -161,6 +165,49 @@ class BuildExploreTreeTests(unittest.TestCase):
         container = next(e for e in region_bucket if e["id"] == "old_kingdom_egypt")
         middle = next(d for d in container["details"] if d["id"] == "crown_of_castile")
         self.assertEqual([d["id"] for d in middle["details"]], ["kingdom_of_castile"])
+
+    def test_detail_of_polity_detail_carries_polity_kind(self) -> None:
+        polities = [*self.polities, polity(
+            "francoist_spain", -2500, -2400, "africa", "north_africa", detail_of="old_kingdom_egypt",
+        )]
+        tree = build_explore_tree(polities, self.periods, self.period_links)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        container = next(e for e in region_bucket if e["id"] == "old_kingdom_egypt")
+        self.assertEqual(container["details"][0]["kind"], "polity")
+
+    def test_detail_of_period_excluded_from_its_own_top_level_entry(self) -> None:
+        # Direct request, live, 7 September 2026: periods can be details of
+        # other periods (or of a polity), same mechanism as polities --
+        # Initial Jomon should nest under Jomon period, not show as its own
+        # separate Period-row band.
+        periods = [*self.periods, named_period(
+            "initial_jomon", -9200, -5301, continents=["asia"], detail_of="old_kingdom",
+        )]
+        tree = build_explore_tree(self.polities, periods, self.period_links)
+        egypt_era = next(e for e in tree["chapters"][0]["eras"] if e["id"] == "egypt_era")
+        self.assertNotIn("initial_jomon", [p["id"] for p in egypt_era["periods"]])
+
+    def test_detail_of_period_attached_to_its_period_container(self) -> None:
+        periods = [*self.periods, named_period(
+            "initial_jomon", -9200, -5301, continents=["asia"], detail_of="old_kingdom",
+        )]
+        tree = build_explore_tree(self.polities, periods, self.period_links)
+        egypt_era = next(e for e in tree["chapters"][0]["eras"] if e["id"] == "egypt_era")
+        container = next(p for p in egypt_era["periods"] if p["id"] == "old_kingdom")
+        self.assertEqual([d["id"] for d in container["details"]], ["initial_jomon"])
+        self.assertEqual(container["details"][0]["kind"], "period")
+
+    def test_detail_of_period_can_target_a_polity(self) -> None:
+        # The reverse of the usual case: a period nested under a POLITY's
+        # own top-level entry, not another period's.
+        periods = [*self.periods, named_period(
+            "brief_phase", -2600, -2500, continents=["africa"], detail_of="old_kingdom_egypt",
+        )]
+        tree = build_explore_tree(self.polities, periods, self.period_links)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        container = next(e for e in region_bucket if e["id"] == "old_kingdom_egypt")
+        self.assertEqual([d["id"] for d in container["details"]], ["brief_phase"])
+        self.assertEqual(container["details"][0]["kind"], "period")
 
     def test_container_without_details_has_no_details_key(self) -> None:
         tree = build_explore_tree(self.polities, self.periods, self.period_links)

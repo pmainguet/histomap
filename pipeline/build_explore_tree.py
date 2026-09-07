@@ -181,6 +181,46 @@ def build_explore_tree(
     chapters_by_id = {cid: periods_by_id[cid] for cid in chapter_ids}
     open_end = max(chapters_by_id[cid]["end"] for cid in chapter_ids)
 
+    # A detail_of entity (see ROADMAP.md item 0 / docs/plans/2026-09-01-detail-of-merge-design.md)
+    # never gets its own independent top-level entry -- it's grouped under
+    # its container's own entry instead (`details`, attached below), which
+    # /explore reveals via a badge/zoom-triggered panel rather than showing
+    # by default. Periods can carry detail_of too (e.g. Initial Jomon ->
+    # Jomon period), targeting either another period or a polity -- the
+    # reverse is never possible (see build.py's validate_entity_relationships/
+    # validate_period_detail_of), so this single unified map covers both
+    # entity kinds, each detail dict carrying its own `kind` so /explore
+    # knows which zoom-target type to use. Built once here, before Pass 1
+    # (period placement) and Pass 2 (polity bucketing) both need it -- a
+    # detail's dates/geography don't need to match its container's own
+    # placement, since it shows wherever the container itself lands.
+    details_by_target: dict[str, list[dict]] = {}
+    for polity in polities:
+        target_id = polity.get("detail_of")
+        if not target_id:
+            continue
+        details_by_target.setdefault(target_id, []).append({
+            "id": polity["id"],
+            "canonical_name": polity.get("canonical_name", polity["id"]),
+            "start": polity.get("start"),
+            "end": polity.get("end"),
+            "kind": "polity",
+        })
+    for period in all_periods:
+        target_id = period.get("detail_of")
+        if not target_id:
+            continue
+        details_by_target.setdefault(target_id, []).append({
+            "id": period["id"],
+            "canonical_name": period.get("canonical_name", period["id"]),
+            "start": period.get("start"),
+            "end": period.get("end"),
+            "kind": "period",
+        })
+    for details in details_by_target.values():
+        details.sort(key=lambda d: (d["start"] if d["start"] is not None else 0, d["id"]))
+    _attach_nested_details(details_by_target)
+
     # Pass 1: place every era's periods for every chapter first, then derive
     # curated polity ids from what actually landed -- must be complete for
     # every chapter before Pass 2's polity bucketing, so a polity curated
@@ -195,6 +235,8 @@ def build_explore_tree(
 
     unmatched_periods = 0
     for period in all_periods:
+        if period.get("detail_of"):
+            continue  # attached to its container's entry instead, not shown independently
         if period.get("broader_periods"):
             era_id = period["broader_periods"][0]
             curated = True
@@ -209,7 +251,10 @@ def build_explore_tree(
         if target_chapter is None:
             continue  # era isn't nested under any chapter -- shouldn't happen for a valid era, but be defensive
         era_entry = next(e for e in eras_by_chapter[target_chapter] if e["id"] == era_id)
-        era_entry["periods"].append(_period_entry(period, curated=curated, era_id=era_entry["id"]))
+        period_entry = _period_entry(period, curated=curated, era_id=era_entry["id"])
+        if period["id"] in details_by_target:
+            period_entry["details"] = details_by_target[period["id"]]
+        era_entry["periods"].append(period_entry)
     if unmatched_periods:
         print(f"build_explore_tree: {unmatched_periods} periods placed under no era (no geography/date match)")
 
@@ -249,28 +294,6 @@ def build_explore_tree(
             civilizations_by_chapter[best["id"]].append(_civilization_polity_entry(polity))
     for cid in chapter_ids:
         civilizations_by_chapter[cid].sort(key=lambda e: (e["start"], e["id"]))
-
-    # A detail_of polity (see ROADMAP.md item 0 / docs/plans/2026-09-01-detail-of-merge-design.md)
-    # never gets its own independent Polities-row entry -- it's grouped under
-    # its container's own entry instead (`details`, attached below), which
-    # /explore reveals via a badge/zoom-triggered panel rather than showing
-    # by default. Built once here, independent of chapter/region bucketing,
-    # since a detail's dates/geography don't need to match its container's
-    # own placement -- it shows wherever the container itself lands.
-    details_by_target: dict[str, list[dict]] = {}
-    for polity in polities:
-        target_id = polity.get("detail_of")
-        if not target_id:
-            continue
-        details_by_target.setdefault(target_id, []).append({
-            "id": polity["id"],
-            "canonical_name": polity.get("canonical_name", polity["id"]),
-            "start": polity.get("start"),
-            "end": polity.get("end"),
-        })
-    for details in details_by_target.values():
-        details.sort(key=lambda d: (d["start"] if d["start"] is not None else 0, d["id"]))
-    _attach_nested_details(details_by_target)
 
     # Pass 2: bucket polities per chapter by region, using the curated ids
     # from Pass 1.
