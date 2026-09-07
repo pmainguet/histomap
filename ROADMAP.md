@@ -9,8 +9,6 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. Add a button to create an entity. Make sure the minimum fields are defined so that it becomes visible.
-0 bis. the consolidation review workflow should also list all the related period or entities basdd on the relationship fields populated from external sources. If already set correctly (details of), do not add to the consolidation review queue
 1. **Work the polity → period reclassification queue (73 pending, confirmed live 1 September 2026,
    `/consolidation-review`'s "period"/"both" decision).** Full scope-and-seed pass done (see
    STATUS.md); what's left is ordinary manual review.
