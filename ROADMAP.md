@@ -27,25 +27,6 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    of the remaining eligibility flags are modern administrative subdivisions, and the rest is a
    long tail of low-count, genuinely ambiguous or obscure types -- ordinary manual review from
    here, same as any other queue.
-6. **Should `/consolidation-review`'s own "independent" button support undoing a prior
-   "period"/"both" decision?** Today it can't -- `/api/periods/{id}/promote-to-entity` (reachable
-   from `/explore`'s period panel) is the only working undo path (confirmed 7 September 2026, the
-   dead code that used to gesture at supporting this from the review queue itself was removed --
-   see STATUS.md). A genuine UX design question, not a bug: the review queue deliberately excludes
-   already-decided entities, so supporting undo there would need its own affordance (e.g. an
-   undo-toast right after the decision, calling `promote-to-entity` under the hood) rather than
-   just re-showing the row. Low priority, optional.
-7. **A period can subdivide a civilization/polity, not just an era — the schema and tree only
-   support the latter today.** Surfaced by `early_dynastic_mesopotamia`: conceptually it's a
-   phase *of Sumer* (the civilization), the same relationship Old Kingdom of Egypt has to
-   Ancient Egypt or Old Babylonian Empire has to Babylonia — but `broader_periods` only
-   resolves against era-tier periods for tree placement, so today that relationship can only
-   be expressed via `period_links.yaml`'s `context` relation, which doesn't affect *where the
-   period nests in the tree* the way `broader_periods` does. Two structurally different kinds
-   of "period subdivision" (era-subdivision vs. civilization/polity-subdivision) are currently
-   conflated into one mechanism. Needs its own design pass: what should the schema/tree
-   support, and how should `/explore` display the distinction (a sub-lane under the
-   civilization/polity's own band, rather than nested in the ordinary Period row)?
 8. **Add a lane for main events** -- the specific events that define the start/end of an
    era, chapter, or period, starting with those. Today a boundary (e.g. Bronze Age
    Collapse ending Mesopotamian Early States) is only implicit in a record's `start`/`end`
@@ -54,16 +35,3 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    source. Needs its own design pass: a new entity/schema for events, how an era/chapter/
    period would reference "the event that ends me," and how `/explore` would display a
    thin events lane against the existing chapter/era/period rows.
-9. **Split `Period` into separate `MacroChapter`/`RegionalEra`/`Period` Pydantic
-    classes** instead of one `Period` class discriminated by `tier`. Would trade runtime
-    validation (Task 2's `validate_period_tiers()` in the period-ontology plan) for
-    structural safety (a macro chapter simply couldn't have a `broader_periods` value).
-    Not done because it breaks the precedent this schema already set twice
-    (`Polity.entity_type`, `Period.kind` — one class, an enum discriminator, several
-    flavors) and would complicate `pipeline/period_hierarchy.py`'s tree-walking, which
-    currently works because every tier shares one shape. **Revisit if** a field ever needs
-    to exist on `macro_chapter` or `regional_era` that would be actively wrong (not just
-    unused) on a regular `period` — at that point, Pydantic discriminated unions
-    (`Annotated[Union[...], Field(discriminator="tier")]`) would give both the safety and
-    a workable `PeriodHierarchy`. See `ONTOLOGY.md` for the full period-tier design.
-10. Add a way to ask a LLM about it's take on whether an entity is a separate or details of or the same entity. Would like to have a chat appearing on the side of the (http://127.0.0.1:8000/consolidation-review) so that it can take the different information, look at the wikipedia pages and give it's own take via a short (but explained) answer. I should be able to ask following question if needed, like in a chat, but the first should be click on a button, he get the info and the question and answer right away 
