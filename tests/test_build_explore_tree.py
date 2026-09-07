@@ -175,6 +175,41 @@ class BuildExploreTreeTests(unittest.TestCase):
         container = next(e for e in region_bucket if e["id"] == "old_kingdom_egypt")
         self.assertEqual(container["details"][0]["kind"], "polity")
 
+    def test_event_detail_of_attaches_to_its_target_entrys_details(self) -> None:
+        # ROADMAP.md item 5 / docs/plans/2026-09-07-events-lane-design.md:
+        # an event's detail_of is a list (unlike a polity/period's single
+        # detail_of) -- one event can be a detail of several entities at
+        # once. A single `year` stands in for start/end.
+        events = [{"id": "some_event", "canonical_name": "Some Event", "year": -2450, "detail_of": ["old_kingdom_egypt"]}]
+        tree = build_explore_tree(self.polities, self.periods, self.period_links, events=events)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        container = next(e for e in region_bucket if e["id"] == "old_kingdom_egypt")
+        detail = next(d for d in container["details"] if d["id"] == "some_event")
+        self.assertEqual(detail["kind"], "event")
+        self.assertEqual(detail["start"], -2450)
+        self.assertEqual(detail["end"], -2450)
+
+    def test_event_can_be_a_detail_of_two_entities_at_once(self) -> None:
+        events = [{
+            "id": "shared_event", "canonical_name": "Shared Event", "year": -2450,
+            "detail_of": ["old_kingdom_egypt", "unlinked_egyptian"],
+        }]
+        tree = build_explore_tree(self.polities, self.periods, self.period_links, events=events)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        first_container = next(e for e in region_bucket if e["id"] == "old_kingdom_egypt")
+        second_container = next(e for e in region_bucket if e["id"] == "unlinked_egyptian")
+        self.assertIn("shared_event", [d["id"] for d in first_container["details"]])
+        self.assertIn("shared_event", [d["id"] for d in second_container["details"]])
+
+    def test_no_events_argument_leaves_tree_unaffected(self) -> None:
+        # events defaults to None -- every existing call site (build.py
+        # before this feature, every other test in this file) must keep
+        # working unchanged.
+        tree = build_explore_tree(self.polities, self.periods, self.period_links)
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        container = next(e for e in region_bucket if e["id"] == "old_kingdom_egypt")
+        self.assertNotIn("details", container)
+
     def test_detail_of_period_excluded_from_its_own_top_level_entry(self) -> None:
         # Direct request, live, 7 September 2026: periods can be details of
         # other periods (or of a polity), same mechanism as polities --

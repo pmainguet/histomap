@@ -16,21 +16,23 @@ function createEntityDialogHtml(geographyOptions) {
         <select name="create-kind">
           <option value="polity">Polity</option>
           <option value="period">Period</option>
+          <option value="event">Event</option>
         </select>
       </label>
     </div>
     <div class="detail-edit-row"><label class="create-entity-name">Name <input type="text" name="create-name" required></label></div>
     <div class="detail-edit-row">
-      <label>Start year <input type="number" name="create-start" required></label>
-      <label>End year <input type="number" name="create-end"></label>
+      <label><span class="create-start-label">Start year</span> <input type="number" name="create-start" required></label>
+      <label class="create-entity-end-field">End year <input type="number" name="create-end"></label>
       <label class="create-entity-open-ended"><input type="checkbox" name="create-open-ended"> Still ongoing (polity only)</label>
     </div>
     <small>Negative years are BCE -- e.g. -500 for 500 BCE.</small>
-    <fieldset><legend>Present countries</legend>
+    <fieldset class="create-entity-countries"><legend>Present countries</legend>
       <input class="country-filter" type="search" placeholder="Filter countries…" aria-label="Filter country list">
       <div class="country-checklist">${countries.map((country) => `<label data-country-search="${escapeHtml(`${country.label} ${country.code}`.toLowerCase())}"><input type="checkbox" name="create-country" value="${escapeHtml(country.code)}"> ${escapeHtml(country.label)} <small>${escapeHtml(country.code)}</small></label>`).join("")}</div>
       <small>At least one is required -- it drives placement in the timeline.</small>
     </fieldset>
+    <small class="create-entity-event-note" hidden>An event's detail_of/bounds attachment is set afterward, via the raw-fields editor or the events review queue.</small>
     <p class="create-entity-status" role="status"></p>
     <div class="detail-edit-row create-entity-actions">
       <button type="button" class="create-entity-cancel">Cancel</button>
@@ -44,23 +46,38 @@ function wireCreateEntityDialog(triggerButton, geographyOptions, { onCreated }) 
   const dialog = document.querySelector(".create-entity-dialog");
   const status = dialog.querySelector(".create-entity-status");
   const kindSelect = dialog.querySelector('[name="create-kind"]');
+  const startLabel = dialog.querySelector(".create-start-label");
+  const endField = dialog.querySelector(".create-entity-end-field");
   const endInput = dialog.querySelector('[name="create-end"]');
+  const openEndedField = dialog.querySelector(".create-entity-open-ended");
   const openEndedCheckbox = dialog.querySelector('[name="create-open-ended"]');
+  const countriesFieldset = dialog.querySelector(".create-entity-countries");
+  const eventNote = dialog.querySelector(".create-entity-event-note");
   const setStatus = (message, isError) => {
     status.textContent = message;
     status.classList.toggle("is-error", Boolean(isError));
   };
   // A period requires a finite end (schema.py has no open-ended period) --
-  // the "still ongoing" shortcut only makes sense for a polity.
-  const syncEndControls = () => {
-    const isPeriod = kindSelect.value === "period";
-    openEndedCheckbox.closest(".create-entity-open-ended").hidden = isPeriod;
-    if (isPeriod) openEndedCheckbox.checked = false;
+  // the "still ongoing" shortcut only makes sense for a polity. An event
+  // (ROADMAP.md item 5) has a single `year` instead of a start/end range,
+  // and no present_countries of its own (its placement comes from its
+  // detail_of/bounds attachment, set afterward) -- so it hides the whole
+  // End year/Still ongoing/Present countries block and relabels Start year.
+  const syncFieldsForKind = () => {
+    const kind = kindSelect.value;
+    const isEvent = kind === "event";
+    const isPeriod = kind === "period";
+    startLabel.textContent = isEvent ? "Year" : "Start year";
+    endField.hidden = isEvent;
+    openEndedField.hidden = isEvent || isPeriod;
+    countriesFieldset.hidden = isEvent;
+    eventNote.hidden = !isEvent;
+    if (isPeriod || isEvent) openEndedCheckbox.checked = false;
     endInput.disabled = openEndedCheckbox.checked;
     if (openEndedCheckbox.checked) endInput.value = "";
   };
-  kindSelect.addEventListener("change", syncEndControls);
-  openEndedCheckbox.addEventListener("change", syncEndControls);
+  kindSelect.addEventListener("change", syncFieldsForKind);
+  openEndedCheckbox.addEventListener("change", syncFieldsForKind);
   dialog.querySelector(".country-filter").addEventListener("input", (event) => {
     const query = event.target.value.trim().toLowerCase();
     dialog.querySelectorAll(".country-checklist label").forEach((label) => {
@@ -74,7 +91,7 @@ function wireCreateEntityDialog(triggerButton, geographyOptions, { onCreated }) 
     openEndedCheckbox.checked = false;
     kindSelect.value = "polity";
     dialog.querySelectorAll('[name="create-country"]:checked').forEach((input) => { input.checked = false; });
-    syncEndControls();
+    syncFieldsForKind();
     setStatus("", false);
     dialog.showModal();
   });
@@ -86,26 +103,30 @@ function wireCreateEntityDialog(triggerButton, geographyOptions, { onCreated }) 
     const end = openEndedCheckbox.checked ? null : endInput.value;
     const presentCountries = [...dialog.querySelectorAll('[name="create-country"]:checked')].map((input) => input.value);
     if (!canonicalName || start === "" || (kind === "period" && (end === "" || end === null))) {
-      setStatus("Name, start year, and (for a period) end year are required.", true);
+      setStatus(`Name and ${kind === "event" ? "year" : "start year"}${kind === "period" ? ", and end year," : ""} are required.`, true);
       return;
     }
-    if (!presentCountries.length) {
+    if (kind !== "event" && !presentCountries.length) {
       setStatus("At least one present country is required.", true);
       return;
     }
-    const body = {
-      canonical_name: canonicalName,
-      start: Number(start),
-      end: end === "" || end === null ? null : Number(end),
-      present_countries: presentCountries,
-    };
+    const endpoint = kind === "polity" ? "/api/polities" : kind === "period" ? "/api/periods" : "/api/events";
+    const body = kind === "event"
+      ? { canonical_name: canonicalName, year: Number(start) }
+      : {
+          canonical_name: canonicalName,
+          start: Number(start),
+          end: end === "" || end === null ? null : Number(end),
+          present_countries: presentCountries,
+        };
     try {
-      const result = kind === "polity"
-        ? await postJson("/api/polities", "POST", body)
-        : await postJson("/api/periods", "POST", body);
+      const result = await postJson(endpoint, "POST", body);
       const record = result.document;
       onCreated(kind, record);
-      setStatus(`Created "${record.canonical_name}" (${record.id}). ${REBUILD_NOTE}`, false);
+      const rebuildNote = kind === "event"
+        ? "Saved. It's in the events review queue until confirmed there."
+        : REBUILD_NOTE;
+      setStatus(`Created "${record.canonical_name}" (${record.id}). ${rebuildNote}`, false);
     } catch (error) {
       setStatus(error.message, true);
     }
@@ -196,6 +217,10 @@ async function main() {
       eraColorMap,
       isExpanded,
       onToggleExpand: toggleExpand,
+      // ROADMAP.md item 5: the shared Events lane -- a flat list, not part
+      // of the tree (an event's placement comes from its own `year`, not
+      // from tree nesting the way chapters/eras/periods are).
+      events: detailCtx ? [...detailCtx.eventsById.values()] : [],
     }, onSelect);
   };
 
@@ -218,15 +243,16 @@ async function main() {
   };
 
   try {
-    const [treeResponse, politiesResponse, periodsResponse, periodLinksResponse, transitionsResponse, geographyOptionsResponse] = await Promise.all([
+    const [treeResponse, politiesResponse, periodsResponse, periodLinksResponse, transitionsResponse, eventsResponse, geographyOptionsResponse] = await Promise.all([
       fetch("/explore_tree.json"),
       fetch("/data.json"),
       fetch("/periods.json"),
       fetch("/period_links.json"),
       fetch("/transitions.json"),
+      fetch("/events.json"),
       fetch("/api/options/geography"),
     ]);
-    for (const response of [treeResponse, politiesResponse, periodsResponse, periodLinksResponse, transitionsResponse, geographyOptionsResponse]) {
+    for (const response of [treeResponse, politiesResponse, periodsResponse, periodLinksResponse, transitionsResponse, eventsResponse, geographyOptionsResponse]) {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
     }
     fullTree = await treeResponse.json();
@@ -235,10 +261,15 @@ async function main() {
     const periods = await periodsResponse.json();
     const periodLinks = await periodLinksResponse.json();
     const transitions = await transitionsResponse.json();
+    // ROADMAP.md item 5 -- published (eligibility: accepted) events only,
+    // same "review stays invisible until accepted" policy events.json
+    // itself already enforces at build time.
+    const events = await eventsResponse.json();
     const geographyOptions = await geographyOptionsResponse.json();
     detailCtx = {
       politiesById: new Map(polities.map((polity) => [polity.id, polity])),
       periodsById: new Map(periods.map((period) => [period.id, period])),
+      eventsById: new Map(events.map((event) => [event.id, event])),
       periodLinks,
       transitions,
       geographyOptions,
@@ -252,9 +283,9 @@ async function main() {
     // Deep link for jumping here from elsewhere (e.g. /consolidation-review's
     // "Edit in /explore" link) straight to one record, zoomed and with its
     // detail panel already open -- ?entity=<id>, looked up as a polity first
-    // (the common case) then a period. Silently does nothing if the id isn't
-    // found, rather than showing an error -- the rest of the page still
-    // loads and works normally either way.
+    // (the common case), then a period, then an event (ROADMAP.md item 5).
+    // Silently does nothing if the id isn't found, rather than showing an
+    // error -- the rest of the page still loads and works normally either way.
     const entityId = new URLSearchParams(location.search).get("entity");
     if (entityId) {
       const record = detailCtx.politiesById.get(entityId) || detailCtx.periodsById.get(entityId);
@@ -262,12 +293,19 @@ async function main() {
         const kind = detailCtx.politiesById.has(entityId) ? "polity" : "period";
         zoomToRange(record.start, record.end ?? fullTree.axis.domain_end, record.detail_of || entityId);
         onSelect(kind, entityId);
+      } else {
+        const event = detailCtx.eventsById.get(entityId);
+        if (event) {
+          zoomToRange(event.year, event.year, (event.detail_of || [])[0] || entityId);
+          onSelect("event", entityId);
+        }
       }
     }
     wireCreateEntityDialog(document.querySelector("[data-create-entity]"), geographyOptions, {
       onCreated: (kind, record) => {
         if (kind === "polity") detailCtx.politiesById.set(record.id, record);
-        else detailCtx.periodsById.set(record.id, record);
+        else if (kind === "period") detailCtx.periodsById.set(record.id, record);
+        else detailCtx.eventsById.set(record.id, record);
         revealBuildButton();
       },
     });

@@ -22,7 +22,7 @@ from rapidfuzz import fuzz
 from pipeline.review_cli import polity_metadata
 from pipeline.backfill_entity_types import normalized_relationship_kind, relationship_kind
 from pipeline.historical_regions import historical_region_for_country
-from schema import Geography, Period, Polity
+from schema import Event, Geography, Period, Polity
 
 ROOT = Path(__file__).resolve().parent.parent
 ALLOWED_ACTIONS = {
@@ -118,6 +118,28 @@ class PeriodCreate(BaseModel):
     start: int
     end: int
     present_countries: list[str] = Field(min_length=1)
+
+
+class EventBoundCreate(BaseModel):
+    target: str
+    edge: Literal["start", "end"]
+
+
+class EventCreate(BaseModel):
+    """ROADMAP.md item 5 -- see docs/plans/2026-09-07-events-lane-design.md.
+    detail_of/bounds are both optional (an event can be created with
+    neither yet, and attached later via the raw-fields editor or the
+    review queue) -- unlike PolityCreate/PeriodCreate, there's no
+    present_countries requirement here: an event's placement comes from
+    its attachment, not its own geography."""
+    canonical_name: str = Field(min_length=1)
+    year: int
+    detail_of: list[str] = Field(default_factory=list)
+    bounds: list[EventBoundCreate] = Field(default_factory=list)
+
+
+class EventReviewDecision(BaseModel):
+    decision: Literal["accepted", "excluded"]
 
 
 def slugify_entity_id(name: str, taken_ids: set[str]) -> str:
@@ -1641,6 +1663,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
 
     BUILD_ARTIFACT_FILES = (
         "data.json", "transitions.json", "periods.json", "period_links.json", "explore_tree.json",
+        "events.json",
     )
 
     @application.middleware("http")
@@ -1682,6 +1705,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
         ("/reviews", "reviews.html"),
         ("/explore", "explore.html"),
         ("/consolidation-review", "consolidation_review.html"),
+        ("/events-review", "events_review.html"),
     ):
         register_page(page_route, page_file)
 
@@ -1703,9 +1727,13 @@ def create_app(root: Path = ROOT) -> FastAPI:
     async def review_dashboard() -> dict:
         refresh_period_role_queue()
         consolidation_queue = consolidation_review_queue()
+        pending_events = sum(
+            1 for document in load_all_events() if document.get("eligibility", "review") == "review"
+        )
         return {
             "pipelines": {
                 "consolidation": len(consolidation_queue),
+                "events": pending_events,
             },
             "breakdowns": {
                 "consolidation": {
@@ -1837,6 +1865,124 @@ def create_app(root: Path = ROOT) -> FastAPI:
             raise HTTPException(409, "Cannot delete -- still referenced: " + "; ".join(blockers))
         path.unlink()
         return {"status": "deleted", "period_id": period_id}
+
+    # ROADMAP.md item 5 -- see docs/plans/2026-09-07-events-lane-design.md.
+    # Events are read fresh from disk on every call, same convention as
+    # periods (no in-memory cache) -- there's no per-event GET-by-id
+    # endpoint either, matching periods (the frontend builds its own map
+    # from events.json/the review-queue list, not per-id fetches).
+    def events_dir() -> Path:
+        return root / "events"
+
+    def load_all_events() -> list[dict]:
+        directory = events_dir()
+        if not directory.exists():
+            return []
+        return [
+            yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+            for path in sorted(directory.glob("*.yaml"))
+        ]
+
+    @application.post("/api/events")
+    async def create_event(request: EventCreate) -> dict:
+        """Hand-authored creation path -- ROADMAP.md item 5 deliberately
+        starts with manual authoring, not a Wikidata extraction pipeline
+        (see the design doc). Defaults to eligibility: review, so it lands
+        in /api/events-review until confirmed."""
+        taken_ids = (
+            set(metadata.keys())
+            | {path.stem for path in (root / "periods").glob("*.yaml")}
+            | {path.stem for path in events_dir().glob("*.yaml")}
+        )
+        event_id = slugify_entity_id(request.canonical_name, taken_ids)
+        document = {
+            "id": event_id,
+            "canonical_name": request.canonical_name,
+            "year": request.year,
+            "detail_of": request.detail_of,
+            "bounds": [bound.model_dump() for bound in request.bounds],
+            "eligibility": "review",
+            "authority": "Histomap editorial: manually created",
+        }
+        try:
+            validated = Event.model_validate(document).model_dump(mode="json")
+        except ValidationError as exc:
+            raise HTTPException(422, str(exc)) from exc
+        events_dir().mkdir(parents=True, exist_ok=True)
+        (events_dir() / f"{event_id}.yaml").write_text(
+            yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
+        )
+        return {"status": "created", "event_id": event_id, "document": clean_json(validated)}
+
+    @application.get("/api/events-review")
+    async def events_review() -> dict:
+        """Simple, per ROADMAP.md item 5's design -- no scoring/candidate-
+        matching (unlike consolidation-review): a hand-authored event
+        already has its detail_of/bounds chosen by whoever created it, so
+        this just resolves and shows exactly what it's attached to, for a
+        reviewer to confirm or reject."""
+        items = []
+        for document in load_all_events():
+            if document.get("eligibility", "review") != "review":
+                continue
+            detail_of_targets = [
+                {"id": target_id, "canonical_name": metadata[target_id]["canonical_name"]}
+                for target_id in document.get("detail_of") or []
+                if target_id in metadata
+            ]
+            bounds_targets = []
+            for bound in document.get("bounds") or []:
+                period_path = root / "periods" / f"{bound.get('target')}.yaml"
+                if not period_path.exists():
+                    continue
+                period_document = yaml.safe_load(period_path.read_text(encoding="utf-8")) or {}
+                bounds_targets.append({
+                    "id": bound.get("target"), "edge": bound.get("edge"),
+                    "canonical_name": period_document.get("canonical_name", bound.get("target")),
+                    "start": period_document.get("start"), "end": period_document.get("end"),
+                })
+            items.append({
+                "id": document["id"], "canonical_name": document.get("canonical_name", document["id"]),
+                "year": document.get("year"),
+                "detail_of_targets": detail_of_targets, "bounds_targets": bounds_targets,
+            })
+        return clean_json({"total": len(items), "items": items})
+
+    @application.post("/api/events-review/{event_id}")
+    async def decide_event_review(event_id: str, request: EventReviewDecision) -> dict:
+        path = events_dir() / f"{event_id}.yaml"
+        if not path.exists():
+            raise HTTPException(404, "Unknown Histomap event")
+        document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        document["eligibility"] = request.decision
+        path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
+        return {"status": "saved", "event_id": event_id, "decision": request.decision}
+
+    @application.patch("/api/events/{event_id}/fields")
+    async def update_event_fields(event_id: str, fields: dict) -> dict:
+        """General-purpose event editor, same as update_polity_fields/
+        update_period_fields above."""
+        merged, changed = save_merged_fields(
+            events_dir() / f"{event_id}.yaml",
+            event_id,
+            fields,
+            Event,
+            "Unknown Histomap event",
+            "Event file ID does not match requested event",
+        )
+        return {"status": "saved", "event_id": event_id, "changed": changed, "document": merged}
+
+    @application.delete("/api/events/{event_id}")
+    async def delete_event(event_id: str) -> dict:
+        """Hard delete, same as delete_polity/delete_period -- no blocker
+        scan needed, unlike those: nothing in this dataset ever references
+        an event id (events only ever point outward via detail_of/
+        bounds), so deleting one is always safe."""
+        path = events_dir() / f"{event_id}.yaml"
+        if not path.exists():
+            raise HTTPException(404, "Unknown Histomap event")
+        path.unlink()
+        return {"status": "deleted", "event_id": event_id}
 
     @application.get("/api/polities/search")
     async def search_all_polities(

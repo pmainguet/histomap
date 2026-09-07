@@ -370,4 +370,76 @@ class PeriodLink(BaseModel):
     evidence: Literal["explicit", "derived", "suggested"]
     confidence: Confidence
     source_urls: list[str] = Field(default_factory=list, min_length=1)
+
+
+class EventBound(BaseModel):
+    """One period (any Period.tier -- macro_chapter/regional_era/period all
+    qualify) an Event starts or ends. A list on Event.bounds, not a single
+    value -- the same real event is routinely the shared boundary between
+    two adjacent periods (it ends one, starts the next)."""
+    target: str
+    edge: Literal["start", "end"]
+
+
+class Event(BaseModel):
+    """ROADMAP.md item 5: a dated historical event, distinct from Transition
+    (which stays exactly what it already is -- a polity-to-polity
+    succession/split/merge fact driving the transition arrows). An Event is
+    broader: not necessarily a polity handover, and can attach two
+    independent, optional ways -- see
+    docs/plans/2026-09-07-events-lane-design.md for the full design:
+
+    - `detail_of`: Polity ids (civilization/culture/etc. are all
+      entity_type values on Polity, not a separate model) this event is a
+      detail of -- rendered nested under that entity's existing detail_of
+      children, the same recursive mechanism polities/periods already use.
+    - `bounds`: periods this event starts or ends -- rendered in one
+      shared Events lane on /explore (positioned by `year`), regardless of
+      which Period.tier it bounds.
+
+    Both are optional and independent; a real event can be neither (not
+    yet placed), either, or both at once.
+
+    A single `year`, not a start/end range like Period/Polity -- matches
+    Transition's own existing shape (also a single `year`), and a
+    multi-year event (e.g. "Bronze Age Collapse") just picks its
+    conventionally-cited year, same tradeoff Transition already accepts."""
+    id: str
+    canonical_name: str
+    year: int
+    detail_of: list[str] = Field(default_factory=list)
+    bounds: list[EventBound] = Field(default_factory=list)
+    # Gates visibility, unlike Polity/Period's own eligibility (which
+    # never blocks /explore -- "publish everything, check later"): an
+    # event's whole point is confirming detail_of/bounds actually points
+    # at the right place before it renders anywhere, so `review` (the
+    # default) is excluded from events.json until a reviewer accepts it.
+    # See build.py's publication filter.
+    eligibility: Eligibility = Eligibility.review
+    external_ids: ExternalIds = Field(default_factory=ExternalIds)
+    authority: str
+    notes: str = ""
+    source_urls: list[str] = Field(default_factory=list)
+
+    @field_validator("id")
+    @classmethod
+    def _event_id(cls, value: str) -> str:
+        if not ID_PATTERN.match(value):
+            raise ValueError("event id must be snake_case starting with a letter")
+        return value
+
+    @field_validator("year")
+    @classmethod
+    def _event_year_range(cls, value: int) -> int:
+        if not YEAR_MIN <= value <= YEAR_MAX:
+            raise ValueError(f"year must be in [{YEAR_MIN}, {YEAR_MAX}]")
+        return value
+
+    @field_validator("bounds")
+    @classmethod
+    def _bounds_no_duplicate_targets(cls, value: list[EventBound]) -> list[EventBound]:
+        seen = {(bound.target, bound.edge) for bound in value}
+        if len(seen) != len(value):
+            raise ValueError("bounds must not repeat the same (target, edge) pair")
+        return value
     notes: str = ""

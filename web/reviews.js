@@ -2,6 +2,7 @@ const dashboard = document.querySelector("#review-dashboard");
 
 const pipelines = [
   ["consolidation", "/consolidation-review", "Resolve identity and chronology", "Decide whether a record is independent, a duplicate, a phase of a specific polity, or a broad period/era shared by many entities."],
+  ["events", "/events-review", "Review events", "Confirm a hand-authored event's detail_of/bounds attachment (which entity it's a detail of, which era/chapter/period it starts or ends) before it appears on /explore."],
 ];
 
 async function loadDashboard() {

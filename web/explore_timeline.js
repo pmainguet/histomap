@@ -156,6 +156,27 @@ function drawDetailPanel(svg, { x, y, width, scale, details, onZoom, isExpanded 
         drawDetailPanel(svg, { x, y: cursorY, width, scale, details: nested, onZoom, isExpanded, onToggleExpand });
         cursorY += detailPanelHeight(nested, isExpanded);
       }
+    } else if (detail.kind === "event") {
+      // ROADMAP.md item 5: a detail_of event is a point in time, not a
+      // range (start === end === year here) -- a circle + label, same
+      // visual as the shared Events lane, rather than a zero-width band.
+      const cy = lineY + DETAIL_LINE_HEIGHT / 2;
+      const openPanel = () => onZoom.handler("event", detail.id);
+      const circle = svgEl("circle", {
+        cx: detailX, cy, r: EVENT_MARKER_RADIUS, class: "hierarchy-event-marker zoomable",
+      });
+      const titleEl = svgEl("title");
+      titleEl.textContent = `${detail.canonical_name} (${formatYear(detail.start)})`;
+      circle.append(titleEl);
+      circle.addEventListener("click", openPanel);
+      svg.append(circle);
+      const eventLabel = svgEl("text", {
+        x: detailX + EVENT_MARKER_RADIUS + 4, y: cy + 4, class: "hierarchy-event-label zoomable",
+      });
+      eventLabel.textContent = detail.canonical_name;
+      eventLabel.addEventListener("click", openPanel);
+      svg.append(eventLabel);
+      cursorY += DETAIL_LINE_HEIGHT;
     } else {
       bandRect(svg, {
         x: detailX, y: lineY, width: detailWidth, height: DETAIL_LINE_HEIGHT,
@@ -706,6 +727,42 @@ function drawFlatLaneRow(svg, scale, lanes, y, laneHeight, cls, onZoom, domainEn
   return y + sumLaneHeights(lanes, laneHeight, isExpanded);
 }
 
+// ROADMAP.md item 5 / docs/plans/2026-09-07-events-lane-design.md: one
+// shared row for every boundary event, regardless of which Period.tier it
+// bounds (Epoch/Chapter/Era/Period are all just Period at different tiers --
+// ONTOLOGY.md). Each event is a circle marker at its own year plus its
+// title beside it -- a point in time, not a band, so this doesn't reuse
+// bandRect/drawItemBand. Overlap handling reuses the same packIntoLanes
+// lanes as every other row (see labelAwareFootprint) -- an event whose
+// label would collide with a neighbor's lands in its own lane/row instead
+// of overlapping it.
+const EVENT_MARKER_RADIUS = 4;
+
+function drawEventsRow(svg, scale, lanes, y, laneHeight, onZoom) {
+  lanes.forEach((lane, laneIndex) => {
+    const laneY = y + laneIndex * laneHeight + laneHeight / 2;
+    lane.forEach((event) => {
+      const cx = scale.x(event.year);
+      const openPanel = () => onZoom("event", event.id);
+      const circle = svgEl("circle", {
+        cx, cy: laneY, r: EVENT_MARKER_RADIUS, class: "hierarchy-event-marker zoomable",
+      });
+      const titleEl = svgEl("title");
+      titleEl.textContent = `${event.canonical_name} (${formatYear(event.year)})`;
+      circle.append(titleEl);
+      circle.addEventListener("click", openPanel);
+      svg.append(circle);
+      const label = svgEl("text", {
+        x: cx + EVENT_MARKER_RADIUS + 4, y: laneY + 4, class: "hierarchy-event-label zoomable",
+      });
+      label.textContent = event.canonical_name;
+      label.addEventListener("click", openPanel);
+      svg.append(label);
+    });
+  });
+  return y + lanes.length * laneHeight;
+}
+
 function drawContinentGroupedRow(svg, scale, rows, y, laneHeight, cls, onZoom, width, domainEnd, opts = {}) {
   const getFill = opts.getFill || (() => null);
   const getKind = opts.getKind || (() => "period");
@@ -800,6 +857,11 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
     // caller (explore.js), not this render function, so it survives across
     // the re-renders zoom/groupBy/showPolities changes already trigger.
     isExpanded = () => false, onToggleExpand = () => {},
+    // ROADMAP.md item 5: boundary events for the shared Events lane -- a
+    // flat list (not tree-nested; an event's placement is purely its own
+    // `year`), independent of groupBy/geoFilter/zoom the way every other
+    // row here is.
+    events = [],
   } = options;
   const width = Math.max(900, Math.min(4800, window.innerWidth - 80));
   const scale = createTimeScale(
@@ -854,6 +916,18 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   const politiesItems = showPolities ? applyGeoFilter(allPolitiesFlat(tree), groupBy, geoFilter) : [];
   const politiesLayout = groupedLayoutFor(politiesItems, scale, polityLaneHeight, groupBy, isExpanded);
 
+  // Events lane: a point marker, not a band, so its lane-packing footprint
+  // is start == end == year (labelAwareFootprint's Math.max(bandWidth,
+  // labelWidth) collapses to just the label's width when the band itself
+  // has zero width) -- two events land in the same lane exactly when their
+  // labels wouldn't collide.
+  const eventLaneHeight = 18;
+  const sortedEvents = [...events].sort((a, b) => a.year - b.year || a.canonical_name.localeCompare(b.canonical_name));
+  const eventLanes = packIntoLanes(
+    sortedEvents.map((event) => ({ ...event, start: event.year, end: event.year })),
+    labelAwareFootprint(scale),
+  );
+
   const eraRowHeight = eraLayout.height;
   const periodRowHeight = periodLayout.height;
   // Zero when there's nothing to show (e.g. the row is hidden via
@@ -862,8 +936,9 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   // empty block, see below.
   const civBlockHeight = civLayout.height > 0 ? civLayout.height + rowGap : 0;
   const politiesRowHeight = showPolities ? politiesLayout.height : 0;
+  const eventsBlockHeight = eventLanes.length > 0 ? eventLanes.length * eventLaneHeight + rowGap : 0;
 
-  const height = geoRowHeight + chapterRowHeight + eraRowHeight + periodRowHeight + civBlockHeight + politiesRowHeight + rowGap * 4;
+  const height = geoRowHeight + chapterRowHeight + eraRowHeight + periodRowHeight + eventsBlockHeight + civBlockHeight + politiesRowHeight + rowGap * 4;
 
   const svg = svgEl("svg", { viewBox: `0 0 ${width} ${height}`, class: "hierarchy-chart" });
 
@@ -920,6 +995,15 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   drawSeparator(svg, width, sepY);
   drawTierLabel(svg, "Period", prevSepY, sepY);
   prevSepY = sepY;
+
+  if (eventLanes.length > 0) {
+    drawEventsRow(svg, scale, eventLanes, y, eventLaneHeight, onZoom);
+    y += eventLanes.length * eventLaneHeight + rowGap;
+    sepY = y - rowGap / 2;
+    drawSeparator(svg, width, sepY);
+    drawTierLabel(svg, "Events", prevSepY, sepY);
+    prevSepY = sepY;
+  }
 
   if (civLayout.height > 0) {
     drawGroupedRow(svg, scale, civLayout, y, civLaneHeight, "hierarchy-band-civilization", onZoom, width, tree.axis.domain_end, {

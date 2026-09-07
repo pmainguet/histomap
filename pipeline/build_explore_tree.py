@@ -148,6 +148,7 @@ def build_explore_tree(
     periods: list[dict],
     period_links: list[dict],
     civilization_period_sources: dict[str, str] | None = None,
+    events: list[dict] | None = None,
 ) -> dict:
     """Precompute the full Explore page tree: 9 macro chapters, each with its
     curated regional eras, each era's curated-or-heuristic named periods, and
@@ -163,6 +164,7 @@ def build_explore_tree(
     placements this function computes itself. See
     docs/plans/2026-08-30-explore-hierarchy-timeline.md's final-review fix."""
     civilization_period_sources = civilization_period_sources or {}
+    events = events or []
     hierarchy = PeriodHierarchy(periods=periods, period_links=period_links, polities=polities)
     periods_by_id = {p["id"]: p for p in periods}
     all_eras = [p for p in periods if p.get("tier") == "regional_era"]
@@ -217,6 +219,20 @@ def build_explore_tree(
             "end": period.get("end"),
             "kind": "period",
         })
+    # ROADMAP.md item 5 / docs/plans/2026-09-07-events-lane-design.md: an
+    # event's detail_of is a list (an event can be a detail of several
+    # entities at once, unlike a polity/period's single detail_of), and it
+    # has no start/end -- a single `year` stands in for both, so it nests
+    # and sorts the same way a zero-length band would.
+    for event in events:
+        for target_id in event.get("detail_of") or []:
+            details_by_target.setdefault(target_id, []).append({
+                "id": event["id"],
+                "canonical_name": event.get("canonical_name", event["id"]),
+                "start": event.get("year"),
+                "end": event.get("year"),
+                "kind": "event",
+            })
     for details in details_by_target.values():
         details.sort(key=lambda d: (d["start"] if d["start"] is not None else 0, d["id"]))
     _attach_nested_details(details_by_target)

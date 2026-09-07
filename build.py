@@ -4,7 +4,7 @@ from pathlib import Path
 
 import yaml
 
-from schema import Period, PeriodLink, Polity, Transition
+from schema import Event, Period, PeriodLink, Polity, Transition
 
 ROOT = Path(__file__).parent
 POLITIES_DIR = ROOT / "polities"
@@ -15,7 +15,14 @@ PERIODS_DIR = ROOT / "periods"
 PERIODS_OUT_PATH = ROOT / "periods.json"
 PERIOD_LINKS_PATH = ROOT / "period_links.yaml"
 PERIOD_LINKS_OUT_PATH = ROOT / "period_links.json"
+EVENTS_DIR = ROOT / "events"
+EVENTS_OUT_PATH = ROOT / "events.json"
 EXPLORE_TREE_OUT_PATH = ROOT / "explore_tree.json"
+# Same grace window validate_transitions() already applies to a transition's
+# year against its source/target polity dates -- reused here rather than a
+# new threshold, for the same reason: editorial start/end estimates are
+# approximate, not exact.
+EVENT_YEAR_TOLERANCE = 25
 
 
 def find_detail_of_cycles(polities: list[Polity], periods: list[Period] | None = None) -> list[list[str]]:
@@ -293,6 +300,44 @@ def load_period_links(periods: list[Period], polities: list[Polity]) -> list[Per
     return links
 
 
+def validate_events(events: list[Event], polities: list[Polity], periods: list[Period]) -> None:
+    """ROADMAP.md item 5 -- see docs/plans/2026-09-07-events-lane-design.md.
+    detail_of targets must be a known Polity (civilization/culture are
+    entity_type values on Polity, not a separate model); bounds targets
+    must be a known Period (any tier). A bound event's own year must fall
+    within EVENT_YEAR_TOLERANCE of the specific edge it claims -- catches
+    an event accidentally bound to the wrong period, or the wrong edge of
+    the right one."""
+    ids = [event.id for event in events]
+    if len(ids) != len(set(ids)):
+        raise ValueError("event IDs must be unique")
+    polity_ids = {polity.id for polity in polities}
+    periods_by_id = {period.id: period for period in periods}
+    for event in events:
+        unknown_detail_of = sorted(target for target in event.detail_of if target not in polity_ids)
+        if unknown_detail_of:
+            raise ValueError(f"event {event.id} references unknown polities: {', '.join(unknown_detail_of)}")
+        for bound in event.bounds:
+            period = periods_by_id.get(bound.target)
+            if period is None:
+                raise ValueError(f"event {event.id} references unknown period {bound.target}")
+            edge_year = period.start if bound.edge == "start" else period.end
+            if abs(event.year - edge_year) > EVENT_YEAR_TOLERANCE:
+                raise ValueError(
+                    f"event {event.id} year {event.year} is too far from {bound.target}'s "
+                    f"{bound.edge} ({edge_year})"
+                )
+
+
+def load_events(polities: list[Polity], periods: list[Period]) -> list[Event]:
+    events = [
+        Event.model_validate(yaml.safe_load(path.read_text(encoding="utf-8")))
+        for path in sorted(EVENTS_DIR.glob("*.yaml"))
+    ] if EVENTS_DIR.exists() else []
+    validate_events(events, polities, periods)
+    return events
+
+
 def main() -> None:
     polities = load_all()
     transitions = load_transitions(polities)
@@ -309,6 +354,11 @@ def main() -> None:
     if detail_of_errors:
         for e in detail_of_errors:
             print(f"ERROR  {e}", file=sys.stderr)
+        sys.exit(1)
+    try:
+        events = load_events(polities, periods)
+    except ValueError as exc:
+        print(f"ERROR  {exc}", file=sys.stderr)
         sys.exit(1)
     # A subdivision with `subdivision_parent_status: "pending"` used to be
     # excluded here -- that gate existed to keep an unconfirmed subdivision
@@ -350,6 +400,18 @@ def main() -> None:
         json.dumps([item.model_dump(mode="json") for item in period_links], indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
+    # Unlike every other publication filter here, this is NOT "publish
+    # everything, check later" -- eligibility: review (the default) is
+    # deliberately excluded. See Event's own docstring in schema.py and
+    # docs/plans/2026-09-07-events-lane-design.md: an event's whole point
+    # is confirming its detail_of/bounds attachment before it renders
+    # anywhere, unlike an unclassified-but-dated polity, which is still
+    # worth seeing.
+    published_events = [event for event in events if event.eligibility.value == "accepted"]
+    EVENTS_OUT_PATH.write_text(
+        json.dumps([event.model_dump(mode="json") for event in published_events], indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
     from pipeline.build_explore_tree import build_explore_tree
 
     explore_tree = build_explore_tree(
@@ -357,6 +419,7 @@ def main() -> None:
         [p.model_dump(mode="json") for p in periods],
         [link.model_dump(mode="json") for link in period_links],
         load_civilization_period_role_sources(),
+        [event.model_dump(mode="json") for event in published_events],
     )
     EXPLORE_TREE_OUT_PATH.write_text(
         json.dumps(explore_tree, indent=2, ensure_ascii=False), encoding="utf-8"
@@ -364,7 +427,8 @@ def main() -> None:
     print(
         f"OK  validated {len(polities)} and wrote {len(published_polities)} entities, "
         f"{len(transitions)} transitions, "
-        f"{len(periods)} periods, and {len(period_links)} period links"
+        f"{len(periods)} periods, {len(period_links)} period links, and "
+        f"{len(published_events)} events"
     )
 
 

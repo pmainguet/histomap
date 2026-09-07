@@ -479,6 +479,44 @@ function renderPeriodDetails(period, ctx) {
   });
 }
 
+// ROADMAP.md item 5 / docs/plans/2026-09-07-events-lane-design.md. An
+// event has no detail_of/bounds editor of its own yet (unlike polities/
+// periods) -- editing those goes through the raw-fields editor for now,
+// same minimal-first-pass scope as event creation itself.
+function renderEventDetails(event, ctx) {
+  const detailOfTargets = event.detail_of || [];
+  const boundsTargets = event.bounds || [];
+  const externalLinks = (event.source_urls || []).map((url, index) =>
+    `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Source ${index + 1} ↗</a>`);
+
+  explorePanel.innerHTML = `<button class="detail-close" type="button" aria-label="Close details">×</button>
+    <p class="detail-kicker">Event</p>
+    <h2>${escapeHtml(event.canonical_name)}</h2>
+    <div class="detail-actions"><button class="zoom-explore" type="button">Zoom to this</button><button class="reset-explore" type="button">Full timeline</button></div>
+    <p>${escapeHtml(event.notes || "A dated historical event.")}</p>
+    <dl>
+      <dt>Year</dt><dd>${formatYear(event.year)}</dd>
+      <dt>Authority</dt><dd>${escapeHtml(event.authority || "unknown")}</dd>
+      ${detailOfTargets.length ? `<dt>Detail of</dt><dd>${detailOfTargets.map((id) => entityRefButton(ctx, id)).join(", ")}</dd>` : ""}
+      ${boundsTargets.length ? `<dt>Bounds</dt><dd>${boundsTargets.map((bound) => `${entityRefButton(ctx, bound.target)} (${escapeHtml(bound.edge)})`).join(", ")}</dd>` : ""}
+      ${externalLinks.length ? `<dt>External pages</dt><dd class="detail-links">${externalLinks.join("<br>")}</dd>` : ""}
+    </dl>`;
+
+  wireExplorePanel(ctx, event.year, event.year, detailOfTargets[0] || event.id);
+  explorePanel.querySelectorAll("[data-explore-period-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = ctx.periodsById.get(button.dataset.explorePeriodId);
+      if (target) renderPeriodDetails(target, ctx);
+    });
+  });
+  explorePanel.querySelectorAll("[data-explore-polity-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = ctx.politiesById.get(button.dataset.explorePolityId);
+      if (target) renderPolityDetails(target, ctx);
+    });
+  });
+}
+
 function renderPolityDetails(polity, ctx) {
   const { periodsById, politiesById, periodLinks } = ctx;
   const description = polity.text?.short_adult_en || polity.text?.long_en || polity.notes;
@@ -569,13 +607,19 @@ function closeExploreDetails() {
 
 explorePanelBackdrop.addEventListener("click", closeExploreDetails);
 
-// kind: "chapter" | "era" | "period" -> periodsById; "polity" -> politiesById.
-// Silently no-ops if the id isn't found (e.g. data not loaded yet) rather
-// than throwing and breaking the click handler for every other band.
+// kind: "chapter" | "era" | "period" -> periodsById; "polity" -> politiesById;
+// "event" -> eventsById (ROADMAP.md item 5). Silently no-ops if the id isn't
+// found (e.g. data not loaded yet) rather than throwing and breaking the
+// click handler for every other band.
 function showExploreDetails(kind, id, ctx) {
   if (kind === "polity") {
     const polity = ctx.politiesById.get(id);
     if (polity) renderPolityDetails(polity, ctx);
+    return;
+  }
+  if (kind === "event") {
+    const event = ctx.eventsById.get(id);
+    if (event) renderEventDetails(event, ctx);
     return;
   }
   const period = ctx.periodsById.get(id);

@@ -9,10 +9,11 @@ from build import (
     find_detail_of_cycles,
     load_civilization_period_role_sources,
     validate_entity_relationships,
+    validate_events,
     validate_period_detail_of,
     validate_transitions,
 )
-from schema import Geography, Period, PeriodLink, Polity, Transition
+from schema import Event, Geography, Period, PeriodLink, Polity, Transition
 
 
 def polity(polity_id: str, entity_type: str = "polity") -> Polity:
@@ -55,6 +56,20 @@ def detail_period(period_id: str, detail_of: str | None = None) -> Period:
             "authority": "test",
         }
     )
+
+
+def event(
+    event_id: str, year: int, detail_of: list[str] | None = None,
+    bounds: list[dict] | None = None,
+) -> Event:
+    return Event.model_validate({
+        "id": event_id,
+        "canonical_name": event_id,
+        "year": year,
+        "detail_of": detail_of or [],
+        "bounds": bounds or [],
+        "authority": "test",
+    })
 
 
 class BuildRelationshipValidationTests(unittest.TestCase):
@@ -237,6 +252,57 @@ class PeriodDetailOfValidationTests(unittest.TestCase):
         polity_pointing_at_period = detail_polity("confused_polity", "some_period")
         errors = validate_entity_relationships([polity_pointing_at_period])
         self.assertIn("confused_polity: unknown detail_of target some_period", errors)
+
+
+class EventValidationTests(unittest.TestCase):
+    def test_valid_event_with_no_attachments_is_fine(self) -> None:
+        validate_events([event("some_event", 1200)], [], [])  # must not raise
+
+    def test_duplicate_event_ids_are_rejected(self) -> None:
+        with self.assertRaises(ValueError):
+            validate_events([event("dup", 1200), event("dup", 1300)], [], [])
+
+    def test_detail_of_unknown_polity_is_rejected(self) -> None:
+        with self.assertRaises(ValueError):
+            validate_events([event("some_event", 1200, detail_of=["missing_polity"])], [], [])
+
+    def test_detail_of_known_polity_is_fine(self) -> None:
+        validate_events(
+            [event("some_event", 1200, detail_of=["known_polity"])], [polity("known_polity")], [],
+        )  # must not raise
+
+    def test_bounds_unknown_period_is_rejected(self) -> None:
+        with self.assertRaises(ValueError):
+            validate_events(
+                [event("some_event", 1200, bounds=[{"target": "missing_period", "edge": "end"}])], [], [],
+            )
+
+    def test_bounds_year_within_tolerance_of_the_edge_is_fine(self) -> None:
+        ending_period = detail_period("some_period")  # start=1, end=2 -- see helper
+        validate_events(
+            [event("some_event", 2 + 20, bounds=[{"target": "some_period", "edge": "end"}])],
+            [], [ending_period],
+        )  # must not raise (within EVENT_YEAR_TOLERANCE, 25)
+
+    def test_bounds_year_too_far_from_the_edge_is_rejected(self) -> None:
+        ending_period = detail_period("some_period")  # start=1, end=2
+        with self.assertRaises(ValueError):
+            validate_events(
+                [event("some_event", 2 + 100, bounds=[{"target": "some_period", "edge": "end"}])],
+                [], [ending_period],
+            )
+
+    def test_bounds_checks_the_start_edge_against_the_periods_start(self) -> None:
+        starting_period = detail_period("some_period")  # start=1, end=2
+        validate_events(
+            [event("some_event", 1, bounds=[{"target": "some_period", "edge": "start"}])],
+            [], [starting_period],
+        )  # must not raise -- exactly at the start edge
+        with self.assertRaises(ValueError):
+            validate_events(
+                [event("some_event", 1 + 100, bounds=[{"target": "some_period", "edge": "start"}])],
+                [], [starting_period],
+            )  # 100 years past the start edge -- well outside tolerance
 
 
 class LoadCivilizationPeriodRoleSourcesTests(unittest.TestCase):

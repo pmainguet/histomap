@@ -56,7 +56,7 @@ class UnifiedServerTests(unittest.TestCase):
             "geological_epochs.js", "timeline_scale.js", "lane_packing.js", "common.js",
             "styles.css",
             "reviews.html", "reviews.js", "consolidation_review.html", "consolidation_review.js",
-            "review_build.js",
+            "review_build.js", "events_review.html", "events_review.js",
         ):
             (self.root / "web" / name).write_text(name, encoding="utf-8")
         (self.root / "data.json").write_text("[]", encoding="utf-8")
@@ -64,6 +64,7 @@ class UnifiedServerTests(unittest.TestCase):
         (self.root / "periods.json").write_text("[]", encoding="utf-8")
         (self.root / "period_links.json").write_text("[]", encoding="utf-8")
         (self.root / "period_links.yaml").write_text("[]\n", encoding="utf-8")
+        (self.root / "events.json").write_text("[]", encoding="utf-8")
         polity = {
             "id": "candidate",
             "canonical_name": "Candidate",
@@ -124,10 +125,12 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(self.client.get("/subdivision-review").status_code, 404)
         self.assertEqual(self.client.get("/reviews").status_code, 200)
         self.assertEqual(self.client.get("/consolidation-review").status_code, 200)
+        self.assertEqual(self.client.get("/events-review").status_code, 200)
         self.assertEqual(self.client.get("/data.json").json(), [])
         self.assertEqual(self.client.get("/transitions.json").json(), [])
         self.assertEqual(self.client.get("/periods.json").json(), [])
         self.assertEqual(self.client.get("/period_links.json").json(), [])
+        self.assertEqual(self.client.get("/events.json").json(), [])
 
     def test_build_artifacts_force_browser_revalidation(self) -> None:
         # Found live, 7 September 2026: converting a polity to a period and
@@ -136,7 +139,7 @@ class UnifiedServerTests(unittest.TestCase):
         # routes carry only ETag/Last-Modified by default (FileResponse),
         # so browsers apply RFC 7234 heuristic freshness. Same class of bug
         # already fixed for /static/*, just never extended to these.
-        for path in ("/data.json", "/transitions.json", "/periods.json", "/period_links.json"):
+        for path in ("/data.json", "/transitions.json", "/periods.json", "/period_links.json", "/events.json"):
             self.assertEqual(self.client.get(path).headers.get("cache-control"), "no-cache")
 
     def test_review_dashboard_lists_pipeline_counts(self) -> None:
@@ -150,6 +153,25 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertNotIn("period_role", payload)
         self.assertIn("consolidation", response["breakdowns"])
         self.assertEqual(response["breakdowns"]["consolidation"]["period_role"], 1)
+
+    def test_review_dashboard_counts_pending_events(self) -> None:
+        (self.root / "events").mkdir(exist_ok=True)
+        (self.root / "events" / "pending_event.yaml").write_text(
+            yaml.safe_dump({"id": "pending_event", "canonical_name": "Pending Event", "year": 210, "authority": "test"}),
+            encoding="utf-8",
+        )
+        (self.root / "events" / "accepted_event.yaml").write_text(
+            yaml.safe_dump({
+                "id": "accepted_event", "canonical_name": "Accepted Event", "year": 210,
+                "eligibility": "accepted", "authority": "test",
+            }),
+            encoding="utf-8",
+        )
+        client = TestClient(create_app(self.root))
+
+        response = client.get("/api/review-dashboard").json()
+
+        self.assertEqual(response["pipelines"]["events"], 1)
 
     def test_combined_identity_queue_handles_period_only_decision(self) -> None:
         queue = self.client.get("/api/consolidation-reviews").json()["items"]
@@ -745,6 +767,129 @@ class UnifiedServerTests(unittest.TestCase):
 
     def test_delete_unknown_period_returns_404(self) -> None:
         response = self.client.delete("/api/periods/no_such_period")
+
+        self.assertEqual(response.status_code, 404)
+
+    def test_creates_event_with_minimum_fields(self) -> None:
+        # ROADMAP.md item 5: hand-authored creation path, defaults to
+        # eligibility: review so it lands in the review queue.
+        response = self.client.post(
+            "/api/events", json={"canonical_name": "Some New Event", "year": 1200},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        body = response.json()
+        self.assertEqual(body["event_id"], "some_new_event")
+        saved = yaml.safe_load((self.root / "events" / "some_new_event.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(saved["year"], 1200)
+        self.assertEqual(saved["eligibility"], "review")
+
+    def test_creates_event_with_detail_of_and_bounds(self) -> None:
+        response = self.client.post(
+            "/api/events",
+            json={
+                "canonical_name": "Attached Event", "year": 200,
+                "detail_of": ["candidate"],
+                "bounds": [{"target": "existing_period", "edge": "end"}],
+            },
+        )
+
+        self.assertEqual(response.status_code, 200)
+        saved = yaml.safe_load((self.root / "events" / "attached_event.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(saved["detail_of"], ["candidate"])
+        self.assertEqual(saved["bounds"], [{"target": "existing_period", "edge": "end"}])
+
+    def test_events_review_lists_review_events_with_resolved_targets(self) -> None:
+        (self.root / "events").mkdir(exist_ok=True)
+        (self.root / "events" / "pending_event.yaml").write_text(
+            yaml.safe_dump({
+                "id": "pending_event", "canonical_name": "Pending Event", "year": 210,
+                "detail_of": ["candidate"], "authority": "test",
+            }),
+            encoding="utf-8",
+        )
+        client = TestClient(create_app(self.root))
+
+        response = client.get("/api/events-review")
+
+        self.assertEqual(response.status_code, 200)
+        body = response.json()
+        item = next(i for i in body["items"] if i["id"] == "pending_event")
+        self.assertEqual(item["detail_of_targets"], [{"id": "candidate", "canonical_name": "Candidate"}])
+
+    def test_events_review_excludes_already_accepted_events(self) -> None:
+        (self.root / "events").mkdir(exist_ok=True)
+        (self.root / "events" / "accepted_event.yaml").write_text(
+            yaml.safe_dump({
+                "id": "accepted_event", "canonical_name": "Accepted Event", "year": 210,
+                "eligibility": "accepted", "authority": "test",
+            }),
+            encoding="utf-8",
+        )
+        client = TestClient(create_app(self.root))
+
+        response = client.get("/api/events-review")
+
+        self.assertNotIn("accepted_event", [i["id"] for i in response.json()["items"]])
+
+    def test_decide_event_review_accepts(self) -> None:
+        (self.root / "events").mkdir(exist_ok=True)
+        (self.root / "events" / "pending_event.yaml").write_text(
+            yaml.safe_dump({"id": "pending_event", "canonical_name": "Pending Event", "year": 210, "authority": "test"}),
+            encoding="utf-8",
+        )
+        client = TestClient(create_app(self.root))
+
+        response = client.post("/api/events-review/pending_event", json={"decision": "accepted"})
+
+        self.assertEqual(response.status_code, 200)
+        saved = yaml.safe_load((self.root / "events" / "pending_event.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(saved["eligibility"], "accepted")
+
+    def test_decide_event_review_rejects_keeps_audit_record(self) -> None:
+        (self.root / "events").mkdir(exist_ok=True)
+        (self.root / "events" / "pending_event.yaml").write_text(
+            yaml.safe_dump({"id": "pending_event", "canonical_name": "Pending Event", "year": 210, "authority": "test"}),
+            encoding="utf-8",
+        )
+        client = TestClient(create_app(self.root))
+
+        response = client.post("/api/events-review/pending_event", json={"decision": "excluded"})
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue((self.root / "events" / "pending_event.yaml").exists())
+        saved = yaml.safe_load((self.root / "events" / "pending_event.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(saved["eligibility"], "excluded")
+
+    def test_updates_event_fields(self) -> None:
+        (self.root / "events").mkdir(exist_ok=True)
+        (self.root / "events" / "some_event.yaml").write_text(
+            yaml.safe_dump({"id": "some_event", "canonical_name": "Some Event", "year": 210, "authority": "test"}),
+            encoding="utf-8",
+        )
+        client = TestClient(create_app(self.root))
+
+        response = client.patch("/api/events/some_event/fields", json={"year": 215})
+
+        self.assertEqual(response.status_code, 200)
+        saved = yaml.safe_load((self.root / "events" / "some_event.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(saved["year"], 215)
+
+    def test_deletes_an_event(self) -> None:
+        (self.root / "events").mkdir(exist_ok=True)
+        (self.root / "events" / "some_event.yaml").write_text(
+            yaml.safe_dump({"id": "some_event", "canonical_name": "Some Event", "year": 210, "authority": "test"}),
+            encoding="utf-8",
+        )
+        client = TestClient(create_app(self.root))
+
+        response = client.delete("/api/events/some_event")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse((self.root / "events" / "some_event.yaml").exists())
+
+    def test_delete_unknown_event_returns_404(self) -> None:
+        response = self.client.delete("/api/events/no_such_event")
 
         self.assertEqual(response.status_code, 404)
 

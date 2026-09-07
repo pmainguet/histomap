@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Histomap — review events</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/explore" aria-label="Histomap timeline"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M5 6h7v24H5zM15 11h7v19h-7zM25 3h7v27h-7z"/></svg><span>Histomap</span></a>
+      <nav aria-label="Main navigation"><a href="/explore">Explore</a><a href="/reviews" aria-current="page">Reviews</a><a href="/docs">API</a></nav>
+    </header>
+    <section class="review-toolbar review-toolbar-flush"><div><p class="eyebrow">Events lane</p><h1>Review events</h1><p class="workspace-purpose-inline">A hand-authored event's detail_of/bounds attachment (which entity it's a detail of, which era/chapter/period it starts or ends) is set at creation time -- confirm it's actually correct here before it shows up anywhere on /explore.</p></div><div class="controls"><a class="button-link" href="/reviews">All reviews</a><button type="button" class="action-button" data-build-timeline>Rebuild timeline</button><span data-build-status aria-live="polite"></span></div></section>
+    <p id="events-review-progress" class="review-progress-caption">Loading…</p>
+    <p id="events-review-status" class="decision-status" role="status" aria-live="assertive"></p>
+    <main class="review-main">
+      <section id="events-review-list" class="events-review-list" aria-live="polite">Loading events…</section>
+    </main>
+    <script src="/static/common.js"></script>
+    <script type="module" src="/static/events_review.js"></script>
+    <script type="module" src="/static/review_build.js"></script>
+  </body>
+</html>

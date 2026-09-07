@@ -2,7 +2,7 @@ import unittest
 
 from pydantic import ValidationError
 
-from schema import Period, Polity
+from schema import Event, Period, Polity
 
 
 def period_kwargs(**overrides: object) -> dict:
@@ -13,6 +13,17 @@ def period_kwargs(**overrides: object) -> dict:
         "end": 1500,
         "authority": "test",
         "source_urls": ["https://example.com"],
+    }
+    value.update(overrides)
+    return value
+
+
+def event_kwargs(**overrides: object) -> dict:
+    value = {
+        "id": "test_event",
+        "canonical_name": "Test Event",
+        "year": 1200,
+        "authority": "test",
     }
     value.update(overrides)
     return value
@@ -169,6 +180,56 @@ class PeriodKindRetirementTests(unittest.TestCase):
     def test_deprecated_accepts_the_old_kind_value(self) -> None:
         period = Period(**period_kwargs(deprecated={"kind": "historical"}))
         self.assertEqual(period.deprecated["kind"], "historical")
+
+
+class EventTests(unittest.TestCase):
+    def test_minimal_event_defaults_to_review_eligibility(self) -> None:
+        event = Event(**event_kwargs())
+        self.assertEqual(event.eligibility.value, "review")
+        self.assertEqual(event.detail_of, [])
+        self.assertEqual(event.bounds, [])
+
+    def test_detail_of_and_bounds_are_both_lists(self) -> None:
+        event = Event(**event_kwargs(
+            detail_of=["some_civilization", "some_other_polity"],
+            bounds=[{"target": "some_era", "edge": "end"}, {"target": "next_era", "edge": "start"}],
+        ))
+        self.assertEqual(event.detail_of, ["some_civilization", "some_other_polity"])
+        self.assertEqual(event.bounds[0].target, "some_era")
+        self.assertEqual(event.bounds[0].edge, "end")
+        self.assertEqual(event.bounds[1].edge, "start")
+
+    def test_bounds_rejects_a_duplicate_target_edge_pair(self) -> None:
+        with self.assertRaises(ValidationError):
+            Event(**event_kwargs(bounds=[
+                {"target": "some_era", "edge": "end"},
+                {"target": "some_era", "edge": "end"},
+            ]))
+
+    def test_bounds_allows_the_same_target_with_different_edges(self) -> None:
+        # Not realistic (an era can't both start and end the same event),
+        # but the schema itself doesn't need to forbid it -- build.py's
+        # date-tolerance validation is where a genuinely wrong pairing
+        # gets caught.
+        event = Event(**event_kwargs(bounds=[
+            {"target": "some_era", "edge": "end"},
+            {"target": "some_era", "edge": "start"},
+        ]))
+        self.assertEqual(len(event.bounds), 2)
+
+    def test_id_must_be_snake_case(self) -> None:
+        with self.assertRaises(ValidationError):
+            Event(**event_kwargs(id="Not-Snake-Case"))
+
+    def test_year_out_of_range_is_rejected(self) -> None:
+        with self.assertRaises(ValidationError):
+            Event(**event_kwargs(year=999_999_999))
+
+    def test_authority_is_required(self) -> None:
+        kwargs = event_kwargs()
+        kwargs.pop("authority")
+        with self.assertRaises(ValidationError):
+            Event(**kwargs)
 
 
 if __name__ == "__main__":
