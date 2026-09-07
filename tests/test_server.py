@@ -280,6 +280,77 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(saved["consolidation_status"], "discarded")
         self.assertFalse(any(item["id"] == "candidate" for item in self.client.get("/api/consolidation-reviews").json()["items"]))
 
+    def test_creates_polity_with_minimum_fields(self) -> None:
+        # ROADMAP.md item 0: minimal hand-authoring path, no Wikidata
+        # ingestion or period conversion involved.
+        response = self.client.post(
+            "/api/polities",
+            json={"canonical_name": "New Test Realm", "start": 1200, "end": 1300, "present_countries": ["FR"]},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        body = response.json()
+        self.assertEqual(body["polity_id"], "new_test_realm")
+        saved = yaml.safe_load((self.root / "polities" / "new_test_realm.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(saved["canonical_name"], "New Test Realm")
+        self.assertEqual(saved["geography"]["present_countries"], ["FR"])
+        self.assertEqual(saved["geography"]["continents"], ["europe"])
+        self.assertEqual(saved["eligibility"], "accepted")
+        # Immediately visible to other endpoints without a server restart --
+        # metadata is refreshed in-process, same as every other write path.
+        self.assertEqual(self.client.get("/api/polities/new_test_realm").status_code, 200)
+
+    def test_create_polity_id_collision_gets_a_numeric_suffix(self) -> None:
+        first = self.client.post(
+            "/api/polities",
+            json={"canonical_name": "Duplicate Name", "start": 1000, "present_countries": ["FR"]},
+        ).json()
+        second = self.client.post(
+            "/api/polities",
+            json={"canonical_name": "Duplicate Name", "start": 1500, "present_countries": ["FR"]},
+        ).json()
+
+        self.assertEqual(first["polity_id"], "duplicate_name")
+        self.assertEqual(second["polity_id"], "duplicate_name_2")
+
+    def test_create_polity_requires_present_countries(self) -> None:
+        response = self.client.post(
+            "/api/polities", json={"canonical_name": "No Geography Realm", "start": 1000}
+        )
+
+        self.assertEqual(response.status_code, 422)
+
+    def test_create_polity_allows_open_ended_dates(self) -> None:
+        response = self.client.post(
+            "/api/polities",
+            json={"canonical_name": "Still Extant Realm", "start": 1950, "present_countries": ["FR"]},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        saved = yaml.safe_load((self.root / "polities" / "still_extant_realm.yaml").read_text(encoding="utf-8"))
+        self.assertIsNone(saved["end"])
+
+    def test_creates_period_with_minimum_fields(self) -> None:
+        response = self.client.post(
+            "/api/periods",
+            json={"canonical_name": "New Test Era", "start": -500, "end": 500, "present_countries": ["FR"]},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        body = response.json()
+        self.assertEqual(body["period_id"], "new_test_era")
+        saved = yaml.safe_load((self.root / "periods" / "new_test_era.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(saved["authority"], "Histomap editorial: manually created")
+        self.assertEqual(saved["geography"]["present_countries"], ["FR"])
+        self.assertEqual(saved["geography"]["continents"], ["europe"])
+
+    def test_create_period_requires_a_finite_end(self) -> None:
+        response = self.client.post(
+            "/api/periods", json={"canonical_name": "Open Ended Era", "start": -500, "present_countries": ["FR"]}
+        )
+
+        self.assertEqual(response.status_code, 422)
+
     def test_marks_entity_as_detail_of_target_without_creating_a_period(self) -> None:
         response = self.client.post(
             "/api/consolidation-reviews/candidate",

@@ -123,6 +123,16 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .detail-edit-row select { flex: 1; min-width: 0; }
 .detail-raw-edit, .detail-geography-edit { margin-top: .7rem; padding-top: .6rem; border-top: 1px solid var(--rule); }
 .detail-raw-edit summary, .detail-geography-edit summary { font-weight: 700; }
+.create-entity-dialog { width: min(32rem, 92vw); padding: 1.1rem 1.3rem; border: 1px solid var(--rule); background: var(--paper); font: .85rem system-ui, sans-serif; }
+.create-entity-dialog::backdrop { background: rgba(39, 37, 31, .45); }
+.create-entity-dialog h2 { margin: 0 0 .6rem; font-family: Georgia, "Times New Roman", serif; }
+.create-entity-dialog fieldset { margin: .6rem 0; padding: .6rem; border: 1px solid var(--rule); }
+.create-entity-dialog label { display: flex; flex-direction: column; gap: .2rem; font-weight: 700; }
+.create-entity-name { flex: 1; }
+.create-entity-open-ended { flex-direction: row; align-items: center; font-weight: 400; }
+.create-entity-actions { justify-content: flex-end; }
+.create-entity-status { min-height: 1.2em; color: var(--ink-faint); }
+.create-entity-status.is-error { color: #a4392b; }
 .detail-raw-textarea { box-sizing: border-box; width: 100%; margin-top: .5rem; padding: .5rem; font: .74rem/1.35 ui-monospace, "SF Mono", Consolas, monospace; background: white; border: 1px solid var(--rule); resize: vertical; }
 .detail-edit-status { margin: .5rem 0 0; color: var(--ink-faint); }
 .detail-edit-status.is-error { color: #8c2d2d; }

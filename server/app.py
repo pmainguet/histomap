@@ -7,6 +7,7 @@ import json
 import math
 import re
 import sys
+import unicodedata
 from pathlib import Path
 from typing import Literal
 
@@ -15,11 +16,12 @@ import yaml
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel, Field, ValidationError
 from rapidfuzz import fuzz
 
 from pipeline.review_cli import polity_metadata
 from pipeline.backfill_entity_types import normalized_relationship_kind, relationship_kind
+from pipeline.historical_regions import historical_region_for_country
 from schema import Geography, Period, Polity
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -75,6 +77,61 @@ class ConsolidationDecision(BaseModel):
         "candidate_detail_of", "period", "discarded",
     ]
     target_id: str | None = None
+
+
+class PolityCreate(BaseModel):
+    canonical_name: str = Field(min_length=1)
+    entity_type: Literal[
+        "polity", "civilization", "subdivision", "micronation", "culture", "people",
+        "tribe", "archaeological_horizon",
+    ] = "polity"
+    start: int
+    end: int | None = None
+    present_countries: list[str] = Field(min_length=1)
+
+
+class PeriodCreate(BaseModel):
+    canonical_name: str = Field(min_length=1)
+    start: int
+    end: int
+    present_countries: list[str] = Field(min_length=1)
+
+
+def slugify_entity_id(name: str, taken_ids: set[str]) -> str:
+    """Turn a canonical_name into a unique snake_case id matching
+    schema.py's ID_PATTERN (snake_case, starting with a letter). Same
+    normalization as pipeline/wd_to_yaml.py's slugify(), duplicated here
+    rather than imported -- that module pulls in pandas for its Parquet
+    conversion, too heavy to import here for a few lines of string logic.
+    Collisions (ids are a single namespace shared by polities and periods,
+    see validate_period_detail_of) get a numeric suffix."""
+    normalized = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
+    base = re.sub(r"[^a-z0-9]+", "_", normalized.lower()).strip("_") or "entity"
+    if not base[0].isalpha():
+        base = f"entity_{base}"
+    candidate = base
+    suffix = 2
+    while candidate in taken_ids:
+        candidate = f"{base}_{suffix}"
+        suffix += 1
+    return candidate
+
+
+def derive_geography_for_countries(
+    present_countries: list[str], iso2_to_continents: dict[str, list[str]]
+) -> dict:
+    """Builds the same geography a curator would normally fill in by hand
+    (or that enrich_geography.py/derive_historical_regions.py backfill
+    later) at creation time, so a newly created record is placed
+    sensibly in /explore's tree right away rather than showing
+    "Unclassified" until the next full pipeline run."""
+    countries = sorted(set(present_countries))
+    continents = sorted({c for code in countries for c in iso2_to_continents.get(code, [])})
+    regions = sorted({r for code in countries if (r := historical_region_for_country(code))})
+    geography: dict = {"present_countries": countries, "continents": continents}
+    if regions:
+        geography["historical_regions"] = regions
+    return geography
 
 
 def clean_json(value: object) -> object:
@@ -177,6 +234,15 @@ def create_app(root: Path = ROOT) -> FastAPI:
         for info in country_metadata.values()
         if info.get("iso2") and len(info["iso2"]) == 2
     }
+    # iso2 -> continents, for derive_geography_for_countries() at creation
+    # time -- same reverse index enrich_geography.py's
+    # backfill_continents_from_present_countries() builds, kept local here
+    # since that module's own loader lives behind a heavier import chain.
+    iso2_to_continents: dict[str, list[str]] = {}
+    for info in country_metadata.values():
+        iso2 = info.get("iso2")
+        if iso2 and info.get("continents"):
+            iso2_to_continents.setdefault(iso2, sorted(set(info["continents"])))
     relationship_rows = (
         json.loads(relationship_cache_path.read_text(encoding="utf-8"))
         if relationship_cache_path.exists()
@@ -1565,6 +1631,61 @@ def create_app(root: Path = ROOT) -> FastAPI:
             "decision": request.decision,
             "target_id": document.get("consolidated_into") or document.get("detail_of"),
         }
+
+    @application.post("/api/polities")
+    async def create_polity(request: PolityCreate) -> dict:
+        """ROADMAP.md item 0: minimal hand-authoring path for a polity that
+        doesn't already exist via Wikidata ingestion or a period conversion.
+        Requires present_countries (unlike every other geography field on
+        this record) so the new entity is never placed as "Unclassified"
+        -- geography drives /explore's grouping."""
+        taken_ids = set(metadata.keys()) | {path.stem for path in (root / "periods").glob("*.yaml")}
+        polity_id = slugify_entity_id(request.canonical_name, taken_ids)
+        document = {
+            "id": polity_id,
+            "canonical_name": request.canonical_name,
+            "entity_type": request.entity_type,
+            "entity_type_confidence": "high",
+            "start": request.start,
+            "end": request.end,
+            "start_confidence": "low",
+            "end_confidence": "low",
+            "eligibility": "accepted",
+            "sources": ["histomap_editorial"],
+            "geography": derive_geography_for_countries(request.present_countries, iso2_to_continents),
+        }
+        try:
+            validated = Polity.model_validate(document).model_dump(mode="json")
+        except ValidationError as exc:
+            raise HTTPException(422, str(exc)) from exc
+        (polities_dir / f"{polity_id}.yaml").write_text(
+            yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
+        )
+        metadata[polity_id] = document
+        return {"status": "created", "polity_id": polity_id, "document": clean_json(validated)}
+
+    @application.post("/api/periods")
+    async def create_period(request: PeriodCreate) -> dict:
+        """Period counterpart to create_polity above. Period.end is
+        required by schema (no open-ended periods), unlike a polity's."""
+        taken_ids = set(metadata.keys()) | {path.stem for path in (root / "periods").glob("*.yaml")}
+        period_id = slugify_entity_id(request.canonical_name, taken_ids)
+        document = {
+            "id": period_id,
+            "canonical_name": request.canonical_name,
+            "start": request.start,
+            "end": request.end,
+            "authority": "Histomap editorial: manually created",
+            "geography": derive_geography_for_countries(request.present_countries, iso2_to_continents),
+        }
+        try:
+            validated = Period.model_validate(document).model_dump(mode="json")
+        except ValidationError as exc:
+            raise HTTPException(422, str(exc)) from exc
+        (root / "periods" / f"{period_id}.yaml").write_text(
+            yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
+        )
+        return {"status": "created", "period_id": period_id, "document": clean_json(validated)}
 
     @application.get("/api/polities/search")
     async def search_all_polities(

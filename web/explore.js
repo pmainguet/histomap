@@ -1,3 +1,117 @@
+// ROADMAP.md item 0: minimal hand-authoring path for a brand-new polity or
+// period, alongside the existing Wikidata-ingestion and period-conversion
+// paths. Lives here (the page-level controller) rather than
+// explore_details.js -- that file is entity-detail-panel logic, this is a
+// page-level "create" action with no existing record to attach to yet.
+// Reuses the same postJson/escapeHtml/REBUILD_NOTE helpers and
+// .country-checklist/.country-filter CSS classes as the geography editor
+// (explore_details.js) so the two stay visually and behaviorally
+// consistent.
+function createEntityDialogHtml(geographyOptions) {
+  const countries = [...(geographyOptions?.countries || [])].sort((a, b) => a.label.localeCompare(b.label));
+  return `<dialog class="create-entity-dialog">
+    <h2>New entity</h2>
+    <div class="detail-edit-row">
+      <label>Type
+        <select name="create-kind">
+          <option value="polity">Polity</option>
+          <option value="period">Period</option>
+        </select>
+      </label>
+    </div>
+    <div class="detail-edit-row"><label class="create-entity-name">Name <input type="text" name="create-name" required></label></div>
+    <div class="detail-edit-row">
+      <label>Start year <input type="number" name="create-start" required></label>
+      <label>End year <input type="number" name="create-end"></label>
+      <label class="create-entity-open-ended"><input type="checkbox" name="create-open-ended"> Still ongoing (polity only)</label>
+    </div>
+    <small>Negative years are BCE -- e.g. -500 for 500 BCE.</small>
+    <fieldset><legend>Present countries</legend>
+      <input class="country-filter" type="search" placeholder="Filter countries…" aria-label="Filter country list">
+      <div class="country-checklist">${countries.map((country) => `<label data-country-search="${escapeHtml(`${country.label} ${country.code}`.toLowerCase())}"><input type="checkbox" name="create-country" value="${escapeHtml(country.code)}"> ${escapeHtml(country.label)} <small>${escapeHtml(country.code)}</small></label>`).join("")}</div>
+      <small>At least one is required -- it drives placement in the timeline.</small>
+    </fieldset>
+    <p class="create-entity-status" role="status"></p>
+    <div class="detail-edit-row create-entity-actions">
+      <button type="button" class="create-entity-cancel">Cancel</button>
+      <button type="button" class="create-entity-submit">Create</button>
+    </div>
+  </dialog>`;
+}
+
+function wireCreateEntityDialog(triggerButton, geographyOptions, { onCreated }) {
+  document.body.insertAdjacentHTML("beforeend", createEntityDialogHtml(geographyOptions));
+  const dialog = document.querySelector(".create-entity-dialog");
+  const status = dialog.querySelector(".create-entity-status");
+  const kindSelect = dialog.querySelector('[name="create-kind"]');
+  const endInput = dialog.querySelector('[name="create-end"]');
+  const openEndedCheckbox = dialog.querySelector('[name="create-open-ended"]');
+  const setStatus = (message, isError) => {
+    status.textContent = message;
+    status.classList.toggle("is-error", Boolean(isError));
+  };
+  // A period requires a finite end (schema.py has no open-ended period) --
+  // the "still ongoing" shortcut only makes sense for a polity.
+  const syncEndControls = () => {
+    const isPeriod = kindSelect.value === "period";
+    openEndedCheckbox.closest(".create-entity-open-ended").hidden = isPeriod;
+    if (isPeriod) openEndedCheckbox.checked = false;
+    endInput.disabled = openEndedCheckbox.checked;
+    if (openEndedCheckbox.checked) endInput.value = "";
+  };
+  kindSelect.addEventListener("change", syncEndControls);
+  openEndedCheckbox.addEventListener("change", syncEndControls);
+  dialog.querySelector(".country-filter").addEventListener("input", (event) => {
+    const query = event.target.value.trim().toLowerCase();
+    dialog.querySelectorAll(".country-checklist label").forEach((label) => {
+      label.hidden = query.length > 0 && !label.dataset.countrySearch.includes(query);
+    });
+  });
+  triggerButton.addEventListener("click", () => {
+    dialog.querySelector('[name="create-name"]').value = "";
+    dialog.querySelector('[name="create-start"]').value = "";
+    endInput.value = "";
+    openEndedCheckbox.checked = false;
+    kindSelect.value = "polity";
+    dialog.querySelectorAll('[name="create-country"]:checked').forEach((input) => { input.checked = false; });
+    syncEndControls();
+    setStatus("", false);
+    dialog.showModal();
+  });
+  dialog.querySelector(".create-entity-cancel").addEventListener("click", () => dialog.close());
+  dialog.querySelector(".create-entity-submit").addEventListener("click", async () => {
+    const kind = kindSelect.value;
+    const canonicalName = dialog.querySelector('[name="create-name"]').value.trim();
+    const start = dialog.querySelector('[name="create-start"]').value;
+    const end = openEndedCheckbox.checked ? null : endInput.value;
+    const presentCountries = [...dialog.querySelectorAll('[name="create-country"]:checked')].map((input) => input.value);
+    if (!canonicalName || start === "" || (kind === "period" && (end === "" || end === null))) {
+      setStatus("Name, start year, and (for a period) end year are required.", true);
+      return;
+    }
+    if (!presentCountries.length) {
+      setStatus("At least one present country is required.", true);
+      return;
+    }
+    const body = {
+      canonical_name: canonicalName,
+      start: Number(start),
+      end: end === "" || end === null ? null : Number(end),
+      present_countries: presentCountries,
+    };
+    try {
+      const result = kind === "polity"
+        ? await postJson("/api/polities", "POST", body)
+        : await postJson("/api/periods", "POST", body);
+      const record = result.document;
+      onCreated(kind, record);
+      setStatus(`Created "${record.canonical_name}" (${record.id}). ${REBUILD_NOTE}`, false);
+    } catch (error) {
+      setStatus(error.message, true);
+    }
+  });
+}
+
 async function main() {
   const container = document.querySelector("#hierarchy-chart");
   const showPolitiesInput = document.querySelector("#show-polities");
@@ -150,6 +264,13 @@ async function main() {
         onSelect(kind, entityId);
       }
     }
+    wireCreateEntityDialog(document.querySelector("[data-create-entity]"), geographyOptions, {
+      onCreated: (kind, record) => {
+        if (kind === "polity") detailCtx.politiesById.set(record.id, record);
+        else detailCtx.periodsById.set(record.id, record);
+        revealBuildButton();
+      },
+    });
     showPolitiesInput.addEventListener("change", draw);
     groupBySelect.addEventListener("change", () => {
       updateGeoFilterOptions();
