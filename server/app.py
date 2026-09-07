@@ -830,13 +830,20 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     )
                     or reviewed_part_of_candidate or candidate_part_of_reviewed
                     or subdivision_part_of_candidate or subdivision_part_of_reviewed
-                    # A documented Wikidata succession claim is itself
-                    # sufficient to warrant a look, even with zero name/
-                    # token overlap or geography match -- otherwise adding
-                    # it to `possible` above achieves nothing, since this
-                    # gate would still reject the pair (found live, 1
-                    # September 2026).
-                    or documented_successor
+                    # A documented Wikidata succession claim only warrants a
+                    # look when dates AND geography actually overlap/match --
+                    # a clean sequential handover (one ends where the next
+                    # begins, no overlap) is always "independent" by
+                    # explicit policy, so reviewing it achieves nothing; it's
+                    # only the same-dates/same-geography case that's ever
+                    # actually ambiguous. Name/token score is still bypassed
+                    # when dates and geography DO match, since the
+                    # succession claim alone is strong enough evidence on
+                    # its own (found live, 1 September 2026). Found live, 7
+                    # September 2026 (Yemen Republic/Yemen: a clean 1990
+                    # handover, no overlap -- always independent, reviewing
+                    # it is pure noise).
+                    or (documented_successor and date_overlap and geography_compatible)
                     or (
                         date_overlap and geography_compatible
                         and ((shared_canonical_tokens and name_score >= 60) or name_score >= 88)

@@ -553,12 +553,18 @@ class ConsolidationSuggestionTests(unittest.TestCase):
             "detail_of",
         )
 
-    def test_documented_relationship_alone_reaches_the_candidate_pool(self) -> None:
-        # A documented Wikidata succession relationship should surface a
-        # candidate even with ZERO name/token overlap between the two
-        # records -- without this, an entity whose real successor has a
-        # completely different name (USAMGIK -> "First Republic of South
-        # Korea") never gets a correct candidate to choose from at all.
+    def test_documented_successor_with_no_date_overlap_is_not_a_candidate(self) -> None:
+        # A documented Wikidata succession relationship used to surface a
+        # candidate even with zero date overlap and zero name/token overlap
+        # (USAMGIK 1945-1948 -> First Republic of South Korea 1948-1960, a
+        # clean adjacent handover) -- explicit policy, live, 7 September
+        # 2026: a clean sequential handover (dates don't overlap) is always
+        # marked independent, so surfacing it for review is pure noise. Only
+        # a documented successor claim WITH overlapping dates and geography
+        # is ever actually ambiguous enough to need a look (see
+        # test_regime_of_naming_wins_over_documented_successor and
+        # test_documented_part_of_wins_over_documented_successor above,
+        # both nested/overlapping date pairs, still correctly surfaced).
         polities = [
             {**BASE, "id": "first_republic_of_south_korea", "canonical_name": "First Republic of South Korea",
              "external_ids": {"wikidata": "Q491559"}, "start": 1948, "end": 1960,
@@ -571,10 +577,28 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         client = build_app(self.root, polities, relationships)
         queue = client.get("/api/consolidation-reviews", params={"limit": 100}).json()["items"]
         row = next((item for item in queue if item["id"] == "usamgik"), None)
-        self.assertIsNotNone(row, "usamgik did not reach the consolidation queue")
-        self.assertIn(
-            "first_republic_of_south_korea", [c["id"] for c in row["candidates"]]
-        )
+        if row is not None:
+            self.assertNotIn("first_republic_of_south_korea", [c["id"] for c in row["candidates"]])
+
+    def test_yemen_republic_clean_1990_handover_is_not_a_candidate(self) -> None:
+        # Found live, 7 September 2026: Yemen Arab Republic (1962-1990) and
+        # unified Yemen (1990-present) -- a documented P1366 successor
+        # relationship (the real 1990 merger), but a clean adjacent handover
+        # (no date overlap). Explicit policy: always independent, no review
+        # needed.
+        polities = [
+            {**BASE, "id": "yemen", "canonical_name": "Yemen", "external_ids": {"wikidata": "Q805"},
+             "start": 1990, "end": None, "prominence_score": 40, "geography": {"present_countries": ["YE"]}},
+            {**BASE, "id": "yemen_republic", "canonical_name": "Yemen Republic",
+             "external_ids": {"wikidata": "Q1234567"}, "start": 1962, "end": 1990,
+             "prominence_score": 20, "geography": {"present_countries": ["YE"]}},
+        ]
+        relationships = [{"source": "Q1234567", "property": "P1366", "target": "Q805"}]
+        client = build_app(self.root, polities, relationships)
+        queue = client.get("/api/consolidation-reviews", params={"limit": 100}).json()["items"]
+        row = next((item for item in queue if item["id"] == "yemen_republic"), None)
+        if row is not None:
+            self.assertNotIn("yemen", [c["id"] for c in row["candidates"]])
 
     def not_a_candidate(self, reviewed_id: str, other_id: str, polities: list[dict]) -> None:
         """Asserts `other_id` never shows up as a candidate for
