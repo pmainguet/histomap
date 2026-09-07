@@ -245,6 +245,25 @@ class UnifiedServerTests(unittest.TestCase):
         saved = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
         self.assertEqual(saved["consolidation_status"], "independent")
 
+    def test_independent_decision_on_a_period_role_candidate_writes_no_timeline_role(self) -> None:
+        # ROADMAP.md item 0, found 5 September 2026: decide_consolidation_
+        # review used to call save_timeline_role(id, "entity", ...) here
+        # whenever the entity was still in period_role_queue (true for
+        # "candidate", seeded in setUp()) -- a redundant no-op write
+        # (timeline_role was already "entity") that only ever fired before
+        # any period-role decision had been made, since the *first*
+        # promotion permanently drops the entity from that queue. Removed;
+        # this locks in that "independent" only ever touches
+        # consolidation_status, never timeline_role/manual_overrides.
+        response = self.client.post(
+            "/api/consolidation-reviews/candidate", json={"decision": "independent"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        saved = yaml.safe_load((self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8"))
+        self.assertNotIn("timeline_role", saved)
+        self.assertNotIn("timeline_role", saved.get("manual_overrides", []))
+
     def test_discards_out_of_scope_entity_without_deleting_audit_record(self) -> None:
         response = self.client.post(
             "/api/consolidation-reviews/candidate", json={"decision": "discarded"}

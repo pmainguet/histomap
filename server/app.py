@@ -1501,8 +1501,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
             if not candidate or not reviewed or candidate_id == entity_id:
                 raise HTTPException(422, "target_id must identify another active entity")
             save_consolidation(candidate_id, "detail_of", entity_id)
-            if period_record is not None:
-                save_timeline_role(entity_id, "entity", period_record.get("period_kinds", []))
             save_consolidation(entity_id, "independent", None)
             return {
                 "status": "saved", "entity_id": entity_id,
@@ -1518,8 +1516,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 "status": "saved", "entity_id": entity_id, "decision": request.decision,
                 "target_id": None, "period_id": result["period_id"],
             }
-        if request.decision == "independent" and period_record is not None:
-            save_timeline_role(entity_id, "entity", period_record.get("period_kinds", []))
         document = save_consolidation(entity_id, request.decision, request.target_id)
         return {
             "status": "saved", "entity_id": entity_id,
