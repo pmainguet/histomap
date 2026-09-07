@@ -32,3 +32,11 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    source. Needs its own design pass: a new entity/schema for events, how an era/chapter/
    period would reference "the event that ends me," and how `/explore` would display a
    thin events lane against the existing chapter/era/period rows.
+6. Allow simple edit of the parent era for periods in /explore (dropdown)
+7. When side panel open, pressing ESC key should close it.
+8. put new entity and Build time line on the same line than "Explore human history" title, right align
+9. Add with the buttons a search field to find entities and then on select, focus on the entity and open side panel
+10. Polity dropdown should have options Show All, Show Main (the biggest one in terms of score so that only the most important ones), Hide
+11. Check the missing elements appearing https://en.wikipedia.org/wiki/Human_history (like Axial Age), extract wikidata, wikipedia elements and adjust the score if needed (if above the threshold that's enough)
+12. Display more pictures and information from wikipedia on the side panel (even read there instead of wikipedia if possible)
+13. Add a start / end year selector to zoom in/out
