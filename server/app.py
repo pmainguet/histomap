@@ -1775,10 +1775,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
         entity["manual_overrides"] = sorted(
             set(entity.get("manual_overrides", [])) | {"consolidation", "entity_type", "timeline_role"}
         )
-        if request.entity_type == "subdivision":
-            entity["subdivision_parent_status"] = "pending"
-        else:
-            entity.pop("subdivision_parent_status", None)
         entity_path.write_text(
             yaml.safe_dump(entity, sort_keys=False, allow_unicode=True), encoding="utf-8"
         )

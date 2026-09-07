@@ -432,6 +432,24 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertFalse(period_path.exists())
         self.assertEqual(yaml.safe_load((self.root / "period_links.yaml").read_text(encoding="utf-8")), [])
 
+    def test_promote_period_to_entity_as_subdivision_writes_no_dead_field(self) -> None:
+        # ROADMAP.md item 0, found 5 September 2026: this endpoint used to
+        # write subdivision_parent_status, a field the 4 September 2026
+        # subdivision/parent merge removed from the schema entirely -- the
+        # write was silently dead under extra="ignore". Removed; this locks
+        # in its absence regardless of entity_type.
+        self.client.post("/api/consolidation-reviews/candidate", json={"decision": "period"})
+
+        response = self.client.post(
+            "/api/periods/candidate_period/promote-to-entity", json={"entity_type": "subdivision"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        saved = yaml.safe_load(
+            (self.root / "polities" / "candidate.yaml").read_text(encoding="utf-8")
+        )
+        self.assertNotIn("subdivision_parent_status", saved)
+
     def test_convert_to_period_creates_linked_period_when_keeping_entity(self) -> None:
         # /period-review (and its dedicated /api/period-role-reviews queue
         # endpoints) was retired -- this timeline_role: "both" capability
