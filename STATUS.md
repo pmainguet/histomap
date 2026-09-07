@@ -1827,6 +1827,43 @@ revert branches (worth a small future UX pass on whether `/consolidation-review`
 "independent" button should support undoing a prior decision too). ROADMAP item 0 (this task)
 removed; item 1 (polity -> period reclassification queue) stays next.
 
+### ROADMAP item 0 (dead `subdivision_parent_status` write) fixed, plus two live bug reports — 7 September 2026
+
+**ROADMAP item 0: dead `subdivision_parent_status` write in `promote_period_to_entity` fixed.**
+Bounded fix -- removed the `if request.entity_type == "subdivision": entity["subdivision_parent_status"]
+= "pending" else: entity.pop(...)` block entirely, matching how `save_entity_type()`'s equivalent
+branch was already removed in the 4 September 2026 merge. New regression test locks in the
+field's absence for `entity_type: subdivision` specifically. ROADMAP item 0 removed; "0 bis" (the
+`decide_consolidation_review` dead revert branches) promoted to item 0.
+
+**Consolidation matching: stop surfacing exact-name matches with zero date overlap.** Direct
+instruction, live: "when dates are completely different (one is not within the other), we should
+not have to review them, they are independent entities." Narrowly targets the `exact_name_match`
+inclusion path -- `no_overlap_alias_reuse` (already a named concept in this code: exact name
+match, distinct Wikidata items, zero date overlap -- "the same name reused for a different era")
+now excludes the pair from the queue entirely rather than surfacing it with a demoted-confidence
+"independent" suggestion still requiring a click. `same_wikidata`/`documented_successor`/`part_of`
+matches are untouched (their own clauses stay independent of date overlap, since those are
+legitimately expected to have non-overlapping dates -- a real successor state starts after its
+predecessor ends, by definition). Bourbon Restoration in France / Kingdom of France, the case that
+originally motivated `no_overlap_alias_reuse`'s own comment, is the regression test.
+
+**Caching bug found live: converting a polity to a period + rebuilding didn't visibly change
+`/explore`.** Reported live: "converting to period + rebuild timeline doesn't seem to work. I
+tried to update Initial Jomon to period, but it stills shows as polity." Investigation confirmed
+the conversion and rebuild both worked correctly -- `data.json`/`explore_tree.json` on disk were
+already correct, Initial Jomon correctly absent. The actual bug: `/data.json`, `/transitions.json`,
+`/periods.json`, `/period_links.json`, `/explore_tree.json` are served via plain `FileResponse`
+(ETag/Last-Modified only, no explicit `Cache-Control`), so browsers apply RFC 7234 heuristic
+freshness and can silently keep serving a pre-rebuild copy -- the *exact* same class of bug
+already root-caused and fixed for `/static/*` earlier this session (see `no_cache_static`'s own
+history), just never extended to these build-artifact routes, registered separately via
+`register_build_artifact`. Both now share one `BUILD_ARTIFACT_FILES` constant so they can't drift
+apart again. Verified live: `Cache-Control: no-cache` now sent for `/data.json`; Initial Jomon
+correctly absent from the live-served data.
+
+Full suite: 358 tests, 0 failures throughout.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which
