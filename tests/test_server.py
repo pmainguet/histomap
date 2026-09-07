@@ -129,6 +129,16 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(self.client.get("/periods.json").json(), [])
         self.assertEqual(self.client.get("/period_links.json").json(), [])
 
+    def test_build_artifacts_force_browser_revalidation(self) -> None:
+        # Found live, 7 September 2026: converting a polity to a period and
+        # rebuilding correctly updated data.json/explore_tree.json on disk,
+        # but /explore kept showing the stale pre-rebuild version -- these
+        # routes carry only ETag/Last-Modified by default (FileResponse),
+        # so browsers apply RFC 7234 heuristic freshness. Same class of bug
+        # already fixed for /static/*, just never extended to these.
+        for path in ("/data.json", "/transitions.json", "/periods.json", "/period_links.json"):
+            self.assertEqual(self.client.get(path).headers.get("cache-control"), "no-cache")
+
     def test_review_dashboard_lists_pipeline_counts(self) -> None:
         response = self.client.get("/api/review-dashboard").json()
         payload = response["pipelines"]

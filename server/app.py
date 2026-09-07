@@ -1406,21 +1406,32 @@ def create_app(root: Path = ROOT) -> FastAPI:
         metadata[polity_id] = document
         return {"document": document, "period_id": period_id}
 
+    BUILD_ARTIFACT_FILES = (
+        "data.json", "transitions.json", "periods.json", "period_links.json", "explore_tree.json",
+    )
+
     @application.middleware("http")
     async def no_cache_static(request, call_next):
         """Force browsers to revalidate (not silently reuse a stale copy of)
-        every /static/* file on each load. Without this, the default
-        StaticFiles response carries only ETag/Last-Modified -- no explicit
-        Cache-Control -- so browsers apply RFC 7234 heuristic freshness and
-        can serve an old cached JS/CSS file for a while after a deploy with
-        no visible sign anything is stale. Bit this session's own live
-        testing repeatedly (explore.js, consolidation_review.js) before
-        being root-caused here rather than worked around with an ignore-
-        cache reload each time. `no-cache` still allows a cheap 304 on an
+        every /static/* file, and every build artifact at the repo root
+        (data.json, explore_tree.json, ...), on each load. Without this, the
+        default FileResponse/StaticFiles response carries only ETag/
+        Last-Modified -- no explicit Cache-Control -- so browsers apply RFC
+        7234 heuristic freshness and can serve an old cached copy for a
+        while after a deploy or a rebuild, with no visible sign anything is
+        stale. Bit this session's own live testing repeatedly (explore.js,
+        consolidation_review.js) before being root-caused here for
+        /static/* -- then bit it again, 7 September 2026, for the build
+        artifacts specifically: converting a polity to a period and
+        rebuilding correctly updated data.json/explore_tree.json on disk,
+        but /explore kept showing the stale pre-rebuild version until a hard
+        refresh, since these routes (registered separately, see
+        register_build_artifact below) weren't covered by the original
+        /static/*-only fix. `no-cache` still allows a cheap 304 on an
         unchanged file -- it forces revalidation, not a full re-download.
         """
         response = await call_next(request)
-        if request.url.path.startswith("/static/"):
+        if request.url.path.startswith("/static/") or request.url.path.lstrip("/") in BUILD_ARTIFACT_FILES:
             response.headers["Cache-Control"] = "no-cache"
         return response
 
@@ -1452,13 +1463,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
 
         application.add_api_route(f"/{filename}", artifact, include_in_schema=False)
 
-    for artifact_file in (
-        "data.json",
-        "transitions.json",
-        "periods.json",
-        "period_links.json",
-        "explore_tree.json",
-    ):
+    for artifact_file in BUILD_ARTIFACT_FILES:
         register_build_artifact(artifact_file)
 
     @application.get("/api/review-dashboard")
