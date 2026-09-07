@@ -53,6 +53,8 @@ prominence_components:
   total: 9.79
 government_form: taifa
 manual_overrides:
+- consolidation
 - geography
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent

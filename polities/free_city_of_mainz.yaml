@@ -56,3 +56,6 @@ prominence_components:
 government_form: free imperial city
 deprecated:
   visibility_tier: detailed
+detail_of: electorate_of_mainz
+manual_overrides:
+- consolidation

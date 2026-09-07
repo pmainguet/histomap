@@ -2,6 +2,7 @@ id: free_city_of_turckheim
 canonical_name: Free City of Turckheim
 names:
   fr: ville impériale de Turckheim
+  aliases_en: free imperial city of Turckheim
 external_ids:
   wikidata: Q97941965
 parent: null
@@ -63,3 +64,5 @@ prominence_components:
 government_form: free imperial city
 deprecated:
   visibility_tier: detailed
+manual_overrides:
+- consolidation

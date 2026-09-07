@@ -57,3 +57,6 @@ prominence_components:
 government_form: vassal state
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent
+manual_overrides:
+- consolidation

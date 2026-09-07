@@ -49,7 +49,9 @@ prominence_components:
   aggregate_penalty: 0
   total: 26.68
 manual_overrides:
+- consolidation
 - entity_type
 government_form: null
 deprecated:
   visibility_tier: detailed
+detail_of: united_states

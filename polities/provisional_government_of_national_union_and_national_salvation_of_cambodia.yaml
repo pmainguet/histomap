@@ -51,7 +51,9 @@ prominence_components:
   aggregate_penalty: 0
   total: 12.94
 manual_overrides:
+- consolidation
 - entity_type
 government_form: null
 deprecated:
   visibility_tier: detailed
+detail_of: cambodia

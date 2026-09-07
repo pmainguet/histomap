@@ -55,3 +55,6 @@ prominence_components:
 government_form: taifa
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent
+manual_overrides:
+- consolidation

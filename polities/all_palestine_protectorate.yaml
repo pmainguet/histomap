@@ -45,6 +45,8 @@ prominence_components:
   total: 14.41
 government_form: null
 manual_overrides:
+- consolidation
 - end
 deprecated:
   visibility_tier: detailed
+detail_of: all_palestine_government
