@@ -222,10 +222,14 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         ]
         self.assertEqual(self.suggestion_for("francoist_spain", "spain", polities), "detail_of")
 
-    def test_appenzell_cantons_likely_siblings_suggest_independent(self) -> None:
+    def test_appenzell_cantons_likely_siblings_not_a_candidate(self) -> None:
         # Split from one original Appenzell canton in 1513 -- identical
         # date ranges, different names, distinct Wikidata items: siblings,
-        # not one a phase of the other.
+        # not one a phase of the other. Used to surface with a suggested
+        # "independent" decision still requiring a click; direct policy,
+        # live, 7 September 2026: an entity whose every candidate suggests
+        # "independent" is now excluded from the queue entirely -- the
+        # answer is already known, reviewing it achieves nothing.
         polities = [
             {**BASE, "id": "canton_of_appenzell_innerrhoden",
              "canonical_name": "Canton of Appenzell Innerrhoden",
@@ -236,12 +240,41 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "external_ids": {"wikidata": "Q12079"}, "start": 1513, "end": None,
              "prominence_score": 20, "geography": {"present_countries": ["CH"]}},
         ]
-        self.assertEqual(
-            self.suggestion_for(
-                "canton_of_appenzell_ausserrhoden", "canton_of_appenzell_innerrhoden", polities
-            ),
-            "independent",
+        self.not_a_candidate(
+            "canton_of_appenzell_ausserrhoden", "canton_of_appenzell_innerrhoden", polities
         )
+
+    def test_entity_with_one_non_independent_candidate_stays_in_queue(self) -> None:
+        # Direct test of the new policy's "at least one" side, not just its
+        # "all independent" side (covered above): a reviewed entity with TWO
+        # candidates -- one genuinely independent (a sibling, same shape as
+        # the Appenzell cantons above), one a real detail_of match (same
+        # shape as Syrian Arab Republic / Syria) -- must still reach the
+        # queue, with both candidates present, since the answer isn't
+        # unanimous.
+        polities = [
+            {**BASE, "id": "reviewed", "canonical_name": "Reviewed Republic",
+             "external_ids": {"wikidata": "Q1"}, "start": 1963, "end": 2024,
+             "prominence_score": 20, "geography": {"present_countries": ["SY"]}},
+            {**BASE, "id": "broader_container", "canonical_name": "Broader Container",
+             "names": {"aliases_en": "Reviewed Republic"},
+             "external_ids": {"wikidata": "Q2"}, "start": 1920, "end": None,
+             "prominence_score": 40, "geography": {"present_countries": ["SY"]}},
+            # Shares the non-generic token "reviewed" with the reviewed
+            # entity's own name -- needed to even reach the candidate pool
+            # (a bare "Republic"/"Council" overlap alone wouldn't, both
+            # being generic government-form words already stopworded).
+            {**BASE, "id": "sibling_republic", "canonical_name": "Reviewed Council",
+             "external_ids": {"wikidata": "Q3"}, "start": 1963, "end": 2024,
+             "prominence_score": 25, "geography": {"present_countries": ["SY"]}},
+        ]
+        client = build_app(self.root, polities)
+        queue = client.get("/api/consolidation-reviews", params={"limit": 100}).json()["items"]
+        row = next((item for item in queue if item["id"] == "reviewed"), None)
+        self.assertIsNotNone(row, "reviewed did not reach the consolidation queue")
+        candidate_ids = {c["id"] for c in row["candidates"]}
+        self.assertIn("broader_container", candidate_ids)
+        self.assertIn("sibling_republic", candidate_ids)
 
     def test_bourbon_restoration_alias_reused_different_era_is_not_a_candidate(self) -> None:
         # Bourbon Restoration in France carries an alias "Kingdom of
@@ -445,6 +478,9 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         # record's real (buggy) present_countries of ["US"] -- a separate
         # data error found alongside this one, since the geography match is
         # what let it reach the candidate pool at all.
+        # (No longer reaches the queue at all now that an entity whose every
+        # candidate suggests "independent" is excluded entirely, 7 September
+        # 2026 -- was previously verified by a non-"detail_of" suggestion.)
         polities = [
             {**BASE, "id": "united_states", "canonical_name": "United States",
              "external_ids": {"wikidata": "Q30"}, "start": 1776, "end": None,
@@ -453,7 +489,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "external_ids": {"wikidata": "Q484104"}, "start": 1945, "end": 1948,
              "prominence_score": 20, "geography": {"present_countries": ["US"]}},
         ]
-        self.assertNotEqual(self.suggestion_for("usamgik", "united_states", polities), "detail_of")
+        self.not_a_candidate("usamgik", "united_states", polities)
 
     def test_demonym_scan_does_not_match_short_word_against_multiword_name(self) -> None:
         # The per-token demonym scan is for single-word place names (Syria/
@@ -467,6 +503,9 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         # gate -- the real United Belgian States (1790) and USAMGIK (1945)
         # are of course from unrelated eras; only the naming-pattern check
         # under test matters here.
+        # (No longer reaches the queue at all now that an entity whose every
+        # candidate suggests "independent" is excluded entirely, 7 September
+        # 2026 -- was previously verified by a non-"detail_of" suggestion.)
         polities = [
             {**BASE, "id": "united_belgian_states", "canonical_name": "United Belgian States",
              "external_ids": {"wikidata": "Q1210685"}, "start": 1940, "end": 1948,
@@ -476,9 +515,7 @@ class ConsolidationSuggestionTests(unittest.TestCase):
              "external_ids": {"wikidata": "Q484104"}, "start": 1945, "end": 1948,
              "prominence_score": 20, "geography": {"present_countries": ["US"]}},
         ]
-        self.assertNotEqual(
-            self.suggestion_for("usamgik", "united_belgian_states", polities), "detail_of"
-        )
+        self.not_a_candidate("usamgik", "united_belgian_states", polities)
 
     def test_scythia_minor_subdivision_qualifier_suggests_part_of_not_phase_of(self) -> None:
         # "Scythia Minor" reads as "<qualifier> Scythia" the same way

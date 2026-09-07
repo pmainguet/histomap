@@ -127,6 +127,36 @@ def search_polities(query: str, metadata: dict[str, dict], limit: int = 10) -> l
     return results
 
 
+def search_periods(query: str, periods_dir: Path, limit: int = 10) -> list[dict]:
+    """Same purpose as search_polities, for periods -- backs the period
+    detail_of picker (a period's detail_of target can be another period).
+    Periods aren't held in an in-memory store the way polities are (see
+    every other period endpoint in this file), so this reads the directory
+    fresh each call -- fine at this dataset's scale (~100 periods)."""
+    query = query.strip()
+    documents: dict[str, dict] = {}
+    ranked = []
+    for path in periods_dir.glob("*.yaml"):
+        document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        period_id = document.get("id", path.stem)
+        documents[period_id] = document
+        name = str(document.get("canonical_name", period_id))
+        score = max(float(fuzz.WRatio(query, candidate)) for candidate in (name, period_id) if candidate)
+        exact = query.casefold() in {name.casefold(), period_id.casefold()}
+        ranked.append((not exact, -score, name, period_id))
+    results = []
+    for _, negative_score, name, period_id in sorted(ranked)[:limit]:
+        document = documents[period_id]
+        results.append({
+            "period_id": period_id,
+            "canonical_name": name,
+            "canonical_start": document.get("start"),
+            "canonical_end": document.get("end"),
+            "search_score": round(-negative_score, 1),
+        })
+    return results
+
+
 def create_app(root: Path = ROOT) -> FastAPI:
     application = FastAPI(title="Histomap", version="0.1.0")
     web_dir = root / "web"
@@ -1097,7 +1127,19 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     }
                 )
             candidates.sort(key=lambda item: (-item["score"], item["canonical_name"]))
-            if candidates:
+            # Direct policy, live, 7 September 2026: if every candidate's own
+            # suggested_decision is "independent", the answer is already
+            # known -- reviewing it achieves nothing, same reasoning as the
+            # date-overlap exclusions above. Kept in the queue whenever at
+            # least one candidate suggests a real relationship
+            # (same_entity/detail_of/candidate_detail_of) OR is genuinely
+            # ambiguous (suggested_decision is None, no confident
+            # recommendation either way) -- only a unanimous "independent"
+            # across every candidate is skipped. This is a presentation
+            # filter only, same as the date-overlap fixes -- nothing gets
+            # auto-written to consolidation_status; the entity simply
+            # doesn't need a human decision made for it.
+            if candidates and any(c["suggested_decision"] != "independent" for c in candidates):
                 queue.append(
                     {
                         "id": entity_id,
@@ -1521,6 +1563,12 @@ def create_app(root: Path = ROOT) -> FastAPI:
         q: str = Query(..., min_length=2), limit: int = Query(10, ge=1, le=25)
     ) -> dict:
         return clean_json({"query": q, "items": search_polities(q, metadata, limit)})
+
+    @application.get("/api/periods/search")
+    async def search_all_periods(
+        q: str = Query(..., min_length=2), limit: int = Query(10, ge=1, le=25)
+    ) -> dict:
+        return clean_json({"query": q, "items": search_periods(q, root / "periods", limit)})
 
     @application.get("/api/polities/{polity_id}")
     async def get_polity(polity_id: str) -> dict:

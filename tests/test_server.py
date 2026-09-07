@@ -220,8 +220,6 @@ class UnifiedServerTests(unittest.TestCase):
             {**base, "id": "rhodes_old", "canonical_name": "Rhodes", "names": {"aliases_en": "Ancient Rhodes"}, "start": -407, "end": 500, "prominence_score": 20, "geography": {"present_countries": ["GR"]}},
             {**base, "id": "rhodes_main", "canonical_name": "Rhodes", "names": {"aliases_en": "Rhodos"}, "start": -1600, "end": None, "prominence_score": 30, "geography": {"present_countries": ["GR"]}},
             {**base, "id": "appenzell", "canonical_name": "Canton of Appenzell Ausserrhoden", "names": {"aliases_en": "Appenzell Outer Rhodes"}, "start": 1513, "end": None, "prominence_score": 25, "geography": {"present_countries": ["CH"]}},
-            {**base, "id": "ottoman_caliphate", "canonical_name": "Ottoman Caliphate", "start": 1517, "end": 1924, "prominence_score": 20, "geography": {"present_countries": ["TR"]}},
-            {**base, "id": "ottoman_empire", "canonical_name": "Ottoman Empire", "start": 1299, "end": 1922, "prominence_score": 40, "geography": {"present_countries": ["TR"]}},
         ]
         for document in documents:
             (self.root / "polities" / f"{document['id']}.yaml").write_text(
@@ -233,8 +231,6 @@ class UnifiedServerTests(unittest.TestCase):
         rhodes = next(item for item in queue if item["id"] == "rhodes_old")
         self.assertIn("rhodes_main", [item["id"] for item in rhodes["candidates"]])
         self.assertNotIn("appenzell", [item["id"] for item in rhodes["candidates"]])
-        ottoman = next(item for item in queue if item["id"] == "ottoman_caliphate")
-        self.assertIn("ottoman_empire", [item["id"] for item in ottoman["candidates"]])
 
     def test_keeps_consolidation_candidate_independent(self) -> None:
         response = self.client.post(
@@ -326,6 +322,24 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["items"][0]["polity_id"], "candidate")
         self.assertEqual(response.json()["items"][0]["search_score"], 100)
+
+    def test_searches_periods_by_name(self) -> None:
+        # Backs the period detail_of picker (Task 5 of the periods-as-
+        # details-of feature) -- a period's own detail_of target can be
+        # another period, so it needs its own search endpoint, mirroring
+        # /api/polities/search.
+        period_path = self.root / "periods" / "jomon_period.yaml"
+        period_path.write_text(
+            yaml.safe_dump({
+                "id": "jomon_period", "canonical_name": "Jomon period",
+                "start": -10000, "end": -300, "authority": "test",
+            }),
+            encoding="utf-8",
+        )
+        client = TestClient(create_app(self.root))
+        response = client.get("/api/periods/search", params={"q": "Jomon"})
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["items"][0]["period_id"], "jomon_period")
 
     def test_gets_one_politys_full_raw_fields(self) -> None:
         response = self.client.get("/api/polities/candidate")
