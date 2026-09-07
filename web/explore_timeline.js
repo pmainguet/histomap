@@ -171,8 +171,9 @@ function drawDetailPanel(svg, { x, y, width, scale, details, onZoom, isExpanded 
 // build_explore_tree.py) -- and, when expanded, the detail panel below.
 // Shared by all three draw functions (flat/continent/country) so this logic
 // lives in exactly one place; `isExpanded`/`onToggleExpand` default to
-// no-ops for rows whose items never carry `details` (Era, Period,
-// Civilizations & Cultures).
+// no-ops for rows whose items never carry `details` (Era, Civilizations &
+// Cultures -- Period carries details too now, 7 September 2026, and is
+// wired the same way the Polities row already was).
 function drawItemBand(svg, item, { x, y, width, height, cls, title, label, fill, onZoom, kind, domainEnd, scale, isExpanded = () => false, onToggleExpand = () => {} }) {
   const zoomTarget = { handler: onZoom, kind, id: item.id, start: item.start, end: item.end ?? domainEnd };
   const hasDetails = Array.isArray(item.details) && item.details.length > 0;
@@ -272,12 +273,13 @@ const REGION_HEADER_HEIGHT = 16;
 const MAX_POLITIES_PER_REGION = 15;
 
 // Detail-of reveal (ROADMAP.md item 0 / docs/plans/2026-09-01-detail-of-merge-design.md):
-// a Polities-row item carrying `details` (see build_explore_tree.py) gets a
-// leading toggle compartment; toggling it (or zooming into the
-// container/one of its details -- see explore.js) reveals a panel of
-// date-positioned detail lines directly beneath the item's own band. Only
-// Polities-row items ever carry `details` -- Era/Period/Civilizations &
-// Cultures rows pass no isExpanded/onToggleExpand, so this is a no-op there.
+// a Polities-row or Period-row item carrying `details` (see
+// build_explore_tree.py) gets a leading toggle compartment; toggling it (or
+// zooming into the container/one of its details -- see explore.js) reveals
+// a panel of date-positioned detail lines directly beneath the item's own
+// band. Periods gained this 7 September 2026 (a period can now be a detail
+// of a period or a polity); Era/Civilizations & Cultures rows still pass no
+// isExpanded/onToggleExpand, so it's still a no-op there.
 const DETAIL_LINE_HEIGHT = 16;
 const DETAIL_LINE_GAP = 2;
 const DETAIL_PANEL_TOP_GAP = 3;
@@ -833,7 +835,12 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   const eraLayout = flatLaneLayout(visibleEras, scale, eraLaneHeight);
 
   const allPeriods = tree.chapters.flatMap((chapter) => chapter.eras.flatMap((era) => era.periods));
-  const periodLayout = groupedLayoutFor(applyGeoFilter(allPeriods, groupBy, geoFilter), scale, periodLaneHeight, groupBy);
+  // isExpanded threaded through here too (not just the Polities row below)
+  // -- periods can carry `details` now (ROADMAP.md item 0 extended to
+  // periods, 7 September 2026), so the Period row's own lane heights need
+  // to reserve room for an expanded detail panel exactly like the
+  // Polities row already does.
+  const periodLayout = groupedLayoutFor(applyGeoFilter(allPeriods, groupBy, geoFilter), scale, periodLaneHeight, groupBy, isExpanded);
 
   // Civilizations & Cultures: always shown when it has content, independent
   // of the "Show polities" checkbox -- civilization/culture/people/tribe
@@ -906,6 +913,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
     getFill: (item) => eraColor(eraColorMap, item.era_id),
     getKind: () => "period",
     getLabel: (item) => itemDisplayLabel(item, groupBy),
+    isExpanded, onToggleExpand,
   });
   y += periodRowHeight + rowGap;
   sepY = y - rowGap / 2;
