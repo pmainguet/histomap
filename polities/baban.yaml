@@ -25,10 +25,13 @@ sources:
 prominence_score: 20.5
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - asia
+  primary_continent: asia
+  historical_regions: []
+  present_countries:
+  - IQ
+  confidence: high
 entity_type: tribe
 entity_type_confidence: high
 entity_type_source_qids: []
@@ -36,6 +39,7 @@ relationships: []
 manual_overrides:
 - consolidation
 - entity_type
+- geography
 prominence_components:
   wikidata_reach: 19.52
   authority_coverage: 0

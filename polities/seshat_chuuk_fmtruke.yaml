@@ -6,9 +6,11 @@ successors: []
 geography:
   continents:
   - oceania
-  present_countries: []
-  centroid: null
-  confidence: null
+  primary_continent: oceania
+  historical_regions: []
+  present_countries:
+  - FM
+  confidence: high
 start: 1775
 end: 1885
 start_confidence: low
@@ -38,6 +40,7 @@ prominence_components:
   total: 0.11
 manual_overrides:
 - entity_type
+- geography
 entity_type_reviewed_against:
 - polity
 government_form: null

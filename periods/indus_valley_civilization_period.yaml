@@ -7,12 +7,14 @@ end_confidence: medium
 geography:
   continents:
   - asia
-  present_countries:
-  - IN
-  - PK
+  primary_continent: asia
   historical_regions:
   - east_asia
   primary_historical_region: east_asia
+  present_countries:
+  - PK
+  centroid: null
+  confidence: null
 authority: Wikidata
 external_ids:
   wikidata: Q42534
@@ -26,3 +28,11 @@ linked_chapter_id: macro_early_cities_states
 civilization_lane: true
 deprecated:
   kind: protohistorical
+tier: period
+broader_periods: []
+successors: []
+government_form: null
+promoted_from: null
+detail_of: null
+manual_overrides:
+- geography

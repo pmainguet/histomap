@@ -8,7 +8,11 @@ successors: []
 geography:
   continents:
   - north_america
-  confidence: low
+  primary_continent: north_america
+  historical_regions: []
+  present_countries:
+  - MX
+  confidence: high
 start: -100
 end: 199
 start_confidence: low
@@ -40,3 +44,5 @@ relationships: []
 government_form: null
 deprecated:
   visibility_tier: detailed
+manual_overrides:
+- geography

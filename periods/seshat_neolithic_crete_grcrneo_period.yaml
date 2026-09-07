@@ -17,6 +17,6 @@ source_urls: []
 promoted_from: seshat_neolithic_crete_grcrneo
 deprecated:
   kind: historical
-detail_of: european_neolithic
+detail_of: greece
 manual_overrides:
 - detail_of

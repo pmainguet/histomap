@@ -24,10 +24,13 @@ sources:
 prominence_score: 2.11
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - north_america
+  primary_continent: north_america
+  historical_regions: []
+  present_countries:
+  - MX
+  confidence: high
 entity_type: civilization
 entity_type_confidence: high
 entity_type_source_qids: []
@@ -46,6 +49,7 @@ prominence_components:
 manual_overrides:
 - consolidation
 - entity_type
+- geography
 - timeline_role
 government_form: null
 timeline_role: entity

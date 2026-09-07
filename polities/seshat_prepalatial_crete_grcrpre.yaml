@@ -32,4 +32,10 @@ government_form: null
 geography:
   continents:
   - europe
-  confidence: low
+  primary_continent: europe
+  historical_regions: []
+  present_countries:
+  - GR
+  confidence: high
+manual_overrides:
+- geography

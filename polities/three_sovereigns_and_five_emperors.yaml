@@ -38,10 +38,13 @@ sources:
 prominence_score: 19.78
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - asia
+  primary_continent: asia
+  historical_regions: []
+  present_countries:
+  - CN
+  confidence: high
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []
@@ -60,3 +63,5 @@ prominence_components:
 government_form: null
 deprecated:
   visibility_tier: detailed
+manual_overrides:
+- geography

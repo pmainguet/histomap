@@ -24,10 +24,13 @@ sources:
 prominence_score: 13.4
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - africa
+  primary_continent: africa
+  historical_regions: []
+  present_countries:
+  - BJ
+  confidence: high
 entity_type: people
 entity_type_confidence: medium
 entity_type_source_qids:
@@ -51,3 +54,4 @@ deprecated:
 consolidation_status: independent
 manual_overrides:
 - consolidation
+- geography

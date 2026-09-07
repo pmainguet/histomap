@@ -1,6 +1,8 @@
 id: seshat_badarian_egbadar
 canonical_name: Badarian
 external_ids:
+  wikidata: null
+  wikipedia_en: null
   seshat:
   - EgBadar
 start: -4400
@@ -9,7 +11,7 @@ start_confidence: high
 end_confidence: high
 sources:
 - seshat
-notes: Seshat-only draft; requires review before canonical import.
+notes: ''
 prominence_components:
   wikidata_reach: 0.0
   authority_coverage: 12
@@ -32,4 +34,28 @@ government_form: null
 geography:
   continents:
   - africa
-  confidence: low
+  - asia
+  primary_continent: africa
+  historical_regions: []
+  present_countries:
+  - EG
+  confidence: high
+names: {}
+entity_type_reviewed_against: []
+timeline_role: entity
+consolidation_status: null
+consolidated_into: null
+detail_of: null
+deprecated: null
+manual_overrides:
+- geography
+- notes
+linked_era_id: null
+linked_chapter_id: null
+weight_by_era: {}
+weight_imputed: false
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''

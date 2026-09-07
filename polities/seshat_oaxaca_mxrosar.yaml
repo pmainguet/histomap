@@ -6,9 +6,11 @@ successors: []
 geography:
   continents:
   - north_america
-  present_countries: []
-  centroid: null
-  confidence: null
+  primary_continent: north_america
+  historical_regions: []
+  present_countries:
+  - MX
+  confidence: high
 start: -700
 end: -501
 start_confidence: low
@@ -38,6 +40,7 @@ prominence_components:
   total: 0.75
 manual_overrides:
 - entity_type
+- geography
 entity_type_reviewed_against:
 - polity
 government_form: null

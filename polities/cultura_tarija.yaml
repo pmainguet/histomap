@@ -23,10 +23,13 @@ sources:
 prominence_score: 7.52
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
-  centroid: null
-  confidence: null
+  continents:
+  - south_america
+  primary_continent: south_america
+  historical_regions: []
+  present_countries:
+  - CO
+  confidence: high
 entity_type: culture
 entity_type_confidence: high
 entity_type_source_qids: []
@@ -45,6 +48,7 @@ prominence_components:
 manual_overrides:
 - consolidation
 - entity_type
+- geography
 government_form: null
 deprecated:
   visibility_tier: detailed
