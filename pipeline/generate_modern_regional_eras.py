@@ -52,7 +52,6 @@ def build_period(continent: str, chapter_id: str, start: int, end: int) -> dict:
         "id": era_id(continent, chapter_id),
         "canonical_name": f"{continent.replace('_', ' ').title()}, "
         f"{chapter_id.removeprefix('macro_').replace('_', ' ').title()}",
-        "kind": "historical",
         "tier": "regional_era",
         "start": start,
         "end": end,

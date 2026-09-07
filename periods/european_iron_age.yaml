@@ -1,6 +1,5 @@
 id: european_iron_age
 canonical_name: Iron Age Europe
-kind: protohistorical
 start: -1200
 end: 800
 start_confidence: low
@@ -16,3 +15,5 @@ external_ids:
 source_urls:
 - https://dbpedia.org/resource/Iron_Age_Europe
 civilization_lane: false
+deprecated:
+  kind: protohistorical

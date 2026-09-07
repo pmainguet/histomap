@@ -24,9 +24,8 @@ class PeriodRoleClassificationTests(unittest.TestCase):
                 "external_ids": {"wikidata": "Q1"},
                 "geography": {"continents": ["asia"]},
             },
-            ["archaeological"],
         )
-        self.assertEqual(value["kind"], "archaeological")
+        self.assertNotIn("kind", value)
         self.assertEqual(value["id"], "bronze_age_period")
 
 

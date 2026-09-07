@@ -1,6 +1,5 @@
 id: seshat_incipient_jomon_jpjomo1_period
 canonical_name: Incipient Jomon
-kind: historical
 start: -13600
 end: -9201
 start_confidence: high
@@ -22,3 +21,5 @@ external_ids: {}
 notes: Period overlay created by an editorial period-role decision.
 source_urls: []
 promoted_from: seshat_incipient_jomon_jpjomo1
+deprecated:
+  kind: historical

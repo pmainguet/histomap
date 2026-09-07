@@ -1,6 +1,5 @@
 id: macro_agricultural_transitions
 canonical_name: Agricultural Transitions and Settled Societies
-kind: archaeological
 tier: macro_chapter
 start: -10000
 end: -3500
@@ -19,3 +18,5 @@ notes: Editorial navigation chapter. The Neolithic transition happened at very d
 source_urls:
 - https://en.wikipedia.org/wiki/Neolithic_Revolution
 civilization_lane: false
+deprecated:
+  kind: archaeological

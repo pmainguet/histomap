@@ -1,6 +1,5 @@
 id: macro_classical_imperial_worlds
 canonical_name: Classical and Imperial Worlds
-kind: historical
 tier: macro_chapter
 start: -1200
 end: 500
@@ -18,3 +17,5 @@ notes: Editorial navigation chapter. Covers the Iron Age plus the classical and 
 source_urls:
 - https://en.wikipedia.org/wiki/Classical_antiquity
 civilization_lane: false
+deprecated:
+  kind: historical

@@ -1,6 +1,5 @@
 id: rhodes_q104383185_period
 canonical_name: Rhodes
-kind: historical
 start: -407
 end: -333
 start_confidence: low
@@ -19,3 +18,5 @@ notes: Editorially identified as a phase or aspect of Rhodes.
 source_urls:
 - https://www.wikidata.org/wiki/Q104383185
 civilization_lane: false
+deprecated:
+  kind: historical

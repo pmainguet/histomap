@@ -1,6 +1,5 @@
 id: etruscan_civilization_period
 canonical_name: Etruscan civilization
-kind: historical
 start: -900
 end: -27
 start_confidence: medium
@@ -25,3 +24,5 @@ source_urls:
 linked_era_id: classical_antiquity_era
 linked_chapter_id: macro_classical_imperial_worlds
 civilization_lane: true
+deprecated:
+  kind: historical

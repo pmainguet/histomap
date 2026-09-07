@@ -62,10 +62,6 @@ class EntityTypeUpdate(BaseModel):
     ]
 
 
-class PeriodKindUpdate(BaseModel):
-    kind: Literal["historical", "archaeological", "protohistorical", "prehistorical"]
-
-
 class PeriodPromotionUpdate(BaseModel):
     entity_type: Literal[
         "polity", "civilization", "subdivision", "micronation", "culture", "people",
@@ -1136,7 +1132,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 queue.append(item)
                 queue_by_id[item["id"]] = item
             item["period_role_candidate"] = True
-            item["period_kinds"] = period_record.get("period_kinds", [])
             item["period_reason"] = period_record.get("reason", "Ambiguous entity and period role")
         queue.sort(key=lambda item: (
             0 if item["candidates"] and item["candidates"][0]["confidence"] == "high" else 1,
@@ -1148,7 +1143,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
 
     def write_period_record(
         document: dict,
-        kind: str,
         authority: str,
         notes: str,
         source_urls: list[str],
@@ -1162,7 +1156,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
         period = {
             "id": period_id,
             "canonical_name": document["canonical_name"],
-            "kind": kind,
             "start": document["start"],
             "end": document["end"],
             "start_confidence": document.get("start_confidence", "low"),
@@ -1378,7 +1371,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
         return document
 
 
-    def save_timeline_role(polity_id: str, timeline_role: str, period_kinds: list[str]) -> dict:
+    def save_timeline_role(polity_id: str, timeline_role: str) -> dict:
         document = metadata.get(polity_id)
         path = polities_dir / f"{polity_id}.yaml"
         if document is None or not path.exists():
@@ -1396,7 +1389,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
             source_urls = [f"https://www.wikidata.org/wiki/{qid}"] if qid else []
             period_id = write_period_record(
                 document,
-                kind="archaeological" if "archaeological" in period_kinds else "historical",
                 authority="Wikidata period classification",
                 notes="Period overlay created by an editorial period-role decision.",
                 source_urls=source_urls,
@@ -1499,8 +1491,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
 
     @application.post("/api/consolidation-reviews/{entity_id}")
     async def decide_consolidation_review(entity_id: str, request: ConsolidationDecision) -> dict:
-        refresh_period_role_queue()
-        period_record = next((item for item in period_role_queue if item["id"] == entity_id), None)
         if request.decision == "candidate_detail_of":
             candidate_id = request.target_id or ""
             candidate = metadata.get(candidate_id)
@@ -1514,11 +1504,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 "decision": request.decision, "target_id": candidate_id,
             }
         if request.decision == "period":
-            result = save_timeline_role(
-                entity_id,
-                request.decision,
-                period_record.get("period_kinds", []) if period_record else [],
-            )
+            result = save_timeline_role(entity_id, request.decision)
             return {
                 "status": "saved", "entity_id": entity_id, "decision": request.decision,
                 "target_id": None, "period_id": result["period_id"],
@@ -1644,7 +1630,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
         only reachable via the now-retired /period-review page; see
         STATUS.md."""
         timeline_role = "both" if keep_entity else "period"
-        result = save_timeline_role(polity_id, timeline_role, [])
+        result = save_timeline_role(polity_id, timeline_role)
         return {
             "status": "saved", "polity_id": polity_id,
             "timeline_role": timeline_role, "period_id": result["period_id"],
@@ -1724,28 +1710,6 @@ def create_app(root: Path = ROOT) -> FastAPI:
             "Period file ID does not match requested period",
         )
         return {"status": "saved", "period_id": period_id, "changed": changed, "document": merged}
-
-    @application.patch("/api/periods/{period_id}/kind")
-    async def update_period_kind(period_id: str, request: PeriodKindUpdate) -> dict:
-        path = root / "periods" / f"{period_id}.yaml"
-        if not path.exists():
-            raise HTTPException(404, "Unknown Histomap period")
-        document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-        if document.get("id") != period_id:
-            raise HTTPException(409, "Period file ID does not match requested period")
-        document["kind"] = request.kind
-        manual_overrides = set(document.get("manual_overrides", []))
-        manual_overrides.add("kind")
-        document["manual_overrides"] = sorted(manual_overrides)
-        path.write_text(
-            yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
-        )
-        return {
-            "status": "saved",
-            "period_id": period_id,
-            "kind": request.kind,
-            "manual_overrides": document["manual_overrides"],
-        }
 
     @application.post("/api/periods/{period_id}/promote-to-entity")
     async def promote_period_to_entity(period_id: str, request: PeriodPromotionUpdate) -> dict:

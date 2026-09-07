@@ -1,6 +1,5 @@
 id: western_zhou_q1069609_period
 canonical_name: Western Zhou
-kind: historical
 start: -1045
 end: -770
 start_confidence: low
@@ -19,3 +18,5 @@ notes: Editorially identified as a phase or aspect of Zhou dynasty.
 source_urls:
 - https://www.wikidata.org/wiki/Q1069609
 civilization_lane: false
+deprecated:
+  kind: historical

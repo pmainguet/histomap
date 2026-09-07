@@ -1,6 +1,5 @@
 id: paleolithic_era
 canonical_name: Paleolithic
-kind: historical
 tier: regional_era
 start: -3000000
 end: -10000
@@ -23,3 +22,5 @@ notes: Overarching parent for the regional Paleolithic variants, which cover mea
 source_urls:
 - https://en.wikipedia.org/wiki/Paleolithic
 civilization_lane: false
+deprecated:
+  kind: historical

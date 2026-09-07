@@ -1,6 +1,5 @@
 id: european_neolithic
 canonical_name: Neolithic Europe
-kind: prehistorical
 tier: period
 start: -7000
 end: -1700
@@ -17,3 +16,5 @@ external_ids:
 source_urls:
 - https://dbpedia.org/resource/Neolithic_Europe
 civilization_lane: false
+deprecated:
+  kind: prehistorical

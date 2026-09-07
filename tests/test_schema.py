@@ -9,7 +9,6 @@ def period_kwargs(**overrides: object) -> dict:
     value = {
         "id": "test_period",
         "canonical_name": "Test Period",
-        "kind": "historical",
         "start": 1000,
         "end": 1500,
         "authority": "test",
@@ -150,6 +149,26 @@ class PeriodDetailOfTests(unittest.TestCase):
     def test_detail_of_rejects_self_reference(self) -> None:
         with self.assertRaises(ValidationError):
             Period(**period_kwargs(id="loop", detail_of="loop"))
+
+
+class PeriodKindRetirementTests(unittest.TestCase):
+    def test_kind_field_no_longer_accepted(self) -> None:
+        period = Period(**period_kwargs(kind="historical"))
+        self.assertFalse(hasattr(period, "kind"))
+        self.assertNotIn("kind", Period.model_fields)
+
+    def test_period_no_longer_requires_kind(self) -> None:
+        kwargs = period_kwargs()
+        kwargs.pop("kind", None)
+        Period(**kwargs)  # must not raise
+
+    def test_deprecated_defaults_to_none(self) -> None:
+        period = Period(**period_kwargs())
+        self.assertIsNone(period.deprecated)
+
+    def test_deprecated_accepts_the_old_kind_value(self) -> None:
+        period = Period(**period_kwargs(deprecated={"kind": "historical"}))
+        self.assertEqual(period.deprecated["kind"], "historical")
 
 
 if __name__ == "__main__":

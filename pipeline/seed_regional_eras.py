@@ -63,7 +63,6 @@ def build_period(row: dict) -> dict:
     return {
         "id": row["id"],
         "canonical_name": row["canonical_name"],
-        "kind": "historical",
         "tier": "regional_era",
         "start": row["start"],
         "end": row["end"],

@@ -1,6 +1,5 @@
 id: macro_postclassical_worlds
 canonical_name: Post-Classical Worlds
-kind: historical
 tier: macro_chapter
 start: 500
 end: 1500
@@ -18,3 +17,5 @@ notes: Editorial navigation chapter. Deliberately named "post-classical" rather 
 source_urls:
 - https://en.wikipedia.org/wiki/Postclassical_Era
 civilization_lane: false
+deprecated:
+  kind: historical

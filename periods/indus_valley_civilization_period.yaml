@@ -1,6 +1,5 @@
 id: indus_valley_civilization_period
 canonical_name: Indus Valley Civilization
-kind: protohistorical
 start: -3000
 end: -1800
 start_confidence: medium
@@ -25,3 +24,5 @@ source_urls:
 linked_era_id: bronze_age_era
 linked_chapter_id: macro_early_cities_states
 civilization_lane: true
+deprecated:
+  kind: protohistorical

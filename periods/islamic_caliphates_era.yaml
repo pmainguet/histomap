@@ -1,6 +1,5 @@
 id: islamic_caliphates_era
 canonical_name: Islamic Caliphates and Sultanates
-kind: historical
 tier: regional_era
 start: 622
 end: 1500
@@ -23,3 +22,5 @@ notes: Rashidun Caliphate through the rise of the Ottoman, Safavid, and Mughal g
 source_urls:
 - https://en.wikipedia.org/wiki/Islamic_Caliphates_and_Sultanates
 civilization_lane: false
+deprecated:
+  kind: historical

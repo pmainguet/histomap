@@ -1,6 +1,5 @@
 id: macro_contemporary_world
 canonical_name: Contemporary World
-kind: historical
 tier: macro_chapter
 start: 1945
 end: 2100
@@ -20,3 +19,5 @@ notes: Editorial navigation chapter, 1945-present. end=2100 is schema.py's YEAR_
 source_urls:
 - https://en.wikipedia.org/wiki/Contemporary_history
 civilization_lane: false
+deprecated:
+  kind: historical

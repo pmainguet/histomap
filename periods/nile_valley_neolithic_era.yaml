@@ -1,6 +1,5 @@
 id: nile_valley_neolithic_era
 canonical_name: Nile Valley Neolithic
-kind: historical
 tier: period
 start: -8800
 end: -3500
@@ -21,3 +20,5 @@ notes: Pre-dynastic Egyptian and Nubian farming cultures.
 source_urls:
 - https://en.wikipedia.org/wiki/Nile_Valley_Neolithic
 civilization_lane: false
+deprecated:
+  kind: historical

@@ -1,6 +1,5 @@
 id: europe_contemporary_world_era
 canonical_name: Europe, Contemporary World
-kind: historical
 tier: regional_era
 start: 1945
 end: 2100
@@ -19,3 +18,5 @@ notes: Auto-generated placeholder -- continent-level grain only, no historical r
   this once someone wants to invest that research; see ONTOLOGY.md.
 source_urls: []
 civilization_lane: false
+deprecated:
+  kind: historical

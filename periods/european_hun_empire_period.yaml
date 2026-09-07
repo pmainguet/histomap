@@ -1,6 +1,5 @@
 id: european_hun_empire_period
 canonical_name: European Hun Empire
-kind: historical
 start: 378
 end: 470
 start_confidence: low
@@ -19,3 +18,5 @@ notes: Editorially identified as a phase or aspect of Hunnic Empire.
 source_urls:
 - https://www.wikidata.org/wiki/Q12836180
 civilization_lane: false
+deprecated:
+  kind: historical

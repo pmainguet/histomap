@@ -1,6 +1,5 @@
 id: mesoamerican_postclassic
 canonical_name: Mesoamerican Postclassic period
-kind: historical
 start: 900
 end: 1521
 geography:
@@ -23,3 +22,5 @@ source_urls:
 civilization_lane: false
 broader_periods:
 - north_america_early_modern_connections_era
+deprecated:
+  kind: historical

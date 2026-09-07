@@ -1,6 +1,5 @@
 id: ayyubid_sultanate_period
 canonical_name: Ayyubid Sultanate
-kind: historical
 start: 1171
 end: 1250
 start_confidence: low
@@ -19,3 +18,5 @@ notes: Editorially identified as a phase or aspect of Ayyubid dynasty.
 source_urls:
 - https://www.wikidata.org/wiki/Q63135869
 civilization_lane: false
+deprecated:
+  kind: historical

@@ -1,6 +1,5 @@
 id: syrakousai_period
 canonical_name: Syrakousai
-kind: historical
 start: -732
 end: -210
 start_confidence: low
@@ -19,3 +18,5 @@ notes: Editorially identified as a phase or aspect of Syracuse.
 source_urls:
 - https://www.wikidata.org/wiki/Q3979194
 civilization_lane: false
+deprecated:
+  kind: historical

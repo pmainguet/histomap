@@ -32,14 +32,13 @@ def has_entity_branch(direct_types: set[str], ancestry: dict[str, dict[str, int]
     return any(inherited_from(direct_types, ancestry, root) for root in ENTITY_ROOTS)
 
 
-def period_document(document: dict, roles: list[str]) -> dict | None:
+def period_document(document: dict) -> dict | None:
     if document.get("end") is None:
         return None
     qid = (document.get("external_ids") or {}).get("wikidata")
     return {
         "id": f"{document['id']}_period",
         "canonical_name": document["canonical_name"],
-        "kind": "archaeological" if "archaeological" in roles else "historical",
         "start": document["start"],
         "end": document["end"],
         "start_confidence": document.get("start_confidence", "low"),
@@ -54,8 +53,8 @@ def period_document(document: dict, roles: list[str]) -> dict | None:
     }
 
 
-def write_period(document: dict, roles: list[str]) -> str | None:
-    value = period_document(document, roles)
+def write_period(document: dict) -> str | None:
+    value = period_document(document)
     if value is None:
         return None
     PERIODS_DIR.mkdir(exist_ok=True)
@@ -85,7 +84,7 @@ def run() -> dict[str, int]:
         entity_branch = has_entity_branch(direct_types, ancestry)
         if not entity_branch and document.get("end") is not None:
             document["timeline_role"] = "period"
-            write_period(document, roles)
+            write_period(document)
             path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
             auto_period += 1
             continue

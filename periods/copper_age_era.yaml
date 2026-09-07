@@ -1,6 +1,5 @@
 id: copper_age_era
 canonical_name: Copper Age
-kind: historical
 tier: regional_era
 start: -4500
 end: -3200
@@ -26,3 +25,5 @@ notes: The Chalcolithic/Copper Age transitional period between the Neolithic and
 source_urls:
 - https://en.wikipedia.org/wiki/Chalcolithic
 civilization_lane: false
+deprecated:
+  kind: historical

@@ -1,6 +1,5 @@
 id: east_asian_imperial_era
 canonical_name: East Asian Imperial Dynasties (Post-Classical)
-kind: historical
 tier: regional_era
 start: 500
 end: 1500
@@ -21,3 +20,5 @@ notes: Tang through Ming China; Heian through Muromachi Japan; Goryeo Korea.
 source_urls:
 - https://en.wikipedia.org/wiki/East_Asian_Imperial_Dynasties_(Post-Classical)
 civilization_lane: false
+deprecated:
+  kind: historical

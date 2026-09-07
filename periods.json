@@ -2,7 +2,6 @@
   {
     "id": "africa_contemporary_world_era",
     "canonical_name": "Africa, Contemporary World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1945,
     "end": 2100,
@@ -32,12 +31,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "africa_early_modern_connections_era",
     "canonical_name": "Africa, Early Modern Connections",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1500,
     "end": 1800,
@@ -67,12 +68,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "africa_industrial_imperial_world_era",
     "canonical_name": "Africa, Industrial Imperial World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1800,
     "end": 1914,
@@ -102,12 +105,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "africa_world_wars_reordering_era",
     "canonical_name": "Africa, World Wars Reordering",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1914,
     "end": 1945,
@@ -137,12 +142,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "african_paleolithic_era",
     "canonical_name": "African Paleolithic",
-    "kind": "historical",
     "tier": "period",
     "start": -3000000,
     "end": -10000,
@@ -174,12 +181,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "ancient_egypt_period",
     "canonical_name": "Ancient Egypt",
-    "kind": "historical",
     "tier": "period",
     "start": -4000,
     "end": -29,
@@ -219,12 +228,14 @@
     "government_form": null,
     "civilization_lane": true,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "andean_archaic_era",
     "canonical_name": "Andean Archaic",
-    "kind": "historical",
     "tier": "period",
     "start": -7000,
     "end": -2000,
@@ -258,12 +269,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "andean_early_civilizations_era",
     "canonical_name": "Early Andean Civilizations",
-    "kind": "historical",
     "tier": "period",
     "start": -1200,
     "end": 600,
@@ -297,12 +310,14 @@
     "government_form": null,
     "civilization_lane": true,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "antarctica_contemporary_world_era",
     "canonical_name": "Antarctica, Contemporary World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1945,
     "end": 2100,
@@ -332,12 +347,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "antarctica_early_modern_connections_era",
     "canonical_name": "Antarctica, Early Modern Connections",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1500,
     "end": 1800,
@@ -367,12 +384,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "antarctica_industrial_imperial_world_era",
     "canonical_name": "Antarctica, Industrial Imperial World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1800,
     "end": 1914,
@@ -402,12 +421,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "antarctica_world_wars_reordering_era",
     "canonical_name": "Antarctica, World Wars Reordering",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1914,
     "end": 1945,
@@ -437,12 +458,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "asia_contemporary_world_era",
     "canonical_name": "Asia, Contemporary World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1945,
     "end": 2100,
@@ -472,12 +495,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "asia_early_modern_connections_era",
     "canonical_name": "Asia, Early Modern Connections",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1500,
     "end": 1800,
@@ -507,12 +532,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "asia_industrial_imperial_world_era",
     "canonical_name": "Asia, Industrial Imperial World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1800,
     "end": 1914,
@@ -542,12 +569,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "asia_world_wars_reordering_era",
     "canonical_name": "Asia, World Wars Reordering",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1914,
     "end": 1945,
@@ -577,12 +606,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "asuka_period",
     "canonical_name": "Asuka period",
-    "kind": "historical",
     "tier": "period",
     "start": 538,
     "end": 710,
@@ -620,12 +651,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "ayyubid_sultanate_period",
     "canonical_name": "Ayyubid Sultanate",
-    "kind": "historical",
     "tier": "period",
     "start": 1171,
     "end": 1250,
@@ -655,12 +688,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "bronze_age_era",
     "canonical_name": "Bronze Age",
-    "kind": "historical",
     "tier": "regional_era",
     "start": -3200,
     "end": -1046,
@@ -693,12 +728,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "chinese_empire_period",
     "canonical_name": "Chinese Empire",
-    "kind": "historical",
     "tier": "period",
     "start": -219,
     "end": 1912,
@@ -737,12 +774,14 @@
     "government_form": null,
     "civilization_lane": true,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "chola_empire_period",
     "canonical_name": "Chola Empire",
-    "kind": "historical",
     "tier": "period",
     "start": 848,
     "end": 1279,
@@ -772,12 +811,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "classical_antiquity_era",
     "canonical_name": "Classical Antiquity",
-    "kind": "historical",
     "tier": "regional_era",
     "start": -1200,
     "end": 900,
@@ -812,12 +853,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "copper_age_era",
     "canonical_name": "Copper Age",
-    "kind": "historical",
     "tier": "regional_era",
     "start": -4500,
     "end": -3200,
@@ -852,12 +895,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "early_dynastic_mesopotamia",
     "canonical_name": "Early Dynastic Mesopotamia",
-    "kind": "protohistorical",
     "tier": "period",
     "start": -2900,
     "end": -2350,
@@ -893,12 +938,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "protohistorical"
+    }
   },
   {
     "id": "east_asian_bronze_age_era",
     "canonical_name": "East Asian Bronze Age",
-    "kind": "historical",
     "tier": "period",
     "start": -2000,
     "end": -1046,
@@ -932,12 +979,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "east_asian_classical_era",
     "canonical_name": "East Asian Classical Antiquity",
-    "kind": "historical",
     "tier": "period",
     "start": -1046,
     "end": 500,
@@ -971,12 +1020,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "east_asian_imperial_era",
     "canonical_name": "East Asian Imperial Dynasties (Post-Classical)",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 500,
     "end": 1500,
@@ -1010,12 +1061,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "east_asian_neolithic_era",
     "canonical_name": "East Asian Neolithic",
-    "kind": "historical",
     "tier": "period",
     "start": -7000,
     "end": -3500,
@@ -1049,12 +1102,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "etruscan_civilization_period",
     "canonical_name": "Etruscan civilization",
-    "kind": "historical",
     "tier": "period",
     "start": -900,
     "end": -27,
@@ -1090,12 +1145,14 @@
     "government_form": null,
     "civilization_lane": true,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "eurasian_paleolithic_era",
     "canonical_name": "Eurasian Paleolithic",
-    "kind": "historical",
     "tier": "period",
     "start": -1800000,
     "end": -10000,
@@ -1128,12 +1185,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "europe_contemporary_world_era",
     "canonical_name": "Europe, Contemporary World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1945,
     "end": 2100,
@@ -1163,12 +1222,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "europe_early_modern_connections_era",
     "canonical_name": "Europe, Early Modern Connections",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1500,
     "end": 1800,
@@ -1198,12 +1259,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "europe_industrial_imperial_world_era",
     "canonical_name": "Europe, Industrial Imperial World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1800,
     "end": 1914,
@@ -1233,12 +1296,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "europe_world_wars_reordering_era",
     "canonical_name": "Europe, World Wars Reordering",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1914,
     "end": 1945,
@@ -1268,12 +1333,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "european_bronze_age_era",
     "canonical_name": "European Bronze Age",
-    "kind": "historical",
     "tier": "period",
     "start": -3200,
     "end": -1200,
@@ -1305,12 +1372,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "european_hun_empire_period",
     "canonical_name": "European Hun Empire",
-    "kind": "historical",
     "tier": "period",
     "start": 378,
     "end": 470,
@@ -1340,12 +1409,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "european_iron_age",
     "canonical_name": "Iron Age Europe",
-    "kind": "protohistorical",
     "tier": "period",
     "start": -1200,
     "end": 800,
@@ -1379,12 +1450,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "protohistorical"
+    }
   },
   {
     "id": "european_neolithic",
     "canonical_name": "Neolithic Europe",
-    "kind": "prehistorical",
     "tier": "period",
     "start": -7000,
     "end": -1700,
@@ -1418,12 +1491,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "prehistorical"
+    }
   },
   {
     "id": "fertile_crescent_neolithic_era",
     "canonical_name": "Fertile Crescent Neolithic",
-    "kind": "historical",
     "tier": "period",
     "start": -10000,
     "end": -3500,
@@ -1457,12 +1532,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "indus_valley_civilization_period",
     "canonical_name": "Indus Valley Civilization",
-    "kind": "protohistorical",
     "tier": "period",
     "start": -3000,
     "end": -1800,
@@ -1499,12 +1576,14 @@
     "government_form": null,
     "civilization_lane": true,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "protohistorical"
+    }
   },
   {
     "id": "iron_age_era",
     "canonical_name": "Iron Age",
-    "kind": "historical",
     "tier": "regional_era",
     "start": -1200,
     "end": 800,
@@ -1537,12 +1616,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "islamic_caliphates_era",
     "canonical_name": "Islamic Caliphates and Sultanates",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 622,
     "end": 1500,
@@ -1578,12 +1659,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "jomon_period",
     "canonical_name": "Jōmon period",
-    "kind": "prehistorical",
     "tier": "period",
     "start": -10000,
     "end": -300,
@@ -1623,12 +1706,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "prehistorical"
+    }
   },
   {
     "id": "kofun_period",
     "canonical_name": "Kofun period",
-    "kind": "protohistorical",
     "tier": "period",
     "start": 250,
     "end": 538,
@@ -1668,12 +1753,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "protohistorical"
+    }
   },
   {
     "id": "macedonian_empire_period",
     "canonical_name": "Macedonian Empire",
-    "kind": "historical",
     "tier": "period",
     "start": -335,
     "end": -300,
@@ -1703,12 +1790,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "macro_agricultural_transitions",
     "canonical_name": "Agricultural Transitions and Settled Societies",
-    "kind": "archaeological",
     "tier": "macro_chapter",
     "start": -10000,
     "end": -3500,
@@ -1736,12 +1825,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "archaeological"
+    }
   },
   {
     "id": "macro_classical_imperial_worlds",
     "canonical_name": "Classical and Imperial Worlds",
-    "kind": "historical",
     "tier": "macro_chapter",
     "start": -1200,
     "end": 500,
@@ -1769,12 +1860,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "macro_contemporary_world",
     "canonical_name": "Contemporary World",
-    "kind": "historical",
     "tier": "macro_chapter",
     "start": 1945,
     "end": 2100,
@@ -1802,12 +1895,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "macro_early_cities_states",
     "canonical_name": "Early Cities and States",
-    "kind": "historical",
     "tier": "macro_chapter",
     "start": -3500,
     "end": -1200,
@@ -1835,12 +1930,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "macro_early_modern_connections",
     "canonical_name": "Early Modern Global Connections",
-    "kind": "historical",
     "tier": "macro_chapter",
     "start": 1500,
     "end": 1800,
@@ -1868,12 +1965,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "macro_human_origins_paleolithic",
     "canonical_name": "Human Origins and Paleolithic Worlds",
-    "kind": "archaeological",
     "tier": "macro_chapter",
     "start": -3000000,
     "end": -10000,
@@ -1901,12 +2000,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "archaeological"
+    }
   },
   {
     "id": "macro_industrial_imperial_world",
     "canonical_name": "Industrial and Imperial World",
-    "kind": "historical",
     "tier": "macro_chapter",
     "start": 1800,
     "end": 1914,
@@ -1934,12 +2035,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "macro_postclassical_worlds",
     "canonical_name": "Post-Classical Worlds",
-    "kind": "historical",
     "tier": "macro_chapter",
     "start": 500,
     "end": 1500,
@@ -1967,12 +2070,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "macro_world_wars_reordering",
     "canonical_name": "World Wars and Global Reordering",
-    "kind": "historical",
     "tier": "macro_chapter",
     "start": 1914,
     "end": 1945,
@@ -2000,12 +2105,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "medieval_europe_era",
     "canonical_name": "Medieval Europe",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 500,
     "end": 1500,
@@ -2037,12 +2144,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "mediterranean_classical_era",
     "canonical_name": "Mediterranean Classical Antiquity",
-    "kind": "historical",
     "tier": "period",
     "start": -1200,
     "end": 500,
@@ -2077,12 +2186,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "mesoamerican_archaic_era",
     "canonical_name": "Mesoamerican Archaic",
-    "kind": "historical",
     "tier": "period",
     "start": -8000,
     "end": -2000,
@@ -2116,12 +2227,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "mesoamerican_classic",
     "canonical_name": "Mesoamerican Classic period",
-    "kind": "historical",
     "tier": "period",
     "start": 250,
     "end": 900,
@@ -2165,12 +2278,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "mesoamerican_formative_classic_era",
     "canonical_name": "Mesoamerican Formative and Classic Periods",
-    "kind": "historical",
     "tier": "period",
     "start": -1200,
     "end": 900,
@@ -2204,12 +2319,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "mesoamerican_postclassic",
     "canonical_name": "Mesoamerican Postclassic period",
-    "kind": "historical",
     "tier": "period",
     "start": 900,
     "end": 1521,
@@ -2251,12 +2368,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "mesoamerican_preclassic",
     "canonical_name": "Mesoamerican Preclassic period",
-    "kind": "protohistorical",
     "tier": "period",
     "start": -2000,
     "end": 250,
@@ -2300,12 +2419,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "protohistorical"
+    }
   },
   {
     "id": "mesopotamia_period",
     "canonical_name": "Mesopotamia",
-    "kind": "historical",
     "tier": "period",
     "start": -4000,
     "end": -538,
@@ -2342,12 +2463,14 @@
     "government_form": null,
     "civilization_lane": true,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "minoan_civilization_period",
     "canonical_name": "Minoan civilization",
-    "kind": "protohistorical",
     "tier": "period",
     "start": -2600,
     "end": -1100,
@@ -2386,12 +2509,14 @@
     "government_form": null,
     "civilization_lane": true,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "protohistorical"
+    }
   },
   {
     "id": "mycenaean_greece_period",
     "canonical_name": "Mycenaean civilization",
-    "kind": "protohistorical",
     "tier": "period",
     "start": -1600,
     "end": -1100,
@@ -2427,12 +2552,14 @@
     "government_form": null,
     "civilization_lane": true,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "protohistorical"
+    }
   },
   {
     "id": "neolithic_era",
     "canonical_name": "Neolithic & Archaic",
-    "kind": "historical",
     "tier": "regional_era",
     "start": -10000,
     "end": -1700,
@@ -2472,12 +2599,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "nile_valley_neolithic_era",
     "canonical_name": "Nile Valley Neolithic",
-    "kind": "historical",
     "tier": "period",
     "start": -8800,
     "end": -3500,
@@ -2511,12 +2640,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "north_america_contemporary_world_era",
     "canonical_name": "North America, Contemporary World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1945,
     "end": 2100,
@@ -2546,12 +2677,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "north_america_early_modern_connections_era",
     "canonical_name": "North America, Early Modern Connections",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1500,
     "end": 1800,
@@ -2581,12 +2714,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "north_america_industrial_imperial_world_era",
     "canonical_name": "North America, Industrial Imperial World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1800,
     "end": 1914,
@@ -2616,12 +2751,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "north_america_world_wars_reordering_era",
     "canonical_name": "North America, World Wars Reordering",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1914,
     "end": 1945,
@@ -2651,12 +2788,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "oceania_contemporary_world_era",
     "canonical_name": "Oceania, Contemporary World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1945,
     "end": 2100,
@@ -2686,12 +2825,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "oceania_early_modern_connections_era",
     "canonical_name": "Oceania, Early Modern Connections",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1500,
     "end": 1800,
@@ -2721,12 +2862,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "oceania_industrial_imperial_world_era",
     "canonical_name": "Oceania, Industrial Imperial World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1800,
     "end": 1914,
@@ -2756,12 +2899,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "oceania_world_wars_reordering_era",
     "canonical_name": "Oceania, World Wars Reordering",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1914,
     "end": 1945,
@@ -2791,12 +2936,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "olmec_civilization_period",
     "canonical_name": "Olmec civilization",
-    "kind": "archaeological",
     "tier": "period",
     "start": -1200,
     "end": -400,
@@ -2832,12 +2979,14 @@
     "government_form": null,
     "civilization_lane": true,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "archaeological"
+    }
   },
   {
     "id": "paleolithic_era",
     "canonical_name": "Paleolithic",
-    "kind": "historical",
     "tier": "regional_era",
     "start": -3000000,
     "end": -10000,
@@ -2871,12 +3020,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "rhodes_q104383185_period",
     "canonical_name": "Rhodes",
-    "kind": "historical",
     "tier": "period",
     "start": -407,
     "end": -333,
@@ -2906,12 +3057,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "seshat_final_jomon_jpjomo6_period",
     "canonical_name": "Final Jomon ",
-    "kind": "historical",
     "tier": "period",
     "start": -1200,
     "end": -301,
@@ -2939,12 +3092,14 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_final_jomon_jpjomo6",
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "seshat_incipient_jomon_jpjomo1_period",
     "canonical_name": "Incipient Jomon",
-    "kind": "historical",
     "tier": "period",
     "start": -13600,
     "end": -9201,
@@ -2976,12 +3131,14 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_incipient_jomon_jpjomo1",
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "seshat_initial_jomon_jpjomo2_period",
     "canonical_name": "Initial Jomon",
-    "kind": "historical",
     "tier": "period",
     "start": -9200,
     "end": -5301,
@@ -3013,12 +3170,14 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_initial_jomon_jpjomo2",
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "seshat_jomon_jpjomo3_period",
     "canonical_name": "Early Jomon",
-    "kind": "historical",
     "tier": "period",
     "start": -5300,
     "end": -3501,
@@ -3046,12 +3205,14 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_jomon_jpjomo3",
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "seshat_jomon_jpjomo4_period",
     "canonical_name": "Middle Jomon ",
-    "kind": "historical",
     "tier": "period",
     "start": -3500,
     "end": -2501,
@@ -3079,12 +3240,14 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_jomon_jpjomo4",
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "seshat_jomon_jpjomo5_period",
     "canonical_name": "Late Jomon ",
-    "kind": "historical",
     "tier": "period",
     "start": -2500,
     "end": -1201,
@@ -3112,12 +3275,14 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_jomon_jpjomo5",
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "seshat_kachi_plain_pkceran_period",
     "canonical_name": "Kachi Plain - Ceramic Neolithic",
-    "kind": "historical",
     "tier": "period",
     "start": -5500,
     "end": -4001,
@@ -3149,12 +3314,14 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_kachi_plain_pkceran",
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "seshat_neolithic_crete_grcrneo_period",
     "canonical_name": "Neolithic Crete",
-    "kind": "historical",
     "tier": "period",
     "start": -7000,
     "end": -3001,
@@ -3182,12 +3349,14 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_neolithic_crete_grcrneo",
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "seshat_neolithic_ganga_ingangn_period",
     "canonical_name": "Neolithic Middle Ganga",
-    "kind": "historical",
     "tier": "period",
     "start": -7000,
     "end": -3001,
@@ -3219,12 +3388,14 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_neolithic_ganga_ingangn",
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "seshat_southern_mesopotamia_neolithic_iqsoneo_period",
     "canonical_name": "Southern Mesopotamia Neolithic",
-    "kind": "historical",
     "tier": "period",
     "start": -9000,
     "end": -5501,
@@ -3252,12 +3423,14 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_southern_mesopotamia_neolithic_iqsoneo",
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "south_america_contemporary_world_era",
     "canonical_name": "South America, Contemporary World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1945,
     "end": 2100,
@@ -3287,12 +3460,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "south_america_early_modern_connections_era",
     "canonical_name": "South America, Early Modern Connections",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1500,
     "end": 1800,
@@ -3322,12 +3497,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "south_america_industrial_imperial_world_era",
     "canonical_name": "South America, Industrial Imperial World",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1800,
     "end": 1914,
@@ -3357,12 +3534,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "south_america_world_wars_reordering_era",
     "canonical_name": "South America, World Wars Reordering",
-    "kind": "historical",
     "tier": "regional_era",
     "start": 1914,
     "end": 1945,
@@ -3392,12 +3571,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "south_asian_classical_era",
     "canonical_name": "South Asian Classical Antiquity",
-    "kind": "historical",
     "tier": "period",
     "start": -600,
     "end": 500,
@@ -3431,12 +3612,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "sub_saharan_african_iron_age_era",
     "canonical_name": "Sub-Saharan African Iron Age",
-    "kind": "historical",
     "tier": "period",
     "start": -600,
     "end": 500,
@@ -3473,12 +3656,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "syrakousai_period",
     "canonical_name": "Syrakousai",
-    "kind": "historical",
     "tier": "period",
     "start": -732,
     "end": -210,
@@ -3508,12 +3693,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "taifa_of_mallorca_q104178581_period",
     "canonical_name": "Taifa of Mallorca",
-    "kind": "historical",
     "tier": "period",
     "start": 1158,
     "end": 1203,
@@ -3543,12 +3730,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "taifa_of_murcia_q104178103_period",
     "canonical_name": "Taifa of Murcia",
-    "kind": "historical",
     "tier": "period",
     "start": 1145,
     "end": 1172,
@@ -3578,12 +3767,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "taifa_of_murcia_q104178238_period",
     "canonical_name": "Taifa of Murcia",
-    "kind": "historical",
     "tier": "period",
     "start": 1228,
     "end": 1266,
@@ -3613,12 +3804,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "viking_age_period",
     "canonical_name": "Viking Age",
-    "kind": "historical",
     "tier": "period",
     "start": 793,
     "end": 1066,
@@ -3656,12 +3849,14 @@
     "government_form": null,
     "civilization_lane": true,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "western_zhou_q1069609_period",
     "canonical_name": "Western Zhou",
-    "kind": "historical",
     "tier": "period",
     "start": -1045,
     "end": -770,
@@ -3691,12 +3886,14 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
   },
   {
     "id": "yayoi_period",
     "canonical_name": "Yayoi period",
-    "kind": "protohistorical",
     "tier": "period",
     "start": -900,
     "end": 250,
@@ -3736,6 +3933,9 @@
     "government_form": null,
     "civilization_lane": false,
     "promoted_from": null,
-    "detail_of": null
+    "detail_of": null,
+    "deprecated": {
+      "kind": "protohistorical"
+    }
   }
 ]

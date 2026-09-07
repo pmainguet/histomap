@@ -1,6 +1,5 @@
 id: macro_early_cities_states
 canonical_name: Early Cities and States
-kind: historical
 tier: macro_chapter
 start: -3500
 end: -1200
@@ -17,3 +16,5 @@ notes: Editorial navigation chapter covering the first urban civilizations (Meso
 source_urls:
 - https://en.wikipedia.org/wiki/Bronze_Age
 civilization_lane: false
+deprecated:
+  kind: historical

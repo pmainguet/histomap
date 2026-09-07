@@ -1,6 +1,5 @@
 id: mesoamerican_preclassic
 canonical_name: Mesoamerican Preclassic period
-kind: protohistorical
 start: -2000
 end: 250
 geography:
@@ -25,3 +24,5 @@ source_urls:
 civilization_lane: false
 broader_periods:
 - classical_antiquity_era
+deprecated:
+  kind: protohistorical

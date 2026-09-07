@@ -1,6 +1,5 @@
 id: minoan_civilization_period
 canonical_name: Minoan civilization
-kind: protohistorical
 start: -2600
 end: -1100
 start_confidence: medium
@@ -27,3 +26,5 @@ source_urls:
 linked_era_id: classical_antiquity_era
 linked_chapter_id: macro_early_cities_states
 civilization_lane: true
+deprecated:
+  kind: protohistorical

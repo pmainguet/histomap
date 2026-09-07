@@ -1,6 +1,5 @@
 id: seshat_jomon_jpjomo4_period
 canonical_name: 'Middle Jomon '
-kind: historical
 start: -3500
 end: -2501
 start_confidence: low
@@ -16,3 +15,5 @@ external_ids: {}
 notes: Period overlay created by an editorial period-role decision.
 source_urls: []
 promoted_from: seshat_jomon_jpjomo4
+deprecated:
+  kind: historical

@@ -1,6 +1,5 @@
 id: eurasian_paleolithic_era
 canonical_name: Eurasian Paleolithic
-kind: historical
 tier: period
 start: -1800000
 end: -10000
@@ -20,3 +19,5 @@ notes: From the first Homo erectus dispersal out of Africa (Dmanisi, ~1.8 millio
 source_urls:
 - https://en.wikipedia.org/wiki/Eurasian_Paleolithic
 civilization_lane: false
+deprecated:
+  kind: historical

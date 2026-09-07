@@ -1,6 +1,5 @@
 id: viking_age_period
 canonical_name: Viking Age
-kind: historical
 start: 793
 end: 1066
 start_confidence: medium
@@ -29,3 +28,5 @@ source_urls:
 linked_era_id: medieval_europe_era
 linked_chapter_id: macro_postclassical_worlds
 civilization_lane: true
+deprecated:
+  kind: historical

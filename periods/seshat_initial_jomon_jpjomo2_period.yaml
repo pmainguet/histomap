@@ -1,6 +1,5 @@
 id: seshat_initial_jomon_jpjomo2_period
 canonical_name: Initial Jomon
-kind: historical
 start: -9200
 end: -5301
 start_confidence: high
@@ -24,3 +23,5 @@ source_urls: []
 promoted_from: seshat_initial_jomon_jpjomo2
 manual_overrides:
 - geography
+deprecated:
+  kind: historical

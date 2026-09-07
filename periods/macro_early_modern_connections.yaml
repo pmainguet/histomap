@@ -1,6 +1,5 @@
 id: macro_early_modern_connections
 canonical_name: Early Modern Global Connections
-kind: historical
 tier: macro_chapter
 start: 1500
 end: 1800
@@ -17,3 +16,5 @@ notes: Editorial navigation chapter. Maritime expansion, gunpowder empires, the 
 source_urls:
 - https://en.wikipedia.org/wiki/Early_modern_period
 civilization_lane: false
+deprecated:
+  kind: historical

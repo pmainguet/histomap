@@ -1,6 +1,5 @@
 id: mesoamerican_classic
 canonical_name: Mesoamerican Classic period
-kind: historical
 start: 250
 end: 900
 geography:
@@ -25,3 +24,5 @@ source_urls:
 civilization_lane: false
 broader_periods:
 - classical_antiquity_era
+deprecated:
+  kind: historical

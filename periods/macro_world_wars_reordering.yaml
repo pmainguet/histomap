@@ -1,6 +1,5 @@
 id: macro_world_wars_reordering
 canonical_name: World Wars and Global Reordering
-kind: historical
 tier: macro_chapter
 start: 1914
 end: 1945
@@ -17,3 +16,5 @@ notes: Editorial navigation chapter spanning the First World War through the end
 source_urls:
 - https://en.wikipedia.org/wiki/World_war
 civilization_lane: false
+deprecated:
+  kind: historical

@@ -1,6 +1,5 @@
 id: neolithic_era
 canonical_name: Neolithic & Archaic
-kind: historical
 tier: regional_era
 start: -10000
 end: -1700
@@ -35,3 +34,5 @@ notes: Overarching parent for the regional agricultural-transition eras, which h
 source_urls:
 - https://en.wikipedia.org/wiki/Neolithic
 civilization_lane: false
+deprecated:
+  kind: historical

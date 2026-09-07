@@ -1,6 +1,5 @@
 id: mesoamerican_formative_classic_era
 canonical_name: Mesoamerican Formative and Classic Periods
-kind: historical
 start: -1200
 end: 900
 start_confidence: low
@@ -23,3 +22,5 @@ notes: Olmec civilization through the Classic Maya collapse. Ends 900 CE, 400 ye
 source_urls:
 - https://en.wikipedia.org/wiki/Mesoamerican_Formative_and_Classic_Periods
 civilization_lane: false
+deprecated:
+  kind: historical

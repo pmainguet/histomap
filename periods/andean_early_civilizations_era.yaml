@@ -1,6 +1,5 @@
 id: andean_early_civilizations_era
 canonical_name: Early Andean Civilizations
-kind: historical
 start: -1200
 end: 600
 start_confidence: low
@@ -25,3 +24,5 @@ source_urls:
 linked_era_id: classical_antiquity_era
 linked_chapter_id: macro_classical_imperial_worlds
 civilization_lane: true
+deprecated:
+  kind: historical

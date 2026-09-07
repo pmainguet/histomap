@@ -1,6 +1,5 @@
 id: oceania_early_modern_connections_era
 canonical_name: Oceania, Early Modern Connections
-kind: historical
 tier: regional_era
 start: 1500
 end: 1800
@@ -19,3 +18,5 @@ notes: Auto-generated placeholder -- continent-level grain only, no historical r
   this once someone wants to invest that research; see ONTOLOGY.md.
 source_urls: []
 civilization_lane: false
+deprecated:
+  kind: historical

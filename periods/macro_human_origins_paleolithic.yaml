@@ -1,6 +1,5 @@
 id: macro_human_origins_paleolithic
 canonical_name: Human Origins and Paleolithic Worlds
-kind: archaeological
 tier: macro_chapter
 start: -3000000
 end: -10000
@@ -21,3 +20,5 @@ notes: Editorial navigation chapter, not a claim that every society developed id
 source_urls:
 - https://en.wikipedia.org/wiki/Stone_Age
 civilization_lane: false
+deprecated:
+  kind: archaeological

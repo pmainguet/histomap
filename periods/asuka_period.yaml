@@ -1,6 +1,5 @@
 id: asuka_period
 canonical_name: Asuka period
-kind: historical
 start: 538
 end: 710
 geography:
@@ -19,3 +18,5 @@ source_urls:
 civilization_lane: false
 broader_periods:
 - classical_antiquity_era
+deprecated:
+  kind: historical

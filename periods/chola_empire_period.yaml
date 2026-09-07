@@ -1,6 +1,5 @@
 id: chola_empire_period
 canonical_name: Chola Empire
-kind: historical
 start: 848
 end: 1279
 start_confidence: low
@@ -19,3 +18,5 @@ notes: Editorially identified as a phase or aspect of Chola dynasty.
 source_urls:
 - https://www.wikidata.org/wiki/Q6806806
 civilization_lane: false
+deprecated:
+  kind: historical

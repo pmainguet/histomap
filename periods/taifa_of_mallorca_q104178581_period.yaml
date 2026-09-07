@@ -1,6 +1,5 @@
 id: taifa_of_mallorca_q104178581_period
 canonical_name: Taifa of Mallorca
-kind: historical
 start: 1158
 end: 1203
 start_confidence: low
@@ -19,3 +18,5 @@ notes: Editorially identified as a phase or aspect of Taifa of Majorca.
 source_urls:
 - https://www.wikidata.org/wiki/Q104178581
 civilization_lane: false
+deprecated:
+  kind: historical

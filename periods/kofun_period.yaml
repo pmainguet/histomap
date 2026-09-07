@@ -1,6 +1,5 @@
 id: kofun_period
 canonical_name: Kofun period
-kind: protohistorical
 start: 250
 end: 538
 geography:
@@ -21,3 +20,5 @@ source_urls:
 civilization_lane: false
 broader_periods:
 - classical_antiquity_era
+deprecated:
+  kind: protohistorical

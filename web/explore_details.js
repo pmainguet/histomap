@@ -22,8 +22,6 @@ const ENTITY_TYPE_OPTIONS = [
   "polity", "civilization", "subdivision", "micronation",
   "culture", "people", "tribe", "archaeological_horizon",
 ];
-const PERIOD_KIND_OPTIONS = ["historical", "archaeological", "protohistorical", "prehistorical"];
-
 const REBUILD_NOTE = "Saved. The record is updated; run a build for /explore's chart bands to reflect it.";
 
 async function postJson(url, method, body) {
@@ -236,10 +234,6 @@ function editControlsHtml(kind, record, geographyOptions, politiesById) {
     : `<div class="detail-edit-row">
          <select class="detail-entity-type-select" name="entity-type" aria-label="Entity type">${optionsHtml(ENTITY_TYPE_OPTIONS, "polity")}</select>
          <button class="detail-convert-to-entity" type="button">Convert to entity</button>
-       </div>
-       <div class="detail-edit-row">
-         <select class="detail-period-kind-select" name="period-kind" aria-label="Period type">${optionsHtml(PERIOD_KIND_OPTIONS, record.kind || "historical")}</select>
-         <button class="detail-set-period-kind" type="button">Set period type</button>
        </div>`;
   return `<details class="detail-edit">
       <summary>Edit</summary>
@@ -304,19 +298,6 @@ function wireEditControls(kind, record, ctx, onSaved) {
         const result = await postJson(`${idPath}/promote-to-entity`, "POST", { entity_type: entityType });
         ctx.onEdit?.();
         setStatus(`${REBUILD_NOTE} New polity id: ${result.entity_id}.`, false);
-      } catch (error) {
-        setStatus(error.message, true);
-      }
-    });
-    explorePanel.querySelector(".detail-set-period-kind").addEventListener("click", async () => {
-      const kindValue = explorePanel.querySelector(".detail-period-kind-select").value;
-      try {
-        await postJson(`${idPath}/kind`, "PATCH", { kind: kindValue });
-        const updated = { ...record, kind: kindValue };
-        ctx.periodsById.set(record.id, updated);
-        onSaved(updated);
-        ctx.onEdit?.();
-        setStatus(REBUILD_NOTE, false);
       } catch (error) {
         setStatus(error.message, true);
       }
@@ -420,7 +401,6 @@ function renderPeriodDetails(period, ctx) {
     <p>${escapeHtml(period.notes || "Sourced chronological context; this record is not a polity.")}</p>
     <dl>
       <dt>Dates</dt><dd>${formatYear(period.start)}–${formatYear(period.end)}</dd>
-      <dt>Period type</dt><dd>${escapeHtml(displayTerm(period.kind))}</dd>
       <dt>Authority</dt><dd>${escapeHtml(period.authority || "unknown")}</dd>
       <dt>Continents</dt><dd>${escapeHtml((period.geography?.continents || []).map(displayTerm).join(", ") || "unknown")}</dd>
       <dt>Present countries</dt><dd>${escapeHtml(countries.join(", ") || "unknown")}</dd>

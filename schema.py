@@ -282,7 +282,6 @@ class Transition(BaseModel):
 class Period(BaseModel):
     id: str
     canonical_name: str
-    kind: Literal["historical", "archaeological", "protohistorical", "prehistorical"]
     tier: Literal["macro_chapter", "regional_era", "period"] = "period"
     start: int
     end: int
@@ -333,6 +332,13 @@ class Period(BaseModel):
     # validate_entity_relationships in build.py). Found live, 7 September
     # 2026.
     detail_of: str | None = None
+    # See Polity.deprecated -- same field, same purpose: a generic bucket
+    # preserving old field values under their original names for records
+    # migrated away from a retired mechanism. First user: `kind` (retired 7
+    # September 2026 -- see pipeline/migrate_period_kind_to_deprecated.py),
+    # moved here rather than discarded so the old historical/archaeological/
+    # protohistorical/prehistorical classification isn't lost.
+    deprecated: dict[str, Any] | None = None
 
     @field_validator("id")
     @classmethod

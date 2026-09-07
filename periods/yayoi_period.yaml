@@ -1,6 +1,5 @@
 id: yayoi_period
 canonical_name: Yayoi period
-kind: protohistorical
 start: -900
 end: 250
 start_confidence: low
@@ -22,3 +21,5 @@ source_urls:
 civilization_lane: false
 broader_periods:
 - classical_antiquity_era
+deprecated:
+  kind: protohistorical

@@ -1,6 +1,5 @@
 id: sub_saharan_african_iron_age_era
 canonical_name: Sub-Saharan African Iron Age
-kind: historical
 start: -600
 end: 500
 start_confidence: low
@@ -25,3 +24,5 @@ notes: Nok culture and the early Bantu expansion ironworking tradition. Demoted 
 source_urls:
 - https://en.wikipedia.org/wiki/Sub-Saharan_African_Iron_Age
 civilization_lane: false
+deprecated:
+  kind: historical

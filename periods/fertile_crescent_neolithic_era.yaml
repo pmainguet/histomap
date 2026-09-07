@@ -1,6 +1,5 @@
 id: fertile_crescent_neolithic_era
 canonical_name: Fertile Crescent Neolithic
-kind: historical
 tier: period
 start: -10000
 end: -3500
@@ -21,3 +20,5 @@ notes: Earliest agriculture (Levant, Anatolia, Mesopotamia).
 source_urls:
 - https://en.wikipedia.org/wiki/Fertile_Crescent_Neolithic
 civilization_lane: false
+deprecated:
+  kind: historical

@@ -1,6 +1,5 @@
 id: macro_industrial_imperial_world
 canonical_name: Industrial and Imperial World
-kind: historical
 tier: macro_chapter
 start: 1800
 end: 1914
@@ -18,3 +17,5 @@ notes: Editorial navigation chapter. Industrialization, high imperialism, and th
 source_urls:
 - https://en.wikipedia.org/wiki/19th_century
 civilization_lane: false
+deprecated:
+  kind: historical

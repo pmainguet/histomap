@@ -406,35 +406,11 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(saved["entity_type_confidence"], "high")
         self.assertIn("entity_type", saved["manual_overrides"])
 
-    def test_updates_and_locks_period_kind(self) -> None:
-        period_path = self.root / "periods" / "test_period.yaml"
-        period_path.write_text(
-            yaml.safe_dump({"id": "test_period", "canonical_name": "Test", "kind": "historical"}),
-            encoding="utf-8",
-        )
-
-        response = self.client.patch(
-            "/api/periods/test_period/kind", json={"kind": "archaeological"}
-        )
-
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json()["kind"], "archaeological")
-        saved = yaml.safe_load(period_path.read_text(encoding="utf-8"))
-        self.assertEqual(saved["kind"], "archaeological")
-        self.assertIn("kind", saved["manual_overrides"])
-
-    def test_rejects_unknown_period_kind_update(self) -> None:
-        response = self.client.patch(
-            "/api/periods/missing/kind", json={"kind": "historical"}
-        )
-
-        self.assertEqual(response.status_code, 404)
-
     def test_promotes_period_by_restoring_original_entity(self) -> None:
         period_path = self.root / "periods" / "candidate_period.yaml"
         period_path.write_text(
             yaml.safe_dump({
-                "id": "candidate_period", "canonical_name": "Candidate", "kind": "historical",
+                "id": "candidate_period", "canonical_name": "Candidate",
                 "start": 90, "end": 210, "authority": "Editorial", "source_urls": ["https://example.test"],
             }),
             encoding="utf-8",
@@ -534,7 +510,7 @@ class UnifiedServerTests(unittest.TestCase):
         period_path = self.root / "periods" / "existing_period.yaml"
         period_path.write_text(
             yaml.safe_dump({
-                "id": "existing_period", "canonical_name": "Existing", "kind": "historical",
+                "id": "existing_period", "canonical_name": "Existing",
                 "start": 90, "end": 210, "authority": "Editorial", "source_urls": ["https://example.test"],
             }),
             encoding="utf-8",

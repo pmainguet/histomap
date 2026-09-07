@@ -1,6 +1,5 @@
 id: classical_antiquity_era
 canonical_name: Classical Antiquity
-kind: historical
 tier: regional_era
 start: -1200
 end: 900
@@ -29,3 +28,5 @@ notes: Overarching parent for the regional Classical Antiquity eras (mediterrane
 source_urls:
 - https://en.wikipedia.org/wiki/Classical_antiquity
 civilization_lane: false
+deprecated:
+  kind: historical

@@ -1,6 +1,5 @@
 id: seshat_neolithic_ganga_ingangn_period
 canonical_name: Neolithic Middle Ganga
-kind: historical
 start: -7000
 end: -3001
 start_confidence: high
@@ -24,3 +23,5 @@ source_urls: []
 promoted_from: seshat_neolithic_ganga_ingangn
 manual_overrides:
 - geography
+deprecated:
+  kind: historical

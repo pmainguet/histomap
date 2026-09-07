@@ -1,6 +1,5 @@
 id: taifa_of_murcia_q104178238_period
 canonical_name: Taifa of Murcia
-kind: historical
 start: 1228
 end: 1266
 start_confidence: low
@@ -19,3 +18,5 @@ notes: Editorially identified as a phase or aspect of Taifa of Murcia.
 source_urls:
 - https://www.wikidata.org/wiki/Q104178238
 civilization_lane: false
+deprecated:
+  kind: historical

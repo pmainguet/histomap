@@ -1,6 +1,5 @@
 id: african_paleolithic_era
 canonical_name: African Paleolithic
-kind: historical
 tier: period
 start: -3000000
 end: -10000
@@ -18,3 +17,5 @@ notes: Earliest stone tools and the origin of Homo sapiens.
 source_urls:
 - https://en.wikipedia.org/wiki/African_Paleolithic
 civilization_lane: false
+deprecated:
+  kind: historical

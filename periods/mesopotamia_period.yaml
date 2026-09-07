@@ -1,6 +1,5 @@
 id: mesopotamia_period
 canonical_name: Mesopotamia
-kind: historical
 start: -4000
 end: -538
 start_confidence: low
@@ -36,3 +35,5 @@ source_urls:
 linked_era_id: neolithic_era
 linked_chapter_id: macro_early_cities_states
 civilization_lane: true
+deprecated:
+  kind: historical

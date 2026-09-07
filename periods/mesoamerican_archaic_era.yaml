@@ -1,6 +1,5 @@
 id: mesoamerican_archaic_era
 canonical_name: Mesoamerican Archaic
-kind: historical
 tier: period
 start: -8000
 end: -2000
@@ -23,3 +22,5 @@ notes: Maize domestication and early sedentism. Ends -2000, well past this chapt
 source_urls:
 - https://en.wikipedia.org/wiki/Mesoamerican_Archaic
 civilization_lane: false
+deprecated:
+  kind: historical

@@ -1,6 +1,5 @@
 id: jomon_period
 canonical_name: Jōmon period
-kind: prehistorical
 start: -10000
 end: -300
 start_confidence: low
@@ -23,3 +22,5 @@ source_urls:
 civilization_lane: false
 broader_periods:
 - neolithic_era
+deprecated:
+  kind: prehistorical

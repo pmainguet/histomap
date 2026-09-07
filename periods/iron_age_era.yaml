@@ -1,6 +1,5 @@
 id: iron_age_era
 canonical_name: Iron Age
-kind: historical
 tier: regional_era
 start: -1200
 end: 800
@@ -25,3 +24,5 @@ notes: Overarching parent for the regional Iron Age eras (european_iron_age, sub
 source_urls:
 - https://en.wikipedia.org/wiki/Iron_Age
 civilization_lane: false
+deprecated:
+  kind: historical

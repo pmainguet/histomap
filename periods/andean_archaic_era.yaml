@@ -1,6 +1,5 @@
 id: andean_archaic_era
 canonical_name: Andean Archaic
-kind: historical
 tier: period
 start: -7000
 end: -2000
@@ -22,3 +21,5 @@ notes: Early Andean and coastal Peruvian farming/fishing settlements (e.g. Norte
 source_urls:
 - https://en.wikipedia.org/wiki/Andean_Archaic
 civilization_lane: false
+deprecated:
+  kind: historical

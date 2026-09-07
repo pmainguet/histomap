@@ -1,6 +1,5 @@
 id: bronze_age_era
 canonical_name: Bronze Age
-kind: historical
 tier: regional_era
 start: -3200
 end: -1046
@@ -28,3 +27,5 @@ notes: Overarching parent for the regional Bronze Age eras, which happened at me
 source_urls:
 - https://en.wikipedia.org/wiki/Bronze_Age
 civilization_lane: false
+deprecated:
+  kind: historical

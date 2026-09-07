@@ -1,6 +1,5 @@
 id: seshat_kachi_plain_pkceran_period
 canonical_name: Kachi Plain - Ceramic Neolithic
-kind: historical
 start: -5500
 end: -4001
 start_confidence: low
@@ -22,3 +21,5 @@ external_ids: {}
 notes: Period overlay created by an editorial period-role decision.
 source_urls: []
 promoted_from: seshat_kachi_plain_pkceran
+deprecated:
+  kind: historical
