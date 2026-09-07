@@ -138,7 +138,7 @@ function drawDetailPanel(svg, { x, y, width, scale, details, onZoom, isExpanded 
     const detailX = scale.x(detail.start);
     const detailWidth = Math.max(4, scale.width(detail.start, detail.end));
     const nested = Array.isArray(detail.details) && detail.details.length > 0 ? detail.details : null;
-    const zoomTarget = { handler: onZoom, kind: "polity", id: detail.id, start: detail.start, end: detail.end };
+    const zoomTarget = { handler: onZoom, kind: detail.kind || "polity", id: detail.id, start: detail.start, end: detail.end };
     if (nested) {
       const nestedExpanded = isExpanded(detail.id);
       const toggleW = Math.min(detailWidth, toggleWidth(nested.length));

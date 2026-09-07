@@ -361,6 +361,16 @@ function polityRefButton(politiesById, id) {
     : escapeHtml(label);
 }
 
+// A period's detail_of target -- and, in reverse, whatever's listed as a
+// period's own "detail of" child -- can be either a period or a polity
+// (the reverse is never true: a polity's own detail_of/children stay
+// polity-only, see build.py's validate_entity_relationships/
+// validate_period_detail_of). Dispatches to whichever of the two ref-button
+// helpers actually has the id, since ids are unique across both.
+function entityRefButton(ctx, id) {
+  return ctx.periodsById.has(id) ? periodRefButton(ctx.periodsById, id) : polityRefButton(ctx.politiesById, id);
+}
+
 function externalLinksForPeriod(period) {
   const links = Object.entries(period.external_ids || {}).map(([source, value]) => {
     const url = String(value).startsWith("http") ? value
@@ -393,6 +403,13 @@ function renderPeriodDetails(period, ctx) {
   const predecessors = [...periodsById.values()].filter((candidate) => (candidate.successors || []).includes(period.id));
   const linked = periodLinks.filter((link) => link.period_id === period.id);
   const externalLinks = externalLinksForPeriod(period);
+  // A period's own detail_of children are always other periods -- a polity
+  // can never be a detail of a period (see build.py's validate_entity_
+  // relationships). Distinct from `contained` above (broader_periods, the
+  // structural era-nesting relationship) -- "Details"/"Detail of" label
+  // the detail_of relationship specifically, to avoid colliding with the
+  // existing "Part of"/"Contains" labels already used for broader_periods.
+  const detailChildren = [...periodsById.values()].filter((candidate) => candidate.detail_of === period.id);
 
   explorePanel.innerHTML = `<button class="detail-close" type="button" aria-label="Close details">×</button>
     <p class="detail-kicker">${escapeHtml(TIER_KICKER[period.tier] || "Period")}</p>
@@ -406,7 +423,9 @@ function renderPeriodDetails(period, ctx) {
       <dt>Present countries</dt><dd>${escapeHtml(countries.join(", ") || "unknown")}</dd>
       ${(period.geography?.historical_regions || []).length ? `<dt>Historical regions</dt><dd>${escapeHtml(period.geography.historical_regions.map(displayTerm).join(", "))}</dd>` : ""}
       ${(period.broader_periods || []).length ? `<dt>Part of</dt><dd>${period.broader_periods.map((id) => periodRefButton(periodsById, id)).join(", ")}</dd>` : ""}
+      ${period.detail_of ? `<dt>Detail of</dt><dd>${entityRefButton(ctx, period.detail_of)}</dd>` : ""}
       ${contained.length ? `<dt>Contains</dt><dd>${contained.map((item) => periodRefButton(periodsById, item.id)).join(", ")}</dd>` : ""}
+      ${detailChildren.length ? `<dt>Details</dt><dd>${detailChildren.map((item) => periodRefButton(periodsById, item.id)).join(", ")}</dd>` : ""}
       ${predecessors.length ? `<dt>Preceded by</dt><dd>${predecessors.map((item) => periodRefButton(periodsById, item.id)).join(", ")}</dd>` : ""}
       ${(period.successors || []).length ? `<dt>Followed by</dt><dd>${period.successors.map((id) => periodRefButton(periodsById, id)).join(", ")}</dd>` : ""}
       ${linked.length ? `<dt>Linked entities</dt><dd class="detail-links">${linked.map((link) => `${polityRefButton(politiesById, link.entity_id)} <small>${escapeHtml(link.evidence)}, ${escapeHtml(link.confidence)}</small>`).join("<br>")}</dd>` : ""}
@@ -414,7 +433,7 @@ function renderPeriodDetails(period, ctx) {
     </dl>
     ${editControlsHtml("period", period)}`;
 
-  wireExplorePanel(ctx, period.start, period.end, period.id);
+  wireExplorePanel(ctx, period.start, period.end, period.detail_of || period.id);
   wireEditControls("period", period, ctx, (updated) => renderPeriodDetails(updated, ctx));
   explorePanel.querySelectorAll("[data-explore-period-id]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -438,7 +457,13 @@ function renderPolityDetails(polity, ctx) {
   const countries = (polity.geography?.present_countries || []).map((code) => exploreCountryNames.of(code) || code);
   const centroid = polity.geography?.centroid;
   const duration = polity.end == null ? null : polity.end - polity.start;
-  const children = [...politiesById.values()].filter((candidate) => candidate.detail_of === polity.id);
+  // A polity's "Contains" (its detail_of children) can now include periods
+  // too, not just other polities -- e.g. a short-lived named period that's
+  // a detail of this polity.
+  const children = [
+    ...[...politiesById.values()].filter((candidate) => candidate.detail_of === polity.id),
+    ...[...periodsById.values()].filter((candidate) => candidate.detail_of === polity.id),
+  ];
   const predecessors = [...politiesById.values()].filter((candidate) => (candidate.successors || []).includes(polity.id));
   const relevantPeriods = periodLinks.filter((link) => link.entity_id === polity.id);
   const relevantTransitions = (ctx.transitions || []).filter((transition) => [...transition.from, ...transition.to].includes(polity.id));
@@ -453,7 +478,7 @@ function renderPolityDetails(polity, ctx) {
       <dt>Entity type</dt><dd>${escapeHtml(displayTerm(polity.entity_type || "polity"))}</dd>
       ${aliases ? `<dt>Other names</dt><dd>${escapeHtml(aliases)}</dd>` : ""}
       ${polity.detail_of ? `<dt>Part of</dt><dd>${polityRefButton(politiesById, polity.detail_of)}</dd>` : ""}
-      ${children.length ? `<dt>Contains</dt><dd>${children.map((item) => polityRefButton(politiesById, item.id)).join(", ")}</dd>` : ""}
+      ${children.length ? `<dt>Contains</dt><dd>${children.map((item) => entityRefButton(ctx, item.id)).join(", ")}</dd>` : ""}
       ${predecessors.length ? `<dt>Preceded by</dt><dd>${predecessors.map((item) => polityRefButton(politiesById, item.id)).join(", ")}</dd>` : ""}
       ${(polity.successors || []).length ? `<dt>Followed by</dt><dd>${polity.successors.map((id) => polityRefButton(politiesById, id)).join(", ")}</dd>` : ""}
       <dt>Continents</dt><dd>${escapeHtml((polity.geography?.continents || []).map(displayTerm).join(", ") || "unknown")}</dd>
