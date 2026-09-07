@@ -1,0 +1,19 @@
+id: seshat_bronze_age_beaker_culture_frbeakr_period
+canonical_name: Early Bronze Age Beaker Culture
+start: -3200
+end: -2201
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Wikidata period classification
+external_ids: {}
+notes: Period overlay created by an editorial period-role decision.
+source_urls: []
+promoted_from: seshat_bronze_age_beaker_culture_frbeakr

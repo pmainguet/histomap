@@ -45,7 +45,9 @@ prominence_components:
   aggregate_penalty: 0
   total: 18.97
 manual_overrides:
+- consolidation
 - entity_type
 government_form: khanate
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent

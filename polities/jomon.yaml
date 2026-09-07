@@ -1,0 +1,49 @@
+id: jomon
+canonical_name: Jōmon period
+names: {}
+external_ids: {}
+successors: []
+start: -10000
+end: -300
+start_confidence: low
+end_confidence: low
+weight_by_era: {}
+weight_imputed: true
+icon: null
+text:
+  short_child_en: ''
+  short_adult_en: ''
+  long_en: ''
+notes: Start is clipped to Histomap's current -10000 year boundary.
+sources:
+- histomap_editorial
+prominence_score: 3.0
+eligibility: accepted
+geography:
+  continents:
+  - asia
+  present_countries:
+  - JP
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
+relationships: []
+entity_type: culture
+entity_type_confidence: high
+entity_type_source_qids: []
+timeline_role: entity
+manual_overrides:
+- consolidation
+- entity_type
+- timeline_role
+prominence_components:
+  wikidata_reach: 0.0
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 8
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 3.0

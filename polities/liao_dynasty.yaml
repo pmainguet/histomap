@@ -68,6 +68,7 @@ relationships:
   source_urls:
   - https://www.wikidata.org/wiki/Q4958
 manual_overrides:
+- consolidation
 - entity_type
 prominence_components:
   wikidata_reach: 26.67
@@ -83,3 +84,4 @@ prominence_components:
 government_form: null
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent

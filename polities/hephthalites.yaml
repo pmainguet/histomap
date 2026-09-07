@@ -39,6 +39,7 @@ geography:
   - central_asia
   primary_historical_region: central_asia
 manual_overrides:
+- consolidation
 - entity_type
 - geography
 entity_type: people
@@ -60,3 +61,4 @@ linked_era_id: classical_antiquity_era
 government_form: null
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent

@@ -55,6 +55,7 @@ prominence_components:
   aggregate_penalty: 0
   total: 41.68
 manual_overrides:
+- consolidation
 - entity_type
 - visibility_override
 linked_era_id: neolithic_era
@@ -63,3 +64,4 @@ linked_chapter_id: macro_early_cities_states
 deprecated:
   visibility_tier: regional
   visibility_override: global
+consolidation_status: independent

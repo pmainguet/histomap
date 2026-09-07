@@ -7,6 +7,12 @@ end_confidence: high
 geography:
   continents:
   - asia
+  primary_continent: asia
+  historical_regions: []
+  primary_historical_region: null
+  present_countries:
+  - IQ
+  centroid: null
   confidence: low
 broader_periods: []
 successors: []
@@ -17,3 +23,11 @@ source_urls: []
 promoted_from: seshat_southern_mesopotamia_neolithic_iqsoneo
 deprecated:
   kind: historical
+tier: period
+linked_era_id: null
+linked_chapter_id: null
+government_form: null
+civilization_lane: null
+detail_of: null
+manual_overrides:
+- geography
