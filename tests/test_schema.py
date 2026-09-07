@@ -138,5 +138,19 @@ class PeriodPromotedFromTests(unittest.TestCase):
         self.assertEqual(period.promoted_from, "some_polity")
 
 
+class PeriodDetailOfTests(unittest.TestCase):
+    def test_detail_of_defaults_to_none(self) -> None:
+        period = Period(**period_kwargs())
+        self.assertIsNone(period.detail_of)
+
+    def test_detail_of_accepts_a_target_id(self) -> None:
+        period = Period(**period_kwargs(detail_of="jomon_period"))
+        self.assertEqual(period.detail_of, "jomon_period")
+
+    def test_detail_of_rejects_self_reference(self) -> None:
+        with self.assertRaises(ValidationError):
+            Period(**period_kwargs(id="loop", detail_of="loop"))
+
+
 if __name__ == "__main__":
     unittest.main()

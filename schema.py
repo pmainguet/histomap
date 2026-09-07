@@ -326,6 +326,13 @@ class Period(BaseModel):
     # filename convention into an explicit, schema-validated back-reference
     # -- see docs/plans/2026-09-05-polity-period-conversion-friction-design.md.
     promoted_from: str | None = None
+    # See Polity.detail_of -- same field, same purpose, for periods: a
+    # period can be a detail of another period (e.g. Initial Jomon -> Jomon
+    # period) or of a polity. The reverse is NOT allowed -- a polity's own
+    # detail_of stays restricted to polity targets only (see
+    # validate_entity_relationships in build.py). Found live, 7 September
+    # 2026.
+    detail_of: str | None = None
 
     @field_validator("id")
     @classmethod
@@ -345,6 +352,8 @@ class Period(BaseModel):
     def _period_dates(self) -> "Period":
         if self.end <= self.start:
             raise ValueError("period end must be after start")
+        if self.detail_of and self.detail_of == self.id:
+            raise ValueError("detail_of cannot reference the entity's own id")
         return self
 
 
