@@ -24,20 +24,13 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    scoped by region) for display purposes only — it must never be a signal for `entity_type` or
    `timeline_role` classification. Those decisions come from Wikidata type evidence and editorial
    judgment, not from how prominent or well-documented a record happens to be.
-5. **Add a lane for main events** -- the specific events that define the start/end of an
-   era, chapter, or period, starting with those. Today a boundary (e.g. Bronze Age
-   Collapse ending Mesopotamian Early States) is only implicit in a record's `start`/`end`
-   dates; there's no explicit event entity a viewer can click to see what happened, or
-   that a `start_confidence`/`end_confidence` figure can point back to as its actual
-   source. Needs its own design pass: a new entity/schema for events, how an era/chapter/
-   period would reference "the event that ends me," and how `/explore` would display a
-   thin events lane against the existing chapter/era/period rows.
-6. Allow simple edit of the parent era for periods in /explore (dropdown)
-7. When side panel open, pressing ESC key should close it.
-8. put new entity and Build time line on the same line than "Explore human history" title, right align
-9. Add with the buttons a search field to find entities and then on select, focus on the entity and open side panel
-10. Polity dropdown should have options Show All, Show Main (the biggest one in terms of score so that only the most important ones), Hide
-11. Check the missing elements appearing https://en.wikipedia.org/wiki/Human_history (like Axial Age), extract wikidata, wikipedia elements and adjust the score if needed (if above the threshold that's enough)
-12. Display more pictures and information from wikipedia on the side panel (even read there instead of wikipedia if possible)
-13. Extracft missing data from Histomap and History of Evolution map
-14. Add a start / end year selector to zoom in/out
+5. Allow simple edit of the parent era for periods in /explore (dropdown)
+6. When side panel open, pressing ESC key should close it.
+7. put new entity and Build time line on the same line than "Explore human history" title, right align
+8. Add with the buttons a search field to find entities and then on select, focus on the entity and open side panel
+9. Polity dropdown should have options Show All, Show Main (the biggest one in terms of score so that only the most important ones), Hide
+10. Check the missing elements appearing https://en.wikipedia.org/wiki/Human_history (like Axial Age), extract wikidata, wikipedia elements and adjust the score if needed (if above the threshold that's enough)
+11. Display more pictures and information from wikipedia on the side panel (even read there instead of wikipedia if possible)
+12. Extracft missing data from Histomap and History of Evolution map
+13. Add a start / end year selector to zoom in/out
+14. Brainstorm on how to have a nice visualization out of this dataset printable in big size
