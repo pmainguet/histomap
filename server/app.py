@@ -32,6 +32,18 @@ ALLOWED_ACTIONS = {
     "compute-weights": ["pipeline/compute_weights.py"],
 }
 CONTINENTS = ["africa", "asia", "europe", "north_america", "south_america", "oceania", "antarctica"]
+# ROADMAP.md item 0 bis: which of Polity.relationships' 8 EntityRelationship
+# kinds (see schema.py) read as literal containment/derivation -- "this
+# entity IS a phase, component, or governed part of that one" -- the
+# detail_of shape. political_successor is deliberately excluded (two
+# sequential, distinct entities, not a container relationship, same
+# reasoning as documented_successor elsewhere in this file);
+# associated_people is a loose demographic/ethnic association, not a
+# hierarchy claim. Kinds picked live, 7 September 2026.
+DETAIL_OF_RELATIONSHIP_KINDS = {
+    "political_parent", "administrative_part_of", "cultural_component",
+    "archaeological_sequence", "cultural_sequence", "part_of_civilization",
+}
 
 
 def english_wikipedia_url(external_ids: dict) -> str | None:
@@ -653,6 +665,27 @@ def create_app(root: Path = ROOT) -> FastAPI:
             qid = (document.get("external_ids") or {}).get("wikidata")
             if qid:
                 qid_index.setdefault(qid, set()).add(entity_id)
+        # entity_id -> ids it has a documented DETAIL_OF_RELATIONSHIP_KINDS
+        # relationship to (source: Polity.relationships, already resolved to
+        # Histomap ids -- see ROADMAP.md item 0 bis). Same shape as
+        # part_of_qids/succession_qids above, just keyed by Histomap id
+        # instead of Wikidata QID, so no id-resolution step is needed.
+        relationship_targets_by_id: dict[str, set[str]] = {}
+        for entity_id, document in active.items():
+            relationship_targets_by_id[entity_id] = {
+                relationship["target"]
+                for relationship in document.get("relationships") or []
+                if relationship.get("kind") in DETAIL_OF_RELATIONSHIP_KINDS
+                and relationship.get("target") in active
+                and relationship.get("target") != entity_id
+            }
+        # Reverse direction: other_id -> ids that document a relationship
+        # TO other_id -- lets the pair reach the queue from either side, the
+        # same way part_of_qids/succession_qids do for the QID-based signal.
+        relationship_sources_by_target: dict[str, set[str]] = {}
+        for source_id, targets in relationship_targets_by_id.items():
+            for target_id in targets:
+                relationship_sources_by_target.setdefault(target_id, set()).add(source_id)
         queue = []
         for entity_id, document in active.items():
             possible = {
@@ -685,6 +718,13 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 for other_id in qid_index.get(related_qid, set())
                 if other_id != entity_id
             )
+            # ROADMAP.md item 0 bis: a documented Polity.relationships entry
+            # (either direction) is the same class of evidence as the
+            # Wikidata QID-based part_of_qids/succession_qids block above,
+            # just already resolved to Histomap ids -- reaches the pool the
+            # same way, regardless of name/token overlap.
+            possible.update(relationship_targets_by_id.get(entity_id, set()))
+            possible.update(relationship_sources_by_target.get(entity_id, set()))
             candidates = []
             source_name = str(document.get("canonical_name", entity_id))
             source_prominence = float(document.get("prominence_score", 0))
@@ -880,6 +920,12 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 candidate_part_of_reviewed = bool(
                     source_qid and other_qid and source_qid in part_of_qids.get(other_qid, set())
                 )
+                # ROADMAP.md item 0 bis: same idea as reviewed_part_of_
+                # candidate/candidate_part_of_reviewed just above, sourced
+                # from Polity.relationships (already Histomap-id-resolved)
+                # instead of a raw Wikidata QID claim.
+                documented_relationship_detail_of = other_id in relationship_targets_by_id.get(entity_id, set())
+                documented_relationship_candidate_detail_of = entity_id in relationship_targets_by_id.get(other_id, set())
                 # The bare naming-qualifier version of part_of evidence,
                 # gated on geography_compatible (actual overlap, or one side
                 # missing data and inheriting the other's -- same rule as
@@ -904,6 +950,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     and not regime_of_candidate_name and not regime_of_reviewed_name
                     and not subdivision_of_candidate_name and not subdivision_of_reviewed_name
                     and not reviewed_part_of_candidate and not candidate_part_of_reviewed
+                    and not documented_relationship_detail_of and not documented_relationship_candidate_detail_of
                 )
                 if not (
                     same_wikidata
@@ -922,6 +969,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     )
                     or reviewed_part_of_candidate or candidate_part_of_reviewed
                     or subdivision_part_of_candidate or subdivision_part_of_reviewed
+                    or documented_relationship_detail_of or documented_relationship_candidate_detail_of
                     # A documented Wikidata succession claim only warrants a
                     # look when dates AND geography actually overlap/match --
                     # a clean sequential handover (one ends where the next
@@ -954,6 +1002,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         (12, exact_name_match and not coordinate_conflict and not documented_successor and not no_overlap_alias_reuse),
                         (8, regime_of_candidate or regime_of_reviewed),
                         (10, reviewed_part_of_candidate or candidate_part_of_reviewed),
+                        (10, documented_relationship_detail_of or documented_relationship_candidate_detail_of),
                         (8, subdivision_part_of_candidate or subdivision_part_of_reviewed),
                         (8, geography_match),
                         (8, date_contains),
@@ -991,6 +1040,10 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     reasons.append("reviewed entity's name reads as a geographic subdivision of the candidate")
                 if subdivision_part_of_reviewed:
                     reasons.append("candidate's name reads as a geographic subdivision of the reviewed entity")
+                if documented_relationship_detail_of:
+                    reasons.append("Histomap: reviewed entity's own relationships record it as part of/derived from the candidate")
+                if documented_relationship_candidate_detail_of:
+                    reasons.append("Histomap: candidate's own relationships record it as part of/derived from the reviewed entity")
                 if documented_successor:
                     reasons.append("Wikidata: documented successor relationship (follows/followed by or replaces/replaced by)")
                 if likely_siblings:
@@ -1093,6 +1146,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         documented_successor
                         and not reviewed_part_of_candidate and not candidate_part_of_reviewed
                         and not regime_of_candidate and not regime_of_reviewed
+                        and not documented_relationship_detail_of and not documented_relationship_candidate_detail_of
                     )
                     or coordinate_conflict or no_overlap_alias_reuse or likely_siblings
                 ):
@@ -1124,9 +1178,9 @@ def create_app(root: Path = ROOT) -> FastAPI:
                     and (exact_name_match or regime_of_reviewed or candidate_part_of_reviewed)
                 ):
                     suggested_decision = "candidate_detail_of"
-                elif reviewed_part_of_candidate or subdivision_part_of_candidate:
+                elif reviewed_part_of_candidate or subdivision_part_of_candidate or documented_relationship_detail_of:
                     suggested_decision = "detail_of"
-                elif candidate_part_of_reviewed or subdivision_part_of_reviewed:
+                elif candidate_part_of_reviewed or subdivision_part_of_reviewed or documented_relationship_candidate_detail_of:
                     suggested_decision = "candidate_detail_of"
                 elif no_identity_signal:
                     # Reached the queue with no strong identity anchor at all
@@ -1175,6 +1229,8 @@ def create_app(root: Path = ROOT) -> FastAPI:
                         "candidate_part_of_reviewed": candidate_part_of_reviewed,
                         "subdivision_part_of_candidate": subdivision_part_of_candidate,
                         "subdivision_part_of_reviewed": subdivision_part_of_reviewed,
+                        "documented_relationship_detail_of": documented_relationship_detail_of,
+                        "documented_relationship_candidate_detail_of": documented_relationship_candidate_detail_of,
                         "suggested_decision": suggested_decision,
                         "confidence": (
                             "high" if not possible_qid_conflict and not no_overlap_alias_reuse

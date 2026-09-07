@@ -967,6 +967,101 @@ class ConsolidationSuggestionTests(unittest.TestCase):
         ]
         self.not_a_candidate("lamidat_de_mindif", "lamidat_of_tibati", polities)
 
+    def test_documented_relationship_surfaces_a_detail_of_candidate(self) -> None:
+        # ROADMAP.md item 0 bis, 7 September 2026: Polity.relationships
+        # (already Histomap-id-resolved, distinct from the raw Wikidata QID
+        # cache the rest of this file exercises via build_app's
+        # `relationships` argument) is now its own consolidation-queue
+        # signal. These two share no name/token overlap and no Wikidata
+        # item at all -- only the documented relationship itself gets this
+        # candidate into the pool.
+        polities = [
+            {**BASE, "id": "vassal_state_alpha", "canonical_name": "Vassal State Alpha",
+             "start": 1200, "end": 1300, "prominence_score": 10,
+             "geography": {"present_countries": ["FR"]},
+             "relationships": [{"target": "suzerain_realm_beta", "kind": "administrative_part_of",
+                                 "evidence": "derived", "confidence": "medium", "source_urls": []}]},
+            {**BASE, "id": "suzerain_realm_beta", "canonical_name": "Suzerain Realm Beta",
+             "start": 1100, "end": 1400, "prominence_score": 50,
+             "geography": {"present_countries": ["FR"]}},
+        ]
+        client = build_app(self.root, polities)
+        queue = client.get("/api/consolidation-reviews", params={"limit": 100}).json()["items"]
+        row = next(item for item in queue if item["id"] == "vassal_state_alpha")
+        candidate = next(c for c in row["candidates"] if c["id"] == "suzerain_realm_beta")
+        self.assertTrue(candidate["documented_relationship_detail_of"])
+        self.assertEqual(candidate["suggested_decision"], "detail_of")
+
+    def test_documented_relationship_surfaces_a_candidate_detail_of_from_the_other_direction(self) -> None:
+        # Same signal, reverse direction: the candidate's own relationships
+        # (not the reviewed entity's) document the containment.
+        polities = [
+            {**BASE, "id": "container_realm_gamma", "canonical_name": "Container Realm Gamma",
+             "start": 1100, "end": 1400, "prominence_score": 10,
+             "geography": {"present_countries": ["FR"]}},
+            {**BASE, "id": "component_state_delta", "canonical_name": "Component State Delta",
+             "start": 1200, "end": 1300, "prominence_score": 50,
+             "geography": {"present_countries": ["FR"]},
+             "relationships": [{"target": "container_realm_gamma", "kind": "cultural_component",
+                                 "evidence": "derived", "confidence": "medium", "source_urls": []}]},
+        ]
+        client = build_app(self.root, polities)
+        queue = client.get("/api/consolidation-reviews", params={"limit": 100}).json()["items"]
+        row = next(item for item in queue if item["id"] == "container_realm_gamma")
+        candidate = next(c for c in row["candidates"] if c["id"] == "component_state_delta")
+        self.assertTrue(candidate["documented_relationship_candidate_detail_of"])
+        self.assertEqual(candidate["suggested_decision"], "candidate_detail_of")
+
+    def test_political_successor_relationship_kind_does_not_trigger_detail_of_matching(self) -> None:
+        # political_successor means two distinct, sequential entities, not
+        # containment -- deliberately excluded from
+        # DETAIL_OF_RELATIONSHIP_KINDS. These two share no other signal.
+        polities = [
+            {**BASE, "id": "predecessor_state_epsilon", "canonical_name": "Predecessor State Epsilon",
+             "start": 1200, "end": 1300, "prominence_score": 50,
+             "geography": {"present_countries": ["FR"]},
+             "relationships": [{"target": "successor_state_zeta", "kind": "political_successor",
+                                 "evidence": "derived", "confidence": "medium", "source_urls": []}]},
+            {**BASE, "id": "successor_state_zeta", "canonical_name": "Successor State Zeta",
+             "start": 1300, "end": 1400, "prominence_score": 50,
+             "geography": {"present_countries": ["FR"]}},
+        ]
+        self.not_a_candidate("predecessor_state_epsilon", "successor_state_zeta", polities)
+
+    def test_associated_people_relationship_kind_does_not_trigger_detail_of_matching(self) -> None:
+        # associated_people is a loose demographic/ethnic association, not a
+        # hierarchy claim -- also excluded.
+        polities = [
+            {**BASE, "id": "polity_with_people_iota", "canonical_name": "Polity With People Iota",
+             "start": 1200, "end": 1300, "prominence_score": 50,
+             "geography": {"present_countries": ["FR"]},
+             "relationships": [{"target": "associated_people_kappa", "kind": "associated_people",
+                                 "evidence": "derived", "confidence": "medium", "source_urls": []}]},
+            {**BASE, "id": "associated_people_kappa", "canonical_name": "Associated People Kappa",
+             "start": 1100, "end": 1400, "prominence_score": 50,
+             "geography": {"present_countries": ["FR"]}},
+        ]
+        self.not_a_candidate("polity_with_people_iota", "associated_people_kappa", polities)
+
+    def test_entity_already_marked_detail_of_the_documented_target_stays_out_of_the_queue(self) -> None:
+        # "If already set correctly, do not add to the review queue" --
+        # falls out of consolidation_review_queue()'s existing active-set
+        # filter (excludes any entity whose detail_of is already set), but
+        # locked in here as a direct regression test for this feature.
+        polities = [
+            {**BASE, "id": "resolved_vassal_eta", "canonical_name": "Resolved Vassal Eta",
+             "start": 1200, "end": 1300, "prominence_score": 10, "detail_of": "resolved_suzerain_theta",
+             "geography": {"present_countries": ["FR"]},
+             "relationships": [{"target": "resolved_suzerain_theta", "kind": "administrative_part_of",
+                                 "evidence": "derived", "confidence": "medium", "source_urls": []}]},
+            {**BASE, "id": "resolved_suzerain_theta", "canonical_name": "Resolved Suzerain Theta",
+             "start": 1100, "end": 1400, "prominence_score": 50,
+             "geography": {"present_countries": ["FR"]}},
+        ]
+        client = build_app(self.root, polities)
+        queue = client.get("/api/consolidation-reviews", params={"limit": 100}).json()["items"]
+        self.assertNotIn("resolved_vassal_eta", [item["id"] for item in queue])
+
 
 if __name__ == "__main__":
     unittest.main()
