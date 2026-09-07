@@ -1864,6 +1864,21 @@ correctly absent from the live-served data.
 
 Full suite: 358 tests, 0 failures throughout.
 
+**ROADMAP item "0 bis" (`decide_consolidation_review`'s dead revert branches) also fixed, same
+day.** Confirmed genuinely unreachable: `period_record` can only be non-`None` for an entity still
+in `period_role_queue`, which the *first* promotion always and permanently excludes from
+(`refresh_period_role_queue()` drops any entity whose `manual_overrides` already contains
+`"timeline_role"`) -- and the UI itself can't even present the buttons needed to trigger a second
+decision, since the row disappears from the queue immediately after the first one. Removed as pure
+dead-code cleanup; a redundant no-op `timeline_role`/`manual_overrides` write on a
+not-yet-promoted entity's "independent"/"candidate_detail_of" decision no longer happens either.
+New regression test locks in that "independent" only ever touches `consolidation_status`. The
+larger open question this item also named -- should `/consolidation-review`'s own "independent"
+button support reverting an *already*-promoted entity, the way `/api/periods/{id}/promote-to-entity`
+already does -- is a separate, genuine UX design question, kept on ROADMAP.md (moved out of the
+top slot to item 6, since it's now confirmed low-priority and optional rather than a live finding
+needing attention). Full suite: 359 tests, 0 failures.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which

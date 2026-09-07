@@ -9,16 +9,6 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. **`decide_consolidation_review`'s revert branches are dead code.** The
-   `"candidate_detail_of"`/`"independent"` branches only call `save_timeline_role(id, "entity",
-   ...)` when the entity is still in `period_role_queue` -- but the *first* promotion always adds
-   `"timeline_role"` to `manual_overrides`, which `refresh_period_role_queue()` treats as
-   permanent exclusion. So `/consolidation-review`'s own "independent" button can never actually
-   undo a prior "period"/"both" decision; `/api/periods/{id}/promote-to-entity` (reachable from
-   `/explore`'s period panel) is the only working undo path today. Found 5 September 2026 while
-   investigating the polity ↔ period conversion friction (see STATUS.md). Worth a small UX pass
-   deciding whether/how the review queue's own button should support this too -- not required for
-   anything else to work.
 1. **Work the polity → period reclassification queue (73 pending, confirmed live 1 September 2026,
    `/consolidation-review`'s "period"/"both" decision).** Full scope-and-seed pass done (see
    STATUS.md); what's left is ordinary manual review.
@@ -37,6 +27,14 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    of the remaining eligibility flags are modern administrative subdivisions, and the rest is a
    long tail of low-count, genuinely ambiguous or obscure types -- ordinary manual review from
    here, same as any other queue.
+6. **Should `/consolidation-review`'s own "independent" button support undoing a prior
+   "period"/"both" decision?** Today it can't -- `/api/periods/{id}/promote-to-entity` (reachable
+   from `/explore`'s period panel) is the only working undo path (confirmed 7 September 2026, the
+   dead code that used to gesture at supporting this from the review queue itself was removed --
+   see STATUS.md). A genuine UX design question, not a bug: the review queue deliberately excludes
+   already-decided entities, so supporting undo there would need its own affordance (e.g. an
+   undo-toast right after the decision, calling `promote-to-entity` under the hood) rather than
+   just re-showing the row. Low priority, optional.
 7. **A period can subdivide a civilization/polity, not just an era — the schema and tree only
    support the latter today.** Surfaced by `early_dynastic_mesopotamia`: conceptually it's a
    phase *of Sumer* (the civilization), the same relationship Old Kingdom of Egypt has to
