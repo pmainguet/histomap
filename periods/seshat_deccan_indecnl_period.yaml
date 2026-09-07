@@ -21,3 +21,6 @@ external_ids: {}
 notes: Period overlay created by an editorial period-role decision.
 source_urls: []
 promoted_from: seshat_deccan_indecnl
+detail_of: deccan_period
+manual_overrides:
+- detail_of

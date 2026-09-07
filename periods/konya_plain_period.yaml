@@ -1,0 +1,24 @@
+id: konya_plain_period
+canonical_name: Konya Plain
+start: -9600
+end: -1400
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  primary_continent: asia
+  present_countries:
+  - TR
+  centroid: null
+  confidence: medium
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: sequence container'
+external_ids: {}
+notes: Editorial container grouping the Konya Plain - <phase> Seshat sequence as details
+  of one band.
+source_urls: []

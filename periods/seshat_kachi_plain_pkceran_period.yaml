@@ -23,3 +23,6 @@ source_urls: []
 promoted_from: seshat_kachi_plain_pkceran
 deprecated:
   kind: historical
+detail_of: kachi_plain_period
+manual_overrides:
+- detail_of

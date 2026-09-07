@@ -15,6 +15,7 @@ geography:
   historical_regions:
   - south_asia
   primary_historical_region: south_asia
+  primary_continent: asia
 start: -4000
 end: -3201
 start_confidence: low
@@ -46,3 +47,7 @@ relationships: []
 government_form: null
 deprecated:
   visibility_tier: detailed
+manual_overrides:
+- geography
+- timeline_role
+timeline_role: period

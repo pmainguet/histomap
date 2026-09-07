@@ -1,26 +1,26 @@
-id: seshat_deccan_indecia_period
-canonical_name: Deccan - Iron Age
-start: -1200
-end: -301
+id: seshat_konya_plain_trclcer_period
+canonical_name: Konya Plain - Early Chalcolithic
+start: -6000
+end: -5001
 start_confidence: low
 end_confidence: low
 geography:
   continents:
   - asia
   present_countries:
-  - IN
+  - TR
   centroid: null
   confidence: medium
   historical_regions:
-  - south_asia
-  primary_historical_region: south_asia
+  - west_asia
+  primary_historical_region: west_asia
 broader_periods: []
 successors: []
 authority: Wikidata period classification
 external_ids: {}
 notes: Period overlay created by an editorial period-role decision.
 source_urls: []
-promoted_from: seshat_deccan_indecia
-detail_of: deccan_period
+promoted_from: seshat_konya_plain_trclcer
+detail_of: konya_plain_period
 manual_overrides:
 - detail_of
