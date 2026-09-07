@@ -26,4 +26,4 @@ manual_overrides:
 - geography
 deprecated:
   kind: historical
-detail_of: jomon_period
+detail_of: jomon

@@ -11,28 +11,6 @@
     "notes": "Chronological and geographic context, not an identity or hierarchy assertion."
   },
   {
-    "period_id": "jomon_period",
-    "entity_id": "seshat_jomon_jpjomo5",
-    "relation": "context",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://dbpedia.org/resource/J%C5%8Dmon_period"
-    ],
-    "notes": ""
-  },
-  {
-    "period_id": "jomon_period",
-    "entity_id": "seshat_final_jomon_jpjomo6",
-    "relation": "context",
-    "evidence": "explicit",
-    "confidence": "high",
-    "source_urls": [
-      "https://dbpedia.org/resource/J%C5%8Dmon_period"
-    ],
-    "notes": ""
-  },
-  {
     "period_id": "yayoi_period",
     "entity_id": "seshat_kansai_jpyayoi",
     "relation": "context",

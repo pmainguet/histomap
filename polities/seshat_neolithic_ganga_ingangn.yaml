@@ -37,8 +37,8 @@ geography:
   present_countries:
   - IN
   historical_regions:
-  - south_asia
-  primary_historical_region: south_asia
+  - east_asia
+  primary_historical_region: east_asia
 timeline_role: period
 manual_overrides:
 - geography

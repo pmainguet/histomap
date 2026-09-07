@@ -8,8 +8,8 @@ geography:
   continents:
   - asia
   historical_regions:
-  - south_asia
-  primary_historical_region: south_asia
+  - east_asia
+  primary_historical_region: east_asia
 broader_periods:
 - classical_antiquity_era
 successors: []

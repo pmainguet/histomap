@@ -340,7 +340,7 @@ function countryLaneLabel(key) {
 // unrelated continents/regions purely by string prefix (e.g. "central_asia"
 // sorting next to "central_africa" rather than next to "east_asia"). Used by
 // every row that groups by continent or historical region.
-const ASIA_GROUP_KEYS = new Set(["asia", "central_asia", "east_asia", "south_asia", "southeast_asia", "west_asia"]);
+const ASIA_GROUP_KEYS = new Set(["asia", "central_asia", "east_asia", "west_asia"]);
 function geoSortKey(key) {
   return ASIA_GROUP_KEYS.has(key) ? `asia~${key}` : key;
 }

@@ -901,43 +901,6 @@
     }
   },
   {
-    "id": "deccan_period",
-    "canonical_name": "Deccan",
-    "tier": "period",
-    "start": -2700,
-    "end": -301,
-    "start_confidence": "low",
-    "end_confidence": "low",
-    "geography": {
-      "continents": [
-        "asia"
-      ],
-      "primary_continent": "asia",
-      "historical_regions": [
-        "south_asia"
-      ],
-      "primary_historical_region": "south_asia",
-      "present_countries": [
-        "IN"
-      ],
-      "centroid": null,
-      "confidence": "medium"
-    },
-    "broader_periods": [],
-    "successors": [],
-    "authority": "Histomap editorial: sequence container",
-    "external_ids": {},
-    "notes": "Editorial container grouping the Deccan - <phase> Seshat sequence as details of one band.",
-    "source_urls": [],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
-    "government_form": null,
-    "civilization_lane": null,
-    "promoted_from": null,
-    "detail_of": null,
-    "deprecated": null
-  },
-  {
     "id": "early_dynastic_mesopotamia",
     "canonical_name": "Early Dynastic Mesopotamia",
     "tier": "period",
@@ -1588,9 +1551,9 @@
       ],
       "primary_continent": "asia",
       "historical_regions": [
-        "south_asia"
+        "east_asia"
       ],
-      "primary_historical_region": "south_asia",
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN",
         "PK"
@@ -1700,90 +1663,6 @@
     "deprecated": {
       "kind": "historical"
     }
-  },
-  {
-    "id": "jomon_period",
-    "canonical_name": "Jōmon period",
-    "tier": "period",
-    "start": -10000,
-    "end": -300,
-    "start_confidence": "low",
-    "end_confidence": "medium",
-    "geography": {
-      "continents": [
-        "asia"
-      ],
-      "primary_continent": "asia",
-      "historical_regions": [
-        "east_asia"
-      ],
-      "primary_historical_region": "east_asia",
-      "present_countries": [
-        "JP"
-      ],
-      "centroid": null,
-      "confidence": null
-    },
-    "broader_periods": [
-      "neolithic_era"
-    ],
-    "successors": [
-      "yayoi_period"
-    ],
-    "authority": "DBpedia/Wikipedia periodization",
-    "external_ids": {
-      "dbpedia": "https://dbpedia.org/resource/J%C5%8Dmon_period"
-    },
-    "notes": "Start is clipped to Histomap's current -10000 year boundary.",
-    "source_urls": [
-      "https://dbpedia.org/resource/J%C5%8Dmon_period"
-    ],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
-    "government_form": null,
-    "civilization_lane": false,
-    "promoted_from": null,
-    "detail_of": null,
-    "deprecated": {
-      "kind": "prehistorical"
-    }
-  },
-  {
-    "id": "kachi_plain_period",
-    "canonical_name": "Kachi Plain",
-    "tier": "period",
-    "start": -7500,
-    "end": -1301,
-    "start_confidence": "low",
-    "end_confidence": "low",
-    "geography": {
-      "continents": [
-        "asia"
-      ],
-      "primary_continent": "asia",
-      "historical_regions": [
-        "south_asia"
-      ],
-      "primary_historical_region": "south_asia",
-      "present_countries": [
-        "PK"
-      ],
-      "centroid": null,
-      "confidence": "medium"
-    },
-    "broader_periods": [],
-    "successors": [],
-    "authority": "Histomap editorial: sequence container",
-    "external_ids": {},
-    "notes": "Editorial container grouping the Kachi Plain - <phase> Seshat sequence as details of one band.",
-    "source_urls": [],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
-    "government_form": null,
-    "civilization_lane": null,
-    "promoted_from": null,
-    "detail_of": null,
-    "deprecated": null
   },
   {
     "id": "kofun_period",
@@ -3174,6 +3053,39 @@
     }
   },
   {
+    "id": "seshat_bronze_age_beaker_culture_frbeakr_period",
+    "canonical_name": "Early Bronze Age Beaker Culture",
+    "tier": "period",
+    "start": -3200,
+    "end": -2201,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {},
+    "notes": "Period overlay created by an editorial period-role decision.",
+    "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": "seshat_bronze_age_beaker_culture_frbeakr",
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "seshat_deccan_indecia_period",
     "canonical_name": "Deccan - Iron Age",
     "tier": "period",
@@ -3187,9 +3099,9 @@
       ],
       "primary_continent": "asia",
       "historical_regions": [
-        "south_asia"
+        "east_asia"
       ],
-      "primary_historical_region": "south_asia",
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -3207,7 +3119,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_deccan_indecia",
-    "detail_of": "deccan_period",
+    "detail_of": "deccan",
     "deprecated": null
   },
   {
@@ -3224,9 +3136,9 @@
       ],
       "primary_continent": "asia",
       "historical_regions": [
-        "south_asia"
+        "east_asia"
       ],
-      "primary_historical_region": "south_asia",
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -3244,7 +3156,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_deccan_indecnl",
-    "detail_of": "deccan_period",
+    "detail_of": "deccan",
     "deprecated": null
   },
   {
@@ -3277,7 +3189,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_final_jomon_jpjomo6",
-    "detail_of": "jomon_period",
+    "detail_of": "jomon",
     "deprecated": {
       "kind": "historical"
     }
@@ -3349,7 +3261,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_incipient_jomon_jpjomo1",
-    "detail_of": "jomon_period",
+    "detail_of": "jomon",
     "deprecated": {
       "kind": "historical"
     }
@@ -3388,7 +3300,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_initial_jomon_jpjomo2",
-    "detail_of": "jomon_period",
+    "detail_of": "jomon",
     "deprecated": {
       "kind": "historical"
     }
@@ -3423,7 +3335,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_jomon_jpjomo3",
-    "detail_of": "jomon_period",
+    "detail_of": "jomon",
     "deprecated": {
       "kind": "historical"
     }
@@ -3458,7 +3370,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_jomon_jpjomo4",
-    "detail_of": "jomon_period",
+    "detail_of": "jomon",
     "deprecated": {
       "kind": "historical"
     }
@@ -3493,7 +3405,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_jomon_jpjomo5",
-    "detail_of": "jomon_period",
+    "detail_of": "jomon",
     "deprecated": {
       "kind": "historical"
     }
@@ -3512,9 +3424,9 @@
       ],
       "primary_continent": "asia",
       "historical_regions": [
-        "south_asia"
+        "east_asia"
       ],
-      "primary_historical_region": "south_asia",
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "PK"
       ],
@@ -3532,7 +3444,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_kachi_plain_pkacern",
-    "detail_of": "kachi_plain_period",
+    "detail_of": "kachi_plain",
     "deprecated": null
   },
   {
@@ -3549,9 +3461,9 @@
       ],
       "primary_continent": "asia",
       "historical_regions": [
-        "south_asia"
+        "east_asia"
       ],
-      "primary_historical_region": "south_asia",
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "PK"
       ],
@@ -3569,7 +3481,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_kachi_plain_pkceran",
-    "detail_of": "kachi_plain_period",
+    "detail_of": "kachi_plain",
     "deprecated": {
       "kind": "historical"
     }
@@ -3588,9 +3500,9 @@
       ],
       "primary_continent": "asia",
       "historical_regions": [
-        "south_asia"
+        "east_asia"
       ],
-      "primary_historical_region": "south_asia",
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "PK"
       ],
@@ -3608,7 +3520,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_kachi_plain_pkchalc",
-    "detail_of": "kachi_plain_period",
+    "detail_of": "kachi_plain",
     "deprecated": null
   },
   {
@@ -3625,9 +3537,9 @@
       ],
       "primary_continent": "asia",
       "historical_regions": [
-        "south_asia"
+        "east_asia"
       ],
-      "primary_historical_region": "south_asia",
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "PK"
       ],
@@ -3645,7 +3557,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_kachi_plain_pkpostu",
-    "detail_of": "kachi_plain_period",
+    "detail_of": "kachi_plain",
     "deprecated": null
   },
   {
@@ -3662,9 +3574,9 @@
       ],
       "primary_continent": "asia",
       "historical_regions": [
-        "south_asia"
+        "east_asia"
       ],
-      "primary_historical_region": "south_asia",
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "PK"
       ],
@@ -3682,7 +3594,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_kachi_plain_pkpreur",
-    "detail_of": "kachi_plain_period",
+    "detail_of": "kachi_plain",
     "deprecated": null
   },
   {
@@ -3699,9 +3611,9 @@
       ],
       "primary_continent": "asia",
       "historical_regions": [
-        "south_asia"
+        "east_asia"
       ],
-      "primary_historical_region": "south_asia",
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "PK"
       ],
@@ -3719,7 +3631,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_kachi_plain_pkurbn1",
-    "detail_of": "kachi_plain_period",
+    "detail_of": "kachi_plain",
     "deprecated": null
   },
   {
@@ -3736,9 +3648,9 @@
       ],
       "primary_continent": "asia",
       "historical_regions": [
-        "south_asia"
+        "east_asia"
       ],
-      "primary_historical_region": "south_asia",
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "PK"
       ],
@@ -3756,7 +3668,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_kachi_plain_pkurbn2",
-    "detail_of": "kachi_plain_period",
+    "detail_of": "kachi_plain",
     "deprecated": null
   },
   {
@@ -4067,9 +3979,9 @@
       ],
       "primary_continent": "asia",
       "historical_regions": [
-        "south_asia"
+        "east_asia"
       ],
-      "primary_historical_region": "south_asia",
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -4140,7 +4052,9 @@
       "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "IQ"
+      ],
       "centroid": null,
       "confidence": "low"
     },
@@ -4322,9 +4236,9 @@
       ],
       "primary_continent": "asia",
       "historical_regions": [
-        "south_asia"
+        "east_asia"
       ],
-      "primary_historical_region": "south_asia",
+      "primary_historical_region": "east_asia",
       "present_countries": [],
       "centroid": null,
       "confidence": null

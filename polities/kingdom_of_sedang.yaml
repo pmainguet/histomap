@@ -34,8 +34,8 @@ geography:
     lon: 107.983333
   confidence: low
   historical_regions:
-  - southeast_asia
-  primary_historical_region: southeast_asia
+  - east_asia
+  primary_historical_region: east_asia
 entity_type: micronation
 entity_type_confidence: medium
 entity_type_source_qids:

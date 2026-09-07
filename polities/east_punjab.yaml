@@ -29,8 +29,8 @@ geography:
   centroid: null
   confidence: medium
   historical_regions:
-  - south_asia
-  primary_historical_region: south_asia
+  - east_asia
+  primary_historical_region: east_asia
 relationships:
 - target: punjab
   kind: administrative_part_of

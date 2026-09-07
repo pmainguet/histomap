@@ -17,6 +17,6 @@ source_urls: []
 promoted_from: seshat_jomon_jpjomo4
 deprecated:
   kind: historical
-detail_of: jomon_period
+detail_of: jomon
 manual_overrides:
 - detail_of

@@ -13,9 +13,14 @@ HISTORICAL_REGIONS: dict[str, list[str]] = {
     "west_asia": ["IR", "IQ", "TR", "SY", "JO", "LB", "IL", "PS", "SA", "YE",
                   "OM", "AE", "QA", "BH", "KW", "CY", "GE", "AM", "AZ"],
     "central_asia": ["KZ", "UZ", "TM", "TJ", "KG", "AF"],
-    "south_asia": ["IN", "PK", "BD", "LK", "NP", "BT", "MV"],
-    "east_asia": ["CN", "JP", "KR", "KP", "MN", "TW", "HK", "MO"],
-    "southeast_asia": ["ID", "MY", "TH", "VN", "PH", "MM", "KH", "LA", "SG", "BN", "TL"],
+    # Merged 7 September 2026: south_asia (IN, PK, BD, LK, NP, BT, MV) and
+    # southeast_asia (ID, MY, TH, VN, PH, MM, KH, LA, SG, BN, TL) folded in
+    # here for simplicity -- west_asia/central_asia/east_asia is now the
+    # full Asian split. See pipeline/migrate_merge_asia_regions.py for the
+    # one-off data migration that relabeled existing records.
+    "east_asia": ["CN", "JP", "KR", "KP", "MN", "TW", "HK", "MO",
+                  "IN", "PK", "BD", "LK", "NP", "BT", "MV",
+                  "ID", "MY", "TH", "VN", "PH", "MM", "KH", "LA", "SG", "BN", "TL"],
     "western_europe": ["FR", "DE", "BE", "NL", "LU", "GB", "IE", "CH", "AT", "MC", "LI"],
     "northern_europe": ["SE", "NO", "DK", "FI", "IS", "EE", "LV", "LT"],
     "southern_europe": ["IT", "ES", "PT", "GR", "MT", "SM", "VA", "AD"],

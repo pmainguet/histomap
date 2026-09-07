@@ -11,8 +11,8 @@ geography:
   - IN
   - PK
   historical_regions:
-  - south_asia
-  primary_historical_region: south_asia
+  - east_asia
+  primary_historical_region: east_asia
 authority: Wikidata
 external_ids:
   wikidata: Q42534
