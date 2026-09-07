@@ -49,3 +49,6 @@ prominence_components:
 government_form: null
 deprecated:
   visibility_tier: detailed
+detail_of: kingdom_of_germany
+manual_overrides:
+- consolidation

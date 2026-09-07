@@ -3063,6 +3063,43 @@
     }
   },
   {
+    "id": "seshat_deccan_indecia_period",
+    "canonical_name": "Deccan - Iron Age",
+    "tier": "period",
+    "start": -1200,
+    "end": -301,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "south_asia"
+      ],
+      "primary_historical_region": "south_asia",
+      "present_countries": [
+        "IN"
+      ],
+      "centroid": null,
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {},
+    "notes": "Period overlay created by an editorial period-role decision.",
+    "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": "seshat_deccan_indecia",
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "seshat_final_jomon_jpjomo6_period",
     "canonical_name": "Final Jomon ",
     "tier": "period",
@@ -3092,10 +3129,43 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_final_jomon_jpjomo6",
-    "detail_of": null,
+    "detail_of": "jomon_period",
     "deprecated": {
       "kind": "historical"
     }
+  },
+  {
+    "id": "seshat_formative_period_irforma_period",
+    "canonical_name": "Formative Period",
+    "tier": "period",
+    "start": -7200,
+    "end": -7001,
+    "start_confidence": "high",
+    "end_confidence": "high",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {},
+    "notes": "Period overlay created by an editorial period-role decision.",
+    "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": "seshat_formative_period_irforma",
+    "detail_of": null,
+    "deprecated": null
   },
   {
     "id": "seshat_incipient_jomon_jpjomo1_period",
@@ -3131,7 +3201,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_incipient_jomon_jpjomo1",
-    "detail_of": null,
+    "detail_of": "jomon_period",
     "deprecated": {
       "kind": "historical"
     }
@@ -3205,7 +3275,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_jomon_jpjomo3",
-    "detail_of": null,
+    "detail_of": "jomon_period",
     "deprecated": {
       "kind": "historical"
     }
@@ -3240,7 +3310,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_jomon_jpjomo4",
-    "detail_of": null,
+    "detail_of": "jomon_period",
     "deprecated": {
       "kind": "historical"
     }
@@ -3275,7 +3345,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_jomon_jpjomo5",
-    "detail_of": null,
+    "detail_of": "jomon_period",
     "deprecated": {
       "kind": "historical"
     }
@@ -3392,6 +3462,39 @@
     "deprecated": {
       "kind": "historical"
     }
+  },
+  {
+    "id": "seshat_pre_ceramic_period_irprcer_period",
+    "canonical_name": "Pre-Ceramic Period",
+    "tier": "period",
+    "start": -7800,
+    "end": -7201,
+    "start_confidence": "high",
+    "end_confidence": "high",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {},
+    "notes": "Period overlay created by an editorial period-role decision.",
+    "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": "seshat_pre_ceramic_period_irprcer",
+    "detail_of": null,
+    "deprecated": null
   },
   {
     "id": "seshat_southern_mesopotamia_neolithic_iqsoneo_period",

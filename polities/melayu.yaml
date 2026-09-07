@@ -48,6 +48,7 @@ relationships:
   source_urls:
   - https://www.wikidata.org/wiki/Q3112053
 manual_overrides:
+- consolidation
 - entity_type
 prominence_components:
   wikidata_reach: 18.06
@@ -63,3 +64,4 @@ prominence_components:
 government_form: empire
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent

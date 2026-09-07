@@ -49,3 +49,6 @@ prominence_components:
 government_form: null
 deprecated:
   visibility_tier: detailed
+detail_of: savoyard_state
+manual_overrides:
+- consolidation

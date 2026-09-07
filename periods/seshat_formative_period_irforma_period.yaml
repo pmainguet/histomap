@@ -1,0 +1,17 @@
+id: seshat_formative_period_irforma_period
+canonical_name: Formative Period
+start: -7200
+end: -7001
+start_confidence: high
+end_confidence: high
+geography:
+  continents:
+  - asia
+  confidence: low
+broader_periods: []
+successors: []
+authority: Wikidata period classification
+external_ids: {}
+notes: Period overlay created by an editorial period-role decision.
+source_urls: []
+promoted_from: seshat_formative_period_irforma

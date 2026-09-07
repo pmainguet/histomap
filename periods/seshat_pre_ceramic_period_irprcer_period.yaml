@@ -1,0 +1,17 @@
+id: seshat_pre_ceramic_period_irprcer_period
+canonical_name: Pre-Ceramic Period
+start: -7800
+end: -7201
+start_confidence: high
+end_confidence: high
+geography:
+  continents:
+  - asia
+  confidence: low
+broader_periods: []
+successors: []
+authority: Wikidata period classification
+external_ids: {}
+notes: Period overlay created by an editorial period-role decision.
+source_urls: []
+promoted_from: seshat_pre_ceramic_period_irprcer

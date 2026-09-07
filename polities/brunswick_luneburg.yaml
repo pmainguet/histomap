@@ -68,3 +68,6 @@ government_form: duchy
 linked_chapter_id: macro_early_modern_connections
 deprecated:
   visibility_tier: regional
+detail_of: holy_roman_empire
+manual_overrides:
+- consolidation

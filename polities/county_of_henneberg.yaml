@@ -45,7 +45,9 @@ prominence_components:
   aggregate_penalty: 0
   total: 15.1
 manual_overrides:
+- consolidation
 - entity_type
 government_form: countship
 deprecated:
   visibility_tier: detailed
+detail_of: holy_roman_empire
