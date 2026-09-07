@@ -6,9 +6,14 @@ successors: []
 geography:
   continents:
   - asia
-  present_countries: []
+  present_countries:
+  - JP
   centroid: null
-  confidence: null
+  confidence: high
+  primary_continent: asia
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
 start: -1200
 end: -301
 start_confidence: low
@@ -38,6 +43,7 @@ prominence_components:
   total: 2.39
 manual_overrides:
 - entity_type
+- geography
 - timeline_role
 entity_type_reviewed_against:
 - polity

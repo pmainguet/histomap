@@ -33,10 +33,12 @@ geography:
   continents:
   - asia
   primary_continent: asia
-  historical_regions: []
+  historical_regions:
+  - east_asia
   present_countries:
   - JP
   confidence: high
+  primary_historical_region: east_asia
 manual_overrides:
 - geography
 - timeline_role

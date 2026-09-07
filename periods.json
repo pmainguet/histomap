@@ -2877,8 +2877,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "JP"
       ],
@@ -2911,11 +2913,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "JP"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "high"
     },
     "broader_periods": [],
     "successors": [],
@@ -3107,11 +3113,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "south_asia"
+      ],
+      "primary_historical_region": "south_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "high"
     },
     "broader_periods": [],
     "successors": [],

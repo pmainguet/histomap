@@ -8,7 +8,13 @@ successors: []
 geography:
   continents:
   - asia
-  confidence: low
+  confidence: high
+  primary_continent: asia
+  present_countries:
+  - JP
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
 start: -3500
 end: -2501
 start_confidence: low
@@ -42,4 +48,5 @@ deprecated:
   visibility_tier: detailed
 timeline_role: period
 manual_overrides:
+- geography
 - timeline_role
