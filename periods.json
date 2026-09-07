@@ -3170,7 +3170,7 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_initial_jomon_jpjomo2",
-    "detail_of": null,
+    "detail_of": "jomon_period",
     "deprecated": {
       "kind": "historical"
     }

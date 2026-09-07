@@ -22,6 +22,8 @@ notes: Period overlay created by an editorial period-role decision.
 source_urls: []
 promoted_from: seshat_initial_jomon_jpjomo2
 manual_overrides:
+- detail_of
 - geography
 deprecated:
   kind: historical
+detail_of: jomon_period
