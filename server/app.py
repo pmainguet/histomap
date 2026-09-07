@@ -146,6 +146,57 @@ def derive_geography_for_countries(
     return geography
 
 
+def find_delete_blockers(
+    target_id: str,
+    metadata: dict[str, dict],
+    periods_dir: Path,
+    transitions_path: Path,
+    period_links_path: Path,
+) -> list[str]:
+    """Scans every place a Histomap id can be referenced from, so a hard
+    delete (unlike the "discarded" consolidation decision, which keeps the
+    record on disk as an audit trail) can never silently leave a dangling
+    reference that fails the next build.py run. Mirrors what build.py's
+    own validators check (validate_entity_relationships,
+    validate_period_detail_of, validate_transitions) plus
+    period_links.yaml, which isn't schema-validated for dangling
+    references at all. Deliberately does not check linked_era_id/
+    linked_chapter_id -- those are a soft /explore grouping hint, not a
+    hard schema reference build.py fails on."""
+    blockers: list[str] = []
+    for other_id, document in metadata.items():
+        if other_id == target_id:
+            continue
+        if document.get("detail_of") == target_id:
+            blockers.append(f"polity {other_id} is a detail_of this record")
+        if target_id in (document.get("successors") or []):
+            blockers.append(f"polity {other_id} lists this record as a successor")
+        if any(relationship.get("target") == target_id for relationship in document.get("relationships") or []):
+            blockers.append(f"polity {other_id} has a relationship pointing to this record")
+    for path in periods_dir.glob("*.yaml"):
+        document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        other_id = document.get("id", path.stem)
+        if other_id == target_id:
+            continue
+        if document.get("detail_of") == target_id:
+            blockers.append(f"period {other_id} is a detail_of this record")
+        if target_id in (document.get("successors") or []):
+            blockers.append(f"period {other_id} lists this record as a successor")
+        if target_id in (document.get("broader_periods") or []):
+            blockers.append(f"period {other_id} lists this record as a broader_period")
+    if transitions_path.exists():
+        for item in yaml.safe_load(transitions_path.read_text(encoding="utf-8")) or []:
+            if target_id in (item.get("from") or []) or target_id in (item.get("to") or []):
+                blockers.append(f"transition {item.get('id')} references this record")
+    if period_links_path.exists():
+        for item in yaml.safe_load(period_links_path.read_text(encoding="utf-8")) or []:
+            if item.get("period_id") == target_id or item.get("entity_id") == target_id:
+                blockers.append(
+                    f"period_links entry ({item.get('period_id')} / {item.get('entity_id')}) references this record"
+                )
+    return blockers
+
+
 def clean_json(value: object) -> object:
     if isinstance(value, float) and not math.isfinite(value):
         return None
@@ -1742,6 +1793,39 @@ def create_app(root: Path = ROOT) -> FastAPI:
             yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
         )
         return {"status": "created", "period_id": period_id, "document": clean_json(validated)}
+
+    @application.delete("/api/polities/{polity_id}")
+    async def delete_polity(polity_id: str) -> dict:
+        """Hard delete -- unlike the "discarded" consolidation decision
+        (which keeps the record on disk as an audit trail), this removes
+        the YAML file permanently. Refuses (409) rather than silently
+        breaking the next build if any other record still references this
+        one -- see find_delete_blockers."""
+        path = polities_dir / f"{polity_id}.yaml"
+        if not path.exists() or metadata.get(polity_id) is None:
+            raise HTTPException(404, "Unknown Histomap entity")
+        blockers = find_delete_blockers(
+            polity_id, metadata, root / "periods", root / "transitions.yaml", root / "period_links.yaml"
+        )
+        if blockers:
+            raise HTTPException(409, "Cannot delete -- still referenced: " + "; ".join(blockers))
+        path.unlink()
+        metadata.pop(polity_id, None)
+        return {"status": "deleted", "polity_id": polity_id}
+
+    @application.delete("/api/periods/{period_id}")
+    async def delete_period(period_id: str) -> dict:
+        """Period counterpart to delete_polity above."""
+        path = root / "periods" / f"{period_id}.yaml"
+        if not path.exists():
+            raise HTTPException(404, "Unknown Histomap period")
+        blockers = find_delete_blockers(
+            period_id, metadata, root / "periods", root / "transitions.yaml", root / "period_links.yaml"
+        )
+        if blockers:
+            raise HTTPException(409, "Cannot delete -- still referenced: " + "; ".join(blockers))
+        path.unlink()
+        return {"status": "deleted", "period_id": period_id}
 
     @application.get("/api/polities/search")
     async def search_all_polities(

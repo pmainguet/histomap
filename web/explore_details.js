@@ -254,6 +254,9 @@ function editControlsHtml(kind, record, geographyOptions, ctx) {
         </div>
       </details>
       <p class="detail-edit-status" role="status"></p>
+      <div class="detail-edit-row">
+        <button class="detail-delete danger" type="button">Delete permanently</button>
+      </div>
     </details>`;
 }
 
@@ -328,6 +331,25 @@ function wireEditControls(kind, record, ctx, onSaved) {
       onSaved(result.document);
       ctx.onEdit?.();
       setStatus(REBUILD_NOTE, false);
+    } catch (error) {
+      setStatus(error.message, true);
+    }
+  });
+
+  // Hard delete -- unlike every other button here (which patches the
+  // record), this removes it entirely. Refused (409) with a list of
+  // remaining references if anything else still points to it (see
+  // find_delete_blockers in server/app.py) -- that message surfaces here
+  // rather than closing the panel, so the reviewer can go fix the
+  // reference first.
+  explorePanel.querySelector(".detail-delete").addEventListener("click", async () => {
+    if (!confirm(`Permanently delete "${record.canonical_name}"? This cannot be undone from here -- only from git history.`)) return;
+    try {
+      await postJson(idPath, "DELETE");
+      if (kind === "polity") ctx.politiesById.delete(record.id);
+      else ctx.periodsById.delete(record.id);
+      ctx.onEdit?.();
+      closeExploreDetails();
     } catch (error) {
       setStatus(error.message, true);
     }

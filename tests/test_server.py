@@ -619,6 +619,104 @@ class UnifiedServerTests(unittest.TestCase):
         self.assertEqual(document["tier"], "regional_era")
         self.assertEqual(document["broader_periods"], ["macro_chapter_stub"])
 
+    def test_deletes_a_polity_with_no_references(self) -> None:
+        (self.root / "polities" / "lonely_polity.yaml").write_text(
+            yaml.safe_dump({**{"id": "lonely_polity", "canonical_name": "Lonely Polity",
+                                "start": 1000, "start_confidence": "low", "end_confidence": "low"}}),
+            encoding="utf-8",
+        )
+        client = TestClient(create_app(self.root))
+
+        response = client.delete("/api/polities/lonely_polity")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse((self.root / "polities" / "lonely_polity.yaml").exists())
+        self.assertEqual(client.get("/api/polities/lonely_polity").status_code, 404)
+
+    def test_delete_unknown_polity_returns_404(self) -> None:
+        response = self.client.delete("/api/polities/no_such_polity")
+
+        self.assertEqual(response.status_code, 404)
+
+    def test_delete_polity_blocked_by_detail_of_reference(self) -> None:
+        (self.root / "polities" / "detail_child.yaml").write_text(
+            yaml.safe_dump({"id": "detail_child", "canonical_name": "Detail Child",
+                             "start": 1000, "start_confidence": "low", "end_confidence": "low",
+                             "detail_of": "candidate"}),
+            encoding="utf-8",
+        )
+        client = TestClient(create_app(self.root))
+
+        response = client.delete("/api/polities/candidate")
+
+        self.assertEqual(response.status_code, 409)
+        self.assertIn("detail_child", response.json()["detail"])
+        self.assertTrue((self.root / "polities" / "candidate.yaml").exists())
+
+    def test_delete_polity_blocked_by_successor_reference(self) -> None:
+        (self.root / "polities" / "predecessor_polity.yaml").write_text(
+            yaml.safe_dump({"id": "predecessor_polity", "canonical_name": "Predecessor",
+                             "start": 900, "start_confidence": "low", "end_confidence": "low",
+                             "successors": ["candidate"]}),
+            encoding="utf-8",
+        )
+        client = TestClient(create_app(self.root))
+
+        response = client.delete("/api/polities/candidate")
+
+        self.assertEqual(response.status_code, 409)
+        self.assertIn("predecessor_polity", response.json()["detail"])
+
+    def test_delete_polity_blocked_by_relationship_reference(self) -> None:
+        (self.root / "polities" / "related_polity.yaml").write_text(
+            yaml.safe_dump({"id": "related_polity", "canonical_name": "Related",
+                             "start": 900, "start_confidence": "low", "end_confidence": "low",
+                             "relationships": [{"target": "candidate", "kind": "political_parent"}]}),
+            encoding="utf-8",
+        )
+        client = TestClient(create_app(self.root))
+
+        response = client.delete("/api/polities/candidate")
+
+        self.assertEqual(response.status_code, 409)
+        self.assertIn("related_polity", response.json()["detail"])
+
+    def test_deletes_a_period_with_no_references(self) -> None:
+        (self.root / "periods" / "lonely_period.yaml").write_text(
+            yaml.safe_dump({"id": "lonely_period", "canonical_name": "Lonely Period",
+                             "start": 1000, "end": 1100, "authority": "Editorial"}),
+            encoding="utf-8",
+        )
+
+        response = self.client.delete("/api/periods/lonely_period")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse((self.root / "periods" / "lonely_period.yaml").exists())
+
+    def test_delete_period_blocked_by_broader_periods_reference(self) -> None:
+        (self.root / "periods" / "container_period.yaml").write_text(
+            yaml.safe_dump({"id": "container_period", "canonical_name": "Container Period",
+                             "start": 900, "end": 1200, "authority": "Editorial"}),
+            encoding="utf-8",
+        )
+        (self.root / "periods" / "nested_period.yaml").write_text(
+            yaml.safe_dump({"id": "nested_period", "canonical_name": "Nested Period",
+                             "start": 1000, "end": 1100, "authority": "Editorial",
+                             "broader_periods": ["container_period"]}),
+            encoding="utf-8",
+        )
+
+        response = self.client.delete("/api/periods/container_period")
+
+        self.assertEqual(response.status_code, 409)
+        self.assertIn("nested_period", response.json()["detail"])
+        self.assertTrue((self.root / "periods" / "container_period.yaml").exists())
+
+    def test_delete_unknown_period_returns_404(self) -> None:
+        response = self.client.delete("/api/periods/no_such_period")
+
+        self.assertEqual(response.status_code, 404)
+
 
 if __name__ == "__main__":
     unittest.main()
