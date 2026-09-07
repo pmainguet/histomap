@@ -1,0 +1,20 @@
+id: seshat_jomon_jpjomo5_period
+canonical_name: 'Late Jomon '
+kind: historical
+start: -2500
+end: -1201
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries: []
+  centroid: null
+  confidence: null
+broader_periods: []
+successors: []
+authority: Wikidata period classification
+external_ids: {}
+notes: Period overlay created by an editorial period-role decision.
+source_urls: []
+promoted_from: seshat_jomon_jpjomo5

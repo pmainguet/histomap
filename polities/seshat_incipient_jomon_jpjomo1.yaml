@@ -39,3 +39,5 @@ geography:
   confidence: high
 manual_overrides:
 - geography
+- timeline_role
+timeline_role: period

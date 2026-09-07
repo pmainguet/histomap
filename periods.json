@@ -2832,6 +2832,200 @@
     "promoted_from": null
   },
   {
+    "id": "seshat_final_jomon_jpjomo6_period",
+    "canonical_name": "Final Jomon ",
+    "kind": "historical",
+    "tier": "period",
+    "start": -1200,
+    "end": -301,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {},
+    "notes": "Period overlay created by an editorial period-role decision.",
+    "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": "seshat_final_jomon_jpjomo6"
+  },
+  {
+    "id": "seshat_incipient_jomon_jpjomo1_period",
+    "canonical_name": "Incipient Jomon",
+    "kind": "historical",
+    "tier": "period",
+    "start": -13600,
+    "end": -9201,
+    "start_confidence": "high",
+    "end_confidence": "high",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [
+        "JP"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {},
+    "notes": "Period overlay created by an editorial period-role decision.",
+    "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": "seshat_incipient_jomon_jpjomo1"
+  },
+  {
+    "id": "seshat_initial_jomon_jpjomo2_period",
+    "canonical_name": "Initial Jomon",
+    "kind": "historical",
+    "tier": "period",
+    "start": -9200,
+    "end": -5301,
+    "start_confidence": "high",
+    "end_confidence": "high",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {},
+    "notes": "Period overlay created by an editorial period-role decision.",
+    "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": "seshat_initial_jomon_jpjomo2"
+  },
+  {
+    "id": "seshat_jomon_jpjomo3_period",
+    "canonical_name": "Early Jomon",
+    "kind": "historical",
+    "tier": "period",
+    "start": -5300,
+    "end": -3501,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {},
+    "notes": "Period overlay created by an editorial period-role decision.",
+    "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": "seshat_jomon_jpjomo3"
+  },
+  {
+    "id": "seshat_jomon_jpjomo4_period",
+    "canonical_name": "Middle Jomon ",
+    "kind": "historical",
+    "tier": "period",
+    "start": -3500,
+    "end": -2501,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {},
+    "notes": "Period overlay created by an editorial period-role decision.",
+    "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": "seshat_jomon_jpjomo4"
+  },
+  {
+    "id": "seshat_jomon_jpjomo5_period",
+    "canonical_name": "Late Jomon ",
+    "kind": "historical",
+    "tier": "period",
+    "start": -2500,
+    "end": -1201,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {},
+    "notes": "Period overlay created by an editorial period-role decision.",
+    "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": "seshat_jomon_jpjomo5"
+  },
+  {
     "id": "seshat_kachi_plain_pkceran_period",
     "canonical_name": "Kachi Plain - Ceramic Neolithic",
     "kind": "historical",
@@ -2898,6 +3092,38 @@
     "government_form": null,
     "civilization_lane": null,
     "promoted_from": "seshat_neolithic_crete_grcrneo"
+  },
+  {
+    "id": "seshat_neolithic_ganga_ingangn_period",
+    "canonical_name": "Neolithic Middle Ganga",
+    "kind": "historical",
+    "tier": "period",
+    "start": -7000,
+    "end": -3001,
+    "start_confidence": "high",
+    "end_confidence": "high",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": "low"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Wikidata period classification",
+    "external_ids": {},
+    "notes": "Period overlay created by an editorial period-role decision.",
+    "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": "seshat_neolithic_ganga_ingangn"
   },
   {
     "id": "seshat_southern_mesopotamia_neolithic_iqsoneo_period",

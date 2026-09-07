@@ -38,8 +38,10 @@ prominence_components:
   total: 2.39
 manual_overrides:
 - entity_type
+- timeline_role
 entity_type_reviewed_against:
 - polity
 government_form: null
 deprecated:
   visibility_tier: detailed
+timeline_role: period

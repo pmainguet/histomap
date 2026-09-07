@@ -1,0 +1,18 @@
+id: seshat_jomon_jpjomo3_period
+canonical_name: Early Jomon
+kind: historical
+start: -5300
+end: -3501
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  confidence: low
+broader_periods: []
+successors: []
+authority: Wikidata period classification
+external_ids: {}
+notes: Period overlay created by an editorial period-role decision.
+source_urls: []
+promoted_from: seshat_jomon_jpjomo3

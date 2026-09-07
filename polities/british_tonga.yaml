@@ -6,11 +6,11 @@ external_ids:
 parent: null
 successors: []
 start: 1900
-end: null
+end: 1970
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  1900: 5
+  '1900': 5
 weight_imputed: true
 icon: null
 text:
@@ -37,16 +37,20 @@ entity_type_confidence: low
 entity_type_source_qids: []
 relationships: []
 prominence_components:
-  wikidata_reach: 0.0
+  wikidata_reach: 0
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
+  relationship_centrality: 0
   longevity: 5.26
   editorial_work: 0
   type_uncertainty_penalty: -10
-  date_uncertainty_penalty: -5.0
+  date_uncertainty_penalty: -5
   aggregate_penalty: 0
   total: 0
 government_form: protectorate
 deprecated:
   visibility_tier: detailed
+manual_overrides:
+- consolidation
+- end
+consolidation_status: independent
