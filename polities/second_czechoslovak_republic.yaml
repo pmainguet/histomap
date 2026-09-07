@@ -53,6 +53,8 @@ prominence_components:
   total: 22.78
 government_form: null
 manual_overrides:
+- consolidation
 - geography
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent

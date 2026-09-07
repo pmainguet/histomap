@@ -29,6 +29,7 @@ sources:
 - editorial
 prominence_score: 32.77
 manual_overrides:
+- consolidation
 - visibility_override
 eligibility: accepted
 geography:
@@ -66,3 +67,4 @@ linked_chapter_id: macro_early_cities_states
 deprecated:
   visibility_tier: detailed
   visibility_override: global
+consolidation_status: independent

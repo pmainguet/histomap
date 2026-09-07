@@ -58,3 +58,6 @@ linked_era_id: asia_contemporary_world_era
 government_form: null
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent
+manual_overrides:
+- consolidation

@@ -51,3 +51,6 @@ prominence_components:
 government_form: null
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent
+manual_overrides:
+- consolidation

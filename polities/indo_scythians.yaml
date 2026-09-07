@@ -41,6 +41,7 @@ entity_type_confidence: high
 entity_type_source_qids: []
 relationships: []
 manual_overrides:
+- consolidation
 - entity_type
 prominence_components:
   wikidata_reach: 25.35
@@ -57,3 +58,4 @@ linked_era_id: classical_antiquity_era
 government_form: null
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent

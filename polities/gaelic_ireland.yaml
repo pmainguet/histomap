@@ -63,8 +63,10 @@ prominence_components:
   aggregate_penalty: 0
   total: 34.44
 manual_overrides:
+- consolidation
 - entity_type
 linked_era_id: medieval_europe_era
 government_form: null
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent

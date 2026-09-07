@@ -35,6 +35,7 @@ geography:
   - mesoamerica
   primary_historical_region: mesoamerica
 manual_overrides:
+- consolidation
 - geography
 entity_type: civilization
 entity_type_confidence: high
@@ -63,3 +64,4 @@ linked_era_id: classical_antiquity_era
 government_form: null
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent

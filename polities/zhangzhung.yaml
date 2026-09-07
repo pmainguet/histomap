@@ -40,6 +40,7 @@ relationships:
   source_urls:
   - https://www.wikidata.org/wiki/Q1358851
 manual_overrides:
+- consolidation
 - entity_type
 prominence_components:
   wikidata_reach: 21.22
@@ -55,3 +56,4 @@ prominence_components:
 government_form: kingdom
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent

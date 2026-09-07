@@ -54,6 +54,7 @@ prominence_components:
   aggregate_penalty: 0
   total: 34.77
 manual_overrides:
+- consolidation
 - entity_type
 - visibility_override
 government_form: null
@@ -61,3 +62,4 @@ linked_chapter_id: macro_early_cities_states
 deprecated:
   visibility_tier: detailed
   visibility_override: global
+consolidation_status: independent

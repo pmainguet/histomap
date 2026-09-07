@@ -35,6 +35,7 @@ geography:
   - east_asia
   primary_historical_region: east_asia
 manual_overrides:
+- consolidation
 - entity_type
 - geography
 entity_type: civilization
@@ -56,3 +57,4 @@ linked_era_id: bronze_age_era
 government_form: kingdom
 deprecated:
   visibility_tier: detailed
+consolidation_status: independent
