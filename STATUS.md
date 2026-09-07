@@ -1879,6 +1879,68 @@ already does -- is a separate, genuine UX design question, kept on ROADMAP.md (m
 top slot to item 6, since it's now confirmed low-priority and optional rather than a live finding
 needing attention). Full suite: 359 tests, 0 failures.
 
+### `Period.kind` retired; periods can now be details of periods or polities — 7 September 2026
+
+**`Period.kind` (historical/archaeological/protohistorical/prehistorical) removed completely,**
+direct instruction, live -- values preserved under `deprecated.kind` on all 100 existing period
+records (`pipeline/migrate_period_kind_to_deprecated.py`, one-off, same pattern as the
+`visibility_tier` and `parent` retirements). The "Set period type" UI control, its backing
+`PATCH /api/periods/{id}/kind` endpoint, and every pipeline writer of the field
+(`classify_period_roles.py`, `generate_modern_regional_eras.py`, `seed_regional_eras.py`) are
+gone. `decide_consolidation_review`'s now-unused `period_record` lookup (its only remaining use)
+was removed alongside it. Verified live: the endpoint 404s; `periods.json` carries
+`deprecated.kind`, not top-level `kind`, on every record. Full suite: 375 tests, 0 failures.
+
+**Periods can now be details of periods or polities** -- direct request, live: "I want periods to
+be details of other periods, like Initial Periods > details of Jomon period. Same behavior than
+for polities. polities can't be details of periods but periods can be details of periods or
+polities." Five tasks, mirroring the `Polity.detail_of` mechanism (1 September 2026) and its
+recursive-nesting support (ROADMAP.md item 0, 5 September 2026):
+
+1. **`schema.py`:** `Period.detail_of: str | None = None` added, mirroring `Polity.detail_of`
+   exactly (including the self-reference guard). No schema change needed for the reverse
+   constraint -- a polity's `detail_of` was already validated against a polity-only id set.
+2. **`build.py`:** `find_detail_of_cycles()` now optionally takes periods too (backward
+   compatible -- `load_all()`'s own polity-only call site is unchanged, since periods aren't
+   loaded yet at that point), catching period-only cycles. New
+   `validate_period_detail_of(periods, polities)` checks a period's `detail_of` target exists
+   among either collection. Verified against the real dataset: validates cleanly.
+3. **`build_explore_tree.py`:** the `details_by_target` recursive-attachment map (built for
+   ROADMAP.md item 0) is now unified across both entity kinds -- moved earlier in the function so
+   both Pass 1 (period placement) and Pass 2 (polity bucketing) can use it, each detail dict
+   carrying a `kind: "polity" | "period"` marker. A period with `detail_of` set is now skipped
+   from its own top-level era-nested entry, exactly like a detail polity is skipped from the
+   Polities row.
+4. **Frontend:** `explore_timeline.js`'s detail-chip zoom target read `detail.kind` instead of a
+   hardcoded `"polity"`. `explore_details.js` gained `entityRefButton()` (dispatches to
+   `periodRefButton`/`polityRefButton` by which map has the id), a broadened "Contains" row on
+   `renderPolityDetails` (periods can be children too), and new "Detail of"/"Details" rows on
+   `renderPeriodDetails` (distinct from the existing `broader_periods`-based "Part of"/"Contains",
+   a structurally different relationship). "Zoom to this" on a period now auto-expands its
+   `detail_of` container too.
+5. **The "Set as detail of" picker,** previously polity-only: new `search_periods()`/
+   `GET /api/periods/search` (periods aren't held in an in-memory store, so this reads the
+   directory fresh each call -- fine at ~100 periods). `wireDetailOfEditor`/`detailOfEditorHtml`
+   generalized to take a `kind` -- a polity's own target search stays polity-only, a period's
+   merges both search endpoints. Also removed the picker's stale "target already has `detail_of`,
+   pick its own container instead" guard, which predated the recursive-nesting support and was
+   now needlessly blocking legitimate chains.
+
+Verified end-to-end live via the actual UI: set Initial Jomon as a detail of Jomon period through
+the picker, rebuilt, confirmed the Jomon period band shows a "+1" toggle instead of Initial Jomon
+appearing as its own band, and the side panel correctly shows "Detail of: Jōmon period" as a
+clickable link. This real relationship is now committed (not reverted -- it matches the exact
+example given when the feature was requested). Full suite: 381 tests, 0 failures throughout.
+
+**Also fixed in the same pass, direct policy requests:** `/consolidation-review`'s queue now
+excludes any entity whose every candidate suggests "independent" -- the answer is already known,
+reviewing it achieves nothing (kept whenever at least one candidate suggests a real relationship
+or is genuinely ambiguous). And `documented_successor` candidates now also require date overlap
+and compatible geography to surface -- a clean sequential handover (Yemen Republic 1962-1990 /
+Yemen 1990-present, the real 1990 merger) is always independent by definition, so it's excluded
+too, same reasoning as the exact-name-match date-overlap fix earlier the same day. Combined impact
+on the real queue: roughly 1180 items down to 122.
+
 ### `government_form` field, and two geography-grouping bugs found via live testing — 31 August 2026
 
 **`government_form` field added to `Polity` and `Period`.** Distinct from `entity_type`, which
