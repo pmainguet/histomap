@@ -155,6 +155,14 @@ class UnifiedServerTests(unittest.TestCase):
         queue = self.client.get("/api/consolidation-reviews").json()["items"]
         candidate = next(item for item in queue if item["id"] == "candidate")
         self.assertTrue(candidate["period_role_candidate"])
+        # Live report, 7 September 2026: this candidate-less fallback entry
+        # rendered with a generic "no compatible canonical target" message
+        # that gave no hint it was actually a period-role decision -- the
+        # queue payload always carried period_reason, but the frontend
+        # never surfaced it. Locking in that the reason travels with the
+        # item so the UI has something concrete to show instead.
+        self.assertFalse(candidate["candidates"])
+        self.assertEqual(candidate["period_reason"], "mixed role")
 
         response = self.client.post(
             "/api/consolidation-reviews/candidate", json={"decision": "period"}

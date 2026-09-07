@@ -1160,6 +1160,14 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 continue
             item = queue_by_id.get(period_record["id"])
             if item is None:
+                # Policy, live, 7 September 2026: this fallback entry is
+                # the sole reason a candidate-less item ever reaches the
+                # queue at all -- it exists specifically to surface a
+                # genuine entity/period ambiguity that has no
+                # consolidation candidate to reconcile against. The
+                # frontend renders it with period-role framing (see
+                # consolidation_review.js), not the identity-matching
+                # framing used for real candidates.
                 qid = (document.get("external_ids") or {}).get("wikidata")
                 item = {
                     "id": document["id"], "canonical_name": document["canonical_name"],

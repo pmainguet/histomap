@@ -293,9 +293,16 @@ async function loadNext() {
   // copy. "Broad period/era" has no card-level button either -- <kbd>P</kbd>
   // (see the keydown handler) remains the only way to make that decision,
   // since it isn't tied to any specific candidate the way the others are.
+  // Reaching the queue with zero candidates only ever happens through the
+  // period_role_queue fallback (server/app.py's consolidation_review_queue)
+  // -- there's no other path in, so this branch is always a genuine
+  // entity/period ambiguity, never a plain failed identity search. Framed
+  // and worded accordingly (period_reason, not a generic "no match" line),
+  // with a visible period button alongside the <kbd>P</kbd> shortcut --
+  // previously that decision had no button at all here.
   const candidateSection = current.candidates.length
     ? `<h3 class="candidate-heading">Other canonical Histomap records with compatible evidence</h3><div class="candidate-list">${current.candidates.map(candidateMarkup).join("")}</div>`
-    : `<p class="proposal-reason">No compatible canonical target was suggested. Decide whether this is an independent entity or belongs on the period layer.</p><div class="review-actions"><button type="button" data-decision="independent"><kbd>K</kbd> Independent entity</button><button type="button" data-decision="discarded" class="danger"><kbd>X</kbd> Discard from Histomap</button><button type="button" data-action="defer"><kbd>S</kbd> Defer</button></div>`;
+    : `<p class="proposal-reason">No consolidation candidate was found. ${escapeHtml(current.period_reason || "Ambiguous entity and period role.")} Decide whether this is an independent entity or belongs on the period layer.</p><div class="review-actions"><button type="button" data-decision="independent"><kbd>K</kbd> Independent entity</button><button type="button" data-decision="period"><kbd>P</kbd> Broad period/era</button><button type="button" data-decision="discarded" class="danger"><kbd>X</kbd> Discard from Histomap</button><button type="button" data-action="defer"><kbd>S</kbd> Defer</button></div>`;
   // Just title + subtitle here -- the rest of what this record is (dates,
   // type, present countries, Wikidata) already appears as the "Reviewed
   // entity" column in each candidate's comparison table below, so a second
@@ -306,7 +313,17 @@ async function loadNext() {
   // reasoning is worth seeing before scrolling into the comparison table.
   const topReasonsBanner = current.candidates[0] ? reasonsBanner(current.candidates[0].reasons) : "";
   card.innerHTML = `<p class="review-rank"><span class="record-badge">Histomap entity</span> Canonical record being checked</p><h2>${escapeHtml(current.canonical_name)}${exploreLink(current.id)}</h2><p class="wikidata-description" data-wikidata-description="${escapeHtml(current.wikidata || "")}"></p>${editFieldsMarkup(current.id)}${topReasonsBanner}${candidateSection}`;
-  card.querySelectorAll("[data-decision]").forEach((button) => button.addEventListener("click", () => decide(button.dataset.decision, button.dataset.target)));
+  card.querySelectorAll("[data-decision]").forEach((button) => button.addEventListener("click", () => {
+    // Same open-end guard as the <kbd>P</kbd> shortcut below -- a period
+    // choice needs a finite end date, and this button is the only other
+    // place that decision is reachable.
+    if (button.dataset.decision === "period" && current.dates[1] == null) {
+      status.className = "decision-status error";
+      status.textContent = "Period choices require a finite end date; this record is still open-ended.";
+      return;
+    }
+    decide(button.dataset.decision, button.dataset.target);
+  }));
   card.querySelectorAll('[data-action="defer"]').forEach((button) => button.addEventListener("click", defer));
   wireEditFields();
   loadWikidataEvidence(current);
