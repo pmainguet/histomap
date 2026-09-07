@@ -303,7 +303,7 @@ kbd { padding: .1rem .3rem; color: #27251f; background: white; border: 1px solid
 .hierarchy-chart-container { overflow: auto; padding: 0 clamp(1rem, 4vw, 3.5rem) 2rem; }
 .hierarchy-chart { display: block; min-width: 740px; }
 .hierarchy-band { fill: var(--paper); stroke: var(--rule); cursor: pointer; }
-.hierarchy-band-geo { fill: #eee9de; stroke: none; cursor: default; }
+.hierarchy-band-geo { fill: #5b6b73; fill-opacity: .22; stroke: #5b6b73; stroke-opacity: .4; cursor: default; }
 .hierarchy-band-chapter { fill: #8c422d; fill-opacity: .18; stroke: #8c422d; }
 .hierarchy-band-era { fill: var(--rule); fill-opacity: .6; stroke: #27251f; stroke-opacity: .35; }
 .hierarchy-band-period { fill: #27251f; fill-opacity: .2; }

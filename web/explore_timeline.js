@@ -875,7 +875,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
     const bx = scale.x(epoch.start);
     bandRect(svg, {
       x: bx, y, width: scale.width(epoch.start, end), height: geoRowHeight,
-      cls: "hierarchy-band hierarchy-band-geo", title: epoch.name,
+      cls: "hierarchy-band hierarchy-band-geo", title: epoch.name, label: epoch.name,
     });
   }
   y += geoRowHeight + rowGap;
