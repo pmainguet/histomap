@@ -25,3 +25,4 @@ notes: Current geological epoch, following the Pleistocene. Spans every macro ch
   end capped at 2100 (YEAR_MAX) -- genuinely still ongoing.
 source_urls:
 - https://en.wikipedia.org/wiki/Holocene
+epoch_lane: true

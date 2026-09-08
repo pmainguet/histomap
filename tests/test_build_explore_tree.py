@@ -35,13 +35,14 @@ def era(
 
 def named_period(id_: str, start: int, end: int, broader: list[str] | None = None, continents: list[str] | None = None,
                   historical_regions: list[str] | None = None, authority: str | None = None,
-                  detail_of: str | None = None) -> dict:
+                  detail_of: str | None = None, epoch_lane: bool = False) -> dict:
     """Build a minimal period fixture dict."""
     doc = {
         "id": id_, "tier": "period", "canonical_name": id_, "start": start, "end": end,
         "broader_periods": broader or [],
         "geography": {"continents": continents or [], "historical_regions": historical_regions or []},
         "authority": authority,
+        "epoch_lane": epoch_lane,
     }
     if detail_of is not None:
         doc["detail_of"] = detail_of
@@ -540,6 +541,50 @@ class CivilizationsCultureLaneTests(unittest.TestCase):
             [e["id"] for e in tree["chapters"][0]["civilizations"]],
             ["earlier_civilization", "later_civilization"],
         )
+
+
+class EpochLaneTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.periods = [
+            chapter("macro_early", -3500, -1200),
+            era("egypt_era", -3100, -1070, "macro_early", ["africa"], ["north_africa"]),
+        ]
+
+    def test_epoch_lane_period_reaches_the_top_level_epochs_list(self) -> None:
+        periods = [*self.periods, named_period("holocene", -9701, 2100, epoch_lane=True)]
+        tree = build_explore_tree([], periods, [])
+        self.assertEqual([e["id"] for e in tree["epochs"]], ["holocene"])
+
+    def test_epoch_lane_period_excluded_from_the_ordinary_period_row(self) -> None:
+        periods = [*self.periods, named_period("holocene", -9701, 2100, epoch_lane=True)]
+        tree = build_explore_tree([], periods, [])
+        all_period_ids = {p["id"] for era_entry in tree["chapters"][0]["eras"] for p in era_entry["periods"]}
+        self.assertNotIn("holocene", all_period_ids)
+
+    def test_epoch_lane_period_gets_its_detail_of_children_attached(self) -> None:
+        periods = [
+            *self.periods,
+            named_period("holocene", -9701, 2100, epoch_lane=True),
+            named_period("greenlandian", -9701, -6237, detail_of="holocene"),
+        ]
+        tree = build_explore_tree([], periods, [])
+        holocene_entry = next(e for e in tree["epochs"] if e["id"] == "holocene")
+        self.assertEqual([d["id"] for d in holocene_entry["details"]], ["greenlandian"])
+        self.assertEqual(holocene_entry["details"][0]["kind"], "period")
+
+    def test_non_epoch_period_is_not_in_epochs_list(self) -> None:
+        periods = [*self.periods, named_period("old_kingdom", -2686, -2181, broader=["egypt_era"])]
+        tree = build_explore_tree([], periods, [])
+        self.assertEqual(tree["epochs"], [])
+
+    def test_epochs_sorted_by_start(self) -> None:
+        periods = [
+            *self.periods,
+            named_period("later_epoch", -1000, 2100, epoch_lane=True),
+            named_period("earlier_epoch", -9701, -1000, epoch_lane=True),
+        ]
+        tree = build_explore_tree([], periods, [])
+        self.assertEqual([e["id"] for e in tree["epochs"]], ["earlier_epoch", "later_epoch"])
 
 
 if __name__ == "__main__":

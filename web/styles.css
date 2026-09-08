@@ -320,6 +320,10 @@ kbd { padding: .1rem .3rem; color: #27251f; background: white; border: 1px solid
 .hierarchy-chart { display: block; min-width: 740px; }
 .hierarchy-band { fill: var(--paper); stroke: var(--rule); cursor: pointer; }
 .hierarchy-band-geo { fill: #5b6b73; fill-opacity: .22; stroke: #5b6b73; stroke-opacity: .4; cursor: default; }
+/* A real Epoch-lane record (e.g. Holocene) sharing the Epoch row with the
+   purely decorative bands above -- same color, but clickable like every
+   other data-driven band (schema.Period.epoch_lane). */
+.hierarchy-band-geo-record { cursor: pointer; }
 .hierarchy-band-chapter { fill: #8c422d; fill-opacity: .18; stroke: #8c422d; }
 .hierarchy-band-era { fill: var(--rule); fill-opacity: .6; stroke: #27251f; stroke-opacity: .35; }
 .hierarchy-band-period { fill: #27251f; fill-opacity: .2; }

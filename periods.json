@@ -30,6 +30,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -67,6 +68,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -104,6 +106,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -141,6 +144,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -180,6 +184,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -221,12 +226,14 @@
     },
     "notes": "Ancient Egypt spans several distinct political phases; rendered as period context so those phases (not this civilization-level record) carry the chart's political weight.",
     "source_urls": [
-      "https://www.wikidata.org/wiki/Q11768"
+      "https://www.wikidata.org/wiki/Q11768",
+      "https://en.wikipedia.org/wiki/Ancient_Egypt"
     ],
     "linked_era_id": "neolithic_era",
     "linked_chapter_id": "macro_early_cities_states",
     "government_form": null,
     "civilization_lane": true,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -268,6 +275,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -309,6 +317,7 @@
     "linked_chapter_id": "macro_classical_imperial_worlds",
     "government_form": null,
     "civilization_lane": true,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -346,6 +355,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -383,6 +393,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -420,6 +431,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -457,6 +469,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -494,6 +507,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -531,6 +545,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -568,6 +583,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -605,6 +621,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -650,6 +667,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -687,6 +705,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -718,7 +737,9 @@
     ],
     "successors": [],
     "authority": "Histomap editorial: overarching regional-era consolidation",
-    "external_ids": {},
+    "external_ids": {
+      "wikidata": "Q11761"
+    },
     "notes": "Overarching parent for the regional Bronze Age eras, which happened at meaningfully different times in different places -- spans from the start of the European Bronze Age (~-3,200) to the end of the East Asian Bronze Age (~-1,046). See ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes\". The geography.historical_regions field (formerly just east_asia) was removed 2026-08-31 -- a leftover from the demoted east_asian_bronze_age_era child that wrongly narrowed geography_matches to East Asia only (every other overarching era -- neolithic_era, paleolithic_era, classical_antiquity_era, iron_age_era, copper_age_era -- correctly has none at all, falling back to continent-level matching); this blocked Indus Valley Civilization's linked_era_id seed value, among others.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Bronze_Age"
@@ -727,6 +748,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -773,6 +795,7 @@
     "linked_chapter_id": "macro_postclassical_worlds",
     "government_form": null,
     "civilization_lane": true,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -810,6 +833,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -843,7 +867,9 @@
     ],
     "successors": [],
     "authority": "Histomap editorial: overarching regional-era consolidation",
-    "external_ids": {},
+    "external_ids": {
+      "wikidata": "Q486761"
+    },
     "notes": "Overarching parent for the regional Classical Antiquity eras (mediterranean_classical_era, east_asian_classical_era, south_asian_classical_era, mesoamerican_formative_classic_era, andean_early_civilizations_era), which happened at meaningfully different times in different places -- same \"overarching regional era\" treatment as bronze_age_era/neolithic_era/ paleolithic_era/iron_age_era. Spans from the earliest regional start (-1200, shared by Mediterranean/Mesoamerican/Andean) to the latest regional end (900, Mesoamerican). Deliberately excludes Sub-Saharan Africa, whose equivalent-period record is iron_age_era, not a \"classical antiquity\" -- see ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes\" and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Classical_antiquity"
@@ -852,6 +878,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -894,6 +921,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -937,6 +965,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -978,6 +1007,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1019,6 +1049,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1060,6 +1091,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1101,6 +1133,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1144,6 +1177,7 @@
     "linked_chapter_id": "macro_classical_imperial_worlds",
     "government_form": null,
     "civilization_lane": true,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1184,6 +1218,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1221,6 +1256,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1258,6 +1294,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1295,6 +1332,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1332,6 +1370,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1371,6 +1410,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1408,6 +1448,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1449,6 +1490,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1490,6 +1532,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1531,6 +1574,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1575,6 +1619,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": "holocene",
     "deprecated": null
@@ -1617,6 +1662,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": true,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": null
@@ -1652,12 +1698,14 @@
     },
     "notes": "Indus script is undeciphered, hence protohistorical. No matching polities/ record -- distributed across major urban centers (Harappa, Mohenjo-daro...), not a single political actor.",
     "source_urls": [
-      "https://www.wikidata.org/wiki/Q42534"
+      "https://www.wikidata.org/wiki/Q42534",
+      "https://en.wikipedia.org/wiki/Indus_Valley_Civilisation"
     ],
     "linked_era_id": "bronze_age_era",
     "linked_chapter_id": "macro_early_cities_states",
     "government_form": null,
     "civilization_lane": true,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1689,7 +1737,9 @@
     ],
     "successors": [],
     "authority": "Histomap editorial: overarching regional-era consolidation",
-    "external_ids": {},
+    "external_ids": {
+      "wikidata": "Q11764"
+    },
     "notes": "Overarching parent for the regional Iron Age eras (european_iron_age, sub_saharan_african_iron_age_era), which happened at meaningfully different times in different places -- same \"overarching regional era\" treatment as bronze_age_era/neolithic_era/paleolithic_era. Added 2026-08-31 -- previously european_iron_age had no Iron Age parent at all (it heuristically nested under mediterranean_classical_era instead) and sub_saharan_african_iron_age_era was its own standalone regional_era with no relation to the European one. See ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes\" and STATUS.md.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Iron_Age"
@@ -1698,6 +1748,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1741,6 +1792,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1788,6 +1840,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1827,6 +1880,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": null
@@ -1868,6 +1922,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": null
@@ -1903,6 +1958,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1938,6 +1994,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -1973,6 +2030,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2008,6 +2066,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2043,6 +2102,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2078,6 +2138,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2113,6 +2174,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2148,6 +2210,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2183,6 +2246,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2218,6 +2282,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2257,6 +2322,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2299,6 +2365,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2343,6 +2410,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": "holocene",
     "deprecated": null
@@ -2382,6 +2450,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2423,16 +2492,19 @@
     ],
     "authority": "DBpedia/Wikipedia periodization",
     "external_ids": {
-      "dbpedia": "https://dbpedia.org/resource/Mesoamerican_chronology"
+      "dbpedia": "https://dbpedia.org/resource/Mesoamerican_chronology",
+      "wikidata": "Q4964"
     },
     "notes": "",
     "source_urls": [
-      "https://dbpedia.org/resource/Mesoamerican_chronology"
+      "https://dbpedia.org/resource/Mesoamerican_chronology",
+      "https://en.wikipedia.org/wiki/Mesoamerican_chronology"
     ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2474,6 +2546,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2523,6 +2596,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2574,6 +2648,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2618,6 +2693,7 @@
     "linked_chapter_id": "macro_early_cities_states",
     "government_form": null,
     "civilization_lane": true,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2658,12 +2734,14 @@
     },
     "notes": "Linear A is undeciphered, hence protohistorical. No matching polities/ record -- centered on Knossos and other Cretan palace-sites, not a single political actor.",
     "source_urls": [
-      "https://www.wikidata.org/wiki/Q134178"
+      "https://www.wikidata.org/wiki/Q134178",
+      "https://en.wikipedia.org/wiki/Minoan_civilization"
     ],
     "linked_era_id": "classical_antiquity_era",
     "linked_chapter_id": "macro_early_cities_states",
     "government_form": null,
     "civilization_lane": true,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2707,6 +2785,7 @@
     "linked_chapter_id": "macro_early_cities_states",
     "government_form": null,
     "civilization_lane": true,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2754,6 +2833,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2795,6 +2875,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2832,6 +2913,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2869,6 +2951,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2906,6 +2989,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2943,6 +3027,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -2987,6 +3072,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": "holocene",
     "deprecated": null
@@ -3022,6 +3108,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -3059,6 +3146,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -3096,6 +3184,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -3133,6 +3222,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -3176,6 +3266,7 @@
     "linked_chapter_id": "macro_classical_imperial_worlds",
     "government_form": null,
     "civilization_lane": true,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -3208,7 +3299,9 @@
     ],
     "successors": [],
     "authority": "Histomap editorial: overarching regional-era consolidation",
-    "external_ids": {},
+    "external_ids": {
+      "wikidata": "Q40203"
+    },
     "notes": "Overarching parent for the regional Paleolithic variants, which cover meaningfully different spans in different places -- from the earliest African stone tools (~-3,000,000) through the end of the last Ice Age everywhere. See ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes.\"",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Paleolithic"
@@ -3217,6 +3310,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -3254,6 +3348,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -3289,6 +3384,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_bronze_age_beaker_culture_frbeakr",
     "detail_of": null,
     "deprecated": null
@@ -3326,6 +3422,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_deccan_indecia",
     "detail_of": "deccan",
     "deprecated": null
@@ -3363,6 +3460,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_deccan_indecnl",
     "detail_of": "deccan",
     "deprecated": null
@@ -3396,6 +3494,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_final_jomon_jpjomo6",
     "detail_of": "jomon",
     "deprecated": {
@@ -3431,6 +3530,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_formative_period_irforma",
     "detail_of": null,
     "deprecated": null
@@ -3468,6 +3568,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_incipient_jomon_jpjomo1",
     "detail_of": "jomon",
     "deprecated": {
@@ -3507,6 +3608,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_initial_jomon_jpjomo2",
     "detail_of": "jomon",
     "deprecated": {
@@ -3542,6 +3644,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_jomon_jpjomo3",
     "detail_of": "jomon",
     "deprecated": {
@@ -3577,6 +3680,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_jomon_jpjomo4",
     "detail_of": "jomon",
     "deprecated": {
@@ -3612,6 +3716,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_jomon_jpjomo5",
     "detail_of": "jomon",
     "deprecated": {
@@ -3651,6 +3756,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_kachi_plain_pkacern",
     "detail_of": "kachi_plain",
     "deprecated": null
@@ -3688,6 +3794,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_kachi_plain_pkceran",
     "detail_of": "kachi_plain",
     "deprecated": {
@@ -3727,6 +3834,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_kachi_plain_pkchalc",
     "detail_of": "kachi_plain",
     "deprecated": null
@@ -3764,6 +3872,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_kachi_plain_pkpostu",
     "detail_of": "kachi_plain",
     "deprecated": null
@@ -3801,6 +3910,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_kachi_plain_pkpreur",
     "detail_of": "kachi_plain",
     "deprecated": null
@@ -3838,6 +3948,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_kachi_plain_pkurbn1",
     "detail_of": "kachi_plain",
     "deprecated": null
@@ -3875,6 +3986,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_kachi_plain_pkurbn2",
     "detail_of": "kachi_plain",
     "deprecated": null
@@ -3912,6 +4024,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_konya_plain_trbrzer",
     "detail_of": "konya_plain_period",
     "deprecated": null
@@ -3949,6 +4062,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_konya_plain_trbrzl2",
     "detail_of": "konya_plain_period",
     "deprecated": null
@@ -3986,6 +4100,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_konya_plain_trclcer",
     "detail_of": "konya_plain_period",
     "deprecated": null
@@ -4023,6 +4138,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_konya_plain_trclclt",
     "detail_of": "konya_plain_period",
     "deprecated": null
@@ -4060,6 +4176,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_konya_plain_trneocr",
     "detail_of": "konya_plain_period",
     "deprecated": null
@@ -4097,6 +4214,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_konya_plain_trneoer",
     "detail_of": "konya_plain_period",
     "deprecated": null
@@ -4134,6 +4252,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_konya_plain_trneolt",
     "detail_of": "konya_plain_period",
     "deprecated": null
@@ -4167,6 +4286,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_neolithic_crete_grcrneo",
     "detail_of": "greece",
     "deprecated": {
@@ -4206,6 +4326,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_neolithic_ganga_ingangn",
     "detail_of": null,
     "deprecated": {
@@ -4241,6 +4362,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_pre_ceramic_period_irprcer",
     "detail_of": null,
     "deprecated": null
@@ -4276,6 +4398,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": "seshat_southern_mesopotamia_neolithic_iqsoneo",
     "detail_of": null,
     "deprecated": {
@@ -4313,6 +4436,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -4350,6 +4474,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -4387,6 +4512,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -4424,6 +4550,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -4465,6 +4592,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -4508,6 +4636,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": null,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": null
@@ -4550,6 +4679,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -4587,6 +4717,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -4624,6 +4755,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -4661,6 +4793,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -4698,6 +4831,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -4743,6 +4877,7 @@
     "linked_chapter_id": "macro_postclassical_worlds",
     "government_form": null,
     "civilization_lane": true,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -4780,6 +4915,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {
@@ -4827,6 +4963,7 @@
     "linked_chapter_id": null,
     "government_form": null,
     "civilization_lane": false,
+    "epoch_lane": false,
     "promoted_from": null,
     "detail_of": null,
     "deprecated": {

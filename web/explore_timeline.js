@@ -399,9 +399,11 @@ function filterTreeToRange(tree, start, end) {
       polities_by_continent: filterBuckets(c.polities_by_continent),
       civilizations: (c.civilizations || []).filter((item) => overlaps(item.start, item.end)),
     }));
+  const epochs = (tree.epochs || []).filter((epoch) => overlaps(epoch.start, epoch.end));
   return {
     axis: { domain_start: start, domain_end: end, segment_break: start },
     chapters,
+    epochs,
   };
 }
 
@@ -949,8 +951,21 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   const civBlockHeight = civLayout.height > 0 ? civLayout.height + rowGap : 0;
   const politiesRowHeight = showPolities !== "hide" ? politiesLayout.height : 0;
   const eventsBlockHeight = eventLanes.length > 0 ? eventLanes.length * eventLaneHeight + rowGap : 0;
+  // Real (data-driven) Epoch-lane records (e.g. Holocene) share the same
+  // horizontal line as the static geological bands, not a lane-packed
+  // stack -- reserves room for whichever one's expanded detail panel is
+  // tallest (an edge case with today's single epoch-lane record, Holocene,
+  // but correct if a second one is ever added too).
+  const epochRowExtraHeight = Math.max(
+    0,
+    ...(tree.epochs || []).map((epoch) => (
+      Array.isArray(epoch.details) && epoch.details.length && isExpanded(epoch.id)
+        ? DETAIL_PANEL_TOP_GAP + detailPanelHeight(epoch.details, isExpanded)
+        : 0
+    )),
+  );
 
-  const height = geoRowHeight + chapterRowHeight + eraRowHeight + periodRowHeight + eventsBlockHeight + civBlockHeight + politiesRowHeight + rowGap * 4;
+  const height = geoRowHeight + epochRowExtraHeight + chapterRowHeight + eraRowHeight + periodRowHeight + eventsBlockHeight + civBlockHeight + politiesRowHeight + rowGap * 4;
 
   const svg = svgEl("svg", { viewBox: `0 0 ${width} ${height}`, class: "hierarchy-chart" });
 
@@ -965,7 +980,20 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
       cls: "hierarchy-band hierarchy-band-geo", title: epoch.name, label: epoch.name,
     });
   }
-  y += geoRowHeight + rowGap;
+  // Real Epoch-lane records (Holocene) share this same row, drawn with the
+  // full click/zoom/detail_of toggle every other data-driven row already
+  // gets (see schema.Period.epoch_lane / build_explore_tree.py's
+  // _is_epoch_lane_period) -- unlike the purely decorative bands above.
+  for (const epoch of tree.epochs || []) {
+    drawItemBand(svg, epoch, {
+      x: scale.x(epoch.start), y, width: scale.width(epoch.start, epoch.end),
+      height: geoRowHeight, cls: "hierarchy-band hierarchy-band-geo hierarchy-band-geo-record",
+      title: `${epoch.canonical_name} (${formatYear(epoch.start)} - ${formatYear(epoch.end)})`,
+      label: epoch.canonical_name, onZoom, kind: "period", domainEnd: tree.axis.domain_end, scale,
+      isExpanded, onToggleExpand,
+    });
+  }
+  y += geoRowHeight + epochRowExtraHeight + rowGap;
   let sepY = y - rowGap / 2;
   drawSeparator(svg, width, sepY);
   drawTierLabel(svg, "Epoch", prevSepY, sepY);

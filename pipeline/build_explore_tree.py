@@ -103,6 +103,33 @@ def best_chapter_for_polity(polity: dict, chapters: list[dict], open_end: int) -
 CIVILIZATION_BACKDROP_AUTHORITY = "Histomap editorial: civilization-as-backdrop"
 
 
+def _is_epoch_lane_period(period: dict) -> bool:
+    """A tier=period record that belongs in the top-level Epoch lane --
+    e.g. Holocene -- rather than the plain Period row (chapter/era-nested)
+    or the Civilizations & Cultures lane. Explicit, curator-set field only
+    (schema.Period.epoch_lane), no name-heuristic fallback: unlike
+    civilization_lane, there's no pre-existing corpus of un-flagged epoch
+    records to backfill a guess for. Found live, 8 September 2026 --
+    Holocene needed the same click/zoom/detail_of support every other
+    entity gets, which the old static geological_epochs.js band (still
+    used for finer geological stages with no Histomap record of their own)
+    never had."""
+    return period.get("tier") == "period" and bool(period.get("epoch_lane"))
+
+
+def _epoch_entry(period: dict) -> dict:
+    """Build a JSON-serializable dict entry for the top-level Epoch lane --
+    simpler than _period_entry: no era/chapter nesting (curated/era_id
+    don't apply), no geography-based grouping (the lane is a single flat
+    global row, like Era)."""
+    return {
+        "id": period["id"],
+        "canonical_name": period["canonical_name"],
+        "start": period["start"],
+        "end": period["end"],
+    }
+
+
 def _is_civilization_lane_period(period: dict) -> bool:
     """A tier=period record that belongs in the Civilizations & Cultures
     lane rather than the plain Period row. `civilization_lane` (explicit,
@@ -172,7 +199,11 @@ def build_explore_tree(
     def _is_civilization_period(p: dict) -> bool:
         return _is_civilization_lane_period(p) or _civilization_period_source_entity_type(p, civilization_period_sources) is not None
 
-    all_periods = [p for p in periods if p.get("tier") == "period" and not _is_civilization_period(p)]
+    epoch_periods = [p for p in periods if _is_epoch_lane_period(p)]
+    all_periods = [
+        p for p in periods
+        if p.get("tier") == "period" and not _is_civilization_period(p) and not _is_epoch_lane_period(p)
+    ]
     civilization_periods = [p for p in periods if _is_civilization_period(p)]
 
     entities_by_period: dict[str, list[str]] = {}
@@ -236,6 +267,18 @@ def build_explore_tree(
     for details in details_by_target.values():
         details.sort(key=lambda d: (d["start"] if d["start"] is not None else 0, d["id"]))
     _attach_nested_details(details_by_target)
+
+    # Top-level Epoch lane -- a single flat global row, like Era, not nested
+    # under any chapter (an epoch like Holocene spans several chapters at
+    # once, so there's no one chapter to place it under). detail_of children
+    # (e.g. Holocene's Greenlandian/Northgrippian/Meghalayan stages) attach
+    # via the same details_by_target map every other row already uses.
+    epochs_out = []
+    for period in sorted(epoch_periods, key=lambda p: (p["start"], p["id"])):
+        entry = _epoch_entry(period)
+        if period["id"] in details_by_target:
+            entry["details"] = details_by_target[period["id"]]
+        epochs_out.append(entry)
 
     # Pass 1: place every era's periods for every chapter first, then derive
     # curated polity ids from what actually landed -- must be complete for
@@ -374,6 +417,7 @@ def build_explore_tree(
             "segment_break": earliest_chapter["end"],
         },
         "chapters": chapters_out,
+        "epochs": epochs_out,
     }
 
 

@@ -232,5 +232,15 @@ class EventTests(unittest.TestCase):
             Event(**kwargs)
 
 
+class PeriodEpochLaneTests(unittest.TestCase):
+    def test_epoch_lane_defaults_to_false(self) -> None:
+        period = Period(**period_kwargs())
+        self.assertFalse(period.epoch_lane)
+
+    def test_epoch_lane_accepts_true(self) -> None:
+        period = Period(**period_kwargs(epoch_lane=True))
+        self.assertTrue(period.epoch_lane)
+
+
 if __name__ == "__main__":
     unittest.main()
