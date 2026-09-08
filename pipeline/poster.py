@@ -248,6 +248,29 @@ def _hash01(seed: float) -> float:
     return x - int(x)
 
 
+_JITTER_CONTROL_POINTS = 7  # per whole band, regardless of its span or how
+# finely `step` samples the taper curve -- matches the mockup's own
+# "linear-jitter" mode, which subdivided each keyframe interval into only
+# 5-6 steps. Jittering independently at every fine sample instead (one
+# random offset every `step` years, for potentially hundreds of points on
+# a centuries-long band) produced a dense, regular sawtooth -- not the
+# sparse, organic hand-drawn wobble intended. A handful of widely-spaced
+# control offsets, smoothly interpolated between, reads as hand-drawn;
+# independent noise at every sample point reads as corrugated cardboard.
+
+
+def _band_jitter(lo: int, hi: int, seed: int, amp: float, year: int) -> float:
+    if amp <= 0 or hi <= lo:
+        return 0.0
+    span = hi - lo
+    t = (year - lo) / span * (_JITTER_CONTROL_POINTS - 1)
+    i = max(0, min(_JITTER_CONTROL_POINTS - 2, int(t)))
+    local_t = smoothstep(t - i)
+    a = (_hash01(seed * 71 + i) - 0.5) * 2 * amp
+    b = (_hash01(seed * 71 + i + 1) - 0.5) * 2 * amp
+    return a + (b - a) * local_t
+
+
 def authentic_path(
     polity: PosterPolity,
     lineage_x: float,
@@ -267,10 +290,11 @@ def authentic_path(
     if lo >= hi:
         return ""
     years = list(range(lo, hi, step)) + [hi]
+    seed = hash(polity.id) % 100000
     left, right = [], []
-    for i, year in enumerate(years):
+    for year in years:
         prom = polity.effective_prominence_at(year, max_year_no_fade_out)
-        hw = width_px(prom) + (_hash01(i * 97 + hash(polity.id) % 1000) - 0.5) * 2 * jitter_amp
+        hw = width_px(prom) + _band_jitter(lo, hi, seed, jitter_amp, year)
         hw = max(2.0, hw)
         y = year_to_y(year)
         left.append(f"{lineage_x - hw:.1f},{y:.1f}")
