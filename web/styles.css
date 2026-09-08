@@ -111,6 +111,10 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .detail-close { float: right; margin: -.5rem -.4rem .5rem .75rem; padding: .2rem .55rem; color: #27251f; background: transparent; border: 0; font: 1.8rem/1 system-ui, sans-serif; }
 .detail-actions { display: flex; flex-wrap: wrap; gap: .4rem; margin: .7rem 0; }
 .detail-actions button { padding: .35rem .55rem; font-size: .72rem; }
+.wiki-summary:empty { display: none; }
+.wiki-summary::after { content: ""; display: table; clear: both; }
+.wiki-summary img { float: left; width: 6rem; margin: 0 .7rem .5rem 0; border: 1px solid var(--rule); border-radius: 3px; }
+.wiki-summary p { margin: 0 0 .6rem; color: var(--ink-faint); font: .8rem/1.45 system-ui, sans-serif; }
 .geography-editor { margin: 1rem 0; padding: .8rem; background: #f5f0e5; border: 1px solid var(--rule); font: .78rem system-ui, sans-serif; }
 .geography-editor[hidden] { display: none; }
 .geography-editor h3 { margin: 0 0 .7rem; font: 700 .9rem system-ui, sans-serif; }

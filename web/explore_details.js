@@ -467,7 +467,98 @@ function externalLinksForPolity(polity) {
     wikipedia ? `<a href="${escapeHtml(wikipedia)}" target="_blank" rel="noopener noreferrer">Wikipedia (English) ↗</a>` : "",
     seshat.length ? `<a href="https://www.seshat-db.com/api/core/polities/?search=${encodeURIComponent(polity.canonical_name)}" target="_blank" rel="noopener noreferrer">Seshat (${escapeHtml(seshat.join(", "))}) ↗</a>` : "",
     centroid ? `<a href="https://www.openstreetmap.org/?mlat=${centroid.lat}&mlon=${centroid.lon}#map=5/${centroid.lat}/${centroid.lon}" target="_blank" rel="noopener noreferrer">View location ↗</a>` : "",
+    ...(polity.source_urls || []).map((url, index) =>
+      `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Source ${index + 1} ↗</a>`),
   ].filter(Boolean);
+}
+
+// ROADMAP.md item 6 -- "Display more pictures and information from
+// wikipedia on the side panel". Client-side only: resolves a Wikipedia
+// article title for a record (direct URL if present, else a live
+// Wikidata sitelink lookup by QID -- see resolveWikipediaTitle) and calls
+// Wikipedia's public, CORS-enabled REST summary endpoint straight from the
+// browser. Cached in memory per title so navigating back and forth in one
+// session doesn't refetch; silently renders nothing if no title can be
+// resolved or a fetch fails (redirect oddities, offline, 404 -- never
+// shown as an error to the user).
+const wikiSummaryCache = new Map();
+const wikidataTitleCache = new Map();
+
+function extractWikipediaTitle(record) {
+  const candidates = [
+    ...Object.values(record.external_ids || {}),
+    ...(record.source_urls || []),
+  ];
+  for (const candidate of candidates) {
+    const value = Array.isArray(candidate) ? candidate.join(" ") : String(candidate ?? "");
+    const match = value.match(/en\.wikipedia\.org\/wiki\/([^\s#?]+)/);
+    if (match) return decodeURIComponent(match[1]);
+  }
+  return null;
+}
+
+// Fallback for the common case (most polities): only a bare Wikidata QID
+// on file, no direct Wikipedia URL. Wikidata's action API supports CORS
+// via origin=* (the standard trick for calling it from an arbitrary
+// browser origin, no key needed).
+async function resolveWikipediaTitleFromWikidata(qid) {
+  if (!qid) return null;
+  if (wikidataTitleCache.has(qid)) return wikidataTitleCache.get(qid);
+  let title = null;
+  try {
+    const url = `https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${encodeURIComponent(qid)}&props=sitelinks&sitefilter=enwiki&format=json&origin=*`;
+    const response = await fetch(url, { headers: { Accept: "application/json" } });
+    if (response.ok) {
+      const data = await response.json();
+      title = data?.entities?.[qid]?.sitelinks?.enwiki?.title || null;
+    }
+  } catch {
+    title = null;
+  }
+  wikidataTitleCache.set(qid, title);
+  return title;
+}
+
+async function resolveWikipediaTitle(record) {
+  return extractWikipediaTitle(record) || resolveWikipediaTitleFromWikidata(record.external_ids?.wikidata);
+}
+
+function renderWikipediaSummary(container, data) {
+  if (!container.isConnected) return; // panel moved on to a different record while the fetch was in flight
+  const image = data?.thumbnail?.source || data?.originalimage?.source;
+  if (!data || (!data.extract && !image)) {
+    container.innerHTML = "";
+    return;
+  }
+  container.innerHTML = `
+    ${image ? `<img src="${escapeHtml(image)}" alt="">` : ""}
+    ${data.extract ? `<p>${escapeHtml(data.extract)}</p>` : ""}
+  `;
+}
+
+async function loadWikipediaSummary(record, container) {
+  const title = await resolveWikipediaTitle(record);
+  if (!title) {
+    container.innerHTML = "";
+    return;
+  }
+  if (!container.isConnected) return; // panel moved on while the QID lookup above was in flight
+  if (wikiSummaryCache.has(title)) {
+    renderWikipediaSummary(container, wikiSummaryCache.get(title));
+    return;
+  }
+  try {
+    const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`, {
+      headers: { Accept: "application/json" },
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    wikiSummaryCache.set(title, data);
+    renderWikipediaSummary(container, data);
+  } catch {
+    wikiSummaryCache.set(title, null);
+    container.innerHTML = "";
+  }
 }
 
 function renderPeriodDetails(period, ctx) {
@@ -489,6 +580,7 @@ function renderPeriodDetails(period, ctx) {
     <p class="detail-kicker">${escapeHtml(TIER_KICKER[period.tier] || "Period")}</p>
     <h2>${escapeHtml(period.canonical_name)}</h2>
     <div class="detail-actions"><button class="zoom-explore" type="button">Zoom to this</button><button class="reset-explore" type="button">Full timeline</button></div>
+    <div class="wiki-summary" data-wiki></div>
     <p>${escapeHtml(period.notes || "Sourced chronological context; this record is not a polity.")}</p>
     <dl>
       <dt>Dates</dt><dd>${formatYear(period.start)}–${formatYear(period.end)}</dd>
@@ -508,6 +600,7 @@ function renderPeriodDetails(period, ctx) {
     ${editControlsHtml("period", period, null, ctx)}`;
 
   wireExplorePanel(ctx, period.start, period.end, period.detail_of || period.id);
+  loadWikipediaSummary(period, explorePanel.querySelector("[data-wiki]"));
   wireEditControls("period", period, ctx, (updated) => renderPeriodDetails(updated, ctx));
   explorePanel.querySelectorAll("[data-explore-period-id]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -537,6 +630,7 @@ function renderEventDetails(event, ctx) {
     <p class="detail-kicker">Event</p>
     <h2>${escapeHtml(event.canonical_name)}</h2>
     <div class="detail-actions"><button class="zoom-explore" type="button">Zoom to this</button><button class="reset-explore" type="button">Full timeline</button></div>
+    <div class="wiki-summary" data-wiki></div>
     <p>${escapeHtml(event.notes || "A dated historical event.")}</p>
     <dl>
       <dt>Year</dt><dd>${formatYear(event.year)}</dd>
@@ -547,6 +641,7 @@ function renderEventDetails(event, ctx) {
     </dl>`;
 
   wireExplorePanel(ctx, event.year, event.year, detailOfTargets[0] || event.id);
+  loadWikipediaSummary(event, explorePanel.querySelector("[data-wiki]"));
   explorePanel.querySelectorAll("[data-explore-period-id]").forEach((button) => {
     button.addEventListener("click", () => {
       const target = ctx.periodsById.get(button.dataset.explorePeriodId);
@@ -584,6 +679,7 @@ function renderPolityDetails(polity, ctx) {
   explorePanel.innerHTML = `<button class="detail-close" type="button" aria-label="Close details">×</button>
     <h2>${escapeHtml(polity.canonical_name)}</h2>
     <div class="detail-actions"><button class="zoom-explore" type="button">Zoom to this</button><button class="reset-explore" type="button">Full timeline</button></div>
+    <div class="wiki-summary" data-wiki></div>
     <p>${escapeHtml(descriptionText)}</p>
     <dl>
       <dt>Dates</dt><dd>${formatYear(polity.start)}–${polity.end == null ? "present" : formatYear(polity.end)}${duration ? ` (${duration.toLocaleString()} years)` : ""}</dd>
@@ -609,6 +705,7 @@ function renderPolityDetails(polity, ctx) {
     ${editControlsHtml("polity", polity, ctx.geographyOptions, ctx)}`;
 
   wireExplorePanel(ctx, polity.start, polity.end ?? ctx.domainEnd, polity.detail_of || polity.id);
+  loadWikipediaSummary(polity, explorePanel.querySelector("[data-wiki]"));
   wireEditControls("polity", polity, ctx, (updated) => renderPolityDetails(updated, ctx));
   explorePanel.querySelectorAll("[data-explore-polity-id]").forEach((button) => {
     button.addEventListener("click", () => {

@@ -158,6 +158,13 @@ class Polity(BaseModel):
     canonical_name: str
     names: dict[str, str] = Field(default_factory=dict)
     external_ids: ExternalIds = Field(default_factory=ExternalIds)
+    # Added 2026-09-08 (ROADMAP.md item 6) -- Period/Event/Transition already
+    # carried this field; Polity did not, so source_urls set in many
+    # hand-authored polity YAML files (Aztec Empire, etc.) was silently
+    # dropped by Pydantic's default extra="ignore" and never reached
+    # data.json. Purely additive: existing records with no source_urls set
+    # default to an empty list, unaffected.
+    source_urls: list[str] = Field(default_factory=list)
     entity_type: EntityType = EntityType.polity
     entity_type_confidence: Confidence = Confidence.low
     entity_type_source_qids: list[str] = Field(default_factory=list)

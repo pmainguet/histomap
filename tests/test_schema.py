@@ -122,6 +122,21 @@ class PolityParentRetirementTests(unittest.TestCase):
             Polity(**polity_kwargs(id="loop", detail_of="loop"))
 
 
+class PolitySourceUrlsTests(unittest.TestCase):
+    def test_source_urls_defaults_to_empty_list(self) -> None:
+        polity = Polity(**polity_kwargs())
+        self.assertEqual(polity.source_urls, [])
+
+    def test_source_urls_accepts_a_list_of_urls(self) -> None:
+        # ROADMAP.md item 6 -- Period/Event/Transition already had this
+        # field; Polity did not, so source_urls set in several hand-authored
+        # polity YAML files was silently dropped by extra="ignore" and never
+        # reached data.json (found live, 8 September 2026, while wiring up
+        # the /explore side panel's Wikipedia summary).
+        polity = Polity(**polity_kwargs(source_urls=["https://en.wikipedia.org/wiki/Test"]))
+        self.assertEqual(polity.source_urls, ["https://en.wikipedia.org/wiki/Test"])
+
+
 class VisibilityTierRetirementTests(unittest.TestCase):
     def test_visibility_tier_field_no_longer_accepted(self) -> None:
         polity = Polity(**polity_kwargs(visibility_tier="global"))
