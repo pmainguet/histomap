@@ -1,0 +1,25 @@
+id: meghalayan
+canonical_name: Meghalayan (Late Holocene)
+tier: period
+start: -2251
+end: 2100
+start_confidence: high
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - asia
+  - europe
+  - north_america
+  - oceania
+  - south_america
+broader_periods: []
+successors: []
+detail_of: holocene
+authority: 'Histomap editorial: ICS-ratified geological epoch (2018)'
+external_ids:
+  wikidata: Q55594589
+notes: ICS-ratified Holocene stage. Same boundaries already used for /explore's static
+  Epoch band (geological_epochs.js) -- see that file's own docstring.
+source_urls:
+- https://en.wikipedia.org/wiki/Meghalayan

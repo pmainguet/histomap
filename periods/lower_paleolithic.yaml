@@ -1,0 +1,24 @@
+id: lower_paleolithic
+canonical_name: Lower Paleolithic
+tier: period
+start: -3000000
+end: -300000
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - asia
+  - europe
+broader_periods:
+- paleolithic_era
+successors: []
+authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q7463501
+notes: Earliest and longest Paleolithic subdivision, from the first stone tools through
+  the Lower-to-Middle Paleolithic transition. Nested under paleolithic_era, the existing
+  overarching regional era for the whole Paleolithic (see ONTOLOGY.md's "Overarching
+  regional eras" section).
+source_urls:
+- https://en.wikipedia.org/wiki/Lower_Paleolithic

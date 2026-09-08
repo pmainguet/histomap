@@ -1,0 +1,26 @@
+id: stone_age
+canonical_name: Stone Age
+tier: regional_era
+start: -3000000
+end: -3200
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - asia
+  - europe
+broader_periods:
+- macro_human_origins_paleolithic
+successors: []
+authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q11759
+notes: Broader than paleolithic_era -- spans the Paleolithic, Mesolithic, and Neolithic
+  collectively, from the earliest stone tools (start capped at the schema floor, -3,000,000,
+  same as paleolithic_era) through the introduction of metalworking. end aligned with
+  bronze_age_era's own start (-3200) for clean adjacency, though the transition was
+  gradual and regionally staggered (see ONTOLOGY.md's note that broader_periods/date
+  ranges are editorial placement, not exhaustive claims).
+source_urls:
+- https://en.wikipedia.org/wiki/Stone_Age

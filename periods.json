@@ -1538,6 +1538,90 @@
     }
   },
   {
+    "id": "greenlandian",
+    "canonical_name": "Greenlandian (Early Holocene)",
+    "tier": "period",
+    "start": -9701,
+    "end": -6237,
+    "start_confidence": "high",
+    "end_confidence": "high",
+    "geography": {
+      "continents": [
+        "africa",
+        "asia",
+        "europe",
+        "north_america",
+        "oceania",
+        "south_america"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: ICS-ratified geological epoch (2018)",
+    "external_ids": {
+      "wikidata": "Q55590012"
+    },
+    "notes": "ICS-ratified Holocene stage. Same boundaries already used for /explore's static Epoch band (geological_epochs.js) -- see that file's own docstring.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Greenlandian"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": null,
+    "detail_of": "holocene",
+    "deprecated": null
+  },
+  {
+    "id": "holocene",
+    "canonical_name": "Holocene",
+    "tier": "period",
+    "start": -9701,
+    "end": 2100,
+    "start_confidence": "high",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "asia",
+        "europe",
+        "north_america",
+        "oceania",
+        "south_america"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: ICS-ratified geological epoch (2018)",
+    "external_ids": {
+      "wikidata": "Q25445"
+    },
+    "notes": "Current geological epoch, following the Pleistocene. Spans every macro chapter from Agricultural Transitions onward, so deliberately left without a single broader_periods parent (see ONTOLOGY.md's single-parent convention) -- its 3 ICS-ratified stages (Greenlandian, Northgrippian, Meghalayan) are attached as detail_of children instead. end capped at 2100 (YEAR_MAX) -- genuinely still ongoing.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Holocene"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "indus_valley_civilization_period",
     "canonical_name": "Indus Valley Civilization",
     "tier": "period",
@@ -1739,6 +1823,47 @@
     "external_ids": {},
     "notes": "Editorial container grouping the Konya Plain - <phase> Seshat sequence as details of one band.",
     "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
+    "id": "lower_paleolithic",
+    "canonical_name": "Lower Paleolithic",
+    "tier": "period",
+    "start": -3000000,
+    "end": -300000,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "asia",
+        "europe"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [
+      "paleolithic_era"
+    ],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q7463501"
+    },
+    "notes": "Earliest and longest Paleolithic subdivision, from the first stone tools through the Lower-to-Middle Paleolithic transition. Nested under paleolithic_era, the existing overarching regional era for the whole Paleolithic (see ONTOLOGY.md's \"Overarching regional eras\" section).",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Lower_Paleolithic"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -2179,6 +2304,48 @@
     "deprecated": {
       "kind": "historical"
     }
+  },
+  {
+    "id": "meghalayan",
+    "canonical_name": "Meghalayan (Late Holocene)",
+    "tier": "period",
+    "start": -2251,
+    "end": 2100,
+    "start_confidence": "high",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "asia",
+        "europe",
+        "north_america",
+        "oceania",
+        "south_america"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: ICS-ratified geological epoch (2018)",
+    "external_ids": {
+      "wikidata": "Q55594589"
+    },
+    "notes": "ICS-ratified Holocene stage. Same boundaries already used for /explore's static Epoch band (geological_epochs.js) -- see that file's own docstring.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Meghalayan"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": null,
+    "detail_of": "holocene",
+    "deprecated": null
   },
   {
     "id": "mesoamerican_archaic_era",
@@ -2781,6 +2948,48 @@
     "deprecated": {
       "kind": "historical"
     }
+  },
+  {
+    "id": "northgrippian",
+    "canonical_name": "Northgrippian (Middle Holocene)",
+    "tier": "period",
+    "start": -6237,
+    "end": -2251,
+    "start_confidence": "high",
+    "end_confidence": "high",
+    "geography": {
+      "continents": [
+        "africa",
+        "asia",
+        "europe",
+        "north_america",
+        "oceania",
+        "south_america"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: ICS-ratified geological epoch (2018)",
+    "external_ids": {
+      "wikidata": "Q55602572"
+    },
+    "notes": "ICS-ratified Holocene stage. Same boundaries already used for /explore's static Epoch band (geological_epochs.js) -- see that file's own docstring.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Northgrippian"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": null,
+    "detail_of": "holocene",
+    "deprecated": null
   },
   {
     "id": "oceania_contemporary_world_era",
@@ -4261,6 +4470,47 @@
     "deprecated": {
       "kind": "historical"
     }
+  },
+  {
+    "id": "stone_age",
+    "canonical_name": "Stone Age",
+    "tier": "regional_era",
+    "start": -3000000,
+    "end": -3200,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "asia",
+        "europe"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [
+      "macro_human_origins_paleolithic"
+    ],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q11759"
+    },
+    "notes": "Broader than paleolithic_era -- spans the Paleolithic, Mesolithic, and Neolithic collectively, from the earliest stone tools (start capped at the schema floor, -3,000,000, same as paleolithic_era) through the introduction of metalworking. end aligned with bronze_age_era's own start (-3200) for clean adjacency, though the transition was gradual and regionally staggered (see ONTOLOGY.md's note that broader_periods/date ranges are editorial placement, not exhaustive claims).",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Stone_Age"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
   },
   {
     "id": "sub_saharan_african_iron_age_era",

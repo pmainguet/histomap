@@ -1,0 +1,17 @@
+id: neolithic_revolution
+canonical_name: Neolithic Revolution
+year: -10000
+detail_of: []
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q180548
+authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+notes: The transition from foraging to farming and settled societies -- a process
+  spanning millennia and staggered by region (Fertile Crescent first, c. 10,000 BCE),
+  not a single dated occurrence. year is its conventionally-cited start; left unattached
+  (no detail_of/bounds) since no single existing polity/period record represents "the"
+  Neolithic transition globally -- see the regional Neolithic era records instead
+  for region-specific placement.
+source_urls:
+- https://en.wikipedia.org/wiki/Neolithic_Revolution

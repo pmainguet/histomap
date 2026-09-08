@@ -1,0 +1,27 @@
+id: holocene
+canonical_name: Holocene
+tier: period
+start: -9701
+end: 2100
+start_confidence: high
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - asia
+  - europe
+  - north_america
+  - oceania
+  - south_america
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: ICS-ratified geological epoch (2018)'
+external_ids:
+  wikidata: Q25445
+notes: Current geological epoch, following the Pleistocene. Spans every macro chapter
+  from Agricultural Transitions onward, so deliberately left without a single broader_periods
+  parent (see ONTOLOGY.md's single-parent convention) -- its 3 ICS-ratified stages
+  (Greenlandian, Northgrippian, Meghalayan) are attached as detail_of children instead.
+  end capped at 2100 (YEAR_MAX) -- genuinely still ongoing.
+source_urls:
+- https://en.wikipedia.org/wiki/Holocene

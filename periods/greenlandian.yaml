@@ -1,0 +1,25 @@
+id: greenlandian
+canonical_name: Greenlandian (Early Holocene)
+tier: period
+start: -9701
+end: -6237
+start_confidence: high
+end_confidence: high
+geography:
+  continents:
+  - africa
+  - asia
+  - europe
+  - north_america
+  - oceania
+  - south_america
+broader_periods: []
+successors: []
+detail_of: holocene
+authority: 'Histomap editorial: ICS-ratified geological epoch (2018)'
+external_ids:
+  wikidata: Q55590012
+notes: ICS-ratified Holocene stage. Same boundaries already used for /explore's static
+  Epoch band (geological_epochs.js) -- see that file's own docstring.
+source_urls:
+- https://en.wikipedia.org/wiki/Greenlandian
