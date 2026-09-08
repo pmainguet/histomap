@@ -6,7 +6,4 @@ sources/*
 !sources/MANIFEST.md
 *.parquet
 *.duckdb
-data.json
-transitions.json
-explore_tree.json
 .superpowers/
