@@ -18,12 +18,16 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    phase 8 lived in the old `/` timeline (retired 31 August 2026) and was never ported to
    `/explore`. Needs a small design pass (where does an icon show? do we restore a child-level
    toggle, or drop `short_child_en` from this item's scope?) before continuing the content work.
-3. **Add the linked map, then a printable large-format visualization** (merged with the former
-   item 8) — see `docs/superpowers/specs/` once a design exists; STATUS.md phase 7 ("Print
-   poster") already sketches an A1/A0 SVG renderer + PDF export, but no map or print code exists
-   in `web/` yet (confirmed live 8 September 2026). Idea to explore: encode relative size/prominence
-   (population, territory, or prominence_score) as band width or scale, closer to the original
-   1931 "Histomap of World History" poster's visual language than the current uniform-width bands.
+3. **Add the linked map** — a geographic map view within `/explore`, linked to timeline navigation.
+   No map code exists in `web/` yet (confirmed live 8 September 2026). Own spec, separate from
+   item 3b below (split 8 September 2026 -- different output format, purpose, and audience).
+3b. **Printable large-format visualization** (formerly item 8; merged into item 3 then split back
+   out 8 September 2026 once it was clear the two are independent projects). STATUS.md phase 7
+   ("Print poster") sketches an A1/A0 SVG renderer + PDF export, but no print code exists yet.
+   Idea to explore: encode relative size/prominence (population, territory, or prominence_score)
+   as band width or scale, closer to the original 1931 "Histomap of World History" poster's visual
+   language (the app's namesake) than the current uniform-width bands. See
+   `docs/superpowers/specs/` once a design exists.
 4. **Work the Wikidata type-eligibility (622) and entity-type classification (2,709) backlogs.**
    Counts refreshed live 8 September 2026, re-running `pipeline/backfill_entity_types.py`'s exact
    `classify_entity`/`classify_automated_entity` logic read-only (no files written) rather than
