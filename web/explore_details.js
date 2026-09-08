@@ -525,13 +525,14 @@ async function resolveWikipediaTitle(record) {
 
 function renderWikipediaSummary(container, data) {
   if (!container.isConnected) return; // panel moved on to a different record while the fetch was in flight
-  const image = data?.thumbnail?.source || data?.originalimage?.source;
-  if (!data || (!data.extract && !image)) {
+  const displayImage = data?.thumbnail?.source || data?.originalimage?.source;
+  const fullImage = data?.originalimage?.source || displayImage;
+  if (!data || (!data.extract && !displayImage)) {
     container.innerHTML = "";
     return;
   }
   container.innerHTML = `
-    ${image ? `<img src="${escapeHtml(image)}" alt="">` : ""}
+    ${displayImage ? `<a class="wiki-summary-image" href="${escapeHtml(fullImage)}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(displayImage)}" alt=""></a>` : ""}
     ${data.extract ? `<p>${escapeHtml(data.extract)}</p>` : ""}
   `;
 }
