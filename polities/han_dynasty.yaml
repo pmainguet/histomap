@@ -1,0 +1,27 @@
+id: han_dynasty
+canonical_name: Han dynasty
+names:
+  aliases_en: Han Empire
+entity_type: polity
+entity_type_confidence: high
+start: -206
+end: 220
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - CN
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q7209
+notes: Parent for its two constitutional phases -- Western Han and Eastern Han (separated
+  by the Xin dynasty interregnum, 9-23 CE) -- attached via detail_of, not merged into
+  one record, since each already exists as its own reviewed polity. later_han_dynasty
+  (947-951 CE) is a wholly different, much later Five Dynasties-era state that happens
+  to share the English name "Han" -- deliberately NOT a child of this record.
+source_urls:
+- https://en.wikipedia.org/wiki/Han_dynasty

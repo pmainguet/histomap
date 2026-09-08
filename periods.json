@@ -194,7 +194,7 @@
   {
     "id": "age_of_discovery",
     "canonical_name": "Age of Discovery",
-    "tier": "period",
+    "tier": "regional_era",
     "start": 1400,
     "end": 1650,
     "start_confidence": "low",
@@ -214,13 +214,15 @@
       "centroid": null,
       "confidence": null
     },
-    "broader_periods": [],
+    "broader_periods": [
+      "macro_early_modern_connections"
+    ],
     "successors": [],
-    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "authority": "Histomap editorial: overarching regional-era consolidation",
     "external_ids": {
       "wikidata": "Q133641"
     },
-    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "notes": "Overarching cross-regional era for European-led maritime exploration and its global consequences (Columbian Exchange, early colonial contact) -- genuinely cross-regional, same treatment as paleolithic_era/bronze_age_era/neolithic_era/copper_age_era/iron_age_era/classical_antiquity_era (see ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes\"). Dates (1400-1650) run slightly earlier than its macro chapter's own start (1500) -- editorial placement, not a date-range claim (early Portuguese voyages predate the chapter's own nominal start).",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Age_of_Discovery"
     ],
@@ -3318,8 +3320,10 @@
     "broader_periods": [],
     "successors": [],
     "authority": "Histomap editorial: civilization-as-backdrop",
-    "external_ids": {},
-    "notes": "Mesopotamia spans several distinct political phases (Uruk, Sumerian city-states, the Akkadian Empire, Babylonia, ...); rendered as period context in the Civilizations & Cultures lane so those phases (now plain polities, not this civilization-level record) carry the chart's political weight. Replaces the earlier arrangement where Sumer/Akkadian Empire/Uruk/Babylonia individually carried civilization-lane weight -- see STATUS.md. mesopotamian_early_states_era (the regional_era) was deleted outright 2026-08-31 as a duplicate of this record, same treatment egyptian_early_states_era got against ancient_egypt_period; early_dynastic_mesopotamia (the one period that nested under it) now falls back to heuristic era placement instead.",
+    "external_ids": {
+      "wikidata": "Q11767"
+    },
+    "notes": "Mesopotamia spans several distinct political phases (Uruk, Sumerian city-states, the Akkadian Empire, Babylonia, ...); rendered as period context in the Civilizations & Cultures lane so those phases (now plain polities, not this civilization-level record) carry the chart's political weight. Replaces the earlier arrangement where Sumer/Akkadian Empire/Uruk/Babylonia individually carried civilization-lane weight -- see STATUS.md. mesopotamian_early_states_era (the regional_era) was deleted outright 2026-08-31 as a duplicate of this record, same treatment egyptian_early_states_era got against ancient_egypt_period; early_dynastic_mesopotamia (the one period that nested under it) now falls back to heuristic era placement instead. mesopotamian_civilization (a polity, entity_type=civilization) was deleted 2026-09-08 as a further duplicate of this same record -- caught live by the user seeing both bands rendered side by side; its Wikidata id (Q11767) was carried over here.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Mesopotamia"
     ],

@@ -1,6 +1,6 @@
 id: age_of_discovery
 canonical_name: Age of Discovery
-tier: period
+tier: regional_era
 start: 1400
 end: 1650
 start_confidence: low
@@ -12,11 +12,18 @@ geography:
   - asia
   - north_america
   - south_america
-broader_periods: []
+broader_periods:
+- macro_early_modern_connections
 successors: []
-authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+authority: 'Histomap editorial: overarching regional-era consolidation'
 external_ids:
   wikidata: Q133641
-notes: Dates are the commonly-cited range; see the linked Wikipedia article for detail.
+notes: Overarching cross-regional era for European-led maritime exploration and its
+  global consequences (Columbian Exchange, early colonial contact) -- genuinely cross-regional,
+  same treatment as paleolithic_era/bronze_age_era/neolithic_era/copper_age_era/iron_age_era/classical_antiquity_era
+  (see ONTOLOGY.md's "Overarching regional eras for genuinely cross-regional themes").
+  Dates (1400-1650) run slightly earlier than its macro chapter's own start (1500)
+  -- editorial placement, not a date-range claim (early Portuguese voyages predate
+  the chapter's own nominal start).
 source_urls:
 - https://en.wikipedia.org/wiki/Age_of_Discovery
