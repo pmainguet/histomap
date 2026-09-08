@@ -14,7 +14,7 @@ from typing import Literal
 import yaml
 
 from fastapi import FastAPI, HTTPException, Query
-from fastapi.responses import FileResponse, RedirectResponse
+from fastapi.responses import FileResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, ValidationError
 from rapidfuzz import fuzz
@@ -22,6 +22,7 @@ from rapidfuzz import fuzz
 from pipeline.review_cli import polity_metadata
 from pipeline.backfill_entity_types import normalized_relationship_kind, relationship_kind
 from pipeline.historical_regions import historical_region_for_country
+from pipeline.poster import render_poster_svg
 from schema import Event, Geography, Period, Polity
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -1706,6 +1707,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
         ("/explore", "explore.html"),
         ("/consolidation-review", "consolidation_review.html"),
         ("/events-review", "events_review.html"),
+        ("/poster", "poster.html"),
     ):
         register_page(page_route, page_file)
 
@@ -2032,6 +2034,21 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 for code, label in sorted(country_options.items(), key=lambda item: item[1])
             ],
         }
+
+    @application.get("/api/poster.svg")
+    async def poster_svg(
+        style: str = Query("authentic", pattern="^(authentic|stacked)$"),
+        start: int = Query(...),
+        end: int = Query(...),
+    ) -> Response:
+        """ROADMAP.md item 3b -- see
+        docs/plans/2026-09-08-poster-visualization-design.md. Minimal
+        generation surface, per explicit request: style, a year range,
+        and that's it -- no column count, palette, or dimension controls."""
+        if end <= start:
+            raise HTTPException(422, "end must be after start")
+        svg = render_poster_svg(style, start, end, root=root)  # type: ignore[arg-type]
+        return Response(content=svg, media_type="image/svg+xml")
 
     @application.patch("/api/polities/{polity_id}/geography")
     async def update_polity_geography(polity_id: str, request: GeographyUpdate) -> dict:

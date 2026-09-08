@@ -57,6 +57,7 @@ class UnifiedServerTests(unittest.TestCase):
             "styles.css",
             "reviews.html", "reviews.js", "consolidation_review.html", "consolidation_review.js",
             "review_build.js", "events_review.html", "events_review.js",
+            "poster.html", "poster.js",
         ):
             (self.root / "web" / name).write_text(name, encoding="utf-8")
         (self.root / "data.json").write_text("[]", encoding="utf-8")

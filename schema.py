@@ -165,6 +165,15 @@ class Polity(BaseModel):
     # data.json. Purely additive: existing records with no source_urls set
     # default to an empty list, unaffected.
     source_urls: list[str] = Field(default_factory=list)
+    # ROADMAP.md item 3b (printable poster visualization) -- how many years
+    # this polity's band takes to ease in/out at its start/end, instead of
+    # snapping to full width instantly. Both default to None, meaning the
+    # poster renderer's own default (15 years) applies; set a larger value
+    # only to hand-author a genuinely gradual historical decline (a slow
+    # multi-decade collapse) rather than an ordinary boundary taper. See
+    # docs/plans/2026-09-08-poster-visualization-design.md.
+    fade_in_years: int | None = None
+    fade_out_years: int | None = None
     entity_type: EntityType = EntityType.polity
     entity_type_confidence: Confidence = Confidence.low
     entity_type_source_qids: list[str] = Field(default_factory=list)

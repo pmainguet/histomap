@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Histomap — printable poster</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/explore" aria-label="Histomap timeline">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M5 6h7v24H5zM15 11h7v19h-7zM25 3h7v27h-7z"/></svg>
+        <span>Histomap</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/explore">Explore</a>
+        <a href="/reviews">Reviews</a>
+      </nav>
+    </header>
+    <section class="review-toolbar review-toolbar-flush">
+      <div>
+        <p class="eyebrow">Printable poster</p>
+        <h1>Generate a poster</h1>
+        <p class="workspace-purpose-inline">Renders the top 60 polities by prominence in the chosen
+          range as flowing bands, in the style of the 1931 <em>Histomap of World History</em>. Opens
+          as an SVG in a new tab -- save it from there.</p>
+      </div>
+    </section>
+    <main class="review-main">
+      <form id="poster-form" class="poster-form">
+        <label>Style
+          <select id="poster-style">
+            <option value="authentic">Histomap Authentic</option>
+            <option value="stacked">100% Stacked</option>
+          </select>
+        </label>
+        <label>From year<input id="poster-start" type="number" value="-500" required></label>
+        <label>To year<input id="poster-end" type="number" value="500" required></label>
+        <button type="submit" class="action-button">Generate</button>
+      </form>
+      <p id="poster-status" class="decision-status" role="status" aria-live="polite"></p>
+    </main>
+    <script type="module" src="/static/poster.js"></script>
+  </body>
+</html>

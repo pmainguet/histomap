@@ -137,6 +137,21 @@ class PolitySourceUrlsTests(unittest.TestCase):
         self.assertEqual(polity.source_urls, ["https://en.wikipedia.org/wiki/Test"])
 
 
+class PolityFadeYearsTests(unittest.TestCase):
+    def test_fade_years_default_to_none(self) -> None:
+        polity = Polity(**polity_kwargs())
+        self.assertIsNone(polity.fade_in_years)
+        self.assertIsNone(polity.fade_out_years)
+
+    def test_fade_years_accept_an_override(self) -> None:
+        # ROADMAP.md item 3b -- a curator hand-authors a longer decline
+        # (e.g. Western Rome's slow collapse) instead of the poster
+        # renderer's own 15-year default.
+        polity = Polity(**polity_kwargs(fade_in_years=10, fade_out_years=70))
+        self.assertEqual(polity.fade_in_years, 10)
+        self.assertEqual(polity.fade_out_years, 70)
+
+
 class VisibilityTierRetirementTests(unittest.TestCase):
     def test_visibility_tier_field_no_longer_accepted(self) -> None:
         polity = Polity(**polity_kwargs(visibility_tier="global"))

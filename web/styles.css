@@ -293,6 +293,10 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .decision-status.pending { color: var(--ink-faint); border-color: var(--rule); }
 .decision-status.success { color: #315d3a; background: #edf4e9; border-color: #66836b; }
 .decision-status.error { color: #7b291d; background: #f8e9e4; border-color: #8c422d; }
+.poster-form { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem; padding: 1.25rem; }
+.poster-form label { display: flex; flex-direction: column; gap: .3rem; font: 700 .78rem system-ui, sans-serif; color: var(--ink-faint); }
+.poster-form input, .poster-form select { padding: .4rem .55rem; font: .85rem system-ui, sans-serif; border: 1px solid var(--rule); background: var(--paper); color: #27251f; }
+.poster-form input[type="number"] { width: 7rem; }
 .review-card button:disabled { cursor: wait; opacity: .55; }
 .danger { background: #8c422d; border-color: #8c422d; }
 kbd { padding: .1rem .3rem; color: #27251f; background: white; border: 1px solid var(--rule); font: .75rem system-ui, sans-serif; }
