@@ -1,0 +1,13 @@
+id: quaternary_extinction_event
+canonical_name: Quaternary extinction event
+year: -10000
+detail_of: []
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q1759232
+authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+notes: Representative year for a process spanning tens of thousands of years, staggered
+  by region/species.
+source_urls:
+- https://en.wikipedia.org/wiki/Late_Pleistocene_extinctions

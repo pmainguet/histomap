@@ -20,7 +20,8 @@ broader_periods:
 - macro_agricultural_transitions
 successors: []
 authority: 'Histomap editorial: overarching regional-era consolidation'
-external_ids: {}
+external_ids:
+  wikidata: Q36422
 notes: Overarching parent for the regional agricultural-transition eras, which happened
   at meaningfully different times, and under different technology packages, in different
   places -- spans from the Fertile Crescent's earliest agriculture (~-10,000) to the

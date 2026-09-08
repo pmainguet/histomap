@@ -1,0 +1,19 @@
+id: mississippian_culture
+canonical_name: Mississippian culture
+entity_type: culture
+entity_type_confidence: high
+start: 800
+end: 1600
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - north_america
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q1052095
+notes: ''
+source_urls:
+- https://en.wikipedia.org/wiki/Mississippian_period_(archaeology)

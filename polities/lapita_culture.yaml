@@ -1,0 +1,19 @@
+id: lapita_culture
+canonical_name: Lapita culture
+entity_type: culture
+entity_type_confidence: high
+start: -1600
+end: -500
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - oceania
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q1021436
+notes: ''
+source_urls:
+- https://en.wikipedia.org/wiki/Lapita_culture

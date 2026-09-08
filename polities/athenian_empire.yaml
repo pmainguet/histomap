@@ -1,0 +1,20 @@
+id: athenian_empire
+canonical_name: Athenian Empire
+entity_type: polity
+entity_type_confidence: high
+start: -477
+end: -404
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q193235
+notes: Also known as the Delian League -- same Wikidata item (Q193235) covers both
+  names, so authored as one record rather than two.
+source_urls:
+- https://en.wikipedia.org/wiki/Delian_League

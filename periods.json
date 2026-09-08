@@ -192,6 +192,86 @@
     }
   },
   {
+    "id": "age_of_discovery",
+    "canonical_name": "Age of Discovery",
+    "tier": "period",
+    "start": 1400,
+    "end": 1650,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "africa",
+        "asia",
+        "north_america",
+        "south_america"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q133641"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Age_of_Discovery"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
+    "id": "age_of_enlightenment",
+    "canonical_name": "Age of Enlightenment",
+    "tier": "period",
+    "start": 1685,
+    "end": 1815,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q12539"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Age_of_Enlightenment"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "ancient_egypt_period",
     "canonical_name": "Ancient Egypt",
     "tier": "period",
@@ -675,6 +755,45 @@
     }
   },
   {
+    "id": "axial_age",
+    "canonical_name": "Axial Age",
+    "tier": "period",
+    "start": -800,
+    "end": -200,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "asia"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q340742"
+    },
+    "notes": "Explicitly named by the user as an example of what this gap-check should catch.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Axial_Age"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "ayyubid_sultanate_period",
     "canonical_name": "Ayyubid Sultanate",
     "tier": "period",
@@ -886,6 +1005,49 @@
     }
   },
   {
+    "id": "contemporary_history_period",
+    "canonical_name": "Contemporary history",
+    "tier": "period",
+    "start": 1945,
+    "end": 2100,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "asia",
+        "africa",
+        "north_america",
+        "south_america",
+        "oceania"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q186075"
+    },
+    "notes": "Post-1945 convention (the most common English-language periodization); end capped at 2100 (YEAR_MAX), genuinely still ongoing.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Contemporary_history"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "copper_age_era",
     "canonical_name": "Copper Age",
     "tier": "regional_era",
@@ -912,7 +1074,9 @@
       "bronze_age_era"
     ],
     "authority": "Histomap editorial: overarching regional-era consolidation",
-    "external_ids": {},
+    "external_ids": {
+      "wikidata": "Q130253"
+    },
     "notes": "The Chalcolithic/Copper Age transitional period between the Neolithic and the Bronze Age (Bronze Age itself starts -3200, where this ends -- see bronze_age_era). Added 2026-08-31 as a new overarching regional_era, same treatment as bronze_age_era/neolithic_era/paleolithic_era, but currently has no regional period records nested under it via broader_periods -- unlike those three, no Copper Age-specific period (e.g. a Fertile Crescent or European Chalcolithic record) exists yet in this dataset to link. Flagged in ROADMAP.md as follow-up work rather than fabricated here without a real source record.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Chalcolithic"
@@ -927,6 +1091,44 @@
     "deprecated": {
       "kind": "historical"
     }
+  },
+  {
+    "id": "crisis_of_the_third_century",
+    "canonical_name": "Crisis of the Third Century",
+    "tier": "period",
+    "start": 235,
+    "end": 284,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q329838"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Crisis_of_the_Third_Century"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
   },
   {
     "id": "early_dynastic_mesopotamia",
@@ -971,6 +1173,86 @@
     "deprecated": {
       "kind": "protohistorical"
     }
+  },
+  {
+    "id": "early_middle_ages",
+    "canonical_name": "Early Middle Ages",
+    "tier": "period",
+    "start": 500,
+    "end": 1000,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q202763"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Early_Middle_Ages"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
+    "id": "early_modern_period_global",
+    "canonical_name": "Early modern period",
+    "tier": "period",
+    "start": 1500,
+    "end": 1800,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "asia",
+        "africa",
+        "north_america",
+        "south_america"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q5308718"
+    },
+    "notes": "Global overarching period -- distinct from any single region's own early-modern era record.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Early_modern_period"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
   },
   {
     "id": "east_asian_bronze_age_era",
@@ -1582,6 +1864,83 @@
     }
   },
   {
+    "id": "golden_age_of_athens",
+    "canonical_name": "Golden Age of Athens",
+    "tier": "period",
+    "start": -480,
+    "end": -404,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q2000977"
+    },
+    "notes": "480 BCE (Persian Wars victory) to 404 BCE (Peloponnesian War end).",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Athens_in_the_5th_century_BC"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
+    "id": "great_divergence",
+    "canonical_name": "Great Divergence",
+    "tier": "period",
+    "start": 1750,
+    "end": 1900,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "asia"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q3238584"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Great_Divergence"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "greenlandian",
     "canonical_name": "Greenlandian (Early Holocene)",
     "tier": "period",
@@ -1622,6 +1981,84 @@
     "epoch_lane": false,
     "promoted_from": null,
     "detail_of": "holocene",
+    "deprecated": null
+  },
+  {
+    "id": "hellenistic_period",
+    "canonical_name": "Hellenistic period",
+    "tier": "period",
+    "start": -323,
+    "end": -31,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "asia",
+        "africa"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q428995"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Hellenistic_period"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
+    "id": "high_middle_ages",
+    "canonical_name": "High Middle Ages",
+    "tier": "period",
+    "start": 1000,
+    "end": 1300,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q212685"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/High_Middle_Ages"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
     "deprecated": null
   },
   {
@@ -1713,6 +2150,45 @@
     }
   },
   {
+    "id": "industrial_revolution",
+    "canonical_name": "Industrial Revolution",
+    "tier": "period",
+    "start": 1760,
+    "end": 1840,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "north_america"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q2269"
+    },
+    "notes": "The \"First\" Industrial Revolution -- the most commonly cited range.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Industrial_Revolution"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "iron_age_era",
     "canonical_name": "Iron Age",
     "tier": "regional_era",
@@ -1800,6 +2276,46 @@
     }
   },
   {
+    "id": "islamic_golden_age",
+    "canonical_name": "Islamic Golden Age",
+    "tier": "period",
+    "start": 750,
+    "end": 1258,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia",
+        "africa",
+        "europe"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q745799"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Islamic_Golden_Age"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "kofun_period",
     "canonical_name": "Kofun period",
     "tier": "period",
@@ -1876,6 +2392,85 @@
     "external_ids": {},
     "notes": "Editorial container grouping the Konya Plain - <phase> Seshat sequence as details of one band.",
     "source_urls": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
+    "id": "late_antiquity_period",
+    "canonical_name": "Late antiquity",
+    "tier": "period",
+    "start": 284,
+    "end": 700,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "asia",
+        "africa"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q217050"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Late_antiquity"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
+    "id": "little_ice_age",
+    "canonical_name": "Little Ice Age",
+    "tier": "period",
+    "start": 1300,
+    "end": 1850,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "north_america"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q190530"
+    },
+    "notes": "Climatic period, same note as Medieval Warm Period.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Little_Ice_Age"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -2330,6 +2925,45 @@
     }
   },
   {
+    "id": "medieval_warm_period",
+    "canonical_name": "Medieval Warm Period",
+    "tier": "period",
+    "start": 950,
+    "end": 1250,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "north_america"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q498819"
+    },
+    "notes": "A climatic (not political/cultural) period -- included since it's a named, dated, Wikidata-documented era genuinely referenced in world-history overviews.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Medieval_Warm_Period"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "mediterranean_classical_era",
     "canonical_name": "Mediterranean Classical Antiquity",
     "tier": "period",
@@ -2701,6 +3335,45 @@
     }
   },
   {
+    "id": "migration_period",
+    "canonical_name": "Migration Period",
+    "tier": "period",
+    "start": 300,
+    "end": 800,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "asia"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q131192"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Migration_Period"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "minoan_civilization_period",
     "canonical_name": "Minoan civilization",
     "tier": "period",
@@ -2824,7 +3497,9 @@
     ],
     "successors": [],
     "authority": "Histomap editorial: overarching regional-era consolidation",
-    "external_ids": {},
+    "external_ids": {
+      "wikidata": "Q36422"
+    },
     "notes": "Overarching parent for the regional agricultural-transition eras, which happened at meaningfully different times, and under different technology packages, in different places -- spans from the Fertile Crescent's earliest agriculture (~-10,000) to the end of Neolithic Europe (~-1,700). Named \"Neolithic & Archaic\" rather than just \"Neolithic\" because the Americas' agricultural transition (mesoamerican_archaic_era, andean_archaic_era) is conventionally called \"Archaic\" in Americanist archaeology, not \"Neolithic\" -- a real terminology difference (different domesticates, no draft animals, a different technology trajectory than the Old World package), not just a regional relabeling of the same thing. See ONTOLOGY.md's \"Overarching regional eras for genuinely cross-regional themes.\"",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Neolithic"
@@ -3318,6 +3993,162 @@
     }
   },
   {
+    "id": "pax_romana",
+    "canonical_name": "Pax Romana",
+    "tier": "period",
+    "start": -27,
+    "end": 180,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "africa",
+        "asia"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q75207"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Pax_Romana"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
+    "id": "post_classical_history_period",
+    "canonical_name": "Post-classical history",
+    "tier": "period",
+    "start": 500,
+    "end": 1500,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe",
+        "asia",
+        "africa"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q7234117"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Post-classical_history"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
+    "id": "reformation",
+    "canonical_name": "Reformation",
+    "tier": "period",
+    "start": 1517,
+    "end": 1648,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q12562"
+    },
+    "notes": "1517 (Luther's Ninety-five Theses) to 1648 (Peace of Westphalia).",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Reformation"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
+    "id": "renaissance",
+    "canonical_name": "Renaissance",
+    "tier": "period",
+    "start": 1300,
+    "end": 1600,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q4692"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Renaissance"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "rhodes_q104383185_period",
     "canonical_name": "Rhodes",
     "tier": "period",
@@ -3354,6 +4185,44 @@
     "deprecated": {
       "kind": "historical"
     }
+  },
+  {
+    "id": "scientific_revolution",
+    "canonical_name": "Scientific Revolution",
+    "tier": "period",
+    "start": 1543,
+    "end": 1687,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q214078"
+    },
+    "notes": "1543 (Copernicus's De revolutionibus) to 1687 (Newton's Principia) -- the range most commonly cited.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Scientific_Revolution"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
   },
   {
     "id": "seshat_bronze_age_beaker_culture_frbeakr_period",
@@ -4839,6 +5708,120 @@
     }
   },
   {
+    "id": "three_kingdoms_period",
+    "canonical_name": "Three Kingdoms period",
+    "tier": "period",
+    "start": 220,
+    "end": 280,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q185043"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Three_Kingdoms"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
+    "id": "timurid_renaissance",
+    "canonical_name": "Timurid Renaissance",
+    "tier": "period",
+    "start": 1370,
+    "end": 1507,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q3424763"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Timurid_Renaissance"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
+    "id": "vedic_period",
+    "canonical_name": "Vedic period",
+    "tier": "period",
+    "start": -1750,
+    "end": -600,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q215262"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Vedic_period"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "viking_age_period",
     "canonical_name": "Viking Age",
     "tier": "period",
@@ -4883,6 +5866,44 @@
     "deprecated": {
       "kind": "historical"
     }
+  },
+  {
+    "id": "warring_states_period_china",
+    "canonical_name": "Warring States period",
+    "tier": "period",
+    "start": -475,
+    "end": -221,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q185063"
+    },
+    "notes": "Dates are the commonly-cited range; see the linked Wikipedia article for detail.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Warring_States_period"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
   },
   {
     "id": "western_zhou_q1069609_period",

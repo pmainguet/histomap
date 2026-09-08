@@ -1,0 +1,19 @@
+id: twenty_fifth_dynasty_egypt
+canonical_name: Twenty-fifth Dynasty of Egypt
+entity_type: polity
+entity_type_confidence: high
+start: -712
+end: -653
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q737648
+notes: ''
+source_urls:
+- https://en.wikipedia.org/wiki/Twenty-fifth_Dynasty_of_Egypt

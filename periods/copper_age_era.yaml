@@ -14,7 +14,8 @@ broader_periods:
 successors:
 - bronze_age_era
 authority: 'Histomap editorial: overarching regional-era consolidation'
-external_ids: {}
+external_ids:
+  wikidata: Q130253
 notes: The Chalcolithic/Copper Age transitional period between the Neolithic and the
   Bronze Age (Bronze Age itself starts -3200, where this ends -- see bronze_age_era).
   Added 2026-08-31 as a new overarching regional_era, same treatment as bronze_age_era/neolithic_era/paleolithic_era,

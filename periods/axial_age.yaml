@@ -1,0 +1,19 @@
+id: axial_age
+canonical_name: Axial Age
+tier: period
+start: -800
+end: -200
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  - asia
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q340742
+notes: Explicitly named by the user as an example of what this gap-check should catch.
+source_urls:
+- https://en.wikipedia.org/wiki/Axial_Age

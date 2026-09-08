@@ -1,0 +1,20 @@
+id: medieval_warm_period
+canonical_name: Medieval Warm Period
+tier: period
+start: 950
+end: 1250
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  - north_america
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q498819
+notes: A climatic (not political/cultural) period -- included since it's a named,
+  dated, Wikidata-documented era genuinely referenced in world-history overviews.
+source_urls:
+- https://en.wikipedia.org/wiki/Medieval_Warm_Period

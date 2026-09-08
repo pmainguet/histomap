@@ -1,0 +1,18 @@
+id: golden_age_of_athens
+canonical_name: Golden Age of Athens
+tier: period
+start: -480
+end: -404
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q2000977
+notes: 480 BCE (Persian Wars victory) to 404 BCE (Peloponnesian War end).
+source_urls:
+- https://en.wikipedia.org/wiki/Athens_in_the_5th_century_BC

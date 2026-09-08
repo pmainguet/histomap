@@ -1,0 +1,19 @@
+id: little_ice_age
+canonical_name: Little Ice Age
+tier: period
+start: 1300
+end: 1850
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  - north_america
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q190530
+notes: Climatic period, same note as Medieval Warm Period.
+source_urls:
+- https://en.wikipedia.org/wiki/Little_Ice_Age

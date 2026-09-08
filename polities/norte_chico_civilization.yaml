@@ -1,0 +1,19 @@
+id: norte_chico_civilization
+canonical_name: Norte Chico civilization
+entity_type: civilization
+entity_type_confidence: high
+start: -3100
+end: -1800
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - south_america
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q153836
+notes: ''
+source_urls:
+- https://en.wikipedia.org/wiki/Caral%E2%80%93Supe_civilization

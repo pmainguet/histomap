@@ -1,0 +1,19 @@
+id: industrial_revolution
+canonical_name: Industrial Revolution
+tier: period
+start: 1760
+end: 1840
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  - north_america
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q2269
+notes: The "First" Industrial Revolution -- the most commonly cited range.
+source_urls:
+- https://en.wikipedia.org/wiki/Industrial_Revolution

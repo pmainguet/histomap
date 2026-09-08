@@ -1,0 +1,20 @@
+id: swahili_culture
+canonical_name: Swahili culture
+entity_type: culture
+entity_type_confidence: high
+start: 1000
+end: 1500
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q1758211
+notes: 1000-1500 CE covers the classical Swahili coast city-state civilization; the
+  Swahili people/language continue to the present as a distinct ethnic/cultural identity.
+source_urls:
+- https://en.wikipedia.org/wiki/Swahili_culture

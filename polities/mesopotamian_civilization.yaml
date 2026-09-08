@@ -1,0 +1,19 @@
+id: mesopotamian_civilization
+canonical_name: Mesopotamian civilization
+entity_type: civilization
+entity_type_confidence: high
+start: -3300
+end: -539
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q11767
+notes: ''
+source_urls:
+- https://en.wikipedia.org/wiki/Mesopotamia

@@ -1,0 +1,19 @@
+id: chinese_civilization
+canonical_name: Chinese civilization
+entity_type: civilization
+entity_type_confidence: high
+start: -2200
+end: null
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q25558247
+notes: Open-ended -- continues to the present.
+source_urls:
+- https://en.wikipedia.org/wiki/Chinese_civilization

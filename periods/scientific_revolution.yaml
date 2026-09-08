@@ -1,0 +1,19 @@
+id: scientific_revolution
+canonical_name: Scientific Revolution
+tier: period
+start: 1543
+end: 1687
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q214078
+notes: 1543 (Copernicus's De revolutionibus) to 1687 (Newton's Principia) -- the range
+  most commonly cited.
+source_urls:
+- https://en.wikipedia.org/wiki/Scientific_Revolution

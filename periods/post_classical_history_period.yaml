@@ -1,0 +1,20 @@
+id: post_classical_history_period
+canonical_name: Post-classical history
+tier: period
+start: 500
+end: 1500
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  - asia
+  - africa
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q7234117
+notes: Dates are the commonly-cited range; see the linked Wikipedia article for detail.
+source_urls:
+- https://en.wikipedia.org/wiki/Post-classical_history

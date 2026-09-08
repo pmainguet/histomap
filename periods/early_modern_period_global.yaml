@@ -1,0 +1,23 @@
+id: early_modern_period_global
+canonical_name: Early modern period
+tier: period
+start: 1500
+end: 1800
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  - asia
+  - africa
+  - north_america
+  - south_america
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q5308718
+notes: Global overarching period -- distinct from any single region's own early-modern
+  era record.
+source_urls:
+- https://en.wikipedia.org/wiki/Early_modern_period

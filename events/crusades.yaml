@@ -1,0 +1,13 @@
+id: crusades
+canonical_name: Crusades
+year: 1095
+detail_of: []
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q12546
+authority: 'Histomap editorial: Wikipedia gap-check, 8 September 2026'
+notes: Representative year (1095, Pope Urban II's call for the First Crusade) for
+  a two-century series of campaigns.
+source_urls:
+- https://en.wikipedia.org/wiki/Crusades

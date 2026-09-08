@@ -1,0 +1,19 @@
+id: zapotec_civilization
+canonical_name: Zapotec civilization
+entity_type: civilization
+entity_type_confidence: high
+start: -700
+end: 1521
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - north_america
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q844750
+notes: ''
+source_urls:
+- https://en.wikipedia.org/wiki/Zapotec_civilization
