@@ -24,7 +24,5 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    scoped by region) for display purposes only — it must never be a signal for `entity_type` or
    `timeline_role` classification. Those decisions come from Wikidata type evidence and editorial
    judgment, not from how prominent or well-documented a record happens to be.
-5. Check the missing elements appearing https://en.wikipedia.org/wiki/Human_history (like Axial Age), extract wikidata, wikipedia elements and adjust the score if needed (if above the threshold that's enough)
 6. Display more pictures and information from wikipedia on the side panel (even read there instead of wikipedia if possible)
-7. Extracft missing data from Histomap and History of Evolution map
 8. Brainstorm on how to have a nice visualization out of this dataset printable in big size
