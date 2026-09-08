@@ -62,7 +62,7 @@ body { margin: 0; }
 .entity-search-wrapper { position: relative; }
 .entity-search-results { position: absolute; top: 100%; left: 0; z-index: 5; width: max(100%, 20rem); margin-top: .2rem; max-height: 18rem; overflow-y: auto; background: white; border: 1px solid var(--rule); box-shadow: 0 6px 18px rgb(39 37 31 / 15%); }
 .entity-search-results p { margin: 0; padding: .5rem .65rem; color: var(--ink-faint); }
-.entity-search-choice { display: block; width: 100%; padding: .45rem .65rem; text-align: left; background: white; border: 0; border-bottom: 1px solid var(--rule); border-radius: 0; }
+.entity-search-choice { display: block; width: 100%; padding: .45rem .65rem; color: #27251f; text-align: left; background: white; border: 0; border-bottom: 1px solid var(--rule); border-radius: 0; }
 .entity-search-choice:last-child { border-bottom: 0; }
 .entity-search-choice:hover, .entity-search-choice:focus { background: #f5f0e5; }
 .entity-search-choice strong { display: block; }
