@@ -18,6 +18,159 @@
     ]
   },
   {
+    "id": "battle_of_tours",
+    "canonical_name": "Battle of Tours",
+    "year": 732,
+    "detail_of": [
+      "francia"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q173077",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "Frankish victory over an Umayyad army, conventionally marking the limit of Muslim expansion into western Europe.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Battle_of_Tours"
+    ]
+  },
+  {
+    "id": "battle_of_vienna",
+    "canonical_name": "Battle of Vienna",
+    "year": 1683,
+    "detail_of": [
+      "holy_roman_empire",
+      "ottoman_empire"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q200855",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "Holy Roman/Polish-Lithuanian relief force defeats an Ottoman siege of Vienna, 1683, halting Ottoman expansion into central Europe.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Battle_of_Vienna"
+    ]
+  },
+  {
+    "id": "birth_of_islam",
+    "canonical_name": "Life of Muhammad / birth of Islam",
+    "year": 610,
+    "detail_of": [],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q9458",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "610 CE, Muhammad's first revelation, conventionally marking the founding of Islam. Left unattached rather than bound to rashidun_caliphate (632-661) -- that polity begins after Muhammad's death, a different milestone from the religion's founding.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Muhammad"
+    ]
+  },
+  {
+    "id": "black_death",
+    "canonical_name": "Black Death",
+    "year": 1347,
+    "detail_of": [],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q42005",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "The pandemic's arrival in Europe, 1347. Left unattached -- affected many polities simultaneously.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Black_Death"
+    ]
+  },
+  {
+    "id": "boston_tea_party",
+    "canonical_name": "Boston Tea Party",
+    "year": 1773,
+    "detail_of": [],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q19024",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "Political protest in Boston, 16 December 1773; a lead-up to the American Revolution (1775-1783) but predates its own start, so left unattached rather than bound to the new american_revolution period.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Boston_Tea_Party"
+    ]
+  },
+  {
+    "id": "charlemagne_coronation",
+    "canonical_name": "Coronation of Charlemagne",
+    "year": 800,
+    "detail_of": [
+      "carolingian_empire"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q3044",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "Pope Leo III crowns Charlemagne Emperor, 25 December 800 -- carolingian_empire's own start date, made explicit as an event.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Charlemagne"
+    ]
+  },
+  {
+    "id": "columbian_exchange",
+    "canonical_name": "Columbian exchange",
+    "year": 1500,
+    "detail_of": [],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q767253",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "The transfer of plants, animals, and diseases between the Old and New Worlds following 1492 contact; left unattached as a cross-continental process.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Columbian_exchange"
+    ]
+  },
+  {
+    "id": "columbus_voyage",
+    "canonical_name": "Columbus arrives in the West Indies",
+    "year": 1492,
+    "detail_of": [
+      "crown_of_castile"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q18578423",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "Columbus's first voyage, sponsored by the Crown of Castile, reaches the Caribbean in 1492. Not bound to age_of_discovery (which starts 1400, tracking earlier Portuguese voyages) -- 92 years apart, well outside the +/-25 year edge tolerance.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus"
+    ]
+  },
+  {
     "id": "crusades",
     "canonical_name": "Crusades",
     "year": 1095,
@@ -54,6 +207,47 @@
     ]
   },
   {
+    "id": "fall_of_constantinople",
+    "canonical_name": "Fall of Constantinople",
+    "year": 1453,
+    "detail_of": [
+      "byzantine_empire",
+      "ottoman_empire"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q160077",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "Ottoman capture of Constantinople, 1453 -- byzantine_empire's own end date, made explicit as an event.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Fall_of_Constantinople"
+    ]
+  },
+  {
+    "id": "first_crusade",
+    "canonical_name": "First Crusade",
+    "year": 1099,
+    "detail_of": [
+      "kingdom_of_jerusalem"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q51649",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "Year uses 1099 (capture of Jerusalem and founding of the Crusader kingdom) rather than the crusade's 1095 launch, so the event lines up exactly with kingdom_of_jerusalem's own start date.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/First_Crusade"
+    ]
+  },
+  {
     "id": "greco_persian_wars",
     "canonical_name": "Greco-Persian Wars",
     "year": -499,
@@ -72,6 +266,120 @@
     ]
   },
   {
+    "id": "jamestown_settlement",
+    "canonical_name": "Founding of Jamestown",
+    "year": 1607,
+    "detail_of": [
+      "kingdom_of_england"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q323813",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "First permanent English settlement in the Americas, 1607. virginia.yaml starts in 1788 (US statehood) and doesn't cover this colonial period, so this is attached to kingdom_of_england (the colonizing polity) instead.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Jamestown,_Virginia"
+    ]
+  },
+  {
+    "id": "life_of_confucius",
+    "canonical_name": "Life of Confucius / birth of Confucianism",
+    "year": -551,
+    "detail_of": [],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q4604",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "Traditional birth year of Confucius; marks the founding of Confucianism.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Confucius"
+    ]
+  },
+  {
+    "id": "life_of_jesus",
+    "canonical_name": "Life of Jesus / birth of Christianity",
+    "year": -4,
+    "detail_of": [],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q302",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "Conventionally cited birth year of Jesus (c. 4 BCE); marks the founding of Christianity.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Jesus"
+    ]
+  },
+  {
+    "id": "life_of_the_buddha",
+    "canonical_name": "Life of the Buddha / birth of Buddhism",
+    "year": -563,
+    "detail_of": [],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q9441",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "Traditional birth year of Siddhartha Gautama; marks the founding of Buddhism. Same 'major religion-founding event' pattern as life_of_confucius/life_of_jesus/birth_of_islam. Left unattached -- no single existing polity represents the event.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/The_Buddha"
+    ]
+  },
+  {
+    "id": "magellan_circumnavigation",
+    "canonical_name": "Magellan's circumnavigation",
+    "year": 1522,
+    "detail_of": [
+      "crown_of_castile"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q1496",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "The Magellan-Elcano expedition, sponsored by the Crown of Castile, completes the first circumnavigation of the globe in 1522.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Ferdinand_Magellan"
+    ]
+  },
+  {
+    "id": "magna_carta",
+    "canonical_name": "Signing of the Magna Carta",
+    "year": 1215,
+    "detail_of": [
+      "kingdom_of_england"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q12519",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "King John seals the Magna Carta at Runnymede, 1215.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Magna_Carta"
+    ]
+  },
+  {
     "id": "neolithic_revolution",
     "canonical_name": "Neolithic Revolution",
     "year": -10000,
@@ -87,6 +395,26 @@
     "notes": "The transition from foraging to farming and settled societies -- a process spanning millennia and staggered by region (Fertile Crescent first, c. 10,000 BCE), not a single dated occurrence. year is its conventionally-cited start; left unattached (no detail_of/bounds) since no single existing polity/period record represents \"the\" Neolithic transition globally -- see the regional Neolithic era records instead for region-specific placement.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Neolithic_Revolution"
+    ]
+  },
+  {
+    "id": "norman_conquest",
+    "canonical_name": "Norman Conquest of England",
+    "year": 1066,
+    "detail_of": [
+      "kingdom_of_england"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q200485",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "William the Conqueror's invasion and conquest of England, 1066.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Norman_Conquest"
     ]
   },
   {
@@ -141,6 +469,26 @@
     "notes": "Representative year for a process spanning tens of thousands of years, staggered by region/species.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Late_Pleistocene_extinctions"
+    ]
+  },
+  {
+    "id": "spanish_armada_defeat",
+    "canonical_name": "Defeat of the Spanish Armada",
+    "year": 1588,
+    "detail_of": [
+      "kingdom_of_england"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q179684",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "notes": "England repels the Spanish Armada, 1588.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Spanish_Armada"
     ]
   },
   {

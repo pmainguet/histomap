@@ -1,0 +1,15 @@
+id: first_crusade
+canonical_name: First Crusade
+year: 1099
+detail_of:
+- kingdom_of_jerusalem
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q51649
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+notes: Year uses 1099 (capture of Jerusalem and founding of the Crusader kingdom)
+  rather than the crusade's 1095 launch, so the event lines up exactly with kingdom_of_jerusalem's
+  own start date.
+source_urls:
+- https://en.wikipedia.org/wiki/First_Crusade

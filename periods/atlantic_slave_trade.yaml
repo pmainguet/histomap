@@ -1,0 +1,25 @@
+id: atlantic_slave_trade
+canonical_name: Atlantic slave trade
+tier: period
+start: 1500
+end: 1866
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  - north_america
+  - south_america
+  - europe
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q10701282
+notes: The transatlantic trade forcibly transporting enslaved Africans to the
+  Americas, roughly the 16th through 19th centuries; dates here use the commonly
+  cited overall span (c. 1500 to the 1860s abolition wave), broader than the
+  earlier 1502-1619 phase cited by the beckchris.com source. Genuinely
+  cross-continental -- no single polity carries this record.
+source_urls:
+- https://en.wikipedia.org/wiki/Atlantic_slave_trade

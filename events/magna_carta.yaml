@@ -1,0 +1,13 @@
+id: magna_carta
+canonical_name: Signing of the Magna Carta
+year: 1215
+detail_of:
+- kingdom_of_england
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q12519
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+notes: King John seals the Magna Carta at Runnymede, 1215.
+source_urls:
+- https://en.wikipedia.org/wiki/Magna_Carta

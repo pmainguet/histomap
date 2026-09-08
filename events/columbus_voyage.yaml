@@ -1,0 +1,15 @@
+id: columbus_voyage
+canonical_name: Columbus arrives in the West Indies
+year: 1492
+detail_of:
+- crown_of_castile
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q18578423
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+notes: Columbus's first voyage, sponsored by the Crown of Castile, reaches the Caribbean
+  in 1492. Not bound to age_of_discovery (which starts 1400, tracking earlier Portuguese
+  voyages) -- 92 years apart, well outside the +/-25 year edge tolerance.
+source_urls:
+- https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus

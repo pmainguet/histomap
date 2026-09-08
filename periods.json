@@ -274,6 +274,46 @@
     "deprecated": null
   },
   {
+    "id": "american_revolution",
+    "canonical_name": "American Revolution",
+    "tier": "period",
+    "start": 1775,
+    "end": 1783,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [
+        "US"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q192769"
+    },
+    "notes": "The war and political movement (1775-1783) by which the Thirteen Colonies won independence from Great Britain. united_states.yaml starts in 1784 (post-war), leaving this earlier revolutionary period previously uncovered.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/American_Revolution"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
+  },
+  {
     "id": "ancient_egypt_period",
     "canonical_name": "Ancient Egypt",
     "tier": "period",
@@ -313,6 +353,53 @@
     ],
     "linked_era_id": "neolithic_era",
     "linked_chapter_id": "macro_early_cities_states",
+    "government_form": null,
+    "civilization_lane": true,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": {
+      "kind": "historical"
+    }
+  },
+  {
+    "id": "ancient_greece_period",
+    "canonical_name": "Ancient Greece",
+    "tier": "period",
+    "start": -800,
+    "end": -336,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
+      "present_countries": [
+        "GR"
+      ],
+      "centroid": {
+        "lat": 39.0,
+        "lon": 22.0
+      },
+      "confidence": "medium"
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: civilization-as-backdrop",
+    "external_ids": {
+      "wikidata": "Q11772"
+    },
+    "notes": "Ancient Greece spans several distinct political phases (Mycenaean Greece, the Archaic and Classical city-states, the Hellenistic kingdoms); rendered as period context in the Civilizations & Cultures lane so those phases (individual polities like the Delian League, Macedonian Empire, etc.) carry the chart's political weight -- same treatment as ancient_egypt_period and mesopotamia_period. Dates (800-336 BCE) cover the Archaic through Classical periods, ending with Alexander's accession; earlier Mycenaean Greece and later Hellenistic kingdoms are separate records.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Ancient_Greece"
+    ],
+    "linked_era_id": "classical_antiquity_era",
+    "linked_chapter_id": "macro_classical_imperial_worlds",
     "government_form": null,
     "civilization_lane": true,
     "epoch_lane": false,
@@ -755,6 +842,47 @@
     "deprecated": {
       "kind": "historical"
     }
+  },
+  {
+    "id": "atlantic_slave_trade",
+    "canonical_name": "Atlantic slave trade",
+    "tier": "period",
+    "start": 1500,
+    "end": 1866,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "africa",
+        "north_america",
+        "south_america",
+        "europe"
+      ],
+      "primary_continent": null,
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q10701282"
+    },
+    "notes": "The transatlantic trade forcibly transporting enslaved Africans to the Americas, roughly the 16th through 19th centuries; dates here use the commonly cited overall span (c. 1500 to the 1860s abolition wave), broader than the earlier 1502-1619 phase cited by the beckchris.com source. Genuinely cross-continental -- no single polity carries this record.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Atlantic_slave_trade"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
   },
   {
     "id": "axial_age",
@@ -1423,6 +1551,46 @@
     "deprecated": {
       "kind": "historical"
     }
+  },
+  {
+    "id": "english_civil_war",
+    "canonical_name": "English Civil War",
+    "tier": "period",
+    "start": 1642,
+    "end": 1660,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [
+        "GB"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "broader_periods": [],
+    "successors": [],
+    "authority": "Histomap editorial: beckchris.com gap-check, 8 September 2026",
+    "external_ids": {
+      "wikidata": "Q80330"
+    },
+    "notes": "Series of civil wars and political crises between Parliamentarians and Royalists, running through the Commonwealth/Protectorate to the 1660 Restoration. kingdom_of_england (927-1707) already covers this era as the surrounding polity.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/English_Civil_War"
+    ],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "civilization_lane": null,
+    "epoch_lane": false,
+    "promoted_from": null,
+    "detail_of": null,
+    "deprecated": null
   },
   {
     "id": "etruscan_civilization_period",

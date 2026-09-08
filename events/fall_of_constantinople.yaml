@@ -1,0 +1,15 @@
+id: fall_of_constantinople
+canonical_name: Fall of Constantinople
+year: 1453
+detail_of:
+- byzantine_empire
+- ottoman_empire
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q160077
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+notes: Ottoman capture of Constantinople, 1453 -- byzantine_empire's own end date,
+  made explicit as an event.
+source_urls:
+- https://en.wikipedia.org/wiki/Fall_of_Constantinople

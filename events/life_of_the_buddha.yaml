@@ -1,0 +1,14 @@
+id: life_of_the_buddha
+canonical_name: Life of the Buddha / birth of Buddhism
+year: -563
+detail_of: []
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q9441
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+notes: Traditional birth year of Siddhartha Gautama; marks the founding of Buddhism.
+  Same 'major religion-founding event' pattern as life_of_confucius/life_of_jesus/birth_of_islam.
+  Left unattached -- no single existing polity represents the event.
+source_urls:
+- https://en.wikipedia.org/wiki/The_Buddha

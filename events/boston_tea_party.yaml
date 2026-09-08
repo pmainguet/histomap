@@ -1,0 +1,14 @@
+id: boston_tea_party
+canonical_name: Boston Tea Party
+year: 1773
+detail_of: []
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q19024
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+notes: Political protest in Boston, 16 December 1773; a lead-up to the American Revolution
+  (1775-1783) but predates its own start, so left unattached rather than bound to
+  the new american_revolution period.
+source_urls:
+- https://en.wikipedia.org/wiki/Boston_Tea_Party

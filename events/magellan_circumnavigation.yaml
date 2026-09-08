@@ -1,0 +1,14 @@
+id: magellan_circumnavigation
+canonical_name: Magellan's circumnavigation
+year: 1522
+detail_of:
+- crown_of_castile
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q1496
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+notes: The Magellan-Elcano expedition, sponsored by the Crown of Castile, completes
+  the first circumnavigation of the globe in 1522.
+source_urls:
+- https://en.wikipedia.org/wiki/Ferdinand_Magellan

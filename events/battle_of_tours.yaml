@@ -1,0 +1,14 @@
+id: battle_of_tours
+canonical_name: Battle of Tours
+year: 732
+detail_of:
+- francia
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q173077
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+notes: Frankish victory over an Umayyad army, conventionally marking the limit of
+  Muslim expansion into western Europe.
+source_urls:
+- https://en.wikipedia.org/wiki/Battle_of_Tours

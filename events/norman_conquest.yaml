@@ -1,0 +1,13 @@
+id: norman_conquest
+canonical_name: Norman Conquest of England
+year: 1066
+detail_of:
+- kingdom_of_england
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q200485
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+notes: William the Conqueror's invasion and conquest of England, 1066.
+source_urls:
+- https://en.wikipedia.org/wiki/Norman_Conquest

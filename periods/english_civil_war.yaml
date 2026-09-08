@@ -1,0 +1,22 @@
+id: english_civil_war
+canonical_name: English Civil War
+tier: period
+start: 1642
+end: 1660
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - GB
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q80330
+notes: Series of civil wars and political crises between Parliamentarians and
+  Royalists, running through the Commonwealth/Protectorate to the 1660 Restoration.
+  kingdom_of_england (927-1707) already covers this era as the surrounding polity.
+source_urls:
+- https://en.wikipedia.org/wiki/English_Civil_War

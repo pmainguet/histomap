@@ -1,0 +1,15 @@
+id: battle_of_vienna
+canonical_name: Battle of Vienna
+year: 1683
+detail_of:
+- holy_roman_empire
+- ottoman_empire
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q200855
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+notes: Holy Roman/Polish-Lithuanian relief force defeats an Ottoman siege of Vienna,
+  1683, halting Ottoman expansion into central Europe.
+source_urls:
+- https://en.wikipedia.org/wiki/Battle_of_Vienna

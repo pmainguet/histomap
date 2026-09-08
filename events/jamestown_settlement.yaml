@@ -1,0 +1,15 @@
+id: jamestown_settlement
+canonical_name: Founding of Jamestown
+year: 1607
+detail_of:
+- kingdom_of_england
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q323813
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+notes: First permanent English settlement in the Americas, 1607. virginia.yaml starts
+  in 1788 (US statehood) and doesn't cover this colonial period, so this is attached
+  to kingdom_of_england (the colonizing polity) instead.
+source_urls:
+- https://en.wikipedia.org/wiki/Jamestown,_Virginia

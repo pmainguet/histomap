@@ -1,0 +1,14 @@
+id: charlemagne_coronation
+canonical_name: Coronation of Charlemagne
+year: 800
+detail_of:
+- carolingian_empire
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q3044
+authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
+notes: Pope Leo III crowns Charlemagne Emperor, 25 December 800 -- carolingian_empire's
+  own start date, made explicit as an event.
+source_urls:
+- https://en.wikipedia.org/wiki/Charlemagne
