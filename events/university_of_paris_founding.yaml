@@ -1,0 +1,16 @@
+id: university_of_paris_founding
+canonical_name: Founding of the University of Paris
+year: 1150
+detail_of:
+- kingdom_of_france
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q209842
+authority: 'Histomap editorial: user request, 8 September 2026'
+notes: Emerged c. 1150 as a corporation associated with the cathedral school of Paris;
+  officially chartered by King Philip II in 1200 and recognised by Pope Innocent III
+  in 1215. year uses the conventional c. 1150 emergence date rather than the later
+  formal charters.
+source_urls:
+- https://en.wikipedia.org/wiki/University_of_Paris
