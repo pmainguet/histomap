@@ -19,8 +19,10 @@ successors:
 authority: DBpedia/Wikipedia periodization
 external_ids:
   dbpedia: https://dbpedia.org/resource/Mesoamerican_chronology
+  wikidata: Q4964
 source_urls:
 - https://dbpedia.org/resource/Mesoamerican_chronology
+- https://en.wikipedia.org/wiki/Mesoamerican_chronology
 civilization_lane: false
 broader_periods:
 - classical_antiquity_era

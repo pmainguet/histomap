@@ -13,7 +13,8 @@ broader_periods:
 - macro_early_cities_states
 successors: []
 authority: 'Histomap editorial: overarching regional-era consolidation'
-external_ids: {}
+external_ids:
+  wikidata: Q11761
 notes: Overarching parent for the regional Bronze Age eras, which happened at meaningfully
   different times in different places -- spans from the start of the European Bronze
   Age (~-3,200) to the end of the East Asian Bronze Age (~-1,046). See ONTOLOGY.md's

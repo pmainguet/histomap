@@ -80,3 +80,5 @@ deprecated:
 consolidation_status: independent
 manual_overrides:
 - consolidation
+source_urls:
+- https://en.wikipedia.org/wiki/Byzantine_Empire

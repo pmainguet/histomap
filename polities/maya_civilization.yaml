@@ -65,3 +65,5 @@ government_form: null
 deprecated:
   visibility_tier: detailed
 consolidation_status: independent
+source_urls:
+- https://en.wikipedia.org/wiki/Maya_civilization

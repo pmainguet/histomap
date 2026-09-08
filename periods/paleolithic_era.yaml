@@ -14,7 +14,8 @@ broader_periods:
 - macro_human_origins_paleolithic
 successors: []
 authority: 'Histomap editorial: overarching regional-era consolidation'
-external_ids: {}
+external_ids:
+  wikidata: Q40203
 notes: Overarching parent for the regional Paleolithic variants, which cover meaningfully
   different spans in different places -- from the earliest African stone tools (~-3,000,000)
   through the end of the last Ice Age everywhere. See ONTOLOGY.md's "Overarching regional

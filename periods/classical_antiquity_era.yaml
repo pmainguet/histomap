@@ -15,7 +15,8 @@ broader_periods:
 - macro_classical_imperial_worlds
 successors: []
 authority: 'Histomap editorial: overarching regional-era consolidation'
-external_ids: {}
+external_ids:
+  wikidata: Q486761
 notes: Overarching parent for the regional Classical Antiquity eras (mediterranean_classical_era,
   east_asian_classical_era, south_asian_classical_era, mesoamerican_formative_classic_era,
   andean_early_civilizations_era), which happened at meaningfully different times

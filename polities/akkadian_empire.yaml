@@ -64,3 +64,5 @@ linked_chapter_id: macro_early_cities_states
 deprecated:
   visibility_tier: regional
   visibility_override: global
+source_urls:
+- https://en.wikipedia.org/wiki/Akkadian_Empire

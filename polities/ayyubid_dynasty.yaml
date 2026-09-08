@@ -53,3 +53,5 @@ manual_overrides:
 government_form: null
 deprecated:
   visibility_tier: detailed
+source_urls:
+- https://en.wikipedia.org/wiki/Ayyubid_dynasty

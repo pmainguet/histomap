@@ -1,6 +1,7 @@
 id: seshat_sui_dynasty_cnsui
 canonical_name: Sui Dynasty
-external_ids: {}
+external_ids:
+  wikidata: Q7405
 parent: null
 successors: []
 geography:
@@ -47,3 +48,5 @@ consolidated_into: sui_dynasty
 government_form: null
 deprecated:
   visibility_tier: detailed
+source_urls:
+- https://en.wikipedia.org/wiki/Sui_dynasty

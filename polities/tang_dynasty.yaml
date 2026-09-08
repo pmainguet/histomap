@@ -76,3 +76,5 @@ deprecated:
   visibility_tier: detailed
   visibility_override: global
 consolidation_status: independent
+source_urls:
+- https://en.wikipedia.org/wiki/Tang_dynasty

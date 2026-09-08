@@ -13,7 +13,8 @@ broader_periods:
 - macro_classical_imperial_worlds
 successors: []
 authority: 'Histomap editorial: overarching regional-era consolidation'
-external_ids: {}
+external_ids:
+  wikidata: Q11764
 notes: Overarching parent for the regional Iron Age eras (european_iron_age, sub_saharan_african_iron_age_era),
   which happened at meaningfully different times in different places -- same "overarching
   regional era" treatment as bronze_age_era/neolithic_era/paleolithic_era. Added 2026-08-31

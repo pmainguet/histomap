@@ -92,3 +92,5 @@ detail_of: roman_kingdom
 deprecated:
   parent: roman_kingdom
   visibility_tier: global
+source_urls:
+- https://en.wikipedia.org/wiki/Roman_Republic

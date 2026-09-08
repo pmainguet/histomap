@@ -80,3 +80,5 @@ detail_of: mongol_empire
 deprecated:
   parent: mongol_empire
   visibility_tier: detailed
+source_urls:
+- https://en.wikipedia.org/wiki/Yuan_dynasty
