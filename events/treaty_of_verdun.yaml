@@ -1,0 +1,16 @@
+id: treaty_of_verdun
+canonical_name: Treaty of Verdun
+year: 843
+detail_of:
+- east_francia
+- west_francia
+- middle_francia
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q134840
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+notes: Divides the Carolingian Empire into three kingdoms -- east_francia, west_francia,
+  and middle_francia -- all of which start exactly in 843.
+source_urls:
+- https://en.wikipedia.org/wiki/Treaty_of_Verdun

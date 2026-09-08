@@ -1,0 +1,22 @@
+id: hundred_years_war
+canonical_name: Hundred Years' War
+tier: period
+start: 1337
+end: 1453
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - FR
+  - GB
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q12551
+notes: Series of conflicts between the kingdoms of England and France over the
+  French throne, 1337-1453.
+source_urls:
+- https://en.wikipedia.org/wiki/Hundred_Years%27_War

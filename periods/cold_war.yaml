@@ -1,0 +1,18 @@
+id: cold_war
+canonical_name: Cold War
+tier: period
+start: 1947
+end: 1991
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q8683
+notes: Decades-long geopolitical standoff between the United States and the
+  Soviet Union and their respective blocs, 1947-1991. Genuinely cross-continental.
+source_urls:
+- https://en.wikipedia.org/wiki/Cold_War

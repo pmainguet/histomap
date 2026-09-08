@@ -59,6 +59,26 @@
     ]
   },
   {
+    "id": "battle_of_waterloo",
+    "canonical_name": "Battle of Waterloo",
+    "year": 1815,
+    "detail_of": [
+      "first_french_empire"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q48314",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "Ends the Napoleonic Wars and Napoleon's rule, 1815 -- first_french_empire's own end date, made explicit as an event.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Battle_of_Waterloo"
+    ]
+  },
+  {
     "id": "birth_of_islam",
     "canonical_name": "Life of Muhammad / birth of Islam",
     "year": 610,
@@ -133,6 +153,44 @@
     ]
   },
   {
+    "id": "chinese_communist_revolution",
+    "canonical_name": "Chinese Communist Revolution",
+    "year": 1949,
+    "detail_of": [
+      "people_s_republic_of_china"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q32993",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "Marks the founding of the People's Republic of China, 1949 -- that polity's own start date, made explicit as an event.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Chinese_Communist_Revolution"
+    ]
+  },
+  {
+    "id": "christianity_roman_state_religion",
+    "canonical_name": "Christianity becomes the Roman state religion",
+    "year": 391,
+    "detail_of": [],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q7603670",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "Theodosius I's Edict of Thessalonica establishes Nicene Christianity as the Roman Empire's state religion. Left unattached -- at this date (pre-395 split) no single Histomap polity record covers the whole empire.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Christianity_as_the_Roman_state_religion"
+    ]
+  },
+  {
     "id": "columbian_exchange",
     "canonical_name": "Columbian exchange",
     "year": 1500,
@@ -189,6 +247,24 @@
     ]
   },
   {
+    "id": "declaration_of_independence",
+    "canonical_name": "Declaration of Independence",
+    "year": 1776,
+    "detail_of": [],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q127912",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "Adopted by the Second Continental Congress, 4 July 1776. Left unattached rather than bound to american_revolution (1775-1783) -- 1776 is not that period's actual start value, and united_states.yaml starts only in 1784 (post-war).",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence"
+    ]
+  },
+  {
     "id": "early_muslim_conquests",
     "canonical_name": "Early Muslim conquests",
     "year": 632,
@@ -204,6 +280,26 @@
     "notes": "Representative start year (632 CE, the year of Muhammad's death) for a decades-long process.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Early_Muslim_conquests"
+    ]
+  },
+  {
+    "id": "emancipation_proclamation",
+    "canonical_name": "Emancipation Proclamation",
+    "year": 1863,
+    "detail_of": [
+      "united_states"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q391358",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "Issued by Abraham Lincoln, 1863, during the American Civil War (1861-1865).",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Emancipation_Proclamation"
     ]
   },
   {
@@ -225,6 +321,26 @@
     "notes": "Ottoman capture of Constantinople, 1453 -- byzantine_empire's own end date, made explicit as an event.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Fall_of_Constantinople"
+    ]
+  },
+  {
+    "id": "first_africans_virginia_1619",
+    "canonical_name": "First recorded Africans arrive in English Virginia",
+    "year": 1619,
+    "detail_of": [
+      "kingdom_of_england"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q7539285",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "Conventionally cited as the start of slavery in the English colonies that became the United States. Attached to kingdom_of_england (the colonizing polity, same pattern as jamestown_settlement) rather than atlantic_slave_trade -- 1619 is far from that period's 1500/1866 edges.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Slavery_in_the_colonial_history_of_the_United_States"
     ]
   },
   {
@@ -380,6 +496,26 @@
     ]
   },
   {
+    "id": "muslim_conquest_of_egypt",
+    "canonical_name": "Muslim conquest of Egypt",
+    "year": 639,
+    "detail_of": [
+      "rashidun_caliphate"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q317519",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "Rashidun conquest of Byzantine Egypt, begun 639, marking the start of the Islamic era in Egypt.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Arab_conquest_of_Egypt"
+    ]
+  },
+  {
     "id": "neolithic_revolution",
     "canonical_name": "Neolithic Revolution",
     "year": -10000,
@@ -415,6 +551,50 @@
     "notes": "William the Conqueror's invasion and conquest of England, 1066.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Norman_Conquest"
+    ]
+  },
+  {
+    "id": "partition_of_india",
+    "canonical_name": "Partition of India",
+    "year": 1947,
+    "detail_of": [
+      "india",
+      "pakistan"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q129053",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "Ends the British Raj and creates both India and Pakistan, 1947 -- both polities' own start date, made explicit as an event. One of the largest mass migrations in history.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Partition_of_India"
+    ]
+  },
+  {
+    "id": "peace_of_westphalia",
+    "canonical_name": "Peace of Westphalia",
+    "year": 1648,
+    "detail_of": [],
+    "bounds": [
+      {
+        "target": "thirty_years_war",
+        "edge": "end"
+      }
+    ],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q150995",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "Ends the Thirty Years' War, 1648 -- thirty_years_war's own end date, made explicit as an event; conventionally cited as the origin of the modern state system.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Peace_of_Westphalia"
     ]
   },
   {
@@ -472,6 +652,104 @@
     ]
   },
   {
+    "id": "russian_revolution",
+    "canonical_name": "Russian Revolution",
+    "year": 1917,
+    "detail_of": [
+      "soviet_union"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q8729",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "The 1917 revolutions that ended the Russian Empire; the Soviet Union itself was formally established in 1922, 5 years later -- still attached here as the clear founding precursor, well within the usual editorial tolerance for such attachments.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Russian_Revolution"
+    ]
+  },
+  {
+    "id": "sack_of_rome_410",
+    "canonical_name": "Sack of Rome (410)",
+    "year": 410,
+    "detail_of": [
+      "western_roman_empire"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q1463845",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "The Visigoths under Alaric sack Rome, 410 -- widely cited as marking the start of the Western Roman Empire's terminal decline.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Sack_of_Rome_(410)"
+    ]
+  },
+  {
+    "id": "september_11_attacks",
+    "canonical_name": "September 11 attacks",
+    "year": 2001,
+    "detail_of": [
+      "united_states"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q10806",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "Al-Qaeda attacks on the United States, 2001 -- a major, globally consequential turning point of the 21st century.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/September_11_attacks"
+    ]
+  },
+  {
+    "id": "siege_of_baghdad_1258",
+    "canonical_name": "Siege of Baghdad (1258)",
+    "year": 1258,
+    "detail_of": [
+      "abbasid_caliphate"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q369560",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "Mongol destruction of Baghdad, 1258 -- abbasid_caliphate's own end date, made explicit as an event.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Siege_of_Baghdad"
+    ]
+  },
+  {
+    "id": "slave_trade_act_1807",
+    "canonical_name": "Slave Trade Act 1807",
+    "year": 1807,
+    "detail_of": [],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q770832",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "Britain abolishes the slave trade (not slavery itself, which followed in 1833). Left unattached -- not near either edge of atlantic_slave_trade (1500-1866).",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Slave_Trade_Act_1807"
+    ]
+  },
+  {
     "id": "spanish_armada_defeat",
     "canonical_name": "Defeat of the Spanish Armada",
     "year": 1588,
@@ -489,6 +767,28 @@
     "notes": "England repels the Spanish Armada, 1588.",
     "source_urls": [
       "https://en.wikipedia.org/wiki/Spanish_Armada"
+    ]
+  },
+  {
+    "id": "treaty_of_verdun",
+    "canonical_name": "Treaty of Verdun",
+    "year": 843,
+    "detail_of": [
+      "east_francia",
+      "west_francia",
+      "middle_francia"
+    ],
+    "bounds": [],
+    "eligibility": "accepted",
+    "external_ids": {
+      "wikidata": "Q134840",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "authority": "Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026",
+    "notes": "Divides the Carolingian Empire into three kingdoms -- east_francia, west_francia, and middle_francia -- all of which start exactly in 843.",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Treaty_of_Verdun"
     ]
   },
   {

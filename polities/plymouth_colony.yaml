@@ -1,0 +1,22 @@
+id: plymouth_colony
+canonical_name: Plymouth Colony
+entity_type: polity
+entity_type_confidence: high
+start: 1620
+end: 1691
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - US
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q126195
+notes: English colonial venture founded by the Mayflower Pilgrims, 1620; merged
+  into the Massachusetts Bay Colony in 1691.
+source_urls:
+- https://en.wikipedia.org/wiki/Plymouth_Colony

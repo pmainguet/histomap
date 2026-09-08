@@ -1,0 +1,15 @@
+id: russian_revolution
+canonical_name: Russian Revolution
+year: 1917
+detail_of:
+- soviet_union
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q8729
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+notes: The 1917 revolutions that ended the Russian Empire; the Soviet Union itself
+  was formally established in 1922, 5 years later -- still attached here as the clear
+  founding precursor, well within the usual editorial tolerance for such attachments.
+source_urls:
+- https://en.wikipedia.org/wiki/Russian_Revolution

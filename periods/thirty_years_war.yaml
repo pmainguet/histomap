@@ -1,0 +1,21 @@
+id: thirty_years_war
+canonical_name: Thirty Years' War
+tier: period
+start: 1618
+end: 1648
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - DE
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q2487
+notes: One of the most destructive wars in European history, fought largely in
+  the Holy Roman Empire, 1618-1648; ended by the Peace of Westphalia.
+source_urls:
+- https://en.wikipedia.org/wiki/Thirty_Years%27_War

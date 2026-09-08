@@ -1,0 +1,20 @@
+id: world_war_i
+canonical_name: World War I
+tier: period
+start: 1914
+end: 1918
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q361
+notes: Global war, 1914-1918. Genuinely cross-continental -- no single polity or
+  region carries this record; the existing *_world_wars_reordering_era backdrop
+  periods span both World Wars together (1914-1945) but neither war had its own
+  dedicated record until now.
+source_urls:
+- https://en.wikipedia.org/wiki/World_War_I

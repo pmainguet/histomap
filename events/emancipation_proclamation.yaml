@@ -1,0 +1,13 @@
+id: emancipation_proclamation
+canonical_name: Emancipation Proclamation
+year: 1863
+detail_of:
+- united_states
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q391358
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+notes: Issued by Abraham Lincoln, 1863, during the American Civil War (1861-1865).
+source_urls:
+- https://en.wikipedia.org/wiki/Emancipation_Proclamation

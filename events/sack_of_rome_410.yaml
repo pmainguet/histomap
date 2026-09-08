@@ -1,0 +1,14 @@
+id: sack_of_rome_410
+canonical_name: Sack of Rome (410)
+year: 410
+detail_of:
+- western_roman_empire
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q1463845
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+notes: The Visigoths under Alaric sack Rome, 410 -- widely cited as marking the start
+  of the Western Roman Empire's terminal decline.
+source_urls:
+- https://en.wikipedia.org/wiki/Sack_of_Rome_(410)

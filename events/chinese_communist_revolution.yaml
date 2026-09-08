@@ -1,0 +1,14 @@
+id: chinese_communist_revolution
+canonical_name: Chinese Communist Revolution
+year: 1949
+detail_of:
+- people_s_republic_of_china
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q32993
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+notes: Marks the founding of the People's Republic of China, 1949 -- that polity's
+  own start date, made explicit as an event.
+source_urls:
+- https://en.wikipedia.org/wiki/Chinese_Communist_Revolution

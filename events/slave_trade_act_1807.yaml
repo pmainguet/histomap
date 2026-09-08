@@ -1,0 +1,13 @@
+id: slave_trade_act_1807
+canonical_name: Slave Trade Act 1807
+year: 1807
+detail_of: []
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q770832
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+notes: Britain abolishes the slave trade (not slavery itself, which followed in 1833).
+  Left unattached -- not near either edge of atlantic_slave_trade (1500-1866).
+source_urls:
+- https://en.wikipedia.org/wiki/Slave_Trade_Act_1807

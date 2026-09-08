@@ -1,0 +1,16 @@
+id: first_africans_virginia_1619
+canonical_name: First recorded Africans arrive in English Virginia
+year: 1619
+detail_of:
+- kingdom_of_england
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q7539285
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+notes: Conventionally cited as the start of slavery in the English colonies that became
+  the United States. Attached to kingdom_of_england (the colonizing polity, same pattern
+  as jamestown_settlement) rather than atlantic_slave_trade -- 1619 is far from that
+  period's 1500/1866 edges.
+source_urls:
+- https://en.wikipedia.org/wiki/Slavery_in_the_colonial_history_of_the_United_States

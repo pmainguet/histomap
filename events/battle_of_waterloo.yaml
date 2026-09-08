@@ -1,0 +1,14 @@
+id: battle_of_waterloo
+canonical_name: Battle of Waterloo
+year: 1815
+detail_of:
+- first_french_empire
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q48314
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+notes: Ends the Napoleonic Wars and Napoleon's rule, 1815 -- first_french_empire's
+  own end date, made explicit as an event.
+source_urls:
+- https://en.wikipedia.org/wiki/Battle_of_Waterloo

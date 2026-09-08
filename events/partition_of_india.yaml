@@ -1,0 +1,16 @@
+id: partition_of_india
+canonical_name: Partition of India
+year: 1947
+detail_of:
+- india
+- pakistan
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q129053
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+notes: Ends the British Raj and creates both India and Pakistan, 1947 -- both polities'
+  own start date, made explicit as an event. One of the largest mass migrations in
+  history.
+source_urls:
+- https://en.wikipedia.org/wiki/Partition_of_India

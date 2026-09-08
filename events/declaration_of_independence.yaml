@@ -1,0 +1,14 @@
+id: declaration_of_independence
+canonical_name: Declaration of Independence
+year: 1776
+detail_of: []
+bounds: []
+eligibility: accepted
+external_ids:
+  wikidata: Q127912
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+notes: Adopted by the Second Continental Congress, 4 July 1776. Left unattached rather
+  than bound to american_revolution (1775-1783) -- 1776 is not that period's actual
+  start value, and united_states.yaml starts only in 1784 (post-war).
+source_urls:
+- https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence

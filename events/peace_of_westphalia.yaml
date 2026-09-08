@@ -1,0 +1,15 @@
+id: peace_of_westphalia
+canonical_name: Peace of Westphalia
+year: 1648
+detail_of: []
+bounds:
+- target: thirty_years_war
+  edge: end
+eligibility: accepted
+external_ids:
+  wikidata: Q150995
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+notes: Ends the Thirty Years' War, 1648 -- thirty_years_war's own end date, made explicit
+  as an event; conventionally cited as the origin of the modern state system.
+source_urls:
+- https://en.wikipedia.org/wiki/Peace_of_Westphalia

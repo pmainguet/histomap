@@ -1,0 +1,19 @@
+id: covid_19_pandemic
+canonical_name: COVID-19 pandemic
+tier: period
+start: 2019
+end: 2023
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q81068910
+notes: Global pandemic, first identified in Wuhan, China, late 2019; WHO declared
+  the end of the public health emergency in 2023. Genuinely cross-continental.
+  Very recent for a history-focused app -- included per explicit user approval.
+source_urls:
+- https://en.wikipedia.org/wiki/COVID-19_pandemic

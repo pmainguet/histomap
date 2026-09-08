@@ -1,0 +1,18 @@
+id: world_war_ii
+canonical_name: World War II
+tier: period
+start: 1939
+end: 1945
+start_confidence: low
+end_confidence: low
+geography:
+  continents: []
+broader_periods: []
+successors: []
+authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
+external_ids:
+  wikidata: Q362
+notes: Global war, 1939-1945. Genuinely cross-continental -- same reasoning as
+  world_war_i.
+source_urls:
+- https://en.wikipedia.org/wiki/World_War_II
