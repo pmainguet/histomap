@@ -9,6 +9,8 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
+0. The events linked to a period should be details of and visible when clicking on the entity they relate to like the other detail_of elements
+1. Remove / merge short adult and short child feature i don't think that's useful as well as icons
 2. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
    **Blocked on a display gap, found live 8 September 2026:** `icon` is not rendered anywhere in
    `/explore` (grepped `web/*.js` — zero references), so writing icons for the top 50 would be
@@ -28,7 +30,7 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
    as band width or scale, closer to the original 1931 "Histomap of World History" poster's visual
    language (the app's namesake) than the current uniform-width bands. See
    `docs/superpowers/specs/` once a design exists.
-4. **Work the Wikidata type-eligibility (622) and entity-type classification (2,709) backlogs.**
+4. **Work the Wikidata type-eligibility (622) and entity-type classification (2,709) backlogs.** => i think woudl be good first to list all fields and logic used in the data model so that i can review and maybe simplify, then will see
    Counts refreshed live 8 September 2026, re-running `pipeline/backfill_entity_types.py`'s exact
    `classify_entity`/`classify_automated_entity` logic read-only (no files written) rather than
    trusting the frozen 655/2,677 figures from 1 September -- both went up slightly, expected given
