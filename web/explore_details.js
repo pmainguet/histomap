@@ -523,29 +523,37 @@ async function resolveWikipediaTitle(record) {
   return extractWikipediaTitle(record) || resolveWikipediaTitleFromWikidata(record.external_ids?.wikidata);
 }
 
-function renderWikipediaSummary(container, data) {
-  if (!container.isConnected) return; // panel moved on to a different record while the fetch was in flight
+// slots = { subtitle: <p data-wiki-subtitle>, body: <div data-wiki> } --
+// both always rendered together from the same API response.
+function renderWikipediaSummary(slots, data) {
+  if (!slots.body.isConnected) return; // panel moved on to a different record while the fetch was in flight
   const displayImage = data?.thumbnail?.source || data?.originalimage?.source;
   const fullImage = data?.originalimage?.source || displayImage;
-  if (!data || (!data.extract && !displayImage)) {
-    container.innerHTML = "";
+  // extract_html (not the plain-text extract) so inline links/formatting
+  // survive -- inserted as-is, not escapeHtml'd: it's Wikipedia's own
+  // sanitized markup from a trusted API response, not user input.
+  const extractHtml = data?.extract_html || (data?.extract ? `<p>${escapeHtml(data.extract)}</p>` : "");
+  if (slots.subtitle) slots.subtitle.textContent = data?.description || "";
+  if (!data || (!extractHtml && !displayImage)) {
+    slots.body.innerHTML = "";
     return;
   }
-  container.innerHTML = `
+  slots.body.innerHTML = `
     ${displayImage ? `<a class="wiki-summary-image" href="${escapeHtml(fullImage)}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(displayImage)}" alt=""></a>` : ""}
-    ${data.extract ? `<p>${escapeHtml(data.extract)}</p>` : ""}
+    ${extractHtml}
   `;
 }
 
-async function loadWikipediaSummary(record, container) {
+async function loadWikipediaSummary(record, slots) {
   const title = await resolveWikipediaTitle(record);
   if (!title) {
-    container.innerHTML = "";
+    slots.body.innerHTML = "";
+    if (slots.subtitle) slots.subtitle.textContent = "";
     return;
   }
-  if (!container.isConnected) return; // panel moved on while the QID lookup above was in flight
+  if (!slots.body.isConnected) return; // panel moved on while the QID lookup above was in flight
   if (wikiSummaryCache.has(title)) {
-    renderWikipediaSummary(container, wikiSummaryCache.get(title));
+    renderWikipediaSummary(slots, wikiSummaryCache.get(title));
     return;
   }
   try {
@@ -555,11 +563,16 @@ async function loadWikipediaSummary(record, container) {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     wikiSummaryCache.set(title, data);
-    renderWikipediaSummary(container, data);
+    renderWikipediaSummary(slots, data);
   } catch {
     wikiSummaryCache.set(title, null);
-    container.innerHTML = "";
+    slots.body.innerHTML = "";
+    if (slots.subtitle) slots.subtitle.textContent = "";
   }
+}
+
+function wikiSummarySlots(panel) {
+  return { subtitle: panel.querySelector("[data-wiki-subtitle]"), body: panel.querySelector("[data-wiki]") };
 }
 
 function renderPeriodDetails(period, ctx) {
@@ -580,6 +593,7 @@ function renderPeriodDetails(period, ctx) {
   explorePanel.innerHTML = `<button class="detail-close" type="button" aria-label="Close details">×</button>
     <p class="detail-kicker">${escapeHtml(TIER_KICKER[period.tier] || "Period")}</p>
     <h2>${escapeHtml(period.canonical_name)}</h2>
+    <p class="wiki-subtitle" data-wiki-subtitle></p>
     <div class="detail-actions"><button class="zoom-explore" type="button">Zoom to this</button><button class="reset-explore" type="button">Full timeline</button></div>
     <div class="wiki-summary" data-wiki></div>
     <p>${escapeHtml(period.notes || "Sourced chronological context; this record is not a polity.")}</p>
@@ -601,7 +615,7 @@ function renderPeriodDetails(period, ctx) {
     ${editControlsHtml("period", period, null, ctx)}`;
 
   wireExplorePanel(ctx, period.start, period.end, period.detail_of || period.id);
-  loadWikipediaSummary(period, explorePanel.querySelector("[data-wiki]"));
+  loadWikipediaSummary(period, wikiSummarySlots(explorePanel));
   wireEditControls("period", period, ctx, (updated) => renderPeriodDetails(updated, ctx));
   explorePanel.querySelectorAll("[data-explore-period-id]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -630,6 +644,7 @@ function renderEventDetails(event, ctx) {
   explorePanel.innerHTML = `<button class="detail-close" type="button" aria-label="Close details">×</button>
     <p class="detail-kicker">Event</p>
     <h2>${escapeHtml(event.canonical_name)}</h2>
+    <p class="wiki-subtitle" data-wiki-subtitle></p>
     <div class="detail-actions"><button class="zoom-explore" type="button">Zoom to this</button><button class="reset-explore" type="button">Full timeline</button></div>
     <div class="wiki-summary" data-wiki></div>
     <p>${escapeHtml(event.notes || "A dated historical event.")}</p>
@@ -642,7 +657,7 @@ function renderEventDetails(event, ctx) {
     </dl>`;
 
   wireExplorePanel(ctx, event.year, event.year, detailOfTargets[0] || event.id);
-  loadWikipediaSummary(event, explorePanel.querySelector("[data-wiki]"));
+  loadWikipediaSummary(event, wikiSummarySlots(explorePanel));
   explorePanel.querySelectorAll("[data-explore-period-id]").forEach((button) => {
     button.addEventListener("click", () => {
       const target = ctx.periodsById.get(button.dataset.explorePeriodId);
@@ -679,6 +694,7 @@ function renderPolityDetails(polity, ctx) {
 
   explorePanel.innerHTML = `<button class="detail-close" type="button" aria-label="Close details">×</button>
     <h2>${escapeHtml(polity.canonical_name)}</h2>
+    <p class="wiki-subtitle" data-wiki-subtitle></p>
     <div class="detail-actions"><button class="zoom-explore" type="button">Zoom to this</button><button class="reset-explore" type="button">Full timeline</button></div>
     <div class="wiki-summary" data-wiki></div>
     <p>${escapeHtml(descriptionText)}</p>
@@ -706,7 +722,7 @@ function renderPolityDetails(polity, ctx) {
     ${editControlsHtml("polity", polity, ctx.geographyOptions, ctx)}`;
 
   wireExplorePanel(ctx, polity.start, polity.end ?? ctx.domainEnd, polity.detail_of || polity.id);
-  loadWikipediaSummary(polity, explorePanel.querySelector("[data-wiki]"));
+  loadWikipediaSummary(polity, wikiSummarySlots(explorePanel));
   wireEditControls("polity", polity, ctx, (updated) => renderPolityDetails(updated, ctx));
   explorePanel.querySelectorAll("[data-explore-polity-id]").forEach((button) => {
     button.addEventListener("click", () => {
