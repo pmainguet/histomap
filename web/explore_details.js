@@ -699,7 +699,7 @@ function renderEventDetails(event, ctx) {
 
 function renderPolityDetails(polity, ctx) {
   const { periodsById, politiesById, periodLinks } = ctx;
-  const description = polity.text?.short_adult_en || polity.text?.long_en || polity.notes;
+  const description = polity.text?.long_en || polity.notes;
   const descriptionText = description || "Draft record; description pending review.";
   const aliases = [polity.names?.aliases_en?.replaceAll(" | ", ", "), polity.names?.fr].filter(Boolean).join("; ");
   const countries = (polity.geography?.present_countries || []).map((code) => exploreCountryNames.of(code) || code);

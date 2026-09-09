@@ -42,8 +42,10 @@ class ProminenceComponentsTests(unittest.TestCase):
         self.assertEqual(components["historical_evidence"], 20)
         self.assertEqual(components["relationship_centrality"], 15)
         self.assertEqual(components["longevity"], 8)
-        self.assertEqual(components["editorial_work"], 7)
-        self.assertEqual(components["total"], 100)
+        # Cap dropped from 7 to 5 (ROADMAP.md item 1, 9 September 2026):
+        # the +2 icon bonus that used to fill the gap is retired.
+        self.assertEqual(components["editorial_work"], 5)
+        self.assertEqual(components["total"], 98)
 
     def test_uncertainty_and_aggregate_penalties_are_explicit(self) -> None:
         certain = prominence_components(sitelinks=50, start=1000, end=1500)

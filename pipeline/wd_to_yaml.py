@@ -134,8 +134,7 @@ def to_document(row: dict, polity_id: str) -> dict:
         "weight_by_era": {start: 5},
         "weight_imputed": True,
         "eligibility": "review",
-        "icon": None,
-        "text": {"short_child_en": "", "short_adult_en": "", "long_en": ""},
+        "text": {"long_en": ""},
         "notes": "Automatically generated from Wikidata; requires review.",
         "sources": ["wikidata"],
     }

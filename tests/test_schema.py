@@ -2,7 +2,7 @@ import unittest
 
 from pydantic import ValidationError
 
-from schema import Event, Period, Polity
+from schema import Event, Period, Polity, Text
 
 
 def period_kwargs(**overrides: object) -> dict:
@@ -166,6 +166,31 @@ class VisibilityTierRetirementTests(unittest.TestCase):
     def test_visibility_tier_enum_no_longer_exported(self) -> None:
         import schema
         self.assertFalse(hasattr(schema, "VisibilityTier"))
+
+
+class IconAndReadingLevelRetirementTests(unittest.TestCase):
+    # ROADMAP.md item 1 (9 September 2026) -- icon and the adult/child
+    # reading-level split (Text.short_child_en/short_adult_en) retired:
+    # neither ever had a display surface in /explore. Text.long_en is the
+    # one surviving free-text field.
+    def test_icon_field_no_longer_accepted(self) -> None:
+        polity = Polity(**polity_kwargs(icon="roman_eagle"))
+        self.assertFalse(hasattr(polity, "icon"))
+        self.assertNotIn("icon", Polity.model_fields)
+
+    def test_short_child_en_field_no_longer_accepted(self) -> None:
+        text = Text(short_child_en="A powerful kingdom.")
+        self.assertFalse(hasattr(text, "short_child_en"))
+        self.assertNotIn("short_child_en", Text.model_fields)
+
+    def test_short_adult_en_field_no_longer_accepted(self) -> None:
+        text = Text(short_adult_en="A Bronze Age empire.")
+        self.assertFalse(hasattr(text, "short_adult_en"))
+        self.assertNotIn("short_adult_en", Text.model_fields)
+
+    def test_long_en_still_accepted(self) -> None:
+        text = Text(long_en="A longer description.")
+        self.assertEqual(text.long_en, "A longer description.")
 
 
 class PeriodPromotedFromTests(unittest.TestCase):

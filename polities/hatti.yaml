@@ -18,13 +18,9 @@ end_confidence: low
 weight_by_era:
   -1649: 5
 weight_imputed: true
-icon: null
 text:
-  short_child_en: A powerful Bronze Age kingdom centered in Anatolia, in present-day
-    Turkey.
-  short_adult_en: A Bronze Age Anatolian empire centered at Hattusa that rivalled
-    Egypt and controlled much of Anatolia and northern Syria.
-  long_en: ''
+  long_en: A Bronze Age Anatolian empire centered at Hattusa that rivalled Egypt
+    and controlled much of Anatolia and northern Syria.
 notes: Canonical political record uses Wikidata Q4496560 (Hatti); the English Wikipedia
   article is attached editorially because it presents the polity as the Hittite Empire.
 sources:

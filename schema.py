@@ -110,8 +110,15 @@ class ExternalIds(BaseModel):
 
 
 class Text(BaseModel):
-    short_child_en: str = ""
-    short_adult_en: str = ""
+    # ROADMAP.md item 1 (9 September 2026) -- short_child_en/short_adult_en
+    # (the adult/child reading-level split) retired: the toggle that would
+    # have shown short_child_en lived in the old "/" timeline, retired 31
+    # August 2026, and was never ported to /explore, so short_child_en had
+    # no display surface at all; short_adult_en's one live use (the detail
+    # panel's description fallback) is now long_en's job instead. Extra
+    # keys on old YAML are silently dropped by Pydantic's extra="ignore",
+    # same as every other retired field this session (parent,
+    # visibility_tier, ...) -- no mass YAML rewrite needed.
     long_en: str = ""
 
 
@@ -227,7 +234,10 @@ class Polity(BaseModel):
     prominence_score: float = Field(default=0, ge=0, le=100)
     prominence_components: dict[str, float] = Field(default_factory=dict)
     eligibility: Eligibility = Eligibility.review
-    icon: str | None = None
+    # ROADMAP.md item 1 (9 September 2026) -- retired: never rendered
+    # anywhere in /explore (grepped web/*.js, zero references), and only
+    # one polity in the whole dataset ever had it set. Extra keys on old
+    # YAML are silently dropped by extra="ignore".
     text: Text = Field(default_factory=Text)
     notes: str = ""
     sources: list[str] = Field(default_factory=list)

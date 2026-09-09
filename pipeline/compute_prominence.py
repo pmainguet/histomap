@@ -56,7 +56,10 @@ def prominence_components(
             + 3 * max(0, transition_count),
         ),
         "longevity": min(8, 2.5 * math.log10(1 + duration)),
-        "editorial_work": min(7, max(0, editorial_score)),
+        # Cap dropped from 7 to 5 (9 September 2026): the +2 icon
+        # component that used to fill the gap is retired, so 5 (the
+        # long_en bonus alone) is now the real ceiling.
+        "editorial_work": min(5, max(0, editorial_score)),
         "type_uncertainty_penalty": -10 if entity_type_confidence == "low" else 0,
         "date_uncertainty_penalty": -2.5
         * sum(value in {"low", "legendary"} for value in (start_confidence, end_confidence)),
@@ -133,7 +136,10 @@ def compute(
         authority = (12 if "seshat" in sources else 0) + (4 if "hyde" in sources else 0) + (4 if "maddison" in sources else 0)
         evidence = 20 if document.get("weight_by_era") and not document.get("weight_imputed", True) else 8 if {"hyde", "maddison"} & sources else 0
         text = document.get("text") or {}
-        editorial = (5 if text.get("short_adult_en") or text.get("long_en") else 0) + (2 if document.get("icon") else 0)
+        # ROADMAP.md item 1 (9 September 2026) -- the +2 icon bonus is
+        # gone along with the field itself; short_adult_en folded into
+        # long_en (see schema.py's Text model).
+        editorial = 5 if text.get("long_en") else 0
         degree = len(document.get("relationships") or []) + inbound[document["id"]]
         aggregate = "Q133250" in set((direct_types.get(qid) or {}).get("types", []))
         components = prominence_components(
