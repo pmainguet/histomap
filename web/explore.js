@@ -133,13 +133,32 @@ function wireCreateEntityDialog(triggerButton, geographyOptions, { onCreated }) 
   });
 }
 
+// Brings a just-zoomed-to entity into view and puts a momentary glow on its
+// own band (see .hierarchy-band-zoomed in styles.css). zoomToRange alone
+// only changes the chart's date range -- it doesn't scroll the page, so a
+// searched/deep-linked entity can render off-screen, or blend into every
+// other band at that same tier once it is on screen. `kind:id` was stamped
+// onto the band's own data-band-id attribute at draw time (see bandRect in
+// explore_timeline.js), so no separate id->element map is needed here.
+function scrollToAndHighlightBand(container, kind, id) {
+  const band = container.querySelector(`[data-band-id="${kind}:${id}"]`);
+  if (!band) return; // off the currently visible geo filter/group-by, or hidden entirely -- nothing to scroll to
+  band.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  // Restart the glow (a CSS animation) even if it's still fading from a
+  // previous jump to this same band -- remove, force a reflow, re-add.
+  band.classList.remove("hierarchy-band-zoomed");
+  void band.getBoundingClientRect();
+  band.classList.add("hierarchy-band-zoomed");
+  band.addEventListener("animationend", () => band.classList.remove("hierarchy-band-zoomed"), { once: true });
+}
+
 // ROADMAP.md item: a search field next to the top controls -- select a
 // result to zoom the timeline to it and open its side panel. Searches
 // polities and periods in parallel (same dual-search pattern
 // wireDetailOfEditor already uses in explore_details.js); events aren't
 // searched here since there's no /api/events/search endpoint (the events
 // review queue and the shared Events lane are the ways to reach one today).
-function wireEntitySearch(detailCtx, zoomToRange, onSelect) {
+function wireEntitySearch(detailCtx, zoomAndSelect) {
   const input = document.querySelector("#entity-search");
   const resultsEl = document.querySelector(".entity-search-results");
   if (!input || !resultsEl) return;
@@ -180,8 +199,7 @@ function wireEntitySearch(detailCtx, zoomToRange, onSelect) {
         const kind = button.dataset.entitySearchKind;
         const record = kind === "polity" ? detailCtx.politiesById.get(id) : detailCtx.periodsById.get(id);
         if (!record) return;
-        zoomToRange(record.start, record.end ?? detailCtx.domainEnd, record.detail_of || id);
-        onSelect(kind, id);
+        zoomAndSelect(kind, id, record.start, record.end ?? detailCtx.domainEnd, record.detail_of || id);
         input.value = "";
         closeResults();
       });
@@ -301,6 +319,15 @@ async function main() {
   const onSelect = (kind, id) => {
     if (detailCtx) showExploreDetails(kind, id, detailCtx);
   };
+  // Every "jump straight to one entity" entry point (search, the ?entity=
+  // deep link) needs the same three steps in the same order -- zoom, open
+  // its panel, then scroll/glow its band -- so they share one place to do
+  // it instead of three near-identical call sequences.
+  const zoomAndSelect = (kind, id, start, end, expandId) => {
+    zoomToRange(start, end, expandId);
+    onSelect(kind, id);
+    scrollToAndHighlightBand(container, kind, id);
+  };
 
   // The "Build timeline" button (review_build.js, shared with /reviews) is
   // hidden until the side panel actually saves something -- explore_tree.json
@@ -361,13 +388,11 @@ async function main() {
       const record = detailCtx.politiesById.get(entityId) || detailCtx.periodsById.get(entityId);
       if (record) {
         const kind = detailCtx.politiesById.has(entityId) ? "polity" : "period";
-        zoomToRange(record.start, record.end ?? fullTree.axis.domain_end, record.detail_of || entityId);
-        onSelect(kind, entityId);
+        zoomAndSelect(kind, entityId, record.start, record.end ?? fullTree.axis.domain_end, record.detail_of || entityId);
       } else {
         const event = detailCtx.eventsById.get(entityId);
         if (event) {
-          zoomToRange(event.year, event.year, (event.detail_of || [])[0] || entityId);
-          onSelect("event", entityId);
+          zoomAndSelect("event", entityId, event.year, event.year, (event.detail_of || [])[0] || entityId);
         }
       }
     }
@@ -379,7 +404,7 @@ async function main() {
         revealBuildButton();
       },
     });
-    wireEntitySearch(detailCtx, zoomToRange, onSelect);
+    wireEntitySearch(detailCtx, zoomAndSelect);
     showPolitiesInput.addEventListener("change", draw);
     groupBySelect.addEventListener("change", () => {
       updateGeoFilterOptions();

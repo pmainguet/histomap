@@ -152,8 +152,12 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem)
 .detail-raw-textarea { box-sizing: border-box; width: 100%; margin-top: .5rem; padding: .5rem; font: .74rem/1.35 ui-monospace, "SF Mono", Consolas, monospace; background: white; border: 1px solid var(--rule); resize: vertical; }
 .detail-edit-status { margin: .5rem 0 0; color: var(--ink-faint); }
 .detail-edit-status.is-error { color: #8c2d2d; }
-.detail-backdrop { position: fixed; z-index: 19; inset: 0; display: block; width: 100%; height: 100%; padding: 0; background: rgb(39 37 31 / 28%); border: 0; opacity: 0; visibility: hidden; transition: opacity .22s ease, visibility 0s linear .22s; }
-.detail-backdrop.is-open { opacity: 1; visibility: visible; transition-delay: 0s; }
+/* Invisible full-viewport click-catcher only -- no dark tint, so whatever's
+   behind the drawer (the chart, including a just-zoomed-to entity) stays
+   fully visible while the panel is open. Still needs `visibility` toggled
+   so it doesn't swallow clicks while the panel is closed. */
+.detail-backdrop { position: fixed; z-index: 19; inset: 0; display: block; width: 100%; height: 100%; padding: 0; background: transparent; border: 0; visibility: hidden; }
+.detail-backdrop.is-open { visibility: visible; }
 .entity-link { display: inline; padding: 0; color: #8c422d; background: none; border: 0; font: inherit; text-align: left; text-decoration: underline; }
 .detail-links { font: .78rem/1.7 system-ui, sans-serif; }
 .detail-links a { color: #8c422d; }
@@ -312,8 +316,9 @@ kbd { padding: .1rem .3rem; color: #27251f; background: white; border: 1px solid
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .detail-drawer, .detail-backdrop { transition: none; }
+  .detail-drawer { transition: none; }
   .button-spinner { animation-duration: 1.5s; }
+  .hierarchy-band-zoomed { animation: none; filter: drop-shadow(0 0 6px rgb(140 66 45 / 70%)); }
 }
 
 .explore-intro { padding: 1.5rem clamp(1rem, 4vw, 3.5rem) 0; }
@@ -343,6 +348,15 @@ kbd { padding: .1rem .3rem; color: #27251f; background: white; border: 1px solid
    here for a different, more visible distinction instead. */
 .hierarchy-band-polity { fill: var(--ink-faint); fill-opacity: .28; }
 .hierarchy-band-civilization { fill: #3d6b66; fill-opacity: .3; stroke-dasharray: 3 2; }
+/* Momentary marker for whatever band a search (or deep link) just scrolled
+   the chart to -- a fading glow on top of the band's own tier color, not a
+   replacement for it, so its normal color/border still read once the glow
+   is gone. Cleared from the element a couple seconds after it's applied. */
+.hierarchy-band-zoomed { stroke: #8c422d; stroke-width: 2.5px; animation: hierarchy-band-zoomed-glow 1.8s ease-out; }
+@keyframes hierarchy-band-zoomed-glow {
+  0% { filter: drop-shadow(0 0 7px rgb(140 66 45 / 90%)); }
+  100% { filter: drop-shadow(0 0 0 rgb(140 66 45 / 0%)); }
+}
 /* ROADMAP.md item 5 / docs/plans/2026-09-07-events-lane-design.md: a point
    marker, not a band -- an amber accent distinct from every other row's
    color so an event reads as its own kind of thing on the timeline. */

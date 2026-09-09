@@ -39,6 +39,10 @@ function bandRect(svg, { x, y, width, height, cls, title, label, onZoom, fill })
   if (fill) rect.style.fill = fill;
   if (onZoom) {
     rect.classList.add("zoomable");
+    // kind:id lets explore.js find this exact band again after a re-render
+    // (e.g. to scroll to it and flash a highlight once a search jumps here)
+    // without needing its own parallel id->element map.
+    rect.dataset.bandId = `${onZoom.kind}:${onZoom.id}`;
     // Click opens the detail panel (kind/id identify which record), not an
     // immediate zoom -- matches "/"'s pattern, where zoom is a button
     // inside the panel, not the click itself. See explore_details.js.
@@ -748,6 +752,7 @@ function drawEventsRow(svg, scale, lanes, y, laneHeight, onZoom) {
       const circle = svgEl("circle", {
         cx, cy: laneY, r: EVENT_MARKER_RADIUS, class: "hierarchy-event-marker zoomable",
       });
+      circle.dataset.bandId = `event:${event.id}`;
       const titleEl = svgEl("title");
       titleEl.textContent = `${event.canonical_name} (${formatYear(event.year)})`;
       circle.append(titleEl);
