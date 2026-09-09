@@ -84,8 +84,6 @@ grouping/coloring — it superseded the four-option toggle and curated/heuristic
 described in earlier drafts of this section.
 
 **Known, accepted limitations:**
-- `MAX_POLITIES_PER_REGION = 15` caps each geography bucket's shown bands with no visual
-  "+N more" affordance — the true count is only visible via tooltip.
 - Most of `explore_tree.json`'s era/period/polity placements are heuristic (geography+date
   overlap), not curated — `period_links.yaml`/`broader_periods` coverage is still thin. This is
   by design (the alternative was an empty page) but means placement quality varies.
@@ -2614,3 +2612,36 @@ already get a real, dynamic Wikipedia description + image for free -- hand-autho
 for them would just duplicate what the panel already shows live. Its "transitions" half (only
 5 `Transition` records exist) was judged not worth reviving as a standalone task on its own;
 if richer polity-succession data is wanted later it should be its own scoped item.
+
+### `/explore` search/deep-link now reveals what it zooms to — 9 September 2026
+
+Selecting an entity via search (or the `?entity=` deep link) zoomed the chart to its date range
+and opened its detail panel, but the target could still end up effectively invisible: off-screen
+(no scroll), dimmed behind the panel's backdrop, hidden by the Polities dropdown's own
+"Show Main"/"Hide" state, only one `detail_of` level auto-expanded (a 2+-level chain like
+Kingdom of Castile -> Crown of Castile -> Hispanic Monarchy left the deeper target's own
+container collapsed), or dropped entirely by the old 15-per-geography-bucket declutter cap.
+Fixed all five, live-verified in a real browser:
+
+- `zoomToRange` (the one shared choke point behind search, the `?entity=` deep link, and the
+  detail panel's own "Zoom to this" button) now forces the Polities dropdown back to "Show All"
+  whenever it's revealing a specific entity, and walks the *full* `detail_of` ancestor chain
+  (not just the immediate parent) to auto-expand every container along the way.
+- Every clickable band and event marker now carries `data-band-id="<kind>:<id>"`, letting
+  `web/explore.js`'s new `scrollToAndHighlightBand()` find the just-zoomed-to entity and
+  `scrollIntoView` it, plus flash a momentary glow (`.hierarchy-band-zoomed`, reusing the
+  existing `#8c422d` accent) on its border.
+- `.detail-backdrop` no longer dims the chart while the panel is open — it's now an invisible
+  full-viewport click-catcher only, so whatever's behind the drawer (including a just-scrolled-to
+  entity) stays fully visible.
+- The old 15-per-geography-bucket cap (`MAX_POLITIES_PER_REGION`, ex-Period/Polities/
+  Civilizations rows alike) is removed outright — it silently dropped anything past the top 15
+  by prominence with no way to ever see it again (found live via Kingdom of France, invisible
+  under "Show All" in a crowded medieval-Europe bucket). "Show Main" (cap of 1) is unaffected —
+  a deliberate, opt-in declutter mode, not the same thing as the blanket cap that was removed.
+  Confirmed live: the full unzoomed timeline now renders 2,319 polity bands under "Show All"
+  (was capped far lower before), "Show Main" still correctly holds to one per bucket (22 bands).
+
+A polity that's still genuinely absent from the currently zoomed date range, or filtered out by
+the "Filter to" continent/country control, still has nothing to scroll to -- `scrollToAndHighlightBand`
+no-ops safely in that case, same as before.

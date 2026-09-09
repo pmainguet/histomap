@@ -295,7 +295,13 @@ function drawTierLabel(svg, text, yStart, yEnd) {
 
 const POLITY_LANE_HEIGHT = 18;
 const REGION_HEADER_HEIGHT = 16;
-const MAX_POLITIES_PER_REGION = 15;
+// "Show Main" (the Polities dropdown) declutters a bucket down to just its
+// single most prominent entry -- a deliberate, opt-in view, unlike the old
+// blanket 15-per-bucket cap every geography bucket used to get regardless
+// of dropdown choice (removed 9 September 2026: it silently dropped
+// anything past the top 15 by prominence with no way to ever see it again,
+// e.g. Kingdom of France in a crowded Europe/medieval bucket).
+const SHOW_MAIN_MAX_PER_BUCKET = 1;
 
 // Detail-of reveal (ROADMAP.md item 0 / docs/plans/2026-09-01-detail-of-merge-design.md):
 // a Polities-row or Period-row item carrying `details` (see
@@ -607,7 +613,7 @@ function geoClusterSort(a, b) {
 // Civilizations & Cultures rows alike -- all three entry types carry the
 // same geography fields. Computed once and reused for both the
 // height-measurement pass and the draw pass, so the two can't diverge.
-function continentGroupedLayout(items, scale, laneHeight, groupBy, isExpanded = () => false, maxPerBucket = MAX_POLITIES_PER_REGION) {
+function continentGroupedLayout(items, scale, laneHeight, groupBy, isExpanded = () => false, maxPerBucket = Infinity) {
   const getRange = labelAwareFootprint(scale, (item) => itemDisplayLabel(item, groupBy));
   const capped = cappedByBucket(items, geoBucketKey, maxPerBucket);
   const buckets = new Map();
@@ -649,7 +655,7 @@ function continentGroupedLayout(items, scale, laneHeight, groupBy, isExpanded = 
 // sub-grouping by countryLaneKey within each bucket, so e.g. Jomon and
 // Yayoi land in the same "Japan" sub-group under "East Asia". Shared by the
 // Period, Polities, and Civilizations & Cultures rows.
-function geoCountryGroupedLayout(items, scale, laneHeight, isExpanded = () => false, maxPerBucket = MAX_POLITIES_PER_REGION) {
+function geoCountryGroupedLayout(items, scale, laneHeight, isExpanded = () => false, maxPerBucket = Infinity) {
   const getRange = labelAwareFootprint(scale);
   const capped = cappedByBucket(items, geoBucketKey, maxPerBucket);
   const geoBuckets = new Map();
@@ -693,11 +699,11 @@ function flatLaneLayout(items, scale, laneHeight, sortFn = (a, b) => a.start - b
 // Dispatches to the right layout function for the current groupBy mode.
 // `groupBy` is ignored (always flat) when the caller passes "none" or
 // omits it, matching the Era row's own always-flat behavior. `maxPerBucket`
-// -- ROADMAP.md item: the Polities dropdown's "Show Main" option -- caps
-// each geography bucket to its single most prominent entry instead of the
-// usual MAX_POLITIES_PER_REGION (15); only meaningful for continent/country
-// grouping (there's no bucket to cap against under "none").
-function groupedLayoutFor(items, scale, laneHeight, groupBy, isExpanded = () => false, maxPerBucket = MAX_POLITIES_PER_REGION) {
+// -- the Polities dropdown's "Show Main" option -- caps each geography
+// bucket to its single most prominent entry instead of showing every
+// matching item; only meaningful for continent/country grouping (there's
+// no bucket to cap against under "none").
+function groupedLayoutFor(items, scale, laneHeight, groupBy, isExpanded = () => false, maxPerBucket = Infinity) {
   if (groupBy === "continent") return continentGroupedLayout(items, scale, laneHeight, groupBy, isExpanded, maxPerBucket);
   if (groupBy === "country") return geoCountryGroupedLayout(items, scale, laneHeight, isExpanded, maxPerBucket);
   return flatLaneLayout(items, scale, laneHeight, geoClusterSort, isExpanded);
@@ -859,10 +865,10 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   // visible era subset changes.
   const {
     groupBy = "continent",
-    // ROADMAP.md item: "all" | "main" | "hide" -- was a plain boolean
-    // (show/hide); "main" caps each geography bucket to its single most
-    // prominent polity via groupedLayoutFor's maxPerBucket, same idea as
-    // the existing MAX_POLITIES_PER_REGION declutter cap, just tighter.
+    // "all" | "main" | "hide" -- was a plain boolean (show/hide); "main"
+    // caps each geography bucket to its single most prominent polity via
+    // groupedLayoutFor's maxPerBucket (SHOW_MAIN_MAX_PER_BUCKET); "all"
+    // shows every matching polity, uncapped.
     showPolities = "all", geoFilter = null, eraColorMap = buildEraColorMap(tree),
     // Detail-of reveal state (see DETAIL_LINE_HEIGHT above) -- owned by the
     // caller (explore.js), not this render function, so it survives across
@@ -927,7 +933,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   const politiesItems = showPolities !== "hide" ? applyGeoFilter(allPolitiesFlat(tree), groupBy, geoFilter) : [];
   const politiesLayout = groupedLayoutFor(
     politiesItems, scale, polityLaneHeight, groupBy, isExpanded,
-    showPolities === "main" ? 1 : MAX_POLITIES_PER_REGION,
+    showPolities === "main" ? SHOW_MAIN_MAX_PER_BUCKET : Infinity,
   );
 
   // Events lane: a point marker, not a band, so its lane-packing footprint

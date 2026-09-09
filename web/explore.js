@@ -133,6 +133,22 @@ function wireCreateEntityDialog(triggerButton, geographyOptions, { onCreated }) 
   });
 }
 
+// Walks a detail_of chain from `id` up through every ancestor container --
+// some are 2+ levels deep (e.g. Kingdom of Castile -> Crown of Castile ->
+// Hispanic Monarchy) -- so zoomToRange can auto-expand the whole chain
+// instead of only the immediate parent, which would leave a deeply nested
+// target's own container collapsed (and so not even in the DOM to scroll
+// or highlight). detail_of can point at either a polity or a period.
+function detailOfChain(id, detailCtx) {
+  const chain = [id];
+  let current = detailCtx?.politiesById.get(id) || detailCtx?.periodsById.get(id);
+  while (current?.detail_of) {
+    chain.push(current.detail_of);
+    current = detailCtx.politiesById.get(current.detail_of) || detailCtx.periodsById.get(current.detail_of);
+  }
+  return chain;
+}
+
 // Brings a just-zoomed-to entity into view and puts a momentary glow on its
 // own band (see .hierarchy-band-zoomed in styles.css). zoomToRange alone
 // only changes the chart's date range -- it doesn't scroll the page, so a
@@ -253,10 +269,16 @@ async function main() {
 
   const zoomToRange = (start, end, expandId) => {
     zoomRange = padded(start, end);
-    // Auto-open the enclosing panel for whatever's being zoomed to -- a
-    // detail_of entity's container id (see explore_details.js callers), or
-    // harmlessly an id with no details at all (no-op in that case).
-    if (expandId) expandedIds.add(expandId);
+    // Auto-open the enclosing panel(s) for whatever's being zoomed to -- the
+    // whole detail_of ancestor chain up from a container id (see
+    // explore_details.js callers), or harmlessly an id with no details at
+    // all (a one-element chain, no-op). Also drops "Show Main"/"Hide" back
+    // to "Show All" -- revealing what was just zoomed to is the whole point
+    // of this call, so the Polities dropdown can't leave it invisible.
+    if (expandId) {
+      if (showPolitiesInput.value !== "all") showPolitiesInput.value = "all";
+      for (const id of detailOfChain(expandId, detailCtx)) expandedIds.add(id);
+    }
     draw();
   };
 
