@@ -11,11 +11,13 @@ it over years. Hobby project, long-lived, good data.
 review, hand-curate only what genuinely needs human judgment.
 
 See [STATUS.md](STATUS.md) for current implementation status, phase-by-phase build narrative, and
-dataset metrics; [ROADMAP.md](ROADMAP.md) for remaining work and open design questions; and
-[ONTOLOGY.md](ONTOLOGY.md) for the chronological (macro chapter → regional era → period → polity →
-event), documentary-status (prehistory/history), and geographic classification the dataset is
-organized around — read it before adding new period or navigation structure. Its rollout is
-tracked in [docs/plans/2026-08-29-period-ontology.md](docs/plans/2026-08-29-period-ontology.md).
+dataset metrics; and [ONTOLOGY.md](ONTOLOGY.md) for the chronological (macro chapter → regional
+era → period → polity → event), documentary-status (prehistory/history), and geographic
+classification the dataset is organized around — read it before adding new period or navigation
+structure. Its rollout is tracked in
+[docs/plans/2026-08-29-period-ontology.md](docs/plans/2026-08-29-period-ontology.md). There is no
+`ROADMAP.md` right now — it was deleted 9 September 2026 once its list was fully cleared; start a
+fresh one whenever the next batch of work is scoped.
 
 ## Quickstart
 
@@ -48,7 +50,7 @@ already does this for you since it depends on `build`. The editorial review work
 (consolidation, entity-type, subdivision-parent) are at <http://127.0.0.1:8000/reviews>. The
 Seshat-matching review page was retired 31 August 2026 once its queue emptied out
 (`pipeline/reconcile.py` and `pipeline/apply_review_decisions.py` stay as scripts/API hooks for
-whenever new source data needs reconciling again — see ROADMAP.md). The server binds only to
+whenever new source data needs reconciling again). The server binds only to
 localhost and exposes a fixed allowlist of pipeline actions.
 
 ## Windows without `make`
@@ -300,12 +302,11 @@ histomap/
 ├── polities/                   # canonical YAML, committed
 │   ├── achaemenid_empire.yaml
 │   └── ...
-├── transitions.yaml            # manual splits/merges
-├── icons/                      # SVG icons for top ~50 polities
-├── schema.py                   # Pydantic validation
-├── build.py                    # YAML → data.json
-├── web/                        # static site (Observable Plot or D3)
-└── print/                      # poster export pipeline
+├── transitions.yaml             # manual splits/merges
+├── schema.py                    # Pydantic validation
+├── build.py                     # YAML → data.json/periods.json/events.json/transitions.json
+├── web/                         # static site (vanilla SVG + JS, no framework)
+└── pipeline/poster.py           # printable poster SVG (ROADMAP item 3b, shipped as v1)
 ```
 
 ---
@@ -322,7 +323,7 @@ external_ids:
   wikidata: Q47222
   wikipedia_en: https://en.wikipedia.org/wiki/Achaemenid_Empire
   seshat: IrAchae
-parent: median_empire             # what it succeeded
+detail_of: median_empire          # if this is a bounded phase of another record
 successors: [macedonian_empire]
 geography:
   continents: [asia]
@@ -340,11 +341,8 @@ weight_by_era:                    # sparse; interpolate between
   -400: 7
   -350: 5
 weight_imputed: false             # true if computed from regional average
-icon: persian_lion
 text:
-  short_child_en: "The first big Persian empire. Alexander the Great defeated it."
-  short_adult_en: "Persian empire founded by Cyrus II, stretching from the Indus to Thrace."
-  long_en: ""                     # written later
+  long_en: "Persian empire founded by Cyrus II, stretching from the Indus to Thrace."
 notes: "Wikidata 550 BCE; Seshat 559 BCE (Cyrus's accession)."
 sources:
   - wikidata
@@ -363,13 +361,12 @@ just "asia") is superseded by `Geography.historical_regions` — see `ONTOLOGY.m
 
 ## What stays manual (and is fine)
 
-Three things need human judgment regardless of automation:
-
-1. **Splits and merges** — ~50 transition decisions for the whole project.
-2. **Iconography** — pick icons for the top ~50 polities; leave the rest unlabeled.
-3. **Reading-level text polish** — skim and tweak LLM output for the top ~50.
-
-Total ongoing manual time after Phase 5: a few hours per year.
+Splits and merges need human judgment regardless of automation — curating `Transition` records
+(only a handful decided so far) for the historically-real splits/mergers/successions worth
+calling out explicitly, beyond what the plain `successors` list already captures. Icon
+iconography and reading-level text polish (originally planned here) were retired 9 September
+2026 — neither ever got a display surface in `/explore`, and the same "richer content per
+entity" goal is now served live by the Wikipedia summary shown on every entity's panel.
 
 ---
 

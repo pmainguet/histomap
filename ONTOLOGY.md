@@ -117,6 +117,19 @@ A period MAY skip a tier and link straight to a coarser one — e.g. a period wi
 regional era authored yet can point `broader_periods` straight at its macro chapter.
 Sparse-but-correct beats forcing a fake intermediate node.
 
+### Epoch lane: a flag, not a fifth tier (added 8 September 2026)
+
+A geological epoch (Holocene, and its sub-epochs Greenlandian/Northgrippian/Meghalayan) spans
+*multiple* macro chapters at once — it can't sit at tier 1 or 2 the way `broader_periods`
+chaining expects, since chaining assumes a period nests inside exactly one coarser parent.
+Rather than adding a fifth `Period.tier` value for this one case, an epoch-lane record stays a
+plain `tier: period` and sets `Period.epoch_lane: bool = True` instead — `build_explore_tree.py`
+pulls every `epoch_lane` record out into its own top-level `tree["epochs"]` list, rendered as
+its own lane above Chapter rather than nested under one. `epoch_lane` has no name-heuristic
+fallback (unlike `civilization_lane`): it and its first users (Holocene et al.) were introduced
+together, so there's no legacy data to infer it from. The sub-epochs still nest normally, via
+`detail_of` pointing at Holocene, same mechanism as any other detail_of child.
+
 ### `roman_republic` vs `roman_republic_period`: naming rule for dual concepts
 
 Some names genuinely refer to both a political entity and a conventional period (the

@@ -1,13 +1,16 @@
 # Histomap — Status
 
 Retrospective: what's implemented, current dataset metrics, and the phase-by-phase build
-narrative. For project context and how to run things, see [README.md](README.md); for what's
-next, see [ROADMAP.md](ROADMAP.md); for the classification system the dataset is organized
-around, see [ONTOLOGY.md](ONTOLOGY.md).
+narrative. For project context and how to run things, see [README.md](README.md); for the
+classification system the dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
+`ROADMAP.md` was deleted 9 September 2026 once its entire remaining list was cleared -- there
+is no open forward-looking backlog file right now; the phase table below is the closest thing
+to "what's left," and a new `ROADMAP.md` should be started fresh whenever the next batch of
+work is scoped, rather than resurrecting the old one.
 
 ---
 
-## Implementation status — 29 August 2026
+## Implementation status — 9 September 2026
 
 This section is the current source of truth. Detailed phase descriptions below retain design context,
 including targets that are not yet complete.
@@ -15,14 +18,14 @@ including targets that are not yet complete.
 | Phase | Status | Implemented | Still required |
 |---|---|---|---|
 | 0 — Foundations | **Mostly complete** | Pydantic schema, canonical YAML, Makefile, build and test suite | Install a pre-commit validation hook; optional Windows-native task wrapper |
-| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | Resolve 655 remaining type-eligibility review flags and 2,677 pending entity-type classifications; work down the consolidation queue (1,525 of 4,697 still pending, confirmed live 1 September 2026; an automated `suggested_decision` hint covers most of the active queue, now spanning same_entity/detail_of/candidate_detail_of/independent -- phase_of and part_of merged into detail_of the same day, see below); accept reviewed display groups; improve relationship review |
+| 1 — Wikidata backbone | **Partial** | Extraction, caching, direct-type rules (expanded 31 August 2026 -- see below), YAML import, prominence tiers, relationships, geography, entity-consolidation dashboard, subdivision-parent classification | 622 type-eligibility review flags and 2,709 pending entity-type classifications (counts refreshed live 8 September 2026 -- see below); of the latter, 2,588 (95%) are `pending_subdivision`, structurally blocked on a parent-polity-confirmation mechanism that no longer exists (`/subdivision-review` was removed 3 September 2026), not ordinary manual review -- only the remaining ~121 + the 622 eligibility flags are an actionable long tail; work down the consolidation queue (1,525 of 4,697 still pending, confirmed live 1 September 2026; an automated `suggested_decision` hint covers most of the active queue, now spanning same_entity/detail_of/candidate_detail_of/independent -- phase_of and part_of merged into detail_of the same day, see below); accept reviewed display groups; improve relationship review |
 | 2 — Seshat overlay | **Nearly done** | Equinox extraction, fuzzy/date/geography reconciliation, review report, 10/10 spot checks, reviewable "review" sub-queue fully cleared (258 decisions applied, confirmed live 31 August 2026) | 34 unmatched records still need an import-workflow decision (not currently an actionable queue); auto-match rate holds at 81/373 (21.7%), still short of the 60% target |
 | 3 — Weights | **Initial implementation** | Maddison/HYDE extraction, mapping, tunable coefficients, sparse era weights | Historical polygon allocation and measured area/complexity; the large majority of records are still imputed |
 | 4 — Review workflow | **Partial, in active use** | Three ongoing curation UIs (consolidation, entity-type, subdivision-parent) with provenance, score explanations, source links, saved decisions, pipeline actions; `/review` (Seshat reconciliation matching) retired 31 August 2026 once its queue emptied out -- `pipeline/reconcile.py`/`apply_review_decisions.py` stay as scripts/API hooks | Complete review pass across the three remaining queues; cost estimator and optional structured LLM proposal/diff workflow |
-| 5 — Editorial pass | **Started** | Validated transition model and 5 curated transitions | Roughly 45 more transitions, icons for top ~50, and polished adult/child copy for top ~50 |
-| 6 — Web view | **Mostly complete** | Unified FastAPI server; `/explore`'s hierarchy timeline (chapter/era/period/polity/civilizations-culture bands) is now the sole web view — `/` (the original flat geographic-lane timeline) was retired 31 August 2026, see below; geographic lane grouping, click-to-zoom, side-panel detail drawer with editing, sources, transitions view | `/`'s free-text search, visibility-tier/entity-type/period-kind filters, era presets/manual date-range input, relationship highlighting on the chart, swimlane collapse/expand, and keyboard-operable bands were deliberately not ported (accepted losses, see ROADMAP.md history) — no longer "still required" so much as "decided against"; reviewed collapsible display groups, linked map, stronger mobile/visual testing, authentication before public write access |
-| 7 — Print poster | **Not started** | — | A1/A0 SVG renderer, methodology/legend footer, PDF export and print test |
-| 8 — Grow with the kid | **Ongoing later work** | Adult/Child selector, extensible text model, period pilot (90 period records as of 31 August 2026 — down from 102 as period→polity conversions removed several) with role review | Substantial content, more reading levels, language UI, family-history layer |
+| 5 — Editorial pass | **Descoped** | Validated transition model and 5 curated transitions; a live check 8 September 2026 found all top-50-by-prominence polities already carry `external_ids.wikidata`, so the /explore side panel's Wikipedia summary (phase 6) gives all of them a real, dynamic description + image for free -- hand-authoring more is no longer judged worth it (see below) | Growing the Transition dataset beyond 5 records is possible but not currently planned as its own task |
+| 6 — Web view | **Mostly complete** | Unified FastAPI server; `/explore`'s hierarchy timeline (chapter/era/period/polity/civilizations-culture bands) is now the sole web view — `/` (the original flat geographic-lane timeline) was retired 31 August 2026, see below; geographic lane grouping, click-to-zoom, side-panel detail drawer with editing, sources, transitions view, and a Wikipedia summary (image + extract, resolved live from a Wikidata QID or direct URL) on every entity's panel (8 September 2026) | `/`'s free-text search, visibility-tier/entity-type/period-kind filters, era presets/manual date-range input, relationship highlighting on the chart, swimlane collapse/expand, and keyboard-operable bands were deliberately not ported (accepted losses) — no longer "still required" so much as "decided against"; reviewed collapsible display groups, linked map (own project, not yet started), stronger mobile/visual testing, authentication before public write access |
+| 7 — Print poster | **v1 shipped** | `pipeline/poster.py` renders a downloadable SVG (`/poster` page, `GET /api/poster.svg?style=&start=&end=`) in the visual language of the 1931 *Histomap of World History*: two styles ("Histomap Authentic" -- independent per-lineage columns; "100% Stacked" -- the real 1931 mechanic, every active polity's width is its share of total prominence and all of them fill the canvas edge-to-edge), a uniform pan-in/pan-out taper mechanism (`Polity.fade_in_years`/`fade_out_years`), lineage grouping via existing successors/detail_of relationships, and an Epoch/Chapter/Events gutter. Design: `docs/plans/2026-09-08-poster-visualization-design.md` | PDF export (still via headless Chromium or paged.js, per the original sketch); per-lineage region/civilization color coding (currently a fixed palette rotation); label crowding at real-world density; column count/palette/dimensions aren't user-configurable |
+| 8 — Grow with the kid | **Retired** | The adult/child reading-level split (`Text.short_child_en`/`short_adult_en`) never got a display surface in `/explore` and was removed outright 9 September 2026, along with the unused `icon` field -- `Text.long_en` is now the one free-text field, and the Wikipedia summary panel (phase 6) covers the "richer content per entity" goal this phase was chasing instead. Period pilot (90 period records as of 31 August 2026) stays, unrelated to the reading-level feature | Not planned: more reading levels, language UI, family-history layer |
 | 9 — Period ontology | **Foundational layer done** | `Period.tier` schema field, build-time tier/cycle validation, 9 macro chapters, 20 hand-curated + auto-generated modern regional eras, suggestion queues for regional-era and polity period-links, tested `pipeline/period_hierarchy.py` query layer (`top_entities` replaces the retired competitive visibility-tier algorithm), `Geography.historical_regions`/`primary_historical_region` derived from `present_countries` via a starter lookup table | Work the two suggestion queues (`reports/regional_era_suggestions.jsonl`, `reports/period_link_suggestions.jsonl`); grow `pipeline/historical_regions.py`'s ~110-country starter table; replace auto-generated modern regional eras with hand-curated sub-continental ones over time; the timeline UI itself (separate plan) reads `pipeline/period_hierarchy.py` |
 
 ### Implementation plans (detailed specifications)
@@ -76,10 +79,9 @@ commit trail).
   live in a real browser: chapter/era/period/polity/civilizations-lane bands all open the
   correct panel content, cross-navigation and zoom-then-reset both work, zero console errors.
 
-See [ROADMAP.md](ROADMAP.md) for what's still queued on `/explore` — moved there since it's
-forward-looking, not retrospective. See the "geography-grouping unification" section below for
-the current (31 August) state of grouping/coloring — it superseded the four-option toggle and
-curated/heuristic legend described in earlier drafts of this section.
+See the "geography-grouping unification" section below for the current (31 August) state of
+grouping/coloring — it superseded the four-option toggle and curated/heuristic legend
+described in earlier drafts of this section.
 
 **Known, accepted limitations:**
 - `MAX_POLITIES_PER_REGION = 15` caps each geography bucket's shown bands with no visual
