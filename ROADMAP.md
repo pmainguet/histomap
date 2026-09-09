@@ -9,17 +9,10 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-0. The events linked to a period should be details of and visible when clicking on the entity they relate to like the other detail_of elements
-1. Remove / merge short adult and short child feature i don't think that's useful as well as icons
-2. **Complete the top-50 editorial pass:** descriptions, icons, and the most important transitions.
-   **Blocked on a display gap, found live 8 September 2026:** `icon` is not rendered anywhere in
-   `/explore` (grepped `web/*.js` — zero references), so writing icons for the top 50 would be
-   invisible work until a display location is designed. `short_adult_en` descriptions already
-   render (the detail panel's main description paragraph falls back to it), but `short_child_en`
-   has no display surface either — the adult/child reading-level toggle mentioned in STATUS.md
-   phase 8 lived in the old `/` timeline (retired 31 August 2026) and was never ported to
-   `/explore`. Needs a small design pass (where does an icon show? do we restore a child-level
-   toggle, or drop `short_child_en` from this item's scope?) before continuing the content work.
+2. **Complete the top-50 editorial pass:** descriptions (`Text.long_en`) and the most important
+   transitions. `icon` and the adult/child reading-level split (`Text.short_child_en`/
+   `short_adult_en`) were retired outright 9 September 2026 (see STATUS.md) rather than given a
+   display surface -- neither had ever been rendered in `/explore`.
 3. **Add the linked map** — a geographic map view within `/explore`, linked to timeline navigation.
    No map code exists in `web/` yet (confirmed live 8 September 2026). Own spec, separate from
    item 3b below (split 8 September 2026 -- different output format, purpose, and audience).
