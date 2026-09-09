@@ -16093,17 +16093,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_thuringia",
-            "canonical_name": "Duchy of Thuringia",
-            "start": 631,
-            "end": 1440,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "arab_caliphate",
             "canonical_name": "Arab Caliphate",
             "start": 632,
@@ -16826,17 +16815,6 @@
             "present_countries": []
           },
           {
-            "id": "county_of_provence",
-            "canonical_name": "County of Provence",
-            "start": 855,
-            "end": 1487,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "emirate_of_multan",
             "canonical_name": "Emirate of Multan",
             "start": 855,
@@ -17035,17 +17013,6 @@
             "present_countries": []
           },
           {
-            "id": "county_of_verdun",
-            "canonical_name": "County of Verdun",
-            "start": 900,
-            "end": 1134,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "kingdom_of_the_isles",
             "canonical_name": "Kingdom of the Isles",
             "start": 900,
@@ -17233,17 +17200,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_swabia",
-            "canonical_name": "Duchy of Swabia",
-            "start": 917,
-            "end": 1313,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "southern_han",
             "canonical_name": "Southern Han",
             "start": 917,
@@ -17251,17 +17207,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "asia",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "county_of_horne",
-            "canonical_name": "County of Horne",
-            "start": 920,
-            "end": 1795,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -17530,17 +17475,6 @@
             "present_countries": []
           },
           {
-            "id": "county_of_luxembourg",
-            "canonical_name": "County of Luxembourg",
-            "start": 963,
-            "end": 1354,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "prince_bishopric_of_meissen",
             "canonical_name": "Prince-Bishopric of Meissen",
             "start": 968,
@@ -17592,17 +17526,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "county_of_namur",
-            "canonical_name": "County of Namur",
-            "start": 981,
-            "end": 1795,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -17662,17 +17585,6 @@
             "present_countries": []
           },
           {
-            "id": "prince_bishopric_of_verdun",
-            "canonical_name": "Prince-Bishopric of Verdun",
-            "start": 997,
-            "end": 1552,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "kingdom_of_artsakh",
             "canonical_name": "Kingdom of Artsakh",
             "start": 1000,
@@ -17724,17 +17636,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "county_of_savoy",
-            "canonical_name": "County of Savoy",
-            "start": 1003,
-            "end": 1416,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -17902,17 +17803,6 @@
             "present_countries": []
           },
           {
-            "id": "prince_bishopric_of_utrecht",
-            "canonical_name": "Prince-Bishopric of Utrecht",
-            "start": 1024,
-            "end": 1528,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "kingdom_kahoeripan",
             "canonical_name": "Kingdom Kahoeripan",
             "start": 1025,
@@ -17968,17 +17858,6 @@
             "present_countries": []
           },
           {
-            "id": "prince_bishopric_of_basel",
-            "canonical_name": "Prince-Bishopric of Basel",
-            "start": 1032,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "tsongkha",
             "canonical_name": "Tsongkha",
             "start": 1032,
@@ -17986,17 +17865,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_bar",
-            "canonical_name": "Duchy of Bar",
-            "start": 1033,
-            "end": 1766,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -18133,17 +18001,6 @@
             "present_countries": []
           },
           {
-            "id": "county_of_diez",
-            "canonical_name": "County of Diez",
-            "start": 1073,
-            "end": 1564,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "patria_del_friuli",
             "canonical_name": "Patria del Friuli",
             "start": 1077,
@@ -18228,17 +18085,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "asia",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "landgraviate_of_brabant",
-            "canonical_name": "Landgraviate of Brabant",
-            "start": 1085,
-            "end": 1183,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -18351,26 +18197,6 @@
             "primary_continent": "africa",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "county_of_isenburg",
-            "canonical_name": "County of Isenburg",
-            "start": 1100,
-            "end": 1816,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": [],
-            "details": [
-              {
-                "id": "principality_isenburg",
-                "canonical_name": "Principality Isenburg",
-                "start": 1806,
-                "end": 1815,
-                "kind": "polity"
-              }
-            ]
           },
           {
             "id": "county_of_jaffa_and_ascalon",
@@ -18692,17 +18518,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_pomerania",
-            "canonical_name": "Duchy of Pomerania",
-            "start": 1121,
-            "end": 1637,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "northern_liao_q110491318",
             "canonical_name": "Northern Liao",
             "start": 1122,
@@ -18934,17 +18749,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_merania",
-            "canonical_name": "Duchy of Merania",
-            "start": 1153,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "angevin_empire",
             "canonical_name": "Angevin Empire",
             "start": 1154,
@@ -18956,28 +18760,6 @@
             "present_countries": []
           },
           {
-            "id": "prince_bishopric_of_konstanz",
-            "canonical_name": "Prince-Bishopric of Konstanz",
-            "start": 1155,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "margraviate_of_brandenburg",
-            "canonical_name": "Margraviate of Brandenburg",
-            "start": 1157,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "principality_of_lutsk",
             "canonical_name": "Principality of Lutsk",
             "start": 1157,
@@ -18985,28 +18767,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "county_of_nassau",
-            "canonical_name": "County of Nassau",
-            "start": 1160,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "prince_bishopric_of_lubeck",
-            "canonical_name": "Prince-Bishopric of Lübeck",
-            "start": 1160,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -19407,17 +19167,6 @@
             "present_countries": []
           },
           {
-            "id": "county_of_stolberg",
-            "canonical_name": "County of Stolberg",
-            "start": 1210,
-            "end": 1548,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "chobanids_q2661668",
             "canonical_name": "Chobanids",
             "start": 1211,
@@ -19546,17 +19295,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "lordship_of_rostock",
-            "canonical_name": "Lordship of Rostock",
-            "start": 1226,
-            "end": 1323,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -19902,17 +19640,6 @@
             "present_countries": []
           },
           {
-            "id": "principality_of_gottingen",
-            "canonical_name": "Principality of Göttingen",
-            "start": 1279,
-            "end": 1495,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "beylik_of_dobruja",
             "canonical_name": "Beylik of Dobruja",
             "start": 1281,
@@ -19975,17 +19702,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "asia",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_saxe_wittenberg",
-            "canonical_name": "Duchy of Saxe-Wittenberg",
-            "start": 1296,
-            "end": 1423,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -20828,17 +20544,6 @@
             "present_countries": []
           },
           {
-            "id": "margravate_of_mantua",
-            "canonical_name": "Margravate of Mantua",
-            "start": 1433,
-            "end": 1530,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "livonian_confederation",
             "canonical_name": "Livonian confederation",
             "start": 1435,
@@ -21393,19 +21098,6 @@
             ]
           },
           {
-            "id": "principality_of_stavelot_malmedy",
-            "canonical_name": "Principality of Stavelot-Malmedy",
-            "start": 651,
-            "end": 1795,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "BE"
-            ]
-          },
-          {
             "id": "kingdom_of_northumbria",
             "canonical_name": "Kingdom of Northumbria",
             "start": 653,
@@ -21677,19 +21369,6 @@
             ]
           },
           {
-            "id": "county_of_holland",
-            "canonical_name": "County of Holland",
-            "start": 880,
-            "end": 1795,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "NL"
-            ]
-          },
-          {
             "id": "duchy_of_burgundy",
             "canonical_name": "Duchy of Burgundy",
             "start": 880,
@@ -21733,19 +21412,6 @@
             "canonical_name": "County of Conflent",
             "start": 900,
             "end": 1126,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "county_of_geneva",
-            "canonical_name": "County of Geneva",
-            "start": 900,
-            "end": 1401,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -21951,6 +21617,27 @@
             ],
             "details": [
               {
+                "id": "duchy_of_spoleto",
+                "canonical_name": "Duchy of Spoleto",
+                "start": 570,
+                "end": 1203,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_thuringia",
+                "canonical_name": "Duchy of Thuringia",
+                "start": 631,
+                "end": 1440,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_stavelot_malmedy",
+                "canonical_name": "Principality of Stavelot-Malmedy",
+                "start": 651,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
                 "id": "electorate_of_mainz",
                 "canonical_name": "Electorate of Mainz",
                 "start": 780,
@@ -21974,10 +21661,24 @@
                 "kind": "polity"
               },
               {
+                "id": "county_of_provence",
+                "canonical_name": "County of Provence",
+                "start": 855,
+                "end": 1487,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_bohemia",
                 "canonical_name": "Duchy of Bohemia",
                 "start": 870,
                 "end": 1198,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_holland",
+                "canonical_name": "County of Holland",
+                "start": 880,
+                "end": 1795,
                 "kind": "polity"
               },
               {
@@ -22002,6 +21703,34 @@
                 "kind": "polity"
               },
               {
+                "id": "county_of_geneva",
+                "canonical_name": "County of Geneva",
+                "start": 900,
+                "end": 1401,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_verdun",
+                "canonical_name": "County of Verdun",
+                "start": 900,
+                "end": 1134,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_swabia",
+                "canonical_name": "Duchy of Swabia",
+                "start": 917,
+                "end": 1313,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_horne",
+                "canonical_name": "County of Horne",
+                "start": 920,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
                 "id": "electorate_of_cologne",
                 "canonical_name": "Electorate of Cologne",
                 "start": 953,
@@ -22013,6 +21742,13 @@
                 "canonical_name": "Duchy of Lorraine",
                 "start": 959,
                 "end": 1766,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_luxembourg",
+                "canonical_name": "County of Luxembourg",
+                "start": 963,
+                "end": 1354,
                 "kind": "polity"
               },
               {
@@ -22041,6 +21777,55 @@
                 "canonical_name": "Margraviate of Austria",
                 "start": 976,
                 "end": 1156,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_namur",
+                "canonical_name": "County of Namur",
+                "start": 981,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_burgundy",
+                "canonical_name": "County of Burgundy",
+                "start": 982,
+                "end": 1678,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_strasbourg",
+                "canonical_name": "Prince-Bishopric of Strasbourg",
+                "start": 982,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_liege",
+                "canonical_name": "Prince-Bishopric of Liège",
+                "start": 985,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_verdun",
+                "canonical_name": "Prince-Bishopric of Verdun",
+                "start": 997,
+                "end": 1552,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_dagsburg",
+                "canonical_name": "County of Dagsburg",
+                "start": 1001,
+                "end": 1793,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_savoy",
+                "canonical_name": "County of Savoy",
+                "start": 1003,
+                "end": 1416,
                 "kind": "polity"
               },
               {
@@ -22074,6 +21859,48 @@
                 "kind": "polity"
               },
               {
+                "id": "county_of_zeeland",
+                "canonical_name": "County of Zeeland",
+                "start": 1012,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_drenthe",
+                "canonical_name": "County of Drenthe",
+                "start": 1024,
+                "end": 1046,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_utrecht",
+                "canonical_name": "Prince-Bishopric of Utrecht",
+                "start": 1024,
+                "end": 1528,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_brixen",
+                "canonical_name": "Prince-Bishopric of Brixen",
+                "start": 1027,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_trent",
+                "canonical_name": "Prince-Bishopric of Trent",
+                "start": 1027,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_basel",
+                "canonical_name": "Prince-Bishopric of Basel",
+                "start": 1032,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_geneva",
                 "canonical_name": "Prince-Bishopric of Geneva",
                 "start": 1032,
@@ -22081,10 +21908,45 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_bar",
+                "canonical_name": "Duchy of Bar",
+                "start": 1033,
+                "end": 1766,
+                "kind": "polity"
+              },
+              {
                 "id": "county_of_montbeliard",
                 "canonical_name": "County of Montbéliard",
                 "start": 1042,
                 "end": 1793,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_toul",
+                "canonical_name": "Prince-Bishopric of Toul",
+                "start": 1048,
+                "end": 1801,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_limburg_q697787",
+                "canonical_name": "Duchy of Limburg",
+                "start": 1065,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_hainaut",
+                "canonical_name": "County of Hainaut",
+                "start": 1071,
+                "end": 1794,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_diez",
+                "canonical_name": "County of Diez",
+                "start": 1073,
+                "end": 1564,
                 "kind": "polity"
               },
               {
@@ -22099,6 +21961,13 @@
                 "canonical_name": "Electoral Palatinate",
                 "start": 1085,
                 "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "landgraviate_of_brabant",
+                "canonical_name": "Landgraviate of Brabant",
+                "start": 1085,
+                "end": 1183,
                 "kind": "polity"
               },
               {
@@ -22130,10 +21999,33 @@
                 "kind": "polity"
               },
               {
+                "id": "county_of_isenburg",
+                "canonical_name": "County of Isenburg",
+                "start": 1100,
+                "end": 1816,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "principality_isenburg",
+                    "canonical_name": "Principality Isenburg",
+                    "start": 1806,
+                    "end": 1815,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
                 "id": "burgraviate_of_nuremberg",
                 "canonical_name": "Burgraviate of Nuremberg",
                 "start": 1105,
                 "end": 1486,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_pomerania",
+                "canonical_name": "Duchy of Pomerania",
+                "start": 1121,
+                "end": 1637,
                 "kind": "polity"
               },
               {
@@ -22144,10 +22036,31 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_merania",
+                "canonical_name": "Duchy of Merania",
+                "start": 1153,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_konstanz",
+                "canonical_name": "Prince-Bishopric of Konstanz",
+                "start": 1155,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_austria",
                 "canonical_name": "Duchy of Austria",
                 "start": 1156,
                 "end": 1453,
+                "kind": "polity"
+              },
+              {
+                "id": "margraviate_of_brandenburg",
+                "canonical_name": "Margraviate of Brandenburg",
+                "start": 1157,
+                "end": 1806,
                 "kind": "polity"
               },
               {
@@ -22158,10 +22071,38 @@
                 "kind": "polity"
               },
               {
+                "id": "county_of_nassau",
+                "canonical_name": "County of Nassau",
+                "start": 1160,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_lubeck",
+                "canonical_name": "Prince-Bishopric of Lübeck",
+                "start": 1160,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_orange",
+                "canonical_name": "Principality of Orange",
+                "start": 1163,
+                "end": 1713,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_wurzburg",
                 "canonical_name": "Prince-Bishopric of Würzburg",
                 "start": 1168,
                 "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_gogow",
+                "canonical_name": "Duchy of Głogów",
+                "start": 1177,
+                "end": 1815,
                 "kind": "polity"
               },
               {
@@ -22176,6 +22117,13 @@
                 "canonical_name": "Duchy of Westphalia",
                 "start": 1180,
                 "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "free_imperial_city_of_besancon",
+                "canonical_name": "Free Imperial City of Besançon",
+                "start": 1180,
+                "end": 1654,
                 "kind": "polity"
               },
               {
@@ -22207,6 +22155,13 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_brabant",
+                "canonical_name": "Duchy of Brabant",
+                "start": 1183,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_sion",
                 "canonical_name": "Prince-Bishopric of Sion",
                 "start": 1189,
@@ -22221,10 +22176,59 @@
                 "kind": "polity"
               },
               {
+                "id": "landgraviate_of_lower_alsace",
+                "canonical_name": "Landgraviate of Lower Alsace",
+                "start": 1200,
+                "end": 1700,
+                "kind": "polity"
+              },
+              {
+                "id": "landgraviate_of_upper_alsace",
+                "canonical_name": "Landgraviate of Upper Alsace",
+                "start": 1200,
+                "end": 1648,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_regensburg",
+                "canonical_name": "Prince-Bishopric of Regensburg",
+                "start": 1201,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_stolberg",
+                "canonical_name": "County of Stolberg",
+                "start": 1210,
+                "end": 1548,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_anhalt",
+                "canonical_name": "Principality of Anhalt",
+                "start": 1212,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_furstenberg",
+                "canonical_name": "Principality of Fürstenberg",
+                "start": 1218,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
                 "id": "free_imperial_city_of_nuremberg",
                 "canonical_name": "Free Imperial City of Nuremberg",
                 "start": 1219,
                 "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "bishopric_of_dorpat",
+                "canonical_name": "Bishopric of Dorpat",
+                "start": 1224,
+                "end": 1558,
                 "kind": "polity"
               },
               {
@@ -22235,10 +22239,24 @@
                 "kind": "polity"
               },
               {
+                "id": "lordship_of_rostock",
+                "canonical_name": "Lordship of Rostock",
+                "start": 1226,
+                "end": 1323,
+                "kind": "polity"
+              },
+              {
                 "id": "brunswick_luneburg",
                 "canonical_name": "Brunswick-Lüneburg",
                 "start": 1235,
                 "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_hildesheim",
+                "canonical_name": "Prince-Bishopric of Hildesheim",
+                "start": 1235,
+                "end": 1803,
                 "kind": "polity"
               },
               {
@@ -22291,6 +22309,20 @@
                 "kind": "polity"
               },
               {
+                "id": "principality_of_gottingen",
+                "canonical_name": "Principality of Göttingen",
+                "start": 1279,
+                "end": 1495,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_teschen",
+                "canonical_name": "Duchy of Teschen",
+                "start": 1281,
+                "end": 1918,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_paderborn",
                 "canonical_name": "Prince-Bishopric of Paderborn",
                 "start": 1281,
@@ -22312,10 +22344,52 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_saxe_wittenberg",
+                "canonical_name": "Duchy of Saxe-Wittenberg",
+                "start": 1296,
+                "end": 1423,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_eichstatt",
                 "canonical_name": "Prince-Bishopric of Eichstätt",
                 "start": 1305,
                 "end": 1802,
+                "kind": "polity"
+              },
+              {
+                "id": "free_imperial_city_of_aachen",
+                "canonical_name": "Free Imperial City of Aachen",
+                "start": 1306,
+                "end": 1801,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_mirandola",
+                "canonical_name": "Duchy of Mirandola",
+                "start": 1310,
+                "end": 1710,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_olesnica",
+                "canonical_name": "Duchy of Oleśnica",
+                "start": 1313,
+                "end": 1884,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_oswiecim",
+                "canonical_name": "Duchy of Oświęcim",
+                "start": 1315,
+                "end": 1564,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_ziebice",
+                "canonical_name": "Duchy of Ziębice",
+                "start": 1321,
+                "end": 1791,
                 "kind": "polity"
               },
               {
@@ -22333,10 +22407,24 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_krnov",
+                "canonical_name": "Duchy of Krnov",
+                "start": 1377,
+                "end": 1623,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_berg",
                 "canonical_name": "Duchy of Berg",
                 "start": 1380,
                 "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_milan",
+                "canonical_name": "Duchy of Milan",
+                "start": 1395,
+                "end": 1797,
                 "kind": "polity"
               },
               {
@@ -22347,10 +22435,73 @@
                 "kind": "polity"
               },
               {
+                "id": "principality_of_piombino",
+                "canonical_name": "Principality of Piombino",
+                "start": 1398,
+                "end": 1805,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_guastalla",
+                "canonical_name": "County of Guastalla",
+                "start": 1406,
+                "end": 1621,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_bernstadt",
+                "canonical_name": "Duchy of Bernstadt",
+                "start": 1412,
+                "end": 1745,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_hanau",
+                "canonical_name": "County of Hanau",
+                "start": 1429,
+                "end": 1736,
+                "kind": "polity"
+              },
+              {
+                "id": "margravate_of_mantua",
+                "canonical_name": "Margravate of Mantua",
+                "start": 1433,
+                "end": 1530,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_modena_and_reggio",
+                "canonical_name": "Duchy of Modena and Reggio",
+                "start": 1452,
+                "end": 1859,
+                "kind": "polity"
+              },
+              {
                 "id": "landgraviate_of_hesse_marburg",
                 "canonical_name": "Landgraviate of Hesse-Marburg",
                 "start": 1458,
                 "end": 1604,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_mindelheim",
+                "canonical_name": "Principality of Mindelheim",
+                "start": 1467,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_mecklenburg",
+                "canonical_name": "Duchy of Mecklenburg",
+                "start": 1471,
+                "end": 1701,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_massa_and_carrara",
+                "canonical_name": "Duchy of Massa and Carrara",
+                "start": 1473,
+                "end": 1829,
                 "kind": "polity"
               },
               {
@@ -22368,10 +22519,73 @@
                 "kind": "polity"
               },
               {
+                "id": "principality_of_ansbach",
+                "canonical_name": "Principality of Ansbach",
+                "start": 1486,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_bayreuth",
+                "canonical_name": "Principality of Bayreuth",
+                "start": 1486,
+                "end": 1810,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_calenberg",
+                "canonical_name": "Principality of Calenberg",
+                "start": 1494,
+                "end": 1705,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_wurttemberg",
+                "canonical_name": "Duchy of Württemberg",
+                "start": 1495,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "margraviate_of_baden_baden",
+                "canonical_name": "Margraviate of Baden-Baden",
+                "start": 1515,
+                "end": 1771,
+                "kind": "polity"
+              },
+              {
                 "id": "margraviate_of_baden_durlach",
                 "canonical_name": "Margraviate of Baden-Durlach",
                 "start": 1515,
                 "end": 1771,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_pless",
+                "canonical_name": "Duchy of Pless",
+                "start": 1517,
+                "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_mantua",
+                "canonical_name": "Duchy of Mantua",
+                "start": 1530,
+                "end": 1797,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_aosta",
+                "canonical_name": "Duchy of Aosta",
+                "start": 1536,
+                "end": 1770,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_gifhorn",
+                "canonical_name": "Duchy of Gifhorn",
+                "start": 1539,
+                "end": 1549,
                 "kind": "polity"
               },
               {
@@ -22403,6 +22617,34 @@
                 "kind": "polity"
               },
               {
+                "id": "grand_duchy_of_tuscany",
+                "canonical_name": "Grand Duchy of Tuscany",
+                "start": 1569,
+                "end": 1860,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_bielsko",
+                "canonical_name": "Duchy of Bielsko",
+                "start": 1572,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_montferrat",
+                "canonical_name": "Duchy of Montferrat",
+                "start": 1574,
+                "end": 1708,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_salm_salm",
+                "canonical_name": "Principality of Salm-Salm",
+                "start": 1574,
+                "end": 1811,
+                "kind": "polity"
+              },
+              {
                 "id": "sayn_wittgenstein_berleburg",
                 "canonical_name": "Sayn-Wittgenstein-Berleburg",
                 "start": 1607,
@@ -22410,10 +22652,38 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_guastalla",
+                "canonical_name": "Duchy of Guastalla",
+                "start": 1621,
+                "end": 1748,
+                "kind": "polity"
+              },
+              {
+                "id": "electorate_of_bavaria",
+                "canonical_name": "Electorate of Bavaria",
+                "start": 1623,
+                "end": 1805,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_friedland",
                 "canonical_name": "Duchy of Friedland",
                 "start": 1627,
                 "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "landgraviate_of_hesse_rotenburg",
+                "canonical_name": "Landgraviate of Hesse-Rotenburg",
+                "start": 1627,
+                "end": 1834,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_bremen_and_verden",
+                "canonical_name": "Duchy of Bremen and Verden",
+                "start": 1648,
+                "end": 1823,
                 "kind": "polity"
               },
               {
@@ -22435,6 +22705,13 @@
                 "canonical_name": "Principality of Anhalt-Dornburg",
                 "start": 1667,
                 "end": 1742,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_saxe_meiningen",
+                "canonical_name": "Duchy of Saxe-Meiningen",
+                "start": 1675,
+                "end": 1918,
                 "kind": "polity"
               },
               {
@@ -22466,6 +22743,13 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_mecklenburg_schwerin",
+                "canonical_name": "Duchy of Mecklenburg-Schwerin",
+                "start": 1701,
+                "end": 1815,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_mecklenburg_strelitz",
                 "canonical_name": "Duchy of Mecklenburg-Strelitz",
                 "start": 1701,
@@ -22473,10 +22757,45 @@
                 "kind": "polity"
               },
               {
+                "id": "principality_of_reuss_greiz",
+                "canonical_name": "Principality of Reuss-Greiz",
+                "start": 1778,
+                "end": 1919,
+                "kind": "polity"
+              },
+              {
                 "id": "principality_of_lippe",
                 "canonical_name": "Principality of Lippe",
                 "start": 1789,
                 "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "electorate_of_baden",
+                "canonical_name": "Electorate of Baden",
+                "start": 1803,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "electorate_of_salzburg",
+                "canonical_name": "Electorate of Salzburg",
+                "start": 1803,
+                "end": 1805,
+                "kind": "polity"
+              },
+              {
+                "id": "electorate_of_wurttemberg",
+                "canonical_name": "Electorate of Württemberg",
+                "start": 1803,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_aschaffenburg",
+                "canonical_name": "Principality of Aschaffenburg",
+                "start": 1803,
+                "end": 1810,
                 "kind": "polity"
               },
               {
@@ -22513,45 +22832,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "FR"
-            ]
-          },
-          {
-            "id": "county_of_burgundy",
-            "canonical_name": "County of Burgundy",
-            "start": 982,
-            "end": 1678,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "prince_bishopric_of_strasbourg",
-            "canonical_name": "Prince-Bishopric of Strasbourg",
-            "start": 982,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "prince_bishopric_of_liege",
-            "canonical_name": "Prince-Bishopric of Liège",
-            "start": 985,
-            "end": 1795,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "BE"
             ]
           },
           {
@@ -22610,19 +22890,6 @@
             ]
           },
           {
-            "id": "county_of_dagsburg",
-            "canonical_name": "County of Dagsburg",
-            "start": 1001,
-            "end": 1793,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "ellwangen_abbey",
             "canonical_name": "Ellwangen Abbey",
             "start": 1011,
@@ -22633,71 +22900,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "DE"
-            ]
-          },
-          {
-            "id": "county_of_zeeland",
-            "canonical_name": "County of Zeeland",
-            "start": 1012,
-            "end": 1795,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "africa",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "NL"
-            ]
-          },
-          {
-            "id": "county_of_drenthe",
-            "canonical_name": "County of Drenthe",
-            "start": 1024,
-            "end": 1046,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "NL"
-            ]
-          },
-          {
-            "id": "prince_bishopric_of_toul",
-            "canonical_name": "Prince-Bishopric of Toul",
-            "start": 1048,
-            "end": 1801,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "duchy_of_limburg_q697787",
-            "canonical_name": "Duchy of Limburg",
-            "start": 1065,
-            "end": 1795,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "BE"
-            ]
-          },
-          {
-            "id": "county_of_hainaut",
-            "canonical_name": "County of Hainaut",
-            "start": 1071,
-            "end": 1794,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "BE"
             ]
           },
           {
@@ -22828,19 +23030,6 @@
             ]
           },
           {
-            "id": "principality_of_orange",
-            "canonical_name": "Principality of Orange",
-            "start": 1163,
-            "end": 1713,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "lordship_of_ireland",
             "canonical_name": "Lordship of Ireland",
             "start": 1171,
@@ -22851,32 +23040,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "IE"
-            ]
-          },
-          {
-            "id": "free_imperial_city_of_besancon",
-            "canonical_name": "Free Imperial City of Besançon",
-            "start": 1180,
-            "end": 1654,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "duchy_of_brabant",
-            "canonical_name": "Duchy of Brabant",
-            "start": 1183,
-            "end": 1795,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "BE"
             ]
           },
           {
@@ -22916,32 +23079,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "DE"
-            ]
-          },
-          {
-            "id": "landgraviate_of_lower_alsace",
-            "canonical_name": "Landgraviate of Lower Alsace",
-            "start": 1200,
-            "end": 1700,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "landgraviate_of_upper_alsace",
-            "canonical_name": "Landgraviate of Upper Alsace",
-            "start": 1200,
-            "end": 1648,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
             ]
           },
           {
@@ -23552,19 +23689,6 @@
             "canonical_name": "Duchy of Benevento",
             "start": 570,
             "end": 1081,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "duchy_of_spoleto",
-            "canonical_name": "Duchy of Spoleto",
-            "start": 570,
-            "end": 1203,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -24213,32 +24337,6 @@
                 "end": 1084,
                 "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "prince_bishopric_of_brixen",
-            "canonical_name": "Prince-Bishopric of Brixen",
-            "start": 1027,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "prince_bishopric_of_trent",
-            "canonical_name": "Prince-Bishopric of Trent",
-            "start": 1027,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
             ]
           },
           {
@@ -25599,19 +25697,6 @@
             "primary_historical_region": "northern_europe",
             "present_countries": [
               "LV"
-            ]
-          },
-          {
-            "id": "bishopric_of_dorpat",
-            "canonical_name": "Bishopric of Dorpat",
-            "start": 1224,
-            "end": 1558,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "northern_europe",
-            "present_countries": [
-              "EE"
             ]
           },
           {
@@ -28405,19 +28490,6 @@
             ]
           },
           {
-            "id": "duchy_of_gogow",
-            "canonical_name": "Duchy of Głogów",
-            "start": 1177,
-            "end": 1815,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "duchy_of_poznan",
             "canonical_name": "Duchy of Poznań",
             "start": 1177,
@@ -28626,19 +28698,6 @@
             ]
           },
           {
-            "id": "duchy_of_oswiecim",
-            "canonical_name": "Duchy of Oświęcim",
-            "start": 1315,
-            "end": 1564,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "duchy_of_prudnik",
             "canonical_name": "Duchy of Prudnik",
             "start": 1318,
@@ -28722,19 +28781,6 @@
             "canonical_name": "Pomerania-Stolp",
             "start": 1368,
             "end": 1459,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
-            "id": "duchy_of_krnov",
-            "canonical_name": "Duchy of Krnov",
-            "start": 1377,
-            "end": 1623,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -33713,19 +33759,6 @@
             ]
           },
           {
-            "id": "county_of_zeeland",
-            "canonical_name": "County of Zeeland",
-            "start": 1012,
-            "end": 1795,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "africa",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "NL"
-            ]
-          },
-          {
             "id": "taifa_of_seville",
             "canonical_name": "Taifa of Seville",
             "start": 1023,
@@ -33736,19 +33769,6 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "ES"
-            ]
-          },
-          {
-            "id": "prince_bishopric_of_brixen",
-            "canonical_name": "Prince-Bishopric of Brixen",
-            "start": 1027,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
             ]
           },
           {
@@ -35209,19 +35229,6 @@
             ]
           },
           {
-            "id": "duchy_of_spoleto",
-            "canonical_name": "Duchy of Spoleto",
-            "start": 570,
-            "end": 1203,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
             "id": "duchy_of_tridentum",
             "canonical_name": "Duchy of Tridentum",
             "start": 574,
@@ -35324,17 +35331,6 @@
             ]
           },
           {
-            "id": "duchy_of_thuringia",
-            "canonical_name": "Duchy of Thuringia",
-            "start": 631,
-            "end": 1440,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "bulgarian_empire",
             "canonical_name": "Bulgarian Empire",
             "start": 632,
@@ -35379,19 +35375,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "principality_of_stavelot_malmedy",
-            "canonical_name": "Principality of Stavelot-Malmedy",
-            "start": 651,
-            "end": 1795,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "BE"
-            ]
           },
           {
             "id": "kingdom_of_northumbria",
@@ -36200,17 +36183,6 @@
             ]
           },
           {
-            "id": "county_of_provence",
-            "canonical_name": "County of Provence",
-            "start": 855,
-            "end": 1487,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "lotharingia",
             "canonical_name": "Lotharingia",
             "start": 855,
@@ -36293,19 +36265,6 @@
             "primary_historical_region": "northern_europe",
             "present_countries": [
               "NO"
-            ]
-          },
-          {
-            "id": "county_of_holland",
-            "canonical_name": "County of Holland",
-            "start": 880,
-            "end": 1795,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "NL"
             ]
           },
           {
@@ -36436,19 +36395,6 @@
             ]
           },
           {
-            "id": "county_of_geneva",
-            "canonical_name": "County of Geneva",
-            "start": 900,
-            "end": 1401,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "county_of_ribagorza",
             "canonical_name": "County of Ribagorza",
             "start": 900,
@@ -36460,17 +36406,6 @@
             "present_countries": [
               "ES"
             ]
-          },
-          {
-            "id": "county_of_verdun",
-            "canonical_name": "County of Verdun",
-            "start": 900,
-            "end": 1134,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "kingdom_of_alba",
@@ -36592,17 +36527,6 @@
             "canonical_name": "Normannia",
             "start": 911,
             "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_swabia",
-            "canonical_name": "Duchy of Swabia",
-            "start": 917,
-            "end": 1313,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -36888,6 +36812,27 @@
             ],
             "details": [
               {
+                "id": "duchy_of_spoleto",
+                "canonical_name": "Duchy of Spoleto",
+                "start": 570,
+                "end": 1203,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_thuringia",
+                "canonical_name": "Duchy of Thuringia",
+                "start": 631,
+                "end": 1440,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_stavelot_malmedy",
+                "canonical_name": "Principality of Stavelot-Malmedy",
+                "start": 651,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
                 "id": "electorate_of_mainz",
                 "canonical_name": "Electorate of Mainz",
                 "start": 780,
@@ -36911,10 +36856,24 @@
                 "kind": "polity"
               },
               {
+                "id": "county_of_provence",
+                "canonical_name": "County of Provence",
+                "start": 855,
+                "end": 1487,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_bohemia",
                 "canonical_name": "Duchy of Bohemia",
                 "start": 870,
                 "end": 1198,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_holland",
+                "canonical_name": "County of Holland",
+                "start": 880,
+                "end": 1795,
                 "kind": "polity"
               },
               {
@@ -36939,6 +36898,34 @@
                 "kind": "polity"
               },
               {
+                "id": "county_of_geneva",
+                "canonical_name": "County of Geneva",
+                "start": 900,
+                "end": 1401,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_verdun",
+                "canonical_name": "County of Verdun",
+                "start": 900,
+                "end": 1134,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_swabia",
+                "canonical_name": "Duchy of Swabia",
+                "start": 917,
+                "end": 1313,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_horne",
+                "canonical_name": "County of Horne",
+                "start": 920,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
                 "id": "electorate_of_cologne",
                 "canonical_name": "Electorate of Cologne",
                 "start": 953,
@@ -36950,6 +36937,13 @@
                 "canonical_name": "Duchy of Lorraine",
                 "start": 959,
                 "end": 1766,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_luxembourg",
+                "canonical_name": "County of Luxembourg",
+                "start": 963,
+                "end": 1354,
                 "kind": "polity"
               },
               {
@@ -36978,6 +36972,55 @@
                 "canonical_name": "Margraviate of Austria",
                 "start": 976,
                 "end": 1156,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_namur",
+                "canonical_name": "County of Namur",
+                "start": 981,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_burgundy",
+                "canonical_name": "County of Burgundy",
+                "start": 982,
+                "end": 1678,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_strasbourg",
+                "canonical_name": "Prince-Bishopric of Strasbourg",
+                "start": 982,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_liege",
+                "canonical_name": "Prince-Bishopric of Liège",
+                "start": 985,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_verdun",
+                "canonical_name": "Prince-Bishopric of Verdun",
+                "start": 997,
+                "end": 1552,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_dagsburg",
+                "canonical_name": "County of Dagsburg",
+                "start": 1001,
+                "end": 1793,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_savoy",
+                "canonical_name": "County of Savoy",
+                "start": 1003,
+                "end": 1416,
                 "kind": "polity"
               },
               {
@@ -37011,6 +37054,48 @@
                 "kind": "polity"
               },
               {
+                "id": "county_of_zeeland",
+                "canonical_name": "County of Zeeland",
+                "start": 1012,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_drenthe",
+                "canonical_name": "County of Drenthe",
+                "start": 1024,
+                "end": 1046,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_utrecht",
+                "canonical_name": "Prince-Bishopric of Utrecht",
+                "start": 1024,
+                "end": 1528,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_brixen",
+                "canonical_name": "Prince-Bishopric of Brixen",
+                "start": 1027,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_trent",
+                "canonical_name": "Prince-Bishopric of Trent",
+                "start": 1027,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_basel",
+                "canonical_name": "Prince-Bishopric of Basel",
+                "start": 1032,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_geneva",
                 "canonical_name": "Prince-Bishopric of Geneva",
                 "start": 1032,
@@ -37018,10 +37103,45 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_bar",
+                "canonical_name": "Duchy of Bar",
+                "start": 1033,
+                "end": 1766,
+                "kind": "polity"
+              },
+              {
                 "id": "county_of_montbeliard",
                 "canonical_name": "County of Montbéliard",
                 "start": 1042,
                 "end": 1793,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_toul",
+                "canonical_name": "Prince-Bishopric of Toul",
+                "start": 1048,
+                "end": 1801,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_limburg_q697787",
+                "canonical_name": "Duchy of Limburg",
+                "start": 1065,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_hainaut",
+                "canonical_name": "County of Hainaut",
+                "start": 1071,
+                "end": 1794,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_diez",
+                "canonical_name": "County of Diez",
+                "start": 1073,
+                "end": 1564,
                 "kind": "polity"
               },
               {
@@ -37036,6 +37156,13 @@
                 "canonical_name": "Electoral Palatinate",
                 "start": 1085,
                 "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "landgraviate_of_brabant",
+                "canonical_name": "Landgraviate of Brabant",
+                "start": 1085,
+                "end": 1183,
                 "kind": "polity"
               },
               {
@@ -37067,10 +37194,33 @@
                 "kind": "polity"
               },
               {
+                "id": "county_of_isenburg",
+                "canonical_name": "County of Isenburg",
+                "start": 1100,
+                "end": 1816,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "principality_isenburg",
+                    "canonical_name": "Principality Isenburg",
+                    "start": 1806,
+                    "end": 1815,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
                 "id": "burgraviate_of_nuremberg",
                 "canonical_name": "Burgraviate of Nuremberg",
                 "start": 1105,
                 "end": 1486,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_pomerania",
+                "canonical_name": "Duchy of Pomerania",
+                "start": 1121,
+                "end": 1637,
                 "kind": "polity"
               },
               {
@@ -37081,10 +37231,31 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_merania",
+                "canonical_name": "Duchy of Merania",
+                "start": 1153,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_konstanz",
+                "canonical_name": "Prince-Bishopric of Konstanz",
+                "start": 1155,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_austria",
                 "canonical_name": "Duchy of Austria",
                 "start": 1156,
                 "end": 1453,
+                "kind": "polity"
+              },
+              {
+                "id": "margraviate_of_brandenburg",
+                "canonical_name": "Margraviate of Brandenburg",
+                "start": 1157,
+                "end": 1806,
                 "kind": "polity"
               },
               {
@@ -37095,10 +37266,38 @@
                 "kind": "polity"
               },
               {
+                "id": "county_of_nassau",
+                "canonical_name": "County of Nassau",
+                "start": 1160,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_lubeck",
+                "canonical_name": "Prince-Bishopric of Lübeck",
+                "start": 1160,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_orange",
+                "canonical_name": "Principality of Orange",
+                "start": 1163,
+                "end": 1713,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_wurzburg",
                 "canonical_name": "Prince-Bishopric of Würzburg",
                 "start": 1168,
                 "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_gogow",
+                "canonical_name": "Duchy of Głogów",
+                "start": 1177,
+                "end": 1815,
                 "kind": "polity"
               },
               {
@@ -37113,6 +37312,13 @@
                 "canonical_name": "Duchy of Westphalia",
                 "start": 1180,
                 "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "free_imperial_city_of_besancon",
+                "canonical_name": "Free Imperial City of Besançon",
+                "start": 1180,
+                "end": 1654,
                 "kind": "polity"
               },
               {
@@ -37144,6 +37350,13 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_brabant",
+                "canonical_name": "Duchy of Brabant",
+                "start": 1183,
+                "end": 1795,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_sion",
                 "canonical_name": "Prince-Bishopric of Sion",
                 "start": 1189,
@@ -37158,10 +37371,59 @@
                 "kind": "polity"
               },
               {
+                "id": "landgraviate_of_lower_alsace",
+                "canonical_name": "Landgraviate of Lower Alsace",
+                "start": 1200,
+                "end": 1700,
+                "kind": "polity"
+              },
+              {
+                "id": "landgraviate_of_upper_alsace",
+                "canonical_name": "Landgraviate of Upper Alsace",
+                "start": 1200,
+                "end": 1648,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_regensburg",
+                "canonical_name": "Prince-Bishopric of Regensburg",
+                "start": 1201,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_stolberg",
+                "canonical_name": "County of Stolberg",
+                "start": 1210,
+                "end": 1548,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_anhalt",
+                "canonical_name": "Principality of Anhalt",
+                "start": 1212,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_furstenberg",
+                "canonical_name": "Principality of Fürstenberg",
+                "start": 1218,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
                 "id": "free_imperial_city_of_nuremberg",
                 "canonical_name": "Free Imperial City of Nuremberg",
                 "start": 1219,
                 "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "bishopric_of_dorpat",
+                "canonical_name": "Bishopric of Dorpat",
+                "start": 1224,
+                "end": 1558,
                 "kind": "polity"
               },
               {
@@ -37172,10 +37434,24 @@
                 "kind": "polity"
               },
               {
+                "id": "lordship_of_rostock",
+                "canonical_name": "Lordship of Rostock",
+                "start": 1226,
+                "end": 1323,
+                "kind": "polity"
+              },
+              {
                 "id": "brunswick_luneburg",
                 "canonical_name": "Brunswick-Lüneburg",
                 "start": 1235,
                 "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "prince_bishopric_of_hildesheim",
+                "canonical_name": "Prince-Bishopric of Hildesheim",
+                "start": 1235,
+                "end": 1803,
                 "kind": "polity"
               },
               {
@@ -37228,6 +37504,20 @@
                 "kind": "polity"
               },
               {
+                "id": "principality_of_gottingen",
+                "canonical_name": "Principality of Göttingen",
+                "start": 1279,
+                "end": 1495,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_teschen",
+                "canonical_name": "Duchy of Teschen",
+                "start": 1281,
+                "end": 1918,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_paderborn",
                 "canonical_name": "Prince-Bishopric of Paderborn",
                 "start": 1281,
@@ -37249,10 +37539,52 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_saxe_wittenberg",
+                "canonical_name": "Duchy of Saxe-Wittenberg",
+                "start": 1296,
+                "end": 1423,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_eichstatt",
                 "canonical_name": "Prince-Bishopric of Eichstätt",
                 "start": 1305,
                 "end": 1802,
+                "kind": "polity"
+              },
+              {
+                "id": "free_imperial_city_of_aachen",
+                "canonical_name": "Free Imperial City of Aachen",
+                "start": 1306,
+                "end": 1801,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_mirandola",
+                "canonical_name": "Duchy of Mirandola",
+                "start": 1310,
+                "end": 1710,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_olesnica",
+                "canonical_name": "Duchy of Oleśnica",
+                "start": 1313,
+                "end": 1884,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_oswiecim",
+                "canonical_name": "Duchy of Oświęcim",
+                "start": 1315,
+                "end": 1564,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_ziebice",
+                "canonical_name": "Duchy of Ziębice",
+                "start": 1321,
+                "end": 1791,
                 "kind": "polity"
               },
               {
@@ -37270,10 +37602,24 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_krnov",
+                "canonical_name": "Duchy of Krnov",
+                "start": 1377,
+                "end": 1623,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_berg",
                 "canonical_name": "Duchy of Berg",
                 "start": 1380,
                 "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_milan",
+                "canonical_name": "Duchy of Milan",
+                "start": 1395,
+                "end": 1797,
                 "kind": "polity"
               },
               {
@@ -37284,10 +37630,73 @@
                 "kind": "polity"
               },
               {
+                "id": "principality_of_piombino",
+                "canonical_name": "Principality of Piombino",
+                "start": 1398,
+                "end": 1805,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_guastalla",
+                "canonical_name": "County of Guastalla",
+                "start": 1406,
+                "end": 1621,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_bernstadt",
+                "canonical_name": "Duchy of Bernstadt",
+                "start": 1412,
+                "end": 1745,
+                "kind": "polity"
+              },
+              {
+                "id": "county_of_hanau",
+                "canonical_name": "County of Hanau",
+                "start": 1429,
+                "end": 1736,
+                "kind": "polity"
+              },
+              {
+                "id": "margravate_of_mantua",
+                "canonical_name": "Margravate of Mantua",
+                "start": 1433,
+                "end": 1530,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_modena_and_reggio",
+                "canonical_name": "Duchy of Modena and Reggio",
+                "start": 1452,
+                "end": 1859,
+                "kind": "polity"
+              },
+              {
                 "id": "landgraviate_of_hesse_marburg",
                 "canonical_name": "Landgraviate of Hesse-Marburg",
                 "start": 1458,
                 "end": 1604,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_mindelheim",
+                "canonical_name": "Principality of Mindelheim",
+                "start": 1467,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_mecklenburg",
+                "canonical_name": "Duchy of Mecklenburg",
+                "start": 1471,
+                "end": 1701,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_massa_and_carrara",
+                "canonical_name": "Duchy of Massa and Carrara",
+                "start": 1473,
+                "end": 1829,
                 "kind": "polity"
               },
               {
@@ -37305,10 +37714,73 @@
                 "kind": "polity"
               },
               {
+                "id": "principality_of_ansbach",
+                "canonical_name": "Principality of Ansbach",
+                "start": 1486,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_bayreuth",
+                "canonical_name": "Principality of Bayreuth",
+                "start": 1486,
+                "end": 1810,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_calenberg",
+                "canonical_name": "Principality of Calenberg",
+                "start": 1494,
+                "end": 1705,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_wurttemberg",
+                "canonical_name": "Duchy of Württemberg",
+                "start": 1495,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "margraviate_of_baden_baden",
+                "canonical_name": "Margraviate of Baden-Baden",
+                "start": 1515,
+                "end": 1771,
+                "kind": "polity"
+              },
+              {
                 "id": "margraviate_of_baden_durlach",
                 "canonical_name": "Margraviate of Baden-Durlach",
                 "start": 1515,
                 "end": 1771,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_pless",
+                "canonical_name": "Duchy of Pless",
+                "start": 1517,
+                "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_mantua",
+                "canonical_name": "Duchy of Mantua",
+                "start": 1530,
+                "end": 1797,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_aosta",
+                "canonical_name": "Duchy of Aosta",
+                "start": 1536,
+                "end": 1770,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_gifhorn",
+                "canonical_name": "Duchy of Gifhorn",
+                "start": 1539,
+                "end": 1549,
                 "kind": "polity"
               },
               {
@@ -37340,6 +37812,34 @@
                 "kind": "polity"
               },
               {
+                "id": "grand_duchy_of_tuscany",
+                "canonical_name": "Grand Duchy of Tuscany",
+                "start": 1569,
+                "end": 1860,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_bielsko",
+                "canonical_name": "Duchy of Bielsko",
+                "start": 1572,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_montferrat",
+                "canonical_name": "Duchy of Montferrat",
+                "start": 1574,
+                "end": 1708,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_salm_salm",
+                "canonical_name": "Principality of Salm-Salm",
+                "start": 1574,
+                "end": 1811,
+                "kind": "polity"
+              },
+              {
                 "id": "sayn_wittgenstein_berleburg",
                 "canonical_name": "Sayn-Wittgenstein-Berleburg",
                 "start": 1607,
@@ -37347,10 +37847,38 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_guastalla",
+                "canonical_name": "Duchy of Guastalla",
+                "start": 1621,
+                "end": 1748,
+                "kind": "polity"
+              },
+              {
+                "id": "electorate_of_bavaria",
+                "canonical_name": "Electorate of Bavaria",
+                "start": 1623,
+                "end": 1805,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_friedland",
                 "canonical_name": "Duchy of Friedland",
                 "start": 1627,
                 "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "landgraviate_of_hesse_rotenburg",
+                "canonical_name": "Landgraviate of Hesse-Rotenburg",
+                "start": 1627,
+                "end": 1834,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_bremen_and_verden",
+                "canonical_name": "Duchy of Bremen and Verden",
+                "start": 1648,
+                "end": 1823,
                 "kind": "polity"
               },
               {
@@ -37372,6 +37900,13 @@
                 "canonical_name": "Principality of Anhalt-Dornburg",
                 "start": 1667,
                 "end": 1742,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_saxe_meiningen",
+                "canonical_name": "Duchy of Saxe-Meiningen",
+                "start": 1675,
+                "end": 1918,
                 "kind": "polity"
               },
               {
@@ -37403,6 +37938,13 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_mecklenburg_schwerin",
+                "canonical_name": "Duchy of Mecklenburg-Schwerin",
+                "start": 1701,
+                "end": 1815,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_mecklenburg_strelitz",
                 "canonical_name": "Duchy of Mecklenburg-Strelitz",
                 "start": 1701,
@@ -37410,10 +37952,45 @@
                 "kind": "polity"
               },
               {
+                "id": "principality_of_reuss_greiz",
+                "canonical_name": "Principality of Reuss-Greiz",
+                "start": 1778,
+                "end": 1919,
+                "kind": "polity"
+              },
+              {
                 "id": "principality_of_lippe",
                 "canonical_name": "Principality of Lippe",
                 "start": 1789,
                 "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "electorate_of_baden",
+                "canonical_name": "Electorate of Baden",
+                "start": 1803,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "electorate_of_salzburg",
+                "canonical_name": "Electorate of Salzburg",
+                "start": 1803,
+                "end": 1805,
+                "kind": "polity"
+              },
+              {
+                "id": "electorate_of_wurttemberg",
+                "canonical_name": "Electorate of Württemberg",
+                "start": 1803,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_aschaffenburg",
+                "canonical_name": "Principality of Aschaffenburg",
+                "start": 1803,
+                "end": 1810,
                 "kind": "polity"
               },
               {
@@ -37438,17 +38015,6 @@
                 "kind": "polity"
               }
             ]
-          },
-          {
-            "id": "county_of_luxembourg",
-            "canonical_name": "County of Luxembourg",
-            "start": 963,
-            "end": 1354,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "march_of_turin",
@@ -37517,43 +38083,6 @@
             "present_countries": []
           },
           {
-            "id": "county_of_namur",
-            "canonical_name": "County of Namur",
-            "start": 981,
-            "end": 1795,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "county_of_burgundy",
-            "canonical_name": "County of Burgundy",
-            "start": 982,
-            "end": 1678,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "prince_bishopric_of_strasbourg",
-            "canonical_name": "Prince-Bishopric of Strasbourg",
-            "start": 982,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "montpellier_seigneury",
             "canonical_name": "Montpellier seigneury",
             "start": 985,
@@ -37563,19 +38092,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "prince_bishopric_of_liege",
-            "canonical_name": "Prince-Bishopric of Liège",
-            "start": 985,
-            "end": 1795,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "BE"
-            ]
           },
           {
             "id": "kingdom_of_france",
@@ -37696,17 +38212,6 @@
             ]
           },
           {
-            "id": "prince_bishopric_of_verdun",
-            "canonical_name": "Prince-Bishopric of Verdun",
-            "start": 997,
-            "end": 1552,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "couto_misto",
             "canonical_name": "Couto Misto",
             "start": 1000,
@@ -37818,30 +38323,6 @@
             "present_countries": [
               "NO"
             ]
-          },
-          {
-            "id": "county_of_dagsburg",
-            "canonical_name": "County of Dagsburg",
-            "start": 1001,
-            "end": 1793,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "county_of_savoy",
-            "canonical_name": "County of Savoy",
-            "start": 1003,
-            "end": 1416,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "savoyard_state",
@@ -38138,30 +38619,6 @@
             ]
           },
           {
-            "id": "county_of_drenthe",
-            "canonical_name": "County of Drenthe",
-            "start": 1024,
-            "end": 1046,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "NL"
-            ]
-          },
-          {
-            "id": "prince_bishopric_of_utrecht",
-            "canonical_name": "Prince-Bishopric of Utrecht",
-            "start": 1024,
-            "end": 1528,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "kingdom_of_poland_q577867",
             "canonical_name": "Kingdom of Poland (1025–1385)",
             "start": 1025,
@@ -38194,19 +38651,6 @@
                 "end": 1084,
                 "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "prince_bishopric_of_trent",
-            "canonical_name": "Prince-Bishopric of Trent",
-            "start": 1027,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
             ]
           },
           {
@@ -38258,28 +38702,6 @@
             "present_countries": [
               "ES"
             ]
-          },
-          {
-            "id": "prince_bishopric_of_basel",
-            "canonical_name": "Prince-Bishopric of Basel",
-            "start": 1032,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_bar",
-            "canonical_name": "Duchy of Bar",
-            "start": 1033,
-            "end": 1766,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "taifa_of_mertola_q2436604",
@@ -38360,19 +38782,6 @@
             ]
           },
           {
-            "id": "prince_bishopric_of_toul",
-            "canonical_name": "Prince-Bishopric of Toul",
-            "start": 1048,
-            "end": 1801,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "taifa_of_segorbe",
             "canonical_name": "Taifa of Segorbe",
             "start": 1055,
@@ -38410,19 +38819,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_limburg_q697787",
-            "canonical_name": "Duchy of Limburg",
-            "start": 1065,
-            "end": 1795,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "BE"
-            ]
-          },
-          {
             "id": "kingdom_of_dalmatia",
             "canonical_name": "Kingdom of Dalmatia",
             "start": 1069,
@@ -38432,19 +38828,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "county_of_hainaut",
-            "canonical_name": "County of Hainaut",
-            "start": 1071,
-            "end": 1794,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "BE"
-            ]
           },
           {
             "id": "county_of_sicily",
@@ -38519,17 +38902,6 @@
             "present_countries": [
               "RS"
             ]
-          },
-          {
-            "id": "landgraviate_of_brabant",
-            "canonical_name": "Landgraviate of Brabant",
-            "start": 1085,
-            "end": 1183,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "lordship_of_brecknock",
@@ -38727,17 +39099,6 @@
             "present_countries": [
               "GB"
             ]
-          },
-          {
-            "id": "duchy_of_pomerania",
-            "canonical_name": "Duchy of Pomerania",
-            "start": 1121,
-            "end": 1637,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "lippe",
@@ -39000,39 +39361,6 @@
             ]
           },
           {
-            "id": "prince_bishopric_of_konstanz",
-            "canonical_name": "Prince-Bishopric of Konstanz",
-            "start": 1155,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "margraviate_of_brandenburg",
-            "canonical_name": "Margraviate of Brandenburg",
-            "start": 1157,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "county_of_nassau",
-            "canonical_name": "County of Nassau",
-            "start": 1160,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "powys_fadog",
             "canonical_name": "Powys Fadog",
             "start": 1160,
@@ -39057,17 +39385,6 @@
             "present_countries": [
               "GB"
             ]
-          },
-          {
-            "id": "prince_bishopric_of_lubeck",
-            "canonical_name": "Prince-Bishopric of Lübeck",
-            "start": 1160,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "republic_of_lucca",
@@ -39135,19 +39452,6 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "IT"
-            ]
-          },
-          {
-            "id": "principality_of_orange",
-            "canonical_name": "Principality of Orange",
-            "start": 1163,
-            "end": 1713,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
             ]
           },
           {
@@ -39310,19 +39614,6 @@
             ]
           },
           {
-            "id": "duchy_of_gogow",
-            "canonical_name": "Duchy of Głogów",
-            "start": 1177,
-            "end": 1815,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "duchy_of_poznan",
             "canonical_name": "Duchy of Poznań",
             "start": 1177,
@@ -39347,19 +39638,6 @@
             "present_countries": []
           },
           {
-            "id": "free_imperial_city_of_besancon",
-            "canonical_name": "Free Imperial City of Besançon",
-            "start": 1180,
-            "end": 1654,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "principality_of_koknese",
             "canonical_name": "Principality of Koknese",
             "start": 1180,
@@ -39382,19 +39660,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "duchy_of_brabant",
-            "canonical_name": "Duchy of Brabant",
-            "start": 1183,
-            "end": 1795,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "BE"
-            ]
           },
           {
             "id": "second_bulgarian_empire",
@@ -39496,32 +39761,6 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "UA"
-            ]
-          },
-          {
-            "id": "landgraviate_of_lower_alsace",
-            "canonical_name": "Landgraviate of Lower Alsace",
-            "start": 1200,
-            "end": 1700,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "landgraviate_of_upper_alsace",
-            "canonical_name": "Landgraviate of Upper Alsace",
-            "start": 1200,
-            "end": 1648,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
             ]
           },
           {
@@ -39684,17 +39923,6 @@
             ]
           },
           {
-            "id": "county_of_stolberg",
-            "canonical_name": "County of Stolberg",
-            "start": 1210,
-            "end": 1548,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "principality_of_wales",
             "canonical_name": "Principality of Wales",
             "start": 1216,
@@ -39745,19 +39973,6 @@
             "present_countries": []
           },
           {
-            "id": "bishopric_of_dorpat",
-            "canonical_name": "Bishopric of Dorpat",
-            "start": 1224,
-            "end": 1558,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "northern_europe",
-            "present_countries": [
-              "EE"
-            ]
-          },
-          {
             "id": "empire_of_thessalonica",
             "canonical_name": "Empire of Thessalonica",
             "start": 1224,
@@ -39782,17 +39997,6 @@
             "present_countries": [
               "ES"
             ]
-          },
-          {
-            "id": "lordship_of_rostock",
-            "canonical_name": "Lordship of Rostock",
-            "start": 1226,
-            "end": 1323,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "taifa_of_lorca_q1949209",
@@ -40335,17 +40539,6 @@
             ]
           },
           {
-            "id": "duchy_of_saxe_wittenberg",
-            "canonical_name": "Duchy of Saxe-Wittenberg",
-            "start": 1296,
-            "end": 1423,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "signoria_of_florence",
             "canonical_name": "Signoria of Florence",
             "start": 1300,
@@ -40453,19 +40646,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "duchy_of_oswiecim",
-            "canonical_name": "Duchy of Oświęcim",
-            "start": 1315,
-            "end": 1564,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
           },
           {
             "id": "duchy_of_prudnik",
@@ -40836,19 +41016,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_krnov",
-            "canonical_name": "Duchy of Krnov",
-            "start": 1377,
-            "end": 1623,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "kingdom_of_bosnia",
             "canonical_name": "Kingdom of Bosnia",
             "start": 1377,
@@ -41027,17 +41194,6 @@
             "canonical_name": "Duchy of Samokalako",
             "start": 1414,
             "end": 1462,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "margravate_of_mantua",
-            "canonical_name": "Margravate of Mantua",
-            "start": 1433,
-            "end": 1530,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -41997,17 +42153,6 @@
             "present_countries": []
           },
           {
-            "id": "county_of_horne",
-            "canonical_name": "County of Horne",
-            "start": 920,
-            "end": 1795,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "dongdan_kingdom",
             "canonical_name": "Dongdan Kingdom",
             "start": 926,
@@ -42404,17 +42549,6 @@
             "present_countries": []
           },
           {
-            "id": "county_of_diez",
-            "canonical_name": "County of Diez",
-            "start": 1073,
-            "end": 1564,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "eastern_ganga_dynasty",
             "canonical_name": "Eastern Ganga dynasty",
             "start": 1078,
@@ -42501,26 +42635,6 @@
             "primary_continent": "unclassified",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "county_of_isenburg",
-            "canonical_name": "County of Isenburg",
-            "start": 1100,
-            "end": 1816,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": [],
-            "details": [
-              {
-                "id": "principality_isenburg",
-                "canonical_name": "Principality Isenburg",
-                "start": 1806,
-                "end": 1815,
-                "kind": "polity"
-              }
-            ]
           },
           {
             "id": "daju_kingdom",
@@ -42791,17 +42905,6 @@
             "canonical_name": "Salghurids",
             "start": 1148,
             "end": 1282,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_merania",
-            "canonical_name": "Duchy of Merania",
-            "start": 1153,
-            "end": null,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -43308,17 +43411,6 @@
             "canonical_name": "Kingdom of al-Abwab",
             "start": 1276,
             "end": 1367,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_gottingen",
-            "canonical_name": "Principality of Göttingen",
-            "start": 1279,
-            "end": 1495,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -44690,28 +44782,6 @@
       "polities_by_historical_region": {
         "unclassified": [
           {
-            "id": "prince_bishopric_of_regensburg",
-            "canonical_name": "Prince-Bishopric of Regensburg",
-            "start": 1201,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_anhalt",
-            "canonical_name": "Principality of Anhalt",
-            "start": 1212,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "prince_bishopric_of_passau",
             "canonical_name": "Prince-Bishopric of Passau",
             "start": 1217,
@@ -44734,17 +44804,6 @@
             "present_countries": []
           },
           {
-            "id": "principality_of_furstenberg",
-            "canonical_name": "Principality of Fürstenberg",
-            "start": 1218,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "amt_der_veste",
             "canonical_name": "Amt der Veste",
             "start": 1219,
@@ -44759,17 +44818,6 @@
             "id": "free_imperial_city_of_dortmund",
             "canonical_name": "free imperial city of Dortmund",
             "start": 1226,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "prince_bishopric_of_hildesheim",
-            "canonical_name": "Prince-Bishopric of Hildesheim",
-            "start": 1235,
             "end": 1803,
             "curated": false,
             "linked_era_id": null,
@@ -44958,17 +45006,6 @@
             "canonical_name": "Nassau-Siegen",
             "start": 1303,
             "end": 1743,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "free_imperial_city_of_aachen",
-            "canonical_name": "Free Imperial City of Aachen",
-            "start": 1306,
-            "end": 1801,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -45284,17 +45321,6 @@
             "present_countries": []
           },
           {
-            "id": "county_of_hanau",
-            "canonical_name": "County of Hanau",
-            "start": 1429,
-            "end": 1736,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "ryukyu_kingdom",
             "canonical_name": "Ryukyu Kingdom",
             "start": 1429,
@@ -45383,17 +45409,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_modena_and_reggio",
-            "canonical_name": "Duchy of Modena and Reggio",
-            "start": 1452,
-            "end": 1859,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "duchy_of_palatinate_simmern",
             "canonical_name": "Duchy of Palatinate-Simmern",
             "start": 1453,
@@ -45471,28 +45486,6 @@
             "present_countries": []
           },
           {
-            "id": "principality_of_mindelheim",
-            "canonical_name": "Principality of Mindelheim",
-            "start": 1467,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_mecklenburg",
-            "canonical_name": "Duchy of Mecklenburg",
-            "start": 1471,
-            "end": 1701,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "panarwa_thikana",
             "canonical_name": "Panarwa thikana",
             "start": 1478,
@@ -45526,28 +45519,6 @@
             "present_countries": []
           },
           {
-            "id": "principality_of_ansbach",
-            "canonical_name": "Principality of Ansbach",
-            "start": 1486,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_bayreuth",
-            "canonical_name": "Principality of Bayreuth",
-            "start": 1486,
-            "end": 1810,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "shilluk_kingdom",
             "canonical_name": "Shilluk Kingdom",
             "start": 1490,
@@ -45555,28 +45526,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_calenberg",
-            "canonical_name": "Principality of Calenberg",
-            "start": 1494,
-            "end": 1705,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_wurttemberg",
-            "canonical_name": "Duchy of Württemberg",
-            "start": 1495,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -45823,17 +45772,6 @@
             "present_countries": []
           },
           {
-            "id": "margraviate_of_baden_baden",
-            "canonical_name": "Margraviate of Baden-Baden",
-            "start": 1515,
-            "end": 1771,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "sultanate_of_maguindanao",
             "canonical_name": "Sultanate of Maguindanao",
             "start": 1515,
@@ -46067,17 +46005,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_gifhorn",
-            "canonical_name": "Duchy of Gifhorn",
-            "start": 1539,
-            "end": 1549,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "sur_empire",
             "canonical_name": "Sur Empire",
             "start": 1540,
@@ -46239,17 +46166,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_salm_salm",
-            "canonical_name": "Principality of Salm-Salm",
-            "start": 1574,
-            "end": 1811,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -46641,17 +46557,6 @@
             "present_countries": []
           },
           {
-            "id": "electorate_of_bavaria",
-            "canonical_name": "Electorate of Bavaria",
-            "start": 1623,
-            "end": 1805,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "akwamu",
             "canonical_name": "Akwamu",
             "start": 1625,
@@ -46670,17 +46575,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "landgraviate_of_hesse_rotenburg",
-            "canonical_name": "Landgraviate of Hesse-Rotenburg",
-            "start": 1627,
-            "end": 1834,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -46969,17 +46863,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_saxe_meiningen",
-            "canonical_name": "Duchy of Saxe-Meiningen",
-            "start": 1675,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "reuss_ebersdorf",
             "canonical_name": "Reuss-Ebersdorf",
             "start": 1678,
@@ -47196,17 +47079,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_mecklenburg_schwerin",
-            "canonical_name": "Duchy of Mecklenburg-Schwerin",
-            "start": 1701,
-            "end": 1815,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -50699,19 +50571,6 @@
             ]
           },
           {
-            "id": "duchy_of_mirandola",
-            "canonical_name": "Duchy of Mirandola",
-            "start": 1310,
-            "end": 1710,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
             "id": "federation_of_the_seven_communities",
             "canonical_name": "Federation of the Seven Communities",
             "start": 1310,
@@ -50813,49 +50672,10 @@
             ]
           },
           {
-            "id": "duchy_of_milan",
-            "canonical_name": "Duchy of Milan",
-            "start": 1395,
-            "end": 1797,
-            "curated": true,
-            "linked_era_id": "europe_early_modern_connections_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
             "id": "marquisate_of_zuccarello",
             "canonical_name": "Marquisate of Zuccarello",
             "start": 1397,
             "end": 1624,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "principality_of_piombino",
-            "canonical_name": "Principality of Piombino",
-            "start": 1398,
-            "end": 1805,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "county_of_guastalla",
-            "canonical_name": "County of Guastalla",
-            "start": 1406,
-            "end": 1621,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -50953,19 +50773,6 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "ES"
-            ]
-          },
-          {
-            "id": "duchy_of_massa_and_carrara",
-            "canonical_name": "Duchy of Massa and Carrara",
-            "start": 1473,
-            "end": 1829,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
             ]
           },
           {
@@ -51205,19 +51012,6 @@
             ]
           },
           {
-            "id": "duchy_of_mantua",
-            "canonical_name": "Duchy of Mantua",
-            "start": 1530,
-            "end": 1797,
-            "curated": true,
-            "linked_era_id": "europe_early_modern_connections_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
             "id": "duchy_of_florence",
             "canonical_name": "Duchy of Florence",
             "start": 1532,
@@ -51225,19 +51019,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "duchy_of_aosta",
-            "canonical_name": "Duchy of Aosta",
-            "start": 1536,
-            "end": 1770,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "IT"
@@ -51322,19 +51103,6 @@
             ]
           },
           {
-            "id": "grand_duchy_of_tuscany",
-            "canonical_name": "Grand Duchy of Tuscany",
-            "start": 1569,
-            "end": 1860,
-            "curated": true,
-            "linked_era_id": "europe_early_modern_connections_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
             "id": "duchy_of_pastrana",
             "canonical_name": "Duchy of Pastrana",
             "start": 1572,
@@ -51345,19 +51113,6 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "ES"
-            ]
-          },
-          {
-            "id": "duchy_of_montferrat",
-            "canonical_name": "Duchy of Montferrat",
-            "start": 1574,
-            "end": 1708,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
             ]
           },
           {
@@ -51455,19 +51210,6 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "ES",
-              "IT"
-            ]
-          },
-          {
-            "id": "duchy_of_guastalla",
-            "canonical_name": "Duchy of Guastalla",
-            "start": 1621,
-            "end": 1748,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
               "IT"
             ]
           },
@@ -53328,19 +53070,6 @@
             ]
           },
           {
-            "id": "duchy_of_teschen",
-            "canonical_name": "Duchy of Teschen",
-            "start": 1281,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "duchy_of_nysa",
             "canonical_name": "Duchy of Nysa",
             "start": 1290,
@@ -53389,36 +53118,10 @@
             ]
           },
           {
-            "id": "duchy_of_olesnica",
-            "canonical_name": "Duchy of Oleśnica",
-            "start": 1313,
-            "end": 1884,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "duchy_of_rawa",
             "canonical_name": "Duchy of Rawa",
             "start": 1313,
             "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
-            "id": "duchy_of_ziebice",
-            "canonical_name": "Duchy of Ziębice",
-            "start": 1321,
-            "end": 1791,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -53486,19 +53189,6 @@
                 "end": 1526,
                 "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "duchy_of_bernstadt",
-            "canonical_name": "Duchy of Bernstadt",
-            "start": 1412,
-            "end": 1745,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
             ]
           },
           {
@@ -53632,19 +53322,6 @@
             ]
           },
           {
-            "id": "duchy_of_pless",
-            "canonical_name": "Duchy of Pless",
-            "start": 1517,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "eastern_hungarian_kingdom",
             "canonical_name": "Eastern Hungarian Kingdom",
             "start": 1526,
@@ -53710,19 +53387,6 @@
                 "end": 1795,
                 "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "duchy_of_bielsko",
-            "canonical_name": "Duchy of Bielsko",
-            "start": 1572,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
             ]
           },
           {
@@ -54040,20 +53704,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "northern_europe",
             "present_countries": [
-              "SE"
-            ]
-          },
-          {
-            "id": "duchy_of_bremen_and_verden",
-            "canonical_name": "Duchy of Bremen and Verden",
-            "start": 1648,
-            "end": 1823,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "northern_europe",
-            "present_countries": [
-              "DE",
               "SE"
             ]
           },
@@ -54954,17 +54604,6 @@
             "present_countries": []
           },
           {
-            "id": "principality_of_mindelheim",
-            "canonical_name": "Principality of Mindelheim",
-            "start": 1467,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "panarwa_thikana",
             "canonical_name": "Panarwa thikana",
             "start": 1478,
@@ -55262,17 +54901,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_gifhorn",
-            "canonical_name": "Duchy of Gifhorn",
-            "start": 1539,
-            "end": 1549,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "sur_empire",
             "canonical_name": "Sur Empire",
             "start": 1540,
@@ -55343,17 +54971,6 @@
             "canonical_name": "Western Beylik",
             "start": 1563,
             "end": 1831,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_salm_salm",
-            "canonical_name": "Principality of Salm-Salm",
-            "start": 1574,
-            "end": 1811,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -60260,19 +59877,6 @@
             ]
           },
           {
-            "id": "duchy_of_aosta",
-            "canonical_name": "Duchy of Aosta",
-            "start": 1536,
-            "end": 1770,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
             "id": "duchy_of_medina_de_rioseco",
             "canonical_name": "Duchy of Medina de Rioseco",
             "start": 1538,
@@ -61199,28 +60803,6 @@
         ],
         "europe": [
           {
-            "id": "prince_bishopric_of_regensburg",
-            "canonical_name": "Prince-Bishopric of Regensburg",
-            "start": 1201,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_anhalt",
-            "canonical_name": "Principality of Anhalt",
-            "start": 1212,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "prince_bishopric_of_passau",
             "canonical_name": "Prince-Bishopric of Passau",
             "start": 1217,
@@ -61236,17 +60818,6 @@
             "canonical_name": "Free Imperial City of Bern",
             "start": 1218,
             "end": 1848,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_furstenberg",
-            "canonical_name": "Principality of Fürstenberg",
-            "start": 1218,
-            "end": 1806,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -61309,17 +60880,6 @@
             "present_countries": [
               "UA"
             ]
-          },
-          {
-            "id": "prince_bishopric_of_hildesheim",
-            "canonical_name": "Prince-Bishopric of Hildesheim",
-            "start": 1235,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "prince_bishopric_of_warmia",
@@ -61589,19 +61149,6 @@
             ]
           },
           {
-            "id": "duchy_of_teschen",
-            "canonical_name": "Duchy of Teschen",
-            "start": 1281,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "kingdom_of_naples_q173065",
             "canonical_name": "Kingdom of Naples",
             "start": 1282,
@@ -61738,17 +61285,6 @@
             "present_countries": []
           },
           {
-            "id": "free_imperial_city_of_aachen",
-            "canonical_name": "Free Imperial City of Aachen",
-            "start": 1306,
-            "end": 1801,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "republic_of_mulhouse",
             "canonical_name": "Republic of Mulhouse",
             "start": 1308,
@@ -61759,19 +61295,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "FR"
-            ]
-          },
-          {
-            "id": "duchy_of_mirandola",
-            "canonical_name": "Duchy of Mirandola",
-            "start": 1310,
-            "end": 1710,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
             ]
           },
           {
@@ -61823,36 +61346,10 @@
             ]
           },
           {
-            "id": "duchy_of_olesnica",
-            "canonical_name": "Duchy of Oleśnica",
-            "start": 1313,
-            "end": 1884,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "duchy_of_rawa",
             "canonical_name": "Duchy of Rawa",
             "start": 1313,
             "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
-            "id": "duchy_of_ziebice",
-            "canonical_name": "Duchy of Ziębice",
-            "start": 1321,
-            "end": 1791,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -62059,19 +61556,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_milan",
-            "canonical_name": "Duchy of Milan",
-            "start": 1395,
-            "end": 1797,
-            "curated": true,
-            "linked_era_id": "europe_early_modern_connections_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
             "id": "anhalt_dessau",
             "canonical_name": "Anhalt-Dessau",
             "start": 1396,
@@ -62111,19 +61595,6 @@
             ]
           },
           {
-            "id": "principality_of_piombino",
-            "canonical_name": "Principality of Piombino",
-            "start": 1398,
-            "end": 1805,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
             "id": "free_imperial_city_of_rottweil",
             "canonical_name": "free imperial city of Rottweil",
             "start": 1400,
@@ -62146,19 +61617,6 @@
             "present_countries": []
           },
           {
-            "id": "county_of_guastalla",
-            "canonical_name": "County of Guastalla",
-            "start": 1406,
-            "end": 1621,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
             "id": "upper_austria",
             "canonical_name": "Upper Austria",
             "start": 1406,
@@ -62170,19 +61628,6 @@
             "present_countries": [
               "AT",
               "CH"
-            ]
-          },
-          {
-            "id": "duchy_of_bernstadt",
-            "canonical_name": "Duchy of Bernstadt",
-            "start": 1412,
-            "end": 1745,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
             ]
           },
           {
@@ -62201,17 +61646,6 @@
             "canonical_name": "Banate of Belgrade",
             "start": 1427,
             "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "county_of_hanau",
-            "canonical_name": "County of Hanau",
-            "start": 1429,
-            "end": 1736,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -62354,17 +61788,6 @@
             ]
           },
           {
-            "id": "duchy_of_modena_and_reggio",
-            "canonical_name": "Duchy of Modena and Reggio",
-            "start": 1452,
-            "end": 1859,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "duchy_of_palatinate_simmern",
             "canonical_name": "Duchy of Palatinate-Simmern",
             "start": 1453,
@@ -62421,30 +61844,6 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "PL"
-            ]
-          },
-          {
-            "id": "duchy_of_mecklenburg",
-            "canonical_name": "Duchy of Mecklenburg",
-            "start": 1471,
-            "end": 1701,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_massa_and_carrara",
-            "canonical_name": "Duchy of Massa and Carrara",
-            "start": 1473,
-            "end": 1829,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
             ]
           },
           {
@@ -62580,28 +61979,6 @@
             "present_countries": []
           },
           {
-            "id": "principality_of_ansbach",
-            "canonical_name": "Principality of Ansbach",
-            "start": 1486,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_bayreuth",
-            "canonical_name": "Principality of Bayreuth",
-            "start": 1486,
-            "end": 1810,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "siberian_khanate",
             "canonical_name": "Siberian Khanate",
             "start": 1490,
@@ -62626,28 +62003,6 @@
             "present_countries": [
               "ES"
             ]
-          },
-          {
-            "id": "principality_of_calenberg",
-            "canonical_name": "Principality of Calenberg",
-            "start": 1494,
-            "end": 1705,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_wurttemberg",
-            "canonical_name": "Duchy of Württemberg",
-            "start": 1495,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "principality_of_pavia",
@@ -62746,17 +62101,6 @@
             "present_countries": []
           },
           {
-            "id": "margraviate_of_baden_baden",
-            "canonical_name": "Margraviate of Baden-Baden",
-            "start": 1515,
-            "end": 1771,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "prince_bishopric_of_montenegro",
             "canonical_name": "Prince-Bishopric of Montenegro",
             "start": 1516,
@@ -62817,19 +62161,6 @@
                 "end": 1975,
                 "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "duchy_of_pless",
-            "canonical_name": "Duchy of Pless",
-            "start": 1517,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
             ]
           },
           {
@@ -62958,19 +62289,6 @@
             "primary_historical_region": "balkans",
             "present_countries": [
               "HR"
-            ]
-          },
-          {
-            "id": "duchy_of_mantua",
-            "canonical_name": "Duchy of Mantua",
-            "start": 1530,
-            "end": 1797,
-            "curated": true,
-            "linked_era_id": "europe_early_modern_connections_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
             ]
           },
           {
@@ -63258,19 +62576,6 @@
             "present_countries": []
           },
           {
-            "id": "grand_duchy_of_tuscany",
-            "canonical_name": "Grand Duchy of Tuscany",
-            "start": 1569,
-            "end": 1860,
-            "curated": true,
-            "linked_era_id": "europe_early_modern_connections_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
             "id": "polishlithuanian_commonwealth",
             "canonical_name": "Polish–Lithuanian Commonwealth",
             "start": 1569,
@@ -63313,19 +62618,6 @@
             ]
           },
           {
-            "id": "duchy_of_bielsko",
-            "canonical_name": "Duchy of Bielsko",
-            "start": 1572,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "saxe_coburg_eisenach",
             "canonical_name": "Saxe-Coburg-Eisenach",
             "start": 1572,
@@ -63348,19 +62640,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "duchy_of_montferrat",
-            "canonical_name": "Duchy of Montferrat",
-            "start": 1574,
-            "end": 1708,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
           },
           {
             "id": "calvinist_republic_of_brussels",
@@ -63660,19 +62939,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_guastalla",
-            "canonical_name": "Duchy of Guastalla",
-            "start": 1621,
-            "end": 1748,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
             "id": "hesse_homburg",
             "canonical_name": "Hesse-Homburg",
             "start": 1622,
@@ -63695,17 +62961,6 @@
             "present_countries": []
           },
           {
-            "id": "electorate_of_bavaria",
-            "canonical_name": "Electorate of Bavaria",
-            "start": 1623,
-            "end": 1805,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "colony_of_barbados",
             "canonical_name": "Colony of Barbados",
             "start": 1627,
@@ -63717,17 +62972,6 @@
             "present_countries": [
               "GB"
             ]
-          },
-          {
-            "id": "landgraviate_of_hesse_rotenburg",
-            "canonical_name": "Landgraviate of Hesse-Rotenburg",
-            "start": 1627,
-            "end": 1834,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "principality_of_monforte",
@@ -63850,20 +63094,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_bremen_and_verden",
-            "canonical_name": "Duchy of Bremen and Verden",
-            "start": 1648,
-            "end": 1823,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "northern_europe",
-            "present_countries": [
-              "DE",
-              "SE"
-            ]
-          },
-          {
             "id": "swedish_pomerania",
             "canonical_name": "Swedish Pomerania",
             "start": 1648,
@@ -63949,17 +63179,6 @@
             "present_countries": [
               "DE"
             ]
-          },
-          {
-            "id": "duchy_of_saxe_meiningen",
-            "canonical_name": "Duchy of Saxe-Meiningen",
-            "start": 1675,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "saxe_eisenberg",
@@ -64063,17 +63282,6 @@
             "present_countries": [
               "ES"
             ]
-          },
-          {
-            "id": "duchy_of_mecklenburg_schwerin",
-            "canonical_name": "Duchy of Mecklenburg-Schwerin",
-            "start": 1701,
-            "end": 1815,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "principality_of_orange_nassau",
@@ -65734,17 +64942,6 @@
             ]
           },
           {
-            "id": "principality_of_reuss_greiz",
-            "canonical_name": "Principality of Reuss-Greiz",
-            "start": 1778,
-            "end": 1919,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "kingdom_of_gomma",
             "canonical_name": "Kingdom of Gomma",
             "start": 1780,
@@ -65941,17 +65138,6 @@
             "present_countries": []
           },
           {
-            "id": "electorate_of_baden",
-            "canonical_name": "Electorate of Baden",
-            "start": 1803,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "electorate_of_hesse_q100594799",
             "canonical_name": "Electorate of Hesse",
             "start": 1803,
@@ -65959,39 +65145,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "electorate_of_salzburg",
-            "canonical_name": "Electorate of Salzburg",
-            "start": 1803,
-            "end": 1805,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "electorate_of_wurttemberg",
-            "canonical_name": "Electorate of Württemberg",
-            "start": 1803,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_aschaffenburg",
-            "canonical_name": "Principality of Aschaffenburg",
-            "start": 1803,
-            "end": 1810,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -72568,17 +71721,6 @@
             ]
           },
           {
-            "id": "principality_of_reuss_greiz",
-            "canonical_name": "Principality of Reuss-Greiz",
-            "start": 1778,
-            "end": 1919,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "batavian_republic",
             "canonical_name": "Batavian Republic",
             "start": 1795,
@@ -72714,43 +71856,10 @@
             "present_countries": []
           },
           {
-            "id": "electorate_of_baden",
-            "canonical_name": "Electorate of Baden",
-            "start": 1803,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "electorate_of_hesse_q100594799",
             "canonical_name": "Electorate of Hesse",
             "start": 1803,
             "end": 1807,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "electorate_of_salzburg",
-            "canonical_name": "Electorate of Salzburg",
-            "start": 1803,
-            "end": 1805,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "electorate_of_wurttemberg",
-            "canonical_name": "Electorate of Württemberg",
-            "start": 1803,
-            "end": 1806,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -76711,17 +75820,6 @@
             "id": "valais_republic",
             "canonical_name": "Valais Republic",
             "start": 1802,
-            "end": 1810,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_aschaffenburg",
-            "canonical_name": "Principality of Aschaffenburg",
-            "start": 1803,
             "end": 1810,
             "curated": false,
             "linked_era_id": null,

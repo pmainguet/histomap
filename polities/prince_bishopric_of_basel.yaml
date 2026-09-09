@@ -50,3 +50,4 @@ manual_overrides:
 government_form: prince-bishopric
 deprecated:
   visibility_tier: detailed
+detail_of: holy_roman_empire
