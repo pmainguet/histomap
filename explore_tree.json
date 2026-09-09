@@ -44684,6 +44684,15 @@
               "primary_historical_region": "unclassified",
               "present_countries": [
                 "DE"
+              ],
+              "details": [
+                {
+                  "id": "peace_of_westphalia",
+                  "canonical_name": "Peace of Westphalia",
+                  "start": 1648,
+                  "end": 1648,
+                  "kind": "event"
+                }
               ]
             }
           ],

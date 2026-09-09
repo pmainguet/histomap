@@ -435,6 +435,13 @@ function polityRefButton(politiesById, id) {
     : escapeHtml(label);
 }
 
+function eventRefButton(eventsById, id) {
+  const label = eventsById.get(id)?.canonical_name || displayTerm(id);
+  return eventsById.has(id)
+    ? `<button class="entity-link" type="button" data-explore-event-id="${escapeHtml(id)}">${escapeHtml(label)}</button>`
+    : escapeHtml(label);
+}
+
 // A period's detail_of target -- and, in reverse, whatever's listed as a
 // period's own "detail of" child -- can be either a period or a polity
 // (the reverse is never true: a polity's own detail_of/children stay
@@ -442,7 +449,9 @@ function polityRefButton(politiesById, id) {
 // validate_period_detail_of). Dispatches to whichever of the two ref-button
 // helpers actually has the id, since ids are unique across both.
 function entityRefButton(ctx, id) {
-  return ctx.periodsById.has(id) ? periodRefButton(ctx.periodsById, id) : polityRefButton(ctx.politiesById, id);
+  if (ctx.periodsById.has(id)) return periodRefButton(ctx.periodsById, id);
+  if (ctx.politiesById.has(id)) return polityRefButton(ctx.politiesById, id);
+  return eventRefButton(ctx.eventsById, id);
 }
 
 function externalLinksForPeriod(period) {
@@ -589,6 +598,16 @@ function renderPeriodDetails(period, ctx) {
   // the detail_of relationship specifically, to avoid colliding with the
   // existing "Part of"/"Contains" labels already used for broader_periods.
   const detailChildren = [...periodsById.values()].filter((candidate) => candidate.detail_of === period.id);
+  // ROADMAP.md item 0 (8 September 2026): an event bound to this period
+  // (edge=start or edge=end) used to only ever show up via its own
+  // Events-lane marker on the chart -- clicking the period itself showed
+  // nothing, unlike every other detail_of relationship. Same "Details"
+  // row as detailChildren above, not a separate one.
+  const boundEvents = [...ctx.eventsById.values()].filter((event) => (event.bounds || []).some((bound) => bound.target === period.id));
+  const detailRefs = [
+    ...detailChildren.map((item) => periodRefButton(periodsById, item.id)),
+    ...boundEvents.map((item) => eventRefButton(ctx.eventsById, item.id)),
+  ];
 
   explorePanel.innerHTML = `<button class="detail-close" type="button" aria-label="Close details">×</button>
     <p class="detail-kicker">${escapeHtml(TIER_KICKER[period.tier] || "Period")}</p>
@@ -606,7 +625,7 @@ function renderPeriodDetails(period, ctx) {
       ${(period.broader_periods || []).length ? `<dt>Part of</dt><dd>${period.broader_periods.map((id) => periodRefButton(periodsById, id)).join(", ")}</dd>` : ""}
       ${period.detail_of ? `<dt>Detail of</dt><dd>${entityRefButton(ctx, period.detail_of)}</dd>` : ""}
       ${contained.length ? `<dt>Contains</dt><dd>${contained.map((item) => periodRefButton(periodsById, item.id)).join(", ")}</dd>` : ""}
-      ${detailChildren.length ? `<dt>Details</dt><dd>${detailChildren.map((item) => periodRefButton(periodsById, item.id)).join(", ")}</dd>` : ""}
+      ${detailRefs.length ? `<dt>Details</dt><dd>${detailRefs.join(", ")}</dd>` : ""}
       ${predecessors.length ? `<dt>Preceded by</dt><dd>${predecessors.map((item) => periodRefButton(periodsById, item.id)).join(", ")}</dd>` : ""}
       ${(period.successors || []).length ? `<dt>Followed by</dt><dd>${period.successors.map((id) => periodRefButton(periodsById, id)).join(", ")}</dd>` : ""}
       ${linked.length ? `<dt>Linked entities</dt><dd class="detail-links">${linked.map((link) => `${polityRefButton(politiesById, link.entity_id)} <small>${escapeHtml(link.evidence)}, ${escapeHtml(link.confidence)}</small>`).join("<br>")}</dd>` : ""}
@@ -627,6 +646,12 @@ function renderPeriodDetails(period, ctx) {
     button.addEventListener("click", () => {
       const target = politiesById.get(button.dataset.explorePolityId);
       if (target) renderPolityDetails(target, ctx);
+    });
+  });
+  explorePanel.querySelectorAll("[data-explore-event-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = ctx.eventsById.get(button.dataset.exploreEventId);
+      if (target) renderEventDetails(target, ctx);
     });
   });
 }
@@ -682,10 +707,14 @@ function renderPolityDetails(polity, ctx) {
   const duration = polity.end == null ? null : polity.end - polity.start;
   // A polity's "Contains" (its detail_of children) can now include periods
   // too, not just other polities -- e.g. a short-lived named period that's
-  // a detail of this polity.
+  // a detail of this polity. ROADMAP.md item 0 (8 September 2026): an
+  // event detail_of this polity belongs here too -- same gap as the
+  // period side (see renderPeriodDetails' boundEvents), just via detail_of
+  // instead of bounds, since an event's detail_of is polity-only.
   const children = [
     ...[...politiesById.values()].filter((candidate) => candidate.detail_of === polity.id),
     ...[...periodsById.values()].filter((candidate) => candidate.detail_of === polity.id),
+    ...[...ctx.eventsById.values()].filter((candidate) => (candidate.detail_of || []).includes(polity.id)),
   ];
   const predecessors = [...politiesById.values()].filter((candidate) => (candidate.successors || []).includes(polity.id));
   const relevantPeriods = periodLinks.filter((link) => link.entity_id === polity.id);
@@ -734,6 +763,12 @@ function renderPolityDetails(polity, ctx) {
     button.addEventListener("click", () => {
       const target = periodsById.get(button.dataset.explorePeriodId);
       if (target) renderPeriodDetails(target, ctx);
+    });
+  });
+  explorePanel.querySelectorAll("[data-explore-event-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = ctx.eventsById.get(button.dataset.exploreEventId);
+      if (target) renderEventDetails(target, ctx);
     });
   });
 }

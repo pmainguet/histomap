@@ -264,6 +264,24 @@ def build_explore_tree(
                 "end": event.get("year"),
                 "kind": "event",
             })
+        # ROADMAP.md item 0 (8 September 2026): an event's bounds (the
+        # era/chapter/period it starts or ends) used to only ever appear on
+        # /explore via its own Events-lane marker -- clicking the period
+        # it's actually bound to showed nothing, unlike every other
+        # detail_of relationship. Same detail shape as above; a bound
+        # event can attach to several periods (edge=start on one,
+        # edge=end on another) same as detail_of's own multi-target list.
+        for bound in event.get("bounds") or []:
+            target_id = bound.get("target")
+            if not target_id:
+                continue
+            details_by_target.setdefault(target_id, []).append({
+                "id": event["id"],
+                "canonical_name": event.get("canonical_name", event["id"]),
+                "start": event.get("year"),
+                "end": event.get("year"),
+                "kind": "event",
+            })
     for details in details_by_target.values():
         details.sort(key=lambda d: (d["start"] if d["start"] is not None else 0, d["id"]))
     _attach_nested_details(details_by_target)

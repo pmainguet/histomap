@@ -202,6 +202,33 @@ class BuildExploreTreeTests(unittest.TestCase):
         self.assertIn("shared_event", [d["id"] for d in first_container["details"]])
         self.assertIn("shared_event", [d["id"] for d in second_container["details"]])
 
+    def test_event_bounds_attaches_to_its_target_periods_details(self) -> None:
+        # ROADMAP.md item 0 (8 September 2026): an event's bounds (the
+        # era/chapter/period it starts or ends) used to only ever show up
+        # via its own Events-lane marker -- it never attached to the
+        # target period's own "details" the way detail_of does above.
+        events = [{
+            "id": "old_kingdom_ends", "canonical_name": "Old Kingdom collapses", "year": -2181,
+            "bounds": [{"target": "old_kingdom", "edge": "end"}],
+        }]
+        tree = build_explore_tree(self.polities, self.periods, self.period_links, events=events)
+        egypt_era = next(e for e in tree["chapters"][0]["eras"] if e["id"] == "egypt_era")
+        container = next(p for p in egypt_era["periods"] if p["id"] == "old_kingdom")
+        detail = next(d for d in container["details"] if d["id"] == "old_kingdom_ends")
+        self.assertEqual(detail["kind"], "event")
+        self.assertEqual(detail["start"], -2181)
+        self.assertEqual(detail["end"], -2181)
+
+    def test_event_can_bound_two_periods_at_once(self) -> None:
+        events = [{
+            "id": "shared_boundary", "canonical_name": "Shared Boundary", "year": -2181,
+            "bounds": [{"target": "old_kingdom", "edge": "end"}, {"target": "heuristic_period", "edge": "start"}],
+        }]
+        tree = build_explore_tree(self.polities, self.periods, self.period_links, events=events)
+        egypt_era = next(e for e in tree["chapters"][0]["eras"] if e["id"] == "egypt_era")
+        old_kingdom_container = next(p for p in egypt_era["periods"] if p["id"] == "old_kingdom")
+        self.assertIn("shared_boundary", [d["id"] for d in old_kingdom_container["details"]])
+
     def test_no_events_argument_leaves_tree_unaffected(self) -> None:
         # events defaults to None -- every existing call site (build.py
         # before this feature, every other test in this file) must keep
