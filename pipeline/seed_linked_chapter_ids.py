@@ -34,19 +34,12 @@ import yaml
 
 from build import load_civilization_period_role_sources
 from pipeline.build_explore_tree import build_explore_tree
+from pipeline.yaml_io import load_yaml_dir, write_yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 POLITIES_DIR = ROOT / "polities"
 PERIODS_DIR = ROOT / "periods"
 PERIOD_LINKS_PATH = ROOT / "period_links.yaml"
-
-
-def load_yaml_dir(directory: Path) -> list[dict]:
-    return [yaml.safe_load(path.read_text(encoding="utf-8")) for path in sorted(directory.glob("*.yaml"))]
-
-
-def write_yaml(path: Path, document: dict) -> None:
-    path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
 
 
 def main() -> None:

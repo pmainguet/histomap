@@ -369,11 +369,6 @@ function sortGeoKeys(keys) {
   return [...keys].sort((a, b) => (geoSortKey(a) < geoSortKey(b) ? -1 : geoSortKey(a) > geoSortKey(b) ? 1 : 0));
 }
 
-function regionLabel(key) {
-  if (key === "unclassified") return "Unclassified";
-  return key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
 // Narrows a tree to a [start, end) window (used when zoomed in) --
 // chapters/eras/periods/polities entirely outside the window are dropped,
 // not just visually clamped, so downstream layout (lane packing, region
@@ -535,7 +530,7 @@ function collectGeoFilterOptions(tree, groupBy) {
   const items = [...periods, ...polities, ...civilizations];
   if (groupBy === "continent") {
     const keys = sortGeoKeys(new Set(items.map(geoBucketKey)));
-    return keys.map((key) => ({ value: key, label: regionLabel(key) }));
+    return keys.map((key) => ({ value: key, label: displayTerm(key) }));
   }
   const keys = [...new Set(items.map(countryLaneKey))].sort((a, b) => countryLaneLabel(a).localeCompare(countryLaneLabel(b)));
   return keys.map((key) => ({ value: key, label: countryLaneLabel(key) }));
@@ -784,7 +779,7 @@ function drawContinentGroupedRow(svg, scale, rows, y, laneHeight, cls, onZoom, w
   rows.forEach(({ continent, lanes }, index) => {
     if (index > 0) drawRegionSeparator(svg, width, rowY - 2);
     const label = svgEl("text", { x: POLITIES_LABEL_X, y: rowY + REGION_HEADER_HEIGHT - 4, class: "hierarchy-region-label" });
-    label.textContent = regionLabel(continent);
+    label.textContent = displayTerm(continent);
     svg.append(label);
     rowY += REGION_HEADER_HEIGHT;
     const offsets = laneOffsets(lanes, laneHeight, isExpanded);
@@ -814,7 +809,7 @@ function drawGeoCountryGroupedRow(svg, scale, groups, y, laneHeight, cls, onZoom
   groups.forEach(({ geo, countries }, groupIndex) => {
     if (groupIndex > 0) drawRegionSeparator(svg, width, rowY - 2);
     const header = svgEl("text", { x: POLITIES_LABEL_X, y: rowY + CONTINENT_HEADER_HEIGHT - 5, class: "hierarchy-continent-label" });
-    header.textContent = regionLabel(geo);
+    header.textContent = displayTerm(geo);
     svg.append(header);
     rowY += CONTINENT_HEADER_HEIGHT;
     countries.forEach(({ country, lanes }, countryIndex) => {
@@ -971,6 +966,17 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
 
   let y = 0;
   let prevSepY = 0;
+  let sepY = 0;
+  // Every tier row below ends the same way: advance past its own height,
+  // draw the separator/label for the row that just finished, and remember
+  // where it ended so the next label knows where its own row started.
+  function advanceRow(heightIncrement, label) {
+    y += heightIncrement + rowGap;
+    sepY = y - rowGap / 2;
+    drawSeparator(svg, width, sepY);
+    drawTierLabel(svg, label, prevSepY, sepY);
+    prevSepY = sepY;
+  }
   const geoEnd = new Date().getFullYear();
   for (const epoch of GEOLOGICAL_EPOCHS) {
     const end = epoch.end === null ? geoEnd : epoch.end;
@@ -993,11 +999,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
       isExpanded, onToggleExpand,
     });
   }
-  y += geoRowHeight + epochRowExtraHeight + rowGap;
-  let sepY = y - rowGap / 2;
-  drawSeparator(svg, width, sepY);
-  drawTierLabel(svg, "Epoch", prevSepY, sepY);
-  prevSepY = sepY;
+  advanceRow(geoRowHeight + epochRowExtraHeight, "Epoch");
 
   for (const chapter of tree.chapters) {
     bandRect(svg, {
@@ -1008,21 +1010,13 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
       onZoom: { handler: onZoom, kind: "chapter", id: chapter.id, start: chapter.start, end: chapter.end },
     });
   }
-  y += chapterRowHeight + rowGap;
-  sepY = y - rowGap / 2;
-  drawSeparator(svg, width, sepY);
-  drawTierLabel(svg, "Chapter", prevSepY, sepY);
-  prevSepY = sepY;
+  advanceRow(chapterRowHeight, "Chapter");
 
   drawFlatLaneRow(svg, scale, eraLayout.lanes, y, eraLaneHeight, "hierarchy-band-era", onZoom, tree.axis.domain_end, {
     getFill: (item) => eraColor(eraColorMap, item.id),
     getKind: () => "era",
   });
-  y += eraRowHeight + rowGap;
-  sepY = y - rowGap / 2;
-  drawSeparator(svg, width, sepY);
-  drawTierLabel(svg, "Era", prevSepY, sepY);
-  prevSepY = sepY;
+  advanceRow(eraRowHeight, "Era");
 
   drawGroupedRow(svg, scale, periodLayout, y, periodLaneHeight, "hierarchy-band-period", onZoom, width, tree.axis.domain_end, {
     getFill: (item) => eraColor(eraColorMap, item.era_id),
@@ -1030,19 +1024,11 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
     getLabel: (item) => itemDisplayLabel(item, groupBy),
     isExpanded, onToggleExpand,
   });
-  y += periodRowHeight + rowGap;
-  sepY = y - rowGap / 2;
-  drawSeparator(svg, width, sepY);
-  drawTierLabel(svg, "Period", prevSepY, sepY);
-  prevSepY = sepY;
+  advanceRow(periodRowHeight, "Period");
 
   if (eventLanes.length > 0) {
     drawEventsRow(svg, scale, eventLanes, y, eventLaneHeight, onZoom);
-    y += eventLanes.length * eventLaneHeight + rowGap;
-    sepY = y - rowGap / 2;
-    drawSeparator(svg, width, sepY);
-    drawTierLabel(svg, "Events", prevSepY, sepY);
-    prevSepY = sepY;
+    advanceRow(eventLanes.length * eventLaneHeight, "Events");
   }
 
   if (civLayout.height > 0) {
@@ -1051,11 +1037,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
       getKind: (item) => (item.source === "polity" ? "polity" : "period"),
       getLabel: (item) => itemDisplayLabel(item, groupBy),
     });
-    y += civLayout.height + rowGap;
-    sepY = y - rowGap / 2;
-    drawSeparator(svg, width, sepY);
-    drawTierLabel(svg, "Civilizations & Cultures", prevSepY, sepY);
-    prevSepY = sepY;
+    advanceRow(civLayout.height, "Civilizations & Cultures");
   }
 
   if (showPolities !== "hide" && politiesRowHeight > 0) {

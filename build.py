@@ -191,7 +191,9 @@ def load_all() -> list[Polity]:
     return polities
 
 
-def load_civilization_period_role_sources(polities_dir: Path = POLITIES_DIR) -> dict[str, str]:
+def load_civilization_period_role_sources(
+    polities_dir: Path = POLITIES_DIR, *, polities: list[Polity] | None = None
+) -> dict[str, str]:
     """Polities promoted to timeline_role: period are excluded from
     *publication* (see main()'s published_polities filter) since they're
     already represented by a generated periods/*.yaml companion record --
@@ -200,10 +202,20 @@ def load_civilization_period_role_sources(polities_dir: Path = POLITIES_DIR) -> 
     companion period into the Civilizations & Cultures lane instead of the
     ordinary Period row (its generated canonical_name is usually just a
     plain copy of the polity's name, e.g. "Ancient Egypt", so the
-    name-substring heuristic alone won't catch it). A lightweight,
-    independent scan (raw dict reads, no Polity validation) rather than a
-    change to load_all()'s contract, which many other callers depend on."""
+    name-substring heuristic alone won't catch it). Pass `polities` when the
+    caller has already loaded and validated the full set via load_all() --
+    main() does -- to skip a second full-directory read+parse of the same
+    files; callers that only have the yaml files on disk (a few one-off
+    pipeline/ scripts) fall back to a lightweight, independent scan (raw
+    dict reads, no Polity validation)."""
     from pipeline.build_explore_tree import CIVILIZATION_ENTITY_TYPES
+
+    if polities is not None:
+        return {
+            polity.id: polity.entity_type.value
+            for polity in polities
+            if polity.timeline_role == "period" and polity.entity_type.value in CIVILIZATION_ENTITY_TYPES
+        }
 
     sources: dict[str, str] = {}
     for path in sorted(polities_dir.glob("*.yaml")):
@@ -338,6 +350,13 @@ def load_events(polities: list[Polity], periods: list[Period]) -> list[Event]:
     return events
 
 
+def _write_json(path: Path, data) -> None:
+    """Shared tail end of every build-output write below: same indent/encoding
+    for every artifact, whether it's a list of model_dump()s or a plain dict
+    (explore_tree)."""
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
 def main() -> None:
     polities = load_all()
     transitions = load_transitions(polities)
@@ -376,30 +395,12 @@ def main() -> None:
     published_polities = [
         polity for polity in polities if polity.timeline_role not in {"retired", "period"}
     ]
-    OUT_PATH.write_text(
-        json.dumps(
-            [p.model_dump(mode="json") for p in published_polities],
-            indent=2,
-            ensure_ascii=False,
-        ),
-        encoding="utf-8",
+    _write_json(OUT_PATH, [p.model_dump(mode="json") for p in published_polities])
+    _write_json(
+        TRANSITIONS_OUT_PATH, [item.model_dump(mode="json", by_alias=True) for item in transitions]
     )
-    TRANSITIONS_OUT_PATH.write_text(
-        json.dumps(
-            [item.model_dump(mode="json", by_alias=True) for item in transitions],
-            indent=2,
-            ensure_ascii=False,
-        ),
-        encoding="utf-8",
-    )
-    PERIODS_OUT_PATH.write_text(
-        json.dumps([item.model_dump(mode="json") for item in periods], indent=2, ensure_ascii=False),
-        encoding="utf-8",
-    )
-    PERIOD_LINKS_OUT_PATH.write_text(
-        json.dumps([item.model_dump(mode="json") for item in period_links], indent=2, ensure_ascii=False),
-        encoding="utf-8",
-    )
+    _write_json(PERIODS_OUT_PATH, [item.model_dump(mode="json") for item in periods])
+    _write_json(PERIOD_LINKS_OUT_PATH, [link.model_dump(mode="json") for link in period_links])
     # Unlike every other publication filter here, this is NOT "publish
     # everything, check later" -- eligibility: review (the default) is
     # deliberately excluded. See Event's own docstring in schema.py and
@@ -408,22 +409,17 @@ def main() -> None:
     # anywhere, unlike an unclassified-but-dated polity, which is still
     # worth seeing.
     published_events = [event for event in events if event.eligibility.value == "accepted"]
-    EVENTS_OUT_PATH.write_text(
-        json.dumps([event.model_dump(mode="json") for event in published_events], indent=2, ensure_ascii=False),
-        encoding="utf-8",
-    )
+    _write_json(EVENTS_OUT_PATH, [event.model_dump(mode="json") for event in published_events])
     from pipeline.build_explore_tree import build_explore_tree
 
     explore_tree = build_explore_tree(
         [p.model_dump(mode="json") for p in published_polities],
         [p.model_dump(mode="json") for p in periods],
         [link.model_dump(mode="json") for link in period_links],
-        load_civilization_period_role_sources(),
+        load_civilization_period_role_sources(polities=polities),
         [event.model_dump(mode="json") for event in published_events],
     )
-    EXPLORE_TREE_OUT_PATH.write_text(
-        json.dumps(explore_tree, indent=2, ensure_ascii=False), encoding="utf-8"
-    )
+    _write_json(EXPLORE_TREE_OUT_PATH, explore_tree)
     print(
         f"OK  validated {len(polities)} and wrote {len(published_polities)} entities, "
         f"{len(transitions)} transitions, "

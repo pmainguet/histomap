@@ -241,9 +241,29 @@ def clean_json(value: object) -> object:
     return value
 
 
-def search_polities(query: str, metadata: dict[str, dict], limit: int = 10) -> list[dict]:
+def rank_by_name(query: str, candidates: dict[str, list[str]], limit: int) -> list[tuple[str, float]]:
+    """Fuzzy-rank candidate ids by name match against query. `candidates` maps
+    each id to its own list of matchable name strings (canonical name first,
+    then aliases/id) -- an exact case-insensitive match against any of them
+    ranks first regardless of fuzzy score, then ties break on the first name.
+    Shared by search_polities and search_periods, which differ only in how
+    they build `candidates` and shape their own result dicts."""
     query = query.strip()
     ranked = []
+    for candidate_id, names in candidates.items():
+        names = [name for name in names if name]
+        if not names:
+            continue
+        score = max(float(fuzz.WRatio(query, name)) for name in names)
+        exact = any(query.casefold() == name.casefold() for name in names)
+        ranked.append((not exact, -score, names[0], candidate_id))
+    return [
+        (candidate_id, -negative_score) for _, negative_score, _, candidate_id in sorted(ranked)[:limit]
+    ]
+
+
+def search_polities(query: str, metadata: dict[str, dict], limit: int = 10) -> list[dict]:
+    candidates = {}
     for polity_id, document in metadata.items():
         if document.get("eligibility") == "excluded" or document.get("timeline_role") == "retired":
             continue
@@ -253,11 +273,9 @@ def search_polities(query: str, metadata: dict[str, dict], limit: int = 10) -> l
                 names.extend(part.strip() for part in str(value).split("|") if part.strip())
             elif value:
                 names.append(str(value))
-        score = max(float(fuzz.WRatio(query, name)) for name in names if name)
-        exact_alias = any(query.casefold() == name.casefold() for name in names if name)
-        ranked.append((not exact_alias, -score, str(document.get("canonical_name", "")), polity_id))
+        candidates[polity_id] = names
     results = []
-    for _, negative_score, _, polity_id in sorted(ranked)[:limit]:
+    for polity_id, score in rank_by_name(query, candidates, limit):
         document = metadata[polity_id]
         external_ids = document.get("external_ids") or {}
         links = []
@@ -275,7 +293,7 @@ def search_polities(query: str, metadata: dict[str, dict], limit: int = 10) -> l
                 "canonical_end": document.get("end"),
                 "canonical_sources": document.get("sources", []),
                 "source_links": links,
-                "search_score": round(-negative_score, 1),
+                "search_score": round(score, 1),
             }
         )
     return results
@@ -287,26 +305,22 @@ def search_periods(query: str, periods_dir: Path, limit: int = 10) -> list[dict]
     Periods aren't held in an in-memory store the way polities are (see
     every other period endpoint in this file), so this reads the directory
     fresh each call -- fine at this dataset's scale (~100 periods)."""
-    query = query.strip()
     documents: dict[str, dict] = {}
-    ranked = []
+    candidates = {}
     for path in periods_dir.glob("*.yaml"):
         document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         period_id = document.get("id", path.stem)
         documents[period_id] = document
-        name = str(document.get("canonical_name", period_id))
-        score = max(float(fuzz.WRatio(query, candidate)) for candidate in (name, period_id) if candidate)
-        exact = query.casefold() in {name.casefold(), period_id.casefold()}
-        ranked.append((not exact, -score, name, period_id))
+        candidates[period_id] = [str(document.get("canonical_name", period_id)), period_id]
     results = []
-    for _, negative_score, name, period_id in sorted(ranked)[:limit]:
+    for period_id, score in rank_by_name(query, candidates, limit):
         document = documents[period_id]
         results.append({
             "period_id": period_id,
-            "canonical_name": name,
+            "canonical_name": candidates[period_id][0],
             "canonical_start": document.get("start"),
             "canonical_end": document.get("end"),
-            "search_score": round(-negative_score, 1),
+            "search_score": round(score, 1),
         })
     return results
 

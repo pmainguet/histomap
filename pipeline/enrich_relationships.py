@@ -51,11 +51,9 @@ def succession_dates_compatible(predecessor: PolityDates, successor: PolityDates
     return successor.start >= predecessor.start and -25 <= gap <= MAX_SUCCESSION_GAP
 
 
-def _qid(uri: str) -> str:
-    return uri.rsplit("/", 1)[-1]
-
-
-def _property(uri: str) -> str:
+def _uri_suffix(uri: str) -> str:
+    """Last path segment of a Wikidata URI -- a QID for an entity URI, a
+    property id for a property URI. Same string operation either way."""
     return uri.rsplit("/", 1)[-1]
 
 
@@ -79,9 +77,9 @@ SELECT DISTINCT ?source ?property ?target WHERE {{
             bindings = sparql.query().convert()["results"]["bindings"]
             return [
                 {
-                    "source": _qid(row["source"]["value"]),
-                    "property": _property(row["property"]["value"]),
-                    "target": _qid(row["target"]["value"]),
+                    "source": _uri_suffix(row["source"]["value"]),
+                    "property": _uri_suffix(row["property"]["value"]),
+                    "target": _uri_suffix(row["target"]["value"]),
                 }
                 for row in bindings
             ]

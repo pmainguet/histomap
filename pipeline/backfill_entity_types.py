@@ -58,6 +58,20 @@ CONTEXT_TYPES = {
     "tribe",
     "archaeological_horizon",
 }
+
+
+def reset_context_type_weight(document: dict) -> None:
+    """A CONTEXT_TYPES record (subdivision, culture, tribe, ...) has no real
+    population/area weight of its own -- Maddison/HYDE only cover sovereign
+    states -- so its weight_by_era is reset to a flat placeholder and any
+    hyde/maddison source credit it previously carried is dropped. Shared by
+    backfill_entity_types.py (when a record's entity_type just changed into
+    CONTEXT_TYPES) and compute_weights.py (on every weight recompute)."""
+    document["weight_by_era"] = {int(document["start"]): 3}
+    document["weight_imputed"] = True
+    document["sources"] = sorted(set(document.get("sources", [])) - {"hyde", "maddison"})
+
+
 # Wikidata "sovereign state" and "country" -- the two direct P31 types that mark
 # a record as a modern state for the population/GDP extractors.
 SOVEREIGN_QIDS = {"Q6256", "Q3624078"}
@@ -392,11 +406,7 @@ def run() -> dict[str, int]:
                 migrated += 1
         document["relationships"] = relationships
         if source_type in CONTEXT_TYPES:
-            document["weight_by_era"] = {int(document["start"]): 3}
-            document["weight_imputed"] = True
-            document["sources"] = sorted(
-                set(document.get("sources", [])) - {"hyde", "maddison"}
-            )
+            reset_context_type_weight(document)
         if source_type not in {"polity", "subdivision"} or (
             parent and by_id.get(parent, {}).get("entity_type") != "polity"
         ):

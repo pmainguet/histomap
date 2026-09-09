@@ -413,33 +413,29 @@ const TIER_KICKER = {
 // A record's own id may not resolve (e.g. a broader_periods/successor
 // pointing at something outside the currently-loaded set) -- fall back to
 // a displayable version of the raw id rather than showing nothing.
-function periodLabel(periodsById, id) {
-  return periodsById.get(id)?.canonical_name || displayTerm(id);
-}
-
-function polityLabel(politiesById, id) {
-  return politiesById.get(id)?.canonical_name || displayTerm(id);
+// Look up id in map, fall back to a displayable version of the raw id
+// (a stale/mistyped reference pointing outside the currently-loaded set)
+// rather than showing nothing; wrap in a clickable ref button only when
+// the target actually resolves. periodRefButton/polityRefButton/
+// eventRefButton below are the same shape, one per lookup map + data
+// attribute the click-wiring in wireEntityRefButtons listens for.
+function refButton(map, id, dataAttr) {
+  const label = map.get(id)?.canonical_name || displayTerm(id);
+  return map.has(id)
+    ? `<button class="entity-link" type="button" data-${dataAttr}="${escapeHtml(id)}">${escapeHtml(label)}</button>`
+    : escapeHtml(label);
 }
 
 function periodRefButton(periodsById, id) {
-  const label = periodLabel(periodsById, id);
-  return periodsById.has(id)
-    ? `<button class="entity-link" type="button" data-explore-period-id="${escapeHtml(id)}">${escapeHtml(label)}</button>`
-    : escapeHtml(label);
+  return refButton(periodsById, id, "explore-period-id");
 }
 
 function polityRefButton(politiesById, id) {
-  const label = polityLabel(politiesById, id);
-  return politiesById.has(id)
-    ? `<button class="entity-link" type="button" data-explore-polity-id="${escapeHtml(id)}">${escapeHtml(label)}</button>`
-    : escapeHtml(label);
+  return refButton(politiesById, id, "explore-polity-id");
 }
 
 function eventRefButton(eventsById, id) {
-  const label = eventsById.get(id)?.canonical_name || displayTerm(id);
-  return eventsById.has(id)
-    ? `<button class="entity-link" type="button" data-explore-event-id="${escapeHtml(id)}">${escapeHtml(label)}</button>`
-    : escapeHtml(label);
+  return refButton(eventsById, id, "explore-event-id");
 }
 
 // A period's detail_of target -- and, in reverse, whatever's listed as a
@@ -636,24 +632,7 @@ function renderPeriodDetails(period, ctx) {
   wireExplorePanel(ctx, period.start, period.end, period.detail_of || period.id);
   loadWikipediaSummary(period, wikiSummarySlots(explorePanel));
   wireEditControls("period", period, ctx, (updated) => renderPeriodDetails(updated, ctx));
-  explorePanel.querySelectorAll("[data-explore-period-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const target = periodsById.get(button.dataset.explorePeriodId);
-      if (target) renderPeriodDetails(target, ctx);
-    });
-  });
-  explorePanel.querySelectorAll("[data-explore-polity-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const target = politiesById.get(button.dataset.explorePolityId);
-      if (target) renderPolityDetails(target, ctx);
-    });
-  });
-  explorePanel.querySelectorAll("[data-explore-event-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const target = ctx.eventsById.get(button.dataset.exploreEventId);
-      if (target) renderEventDetails(target, ctx);
-    });
-  });
+  wireEntityRefButtons(ctx);
 }
 
 // ROADMAP.md item 5 / docs/plans/2026-09-07-events-lane-design.md. An
@@ -683,18 +662,7 @@ function renderEventDetails(event, ctx) {
 
   wireExplorePanel(ctx, event.year, event.year, detailOfTargets[0] || event.id);
   loadWikipediaSummary(event, wikiSummarySlots(explorePanel));
-  explorePanel.querySelectorAll("[data-explore-period-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const target = ctx.periodsById.get(button.dataset.explorePeriodId);
-      if (target) renderPeriodDetails(target, ctx);
-    });
-  });
-  explorePanel.querySelectorAll("[data-explore-polity-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const target = ctx.politiesById.get(button.dataset.explorePolityId);
-      if (target) renderPolityDetails(target, ctx);
-    });
-  });
+  wireEntityRefButtons(ctx);
 }
 
 function renderPolityDetails(polity, ctx) {
@@ -753,16 +721,24 @@ function renderPolityDetails(polity, ctx) {
   wireExplorePanel(ctx, polity.start, polity.end ?? ctx.domainEnd, polity.detail_of || polity.id);
   loadWikipediaSummary(polity, wikiSummarySlots(explorePanel));
   wireEditControls("polity", polity, ctx, (updated) => renderPolityDetails(updated, ctx));
-  explorePanel.querySelectorAll("[data-explore-polity-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const target = politiesById.get(button.dataset.explorePolityId);
-      if (target) renderPolityDetails(target, ctx);
-    });
-  });
+  wireEntityRefButtons(ctx);
+}
+
+// Every ref button rendered anywhere in the currently-open panel (periodRefButton/
+// polityRefButton/eventRefButton, direct or via entityRefButton) shares this one
+// click-wiring pass -- called once per render*Details, regardless of which of
+// the three kinds actually appear; a selector with no matches is a no-op.
+function wireEntityRefButtons(ctx) {
   explorePanel.querySelectorAll("[data-explore-period-id]").forEach((button) => {
     button.addEventListener("click", () => {
-      const target = periodsById.get(button.dataset.explorePeriodId);
+      const target = ctx.periodsById.get(button.dataset.explorePeriodId);
       if (target) renderPeriodDetails(target, ctx);
+    });
+  });
+  explorePanel.querySelectorAll("[data-explore-polity-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = ctx.politiesById.get(button.dataset.explorePolityId);
+      if (target) renderPolityDetails(target, ctx);
     });
   });
   explorePanel.querySelectorAll("[data-explore-event-id]").forEach((button) => {

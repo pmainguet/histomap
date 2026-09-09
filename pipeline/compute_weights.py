@@ -9,7 +9,11 @@ import numpy as np
 import pandas as pd
 import yaml
 
-from pipeline.backfill_entity_types import CONTEXT_TYPES, sovereign_state_qids
+from pipeline.backfill_entity_types import (
+    CONTEXT_TYPES,
+    reset_context_type_weight,
+    sovereign_state_qids,
+)
 
 try:
     import tomllib
@@ -157,11 +161,7 @@ def run() -> dict[str, int]:
     measured = 0
     for path, document in documents:
         if document.get("entity_type", "polity") in CONTEXT_TYPES:
-            document["weight_by_era"] = {int(document["start"]): 3}
-            document["weight_imputed"] = True
-            document["sources"] = sorted(
-                set(document.get("sources", [])) - {"hyde", "maddison"}
-            )
+            reset_context_type_weight(document)
             path.write_text(
                 yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
             )

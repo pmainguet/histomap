@@ -19,24 +19,15 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import yaml
-
 from pipeline.build_explore_tree import CIVILIZATION_ENTITY_TYPES, _is_civilization_lane_period, _civilization_period_source_entity_type
 from pipeline.suggest_period_links import in_scope
 from pipeline.suggest_regional_eras import rank_candidates
+from pipeline.yaml_io import load_yaml_dir, write_yaml
 from build import load_civilization_period_role_sources
 
 ROOT = Path(__file__).resolve().parent.parent
 POLITIES_DIR = ROOT / "polities"
 PERIODS_DIR = ROOT / "periods"
-
-
-def load_yaml_dir(directory: Path) -> list[dict]:
-    return [yaml.safe_load(path.read_text(encoding="utf-8")) for path in sorted(directory.glob("*.yaml"))]
-
-
-def write_yaml(path: Path, document: dict) -> None:
-    path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
 
 
 def main() -> None:

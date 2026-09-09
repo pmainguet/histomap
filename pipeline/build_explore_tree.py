@@ -372,6 +372,23 @@ def build_explore_tree(
     for cid in chapter_ids:
         civilizations_by_chapter[cid].sort(key=lambda e: (e["start"], e["id"]))
 
+    # The "no curated placement" heuristic below doesn't depend on which chapter
+    # is currently being assembled, so it's computed once per polity here rather
+    # than once per (chapter, polity) pair inside Pass 2's per-chapter loop.
+    best_chapter_by_polity_id: dict[str, dict | None] = {}
+    for polity in polities:
+        if polity.get("entity_type") in CIVILIZATION_ENTITY_TYPES:
+            continue
+        if polity.get("detail_of"):
+            continue
+        polity_id = polity["id"]
+        linked_chapter_id = polity.get("linked_chapter_id")
+        if linked_chapter_id and linked_chapter_id in chapters_by_id:
+            continue  # explicit human link, heuristic never consulted
+        if polity_id in all_curated_ids:
+            continue  # curated under some chapter already
+        best_chapter_by_polity_id[polity_id] = best_chapter_for_polity(polity, all_chapters, open_end)
+
     # Pass 2: bucket polities per chapter by region, using the curated ids
     # from Pass 1.
     chapters_out = []
@@ -400,7 +417,7 @@ def build_explore_tree(
                 if not is_curated:
                     if polity_id in all_curated_ids:
                         continue  # curated under a *different* chapter
-                    best = best_chapter_for_polity(polity, [chapters_by_id[c] for c in chapter_ids], open_end)
+                    best = best_chapter_by_polity_id.get(polity_id)
                     if best is None or best["id"] != cid:
                         continue
             geo = polity.get("geography") or {}
@@ -485,6 +502,18 @@ def _merge_auto_generated_eras(eras: list[dict], chapter: dict) -> list[dict]:
     return curated + [merged]
 
 
+def _geo_fields(geo: dict) -> dict:
+    """The primary_continent/primary_historical_region/present_countries triple
+    every explore-tree entry builder below derives from a record's `geography`
+    the same way, so /explore's period, polity, and civilization rows can share
+    one client-side geography-grouping implementation instead of several."""
+    return {
+        "primary_continent": primary_continent(geo),
+        "primary_historical_region": primary_historical_region(geo),
+        "present_countries": geo.get("present_countries") or [],
+    }
+
+
 def _period_entry(period: dict, curated: bool, era_id: str) -> dict:
     """Build a JSON-serializable dict entry for a named-period node with its
     curated/heuristic flag. `primary_continent` lets the /explore period row
@@ -505,9 +534,7 @@ def _period_entry(period: dict, curated: bool, era_id: str) -> dict:
         "end": period["end"],
         "curated": curated,
         "era_id": era_id,
-        "primary_continent": primary_continent(geo),
-        "primary_historical_region": primary_historical_region(geo),
-        "present_countries": geo.get("present_countries") or [],
+        **_geo_fields(geo),
     }
 
 
@@ -528,10 +555,8 @@ def _polity_entry(polity: dict, curated: bool) -> dict:
         "start": polity["start"],
         "end": polity.get("end"),
         "curated": curated,
-        "present_countries": geo.get("present_countries") or [],
-        "primary_continent": primary_continent(geo),
-        "primary_historical_region": primary_historical_region(geo),
         "linked_era_id": polity.get("linked_era_id"),
+        **_geo_fields(geo),
     }
 
 
@@ -559,9 +584,7 @@ def _civilization_polity_entry(polity: dict) -> dict:
         "source": "polity",
         "entity_type": polity.get("entity_type"),
         "linked_era_id": polity.get("linked_era_id"),
-        "primary_continent": primary_continent(geo),
-        "primary_historical_region": primary_historical_region(geo),
-        "present_countries": geo.get("present_countries") or [],
+        **_geo_fields(geo),
     }
 
 
@@ -585,9 +608,7 @@ def _civilization_period_entry(period: dict, source_entity_type: str | None = No
         "curated": curated,
         "source": "period",
         "linked_era_id": period.get("linked_era_id"),
-        "primary_continent": primary_continent(geo),
-        "primary_historical_region": primary_historical_region(geo),
-        "present_countries": geo.get("present_countries") or [],
+        **_geo_fields(geo),
     }
     if source_entity_type is not None:
         entry["entity_type"] = source_entity_type

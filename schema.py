@@ -143,20 +143,27 @@ class Geography(BaseModel):
             raise ValueError("present_countries must contain ISO alpha-2 codes")
         return sorted(set(values))
 
-    @model_validator(mode="after")
-    def _primary_is_a_known_continent(self) -> "Geography":
-        if self.primary_continent is not None and self.primary_continent not in self.continents:
-            raise ValueError("primary_continent must also appear in continents")
-        if self.primary_continent is None and len(self.continents) == 1:
-            self.primary_continent = self.continents[0]
-        return self
+    @staticmethod
+    def _resolved_primary(
+        primary: str | None, options: list[str], primary_field: str, options_field: str
+    ) -> str | None:
+        if primary is not None and primary not in options:
+            raise ValueError(f"{primary_field} must also appear in {options_field}")
+        if primary is None and len(options) == 1:
+            return options[0]
+        return primary
 
     @model_validator(mode="after")
-    def _primary_is_a_known_historical_region(self) -> "Geography":
-        if self.primary_historical_region is not None and self.primary_historical_region not in self.historical_regions:
-            raise ValueError("primary_historical_region must also appear in historical_regions")
-        if self.primary_historical_region is None and len(self.historical_regions) == 1:
-            self.primary_historical_region = self.historical_regions[0]
+    def _resolve_primaries(self) -> "Geography":
+        self.primary_continent = self._resolved_primary(
+            self.primary_continent, self.continents, "primary_continent", "continents"
+        )
+        self.primary_historical_region = self._resolved_primary(
+            self.primary_historical_region,
+            self.historical_regions,
+            "primary_historical_region",
+            "historical_regions",
+        )
         return self
 
 
@@ -477,4 +484,3 @@ class Event(BaseModel):
         if len(seen) != len(value):
             raise ValueError("bounds must not repeat the same (target, edge) pair")
         return value
-    notes: str = ""

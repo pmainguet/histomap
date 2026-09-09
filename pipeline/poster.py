@@ -277,7 +277,6 @@ def authentic_path(
     year_range: tuple[int, int],
     step: int,
     year_to_y,
-    max_year_no_fade_out: int | None,
     jitter_amp: float = 3.0,
 ) -> str:
     """Style "authentic": a polity's own band, centered on its lineage's
@@ -285,6 +284,7 @@ def authentic_path(
     stack_polities for the non-stacked style. Small deterministic jitter
     on the half-width, echoing the 1931 original's hand-drawn edges."""
     start_year, end_year = year_range
+    max_year_no_fade_out = end_year
     lo = max(start_year, polity.start)
     hi = min(end_year, polity.end)
     if lo >= hi:
@@ -440,7 +440,7 @@ def render_poster_svg(style: Style, start_year: int, end_year: int, root: Path =
         for p in polities:
             fill, line = lineage_color.get(p.lineage_id, _PALETTE[0])
             x = lineage_x.get(p.lineage_id, content_x0)
-            d = authentic_path(p, x, (start_year, end_year), step, year_to_y, end_year)
+            d = authentic_path(p, x, (start_year, end_year), step, year_to_y)
             if d:
                 parts.append(f'<path d="{d}" fill="{fill}" stroke="{line}" stroke-width="1.1"/>')
                 mid_year = max(start_year, min(end_year, (p.start + p.end) // 2))
@@ -462,9 +462,8 @@ def render_poster_svg(style: Style, start_year: int, end_year: int, root: Path =
         year += tick_step
 
     # Events -- ticks in the left margin.
-    for event in raw_events:
-        if not (start_year <= event["year"] <= end_year):
-            continue
+    visible_events = [e for e in raw_events if start_year <= e["year"] <= end_year]
+    for event in visible_events:
         y = year_to_y(event["year"])
         parts.append(f'<circle cx="{content_x0 - 20:.1f}" cy="{y:.1f}" r="3" fill="{_EVENT_COLOR}"/>')
         parts.append(f'<text x="{content_x0 - 14:.1f}" y="{y + 3:.1f}" style="font:700 italic 7.5px sans-serif; fill:{_EVENT_COLOR};">{_esc(event["canonical_name"])}</text>')
@@ -493,9 +492,7 @@ def render_poster_svg(style: Style, start_year: int, end_year: int, root: Path =
         parts.append(_rotated_label(x + _GUTTER_LANE_W / 2 + 4, y0 - 6, label, 8, _INK))
     parts.append(f'<rect x="{x_events:.1f}" y="{y0:.1f}" width="{_GUTTER_LANE_W}" height="{y1 - y0:.1f}" fill="{events_fill}" stroke="{_INK}" stroke-width="0.6"/>')
     parts.append(_rotated_label(x_events + _GUTTER_LANE_W / 2 + 4, y0 - 6, "EVENTS", 8, _EVENT_COLOR))
-    for event in raw_events:
-        if not (start_year <= event["year"] <= end_year):
-            continue
+    for event in visible_events:
         y = year_to_y(event["year"])
         parts.append(f'<circle cx="{x_events + _GUTTER_LANE_W / 2:.1f}" cy="{y:.1f}" r="3" fill="{_EVENT_COLOR}"/>')
 

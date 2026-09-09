@@ -26,7 +26,9 @@ REPORT_PATH = ROOT / "reports" / "geography_coverage.md"
 
 
 def field_locked(document: dict, field: str) -> bool:
-    return field in set(document.get("manual_overrides", []))
+    return field in document.get("manual_overrides", [])
+
+
 NATURAL_EARTH_URL = (
     "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/"
     "geojson/ne_110m_admin_0_countries.geojson"
@@ -78,17 +80,20 @@ def point_in_polygon(lon: float, lat: float, polygon: list[list[list[float]]]) -
     )
 
 
+def _polygons_of(geometry: dict) -> list:
+    """Normalize both GeoJSON shapes to a list of polygons (a polygon being a
+    list of rings), so callers below have only one case to handle."""
+    if geometry.get("type") == "Polygon":
+        return [geometry.get("coordinates", [])]
+    if geometry.get("type") == "MultiPolygon":
+        return geometry.get("coordinates", [])
+    return []
+
+
 def locate_point(lon: float, lat: float, features: list[dict]) -> tuple[str, str] | None:
     for feature in features:
         geometry = feature.get("geometry") or {}
-        # Normalize both GeoJSON shapes to a list of polygons (a polygon being
-        # a list of rings), so the scan below has only one case to handle.
-        if geometry.get("type") == "Polygon":
-            polygons = [geometry.get("coordinates", [])]
-        elif geometry.get("type") == "MultiPolygon":
-            polygons = geometry.get("coordinates", [])
-        else:
-            polygons = []
+        polygons = _polygons_of(geometry)
         if any(point_in_polygon(lon, lat, polygon) for polygon in polygons):
             properties = feature.get("properties", {})
             iso = properties.get("ISO_A2_EH") or properties.get("ISO_A2")
@@ -121,14 +126,7 @@ def locate_near_coast(
     matches: list[tuple[float, str, str]] = []
     for feature in features:
         geometry = feature.get("geometry") or {}
-        # Normalize both GeoJSON shapes to a list of polygons (a polygon being
-        # a list of rings), so the scan below has only one case to handle.
-        if geometry.get("type") == "Polygon":
-            polygons = [geometry.get("coordinates", [])]
-        elif geometry.get("type") == "MultiPolygon":
-            polygons = geometry.get("coordinates", [])
-        else:
-            polygons = []
+        polygons = _polygons_of(geometry)
         distances = [
             point_segment_distance(lon, lat, ring[index - 1], ring[index])
             for polygon in polygons
