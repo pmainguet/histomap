@@ -4475,7 +4475,7 @@
             "end": -203,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -10493,6 +10493,17 @@
             ]
           },
           {
+            "id": "jiujiang",
+            "canonical_name": "Jiujiang",
+            "start": -205,
+            "end": -203,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
             "id": "linjiang",
             "canonical_name": "Linjiang",
             "start": -205,
@@ -13208,17 +13219,6 @@
             "present_countries": []
           },
           {
-            "id": "jiujiang",
-            "canonical_name": "Jiujiang",
-            "start": -205,
-            "end": -203,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "kingdom_of_henan",
             "canonical_name": "Kingdom of Henan",
             "start": -205,
@@ -15274,9 +15274,11 @@
             "end": 1816,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "south_america",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CO"
+            ]
           },
           {
             "id": "early_history_of_kedah",
@@ -20115,9 +20117,11 @@
             "end": 1364,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "MM"
+            ]
           },
           {
             "id": "signoria_di_carrara",
@@ -32686,6 +32690,19 @@
             ]
           },
           {
+            "id": "pinya_kingdom",
+            "canonical_name": "Pinya Kingdom",
+            "start": 1310,
+            "end": 1364,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "MM"
+            ]
+          },
+          {
             "id": "beylik_of_saruhan",
             "canonical_name": "Beylik of Saruhan",
             "start": 1313,
@@ -41129,17 +41146,6 @@
             "present_countries": []
           },
           {
-            "id": "united_provinces_of_new_granada",
-            "canonical_name": "United Provinces of New Granada",
-            "start": 181,
-            "end": 1816,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "afrighids",
             "canonical_name": "Afrighids",
             "start": 305,
@@ -43448,17 +43454,6 @@
             "present_countries": []
           },
           {
-            "id": "pinya_kingdom",
-            "canonical_name": "Pinya Kingdom",
-            "start": 1310,
-            "end": 1364,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "sagaing_kingdom",
             "canonical_name": "Sagaing Kingdom",
             "start": 1315,
@@ -43944,6 +43939,19 @@
           }
         ],
         "south_america": [
+          {
+            "id": "united_provinces_of_new_granada",
+            "canonical_name": "United Provinces of New Granada",
+            "start": 181,
+            "end": 1816,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "south_america",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CO"
+            ]
+          },
           {
             "id": "seshat_neguanje_conahua",
             "canonical_name": "Neguanje",
@@ -45498,7 +45506,7 @@
             "end": 1701,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -45982,9 +45990,11 @@
             "end": 1798,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "MT"
+            ]
           },
           {
             "id": "soran_emirate",
@@ -46422,7 +46432,7 @@
             "end": 1882,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -55502,17 +55512,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_mecklenburg",
-            "canonical_name": "Duchy of Mecklenburg",
-            "start": 1471,
-            "end": 1701,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "panarwa_thikana",
             "canonical_name": "Panarwa thikana",
             "start": 1478,
@@ -55755,17 +55754,6 @@
             "present_countries": []
           },
           {
-            "id": "hospitaller_malta",
-            "canonical_name": "Hospitaller Malta",
-            "start": 1530,
-            "end": 1798,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "soran_emirate",
             "canonical_name": "Soran Emirate",
             "start": 1530,
@@ -55968,17 +55956,6 @@
             "canonical_name": "Kingdom of Niumi",
             "start": 1600,
             "end": 1897,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_of_tazeroualt",
-            "canonical_name": "Kingdom of Tazeroualt",
-            "start": 1600,
-            "end": 1882,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -61255,6 +61232,17 @@
             ]
           },
           {
+            "id": "kingdom_of_tazeroualt",
+            "canonical_name": "Kingdom of Tazeroualt",
+            "start": 1600,
+            "end": 1882,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
             "id": "kombo",
             "canonical_name": "Kombo",
             "start": 1600,
@@ -63304,6 +63292,17 @@
             ]
           },
           {
+            "id": "duchy_of_mecklenburg",
+            "canonical_name": "Duchy of Mecklenburg",
+            "start": 1471,
+            "end": 1701,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
             "id": "duchy_of_massa_and_carrara",
             "canonical_name": "Duchy of Massa and Carrara",
             "start": 1473,
@@ -63918,6 +63917,19 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "IT"
+            ]
+          },
+          {
+            "id": "hospitaller_malta",
+            "canonical_name": "Hospitaller Malta",
+            "start": 1530,
+            "end": 1798,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "MT"
             ]
           },
           {
@@ -79334,9 +79346,11 @@
             "end": 1929,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "DE"
+            ]
           },
           {
             "id": "komancza_republic",
@@ -79741,9 +79755,11 @@
             "end": 1941,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "RO"
+            ]
           },
           {
             "id": "hellenic_state",
@@ -82120,17 +82136,6 @@
             "present_countries": []
           },
           {
-            "id": "free_state_of_waldeck_pyrmont",
-            "canonical_name": "Free State of Waldeck-Pyrmont",
-            "start": 1918,
-            "end": 1929,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "kurdish_state_19181919",
             "canonical_name": "Kurdish state (1918–1919)",
             "start": 1918,
@@ -82311,17 +82316,6 @@
             "canonical_name": "North Shanxi Autonomous Government",
             "start": 1937,
             "end": 1939,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "national_legionary_state",
-            "canonical_name": "National Legionary State",
-            "start": 1940,
-            "end": 1941,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -83574,6 +83568,19 @@
             ]
           },
           {
+            "id": "free_state_of_waldeck_pyrmont",
+            "canonical_name": "Free State of Waldeck-Pyrmont",
+            "start": 1918,
+            "end": 1929,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
             "id": "free_state_schwarzburg_rudolstadt",
             "canonical_name": "Free State Schwarzburg-Rudolstadt",
             "start": 1918,
@@ -84248,6 +84255,19 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "SK"
+            ]
+          },
+          {
+            "id": "national_legionary_state",
+            "canonical_name": "National Legionary State",
+            "start": 1940,
+            "end": 1941,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "RO"
             ]
           },
           {

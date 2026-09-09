@@ -24,7 +24,8 @@ sources:
 prominence_score: 12.8
 eligibility: accepted
 geography:
-  continents: []
+  continents:
+  - africa
   present_countries: []
   centroid: null
   confidence: null

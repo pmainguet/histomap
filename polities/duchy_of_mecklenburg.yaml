@@ -24,7 +24,8 @@ sources:
 prominence_score: 14.46
 eligibility: accepted
 geography:
-  continents: []
+  continents:
+  - europe
   present_countries: []
   centroid: null
   confidence: null

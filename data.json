@@ -80327,8 +80327,10 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
       "present_countries": [],
@@ -114332,13 +114334,20 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
-      "centroid": null,
-      "confidence": null
+      "present_countries": [
+        "DE"
+      ],
+      "centroid": {
+        "lat": 51.366666666,
+        "lon": 9.016666666
+      },
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -135763,13 +135772,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "MT"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -149785,8 +149798,10 @@
       "western_chu"
     ],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
       "present_countries": [],
@@ -187700,8 +187715,10 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
       "present_countries": [],
@@ -205306,8 +205323,10 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
       "present_countries": [],
@@ -233818,13 +233837,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "RO"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -256116,13 +256139,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "MM"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -324050,13 +324077,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "MA"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -370654,13 +370685,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "south_america"
+      ],
+      "primary_continent": "south_america",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CO"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"

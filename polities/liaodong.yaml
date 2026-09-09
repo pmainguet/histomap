@@ -26,7 +26,8 @@ sources:
 prominence_score: 3.77
 eligibility: accepted
 geography:
-  continents: []
+  continents:
+  - asia
   present_countries: []
   centroid: null
   confidence: null
