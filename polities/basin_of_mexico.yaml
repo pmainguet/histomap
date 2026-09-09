@@ -1,0 +1,25 @@
+id: basin_of_mexico
+canonical_name: Basin of Mexico
+names:
+  aliases_en: Valley of Mexico
+entity_type: polity
+entity_type_confidence: high
+start: -6000
+end: 1426
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - MX
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q50647
+notes: Parent for the Basin of Mexico's own phase sequence (Archaic through Postclassic),
+  each already its own reviewed polity, attached via detail_of rather than merged
+  into one record.
+source_urls:
+- https://en.wikipedia.org/wiki/Valley_of_Mexico

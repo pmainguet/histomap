@@ -46,3 +46,4 @@ entity_type_reviewed_against:
 government_form: null
 deprecated:
   visibility_tier: detailed
+detail_of: monte_alban

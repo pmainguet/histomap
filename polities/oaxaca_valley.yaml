@@ -1,0 +1,27 @@
+id: oaxaca_valley
+canonical_name: Valley of Oaxaca
+names:
+  aliases_en: Ancient Oaxaca
+entity_type: polity
+entity_type_confidence: high
+start: -1400
+end: -501
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - north_america
+  present_countries:
+  - MX
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q2528964
+notes: Parent for the Valley of Oaxaca's pre-Monte Alban Formative phase sequence
+  (Tierras Largas, San Jose, Rosario), each already its own reviewed polity, attached
+  via detail_of rather than merged into one record. Distinct from the modern Mexican
+  state of Oaxaca (id oaxaca, founded 1824) and from Monte Alban/the later Zapotec
+  civilization, which succeed this sequence.
+source_urls:
+- https://en.wikipedia.org/wiki/Oaxaca_Valley

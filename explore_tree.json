@@ -305,6 +305,154 @@
             ]
           }
         ],
+        "unclassified": [
+          {
+            "id": "seshat_peiligang_cnpeili",
+            "canonical_name": "Peiligang",
+            "start": -7000,
+            "end": -5001,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "basin_of_mexico",
+            "canonical_name": "Basin of Mexico",
+            "start": -6000,
+            "end": 1426,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "north_america",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "MX"
+            ],
+            "details": [
+              {
+                "id": "seshat_archaic_basin_mexico_mxarch",
+                "canonical_name": "Archaic Basin of Mexico",
+                "start": -6000,
+                "end": -2001,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_initial_formative_basin_mexico_mxinitl",
+                "canonical_name": "Initial Formative Basin of Mexico",
+                "start": -2000,
+                "end": -1201,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_formative_basin_mexico_mxforme",
+                "canonical_name": "Early Formative Basin of Mexico",
+                "start": -1200,
+                "end": -801,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_formative_basin_mexico_mxformm",
+                "canonical_name": "Middle Formative Basin of Mexico",
+                "start": -800,
+                "end": -401,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_formative_basin_mexico_mxforml",
+                "canonical_name": "Late Formative Basin of Mexico",
+                "start": -400,
+                "end": -101,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_terminal_formative_basin_mexico_mxformt",
+                "canonical_name": "Terminal Formative Basin of Mexico",
+                "start": -100,
+                "end": 99,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_classic_basin_mexico_mxclass",
+                "canonical_name": "Classic Basin of Mexico",
+                "start": 100,
+                "end": 649,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_epiclassic_basin_mexico_mxepicl",
+                "canonical_name": "Epiclassic Basin of Mexico",
+                "start": 650,
+                "end": 899,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_postclassic_basin_mexico_mxpostm",
+                "canonical_name": "Middle Postclassic Basin of Mexico",
+                "start": 1200,
+                "end": 1426,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "seshat_ubaid_iqubaid",
+            "canonical_name": "Ubaid",
+            "start": -5500,
+            "end": -4201,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "seshat_yangshao_cnyngsh",
+            "canonical_name": "Yangshao",
+            "start": -5000,
+            "end": -3001,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "seshat_badarian_egbadar",
+            "canonical_name": "Badarian",
+            "start": -4400,
+            "end": -3801,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "EG"
+            ]
+          },
+          {
+            "id": "seshat_susa_i_irsusa1",
+            "canonical_name": "Susa I",
+            "start": -4300,
+            "end": -3801,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "seshat_naqada_i_egnaqa1",
+            "canonical_name": "Naqada I",
+            "start": -3800,
+            "end": -3551,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          }
+        ],
         "west_asia": [
           {
             "id": "byblos",
@@ -397,91 +545,6 @@
               "IQ"
             ]
           }
-        ],
-        "mesoamerica": [
-          {
-            "id": "seshat_archaic_basin_mexico_mxarch",
-            "canonical_name": "Archaic Basin of Mexico",
-            "start": -6000,
-            "end": -2001,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          }
-        ],
-        "unclassified": [
-          {
-            "id": "seshat_peiligang_cnpeili",
-            "canonical_name": "Peiligang",
-            "start": -7000,
-            "end": -5001,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "seshat_ubaid_iqubaid",
-            "canonical_name": "Ubaid",
-            "start": -5500,
-            "end": -4201,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "seshat_yangshao_cnyngsh",
-            "canonical_name": "Yangshao",
-            "start": -5000,
-            "end": -3001,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "seshat_badarian_egbadar",
-            "canonical_name": "Badarian",
-            "start": -4400,
-            "end": -3801,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": [
-              "EG"
-            ]
-          },
-          {
-            "id": "seshat_susa_i_irsusa1",
-            "canonical_name": "Susa I",
-            "start": -4300,
-            "end": -3801,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "seshat_naqada_i_egnaqa1",
-            "canonical_name": "Naqada I",
-            "start": -3800,
-            "end": -3551,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          }
         ]
       },
       "polities_by_continent": {
@@ -510,6 +573,86 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "GR"
+            ]
+          }
+        ],
+        "north_america": [
+          {
+            "id": "basin_of_mexico",
+            "canonical_name": "Basin of Mexico",
+            "start": -6000,
+            "end": 1426,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "north_america",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "MX"
+            ],
+            "details": [
+              {
+                "id": "seshat_archaic_basin_mexico_mxarch",
+                "canonical_name": "Archaic Basin of Mexico",
+                "start": -6000,
+                "end": -2001,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_initial_formative_basin_mexico_mxinitl",
+                "canonical_name": "Initial Formative Basin of Mexico",
+                "start": -2000,
+                "end": -1201,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_formative_basin_mexico_mxforme",
+                "canonical_name": "Early Formative Basin of Mexico",
+                "start": -1200,
+                "end": -801,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_formative_basin_mexico_mxformm",
+                "canonical_name": "Middle Formative Basin of Mexico",
+                "start": -800,
+                "end": -401,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_formative_basin_mexico_mxforml",
+                "canonical_name": "Late Formative Basin of Mexico",
+                "start": -400,
+                "end": -101,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_terminal_formative_basin_mexico_mxformt",
+                "canonical_name": "Terminal Formative Basin of Mexico",
+                "start": -100,
+                "end": 99,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_classic_basin_mexico_mxclass",
+                "canonical_name": "Classic Basin of Mexico",
+                "start": 100,
+                "end": 649,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_epiclassic_basin_mexico_mxepicl",
+                "canonical_name": "Epiclassic Basin of Mexico",
+                "start": 650,
+                "end": 899,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_postclassic_basin_mexico_mxpostm",
+                "canonical_name": "Middle Postclassic Basin of Mexico",
+                "start": 1200,
+                "end": 1426,
+                "kind": "polity"
+              }
             ]
           }
         ],
@@ -647,21 +790,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "IQ"
-            ]
-          }
-        ],
-        "north_america": [
-          {
-            "id": "seshat_archaic_basin_mexico_mxarch",
-            "canonical_name": "Archaic Basin of Mexico",
-            "start": -6000,
-            "end": -2001,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           }
         ],
@@ -1415,19 +1543,6 @@
             "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "seshat_oaxaca_mxtiela",
-            "canonical_name": "Oaxaca - Tierras Largas",
-            "start": -1400,
-            "end": -1151,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": [
-              "MX"
-            ]
           }
         ],
         "north_africa": [
@@ -1604,21 +1719,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "CN"
-            ]
-          }
-        ],
-        "mesoamerica": [
-          {
-            "id": "seshat_initial_formative_basin_mexico_mxinitl",
-            "canonical_name": "Initial Formative Basin of Mexico",
-            "start": -2000,
-            "end": -1201,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           }
         ]
@@ -2421,34 +2521,6 @@
               "EG"
             ]
           }
-        ],
-        "north_america": [
-          {
-            "id": "seshat_initial_formative_basin_mexico_mxinitl",
-            "canonical_name": "Initial Formative Basin of Mexico",
-            "start": -2000,
-            "end": -1201,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "seshat_oaxaca_mxtiela",
-            "canonical_name": "Oaxaca - Tierras Largas",
-            "start": -1400,
-            "end": -1151,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": [
-              "MX"
-            ]
-          }
         ]
       },
       "civilizations": [
@@ -2916,6 +2988,42 @@
             "present_countries": []
           },
           {
+            "id": "oaxaca_valley",
+            "canonical_name": "Valley of Oaxaca",
+            "start": -1400,
+            "end": -501,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "north_america",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "MX"
+            ],
+            "details": [
+              {
+                "id": "seshat_oaxaca_mxtiela",
+                "canonical_name": "Oaxaca - Tierras Largas",
+                "start": -1400,
+                "end": -1151,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_oaxaca_mxsangu",
+                "canonical_name": "Oaxaca - San Jose",
+                "start": -1150,
+                "end": -701,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_oaxaca_mxrosar",
+                "canonical_name": "Oaxaca - Rosario",
+                "start": -700,
+                "end": -501,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
             "id": "seshat_xiongnu_mnxngne",
             "canonical_name": "Early Xiongnu",
             "start": -1400,
@@ -3010,19 +3118,6 @@
             "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "seshat_oaxaca_mxsangu",
-            "canonical_name": "Oaxaca - San Jose",
-            "start": -1150,
-            "end": -701,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": [
-              "MX"
-            ]
           },
           {
             "id": "cheng_state",
@@ -3705,19 +3800,6 @@
             "present_countries": []
           },
           {
-            "id": "seshat_oaxaca_mxrosar",
-            "canonical_name": "Oaxaca - Rosario",
-            "start": -700,
-            "end": -501,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
             "id": "surasena",
             "canonical_name": "Surasena",
             "start": -700,
@@ -3927,6 +4009,63 @@
             "present_countries": []
           },
           {
+            "id": "monte_alban",
+            "canonical_name": "Monte Albán",
+            "start": -500,
+            "end": 1520,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "north_america",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "MX"
+            ],
+            "details": [
+              {
+                "id": "seshat_monte_alban_i_mxalb1e",
+                "canonical_name": "Early Monte Alban I",
+                "start": -500,
+                "end": -301,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_monte_alban_i_mxalb1l",
+                "canonical_name": "Monte Alban Late I",
+                "start": -300,
+                "end": -101,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_monte_alban_ii_mxalb2",
+                "canonical_name": "Monte Alban II",
+                "start": -100,
+                "end": 199,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_monte_alban_iii_mxalb3a",
+                "canonical_name": "Monte Alban III",
+                "start": 200,
+                "end": 499,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_monte_alban_iiib_iv_mxalb3b",
+                "canonical_name": "Monte Alban IIIB and IV",
+                "start": 500,
+                "end": 899,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_monte_alban_v_mxalb5",
+                "canonical_name": "Monte Alban V",
+                "start": 900,
+                "end": 1520,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
             "id": "seshat_iron_age_cambodia_khmekia",
             "canonical_name": "Iron Age Cambodia",
             "start": -500,
@@ -3936,19 +4075,6 @@
             "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "seshat_monte_alban_i_mxalb1e",
-            "canonical_name": "Early Monte Alban I",
-            "start": -500,
-            "end": -301,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": [
-              "MX"
-            ]
           },
           {
             "id": "yaudheya",
@@ -4147,19 +4273,6 @@
             "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "seshat_monte_alban_i_mxalb1l",
-            "canonical_name": "Monte Alban Late I",
-            "start": -300,
-            "end": -101,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": [
-              "MX"
-            ]
           },
           {
             "id": "kingdom_of_persia",
@@ -4532,19 +4645,6 @@
             "present_countries": []
           },
           {
-            "id": "seshat_monte_alban_ii_mxalb2",
-            "canonical_name": "Monte Alban II",
-            "start": -100,
-            "end": 199,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
             "id": "shanshan",
             "canonical_name": "Shanshan",
             "start": -91,
@@ -4739,17 +4839,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "seshat_monte_alban_iii_mxalb3a",
-            "canonical_name": "Monte Alban III",
-            "start": 200,
-            "end": 499,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -8337,73 +8426,6 @@
             "primary_historical_region": "north_america",
             "present_countries": [
               "US"
-            ]
-          }
-        ],
-        "mesoamerica": [
-          {
-            "id": "seshat_formative_basin_mexico_mxforme",
-            "canonical_name": "Early Formative Basin of Mexico",
-            "start": -1200,
-            "end": -801,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "seshat_formative_basin_mexico_mxformm",
-            "canonical_name": "Middle Formative Basin of Mexico",
-            "start": -800,
-            "end": -401,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "seshat_formative_basin_mexico_mxforml",
-            "canonical_name": "Late Formative Basin of Mexico",
-            "start": -400,
-            "end": -101,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "seshat_terminal_formative_basin_mexico_mxformt",
-            "canonical_name": "Terminal Formative Basin of Mexico",
-            "start": -100,
-            "end": 99,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "seshat_classic_basin_mexico_mxclass",
-            "canonical_name": "Classic Basin of Mexico",
-            "start": 100,
-            "end": 649,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           }
         ],
@@ -13773,48 +13795,9 @@
         ],
         "north_america": [
           {
-            "id": "seshat_formative_basin_mexico_mxforme",
-            "canonical_name": "Early Formative Basin of Mexico",
-            "start": -1200,
-            "end": -801,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "seshat_oaxaca_mxsangu",
-            "canonical_name": "Oaxaca - San Jose",
-            "start": -1150,
-            "end": -701,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "seshat_formative_basin_mexico_mxformm",
-            "canonical_name": "Middle Formative Basin of Mexico",
-            "start": -800,
-            "end": -401,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "seshat_oaxaca_mxrosar",
-            "canonical_name": "Oaxaca - Rosario",
-            "start": -700,
+            "id": "oaxaca_valley",
+            "canonical_name": "Valley of Oaxaca",
+            "start": -1400,
             "end": -501,
             "curated": false,
             "linked_era_id": null,
@@ -13822,6 +13805,29 @@
             "primary_historical_region": "unclassified",
             "present_countries": [
               "MX"
+            ],
+            "details": [
+              {
+                "id": "seshat_oaxaca_mxtiela",
+                "canonical_name": "Oaxaca - Tierras Largas",
+                "start": -1400,
+                "end": -1151,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_oaxaca_mxsangu",
+                "canonical_name": "Oaxaca - San Jose",
+                "start": -1150,
+                "end": -701,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_oaxaca_mxrosar",
+                "canonical_name": "Oaxaca - Rosario",
+                "start": -700,
+                "end": -501,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -13838,42 +13844,60 @@
             ]
           },
           {
-            "id": "seshat_monte_alban_i_mxalb1e",
-            "canonical_name": "Early Monte Alban I",
+            "id": "monte_alban",
+            "canonical_name": "Monte Albán",
             "start": -500,
-            "end": -301,
+            "end": 1520,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "north_america",
             "primary_historical_region": "unclassified",
             "present_countries": [
               "MX"
-            ]
-          },
-          {
-            "id": "seshat_formative_basin_mexico_mxforml",
-            "canonical_name": "Late Formative Basin of Mexico",
-            "start": -400,
-            "end": -101,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "seshat_monte_alban_i_mxalb1l",
-            "canonical_name": "Monte Alban Late I",
-            "start": -300,
-            "end": -101,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": [
-              "MX"
+            ],
+            "details": [
+              {
+                "id": "seshat_monte_alban_i_mxalb1e",
+                "canonical_name": "Early Monte Alban I",
+                "start": -500,
+                "end": -301,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_monte_alban_i_mxalb1l",
+                "canonical_name": "Monte Alban Late I",
+                "start": -300,
+                "end": -101,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_monte_alban_ii_mxalb2",
+                "canonical_name": "Monte Alban II",
+                "start": -100,
+                "end": 199,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_monte_alban_iii_mxalb3a",
+                "canonical_name": "Monte Alban III",
+                "start": 200,
+                "end": 499,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_monte_alban_iiib_iv_mxalb3b",
+                "canonical_name": "Monte Alban IIIB and IV",
+                "start": 500,
+                "end": 899,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_monte_alban_v_mxalb5",
+                "canonical_name": "Monte Alban V",
+                "start": 900,
+                "end": 1520,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -13888,56 +13912,6 @@
             "present_countries": [
               "US"
             ]
-          },
-          {
-            "id": "seshat_monte_alban_ii_mxalb2",
-            "canonical_name": "Monte Alban II",
-            "start": -100,
-            "end": 199,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "seshat_terminal_formative_basin_mexico_mxformt",
-            "canonical_name": "Terminal Formative Basin of Mexico",
-            "start": -100,
-            "end": 99,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "seshat_classic_basin_mexico_mxclass",
-            "canonical_name": "Classic Basin of Mexico",
-            "start": 100,
-            "end": 649,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "seshat_monte_alban_iii_mxalb3a",
-            "canonical_name": "Monte Alban III",
-            "start": 200,
-            "end": 499,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "seshat_cahokia_usmisro",
@@ -15624,17 +15598,6 @@
             "present_countries": []
           },
           {
-            "id": "seshat_monte_alban_iiib_iv_mxalb3b",
-            "canonical_name": "Monte Alban IIIB and IV",
-            "start": 500,
-            "end": 899,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "gaochang_kingdom_qu_clan",
             "canonical_name": "Gaochang Kingdom (Qu clan)",
             "start": 501,
@@ -17132,17 +17095,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "seshat_monte_alban_v_mxalb5",
-            "canonical_name": "Monte Alban V",
-            "start": 900,
-            "end": 1520,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -27473,19 +27425,6 @@
         ],
         "mesoamerica": [
           {
-            "id": "seshat_epiclassic_basin_mexico_mxepicl",
-            "canonical_name": "Epiclassic Basin of Mexico",
-            "start": 650,
-            "end": 899,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
             "id": "toltec_empire",
             "canonical_name": "Toltec Empire",
             "start": 674,
@@ -27523,19 +27462,6 @@
             "primary_historical_region": "mesoamerica",
             "present_countries": [
               "CR"
-            ]
-          },
-          {
-            "id": "seshat_postclassic_basin_mexico_mxpostm",
-            "canonical_name": "Middle Postclassic Basin of Mexico",
-            "start": 1200,
-            "end": 1426,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           },
           {
@@ -44182,17 +44108,6 @@
             ]
           },
           {
-            "id": "seshat_monte_alban_iiib_iv_mxalb3b",
-            "canonical_name": "Monte Alban IIIB and IV",
-            "start": 500,
-            "end": 899,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "seshat_cahokia_usmispa",
             "canonical_name": "Cahokia - Late Woodland III",
             "start": 600,
@@ -44203,19 +44118,6 @@
             "primary_historical_region": "north_america",
             "present_countries": [
               "US"
-            ]
-          },
-          {
-            "id": "seshat_epiclassic_basin_mexico_mxepicl",
-            "canonical_name": "Epiclassic Basin of Mexico",
-            "start": 650,
-            "end": 899,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           },
           {
@@ -44272,17 +44174,6 @@
             ]
           },
           {
-            "id": "seshat_monte_alban_v_mxalb5",
-            "canonical_name": "Monte Alban V",
-            "start": 900,
-            "end": 1520,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "azcapotzalco",
             "canonical_name": "Azcapotzalco",
             "start": 995,
@@ -44330,19 +44221,6 @@
             "primary_historical_region": "north_america",
             "present_countries": [
               "US"
-            ]
-          },
-          {
-            "id": "seshat_postclassic_basin_mexico_mxpostm",
-            "canonical_name": "Middle Postclassic Basin of Mexico",
-            "start": 1200,
-            "end": 1426,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           },
           {

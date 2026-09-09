@@ -23516,6 +23516,67 @@
     ]
   },
   {
+    "id": "basin_of_mexico",
+    "canonical_name": "Basin of Mexico",
+    "names": {
+      "aliases_en": "Valley of Mexico"
+    },
+    "external_ids": {
+      "wikidata": "Q50647",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Valley_of_Mexico"
+    ],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [
+        "MX"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": -6000,
+    "end": 1426,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Parent for the Basin of Mexico's own phase sequence (Archaic through Postclassic), each already its own reviewed polity, attached via detail_of rather than merged into one record.",
+    "sources": [
+      "histomap_editorial"
+    ]
+  },
+  {
     "id": "basoda_state",
     "canonical_name": "Basoda State",
     "names": {
@@ -227546,6 +227607,67 @@
     ]
   },
   {
+    "id": "monte_alban",
+    "canonical_name": "Monte Albán",
+    "names": {
+      "aliases_en": "Monte Alban"
+    },
+    "external_ids": {
+      "wikidata": "Q464899",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n"
+    ],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [
+        "MX"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": -500,
+    "end": 1520,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Parent for the Zapotec capital's own phase sequence (Monte Alban I through V), each already its own reviewed polity, attached via detail_of rather than merged into one record.",
+    "sources": [
+      "histomap_editorial"
+    ]
+  },
+  {
     "id": "montenegro",
     "canonical_name": "Montenegro",
     "names": {
@@ -242724,6 +242846,67 @@
     "notes": "Automatically generated from Wikidata; requires review.",
     "sources": [
       "wikidata"
+    ]
+  },
+  {
+    "id": "oaxaca_valley",
+    "canonical_name": "Valley of Oaxaca",
+    "names": {
+      "aliases_en": "Ancient Oaxaca"
+    },
+    "external_ids": {
+      "wikidata": "Q2528964",
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Oaxaca_Valley"
+    ],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
+      "historical_regions": [],
+      "primary_historical_region": null,
+      "present_countries": [
+        "MX"
+      ],
+      "centroid": null,
+      "confidence": null
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": -1400,
+    "end": -501,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Parent for the Valley of Oaxaca's pre-Monte Alban Formative phase sequence (Tierras Largas, San Jose, Rosario), each already its own reviewed polity, attached via detail_of rather than merged into one record. Distinct from the modern Mexican state of Oaxaca (id oaxaca, founded 1824) and from Monte Alban/the later Zapotec civilization, which succeed this sequence.",
+    "sources": [
+      "histomap_editorial"
     ]
   },
   {
@@ -312096,7 +312279,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "basin_of_mexico",
     "deprecated": null,
     "relationships": [],
     "successors": [],
@@ -313513,7 +313696,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "basin_of_mexico",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -314329,7 +314512,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "basin_of_mexico",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -314762,7 +314945,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "basin_of_mexico",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -314838,7 +315021,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "basin_of_mexico",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -314914,7 +315097,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "basin_of_mexico",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -316273,7 +316456,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "basin_of_mexico",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -318753,7 +318936,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "monte_alban",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -318828,7 +319011,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "monte_alban",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -318903,7 +319086,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "monte_alban",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -318979,7 +319162,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "monte_alban",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -319051,7 +319234,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "monte_alban",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -319123,7 +319306,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "monte_alban",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -319489,7 +319672,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "oaxaca_valley",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -319564,7 +319747,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "oaxaca_valley",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -319639,7 +319822,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "oaxaca_valley",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -320285,7 +320468,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "basin_of_mexico",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -321947,7 +322130,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "basin_of_mexico",
     "deprecated": {
       "visibility_tier": "detailed"
     },
