@@ -89635,1634 +89635,6 @@
             ]
           }
         ],
-        "east_asia": [
-          {
-            "id": "kasepuhan_sultanate",
-            "canonical_name": "Kasepuhan Sultanate",
-            "start": 1679,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "ID"
-            ]
-          },
-          {
-            "id": "terengganu",
-            "canonical_name": "Terengganu",
-            "start": 1724,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MY"
-            ]
-          },
-          {
-            "id": "penang",
-            "canonical_name": "Penang",
-            "start": 1786,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MY"
-            ]
-          },
-          {
-            "id": "vietnam",
-            "canonical_name": "Vietnam",
-            "start": 1804,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "VN"
-            ],
-            "details": [
-              {
-                "id": "empire_of_vietnam",
-                "canonical_name": "Empire of Vietnam",
-                "start": 1945,
-                "end": 2026,
-                "kind": "polity"
-              },
-              {
-                "id": "north_vietnam",
-                "canonical_name": "North Vietnam",
-                "start": 1945,
-                "end": 1976,
-                "kind": "polity"
-              },
-              {
-                "id": "provisional_central_government_of_vietnam",
-                "canonical_name": "Provisional Central Government of Vietnam",
-                "start": 1948,
-                "end": 1949,
-                "kind": "polity"
-              },
-              {
-                "id": "state_of_vietnam",
-                "canonical_name": "State of Vietnam",
-                "start": 1949,
-                "end": 1955,
-                "kind": "polity"
-              },
-              {
-                "id": "south_vietnam",
-                "canonical_name": "South Vietnam",
-                "start": 1955,
-                "end": 1975,
-                "kind": "polity"
-              },
-              {
-                "id": "provisional_revolutionary_government_of_the_republic_of_south_vietnam",
-                "canonical_name": "Provisional Revolutionary Government of the Republic of South Vietnam",
-                "start": 1969,
-                "end": 1976,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "kuroishi_domain",
-            "canonical_name": "Kuroishi Domain",
-            "start": 1809,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "JP"
-            ]
-          },
-          {
-            "id": "selangor",
-            "canonical_name": "Selangor",
-            "start": 1895,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MY"
-            ]
-          },
-          {
-            "id": "nazargunj",
-            "canonical_name": "Nazargunj",
-            "start": 1899,
-            "end": 2000,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "bihar",
-            "canonical_name": "Bihar",
-            "start": 1912,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "taiwan",
-            "canonical_name": "Taiwan",
-            "start": 1912,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "TW"
-            ]
-          },
-          {
-            "id": "mongolian_people_s_republic",
-            "canonical_name": "Mongolian People's Republic",
-            "start": 1924,
-            "end": 1992,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MN"
-            ],
-            "details": [
-              {
-                "id": "inner_mongolian_people_s_republic",
-                "canonical_name": "Inner Mongolian People's Republic",
-                "start": 1945,
-                "end": 1945,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "odisha",
-            "canonical_name": "Odisha",
-            "start": 1936,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "indonesia",
-            "canonical_name": "Indonesia",
-            "start": 1945,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "ID"
-            ],
-            "details": [
-              {
-                "id": "state_of_east_indonesia",
-                "canonical_name": "State of East Indonesia",
-                "start": 1946,
-                "end": 1950,
-                "kind": "polity"
-              },
-              {
-                "id": "state_of_the_republic_of_indonesia",
-                "canonical_name": "State of the Republic of Indonesia",
-                "start": 1949,
-                "end": 1950,
-                "kind": "polity"
-              },
-              {
-                "id": "united_states_of_indonesia",
-                "canonical_name": "United States of Indonesia",
-                "start": 1949,
-                "end": 1950,
-                "kind": "polity"
-              },
-              {
-                "id": "revolutionary_government_of_the_republic_of_indonesia",
-                "canonical_name": "Revolutionary Government of the Republic of Indonesia",
-                "start": 1958,
-                "end": 1961,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "kingdom_of_kampuchea",
-            "canonical_name": "Kingdom of Kampuchea",
-            "start": 1945,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "KH"
-            ],
-            "details": [
-              {
-                "id": "people_s_republic_of_kampuchea",
-                "canonical_name": "People's Republic of Kampuchea",
-                "start": 1979,
-                "end": 1989,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "united_states_army_military_government_in_korea",
-            "canonical_name": "United States Army Military Government in Korea",
-            "start": 1945,
-            "end": 1948,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "KR"
-            ]
-          },
-          {
-            "id": "malayan_union",
-            "canonical_name": "Malayan Union",
-            "start": 1946,
-            "end": 1948,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MY"
-            ]
-          },
-          {
-            "id": "provisional_people_s_committee_of_north_korea",
-            "canonical_name": "Provisional People's Committee of North Korea",
-            "start": 1946,
-            "end": 1947,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "KR"
-            ]
-          },
-          {
-            "id": "ajmer_state",
-            "canonical_name": "Ajmer State",
-            "start": 1947,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "bombay_state",
-            "canonical_name": "Bombay State",
-            "start": 1947,
-            "end": 1960,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "eastern_states_union",
-            "canonical_name": "Eastern States Union",
-            "start": 1947,
-            "end": 1948,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "india",
-            "canonical_name": "India",
-            "start": 1947,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ],
-            "details": [
-              {
-                "id": "kotharia_state_rajasthan",
-                "canonical_name": "Kotharia State, Rajasthan",
-                "start": 1527,
-                "end": 2000,
-                "kind": "polity"
-              },
-              {
-                "id": "dominion_of_india",
-                "canonical_name": "Dominion of India",
-                "start": 1947,
-                "end": 1950,
-                "kind": "polity"
-              },
-              {
-                "id": "partition_of_india",
-                "canonical_name": "Partition of India",
-                "start": 1947,
-                "end": 1947,
-                "kind": "event"
-              }
-            ]
-          },
-          {
-            "id": "jammu_and_kashmir_q1180",
-            "canonical_name": "Jammu and Kashmir",
-            "start": 1947,
-            "end": 2019,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "japan",
-            "canonical_name": "Japan",
-            "start": 1947,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "JP"
-            ]
-          },
-          {
-            "id": "mysore_state",
-            "canonical_name": "Mysore State",
-            "start": 1947,
-            "end": 1973,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "pakistan",
-            "canonical_name": "Pakistan",
-            "start": 1947,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "PK"
-            ],
-            "details": [
-              {
-                "id": "dominion_of_pakistan",
-                "canonical_name": "Dominion of Pakistan",
-                "start": 1947,
-                "end": 1956,
-                "kind": "polity"
-              },
-              {
-                "id": "partition_of_india",
-                "canonical_name": "Partition of India",
-                "start": 1947,
-                "end": 1947,
-                "kind": "event"
-              }
-            ]
-          },
-          {
-            "id": "pasundan",
-            "canonical_name": "Pasundan",
-            "start": 1947,
-            "end": 1950,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "ID"
-            ]
-          },
-          {
-            "id": "people_s_committee_of_north_korea",
-            "canonical_name": "People's Committee of North Korea",
-            "start": 1947,
-            "end": 1948,
-            "curated": true,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "KR"
-            ]
-          },
-          {
-            "id": "saurashtra_state",
-            "canonical_name": "Saurashtra State",
-            "start": 1947,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "state_of_east_sumatra",
-            "canonical_name": "State of East Sumatra",
-            "start": 1947,
-            "end": 1950,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "ID"
-            ]
-          },
-          {
-            "id": "undivided_assam",
-            "canonical_name": "Undivided Assam",
-            "start": 1947,
-            "end": 1963,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "west_bengal",
-            "canonical_name": "West Bengal",
-            "start": 1947,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "dominion_of_ceylon",
-            "canonical_name": "Dominion of Ceylon",
-            "start": 1948,
-            "end": 1972,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "LK"
-            ]
-          },
-          {
-            "id": "federation_of_malaya",
-            "canonical_name": "Federation of Malaya",
-            "start": 1948,
-            "end": 1963,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MY"
-            ]
-          },
-          {
-            "id": "hyderabad_state_1948_1956",
-            "canonical_name": "Hyderabad State (1948-1956)",
-            "start": 1948,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "madhya_bharat",
-            "canonical_name": "Madhya Bharat",
-            "start": 1948,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "malacca",
-            "canonical_name": "Malacca",
-            "start": 1948,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MY"
-            ]
-          },
-          {
-            "id": "myanmar",
-            "canonical_name": "Myanmar",
-            "start": 1948,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MM"
-            ],
-            "details": [
-              {
-                "id": "union_of_burma_19481962",
-                "canonical_name": "Union of Burma (1948–1962)",
-                "start": 1948,
-                "end": 1962,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "north_korea",
-            "canonical_name": "North Korea",
-            "start": 1948,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "KP"
-            ]
-          },
-          {
-            "id": "patiala_and_east_punjab_states_union",
-            "canonical_name": "Patiala and East Punjab States Union",
-            "start": 1948,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "south_korea",
-            "canonical_name": "South Korea",
-            "start": 1948,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "KR"
-            ],
-            "details": [
-              {
-                "id": "first_republic_of_south_korea",
-                "canonical_name": "First Republic of South Korea",
-                "start": 1948,
-                "end": 1960,
-                "kind": "polity"
-              },
-              {
-                "id": "second_republic_of_south_korea",
-                "canonical_name": "Second Republic of South Korea",
-                "start": 1960,
-                "end": 1961,
-                "kind": "polity"
-              },
-              {
-                "id": "third_republic_of_south_korea",
-                "canonical_name": "Third Republic of South Korea",
-                "start": 1963,
-                "end": 1972,
-                "kind": "polity"
-              },
-              {
-                "id": "fourth_republic_of_south_korea",
-                "canonical_name": "Fourth Republic of South Korea",
-                "start": 1972,
-                "end": 1981,
-                "kind": "polity"
-              },
-              {
-                "id": "fifth_republic_of_south_korea",
-                "canonical_name": "Fifth Republic of South Korea",
-                "start": 1981,
-                "end": 1988,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "united_states_of_matsya",
-            "canonical_name": "United States of Matsya",
-            "start": 1948,
-            "end": 1949,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "vindhya_pradesh",
-            "canonical_name": "Vindhya Pradesh",
-            "start": 1948,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "bhopal_state_19491956",
-            "canonical_name": "Bhopal State (1949–1956)",
-            "start": 1949,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "bhutan",
-            "canonical_name": "Bhutan",
-            "start": 1949,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "BT"
-            ]
-          },
-          {
-            "id": "laos",
-            "canonical_name": "Laos",
-            "start": 1949,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "LA"
-            ],
-            "details": [
-              {
-                "id": "kingdom_of_laos",
-                "canonical_name": "Kingdom of Laos",
-                "start": 1947,
-                "end": 1975,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "people_s_republic_of_china",
-            "canonical_name": "People's Republic of China",
-            "start": 1949,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "CN"
-            ],
-            "details": [
-              {
-                "id": "chinese_communist_revolution",
-                "canonical_name": "Chinese Communist Revolution",
-                "start": 1949,
-                "end": 1949,
-                "kind": "event"
-              }
-            ]
-          },
-          {
-            "id": "travancore_cochin",
-            "canonical_name": "Travancore-Cochin",
-            "start": 1949,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "assam",
-            "canonical_name": "Assam",
-            "start": 1950,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "bilaspur_state",
-            "canonical_name": "Bilaspur State",
-            "start": 1950,
-            "end": 1954,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "coorg_state",
-            "canonical_name": "Coorg State",
-            "start": 1950,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "madhya_pradesh",
-            "canonical_name": "Madhya Pradesh",
-            "start": 1950,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "madras_state",
-            "canonical_name": "Madras State",
-            "start": 1950,
-            "end": 1969,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "rajasthan",
-            "canonical_name": "Rajasthan",
-            "start": 1950,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "republic_of_south_maluku",
-            "canonical_name": "Republic of South Maluku",
-            "start": 1950,
-            "end": 1963,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "ID"
-            ]
-          },
-          {
-            "id": "tamil_nadu",
-            "canonical_name": "Tamil Nadu",
-            "start": 1950,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "uttar_pradesh",
-            "canonical_name": "Uttar Pradesh",
-            "start": 1950,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "andhra_state",
-            "canonical_name": "Andhra State",
-            "start": 1953,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "cambodia",
-            "canonical_name": "Cambodia",
-            "start": 1953,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "KH"
-            ],
-            "details": [
-              {
-                "id": "state_of_cambodia",
-                "canonical_name": "State of Cambodia",
-                "start": 1989,
-                "end": 1993,
-                "kind": "polity"
-              },
-              {
-                "id": "provisional_government_of_national_union_and_national_salvation_of_cambodia",
-                "canonical_name": "Provisional Government of National Union and National Salvation of Cambodia",
-                "start": 1994,
-                "end": 1998,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "kingdom_of_cambodia",
-            "canonical_name": "Kingdom of Cambodia",
-            "start": 1953,
-            "end": 1970,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "KH"
-            ]
-          },
-          {
-            "id": "west_pakistan",
-            "canonical_name": "West Pakistan",
-            "start": 1955,
-            "end": 1970,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "PK"
-            ]
-          },
-          {
-            "id": "andhra_pradesh",
-            "canonical_name": "Andhra Pradesh",
-            "start": 1956,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "andhra_pradesh_19562014",
-            "canonical_name": "Andhra Pradesh (1956–2014)",
-            "start": 1956,
-            "end": 2014,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "karnataka",
-            "canonical_name": "Karnataka",
-            "start": 1956,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "kerala",
-            "canonical_name": "Kerala",
-            "start": 1956,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "punjab",
-            "canonical_name": "Punjab",
-            "start": 1956,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ],
-            "details": [
-              {
-                "id": "east_punjab",
-                "canonical_name": "East Punjab",
-                "start": 1950,
-                "end": 1966,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "united_suvadive_republic",
-            "canonical_name": "United Suvadive Republic",
-            "start": 1959,
-            "end": 1963,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MV"
-            ]
-          },
-          {
-            "id": "gujarat",
-            "canonical_name": "Gujarat",
-            "start": 1960,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "maharashtra",
-            "canonical_name": "Maharashtra",
-            "start": 1960,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "socialist_republic_of_the_union_of_burma",
-            "canonical_name": "Socialist Republic of the Union of Burma",
-            "start": 1962,
-            "end": 1988,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MM"
-            ]
-          },
-          {
-            "id": "malaysia",
-            "canonical_name": "Malaysia",
-            "start": 1963,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MY"
-            ]
-          },
-          {
-            "id": "nagaland",
-            "canonical_name": "Nagaland",
-            "start": 1963,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "sabah",
-            "canonical_name": "Sabah",
-            "start": 1963,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MY"
-            ]
-          },
-          {
-            "id": "sarawak",
-            "canonical_name": "Sarawak",
-            "start": 1963,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MY"
-            ]
-          },
-          {
-            "id": "maldives",
-            "canonical_name": "Maldives",
-            "start": 1965,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MV"
-            ]
-          },
-          {
-            "id": "singapore",
-            "canonical_name": "Singapore",
-            "start": 1965,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MY",
-              "SG"
-            ]
-          },
-          {
-            "id": "haryana",
-            "canonical_name": "Haryana",
-            "start": 1966,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "swat_district",
-            "canonical_name": "Swat District",
-            "start": 1969,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "PK"
-            ]
-          },
-          {
-            "id": "khmer_republic",
-            "canonical_name": "Khmer Republic",
-            "start": 1970,
-            "end": 1975,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "KH"
-            ]
-          },
-          {
-            "id": "bangladesh",
-            "canonical_name": "Bangladesh",
-            "start": 1971,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "BD"
-            ]
-          },
-          {
-            "id": "himachal_pradesh",
-            "canonical_name": "Himachal Pradesh",
-            "start": 1971,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "republic_of_west_papua",
-            "canonical_name": "Republic of West Papua",
-            "start": 1971,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "ID"
-            ]
-          },
-          {
-            "id": "manipur",
-            "canonical_name": "Manipur",
-            "start": 1972,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "meghalaya",
-            "canonical_name": "Meghalaya",
-            "start": 1972,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "sri_lanka",
-            "canonical_name": "Sri Lanka",
-            "start": 1972,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "LK"
-            ]
-          },
-          {
-            "id": "tripura_q1363",
-            "canonical_name": "Tripura",
-            "start": 1972,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "BD",
-              "IN"
-            ]
-          },
-          {
-            "id": "democratic_republic_of_east_timor",
-            "canonical_name": "Democratic Republic of East Timor",
-            "start": 1975,
-            "end": 1976,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "TL"
-            ]
-          },
-          {
-            "id": "sikkim",
-            "canonical_name": "Sikkim",
-            "start": 1975,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "timor_leste",
-            "canonical_name": "Timor-Leste",
-            "start": 1975,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "TL"
-            ]
-          },
-          {
-            "id": "democratic_kampuchea",
-            "canonical_name": "Democratic Kampuchea",
-            "start": 1976,
-            "end": 1979,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "KH"
-            ]
-          },
-          {
-            "id": "kirikiri_koku",
-            "canonical_name": "Kirikiri koku",
-            "start": 1982,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "JP"
-            ]
-          },
-          {
-            "id": "tamil_eelam",
-            "canonical_name": "Tamil Eelam",
-            "start": 1983,
-            "end": 2009,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "LK"
-            ]
-          },
-          {
-            "id": "federal_republic_of_mindanao",
-            "canonical_name": "Federal Republic of Mindanao",
-            "start": 1986,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "PH"
-            ]
-          },
-          {
-            "id": "inobutan_kingdom",
-            "canonical_name": "Inobutan Kingdom",
-            "start": 1986,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "JP"
-            ]
-          },
-          {
-            "id": "arunachal_pradesh",
-            "canonical_name": "Arunachal Pradesh",
-            "start": 1987,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "galactic_federation",
-            "canonical_name": "Galactic Federation",
-            "start": 1987,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "JP"
-            ]
-          },
-          {
-            "id": "goa",
-            "canonical_name": "Goa",
-            "start": 1987,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "mizoram",
-            "canonical_name": "Mizoram",
-            "start": 1987,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "mahoroba_federation",
-            "canonical_name": "Mahoroba Federation",
-            "start": 1988,
-            "end": 2004,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "JP"
-            ]
-          },
-          {
-            "id": "hakusan_mountain_range_united_states",
-            "canonical_name": "Hakusan Mountain Range United States",
-            "start": 1989,
-            "end": 2004,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "JP"
-            ]
-          },
-          {
-            "id": "casian_commonwealth_of_cassiopeia",
-            "canonical_name": "Casian Commonwealth of Cassiopeia",
-            "start": 1991,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "JP"
-            ]
-          },
-          {
-            "id": "mongolia",
-            "canonical_name": "Mongolia",
-            "start": 1992,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "asia_contemporary_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "MN"
-            ]
-          },
-          {
-            "id": "hong_kong",
-            "canonical_name": "Hong Kong",
-            "start": 1997,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "CN"
-            ]
-          },
-          {
-            "id": "chhattisgarh",
-            "canonical_name": "Chhattisgarh",
-            "start": 2000,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "jharkhand",
-            "canonical_name": "Jharkhand",
-            "start": 2000,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "uttarakhand",
-            "canonical_name": "Uttarakhand",
-            "start": 2000,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "villasante_calamba",
-            "canonical_name": "Villasante, Calamba",
-            "start": 2002,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "PH"
-            ]
-          },
-          {
-            "id": "nepal",
-            "canonical_name": "Nepal",
-            "start": 2008,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "NP"
-            ]
-          },
-          {
-            "id": "tateyama_federation_kingdom",
-            "canonical_name": "Tateyama Federation Kingdom",
-            "start": 2009,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "JP"
-            ]
-          },
-          {
-            "id": "telangana",
-            "canonical_name": "Telangana",
-            "start": 2014,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          }
-        ],
         "west_asia": [
           {
             "id": "saudi_arabia",
@@ -96093,6 +94465,1369 @@
             "primary_historical_region": "horn_of_africa",
             "present_countries": [
               "SO"
+            ]
+          }
+        ],
+        "east_asia": [
+          {
+            "id": "kasepuhan_sultanate",
+            "canonical_name": "Kasepuhan Sultanate",
+            "start": 1679,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "ID"
+            ]
+          },
+          {
+            "id": "terengganu",
+            "canonical_name": "Terengganu",
+            "start": 1724,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MY"
+            ]
+          },
+          {
+            "id": "penang",
+            "canonical_name": "Penang",
+            "start": 1786,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MY"
+            ]
+          },
+          {
+            "id": "vietnam",
+            "canonical_name": "Vietnam",
+            "start": 1804,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "VN"
+            ],
+            "details": [
+              {
+                "id": "empire_of_vietnam",
+                "canonical_name": "Empire of Vietnam",
+                "start": 1945,
+                "end": 2026,
+                "kind": "polity"
+              },
+              {
+                "id": "north_vietnam",
+                "canonical_name": "North Vietnam",
+                "start": 1945,
+                "end": 1976,
+                "kind": "polity"
+              },
+              {
+                "id": "provisional_central_government_of_vietnam",
+                "canonical_name": "Provisional Central Government of Vietnam",
+                "start": 1948,
+                "end": 1949,
+                "kind": "polity"
+              },
+              {
+                "id": "state_of_vietnam",
+                "canonical_name": "State of Vietnam",
+                "start": 1949,
+                "end": 1955,
+                "kind": "polity"
+              },
+              {
+                "id": "south_vietnam",
+                "canonical_name": "South Vietnam",
+                "start": 1955,
+                "end": 1975,
+                "kind": "polity"
+              },
+              {
+                "id": "provisional_revolutionary_government_of_the_republic_of_south_vietnam",
+                "canonical_name": "Provisional Revolutionary Government of the Republic of South Vietnam",
+                "start": 1969,
+                "end": 1976,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "kuroishi_domain",
+            "canonical_name": "Kuroishi Domain",
+            "start": 1809,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "JP"
+            ]
+          },
+          {
+            "id": "selangor",
+            "canonical_name": "Selangor",
+            "start": 1895,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MY"
+            ]
+          },
+          {
+            "id": "nazargunj",
+            "canonical_name": "Nazargunj",
+            "start": 1899,
+            "end": 2000,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "IN"
+            ]
+          },
+          {
+            "id": "bihar",
+            "canonical_name": "Bihar",
+            "start": 1912,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "IN"
+            ]
+          },
+          {
+            "id": "taiwan",
+            "canonical_name": "Taiwan",
+            "start": 1912,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "TW"
+            ]
+          },
+          {
+            "id": "mongolian_people_s_republic",
+            "canonical_name": "Mongolian People's Republic",
+            "start": 1924,
+            "end": 1992,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MN"
+            ],
+            "details": [
+              {
+                "id": "inner_mongolian_people_s_republic",
+                "canonical_name": "Inner Mongolian People's Republic",
+                "start": 1945,
+                "end": 1945,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "odisha",
+            "canonical_name": "Odisha",
+            "start": 1936,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "IN"
+            ]
+          },
+          {
+            "id": "indonesia",
+            "canonical_name": "Indonesia",
+            "start": 1945,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "ID"
+            ],
+            "details": [
+              {
+                "id": "state_of_east_indonesia",
+                "canonical_name": "State of East Indonesia",
+                "start": 1946,
+                "end": 1950,
+                "kind": "polity"
+              },
+              {
+                "id": "state_of_the_republic_of_indonesia",
+                "canonical_name": "State of the Republic of Indonesia",
+                "start": 1949,
+                "end": 1950,
+                "kind": "polity"
+              },
+              {
+                "id": "united_states_of_indonesia",
+                "canonical_name": "United States of Indonesia",
+                "start": 1949,
+                "end": 1950,
+                "kind": "polity"
+              },
+              {
+                "id": "revolutionary_government_of_the_republic_of_indonesia",
+                "canonical_name": "Revolutionary Government of the Republic of Indonesia",
+                "start": 1958,
+                "end": 1961,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "kingdom_of_kampuchea",
+            "canonical_name": "Kingdom of Kampuchea",
+            "start": 1945,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "KH"
+            ],
+            "details": [
+              {
+                "id": "people_s_republic_of_kampuchea",
+                "canonical_name": "People's Republic of Kampuchea",
+                "start": 1979,
+                "end": 1989,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "united_states_army_military_government_in_korea",
+            "canonical_name": "United States Army Military Government in Korea",
+            "start": 1945,
+            "end": 1948,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "KR"
+            ]
+          },
+          {
+            "id": "malayan_union",
+            "canonical_name": "Malayan Union",
+            "start": 1946,
+            "end": 1948,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MY"
+            ]
+          },
+          {
+            "id": "provisional_people_s_committee_of_north_korea",
+            "canonical_name": "Provisional People's Committee of North Korea",
+            "start": 1946,
+            "end": 1947,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "KR"
+            ]
+          },
+          {
+            "id": "india",
+            "canonical_name": "India",
+            "start": 1947,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "IN"
+            ],
+            "details": [
+              {
+                "id": "kotharia_state_rajasthan",
+                "canonical_name": "Kotharia State, Rajasthan",
+                "start": 1527,
+                "end": 2000,
+                "kind": "polity"
+              },
+              {
+                "id": "ajmer_state",
+                "canonical_name": "Ajmer State",
+                "start": 1947,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "bombay_state",
+                "canonical_name": "Bombay State",
+                "start": 1947,
+                "end": 1960,
+                "kind": "polity"
+              },
+              {
+                "id": "dominion_of_india",
+                "canonical_name": "Dominion of India",
+                "start": 1947,
+                "end": 1950,
+                "kind": "polity"
+              },
+              {
+                "id": "eastern_states_union",
+                "canonical_name": "Eastern States Union",
+                "start": 1947,
+                "end": 1948,
+                "kind": "polity"
+              },
+              {
+                "id": "jammu_and_kashmir_q1180",
+                "canonical_name": "Jammu and Kashmir",
+                "start": 1947,
+                "end": 2019,
+                "kind": "polity"
+              },
+              {
+                "id": "mysore_state",
+                "canonical_name": "Mysore State",
+                "start": 1947,
+                "end": 1973,
+                "kind": "polity"
+              },
+              {
+                "id": "partition_of_india",
+                "canonical_name": "Partition of India",
+                "start": 1947,
+                "end": 1947,
+                "kind": "event"
+              },
+              {
+                "id": "saurashtra_state",
+                "canonical_name": "Saurashtra State",
+                "start": 1947,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "undivided_assam",
+                "canonical_name": "Undivided Assam",
+                "start": 1947,
+                "end": 1963,
+                "kind": "polity"
+              },
+              {
+                "id": "west_bengal",
+                "canonical_name": "West Bengal",
+                "start": 1947,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "hyderabad_state_1948_1956",
+                "canonical_name": "Hyderabad State (1948-1956)",
+                "start": 1948,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "madhya_bharat",
+                "canonical_name": "Madhya Bharat",
+                "start": 1948,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "patiala_and_east_punjab_states_union",
+                "canonical_name": "Patiala and East Punjab States Union",
+                "start": 1948,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "united_states_of_matsya",
+                "canonical_name": "United States of Matsya",
+                "start": 1948,
+                "end": 1949,
+                "kind": "polity"
+              },
+              {
+                "id": "vindhya_pradesh",
+                "canonical_name": "Vindhya Pradesh",
+                "start": 1948,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "bhopal_state_19491956",
+                "canonical_name": "Bhopal State (1949–1956)",
+                "start": 1949,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "travancore_cochin",
+                "canonical_name": "Travancore-Cochin",
+                "start": 1949,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "assam",
+                "canonical_name": "Assam",
+                "start": 1950,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "bilaspur_state",
+                "canonical_name": "Bilaspur State",
+                "start": 1950,
+                "end": 1954,
+                "kind": "polity"
+              },
+              {
+                "id": "coorg_state",
+                "canonical_name": "Coorg State",
+                "start": 1950,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "madhya_pradesh",
+                "canonical_name": "Madhya Pradesh",
+                "start": 1950,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "rajasthan",
+                "canonical_name": "Rajasthan",
+                "start": 1950,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "tamil_nadu",
+                "canonical_name": "Tamil Nadu",
+                "start": 1950,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "uttar_pradesh",
+                "canonical_name": "Uttar Pradesh",
+                "start": 1950,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "andhra_state",
+                "canonical_name": "Andhra State",
+                "start": 1953,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "andhra_pradesh",
+                "canonical_name": "Andhra Pradesh",
+                "start": 1956,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "andhra_pradesh_19562014",
+                "canonical_name": "Andhra Pradesh (1956–2014)",
+                "start": 1956,
+                "end": 2014,
+                "kind": "polity"
+              },
+              {
+                "id": "karnataka",
+                "canonical_name": "Karnataka",
+                "start": 1956,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "kerala",
+                "canonical_name": "Kerala",
+                "start": 1956,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "punjab",
+                "canonical_name": "Punjab",
+                "start": 1956,
+                "end": null,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "east_punjab",
+                    "canonical_name": "East Punjab",
+                    "start": 1950,
+                    "end": 1966,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "gujarat",
+                "canonical_name": "Gujarat",
+                "start": 1960,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "maharashtra",
+                "canonical_name": "Maharashtra",
+                "start": 1960,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "nagaland",
+                "canonical_name": "Nagaland",
+                "start": 1963,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "haryana",
+                "canonical_name": "Haryana",
+                "start": 1966,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "himachal_pradesh",
+                "canonical_name": "Himachal Pradesh",
+                "start": 1971,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "manipur",
+                "canonical_name": "Manipur",
+                "start": 1972,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "meghalaya",
+                "canonical_name": "Meghalaya",
+                "start": 1972,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "tripura_q1363",
+                "canonical_name": "Tripura",
+                "start": 1972,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "sikkim",
+                "canonical_name": "Sikkim",
+                "start": 1975,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "arunachal_pradesh",
+                "canonical_name": "Arunachal Pradesh",
+                "start": 1987,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "goa",
+                "canonical_name": "Goa",
+                "start": 1987,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "mizoram",
+                "canonical_name": "Mizoram",
+                "start": 1987,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "chhattisgarh",
+                "canonical_name": "Chhattisgarh",
+                "start": 2000,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "jharkhand",
+                "canonical_name": "Jharkhand",
+                "start": 2000,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "uttarakhand",
+                "canonical_name": "Uttarakhand",
+                "start": 2000,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "telangana",
+                "canonical_name": "Telangana",
+                "start": 2014,
+                "end": null,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "japan",
+            "canonical_name": "Japan",
+            "start": 1947,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "JP"
+            ]
+          },
+          {
+            "id": "pakistan",
+            "canonical_name": "Pakistan",
+            "start": 1947,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "PK"
+            ],
+            "details": [
+              {
+                "id": "dominion_of_pakistan",
+                "canonical_name": "Dominion of Pakistan",
+                "start": 1947,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "partition_of_india",
+                "canonical_name": "Partition of India",
+                "start": 1947,
+                "end": 1947,
+                "kind": "event"
+              }
+            ]
+          },
+          {
+            "id": "pasundan",
+            "canonical_name": "Pasundan",
+            "start": 1947,
+            "end": 1950,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "ID"
+            ]
+          },
+          {
+            "id": "people_s_committee_of_north_korea",
+            "canonical_name": "People's Committee of North Korea",
+            "start": 1947,
+            "end": 1948,
+            "curated": true,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "KR"
+            ]
+          },
+          {
+            "id": "state_of_east_sumatra",
+            "canonical_name": "State of East Sumatra",
+            "start": 1947,
+            "end": 1950,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "ID"
+            ]
+          },
+          {
+            "id": "dominion_of_ceylon",
+            "canonical_name": "Dominion of Ceylon",
+            "start": 1948,
+            "end": 1972,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "LK"
+            ]
+          },
+          {
+            "id": "federation_of_malaya",
+            "canonical_name": "Federation of Malaya",
+            "start": 1948,
+            "end": 1963,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MY"
+            ]
+          },
+          {
+            "id": "malacca",
+            "canonical_name": "Malacca",
+            "start": 1948,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MY"
+            ]
+          },
+          {
+            "id": "myanmar",
+            "canonical_name": "Myanmar",
+            "start": 1948,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MM"
+            ],
+            "details": [
+              {
+                "id": "union_of_burma_19481962",
+                "canonical_name": "Union of Burma (1948–1962)",
+                "start": 1948,
+                "end": 1962,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "north_korea",
+            "canonical_name": "North Korea",
+            "start": 1948,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "KP"
+            ]
+          },
+          {
+            "id": "south_korea",
+            "canonical_name": "South Korea",
+            "start": 1948,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "KR"
+            ],
+            "details": [
+              {
+                "id": "first_republic_of_south_korea",
+                "canonical_name": "First Republic of South Korea",
+                "start": 1948,
+                "end": 1960,
+                "kind": "polity"
+              },
+              {
+                "id": "second_republic_of_south_korea",
+                "canonical_name": "Second Republic of South Korea",
+                "start": 1960,
+                "end": 1961,
+                "kind": "polity"
+              },
+              {
+                "id": "third_republic_of_south_korea",
+                "canonical_name": "Third Republic of South Korea",
+                "start": 1963,
+                "end": 1972,
+                "kind": "polity"
+              },
+              {
+                "id": "fourth_republic_of_south_korea",
+                "canonical_name": "Fourth Republic of South Korea",
+                "start": 1972,
+                "end": 1981,
+                "kind": "polity"
+              },
+              {
+                "id": "fifth_republic_of_south_korea",
+                "canonical_name": "Fifth Republic of South Korea",
+                "start": 1981,
+                "end": 1988,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "bhutan",
+            "canonical_name": "Bhutan",
+            "start": 1949,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "BT"
+            ]
+          },
+          {
+            "id": "laos",
+            "canonical_name": "Laos",
+            "start": 1949,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "LA"
+            ],
+            "details": [
+              {
+                "id": "kingdom_of_laos",
+                "canonical_name": "Kingdom of Laos",
+                "start": 1947,
+                "end": 1975,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "people_s_republic_of_china",
+            "canonical_name": "People's Republic of China",
+            "start": 1949,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "CN"
+            ],
+            "details": [
+              {
+                "id": "chinese_communist_revolution",
+                "canonical_name": "Chinese Communist Revolution",
+                "start": 1949,
+                "end": 1949,
+                "kind": "event"
+              }
+            ]
+          },
+          {
+            "id": "madras_state",
+            "canonical_name": "Madras State",
+            "start": 1950,
+            "end": 1969,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "IN"
+            ]
+          },
+          {
+            "id": "republic_of_south_maluku",
+            "canonical_name": "Republic of South Maluku",
+            "start": 1950,
+            "end": 1963,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "ID"
+            ]
+          },
+          {
+            "id": "cambodia",
+            "canonical_name": "Cambodia",
+            "start": 1953,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "KH"
+            ],
+            "details": [
+              {
+                "id": "state_of_cambodia",
+                "canonical_name": "State of Cambodia",
+                "start": 1989,
+                "end": 1993,
+                "kind": "polity"
+              },
+              {
+                "id": "provisional_government_of_national_union_and_national_salvation_of_cambodia",
+                "canonical_name": "Provisional Government of National Union and National Salvation of Cambodia",
+                "start": 1994,
+                "end": 1998,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "kingdom_of_cambodia",
+            "canonical_name": "Kingdom of Cambodia",
+            "start": 1953,
+            "end": 1970,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "KH"
+            ]
+          },
+          {
+            "id": "west_pakistan",
+            "canonical_name": "West Pakistan",
+            "start": 1955,
+            "end": 1970,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "PK"
+            ]
+          },
+          {
+            "id": "united_suvadive_republic",
+            "canonical_name": "United Suvadive Republic",
+            "start": 1959,
+            "end": 1963,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MV"
+            ]
+          },
+          {
+            "id": "socialist_republic_of_the_union_of_burma",
+            "canonical_name": "Socialist Republic of the Union of Burma",
+            "start": 1962,
+            "end": 1988,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MM"
+            ]
+          },
+          {
+            "id": "malaysia",
+            "canonical_name": "Malaysia",
+            "start": 1963,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MY"
+            ]
+          },
+          {
+            "id": "sabah",
+            "canonical_name": "Sabah",
+            "start": 1963,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MY"
+            ]
+          },
+          {
+            "id": "sarawak",
+            "canonical_name": "Sarawak",
+            "start": 1963,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MY"
+            ]
+          },
+          {
+            "id": "maldives",
+            "canonical_name": "Maldives",
+            "start": 1965,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MV"
+            ]
+          },
+          {
+            "id": "singapore",
+            "canonical_name": "Singapore",
+            "start": 1965,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MY",
+              "SG"
+            ]
+          },
+          {
+            "id": "swat_district",
+            "canonical_name": "Swat District",
+            "start": 1969,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "PK"
+            ]
+          },
+          {
+            "id": "khmer_republic",
+            "canonical_name": "Khmer Republic",
+            "start": 1970,
+            "end": 1975,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "KH"
+            ]
+          },
+          {
+            "id": "bangladesh",
+            "canonical_name": "Bangladesh",
+            "start": 1971,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "BD"
+            ]
+          },
+          {
+            "id": "republic_of_west_papua",
+            "canonical_name": "Republic of West Papua",
+            "start": 1971,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "ID"
+            ]
+          },
+          {
+            "id": "sri_lanka",
+            "canonical_name": "Sri Lanka",
+            "start": 1972,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "LK"
+            ]
+          },
+          {
+            "id": "democratic_republic_of_east_timor",
+            "canonical_name": "Democratic Republic of East Timor",
+            "start": 1975,
+            "end": 1976,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "TL"
+            ]
+          },
+          {
+            "id": "timor_leste",
+            "canonical_name": "Timor-Leste",
+            "start": 1975,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "TL"
+            ]
+          },
+          {
+            "id": "democratic_kampuchea",
+            "canonical_name": "Democratic Kampuchea",
+            "start": 1976,
+            "end": 1979,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "KH"
+            ]
+          },
+          {
+            "id": "kirikiri_koku",
+            "canonical_name": "Kirikiri koku",
+            "start": 1982,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "JP"
+            ]
+          },
+          {
+            "id": "tamil_eelam",
+            "canonical_name": "Tamil Eelam",
+            "start": 1983,
+            "end": 2009,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "LK"
+            ]
+          },
+          {
+            "id": "federal_republic_of_mindanao",
+            "canonical_name": "Federal Republic of Mindanao",
+            "start": 1986,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "PH"
+            ]
+          },
+          {
+            "id": "inobutan_kingdom",
+            "canonical_name": "Inobutan Kingdom",
+            "start": 1986,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "JP"
+            ]
+          },
+          {
+            "id": "galactic_federation",
+            "canonical_name": "Galactic Federation",
+            "start": 1987,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "JP"
+            ]
+          },
+          {
+            "id": "mahoroba_federation",
+            "canonical_name": "Mahoroba Federation",
+            "start": 1988,
+            "end": 2004,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "JP"
+            ]
+          },
+          {
+            "id": "hakusan_mountain_range_united_states",
+            "canonical_name": "Hakusan Mountain Range United States",
+            "start": 1989,
+            "end": 2004,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "JP"
+            ]
+          },
+          {
+            "id": "casian_commonwealth_of_cassiopeia",
+            "canonical_name": "Casian Commonwealth of Cassiopeia",
+            "start": 1991,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "JP"
+            ]
+          },
+          {
+            "id": "mongolia",
+            "canonical_name": "Mongolia",
+            "start": 1992,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "MN"
+            ]
+          },
+          {
+            "id": "hong_kong",
+            "canonical_name": "Hong Kong",
+            "start": 1997,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
+            "id": "villasante_calamba",
+            "canonical_name": "Villasante, Calamba",
+            "start": 2002,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "PH"
+            ]
+          },
+          {
+            "id": "nepal",
+            "canonical_name": "Nepal",
+            "start": 2008,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "NP"
+            ]
+          },
+          {
+            "id": "tateyama_federation_kingdom",
+            "canonical_name": "Tateyama Federation Kingdom",
+            "start": 2009,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "east_asia",
+            "present_countries": [
+              "JP"
             ]
           }
         ],
@@ -105777,45 +105512,6 @@
             ]
           },
           {
-            "id": "ajmer_state",
-            "canonical_name": "Ajmer State",
-            "start": 1947,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "bombay_state",
-            "canonical_name": "Bombay State",
-            "start": 1947,
-            "end": 1960,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "eastern_states_union",
-            "canonical_name": "Eastern States Union",
-            "start": 1947,
-            "end": 1948,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
             "id": "india",
             "canonical_name": "India",
             "start": 1947,
@@ -105836,10 +105532,45 @@
                 "kind": "polity"
               },
               {
+                "id": "ajmer_state",
+                "canonical_name": "Ajmer State",
+                "start": 1947,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "bombay_state",
+                "canonical_name": "Bombay State",
+                "start": 1947,
+                "end": 1960,
+                "kind": "polity"
+              },
+              {
                 "id": "dominion_of_india",
                 "canonical_name": "Dominion of India",
                 "start": 1947,
                 "end": 1950,
+                "kind": "polity"
+              },
+              {
+                "id": "eastern_states_union",
+                "canonical_name": "Eastern States Union",
+                "start": 1947,
+                "end": 1948,
+                "kind": "polity"
+              },
+              {
+                "id": "jammu_and_kashmir_q1180",
+                "canonical_name": "Jammu and Kashmir",
+                "start": 1947,
+                "end": 2019,
+                "kind": "polity"
+              },
+              {
+                "id": "mysore_state",
+                "canonical_name": "Mysore State",
+                "start": 1947,
+                "end": 1973,
                 "kind": "polity"
               },
               {
@@ -105848,20 +105579,289 @@
                 "start": 1947,
                 "end": 1947,
                 "kind": "event"
+              },
+              {
+                "id": "saurashtra_state",
+                "canonical_name": "Saurashtra State",
+                "start": 1947,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "undivided_assam",
+                "canonical_name": "Undivided Assam",
+                "start": 1947,
+                "end": 1963,
+                "kind": "polity"
+              },
+              {
+                "id": "west_bengal",
+                "canonical_name": "West Bengal",
+                "start": 1947,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "hyderabad_state_1948_1956",
+                "canonical_name": "Hyderabad State (1948-1956)",
+                "start": 1948,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "madhya_bharat",
+                "canonical_name": "Madhya Bharat",
+                "start": 1948,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "patiala_and_east_punjab_states_union",
+                "canonical_name": "Patiala and East Punjab States Union",
+                "start": 1948,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "united_states_of_matsya",
+                "canonical_name": "United States of Matsya",
+                "start": 1948,
+                "end": 1949,
+                "kind": "polity"
+              },
+              {
+                "id": "vindhya_pradesh",
+                "canonical_name": "Vindhya Pradesh",
+                "start": 1948,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "bhopal_state_19491956",
+                "canonical_name": "Bhopal State (1949–1956)",
+                "start": 1949,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "travancore_cochin",
+                "canonical_name": "Travancore-Cochin",
+                "start": 1949,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "assam",
+                "canonical_name": "Assam",
+                "start": 1950,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "bilaspur_state",
+                "canonical_name": "Bilaspur State",
+                "start": 1950,
+                "end": 1954,
+                "kind": "polity"
+              },
+              {
+                "id": "coorg_state",
+                "canonical_name": "Coorg State",
+                "start": 1950,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "madhya_pradesh",
+                "canonical_name": "Madhya Pradesh",
+                "start": 1950,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "rajasthan",
+                "canonical_name": "Rajasthan",
+                "start": 1950,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "tamil_nadu",
+                "canonical_name": "Tamil Nadu",
+                "start": 1950,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "uttar_pradesh",
+                "canonical_name": "Uttar Pradesh",
+                "start": 1950,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "andhra_state",
+                "canonical_name": "Andhra State",
+                "start": 1953,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "andhra_pradesh",
+                "canonical_name": "Andhra Pradesh",
+                "start": 1956,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "andhra_pradesh_19562014",
+                "canonical_name": "Andhra Pradesh (1956–2014)",
+                "start": 1956,
+                "end": 2014,
+                "kind": "polity"
+              },
+              {
+                "id": "karnataka",
+                "canonical_name": "Karnataka",
+                "start": 1956,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "kerala",
+                "canonical_name": "Kerala",
+                "start": 1956,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "punjab",
+                "canonical_name": "Punjab",
+                "start": 1956,
+                "end": null,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "east_punjab",
+                    "canonical_name": "East Punjab",
+                    "start": 1950,
+                    "end": 1966,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "gujarat",
+                "canonical_name": "Gujarat",
+                "start": 1960,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "maharashtra",
+                "canonical_name": "Maharashtra",
+                "start": 1960,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "nagaland",
+                "canonical_name": "Nagaland",
+                "start": 1963,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "haryana",
+                "canonical_name": "Haryana",
+                "start": 1966,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "himachal_pradesh",
+                "canonical_name": "Himachal Pradesh",
+                "start": 1971,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "manipur",
+                "canonical_name": "Manipur",
+                "start": 1972,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "meghalaya",
+                "canonical_name": "Meghalaya",
+                "start": 1972,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "tripura_q1363",
+                "canonical_name": "Tripura",
+                "start": 1972,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "sikkim",
+                "canonical_name": "Sikkim",
+                "start": 1975,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "arunachal_pradesh",
+                "canonical_name": "Arunachal Pradesh",
+                "start": 1987,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "goa",
+                "canonical_name": "Goa",
+                "start": 1987,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "mizoram",
+                "canonical_name": "Mizoram",
+                "start": 1987,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "chhattisgarh",
+                "canonical_name": "Chhattisgarh",
+                "start": 2000,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "jharkhand",
+                "canonical_name": "Jharkhand",
+                "start": 2000,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "uttarakhand",
+                "canonical_name": "Uttarakhand",
+                "start": 2000,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "telangana",
+                "canonical_name": "Telangana",
+                "start": 2014,
+                "end": null,
+                "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "jammu_and_kashmir_q1180",
-            "canonical_name": "Jammu and Kashmir",
-            "start": 1947,
-            "end": 2019,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
             ]
           },
           {
@@ -105875,19 +105875,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "JP"
-            ]
-          },
-          {
-            "id": "mysore_state",
-            "canonical_name": "Mysore State",
-            "start": 1947,
-            "end": 1973,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
             ]
           },
           {
@@ -105946,19 +105933,6 @@
             ]
           },
           {
-            "id": "saurashtra_state",
-            "canonical_name": "Saurashtra State",
-            "start": 1947,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
             "id": "state_of_east_sumatra",
             "canonical_name": "State of East Sumatra",
             "start": 1947,
@@ -105982,32 +105956,6 @@
             "primary_historical_region": "north_america",
             "present_countries": [
               "US"
-            ]
-          },
-          {
-            "id": "undivided_assam",
-            "canonical_name": "Undivided Assam",
-            "start": 1947,
-            "end": 1963,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "west_bengal",
-            "canonical_name": "West Bengal",
-            "start": 1947,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
             ]
           },
           {
@@ -106059,19 +106007,6 @@
             ]
           },
           {
-            "id": "hyderabad_state_1948_1956",
-            "canonical_name": "Hyderabad State (1948-1956)",
-            "start": 1948,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
             "id": "israel",
             "canonical_name": "Israel",
             "start": 1948,
@@ -106091,19 +106026,6 @@
                 "end": null,
                 "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "madhya_bharat",
-            "canonical_name": "Madhya Bharat",
-            "start": 1948,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
             ]
           },
           {
@@ -106155,19 +106077,6 @@
             ]
           },
           {
-            "id": "patiala_and_east_punjab_states_union",
-            "canonical_name": "Patiala and East Punjab States Union",
-            "start": 1948,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
             "id": "south_korea",
             "canonical_name": "South Korea",
             "start": 1948,
@@ -106215,45 +106124,6 @@
                 "end": 1988,
                 "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "united_states_of_matsya",
-            "canonical_name": "United States of Matsya",
-            "start": 1948,
-            "end": 1949,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "vindhya_pradesh",
-            "canonical_name": "Vindhya Pradesh",
-            "start": 1948,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "bhopal_state_19491956",
-            "canonical_name": "Bhopal State (1949–1956)",
-            "start": 1949,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
             ]
           },
           {
@@ -106327,88 +106197,10 @@
             ]
           },
           {
-            "id": "travancore_cochin",
-            "canonical_name": "Travancore-Cochin",
-            "start": 1949,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "assam",
-            "canonical_name": "Assam",
-            "start": 1950,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "bilaspur_state",
-            "canonical_name": "Bilaspur State",
-            "start": 1950,
-            "end": 1954,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "coorg_state",
-            "canonical_name": "Coorg State",
-            "start": 1950,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "madhya_pradesh",
-            "canonical_name": "Madhya Pradesh",
-            "start": 1950,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
             "id": "madras_state",
             "canonical_name": "Madras State",
             "start": 1950,
             "end": 1969,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "rajasthan",
-            "canonical_name": "Rajasthan",
-            "start": 1950,
-            "end": null,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "asia",
@@ -106428,45 +106220,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "ID"
-            ]
-          },
-          {
-            "id": "tamil_nadu",
-            "canonical_name": "Tamil Nadu",
-            "start": 1950,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "uttar_pradesh",
-            "canonical_name": "Uttar Pradesh",
-            "start": 1950,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "andhra_state",
-            "canonical_name": "Andhra State",
-            "start": 1953,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
             ]
           },
           {
@@ -106525,80 +106278,6 @@
             ]
           },
           {
-            "id": "andhra_pradesh",
-            "canonical_name": "Andhra Pradesh",
-            "start": 1956,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "andhra_pradesh_19562014",
-            "canonical_name": "Andhra Pradesh (1956–2014)",
-            "start": 1956,
-            "end": 2014,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "karnataka",
-            "canonical_name": "Karnataka",
-            "start": 1956,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "kerala",
-            "canonical_name": "Kerala",
-            "start": 1956,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "punjab",
-            "canonical_name": "Punjab",
-            "start": 1956,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ],
-            "details": [
-              {
-                "id": "east_punjab",
-                "canonical_name": "East Punjab",
-                "start": 1950,
-                "end": 1966,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
             "id": "federation_of_the_emirates_of_south_arabia",
             "canonical_name": "Federation of the Emirates of South Arabia",
             "start": 1959,
@@ -106644,32 +106323,6 @@
                 "end": 1983,
                 "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "gujarat",
-            "canonical_name": "Gujarat",
-            "start": 1960,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "maharashtra",
-            "canonical_name": "Maharashtra",
-            "start": 1960,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
             ]
           },
           {
@@ -106731,19 +106384,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "MY"
-            ]
-          },
-          {
-            "id": "nagaland",
-            "canonical_name": "Nagaland",
-            "start": 1963,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
             ]
           },
           {
@@ -106823,19 +106463,6 @@
             "present_countries": [
               "MY",
               "SG"
-            ]
-          },
-          {
-            "id": "haryana",
-            "canonical_name": "Haryana",
-            "start": 1966,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
             ]
           },
           {
@@ -106926,19 +106553,6 @@
             ]
           },
           {
-            "id": "himachal_pradesh",
-            "canonical_name": "Himachal Pradesh",
-            "start": 1971,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
             "id": "republic_of_west_papua",
             "canonical_name": "Republic of West Papua",
             "start": 1971,
@@ -106978,32 +106592,6 @@
             ]
           },
           {
-            "id": "manipur",
-            "canonical_name": "Manipur",
-            "start": 1972,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "meghalaya",
-            "canonical_name": "Meghalaya",
-            "start": 1972,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
             "id": "sri_lanka",
             "canonical_name": "Sri Lanka",
             "start": 1972,
@@ -107014,20 +106602,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "LK"
-            ]
-          },
-          {
-            "id": "tripura_q1363",
-            "canonical_name": "Tripura",
-            "start": 1972,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "BD",
-              "IN"
             ]
           },
           {
@@ -107067,19 +106641,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "TL"
-            ]
-          },
-          {
-            "id": "sikkim",
-            "canonical_name": "Sikkim",
-            "start": 1975,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
             ]
           },
           {
@@ -107200,19 +106761,6 @@
             ]
           },
           {
-            "id": "arunachal_pradesh",
-            "canonical_name": "Arunachal Pradesh",
-            "start": 1987,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
             "id": "galactic_federation",
             "canonical_name": "Galactic Federation",
             "start": 1987,
@@ -107223,32 +106771,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "JP"
-            ]
-          },
-          {
-            "id": "goa",
-            "canonical_name": "Goa",
-            "start": 1987,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "mizoram",
-            "canonical_name": "Mizoram",
-            "start": 1987,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
             ]
           },
           {
@@ -107543,45 +107065,6 @@
             ]
           },
           {
-            "id": "chhattisgarh",
-            "canonical_name": "Chhattisgarh",
-            "start": 2000,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "jharkhand",
-            "canonical_name": "Jharkhand",
-            "start": 2000,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
-            "id": "uttarakhand",
-            "canonical_name": "Uttarakhand",
-            "start": 2000,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
-            ]
-          },
-          {
             "id": "villasante_calamba",
             "canonical_name": "Villasante, Calamba",
             "start": 2002,
@@ -107631,19 +107114,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "JP"
-            ]
-          },
-          {
-            "id": "telangana",
-            "canonical_name": "Telangana",
-            "start": 2014,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "IN"
             ]
           }
         ],
