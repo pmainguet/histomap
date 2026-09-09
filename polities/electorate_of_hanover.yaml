@@ -63,3 +63,4 @@ manual_overrides:
 government_form: electorate
 deprecated:
   visibility_tier: detailed
+detail_of: holy_roman_empire
