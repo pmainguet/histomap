@@ -9,10 +9,6 @@ dataset is organized around, see [ONTOLOGY.md](ONTOLOGY.md).
 
 ## Remaining work, in recommended order
 
-2. **Complete the top-50 editorial pass:** descriptions (`Text.long_en`) and the most important
-   transitions. `icon` and the adult/child reading-level split (`Text.short_child_en`/
-   `short_adult_en`) were retired outright 9 September 2026 (see STATUS.md) rather than given a
-   display surface -- neither had ever been rendered in `/explore`.
 3. **Add the linked map** — a geographic map view within `/explore`, linked to timeline navigation.
    No map code exists in `web/` yet (confirmed live 8 September 2026). Own spec, separate from
    item 3b below (split 8 September 2026 -- different output format, purpose, and audience).

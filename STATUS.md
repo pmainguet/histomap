@@ -2576,3 +2576,39 @@ HYDE downloads are slow and rate-limited — do it once and cache aggressively.
     exhaustively (subset-only continents, `historical_regions` preserved, `manual_overrides`
     respected, zero overlap with anything already known-uncommitted-for-other-reasons) before
     trusting any bulk classification of "safe to discard."
+
+### ROADMAP item 0: events bound to a period now show as its details; icon and the
+adult/child reading-level split retired; item 2 dropped — 9 September 2026
+
+Three small, related fixes/decisions, all confirmed live before committing.
+
+**Events-bound-to-period details (ROADMAP item 0).** An event's `bounds` (the era/chapter/
+period it starts or ends) fed into `/explore`'s Events lane marker but never attached to the
+target period's own "details" the way every other `detail_of` relationship does -- clicking
+the period showed nothing. `pipeline/build_explore_tree.py`'s `details_by_target` now also
+walks `event.bounds`, and `web/explore_details.js` gained `eventRefButton()` (mirrors the
+existing period/polity ref buttons) wired into both `renderPeriodDetails`'s "Details" row and
+`renderPolityDetails`'s "Contains" list (the same gap existed there too, via `detail_of`).
+Verified live: Thirty Years' War's panel now lists "Peace of Westphalia" under Details,
+clicking it opens the event's own panel.
+
+**`icon` and the adult/child reading-level split retired (ROADMAP item 1).** Neither had a
+display surface in `/explore`: `icon` was never referenced anywhere in `web/*.js`, and
+`Text.short_child_en`'s toggle lived in the old `/` timeline (retired 31 August 2026) and was
+never ported over. Checked live before touching anything: only 1 polity in the whole dataset
+ever had `icon` set (Roman Republic), only 2 ever had `short_child_en`/`short_adult_en` (Hatti,
+Roman Republic), 0 had `long_en`. Both records' `short_adult_en` content migrated into
+`long_en` by hand; every other record's now-extra keys are silently dropped by Pydantic's
+`extra="ignore"`, same as every other retired field this session -- no mass YAML rewrite.
+`pipeline/compute_prominence.py`'s `editorial_work` score lost its +2 icon bonus; its cap
+dropped from 7 to 5 accordingly (Roman Republic's own cached `prominence_components` is now
+slightly stale at the old value until `pipeline/rebuild_timeline.py` -- a separate, full-dataset
+recompute -- next runs; not triggered here, out of scope for this cleanup).
+
+**ROADMAP item 2 dropped.** Its "descriptions" half (`Text.long_en`) is superseded by the
+Wikipedia summary panel shipped earlier this session (ROADMAP item 6): checked live, all 50 of
+the top-50 entities by `prominence_score` already carry `external_ids.wikidata`, so all 50
+already get a real, dynamic Wikipedia description + image for free -- hand-authoring `long_en`
+for them would just duplicate what the panel already shows live. Its "transitions" half (only
+5 `Transition` records exist) was judged not worth reviving as a standalone task on its own;
+if richer polity-succession data is wanted later it should be its own scoped item.
