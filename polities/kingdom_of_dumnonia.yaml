@@ -25,10 +25,12 @@ sources:
 prominence_score: 23.74
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - europe
+  present_countries:
+  - GB
   centroid: null
-  confidence: null
+  confidence: low
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

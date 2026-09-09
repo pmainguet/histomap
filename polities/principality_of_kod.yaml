@@ -23,10 +23,14 @@ sources:
 prominence_score: 1.45
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - asia
+  - europe
+  present_countries:
+  - RU
   centroid: null
-  confidence: null
+  confidence: low
+  primary_continent: asia
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []

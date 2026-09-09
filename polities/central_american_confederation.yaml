@@ -25,10 +25,16 @@ sources:
 prominence_score: 10.82
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - north_america
+  present_countries:
+  - CR
+  - GT
+  - HN
+  - NI
+  - SV
   centroid: null
-  confidence: null
+  confidence: low
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
