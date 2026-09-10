@@ -33026,7 +33026,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "france",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -105788,7 +105788,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "france",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -115991,7 +115991,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "france",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -116090,7 +116090,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "france",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -116337,7 +116337,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "france",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -117099,7 +117099,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "france",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -117200,7 +117200,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "france",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -152301,7 +152301,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "france",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -171641,7 +171641,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "france",
     "deprecated": {
       "visibility_tier": "global"
     },
@@ -278103,7 +278103,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "france",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -311483,7 +311483,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "france",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -380208,7 +380208,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "france",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -382922,7 +382922,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "french_colonial_empire",
     "deprecated": {
       "visibility_tier": "detailed"
     },

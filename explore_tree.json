@@ -19624,10 +19624,119 @@
             ],
             "details": [
               {
+                "id": "kingdom_of_france",
+                "canonical_name": "Kingdom of France",
+                "start": 987,
+                "end": 1791,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "capetian_dynasty",
+                    "canonical_name": "Capetian Dynasty (direct line)",
+                    "start": 987,
+                    "end": 1328,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "university_of_paris_founding",
+                    "canonical_name": "Founding of the University of Paris",
+                    "start": 1150,
+                    "end": 1150,
+                    "kind": "event"
+                  }
+                ]
+              },
+              {
+                "id": "french_constitutional_monarchy",
+                "canonical_name": "French constitutional monarchy",
+                "start": 1791,
+                "end": 1792,
+                "kind": "polity"
+              },
+              {
                 "id": "french_first_republic",
                 "canonical_name": "French First Republic",
                 "start": 1792,
                 "end": 1804,
+                "kind": "polity"
+              },
+              {
+                "id": "french_consulate",
+                "canonical_name": "French Consulate",
+                "start": 1799,
+                "end": 1804,
+                "kind": "polity"
+              },
+              {
+                "id": "first_french_empire",
+                "canonical_name": "First French Empire",
+                "start": 1804,
+                "end": 1815,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "battle_of_waterloo",
+                    "canonical_name": "Battle of Waterloo",
+                    "start": 1815,
+                    "end": 1815,
+                    "kind": "event"
+                  }
+                ]
+              },
+              {
+                "id": "bourbon_restoration_in_france",
+                "canonical_name": "Bourbon Restoration in France",
+                "start": 1815,
+                "end": 1830,
+                "kind": "polity"
+              },
+              {
+                "id": "july_monarchy",
+                "canonical_name": "July Monarchy",
+                "start": 1830,
+                "end": 1848,
+                "kind": "polity"
+              },
+              {
+                "id": "french_second_republic",
+                "canonical_name": "French Second Republic",
+                "start": 1848,
+                "end": 1852,
+                "kind": "polity"
+              },
+              {
+                "id": "second_french_empire",
+                "canonical_name": "Second French Empire",
+                "start": 1852,
+                "end": 1870,
+                "kind": "polity"
+              },
+              {
+                "id": "french_third_republic",
+                "canonical_name": "French Third Republic",
+                "start": 1870,
+                "end": 1940,
+                "kind": "polity"
+              },
+              {
+                "id": "vichy_france",
+                "canonical_name": "Vichy France",
+                "start": 1940,
+                "end": 1944,
+                "kind": "polity"
+              },
+              {
+                "id": "provisional_government_of_the_french_republic",
+                "canonical_name": "Provisional Government of the French Republic",
+                "start": 1944,
+                "end": 1946,
+                "kind": "polity"
+              },
+              {
+                "id": "french_fourth_republic",
+                "canonical_name": "French Fourth Republic",
+                "start": 1946,
+                "end": 1958,
                 "kind": "polity"
               }
             ]
@@ -21957,35 +22066,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "FR"
-            ]
-          },
-          {
-            "id": "kingdom_of_france",
-            "canonical_name": "Kingdom of France",
-            "start": 987,
-            "end": 1791,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ],
-            "details": [
-              {
-                "id": "capetian_dynasty",
-                "canonical_name": "Capetian Dynasty (direct line)",
-                "start": 987,
-                "end": 1328,
-                "kind": "polity"
-              },
-              {
-                "id": "university_of_paris_founding",
-                "canonical_name": "Founding of the University of Paris",
-                "start": 1150,
-                "end": 1150,
-                "kind": "event"
-              }
             ]
           },
           {
@@ -37767,10 +37847,119 @@
             ],
             "details": [
               {
+                "id": "kingdom_of_france",
+                "canonical_name": "Kingdom of France",
+                "start": 987,
+                "end": 1791,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "capetian_dynasty",
+                    "canonical_name": "Capetian Dynasty (direct line)",
+                    "start": 987,
+                    "end": 1328,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "university_of_paris_founding",
+                    "canonical_name": "Founding of the University of Paris",
+                    "start": 1150,
+                    "end": 1150,
+                    "kind": "event"
+                  }
+                ]
+              },
+              {
+                "id": "french_constitutional_monarchy",
+                "canonical_name": "French constitutional monarchy",
+                "start": 1791,
+                "end": 1792,
+                "kind": "polity"
+              },
+              {
                 "id": "french_first_republic",
                 "canonical_name": "French First Republic",
                 "start": 1792,
                 "end": 1804,
+                "kind": "polity"
+              },
+              {
+                "id": "french_consulate",
+                "canonical_name": "French Consulate",
+                "start": 1799,
+                "end": 1804,
+                "kind": "polity"
+              },
+              {
+                "id": "first_french_empire",
+                "canonical_name": "First French Empire",
+                "start": 1804,
+                "end": 1815,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "battle_of_waterloo",
+                    "canonical_name": "Battle of Waterloo",
+                    "start": 1815,
+                    "end": 1815,
+                    "kind": "event"
+                  }
+                ]
+              },
+              {
+                "id": "bourbon_restoration_in_france",
+                "canonical_name": "Bourbon Restoration in France",
+                "start": 1815,
+                "end": 1830,
+                "kind": "polity"
+              },
+              {
+                "id": "july_monarchy",
+                "canonical_name": "July Monarchy",
+                "start": 1830,
+                "end": 1848,
+                "kind": "polity"
+              },
+              {
+                "id": "french_second_republic",
+                "canonical_name": "French Second Republic",
+                "start": 1848,
+                "end": 1852,
+                "kind": "polity"
+              },
+              {
+                "id": "second_french_empire",
+                "canonical_name": "Second French Empire",
+                "start": 1852,
+                "end": 1870,
+                "kind": "polity"
+              },
+              {
+                "id": "french_third_republic",
+                "canonical_name": "French Third Republic",
+                "start": 1870,
+                "end": 1940,
+                "kind": "polity"
+              },
+              {
+                "id": "vichy_france",
+                "canonical_name": "Vichy France",
+                "start": 1940,
+                "end": 1944,
+                "kind": "polity"
+              },
+              {
+                "id": "provisional_government_of_the_french_republic",
+                "canonical_name": "Provisional Government of the French Republic",
+                "start": 1944,
+                "end": 1946,
+                "kind": "polity"
+              },
+              {
+                "id": "french_fourth_republic",
+                "canonical_name": "French Fourth Republic",
+                "start": 1946,
+                "end": 1958,
                 "kind": "polity"
               }
             ]
@@ -41400,35 +41589,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "kingdom_of_france",
-            "canonical_name": "Kingdom of France",
-            "start": 987,
-            "end": 1791,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ],
-            "details": [
-              {
-                "id": "capetian_dynasty",
-                "canonical_name": "Capetian Dynasty (direct line)",
-                "start": 987,
-                "end": 1328,
-                "kind": "polity"
-              },
-              {
-                "id": "university_of_paris_founding",
-                "canonical_name": "Founding of the University of Paris",
-                "start": 1150,
-                "end": 1150,
-                "kind": "event"
-              }
-            ]
           },
           {
             "id": "principality_of_volhynia",
@@ -53300,6 +53460,15 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "FR"
+            ],
+            "details": [
+              {
+                "id": "wallis_and_futuna_protectorate",
+                "canonical_name": "Wallis and Futuna protectorate",
+                "start": 1888,
+                "end": 1961,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -53733,19 +53902,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "BE"
-            ]
-          },
-          {
-            "id": "french_constitutional_monarchy",
-            "canonical_name": "French constitutional monarchy",
-            "start": 1791,
-            "end": 1792,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
             ]
           },
           {
@@ -63254,6 +63410,15 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "FR"
+            ],
+            "details": [
+              {
+                "id": "wallis_and_futuna_protectorate",
+                "canonical_name": "Wallis and Futuna protectorate",
+                "start": 1888,
+                "end": 1961,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -64306,19 +64471,6 @@
             ]
           },
           {
-            "id": "french_constitutional_monarchy",
-            "canonical_name": "French constitutional monarchy",
-            "start": 1791,
-            "end": 1792,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "rauracian_republic",
             "canonical_name": "Rauracian Republic",
             "start": 1792,
@@ -65119,19 +65271,6 @@
             ]
           },
           {
-            "id": "french_consulate",
-            "canonical_name": "French Consulate",
-            "start": 1799,
-            "end": 1804,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "united_kingdom_of_great_britain_and_ireland",
             "canonical_name": "United Kingdom of Great Britain and Ireland",
             "start": 1801,
@@ -65194,28 +65333,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "AT"
-            ]
-          },
-          {
-            "id": "first_french_empire",
-            "canonical_name": "First French Empire",
-            "start": 1804,
-            "end": 1815,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ],
-            "details": [
-              {
-                "id": "battle_of_waterloo",
-                "canonical_name": "Battle of Waterloo",
-                "start": 1815,
-                "end": 1815,
-                "kind": "event"
-              }
             ]
           },
           {
@@ -65375,19 +65492,6 @@
             ]
           },
           {
-            "id": "bourbon_restoration_in_france",
-            "canonical_name": "Bourbon Restoration in France",
-            "start": 1815,
-            "end": 1830,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "duchy_of_brunswick",
             "canonical_name": "Duchy of Brunswick",
             "start": 1815,
@@ -65453,19 +65557,6 @@
             ]
           },
           {
-            "id": "july_monarchy",
-            "canonical_name": "July Monarchy",
-            "start": 1830,
-            "end": 1848,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "duchy_of_limburg_q376009",
             "canonical_name": "Duchy of Limburg",
             "start": 1839,
@@ -65486,32 +65577,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "africa",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "french_second_republic",
-            "canonical_name": "French Second Republic",
-            "start": 1848,
-            "end": 1852,
-            "curated": true,
-            "linked_era_id": "africa_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "second_french_empire",
-            "canonical_name": "Second French Empire",
-            "start": 1852,
-            "end": 1870,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
             "primary_historical_region": "western_europe",
             "present_countries": [
               "FR"
@@ -65655,19 +65720,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "GB"
-            ]
-          },
-          {
-            "id": "french_third_republic",
-            "canonical_name": "French Third Republic",
-            "start": 1870,
-            "end": 1940,
-            "curated": true,
-            "linked_era_id": "africa_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
             ]
           },
           {
@@ -71769,19 +71821,6 @@
             "present_countries": []
           },
           {
-            "id": "french_consulate",
-            "canonical_name": "French Consulate",
-            "start": 1799,
-            "end": 1804,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "septinsular_republic",
             "canonical_name": "Septinsular Republic",
             "start": 1800,
@@ -71929,28 +71968,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "AT"
-            ]
-          },
-          {
-            "id": "first_french_empire",
-            "canonical_name": "First French Empire",
-            "start": 1804,
-            "end": 1815,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ],
-            "details": [
-              {
-                "id": "battle_of_waterloo",
-                "canonical_name": "Battle of Waterloo",
-                "start": 1815,
-                "end": 1815,
-                "kind": "event"
-              }
             ]
           },
           {
@@ -72311,19 +72328,6 @@
             ]
           },
           {
-            "id": "bourbon_restoration_in_france",
-            "canonical_name": "Bourbon Restoration in France",
-            "start": 1815,
-            "end": 1830,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "duchy_of_brunswick",
             "canonical_name": "Duchy of Brunswick",
             "start": 1815,
@@ -72524,19 +72528,6 @@
             "present_countries": []
           },
           {
-            "id": "july_monarchy",
-            "canonical_name": "July Monarchy",
-            "start": 1830,
-            "end": 1848,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "kingdom_of_poland_q11750128",
             "canonical_name": "Kingdom of Poland",
             "start": 1830,
@@ -72560,19 +72551,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "NL"
-            ]
-          },
-          {
-            "id": "french_second_republic",
-            "canonical_name": "French Second Republic",
-            "start": 1848,
-            "end": 1852,
-            "curated": true,
-            "linked_era_id": "africa_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
             ]
           },
           {
@@ -72632,19 +72610,6 @@
             "primary_historical_region": "balkans",
             "present_countries": [
               "ME"
-            ]
-          },
-          {
-            "id": "second_french_empire",
-            "canonical_name": "Second French Empire",
-            "start": 1852,
-            "end": 1870,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
             ]
           },
           {
@@ -72857,19 +72822,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "GB"
-            ]
-          },
-          {
-            "id": "french_third_republic",
-            "canonical_name": "French Third Republic",
-            "start": 1870,
-            "end": 1940,
-            "curated": true,
-            "linked_era_id": "africa_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
             ]
           },
           {
@@ -80471,19 +80423,6 @@
             ]
           },
           {
-            "id": "wallis_and_futuna_protectorate",
-            "canonical_name": "Wallis and Futuna protectorate",
-            "start": 1888,
-            "end": 1961,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "oceania",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "zanzibar_protectorate",
             "canonical_name": "Zanzibar Protectorate",
             "start": 1890,
@@ -80780,32 +80719,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "AT"
-            ]
-          },
-          {
-            "id": "vichy_france",
-            "canonical_name": "Vichy France",
-            "start": 1940,
-            "end": 1944,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "provisional_government_of_the_french_republic",
-            "canonical_name": "Provisional Government of the French Republic",
-            "start": 1944,
-            "end": 1946,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
             ]
           }
         ],
@@ -83628,19 +83541,6 @@
             ]
           },
           {
-            "id": "vichy_france",
-            "canonical_name": "Vichy France",
-            "start": 1940,
-            "end": 1944,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "governorate_of_montenegro",
             "canonical_name": "Governorate of Montenegro",
             "start": 1941,
@@ -83761,19 +83661,6 @@
             "present_countries": [
               "IT"
             ]
-          },
-          {
-            "id": "provisional_government_of_the_french_republic",
-            "canonical_name": "Provisional Government of the French Republic",
-            "start": 1944,
-            "end": 1946,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
           }
         ],
         "oceania": [
@@ -83787,19 +83674,6 @@
             "primary_continent": "oceania",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "wallis_and_futuna_protectorate",
-            "canonical_name": "Wallis and Futuna protectorate",
-            "start": 1888,
-            "end": 1961,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "oceania",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
           },
           {
             "id": "british_tonga",
@@ -90633,19 +90507,6 @@
             ]
           },
           {
-            "id": "french_fourth_republic",
-            "canonical_name": "French Fourth Republic",
-            "start": 1946,
-            "end": 1958,
-            "curated": true,
-            "linked_era_id": "africa_contemporary_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
             "id": "republic_of_saugeais",
             "canonical_name": "Republic of Saugeais",
             "start": 1947,
@@ -95841,19 +95702,6 @@
             "primary_historical_region": "balkans",
             "present_countries": [
               "YU"
-            ]
-          },
-          {
-            "id": "french_fourth_republic",
-            "canonical_name": "French Fourth Republic",
-            "start": 1946,
-            "end": 1958,
-            "curated": true,
-            "linked_era_id": "africa_contemporary_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
             ]
           },
           {
