@@ -26,12 +26,11 @@ eligibility: accepted
 geography:
   continents:
   - africa
+  primary_continent: africa
+  historical_regions: []
   present_countries:
-  - DZ
-  - LY
   - TN
-  centroid: null
-  confidence: low
+  confidence: high
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []
@@ -50,3 +49,5 @@ prominence_components:
 government_form: null
 deprecated:
   visibility_tier: detailed
+manual_overrides:
+- geography
