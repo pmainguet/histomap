@@ -38489,7 +38489,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "byzantine_empire",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -105905,7 +105905,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -311576,7 +311576,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "greece",
     "deprecated": {
       "visibility_tier": "detailed",
       "visibility_override": "global"

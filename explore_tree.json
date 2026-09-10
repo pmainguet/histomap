@@ -14703,6 +14703,13 @@
                 "kind": "polity"
               },
               {
+                "id": "byzantine_empire_under_the_palaiologos_dynasty",
+                "canonical_name": "Byzantine Empire under the Palaiologos dynasty",
+                "start": 1261,
+                "end": 1453,
+                "kind": "polity"
+              },
+              {
                 "id": "fall_of_constantinople",
                 "canonical_name": "Fall of Constantinople",
                 "start": 1453,
@@ -24325,19 +24332,6 @@
             ]
           },
           {
-            "id": "byzantine_empire_under_the_palaiologos_dynasty",
-            "canonical_name": "Byzantine Empire under the Palaiologos dynasty",
-            "start": 1261,
-            "end": 1453,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "GR"
-            ]
-          },
-          {
             "id": "duchy_of_ferrara",
             "canonical_name": "Duchy of Ferrara",
             "start": 1264,
@@ -30465,6 +30459,13 @@
                 "canonical_name": "Duchy of Rome",
                 "start": 590,
                 "end": 754,
+                "kind": "polity"
+              },
+              {
+                "id": "byzantine_empire_under_the_palaiologos_dynasty",
+                "canonical_name": "Byzantine Empire under the Palaiologos dynasty",
+                "start": 1261,
+                "end": 1453,
                 "kind": "polity"
               },
               {
@@ -43714,19 +43715,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "byzantine_empire_under_the_palaiologos_dynasty",
-            "canonical_name": "Byzantine Empire under the Palaiologos dynasty",
-            "start": 1261,
-            "end": 1453,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "GR"
-            ]
           },
           {
             "id": "free_imperial_city_of_strasbourg_q95895695",
@@ -71042,19 +71030,6 @@
             ]
           },
           {
-            "id": "first_hellenic_republic",
-            "canonical_name": "First Hellenic Republic",
-            "start": 1822,
-            "end": 1832,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "GR"
-            ]
-          },
-          {
             "id": "kingdom_of_sicily_q30890672",
             "canonical_name": "Kingdom of Sicily",
             "start": 1848,
@@ -72529,19 +72504,6 @@
             "canonical_name": "Military-Political System of Samos",
             "start": 1821,
             "end": 1834,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "GR"
-            ]
-          },
-          {
-            "id": "first_hellenic_republic",
-            "canonical_name": "First Hellenic Republic",
-            "start": 1822,
-            "end": 1832,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -80975,19 +80937,6 @@
             ]
           },
           {
-            "id": "second_hellenic_republic",
-            "canonical_name": "Second Hellenic Republic",
-            "start": 1924,
-            "end": 1935,
-            "curated": true,
-            "linked_era_id": "europe_world_wars_reordering_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "GR"
-            ]
-          },
-          {
             "id": "nationalist_zone",
             "canonical_name": "Nationalist zone",
             "start": 1936,
@@ -83525,19 +83474,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "IE"
-            ]
-          },
-          {
-            "id": "second_hellenic_republic",
-            "canonical_name": "Second Hellenic Republic",
-            "start": 1924,
-            "end": 1935,
-            "curated": true,
-            "linked_era_id": "europe_world_wars_reordering_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "GR"
             ]
           },
           {
@@ -94556,10 +94492,24 @@
                 "kind": "period"
               },
               {
+                "id": "first_hellenic_republic",
+                "canonical_name": "First Hellenic Republic",
+                "start": 1822,
+                "end": 1832,
+                "kind": "polity"
+              },
+              {
                 "id": "kingdom_of_greece",
                 "canonical_name": "Kingdom of Greece",
                 "start": 1832,
                 "end": 1973,
+                "kind": "polity"
+              },
+              {
+                "id": "second_hellenic_republic",
+                "canonical_name": "Second Hellenic Republic",
+                "start": 1924,
+                "end": 1935,
                 "kind": "polity"
               }
             ]
@@ -95025,10 +94975,24 @@
                 "kind": "period"
               },
               {
+                "id": "first_hellenic_republic",
+                "canonical_name": "First Hellenic Republic",
+                "start": 1822,
+                "end": 1832,
+                "kind": "polity"
+              },
+              {
                 "id": "kingdom_of_greece",
                 "canonical_name": "Kingdom of Greece",
                 "start": 1832,
                 "end": 1973,
+                "kind": "polity"
+              },
+              {
+                "id": "second_hellenic_republic",
+                "canonical_name": "Second Hellenic Republic",
+                "start": 1924,
+                "end": 1935,
                 "kind": "polity"
               }
             ]
