@@ -93347,6 +93347,20 @@
                 "kind": "polity"
               },
               {
+                "id": "pasundan",
+                "canonical_name": "Pasundan",
+                "start": 1947,
+                "end": 1950,
+                "kind": "polity"
+              },
+              {
+                "id": "state_of_east_sumatra",
+                "canonical_name": "State of East Sumatra",
+                "start": 1947,
+                "end": 1950,
+                "kind": "polity"
+              },
+              {
                 "id": "state_of_the_republic_of_indonesia",
                 "canonical_name": "State of the Republic of Indonesia",
                 "start": 1949,
@@ -93839,19 +93853,6 @@
             ]
           },
           {
-            "id": "pasundan",
-            "canonical_name": "Pasundan",
-            "start": 1947,
-            "end": 1950,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "ID"
-            ]
-          },
-          {
             "id": "people_s_committee_of_north_korea",
             "canonical_name": "People's Committee of North Korea",
             "start": 1947,
@@ -93862,19 +93863,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "KR"
-            ]
-          },
-          {
-            "id": "state_of_east_sumatra",
-            "canonical_name": "State of East Sumatra",
-            "start": 1947,
-            "end": 1950,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "ID"
             ]
           },
           {
@@ -100023,6 +100011,20 @@
                 "kind": "polity"
               },
               {
+                "id": "pasundan",
+                "canonical_name": "Pasundan",
+                "start": 1947,
+                "end": 1950,
+                "kind": "polity"
+              },
+              {
+                "id": "state_of_east_sumatra",
+                "canonical_name": "State of East Sumatra",
+                "start": 1947,
+                "end": 1950,
+                "kind": "polity"
+              },
+              {
                 "id": "state_of_the_republic_of_indonesia",
                 "canonical_name": "State of the Republic of Indonesia",
                 "start": 1949,
@@ -100576,19 +100578,6 @@
             ]
           },
           {
-            "id": "pasundan",
-            "canonical_name": "Pasundan",
-            "start": 1947,
-            "end": 1950,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "ID"
-            ]
-          },
-          {
             "id": "people_s_committee_of_north_korea",
             "canonical_name": "People's Committee of North Korea",
             "start": 1947,
@@ -100599,19 +100588,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "KR"
-            ]
-          },
-          {
-            "id": "state_of_east_sumatra",
-            "canonical_name": "State of East Sumatra",
-            "start": 1947,
-            "end": 1950,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "ID"
             ]
           },
           {

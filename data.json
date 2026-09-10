@@ -253531,7 +253531,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "indonesia",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -340723,7 +340723,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "indonesia",
     "deprecated": {
       "visibility_tier": "detailed"
     },
