@@ -8269,6 +8269,67 @@
     ]
   },
   {
+    "id": "ancient_chinese_states",
+    "canonical_name": "Ancient Chinese states",
+    "names": {
+      "aliases_en": "Zhou-era vassal states | Spring and Autumn and Warring States polities"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": -2000,
+    "end": -95,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026, requested review of China/Russia/ Turkey/Indonesia/Iran/Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen for detail_of opportunities) for the roughly 60 small Zhou-era vassal states (Spring and Autumn and Warring States period) and Qin/early-Han successor kingdoms that each rendered as an independent top-level entity -- none of them a genuine bounded phase of any single continuous polity, and most predate or postdate the Zhou royal house's own effective authority. Not a claim of a shared sovereign or lineage between members, many of which were rivals -- a plain container grouping by shared era/category, same construct as princely_states_of_india. Deliberately excludes the major recognized dynasties (Xia, Shang, Zhou, Qin), which stay independent, and Au Lac/ Nanhai/Loulan (non-Sinitic border-region polities whose own identity isn't \"an ancient Chinese state\" even though later absorbed).",
+    "sources": [
+      "histomap_editorial"
+    ]
+  },
+  {
     "id": "ancient_corinth",
     "canonical_name": "Ancient Corinth",
     "names": {
@@ -13073,7 +13134,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -16173,7 +16234,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -17960,7 +18021,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -25350,7 +25411,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -38936,7 +38997,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -42339,7 +42400,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -46103,7 +46164,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -46777,7 +46838,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -47106,7 +47167,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -47183,7 +47244,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -48395,7 +48456,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -49221,7 +49282,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -49316,7 +49377,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -49408,7 +49469,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -63911,7 +63972,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -64071,7 +64132,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -64633,7 +64694,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -64713,7 +64774,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -64789,7 +64850,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -64868,7 +64929,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -66106,7 +66167,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -66815,7 +66876,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -66979,7 +67040,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -68886,7 +68947,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -70741,7 +70802,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -72795,7 +72856,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -91119,7 +91180,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -91699,7 +91760,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -91962,7 +92023,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -99865,7 +99926,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -106493,7 +106554,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -109074,6 +109135,67 @@
     ]
   },
   {
+    "id": "five_dynasties_ten_kingdoms",
+    "canonical_name": "Five Dynasties and Ten Kingdoms",
+    "names": {
+      "aliases_en": "Five Dynasties Ten Kingdoms period states"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 896,
+    "end": 986,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026) for the ~30 states of the Five Dynasties and Ten Kingdoms era following the Tang dynasty's collapse (the five successive northern dynasties -- Later Liang/Tang/Jin/Han/Zhou -- plus the ten (or more) southern/regional kingdoms -- Wu, Wuyue, Min, Southern Han, Chu, Former/Later Shu, Southern Tang, Northern Han, Jingnan, and several smaller/shorter-lived states). Not a claim of shared sovereignty or lineage between rival, often warring, members -- a plain container grouping by shared era, same construct as princely_states_of_india.",
+    "sources": [
+      "histomap_editorial"
+    ]
+  },
+  {
     "id": "florida",
     "canonical_name": "Florida",
     "names": {
@@ -109178,7 +109300,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -109257,7 +109379,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -109393,7 +109515,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -109486,7 +109608,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -129263,7 +129385,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -130005,7 +130127,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -130165,7 +130287,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -131098,7 +131220,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -133116,7 +133238,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -133282,7 +133404,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -133361,7 +133483,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -133442,7 +133564,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -134982,7 +135104,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -138838,7 +138960,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -138914,7 +139036,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -138990,7 +139112,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -150713,7 +150835,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -151251,7 +151373,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -151330,7 +151452,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -151851,7 +151973,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -152025,7 +152147,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -152106,7 +152228,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -152286,7 +152408,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -152375,7 +152497,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -153082,7 +153204,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -164315,7 +164437,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -175907,7 +176029,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -195859,7 +195981,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -205314,7 +205436,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -205394,7 +205516,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -205598,7 +205720,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -205792,7 +205914,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -205895,7 +206017,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -206122,7 +206244,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -206201,7 +206323,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -206412,7 +206534,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -206514,7 +206636,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -206592,7 +206714,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -206694,7 +206816,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -206787,7 +206909,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -208734,7 +208856,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -208895,7 +209017,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -209013,7 +209135,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -210214,7 +210336,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -214297,7 +214419,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -214375,7 +214497,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -219501,7 +219623,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -220638,7 +220760,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -226983,7 +227105,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -228859,7 +228981,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -229313,7 +229435,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -231350,7 +231472,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -231428,7 +231550,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -234755,7 +234877,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -237092,7 +237214,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -241530,7 +241652,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -244579,7 +244701,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -244856,7 +244978,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -245022,7 +245144,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -245114,7 +245236,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -245702,7 +245824,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -245809,7 +245931,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -259018,7 +259140,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -283301,7 +283423,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -283455,7 +283577,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -283539,7 +283661,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -283623,7 +283745,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -283700,7 +283822,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -286582,7 +286704,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -288534,7 +288656,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -304559,7 +304681,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -306890,7 +307012,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -314199,7 +314321,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -330778,7 +330900,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -330858,7 +330980,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -331374,7 +331496,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -333873,6 +333995,67 @@
     "sources": [
       "hyde",
       "wikidata"
+    ]
+  },
+  {
+    "id": "sixteen_kingdoms_of_china",
+    "canonical_name": "Sixteen Kingdoms of China",
+    "names": {
+      "aliases_en": "Sixteen Kingdoms | Wu Hu states"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 300,
+    "end": 439,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026) for the ~26 short-lived states of the Sixteen Kingdoms era (mostly Wu Hu/\"Five Barbarians\" states in northern China following the Western Jin's collapse, plus Cheng Han in the southwest) -- each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity (the \"Sixteen Kingdoms\" is a historiographical period label, not a state). Not a claim of shared sovereignty or lineage between rival, often warring, members -- a plain container grouping by shared era, same construct as princely_states_of_india.",
+    "sources": [
+      "histomap_editorial"
     ]
   },
   {
@@ -336938,7 +337121,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -337927,7 +338110,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -339266,7 +339449,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -339358,7 +339541,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -339842,7 +340025,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -339933,7 +340116,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -362583,7 +362766,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -386511,7 +386694,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "warlord_era_and_puppet_states_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -386965,6 +387148,67 @@
     ]
   },
   {
+    "id": "warlord_era_and_puppet_states_of_china",
+    "canonical_name": "Warlord-era and puppet states of China",
+    "names": {
+      "aliases_en": "Chinese Warlord Era factions | Japanese puppet states in China"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 1912,
+    "end": 1950,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026) for the ~23 rival regional governments, Warlord Era factions, and Japanese-sponsored puppet states (Manchukuo, Mengjiang, the Wang Jingwei regime, and similar) active in China between the 1911 Revolution and the 1949 Communist victory. Deliberately NOT attached to republic_of_china or people_s_republic_of_china via detail_of -- most of these were rival or foreign-imposed administrations that the internationally-recognized Chinese government never controlled or recognized, so detail_of would misrepresent them as a subordinate part of it (same reasoning as Biafra/Vichy France elsewhere in this dataset). A plain container grouping by shared era/category only, not sovereignty or lineage.",
+    "sources": [
+      "histomap_editorial"
+    ]
+  },
+  {
     "id": "warrap",
     "canonical_name": "Warrap",
     "names": {
@@ -387320,7 +387564,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -387401,7 +387645,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -387582,7 +387826,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -388929,7 +389173,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -389099,7 +389343,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -389417,7 +389661,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -389639,7 +389883,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -390307,7 +390551,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -390482,7 +390726,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -390655,7 +390899,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -391706,7 +391950,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -391953,7 +392197,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -392206,7 +392450,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sixteen_kingdoms_of_china",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -392463,7 +392707,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -392636,7 +392880,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -392803,7 +393047,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -393300,7 +393544,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -393454,7 +393698,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -393545,7 +393789,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -393626,7 +393870,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -394626,7 +394870,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -394707,7 +394951,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -394950,7 +395194,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -395233,7 +395477,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -396953,7 +397197,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -397122,7 +397366,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -397203,7 +397447,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "five_dynasties_ten_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -397357,7 +397601,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -397857,7 +398101,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_chinese_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },

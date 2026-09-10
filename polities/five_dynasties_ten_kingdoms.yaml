@@ -1,0 +1,29 @@
+id: five_dynasties_ten_kingdoms
+canonical_name: Five Dynasties and Ten Kingdoms
+names:
+  aliases_en: Five Dynasties Ten Kingdoms period states
+entity_type: polity
+entity_type_confidence: high
+start: 896
+end: 986
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - CN
+  confidence: high
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026) for the ~30 states of the Five Dynasties
+  and Ten Kingdoms era following the Tang dynasty's collapse (the five successive
+  northern dynasties -- Later Liang/Tang/Jin/Han/Zhou -- plus the ten (or more) southern/regional
+  kingdoms -- Wu, Wuyue, Min, Southern Han, Chu, Former/Later Shu, Southern Tang,
+  Northern Han, Jingnan, and several smaller/shorter-lived states). Not a claim of
+  shared sovereignty or lineage between rival, often warring, members -- a plain container
+  grouping by shared era, same construct as princely_states_of_india.

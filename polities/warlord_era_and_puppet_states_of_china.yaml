@@ -1,0 +1,31 @@
+id: warlord_era_and_puppet_states_of_china
+canonical_name: Warlord-era and puppet states of China
+names:
+  aliases_en: Chinese Warlord Era factions | Japanese puppet states in China
+entity_type: polity
+entity_type_confidence: high
+start: 1912
+end: 1950
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - CN
+  confidence: high
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026) for the ~23 rival regional governments,
+  Warlord Era factions, and Japanese-sponsored puppet states (Manchukuo, Mengjiang,
+  the Wang Jingwei regime, and similar) active in China between the 1911 Revolution
+  and the 1949 Communist victory. Deliberately NOT attached to republic_of_china or
+  people_s_republic_of_china via detail_of -- most of these were rival or foreign-imposed
+  administrations that the internationally-recognized Chinese government never controlled
+  or recognized, so detail_of would misrepresent them as a subordinate part of it
+  (same reasoning as Biafra/Vichy France elsewhere in this dataset). A plain container
+  grouping by shared era/category only, not sovereignty or lineage.

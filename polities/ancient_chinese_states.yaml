@@ -1,0 +1,33 @@
+id: ancient_chinese_states
+canonical_name: Ancient Chinese states
+names:
+  aliases_en: Zhou-era vassal states | Spring and Autumn and Warring States polities
+entity_type: polity
+entity_type_confidence: high
+start: -2000
+end: -95
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - CN
+  confidence: high
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026, requested review of China/Russia/ Turkey/Indonesia/Iran/Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen
+  for detail_of opportunities) for the roughly 60 small Zhou-era vassal states (Spring
+  and Autumn and Warring States period) and Qin/early-Han successor kingdoms that
+  each rendered as an independent top-level entity -- none of them a genuine bounded
+  phase of any single continuous polity, and most predate or postdate the Zhou royal
+  house's own effective authority. Not a claim of a shared sovereign or lineage between
+  members, many of which were rivals -- a plain container grouping by shared era/category,
+  same construct as princely_states_of_india. Deliberately excludes the major recognized
+  dynasties (Xia, Shang, Zhou, Qin), which stay independent, and Au Lac/ Nanhai/Loulan
+  (non-Sinitic border-region polities whose own identity isn't "an ancient Chinese
+  state" even though later absorbed).

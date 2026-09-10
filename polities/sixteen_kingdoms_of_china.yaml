@@ -1,0 +1,29 @@
+id: sixteen_kingdoms_of_china
+canonical_name: Sixteen Kingdoms of China
+names:
+  aliases_en: Sixteen Kingdoms | Wu Hu states
+entity_type: polity
+entity_type_confidence: high
+start: 300
+end: 439
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - CN
+  confidence: high
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026) for the ~26 short-lived states of the
+  Sixteen Kingdoms era (mostly Wu Hu/"Five Barbarians" states in northern China following
+  the Western Jin's collapse, plus Cheng Han in the southwest) -- each independently
+  reviewed and rendering as a top-level entity, none a bounded phase of a single continuous
+  polity (the "Sixteen Kingdoms" is a historiographical period label, not a state).
+  Not a claim of shared sovereignty or lineage between rival, often warring, members
+  -- a plain container grouping by shared era, same construct as princely_states_of_india.
