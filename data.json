@@ -608,7 +608,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -1095,7 +1095,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "sokoto_caliphate",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -1179,7 +1179,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -3955,7 +3955,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -7975,7 +7975,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -24265,7 +24265,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -24935,7 +24935,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -25911,7 +25911,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -26184,7 +26184,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -26289,7 +26289,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -32444,7 +32444,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -61566,7 +61566,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -66891,7 +66891,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -90561,7 +90561,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -92416,7 +92416,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -92669,7 +92669,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -93002,7 +93002,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -99851,7 +99851,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -102296,7 +102296,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -106175,7 +106175,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -119536,7 +119536,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kano_state",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -123434,7 +123434,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -123607,7 +123607,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -140193,7 +140193,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -149896,7 +149896,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -152621,7 +152621,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -155266,7 +155266,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -156375,7 +156375,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kano_state",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -157573,7 +157573,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -158583,7 +158583,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -194799,7 +194799,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -199353,7 +199353,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -200231,7 +200231,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -225287,7 +225287,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -234653,7 +234653,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -239337,7 +239337,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -240627,7 +240627,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -240885,7 +240885,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -241877,7 +241877,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -245072,7 +245072,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -246482,7 +246482,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -247711,7 +247711,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -248538,7 +248538,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -257910,7 +257910,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -283155,7 +283155,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kano_state",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -298559,7 +298559,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kano_state",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -298785,7 +298785,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -311036,7 +311036,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -331818,7 +331818,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -334001,7 +334001,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -356580,7 +356580,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -385284,7 +385284,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -389961,7 +389961,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -391308,7 +391308,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "nigeria",
     "deprecated": {
       "visibility_tier": "detailed"
     },
