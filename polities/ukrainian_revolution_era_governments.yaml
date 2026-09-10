@@ -1,0 +1,33 @@
+id: ukrainian_revolution_era_governments
+canonical_name: Ukrainian revolution-era local governments
+names:
+  aliases_en: Ukrainian Civil War regional governments
+entity_type: polity
+entity_type_confidence: high
+start: 1905
+end: 1943
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - UA
+  confidence: high
+  historical_regions:
+  - eastern_europe
+  primary_historical_region: eastern_europe
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026) for the ~15 short-lived local republics,
+  Soviet republics, and rival/regional governments active on Ukrainian territory during
+  the 1917-1922 revolution and civil war (plus the 1905 Chechelivka/Shuliavka republics
+  and a couple of WWII-era local governments, same category of brief local self-governance)
+  -- each independently reviewed and rendering as a top-level entity, none a bounded
+  phase of a single continuous polity. Left the Ukrainian People's Republic out --
+  Ukraine's actual national government during 1917-1921, not a fleeting local faction.
+  A plain container grouping by shared era/category, same construct as princely_states_of_india.
+  The 2014-2022 Donetsk/Luhansk People's Republics are deliberately untouched -- recent,
+  internationally disputed sovereignty questions this dataset doesn't take a side
+  on.

@@ -104,7 +104,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -1346,6 +1346,67 @@
     "notes": "Automatically generated from Wikidata; requires review.",
     "sources": [
       "wikidata"
+    ]
+  },
+  {
+    "id": "aden_protectorate_states",
+    "canonical_name": "Aden Protectorate states",
+    "names": {
+      "aliases_en": "South Arabian sultanates and sheikhdoms"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "YE"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 1379,
+    "end": 1967,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/ Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for the ~18 sultanates, emirates, and sheikhdoms of the Aden Protectorate -- each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity, but sharing the exact same 1967 dissolution into South Yemen (visible in every member's own end date). Not a claim of shared sovereignty or lineage between distinct ruling houses -- a plain container grouping by shared era/category, same construct as princely_states_of_india. Left the ancient/medieval Yemeni kingdoms (Sheba, the Himyarite kingdom, the Rasulid/Tahirid dynasties) and the Asir-region entities (a different geography, now part of Saudi Arabia) untouched.",
+    "sources": [
+      "histomap_editorial"
     ]
   },
   {
@@ -4303,7 +4364,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -5115,7 +5176,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -5293,7 +5354,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "french_mandate_syrian_states",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -5388,7 +5449,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "french_mandate_syrian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -8768,6 +8829,67 @@
     ]
   },
   {
+    "id": "ancient_syrian_city_states",
+    "canonical_name": "Ancient Syrian city-states",
+    "names": {
+      "aliases_en": "Bronze and Iron Age Levantine states"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "SY"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": -6000,
+    "end": -742,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/ Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for ~15 ancient Bronze and Iron Age Syrian city-states and Aramean kingdoms (Ugarit, Ebla, Mari, Yamhad, Aram-Damascus, and similar) -- each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity. Not a claim of shared sovereignty or lineage between rival, often warring, members -- a plain container grouping by shared era/region, same construct as princely_states_of_india.",
+    "sources": [
+      "histomap_editorial"
+    ]
+  },
+  {
     "id": "anconine_republic",
     "canonical_name": "Anconine Republic",
     "names": {
@@ -11408,7 +11530,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -11745,7 +11867,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "french_mandate_syrian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -11907,7 +12029,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -15318,7 +15440,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -31305,7 +31427,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -31387,7 +31509,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -31468,7 +31590,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -33584,7 +33706,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -43690,7 +43812,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -46703,7 +46825,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -62052,7 +62174,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -72874,7 +72996,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -84559,7 +84681,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kievan_rus_appanage_principalities",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -93741,7 +93863,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -97630,7 +97752,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -98249,7 +98371,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -118184,6 +118306,67 @@
     ]
   },
   {
+    "id": "french_mandate_syrian_states",
+    "canonical_name": "French Mandate Syrian states",
+    "names": {
+      "aliases_en": "States of the Syrian Federation"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "SY"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 1920,
+    "end": 1936,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026) for the short-lived Arab Kingdom of Syria (1920, crushed within the year) and the separate statelets the French Mandate then partitioned Syria into (State of Aleppo, State of Damascus, the Alawite Territory/State, Jabal Druze, the Independent State of Raqqa) before their 1936-1946 reunification into modern Syria. A plain container grouping by shared era/category, same construct as princely_states_of_india.",
+    "sources": [
+      "histomap_editorial"
+    ]
+  },
+  {
     "id": "french_protectorate_in_morocco",
     "canonical_name": "French protectorate in Morocco",
     "names": {
@@ -119787,7 +119970,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -133061,7 +133244,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -143537,7 +143720,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "french_mandate_syrian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -147694,7 +147877,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "french_mandate_syrian_states",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -159762,7 +159945,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -164407,7 +164590,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -165276,6 +165459,67 @@
     "sources": [
       "hyde",
       "wikidata"
+    ]
+  },
+  {
+    "id": "kievan_rus_appanage_principalities",
+    "canonical_name": "Kievan Rus' appanage principalities",
+    "names": {
+      "aliases_en": "Rus' principalities"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "UA"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 500,
+    "end": 1471,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/ Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for ~11 Kievan Rus'-era and post-fragmentation appanage principalities on the territory of modern Ukraine (Novgorod-Seversk, Volhynia, Chernigov, Terebovlia, and similar) -- each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity. Not a claim of shared sovereignty or lineage between rival members -- a plain container grouping by shared era/region, same construct as princely_states_of_india. Left Principality of Kyiv (a much broader-spanning record) and Kievan Rus' itself out, along with the more individually significant Kingdom of Galicia-Volhynia.",
+    "sources": [
+      "histomap_editorial"
     ]
   },
   {
@@ -175871,7 +176115,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -197787,7 +198031,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -205455,7 +205699,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -216480,7 +216724,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -217341,7 +217585,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -217781,7 +218025,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -223358,7 +223602,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -234406,7 +234650,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -248073,7 +248317,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -254202,7 +254446,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -269257,7 +269501,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kievan_rus_appanage_principalities",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -271653,7 +271897,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kievan_rus_appanage_principalities",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -272804,7 +273048,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kievan_rus_appanage_principalities",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -273997,7 +274241,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kievan_rus_appanage_principalities",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -277400,7 +277644,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kievan_rus_appanage_principalities",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -278688,7 +278932,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kievan_rus_appanage_principalities",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -278917,7 +279161,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kievan_rus_appanage_principalities",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -284798,7 +285042,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -314709,7 +314953,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -315453,7 +315697,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iraq",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -331210,7 +331454,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -331291,7 +331535,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -332284,7 +332528,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -343536,7 +343780,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "french_mandate_syrian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -344444,7 +344688,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "french_mandate_syrian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -350154,7 +350398,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -362906,7 +363150,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -365569,7 +365813,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kievan_rus_appanage_principalities",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -374979,7 +375223,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "global",
       "visibility_override": "regional"
@@ -375268,7 +375512,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -375326,6 +375570,67 @@
     "notes": "Automatically generated from Wikidata; requires review.",
     "sources": [
       "wikidata"
+    ]
+  },
+  {
+    "id": "ukrainian_revolution_era_governments",
+    "canonical_name": "Ukrainian revolution-era local governments",
+    "names": {
+      "aliases_en": "Ukrainian Civil War regional governments"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "UA"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 1905,
+    "end": 1943,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026) for the ~15 short-lived local republics, Soviet republics, and rival/regional governments active on Ukrainian territory during the 1917-1922 revolution and civil war (plus the 1905 Chechelivka/Shuliavka republics and a couple of WWII-era local governments, same category of brief local self-governance) -- each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity. Left the Ukrainian People's Republic out -- Ukraine's actual national government during 1917-1921, not a fleeting local faction. A plain container grouping by shared era/category, same construct as princely_states_of_india. The 2014-2022 Donetsk/Luhansk People's Republics are deliberately untouched -- recent, internationally disputed sovereignty questions this dataset doesn't take a side on.",
+    "sources": [
+      "histomap_editorial"
     ]
   },
   {
@@ -375585,7 +375890,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ukrainian_revolution_era_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -379966,7 +380271,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -380317,7 +380622,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -386415,7 +386720,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -386594,7 +386899,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -386679,7 +386984,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "aden_protectorate_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -393933,7 +394238,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -398977,7 +399282,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_syrian_city_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -399453,7 +399758,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kievan_rus_appanage_principalities",
     "deprecated": {
       "visibility_tier": "detailed"
     },

@@ -511,6 +511,206 @@
             ]
           }
         ],
+        "west_asia": [
+          {
+            "id": "byblos",
+            "canonical_name": "Byblos",
+            "start": -8000,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "LB"
+            ]
+          },
+          {
+            "id": "seshat_susiana_irarcha",
+            "canonical_name": "Susiana - Muhammad Jaffar",
+            "start": -7000,
+            "end": -6001,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "IR"
+            ]
+          },
+          {
+            "id": "ancient_syrian_city_states",
+            "canonical_name": "Ancient Syrian city-states",
+            "start": -6000,
+            "end": -742,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "SY"
+            ],
+            "details": [
+              {
+                "id": "ugarit",
+                "canonical_name": "Ugarit",
+                "start": -6000,
+                "end": -1190,
+                "kind": "polity"
+              },
+              {
+                "id": "ebla",
+                "canonical_name": "Ebla",
+                "start": -2999,
+                "end": -2239,
+                "kind": "polity"
+              },
+              {
+                "id": "mari",
+                "canonical_name": "Mari",
+                "start": -2900,
+                "end": -1758,
+                "kind": "polity"
+              },
+              {
+                "id": "abarsal",
+                "canonical_name": "Abarsal",
+                "start": -2419,
+                "end": -2000,
+                "kind": "polity"
+              },
+              {
+                "id": "yamhad",
+                "canonical_name": "Yamhad",
+                "start": -2003,
+                "end": -1594,
+                "kind": "polity"
+              },
+              {
+                "id": "kingdom_of_hana",
+                "canonical_name": "Kingdom of Ḫana",
+                "start": -1800,
+                "end": -1700,
+                "kind": "polity"
+              },
+              {
+                "id": "mukis",
+                "canonical_name": "Mukis",
+                "start": -1600,
+                "end": -1339,
+                "kind": "polity"
+              },
+              {
+                "id": "aram_damascus",
+                "canonical_name": "Aram-Damascus",
+                "start": -1200,
+                "end": -733,
+                "kind": "polity"
+              },
+              {
+                "id": "bit_bahiani",
+                "canonical_name": "Bit Bahiani",
+                "start": -1199,
+                "end": -807,
+                "kind": "polity"
+              },
+              {
+                "id": "palistin",
+                "canonical_name": "Palistin",
+                "start": -1099,
+                "end": -900,
+                "kind": "polity"
+              },
+              {
+                "id": "bit_adini",
+                "canonical_name": "Bit Adini",
+                "start": -1000,
+                "end": -900,
+                "kind": "polity"
+              },
+              {
+                "id": "hamath",
+                "canonical_name": "Hamath",
+                "start": -1000,
+                "end": -719,
+                "kind": "polity"
+              },
+              {
+                "id": "laqe",
+                "canonical_name": "Laqe",
+                "start": -1000,
+                "end": -894,
+                "kind": "polity"
+              },
+              {
+                "id": "zobah",
+                "canonical_name": "Zobah",
+                "start": -1000,
+                "end": -1000,
+                "kind": "polity"
+              },
+              {
+                "id": "bit_agusi",
+                "canonical_name": "Bit Agusi",
+                "start": -900,
+                "end": -742,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "seshat_susiana_a_irkhze",
+            "canonical_name": "Susiana A",
+            "start": -6000,
+            "end": -5701,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "IR"
+            ]
+          },
+          {
+            "id": "seshat_susiana_b_irkhzem",
+            "canonical_name": "Susiana B",
+            "start": -5700,
+            "end": -5101,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "IR"
+            ]
+          },
+          {
+            "id": "sumer",
+            "canonical_name": "Sumer",
+            "start": -5500,
+            "end": -1900,
+            "curated": true,
+            "linked_era_id": "neolithic_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "IQ"
+            ]
+          },
+          {
+            "id": "der",
+            "canonical_name": "Der",
+            "start": -4000,
+            "end": -3000,
+            "curated": true,
+            "linked_era_id": "neolithic_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "IQ"
+            ]
+          }
+        ],
         "mesoamerica": [
           {
             "id": "basin_of_mexico",
@@ -588,99 +788,6 @@
                 "end": 1426,
                 "kind": "polity"
               }
-            ]
-          }
-        ],
-        "west_asia": [
-          {
-            "id": "byblos",
-            "canonical_name": "Byblos",
-            "start": -8000,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "LB"
-            ]
-          },
-          {
-            "id": "seshat_susiana_irarcha",
-            "canonical_name": "Susiana - Muhammad Jaffar",
-            "start": -7000,
-            "end": -6001,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IR"
-            ]
-          },
-          {
-            "id": "seshat_susiana_a_irkhze",
-            "canonical_name": "Susiana A",
-            "start": -6000,
-            "end": -5701,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IR"
-            ]
-          },
-          {
-            "id": "ugarit",
-            "canonical_name": "Ugarit",
-            "start": -6000,
-            "end": -1190,
-            "curated": true,
-            "linked_era_id": "neolithic_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
-            "id": "seshat_susiana_b_irkhzem",
-            "canonical_name": "Susiana B",
-            "start": -5700,
-            "end": -5101,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IR"
-            ]
-          },
-          {
-            "id": "sumer",
-            "canonical_name": "Sumer",
-            "start": -5500,
-            "end": -1900,
-            "curated": true,
-            "linked_era_id": "neolithic_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IQ"
-            ]
-          },
-          {
-            "id": "der",
-            "canonical_name": "Der",
-            "start": -4000,
-            "end": -3000,
-            "curated": true,
-            "linked_era_id": "neolithic_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IQ"
             ]
           }
         ],
@@ -991,6 +1098,250 @@
             ]
           }
         ],
+        "asia": [
+          {
+            "id": "byblos",
+            "canonical_name": "Byblos",
+            "start": -8000,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "LB"
+            ]
+          },
+          {
+            "id": "seshat_peiligang_cnpeili",
+            "canonical_name": "Peiligang",
+            "start": -7000,
+            "end": -5001,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "seshat_susiana_irarcha",
+            "canonical_name": "Susiana - Muhammad Jaffar",
+            "start": -7000,
+            "end": -6001,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "IR"
+            ]
+          },
+          {
+            "id": "ancient_syrian_city_states",
+            "canonical_name": "Ancient Syrian city-states",
+            "start": -6000,
+            "end": -742,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "SY"
+            ],
+            "details": [
+              {
+                "id": "ugarit",
+                "canonical_name": "Ugarit",
+                "start": -6000,
+                "end": -1190,
+                "kind": "polity"
+              },
+              {
+                "id": "ebla",
+                "canonical_name": "Ebla",
+                "start": -2999,
+                "end": -2239,
+                "kind": "polity"
+              },
+              {
+                "id": "mari",
+                "canonical_name": "Mari",
+                "start": -2900,
+                "end": -1758,
+                "kind": "polity"
+              },
+              {
+                "id": "abarsal",
+                "canonical_name": "Abarsal",
+                "start": -2419,
+                "end": -2000,
+                "kind": "polity"
+              },
+              {
+                "id": "yamhad",
+                "canonical_name": "Yamhad",
+                "start": -2003,
+                "end": -1594,
+                "kind": "polity"
+              },
+              {
+                "id": "kingdom_of_hana",
+                "canonical_name": "Kingdom of Ḫana",
+                "start": -1800,
+                "end": -1700,
+                "kind": "polity"
+              },
+              {
+                "id": "mukis",
+                "canonical_name": "Mukis",
+                "start": -1600,
+                "end": -1339,
+                "kind": "polity"
+              },
+              {
+                "id": "aram_damascus",
+                "canonical_name": "Aram-Damascus",
+                "start": -1200,
+                "end": -733,
+                "kind": "polity"
+              },
+              {
+                "id": "bit_bahiani",
+                "canonical_name": "Bit Bahiani",
+                "start": -1199,
+                "end": -807,
+                "kind": "polity"
+              },
+              {
+                "id": "palistin",
+                "canonical_name": "Palistin",
+                "start": -1099,
+                "end": -900,
+                "kind": "polity"
+              },
+              {
+                "id": "bit_adini",
+                "canonical_name": "Bit Adini",
+                "start": -1000,
+                "end": -900,
+                "kind": "polity"
+              },
+              {
+                "id": "hamath",
+                "canonical_name": "Hamath",
+                "start": -1000,
+                "end": -719,
+                "kind": "polity"
+              },
+              {
+                "id": "laqe",
+                "canonical_name": "Laqe",
+                "start": -1000,
+                "end": -894,
+                "kind": "polity"
+              },
+              {
+                "id": "zobah",
+                "canonical_name": "Zobah",
+                "start": -1000,
+                "end": -1000,
+                "kind": "polity"
+              },
+              {
+                "id": "bit_agusi",
+                "canonical_name": "Bit Agusi",
+                "start": -900,
+                "end": -742,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "seshat_susiana_a_irkhze",
+            "canonical_name": "Susiana A",
+            "start": -6000,
+            "end": -5701,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "IR"
+            ]
+          },
+          {
+            "id": "seshat_susiana_b_irkhzem",
+            "canonical_name": "Susiana B",
+            "start": -5700,
+            "end": -5101,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "IR"
+            ]
+          },
+          {
+            "id": "seshat_ubaid_iqubaid",
+            "canonical_name": "Ubaid",
+            "start": -5500,
+            "end": -4201,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "sumer",
+            "canonical_name": "Sumer",
+            "start": -5500,
+            "end": -1900,
+            "curated": true,
+            "linked_era_id": "neolithic_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "IQ"
+            ]
+          },
+          {
+            "id": "seshat_yangshao_cnyngsh",
+            "canonical_name": "Yangshao",
+            "start": -5000,
+            "end": -3001,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "seshat_susa_i_irsusa1",
+            "canonical_name": "Susa I",
+            "start": -4300,
+            "end": -3801,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "der",
+            "canonical_name": "Der",
+            "start": -4000,
+            "end": -3000,
+            "curated": true,
+            "linked_era_id": "neolithic_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "IQ"
+            ]
+          }
+        ],
         "north_america": [
           {
             "id": "basin_of_mexico",
@@ -1068,143 +1419,6 @@
                 "end": 1426,
                 "kind": "polity"
               }
-            ]
-          }
-        ],
-        "asia": [
-          {
-            "id": "byblos",
-            "canonical_name": "Byblos",
-            "start": -8000,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "LB"
-            ]
-          },
-          {
-            "id": "seshat_peiligang_cnpeili",
-            "canonical_name": "Peiligang",
-            "start": -7000,
-            "end": -5001,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "seshat_susiana_irarcha",
-            "canonical_name": "Susiana - Muhammad Jaffar",
-            "start": -7000,
-            "end": -6001,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IR"
-            ]
-          },
-          {
-            "id": "seshat_susiana_a_irkhze",
-            "canonical_name": "Susiana A",
-            "start": -6000,
-            "end": -5701,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IR"
-            ]
-          },
-          {
-            "id": "ugarit",
-            "canonical_name": "Ugarit",
-            "start": -6000,
-            "end": -1190,
-            "curated": true,
-            "linked_era_id": "neolithic_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
-            "id": "seshat_susiana_b_irkhzem",
-            "canonical_name": "Susiana B",
-            "start": -5700,
-            "end": -5101,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IR"
-            ]
-          },
-          {
-            "id": "seshat_ubaid_iqubaid",
-            "canonical_name": "Ubaid",
-            "start": -5500,
-            "end": -4201,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "sumer",
-            "canonical_name": "Sumer",
-            "start": -5500,
-            "end": -1900,
-            "curated": true,
-            "linked_era_id": "neolithic_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IQ"
-            ]
-          },
-          {
-            "id": "seshat_yangshao_cnyngsh",
-            "canonical_name": "Yangshao",
-            "start": -5000,
-            "end": -3001,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "seshat_susa_i_irsusa1",
-            "canonical_name": "Susa I",
-            "start": -4300,
-            "end": -3801,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "der",
-            "canonical_name": "Der",
-            "start": -4000,
-            "end": -3000,
-            "curated": true,
-            "linked_era_id": "neolithic_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IQ"
             ]
           }
         ],
@@ -1727,32 +1941,6 @@
             ]
           },
           {
-            "id": "ebla",
-            "canonical_name": "Ebla",
-            "start": -2999,
-            "end": -2239,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
-            "id": "mari",
-            "canonical_name": "Mari",
-            "start": -2900,
-            "end": -1758,
-            "curated": true,
-            "linked_era_id": "neolithic_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
             "id": "elam",
             "canonical_name": "Elam",
             "start": -2699,
@@ -1789,19 +1977,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "LB"
-            ]
-          },
-          {
-            "id": "abarsal",
-            "canonical_name": "Abarsal",
-            "start": -2419,
-            "end": -2000,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -1857,45 +2032,6 @@
                 "end": -608,
                 "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "yamhad",
-            "canonical_name": "Yamhad",
-            "start": -2003,
-            "end": -1594,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
-            "id": "kingdom_of_hana",
-            "canonical_name": "Kingdom of Ḫana",
-            "start": -1800,
-            "end": -1700,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
-            "id": "mukis",
-            "canonical_name": "Mukis",
-            "start": -1600,
-            "end": -1339,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -2727,32 +2863,6 @@
             ]
           },
           {
-            "id": "ebla",
-            "canonical_name": "Ebla",
-            "start": -2999,
-            "end": -2239,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
-            "id": "mari",
-            "canonical_name": "Mari",
-            "start": -2900,
-            "end": -1758,
-            "curated": true,
-            "linked_era_id": "neolithic_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
             "id": "seshat_dynastic_iqedyn",
             "canonical_name": "Early Dynastic",
             "start": -2900,
@@ -2800,19 +2910,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "LB"
-            ]
-          },
-          {
-            "id": "abarsal",
-            "canonical_name": "Abarsal",
-            "start": -2419,
-            "end": -2000,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -2908,19 +3005,6 @@
             "present_countries": []
           },
           {
-            "id": "yamhad",
-            "canonical_name": "Yamhad",
-            "start": -2003,
-            "end": -1594,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
             "id": "seshat_andronovo_kzandro",
             "canonical_name": "Andronovo",
             "start": -2000,
@@ -2954,19 +3038,6 @@
             "present_countries": []
           },
           {
-            "id": "kingdom_of_hana",
-            "canonical_name": "Kingdom of Ḫana",
-            "start": -1800,
-            "end": -1700,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
             "id": "seshat_erligang_cnerlig",
             "canonical_name": "Erligang",
             "start": -1650,
@@ -2976,19 +3047,6 @@
             "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "mukis",
-            "canonical_name": "Mukis",
-            "start": -1600,
-            "end": -1339,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
           },
           {
             "id": "shang_dynasty",
@@ -6199,19 +6257,6 @@
             ]
           },
           {
-            "id": "aram_damascus",
-            "canonical_name": "Aram-Damascus",
-            "start": -1200,
-            "end": -733,
-            "curated": true,
-            "linked_era_id": "classical_antiquity_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
             "id": "idalion",
             "canonical_name": "Idalion",
             "start": -1200,
@@ -6235,19 +6280,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "YE"
-            ]
-          },
-          {
-            "id": "bit_bahiani",
-            "canonical_name": "Bit Bahiani",
-            "start": -1199,
-            "end": -807,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -6329,19 +6361,6 @@
             ]
           },
           {
-            "id": "palistin",
-            "canonical_name": "Palistin",
-            "start": -1099,
-            "end": -900,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
             "id": "kourion",
             "canonical_name": "Kourion",
             "start": -1050,
@@ -6381,19 +6400,6 @@
             ]
           },
           {
-            "id": "bit_adini",
-            "canonical_name": "Bit Adini",
-            "start": -1000,
-            "end": -900,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
             "id": "chaldea",
             "canonical_name": "Chaldea",
             "start": -1000,
@@ -6404,32 +6410,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "IQ"
-            ]
-          },
-          {
-            "id": "hamath",
-            "canonical_name": "Hamath",
-            "start": -1000,
-            "end": -719,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
-            "id": "laqe",
-            "canonical_name": "Laqe",
-            "start": -1000,
-            "end": -894,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -6482,19 +6462,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "PS"
-            ]
-          },
-          {
-            "id": "bit_agusi",
-            "canonical_name": "Bit Agusi",
-            "start": -900,
-            "end": -742,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -10130,19 +10097,6 @@
             ]
           },
           {
-            "id": "aram_damascus",
-            "canonical_name": "Aram-Damascus",
-            "start": -1200,
-            "end": -733,
-            "curated": true,
-            "linked_era_id": "classical_antiquity_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
             "id": "idalion",
             "canonical_name": "Idalion",
             "start": -1200,
@@ -10165,19 +10119,6 @@
             "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "bit_bahiani",
-            "canonical_name": "Bit Bahiani",
-            "start": -1199,
-            "end": -807,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
           },
           {
             "id": "seshat_kenaan_lbacpho",
@@ -10280,19 +10221,6 @@
             ]
           },
           {
-            "id": "palistin",
-            "canonical_name": "Palistin",
-            "start": -1099,
-            "end": -900,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
             "id": "kourion",
             "canonical_name": "Kourion",
             "start": -1050,
@@ -10365,19 +10293,6 @@
             "present_countries": []
           },
           {
-            "id": "bit_adini",
-            "canonical_name": "Bit Adini",
-            "start": -1000,
-            "end": -900,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
             "id": "chaldea",
             "canonical_name": "Chaldea",
             "start": -1000,
@@ -10388,32 +10303,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "IQ"
-            ]
-          },
-          {
-            "id": "hamath",
-            "canonical_name": "Hamath",
-            "start": -1000,
-            "end": -719,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
-            "id": "laqe",
-            "canonical_name": "Laqe",
-            "start": -1000,
-            "end": -894,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -10503,19 +10392,6 @@
             "primary_historical_region": "central_asia",
             "present_countries": [
               "AF"
-            ]
-          },
-          {
-            "id": "bit_agusi",
-            "canonical_name": "Bit Agusi",
-            "start": -900,
-            "end": -742,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -26831,6 +26707,91 @@
             ]
           },
           {
+            "id": "kievan_rus_appanage_principalities",
+            "canonical_name": "Kievan Rus' appanage principalities",
+            "start": 500,
+            "end": 1471,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "eastern_europe",
+            "present_countries": [
+              "UA"
+            ],
+            "details": [
+              {
+                "id": "principality_of_volhynia",
+                "canonical_name": "Principality of Volhynia",
+                "start": 987,
+                "end": 1452,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_chernigov",
+                "canonical_name": "Principality of Chernigov",
+                "start": 988,
+                "end": 1402,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_terebovlia",
+                "canonical_name": "Principality of Terebovlia",
+                "start": 1048,
+                "end": 1141,
+                "kind": "polity"
+              },
+              {
+                "id": "zvenyhorod_principality",
+                "canonical_name": "Zvenyhorod Principality",
+                "start": 1084,
+                "end": 1444,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_novgorod_seversky",
+                "canonical_name": "Principality of Novgorod-Seversky",
+                "start": 1097,
+                "end": 1240,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_vyshgorod",
+                "canonical_name": "Principality of Vyshgorod",
+                "start": 1100,
+                "end": 1300,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_lutsk",
+                "canonical_name": "Principality of Lutsk",
+                "start": 1157,
+                "end": 1393,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_kholm",
+                "canonical_name": "principality of Kholm",
+                "start": 1260,
+                "end": 1370,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_podolia",
+                "canonical_name": "Duchy of Podolia",
+                "start": 1363,
+                "end": 1402,
+                "kind": "polity"
+              },
+              {
+                "id": "the_glinsky_principality",
+                "canonical_name": "The Glinsky Principality",
+                "start": 1381,
+                "end": 1392,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
             "id": "north_caucasian_huns",
             "canonical_name": "North Caucasian Huns",
             "start": 500,
@@ -27472,32 +27433,6 @@
             ]
           },
           {
-            "id": "principality_of_volhynia",
-            "canonical_name": "Principality of Volhynia",
-            "start": 987,
-            "end": 1452,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
-            "id": "principality_of_chernigov",
-            "canonical_name": "Principality of Chernigov",
-            "start": 988,
-            "end": 1402,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
             "id": "principality_of_turov_and_pinsk",
             "canonical_name": "Principality of Turov and Pinsk",
             "start": 988,
@@ -27550,45 +27485,6 @@
             ]
           },
           {
-            "id": "principality_of_terebovlia",
-            "canonical_name": "Principality of Terebovlia",
-            "start": 1048,
-            "end": 1141,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
-            "id": "zvenyhorod_principality",
-            "canonical_name": "Zvenyhorod Principality",
-            "start": 1084,
-            "end": 1444,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
-            "id": "principality_of_novgorod_seversky",
-            "canonical_name": "Principality of Novgorod-Seversky",
-            "start": 1097,
-            "end": 1240,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
             "id": "principality_of_ryazan",
             "canonical_name": "Principality of Ryazan",
             "start": 1097,
@@ -27612,19 +27508,6 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "RU"
-            ]
-          },
-          {
-            "id": "principality_of_vyshgorod",
-            "canonical_name": "Principality of Vyshgorod",
-            "start": 1100,
-            "end": 1300,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
             ]
           },
           {
@@ -27755,19 +27638,6 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "PL"
-            ]
-          },
-          {
-            "id": "principality_of_lutsk",
-            "canonical_name": "Principality of Lutsk",
-            "start": 1157,
-            "end": 1393,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
             ]
           },
           {
@@ -27980,20 +27850,6 @@
             ]
           },
           {
-            "id": "principality_of_kholm",
-            "canonical_name": "principality of Kholm",
-            "start": 1260,
-            "end": 1370,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL",
-              "UA"
-            ]
-          },
-          {
             "id": "grand_principality_of_moscow",
             "canonical_name": "Grand Principality of Moscow",
             "start": 1263,
@@ -28167,19 +28023,6 @@
             ]
           },
           {
-            "id": "duchy_of_podolia",
-            "canonical_name": "Duchy of Podolia",
-            "start": 1363,
-            "end": 1402,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
             "id": "hungarian_occupation_of_vidin",
             "canonical_name": "Hungarian occupation of Vidin",
             "start": 1365,
@@ -28203,19 +28046,6 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "RU"
-            ]
-          },
-          {
-            "id": "the_glinsky_principality",
-            "canonical_name": "The Glinsky Principality",
-            "start": 1381,
-            "end": 1392,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
             ]
           },
           {
@@ -38662,6 +38492,91 @@
             ]
           },
           {
+            "id": "kievan_rus_appanage_principalities",
+            "canonical_name": "Kievan Rus' appanage principalities",
+            "start": 500,
+            "end": 1471,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "eastern_europe",
+            "present_countries": [
+              "UA"
+            ],
+            "details": [
+              {
+                "id": "principality_of_volhynia",
+                "canonical_name": "Principality of Volhynia",
+                "start": 987,
+                "end": 1452,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_chernigov",
+                "canonical_name": "Principality of Chernigov",
+                "start": 988,
+                "end": 1402,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_terebovlia",
+                "canonical_name": "Principality of Terebovlia",
+                "start": 1048,
+                "end": 1141,
+                "kind": "polity"
+              },
+              {
+                "id": "zvenyhorod_principality",
+                "canonical_name": "Zvenyhorod Principality",
+                "start": 1084,
+                "end": 1444,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_novgorod_seversky",
+                "canonical_name": "Principality of Novgorod-Seversky",
+                "start": 1097,
+                "end": 1240,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_vyshgorod",
+                "canonical_name": "Principality of Vyshgorod",
+                "start": 1100,
+                "end": 1300,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_lutsk",
+                "canonical_name": "Principality of Lutsk",
+                "start": 1157,
+                "end": 1393,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_of_kholm",
+                "canonical_name": "principality of Kholm",
+                "start": 1260,
+                "end": 1370,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_podolia",
+                "canonical_name": "Duchy of Podolia",
+                "start": 1363,
+                "end": 1402,
+                "kind": "polity"
+              },
+              {
+                "id": "the_glinsky_principality",
+                "canonical_name": "The Glinsky Principality",
+                "start": 1381,
+                "end": 1392,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
             "id": "principality_of_kyiv",
             "canonical_name": "Principality of Kyiv",
             "start": 500,
@@ -42395,19 +42310,6 @@
             ]
           },
           {
-            "id": "principality_of_volhynia",
-            "canonical_name": "Principality of Volhynia",
-            "start": 987,
-            "end": 1452,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
             "id": "counts_of_berga",
             "canonical_name": "Counts of Berga",
             "start": 988,
@@ -42457,19 +42359,6 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "ES"
-            ]
-          },
-          {
-            "id": "principality_of_chernigov",
-            "canonical_name": "Principality of Chernigov",
-            "start": 988,
-            "end": 1402,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
             ]
           },
           {
@@ -43073,19 +42962,6 @@
             ]
           },
           {
-            "id": "principality_of_terebovlia",
-            "canonical_name": "Principality of Terebovlia",
-            "start": 1048,
-            "end": 1141,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
             "id": "taifa_of_segorbe",
             "canonical_name": "Taifa of Segorbe",
             "start": 1055,
@@ -43216,19 +43092,6 @@
             ]
           },
           {
-            "id": "zvenyhorod_principality",
-            "canonical_name": "Zvenyhorod Principality",
-            "start": 1084,
-            "end": 1444,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
             "id": "palatinate_of_rhine",
             "canonical_name": "Palatinate of Rhine",
             "start": 1085,
@@ -43251,19 +43114,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "principality_of_novgorod_seversky",
-            "canonical_name": "Principality of Novgorod-Seversky",
-            "start": 1097,
-            "end": 1240,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
           },
           {
             "id": "principality_of_ryazan",
@@ -43302,19 +43152,6 @@
             "primary_historical_region": "northern_europe",
             "present_countries": [
               "LT"
-            ]
-          },
-          {
-            "id": "principality_of_vyshgorod",
-            "canonical_name": "Principality of Vyshgorod",
-            "start": 1100,
-            "end": 1300,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
             ]
           },
           {
@@ -43752,19 +43589,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "DE"
-            ]
-          },
-          {
-            "id": "principality_of_lutsk",
-            "canonical_name": "Principality of Lutsk",
-            "start": 1157,
-            "end": 1393,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
             ]
           },
           {
@@ -44732,20 +44556,6 @@
             ]
           },
           {
-            "id": "principality_of_kholm",
-            "canonical_name": "principality of Kholm",
-            "start": 1260,
-            "end": 1370,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL",
-              "UA"
-            ]
-          },
-          {
             "id": "free_imperial_city_of_strasbourg_q95895695",
             "canonical_name": "Free Imperial City of Strasbourg",
             "start": 1262,
@@ -45338,19 +45148,6 @@
             ]
           },
           {
-            "id": "duchy_of_podolia",
-            "canonical_name": "Duchy of Podolia",
-            "start": 1363,
-            "end": 1402,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
             "id": "hungarian_occupation_of_vidin",
             "canonical_name": "Hungarian occupation of Vidin",
             "start": 1365,
@@ -45454,19 +45251,6 @@
             "primary_historical_region": "balkans",
             "present_countries": [
               "BA"
-            ]
-          },
-          {
-            "id": "the_glinsky_principality",
-            "canonical_name": "The Glinsky Principality",
-            "start": 1381,
-            "end": 1392,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
             ]
           },
           {
@@ -48642,8 +48426,8 @@
             ]
           },
           {
-            "id": "kathiri_sultanate",
-            "canonical_name": "Kathiri Sultanate",
+            "id": "aden_protectorate_states",
+            "canonical_name": "Aden Protectorate states",
             "start": 1379,
             "end": 1967,
             "curated": false,
@@ -48652,6 +48436,143 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "YE"
+            ],
+            "details": [
+              {
+                "id": "kathiri_sultanate",
+                "canonical_name": "Kathiri Sultanate",
+                "start": 1379,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "mahra_sultanate",
+                "canonical_name": "Mahra Sultanate",
+                "start": 1432,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "emirate_of_dhala",
+                "canonical_name": "Emirate of Dhala",
+                "start": 1500,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "emirate_of_beihan",
+                "canonical_name": "Emirate of Beihan",
+                "start": 1680,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "sultanate_of_lahej",
+                "canonical_name": "Sultanate of Lahej",
+                "start": 1728,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "alawi",
+                "canonical_name": "Alawi",
+                "start": 1743,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "al_busi",
+                "canonical_name": "Al-Busi",
+                "start": 1800,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "aqrabi",
+                "canonical_name": "Aqrabi",
+                "start": 1800,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "audhali",
+                "canonical_name": "Audhali",
+                "start": 1800,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "upper_aulaqi_sheikhdom",
+                "canonical_name": "Upper Aulaqi Sheikhdom",
+                "start": 1800,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "upper_yafa",
+                "canonical_name": "Upper Yafa",
+                "start": 1800,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "wahidi",
+                "canonical_name": "Wahidi",
+                "start": 1800,
+                "end": 1963,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "wahidi_azzan",
+                    "canonical_name": "Wahidi Azzan",
+                    "start": 1830,
+                    "end": 1881,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "wahidi_balhaf",
+                "canonical_name": "Wahidi Balhaf",
+                "start": 1830,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "wahidi_bir_ali",
+                "canonical_name": "Wahidi Bir Ali",
+                "start": 1830,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "maflahi",
+                "canonical_name": "Maflahi",
+                "start": 1850,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "qu_aiti_sultanate",
+                "canonical_name": "Qu'aiti Sultanate",
+                "start": 1858,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "sheikhdom_of_al_hawra",
+                "canonical_name": "Sheikhdom of al-Hawra",
+                "start": 1900,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "sheikhdom_of_al_irqa",
+                "canonical_name": "Sheikhdom of al-ʽIrqa",
+                "start": 1900,
+                "end": 1967,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -48691,19 +48612,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "TR"
-            ]
-          },
-          {
-            "id": "mahra_sultanate",
-            "canonical_name": "Mahra Sultanate",
-            "start": 1432,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
             ]
           },
           {
@@ -48821,19 +48729,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "TR"
-            ]
-          },
-          {
-            "id": "emirate_of_dhala",
-            "canonical_name": "Emirate of Dhala",
-            "start": 1500,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
             ]
           },
           {
@@ -49016,19 +48911,6 @@
               "KW",
               "QA",
               "SA"
-            ]
-          },
-          {
-            "id": "emirate_of_beihan",
-            "canonical_name": "Emirate of Beihan",
-            "start": 1680,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
             ]
           },
           {
@@ -54767,8 +54649,8 @@
             "present_countries": []
           },
           {
-            "id": "kathiri_sultanate",
-            "canonical_name": "Kathiri Sultanate",
+            "id": "aden_protectorate_states",
+            "canonical_name": "Aden Protectorate states",
             "start": 1379,
             "end": 1967,
             "curated": false,
@@ -54777,6 +54659,143 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "YE"
+            ],
+            "details": [
+              {
+                "id": "kathiri_sultanate",
+                "canonical_name": "Kathiri Sultanate",
+                "start": 1379,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "mahra_sultanate",
+                "canonical_name": "Mahra Sultanate",
+                "start": 1432,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "emirate_of_dhala",
+                "canonical_name": "Emirate of Dhala",
+                "start": 1500,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "emirate_of_beihan",
+                "canonical_name": "Emirate of Beihan",
+                "start": 1680,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "sultanate_of_lahej",
+                "canonical_name": "Sultanate of Lahej",
+                "start": 1728,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "alawi",
+                "canonical_name": "Alawi",
+                "start": 1743,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "al_busi",
+                "canonical_name": "Al-Busi",
+                "start": 1800,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "aqrabi",
+                "canonical_name": "Aqrabi",
+                "start": 1800,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "audhali",
+                "canonical_name": "Audhali",
+                "start": 1800,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "upper_aulaqi_sheikhdom",
+                "canonical_name": "Upper Aulaqi Sheikhdom",
+                "start": 1800,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "upper_yafa",
+                "canonical_name": "Upper Yafa",
+                "start": 1800,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "wahidi",
+                "canonical_name": "Wahidi",
+                "start": 1800,
+                "end": 1963,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "wahidi_azzan",
+                    "canonical_name": "Wahidi Azzan",
+                    "start": 1830,
+                    "end": 1881,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "wahidi_balhaf",
+                "canonical_name": "Wahidi Balhaf",
+                "start": 1830,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "wahidi_bir_ali",
+                "canonical_name": "Wahidi Bir Ali",
+                "start": 1830,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "maflahi",
+                "canonical_name": "Maflahi",
+                "start": 1850,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "qu_aiti_sultanate",
+                "canonical_name": "Qu'aiti Sultanate",
+                "start": 1858,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "sheikhdom_of_al_hawra",
+                "canonical_name": "Sheikhdom of al-Hawra",
+                "start": 1900,
+                "end": 1967,
+                "kind": "polity"
+              },
+              {
+                "id": "sheikhdom_of_al_irqa",
+                "canonical_name": "Sheikhdom of al-ʽIrqa",
+                "start": 1900,
+                "end": 1967,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -55035,19 +55054,6 @@
                 "end": 1600,
                 "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "mahra_sultanate",
-            "canonical_name": "Mahra Sultanate",
-            "start": 1432,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
             ]
           },
           {
@@ -55425,19 +55431,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "ID"
-            ]
-          },
-          {
-            "id": "emirate_of_dhala",
-            "canonical_name": "Emirate of Dhala",
-            "start": 1500,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
             ]
           },
           {
@@ -56566,19 +56559,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "CN"
-            ]
-          },
-          {
-            "id": "emirate_of_beihan",
-            "canonical_name": "Emirate of Beihan",
-            "start": 1680,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
             ]
           },
           {
@@ -63217,501 +63197,6 @@
             ]
           }
         ],
-        "west_asia": [
-          {
-            "id": "sultanate_of_lahej",
-            "canonical_name": "Sultanate of Lahej",
-            "start": 1728,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "alawi",
-            "canonical_name": "Alawi",
-            "start": 1743,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "iranian_khanates",
-            "canonical_name": "Iranian khanates",
-            "start": 1747,
-            "end": 1929,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IR"
-            ],
-            "details": [
-              {
-                "id": "ardabil_khanate",
-                "canonical_name": "Ardabil Khanate",
-                "start": 1747,
-                "end": 1808,
-                "kind": "polity"
-              },
-              {
-                "id": "khalkhal_khanate",
-                "canonical_name": "Khalkhal Khanate",
-                "start": 1747,
-                "end": 1799,
-                "kind": "polity"
-              },
-              {
-                "id": "khanate_of_nishapur",
-                "canonical_name": "Khanate of Nishapur",
-                "start": 1747,
-                "end": 1798,
-                "kind": "polity"
-              },
-              {
-                "id": "khoy_khanate",
-                "canonical_name": "Khoy Khanate",
-                "start": 1747,
-                "end": 1813,
-                "kind": "polity"
-              },
-              {
-                "id": "maku_khanate",
-                "canonical_name": "Maku Khanate",
-                "start": 1747,
-                "end": 1929,
-                "kind": "polity"
-              },
-              {
-                "id": "marand_khanate",
-                "canonical_name": "Marand Khanate",
-                "start": 1747,
-                "end": 1828,
-                "kind": "polity"
-              },
-              {
-                "id": "qazvin_khanate",
-                "canonical_name": "Qazvin Khanate",
-                "start": 1747,
-                "end": 1804,
-                "kind": "polity"
-              },
-              {
-                "id": "sarab_khanate",
-                "canonical_name": "Sarab Khanate",
-                "start": 1747,
-                "end": 1797,
-                "kind": "polity"
-              },
-              {
-                "id": "talysh_khanate",
-                "canonical_name": "Talysh Khanate",
-                "start": 1747,
-                "end": 1828,
-                "kind": "polity"
-              },
-              {
-                "id": "urmia_khanate",
-                "canonical_name": "Urmia Khanate",
-                "start": 1747,
-                "end": 1865,
-                "kind": "polity"
-              },
-              {
-                "id": "karadagh_khanate",
-                "canonical_name": "Karadagh Khanate",
-                "start": 1748,
-                "end": 1828,
-                "kind": "polity"
-              },
-              {
-                "id": "khanate_of_gilan",
-                "canonical_name": "Khanate of Gilan",
-                "start": 1749,
-                "end": 1787,
-                "kind": "polity"
-              },
-              {
-                "id": "zanjan_khanate",
-                "canonical_name": "Zanjan Khanate",
-                "start": 1800,
-                "end": 1900,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "emirate_of_lengeh",
-            "canonical_name": "Emirate of Lengeh",
-            "start": 1750,
-            "end": 1899,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "AE",
-              "IR"
-            ]
-          },
-          {
-            "id": "sheikhdom_of_kuwait",
-            "canonical_name": "Sheikhdom of Kuwait",
-            "start": 1752,
-            "end": 1961,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "KW"
-            ]
-          },
-          {
-            "id": "buraydah_emirate",
-            "canonical_name": "Buraydah Emirate",
-            "start": 1768,
-            "end": 1908,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SA"
-            ]
-          },
-          {
-            "id": "unaizah_emirate",
-            "canonical_name": "Unaizah Emirate",
-            "start": 1768,
-            "end": 1904,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SA"
-            ]
-          },
-          {
-            "id": "bahrain_and_its_dependencies",
-            "canonical_name": "Bahrain and its Dependencies",
-            "start": 1783,
-            "end": 1971,
-            "curated": true,
-            "linked_era_id": "asia_industrial_imperial_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "BH"
-            ]
-          },
-          {
-            "id": "emirate_of_bahrain_17831971",
-            "canonical_name": "Emirate of Bahrain (1783–1971)",
-            "start": 1783,
-            "end": 1971,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "BH"
-            ]
-          },
-          {
-            "id": "qajar_iran",
-            "canonical_name": "Qajar Iran",
-            "start": 1789,
-            "end": 1925,
-            "curated": true,
-            "linked_era_id": "asia_industrial_imperial_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IR"
-            ]
-          },
-          {
-            "id": "al_busi",
-            "canonical_name": "Al-Busi",
-            "start": 1800,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "aqrabi",
-            "canonical_name": "Aqrabi",
-            "start": 1800,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "audhali",
-            "canonical_name": "Audhali",
-            "start": 1800,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "emirate_of_almathami",
-            "canonical_name": "Emirate of Almathami",
-            "start": 1800,
-            "end": 1818,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SA"
-            ]
-          },
-          {
-            "id": "upper_aulaqi_sheikhdom",
-            "canonical_name": "Upper Aulaqi Sheikhdom",
-            "start": 1800,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "upper_yafa",
-            "canonical_name": "Upper Yafa",
-            "start": 1800,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "wahidi",
-            "canonical_name": "Wahidi",
-            "start": 1800,
-            "end": 1963,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ],
-            "details": [
-              {
-                "id": "wahidi_azzan",
-                "canonical_name": "Wahidi Azzan",
-                "start": 1830,
-                "end": 1881,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "second_bani_khalid_emirate",
-            "canonical_name": "Second Bani Khalid Emirate",
-            "start": 1819,
-            "end": 1830,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SA"
-            ]
-          },
-          {
-            "id": "muscat_and_oman",
-            "canonical_name": "Muscat and Oman",
-            "start": 1820,
-            "end": 1970,
-            "curated": true,
-            "linked_era_id": "asia_industrial_imperial_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "OM"
-            ]
-          },
-          {
-            "id": "wahidi_balhaf",
-            "canonical_name": "Wahidi Balhaf",
-            "start": 1830,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "wahidi_bir_ali",
-            "canonical_name": "Wahidi Bir Ali",
-            "start": 1830,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "principality_of_samos",
-            "canonical_name": "Principality of Samos",
-            "start": 1834,
-            "end": 1912,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "TR"
-            ]
-          },
-          {
-            "id": "emirate_of_jabal_shammar",
-            "canonical_name": "Emirate of Jabal Shammar",
-            "start": 1836,
-            "end": 1921,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SA"
-            ]
-          },
-          {
-            "id": "maflahi",
-            "canonical_name": "Maflahi",
-            "start": 1850,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "qu_aiti_sultanate",
-            "canonical_name": "Qu'aiti Sultanate",
-            "start": 1858,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "mutasarrifate_of_mount_lebanon",
-            "canonical_name": "mutasarrifate of Mount Lebanon",
-            "start": 1861,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "LB"
-            ]
-          },
-          {
-            "id": "british_cyprus",
-            "canonical_name": "British Cyprus",
-            "start": 1878,
-            "end": 1947,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "CY"
-            ]
-          },
-          {
-            "id": "emirate_of_nejd_and_hasa",
-            "canonical_name": "Emirate of Nejd and Hasa",
-            "start": 1902,
-            "end": 1921,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SA"
-            ]
-          },
-          {
-            "id": "gurian_republic",
-            "canonical_name": "Gurian Republic",
-            "start": 1902,
-            "end": 1906,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "GE"
-            ]
-          },
-          {
-            "id": "islamic_government_of_laristan",
-            "canonical_name": "Islamic government of Laristan",
-            "start": 1909,
-            "end": 1914,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IR"
-            ]
-          }
-        ],
         "horn_of_africa": [
           {
             "id": "geledi_sultanate",
@@ -64566,6 +64051,336 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "DE"
+            ]
+          }
+        ],
+        "west_asia": [
+          {
+            "id": "iranian_khanates",
+            "canonical_name": "Iranian khanates",
+            "start": 1747,
+            "end": 1929,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "IR"
+            ],
+            "details": [
+              {
+                "id": "ardabil_khanate",
+                "canonical_name": "Ardabil Khanate",
+                "start": 1747,
+                "end": 1808,
+                "kind": "polity"
+              },
+              {
+                "id": "khalkhal_khanate",
+                "canonical_name": "Khalkhal Khanate",
+                "start": 1747,
+                "end": 1799,
+                "kind": "polity"
+              },
+              {
+                "id": "khanate_of_nishapur",
+                "canonical_name": "Khanate of Nishapur",
+                "start": 1747,
+                "end": 1798,
+                "kind": "polity"
+              },
+              {
+                "id": "khoy_khanate",
+                "canonical_name": "Khoy Khanate",
+                "start": 1747,
+                "end": 1813,
+                "kind": "polity"
+              },
+              {
+                "id": "maku_khanate",
+                "canonical_name": "Maku Khanate",
+                "start": 1747,
+                "end": 1929,
+                "kind": "polity"
+              },
+              {
+                "id": "marand_khanate",
+                "canonical_name": "Marand Khanate",
+                "start": 1747,
+                "end": 1828,
+                "kind": "polity"
+              },
+              {
+                "id": "qazvin_khanate",
+                "canonical_name": "Qazvin Khanate",
+                "start": 1747,
+                "end": 1804,
+                "kind": "polity"
+              },
+              {
+                "id": "sarab_khanate",
+                "canonical_name": "Sarab Khanate",
+                "start": 1747,
+                "end": 1797,
+                "kind": "polity"
+              },
+              {
+                "id": "talysh_khanate",
+                "canonical_name": "Talysh Khanate",
+                "start": 1747,
+                "end": 1828,
+                "kind": "polity"
+              },
+              {
+                "id": "urmia_khanate",
+                "canonical_name": "Urmia Khanate",
+                "start": 1747,
+                "end": 1865,
+                "kind": "polity"
+              },
+              {
+                "id": "karadagh_khanate",
+                "canonical_name": "Karadagh Khanate",
+                "start": 1748,
+                "end": 1828,
+                "kind": "polity"
+              },
+              {
+                "id": "khanate_of_gilan",
+                "canonical_name": "Khanate of Gilan",
+                "start": 1749,
+                "end": 1787,
+                "kind": "polity"
+              },
+              {
+                "id": "zanjan_khanate",
+                "canonical_name": "Zanjan Khanate",
+                "start": 1800,
+                "end": 1900,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "emirate_of_lengeh",
+            "canonical_name": "Emirate of Lengeh",
+            "start": 1750,
+            "end": 1899,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "AE",
+              "IR"
+            ]
+          },
+          {
+            "id": "sheikhdom_of_kuwait",
+            "canonical_name": "Sheikhdom of Kuwait",
+            "start": 1752,
+            "end": 1961,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "KW"
+            ]
+          },
+          {
+            "id": "buraydah_emirate",
+            "canonical_name": "Buraydah Emirate",
+            "start": 1768,
+            "end": 1908,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "SA"
+            ]
+          },
+          {
+            "id": "unaizah_emirate",
+            "canonical_name": "Unaizah Emirate",
+            "start": 1768,
+            "end": 1904,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "SA"
+            ]
+          },
+          {
+            "id": "bahrain_and_its_dependencies",
+            "canonical_name": "Bahrain and its Dependencies",
+            "start": 1783,
+            "end": 1971,
+            "curated": true,
+            "linked_era_id": "asia_industrial_imperial_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "BH"
+            ]
+          },
+          {
+            "id": "emirate_of_bahrain_17831971",
+            "canonical_name": "Emirate of Bahrain (1783–1971)",
+            "start": 1783,
+            "end": 1971,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "BH"
+            ]
+          },
+          {
+            "id": "qajar_iran",
+            "canonical_name": "Qajar Iran",
+            "start": 1789,
+            "end": 1925,
+            "curated": true,
+            "linked_era_id": "asia_industrial_imperial_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "IR"
+            ]
+          },
+          {
+            "id": "emirate_of_almathami",
+            "canonical_name": "Emirate of Almathami",
+            "start": 1800,
+            "end": 1818,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "SA"
+            ]
+          },
+          {
+            "id": "second_bani_khalid_emirate",
+            "canonical_name": "Second Bani Khalid Emirate",
+            "start": 1819,
+            "end": 1830,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "SA"
+            ]
+          },
+          {
+            "id": "muscat_and_oman",
+            "canonical_name": "Muscat and Oman",
+            "start": 1820,
+            "end": 1970,
+            "curated": true,
+            "linked_era_id": "asia_industrial_imperial_world_era",
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "OM"
+            ]
+          },
+          {
+            "id": "principality_of_samos",
+            "canonical_name": "Principality of Samos",
+            "start": 1834,
+            "end": 1912,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "TR"
+            ]
+          },
+          {
+            "id": "emirate_of_jabal_shammar",
+            "canonical_name": "Emirate of Jabal Shammar",
+            "start": 1836,
+            "end": 1921,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "SA"
+            ]
+          },
+          {
+            "id": "mutasarrifate_of_mount_lebanon",
+            "canonical_name": "mutasarrifate of Mount Lebanon",
+            "start": 1861,
+            "end": 1918,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "LB"
+            ]
+          },
+          {
+            "id": "british_cyprus",
+            "canonical_name": "British Cyprus",
+            "start": 1878,
+            "end": 1947,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "CY"
+            ]
+          },
+          {
+            "id": "emirate_of_nejd_and_hasa",
+            "canonical_name": "Emirate of Nejd and Hasa",
+            "start": 1902,
+            "end": 1921,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "SA"
+            ]
+          },
+          {
+            "id": "gurian_republic",
+            "canonical_name": "Gurian Republic",
+            "start": 1902,
+            "end": 1906,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "GE"
+            ]
+          },
+          {
+            "id": "islamic_government_of_laristan",
+            "canonical_name": "Islamic government of Laristan",
+            "start": 1909,
+            "end": 1914,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "IR"
             ]
           }
         ],
@@ -67616,19 +67431,6 @@
             ]
           },
           {
-            "id": "sultanate_of_lahej",
-            "canonical_name": "Sultanate of Lahej",
-            "start": 1728,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
             "id": "sultanate_of_bulungan",
             "canonical_name": "Sultanate of Bulungan",
             "start": 1731,
@@ -67678,19 +67480,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "PK"
-            ]
-          },
-          {
-            "id": "alawi",
-            "canonical_name": "Alawi",
-            "start": 1743,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
             ]
           },
           {
@@ -68152,45 +67941,6 @@
             ]
           },
           {
-            "id": "al_busi",
-            "canonical_name": "Al-Busi",
-            "start": 1800,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "aqrabi",
-            "canonical_name": "Aqrabi",
-            "start": 1800,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "audhali",
-            "canonical_name": "Audhali",
-            "start": 1800,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
             "id": "emirate_of_almathami",
             "canonical_name": "Emirate of Almathami",
             "start": 1800,
@@ -68229,32 +67979,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "MM"
-            ]
-          },
-          {
-            "id": "upper_aulaqi_sheikhdom",
-            "canonical_name": "Upper Aulaqi Sheikhdom",
-            "start": 1800,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "upper_yafa",
-            "canonical_name": "Upper Yafa",
-            "start": 1800,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
             ]
           },
           {
@@ -68482,32 +68206,6 @@
             ]
           },
           {
-            "id": "wahidi_balhaf",
-            "canonical_name": "Wahidi Balhaf",
-            "start": 1830,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "wahidi_bir_ali",
-            "canonical_name": "Wahidi Bir Ali",
-            "start": 1830,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
             "id": "principality_of_samos",
             "canonical_name": "Principality of Samos",
             "start": 1834,
@@ -68637,19 +68335,6 @@
             ]
           },
           {
-            "id": "maflahi",
-            "canonical_name": "Maflahi",
-            "start": 1850,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
             "id": "taiping_heavenly_kingdom",
             "canonical_name": "Taiping Heavenly Kingdom",
             "start": 1851,
@@ -68673,19 +68358,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "CN"
-            ]
-          },
-          {
-            "id": "qu_aiti_sultanate",
-            "canonical_name": "Qu'aiti Sultanate",
-            "start": 1858,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
             ]
           },
           {
@@ -69363,28 +69035,6 @@
             "primary_historical_region": "central_africa",
             "present_countries": [
               "CF"
-            ]
-          },
-          {
-            "id": "wahidi",
-            "canonical_name": "Wahidi",
-            "start": 1800,
-            "end": 1963,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ],
-            "details": [
-              {
-                "id": "wahidi_azzan",
-                "canonical_name": "Wahidi Azzan",
-                "start": 1830,
-                "end": 1881,
-                "kind": "polity"
-              }
             ]
           },
           {
@@ -72576,32 +72226,6 @@
       "polities_by_historical_region": {
         "west_asia": [
           {
-            "id": "sheikhdom_of_al_hawra",
-            "canonical_name": "Sheikhdom of al-Hawra",
-            "start": 1900,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
-            "id": "sheikhdom_of_al_irqa",
-            "canonical_name": "Sheikhdom of al-ʽIrqa",
-            "start": 1900,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
             "id": "emirate_of_asir",
             "canonical_name": "Emirate of Asir",
             "start": 1906,
@@ -72747,16 +72371,67 @@
             ]
           },
           {
-            "id": "alawite_territory",
-            "canonical_name": "Alawite Territory",
+            "id": "french_mandate_syrian_states",
+            "canonical_name": "French Mandate Syrian states",
             "start": 1920,
-            "end": 1922,
+            "end": 1936,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "asia",
             "primary_historical_region": "west_asia",
             "present_countries": [
               "SY"
+            ],
+            "details": [
+              {
+                "id": "alawite_territory",
+                "canonical_name": "Alawite Territory",
+                "start": 1920,
+                "end": 1922,
+                "kind": "polity"
+              },
+              {
+                "id": "arab_kingdom_of_syria",
+                "canonical_name": "Arab Kingdom of Syria",
+                "start": 1920,
+                "end": 1920,
+                "kind": "polity"
+              },
+              {
+                "id": "independent_state_of_raqqa",
+                "canonical_name": "Independent State of Raqqa",
+                "start": 1920,
+                "end": 1921,
+                "kind": "polity"
+              },
+              {
+                "id": "state_of_aleppo",
+                "canonical_name": "State of Aleppo",
+                "start": 1920,
+                "end": 1925,
+                "kind": "polity"
+              },
+              {
+                "id": "state_of_damascus",
+                "canonical_name": "State of Damascus",
+                "start": 1920,
+                "end": 1925,
+                "kind": "polity"
+              },
+              {
+                "id": "jabal_druze",
+                "canonical_name": "Jabal Druze",
+                "start": 1921,
+                "end": 1936,
+                "kind": "polity"
+              },
+              {
+                "id": "alawite_state",
+                "canonical_name": "Alawite State",
+                "start": 1922,
+                "end": 1936,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -72770,19 +72445,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "IR"
-            ]
-          },
-          {
-            "id": "independent_state_of_raqqa",
-            "canonical_name": "Independent State of Raqqa",
-            "start": 1920,
-            "end": 1921,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -72825,32 +72487,6 @@
             ]
           },
           {
-            "id": "state_of_aleppo",
-            "canonical_name": "State of Aleppo",
-            "start": 1920,
-            "end": 1925,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
-            "id": "state_of_damascus",
-            "canonical_name": "State of Damascus",
-            "start": 1920,
-            "end": 1925,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
             "id": "emirate_of_transjordan",
             "canonical_name": "Emirate of Transjordan",
             "start": 1921,
@@ -72861,19 +72497,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "JO"
-            ]
-          },
-          {
-            "id": "jabal_druze",
-            "canonical_name": "Jabal Druze",
-            "start": 1921,
-            "end": 1936,
-            "curated": true,
-            "linked_era_id": "asia_world_wars_reordering_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -72913,19 +72536,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "GE"
-            ]
-          },
-          {
-            "id": "alawite_state",
-            "canonical_name": "Alawite State",
-            "start": 1922,
-            "end": 1936,
-            "curated": true,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -73666,6 +73276,142 @@
         ],
         "eastern_europe": [
           {
+            "id": "ukrainian_revolution_era_governments",
+            "canonical_name": "Ukrainian revolution-era local governments",
+            "start": 1905,
+            "end": 1943,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "eastern_europe",
+            "present_countries": [
+              "UA"
+            ],
+            "details": [
+              {
+                "id": "chechelivka_republic",
+                "canonical_name": "Chechelivka Republic",
+                "start": 1905,
+                "end": 1905,
+                "kind": "polity"
+              },
+              {
+                "id": "shuliavka_republic",
+                "canonical_name": "Shuliavka Republic",
+                "start": 1905,
+                "end": 1905,
+                "kind": "polity"
+              },
+              {
+                "id": "ukrainian_people_s_republic_of_soviets",
+                "canonical_name": "Ukrainian People's Republic of Soviets",
+                "start": 1917,
+                "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "crimean_regional_government",
+                "canonical_name": "Crimean Regional Government",
+                "start": 1918,
+                "end": 1919,
+                "kind": "polity"
+              },
+              {
+                "id": "donetsk_krivoy_rog_soviet_republic",
+                "canonical_name": "Donetsk-Krivoy Rog Soviet Republic",
+                "start": 1918,
+                "end": 1919,
+                "kind": "polity"
+              },
+              {
+                "id": "makhnovshchina",
+                "canonical_name": "Makhnovshchina",
+                "start": 1918,
+                "end": 1921,
+                "kind": "polity"
+              },
+              {
+                "id": "odesa_soviet_republic",
+                "canonical_name": "Odesa Soviet Republic",
+                "start": 1918,
+                "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "second_crimean_regional_government",
+                "canonical_name": "Second Crimean Regional Government",
+                "start": 1918,
+                "end": 1919,
+                "kind": "polity"
+              },
+              {
+                "id": "taurida_soviet_socialist_republic",
+                "canonical_name": "Taurida Soviet Socialist Republic",
+                "start": 1918,
+                "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "ukrainian_state",
+                "canonical_name": "Ukrainian State",
+                "start": 1918,
+                "end": 1918,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "west_ukrainian_people_s_republic",
+                    "canonical_name": "West Ukrainian People's Republic",
+                    "start": 1918,
+                    "end": 1923,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "ukrainian_soviet_socialist_republic",
+                    "canonical_name": "Ukrainian Soviet Socialist Republic",
+                    "start": 1919,
+                    "end": 1991,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "kholodny_yar_republic",
+                "canonical_name": "Kholodny Yar Republic",
+                "start": 1919,
+                "end": 1922,
+                "kind": "polity"
+              },
+              {
+                "id": "boyko_soviet_republic",
+                "canonical_name": "Boyko Soviet Republic",
+                "start": 1920,
+                "end": 1920,
+                "kind": "polity"
+              },
+              {
+                "id": "galician_soviet_socialist_republic",
+                "canonical_name": "Galician Soviet Socialist Republic",
+                "start": 1920,
+                "end": 1920,
+                "kind": "polity"
+              },
+              {
+                "id": "carpatho_ukraine",
+                "canonical_name": "Carpatho-Ukraine",
+                "start": 1939,
+                "end": 1939,
+                "kind": "polity"
+              },
+              {
+                "id": "kolky_republic",
+                "canonical_name": "Kolky Republic",
+                "start": 1943,
+                "end": 1943,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
             "id": "moldavian_democratic_republic",
             "canonical_name": "Moldavian Democratic Republic",
             "start": 1917,
@@ -73945,19 +73691,6 @@
             ]
           },
           {
-            "id": "ukrainian_people_s_republic_of_soviets",
-            "canonical_name": "Ukrainian People's Republic of Soviets",
-            "start": 1917,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
             "id": "belarusian_people_s_republic",
             "canonical_name": "Belarusian People's Republic",
             "start": 1918,
@@ -73968,32 +73701,6 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "BY"
-            ]
-          },
-          {
-            "id": "crimean_regional_government",
-            "canonical_name": "Crimean Regional Government",
-            "start": 1918,
-            "end": 1919,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
-            "id": "donetsk_krivoy_rog_soviet_republic",
-            "canonical_name": "Donetsk-Krivoy Rog Soviet Republic",
-            "start": 1918,
-            "end": 1919,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
             ]
           },
           {
@@ -74033,45 +73740,6 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "RO"
-            ]
-          },
-          {
-            "id": "makhnovshchina",
-            "canonical_name": "Makhnovshchina",
-            "start": 1918,
-            "end": 1921,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
-            "id": "second_crimean_regional_government",
-            "canonical_name": "Second Crimean Regional Government",
-            "start": 1918,
-            "end": 1919,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
-            "id": "kholodny_yar_republic",
-            "canonical_name": "Kholodny Yar Republic",
-            "start": 1919,
-            "end": 1922,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
             ]
           },
           {
@@ -75194,19 +74862,6 @@
             ]
           },
           {
-            "id": "sheikhdom_of_al_irqa",
-            "canonical_name": "Sheikhdom of al-ʽIrqa",
-            "start": 1900,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
-            ]
-          },
-          {
             "id": "south_african_republic_q766411",
             "canonical_name": "South African Republic",
             "start": 1914,
@@ -75523,19 +75178,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "PK"
-            ]
-          },
-          {
-            "id": "sheikhdom_of_al_hawra",
-            "canonical_name": "Sheikhdom of al-Hawra",
-            "start": 1900,
-            "end": 1967,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "YE"
             ]
           },
           {
@@ -76006,19 +75648,6 @@
             ]
           },
           {
-            "id": "alawite_territory",
-            "canonical_name": "Alawite Territory",
-            "start": 1920,
-            "end": 1922,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
             "id": "bukharan_people_s_soviet_republic",
             "canonical_name": "Bukharan People's Soviet Republic",
             "start": 1920,
@@ -76032,6 +75661,70 @@
             ]
           },
           {
+            "id": "french_mandate_syrian_states",
+            "canonical_name": "French Mandate Syrian states",
+            "start": 1920,
+            "end": 1936,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "west_asia",
+            "present_countries": [
+              "SY"
+            ],
+            "details": [
+              {
+                "id": "alawite_territory",
+                "canonical_name": "Alawite Territory",
+                "start": 1920,
+                "end": 1922,
+                "kind": "polity"
+              },
+              {
+                "id": "arab_kingdom_of_syria",
+                "canonical_name": "Arab Kingdom of Syria",
+                "start": 1920,
+                "end": 1920,
+                "kind": "polity"
+              },
+              {
+                "id": "independent_state_of_raqqa",
+                "canonical_name": "Independent State of Raqqa",
+                "start": 1920,
+                "end": 1921,
+                "kind": "polity"
+              },
+              {
+                "id": "state_of_aleppo",
+                "canonical_name": "State of Aleppo",
+                "start": 1920,
+                "end": 1925,
+                "kind": "polity"
+              },
+              {
+                "id": "state_of_damascus",
+                "canonical_name": "State of Damascus",
+                "start": 1920,
+                "end": 1925,
+                "kind": "polity"
+              },
+              {
+                "id": "jabal_druze",
+                "canonical_name": "Jabal Druze",
+                "start": 1921,
+                "end": 1936,
+                "kind": "polity"
+              },
+              {
+                "id": "alawite_state",
+                "canonical_name": "Alawite State",
+                "start": 1922,
+                "end": 1936,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
             "id": "gilan_socialist_soviet_republic",
             "canonical_name": "Gilan Socialist Soviet Republic",
             "start": 1920,
@@ -76042,19 +75735,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "IR"
-            ]
-          },
-          {
-            "id": "independent_state_of_raqqa",
-            "canonical_name": "Independent State of Raqqa",
-            "start": 1920,
-            "end": 1921,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -76111,32 +75791,6 @@
             ]
           },
           {
-            "id": "state_of_aleppo",
-            "canonical_name": "State of Aleppo",
-            "start": 1920,
-            "end": 1925,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
-            "id": "state_of_damascus",
-            "canonical_name": "State of Damascus",
-            "start": 1920,
-            "end": 1925,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
-            ]
-          },
-          {
             "id": "emirate_of_transjordan",
             "canonical_name": "Emirate of Transjordan",
             "start": 1921,
@@ -76147,19 +75801,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "JO"
-            ]
-          },
-          {
-            "id": "jabal_druze",
-            "canonical_name": "Jabal Druze",
-            "start": 1921,
-            "end": 1936,
-            "curated": true,
-            "linked_era_id": "asia_world_wars_reordering_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -76199,19 +75840,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "GE"
-            ]
-          },
-          {
-            "id": "alawite_state",
-            "canonical_name": "Alawite State",
-            "start": 1922,
-            "end": 1936,
-            "curated": true,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "SY"
             ]
           },
           {
@@ -76331,6 +75959,142 @@
           }
         ],
         "europe": [
+          {
+            "id": "ukrainian_revolution_era_governments",
+            "canonical_name": "Ukrainian revolution-era local governments",
+            "start": 1905,
+            "end": 1943,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "eastern_europe",
+            "present_countries": [
+              "UA"
+            ],
+            "details": [
+              {
+                "id": "chechelivka_republic",
+                "canonical_name": "Chechelivka Republic",
+                "start": 1905,
+                "end": 1905,
+                "kind": "polity"
+              },
+              {
+                "id": "shuliavka_republic",
+                "canonical_name": "Shuliavka Republic",
+                "start": 1905,
+                "end": 1905,
+                "kind": "polity"
+              },
+              {
+                "id": "ukrainian_people_s_republic_of_soviets",
+                "canonical_name": "Ukrainian People's Republic of Soviets",
+                "start": 1917,
+                "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "crimean_regional_government",
+                "canonical_name": "Crimean Regional Government",
+                "start": 1918,
+                "end": 1919,
+                "kind": "polity"
+              },
+              {
+                "id": "donetsk_krivoy_rog_soviet_republic",
+                "canonical_name": "Donetsk-Krivoy Rog Soviet Republic",
+                "start": 1918,
+                "end": 1919,
+                "kind": "polity"
+              },
+              {
+                "id": "makhnovshchina",
+                "canonical_name": "Makhnovshchina",
+                "start": 1918,
+                "end": 1921,
+                "kind": "polity"
+              },
+              {
+                "id": "odesa_soviet_republic",
+                "canonical_name": "Odesa Soviet Republic",
+                "start": 1918,
+                "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "second_crimean_regional_government",
+                "canonical_name": "Second Crimean Regional Government",
+                "start": 1918,
+                "end": 1919,
+                "kind": "polity"
+              },
+              {
+                "id": "taurida_soviet_socialist_republic",
+                "canonical_name": "Taurida Soviet Socialist Republic",
+                "start": 1918,
+                "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "ukrainian_state",
+                "canonical_name": "Ukrainian State",
+                "start": 1918,
+                "end": 1918,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "west_ukrainian_people_s_republic",
+                    "canonical_name": "West Ukrainian People's Republic",
+                    "start": 1918,
+                    "end": 1923,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "ukrainian_soviet_socialist_republic",
+                    "canonical_name": "Ukrainian Soviet Socialist Republic",
+                    "start": 1919,
+                    "end": 1991,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "kholodny_yar_republic",
+                "canonical_name": "Kholodny Yar Republic",
+                "start": 1919,
+                "end": 1922,
+                "kind": "polity"
+              },
+              {
+                "id": "boyko_soviet_republic",
+                "canonical_name": "Boyko Soviet Republic",
+                "start": 1920,
+                "end": 1920,
+                "kind": "polity"
+              },
+              {
+                "id": "galician_soviet_socialist_republic",
+                "canonical_name": "Galician Soviet Socialist Republic",
+                "start": 1920,
+                "end": 1920,
+                "kind": "polity"
+              },
+              {
+                "id": "carpatho_ukraine",
+                "canonical_name": "Carpatho-Ukraine",
+                "start": 1939,
+                "end": 1939,
+                "kind": "polity"
+              },
+              {
+                "id": "kolky_republic",
+                "canonical_name": "Kolky Republic",
+                "start": 1943,
+                "end": 1943,
+                "kind": "polity"
+              }
+            ]
+          },
           {
             "id": "first_portuguese_republic",
             "canonical_name": "First Portuguese Republic",
@@ -76650,19 +76414,6 @@
             ]
           },
           {
-            "id": "ukrainian_people_s_republic_of_soviets",
-            "canonical_name": "Ukrainian People's Republic of Soviets",
-            "start": 1917,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
             "id": "belarusian_people_s_republic",
             "canonical_name": "Belarusian People's Republic",
             "start": 1918,
@@ -76673,32 +76424,6 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "BY"
-            ]
-          },
-          {
-            "id": "crimean_regional_government",
-            "canonical_name": "Crimean Regional Government",
-            "start": 1918,
-            "end": 1919,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
-            "id": "donetsk_krivoy_rog_soviet_republic",
-            "canonical_name": "Donetsk-Krivoy Rog Soviet Republic",
-            "start": 1918,
-            "end": 1919,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
             ]
           },
           {
@@ -76958,19 +76683,6 @@
             ]
           },
           {
-            "id": "makhnovshchina",
-            "canonical_name": "Makhnovshchina",
-            "start": 1918,
-            "end": 1921,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
             "id": "people_s_state_of_bavaria",
             "canonical_name": "People's State of Bavaria",
             "start": 1918,
@@ -77036,19 +76748,6 @@
             ]
           },
           {
-            "id": "second_crimean_regional_government",
-            "canonical_name": "Second Crimean Regional Government",
-            "start": 1918,
-            "end": 1919,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
             "id": "socialist_republic_of_germany",
             "canonical_name": "Socialist Republic of Germany",
             "start": 1918,
@@ -77111,19 +76810,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "IE"
-            ]
-          },
-          {
-            "id": "kholodny_yar_republic",
-            "canonical_name": "Kholodny Yar Republic",
-            "start": 1919,
-            "end": 1922,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
             ]
           },
           {
@@ -78026,6 +77712,13 @@
                 "kind": "polity"
               },
               {
+                "id": "second_iraqi_republic",
+                "canonical_name": "Second Iraqi Republic",
+                "start": 1963,
+                "end": 1968,
+                "kind": "polity"
+              },
+              {
                 "id": "ba_athist_iraq",
                 "canonical_name": "Ba'athist Iraq",
                 "start": 1968,
@@ -78220,19 +77913,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "YE"
-            ]
-          },
-          {
-            "id": "second_iraqi_republic",
-            "canonical_name": "Second Iraqi Republic",
-            "start": 1963,
-            "end": 1968,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IQ"
             ]
           },
           {
@@ -87295,19 +86975,6 @@
             ]
           },
           {
-            "id": "galician_soviet_socialist_republic",
-            "canonical_name": "Galician Soviet Socialist Republic",
-            "start": 1920,
-            "end": 1920,
-            "curated": true,
-            "linked_era_id": "europe_contemporary_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
-            ]
-          },
-          {
             "id": "soviet_union",
             "canonical_name": "Soviet Union",
             "start": 1922,
@@ -89067,6 +88734,13 @@
                 "kind": "polity"
               },
               {
+                "id": "second_iraqi_republic",
+                "canonical_name": "Second Iraqi Republic",
+                "start": 1963,
+                "end": 1968,
+                "kind": "polity"
+              },
+              {
                 "id": "ba_athist_iraq",
                 "canonical_name": "Ba'athist Iraq",
                 "start": 1968,
@@ -90231,19 +89905,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "MY"
-            ]
-          },
-          {
-            "id": "second_iraqi_republic",
-            "canonical_name": "Second Iraqi Republic",
-            "start": 1963,
-            "end": 1968,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "IQ"
             ]
           },
           {
@@ -93720,19 +93381,6 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "BY"
-            ]
-          },
-          {
-            "id": "galician_soviet_socialist_republic",
-            "canonical_name": "Galician Soviet Socialist Republic",
-            "start": 1920,
-            "end": 1920,
-            "curated": true,
-            "linked_era_id": "europe_contemporary_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "UA"
             ]
           },
           {

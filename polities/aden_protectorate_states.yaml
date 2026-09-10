@@ -1,0 +1,32 @@
+id: aden_protectorate_states
+canonical_name: Aden Protectorate states
+names:
+  aliases_en: South Arabian sultanates and sheikhdoms
+entity_type: polity
+entity_type_confidence: high
+start: 1379
+end: 1967
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - YE
+  confidence: high
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/
+  Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for the ~18 sultanates,
+  emirates, and sheikhdoms of the Aden Protectorate -- each independently reviewed
+  and rendering as a top-level entity, none a bounded phase of a single continuous
+  polity, but sharing the exact same 1967 dissolution into South Yemen (visible in
+  every member's own end date). Not a claim of shared sovereignty or lineage between
+  distinct ruling houses -- a plain container grouping by shared era/category, same
+  construct as princely_states_of_india. Left the ancient/medieval Yemeni kingdoms
+  (Sheba, the Himyarite kingdom, the Rasulid/Tahirid dynasties) and the Asir-region
+  entities (a different geography, now part of Saudi Arabia) untouched.

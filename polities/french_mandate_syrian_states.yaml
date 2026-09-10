@@ -1,0 +1,28 @@
+id: french_mandate_syrian_states
+canonical_name: French Mandate Syrian states
+names:
+  aliases_en: States of the Syrian Federation
+entity_type: polity
+entity_type_confidence: high
+start: 1920
+end: 1936
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - SY
+  confidence: high
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026) for the short-lived Arab Kingdom of
+  Syria (1920, crushed within the year) and the separate statelets the French Mandate
+  then partitioned Syria into (State of Aleppo, State of Damascus, the Alawite Territory/State,
+  Jabal Druze, the Independent State of Raqqa) before their 1936-1946 reunification
+  into modern Syria. A plain container grouping by shared era/category, same construct
+  as princely_states_of_india.
