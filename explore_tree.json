@@ -27978,6 +27978,13 @@
             ],
             "details": [
               {
+                "id": "kingdom_of_poland_q577867",
+                "canonical_name": "Kingdom of Poland (1025–1385)",
+                "start": 1025,
+                "end": 1385,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_greater_poland",
                 "canonical_name": "Duchy of Greater Poland",
                 "start": 1138,
@@ -27985,9 +27992,23 @@
                 "kind": "polity"
               },
               {
+                "id": "kingdom_of_poland_q3446214",
+                "canonical_name": "Kingdom of Poland (1320–1386)",
+                "start": 1320,
+                "end": 1386,
+                "kind": "polity"
+              },
+              {
                 "id": "united_kingdom_of_poland",
                 "canonical_name": "United Kingdom of Poland",
                 "start": 1320,
+                "end": 1569,
+                "kind": "polity"
+              },
+              {
+                "id": "kingdom_of_poland_q1649871",
+                "canonical_name": "Kingdom of Poland (1386–1569)",
+                "start": 1386,
                 "end": 1569,
                 "kind": "polity"
               }
@@ -28056,19 +28077,6 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "HU"
-            ]
-          },
-          {
-            "id": "kingdom_of_poland_q577867",
-            "canonical_name": "Kingdom of Poland (1025–1385)",
-            "start": 1025,
-            "end": 1385,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
             ]
           },
           {
@@ -28666,19 +28674,6 @@
             ]
           },
           {
-            "id": "kingdom_of_poland_q3446214",
-            "canonical_name": "Kingdom of Poland (1320–1386)",
-            "start": 1320,
-            "end": 1386,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "maramures",
             "canonical_name": "Maramureș",
             "start": 1320,
@@ -28802,19 +28797,6 @@
             "id": "polishlithuanian_union",
             "canonical_name": "Polish–Lithuanian union",
             "start": 1385,
-            "end": 1569,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
-            "id": "kingdom_of_poland_q1649871",
-            "canonical_name": "Kingdom of Poland (1386–1569)",
-            "start": 1386,
             "end": 1569,
             "curated": false,
             "linked_era_id": null,
@@ -41540,6 +41522,13 @@
             ],
             "details": [
               {
+                "id": "kingdom_of_poland_q577867",
+                "canonical_name": "Kingdom of Poland (1025–1385)",
+                "start": 1025,
+                "end": 1385,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_greater_poland",
                 "canonical_name": "Duchy of Greater Poland",
                 "start": 1138,
@@ -41547,9 +41536,23 @@
                 "kind": "polity"
               },
               {
+                "id": "kingdom_of_poland_q3446214",
+                "canonical_name": "Kingdom of Poland (1320–1386)",
+                "start": 1320,
+                "end": 1386,
+                "kind": "polity"
+              },
+              {
                 "id": "united_kingdom_of_poland",
                 "canonical_name": "United Kingdom of Poland",
                 "start": 1320,
+                "end": 1569,
+                "kind": "polity"
+              },
+              {
+                "id": "kingdom_of_poland_q1649871",
+                "canonical_name": "Kingdom of Poland (1386–1569)",
+                "start": 1386,
                 "end": 1569,
                 "kind": "polity"
               }
@@ -42071,19 +42074,6 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "ES"
-            ]
-          },
-          {
-            "id": "kingdom_of_poland_q577867",
-            "canonical_name": "Kingdom of Poland (1025–1385)",
-            "start": 1025,
-            "end": 1385,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
             ]
           },
           {
@@ -44269,19 +44259,6 @@
             ]
           },
           {
-            "id": "kingdom_of_poland_q3446214",
-            "canonical_name": "Kingdom of Poland (1320–1386)",
-            "start": 1320,
-            "end": 1386,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "maramures",
             "canonical_name": "Maramureș",
             "start": 1320,
@@ -44726,19 +44703,6 @@
             "id": "polishlithuanian_union",
             "canonical_name": "Polish–Lithuanian union",
             "start": 1385,
-            "end": 1569,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
-            "id": "kingdom_of_poland_q1649871",
-            "canonical_name": "Kingdom of Poland (1386–1569)",
-            "start": 1386,
             "end": 1569,
             "curated": false,
             "linked_era_id": null,
@@ -80038,19 +80002,6 @@
             ]
           },
           {
-            "id": "second_polish_republic",
-            "canonical_name": "Second Polish Republic",
-            "start": 1918,
-            "end": 1939,
-            "curated": true,
-            "linked_era_id": "europe_world_wars_reordering_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "terek_soviet_republic",
             "canonical_name": "Terek Soviet Republic",
             "start": 1918,
@@ -80236,19 +80187,6 @@
           {
             "id": "general_government",
             "canonical_name": "General Government",
-            "start": 1939,
-            "end": 1945,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
-            "id": "polish_underground_state",
-            "canonical_name": "Polish Underground State",
             "start": 1939,
             "end": 1945,
             "curated": false,
@@ -83132,19 +83070,6 @@
             "present_countries": []
           },
           {
-            "id": "second_polish_republic",
-            "canonical_name": "Second Polish Republic",
-            "start": 1918,
-            "end": 1939,
-            "curated": true,
-            "linked_era_id": "europe_world_wars_reordering_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
             "id": "soviet_republic_of_saxony",
             "canonical_name": "Soviet Republic of Saxony",
             "start": 1918,
@@ -83478,19 +83403,6 @@
           {
             "id": "general_government",
             "canonical_name": "General Government",
-            "start": 1939,
-            "end": 1945,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
-            "id": "polish_underground_state",
-            "canonical_name": "Polish Underground State",
             "start": 1939,
             "end": 1945,
             "curated": false,
@@ -84499,6 +84411,29 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "PL"
+            ],
+            "details": [
+              {
+                "id": "second_polish_republic",
+                "canonical_name": "Second Polish Republic",
+                "start": 1918,
+                "end": 1939,
+                "kind": "polity"
+              },
+              {
+                "id": "polish_underground_state",
+                "canonical_name": "Polish Underground State",
+                "start": 1939,
+                "end": 1945,
+                "kind": "polity"
+              },
+              {
+                "id": "polish_people_s_republic",
+                "canonical_name": "Polish People's Republic",
+                "start": 1944,
+                "end": 1989,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -84637,19 +84572,6 @@
                 "end": 1991,
                 "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "polish_people_s_republic",
-            "canonical_name": "Polish People's Republic",
-            "start": 1944,
-            "end": 1989,
-            "curated": true,
-            "linked_era_id": "europe_contemporary_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
             ]
           },
           {
@@ -95346,6 +95268,29 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "PL"
+            ],
+            "details": [
+              {
+                "id": "second_polish_republic",
+                "canonical_name": "Second Polish Republic",
+                "start": 1918,
+                "end": 1939,
+                "kind": "polity"
+              },
+              {
+                "id": "polish_underground_state",
+                "canonical_name": "Polish Underground State",
+                "start": 1939,
+                "end": 1945,
+                "kind": "polity"
+              },
+              {
+                "id": "polish_people_s_republic",
+                "canonical_name": "Polish People's Republic",
+                "start": 1944,
+                "end": 1989,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -95637,19 +95582,6 @@
             "primary_historical_region": "northern_europe",
             "present_countries": [
               "IS"
-            ]
-          },
-          {
-            "id": "polish_people_s_republic",
-            "canonical_name": "Polish People's Republic",
-            "start": 1944,
-            "end": 1989,
-            "curated": true,
-            "linked_era_id": "europe_contemporary_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
             ]
           },
           {

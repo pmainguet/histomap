@@ -184205,7 +184205,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kingdom_of_poland_q8890160",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -184296,7 +184296,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kingdom_of_poland_q8890160",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -184376,7 +184376,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kingdom_of_poland_q8890160",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -258897,7 +258897,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "poland",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -258980,7 +258980,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "poland",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -312141,7 +312141,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "poland",
     "deprecated": {
       "visibility_tier": "regional"
     },
