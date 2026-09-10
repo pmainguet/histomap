@@ -458,6 +458,78 @@ relationship geography already has to everything else. Closed by
 starter, growable lookup, not exhaustive, but no longer an open gap; solving it never
 meant growing the `Period` tree.
 
+## `detail_of`: nesting for display, not a tree tier
+
+`Polity.detail_of` / `Period.detail_of` (see
+[`docs/plans/2026-09-01-detail-of-merge-design.md`](docs/plans/2026-09-01-detail-of-merge-design.md)
+for its origin, replacing the retired `phase_of`/`part_of` consolidation mechanisms) is a
+fourth relationship, alongside the three named in "Tree, lanes, graph" above — it isn't the
+`Period` tree (it links two `Polity`/`Period` records directly, no chapter/era involved),
+isn't a display lane (it changes what a *single* lane shows, rather than adding a lane), and
+isn't quite the general relationship graph either (`Polity.relationships` stays purely
+descriptive; `detail_of` has a real structural effect at build time).
+
+**What it does mechanically.** A detail entity is dropped from `build_explore_tree.py`'s
+ordinary chapter/region bucketing entirely (`if polity.get("detail_of"): continue` in Pass
+2) and instead attached to its container's own entry as a `details` list, rendered by
+`/explore` as a collapsed `+N` badge on the container's band — revealed by clicking the badge
+or by `zoomToRange`'s automatic expand-the-whole-chain behavior (see the 9 September 2026
+STATUS.md entry). A detail entity never gets an independent top-level band; if its container
+itself never lands anywhere in the tree, the detail is unreachable too. Chains nest to any
+depth (`_attach_nested_details` walks recursively — Kingdom of Castile → Crown of Castile →
+Hispanic Monarchy is a real 3-level example).
+
+**Two established uses, deliberately kept distinct:**
+
+1. **Bounded phase of the same continuous entity (the original, default meaning).** The
+   child's own `start`/`end` is a genuine subset of the container's — not merely
+   geographically coincident, and not "absorbed by" in a loose sense. Covers three
+   recurring shapes, all used throughout the ROADMAP.md country-by-country review (10
+   September 2026): a dynastic/constitutional-era split of one continuous state (Han
+   Dynasty's Western/Eastern phases; West Germany → Germany; First/Second Nigerian
+   Republic → Nigeria; Second Polish Republic → Poland), a Seshat/Wikidata internal phase
+   split reconciled during import (Ptolemaic Kingdom II → Ptolemaic Kingdom), and a modern
+   administrative subdivision of its country (US states, German Länder, Swiss cantons,
+   Nigerian/Mexican/Russian states, South Africa's apartheid-era bantustans). A rival or
+   secessionist claim against the would-be container — Biafra, the Republic of South
+   Maluku, the Chechen Republic of Ichkeria — is never attached this way even when
+   geographically inside it and even when its dates would technically nest: `detail_of`
+   implies subordination, which would misrepresent a state the container never actually
+   governed.
+2. **Editorial category grouping (introduced 10 September 2026, ROADMAP.md item 5
+   follow-up).** A container whose members share a category or era — not a lineage, not a
+   claim that they were ever under one another's or a common sovereign's rule — used purely
+   to declutter a region bucket that had accumulated dozens-to-hundreds of independent
+   top-level bands with no genuine common parent to attach them to (`spanish_noble_titles`
+   for standalone Spanish ducal titles; `princely_states_of_india` and
+   `precolonial_kingdoms_of_india`, splitting ~330 unlinked India polities by era/legal
+   status). These containers are hand-authored (`sources: [histomap_editorial]`, no
+   Wikidata id — there's no real-world institution to point at), with a wide enough
+   `start`/`end` to trivially contain every member, often open-ended. **Every such
+   container's `notes` field must say explicitly that membership means shared
+   category/era, not shared sovereignty or lineage** — a reader opening the container's
+   detail panel has no other way to know which of the two meanings applies, since the data
+   shape is identical either way.
+
+**Enforcement boundary — this is editorial discipline, not a schema constraint.**
+`build.py`'s validation (`find_detail_of_cycles`, `validate_period_detail_of`) only checks
+that the target id exists and that no cycle forms. It does **not** check date-range
+containment — nothing stops a `detail_of` pointing at a container whose dates don't actually
+contain the child's. Getting the "genuine subset" rule right (use 1 above) is entirely on
+whoever adds the relationship; a border-touching case (child starts exactly when the
+container ends, or vice versa) is deliberately treated as a predecessor/successor
+relationship instead (see `successors`), never forced into `detail_of` just because the
+years are adjacent — Federation of Nigeria → Nigeria and Kingdom of Great Britain → United
+Kingdom are both modeled this way, not as `detail_of`.
+
+**Polity → Polity only; Period → either.** `Polity.detail_of` may only target another
+`Polity` — never a `Period`, even though a Period record covering the exact right date range
+sometimes exists (`build.py` rejects this at validation time; the Konya Plain Seshat phase
+sequence hit exactly this trying to attach to `konya_plain_period` instead of a Polity
+container). `Period.detail_of` has no such restriction — it may target either another Period
+or a Polity (e.g. Initial Jomon → Jomon period; the Holocene's sub-epochs → Holocene), the
+asymmetry noted in `schema.py`'s own field comment.
+
 ## How a future timeline UI should read this
 
 Implemented in [`docs/plans/2026-08-30-explore-hierarchy-timeline.md`](docs/plans/2026-08-30-explore-hierarchy-timeline.md):
