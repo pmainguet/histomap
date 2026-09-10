@@ -20233,6 +20233,15 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "GB"
+            ],
+            "details": [
+              {
+                "id": "kingdom_of_alba",
+                "canonical_name": "Kingdom of Alba",
+                "start": 900,
+                "end": 1286,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -20377,19 +20386,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "FR"
-            ]
-          },
-          {
-            "id": "kingdom_of_alba",
-            "canonical_name": "Kingdom of Alba",
-            "start": 900,
-            "end": 1286,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "GB"
             ]
           },
           {
@@ -39211,6 +39207,15 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "GB"
+            ],
+            "details": [
+              {
+                "id": "kingdom_of_alba",
+                "canonical_name": "Kingdom of Alba",
+                "start": 900,
+                "end": 1286,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -39570,19 +39575,6 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "ES"
-            ]
-          },
-          {
-            "id": "kingdom_of_alba",
-            "canonical_name": "Kingdom of Alba",
-            "start": 900,
-            "end": 1286,
-            "curated": true,
-            "linked_era_id": "medieval_europe_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "GB"
             ]
           },
           {
@@ -53758,10 +53750,108 @@
             ],
             "details": [
               {
+                "id": "colony_of_barbados",
+                "canonical_name": "Colony of Barbados",
+                "start": 1627,
+                "end": 1961,
+                "kind": "polity"
+              },
+              {
+                "id": "trucial_states",
+                "canonical_name": "Trucial States",
+                "start": 1820,
+                "end": 1971,
+                "kind": "polity"
+              },
+              {
+                "id": "gold_coast_colony",
+                "canonical_name": "Gold Coast Colony",
+                "start": 1821,
+                "end": 1957,
+                "kind": "polity"
+              },
+              {
                 "id": "british_raj",
                 "canonical_name": "British Raj",
                 "start": 1858,
                 "end": 1947,
+                "kind": "polity"
+              },
+              {
+                "id": "aden_protectorate",
+                "canonical_name": "Aden Protectorate",
+                "start": 1869,
+                "end": 1963,
+                "kind": "polity"
+              },
+              {
+                "id": "british_north_borneo",
+                "canonical_name": "British North Borneo",
+                "start": 1882,
+                "end": 1963,
+                "kind": "polity"
+              },
+              {
+                "id": "british_somaliland",
+                "canonical_name": "British Somaliland",
+                "start": 1884,
+                "end": 1960,
+                "kind": "polity"
+              },
+              {
+                "id": "bechuanaland_protectorate",
+                "canonical_name": "Bechuanaland Protectorate",
+                "start": 1885,
+                "end": 1966,
+                "kind": "polity"
+              },
+              {
+                "id": "zanzibar_protectorate",
+                "canonical_name": "Zanzibar Protectorate",
+                "start": 1890,
+                "end": 1963,
+                "kind": "polity"
+              },
+              {
+                "id": "anglo_egyptian_sudan",
+                "canonical_name": "Anglo-Egyptian Sudan",
+                "start": 1899,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "orange_river_colony",
+                "canonical_name": "Orange River Colony",
+                "start": 1902,
+                "end": 1910,
+                "kind": "polity"
+              },
+              {
+                "id": "nyasaland",
+                "canonical_name": "Nyasaland",
+                "start": 1907,
+                "end": 1964,
+                "kind": "polity"
+              },
+              {
+                "id": "mandatory_iraq",
+                "canonical_name": "Mandatory Iraq",
+                "start": 1920,
+                "end": 1932,
+                "kind": "polity"
+              },
+              {
+                "id": "northern_rhodesia",
+                "canonical_name": "Northern Rhodesia",
+                "start": 1924,
+                "end": 1964,
+                "kind": "polity"
+              },
+              {
+                "id": "associated_state_of_antigua",
+                "canonical_name": "Associated State of Antigua",
+                "start": 1967,
+                "end": 1981,
                 "kind": "polity"
               }
             ]
@@ -53867,19 +53957,6 @@
                 "end": 2010,
                 "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "colony_of_barbados",
-            "canonical_name": "Colony of Barbados",
-            "start": 1627,
-            "end": 1961,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "GB"
             ]
           },
           {
@@ -64098,10 +64175,108 @@
             ],
             "details": [
               {
+                "id": "colony_of_barbados",
+                "canonical_name": "Colony of Barbados",
+                "start": 1627,
+                "end": 1961,
+                "kind": "polity"
+              },
+              {
+                "id": "trucial_states",
+                "canonical_name": "Trucial States",
+                "start": 1820,
+                "end": 1971,
+                "kind": "polity"
+              },
+              {
+                "id": "gold_coast_colony",
+                "canonical_name": "Gold Coast Colony",
+                "start": 1821,
+                "end": 1957,
+                "kind": "polity"
+              },
+              {
                 "id": "british_raj",
                 "canonical_name": "British Raj",
                 "start": 1858,
                 "end": 1947,
+                "kind": "polity"
+              },
+              {
+                "id": "aden_protectorate",
+                "canonical_name": "Aden Protectorate",
+                "start": 1869,
+                "end": 1963,
+                "kind": "polity"
+              },
+              {
+                "id": "british_north_borneo",
+                "canonical_name": "British North Borneo",
+                "start": 1882,
+                "end": 1963,
+                "kind": "polity"
+              },
+              {
+                "id": "british_somaliland",
+                "canonical_name": "British Somaliland",
+                "start": 1884,
+                "end": 1960,
+                "kind": "polity"
+              },
+              {
+                "id": "bechuanaland_protectorate",
+                "canonical_name": "Bechuanaland Protectorate",
+                "start": 1885,
+                "end": 1966,
+                "kind": "polity"
+              },
+              {
+                "id": "zanzibar_protectorate",
+                "canonical_name": "Zanzibar Protectorate",
+                "start": 1890,
+                "end": 1963,
+                "kind": "polity"
+              },
+              {
+                "id": "anglo_egyptian_sudan",
+                "canonical_name": "Anglo-Egyptian Sudan",
+                "start": 1899,
+                "end": 1956,
+                "kind": "polity"
+              },
+              {
+                "id": "orange_river_colony",
+                "canonical_name": "Orange River Colony",
+                "start": 1902,
+                "end": 1910,
+                "kind": "polity"
+              },
+              {
+                "id": "nyasaland",
+                "canonical_name": "Nyasaland",
+                "start": 1907,
+                "end": 1964,
+                "kind": "polity"
+              },
+              {
+                "id": "mandatory_iraq",
+                "canonical_name": "Mandatory Iraq",
+                "start": 1920,
+                "end": 1932,
+                "kind": "polity"
+              },
+              {
+                "id": "northern_rhodesia",
+                "canonical_name": "Northern Rhodesia",
+                "start": 1924,
+                "end": 1964,
+                "kind": "polity"
+              },
+              {
+                "id": "associated_state_of_antigua",
+                "canonical_name": "Associated State of Antigua",
+                "start": 1967,
+                "end": 1981,
                 "kind": "polity"
               }
             ]
@@ -64289,19 +64464,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "colony_of_barbados",
-            "canonical_name": "Colony of Barbados",
-            "start": 1627,
-            "end": 1961,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "GB"
-            ]
           },
           {
             "id": "principality_of_monforte",
@@ -65508,548 +65670,6 @@
         }
       ],
       "polities_by_historical_region": {
-        "western_europe": [
-          {
-            "id": "austrian_colonies",
-            "canonical_name": "Austrian colonies",
-            "start": 1715,
-            "end": 1900,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "AT"
-            ]
-          },
-          {
-            "id": "saxe_weimar_eisenach",
-            "canonical_name": "Saxe-Weimar-Eisenach",
-            "start": 1741,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "batavian_republic",
-            "canonical_name": "Batavian Republic",
-            "start": 1795,
-            "end": 1806,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "NL"
-            ]
-          },
-          {
-            "id": "united_kingdom_of_great_britain_and_ireland",
-            "canonical_name": "United Kingdom of Great Britain and Ireland",
-            "start": 1801,
-            "end": 1927,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "GB"
-            ]
-          },
-          {
-            "id": "valais_republic",
-            "canonical_name": "Valais Republic",
-            "start": 1802,
-            "end": 1810,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "CH"
-            ]
-          },
-          {
-            "id": "salm_horstmar",
-            "canonical_name": "Salm-Horstmar",
-            "start": 1803,
-            "end": 1813,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "switzerland_in_the_napoleonic_era",
-            "canonical_name": "Switzerland in the Napoleonic era",
-            "start": 1803,
-            "end": 1815,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "CH"
-            ]
-          },
-          {
-            "id": "austrian_empire",
-            "canonical_name": "Austrian Empire",
-            "start": 1804,
-            "end": 1867,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "AT"
-            ]
-          },
-          {
-            "id": "grand_duchy_of_baden",
-            "canonical_name": "Grand Duchy of Baden",
-            "start": 1806,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "grand_duchy_of_hesse",
-            "canonical_name": "Grand Duchy of Hesse",
-            "start": 1806,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "kingdom_of_bavaria",
-            "canonical_name": "Kingdom of Bavaria",
-            "start": 1806,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "kingdom_of_saxony",
-            "canonical_name": "Kingdom of Saxony",
-            "start": 1806,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "kingdom_of_wurttemberg",
-            "canonical_name": "Kingdom of Württemberg",
-            "start": 1806,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "principality_of_erfurt",
-            "canonical_name": "Principality of Erfurt",
-            "start": 1806,
-            "end": 1814,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "kingdom_of_westphalia",
-            "canonical_name": "Kingdom of Westphalia",
-            "start": 1807,
-            "end": 1813,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "sovereign_principality_of_the_united_netherlands",
-            "canonical_name": "Sovereign Principality of the United Netherlands",
-            "start": 1813,
-            "end": 1815,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "NL"
-            ]
-          },
-          {
-            "id": "electorate_of_hesse_q529605",
-            "canonical_name": "Electorate of Hesse",
-            "start": 1814,
-            "end": 1866,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "kingdom_of_hanover",
-            "canonical_name": "Kingdom of Hanover",
-            "start": 1814,
-            "end": 1866,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "principality_of_elba",
-            "canonical_name": "Principality of Elba",
-            "start": 1814,
-            "end": 1815,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "restoration_in_switzerland",
-            "canonical_name": "Restoration in Switzerland",
-            "start": 1814,
-            "end": 1848,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "CH"
-            ]
-          },
-          {
-            "id": "duchy_of_brunswick",
-            "canonical_name": "Duchy of Brunswick",
-            "start": 1815,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "grand_duchy_of_mecklenburg_schwerin",
-            "canonical_name": "Grand Duchy of Mecklenburg-Schwerin",
-            "start": 1815,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "grand_duchy_of_mecklenburg_strelitz",
-            "canonical_name": "Grand Duchy of Mecklenburg-Strelitz",
-            "start": 1815,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "province_grand_duchy_of_the_lower_rhine",
-            "canonical_name": "Province Grand Duchy of the Lower Rhine",
-            "start": 1815,
-            "end": 1822,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "principality_of_lichtenberg",
-            "canonical_name": "Principality of Lichtenberg",
-            "start": 1816,
-            "end": 1834,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "duchy_of_limburg_q376009",
-            "canonical_name": "Duchy of Limburg",
-            "start": 1839,
-            "end": 1866,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "NL"
-            ]
-          },
-          {
-            "id": "free_cities_of_menton_and_roquebrune",
-            "canonical_name": "Free Cities of Menton and Roquebrune",
-            "start": 1848,
-            "end": 1861,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "duchy_of_anhalt",
-            "canonical_name": "Duchy of Anhalt",
-            "start": 1863,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "austriahungary",
-            "canonical_name": "Austria–Hungary",
-            "start": 1867,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "AT"
-            ],
-            "details": [
-              {
-                "id": "cisleithania",
-                "canonical_name": "Cisleithania",
-                "start": 1867,
-                "end": 1918,
-                "kind": "polity",
-                "details": [
-                  {
-                    "id": "duchy_of_styria",
-                    "canonical_name": "Duchy of Styria",
-                    "start": 1180,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "margraviate_of_moravia",
-                    "canonical_name": "Margraviate of Moravia",
-                    "start": 1182,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "kingdom_of_bohemia",
-                    "canonical_name": "Kingdom of Bohemia",
-                    "start": 1198,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "duchy_of_carniola",
-                    "canonical_name": "Duchy of Carniola",
-                    "start": 1364,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "gorizia_and_gradisca",
-                    "canonical_name": "Gorizia and Gradisca",
-                    "start": 1754,
-                    "end": 1919,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "kingdom_of_galicia_and_lodomeria",
-                    "canonical_name": "Kingdom of Galicia and Lodomeria",
-                    "start": 1772,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "austrian_littoral",
-                    "canonical_name": "Austrian Littoral",
-                    "start": 1813,
-                    "end": 1919,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "grand_duchy_of_cracow",
-                    "canonical_name": "Grand Duchy of Cracow",
-                    "start": 1846,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "duchy_of_bukovina",
-                    "canonical_name": "Duchy of Bukovina",
-                    "start": 1849,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "duchy_of_salzburg",
-                    "canonical_name": "Duchy of Salzburg",
-                    "start": 1849,
-                    "end": 1918,
-                    "kind": "polity"
-                  }
-                ]
-              },
-              {
-                "id": "lands_of_the_crown_of_saint_stephen",
-                "canonical_name": "Lands of the Crown of Saint Stephen",
-                "start": 1867,
-                "end": 1918,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "north_german_confederation",
-            "canonical_name": "North German Confederation",
-            "start": 1867,
-            "end": 1870,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "aden_protectorate",
-            "canonical_name": "Aden Protectorate",
-            "start": 1869,
-            "end": 1963,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "GB"
-            ]
-          },
-          {
-            "id": "german_reich",
-            "canonical_name": "German Reich",
-            "start": 1871,
-            "end": 1949,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ],
-            "details": [
-              {
-                "id": "german_empire",
-                "canonical_name": "German Empire",
-                "start": 1871,
-                "end": 1918,
-                "kind": "polity"
-              },
-              {
-                "id": "weimar_republic",
-                "canonical_name": "Weimar Republic",
-                "start": 1918,
-                "end": 1933,
-                "kind": "polity"
-              },
-              {
-                "id": "nazi_germany",
-                "canonical_name": "Nazi Germany",
-                "start": 1933,
-                "end": 1945,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "german_colonial_empire",
-            "canonical_name": "German colonial empire",
-            "start": 1884,
-            "end": 1920,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          }
-        ],
         "unclassified": [
           {
             "id": "kumul_khanate",
@@ -68956,20 +68576,6 @@
             ]
           },
           {
-            "id": "british_north_borneo",
-            "canonical_name": "British North Borneo",
-            "start": 1882,
-            "end": 1963,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "GB",
-              "MY"
-            ]
-          },
-          {
             "id": "zheltuga_republic",
             "canonical_name": "Zheltuga Republic",
             "start": 1883,
@@ -69307,20 +68913,6 @@
             ]
           },
           {
-            "id": "trucial_states",
-            "canonical_name": "Trucial States",
-            "start": 1820,
-            "end": 1971,
-            "curated": true,
-            "linked_era_id": "asia_industrial_imperial_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "AE",
-              "GB"
-            ]
-          },
-          {
             "id": "wahidi_balhaf",
             "canonical_name": "Wahidi Balhaf",
             "start": 1830,
@@ -69581,6 +69173,522 @@
             "primary_historical_region": "horn_of_africa",
             "present_countries": [
               "SO"
+            ]
+          }
+        ],
+        "western_europe": [
+          {
+            "id": "austrian_colonies",
+            "canonical_name": "Austrian colonies",
+            "start": 1715,
+            "end": 1900,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "AT"
+            ]
+          },
+          {
+            "id": "saxe_weimar_eisenach",
+            "canonical_name": "Saxe-Weimar-Eisenach",
+            "start": 1741,
+            "end": 1918,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "batavian_republic",
+            "canonical_name": "Batavian Republic",
+            "start": 1795,
+            "end": 1806,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "NL"
+            ]
+          },
+          {
+            "id": "valais_republic",
+            "canonical_name": "Valais Republic",
+            "start": 1802,
+            "end": 1810,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "CH"
+            ]
+          },
+          {
+            "id": "salm_horstmar",
+            "canonical_name": "Salm-Horstmar",
+            "start": 1803,
+            "end": 1813,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "switzerland_in_the_napoleonic_era",
+            "canonical_name": "Switzerland in the Napoleonic era",
+            "start": 1803,
+            "end": 1815,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "CH"
+            ]
+          },
+          {
+            "id": "austrian_empire",
+            "canonical_name": "Austrian Empire",
+            "start": 1804,
+            "end": 1867,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "AT"
+            ]
+          },
+          {
+            "id": "grand_duchy_of_baden",
+            "canonical_name": "Grand Duchy of Baden",
+            "start": 1806,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "grand_duchy_of_hesse",
+            "canonical_name": "Grand Duchy of Hesse",
+            "start": 1806,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "kingdom_of_bavaria",
+            "canonical_name": "Kingdom of Bavaria",
+            "start": 1806,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "kingdom_of_saxony",
+            "canonical_name": "Kingdom of Saxony",
+            "start": 1806,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "kingdom_of_wurttemberg",
+            "canonical_name": "Kingdom of Württemberg",
+            "start": 1806,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "principality_of_erfurt",
+            "canonical_name": "Principality of Erfurt",
+            "start": 1806,
+            "end": 1814,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "kingdom_of_westphalia",
+            "canonical_name": "Kingdom of Westphalia",
+            "start": 1807,
+            "end": 1813,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "sovereign_principality_of_the_united_netherlands",
+            "canonical_name": "Sovereign Principality of the United Netherlands",
+            "start": 1813,
+            "end": 1815,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "NL"
+            ]
+          },
+          {
+            "id": "electorate_of_hesse_q529605",
+            "canonical_name": "Electorate of Hesse",
+            "start": 1814,
+            "end": 1866,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "kingdom_of_hanover",
+            "canonical_name": "Kingdom of Hanover",
+            "start": 1814,
+            "end": 1866,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "principality_of_elba",
+            "canonical_name": "Principality of Elba",
+            "start": 1814,
+            "end": 1815,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "FR"
+            ]
+          },
+          {
+            "id": "restoration_in_switzerland",
+            "canonical_name": "Restoration in Switzerland",
+            "start": 1814,
+            "end": 1848,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "CH"
+            ]
+          },
+          {
+            "id": "duchy_of_brunswick",
+            "canonical_name": "Duchy of Brunswick",
+            "start": 1815,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "grand_duchy_of_mecklenburg_schwerin",
+            "canonical_name": "Grand Duchy of Mecklenburg-Schwerin",
+            "start": 1815,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "grand_duchy_of_mecklenburg_strelitz",
+            "canonical_name": "Grand Duchy of Mecklenburg-Strelitz",
+            "start": 1815,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "province_grand_duchy_of_the_lower_rhine",
+            "canonical_name": "Province Grand Duchy of the Lower Rhine",
+            "start": 1815,
+            "end": 1822,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "principality_of_lichtenberg",
+            "canonical_name": "Principality of Lichtenberg",
+            "start": 1816,
+            "end": 1834,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "duchy_of_limburg_q376009",
+            "canonical_name": "Duchy of Limburg",
+            "start": 1839,
+            "end": 1866,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "NL"
+            ]
+          },
+          {
+            "id": "free_cities_of_menton_and_roquebrune",
+            "canonical_name": "Free Cities of Menton and Roquebrune",
+            "start": 1848,
+            "end": 1861,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "FR"
+            ]
+          },
+          {
+            "id": "duchy_of_anhalt",
+            "canonical_name": "Duchy of Anhalt",
+            "start": 1863,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "austriahungary",
+            "canonical_name": "Austria–Hungary",
+            "start": 1867,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "AT"
+            ],
+            "details": [
+              {
+                "id": "cisleithania",
+                "canonical_name": "Cisleithania",
+                "start": 1867,
+                "end": 1918,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "duchy_of_styria",
+                    "canonical_name": "Duchy of Styria",
+                    "start": 1180,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "margraviate_of_moravia",
+                    "canonical_name": "Margraviate of Moravia",
+                    "start": 1182,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "kingdom_of_bohemia",
+                    "canonical_name": "Kingdom of Bohemia",
+                    "start": 1198,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "duchy_of_carniola",
+                    "canonical_name": "Duchy of Carniola",
+                    "start": 1364,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "gorizia_and_gradisca",
+                    "canonical_name": "Gorizia and Gradisca",
+                    "start": 1754,
+                    "end": 1919,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "kingdom_of_galicia_and_lodomeria",
+                    "canonical_name": "Kingdom of Galicia and Lodomeria",
+                    "start": 1772,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "austrian_littoral",
+                    "canonical_name": "Austrian Littoral",
+                    "start": 1813,
+                    "end": 1919,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "grand_duchy_of_cracow",
+                    "canonical_name": "Grand Duchy of Cracow",
+                    "start": 1846,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "duchy_of_bukovina",
+                    "canonical_name": "Duchy of Bukovina",
+                    "start": 1849,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "duchy_of_salzburg",
+                    "canonical_name": "Duchy of Salzburg",
+                    "start": 1849,
+                    "end": 1918,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "lands_of_the_crown_of_saint_stephen",
+                "canonical_name": "Lands of the Crown of Saint Stephen",
+                "start": 1867,
+                "end": 1918,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "north_german_confederation",
+            "canonical_name": "North German Confederation",
+            "start": 1867,
+            "end": 1870,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "german_reich",
+            "canonical_name": "German Reich",
+            "start": 1871,
+            "end": 1949,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ],
+            "details": [
+              {
+                "id": "german_empire",
+                "canonical_name": "German Empire",
+                "start": 1871,
+                "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "weimar_republic",
+                "canonical_name": "Weimar Republic",
+                "start": 1918,
+                "end": 1933,
+                "kind": "polity"
+              },
+              {
+                "id": "nazi_germany",
+                "canonical_name": "Nazi Germany",
+                "start": 1933,
+                "end": 1945,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "german_colonial_empire",
+            "canonical_name": "German colonial empire",
+            "start": 1884,
+            "end": 1920,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
             ]
           }
         ],
@@ -70145,20 +70253,6 @@
             ]
           },
           {
-            "id": "gold_coast_colony",
-            "canonical_name": "Gold Coast Colony",
-            "start": 1821,
-            "end": 1957,
-            "curated": true,
-            "linked_era_id": "africa_industrial_imperial_world_era",
-            "primary_continent": "africa",
-            "primary_historical_region": "west_africa",
-            "present_countries": [
-              "GB",
-              "GH"
-            ]
-          },
-          {
             "id": "empire_peul",
             "canonical_name": "Empire Peul",
             "start": 1836,
@@ -70677,20 +70771,6 @@
             "primary_continent": "africa",
             "primary_historical_region": "southern_africa",
             "present_countries": [
-              "ZA"
-            ]
-          },
-          {
-            "id": "orange_river_colony",
-            "canonical_name": "Orange River Colony",
-            "start": 1902,
-            "end": 1910,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "GB",
               "ZA"
             ]
           }
@@ -72010,1213 +72090,6 @@
         ]
       },
       "polities_by_continent": {
-        "europe": [
-          {
-            "id": "austrian_colonies",
-            "canonical_name": "Austrian colonies",
-            "start": 1715,
-            "end": 1900,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "AT"
-            ]
-          },
-          {
-            "id": "saxe_weimar_eisenach",
-            "canonical_name": "Saxe-Weimar-Eisenach",
-            "start": 1741,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "batavian_republic",
-            "canonical_name": "Batavian Republic",
-            "start": 1795,
-            "end": 1806,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "NL"
-            ]
-          },
-          {
-            "id": "ligurian_republic",
-            "canonical_name": "Ligurian Republic",
-            "start": 1797,
-            "end": 1805,
-            "curated": true,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "helvetic_republic",
-            "canonical_name": "Helvetic Republic",
-            "start": 1798,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "septinsular_republic",
-            "canonical_name": "Septinsular Republic",
-            "start": 1800,
-            "end": 1807,
-            "curated": true,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "GR"
-            ]
-          },
-          {
-            "id": "subalpine_republic",
-            "canonical_name": "Subalpine Republic",
-            "start": 1800,
-            "end": 1802,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "batavian_commonwealth",
-            "canonical_name": "Batavian Commonwealth",
-            "start": 1801,
-            "end": 1806,
-            "curated": true,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_of_etruria",
-            "canonical_name": "Kingdom of Etruria",
-            "start": 1801,
-            "end": 1807,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "united_kingdom_of_great_britain_and_ireland",
-            "canonical_name": "United Kingdom of Great Britain and Ireland",
-            "start": 1801,
-            "end": 1927,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "GB"
-            ]
-          },
-          {
-            "id": "italian_republic",
-            "canonical_name": "Italian Republic",
-            "start": 1802,
-            "end": 1805,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "principality_of_salm_q19837669",
-            "canonical_name": "Principality of Salm",
-            "start": 1802,
-            "end": 1811,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "valais_republic",
-            "canonical_name": "Valais Republic",
-            "start": 1802,
-            "end": 1810,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "CH"
-            ]
-          },
-          {
-            "id": "electorate_of_hesse_q100594799",
-            "canonical_name": "Electorate of Hesse",
-            "start": 1803,
-            "end": 1807,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "salm_horstmar",
-            "canonical_name": "Salm-Horstmar",
-            "start": 1803,
-            "end": 1813,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "switzerland_in_the_napoleonic_era",
-            "canonical_name": "Switzerland in the Napoleonic era",
-            "start": 1803,
-            "end": 1815,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "CH"
-            ]
-          },
-          {
-            "id": "austrian_empire",
-            "canonical_name": "Austrian Empire",
-            "start": 1804,
-            "end": 1867,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "AT"
-            ]
-          },
-          {
-            "id": "revolutionary_serbia",
-            "canonical_name": "Revolutionary Serbia",
-            "start": 1804,
-            "end": 1813,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "balkans",
-            "present_countries": [
-              "RS"
-            ]
-          },
-          {
-            "id": "kingdom_of_italy_q223936",
-            "canonical_name": "Kingdom of Italy",
-            "start": 1805,
-            "end": 1814,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "duchy_of_nassau",
-            "canonical_name": "Duchy of Nassau",
-            "start": 1806,
-            "end": 1866,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "grand_duchy_of_baden",
-            "canonical_name": "Grand Duchy of Baden",
-            "start": 1806,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "grand_duchy_of_berg",
-            "canonical_name": "Grand Duchy of Berg",
-            "start": 1806,
-            "end": 1813,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "grand_duchy_of_hesse",
-            "canonical_name": "Grand Duchy of Hesse",
-            "start": 1806,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "grand_duchy_of_wurzburg",
-            "canonical_name": "Grand Duchy of Würzburg",
-            "start": 1806,
-            "end": 1814,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_of_bavaria",
-            "canonical_name": "Kingdom of Bavaria",
-            "start": 1806,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "kingdom_of_holland",
-            "canonical_name": "Kingdom of Holland",
-            "start": 1806,
-            "end": 1810,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_of_saxony",
-            "canonical_name": "Kingdom of Saxony",
-            "start": 1806,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "kingdom_of_wurttemberg",
-            "canonical_name": "Kingdom of Württemberg",
-            "start": 1806,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "principality_of_erfurt",
-            "canonical_name": "Principality of Erfurt",
-            "start": 1806,
-            "end": 1814,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "principality_of_leyen",
-            "canonical_name": "Principality of Leyen",
-            "start": 1806,
-            "end": 1814,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_ponte_corvo",
-            "canonical_name": "Principality of Ponte Corvo",
-            "start": 1806,
-            "end": 1815,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_reuss_gera",
-            "canonical_name": "Principality of Reuss-Gera",
-            "start": 1806,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "state_of_the_prince_primate",
-            "canonical_name": "State of the Prince Primate",
-            "start": 1806,
-            "end": 1810,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "free_city_of_danzig_q901974",
-            "canonical_name": "Free City of Danzig",
-            "start": 1807,
-            "end": 1814,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
-            "id": "kingdom_of_westphalia",
-            "canonical_name": "Kingdom of Westphalia",
-            "start": 1807,
-            "end": 1813,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "grand_duchy_of_finland",
-            "canonical_name": "Grand Duchy of Finland",
-            "start": 1809,
-            "end": 1917,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "northern_europe",
-            "present_countries": [
-              "FI"
-            ]
-          },
-          {
-            "id": "illyrian_provinces",
-            "canonical_name": "Illyrian Provinces",
-            "start": 1809,
-            "end": 1816,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "columbia_district",
-            "canonical_name": "Columbia District",
-            "start": 1810,
-            "end": 1858,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "sovereign_principality_of_the_united_netherlands",
-            "canonical_name": "Sovereign Principality of the United Netherlands",
-            "start": 1813,
-            "end": 1815,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "NL"
-            ]
-          },
-          {
-            "id": "electorate_of_hesse_q529605",
-            "canonical_name": "Electorate of Hesse",
-            "start": 1814,
-            "end": 1866,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "genoese_republic",
-            "canonical_name": "Genoese Republic",
-            "start": 1814,
-            "end": 1815,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "kingdom_of_hanover",
-            "canonical_name": "Kingdom of Hanover",
-            "start": 1814,
-            "end": 1866,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "principality_of_elba",
-            "canonical_name": "Principality of Elba",
-            "start": 1814,
-            "end": 1815,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "FR"
-            ]
-          },
-          {
-            "id": "restoration_in_switzerland",
-            "canonical_name": "Restoration in Switzerland",
-            "start": 1814,
-            "end": 1848,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "CH"
-            ]
-          },
-          {
-            "id": "union_between_sweden_and_norway",
-            "canonical_name": "Union between Sweden and Norway",
-            "start": 1814,
-            "end": 1905,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "northern_europe",
-            "present_countries": [
-              "SE"
-            ]
-          },
-          {
-            "id": "unitary_state",
-            "canonical_name": "Unitary State",
-            "start": 1814,
-            "end": 1864,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "northern_europe",
-            "present_countries": [
-              "DK"
-            ]
-          },
-          {
-            "id": "duchy_of_brunswick",
-            "canonical_name": "Duchy of Brunswick",
-            "start": 1815,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "duchy_of_genoa",
-            "canonical_name": "Duchy of Genoa",
-            "start": 1815,
-            "end": 1848,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_lucca",
-            "canonical_name": "Duchy of Lucca",
-            "start": 1815,
-            "end": 1847,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "free_city_of_krakow",
-            "canonical_name": "Free City of Kraków",
-            "start": 1815,
-            "end": 1846,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
-            "id": "grand_duchy_of_mecklenburg_schwerin",
-            "canonical_name": "Grand Duchy of Mecklenburg-Schwerin",
-            "start": 1815,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "grand_duchy_of_mecklenburg_strelitz",
-            "canonical_name": "Grand Duchy of Mecklenburg-Strelitz",
-            "start": 1815,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "grand_duchy_of_posen",
-            "canonical_name": "Grand Duchy of Posen",
-            "start": 1815,
-            "end": 1848,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
-            "id": "kingdom_of_lombardyvenetia",
-            "canonical_name": "Kingdom of Lombardy–Venetia",
-            "start": 1815,
-            "end": 1866,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_serbia_q684030",
-            "canonical_name": "Principality of Serbia",
-            "start": 1815,
-            "end": 1882,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "balkans",
-            "present_countries": [
-              "RS"
-            ]
-          },
-          {
-            "id": "province_grand_duchy_of_the_lower_rhine",
-            "canonical_name": "Province Grand Duchy of the Lower Rhine",
-            "start": 1815,
-            "end": 1822,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "united_states_of_the_ionian_islands",
-            "canonical_name": "United States of the Ionian Islands",
-            "start": 1815,
-            "end": 1864,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "GR"
-            ]
-          },
-          {
-            "id": "kingdom_of_illyria",
-            "canonical_name": "Kingdom of Illyria",
-            "start": 1816,
-            "end": 1849,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "balkans",
-            "present_countries": [
-              "SI"
-            ]
-          },
-          {
-            "id": "principality_of_lichtenberg",
-            "canonical_name": "Principality of Lichtenberg",
-            "start": 1816,
-            "end": 1834,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "military_political_system_of_samos",
-            "canonical_name": "Military-Political System of Samos",
-            "start": 1821,
-            "end": 1834,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "GR"
-            ]
-          },
-          {
-            "id": "duchy_saxony_gotha",
-            "canonical_name": "Duchy Saxony-Gotha",
-            "start": 1826,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "saxe_coburg_and_gotha",
-            "canonical_name": "Saxe-Coburg and Gotha",
-            "start": 1826,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_of_poland_q11750128",
-            "canonical_name": "Kingdom of Poland",
-            "start": 1830,
-            "end": 1831,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "PL"
-            ]
-          },
-          {
-            "id": "duchy_of_limburg_q376009",
-            "canonical_name": "Duchy of Limburg",
-            "start": 1839,
-            "end": 1866,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "NL"
-            ]
-          },
-          {
-            "id": "german_empire_of_1848_1849",
-            "canonical_name": "German Empire of 1848/1849",
-            "start": 1848,
-            "end": 1849,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "republic_of_san_marco",
-            "canonical_name": "Republic of San Marco",
-            "start": 1848,
-            "end": 1849,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "erfurt_union",
-            "canonical_name": "Erfurt Union",
-            "start": 1849,
-            "end": 1850,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "waldeck_pyrmont",
-            "canonical_name": "Waldeck-Pyrmont",
-            "start": 1849,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_montenegro",
-            "canonical_name": "Principality of Montenegro",
-            "start": 1852,
-            "end": 1910,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "balkans",
-            "present_countries": [
-              "ME"
-            ]
-          },
-          {
-            "id": "united_principalities_of_moldavia_and_wallachia",
-            "canonical_name": "United Principalities of Moldavia and Wallachia",
-            "start": 1859,
-            "end": 1881,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "united_provinces_of_central_italy",
-            "canonical_name": "United Provinces of Central Italy",
-            "start": 1859,
-            "end": 1860,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "kingdom_of_italy_q172579",
-            "canonical_name": "Kingdom of Italy",
-            "start": 1861,
-            "end": 1946,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ],
-            "details": [
-              {
-                "id": "fascist_italy",
-                "canonical_name": "Fascist Italy",
-                "start": 1922,
-                "end": 1943,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "duchy_of_anhalt",
-            "canonical_name": "Duchy of Anhalt",
-            "start": 1863,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "austriahungary",
-            "canonical_name": "Austria–Hungary",
-            "start": 1867,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "AT"
-            ],
-            "details": [
-              {
-                "id": "cisleithania",
-                "canonical_name": "Cisleithania",
-                "start": 1867,
-                "end": 1918,
-                "kind": "polity",
-                "details": [
-                  {
-                    "id": "duchy_of_styria",
-                    "canonical_name": "Duchy of Styria",
-                    "start": 1180,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "margraviate_of_moravia",
-                    "canonical_name": "Margraviate of Moravia",
-                    "start": 1182,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "kingdom_of_bohemia",
-                    "canonical_name": "Kingdom of Bohemia",
-                    "start": 1198,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "duchy_of_carniola",
-                    "canonical_name": "Duchy of Carniola",
-                    "start": 1364,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "gorizia_and_gradisca",
-                    "canonical_name": "Gorizia and Gradisca",
-                    "start": 1754,
-                    "end": 1919,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "kingdom_of_galicia_and_lodomeria",
-                    "canonical_name": "Kingdom of Galicia and Lodomeria",
-                    "start": 1772,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "austrian_littoral",
-                    "canonical_name": "Austrian Littoral",
-                    "start": 1813,
-                    "end": 1919,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "grand_duchy_of_cracow",
-                    "canonical_name": "Grand Duchy of Cracow",
-                    "start": 1846,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "duchy_of_bukovina",
-                    "canonical_name": "Duchy of Bukovina",
-                    "start": 1849,
-                    "end": 1918,
-                    "kind": "polity"
-                  },
-                  {
-                    "id": "duchy_of_salzburg",
-                    "canonical_name": "Duchy of Salzburg",
-                    "start": 1849,
-                    "end": 1918,
-                    "kind": "polity"
-                  }
-                ]
-              },
-              {
-                "id": "lands_of_the_crown_of_saint_stephen",
-                "canonical_name": "Lands of the Crown of Saint Stephen",
-                "start": 1867,
-                "end": 1918,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "kingdom_of_hungary_q25395037",
-            "canonical_name": "Kingdom of Hungary (1867–1918)",
-            "start": 1867,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "HU"
-            ]
-          },
-          {
-            "id": "north_german_confederation",
-            "canonical_name": "North German Confederation",
-            "start": 1867,
-            "end": 1870,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "kingdom_of_croatia_slavonia",
-            "canonical_name": "Kingdom of Croatia-Slavonia",
-            "start": 1868,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "balkans",
-            "present_countries": [
-              "HR"
-            ]
-          },
-          {
-            "id": "aden_protectorate",
-            "canonical_name": "Aden Protectorate",
-            "start": 1869,
-            "end": 1963,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "GB"
-            ]
-          },
-          {
-            "id": "german_reich",
-            "canonical_name": "German Reich",
-            "start": 1871,
-            "end": 1949,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ],
-            "details": [
-              {
-                "id": "german_empire",
-                "canonical_name": "German Empire",
-                "start": 1871,
-                "end": 1918,
-                "kind": "polity"
-              },
-              {
-                "id": "weimar_republic",
-                "canonical_name": "Weimar Republic",
-                "start": 1918,
-                "end": 1933,
-                "kind": "polity"
-              },
-              {
-                "id": "nazi_germany",
-                "canonical_name": "Nazi Germany",
-                "start": 1933,
-                "end": 1945,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "reign_of_amadeo_i_of_spain",
-            "canonical_name": "reign of Amadeo I of Spain",
-            "start": 1871,
-            "end": 1873,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "ES"
-            ]
-          },
-          {
-            "id": "eastern_rumelia",
-            "canonical_name": "Eastern Rumelia",
-            "start": 1878,
-            "end": 1908,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "BG"
-            ]
-          },
-          {
-            "id": "romanian_old_kingdom",
-            "canonical_name": "Romanian Old Kingdom",
-            "start": 1881,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "RO"
-            ]
-          },
-          {
-            "id": "kingdom_of_serbia_q241748",
-            "canonical_name": "Kingdom of Serbia",
-            "start": 1882,
-            "end": 1918,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "balkans",
-            "present_countries": [
-              "RS"
-            ]
-          },
-          {
-            "id": "german_colonial_empire",
-            "canonical_name": "German colonial empire",
-            "start": 1884,
-            "end": 1920,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "cretan_state",
-            "canonical_name": "Cretan State",
-            "start": 1898,
-            "end": 1913,
-            "curated": true,
-            "linked_era_id": "europe_industrial_imperial_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "GR"
-            ]
-          },
-          {
-            "id": "kingdom_of_montenegro",
-            "canonical_name": "Kingdom of Montenegro",
-            "start": 1910,
-            "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "balkans",
-            "present_countries": [
-              "ME"
-            ]
-          },
-          {
-            "id": "uryankhay_republic",
-            "canonical_name": "Uryankhay Republic",
-            "start": 1911,
-            "end": 1914,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "eastern_europe",
-            "present_countries": [
-              "RU"
-            ]
-          }
-        ],
         "asia": [
           {
             "id": "bahawalpur_state",
@@ -75402,20 +74275,6 @@
             ]
           },
           {
-            "id": "trucial_states",
-            "canonical_name": "Trucial States",
-            "start": 1820,
-            "end": 1971,
-            "curated": true,
-            "linked_era_id": "asia_industrial_imperial_world_era",
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "AE",
-              "GB"
-            ]
-          },
-          {
             "id": "chota_nagpur_states",
             "canonical_name": "Chota Nagpur States",
             "start": 1821,
@@ -75864,20 +74723,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "IN"
-            ]
-          },
-          {
-            "id": "british_north_borneo",
-            "canonical_name": "British North Borneo",
-            "start": 1882,
-            "end": 1963,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "east_asia",
-            "present_countries": [
-              "GB",
-              "MY"
             ]
           },
           {
@@ -76763,20 +75608,6 @@
             ]
           },
           {
-            "id": "gold_coast_colony",
-            "canonical_name": "Gold Coast Colony",
-            "start": 1821,
-            "end": 1957,
-            "curated": true,
-            "linked_era_id": "africa_industrial_imperial_world_era",
-            "primary_continent": "africa",
-            "primary_historical_region": "west_africa",
-            "present_countries": [
-              "GB",
-              "GH"
-            ]
-          },
-          {
             "id": "pre_colonial_basutoland",
             "canonical_name": "Pre-Colonial Basutoland",
             "start": 1822,
@@ -77655,20 +76486,6 @@
             ]
           },
           {
-            "id": "orange_river_colony",
-            "canonical_name": "Orange River Colony",
-            "start": 1902,
-            "end": 1910,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "GB",
-              "ZA"
-            ]
-          },
-          {
             "id": "colony_and_protectorate_of_southern_nigeria",
             "canonical_name": "Colony and Protectorate of Southern Nigeria",
             "start": 1906,
@@ -77679,6 +76496,1187 @@
             "primary_historical_region": "west_africa",
             "present_countries": [
               "NG"
+            ]
+          }
+        ],
+        "europe": [
+          {
+            "id": "austrian_colonies",
+            "canonical_name": "Austrian colonies",
+            "start": 1715,
+            "end": 1900,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "AT"
+            ]
+          },
+          {
+            "id": "saxe_weimar_eisenach",
+            "canonical_name": "Saxe-Weimar-Eisenach",
+            "start": 1741,
+            "end": 1918,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "batavian_republic",
+            "canonical_name": "Batavian Republic",
+            "start": 1795,
+            "end": 1806,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "NL"
+            ]
+          },
+          {
+            "id": "ligurian_republic",
+            "canonical_name": "Ligurian Republic",
+            "start": 1797,
+            "end": 1805,
+            "curated": true,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "helvetic_republic",
+            "canonical_name": "Helvetic Republic",
+            "start": 1798,
+            "end": 1803,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "septinsular_republic",
+            "canonical_name": "Septinsular Republic",
+            "start": 1800,
+            "end": 1807,
+            "curated": true,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "GR"
+            ]
+          },
+          {
+            "id": "subalpine_republic",
+            "canonical_name": "Subalpine Republic",
+            "start": 1800,
+            "end": 1802,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "IT"
+            ]
+          },
+          {
+            "id": "batavian_commonwealth",
+            "canonical_name": "Batavian Commonwealth",
+            "start": 1801,
+            "end": 1806,
+            "curated": true,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "kingdom_of_etruria",
+            "canonical_name": "Kingdom of Etruria",
+            "start": 1801,
+            "end": 1807,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "IT"
+            ]
+          },
+          {
+            "id": "italian_republic",
+            "canonical_name": "Italian Republic",
+            "start": 1802,
+            "end": 1805,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "IT"
+            ]
+          },
+          {
+            "id": "principality_of_salm_q19837669",
+            "canonical_name": "Principality of Salm",
+            "start": 1802,
+            "end": 1811,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "valais_republic",
+            "canonical_name": "Valais Republic",
+            "start": 1802,
+            "end": 1810,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "CH"
+            ]
+          },
+          {
+            "id": "electorate_of_hesse_q100594799",
+            "canonical_name": "Electorate of Hesse",
+            "start": 1803,
+            "end": 1807,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "salm_horstmar",
+            "canonical_name": "Salm-Horstmar",
+            "start": 1803,
+            "end": 1813,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "switzerland_in_the_napoleonic_era",
+            "canonical_name": "Switzerland in the Napoleonic era",
+            "start": 1803,
+            "end": 1815,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "CH"
+            ]
+          },
+          {
+            "id": "austrian_empire",
+            "canonical_name": "Austrian Empire",
+            "start": 1804,
+            "end": 1867,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "AT"
+            ]
+          },
+          {
+            "id": "revolutionary_serbia",
+            "canonical_name": "Revolutionary Serbia",
+            "start": 1804,
+            "end": 1813,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "balkans",
+            "present_countries": [
+              "RS"
+            ]
+          },
+          {
+            "id": "kingdom_of_italy_q223936",
+            "canonical_name": "Kingdom of Italy",
+            "start": 1805,
+            "end": 1814,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "IT"
+            ]
+          },
+          {
+            "id": "duchy_of_nassau",
+            "canonical_name": "Duchy of Nassau",
+            "start": 1806,
+            "end": 1866,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "grand_duchy_of_baden",
+            "canonical_name": "Grand Duchy of Baden",
+            "start": 1806,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "grand_duchy_of_berg",
+            "canonical_name": "Grand Duchy of Berg",
+            "start": 1806,
+            "end": 1813,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "grand_duchy_of_hesse",
+            "canonical_name": "Grand Duchy of Hesse",
+            "start": 1806,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "grand_duchy_of_wurzburg",
+            "canonical_name": "Grand Duchy of Würzburg",
+            "start": 1806,
+            "end": 1814,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "kingdom_of_bavaria",
+            "canonical_name": "Kingdom of Bavaria",
+            "start": 1806,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "kingdom_of_holland",
+            "canonical_name": "Kingdom of Holland",
+            "start": 1806,
+            "end": 1810,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "kingdom_of_saxony",
+            "canonical_name": "Kingdom of Saxony",
+            "start": 1806,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "kingdom_of_wurttemberg",
+            "canonical_name": "Kingdom of Württemberg",
+            "start": 1806,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "principality_of_erfurt",
+            "canonical_name": "Principality of Erfurt",
+            "start": 1806,
+            "end": 1814,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "principality_of_leyen",
+            "canonical_name": "Principality of Leyen",
+            "start": 1806,
+            "end": 1814,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "principality_of_ponte_corvo",
+            "canonical_name": "Principality of Ponte Corvo",
+            "start": 1806,
+            "end": 1815,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "principality_of_reuss_gera",
+            "canonical_name": "Principality of Reuss-Gera",
+            "start": 1806,
+            "end": 1918,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "state_of_the_prince_primate",
+            "canonical_name": "State of the Prince Primate",
+            "start": 1806,
+            "end": 1810,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "free_city_of_danzig_q901974",
+            "canonical_name": "Free City of Danzig",
+            "start": 1807,
+            "end": 1814,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "eastern_europe",
+            "present_countries": [
+              "PL"
+            ]
+          },
+          {
+            "id": "kingdom_of_westphalia",
+            "canonical_name": "Kingdom of Westphalia",
+            "start": 1807,
+            "end": 1813,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "grand_duchy_of_finland",
+            "canonical_name": "Grand Duchy of Finland",
+            "start": 1809,
+            "end": 1917,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "northern_europe",
+            "present_countries": [
+              "FI"
+            ]
+          },
+          {
+            "id": "illyrian_provinces",
+            "canonical_name": "Illyrian Provinces",
+            "start": 1809,
+            "end": 1816,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "columbia_district",
+            "canonical_name": "Columbia District",
+            "start": 1810,
+            "end": 1858,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "sovereign_principality_of_the_united_netherlands",
+            "canonical_name": "Sovereign Principality of the United Netherlands",
+            "start": 1813,
+            "end": 1815,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "NL"
+            ]
+          },
+          {
+            "id": "electorate_of_hesse_q529605",
+            "canonical_name": "Electorate of Hesse",
+            "start": 1814,
+            "end": 1866,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "genoese_republic",
+            "canonical_name": "Genoese Republic",
+            "start": 1814,
+            "end": 1815,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "IT"
+            ]
+          },
+          {
+            "id": "kingdom_of_hanover",
+            "canonical_name": "Kingdom of Hanover",
+            "start": 1814,
+            "end": 1866,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "principality_of_elba",
+            "canonical_name": "Principality of Elba",
+            "start": 1814,
+            "end": 1815,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "FR"
+            ]
+          },
+          {
+            "id": "restoration_in_switzerland",
+            "canonical_name": "Restoration in Switzerland",
+            "start": 1814,
+            "end": 1848,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "CH"
+            ]
+          },
+          {
+            "id": "union_between_sweden_and_norway",
+            "canonical_name": "Union between Sweden and Norway",
+            "start": 1814,
+            "end": 1905,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "northern_europe",
+            "present_countries": [
+              "SE"
+            ]
+          },
+          {
+            "id": "unitary_state",
+            "canonical_name": "Unitary State",
+            "start": 1814,
+            "end": 1864,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "northern_europe",
+            "present_countries": [
+              "DK"
+            ]
+          },
+          {
+            "id": "duchy_of_brunswick",
+            "canonical_name": "Duchy of Brunswick",
+            "start": 1815,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "duchy_of_genoa",
+            "canonical_name": "Duchy of Genoa",
+            "start": 1815,
+            "end": 1848,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "duchy_of_lucca",
+            "canonical_name": "Duchy of Lucca",
+            "start": 1815,
+            "end": 1847,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "IT"
+            ]
+          },
+          {
+            "id": "free_city_of_krakow",
+            "canonical_name": "Free City of Kraków",
+            "start": 1815,
+            "end": 1846,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "eastern_europe",
+            "present_countries": [
+              "PL"
+            ]
+          },
+          {
+            "id": "grand_duchy_of_mecklenburg_schwerin",
+            "canonical_name": "Grand Duchy of Mecklenburg-Schwerin",
+            "start": 1815,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "grand_duchy_of_mecklenburg_strelitz",
+            "canonical_name": "Grand Duchy of Mecklenburg-Strelitz",
+            "start": 1815,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "grand_duchy_of_posen",
+            "canonical_name": "Grand Duchy of Posen",
+            "start": 1815,
+            "end": 1848,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "eastern_europe",
+            "present_countries": [
+              "PL"
+            ]
+          },
+          {
+            "id": "kingdom_of_lombardyvenetia",
+            "canonical_name": "Kingdom of Lombardy–Venetia",
+            "start": 1815,
+            "end": 1866,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "principality_of_serbia_q684030",
+            "canonical_name": "Principality of Serbia",
+            "start": 1815,
+            "end": 1882,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "balkans",
+            "present_countries": [
+              "RS"
+            ]
+          },
+          {
+            "id": "province_grand_duchy_of_the_lower_rhine",
+            "canonical_name": "Province Grand Duchy of the Lower Rhine",
+            "start": 1815,
+            "end": 1822,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "united_states_of_the_ionian_islands",
+            "canonical_name": "United States of the Ionian Islands",
+            "start": 1815,
+            "end": 1864,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "GR"
+            ]
+          },
+          {
+            "id": "kingdom_of_illyria",
+            "canonical_name": "Kingdom of Illyria",
+            "start": 1816,
+            "end": 1849,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "balkans",
+            "present_countries": [
+              "SI"
+            ]
+          },
+          {
+            "id": "principality_of_lichtenberg",
+            "canonical_name": "Principality of Lichtenberg",
+            "start": 1816,
+            "end": 1834,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "military_political_system_of_samos",
+            "canonical_name": "Military-Political System of Samos",
+            "start": 1821,
+            "end": 1834,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "GR"
+            ]
+          },
+          {
+            "id": "duchy_saxony_gotha",
+            "canonical_name": "Duchy Saxony-Gotha",
+            "start": 1826,
+            "end": 1918,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "saxe_coburg_and_gotha",
+            "canonical_name": "Saxe-Coburg and Gotha",
+            "start": 1826,
+            "end": 1918,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "kingdom_of_poland_q11750128",
+            "canonical_name": "Kingdom of Poland",
+            "start": 1830,
+            "end": 1831,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "eastern_europe",
+            "present_countries": [
+              "PL"
+            ]
+          },
+          {
+            "id": "duchy_of_limburg_q376009",
+            "canonical_name": "Duchy of Limburg",
+            "start": 1839,
+            "end": 1866,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "NL"
+            ]
+          },
+          {
+            "id": "german_empire_of_1848_1849",
+            "canonical_name": "German Empire of 1848/1849",
+            "start": 1848,
+            "end": 1849,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "republic_of_san_marco",
+            "canonical_name": "Republic of San Marco",
+            "start": 1848,
+            "end": 1849,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "IT"
+            ]
+          },
+          {
+            "id": "erfurt_union",
+            "canonical_name": "Erfurt Union",
+            "start": 1849,
+            "end": 1850,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "waldeck_pyrmont",
+            "canonical_name": "Waldeck-Pyrmont",
+            "start": 1849,
+            "end": 1918,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "principality_of_montenegro",
+            "canonical_name": "Principality of Montenegro",
+            "start": 1852,
+            "end": 1910,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "balkans",
+            "present_countries": [
+              "ME"
+            ]
+          },
+          {
+            "id": "united_principalities_of_moldavia_and_wallachia",
+            "canonical_name": "United Principalities of Moldavia and Wallachia",
+            "start": 1859,
+            "end": 1881,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "united_provinces_of_central_italy",
+            "canonical_name": "United Provinces of Central Italy",
+            "start": 1859,
+            "end": 1860,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "IT"
+            ]
+          },
+          {
+            "id": "kingdom_of_italy_q172579",
+            "canonical_name": "Kingdom of Italy",
+            "start": 1861,
+            "end": 1946,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "IT"
+            ],
+            "details": [
+              {
+                "id": "fascist_italy",
+                "canonical_name": "Fascist Italy",
+                "start": 1922,
+                "end": 1943,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "duchy_of_anhalt",
+            "canonical_name": "Duchy of Anhalt",
+            "start": 1863,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "austriahungary",
+            "canonical_name": "Austria–Hungary",
+            "start": 1867,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "AT"
+            ],
+            "details": [
+              {
+                "id": "cisleithania",
+                "canonical_name": "Cisleithania",
+                "start": 1867,
+                "end": 1918,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "duchy_of_styria",
+                    "canonical_name": "Duchy of Styria",
+                    "start": 1180,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "margraviate_of_moravia",
+                    "canonical_name": "Margraviate of Moravia",
+                    "start": 1182,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "kingdom_of_bohemia",
+                    "canonical_name": "Kingdom of Bohemia",
+                    "start": 1198,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "duchy_of_carniola",
+                    "canonical_name": "Duchy of Carniola",
+                    "start": 1364,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "gorizia_and_gradisca",
+                    "canonical_name": "Gorizia and Gradisca",
+                    "start": 1754,
+                    "end": 1919,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "kingdom_of_galicia_and_lodomeria",
+                    "canonical_name": "Kingdom of Galicia and Lodomeria",
+                    "start": 1772,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "austrian_littoral",
+                    "canonical_name": "Austrian Littoral",
+                    "start": 1813,
+                    "end": 1919,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "grand_duchy_of_cracow",
+                    "canonical_name": "Grand Duchy of Cracow",
+                    "start": 1846,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "duchy_of_bukovina",
+                    "canonical_name": "Duchy of Bukovina",
+                    "start": 1849,
+                    "end": 1918,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "duchy_of_salzburg",
+                    "canonical_name": "Duchy of Salzburg",
+                    "start": 1849,
+                    "end": 1918,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "lands_of_the_crown_of_saint_stephen",
+                "canonical_name": "Lands of the Crown of Saint Stephen",
+                "start": 1867,
+                "end": 1918,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "kingdom_of_hungary_q25395037",
+            "canonical_name": "Kingdom of Hungary (1867–1918)",
+            "start": 1867,
+            "end": 1918,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "eastern_europe",
+            "present_countries": [
+              "HU"
+            ]
+          },
+          {
+            "id": "north_german_confederation",
+            "canonical_name": "North German Confederation",
+            "start": 1867,
+            "end": 1870,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "kingdom_of_croatia_slavonia",
+            "canonical_name": "Kingdom of Croatia-Slavonia",
+            "start": 1868,
+            "end": 1918,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "balkans",
+            "present_countries": [
+              "HR"
+            ]
+          },
+          {
+            "id": "german_reich",
+            "canonical_name": "German Reich",
+            "start": 1871,
+            "end": 1949,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ],
+            "details": [
+              {
+                "id": "german_empire",
+                "canonical_name": "German Empire",
+                "start": 1871,
+                "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "weimar_republic",
+                "canonical_name": "Weimar Republic",
+                "start": 1918,
+                "end": 1933,
+                "kind": "polity"
+              },
+              {
+                "id": "nazi_germany",
+                "canonical_name": "Nazi Germany",
+                "start": 1933,
+                "end": 1945,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "reign_of_amadeo_i_of_spain",
+            "canonical_name": "reign of Amadeo I of Spain",
+            "start": 1871,
+            "end": 1873,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "ES"
+            ]
+          },
+          {
+            "id": "eastern_rumelia",
+            "canonical_name": "Eastern Rumelia",
+            "start": 1878,
+            "end": 1908,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "eastern_europe",
+            "present_countries": [
+              "BG"
+            ]
+          },
+          {
+            "id": "romanian_old_kingdom",
+            "canonical_name": "Romanian Old Kingdom",
+            "start": 1881,
+            "end": 1918,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "eastern_europe",
+            "present_countries": [
+              "RO"
+            ]
+          },
+          {
+            "id": "kingdom_of_serbia_q241748",
+            "canonical_name": "Kingdom of Serbia",
+            "start": 1882,
+            "end": 1918,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "balkans",
+            "present_countries": [
+              "RS"
+            ]
+          },
+          {
+            "id": "german_colonial_empire",
+            "canonical_name": "German colonial empire",
+            "start": 1884,
+            "end": 1920,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "cretan_state",
+            "canonical_name": "Cretan State",
+            "start": 1898,
+            "end": 1913,
+            "curated": true,
+            "linked_era_id": "europe_industrial_imperial_world_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "GR"
+            ]
+          },
+          {
+            "id": "kingdom_of_montenegro",
+            "canonical_name": "Kingdom of Montenegro",
+            "start": 1910,
+            "end": 1918,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "balkans",
+            "present_countries": [
+              "ME"
+            ]
+          },
+          {
+            "id": "uryankhay_republic",
+            "canonical_name": "Uryankhay Republic",
+            "start": 1911,
+            "end": 1914,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "eastern_europe",
+            "present_countries": [
+              "RU"
             ]
           }
         ],
@@ -78702,20 +78700,6 @@
             ]
           },
           {
-            "id": "mandatory_iraq",
-            "canonical_name": "Mandatory Iraq",
-            "start": 1920,
-            "end": 1932,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "GB",
-              "IQ"
-            ]
-          },
-          {
             "id": "mandatory_palestine",
             "canonical_name": "Mandatory Palestine",
             "start": 1920,
@@ -79451,87 +79435,6 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "MM"
-            ]
-          }
-        ],
-        "north_africa": [
-          {
-            "id": "spanish_sahara",
-            "canonical_name": "Spanish Sahara",
-            "start": 1884,
-            "end": 1976,
-            "curated": true,
-            "linked_era_id": "africa_contemporary_world_era",
-            "primary_continent": "africa",
-            "primary_historical_region": "north_africa",
-            "present_countries": [
-              "MA"
-            ]
-          },
-          {
-            "id": "anglo_egyptian_sudan",
-            "canonical_name": "Anglo-Egyptian Sudan",
-            "start": 1899,
-            "end": 1956,
-            "curated": true,
-            "linked_era_id": "africa_world_wars_reordering_era",
-            "primary_continent": "africa",
-            "primary_historical_region": "north_africa",
-            "present_countries": [
-              "GB",
-              "SD"
-            ]
-          },
-          {
-            "id": "sultanate_of_egypt",
-            "canonical_name": "Sultanate of Egypt",
-            "start": 1914,
-            "end": 1922,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "north_africa",
-            "present_countries": [
-              "EG"
-            ]
-          },
-          {
-            "id": "tripolitanian_republic",
-            "canonical_name": "Tripolitanian Republic",
-            "start": 1918,
-            "end": 1922,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "north_africa",
-            "present_countries": [
-              "LY"
-            ]
-          },
-          {
-            "id": "republic_of_the_rif",
-            "canonical_name": "Republic of the Rif",
-            "start": 1921,
-            "end": 1926,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "north_africa",
-            "present_countries": [
-              "MA"
-            ]
-          },
-          {
-            "id": "tangier_international_zone",
-            "canonical_name": "Tangier International Zone",
-            "start": 1924,
-            "end": 1956,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "north_africa",
-            "present_countries": [
-              "MA"
             ]
           }
         ],
@@ -80579,20 +80482,6 @@
             ]
           },
           {
-            "id": "bechuanaland_protectorate",
-            "canonical_name": "Bechuanaland Protectorate",
-            "start": 1885,
-            "end": 1966,
-            "curated": true,
-            "linked_era_id": "africa_world_wars_reordering_era",
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "BW",
-              "GB"
-            ]
-          },
-          {
             "id": "south_african_republic_q766411",
             "canonical_name": "South African Republic",
             "start": 1914,
@@ -80634,33 +80523,105 @@
             ]
           }
         ],
-        "western_europe": [
+        "west_africa": [
           {
-            "id": "british_somaliland",
-            "canonical_name": "British Somaliland",
-            "start": 1884,
+            "id": "british_togoland",
+            "canonical_name": "British Togoland",
+            "start": 1916,
+            "end": 1956,
+            "curated": true,
+            "linked_era_id": "africa_world_wars_reordering_era",
+            "primary_continent": "africa",
+            "primary_historical_region": "west_africa",
+            "present_countries": [
+              "GH"
+            ]
+          },
+          {
+            "id": "french_togoland",
+            "canonical_name": "French Togoland",
+            "start": 1916,
             "end": 1960,
             "curated": true,
-            "linked_era_id": "europe_world_wars_reordering_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
+            "linked_era_id": "africa_world_wars_reordering_era",
+            "primary_continent": "africa",
+            "primary_historical_region": "west_africa",
             "present_countries": [
-              "GB"
+              "TG"
+            ]
+          }
+        ],
+        "oceania_pacific": [
+          {
+            "id": "british_tonga",
+            "canonical_name": "British Tonga",
+            "start": 1900,
+            "end": 1970,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "oceania",
+            "primary_historical_region": "oceania_pacific",
+            "present_countries": [
+              "TO"
             ]
           },
           {
-            "id": "zanzibar_protectorate",
-            "canonical_name": "Zanzibar Protectorate",
-            "start": 1890,
-            "end": 1963,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
+            "id": "kingdom_of_tonga",
+            "canonical_name": "Kingdom of Tonga",
+            "start": 1900,
+            "end": 1970,
+            "curated": true,
+            "linked_era_id": "oceania_world_wars_reordering_era",
+            "primary_continent": "oceania",
+            "primary_historical_region": "oceania_pacific",
             "present_countries": [
-              "GB"
+              "TO"
             ]
           },
+          {
+            "id": "territory_of_new_guinea",
+            "canonical_name": "Territory of New Guinea",
+            "start": 1919,
+            "end": 1949,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "oceania",
+            "primary_historical_region": "oceania_pacific",
+            "present_countries": [
+              "AU",
+              "PG"
+            ]
+          },
+          {
+            "id": "western_samoa_trust_territory",
+            "canonical_name": "Western Samoa Trust Territory",
+            "start": 1920,
+            "end": 1962,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "oceania",
+            "primary_historical_region": "oceania_pacific",
+            "present_countries": [
+              "WS"
+            ]
+          }
+        ],
+        "north_america": [
+          {
+            "id": "dominion_of_newfoundland",
+            "canonical_name": "Dominion of Newfoundland",
+            "start": 1907,
+            "end": 1949,
+            "curated": true,
+            "linked_era_id": "north_america_world_wars_reordering_era",
+            "primary_continent": "north_america",
+            "primary_historical_region": "north_america",
+            "present_countries": [
+              "CA"
+            ]
+          }
+        ],
+        "western_europe": [
           {
             "id": "free_state_of_anhalt",
             "canonical_name": "Free State of Anhalt",
@@ -80948,104 +80909,6 @@
             ]
           }
         ],
-        "west_africa": [
-          {
-            "id": "british_togoland",
-            "canonical_name": "British Togoland",
-            "start": 1916,
-            "end": 1956,
-            "curated": true,
-            "linked_era_id": "africa_world_wars_reordering_era",
-            "primary_continent": "africa",
-            "primary_historical_region": "west_africa",
-            "present_countries": [
-              "GH"
-            ]
-          },
-          {
-            "id": "french_togoland",
-            "canonical_name": "French Togoland",
-            "start": 1916,
-            "end": 1960,
-            "curated": true,
-            "linked_era_id": "africa_world_wars_reordering_era",
-            "primary_continent": "africa",
-            "primary_historical_region": "west_africa",
-            "present_countries": [
-              "TG"
-            ]
-          }
-        ],
-        "oceania_pacific": [
-          {
-            "id": "british_tonga",
-            "canonical_name": "British Tonga",
-            "start": 1900,
-            "end": 1970,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "oceania",
-            "primary_historical_region": "oceania_pacific",
-            "present_countries": [
-              "TO"
-            ]
-          },
-          {
-            "id": "kingdom_of_tonga",
-            "canonical_name": "Kingdom of Tonga",
-            "start": 1900,
-            "end": 1970,
-            "curated": true,
-            "linked_era_id": "oceania_world_wars_reordering_era",
-            "primary_continent": "oceania",
-            "primary_historical_region": "oceania_pacific",
-            "present_countries": [
-              "TO"
-            ]
-          },
-          {
-            "id": "territory_of_new_guinea",
-            "canonical_name": "Territory of New Guinea",
-            "start": 1919,
-            "end": 1949,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "oceania",
-            "primary_historical_region": "oceania_pacific",
-            "present_countries": [
-              "AU",
-              "PG"
-            ]
-          },
-          {
-            "id": "western_samoa_trust_territory",
-            "canonical_name": "Western Samoa Trust Territory",
-            "start": 1920,
-            "end": 1962,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "oceania",
-            "primary_historical_region": "oceania_pacific",
-            "present_countries": [
-              "WS"
-            ]
-          }
-        ],
-        "north_america": [
-          {
-            "id": "dominion_of_newfoundland",
-            "canonical_name": "Dominion of Newfoundland",
-            "start": 1907,
-            "end": 1949,
-            "curated": true,
-            "linked_era_id": "north_america_world_wars_reordering_era",
-            "primary_continent": "north_america",
-            "primary_historical_region": "north_america",
-            "present_countries": [
-              "CA"
-            ]
-          }
-        ],
         "mesoamerica": [
           {
             "id": "federation_of_central_america",
@@ -81240,20 +81103,6 @@
             ]
           },
           {
-            "id": "nyasaland",
-            "canonical_name": "Nyasaland",
-            "start": 1907,
-            "end": 1964,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "east_africa",
-            "present_countries": [
-              "GB",
-              "MW"
-            ]
-          },
-          {
             "id": "kenya_colony",
             "canonical_name": "Kenya Colony",
             "start": 1920,
@@ -81291,20 +81140,6 @@
             "present_countries": [
               "TZ"
             ]
-          },
-          {
-            "id": "northern_rhodesia",
-            "canonical_name": "Northern Rhodesia",
-            "start": 1924,
-            "end": 1964,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "east_africa",
-            "present_countries": [
-              "GB",
-              "ZM"
-            ]
           }
         ],
         "caribbean": [
@@ -81319,6 +81154,73 @@
             "primary_historical_region": "caribbean",
             "present_countries": [
               "CU"
+            ]
+          }
+        ],
+        "north_africa": [
+          {
+            "id": "spanish_sahara",
+            "canonical_name": "Spanish Sahara",
+            "start": 1884,
+            "end": 1976,
+            "curated": true,
+            "linked_era_id": "africa_contemporary_world_era",
+            "primary_continent": "africa",
+            "primary_historical_region": "north_africa",
+            "present_countries": [
+              "MA"
+            ]
+          },
+          {
+            "id": "sultanate_of_egypt",
+            "canonical_name": "Sultanate of Egypt",
+            "start": 1914,
+            "end": 1922,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "north_africa",
+            "present_countries": [
+              "EG"
+            ]
+          },
+          {
+            "id": "tripolitanian_republic",
+            "canonical_name": "Tripolitanian Republic",
+            "start": 1918,
+            "end": 1922,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "north_africa",
+            "present_countries": [
+              "LY"
+            ]
+          },
+          {
+            "id": "republic_of_the_rif",
+            "canonical_name": "Republic of the Rif",
+            "start": 1921,
+            "end": 1926,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "north_africa",
+            "present_countries": [
+              "MA"
+            ]
+          },
+          {
+            "id": "tangier_international_zone",
+            "canonical_name": "Tangier International Zone",
+            "start": 1924,
+            "end": 1956,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "north_africa",
+            "present_countries": [
+              "MA"
             ]
           }
         ],
@@ -81367,20 +81269,6 @@
             ]
           },
           {
-            "id": "bechuanaland_protectorate",
-            "canonical_name": "Bechuanaland Protectorate",
-            "start": 1885,
-            "end": 1966,
-            "curated": true,
-            "linked_era_id": "africa_world_wars_reordering_era",
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "BW",
-              "GB"
-            ]
-          },
-          {
             "id": "uganda_protectorate",
             "canonical_name": "Uganda Protectorate",
             "start": 1894,
@@ -81394,20 +81282,6 @@
             ]
           },
           {
-            "id": "anglo_egyptian_sudan",
-            "canonical_name": "Anglo-Egyptian Sudan",
-            "start": 1899,
-            "end": 1956,
-            "curated": true,
-            "linked_era_id": "africa_world_wars_reordering_era",
-            "primary_continent": "africa",
-            "primary_historical_region": "north_africa",
-            "present_countries": [
-              "GB",
-              "SD"
-            ]
-          },
-          {
             "id": "sheikhdom_of_al_irqa",
             "canonical_name": "Sheikhdom of al-ʽIrqa",
             "start": 1900,
@@ -81418,20 +81292,6 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "YE"
-            ]
-          },
-          {
-            "id": "nyasaland",
-            "canonical_name": "Nyasaland",
-            "start": 1907,
-            "end": 1964,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "east_africa",
-            "present_countries": [
-              "GB",
-              "MW"
             ]
           },
           {
@@ -81616,20 +81476,6 @@
             "primary_historical_region": "east_africa",
             "present_countries": [
               "TZ"
-            ]
-          },
-          {
-            "id": "northern_rhodesia",
-            "canonical_name": "Northern Rhodesia",
-            "start": 1924,
-            "end": 1964,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "east_africa",
-            "present_countries": [
-              "GB",
-              "ZM"
             ]
           },
           {
@@ -82264,20 +82110,6 @@
             "present_countries": []
           },
           {
-            "id": "mandatory_iraq",
-            "canonical_name": "Mandatory Iraq",
-            "start": 1920,
-            "end": 1932,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "asia",
-            "primary_historical_region": "west_asia",
-            "present_countries": [
-              "GB",
-              "IQ"
-            ]
-          },
-          {
             "id": "mandatory_palestine",
             "canonical_name": "Mandatory Palestine",
             "start": 1920,
@@ -82707,32 +82539,6 @@
           }
         ],
         "europe": [
-          {
-            "id": "british_somaliland",
-            "canonical_name": "British Somaliland",
-            "start": 1884,
-            "end": 1960,
-            "curated": true,
-            "linked_era_id": "europe_world_wars_reordering_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "GB"
-            ]
-          },
-          {
-            "id": "zanzibar_protectorate",
-            "canonical_name": "Zanzibar Protectorate",
-            "start": 1890,
-            "end": 1963,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "GB"
-            ]
-          },
           {
             "id": "first_portuguese_republic",
             "canonical_name": "First Portuguese Republic",
@@ -89574,6 +89380,15 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "GB"
+            ],
+            "details": [
+              {
+                "id": "united_kingdom_of_great_britain_and_ireland",
+                "canonical_name": "United Kingdom of Great Britain and Ireland",
+                "start": 1801,
+                "end": 1927,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -90138,19 +89953,6 @@
             "present_countries": [
               "NL",
               "SR"
-            ]
-          },
-          {
-            "id": "associated_state_of_antigua",
-            "canonical_name": "Associated State of Antigua",
-            "start": 1967,
-            "end": 1981,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "GB"
             ]
           },
           {
@@ -98672,6 +98474,15 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "GB"
+            ],
+            "details": [
+              {
+                "id": "united_kingdom_of_great_britain_and_ireland",
+                "canonical_name": "United Kingdom of Great Britain and Ireland",
+                "start": 1801,
+                "end": 1927,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -99954,19 +99765,6 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "RO"
-            ]
-          },
-          {
-            "id": "associated_state_of_antigua",
-            "canonical_name": "Associated State of Antigua",
-            "start": 1967,
-            "end": 1981,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "GB"
             ]
           },
           {

@@ -1264,7 +1264,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -9277,7 +9277,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -14058,7 +14058,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -25074,7 +25074,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -34586,7 +34586,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -35051,7 +35051,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -51302,7 +51302,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -123492,7 +123492,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -164461,7 +164461,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kingdom_of_scotland",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -217705,7 +217705,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -243257,7 +243257,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -244807,7 +244807,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -247459,7 +247459,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -367457,7 +367457,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -373203,7 +373203,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "united_kingdom",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -392910,7 +392910,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "british_empire",
     "deprecated": {
       "visibility_tier": "detailed"
     },
