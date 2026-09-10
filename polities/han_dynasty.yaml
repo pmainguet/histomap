@@ -25,3 +25,15 @@ notes: Parent for its two constitutional phases -- Western Han and Eastern Han (
   to share the English name "Han" -- deliberately NOT a child of this record.
 source_urls:
 - https://en.wikipedia.org/wiki/Han_dynasty
+prominence_components:
+  wikidata_reach: 30
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 6.58
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 31.58
+prominence_score: 31.58

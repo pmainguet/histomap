@@ -23,3 +23,15 @@ notes: Parent for the Basin of Mexico's own phase sequence (Archaic through Post
   into one record.
 source_urls:
 - https://en.wikipedia.org/wiki/Valley_of_Mexico
+prominence_components:
+  wikidata_reach: 22.78
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 8
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 25.78
+prominence_score: 25.78

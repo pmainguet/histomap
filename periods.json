@@ -1211,49 +1211,6 @@
     "deprecated": null
   },
   {
-    "id": "contemporary_history_period",
-    "canonical_name": "Contemporary history",
-    "tier": "period",
-    "start": 1945,
-    "end": 2100,
-    "start_confidence": "low",
-    "end_confidence": "low",
-    "geography": {
-      "continents": [
-        "europe",
-        "asia",
-        "africa",
-        "north_america",
-        "south_america",
-        "oceania"
-      ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
-      "centroid": null,
-      "confidence": null
-    },
-    "broader_periods": [],
-    "successors": [],
-    "authority": "Histomap editorial: Wikipedia gap-check, 8 September 2026",
-    "external_ids": {
-      "wikidata": "Q186075"
-    },
-    "notes": "Post-1945 convention (the most common English-language periodization); end capped at 2100 (YEAR_MAX), genuinely still ongoing.",
-    "source_urls": [
-      "https://en.wikipedia.org/wiki/Contemporary_history"
-    ],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
-    "government_form": null,
-    "civilization_lane": null,
-    "epoch_lane": false,
-    "promoted_from": null,
-    "detail_of": null,
-    "deprecated": null
-  },
-  {
     "id": "copper_age_era",
     "canonical_name": "Copper Age",
     "tier": "regional_era",

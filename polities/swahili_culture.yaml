@@ -18,3 +18,15 @@ notes: 1000-1500 CE covers the classical Swahili coast city-state civilization; 
   Swahili people/language continue to the present as a distinct ethnic/cultural identity.
 source_urls:
 - https://en.wikipedia.org/wiki/Swahili_culture
+prominence_components:
+  wikidata_reach: 19.83
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 6.75
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 21.58
+prominence_score: 21.58

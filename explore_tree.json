@@ -3969,9 +3969,11 @@
             "end": -199,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "africa",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "AM"
+            ]
           },
           {
             "id": "cilicia_satrapy",
@@ -10273,6 +10275,19 @@
             ]
           },
           {
+            "id": "satrapy_of_armenia",
+            "canonical_name": "Satrapy of Armenia",
+            "start": -569,
+            "end": -199,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "AM"
+            ]
+          },
+          {
             "id": "heraclea_pontica",
             "canonical_name": "Heraclea Pontica",
             "start": -557,
@@ -13808,17 +13823,6 @@
             ]
           },
           {
-            "id": "satrapy_of_armenia",
-            "canonical_name": "Satrapy of Armenia",
-            "start": -569,
-            "end": -199,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "lydia_satrapy",
             "canonical_name": "Lydia Satrapy",
             "start": -545,
@@ -14168,19 +14172,6 @@
       },
       "civilizations": [
         {
-          "id": "chinese_civilization",
-          "canonical_name": "Chinese civilization",
-          "start": -2200,
-          "end": null,
-          "curated": true,
-          "source": "polity",
-          "entity_type": "civilization",
-          "linked_era_id": null,
-          "primary_continent": "asia",
-          "primary_historical_region": "unclassified",
-          "present_countries": []
-        },
-        {
           "id": "maya_civilization",
           "canonical_name": "Maya civilization",
           "start": -2000,
@@ -14288,7 +14279,9 @@
           "linked_era_id": null,
           "primary_continent": "north_america",
           "primary_historical_region": "unclassified",
-          "present_countries": []
+          "present_countries": [
+            "MX"
+          ]
         },
         {
           "id": "cultura_tarija",
@@ -45602,7 +45595,9 @@
           "linked_era_id": null,
           "primary_continent": "north_america",
           "primary_historical_region": "unclassified",
-          "present_countries": []
+          "present_countries": [
+            "US"
+          ]
         },
         {
           "id": "chimor",
@@ -84433,17 +84428,6 @@
           "start": 1945,
           "end": 2100,
           "periods": [
-            {
-              "id": "contemporary_history_period",
-              "canonical_name": "Contemporary history",
-              "start": 1945,
-              "end": 2100,
-              "curated": false,
-              "era_id": "africa_contemporary_world_era",
-              "primary_continent": "europe",
-              "primary_historical_region": "unclassified",
-              "present_countries": []
-            },
             {
               "id": "vietnam_war",
               "canonical_name": "Vietnam War",

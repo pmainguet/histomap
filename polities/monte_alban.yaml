@@ -19,7 +19,19 @@ sources:
 external_ids:
   wikidata: Q464899
 notes: Parent for the Zapotec capital's own phase sequence (Monte Alban I through
-  V), each already its own reviewed polity, attached via detail_of rather than
-  merged into one record.
+  V), each already its own reviewed polity, attached via detail_of rather than merged
+  into one record.
 source_urls:
 - https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n
+prominence_components:
+  wikidata_reach: 25.74
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 8
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 28.74
+prominence_score: 28.74

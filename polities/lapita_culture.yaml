@@ -17,3 +17,15 @@ external_ids:
 notes: ''
 source_urls:
 - https://en.wikipedia.org/wiki/Lapita_culture
+prominence_components:
+  wikidata_reach: 23.52
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 7.6
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 26.13
+prominence_score: 26.13

@@ -9,6 +9,11 @@ end_confidence: low
 geography:
   continents:
   - north_america
+  primary_continent: north_america
+  historical_regions: []
+  present_countries:
+  - MX
+  confidence: high
 eligibility: accepted
 sources:
 - histomap_editorial
@@ -17,3 +22,17 @@ external_ids:
 notes: ''
 source_urls:
 - https://en.wikipedia.org/wiki/Zapotec_civilization
+manual_overrides:
+- geography
+prominence_components:
+  wikidata_reach: 22.97
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 8
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 25.97
+prominence_score: 25.97

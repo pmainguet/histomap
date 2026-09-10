@@ -14371,8 +14371,19 @@
     "end_confidence": "low",
     "weight_by_era": {},
     "weight_imputed": false,
-    "prominence_score": 0.0,
-    "prominence_components": {},
+    "prominence_score": 26.24,
+    "prominence_components": {
+      "wikidata_reach": 26.56,
+      "authority_coverage": 0.0,
+      "historical_evidence": 0.0,
+      "relationship_centrality": 0.0,
+      "longevity": 4.67,
+      "editorial_work": 0.0,
+      "type_uncertainty_penalty": 0.0,
+      "date_uncertainty_penalty": -5.0,
+      "aggregate_penalty": 0.0,
+      "total": 26.24
+    },
     "eligibility": "accepted",
     "text": {
       "long_en": ""
@@ -23677,8 +23688,19 @@
     "end_confidence": "low",
     "weight_by_era": {},
     "weight_imputed": false,
-    "prominence_score": 0.0,
-    "prominence_components": {},
+    "prominence_score": 25.78,
+    "prominence_components": {
+      "wikidata_reach": 22.78,
+      "authority_coverage": 0.0,
+      "historical_evidence": 0.0,
+      "relationship_centrality": 0.0,
+      "longevity": 8.0,
+      "editorial_work": 0.0,
+      "type_uncertainty_penalty": 0.0,
+      "date_uncertainty_penalty": -5.0,
+      "aggregate_penalty": 0.0,
+      "total": 25.78
+    },
     "eligibility": "accepted",
     "text": {
       "long_en": ""
@@ -47878,63 +47900,6 @@
     "notes": "Automatically generated from Wikidata; requires review.",
     "sources": [
       "wikidata"
-    ]
-  },
-  {
-    "id": "chinese_civilization",
-    "canonical_name": "Chinese civilization",
-    "names": {},
-    "external_ids": {
-      "wikidata": "Q25558247",
-      "wikipedia_en": null,
-      "seshat": []
-    },
-    "source_urls": [
-      "https://en.wikipedia.org/wiki/Chinese_civilization"
-    ],
-    "fade_in_years": null,
-    "fade_out_years": null,
-    "entity_type": "civilization",
-    "entity_type_confidence": "high",
-    "entity_type_source_qids": [],
-    "entity_type_reviewed_against": [],
-    "timeline_role": "entity",
-    "consolidation_status": null,
-    "consolidated_into": null,
-    "detail_of": null,
-    "deprecated": null,
-    "relationships": [],
-    "successors": [],
-    "geography": {
-      "continents": [
-        "asia"
-      ],
-      "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
-      "centroid": null,
-      "confidence": null
-    },
-    "manual_overrides": [],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
-    "government_form": null,
-    "start": -2200,
-    "end": null,
-    "start_confidence": "low",
-    "end_confidence": "low",
-    "weight_by_era": {},
-    "weight_imputed": false,
-    "prominence_score": 0.0,
-    "prominence_components": {},
-    "eligibility": "accepted",
-    "text": {
-      "long_en": ""
-    },
-    "notes": "Open-ended -- continues to the present.",
-    "sources": [
-      "histomap_editorial"
     ]
   },
   {
@@ -131621,8 +131586,19 @@
     "end_confidence": "low",
     "weight_by_era": {},
     "weight_imputed": false,
-    "prominence_score": 0.0,
-    "prominence_components": {},
+    "prominence_score": 31.58,
+    "prominence_components": {
+      "wikidata_reach": 30.0,
+      "authority_coverage": 0.0,
+      "historical_evidence": 0.0,
+      "relationship_centrality": 0.0,
+      "longevity": 6.58,
+      "editorial_work": 0.0,
+      "type_uncertainty_penalty": 0.0,
+      "date_uncertainty_penalty": -5.0,
+      "aggregate_penalty": 0.0,
+      "total": 31.58
+    },
     "eligibility": "accepted",
     "text": {
       "long_en": ""
@@ -202327,8 +202303,19 @@
     "end_confidence": "low",
     "weight_by_era": {},
     "weight_imputed": false,
-    "prominence_score": 0.0,
-    "prominence_components": {},
+    "prominence_score": 26.13,
+    "prominence_components": {
+      "wikidata_reach": 23.52,
+      "authority_coverage": 0.0,
+      "historical_evidence": 0.0,
+      "relationship_centrality": 0.0,
+      "longevity": 7.6,
+      "editorial_work": 0.0,
+      "type_uncertainty_penalty": 0.0,
+      "date_uncertainty_penalty": -5.0,
+      "aggregate_penalty": 0.0,
+      "total": 26.13
+    },
     "eligibility": "accepted",
     "text": {
       "long_en": ""
@@ -226961,16 +226948,22 @@
     "successors": [],
     "geography": {
       "continents": [
-        "north_america"
+        "asia",
+        "north_america",
+        "oceania"
       ],
       "primary_continent": "north_america",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "US"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -226980,8 +226973,19 @@
     "end_confidence": "low",
     "weight_by_era": {},
     "weight_imputed": false,
-    "prominence_score": 0.0,
-    "prominence_components": {},
+    "prominence_score": 26.45,
+    "prominence_components": {
+      "wikidata_reach": 24.19,
+      "authority_coverage": 0.0,
+      "historical_evidence": 0.0,
+      "relationship_centrality": 0.0,
+      "longevity": 7.26,
+      "editorial_work": 0.0,
+      "type_uncertainty_penalty": 0.0,
+      "date_uncertainty_penalty": -5.0,
+      "aggregate_penalty": 0.0,
+      "total": 26.45
+    },
     "eligibility": "accepted",
     "text": {
       "long_en": ""
@@ -228797,8 +228801,19 @@
     "end_confidence": "low",
     "weight_by_era": {},
     "weight_imputed": false,
-    "prominence_score": 0.0,
-    "prominence_components": {},
+    "prominence_score": 28.74,
+    "prominence_components": {
+      "wikidata_reach": 25.74,
+      "authority_coverage": 0.0,
+      "historical_evidence": 0.0,
+      "relationship_centrality": 0.0,
+      "longevity": 8.0,
+      "editorial_work": 0.0,
+      "type_uncertainty_penalty": 0.0,
+      "date_uncertainty_penalty": -5.0,
+      "aggregate_penalty": 0.0,
+      "total": 28.74
+    },
     "eligibility": "accepted",
     "text": {
       "long_en": ""
@@ -239923,8 +239938,19 @@
     "end_confidence": "low",
     "weight_by_era": {},
     "weight_imputed": false,
-    "prominence_score": 0.0,
-    "prominence_components": {},
+    "prominence_score": 26.98,
+    "prominence_components": {
+      "wikidata_reach": 24.19,
+      "authority_coverage": 0.0,
+      "historical_evidence": 0.0,
+      "relationship_centrality": 0.0,
+      "longevity": 7.79,
+      "editorial_work": 0.0,
+      "type_uncertainty_penalty": 0.0,
+      "date_uncertainty_penalty": -5.0,
+      "aggregate_penalty": 0.0,
+      "total": 26.98
+    },
     "eligibility": "accepted",
     "text": {
       "long_en": ""
@@ -244088,8 +244114,19 @@
     "end_confidence": "low",
     "weight_by_era": {},
     "weight_imputed": false,
-    "prominence_score": 0.0,
-    "prominence_components": {},
+    "prominence_score": 19.09,
+    "prominence_components": {
+      "wikidata_reach": 16.71,
+      "authority_coverage": 0.0,
+      "historical_evidence": 0.0,
+      "relationship_centrality": 0.0,
+      "longevity": 7.39,
+      "editorial_work": 0.0,
+      "type_uncertainty_penalty": 0.0,
+      "date_uncertainty_penalty": -5.0,
+      "aggregate_penalty": 0.0,
+      "total": 19.09
+    },
     "eligibility": "accepted",
     "text": {
       "long_en": ""
@@ -257626,8 +257663,19 @@
     "end_confidence": "low",
     "weight_by_era": {},
     "weight_imputed": false,
-    "prominence_score": 0.0,
-    "prominence_components": {},
+    "prominence_score": 24.58,
+    "prominence_components": {
+      "wikidata_reach": 24.94,
+      "authority_coverage": 0.0,
+      "historical_evidence": 0.0,
+      "relationship_centrality": 0.0,
+      "longevity": 4.64,
+      "editorial_work": 0.0,
+      "type_uncertainty_penalty": 0.0,
+      "date_uncertainty_penalty": -5.0,
+      "aggregate_penalty": 0.0,
+      "total": 24.58
+    },
     "eligibility": "accepted",
     "text": {
       "long_en": ""
@@ -298975,18 +299023,18 @@
       "-30": 9.0
     },
     "weight_imputed": false,
-    "prominence_score": 81.26,
+    "prominence_score": 79.26,
     "prominence_components": {
       "wikidata_reach": 30.0,
       "authority_coverage": 12.0,
       "historical_evidence": 20.0,
       "relationship_centrality": 5.55,
       "longevity": 6.71,
-      "editorial_work": 7.0,
+      "editorial_work": 5.0,
       "type_uncertainty_penalty": 0.0,
       "date_uncertainty_penalty": -0.0,
       "aggregate_penalty": 0.0,
-      "total": 81.26
+      "total": 79.26
     },
     "eligibility": "accepted",
     "text": {
@@ -306339,18 +306387,20 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
-        "europe"
+        "asia"
       ],
-      "primary_continent": null,
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "AM"
+      ],
       "centroid": null,
-      "confidence": "medium"
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": "satrapy",
@@ -347308,8 +347358,19 @@
     "end_confidence": "low",
     "weight_by_era": {},
     "weight_imputed": false,
-    "prominence_score": 0.0,
-    "prominence_components": {},
+    "prominence_score": 21.58,
+    "prominence_components": {
+      "wikidata_reach": 19.83,
+      "authority_coverage": 0.0,
+      "historical_evidence": 0.0,
+      "relationship_centrality": 0.0,
+      "longevity": 6.75,
+      "editorial_work": 0.0,
+      "type_uncertainty_penalty": 0.0,
+      "date_uncertainty_penalty": -5.0,
+      "aggregate_penalty": 0.0,
+      "total": 21.58
+    },
     "eligibility": "accepted",
     "text": {
       "long_en": ""
@@ -368283,8 +368344,19 @@
     "end_confidence": "low",
     "weight_by_era": {},
     "weight_imputed": false,
-    "prominence_score": 0.0,
-    "prominence_components": {},
+    "prominence_score": 24.1,
+    "prominence_components": {
+      "wikidata_reach": 24.65,
+      "authority_coverage": 0.0,
+      "historical_evidence": 0.0,
+      "relationship_centrality": 0.0,
+      "longevity": 4.45,
+      "editorial_work": 0.0,
+      "type_uncertainty_penalty": 0.0,
+      "date_uncertainty_penalty": -5.0,
+      "aggregate_penalty": 0.0,
+      "total": 24.1
+    },
     "eligibility": "accepted",
     "text": {
       "long_en": ""
@@ -391297,11 +391369,15 @@
       "primary_continent": "north_america",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "MX"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -391311,8 +391387,19 @@
     "end_confidence": "low",
     "weight_by_era": {},
     "weight_imputed": false,
-    "prominence_score": 0.0,
-    "prominence_components": {},
+    "prominence_score": 25.97,
+    "prominence_components": {
+      "wikidata_reach": 22.97,
+      "authority_coverage": 0.0,
+      "historical_evidence": 0.0,
+      "relationship_centrality": 0.0,
+      "longevity": 8.0,
+      "editorial_work": 0.0,
+      "type_uncertainty_penalty": 0.0,
+      "date_uncertainty_penalty": -5.0,
+      "aggregate_penalty": 0.0,
+      "total": 25.97
+    },
     "eligibility": "accepted",
     "text": {
       "long_en": ""

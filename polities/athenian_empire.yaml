@@ -18,3 +18,15 @@ notes: Also known as the Delian League -- same Wikidata item (Q193235) covers bo
   names, so authored as one record rather than two.
 source_urls:
 - https://en.wikipedia.org/wiki/Delian_League
+prominence_components:
+  wikidata_reach: 26.56
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 4.67
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 26.24
+prominence_score: 26.24

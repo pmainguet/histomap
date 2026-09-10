@@ -25,3 +25,15 @@ notes: Parent for the Valley of Oaxaca's pre-Monte Alban Formative phase sequenc
   civilization, which succeed this sequence.
 source_urls:
 - https://en.wikipedia.org/wiki/Oaxaca_Valley
+prominence_components:
+  wikidata_reach: 16.71
+  authority_coverage: 0
+  historical_evidence: 0
+  relationship_centrality: 0.0
+  longevity: 7.39
+  editorial_work: 0
+  type_uncertainty_penalty: 0
+  date_uncertainty_penalty: -5.0
+  aggregate_penalty: 0
+  total: 19.09
+prominence_score: 19.09

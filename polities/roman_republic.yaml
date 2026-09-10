@@ -37,7 +37,7 @@ notes: Traditional founding date 509 BCE is legendary; end conventionally 27 BCE
 sources:
 - seshat
 - wikidata
-prominence_score: 81.26
+prominence_score: 79.26
 eligibility: accepted
 geography:
   continents:
@@ -74,11 +74,11 @@ prominence_components:
   historical_evidence: 20
   relationship_centrality: 5.55
   longevity: 6.71
-  editorial_work: 7
+  editorial_work: 5
   type_uncertainty_penalty: 0
   date_uncertainty_penalty: -0.0
   aggregate_penalty: 0
-  total: 81.26
+  total: 79.26
 manual_overrides:
 - consolidation
 linked_era_id: classical_antiquity_era
