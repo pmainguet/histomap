@@ -333,6 +333,12 @@ async function main() {
       // of the tree (an event's placement comes from its own `year`, not
       // from tree nesting the way chapters/eras/periods are).
       events: detailCtx ? [...detailCtx.eventsById.values()] : [],
+      // Population lane: WORLD_POPULATION_ESTIMATES is a plain global
+      // (population_estimates.js), same "flat list, not tree-nested" shape
+      // as events -- never filtered by zoom/groupBy/geoFilter, same as
+      // events aren't; off-domain points just render outside the current
+      // viewBox, same as an off-screen event marker already does.
+      population: WORLD_POPULATION_ESTIMATES,
     }, onSelect);
   };
 
@@ -391,6 +397,7 @@ async function main() {
       politiesById: new Map(polities.map((polity) => [polity.id, polity])),
       periodsById: new Map(periods.map((period) => [period.id, period])),
       eventsById: new Map(events.map((event) => [event.id, event])),
+      populationById: new Map(WORLD_POPULATION_ESTIMATES.map((point) => [point.id, point])),
       periodLinks,
       transitions,
       geographyOptions,

@@ -665,6 +665,28 @@ function renderEventDetails(event, ctx) {
   wireEntityRefButtons(ctx);
 }
 
+// Population lane (ROADMAP.md item, 10 September 2026): no Wikipedia
+// summary call, unlike every other kind here -- a population estimate
+// isn't a Wikidata-backed entity with its own article, just a sourced
+// figure from population_estimates.js. `formatPopulation`/`formatYear`
+// come from explore_timeline.js (loaded first, see explore.html), same
+// classic-script global-scope sharing common.js's own docstring already
+// explains.
+function renderPopulationDetails(point, ctx) {
+  explorePanel.innerHTML = `<button class="detail-close" type="button" aria-label="Close details">×</button>
+    <p class="detail-kicker">Population estimate</p>
+    <h2>${escapeHtml(formatYear(point.year))}</h2>
+    <div class="detail-actions"><button class="zoom-explore" type="button">Zoom to this</button><button class="reset-explore" type="button">Full timeline</button></div>
+    <p>Estimated world population: <strong>~${escapeHtml(formatPopulation(point.population))}</strong> people.</p>
+    <dl>
+      <dt>Year</dt><dd>${escapeHtml(formatYear(point.year))}</dd>
+      <dt>Estimate</dt><dd>~${escapeHtml(formatPopulation(point.population))} (${point.population.toLocaleString()})</dd>
+      <dt>Source</dt><dd class="detail-links"><a href="${escapeHtml(point.source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(point.source.name)} ↗</a></dd>
+    </dl>`;
+
+  wireExplorePanel(ctx, point.year, point.year, point.id);
+}
+
 function renderPolityDetails(polity, ctx) {
   const { periodsById, politiesById, periodLinks } = ctx;
   const description = polity.text?.long_en || polity.notes;
@@ -800,6 +822,11 @@ function showExploreDetails(kind, id, ctx) {
   if (kind === "event") {
     const event = ctx.eventsById.get(id);
     if (event) renderEventDetails(event, ctx);
+    return;
+  }
+  if (kind === "population") {
+    const point = ctx.populationById.get(id);
+    if (point) renderPopulationDetails(point, ctx);
     return;
   }
   const period = ctx.periodsById.get(id);

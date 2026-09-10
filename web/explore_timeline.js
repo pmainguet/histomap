@@ -779,6 +779,98 @@ function drawFlatLaneRow(svg, scale, lanes, y, laneHeight, cls, onZoom, domainEn
 // of overlapping it.
 const EVENT_MARKER_RADIUS = 4;
 
+// Population lane (ROADMAP.md item, 10 September 2026): a single filled
+// "tide" silhouette rising from the lane's own baseline, one lane above
+// Events per explicit request. Height is driven by log10(population) --
+// world population was near-flat for 99.7% of history then rose almost
+// vertically in the last two centuries, so a linear height would leave the
+// shape looking empty until the last sliver of the timeline; log height is
+// a drawing decision only, never shown to the viewer (hover/click always
+// surfaces the real figure via POPULATION_MARKER_RADIUS below). The x-axis
+// stays exactly time-proportional like every other row -- only the height
+// channel is compressed.
+const POPULATION_MARKER_RADIUS = 3;
+
+function populationHeight(population, minLog, maxLog, laneHeight) {
+  if (maxLog === minLog) return laneHeight; // defensive: a single-point series would divide by zero
+  const raw = laneHeight * (Math.log10(population) - minLog) / (maxLog - minLog);
+  return Math.max(0, Math.min(laneHeight, raw)); // belt-and-suspenders alongside the clip-path below
+}
+
+function formatPopulation(population) {
+  if (population >= 1_000_000_000) return `${(population / 1_000_000_000).toLocaleString(undefined, { maximumFractionDigits: 2 })} billion`;
+  if (population >= 1_000_000) return `${(population / 1_000_000).toLocaleString(undefined, { maximumFractionDigits: 1 })} million`;
+  return population.toLocaleString();
+}
+
+// `points` is WORLD_POPULATION_ESTIMATES already filtered to the visible
+// domain (see renderHierarchyTimeline) and sorted by year. Requires at
+// least 2 points to draw a shape; a single surviving point (an extreme
+// zoom) draws just its marker, no fill.
+function drawPopulationRow(svg, scale, points, y, laneHeight, width, onZoom) {
+  if (points.length === 0) return;
+  const logs = points.map((p) => Math.log10(p.population));
+  const minLog = Math.min(...logs);
+  const maxLog = Math.max(...logs);
+  const baseline = y + laneHeight;
+  const coords = points.map((p) => ({
+    x: scale.x(p.year),
+    y: baseline - populationHeight(p.population, minLog, maxLog, laneHeight),
+    point: p,
+  }));
+
+  // Clip to this lane's own rect so the tide can never bleed into the row
+  // above or below regardless of data -- the height clamp in
+  // populationHeight() already prevents this in the normal case, but the
+  // clip-path is the hard guarantee, not just a convention. A fixed id is
+  // safe (not per-instance-unique) since renderHierarchyTimeline always
+  // replaces the whole <svg> wholesale (container.replaceChildren) rather
+  // than ever having two of these defs alive in the DOM at once.
+  const clipPath = svgEl("clipPath", { id: "population-lane-clip" });
+  clipPath.append(svgEl("rect", { x: 0, y, width, height: laneHeight }));
+  svg.append(clipPath);
+  // Rises from pale sand to the page's own accent color -- objectBoundingBox
+  // (the gradient default) scales to the filled path's own bbox, so one
+  // fixed vertical gradient works regardless of the lane's actual height.
+  const gradient = svgEl("linearGradient", { id: "population-tide-gradient", x1: 0, y1: 1, x2: 0, y2: 0 });
+  gradient.append(
+    svgEl("stop", { offset: 0, "stop-color": "#e7dcc5" }),
+    svgEl("stop", { offset: 1, "stop-color": "#8c422d" }),
+  );
+  svg.append(gradient);
+
+  if (coords.length >= 2) {
+    const top = coords.map((c) => `${c.x},${c.y}`).join(" L ");
+    const areaPath = `M ${coords[0].x},${baseline} L ${top} L ${coords[coords.length - 1].x},${baseline} Z`;
+    const area = svgEl("path", {
+      d: areaPath, class: "hierarchy-population-fill", fill: "url(#population-tide-gradient)",
+      "clip-path": "url(#population-lane-clip)",
+    });
+    svg.append(area);
+    const line = svgEl("path", { d: `M ${top}`, class: "hierarchy-population-line", "clip-path": "url(#population-lane-clip)" });
+    svg.append(line);
+  }
+
+  for (const { x, y: cy, point } of coords) {
+    const openPanel = () => onZoom("population", point.id);
+    const circle = svgEl("circle", {
+      cx: x, cy, r: POPULATION_MARKER_RADIUS, class: "hierarchy-population-marker zoomable",
+    });
+    circle.dataset.bandId = `population:${point.id}`;
+    const title = svgEl("title");
+    title.textContent = `${formatYear(point.year)}: ~${formatPopulation(point.population)} people (${point.source.name})`;
+    circle.append(title);
+    circle.addEventListener("click", openPanel);
+    svg.append(circle);
+    if (point.label) {
+      const label = svgEl("text", { x: x + POPULATION_MARKER_RADIUS + 3, y: cy - 4, class: "hierarchy-population-label zoomable" });
+      label.textContent = `~${formatPopulation(point.population)}`;
+      label.addEventListener("click", openPanel);
+      svg.append(label);
+    }
+  }
+}
+
 function drawEventsRow(svg, scale, lanes, y, laneHeight, onZoom) {
   lanes.forEach((lane, laneIndex) => {
     const laneY = y + laneIndex * laneHeight + laneHeight / 2;
@@ -914,6 +1006,10 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
     // `year`), independent of groupBy/geoFilter/zoom the way every other
     // row here is.
     events = [],
+    // Population lane (ROADMAP.md item, 10 September 2026): WORLD_POPULATION_ESTIMATES,
+    // same "flat list, not tree-nested" shape as events -- a population
+    // estimate's placement is purely its own `year`.
+    population = [],
   } = options;
   const width = Math.max(900, Math.min(4800, window.innerWidth - 80));
   const scale = createTimeScale(
@@ -981,6 +1077,18 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
     showPolities === "main" ? SHOW_MAIN_MAX_PER_BUCKET : Infinity,
   );
 
+  // Population lane: sorted once here (drawPopulationRow assumes ascending
+  // year for its area-path construction). Not lane-packed like Events --
+  // it's one continuous shape, not a set of discrete markers competing for
+  // vertical space.
+  // Tall enough for "Population" (10 chars) to fit as a rotated tier label
+  // without overlapping the row above (drawTierLabel's own footprint
+  // estimate is chars * ESTIMATED_CHAR_WIDTH = 60px) -- also gives the tide
+  // shape itself a bit more room to actually read as a shape.
+  const populationLaneHeight = 64;
+  const sortedPopulation = [...population].sort((a, b) => a.year - b.year);
+  const populationRowHeight = sortedPopulation.length > 0 ? populationLaneHeight : 0;
+
   // Events lane: a point marker, not a band, so its lane-packing footprint
   // is start == end == year (labelAwareFootprint's Math.max(bandWidth,
   // labelWidth) collapses to just the label's width when the band itself
@@ -1002,6 +1110,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   const civBlockHeight = civLayout.height > 0 ? civLayout.height + rowGap : 0;
   const micBlockHeight = micLayout.height > 0 ? micLayout.height + rowGap : 0;
   const politiesRowHeight = showPolities !== "hide" ? politiesLayout.height : 0;
+  const populationBlockHeight = populationRowHeight > 0 ? populationRowHeight + rowGap : 0;
   const eventsBlockHeight = eventLanes.length > 0 ? eventLanes.length * eventLaneHeight + rowGap : 0;
   // Real (data-driven) Epoch-lane records (e.g. Holocene) share the same
   // horizontal line as the static geological bands, not a lane-packed
@@ -1017,7 +1126,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
     )),
   );
 
-  const height = geoRowHeight + epochRowExtraHeight + chapterRowHeight + eraRowHeight + periodRowHeight + eventsBlockHeight + civBlockHeight + micBlockHeight + politiesRowHeight + rowGap * 4;
+  const height = geoRowHeight + epochRowExtraHeight + chapterRowHeight + eraRowHeight + periodRowHeight + populationBlockHeight + eventsBlockHeight + civBlockHeight + micBlockHeight + politiesRowHeight + rowGap * 4;
 
   const svg = svgEl("svg", { viewBox: `0 0 ${width} ${height}`, class: "hierarchy-chart" });
 
@@ -1082,6 +1191,11 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
     isExpanded, onToggleExpand,
   });
   advanceRow(periodRowHeight, "Period");
+
+  if (populationRowHeight > 0) {
+    drawPopulationRow(svg, scale, sortedPopulation, y, populationLaneHeight, width, onZoom);
+    advanceRow(populationLaneHeight, "Population");
+  }
 
   if (eventLanes.length > 0) {
     drawEventsRow(svg, scale, eventLanes, y, eventLaneHeight, onZoom);

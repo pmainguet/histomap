@@ -363,6 +363,15 @@ kbd { padding: .1rem .3rem; color: #27251f; background: white; border: 1px solid
    color so an event reads as its own kind of thing on the timeline. */
 .hierarchy-event-marker { fill: #b8860b; stroke: #7a5a07; stroke-width: 1; cursor: pointer; }
 .hierarchy-event-label { font: .68rem system-ui, sans-serif; fill: #7a5a07; cursor: pointer; }
+/* ROADMAP.md item, 10 September 2026: the Population lane -- a "tide"
+   silhouette (see explore_timeline.js's drawPopulationRow), not a band or a
+   point marker like every other row. Fill color comes from the
+   #population-tide-gradient def drawn alongside it; this class only carries
+   the line/marker treatment. */
+.hierarchy-population-fill { opacity: .88; }
+.hierarchy-population-line { fill: none; stroke: #8c422d; stroke-width: 1.4; }
+.hierarchy-population-marker { fill: #27251f; stroke: #f9f5ea; stroke-width: 1; cursor: pointer; }
+.hierarchy-population-label { font: .66rem system-ui, sans-serif; fill: #5a4636; cursor: pointer; }
 .hierarchy-region-label { font: .72rem system-ui, sans-serif; fill: var(--ink-faint); }
 .hierarchy-continent-label { font: 700 .74rem system-ui, sans-serif; fill: #27251f; }
 .hierarchy-band-label { font: .68rem system-ui, sans-serif; fill: #27251f; pointer-events: none; }
