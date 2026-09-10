@@ -25,11 +25,12 @@ prominence_score: 20.81
 eligibility: review
 geography:
   continents:
-  - africa
   - asia
-  present_countries: []
-  centroid: null
-  confidence: medium
+  primary_continent: asia
+  historical_regions: []
+  present_countries:
+  - IR
+  confidence: high
 entity_type: polity
 entity_type_confidence: medium
 entity_type_source_qids:
@@ -49,3 +50,5 @@ prominence_components:
 government_form: null
 deprecated:
   visibility_tier: detailed
+manual_overrides:
+- geography
