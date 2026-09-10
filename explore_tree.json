@@ -4836,9 +4836,12 @@
             "end": 476,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "africa",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "AT",
+              "SI"
+            ]
           },
           {
             "id": "dangchang_kingdom",
@@ -13543,6 +13546,20 @@
             ]
           },
           {
+            "id": "noricum",
+            "canonical_name": "Noricum",
+            "start": -15,
+            "end": 476,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "AT",
+              "SI"
+            ]
+          },
+          {
             "id": "seshat_roman_empire_trromdm",
             "canonical_name": "Roman Empire - Dominate",
             "start": 284,
@@ -13934,17 +13951,6 @@
             "present_countries": [
               "LY"
             ]
-          },
-          {
-            "id": "noricum",
-            "canonical_name": "Noricum",
-            "start": -15,
-            "end": 476,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "gallic_empire",
@@ -14660,6 +14666,13 @@
               "TR"
             ],
             "details": [
+              {
+                "id": "duchy_of_rome",
+                "canonical_name": "Duchy of Rome",
+                "start": 590,
+                "end": 754,
+                "kind": "polity"
+              },
               {
                 "id": "fall_of_constantinople",
                 "canonical_name": "Fall of Constantinople",
@@ -15627,9 +15640,11 @@
             "end": null,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "africa",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "IR"
+            ]
           },
           {
             "id": "seshat_neguanje_conahua",
@@ -16347,17 +16362,6 @@
             ]
           },
           {
-            "id": "duchy_of_rome",
-            "canonical_name": "Duchy of Rome",
-            "start": 590,
-            "end": 754,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "chahamanas_of_shakambhari",
             "canonical_name": "Chahamanas of Shakambhari",
             "start": 600,
@@ -16868,7 +16872,9 @@
             "linked_era_id": null,
             "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "DZ"
+            ]
           },
           {
             "id": "county_of_asti",
@@ -30293,6 +30299,19 @@
             ]
           },
           {
+            "id": "pars",
+            "canonical_name": "Pars",
+            "start": 224,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IR"
+            ]
+          },
+          {
             "id": "pallava_dynasty",
             "canonical_name": "Pallava dynasty",
             "start": 275,
@@ -30354,6 +30373,13 @@
               "TR"
             ],
             "details": [
+              {
+                "id": "duchy_of_rome",
+                "canonical_name": "Duchy of Rome",
+                "start": 590,
+                "end": 754,
+                "kind": "polity"
+              },
               {
                 "id": "fall_of_constantinople",
                 "canonical_name": "Fall of Constantinople",
@@ -35481,17 +35507,6 @@
             ]
           },
           {
-            "id": "pars",
-            "canonical_name": "Pars",
-            "start": 224,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "nobatia",
             "canonical_name": "Nobatia",
             "start": 400,
@@ -35622,17 +35637,6 @@
               "DZ",
               "TN"
             ]
-          },
-          {
-            "id": "duchy_of_rome",
-            "canonical_name": "Duchy of Rome",
-            "start": 590,
-            "end": 754,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "alodia",
@@ -35802,7 +35806,9 @@
             "linked_era_id": null,
             "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "DZ"
+            ]
           },
           {
             "id": "idrisid_dynasty",

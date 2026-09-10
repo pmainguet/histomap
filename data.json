@@ -84314,7 +84314,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "byzantine_empire",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -240009,18 +240009,21 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
         "europe"
       ],
-      "primary_continent": null,
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "AT",
+        "SI"
+      ],
       "centroid": null,
-      "confidence": "medium"
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -252225,17 +252228,20 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
         "asia"
       ],
-      "primary_continent": null,
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "medium"
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -301745,11 +301751,15 @@
       "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "DZ"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
