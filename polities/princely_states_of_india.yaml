@@ -1,0 +1,36 @@
+id: princely_states_of_india
+canonical_name: Princely states of India
+names:
+  aliases_en: Indian princely states | Native states
+entity_type: polity
+entity_type_confidence: high
+start: 200
+end: null
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - IN
+  confidence: high
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (ROADMAP.md item 5 follow-up, 10 September 2026) for the
+  roughly 230 princely/native states that retained internal autonomy under Mughal,
+  Maratha, or British paramountcy and acceded to the Indian Union between 1947 and
+  1950 (a handful of small estates carry an imprecise recorded end date and are attached
+  by name-pattern instead) -- each was its own independently reviewed record that
+  crowded India's region buckets with hundreds of top-level bands. Not a claim that
+  these states were ever under one another's or a single common sovereign's direct
+  rule -- a plain container for "a princely state of British India", grouped by shared
+  legal status at the moment each ceased to exist, not by lineage. See also precolonial_kingdoms_of_india,
+  its sibling grouping for polities that had already ceased to exist as independent
+  states before the princely-state era. Deliberately excludes Ajmer-Merwara (directly
+  administered British India, not a vassal state) and Sikkim (a separate protectorate
+  that joined India only in 1975, well after the 1947-1950 accession wave this grouping
+  covers).

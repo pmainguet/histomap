@@ -1,0 +1,32 @@
+id: precolonial_kingdoms_of_india
+canonical_name: Pre-colonial kingdoms of India
+names:
+  aliases_en: Ancient and medieval Indian kingdoms | Indian dynasties and empires
+entity_type: polity
+entity_type_confidence: high
+start: -2700
+end: null
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - IN
+  confidence: high
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (ROADMAP.md item 5 follow-up, 10 September 2026) for ancient
+  and medieval Indian kingdoms, dynasties, empires, and sultanates that had already
+  ceased to exist as independent states before the British-paramountcy princely-state
+  era (Maurya Empire, Chola dynasty, Vijayanagara Empire, Mughal Empire, Maratha Empire,
+  and roughly 95 more) -- each was its own independently reviewed record that crowded
+  India's region buckets with hundreds of top-level bands. Not a claim of a shared
+  lineage or sovereign relationship between these polities, many of which were rivals
+  or existed centuries apart -- a plain container grouping by shared historical era/category,
+  not by descent. See also princely_states_of_india, its sibling grouping for the
+  later British-era vassal states that survived into the 1947-1950 accession wave.
