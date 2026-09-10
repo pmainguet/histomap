@@ -1,0 +1,29 @@
+id: iranian_khanates
+canonical_name: Iranian khanates
+names:
+  aliases_en: Post-Nader Shah regional khanates
+entity_type: polity
+entity_type_confidence: high
+start: 1747
+end: 1929
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - IR
+  confidence: high
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/
+  Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for the ~13 regional
+  khanates that fragmented out of Iran following Nader Shah's 1747 assassination,
+  before Qajar consolidation reabsorbed most of them -- each independently reviewed
+  and rendering as a top-level entity, none a bounded phase of a single continuous
+  polity. Not a claim of shared sovereignty or lineage between rival members -- a
+  plain container grouping by shared era, same construct as princely_states_of_india.

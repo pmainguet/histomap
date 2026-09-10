@@ -1,0 +1,31 @@
+id: piast_era_polish_duchies
+canonical_name: Piast-era Polish duchies
+names:
+  aliases_en: Duchies of fragmented Poland
+entity_type: polity
+entity_type_confidence: high
+start: 960
+end: 1795
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - PL
+  confidence: high
+  historical_regions:
+  - eastern_europe
+  primary_historical_region: eastern_europe
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/
+  Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for the ~24 Piast-dynasty
+  duchies produced by Poland's feudal fragmentation (starting with Bolesław III's
+  1138 testament, largely reunified only under Casimir the Great) -- each independently
+  reviewed and rendering as a top-level entity, none a bounded phase of a single continuous
+  polity. Not a claim of shared sovereignty or lineage between rival members -- a
+  plain container grouping by shared era/category, same construct as princely_states_of_india.
+  Left the main Duchy of Poland/Kingdom of Poland lineage and Principality of Kholm
+  (more Ruthenian than Polish) out.

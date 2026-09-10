@@ -1783,7 +1783,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -2222,7 +2222,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -2301,7 +2301,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -2725,7 +2725,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -2886,7 +2886,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -7067,7 +7067,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -7731,7 +7731,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -8187,6 +8187,67 @@
     ]
   },
   {
+    "id": "anatolian_beyliks",
+    "canonical_name": "Anatolian beyliks",
+    "names": {
+      "aliases_en": "Beylik period principalities"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "TR"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 1071,
+    "end": 1522,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026) for the ~38 Turkish beyliks and principalities of Anatolia between the Seljuk victory at Manzikert (1071) and the beyliks' final absorption by the Ottoman Empire -- each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity (the \"Beylik period\" is a historiographical label, not a state). Not a claim of shared sovereignty or lineage between rival, often warring, members -- a plain container grouping by shared era/category, same construct as princely_states_of_india. Left the Beylik of Osman out deliberately -- it shares the Ottoman Empire's own 1299 start year and is usually treated as its earliest phase rather than a peer beylik.",
+    "sources": [
+      "histomap_editorial"
+    ]
+  },
+  {
     "id": "ancient_abdera",
     "canonical_name": "Ancient Abdera",
     "names": {
@@ -8210,7 +8271,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -8266,6 +8327,67 @@
     "notes": "Automatically generated from Wikidata; requires review.",
     "sources": [
       "wikidata"
+    ]
+  },
+  {
+    "id": "ancient_anatolian_states",
+    "canonical_name": "Ancient Anatolian states",
+    "names": {
+      "aliases_en": "Hittite-era Anatolian kingdoms | Ancient Greek colonies of Anatolia"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "TR"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": -2999,
+    "end": -73,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/ Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for ~40 ancient Anatolian polities -- Bronze/Iron Age Hittite-era kingdoms (Hatti, Mitanni, Arzawa, Wilusa, the Neo-Hittite successor states) and the ancient Greek colonial city-states of the Aegean coast (Miletus, Ephesus, Byzantium, Halicarnassus) -- through the Hellenistic-era satrapies, ending when Rome absorbed the peninsula. Each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity. Not a claim of shared sovereignty or lineage between rival, culturally distinct members (Hittite/Luwian states and Greek colonies alike) -- a plain container grouping by shared era/region, same construct as princely_states_of_india. Left the more individually notable Hellenistic client kingdoms (Armenia, Cappadocia, Pontus, Commagene, Sophene, Osroene) and Byzantine/Ottoman/modern Turkey untouched.",
+    "sources": [
+      "histomap_editorial"
     ]
   },
   {
@@ -8353,7 +8475,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -8412,6 +8534,67 @@
     ]
   },
   {
+    "id": "ancient_greek_poleis",
+    "canonical_name": "Ancient Greek poleis",
+    "names": {
+      "aliases_en": "Ancient Greek city-states"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
+      "present_countries": [
+        "GR"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": -7000,
+    "end": -321,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/ Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for ~31 ancient Greek city-states and Bronze/Iron Age polities (Knossos, Sparta, Argos, Chios, and similar) -- each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity. Not a claim of shared sovereignty or lineage between rival, often warring, members -- a plain container grouping by shared era/category, same construct as princely_states_of_india. Left the more individually notable entities (Macedonia, Epirus, the Athenian Empire) out, and left the Frankokratia-era medieval polities (Duchy of Athens, Despotate of Epirus, etc.) to their own sibling grouping, frankokratia_states_of_greece.",
+    "sources": [
+      "histomap_editorial"
+    ]
+  },
+  {
     "id": "ancient_paros",
     "canonical_name": "Ancient Paros",
     "names": {
@@ -8434,7 +8617,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -10553,7 +10736,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -12145,7 +12328,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iranian_khanates",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -12558,7 +12741,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -13289,7 +13472,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -13535,7 +13718,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -23786,7 +23969,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -27013,7 +27196,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -27098,7 +27281,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -27182,7 +27365,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -27263,7 +27446,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -27343,7 +27526,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -27421,7 +27604,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -27499,7 +27682,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -27664,7 +27847,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -27745,7 +27928,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -27829,7 +28012,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -27906,7 +28089,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -27988,7 +28171,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -28071,7 +28254,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -28151,7 +28334,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -28235,7 +28418,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -28315,7 +28498,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -28477,7 +28660,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -28561,7 +28744,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -28641,7 +28824,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -28721,7 +28904,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -31367,7 +31550,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -31448,7 +31631,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -38911,7 +39094,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -39077,7 +39260,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -40196,7 +40379,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -43241,7 +43424,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -45380,7 +45563,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -45544,7 +45727,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -48612,7 +48795,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -48869,7 +49052,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -48950,7 +49133,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -49882,7 +50065,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -50521,7 +50704,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -50601,7 +50784,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -51885,7 +52068,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -54573,7 +54756,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -61265,7 +61448,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -61785,7 +61968,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -61962,7 +62145,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -65104,7 +65287,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -65342,7 +65525,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -65918,7 +66101,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -69377,7 +69560,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -69453,7 +69636,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -69612,7 +69795,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -70964,7 +71147,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -71637,7 +71820,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -72608,7 +72791,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -74923,7 +75106,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -76368,7 +76551,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -76450,7 +76633,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -76705,7 +76888,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -77540,7 +77723,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -78843,7 +79026,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -79007,7 +79190,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -79325,7 +79508,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -79657,7 +79840,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -79813,7 +79996,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -80218,7 +80401,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -80376,7 +80559,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -80538,7 +80721,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -80977,7 +81160,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -81552,7 +81735,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -82966,7 +83149,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -83135,7 +83318,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -83502,7 +83685,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -83583,7 +83766,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -84706,7 +84889,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -84780,7 +84963,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -85019,7 +85202,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -85102,7 +85285,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -85672,7 +85855,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -86408,7 +86591,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -86487,7 +86670,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -86575,7 +86758,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -87098,7 +87281,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -88262,7 +88445,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -88421,7 +88604,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -88497,7 +88680,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -88578,7 +88761,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -88744,7 +88927,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -88829,7 +89012,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -90120,7 +90303,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -91403,6 +91586,67 @@
     "notes": "Automatically generated from Wikidata; requires review.",
     "sources": [
       "wikidata"
+    ]
+  },
+  {
+    "id": "early_medieval_british_isles_kingdoms",
+    "canonical_name": "Early medieval British Isles kingdoms",
+    "names": {
+      "aliases_en": "Anglo-Saxon Heptarchy | Celtic petty kingdoms of Britain"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
+      "present_countries": [
+        "GB"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 1,
+    "end": 1266,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/ Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for ~39 early medieval petty kingdoms of the British Isles -- the Anglo-Saxon Heptarchy states (Wessex, Mercia, Kent, Northumbria, and similar), the Brittonic/Welsh kingdoms (Gwynedd, Powys, Dyfed, and similar), and Scottish/Pictish/Norse polities (Strathclyde, Fortriu, Dal Riata, the Jarldom of Orkney) -- each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity, predating the unification into Scotland/England. Not a claim of shared sovereignty or lineage between rival, often warring, members -- a plain container grouping by shared era/region, same construct as princely_states_of_india. Left the Roman-era breakaway empires (Gallic Empire, Britannic Empire -- a different category), the long-lived Irish Airgialla, and the unified successor kingdoms (Scotland, England) and their high-medieval successors (Angevin Empire, Principality of Wales, Lordship of the Isles) out.",
+    "sources": [
+      "histomap_editorial"
     ]
   },
   {
@@ -95592,7 +95836,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -95986,7 +96230,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -97572,7 +97816,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -100547,7 +100791,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -101183,7 +101427,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -101506,7 +101750,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -101914,7 +102158,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -103147,7 +103391,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -108147,7 +108391,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "polish_local_republics_1918",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -109699,7 +109943,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -110559,6 +110803,67 @@
     "sources": [
       "hyde",
       "wikidata"
+    ]
+  },
+  {
+    "id": "frankokratia_states_of_greece",
+    "canonical_name": "Frankokratia states of Greece",
+    "names": {
+      "aliases_en": "Latinokratia | Crusader states of Greece"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
+      "present_countries": [
+        "GR"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 1204,
+    "end": 1579,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026) for the ~18 Frankish/Venetian/ Genoese states carved out of Byzantine territory after the Fourth Crusade (1204) -- each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity (the Latin Empire itself was their nominal suzerain but most operated with real independence). Not a claim of shared sovereignty or lineage between rival members -- a plain container grouping by shared era/category, same construct as princely_states_of_india. Left the earlier Emirate of Crete (Arab rule, 820-961 -- a different era entirely) and the later Kingdom of the Morea (the 1685-1715 Venetian reconquest, a distinct later episode) out.",
+    "sources": [
+      "histomap_editorial"
     ]
   },
   {
@@ -114684,7 +114989,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -116790,7 +117095,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "polish_local_republics_1918",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -131436,7 +131741,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -132673,7 +132978,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -134339,7 +134644,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "global",
       "visibility_override": "global"
@@ -135350,7 +135655,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -139264,7 +139569,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -141013,7 +141318,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -142669,7 +142974,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -144614,6 +144919,67 @@
     ]
   },
   {
+    "id": "iranian_khanates",
+    "canonical_name": "Iranian khanates",
+    "names": {
+      "aliases_en": "Post-Nader Shah regional khanates"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IR"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 1747,
+    "end": 1929,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/ Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for the ~13 regional khanates that fragmented out of Iran following Nader Shah's 1747 assassination, before Qajar consolidation reabsorbed most of them -- each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity. Not a claim of shared sovereignty or lineage between rival members -- a plain container grouping by shared era, same construct as princely_states_of_india.",
+    "sources": [
+      "histomap_editorial"
+    ]
+  },
+  {
     "id": "iraq",
     "canonical_name": "Iraq",
     "names": {
@@ -146280,7 +146646,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -147162,7 +147528,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -153023,7 +153389,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -155793,7 +156159,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -158003,7 +158369,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iranian_khanates",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -158763,7 +159129,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -162171,7 +162537,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iranian_khanates",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -162439,7 +162805,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iranian_khanates",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -162795,7 +163161,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iranian_khanates",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -164516,7 +164882,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iranian_khanates",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -167853,7 +168219,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -168518,7 +168884,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -169282,7 +169648,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -169614,7 +169980,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -169693,7 +170059,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -170120,7 +170486,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -171454,7 +171820,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -171552,7 +171918,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -171989,7 +172355,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -172068,7 +172434,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -172169,7 +172535,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -172685,7 +173051,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -174344,7 +174710,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -175094,7 +175460,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -175182,7 +175548,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -179341,7 +179707,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -182203,7 +182569,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -182570,7 +182936,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -184505,7 +184871,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -186151,7 +186517,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "polish_local_republics_1918",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -186711,7 +187077,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -187384,7 +187750,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -188605,7 +188971,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -190282,7 +190648,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "global"
     },
@@ -190453,7 +190819,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -191966,7 +192332,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -192142,7 +192508,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -192670,7 +193036,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -194983,7 +195349,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -196670,7 +197036,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -196916,7 +197282,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -197499,7 +197865,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "polish_local_republics_1918",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -199505,7 +199871,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -199584,7 +199950,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -199667,7 +200033,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -199746,7 +200112,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -201440,7 +201806,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -207104,7 +207470,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -207991,7 +208357,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -208528,7 +208894,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "polish_local_republics_1918",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -212514,7 +212880,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -213254,7 +213620,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -213448,7 +213814,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -215102,7 +215468,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "global"
     },
@@ -215186,7 +215552,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -217680,7 +218046,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iranian_khanates",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -219544,7 +219910,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -220841,7 +221207,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -221239,7 +221605,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iranian_khanates",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -223337,7 +223703,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -226429,7 +226795,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -226594,7 +226960,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -227184,7 +227550,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -227598,7 +227964,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -228714,7 +229080,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -229514,7 +229880,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -230265,7 +230631,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -233159,7 +233525,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -235449,7 +235815,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -238062,7 +238428,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -238939,7 +239305,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -239512,7 +239878,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -243379,7 +243745,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -243535,7 +243901,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -244072,7 +244438,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -244619,7 +244985,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -246364,7 +246730,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "global"
     },
@@ -249180,7 +249546,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -250151,7 +250517,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -256939,7 +257305,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -259219,7 +259585,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -259302,7 +259668,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -259796,7 +260162,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -260049,7 +260415,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -260225,7 +260591,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -260632,6 +260998,67 @@
     "notes": "Automatically generated from Wikidata; requires review.",
     "sources": [
       "wikidata"
+    ]
+  },
+  {
+    "id": "piast_era_polish_duchies",
+    "canonical_name": "Piast-era Polish duchies",
+    "names": {
+      "aliases_en": "Duchies of fragmented Poland"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "PL"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 960,
+    "end": 1795,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/ Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for the ~24 Piast-dynasty duchies produced by Poland's feudal fragmentation (starting with Bolesław III's 1138 testament, largely reunified only under Casimir the Great) -- each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity. Not a claim of shared sovereignty or lineage between rival members -- a plain container grouping by shared era/category, same construct as princely_states_of_india. Left the main Duchy of Poland/Kingdom of Poland lineage and Principality of Kholm (more Ruthenian than Polish) out.",
+    "sources": [
+      "histomap_editorial"
     ]
   },
   {
@@ -261278,6 +261705,67 @@
     ]
   },
   {
+    "id": "polish_local_republics_1918",
+    "canonical_name": "Polish local republics of 1918",
+    "names": {
+      "aliases_en": "Polish revolutionary-era local councils and republics"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "PL"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 1905,
+    "end": 1920,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026) for the short-lived local republics, councils, and client-state precursors that emerged around Poland's 1918 re-independence (plus the 1905 Republic of Slawkow, same category of brief local self-governance) -- each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity or of modern Poland itself. A plain container grouping by shared era/category, same construct as princely_states_of_india.",
+    "sources": [
+      "histomap_editorial"
+    ]
+  },
+  {
     "id": "polish_people_s_republic",
     "canonical_name": "Polish People's Republic",
     "names": {
@@ -261705,7 +262193,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -262570,7 +263058,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -262652,7 +263140,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "early_medieval_british_isles_kingdoms",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -263065,7 +263553,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -266392,7 +266880,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -269948,7 +270436,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -274317,7 +274805,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -281319,7 +281807,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -281494,7 +281982,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -283262,7 +283750,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iranian_khanates",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -284954,7 +285442,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -285113,7 +285601,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "polish_local_republics_1918",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -288148,7 +288636,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "polish_local_republics_1918",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -288417,7 +288905,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -298031,7 +298519,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "polish_local_republics_1918",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -298869,7 +299357,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -302090,7 +302578,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -304273,7 +304761,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -305022,7 +305510,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -305078,6 +305566,68 @@
     "notes": "Automatically generated from Wikidata; requires review. End date corrected from null (\"present\") to 1920 -- Wikidata records a same-year (or single approximate) dissolution date that was previously misread as invalid (found live, 1 September 2026).",
     "sources": [
       "wikidata"
+    ]
+  },
+  {
+    "id": "russian_civil_war_regional_governments",
+    "canonical_name": "Russian Civil War regional governments",
+    "names": {
+      "aliases_en": "Russian Revolution period separatist and regional governments"
+    },
+    "external_ids": {
+      "wikidata": null,
+      "wikipedia_en": null,
+      "seshat": []
+    },
+    "source_urls": [],
+    "fade_in_years": null,
+    "fade_out_years": null,
+    "entity_type": "polity",
+    "entity_type_confidence": "high",
+    "entity_type_source_qids": [],
+    "entity_type_reviewed_against": [],
+    "timeline_role": "entity",
+    "consolidation_status": null,
+    "consolidated_into": null,
+    "detail_of": null,
+    "deprecated": null,
+    "relationships": [],
+    "successors": [],
+    "geography": {
+      "continents": [
+        "europe",
+        "asia"
+      ],
+      "primary_continent": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "RU"
+      ],
+      "centroid": null,
+      "confidence": "high"
+    },
+    "manual_overrides": [],
+    "linked_era_id": null,
+    "linked_chapter_id": null,
+    "government_form": null,
+    "start": 1917,
+    "end": 1922,
+    "start_confidence": "low",
+    "end_confidence": "low",
+    "weight_by_era": {},
+    "weight_imputed": false,
+    "prominence_score": 0.0,
+    "prominence_components": {},
+    "eligibility": "accepted",
+    "text": {
+      "long_en": ""
+    },
+    "notes": "Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/ Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for the ~33 short-lived regional governments, Cossack Host unions, Soviet republics, and White Movement factions that emerged during the collapse of the Russian Empire and the ensuing civil war -- each independently reviewed and rendering as a top-level entity, none a bounded phase of a single continuous polity or of Russia/the Soviet Union themselves (most were rivals to, or briefly independent of, both). A plain container grouping by shared era/category, not sovereignty or lineage -- same construct as princely_states_of_india and China's warlord_era_and_puppet_states_of_china. Left the Tuvan People's Republic (a genuinely independent state until its 1944 annexation, not a fleeting civil-war faction) and Yakutia (spans a full century, a different kind of entity) out of this grouping.",
+    "sources": [
+      "histomap_editorial"
     ]
   },
   {
@@ -305189,7 +305739,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -306848,7 +307398,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -308026,7 +308576,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -308699,7 +309249,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -309819,7 +310369,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iranian_khanates",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -310855,7 +311405,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -311376,7 +311926,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "polish_local_republics_1918",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -316380,7 +316930,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -317401,7 +317951,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "piast_era_polish_duchies",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -332244,7 +332794,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -332325,7 +332875,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -335920,7 +336470,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -338371,7 +338921,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -338833,7 +339383,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -342233,7 +342783,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "regional",
       "visibility_override": "global"
@@ -342742,7 +343292,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -343571,7 +344121,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -346914,7 +347464,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -353842,7 +354392,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "global"
     },
@@ -360133,7 +360683,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iranian_khanates",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -361589,7 +362139,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -363103,7 +363653,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -365093,7 +365643,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -365255,7 +365805,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_greek_poleis",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -365416,7 +365966,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "frankokratia_states_of_greece",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -370914,7 +371464,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -373387,7 +373937,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -379852,7 +380402,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -379947,7 +380497,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iranian_khanates",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -380201,7 +380751,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -391158,7 +391708,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -391314,7 +391864,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_anatolian_states",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -391872,7 +392422,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "russian_civil_war_regional_governments",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -396627,7 +397177,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "iranian_khanates",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -397036,7 +397586,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "anatolian_beyliks",
     "deprecated": {
       "visibility_tier": "detailed"
     },

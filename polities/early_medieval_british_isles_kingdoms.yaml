@@ -1,0 +1,35 @@
+id: early_medieval_british_isles_kingdoms
+canonical_name: Early medieval British Isles kingdoms
+names:
+  aliases_en: Anglo-Saxon Heptarchy | Celtic petty kingdoms of Britain
+entity_type: polity
+entity_type_confidence: high
+start: 1
+end: 1266
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - GB
+  confidence: high
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/
+  Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for ~39 early medieval
+  petty kingdoms of the British Isles -- the Anglo-Saxon Heptarchy states (Wessex,
+  Mercia, Kent, Northumbria, and similar), the Brittonic/Welsh kingdoms (Gwynedd,
+  Powys, Dyfed, and similar), and Scottish/Pictish/Norse polities (Strathclyde, Fortriu,
+  Dal Riata, the Jarldom of Orkney) -- each independently reviewed and rendering as
+  a top-level entity, none a bounded phase of a single continuous polity, predating
+  the unification into Scotland/England. Not a claim of shared sovereignty or lineage
+  between rival, often warring, members -- a plain container grouping by shared era/region,
+  same construct as princely_states_of_india. Left the Roman-era breakaway empires
+  (Gallic Empire, Britannic Empire -- a different category), the long-lived Irish
+  Airgialla, and the unified successor kingdoms (Scotland, England) and their high-medieval
+  successors (Angevin Empire, Principality of Wales, Lordship of the Isles) out.

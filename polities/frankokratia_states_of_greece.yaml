@@ -1,0 +1,31 @@
+id: frankokratia_states_of_greece
+canonical_name: Frankokratia states of Greece
+names:
+  aliases_en: Latinokratia | Crusader states of Greece
+entity_type: polity
+entity_type_confidence: high
+start: 1204
+end: 1579
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - GR
+  confidence: high
+  historical_regions:
+  - southern_europe
+  primary_historical_region: southern_europe
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026) for the ~18 Frankish/Venetian/ Genoese
+  states carved out of Byzantine territory after the Fourth Crusade (1204) -- each
+  independently reviewed and rendering as a top-level entity, none a bounded phase
+  of a single continuous polity (the Latin Empire itself was their nominal suzerain
+  but most operated with real independence). Not a claim of shared sovereignty or
+  lineage between rival members -- a plain container grouping by shared era/category,
+  same construct as princely_states_of_india. Left the earlier Emirate of Crete (Arab
+  rule, 820-961 -- a different era entirely) and the later Kingdom of the Morea (the
+  1685-1715 Venetian reconquest, a distinct later episode) out.

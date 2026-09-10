@@ -1,0 +1,35 @@
+id: russian_civil_war_regional_governments
+canonical_name: Russian Civil War regional governments
+names:
+  aliases_en: Russian Revolution period separatist and regional governments
+entity_type: polity
+entity_type_confidence: high
+start: 1917
+end: 1922
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  - asia
+  present_countries:
+  - RU
+  confidence: high
+  historical_regions:
+  - eastern_europe
+  primary_historical_region: eastern_europe
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/
+  Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for the ~33 short-lived
+  regional governments, Cossack Host unions, Soviet republics, and White Movement
+  factions that emerged during the collapse of the Russian Empire and the ensuing
+  civil war -- each independently reviewed and rendering as a top-level entity, none
+  a bounded phase of a single continuous polity or of Russia/the Soviet Union themselves
+  (most were rivals to, or briefly independent of, both). A plain container grouping
+  by shared era/category, not sovereignty or lineage -- same construct as princely_states_of_india
+  and China's warlord_era_and_puppet_states_of_china. Left the Tuvan People's Republic
+  (a genuinely independent state until its 1944 annexation, not a fleeting civil-war
+  faction) and Yakutia (spans a full century, a different kind of entity) out of this
+  grouping.

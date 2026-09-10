@@ -1,0 +1,28 @@
+id: polish_local_republics_1918
+canonical_name: Polish local republics of 1918
+names:
+  aliases_en: Polish revolutionary-era local councils and republics
+entity_type: polity
+entity_type_confidence: high
+start: 1905
+end: 1920
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - europe
+  present_countries:
+  - PL
+  confidence: high
+  historical_regions:
+  - eastern_europe
+  primary_historical_region: eastern_europe
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026) for the short-lived local republics,
+  councils, and client-state precursors that emerged around Poland's 1918 re-independence
+  (plus the 1905 Republic of Slawkow, same category of brief local self-governance)
+  -- each independently reviewed and rendering as a top-level entity, none a bounded
+  phase of a single continuous polity or of modern Poland itself. A plain container
+  grouping by shared era/category, same construct as princely_states_of_india.

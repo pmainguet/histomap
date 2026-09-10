@@ -64,3 +64,4 @@ manual_overrides:
 government_form: duchy
 deprecated:
   visibility_tier: detailed
+detail_of: piast_era_polish_duchies

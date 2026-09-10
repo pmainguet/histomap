@@ -1,0 +1,34 @@
+id: ancient_anatolian_states
+canonical_name: Ancient Anatolian states
+names:
+  aliases_en: Hittite-era Anatolian kingdoms | Ancient Greek colonies of Anatolia
+entity_type: polity
+entity_type_confidence: high
+start: -2999
+end: -73
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - asia
+  present_countries:
+  - TR
+  confidence: high
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
+eligibility: accepted
+sources:
+- histomap_editorial
+notes: Editorial grouping (10 September 2026, China/Russia/Turkey/Indonesia/Iran/
+  Greece/Poland/UK/Syria/Ukraine/Iraq/Yemen detail_of review) for ~40 ancient Anatolian
+  polities -- Bronze/Iron Age Hittite-era kingdoms (Hatti, Mitanni, Arzawa, Wilusa,
+  the Neo-Hittite successor states) and the ancient Greek colonial city-states of
+  the Aegean coast (Miletus, Ephesus, Byzantium, Halicarnassus) -- through the Hellenistic-era
+  satrapies, ending when Rome absorbed the peninsula. Each independently reviewed
+  and rendering as a top-level entity, none a bounded phase of a single continuous
+  polity. Not a claim of shared sovereignty or lineage between rival, culturally distinct
+  members (Hittite/Luwian states and Greek colonies alike) -- a plain container grouping
+  by shared era/region, same construct as princely_states_of_india. Left the more
+  individually notable Hellenistic client kingdoms (Armenia, Cappadocia, Pontus, Commagene,
+  Sophene, Osroene) and Byzantine/Ottoman/modern Turkey untouched.

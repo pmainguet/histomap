@@ -56,3 +56,4 @@ manual_overrides:
 government_form: city-state
 deprecated:
   visibility_tier: detailed
+detail_of: ancient_greek_poleis
