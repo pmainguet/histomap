@@ -29,7 +29,8 @@ geography:
   continents:
   - europe
   primary_continent: europe
-  present_countries: []
+  present_countries:
+  - FR
   confidence: high
   historical_regions:
   - western_europe

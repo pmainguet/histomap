@@ -28,7 +28,12 @@ geography:
   continents:
   - europe
   primary_continent: europe
-  present_countries: []
+  present_countries:
+  - NL
+  - BE
+  - FR
+  - DE
+  - IT
   confidence: high
   historical_regions:
   - western_europe

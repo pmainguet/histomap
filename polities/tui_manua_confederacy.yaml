@@ -25,10 +25,12 @@ sources:
 prominence_score: 10.35
 eligibility: accepted
 geography:
-  continents: []
-  present_countries: []
+  continents:
+  - oceania
+  present_countries:
+  - AS
   centroid: null
-  confidence: null
+  confidence: medium
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

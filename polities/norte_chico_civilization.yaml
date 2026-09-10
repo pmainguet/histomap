@@ -9,6 +9,12 @@ end_confidence: low
 geography:
   continents:
   - south_america
+  present_countries:
+  - PE
+  confidence: medium
+  historical_regions:
+  - andes
+  primary_historical_region: andes
 eligibility: accepted
 sources:
 - histomap_editorial

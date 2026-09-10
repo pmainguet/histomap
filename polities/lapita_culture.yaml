@@ -9,6 +9,16 @@ end_confidence: low
 geography:
   continents:
   - oceania
+  present_countries:
+  - PG
+  - VU
+  - FJ
+  - NC
+  - SB
+  confidence: medium
+  historical_regions:
+  - oceania_pacific
+  primary_historical_region: oceania_pacific
 eligibility: accepted
 sources:
 - histomap_editorial
