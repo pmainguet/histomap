@@ -1,0 +1,27 @@
+id: jenne_jeno
+canonical_name: Djenné-Djeno
+names:
+  aliases_en: Jenne-jeno
+entity_type: polity
+entity_type_confidence: high
+start: -250
+end: 999
+start_confidence: low
+end_confidence: low
+geography:
+  continents:
+  - africa
+  present_countries:
+  - ML
+eligibility: accepted
+sources:
+- histomap_editorial
+external_ids:
+  wikidata: Q607668
+notes: Parent for the Jenne-jeno phase sequence (I through IV), each already its
+  own reviewed polity, attached via detail_of rather than merged into one record.
+  Wikipedia dates the site's full occupation 250 BCE-1400 CE; end here matches the
+  dataset's own latest phase (Jenne-jeno IV, ending 999 CE per Seshat) rather than
+  overriding it.
+source_urls:
+- https://en.wikipedia.org/wiki/Djenn%C3%A9-Djenno

@@ -4293,7 +4293,18 @@
             "linked_era_id": null,
             "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "EG"
+            ],
+            "details": [
+              {
+                "id": "seshat_ptolemaic_kingdom_ii_egptol2",
+                "canonical_name": "Ptolemaic Kingdom II",
+                "start": -217,
+                "end": -32,
+                "kind": "polity"
+              }
+            ]
           },
           {
             "id": "ailao",
@@ -4367,15 +4378,47 @@
             ]
           },
           {
-            "id": "seshat_jenne_jeno_i_mljeje1",
-            "canonical_name": "Jenne-jeno I",
+            "id": "jenne_jeno",
+            "canonical_name": "Djenné-Djeno",
             "start": -250,
-            "end": 49,
+            "end": 999,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "ML"
+            ],
+            "details": [
+              {
+                "id": "seshat_jenne_jeno_i_mljeje1",
+                "canonical_name": "Jenne-jeno I",
+                "start": -250,
+                "end": 49,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_jenne_jeno_ii_mljeje2",
+                "canonical_name": "Jenne-jeno II",
+                "start": 50,
+                "end": 399,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_jenne_jeno_iii_mljeje3",
+                "canonical_name": "Jenne-jeno III",
+                "start": 400,
+                "end": 899,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_jenne_jeno_iv_mljeje4",
+                "canonical_name": "Jenne-jeno IV",
+                "start": 900,
+                "end": 999,
+                "kind": "polity"
+              }
+            ]
           },
           {
             "id": "dai_q5208973",
@@ -4409,17 +4452,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "asia",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "seshat_ptolemaic_kingdom_ii_egptol2",
-            "canonical_name": "Ptolemaic Kingdom II",
-            "start": -217,
-            "end": -32,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -4853,17 +4885,6 @@
             "present_countries": []
           },
           {
-            "id": "seshat_jenne_jeno_ii_mljeje2",
-            "canonical_name": "Jenne-jeno II",
-            "start": 50,
-            "end": 399,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "kingdom_of_arshakuni",
             "canonical_name": "Kingdom of Arshakuni",
             "start": 55,
@@ -4974,9 +4995,11 @@
             "end": 642,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "africa",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "IR"
+            ]
           },
           {
             "id": "yan_q15940658",
@@ -11679,6 +11702,19 @@
             "present_countries": []
           },
           {
+            "id": "khuzistan_sasanian_province",
+            "canonical_name": "Khuzistan (Sasanian province)",
+            "start": 224,
+            "end": 642,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IR"
+            ]
+          },
+          {
             "id": "sasanian_empire",
             "canonical_name": "Sasanian Empire",
             "start": 224,
@@ -13855,7 +13891,18 @@
             "linked_era_id": null,
             "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "EG"
+            ],
+            "details": [
+              {
+                "id": "seshat_ptolemaic_kingdom_ii_egptol2",
+                "canonical_name": "Ptolemaic Kingdom II",
+                "start": -217,
+                "end": -32,
+                "kind": "polity"
+              }
+            ]
           },
           {
             "id": "mauretania",
@@ -13871,26 +13918,47 @@
             ]
           },
           {
-            "id": "seshat_jenne_jeno_i_mljeje1",
-            "canonical_name": "Jenne-jeno I",
+            "id": "jenne_jeno",
+            "canonical_name": "Djenné-Djeno",
             "start": -250,
-            "end": 49,
+            "end": 999,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "seshat_ptolemaic_kingdom_ii_egptol2",
-            "canonical_name": "Ptolemaic Kingdom II",
-            "start": -217,
-            "end": -32,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "ML"
+            ],
+            "details": [
+              {
+                "id": "seshat_jenne_jeno_i_mljeje1",
+                "canonical_name": "Jenne-jeno I",
+                "start": -250,
+                "end": 49,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_jenne_jeno_ii_mljeje2",
+                "canonical_name": "Jenne-jeno II",
+                "start": 50,
+                "end": 399,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_jenne_jeno_iii_mljeje3",
+                "canonical_name": "Jenne-jeno III",
+                "start": 400,
+                "end": 899,
+                "kind": "polity"
+              },
+              {
+                "id": "seshat_jenne_jeno_iv_mljeje4",
+                "canonical_name": "Jenne-jeno IV",
+                "start": 900,
+                "end": 999,
+                "kind": "polity"
+              }
+            ]
           },
           {
             "id": "kingdom_of_numidia",
@@ -13923,28 +13991,6 @@
             "canonical_name": "Noricum",
             "start": -15,
             "end": 476,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "seshat_jenne_jeno_ii_mljeje2",
-            "canonical_name": "Jenne-jeno II",
-            "start": 50,
-            "end": 399,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "khuzistan_sasanian_province",
-            "canonical_name": "Khuzistan (Sasanian province)",
-            "start": 224,
-            "end": 642,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "africa",
@@ -15647,17 +15693,6 @@
             "present_countries": []
           },
           {
-            "id": "seshat_jenne_jeno_iii_mljeje3",
-            "canonical_name": "Jenne-jeno III",
-            "start": 400,
-            "end": 899,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "tyrconnell",
             "canonical_name": "Tyrconnell",
             "start": 401,
@@ -16391,7 +16426,9 @@
             "linked_era_id": null,
             "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "EG"
+            ]
           },
           {
             "id": "khazar_khaganate",
@@ -17399,17 +17436,6 @@
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "seshat_jenne_jeno_iv_mljeje4",
-            "canonical_name": "Jenne-jeno IV",
-            "start": 900,
-            "end": 999,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -19175,8 +19201,6 @@
             "primary_continent": "africa",
             "primary_historical_region": "unclassified",
             "present_countries": [
-              "DZ",
-              "LY",
               "TN"
             ]
           },
@@ -35093,17 +35117,6 @@
             ]
           },
           {
-            "id": "seshat_jenne_jeno_iii_mljeje3",
-            "canonical_name": "Jenne-jeno III",
-            "start": 400,
-            "end": 899,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "mauro_roman_kingdoms",
             "canonical_name": "Mauro-Roman kingdoms",
             "start": 429,
@@ -35273,7 +35286,9 @@
             "linked_era_id": null,
             "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "EG"
+            ]
           },
           {
             "id": "diarra",
@@ -35573,17 +35588,6 @@
             "present_countries": [
               "NG"
             ]
-          },
-          {
-            "id": "seshat_jenne_jeno_iv_mljeje4",
-            "canonical_name": "Jenne-jeno IV",
-            "start": 900,
-            "end": 999,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           },
           {
             "id": "zagwe_dynasty",
@@ -36174,8 +36178,6 @@
             "primary_continent": "africa",
             "primary_historical_region": "unclassified",
             "present_countries": [
-              "DZ",
-              "LY",
               "TN"
             ]
           },
@@ -80143,7 +80145,6 @@
             "primary_continent": "africa",
             "primary_historical_region": "north_africa",
             "present_countries": [
-              "ES",
               "MA"
             ]
           },
@@ -81537,7 +81538,6 @@
             "primary_continent": "africa",
             "primary_historical_region": "north_africa",
             "present_countries": [
-              "ES",
               "MA"
             ]
           },

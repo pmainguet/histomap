@@ -20,9 +20,14 @@ weight_by_era:
   -217: 1.0
 weight_imputed: true
 prominence_score: 0.67
-eligibility: review
-notes: Kept as a separate entity during Seshat reconciliation; requires canonical
-  review.
+eligibility: accepted
+detail_of: ptolemaic_kingdom
+notes: Seshat's own second internal phase code (EgPtol2) for the Ptolemaic Kingdom
+  (ptolemaic_kingdom carries EgPtol1) -- kept as a separate entity during Seshat
+  reconciliation rather than merged, since ptolemaic_kingdom's own dates (304-29
+  BCE) already span this phase's narrower 217-32 BCE range. Attached via detail_of
+  as a bounded phase, same pattern as Han Dynasty's Western/Eastern split, resolving
+  the review flag this record was reconciled with.
 sources: []
 entity_type: polity
 entity_type_confidence: high
