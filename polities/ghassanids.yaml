@@ -28,7 +28,9 @@ geography:
   continents:
   - asia
   primary_continent: asia
-  present_countries: []
+  present_countries:
+  - SY
+  - JO
   confidence: high
   historical_regions:
   - west_asia

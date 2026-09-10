@@ -554,11 +554,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -2570,11 +2574,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "VN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -2805,11 +2813,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -13040,9 +13052,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -13953,11 +13969,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -16532,11 +16552,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -17192,11 +17216,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -18261,9 +18289,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IQ"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -18421,11 +18453,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
+      "present_countries": [
+        "AF"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -18735,9 +18771,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "ID"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -21238,9 +21278,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -22182,11 +22226,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -27242,11 +27290,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "TR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -31476,11 +31528,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "KR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -31564,11 +31620,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "MN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -36262,11 +36322,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
+      "present_countries": [
+        "UZ"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -36421,9 +36485,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
+      "present_countries": [
+        "UZ"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -38735,11 +38803,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -43971,11 +44043,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "RU"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -46466,11 +46542,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -46539,11 +46619,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -46629,11 +46713,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -46860,11 +46948,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -46933,9 +47025,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -48141,11 +48237,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -48884,11 +48984,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -48972,11 +49076,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -51882,11 +51990,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "PH"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -52750,9 +52862,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -57849,9 +57965,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IL"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -60289,9 +60409,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "LB"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -63852,11 +63976,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "KR"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -64252,11 +64380,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -64909,11 +65041,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -66996,9 +67132,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -70843,9 +70983,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "PK"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -90564,9 +90708,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "MY"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -91774,11 +91922,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation",
@@ -91923,11 +92075,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -92330,11 +92486,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -92590,9 +92750,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -93601,11 +93765,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "AZ",
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -99239,11 +99408,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -105663,11 +105836,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -108344,11 +108521,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -108476,11 +108657,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -108564,11 +108749,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -108653,11 +108842,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -119247,9 +119440,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -119437,11 +119634,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -121734,11 +121935,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "KR"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -121996,7 +122201,10 @@
         "west_asia"
       ],
       "primary_historical_region": "west_asia",
-      "present_countries": [],
+      "present_countries": [
+        "JO",
+        "SY"
+      ],
       "centroid": null,
       "confidence": "high"
     },
@@ -122159,9 +122367,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "east_asia"
+      ],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "AF",
+        "IN",
+        "PK"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -122319,11 +122534,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -123270,11 +123489,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "KR"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -123514,11 +123737,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -127849,11 +128076,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN",
+        "KR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -129168,9 +129400,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -131620,11 +131856,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "SY"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -131772,11 +132012,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IQ",
+        "SY"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -132094,11 +132339,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -132243,9 +132492,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -132412,11 +132665,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -136363,11 +136620,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "ID"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -137297,11 +137558,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "MN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -138049,11 +138314,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "TR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -141975,11 +142244,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "SY"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -142734,11 +143007,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -144336,9 +144613,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IR"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -145001,11 +145282,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "TR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -146710,11 +146995,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IQ",
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -147500,9 +147790,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "PK"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -150253,11 +150547,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation",
@@ -150585,11 +150883,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -150663,11 +150965,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation",
@@ -150753,9 +151059,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "KR"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -150829,11 +151139,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -150906,11 +151220,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -151095,11 +151413,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -151180,11 +151502,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -151860,11 +152186,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation",
@@ -153682,11 +154012,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -153931,11 +154265,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "PK"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -155058,11 +155396,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -157149,11 +157491,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -158801,9 +159147,13 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "RU"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -160440,11 +160790,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -160866,11 +161220,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "MN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -161849,11 +162207,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "PK"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -162785,9 +163147,14 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
+      "present_countries": [
+        "TM",
+        "UZ"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -163092,11 +163459,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -165543,11 +165914,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "AM",
+        "AZ"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -167643,11 +168019,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -168482,11 +168862,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "LA"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -174006,11 +174390,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "SY"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -178178,11 +178566,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "LK"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -178866,11 +179258,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "ID"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -185740,11 +186136,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "MY",
+        "TH"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -187681,11 +188082,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "AZ"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -188282,11 +188687,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "LK"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -194364,11 +194773,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -196101,7 +196514,9 @@
         "east_asia"
       ],
       "primary_historical_region": "east_asia",
-      "present_countries": [],
+      "present_countries": [
+        "MM"
+      ],
       "centroid": null,
       "confidence": "high"
     },
@@ -198570,9 +198985,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -202966,11 +203385,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "MY",
+        "TH"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -203626,11 +204050,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "KR"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -203802,11 +204230,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation",
@@ -203991,11 +204423,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -204192,11 +204628,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -204335,11 +204775,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -204411,11 +204855,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -204486,11 +204934,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -204574,11 +205026,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -204686,9 +205142,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "KR"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -204788,11 +205248,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -204964,11 +205428,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -205051,11 +205519,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -205151,11 +205623,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -205313,11 +205789,17 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
+      "historical_regions": [
+        "southern_europe",
+        "west_asia"
+      ],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "GR",
+        "TR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -207138,11 +207620,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -207333,11 +207819,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -208191,11 +208681,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -208535,11 +209029,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -209076,11 +209574,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -209167,11 +209669,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -209974,9 +210480,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IL"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -210282,9 +210792,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IL"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -210431,9 +210945,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IL"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -211060,9 +211578,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IL"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -211307,9 +211829,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "PS"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -212599,9 +213125,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -213117,9 +213647,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "VN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -214126,11 +214660,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -216960,11 +217498,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN",
+        "NP"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -222753,11 +223296,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -226985,11 +227532,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -227262,11 +227813,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "TW"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -232809,11 +233364,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -234313,11 +234872,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "AZ"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -234388,9 +234951,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "JP"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -236077,9 +236644,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -240617,11 +241188,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IR",
+        "SY"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -243026,11 +243602,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -243101,11 +243681,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -243175,11 +243759,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -243346,11 +243934,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -243594,9 +244186,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -243780,11 +244376,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -243856,11 +244456,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN",
+        "MN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -243946,11 +244551,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -244608,13 +245217,16 @@
     "successors": [],
     "geography": {
       "continents": [
-        "asia",
         "north_america"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "north_america",
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
+      "present_countries": [
+        "MX"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -249996,11 +250608,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "ID"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -251827,11 +252443,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -265748,11 +266368,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "BD",
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -266864,11 +267489,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "TR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -267473,9 +268102,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IL"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -268021,11 +268654,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "TR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -271757,11 +272394,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "SY",
+        "TR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -274229,9 +274871,14 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "AM",
+        "TR"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -275794,9 +276441,13 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "RU"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -277686,9 +278337,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
+      "present_countries": [
+        "UZ"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -278548,9 +279203,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -280207,11 +280866,18 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "east_asia"
+      ],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN",
+        "KG",
+        "KZ"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -280403,11 +281069,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "BH",
+        "SA"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -281034,11 +281705,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -281575,11 +282250,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -283224,11 +283903,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "PH"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -284138,11 +284821,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -285359,11 +286046,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -285486,9 +286177,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -287863,9 +288558,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "PH"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -299003,9 +299702,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -299845,11 +300548,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -302764,11 +303471,15 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "RU"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -303194,14 +303905,18 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "JP"
+      ],
       "centroid": {
         "lat": 26.2,
         "lon": 127.68333333
       },
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -303976,11 +304691,17 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "west_asia"
+      ],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "AF",
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -311533,11 +312254,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -314520,11 +315245,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
+      "present_countries": [
+        "KZ"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -326234,11 +326963,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -327598,11 +328331,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
+      "present_countries": [
+        "UZ"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -328156,9 +328893,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -328751,11 +329492,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -328980,9 +329725,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -329408,11 +330157,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "RU"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -330200,9 +330953,14 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN",
+        "PK"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -330279,7 +331037,10 @@
         "east_asia"
       ],
       "primary_historical_region": "east_asia",
-      "present_countries": [],
+      "present_countries": [
+        "IN",
+        "PK"
+      ],
       "centroid": null,
       "confidence": "high"
     },
@@ -331150,11 +331911,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
+      "present_countries": [
+        "RU"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -334170,9 +334935,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -334506,9 +335275,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "ID"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -336486,11 +337259,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -336561,11 +337338,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -336637,11 +337418,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -336811,11 +337596,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -336952,11 +337741,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -337042,11 +337835,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -337116,11 +337913,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -337685,11 +338486,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "KP"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -344573,11 +345378,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -344744,11 +345553,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "TH"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -348350,9 +349163,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -348823,11 +349640,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -351166,11 +351987,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "KR"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -357538,11 +358363,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation",
@@ -358733,11 +359562,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
+      "present_countries": [
+        "UZ"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -361209,11 +362042,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -363121,11 +363958,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "PH"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -363287,9 +364128,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "TH"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -363687,11 +364532,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation",
@@ -364006,9 +364855,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -367649,11 +368502,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -368858,11 +369715,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN",
+        "NP"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -369279,11 +370141,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
+      "present_countries": [
+        "UZ"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -369462,11 +370328,16 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN",
+        "MN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation",
@@ -370260,11 +371131,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -376698,11 +377573,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -378244,11 +379123,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -378749,11 +379632,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "VN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -379069,11 +379956,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -379314,11 +380205,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -379563,9 +380458,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -384187,11 +385086,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -385796,11 +386699,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -386038,9 +386945,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -386176,11 +387087,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type",
@@ -386255,11 +387170,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -386393,11 +387312,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -386482,11 +387405,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -386762,11 +387689,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -386951,11 +387882,18 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "east_asia"
+      ],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN",
+        "KZ",
+        "UZ"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -387042,11 +387980,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -387306,11 +388248,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -387968,11 +388914,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "KR"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -388930,11 +389880,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -389005,11 +389959,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -389094,11 +390052,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation",
@@ -389349,11 +390311,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -389848,9 +390814,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "JP"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -390083,11 +391053,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -390157,11 +391131,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -390242,11 +391220,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -390404,11 +391386,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -391313,11 +392299,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -391464,11 +392454,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -392971,11 +393965,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -393861,11 +394859,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -394092,11 +395094,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -394346,9 +395352,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -394584,9 +395594,13 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
