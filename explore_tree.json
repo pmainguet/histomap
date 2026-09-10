@@ -71076,58 +71076,6 @@
             ]
           },
           {
-            "id": "first_mexican_republic",
-            "canonical_name": "First Mexican Republic",
-            "start": 1823,
-            "end": 1835,
-            "curated": true,
-            "linked_era_id": "north_america_industrial_imperial_world_era",
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "provisional_government_of_mexico",
-            "canonical_name": "Provisional Government of Mexico",
-            "start": 1823,
-            "end": 1824,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "estado_de_occidente",
-            "canonical_name": "Estado de Occidente",
-            "start": 1824,
-            "end": 1830,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "centralist_republic_of_mexico",
-            "canonical_name": "Centralist Republic of Mexico",
-            "start": 1835,
-            "end": 1846,
-            "curated": true,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
             "id": "estado_libre_del_istmo",
             "canonical_name": "Estado Libre del Istmo",
             "start": 1840,
@@ -71155,19 +71103,6 @@
               "HN",
               "NI",
               "SV"
-            ]
-          },
-          {
-            "id": "second_federal_republic_of_mexico",
-            "canonical_name": "Second Federal Republic of Mexico",
-            "start": 1846,
-            "end": 1863,
-            "curated": true,
-            "linked_era_id": "north_america_industrial_imperial_world_era",
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           },
           {
@@ -71207,19 +71142,6 @@
             "primary_historical_region": "mesoamerica",
             "present_countries": [
               "CR"
-            ]
-          },
-          {
-            "id": "restored_republic",
-            "canonical_name": "Restored Republic",
-            "start": 1867,
-            "end": 1876,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           },
           {
@@ -78183,45 +78105,6 @@
             ]
           },
           {
-            "id": "first_mexican_republic",
-            "canonical_name": "First Mexican Republic",
-            "start": 1823,
-            "end": 1835,
-            "curated": true,
-            "linked_era_id": "north_america_industrial_imperial_world_era",
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "provisional_government_of_mexico",
-            "canonical_name": "Provisional Government of Mexico",
-            "start": 1823,
-            "end": 1824,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "estado_de_occidente",
-            "canonical_name": "Estado de Occidente",
-            "start": 1824,
-            "end": 1830,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
             "id": "republic_of_madawaska",
             "canonical_name": "Republic of Madawaska",
             "start": 1827,
@@ -78245,19 +78128,6 @@
             "primary_historical_region": "north_america",
             "present_countries": [
               "US"
-            ]
-          },
-          {
-            "id": "centralist_republic_of_mexico",
-            "canonical_name": "Centralist Republic of Mexico",
-            "start": 1835,
-            "end": 1846,
-            "curated": true,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           },
           {
@@ -78323,19 +78193,6 @@
               "HN",
               "NI",
               "SV"
-            ]
-          },
-          {
-            "id": "second_federal_republic_of_mexico",
-            "canonical_name": "Second Federal Republic of Mexico",
-            "start": 1846,
-            "end": 1863,
-            "curated": true,
-            "linked_era_id": "north_america_industrial_imperial_world_era",
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           },
           {
@@ -78436,19 +78293,6 @@
             "primary_historical_region": "mesoamerica",
             "present_countries": [
               "CR"
-            ]
-          },
-          {
-            "id": "restored_republic",
-            "canonical_name": "Restored Republic",
-            "start": 1867,
-            "end": 1876,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           },
           {
@@ -85437,604 +85281,6 @@
             ]
           }
         ],
-        "mesoamerica": [
-          {
-            "id": "baja_california",
-            "canonical_name": "Baja California",
-            "start": 1804,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ],
-            "details": [
-              {
-                "id": "republic_of_baja_california",
-                "canonical_name": "Republic of Baja California",
-                "start": 1853,
-                "end": 1854,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "mexico",
-            "canonical_name": "Mexico",
-            "start": 1810,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "north_america_contemporary_world_era",
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ],
-            "details": [
-              {
-                "id": "first_mexican_empire",
-                "canonical_name": "First Mexican Empire",
-                "start": 1822,
-                "end": 1823,
-                "kind": "polity"
-              },
-              {
-                "id": "state_of_mexico",
-                "canonical_name": "State of Mexico",
-                "start": 1823,
-                "end": null,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "costa_rica",
-            "canonical_name": "Costa Rica",
-            "start": 1821,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "north_america_contemporary_world_era",
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "CR"
-            ],
-            "details": [
-              {
-                "id": "state_of_costa_rica",
-                "canonical_name": "State of Costa Rica",
-                "start": 1824,
-                "end": 1838,
-                "kind": "polity"
-              },
-              {
-                "id": "free_state_of_costa_rica",
-                "canonical_name": "Free State of Costa Rica",
-                "start": 1838,
-                "end": 2026,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "guatemala",
-            "canonical_name": "Guatemala",
-            "start": 1821,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "north_america_contemporary_world_era",
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "GT"
-            ],
-            "details": [
-              {
-                "id": "state_of_guatemala",
-                "canonical_name": "State of Guatemala",
-                "start": 1824,
-                "end": 1839,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "honduras",
-            "canonical_name": "Honduras",
-            "start": 1821,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "north_america_contemporary_world_era",
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "HN"
-            ],
-            "details": [
-              {
-                "id": "state_of_honduras",
-                "canonical_name": "State of Honduras",
-                "start": 1824,
-                "end": 1838,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "nicaragua",
-            "canonical_name": "Nicaragua",
-            "start": 1821,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "north_america_contemporary_world_era",
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "NI"
-            ],
-            "details": [
-              {
-                "id": "state_of_nicaragua",
-                "canonical_name": "State of Nicaragua",
-                "start": 1824,
-                "end": 1838,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "guanajuato",
-            "canonical_name": "Guanajuato",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "jalisco",
-            "canonical_name": "Jalisco",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "michoacan",
-            "canonical_name": "Michoacán",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "queretaro",
-            "canonical_name": "Querétaro",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "san_luis_potosi",
-            "canonical_name": "San Luis Potosí",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "veracruz",
-            "canonical_name": "Veracruz",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "yucatan",
-            "canonical_name": "Yucatán",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ],
-            "details": [
-              {
-                "id": "republic_of_yucatan",
-                "canonical_name": "Republic of Yucatán",
-                "start": 1841,
-                "end": 1848,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "zacatecas",
-            "canonical_name": "Zacatecas",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "chiapas",
-            "canonical_name": "Chiapas",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "chihuahua",
-            "canonical_name": "Chihuahua",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "coahuila",
-            "canonical_name": "Coahuila",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ],
-            "details": [
-              {
-                "id": "coahuila_y_tejas",
-                "canonical_name": "Coahuila y Tejas",
-                "start": 1824,
-                "end": 1835,
-                "kind": "polity"
-              },
-              {
-                "id": "nuevo_leon_coahuila",
-                "canonical_name": "Nuevo León-Coahuila",
-                "start": 1856,
-                "end": 1864,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "durango",
-            "canonical_name": "Durango",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "nuevo_leon",
-            "canonical_name": "Nuevo León",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "oaxaca",
-            "canonical_name": "Oaxaca",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "puebla",
-            "canonical_name": "Puebla",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "tabasco",
-            "canonical_name": "Tabasco",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "tamaulipas",
-            "canonical_name": "Tamaulipas",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "sinaloa",
-            "canonical_name": "Sinaloa",
-            "start": 1831,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "sonora",
-            "canonical_name": "Sonora",
-            "start": 1831,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ],
-            "details": [
-              {
-                "id": "republic_of_sonora",
-                "canonical_name": "Republic of Sonora",
-                "start": 1853,
-                "end": 1854,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "aguascalientes",
-            "canonical_name": "Aguascalientes",
-            "start": 1835,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "el_salvador",
-            "canonical_name": "El Salvador",
-            "start": 1841,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "north_america_contemporary_world_era",
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "SV"
-            ]
-          },
-          {
-            "id": "colima",
-            "canonical_name": "Colima",
-            "start": 1856,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "tlaxcala_q82681",
-            "canonical_name": "Tlaxcala",
-            "start": 1857,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "campeche",
-            "canonical_name": "Campeche",
-            "start": 1858,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "guerrero",
-            "canonical_name": "Guerrero",
-            "start": 1858,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "hidalgo",
-            "canonical_name": "Hidalgo",
-            "start": 1869,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "morelos",
-            "canonical_name": "Morelos",
-            "start": 1869,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "panama",
-            "canonical_name": "Panama",
-            "start": 1903,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "north_america_contemporary_world_era",
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "PA"
-            ]
-          },
-          {
-            "id": "nayarit",
-            "canonical_name": "Nayarit",
-            "start": 1917,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "baja_california_sur",
-            "canonical_name": "Baja California Sur",
-            "start": 1974,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "quintana_roo",
-            "canonical_name": "Quintana Roo",
-            "start": 1974,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "belize",
-            "canonical_name": "Belize",
-            "start": 1981,
-            "end": null,
-            "curated": true,
-            "linked_era_id": "north_america_contemporary_world_era",
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "BZ"
-            ]
-          }
-        ],
         "west_asia": [
           {
             "id": "saudi_arabia",
@@ -91636,6 +90882,472 @@
             ]
           }
         ],
+        "mesoamerica": [
+          {
+            "id": "baja_california",
+            "canonical_name": "Baja California",
+            "start": 1804,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "north_america",
+            "primary_historical_region": "mesoamerica",
+            "present_countries": [
+              "MX"
+            ],
+            "details": [
+              {
+                "id": "republic_of_baja_california",
+                "canonical_name": "Republic of Baja California",
+                "start": 1853,
+                "end": 1854,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "mexico",
+            "canonical_name": "Mexico",
+            "start": 1810,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "north_america_contemporary_world_era",
+            "primary_continent": "north_america",
+            "primary_historical_region": "mesoamerica",
+            "present_countries": [
+              "MX"
+            ],
+            "details": [
+              {
+                "id": "first_mexican_empire",
+                "canonical_name": "First Mexican Empire",
+                "start": 1822,
+                "end": 1823,
+                "kind": "polity"
+              },
+              {
+                "id": "first_mexican_republic",
+                "canonical_name": "First Mexican Republic",
+                "start": 1823,
+                "end": 1835,
+                "kind": "polity"
+              },
+              {
+                "id": "guanajuato",
+                "canonical_name": "Guanajuato",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "jalisco",
+                "canonical_name": "Jalisco",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "michoacan",
+                "canonical_name": "Michoacán",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "provisional_government_of_mexico",
+                "canonical_name": "Provisional Government of Mexico",
+                "start": 1823,
+                "end": 1824,
+                "kind": "polity"
+              },
+              {
+                "id": "queretaro",
+                "canonical_name": "Querétaro",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "san_luis_potosi",
+                "canonical_name": "San Luis Potosí",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "state_of_mexico",
+                "canonical_name": "State of Mexico",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "veracruz",
+                "canonical_name": "Veracruz",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "yucatan",
+                "canonical_name": "Yucatán",
+                "start": 1823,
+                "end": null,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "republic_of_yucatan",
+                    "canonical_name": "Republic of Yucatán",
+                    "start": 1841,
+                    "end": 1848,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "zacatecas",
+                "canonical_name": "Zacatecas",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "chiapas",
+                "canonical_name": "Chiapas",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "chihuahua",
+                "canonical_name": "Chihuahua",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "coahuila",
+                "canonical_name": "Coahuila",
+                "start": 1824,
+                "end": null,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "coahuila_y_tejas",
+                    "canonical_name": "Coahuila y Tejas",
+                    "start": 1824,
+                    "end": 1835,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "nuevo_leon_coahuila",
+                    "canonical_name": "Nuevo León-Coahuila",
+                    "start": 1856,
+                    "end": 1864,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "durango",
+                "canonical_name": "Durango",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "estado_de_occidente",
+                "canonical_name": "Estado de Occidente",
+                "start": 1824,
+                "end": 1830,
+                "kind": "polity"
+              },
+              {
+                "id": "nuevo_leon",
+                "canonical_name": "Nuevo León",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "oaxaca",
+                "canonical_name": "Oaxaca",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "puebla",
+                "canonical_name": "Puebla",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "tabasco",
+                "canonical_name": "Tabasco",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "tamaulipas",
+                "canonical_name": "Tamaulipas",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "sinaloa",
+                "canonical_name": "Sinaloa",
+                "start": 1831,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "sonora",
+                "canonical_name": "Sonora",
+                "start": 1831,
+                "end": null,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "republic_of_sonora",
+                    "canonical_name": "Republic of Sonora",
+                    "start": 1853,
+                    "end": 1854,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "aguascalientes",
+                "canonical_name": "Aguascalientes",
+                "start": 1835,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "centralist_republic_of_mexico",
+                "canonical_name": "Centralist Republic of Mexico",
+                "start": 1835,
+                "end": 1846,
+                "kind": "polity"
+              },
+              {
+                "id": "second_federal_republic_of_mexico",
+                "canonical_name": "Second Federal Republic of Mexico",
+                "start": 1846,
+                "end": 1863,
+                "kind": "polity"
+              },
+              {
+                "id": "colima",
+                "canonical_name": "Colima",
+                "start": 1856,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "tlaxcala_q82681",
+                "canonical_name": "Tlaxcala",
+                "start": 1857,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "campeche",
+                "canonical_name": "Campeche",
+                "start": 1858,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "guerrero",
+                "canonical_name": "Guerrero",
+                "start": 1858,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "restored_republic",
+                "canonical_name": "Restored Republic",
+                "start": 1867,
+                "end": 1876,
+                "kind": "polity"
+              },
+              {
+                "id": "hidalgo",
+                "canonical_name": "Hidalgo",
+                "start": 1869,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "morelos",
+                "canonical_name": "Morelos",
+                "start": 1869,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "nayarit",
+                "canonical_name": "Nayarit",
+                "start": 1917,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "baja_california_sur",
+                "canonical_name": "Baja California Sur",
+                "start": 1974,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "quintana_roo",
+                "canonical_name": "Quintana Roo",
+                "start": 1974,
+                "end": null,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "costa_rica",
+            "canonical_name": "Costa Rica",
+            "start": 1821,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "north_america_contemporary_world_era",
+            "primary_continent": "north_america",
+            "primary_historical_region": "mesoamerica",
+            "present_countries": [
+              "CR"
+            ],
+            "details": [
+              {
+                "id": "state_of_costa_rica",
+                "canonical_name": "State of Costa Rica",
+                "start": 1824,
+                "end": 1838,
+                "kind": "polity"
+              },
+              {
+                "id": "free_state_of_costa_rica",
+                "canonical_name": "Free State of Costa Rica",
+                "start": 1838,
+                "end": 2026,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "guatemala",
+            "canonical_name": "Guatemala",
+            "start": 1821,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "north_america_contemporary_world_era",
+            "primary_continent": "north_america",
+            "primary_historical_region": "mesoamerica",
+            "present_countries": [
+              "GT"
+            ],
+            "details": [
+              {
+                "id": "state_of_guatemala",
+                "canonical_name": "State of Guatemala",
+                "start": 1824,
+                "end": 1839,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "honduras",
+            "canonical_name": "Honduras",
+            "start": 1821,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "north_america_contemporary_world_era",
+            "primary_continent": "north_america",
+            "primary_historical_region": "mesoamerica",
+            "present_countries": [
+              "HN"
+            ],
+            "details": [
+              {
+                "id": "state_of_honduras",
+                "canonical_name": "State of Honduras",
+                "start": 1824,
+                "end": 1838,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "nicaragua",
+            "canonical_name": "Nicaragua",
+            "start": 1821,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "north_america_contemporary_world_era",
+            "primary_continent": "north_america",
+            "primary_historical_region": "mesoamerica",
+            "present_countries": [
+              "NI"
+            ],
+            "details": [
+              {
+                "id": "state_of_nicaragua",
+                "canonical_name": "State of Nicaragua",
+                "start": 1824,
+                "end": 1838,
+                "kind": "polity"
+              }
+            ]
+          },
+          {
+            "id": "el_salvador",
+            "canonical_name": "El Salvador",
+            "start": 1841,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "north_america_contemporary_world_era",
+            "primary_continent": "north_america",
+            "primary_historical_region": "mesoamerica",
+            "present_countries": [
+              "SV"
+            ]
+          },
+          {
+            "id": "panama",
+            "canonical_name": "Panama",
+            "start": 1903,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "north_america_contemporary_world_era",
+            "primary_continent": "north_america",
+            "primary_historical_region": "mesoamerica",
+            "present_countries": [
+              "PA"
+            ]
+          },
+          {
+            "id": "belize",
+            "canonical_name": "Belize",
+            "start": 1981,
+            "end": null,
+            "curated": true,
+            "linked_era_id": "north_america_contemporary_world_era",
+            "primary_continent": "north_america",
+            "primary_historical_region": "mesoamerica",
+            "present_countries": [
+              "BZ"
+            ]
+          }
+        ],
         "east_asia": [
           {
             "id": "kasepuhan_sultanate",
@@ -94893,9 +94605,288 @@
                 "kind": "polity"
               },
               {
+                "id": "first_mexican_republic",
+                "canonical_name": "First Mexican Republic",
+                "start": 1823,
+                "end": 1835,
+                "kind": "polity"
+              },
+              {
+                "id": "guanajuato",
+                "canonical_name": "Guanajuato",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "jalisco",
+                "canonical_name": "Jalisco",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "michoacan",
+                "canonical_name": "Michoacán",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "provisional_government_of_mexico",
+                "canonical_name": "Provisional Government of Mexico",
+                "start": 1823,
+                "end": 1824,
+                "kind": "polity"
+              },
+              {
+                "id": "queretaro",
+                "canonical_name": "Querétaro",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "san_luis_potosi",
+                "canonical_name": "San Luis Potosí",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
                 "id": "state_of_mexico",
                 "canonical_name": "State of Mexico",
                 "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "veracruz",
+                "canonical_name": "Veracruz",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "yucatan",
+                "canonical_name": "Yucatán",
+                "start": 1823,
+                "end": null,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "republic_of_yucatan",
+                    "canonical_name": "Republic of Yucatán",
+                    "start": 1841,
+                    "end": 1848,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "zacatecas",
+                "canonical_name": "Zacatecas",
+                "start": 1823,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "chiapas",
+                "canonical_name": "Chiapas",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "chihuahua",
+                "canonical_name": "Chihuahua",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "coahuila",
+                "canonical_name": "Coahuila",
+                "start": 1824,
+                "end": null,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "coahuila_y_tejas",
+                    "canonical_name": "Coahuila y Tejas",
+                    "start": 1824,
+                    "end": 1835,
+                    "kind": "polity"
+                  },
+                  {
+                    "id": "nuevo_leon_coahuila",
+                    "canonical_name": "Nuevo León-Coahuila",
+                    "start": 1856,
+                    "end": 1864,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "durango",
+                "canonical_name": "Durango",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "estado_de_occidente",
+                "canonical_name": "Estado de Occidente",
+                "start": 1824,
+                "end": 1830,
+                "kind": "polity"
+              },
+              {
+                "id": "nuevo_leon",
+                "canonical_name": "Nuevo León",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "oaxaca",
+                "canonical_name": "Oaxaca",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "puebla",
+                "canonical_name": "Puebla",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "tabasco",
+                "canonical_name": "Tabasco",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "tamaulipas",
+                "canonical_name": "Tamaulipas",
+                "start": 1824,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "sinaloa",
+                "canonical_name": "Sinaloa",
+                "start": 1831,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "sonora",
+                "canonical_name": "Sonora",
+                "start": 1831,
+                "end": null,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "republic_of_sonora",
+                    "canonical_name": "Republic of Sonora",
+                    "start": 1853,
+                    "end": 1854,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "aguascalientes",
+                "canonical_name": "Aguascalientes",
+                "start": 1835,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "centralist_republic_of_mexico",
+                "canonical_name": "Centralist Republic of Mexico",
+                "start": 1835,
+                "end": 1846,
+                "kind": "polity"
+              },
+              {
+                "id": "second_federal_republic_of_mexico",
+                "canonical_name": "Second Federal Republic of Mexico",
+                "start": 1846,
+                "end": 1863,
+                "kind": "polity"
+              },
+              {
+                "id": "colima",
+                "canonical_name": "Colima",
+                "start": 1856,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "tlaxcala_q82681",
+                "canonical_name": "Tlaxcala",
+                "start": 1857,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "campeche",
+                "canonical_name": "Campeche",
+                "start": 1858,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "guerrero",
+                "canonical_name": "Guerrero",
+                "start": 1858,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "restored_republic",
+                "canonical_name": "Restored Republic",
+                "start": 1867,
+                "end": 1876,
+                "kind": "polity"
+              },
+              {
+                "id": "hidalgo",
+                "canonical_name": "Hidalgo",
+                "start": 1869,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "morelos",
+                "canonical_name": "Morelos",
+                "start": 1869,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "nayarit",
+                "canonical_name": "Nayarit",
+                "start": 1917,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "baja_california_sur",
+                "canonical_name": "Baja California Sur",
+                "start": 1974,
+                "end": null,
+                "kind": "polity"
+              },
+              {
+                "id": "quintana_roo",
+                "canonical_name": "Quintana Roo",
+                "start": 1974,
                 "end": null,
                 "kind": "polity"
               }
@@ -94997,300 +94988,6 @@
             ]
           },
           {
-            "id": "guanajuato",
-            "canonical_name": "Guanajuato",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "jalisco",
-            "canonical_name": "Jalisco",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "michoacan",
-            "canonical_name": "Michoacán",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "queretaro",
-            "canonical_name": "Querétaro",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "san_luis_potosi",
-            "canonical_name": "San Luis Potosí",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "veracruz",
-            "canonical_name": "Veracruz",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "yucatan",
-            "canonical_name": "Yucatán",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ],
-            "details": [
-              {
-                "id": "republic_of_yucatan",
-                "canonical_name": "Republic of Yucatán",
-                "start": 1841,
-                "end": 1848,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "zacatecas",
-            "canonical_name": "Zacatecas",
-            "start": 1823,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "chiapas",
-            "canonical_name": "Chiapas",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "chihuahua",
-            "canonical_name": "Chihuahua",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "coahuila",
-            "canonical_name": "Coahuila",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ],
-            "details": [
-              {
-                "id": "coahuila_y_tejas",
-                "canonical_name": "Coahuila y Tejas",
-                "start": 1824,
-                "end": 1835,
-                "kind": "polity"
-              },
-              {
-                "id": "nuevo_leon_coahuila",
-                "canonical_name": "Nuevo León-Coahuila",
-                "start": 1856,
-                "end": 1864,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "durango",
-            "canonical_name": "Durango",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "nuevo_leon",
-            "canonical_name": "Nuevo León",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "oaxaca",
-            "canonical_name": "Oaxaca",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "puebla",
-            "canonical_name": "Puebla",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "tabasco",
-            "canonical_name": "Tabasco",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "tamaulipas",
-            "canonical_name": "Tamaulipas",
-            "start": 1824,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "sinaloa",
-            "canonical_name": "Sinaloa",
-            "start": 1831,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "sonora",
-            "canonical_name": "Sonora",
-            "start": 1831,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ],
-            "details": [
-              {
-                "id": "republic_of_sonora",
-                "canonical_name": "Republic of Sonora",
-                "start": 1853,
-                "end": 1854,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "aguascalientes",
-            "canonical_name": "Aguascalientes",
-            "start": 1835,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
             "id": "cherokee_nation",
             "canonical_name": "Cherokee Nation",
             "start": 1839,
@@ -95385,58 +95082,6 @@
             ]
           },
           {
-            "id": "colima",
-            "canonical_name": "Colima",
-            "start": 1856,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "tlaxcala_q82681",
-            "canonical_name": "Tlaxcala",
-            "start": 1857,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "campeche",
-            "canonical_name": "Campeche",
-            "start": 1858,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "guerrero",
-            "canonical_name": "Guerrero",
-            "start": 1858,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
             "id": "canada",
             "canonical_name": "Canada",
             "start": 1867,
@@ -95499,32 +95144,6 @@
             "primary_historical_region": "north_america",
             "present_countries": [
               "CA"
-            ]
-          },
-          {
-            "id": "hidalgo",
-            "canonical_name": "Hidalgo",
-            "start": 1869,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
-            "id": "morelos",
-            "canonical_name": "Morelos",
-            "start": 1869,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           },
           {
@@ -95612,19 +95231,6 @@
             "primary_historical_region": "north_america",
             "present_countries": [
               "CA"
-            ]
-          },
-          {
-            "id": "nayarit",
-            "canonical_name": "Nayarit",
-            "start": 1917,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           },
           {
@@ -95745,19 +95351,6 @@
             ]
           },
           {
-            "id": "baja_california_sur",
-            "canonical_name": "Baja California Sur",
-            "start": 1974,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
-            ]
-          },
-          {
             "id": "grenada",
             "canonical_name": "Grenada",
             "start": 1974,
@@ -95768,19 +95361,6 @@
             "primary_historical_region": "caribbean",
             "present_countries": [
               "GD"
-            ]
-          },
-          {
-            "id": "quintana_roo",
-            "canonical_name": "Quintana Roo",
-            "start": 1974,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "north_america",
-            "primary_historical_region": "mesoamerica",
-            "present_countries": [
-              "MX"
             ]
           },
           {
