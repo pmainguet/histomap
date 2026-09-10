@@ -3557,7 +3557,7 @@
             "end": -600,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -3875,9 +3875,11 @@
             "end": null,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "IN"
+            ]
           },
           {
             "id": "zhu_q227007",
@@ -4231,9 +4233,11 @@
             "end": -301,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "TR"
+            ]
           },
           {
             "id": "theban_oligarchy",
@@ -4462,9 +4466,11 @@
             "end": -207,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "qi_209203_bc",
@@ -4473,9 +4479,11 @@
             "end": -202,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "yan_zang_tu",
@@ -4535,9 +4543,11 @@
             "end": -204,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "dai_q10884385",
@@ -4546,9 +4556,11 @@
             "end": -113,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "hengshan",
@@ -4557,9 +4569,11 @@
             "end": -201,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "jiaodong_kingdom",
@@ -4592,9 +4606,11 @@
             "end": -204,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "linjiang",
@@ -4636,9 +4652,11 @@
             "end": -204,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "yin_q11125624",
@@ -4647,9 +4665,11 @@
             "end": -204,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "yong",
@@ -4658,9 +4678,11 @@
             "end": -204,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "nanhai_kingdom",
@@ -4669,9 +4691,11 @@
             "end": -173,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "wiman_choson",
@@ -4916,9 +4940,11 @@
             "end": 197,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "kingdom_k_antu",
@@ -4927,7 +4953,7 @@
             "end": 900,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "north_america",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -4962,9 +4988,11 @@
             "end": 790,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "seshat_sassanid_empire_i_irsasn1",
@@ -5325,9 +5353,11 @@
             "end": 534,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "wei_q1327602",
@@ -5402,9 +5432,11 @@
             "end": 404,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "qiao_shu",
@@ -5413,9 +5445,11 @@
             "end": 413,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "northern_yan",
@@ -5468,9 +5502,11 @@
             "end": 480,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "HR"
+            ]
           },
           {
             "id": "rugiland",
@@ -9746,6 +9782,17 @@
             ]
           },
           {
+            "id": "bactria",
+            "canonical_name": "Bactria",
+            "start": -900,
+            "end": -600,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
             "id": "bit_agusi",
             "canonical_name": "Bit Agusi",
             "start": -900,
@@ -10107,6 +10154,19 @@
             "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
+          },
+          {
+            "id": "kashi_q5405861",
+            "canonical_name": "Kashi",
+            "start": -699,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IN"
+            ]
           },
           {
             "id": "phaselis",
@@ -10558,6 +10618,19 @@
             "present_countries": []
           },
           {
+            "id": "satrapy_of_caria",
+            "canonical_name": "Satrapy of Caria",
+            "start": -384,
+            "end": -301,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "TR"
+            ]
+          },
+          {
             "id": "anuradhapura_kingdom",
             "canonical_name": "Anuradhapura Kingdom",
             "start": -376,
@@ -10915,6 +10988,32 @@
             "present_countries": []
           },
           {
+            "id": "chu_q6648074",
+            "canonical_name": "Chu",
+            "start": -208,
+            "end": -207,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
+            "id": "qi_209203_bc",
+            "canonical_name": "Qi  (209–203 BC)",
+            "start": -208,
+            "end": -202,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
             "id": "yan_zang_tu",
             "canonical_name": "Yan (Zang Tu)",
             "start": -208,
@@ -10979,6 +11078,45 @@
             ]
           },
           {
+            "id": "changshan",
+            "canonical_name": "Changshan",
+            "start": -205,
+            "end": -204,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
+            "id": "dai_q10884385",
+            "canonical_name": "Dai",
+            "start": -205,
+            "end": -113,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
+            "id": "hengshan",
+            "canonical_name": "Hengshan",
+            "start": -205,
+            "end": -201,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
             "id": "jiaodong_kingdom",
             "canonical_name": "Jiaodong Kingdom",
             "start": -205,
@@ -11001,6 +11139,19 @@
             "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
+          },
+          {
+            "id": "kingdom_of_henan",
+            "canonical_name": "Kingdom of Henan",
+            "start": -205,
+            "end": -204,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "linjiang",
@@ -11034,6 +11185,45 @@
             "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
+          },
+          {
+            "id": "western_wei_q17059107",
+            "canonical_name": "Western Wei",
+            "start": -205,
+            "end": -204,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
+            "id": "yin_q11125624",
+            "canonical_name": "Yin",
+            "start": -205,
+            "end": -204,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
+            "id": "yong",
+            "canonical_name": "Yong",
+            "start": -205,
+            "end": -204,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "kingdom_of_sophene",
@@ -11094,6 +11284,19 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "MM"
+            ]
+          },
+          {
+            "id": "nanhai_kingdom",
+            "canonical_name": "Nanhai Kingdom",
+            "start": -194,
+            "end": -173,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
             ]
           },
           {
@@ -11554,6 +11757,19 @@
             ]
           },
           {
+            "id": "chen_princedom",
+            "canonical_name": "Chen princedom",
+            "start": 88,
+            "end": 197,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
             "id": "xianbei_state",
             "canonical_name": "Xianbei state",
             "start": 93,
@@ -11653,6 +11869,19 @@
             "primary_historical_region": "unclassified",
             "present_countries": [
               "IQ"
+            ]
+          },
+          {
+            "id": "shule_kingdom",
+            "canonical_name": "Shule Kingdom",
+            "start": 200,
+            "end": 790,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
             ]
           },
           {
@@ -12098,6 +12327,19 @@
             "present_countries": []
           },
           {
+            "id": "later_wei",
+            "canonical_name": "Later Wei",
+            "start": 386,
+            "end": 534,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
             "id": "northern_wei",
             "canonical_name": "Northern Wei",
             "start": 386,
@@ -12164,6 +12406,32 @@
             "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
+          },
+          {
+            "id": "huan_chu",
+            "canonical_name": "Huan Chu",
+            "start": 403,
+            "end": 404,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
+            "id": "qiao_shu",
+            "canonical_name": "Qiao Shu",
+            "start": 405,
+            "end": 413,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "northern_yan",
@@ -13356,6 +13624,19 @@
             ]
           },
           {
+            "id": "dalmatia",
+            "canonical_name": "Dalmatia",
+            "start": 454,
+            "end": 480,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "HR"
+            ]
+          },
+          {
             "id": "rugiland",
             "canonical_name": "Rugiland",
             "start": 467,
@@ -13382,338 +13663,6 @@
             "present_countries": [
               "IT"
             ]
-          }
-        ],
-        "unclassified": [
-          {
-            "id": "yang",
-            "canonical_name": "Yang",
-            "start": -1019,
-            "end": -676,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "laqe",
-            "canonical_name": "Laqe",
-            "start": -1000,
-            "end": -894,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "tan_q1437302",
-            "canonical_name": "Tan",
-            "start": -1000,
-            "end": 414,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "bactria",
-            "canonical_name": "Bactria",
-            "start": -900,
-            "end": -600,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "daiaeni",
-            "canonical_name": "Daiaeni",
-            "start": -843,
-            "end": -600,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kashi_q5405861",
-            "canonical_name": "Kashi",
-            "start": -699,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "magadhan_empire",
-            "canonical_name": "Magadhan Empire",
-            "start": -543,
-            "end": 28,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "satrapy_of_caria",
-            "canonical_name": "Satrapy of Caria",
-            "start": -384,
-            "end": -301,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "theban_oligarchy",
-            "canonical_name": "Theban oligarchy",
-            "start": -381,
-            "end": -378,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "eritraean_sea_satrapy",
-            "canonical_name": "Eritraean Sea Satrapy",
-            "start": -220,
-            "end": -164,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "chu_q6648074",
-            "canonical_name": "Chu",
-            "start": -208,
-            "end": -207,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "qi_209203_bc",
-            "canonical_name": "Qi  (209–203 BC)",
-            "start": -208,
-            "end": -202,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "changshan",
-            "canonical_name": "Changshan",
-            "start": -205,
-            "end": -204,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "dai_q10884385",
-            "canonical_name": "Dai",
-            "start": -205,
-            "end": -113,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "hengshan",
-            "canonical_name": "Hengshan",
-            "start": -205,
-            "end": -201,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_of_henan",
-            "canonical_name": "Kingdom of Henan",
-            "start": -205,
-            "end": -204,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "western_wei_q17059107",
-            "canonical_name": "Western Wei",
-            "start": -205,
-            "end": -204,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "yin_q11125624",
-            "canonical_name": "Yin",
-            "start": -205,
-            "end": -204,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "yong",
-            "canonical_name": "Yong",
-            "start": -205,
-            "end": -204,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "nanhai_kingdom",
-            "canonical_name": "Nanhai Kingdom",
-            "start": -194,
-            "end": -173,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_of_ce",
-            "canonical_name": "Kingdom of Ce",
-            "start": 1,
-            "end": 900,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_of_arshakuni",
-            "canonical_name": "Kingdom of Arshakuni",
-            "start": 55,
-            "end": 428,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "chen_princedom",
-            "canonical_name": "Chen princedom",
-            "start": 88,
-            "end": 197,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_k_antu",
-            "canonical_name": "Kingdom K'antu",
-            "start": 100,
-            "end": 900,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "shule_kingdom",
-            "canonical_name": "Shule Kingdom",
-            "start": 200,
-            "end": 790,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "later_wei",
-            "canonical_name": "Later Wei",
-            "start": 386,
-            "end": 534,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_of_the_angles",
-            "canonical_name": "Kingdom of the Angles",
-            "start": 400,
-            "end": 600,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "huan_chu",
-            "canonical_name": "Huan Chu",
-            "start": 403,
-            "end": 404,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "qiao_shu",
-            "canonical_name": "Qiao Shu",
-            "start": 405,
-            "end": 413,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "dalmatia",
-            "canonical_name": "Dalmatia",
-            "start": 454,
-            "end": 480,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
           }
         ],
         "africa": [
@@ -14053,6 +14002,118 @@
             ]
           }
         ],
+        "unclassified": [
+          {
+            "id": "yang",
+            "canonical_name": "Yang",
+            "start": -1019,
+            "end": -676,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "unclassified",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "laqe",
+            "canonical_name": "Laqe",
+            "start": -1000,
+            "end": -894,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "unclassified",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "tan_q1437302",
+            "canonical_name": "Tan",
+            "start": -1000,
+            "end": 414,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "unclassified",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "daiaeni",
+            "canonical_name": "Daiaeni",
+            "start": -843,
+            "end": -600,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "unclassified",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "magadhan_empire",
+            "canonical_name": "Magadhan Empire",
+            "start": -543,
+            "end": 28,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "unclassified",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "theban_oligarchy",
+            "canonical_name": "Theban oligarchy",
+            "start": -381,
+            "end": -378,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "unclassified",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "eritraean_sea_satrapy",
+            "canonical_name": "Eritraean Sea Satrapy",
+            "start": -220,
+            "end": -164,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "unclassified",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "kingdom_of_ce",
+            "canonical_name": "Kingdom of Ce",
+            "start": 1,
+            "end": 900,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "unclassified",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "kingdom_of_arshakuni",
+            "canonical_name": "Kingdom of Arshakuni",
+            "start": 55,
+            "end": 428,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "unclassified",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "kingdom_of_the_angles",
+            "canonical_name": "Kingdom of the Angles",
+            "start": 400,
+            "end": 600,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "unclassified",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          }
+        ],
         "north_america": [
           {
             "id": "oaxaca_valley",
@@ -14172,6 +14233,17 @@
             "present_countries": [
               "US"
             ]
+          },
+          {
+            "id": "kingdom_k_antu",
+            "canonical_name": "Kingdom K'antu",
+            "start": 100,
+            "end": 900,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "north_america",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
           },
           {
             "id": "seshat_cahokia_usmisro",
@@ -15664,7 +15736,7 @@
             "end": 900,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "north_america",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -15688,7 +15760,7 @@
             "end": 900,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "north_america",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -15818,7 +15890,7 @@
             "end": 900,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "north_america",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -16197,9 +16269,11 @@
             "end": 702,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "IT"
+            ]
           },
           {
             "id": "kingdom_of_the_hwicce",
@@ -16303,9 +16377,11 @@
             "end": 800,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "DE"
+            ]
           },
           {
             "id": "old_saxony",
@@ -16327,9 +16403,11 @@
             "end": 800,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "UZ"
+            ]
           },
           {
             "id": "rutul_federation",
@@ -16373,9 +16451,11 @@
             "end": 621,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "samo_s_realm",
@@ -16494,7 +16574,7 @@
             "end": 683,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -16687,9 +16767,11 @@
             "end": 1045,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "ES"
+            ]
           },
           {
             "id": "seshat_medang_kingdom_idmedng",
@@ -17320,9 +17402,11 @@
             "end": 884,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "kingdom_of_the_iberians",
@@ -17413,9 +17497,11 @@
             "end": null,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CZ"
+            ]
           },
           {
             "id": "pagania",
@@ -17424,9 +17510,11 @@
             "end": 1200,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "HR"
+            ]
           },
           {
             "id": "royaume_d_yvetot",
@@ -17645,9 +17733,11 @@
             "end": 929,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "dayining",
@@ -17656,9 +17746,11 @@
             "end": 937,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "maryul_kingdom",
@@ -18319,9 +18411,11 @@
             "end": 1077,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "IT"
+            ]
           },
           {
             "id": "principality_of_terebovlia",
@@ -18576,9 +18670,11 @@
             "end": 1096,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "emirate_of_homs",
@@ -18587,9 +18683,11 @@
             "end": 1103,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "SY"
+            ]
           },
           {
             "id": "principality_of_ryazan",
@@ -18721,9 +18819,11 @@
             "end": 1300,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "UA"
+            ]
           },
           {
             "id": "republic_of_volterra",
@@ -18767,9 +18867,11 @@
             "end": 1380,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "DE"
+            ]
           },
           {
             "id": "lordship_of_arsuf",
@@ -18963,9 +19065,11 @@
             "end": 1194,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "IQ"
+            ]
           },
           {
             "id": "khamag_mongol",
@@ -19070,9 +19174,11 @@
             "end": 1136,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "KP"
+            ]
           },
           {
             "id": "free_imperial_city_of_muhlhausen",
@@ -19103,7 +19209,7 @@
             "end": 1225,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -19375,9 +19481,11 @@
             "end": 1593,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "DE"
+            ]
           },
           {
             "id": "principality_of_bitlis",
@@ -19469,9 +19577,11 @@
             "end": 1206,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "UZ"
+            ]
           },
           {
             "id": "haihaiyavansi_kingdom",
@@ -19550,9 +19660,11 @@
             "end": 1517,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "RU"
+            ]
           },
           {
             "id": "torawati",
@@ -19900,9 +20012,11 @@
             "end": 1516,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "DZ"
+            ]
           },
           {
             "id": "kingdom_of_tlemcen",
@@ -19969,9 +20083,11 @@
             "end": 1360,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "RU"
+            ]
           },
           {
             "id": "principality_of_kostroma",
@@ -20013,9 +20129,11 @@
             "end": 1340,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "DE"
+            ]
           },
           {
             "id": "duchy_of_upper_bavaria",
@@ -20024,9 +20142,11 @@
             "end": 1363,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "DE"
+            ]
           },
           {
             "id": "landi_state",
@@ -20464,9 +20584,11 @@
             "end": 1471,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "RU"
+            ]
           },
           {
             "id": "despotate_of_dobruja",
@@ -20612,9 +20734,11 @@
             "end": 1393,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "TR"
+            ]
           },
           {
             "id": "signoria_of_volterra",
@@ -20777,9 +20901,11 @@
             "end": 1366,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "tsardom_of_vidin",
@@ -20828,9 +20954,11 @@
             "end": 1563,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "RU"
+            ]
           },
           {
             "id": "chen_han",
@@ -20981,9 +21109,11 @@
             "end": 1398,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "TR"
+            ]
           },
           {
             "id": "the_glinsky_principality",
@@ -21045,9 +21175,11 @@
             "end": 1407,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "VN"
+            ]
           },
           {
             "id": "beylik_of_hacemir",
@@ -21148,7 +21280,7 @@
             "end": 1435,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -30717,6 +30849,19 @@
             ]
           },
           {
+            "id": "vardan_khudahs",
+            "canonical_name": "Vardan Khudahs",
+            "start": 600,
+            "end": 800,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "UZ"
+            ]
+          },
+          {
             "id": "rutul_federation",
             "canonical_name": "Rutul Federation",
             "start": 601,
@@ -30786,6 +30931,19 @@
             "linked_era_id": "classical_antiquity_era",
             "primary_continent": "asia",
             "primary_historical_region": "east_asia",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
+            "id": "zheng_q49788484",
+            "canonical_name": "Zheng",
+            "start": 619,
+            "end": 621,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
             "present_countries": [
               "CN"
             ]
@@ -30939,6 +31097,17 @@
             "present_countries": [
               "ID"
             ]
+          },
+          {
+            "id": "bodeokguk",
+            "canonical_name": "Bodeokguk",
+            "start": 674,
+            "end": 683,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
           },
           {
             "id": "second_turkic_khaganate",
@@ -31720,6 +31889,19 @@
             ]
           },
           {
+            "id": "qi_huang_chao",
+            "canonical_name": "Qi (Huang Chao)",
+            "start": 881,
+            "end": 884,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
             "id": "bagratid_armenia",
             "canonical_name": "Bagratid Armenia",
             "start": 884,
@@ -32093,6 +32275,32 @@
             "present_countries": [
               "CN",
               "KP"
+            ]
+          },
+          {
+            "id": "datianxing",
+            "canonical_name": "Datianxing",
+            "start": 928,
+            "end": 929,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
+            "id": "dayining",
+            "canonical_name": "Dayining",
+            "start": 929,
+            "end": 937,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
             ]
           },
           {
@@ -32939,6 +33147,32 @@
             "present_countries": []
           },
           {
+            "id": "dazhong_kingdom",
+            "canonical_name": "Dazhong Kingdom",
+            "start": 1094,
+            "end": 1096,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
+            "id": "emirate_of_homs",
+            "canonical_name": "Emirate of Homs",
+            "start": 1097,
+            "end": 1103,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "SY"
+            ]
+          },
+          {
             "id": "inalids",
             "canonical_name": "Inalids",
             "start": 1098,
@@ -33253,6 +33487,19 @@
             "present_countries": []
           },
           {
+            "id": "sultanate_of_iraq",
+            "canonical_name": "Sultanate of Iraq",
+            "start": 1118,
+            "end": 1194,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IQ"
+            ]
+          },
+          {
             "id": "khamag_mongol",
             "canonical_name": "Khamag Mongol",
             "start": 1120,
@@ -33327,6 +33574,30 @@
             "canonical_name": "Liu Qi",
             "start": 1130,
             "end": 1137,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "daewiguk",
+            "canonical_name": "Daewiguk",
+            "start": 1135,
+            "end": 1136,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "KP"
+            ]
+          },
+          {
+            "id": "eldiguzid_state",
+            "canonical_name": "Eldiguzid state",
+            "start": 1136,
+            "end": 1225,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "asia",
@@ -33666,6 +33937,19 @@
             ]
           },
           {
+            "id": "burhanids",
+            "canonical_name": "Burhanids",
+            "start": 1200,
+            "end": 1206,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "UZ"
+            ]
+          },
+          {
             "id": "haihaiyavansi_kingdom",
             "canonical_name": "Haihaiyavansi Kingdom",
             "start": 1200,
@@ -33739,6 +34023,19 @@
             "primary_historical_region": "north_america",
             "present_countries": [
               "US"
+            ]
+          },
+          {
+            "id": "starodub_principality_q16701789",
+            "canonical_name": "Starodub Principality",
+            "start": 1200,
+            "end": 1517,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "RU"
             ]
           },
           {
@@ -34054,6 +34351,19 @@
             "primary_continent": "asia",
             "primary_historical_region": "unclassified",
             "present_countries": []
+          },
+          {
+            "id": "principality_of_karachev",
+            "canonical_name": "Principality of Karachev",
+            "start": 1246,
+            "end": 1360,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "RU"
+            ]
           },
           {
             "id": "beylik_of_karaman",
@@ -34519,6 +34829,19 @@
             ]
           },
           {
+            "id": "grand_duchy_of_yaroslavl",
+            "canonical_name": "Grand Duchy of Yaroslavl",
+            "start": 1321,
+            "end": 1471,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "RU"
+            ]
+          },
+          {
             "id": "oiniwar_dynasty",
             "canonical_name": "Oiniwar Dynasty",
             "start": 1325,
@@ -34684,6 +35007,19 @@
             ]
           },
           {
+            "id": "kutlushahs",
+            "canonical_name": "Kutlushahs",
+            "start": 1340,
+            "end": 1393,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "TR"
+            ]
+          },
+          {
             "id": "bahmani_sultanate",
             "canonical_name": "Bahmani Sultanate",
             "start": 1347,
@@ -34775,6 +35111,32 @@
             "primary_historical_region": "unclassified",
             "present_countries": [
               "CN"
+            ]
+          },
+          {
+            "id": "song_q6821029",
+            "canonical_name": "Song",
+            "start": 1355,
+            "end": 1366,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
+            "id": "khanate_of_tyumen",
+            "canonical_name": "Khanate of Tyumen",
+            "start": 1359,
+            "end": 1563,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "RU"
             ]
           },
           {
@@ -34873,6 +35235,19 @@
             ]
           },
           {
+            "id": "beylik_of_kadi_burhan_al_din",
+            "canonical_name": "Beylik of Kadi Burhan al-Din",
+            "start": 1381,
+            "end": 1398,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "TR"
+            ]
+          },
+          {
             "id": "negara_dipa",
             "canonical_name": "Negara Dipa",
             "start": 1387,
@@ -34924,6 +35299,19 @@
             "primary_historical_region": "east_asia",
             "present_countries": [
               "IN"
+            ]
+          },
+          {
+            "id": "ai_ngu",
+            "canonical_name": "Đại Ngu",
+            "start": 1400,
+            "end": 1407,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "VN"
             ]
           },
           {
@@ -35209,6 +35597,19 @@
             ]
           },
           {
+            "id": "duchy_of_bergamo",
+            "canonical_name": "Duchy of Bergamo",
+            "start": 570,
+            "end": 702,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IT"
+            ]
+          },
+          {
             "id": "kingdom_of_altava",
             "canonical_name": "Kingdom of Altava",
             "start": 578,
@@ -35355,6 +35756,19 @@
             "present_countries": [
               "ES",
               "MA"
+            ]
+          },
+          {
+            "id": "county_of_sobrarbe",
+            "canonical_name": "County of Sobrarbe",
+            "start": 724,
+            "end": 1045,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "ES"
             ]
           },
           {
@@ -35861,6 +36275,19 @@
               "DZ",
               "MA",
               "MR"
+            ]
+          },
+          {
+            "id": "county_of_apulia",
+            "canonical_name": "County of Apulia",
+            "start": 1042,
+            "end": 1077,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IT"
             ]
           },
           {
@@ -36411,6 +36838,19 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "ES"
+            ]
+          },
+          {
+            "id": "emirate_of_algiers",
+            "canonical_name": "Emirate of Algiers",
+            "start": 1235,
+            "end": 1516,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "DZ"
             ]
           },
           {
@@ -37707,6 +38147,19 @@
             ]
           },
           {
+            "id": "first_duchy_of_bavaria",
+            "canonical_name": "First duchy of Bavaria",
+            "start": 600,
+            "end": 800,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
             "id": "kingdom_of_rogaland",
             "canonical_name": "Kingdom of Rogaland",
             "start": 600,
@@ -38882,6 +39335,19 @@
             ]
           },
           {
+            "id": "moravian_principality",
+            "canonical_name": "Moravian Principality",
+            "start": 900,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CZ"
+            ]
+          },
+          {
             "id": "norway",
             "canonical_name": "Norway",
             "start": 900,
@@ -38892,6 +39358,19 @@
             "primary_historical_region": "northern_europe",
             "present_countries": [
               "NO"
+            ]
+          },
+          {
+            "id": "pagania",
+            "canonical_name": "Pagania",
+            "start": 900,
+            "end": 1200,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "HR"
             ]
           },
           {
@@ -41474,6 +41953,19 @@
             "present_countries": []
           },
           {
+            "id": "principality_of_vyshgorod",
+            "canonical_name": "Principality of Vyshgorod",
+            "start": 1100,
+            "end": 1300,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "UA"
+            ]
+          },
+          {
             "id": "zvecan_fortress",
             "canonical_name": "Zvečan Fortress",
             "start": 1100,
@@ -41485,6 +41977,19 @@
             "present_countries": [
               "RS",
               "XK"
+            ]
+          },
+          {
+            "id": "county_of_berg",
+            "canonical_name": "County of Berg",
+            "start": 1101,
+            "end": 1380,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "DE"
             ]
           },
           {
@@ -42227,6 +42732,19 @@
             "present_countries": []
           },
           {
+            "id": "hohnstein",
+            "canonical_name": "Hohnstein",
+            "start": 1182,
+            "end": 1593,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
             "id": "second_bulgarian_empire",
             "canonical_name": "Second Bulgarian Empire",
             "start": 1185,
@@ -42842,6 +43360,32 @@
             "primary_historical_region": "northern_europe",
             "present_countries": [
               "LT"
+            ]
+          },
+          {
+            "id": "duchy_of_lower_bavaria",
+            "canonical_name": "Duchy of Lower Bavaria",
+            "start": 1255,
+            "end": 1340,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "duchy_of_upper_bavaria",
+            "canonical_name": "Duchy of Upper Bavaria",
+            "start": 1255,
+            "end": 1363,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "DE"
             ]
           },
           {
@@ -44010,6 +44554,17 @@
             "present_countries": []
           },
           {
+            "id": "grand_duchy_of_rus",
+            "canonical_name": "Grand Duchy of Rusʹ",
+            "start": 1432,
+            "end": 1435,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
             "id": "khanate_of_qazan",
             "canonical_name": "Khanate of Qazan",
             "start": 1438,
@@ -44084,43 +44639,10 @@
             "present_countries": []
           },
           {
-            "id": "kingdom_saal",
-            "canonical_name": "Kingdom Saal",
-            "start": 400,
-            "end": 900,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "pachan_kingdom",
-            "canonical_name": "Pachan kingdom",
-            "start": 400,
-            "end": 900,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "dumakru",
             "canonical_name": "Dumakru",
             "start": 410,
             "end": 726,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_tzu",
-            "canonical_name": "Kingdom Tzu'",
-            "start": 500,
-            "end": 900,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -44150,61 +44672,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_bergamo",
-            "canonical_name": "Duchy of Bergamo",
-            "start": 570,
-            "end": 702,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "first_duchy_of_bavaria",
-            "canonical_name": "First duchy of Bavaria",
-            "start": 600,
-            "end": 800,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "vardan_khudahs",
-            "canonical_name": "Vardan Khudahs",
-            "start": 600,
-            "end": 800,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "zheng_q49788484",
-            "canonical_name": "Zheng",
-            "start": 619,
-            "end": 621,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "bodeokguk",
-            "canonical_name": "Bodeokguk",
-            "start": 674,
-            "end": 683,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "danube_bulgar_khanate",
             "canonical_name": "Danube Bulgar Khanate",
             "start": 681,
@@ -44220,17 +44687,6 @@
             "canonical_name": "Liuqiu",
             "start": 700,
             "end": 1000,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "county_of_sobrarbe",
-            "canonical_name": "County of Sobrarbe",
-            "start": 724,
-            "end": 1045,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -44282,17 +44738,6 @@
             "present_countries": []
           },
           {
-            "id": "qi_huang_chao",
-            "canonical_name": "Qi (Huang Chao)",
-            "start": 881,
-            "end": 884,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "kingdom_of_the_isles",
             "canonical_name": "Kingdom of the Isles",
             "start": 900,
@@ -44304,54 +44749,10 @@
             "present_countries": []
           },
           {
-            "id": "moravian_principality",
-            "canonical_name": "Moravian Principality",
-            "start": 900,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "pagania",
-            "canonical_name": "Pagania",
-            "start": 900,
-            "end": 1200,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "royaume_d_yvetot",
             "canonical_name": "Royaume d'Yvetot",
             "start": 900,
             "end": 1555,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "datianxing",
-            "canonical_name": "Datianxing",
-            "start": 928,
-            "end": 929,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "dayining",
-            "canonical_name": "Dayining",
-            "start": 929,
-            "end": 937,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -44480,17 +44881,6 @@
             "present_countries": []
           },
           {
-            "id": "county_of_apulia",
-            "canonical_name": "County of Apulia",
-            "start": 1042,
-            "end": 1077,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "emirate_of_kars",
             "canonical_name": "Emirate of Kars",
             "start": 1065,
@@ -44524,54 +44914,10 @@
             "present_countries": []
           },
           {
-            "id": "dazhong_kingdom",
-            "canonical_name": "Dazhong Kingdom",
-            "start": 1094,
-            "end": 1096,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "emirate_of_homs",
-            "canonical_name": "Emirate of Homs",
-            "start": 1097,
-            "end": 1103,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_vyshgorod",
-            "canonical_name": "Principality of Vyshgorod",
-            "start": 1100,
-            "end": 1300,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "republic_of_volterra",
             "canonical_name": "Republic of Volterra",
             "start": 1100,
             "end": 1361,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "county_of_berg",
-            "canonical_name": "County of Berg",
-            "start": 1101,
-            "end": 1380,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -44594,39 +44940,6 @@
             "canonical_name": "Principality of Goroden",
             "start": 1116,
             "end": 1240,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "sultanate_of_iraq",
-            "canonical_name": "Sultanate of Iraq",
-            "start": 1118,
-            "end": 1194,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "daewiguk",
-            "canonical_name": "Daewiguk",
-            "start": 1135,
-            "end": 1136,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "eldiguzid_state",
-            "canonical_name": "Eldiguzid state",
-            "start": 1136,
-            "end": 1225,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -44678,17 +44991,6 @@
             "present_countries": []
           },
           {
-            "id": "hohnstein",
-            "canonical_name": "Hohnstein",
-            "start": 1182,
-            "end": 1593,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "county_palatine_of_cephalonia_and_zakynthos",
             "canonical_name": "County palatine of Cephalonia and Zakynthos",
             "start": 1185,
@@ -44711,32 +45013,10 @@
             "present_countries": []
           },
           {
-            "id": "burhanids",
-            "canonical_name": "Burhanids",
-            "start": 1200,
-            "end": 1206,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "patan_state_rajasthan",
             "canonical_name": "Patan State, Rajasthan",
             "start": 1200,
             "end": 2000,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "starodub_principality_q16701789",
-            "canonical_name": "Starodub Principality",
-            "start": 1200,
-            "end": 1517,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -44777,32 +45057,10 @@
             "present_countries": []
           },
           {
-            "id": "emirate_of_algiers",
-            "canonical_name": "Emirate of Algiers",
-            "start": 1235,
-            "end": 1516,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "principality_of_vyazma",
             "canonical_name": "Principality of Vyazma",
             "start": 1239,
             "end": 1403,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_karachev",
-            "canonical_name": "Principality of Karachev",
-            "start": 1246,
-            "end": 1360,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -44843,28 +45101,6 @@
             "present_countries": []
           },
           {
-            "id": "duchy_of_lower_bavaria",
-            "canonical_name": "Duchy of Lower Bavaria",
-            "start": 1255,
-            "end": 1340,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_upper_bavaria",
-            "canonical_name": "Duchy of Upper Bavaria",
-            "start": 1255,
-            "end": 1363,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "beylik_of_dobruja",
             "canonical_name": "Beylik of Dobruja",
             "start": 1281,
@@ -44898,32 +45134,10 @@
             "present_countries": []
           },
           {
-            "id": "grand_duchy_of_yaroslavl",
-            "canonical_name": "Grand Duchy of Yaroslavl",
-            "start": 1321,
-            "end": 1471,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "duchy_of_opava_ratibor",
             "canonical_name": "Duchy of Opava-Ratiboř",
             "start": 1337,
             "end": 1377,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kutlushahs",
-            "canonical_name": "Kutlushahs",
-            "start": 1340,
-            "end": 1393,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -44953,54 +45167,10 @@
             "present_countries": []
           },
           {
-            "id": "song_q6821029",
-            "canonical_name": "Song",
-            "start": 1355,
-            "end": 1366,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "khanate_of_tyumen",
-            "canonical_name": "Khanate of Tyumen",
-            "start": 1359,
-            "end": 1563,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "beylik_of_kadi_burhan_al_din",
-            "canonical_name": "Beylik of Kadi Burhan al-Din",
-            "start": 1381,
-            "end": 1398,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "the_glinsky_principality",
             "canonical_name": "The Glinsky Principality",
             "start": 1381,
             "end": 1392,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "ai_ngu",
-            "canonical_name": "Đại Ngu",
-            "start": 1400,
-            "end": 1407,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -45023,17 +45193,6 @@
             "canonical_name": "Ustuni",
             "start": 1400,
             "end": 1500,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "grand_duchy_of_rus",
-            "canonical_name": "Grand Duchy of Rusʹ",
-            "start": 1432,
-            "end": 1435,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -45239,6 +45398,28 @@
         ],
         "north_america": [
           {
+            "id": "kingdom_saal",
+            "canonical_name": "Kingdom Saal",
+            "start": 400,
+            "end": 900,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "north_america",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
+            "id": "pachan_kingdom",
+            "canonical_name": "Pachan kingdom",
+            "start": 400,
+            "end": 900,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "north_america",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
             "id": "seshat_cahokia_usmismu",
             "canonical_name": "Cahokia - Late Woodland II",
             "start": 450,
@@ -45250,6 +45431,17 @@
             "present_countries": [
               "US"
             ]
+          },
+          {
+            "id": "kingdom_tzu",
+            "canonical_name": "Kingdom Tzu'",
+            "start": 500,
+            "end": 900,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "north_america",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
           },
           {
             "id": "seshat_cahokia_usmispa",
@@ -45890,9 +46082,11 @@
             "end": null,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "PL"
+            ]
           },
           {
             "id": "free_imperial_city_of_friedberg",
@@ -45934,9 +46128,11 @@
             "end": null,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "GB"
+            ]
           },
           {
             "id": "brunswick_wolfenbuttel",
@@ -46226,9 +46422,11 @@
             "end": 1703,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "RU"
+            ]
           },
           {
             "id": "ardalan",
@@ -46344,9 +46542,11 @@
             "end": 1895,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "BF"
+            ]
           },
           {
             "id": "kingdom_of_kotte",
@@ -46445,9 +46645,11 @@
             "end": 1659,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "ID"
+            ]
           },
           {
             "id": "pelym_principality",
@@ -46772,9 +46974,11 @@
             "end": 1627,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "UZ"
+            ]
           },
           {
             "id": "duchy_bavaria",
@@ -46807,9 +47011,11 @@
             "end": null,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "ES"
+            ]
           },
           {
             "id": "first_toungoo_empire",
@@ -47063,9 +47269,11 @@
             "end": null,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "BE"
+            ]
           },
           {
             "id": "republic_of_geneva",
@@ -47096,9 +47304,11 @@
             "end": 1571,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "DE"
+            ]
           },
           {
             "id": "duchy_of_castro",
@@ -47497,9 +47707,11 @@
             "end": 1905,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "TW"
+            ]
           },
           {
             "id": "principality_of_noja",
@@ -47508,9 +47720,11 @@
             "end": 1806,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "IT"
+            ]
           },
           {
             "id": "skewbald_horde",
@@ -47778,9 +47992,11 @@
             "end": 1946,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "ID"
+            ]
           },
           {
             "id": "kingdom_of_matamba",
@@ -47921,9 +48137,11 @@
             "end": 1795,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "NL"
+            ]
           },
           {
             "id": "khoshut_khanate",
@@ -48053,9 +48271,11 @@
             "end": 1681,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "CN"
+            ]
           },
           {
             "id": "quba_khanate",
@@ -48337,9 +48557,11 @@
             "end": 1715,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "IN"
+            ]
           },
           {
             "id": "balladhdarh_state",
@@ -48453,9 +48675,11 @@
             "end": 1796,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "AZ"
+            ]
           },
           {
             "id": "kingdom_of_sicily_q3932079",
@@ -48464,9 +48688,11 @@
             "end": 1816,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "IT"
+            ]
           },
           {
             "id": "shaki_khanate",
@@ -56247,6 +56473,19 @@
             ]
           },
           {
+            "id": "khongoray",
+            "canonical_name": "Khongoray",
+            "start": 1399,
+            "end": 1703,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "RU"
+            ]
+          },
+          {
             "id": "kingdom_of_mysore",
             "canonical_name": "Kingdom of Mysore",
             "start": 1399,
@@ -56570,6 +56809,19 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "GE"
+            ]
+          },
+          {
+            "id": "kingdom_of_palembang",
+            "canonical_name": "Kingdom of Palembang",
+            "start": 1445,
+            "end": 1659,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "ID"
             ]
           },
           {
@@ -57325,6 +57577,19 @@
             "primary_historical_region": "west_asia",
             "present_countries": [
               "IR"
+            ]
+          },
+          {
+            "id": "tashkent_khanate",
+            "canonical_name": "Tashkent Khanate",
+            "start": 1501,
+            "end": 1627,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "UZ"
             ]
           },
           {
@@ -58151,6 +58416,19 @@
             ]
           },
           {
+            "id": "lonc_kjauw",
+            "canonical_name": "Lonc-kjauw",
+            "start": 1600,
+            "end": 1905,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "TW"
+            ]
+          },
+          {
             "id": "rahua_estate",
             "canonical_name": "Rahua estate",
             "start": 1600,
@@ -58487,6 +58765,19 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "RU"
+            ]
+          },
+          {
+            "id": "tasik",
+            "canonical_name": "Tasik",
+            "start": 1630,
+            "end": 1946,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "ID"
             ]
           },
           {
@@ -58861,6 +59152,19 @@
             "present_countries": []
           },
           {
+            "id": "zhou_dynasty_16781681",
+            "canonical_name": "Zhou dynasty (1678–1681)",
+            "start": 1678,
+            "end": 1681,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "CN"
+            ]
+          },
+          {
             "id": "bharatpur_state",
             "canonical_name": "Bharatpur State",
             "start": 1680,
@@ -59105,6 +59409,19 @@
             ]
           },
           {
+            "id": "first_sikh_state",
+            "canonical_name": "First Sikh State",
+            "start": 1709,
+            "end": 1715,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IN"
+            ]
+          },
+          {
             "id": "hotak_dynasty",
             "canonical_name": "Hotak dynasty",
             "start": 1709,
@@ -59163,6 +59480,19 @@
             "primary_historical_region": "unclassified",
             "present_countries": [
               "IN"
+            ]
+          },
+          {
+            "id": "salyan_sultanate",
+            "canonical_name": "Salyan Sultanate",
+            "start": 1729,
+            "end": 1796,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "AZ"
             ]
           },
           {
@@ -59935,6 +60265,19 @@
             ]
           },
           {
+            "id": "yatenga_kingdom",
+            "canonical_name": "Yatenga Kingdom",
+            "start": 1400,
+            "end": 1895,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "BF"
+            ]
+          },
+          {
             "id": "sultanate_of_tuggurt",
             "canonical_name": "Sultanate of Tuggurt",
             "start": 1414,
@@ -60433,6 +60776,19 @@
             "primary_historical_region": "north_africa",
             "present_countries": [
               "SD"
+            ]
+          },
+          {
+            "id": "duchy_of_montalto_q3715868",
+            "canonical_name": "Duchy of Montalto",
+            "start": 1507,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "ES"
             ]
           },
           {
@@ -61026,6 +61382,19 @@
             ]
           },
           {
+            "id": "principality_of_noja",
+            "canonical_name": "Principality of Noja",
+            "start": 1600,
+            "end": 1806,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IT"
+            ]
+          },
+          {
             "id": "sangage_sheikhdom",
             "canonical_name": "Sangage Sheikhdom",
             "start": 1600,
@@ -61289,6 +61658,19 @@
             ]
           },
           {
+            "id": "staats_brabant",
+            "canonical_name": "Staats-Brabant",
+            "start": 1648,
+            "end": 1795,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "NL"
+            ]
+          },
+          {
             "id": "bundu",
             "canonical_name": "Bundu",
             "start": 1650,
@@ -61531,6 +61913,19 @@
             ]
           },
           {
+            "id": "kingdom_of_sicily_q3932079",
+            "canonical_name": "Kingdom of Sicily",
+            "start": 1734,
+            "end": 1816,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IT"
+            ]
+          },
+          {
             "id": "state_of_grao_para_and_rio_negro",
             "canonical_name": "State of Grão-Pará and Rio Negro",
             "start": 1772,
@@ -61697,6 +62092,19 @@
             "present_countries": []
           },
           {
+            "id": "duchy_of_krosno",
+            "canonical_name": "Duchy of Krosno",
+            "start": 1251,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "PL"
+            ]
+          },
+          {
             "id": "anhalt_bernburg",
             "canonical_name": "Anhalt-Bernburg",
             "start": 1252,
@@ -61786,6 +62194,19 @@
             "linked_era_id": null,
             "primary_continent": "europe",
             "primary_historical_region": "western_europe",
+            "present_countries": [
+              "GB"
+            ]
+          },
+          {
+            "id": "lordship_of_the_isles",
+            "canonical_name": "Lordship of the Isles",
+            "start": 1266,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
             "present_countries": [
               "GB"
             ]
@@ -63136,6 +63557,19 @@
             ]
           },
           {
+            "id": "duchy_of_aarschot",
+            "canonical_name": "Duchy of Aarschot",
+            "start": 1532,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "BE"
+            ]
+          },
+          {
             "id": "duchy_of_florence",
             "canonical_name": "Duchy of Florence",
             "start": 1532,
@@ -63171,6 +63605,19 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
+          },
+          {
+            "id": "margraviate_of_brandenburg_kustrin",
+            "canonical_name": "Margraviate of Brandenburg-Küstrin",
+            "start": 1535,
+            "end": 1571,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "DE"
+            ]
           },
           {
             "id": "danish_colonial_empire",
@@ -64494,28 +64941,6 @@
         ],
         "unclassified": [
           {
-            "id": "duchy_of_krosno",
-            "canonical_name": "Duchy of Krosno",
-            "start": 1251,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "lordship_of_the_isles",
-            "canonical_name": "Lordship of the Isles",
-            "start": 1266,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "lathi_state",
             "canonical_name": "Lathi State",
             "start": 1340,
@@ -64549,43 +64974,10 @@
             "present_countries": []
           },
           {
-            "id": "khongoray",
-            "canonical_name": "Khongoray",
-            "start": 1399,
-            "end": 1703,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "yatenga_kingdom",
-            "canonical_name": "Yatenga Kingdom",
-            "start": 1400,
-            "end": 1895,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "vallavpur_state",
             "canonical_name": "Vallavpur State",
             "start": 1434,
             "end": 1949,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_of_palembang",
-            "canonical_name": "Kingdom of Palembang",
-            "start": 1445,
-            "end": 1659,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -64648,28 +65040,6 @@
             "present_countries": []
           },
           {
-            "id": "tashkent_khanate",
-            "canonical_name": "Tashkent Khanate",
-            "start": 1501,
-            "end": 1627,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_montalto_q3715868",
-            "canonical_name": "Duchy of Montalto",
-            "start": 1507,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "balkh_khanate",
             "canonical_name": "Balkh Khanate",
             "start": 1526,
@@ -64696,28 +65066,6 @@
             "canonical_name": "Madurai Nayak Kingdom",
             "start": 1529,
             "end": 1736,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "duchy_of_aarschot",
-            "canonical_name": "Duchy of Aarschot",
-            "start": 1532,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "margraviate_of_brandenburg_kustrin",
-            "canonical_name": "Margraviate of Brandenburg-Küstrin",
-            "start": 1535,
-            "end": 1571,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -64762,28 +65110,6 @@
             "canonical_name": "Mohrampur Jagir State",
             "start": 1580,
             "end": 1948,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "lonc_kjauw",
-            "canonical_name": "Lonc-kjauw",
-            "start": 1600,
-            "end": 1905,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_of_noja",
-            "canonical_name": "Principality of Noja",
-            "start": 1600,
-            "end": 1806,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -64846,43 +65172,10 @@
             "present_countries": []
           },
           {
-            "id": "tasik",
-            "canonical_name": "Tasik",
-            "start": 1630,
-            "end": 1946,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "mosquito_coast",
             "canonical_name": "Mosquito Coast",
             "start": 1638,
             "end": 1787,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "staats_brabant",
-            "canonical_name": "Staats-Brabant",
-            "start": 1648,
-            "end": 1795,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "zhou_dynasty_16781681",
-            "canonical_name": "Zhou dynasty (1678–1681)",
-            "start": 1678,
-            "end": 1681,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -64923,17 +65216,6 @@
             "present_countries": []
           },
           {
-            "id": "first_sikh_state",
-            "canonical_name": "First Sikh State",
-            "start": 1709,
-            "end": 1715,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "balladhdarh_state",
             "canonical_name": "Balladhdarh State",
             "start": 1710,
@@ -64949,28 +65231,6 @@
             "canonical_name": "Kingdom of Nafana",
             "start": 1720,
             "end": 1848,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "salyan_sultanate",
-            "canonical_name": "Salyan Sultanate",
-            "start": 1729,
-            "end": 1796,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_of_sicily_q3932079",
-            "canonical_name": "Kingdom of Sicily",
-            "start": 1734,
-            "end": 1816,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -66200,9 +66460,11 @@
             "end": 1947,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "IN"
+            ]
           },
           {
             "id": "maku_khanate",
@@ -66422,7 +66684,7 @@
             "end": 1890,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
             "present_countries": []
           },
@@ -66571,9 +66833,11 @@
             "end": 1806,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "europe",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "DE"
+            ]
           },
           {
             "id": "duchy_of_nassau",
@@ -66683,9 +66947,11 @@
             "end": 1897,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "BF"
+            ]
           },
           {
             "id": "illyrian_provinces",
@@ -66899,9 +67165,11 @@
             "end": 1868,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "LS"
+            ]
           },
           {
             "id": "duchy_saxony_gotha",
@@ -67011,9 +67279,11 @@
             "end": 1893,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "ZW"
+            ]
           },
           {
             "id": "ibadan_republic",
@@ -67121,9 +67391,11 @@
             "end": 1848,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "ZA"
+            ]
           },
           {
             "id": "free_cities_of_menton_and_roquebrune",
@@ -67156,9 +67428,11 @@
             "end": 1849,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "IT"
+            ]
           },
           {
             "id": "bight_of_biafra_protectorate",
@@ -67392,9 +67666,11 @@
             "end": 1871,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "ZA"
+            ]
           },
           {
             "id": "angadh_estate",
@@ -67425,9 +67701,11 @@
             "end": 1895,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "GH"
+            ]
           },
           {
             "id": "zheltuga_republic",
@@ -67471,9 +67749,11 @@
             "end": 1897,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "VN"
+            ]
           },
           {
             "id": "protectorate_of_wituland",
@@ -67482,9 +67762,11 @@
             "end": 1920,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "KE"
+            ]
           },
           {
             "id": "counani_free_state",
@@ -67504,9 +67786,11 @@
             "end": 1916,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "oceania",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "TV"
+            ]
           },
           {
             "id": "gilbert_islands",
@@ -72333,6 +72617,17 @@
             ]
           },
           {
+            "id": "bang_assu",
+            "canonical_name": "Bang Assu",
+            "start": 1800,
+            "end": 1890,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": []
+          },
+          {
             "id": "bate_empire",
             "canonical_name": "Baté Empire",
             "start": 1800,
@@ -72467,6 +72762,19 @@
             ]
           },
           {
+            "id": "emirate_of_liptako",
+            "canonical_name": "Emirate of Liptako",
+            "start": 1809,
+            "end": 1897,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "BF"
+            ]
+          },
+          {
             "id": "kingdom_of_spain_q15238138",
             "canonical_name": "Kingdom of Spain (1814–1833)",
             "start": 1814,
@@ -72558,6 +72866,19 @@
             "present_countries": [
               "GB",
               "GH"
+            ]
+          },
+          {
+            "id": "pre_colonial_basutoland",
+            "canonical_name": "Pre-Colonial Basutoland",
+            "start": 1822,
+            "end": 1868,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "LS"
             ]
           },
           {
@@ -72690,6 +73011,19 @@
             ]
           },
           {
+            "id": "matabele_kingdom",
+            "canonical_name": "Matabele kingdom",
+            "start": 1837,
+            "end": 1893,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "ZW"
+            ]
+          },
+          {
             "id": "ibadan_republic",
             "canonical_name": "Ibadan Republic",
             "start": 1838,
@@ -72711,6 +73045,19 @@
             "linked_era_id": null,
             "primary_continent": "africa",
             "primary_historical_region": "southern_africa",
+            "present_countries": [
+              "ZA"
+            ]
+          },
+          {
+            "id": "republic_of_winburg_potchefstroom",
+            "canonical_name": "Republic of Winburg-Potchefstroom",
+            "start": 1844,
+            "end": 1848,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
             "present_countries": [
               "ZA"
             ]
@@ -72739,6 +73086,19 @@
             "primary_historical_region": "unclassified",
             "present_countries": [
               "FR"
+            ]
+          },
+          {
+            "id": "kingdom_of_sicily_q30890672",
+            "canonical_name": "Kingdom of Sicily",
+            "start": 1848,
+            "end": 1849,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IT"
             ]
           },
           {
@@ -72944,6 +73304,19 @@
             ]
           },
           {
+            "id": "diggers_republic",
+            "canonical_name": "Diggers Republic",
+            "start": 1870,
+            "end": 1871,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "ZA"
+            ]
+          },
+          {
             "id": "griqualand_west",
             "canonical_name": "Griqualand West",
             "start": 1871,
@@ -73019,6 +73392,19 @@
             "primary_historical_region": "central_africa",
             "present_countries": [
               "CD"
+            ]
+          },
+          {
+            "id": "brong_confederation",
+            "canonical_name": "Brong Confederation",
+            "start": 1881,
+            "end": 1895,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "GH"
             ]
           },
           {
@@ -73241,6 +73627,19 @@
             "primary_historical_region": "horn_of_africa",
             "present_countries": [
               "ER"
+            ]
+          },
+          {
+            "id": "protectorate_of_wituland",
+            "canonical_name": "Protectorate of Wituland",
+            "start": 1890,
+            "end": 1920,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "KE"
             ]
           },
           {
@@ -73583,6 +73982,19 @@
             "linked_era_id": null,
             "primary_continent": "europe",
             "primary_historical_region": "western_europe",
+            "present_countries": [
+              "DE"
+            ]
+          },
+          {
+            "id": "principality_rheina_wolbeck",
+            "canonical_name": "Principality Rheina-Wolbeck",
+            "start": 1803,
+            "end": 1806,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "unclassified",
             "present_countries": [
               "DE"
             ]
@@ -75282,6 +75694,19 @@
             "linked_era_id": null,
             "primary_continent": "asia",
             "primary_historical_region": "east_asia",
+            "present_countries": [
+              "IN"
+            ]
+          },
+          {
+            "id": "patdi_state",
+            "canonical_name": "Patdi State",
+            "start": 1741,
+            "end": 1947,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
             "present_countries": [
               "IN"
             ]
@@ -77382,6 +77807,19 @@
             ]
           },
           {
+            "id": "confederation_of_sedang",
+            "canonical_name": "Confederation of Sedang",
+            "start": 1889,
+            "end": 1897,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "VN"
+            ]
+          },
+          {
             "id": "provisional_government_of_hawaii",
             "canonical_name": "Provisional Government of Hawaii",
             "start": 1893,
@@ -77521,17 +77959,6 @@
             "present_countries": []
           },
           {
-            "id": "patdi_state",
-            "canonical_name": "Patdi State",
-            "start": 1741,
-            "end": 1947,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "buraydah_emirate",
             "canonical_name": "Buraydah Emirate",
             "start": 1768,
@@ -77554,43 +77981,10 @@
             "present_countries": []
           },
           {
-            "id": "bang_assu",
-            "canonical_name": "Bang Assu",
-            "start": 1800,
-            "end": 1890,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "malta_protectorate",
             "canonical_name": "Malta Protectorate",
             "start": 1800,
             "end": 1813,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "principality_rheina_wolbeck",
-            "canonical_name": "Principality Rheina-Wolbeck",
-            "start": 1803,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "emirate_of_liptako",
-            "canonical_name": "Emirate of Liptako",
-            "start": 1809,
-            "end": 1897,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -77620,28 +78014,6 @@
             "present_countries": []
           },
           {
-            "id": "pre_colonial_basutoland",
-            "canonical_name": "Pre-Colonial Basutoland",
-            "start": 1822,
-            "end": 1868,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "matabele_kingdom",
-            "canonical_name": "Matabele kingdom",
-            "start": 1837,
-            "end": 1893,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "mong_leng",
             "canonical_name": "Möng Leng",
             "start": 1840,
@@ -77657,39 +78029,6 @@
             "canonical_name": "Stok jair State",
             "start": 1842,
             "end": 1948,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "republic_of_winburg_potchefstroom",
-            "canonical_name": "Republic of Winburg-Potchefstroom",
-            "start": 1844,
-            "end": 1848,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "kingdom_of_sicily_q30890672",
-            "canonical_name": "Kingdom of Sicily",
-            "start": 1848,
-            "end": 1849,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "diggers_republic",
-            "canonical_name": "Diggers Republic",
-            "start": 1870,
-            "end": 1871,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -77719,54 +78058,10 @@
             "present_countries": []
           },
           {
-            "id": "brong_confederation",
-            "canonical_name": "Brong Confederation",
-            "start": 1881,
-            "end": 1895,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "sultanate_of_grande_comore",
             "canonical_name": "Sultanate of Grande Comore",
             "start": 1886,
             "end": 1904,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "confederation_of_sedang",
-            "canonical_name": "Confederation of Sedang",
-            "start": 1889,
-            "end": 1897,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "protectorate_of_wituland",
-            "canonical_name": "Protectorate of Wituland",
-            "start": 1890,
-            "end": 1920,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "ellice_islands",
-            "canonical_name": "Ellice Islands",
-            "start": 1892,
-            "end": 1916,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -78226,6 +78521,19 @@
             "primary_historical_region": "oceania_pacific",
             "present_countries": [
               "VU"
+            ]
+          },
+          {
+            "id": "ellice_islands",
+            "canonical_name": "Ellice Islands",
+            "start": 1892,
+            "end": 1916,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "oceania",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "TV"
             ]
           }
         ],
@@ -78743,9 +79051,11 @@
             "end": 1920,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "RU"
+            ]
           },
           {
             "id": "soiuz_obedinennykh_gortsev_gorskaia_respublika",
@@ -82152,6 +82462,19 @@
             ]
           },
           {
+            "id": "orenburgsky_kray",
+            "canonical_name": "Orenburgsky kray",
+            "start": 1917,
+            "end": 1920,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "RU"
+            ]
+          },
+          {
             "id": "russian_socialist_federative_soviet_republic",
             "canonical_name": "Russian Socialist Federative Soviet Republic",
             "start": 1917,
@@ -84277,17 +84600,6 @@
             "canonical_name": "National-cultural autonomy of Muslim Turko-Tatars Inner Russia and Siberia",
             "start": 1917,
             "end": 1918,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "orenburgsky_kray",
-            "canonical_name": "Orenburgsky kray",
-            "start": 1917,
-            "end": 1920,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -86489,9 +86801,11 @@
             "end": null,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "IN"
+            ]
           },
           {
             "id": "hohenlohe_weikersheim",
@@ -86590,9 +86904,11 @@
             "end": null,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "MW"
+            ]
           },
           {
             "id": "nyasaland_districts_protectorate",
@@ -86601,9 +86917,11 @@
             "end": null,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "MW"
+            ]
           },
           {
             "id": "pategi_emirate",
@@ -86711,9 +87029,11 @@
             "end": 1949,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "asia",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "VN"
+            ]
           },
           {
             "id": "kingdom_shunzheng",
@@ -86925,9 +87245,11 @@
             "end": 1998,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "KM"
+            ]
           },
           {
             "id": "holy_empire_of_reunion",
@@ -87107,9 +87429,11 @@
             "end": null,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "unclassified",
+            "primary_continent": "africa",
             "primary_historical_region": "unclassified",
-            "present_countries": []
+            "present_countries": [
+              "IT"
+            ]
           },
           {
             "id": "republic_of_castle",
@@ -97738,6 +98062,32 @@
             ]
           },
           {
+            "id": "shire_highlands_protectorate",
+            "canonical_name": "Shire Highlands Protectorate",
+            "start": 1889,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "MW"
+            ]
+          },
+          {
+            "id": "nyasaland_districts_protectorate",
+            "canonical_name": "Nyasaland Districts Protectorate",
+            "start": 1891,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "MW"
+            ]
+          },
+          {
             "id": "amashangana_tribal_authority",
             "canonical_name": "Amashangana Tribal Authority",
             "start": 1897,
@@ -100210,6 +100560,19 @@
             ]
           },
           {
+            "id": "democratic_republic_of_moheli",
+            "canonical_name": "Democratic Republic of Mohéli",
+            "start": 1997,
+            "end": 1998,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "KM"
+            ]
+          },
+          {
             "id": "state_of_anjouan",
             "canonical_name": "State of Anjouan",
             "start": 1997,
@@ -100341,6 +100704,19 @@
             "primary_historical_region": "west_africa",
             "present_countries": [
               "NE"
+            ]
+          },
+          {
+            "id": "the_free_republic_of_alcatraz",
+            "canonical_name": "The Free Republic of Alcatraz",
+            "start": 2009,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IT"
             ]
           },
           {
@@ -100628,17 +101004,6 @@
             "present_countries": []
           },
           {
-            "id": "tarauli",
-            "canonical_name": "Tarauli",
-            "start": 1690,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "pelalawan_sultanate",
             "canonical_name": "Pelalawan Sultanate",
             "start": 1725,
@@ -100683,28 +101048,6 @@
             "present_countries": []
           },
           {
-            "id": "shire_highlands_protectorate",
-            "canonical_name": "Shire Highlands Protectorate",
-            "start": 1889,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "nyasaland_districts_protectorate",
-            "canonical_name": "Nyasaland Districts Protectorate",
-            "start": 1891,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
             "id": "kingdom_of_humanity",
             "canonical_name": "Kingdom of Humanity",
             "start": 1914,
@@ -100720,17 +101063,6 @@
             "canonical_name": "Malaka Kingdom",
             "start": 1916,
             "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "cochinchina_autonomous_republic",
-            "canonical_name": "Cochinchina Autonomous Republic",
-            "start": 1946,
-            "end": 1949,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -100801,17 +101133,6 @@
             "canonical_name": "Kingdom of EnenKio",
             "start": 1994,
             "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "democratic_republic_of_moheli",
-            "canonical_name": "Democratic Republic of Mohéli",
-            "start": 1997,
-            "end": 1998,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "unclassified",
@@ -100890,17 +101211,6 @@
             "id": "wirtland",
             "canonical_name": "Wirtland",
             "start": 2008,
-            "end": null,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "unclassified",
-            "primary_historical_region": "unclassified",
-            "present_countries": []
-          },
-          {
-            "id": "the_free_republic_of_alcatraz",
-            "canonical_name": "The Free Republic of Alcatraz",
-            "start": 2009,
             "end": null,
             "curated": false,
             "linked_era_id": null,
@@ -103520,6 +103830,19 @@
             ]
           },
           {
+            "id": "tarauli",
+            "canonical_name": "Tarauli",
+            "start": 1690,
+            "end": null,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IN"
+            ]
+          },
+          {
             "id": "afghanistan",
             "canonical_name": "Afghanistan",
             "start": 1709,
@@ -104332,6 +104655,19 @@
             "primary_historical_region": "north_america",
             "present_countries": [
               "US"
+            ]
+          },
+          {
+            "id": "cochinchina_autonomous_republic",
+            "canonical_name": "Cochinchina Autonomous Republic",
+            "start": 1946,
+            "end": 1949,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "VN"
             ]
           },
           {

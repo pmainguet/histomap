@@ -2623,13 +2623,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "VN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -18324,13 +18328,15 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
       "present_countries": [],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -21281,13 +21287,15 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
       "present_countries": [],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -27755,13 +27763,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "TR"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -31335,13 +31348,15 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
       "present_countries": [],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -33042,13 +33057,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "UA"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -35310,13 +35329,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "GH"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -37318,13 +37341,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "UZ"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -45683,13 +45710,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -46033,13 +46064,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "UA"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -46581,13 +46616,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -48926,13 +48965,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -50422,13 +50465,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "VN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -53396,13 +53443,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "VN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -54705,13 +54756,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "africa",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "IT"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -55284,13 +55340,17 @@
       "duchy_of_berg"
     ],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "DE"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "entity_type"
@@ -59769,13 +59829,18 @@
       "kingdom_of_aragon"
     ],
     "geography": {
-      "continents": [],
+      "continents": [
+        "africa",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "ES"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -63643,13 +63708,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "KP"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -63883,13 +63952,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -64679,13 +64752,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "HR"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -66014,13 +66091,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -66172,13 +66253,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -66242,13 +66327,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -67466,13 +67555,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "KM"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -70236,13 +70329,17 @@
       "griqualand_west"
     ],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "ZA"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -72616,13 +72713,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "BE"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -73807,13 +73908,17 @@
       "first_french_empire"
     ],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "DE"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -74517,13 +74622,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "africa",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "IT"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -79164,13 +79274,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "PL"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -79993,13 +80107,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "DE"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -81459,13 +81577,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "africa",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "ES"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -86682,13 +86805,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "DE"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -93147,13 +93274,15 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
       "present_countries": [],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -94441,13 +94570,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "oceania"
+      ],
+      "primary_continent": "oceania",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "TV"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -95562,13 +95695,17 @@
       "regency_of_algiers"
     ],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "DZ"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -96964,13 +97101,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "SY"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -97369,13 +97510,17 @@
       "burkina_faso"
     ],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "BF"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -105061,13 +105206,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "DE"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -107289,13 +107438,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -126430,13 +126583,15 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
       "present_countries": [],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -126759,13 +126914,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "RU"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -133303,13 +133463,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -135560,13 +135724,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "DE"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "entity_type"
@@ -137184,13 +137352,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -153738,13 +153910,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "RU"
+      ],
       "centroid": null,
-      "confidence": "medium"
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -157159,13 +157336,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -160852,13 +161033,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "RU"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -161981,13 +162167,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "RU"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -163170,13 +163361,15 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
       "historical_regions": [],
       "primary_historical_region": null,
       "present_countries": [],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -164634,13 +164827,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "AM"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -173738,13 +173935,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "entity_type"
@@ -182877,13 +183078,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "oceania"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "ID"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -186984,13 +187190,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "africa",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "IT"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -187054,13 +187265,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "africa",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "IT"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -193360,13 +193576,15 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
       "historical_regions": [],
       "primary_historical_region": null,
       "present_countries": [],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -193520,13 +193738,15 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
       "historical_regions": [],
       "primary_historical_region": null,
       "present_countries": [],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -198815,13 +199035,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "TR"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "entity_type"
@@ -203918,13 +204143,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -205694,13 +205923,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CH"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -206094,13 +206327,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -208832,13 +209069,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "TW"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -210877,13 +211118,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "GB"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -219729,13 +219974,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "DE"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -221450,13 +221699,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "ZW"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -229151,13 +229404,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CZ"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -233880,13 +234137,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -243923,13 +244184,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "MW"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -246839,13 +247104,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "RU"
+      ],
       "centroid": null,
-      "confidence": "medium"
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -248353,13 +248623,15 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
       "historical_regions": [],
       "primary_historical_region": null,
       "present_countries": [],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -248755,13 +249027,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "HR"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -252865,13 +253141,17 @@
       "india"
     ],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "entity_type"
@@ -259397,13 +259677,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "LS"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -267229,13 +267513,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "RU"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -269666,13 +269955,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "africa",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "IT"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -274527,13 +274821,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "UA"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -275258,13 +275556,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "DE"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -275899,13 +276201,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "KE"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -279438,13 +279744,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "entity_type"
@@ -279510,13 +279820,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -279744,13 +280058,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -288267,13 +288585,19 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "north_america",
+        "oceania"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "US"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation",
@@ -293357,13 +293681,19 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "north_america",
+        "oceania"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "US"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -294635,13 +294965,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CH"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "entity_type"
@@ -296012,13 +296346,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "ZA"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -296228,13 +296566,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "north_america"
+      ],
+      "primary_continent": "north_america",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "MX"
+      ],
       "centroid": null,
-      "confidence": "medium"
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -302726,13 +303068,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -303809,13 +304155,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "AZ"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "entity_type"
@@ -306533,13 +306884,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "TR"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -307047,13 +307403,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "PL"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -326639,13 +326999,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "MW"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -327145,13 +327509,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -332568,13 +332936,17 @@
       "ming_dynasty"
     ],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -336427,13 +336799,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "europe"
+      ],
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "DE"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -337793,13 +338169,21 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "africa",
+        "asia",
+        "europe",
+        "north_america",
+        "south_america"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "NL"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "entity_type"
@@ -338023,13 +338407,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "RU"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -338881,13 +339270,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "KH"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation",
@@ -344500,13 +344893,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "IQ"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -356513,13 +356910,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -356777,13 +357178,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "UZ"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -356938,13 +357343,18 @@
       "indonesia"
     ],
     "geography": {
-      "continents": [],
+      "continents": [
+        "asia",
+        "oceania"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "ID"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -359812,13 +360222,18 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
+      "continents": [
+        "africa",
+        "europe"
+      ],
       "primary_continent": null,
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "IT"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -377036,13 +377451,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "UZ"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -385146,13 +385565,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -388649,13 +389072,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "africa"
+      ],
+      "primary_continent": "africa",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "BF"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -389377,13 +389804,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation",
@@ -389691,13 +390122,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -391667,13 +392102,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -392129,13 +392568,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [
       "consolidation"
@@ -392382,13 +392825,17 @@
     "relationships": [],
     "successors": [],
     "geography": {
-      "continents": [],
-      "primary_continent": null,
+      "continents": [
+        "asia"
+      ],
+      "primary_continent": "asia",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "CN"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "low"
     },
     "manual_overrides": [],
     "linked_era_id": null,
