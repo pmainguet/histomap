@@ -63,3 +63,4 @@ manual_overrides:
 government_form: duchy
 deprecated:
   visibility_tier: detailed
+detail_of: spanish_noble_titles
