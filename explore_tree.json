@@ -20467,6 +20467,19 @@
             ]
           },
           {
+            "id": "banu_thabit",
+            "canonical_name": "Banu thabit",
+            "start": 1324,
+            "end": 1416,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "LY"
+            ]
+          },
+          {
             "id": "reddy_mahto_dynasty",
             "canonical_name": "Reddy mahto dynasty",
             "start": 1325,
@@ -21219,6 +21232,19 @@
           }
         ],
         "western_europe": [
+          {
+            "id": "catuvellauni",
+            "canonical_name": "Catuvellauni",
+            "start": -100,
+            "end": null,
+            "curated": false,
+            "linked_era_id": "classical_antiquity_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "GB"
+            ]
+          },
           {
             "id": "vienna",
             "canonical_name": "Vienna",
@@ -36556,6 +36582,19 @@
             ]
           },
           {
+            "id": "banu_thabit",
+            "canonical_name": "Banu thabit",
+            "start": 1324,
+            "end": 1416,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "africa",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "LY"
+            ]
+          },
+          {
             "id": "lordship_of_bologna",
             "canonical_name": "Lordship of Bologna",
             "start": 1337,
@@ -36805,6 +36844,19 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "GR"
+            ]
+          },
+          {
+            "id": "catuvellauni",
+            "canonical_name": "Catuvellauni",
+            "start": -100,
+            "end": null,
+            "curated": false,
+            "linked_era_id": "classical_antiquity_era",
+            "primary_continent": "europe",
+            "primary_historical_region": "western_europe",
+            "present_countries": [
+              "GB"
             ]
           },
           {
@@ -45464,21 +45516,6 @@
           ]
         },
         {
-          "id": "catuvellauni",
-          "canonical_name": "Catuvellauni",
-          "start": -100,
-          "end": null,
-          "curated": true,
-          "source": "polity",
-          "entity_type": "tribe",
-          "linked_era_id": "classical_antiquity_era",
-          "primary_continent": "europe",
-          "primary_historical_region": "western_europe",
-          "present_countries": [
-            "GB"
-          ]
-        },
-        {
           "id": "tiwanaku_polity",
           "canonical_name": "Tiwanaku polity",
           "start": 300,
@@ -45608,21 +45645,6 @@
           "primary_historical_region": "andes",
           "present_countries": [
             "PE"
-          ]
-        },
-        {
-          "id": "banu_thabit",
-          "canonical_name": "Banu thabit",
-          "start": 1324,
-          "end": 1416,
-          "curated": true,
-          "source": "polity",
-          "entity_type": "tribe",
-          "linked_era_id": null,
-          "primary_continent": "africa",
-          "primary_historical_region": "unclassified",
-          "present_countries": [
-            "LY"
           ]
         }
       ]
@@ -47431,6 +47453,19 @@
             "primary_historical_region": "unclassified",
             "present_countries": [
               "RU"
+            ]
+          },
+          {
+            "id": "baban",
+            "canonical_name": "Baban",
+            "start": 1600,
+            "end": 1847,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IQ"
             ]
           },
           {
@@ -58067,6 +58102,19 @@
             ]
           },
           {
+            "id": "baban",
+            "canonical_name": "Baban",
+            "start": 1600,
+            "end": 1847,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "asia",
+            "primary_historical_region": "unclassified",
+            "present_countries": [
+              "IQ"
+            ]
+          },
+          {
             "id": "baghat_state",
             "canonical_name": "Baghat State",
             "start": 1600,
@@ -65207,21 +65255,6 @@
           "primary_historical_region": "unclassified",
           "present_countries": [
             "NE"
-          ]
-        },
-        {
-          "id": "baban",
-          "canonical_name": "Baban",
-          "start": 1600,
-          "end": 1847,
-          "curated": true,
-          "source": "polity",
-          "entity_type": "tribe",
-          "linked_era_id": null,
-          "primary_continent": "asia",
-          "primary_historical_region": "unclassified",
-          "present_countries": [
-            "IQ"
           ]
         },
         {
@@ -84870,6 +84903,19 @@
             ]
           },
           {
+            "id": "cherokee_nation",
+            "canonical_name": "Cherokee Nation",
+            "start": 1839,
+            "end": null,
+            "curated": false,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "north_america",
+            "primary_historical_region": "north_america",
+            "present_countries": [
+              "US"
+            ]
+          },
+          {
             "id": "republic_of_the_rio_grande",
             "canonical_name": "Republic of the Río Grande",
             "start": 1840,
@@ -96781,6 +96827,19 @@
             ]
           },
           {
+            "id": "cherokee_nation",
+            "canonical_name": "Cherokee Nation",
+            "start": 1839,
+            "end": null,
+            "curated": false,
+            "linked_era_id": "asia_contemporary_world_era",
+            "primary_continent": "north_america",
+            "primary_historical_region": "north_america",
+            "present_countries": [
+              "US"
+            ]
+          },
+          {
             "id": "republic_of_the_rio_grande",
             "canonical_name": "Republic of the Río Grande",
             "start": 1840,
@@ -107254,23 +107313,7 @@
           }
         ]
       },
-      "civilizations": [
-        {
-          "id": "cherokee_nation",
-          "canonical_name": "Cherokee Nation",
-          "start": 1839,
-          "end": null,
-          "curated": true,
-          "source": "polity",
-          "entity_type": "tribe",
-          "linked_era_id": "asia_contemporary_world_era",
-          "primary_continent": "north_america",
-          "primary_historical_region": "north_america",
-          "present_countries": [
-            "US"
-          ]
-        }
-      ]
+      "civilizations": []
     }
   ],
   "epochs": [

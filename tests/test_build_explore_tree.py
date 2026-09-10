@@ -424,15 +424,24 @@ class CivilizationsCultureLaneTests(unittest.TestCase):
         all_polity_ids = {e["id"] for bucket in chapter_out["polities_by_historical_region"].values() for e in bucket}
         self.assertNotIn("nubian_civilization", all_polity_ids)
 
-    def test_entity_type_culture_people_tribe_all_routed_to_lane(self) -> None:
+    def test_entity_type_culture_and_people_routed_to_lane(self) -> None:
         polities = [
             polity("some_culture", -2500, -1500, "africa", "north_africa", entity_type="culture"),
             polity("some_people", -2500, -1500, "africa", "north_africa", entity_type="people"),
-            polity("some_tribe", -2500, -1500, "africa", "north_africa", entity_type="tribe"),
         ]
         tree = build_explore_tree(polities, self.base_periods, [])
         lane_ids = {e["id"] for e in tree["chapters"][0]["civilizations"]}
-        self.assertEqual(lane_ids, {"some_culture", "some_people", "some_tribe"})
+        self.assertEqual(lane_ids, {"some_culture", "some_people"})
+
+    def test_entity_type_tribe_routed_to_polities_row_not_lane(self) -> None:
+        """Unlike civilization/culture/people, a tribe is treated as any
+        other weight-bearing polity (moved back 10 September 2026 --
+        see CIVILIZATION_ENTITY_TYPES)."""
+        polities = [polity("some_tribe", -2500, -1500, "africa", "north_africa", entity_type="tribe")]
+        tree = build_explore_tree(polities, self.base_periods, [])
+        self.assertEqual(tree["chapters"][0]["civilizations"], [])
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["north_africa"]
+        self.assertIn("some_tribe", {e["id"] for e in region_bucket})
 
     def test_lane_polity_entry_always_curated_and_carries_entity_type(self) -> None:
         polities = [polity("nubian_civilization", -2500, -1500, "africa", "north_africa", entity_type="civilization")]

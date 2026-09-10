@@ -42,8 +42,11 @@ def _attach_nested_details(details_by_target: dict[str, list[dict]]) -> None:
 
 # Polity.entity_type values that mean "not really a weight-bearing political
 # entity" -- these render in the Civilizations & Cultures lane instead of the
-# Polities row. See ROADMAP.md item 4 and the /explore lane-separation design.
-CIVILIZATION_ENTITY_TYPES = {"civilization", "culture", "people", "tribe"}
+# Polities row. `tribe` was here too until 10 September 2026 -- moved back to
+# the ordinary Polities row on request (a tribe is treated as any other
+# weight-bearing polity for /explore's purposes, unlike civilization/culture/
+# people, which stay backdrop-only).
+CIVILIZATION_ENTITY_TYPES = {"civilization", "culture", "people"}
 
 
 def primary_geography(geo: dict, primary_key: str, list_key: str) -> str:
@@ -562,7 +565,7 @@ def _polity_entry(polity: dict, curated: bool) -> dict:
 
 def _civilization_polity_entry(polity: dict) -> dict:
     """Build a JSON-serializable dict entry for a civilization/culture/
-    people/tribe-typed polity in the Civilizations & Cultures lane.
+    people-typed polity in the Civilizations & Cultures lane.
     `curated` is always True -- entity_type is a reviewed field, not a
     heuristic guess, unlike the name-matched periods alongside it.
     `primary_continent`/`primary_historical_region`/`present_countries`
