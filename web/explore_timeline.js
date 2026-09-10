@@ -8,7 +8,6 @@ function formatYear(year) {
 // AND comma-formats large numbers) from common.js's plainer variant.
 
 let clipIdCounter = 0;
-const LABEL_MIN_WIDTH = 30;
 
 const ESTIMATED_CHAR_WIDTH = 6; // px per character at the .68rem label font -- no live text measurement, just a reasonable estimate
 const LABEL_PADDING = 8;
@@ -19,13 +18,19 @@ const LABEL_PADDING = 8;
 // `getLabel` defaults to canonical_name, but callers showing a
 // country-suffixed label (see itemDisplayLabel) pass it in so the
 // footprint accounts for the longer displayed text, not just the bare name.
+// Also reserves space to the LEFT for an item's own detail-of toggle when
+// it's too narrow to hold one (see drawItemBand) -- the toggle moves
+// outside the band's left edge in that case, so packIntoLanes needs to
+// know about that extra footprint too, not just the label's.
 function labelAwareFootprint(scale, getLabel = (item) => item.canonical_name) {
   return (item) => {
     const bandStart = scale.x(item.start);
     const bandWidth = scale.width(item.start, item.end);
     const labelWidth = getLabel(item).length * ESTIMATED_CHAR_WIDTH + LABEL_PADDING;
-    const footprintWidth = Math.max(bandWidth, labelWidth);
-    return { start: bandStart, end: bandStart + footprintWidth };
+    const detailCount = Array.isArray(item.details) ? item.details.length : 0;
+    const outsideToggleWidth = detailCount > 0 && toggleWidth(detailCount) > bandWidth ? toggleWidth(detailCount) : 0;
+    const footprintWidth = Math.max(bandWidth, labelWidth) + outsideToggleWidth;
+    return { start: bandStart - outsideToggleWidth, end: bandStart - outsideToggleWidth + footprintWidth };
   };
 }
 
@@ -52,10 +57,17 @@ function bandRect(svg, { x, y, width, height, cls, title, label, onZoom, fill })
   titleEl.textContent = title;
   rect.append(titleEl);
   svg.append(rect);
-  if (label && width >= LABEL_MIN_WIDTH) {
+  // Always drawn when there's a label, even for a band far narrower than
+  // the text -- packIntoLanes already reserved room for the label's own
+  // width via labelAwareFootprint, not just the band's, so letting it spill
+  // past a narrow band's edge can't actually collide with the next item.
+  // Clipped to that same reserved width (not the bare band width) so a
+  // label can never render past the space genuinely set aside for it.
+  if (label) {
+    const labelWidth = Math.max(width, label.length * ESTIMATED_CHAR_WIDTH + LABEL_PADDING);
     const clipId = `hierarchy-clip-${clipIdCounter++}`;
     const clipPath = svgEl("clipPath", { id: clipId });
-    clipPath.append(svgEl("rect", { x, y, width, height }));
+    clipPath.append(svgEl("rect", { x, y, width: labelWidth, height }));
     svg.append(clipPath);
     const textEl = svgEl("text", {
       x: x + 4, y: y + height / 2 + 4, class: "hierarchy-band-label", "clip-path": `url(#${clipId})`,
@@ -145,13 +157,20 @@ function drawDetailPanel(svg, { x, y, width, scale, details, onZoom, isExpanded 
     const zoomTarget = { handler: onZoom, kind: detail.kind || "polity", id: detail.id, start: detail.start, end: detail.end };
     if (nested) {
       const nestedExpanded = isExpanded(detail.id);
-      const toggleW = Math.min(detailWidth, toggleWidth(nested.length));
+      const naturalToggleW = toggleWidth(nested.length);
+      // Same "push outside a too-narrow band" rule as drawItemBand -- each
+      // detail line is already its own row (no lane-sharing sibling to
+      // collide with), so there's no footprint to reserve here.
+      const outside = naturalToggleW > detailWidth;
+      const toggleX = outside ? detailX - naturalToggleW : detailX;
+      const chipX = outside ? detailX : detailX + naturalToggleW;
+      const chipWidth = outside ? detailWidth : Math.max(0, detailWidth - naturalToggleW);
       drawDetailToggle(svg, {
-        x: detailX, y: lineY, width: toggleW, height: DETAIL_LINE_HEIGHT,
+        x: toggleX, y: lineY, width: naturalToggleW, height: DETAIL_LINE_HEIGHT,
         count: nested.length, expanded: nestedExpanded, onToggle: () => onToggleExpand(detail.id),
       });
       bandRect(svg, {
-        x: detailX + toggleW, y: lineY, width: Math.max(0, detailWidth - toggleW), height: DETAIL_LINE_HEIGHT,
+        x: chipX, y: lineY, width: chipWidth, height: DETAIL_LINE_HEIGHT,
         cls: "hierarchy-detail-chip", title: detailLabel, label: detailLabel, onZoom: zoomTarget,
       });
       cursorY += DETAIL_LINE_HEIGHT;
@@ -208,9 +227,18 @@ function drawItemBand(svg, item, { x, y, width, height, cls, title, label, fill,
   }
   const count = item.details.length;
   const expanded = isExpanded(item.id);
-  const toggleW = Math.min(width, toggleWidth(count));
-  drawDetailToggle(svg, { x, y, width: toggleW, height, count, expanded, onToggle: () => onToggleExpand(item.id) });
-  bandRect(svg, { x: x + toggleW, y, width: Math.max(0, width - toggleW), height, cls, title, label, fill, onZoom: zoomTarget });
+  const naturalToggleW = toggleWidth(count);
+  // A band at least as wide as the toggle keeps it fused to the band's own
+  // left edge, same as always. A narrower one would otherwise either
+  // squeeze the count down to unreadable or eat the whole band and leave
+  // no room for its own label -- pushed outside the band's left edge
+  // instead (labelAwareFootprint already reserved that extra space).
+  const outside = naturalToggleW > width;
+  const toggleX = outside ? x - naturalToggleW : x;
+  const bandX = outside ? x : x + naturalToggleW;
+  const bandWidth = outside ? width : Math.max(0, width - naturalToggleW);
+  drawDetailToggle(svg, { x: toggleX, y, width: naturalToggleW, height, count, expanded, onToggle: () => onToggleExpand(item.id) });
+  bandRect(svg, { x: bandX, y, width: bandWidth, height, cls, title, label, fill, onZoom: zoomTarget });
   if (expanded) {
     drawDetailPanel(svg, { x, y: y + height + DETAIL_PANEL_TOP_GAP, width, scale, details: item.details, onZoom, isExpanded, onToggleExpand });
   }
