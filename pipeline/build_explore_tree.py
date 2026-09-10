@@ -1,10 +1,10 @@
 """Build-time step: precompute explore_tree.json, the full period hierarchy
 (macro chapter -> regional era -> named period, plus polities bucketed per
 chapter by historical region and by continent, plus a flat Civilizations &
-Cultures lane per chapter) that /explore renders directly. Retires
-build_explore_index.py's flatter top-N summary -- the new hierarchical
-/explore view needs the whole tree, not just each chapter's top 3 entities.
-See docs/plans/2026-08-30-explore-hierarchy-timeline.md."""
+Cultures lane and a flat Micronations lane per chapter) that /explore
+renders directly. Retires build_explore_index.py's flatter top-N summary --
+the new hierarchical /explore view needs the whole tree, not just each
+chapter's top 3 entities. See docs/plans/2026-08-30-explore-hierarchy-timeline.md."""
 
 from __future__ import annotations
 
@@ -47,6 +47,19 @@ def _attach_nested_details(details_by_target: dict[str, list[dict]]) -> None:
 # weight-bearing polity for /explore's purposes, unlike civilization/culture/
 # people, which stay backdrop-only).
 CIVILIZATION_ENTITY_TYPES = {"civilization", "culture", "people"}
+
+# Polity.entity_type value for self-declared joke/novelty polities (Hubbistan,
+# the Republic of Rose Island, ...) -- like CIVILIZATION_ENTITY_TYPES, these
+# render in their own lane (Micronations) instead of the ordinary Polities
+# row, so they don't crowd out real states in the default view. Added 10
+# September 2026 per explicit request ("move all micronations to a separate
+# lane ... hidden by default").
+MICRONATION_ENTITY_TYPES = {"micronation"}
+
+# Both lanes above are excluded from the ordinary Polities row and from its
+# "no curated placement" heuristic precompute -- combined here so those two
+# exclusion checks read as one condition instead of two ORed constants.
+NON_POLITY_ROW_ENTITY_TYPES = CIVILIZATION_ENTITY_TYPES | MICRONATION_ENTITY_TYPES
 
 
 def primary_geography(geo: dict, primary_key: str, list_key: str) -> str:
@@ -375,12 +388,38 @@ def build_explore_tree(
     for cid in chapter_ids:
         civilizations_by_chapter[cid].sort(key=lambda e: (e["start"], e["id"]))
 
+    # Micronations lane: entity_type: micronation polities, placed the same
+    # way as the Civilizations & Cultures lane above (date overlap, single
+    # flat row per chapter) but hidden by default on the front end -- see
+    # ROADMAP.md's "move all micronations to a separate lane" item. Unlike
+    # the Civilizations & Cultures loop above, a detail_of'd micronation
+    # (e.g. the Most Serene Federal Republic of Montmartre, detail_of the
+    # Republic of Montmartre) is skipped here and surfaces instead under its
+    # container's own `details` list, same as every detail_of entity
+    # elsewhere in this tree.
+    micronations_by_chapter: dict[str, list[dict]] = {cid: [] for cid in chapter_ids}
+    for polity in polities:
+        if polity.get("entity_type") not in MICRONATION_ENTITY_TYPES:
+            continue
+        if polity.get("detail_of"):
+            continue
+        best = chapters_by_id.get(polity.get("linked_chapter_id")) or best_chapter_for_polity(
+            polity, all_chapters, open_end
+        )
+        if best is not None:
+            entry = _civilization_polity_entry(polity)
+            if polity["id"] in details_by_target:
+                entry["details"] = details_by_target[polity["id"]]
+            micronations_by_chapter[best["id"]].append(entry)
+    for cid in chapter_ids:
+        micronations_by_chapter[cid].sort(key=lambda e: (e["start"], e["id"]))
+
     # The "no curated placement" heuristic below doesn't depend on which chapter
     # is currently being assembled, so it's computed once per polity here rather
     # than once per (chapter, polity) pair inside Pass 2's per-chapter loop.
     best_chapter_by_polity_id: dict[str, dict | None] = {}
     for polity in polities:
-        if polity.get("entity_type") in CIVILIZATION_ENTITY_TYPES:
+        if polity.get("entity_type") in NON_POLITY_ROW_ENTITY_TYPES:
             continue
         if polity.get("detail_of"):
             continue
@@ -400,8 +439,8 @@ def build_explore_tree(
         by_region: dict[str, list[dict]] = {}
         by_continent: dict[str, list[dict]] = {}
         for polity in polities:
-            if polity.get("entity_type") in CIVILIZATION_ENTITY_TYPES:
-                continue  # handled by the Civilizations & Cultures lane above, not the Polities row
+            if polity.get("entity_type") in NON_POLITY_ROW_ENTITY_TYPES:
+                continue  # handled by the Civilizations & Cultures or Micronations lane above, not the Polities row
             if polity.get("detail_of"):
                 continue  # attached to its container's entry below, not shown independently
             polity_id = polity["id"]
@@ -444,6 +483,7 @@ def build_explore_tree(
             "polities_by_historical_region": by_region,
             "polities_by_continent": by_continent,
             "civilizations": civilizations_by_chapter[cid],
+            "micronations": micronations_by_chapter[cid],
         })
 
     earliest_chapter = min(chapters_out, key=lambda c: c["start"])
@@ -565,9 +605,13 @@ def _polity_entry(polity: dict, curated: bool) -> dict:
 
 def _civilization_polity_entry(polity: dict) -> dict:
     """Build a JSON-serializable dict entry for a civilization/culture/
-    people-typed polity in the Civilizations & Cultures lane.
-    `curated` is always True -- entity_type is a reviewed field, not a
-    heuristic guess, unlike the name-matched periods alongside it.
+    people-typed polity in the Civilizations & Cultures lane. Also reused
+    as-is for the Micronations lane (see MICRONATION_ENTITY_TYPES) -- the
+    shape only depends on generic polity fields, not on which of the two
+    lanes it ends up in; `entity_type` on the resulting entry distinguishes
+    them for the front end. `curated` is always True -- entity_type is a
+    reviewed field, not a heuristic guess, unlike the name-matched periods
+    alongside it.
     `primary_continent`/`primary_historical_region`/`present_countries`
     mirror _period_entry/_polity_entry's own fields so this lane can share
     the same client-side continent/country grouping. `linked_era_id` is a

@@ -431,6 +431,7 @@ function filterTreeToRange(tree, start, end) {
       polities_by_historical_region: filterBuckets(c.polities_by_historical_region),
       polities_by_continent: filterBuckets(c.polities_by_continent),
       civilizations: (c.civilizations || []).filter((item) => overlaps(item.start, item.end)),
+      micronations: (c.micronations || []).filter((item) => overlaps(item.start, item.end)),
     }));
   const epochs = (tree.epochs || []).filter((epoch) => overlaps(epoch.start, epoch.end));
   return {
@@ -565,7 +566,8 @@ function collectGeoFilterOptions(tree, groupBy) {
   const periods = tree.chapters.flatMap((chapter) => chapter.eras.flatMap((era) => era.periods));
   const polities = allPolitiesFlat(tree);
   const civilizations = tree.chapters.flatMap((chapter) => chapter.civilizations || []);
-  const items = [...periods, ...polities, ...civilizations];
+  const micronations = tree.chapters.flatMap((chapter) => chapter.micronations || []);
+  const items = [...periods, ...polities, ...civilizations, ...micronations];
   if (groupBy === "continent") {
     const keys = sortGeoKeys(new Set(items.map(geoBucketKey)));
     return keys.map((key) => ({ value: key, label: displayTerm(key) }));
@@ -898,6 +900,11 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
     // groupedLayoutFor's maxPerBucket (SHOW_MAIN_MAX_PER_BUCKET); "all"
     // shows every matching polity, uncapped.
     showPolities = "all", geoFilter = null, eraColorMap = buildEraColorMap(tree),
+    // "hide" | "show" -- unlike showPolities, there's no "main" concept for
+    // a lane of self-declared joke/novelty polities, so this is a plain
+    // two-state toggle. Defaults to hidden per explicit request (10
+    // September 2026): these would otherwise crowd out real states.
+    showMicronations = "hide",
     // Detail-of reveal state (see DETAIL_LINE_HEIGHT above) -- owned by the
     // caller (explore.js), not this render function, so it survives across
     // the re-renders zoom/groupBy/showPolities changes already trigger.
@@ -958,6 +965,16 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   const civItems = tree.chapters.flatMap((chapter) => chapter.civilizations || []);
   const civLayout = groupedLayoutFor(applyGeoFilter(civItems, groupBy, geoFilter), scale, civLaneHeight, groupBy);
 
+  // Micronations: same lane mechanics as Civilizations & Cultures above, but
+  // gated behind its own show/hide control (default hidden) instead of
+  // always shown -- an empty items list here collapses micLayout.height to
+  // 0, which the row-skip logic below already treats the same as "no
+  // content", same as it does for the Polities row when showPolities is
+  // "hide".
+  const micronationLaneHeight = 20;
+  const micItems = showMicronations !== "hide" ? tree.chapters.flatMap((chapter) => chapter.micronations || []) : [];
+  const micLayout = groupedLayoutFor(applyGeoFilter(micItems, groupBy, geoFilter), scale, micronationLaneHeight, groupBy);
+
   const politiesItems = showPolities !== "hide" ? applyGeoFilter(allPolitiesFlat(tree), groupBy, geoFilter) : [];
   const politiesLayout = groupedLayoutFor(
     politiesItems, scale, polityLaneHeight, groupBy, isExpanded,
@@ -983,6 +1000,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   // its separator/tier label) is skipped entirely rather than drawing an
   // empty block, see below.
   const civBlockHeight = civLayout.height > 0 ? civLayout.height + rowGap : 0;
+  const micBlockHeight = micLayout.height > 0 ? micLayout.height + rowGap : 0;
   const politiesRowHeight = showPolities !== "hide" ? politiesLayout.height : 0;
   const eventsBlockHeight = eventLanes.length > 0 ? eventLanes.length * eventLaneHeight + rowGap : 0;
   // Real (data-driven) Epoch-lane records (e.g. Holocene) share the same
@@ -999,7 +1017,7 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
     )),
   );
 
-  const height = geoRowHeight + epochRowExtraHeight + chapterRowHeight + eraRowHeight + periodRowHeight + eventsBlockHeight + civBlockHeight + politiesRowHeight + rowGap * 4;
+  const height = geoRowHeight + epochRowExtraHeight + chapterRowHeight + eraRowHeight + periodRowHeight + eventsBlockHeight + civBlockHeight + micBlockHeight + politiesRowHeight + rowGap * 4;
 
   const svg = svgEl("svg", { viewBox: `0 0 ${width} ${height}`, class: "hierarchy-chart" });
 
@@ -1077,6 +1095,15 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
       getLabel: (item) => itemDisplayLabel(item, groupBy),
     });
     advanceRow(civLayout.height, "Civilizations & Cultures");
+  }
+
+  if (micLayout.height > 0) {
+    drawGroupedRow(svg, scale, micLayout, y, micronationLaneHeight, "hierarchy-band-micronation", onZoom, width, tree.axis.domain_end, {
+      getFill: (item) => eraColor(eraColorMap, item.linked_era_id),
+      getKind: () => "polity",
+      getLabel: (item) => itemDisplayLabel(item, groupBy),
+    });
+    advanceRow(micLayout.height, "Micronations");
   }
 
   if (showPolities !== "hide" && politiesRowHeight > 0) {

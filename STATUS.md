@@ -2645,3 +2645,28 @@ Fixed all five, live-verified in a real browser:
 A polity that's still genuinely absent from the currently zoomed date range, or filtered out by
 the "Filter to" continent/country control, still has nothing to scroll to -- `scrollToAndHighlightBand`
 no-ops safely in that case, same as before.
+
+### `/explore` gains a Micronations lane, hidden by default — 10 September 2026
+
+The 45 `entity_type: micronation` polities (Hubbistan, the Republic of Rose Island, and similar
+self-declared joke/novelty "states") used to render in the ordinary Polities row alongside real
+states, per explicit request they now get their own lane instead:
+
+- `pipeline/build_explore_tree.py` mirrors the existing Civilizations & Cultures lane's
+  construction (`MICRONATION_ENTITY_TYPES`, a `micronations_by_chapter` dict placed by date
+  overlap via `best_chapter_for_polity`, excluded from the ordinary Polities row and from the
+  "no curated placement" heuristic precompute via the new combined `NON_POLITY_ROW_ENTITY_TYPES`).
+  Unlike the Civilizations lane (a pre-existing, out-of-scope gap left untouched), a detail_of'd
+  micronation is correctly skipped here and surfaces instead under its container's own `details`
+  list — e.g. the Most Serene Federal Republic of Montmartre nests under the Republic of
+  Montmartre rather than getting a redundant top-level entry.
+- `web/explore_timeline.js` adds a parallel `micLayout`/`drawGroupedRow` block (own
+  `hierarchy-band-micronation` CSS class, own tier label "Micronations"), gated behind a new
+  `showMicronations` option ("hide" | "show", default "hide") the same way the Polities row is
+  already gated behind `showPolities`.
+- `web/explore.html`/`explore.js` add a "Micronations" dropdown (Hide / Show All) next to the
+  existing Polities control, defaulting to Hide.
+- Verified live: hidden by default (0 bands), 40 of the 45 render correctly grouped by continent
+  when switched to Show All (3 excluded as detail_of children per above; 2 zero-length-date
+  records fall through the same date-overlap heuristic every other lane already shares -- a
+  pre-existing limitation of `overlap_years`, not new here).

@@ -239,6 +239,7 @@ function wireEntitySearch(detailCtx, zoomAndSelect) {
 async function main() {
   const container = document.querySelector("#hierarchy-chart");
   const showPolitiesInput = document.querySelector("#show-polities");
+  const showMicronationsInput = document.querySelector("#show-micronations");
   const groupBySelect = document.querySelector("#group-by");
   const geoFilterSelect = document.querySelector("#geo-filter");
   const geoFilterLabel = document.querySelector("#geo-filter-label");
@@ -320,6 +321,7 @@ async function main() {
       groupBy: groupBySelect.value,
       // ROADMAP.md item: "all" | "main" | "hide" -- was a boolean show/hide.
       showPolities: showPolitiesInput.value,
+      showMicronations: showMicronationsInput.value,
       geoFilter: geoFilterSelect.hidden ? null : geoFilterSelect.value,
       // Built once from the full, unzoomed tree (see below) so era colors
       // stay stable across zoom/filter re-renders instead of shifting as the
@@ -428,6 +430,7 @@ async function main() {
     });
     wireEntitySearch(detailCtx, zoomAndSelect);
     showPolitiesInput.addEventListener("change", draw);
+    showMicronationsInput.addEventListener("change", draw);
     groupBySelect.addEventListener("change", () => {
       updateGeoFilterOptions();
       draw();

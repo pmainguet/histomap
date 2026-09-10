@@ -579,6 +579,93 @@ class CivilizationsCultureLaneTests(unittest.TestCase):
         )
 
 
+class MicronationsLaneTests(unittest.TestCase):
+    """The Micronations lane: entity_type: micronation polities, routed out
+    of the ordinary Polities row into their own flat per-chapter lane, same
+    mechanics as the Civilizations & Cultures lane (see that class above)."""
+
+    def setUp(self) -> None:
+        self.base_periods = [
+            chapter("macro_modern", 1800, 2026),
+            era("modern_era", 1900, 2026, "macro_modern", ["europe"], ["western_europe"]),
+        ]
+
+    def test_entity_type_micronation_routed_to_lane_not_polities_row(self) -> None:
+        polities = [polity("hubbistan", 1967, None, "europe", "western_europe", entity_type="micronation")]
+        tree = build_explore_tree(polities, self.base_periods, [])
+        chapter_out = tree["chapters"][0]
+        self.assertEqual([e["id"] for e in chapter_out["micronations"]], ["hubbistan"])
+        all_polity_ids = {e["id"] for bucket in chapter_out["polities_by_historical_region"].values() for e in bucket}
+        self.assertNotIn("hubbistan", all_polity_ids)
+
+    def test_lane_polity_entry_always_curated_and_carries_entity_type(self) -> None:
+        polities = [polity("hubbistan", 1967, None, "europe", "western_europe", entity_type="micronation")]
+        tree = build_explore_tree(polities, self.base_periods, [])
+        entry = tree["chapters"][0]["micronations"][0]
+        self.assertTrue(entry["curated"])
+        self.assertEqual(entry["source"], "polity")
+        self.assertEqual(entry["entity_type"], "micronation")
+
+    def test_plain_polity_entity_type_unaffected(self) -> None:
+        polities = [polity("kingdom_of_belgium", 1830, None, "europe", "western_europe")]
+        tree = build_explore_tree(polities, self.base_periods, [])
+        self.assertEqual(tree["chapters"][0]["micronations"], [])
+        region_bucket = tree["chapters"][0]["polities_by_historical_region"]["western_europe"]
+        self.assertIn("kingdom_of_belgium", {e["id"] for e in region_bucket})
+
+    def test_civilization_and_micronation_lanes_are_independent(self) -> None:
+        polities = [
+            polity("nubian_civilization", 1900, 1950, "europe", "western_europe", entity_type="civilization"),
+            polity("hubbistan", 1967, None, "europe", "western_europe", entity_type="micronation"),
+        ]
+        tree = build_explore_tree(polities, self.base_periods, [])
+        chapter_out = tree["chapters"][0]
+        self.assertEqual([e["id"] for e in chapter_out["civilizations"]], ["nubian_civilization"])
+        self.assertEqual([e["id"] for e in chapter_out["micronations"]], ["hubbistan"])
+
+    def test_detail_of_micronation_excluded_from_its_own_lane_entry(self) -> None:
+        """A detail_of'd micronation doesn't get its own top-level lane
+        entry -- it surfaces instead under its container's `details` list,
+        same as every other detail_of entity in this tree (reproduces the
+        Most Serene Federal Republic of Montmartre -> Republic of Montmartre
+        case)."""
+        polities = [
+            polity("republic_of_montmartre", 1920, None, "europe", "western_europe", entity_type="micronation"),
+            polity(
+                "most_serene_federal_republic_of_montmartre", 1921, 1922, "europe", "western_europe",
+                entity_type="micronation", detail_of="republic_of_montmartre",
+            ),
+        ]
+        tree = build_explore_tree(polities, self.base_periods, [])
+        lane_ids = [e["id"] for e in tree["chapters"][0]["micronations"]]
+        self.assertEqual(lane_ids, ["republic_of_montmartre"])
+        container = tree["chapters"][0]["micronations"][0]
+        self.assertEqual([d["id"] for d in container["details"]], ["most_serene_federal_republic_of_montmartre"])
+
+    def test_lane_placed_in_correct_chapter_by_date_overlap(self) -> None:
+        periods = [
+            chapter("macro_early", -3500, -1200),
+            chapter("macro_modern", 1800, 2026),
+        ]
+        polities = [polity("hubbistan", 1967, None, "europe", entity_type="micronation")]
+        tree = build_explore_tree(polities, periods, [])
+        early = next(c for c in tree["chapters"] if c["id"] == "macro_early")
+        modern = next(c for c in tree["chapters"] if c["id"] == "macro_modern")
+        self.assertEqual(early["micronations"], [])
+        self.assertEqual([e["id"] for e in modern["micronations"]], ["hubbistan"])
+
+    def test_lane_entries_sorted_by_start_then_id(self) -> None:
+        polities = [
+            polity("later_micronation", 1990, None, "europe", entity_type="micronation"),
+            polity("earlier_micronation", 1967, None, "europe", entity_type="micronation"),
+        ]
+        tree = build_explore_tree(polities, self.base_periods, [])
+        self.assertEqual(
+            [e["id"] for e in tree["chapters"][0]["micronations"]],
+            ["earlier_micronation", "later_micronation"],
+        )
+
+
 class EpochLaneTests(unittest.TestCase):
     def setUp(self) -> None:
         self.periods = [

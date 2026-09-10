@@ -348,6 +348,7 @@ kbd { padding: .1rem .3rem; color: #27251f; background: white; border: 1px solid
    here for a different, more visible distinction instead. */
 .hierarchy-band-polity { fill: var(--ink-faint); fill-opacity: .28; }
 .hierarchy-band-civilization { fill: #3d6b66; fill-opacity: .3; stroke-dasharray: 3 2; }
+.hierarchy-band-micronation { fill: #7a4d7a; fill-opacity: .3; stroke-dasharray: 3 2; }
 /* Momentary marker for whatever band a search (or deep link) just scrolled
    the chart to -- a fading glow on top of the band's own tier color, not a
    replacement for it, so its normal color/border still read once the glow
