@@ -63,3 +63,6 @@ consolidation_status: independent
 government_form: null
 deprecated:
   visibility_tier: detailed
+detail_of: egypt
+manual_overrides:
+- detail_of

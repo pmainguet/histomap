@@ -52,3 +52,6 @@ consolidation_status: independent
 government_form: null
 deprecated:
   visibility_tier: detailed
+detail_of: equatorial_guinea
+manual_overrides:
+- detail_of

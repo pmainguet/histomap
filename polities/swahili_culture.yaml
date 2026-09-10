@@ -9,6 +9,16 @@ end_confidence: low
 geography:
   continents:
   - africa
+  present_countries:
+  - KE
+  - TZ
+  - SO
+  - MZ
+  - KM
+  confidence: medium
+  historical_regions:
+  - east_africa
+  - horn_of_africa
 eligibility: accepted
 sources:
 - histomap_editorial

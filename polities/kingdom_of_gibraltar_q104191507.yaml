@@ -25,11 +25,12 @@ prominence_score: 0
 eligibility: accepted
 geography:
   continents:
-  - africa
   - europe
-  present_countries: []
-  centroid: null
-  confidence: medium
+  primary_continent: europe
+  historical_regions: []
+  present_countries:
+  - GI
+  confidence: high
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []
@@ -48,6 +49,7 @@ prominence_components:
 consolidation_status: independent
 manual_overrides:
 - consolidation
+- geography
 government_form: null
 deprecated:
   visibility_tier: detailed

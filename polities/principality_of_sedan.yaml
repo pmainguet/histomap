@@ -25,17 +25,13 @@ prominence_score: 15.55
 eligibility: accepted
 geography:
   continents:
-  - africa
-  - antarctica
   - europe
-  - oceania
-  present_countries:
-  - FR
-  centroid: null
-  confidence: low
-  primary_continent: africa
+  primary_continent: europe
   historical_regions:
   - western_europe
+  present_countries:
+  - FR
+  confidence: high
   primary_historical_region: western_europe
 entity_type: polity
 entity_type_confidence: high
@@ -56,3 +52,5 @@ prominence_components:
 government_form: principality
 deprecated:
   visibility_tier: detailed
+manual_overrides:
+- geography

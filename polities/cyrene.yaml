@@ -5,19 +5,19 @@ names:
   aliases_en: Mint of Cyrene | Cyrene, Libya
 external_ids:
   wikidata: Q44112
+  wikipedia_en: null
+  seshat: []
 parent: null
 successors: []
 start: -629
-end: null
+end: 642
 start_confidence: low
 end_confidence: low
 weight_by_era:
-  -629: 5
+  '-629': 5
 weight_imputed: true
 icon: null
 text:
-  short_child_en: ''
-  short_adult_en: ''
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
@@ -27,15 +27,16 @@ eligibility: accepted
 geography:
   continents:
   - africa
+  primary_continent: africa
+  historical_regions:
+  - north_africa
+  primary_historical_region: north_africa
   present_countries:
   - LY
   centroid:
     lat: 32.816666666
     lon: 21.85
   confidence: medium
-  historical_regions:
-  - north_africa
-  primary_historical_region: north_africa
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:
@@ -45,13 +46,25 @@ prominence_components:
   wikidata_reach: 28.04
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
+  relationship_centrality: 0
   longevity: 8
   editorial_work: 0
   type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
+  date_uncertainty_penalty: -5
   aggregate_penalty: 0
   total: 31.04
 government_form: city-state
 deprecated:
   visibility_tier: detailed
+source_urls: []
+fade_in_years: null
+fade_out_years: null
+entity_type_reviewed_against: []
+timeline_role: entity
+consolidation_status: null
+consolidated_into: null
+detail_of: null
+manual_overrides:
+- end
+linked_era_id: null
+linked_chapter_id: null

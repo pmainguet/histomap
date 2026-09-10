@@ -29,7 +29,11 @@ geography:
   continents:
   - africa
   - asia
-  present_countries: []
+  present_countries:
+  - SA
+  - EG
+  - IQ
+  - SY
   confidence: high
   historical_regions:
   - west_asia

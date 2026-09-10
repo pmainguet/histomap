@@ -1982,7 +1982,9 @@
         "north_africa"
       ],
       "primary_historical_region": "north_africa",
-      "present_countries": [],
+      "present_countries": [
+        "TN"
+      ],
       "centroid": null,
       "confidence": "high"
     },
@@ -4066,11 +4068,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
+      "present_countries": [
+        "GH"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -5200,11 +5206,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "MA"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -6603,7 +6613,12 @@
         "southern_europe"
       ],
       "primary_historical_region": "north_africa",
-      "present_countries": [],
+      "present_countries": [
+        "DZ",
+        "ES",
+        "MA",
+        "TN"
+      ],
       "centroid": null,
       "confidence": "high"
     },
@@ -7454,11 +7469,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
+      "present_countries": [
+        "CM"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -8892,8 +8911,8 @@
       "confidence": "medium"
     },
     "manual_overrides": [],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
+    "linked_era_id": "europe_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 1278,
     "end": null,
@@ -11207,11 +11226,24 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
+      "historical_regions": [
+        "north_africa",
+        "southern_europe",
+        "west_asia"
+      ],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "DZ",
+        "EG",
+        "ES",
+        "IQ",
+        "MA",
+        "SA",
+        "SY",
+        "TN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -17077,9 +17109,16 @@
         "asia"
       ],
       "primary_continent": null,
-      "historical_regions": [],
+      "historical_regions": [
+        "north_africa",
+        "west_asia"
+      ],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "EG",
+        "SY",
+        "YE"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -21348,11 +21387,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
+      "present_countries": [
+        "CF"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -24267,9 +24310,13 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
+      "present_countries": [
+        "GN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -25396,8 +25443,8 @@
       "confidence": "medium"
     },
     "manual_overrides": [],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
+    "linked_era_id": "europe_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 882,
     "end": null,
@@ -28648,11 +28695,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "TN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -30014,16 +30065,16 @@
     ],
     "geography": {
       "continents": [
-        "africa",
-        "antarctica",
-        "asia",
-        "europe",
-        "oceania"
+        "africa"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "africa",
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
+      "present_countries": [
+        "NG"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -34402,7 +34453,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "libya",
     "deprecated": {
       "visibility_tier": "regional"
     },
@@ -34450,7 +34501,9 @@
       },
       "confidence": "low"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "detail_of"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
@@ -35507,8 +35560,8 @@
       "confidence": "medium"
     },
     "manual_overrides": [],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
+    "linked_era_id": "asia_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": "sultanate",
     "start": 1368,
     "end": null,
@@ -35979,11 +36032,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_africa"
+      ],
+      "primary_historical_region": "east_africa",
+      "present_countries": [
+        "TZ"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -43559,15 +43616,16 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
-        "europe",
-        "oceania"
+        "europe"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
+      "present_countries": [
+        "ES"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -52249,11 +52307,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_africa"
+      ],
+      "primary_historical_region": "east_africa",
+      "present_countries": [
+        "TZ"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -53002,16 +53064,16 @@
     ],
     "geography": {
       "continents": [
-        "africa",
-        "antarctica",
-        "asia",
-        "europe",
-        "oceania"
+        "asia"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -55737,12 +55799,9 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "antarctica",
-        "europe",
-        "oceania"
+        "europe"
       ],
-      "primary_continent": "africa",
+      "primary_continent": "europe",
       "historical_regions": [
         "western_europe"
       ],
@@ -55751,9 +55810,11 @@
         "FR"
       ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": "countship",
@@ -62626,12 +62687,14 @@
       },
       "confidence": "medium"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "end"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": "city-state",
     "start": -629,
-    "end": null,
+    "end": 642,
     "start_confidence": "low",
     "end_confidence": "low",
     "weight_by_era": {
@@ -65645,11 +65708,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
+      "present_countries": [
+        "CF"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -84575,14 +84642,16 @@
     ],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
         "europe"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
+      "present_countries": [
+        "IT"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -96927,7 +96996,9 @@
       "centroid": null,
       "confidence": "low"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "detail_of"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -98394,11 +98465,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "MA"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -98634,11 +98709,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "DZ"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -109125,8 +109204,8 @@
     "manual_overrides": [
       "consolidation"
     ],
-    "linked_era_id": "medieval_europe_era",
-    "linked_chapter_id": "macro_postclassical_worlds",
+    "linked_era_id": "europe_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 481,
     "end": null,
@@ -131044,11 +131123,16 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "DZ",
+        "TN"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -138514,8 +138598,8 @@
     "manual_overrides": [
       "consolidation"
     ],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
+    "linked_era_id": "europe_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 1000,
     "end": null,
@@ -145723,8 +145807,8 @@
     "manual_overrides": [
       "consolidation"
     ],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
+    "linked_era_id": "europe_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 476,
     "end": null,
@@ -152664,11 +152748,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
+      "present_countries": [
+        "ML"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -157458,9 +157546,13 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
+      "present_countries": [
+        "AO"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -164645,13 +164737,16 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
         "europe"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
+      "present_countries": [
+        "ES"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -171339,11 +171434,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "MA"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -172580,18 +172679,20 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
         "europe"
       ],
-      "primary_continent": null,
+      "primary_continent": "europe",
       "historical_regions": [],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "GI"
+      ],
       "centroid": null,
-      "confidence": "medium"
+      "confidence": "high"
     },
     "manual_overrides": [
-      "consolidation"
+      "consolidation",
+      "geography"
     ],
     "linked_era_id": null,
     "linked_chapter_id": null,
@@ -172844,11 +172945,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "horn_of_africa"
+      ],
+      "primary_historical_region": "horn_of_africa",
+      "present_countries": [
+        "ET"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -177139,11 +177244,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
+      "present_countries": [
+        "AO"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -180408,11 +180517,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
+      "present_countries": [
+        "AO"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -182204,11 +182317,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
+      "present_countries": [
+        "AO"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -189423,11 +189540,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "MA"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -189920,14 +190041,18 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
+      "present_countries": [
+        "ES"
+      ],
       "centroid": {
         "lat": 27.948,
         "lon": -15.603
       },
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -191196,11 +191321,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "DZ"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -207549,8 +207678,8 @@
       "confidence": "medium"
     },
     "manual_overrides": [],
-    "linked_era_id": "africa_early_modern_connections_era",
-    "linked_chapter_id": "macro_early_modern_connections",
+    "linked_era_id": "africa_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 1551,
     "end": null,
@@ -213148,14 +213277,16 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
-        "europe"
+        "asia"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "TR"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -218032,11 +218163,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
+      "present_countries": [
+        "CD"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -226100,13 +226235,17 @@
     ],
     "geography": {
       "continents": [
-        "africa",
         "asia"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IQ",
+        "SY"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -228902,8 +229041,8 @@
       "confidence": "medium"
     },
     "manual_overrides": [],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
+    "linked_era_id": "europe_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": "city-state",
     "start": 1297,
     "end": null,
@@ -230422,8 +230561,8 @@
       "confidence": "medium"
     },
     "manual_overrides": [],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
+    "linked_era_id": "africa_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 789,
     "end": null,
@@ -238714,15 +238853,16 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
-        "europe",
-        "oceania"
+        "north_america"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "north_america",
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
+      "present_countries": [
+        "MX"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -239484,11 +239624,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
+      "present_countries": [
+        "AO"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -243989,8 +244133,8 @@
     "manual_overrides": [
       "consolidation"
     ],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
+    "linked_era_id": "europe_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 900,
     "end": null,
@@ -248615,14 +248759,17 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
-        "europe"
+        "asia"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "SA",
+        "YE"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -248877,11 +249024,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
+      "present_countries": [
+        "TD"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -254066,11 +254217,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
+      "present_countries": [
+        "NG"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -257947,8 +258102,8 @@
       "confidence": "medium"
     },
     "manual_overrides": [],
-    "linked_era_id": "asia_early_modern_connections_era",
-    "linked_chapter_id": "macro_early_modern_connections",
+    "linked_era_id": "asia_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 1565,
     "end": null,
@@ -259586,12 +259741,9 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "antarctica",
-        "europe",
-        "oceania"
+        "europe"
       ],
-      "primary_continent": "africa",
+      "primary_continent": "europe",
       "historical_regions": [
         "western_europe"
       ],
@@ -259600,9 +259752,11 @@
         "FR"
       ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -259688,8 +259842,8 @@
     "manual_overrides": [
       "consolidation"
     ],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
+    "linked_era_id": "europe_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 1128,
     "end": null,
@@ -259843,15 +259997,16 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
-        "europe",
-        "oceania"
+        "asia"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "asia",
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
+      "present_countries": [
+        "IN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -264888,12 +265043,9 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "antarctica",
-        "europe",
-        "oceania"
+        "europe"
       ],
-      "primary_continent": "africa",
+      "primary_continent": "europe",
       "historical_regions": [
         "western_europe"
       ],
@@ -264902,9 +265054,11 @@
         "FR"
       ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -273124,12 +273278,9 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "antarctica",
-        "europe",
-        "oceania"
+        "europe"
       ],
-      "primary_continent": "africa",
+      "primary_continent": "europe",
       "historical_regions": [
         "western_europe"
       ],
@@ -273138,9 +273289,11 @@
         "FR"
       ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": "principality",
@@ -284428,7 +284581,12 @@
         "north_africa"
       ],
       "primary_historical_region": "west_asia",
-      "present_countries": [],
+      "present_countries": [
+        "EG",
+        "IQ",
+        "SA",
+        "SY"
+      ],
       "centroid": null,
       "confidence": "high"
     },
@@ -289159,7 +289317,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "egypt",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -289196,7 +289354,9 @@
       },
       "confidence": "low"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "detail_of"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -289333,7 +289493,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "equatorial_guinea",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -289354,7 +289514,9 @@
       "centroid": null,
       "confidence": "medium"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "detail_of"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -291618,11 +291780,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "southern_africa"
+      ],
+      "primary_historical_region": "southern_africa",
+      "present_countries": [
+        "ZA"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -295573,15 +295739,16 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
-        "europe",
-        "oceania"
+        "north_america"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "north_america",
+      "historical_regions": [
+        "north_america"
+      ],
+      "primary_historical_region": "north_america",
+      "present_countries": [
+        "US"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -299975,12 +300142,9 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "antarctica",
-        "europe",
-        "oceania"
+        "europe"
       ],
-      "primary_continent": null,
+      "primary_continent": "europe",
       "historical_regions": [
         "western_europe"
       ],
@@ -302090,8 +302254,8 @@
     "manual_overrides": [
       "consolidation"
     ],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
+    "linked_era_id": "europe_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 1263,
     "end": null,
@@ -306264,8 +306428,8 @@
       "confidence": "medium"
     },
     "manual_overrides": [],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
+    "linked_era_id": "europe_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 301,
     "end": null,
@@ -328070,11 +328234,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "SS"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -338128,8 +338296,8 @@
       "confidence": "medium"
     },
     "manual_overrides": [],
-    "linked_era_id": "africa_early_modern_connections_era",
-    "linked_chapter_id": "macro_early_modern_connections",
+    "linked_era_id": "europe_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 1516,
     "end": null,
@@ -341205,15 +341373,16 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
-        "europe",
-        "oceania"
+        "south_america"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "south_america",
+      "historical_regions": [
+        "brazil_amazonia"
+      ],
+      "primary_historical_region": "brazil_amazonia",
+      "present_countries": [
+        "BR"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -342052,15 +342221,16 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
-        "europe",
-        "oceania"
+        "south_america"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "south_america",
+      "historical_regions": [
+        "brazil_amazonia"
+      ],
+      "primary_historical_region": "brazil_amazonia",
+      "present_countries": [
+        "BR"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -345389,11 +345559,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "SD"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -346630,14 +346804,18 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "east_africa"
+      ],
+      "primary_historical_region": "east_africa",
+      "present_countries": [
+        "KM"
+      ],
       "centroid": {
         "lat": -12.32,
         "lon": 43.73
       },
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -346877,11 +347055,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
+      "present_countries": [
+        "CF"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -349076,11 +349258,20 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
+      "historical_regions": [
+        "east_africa",
+        "horn_of_africa"
+      ],
       "primary_historical_region": null,
-      "present_countries": [],
+      "present_countries": [
+        "KE",
+        "KM",
+        "MZ",
+        "SO",
+        "TZ"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -349338,8 +349529,8 @@
     "manual_overrides": [
       "consolidation"
     ],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
+    "linked_era_id": "europe_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 900,
     "end": null,
@@ -357782,11 +357973,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "SD"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -360931,8 +361126,8 @@
       "confidence": "low"
     },
     "manual_overrides": [],
-    "linked_era_id": null,
-    "linked_chapter_id": null,
+    "linked_era_id": "asia_contemporary_world_era",
+    "linked_chapter_id": "macro_contemporary_world",
     "government_form": null,
     "start": 1238,
     "end": null,
@@ -361277,11 +361472,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "southern_africa"
+      ],
+      "primary_historical_region": "southern_africa",
+      "present_countries": [
+        "ZA"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -367297,7 +367496,9 @@
       },
       "confidence": "low"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "detail_of"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -370129,11 +370330,16 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "EG",
+        "SD"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -372738,7 +372944,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "egypt",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -372762,7 +372968,9 @@
       },
       "confidence": "low"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "detail_of"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -378621,7 +378829,9 @@
         "north_africa"
       ],
       "primary_historical_region": "north_africa",
-      "present_countries": [],
+      "present_countries": [
+        "TN"
+      ],
       "centroid": {
         "lat": 36.886667,
         "lon": 10.314722
@@ -381469,12 +381679,9 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "antarctica",
-        "europe",
-        "oceania"
+        "europe"
       ],
-      "primary_continent": "africa",
+      "primary_continent": "europe",
       "historical_regions": [
         "western_europe"
       ],
@@ -381483,9 +381690,11 @@
         "FR"
       ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -390764,11 +390973,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
+      "present_countries": [
+        "CD"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -394614,9 +394827,14 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "DZ",
+        "TN"
+      ],
       "centroid": null,
       "confidence": "medium"
     },

@@ -61,3 +61,5 @@ prominence_components:
 government_form: city-state
 deprecated:
   visibility_tier: detailed
+linked_chapter_id: macro_contemporary_world
+linked_era_id: europe_contemporary_world_era

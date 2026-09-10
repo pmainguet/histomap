@@ -9,6 +9,13 @@ end_confidence: low
 geography:
   continents:
   - africa
+  present_countries:
+  - EG
+  - SD
+  confidence: medium
+  historical_regions:
+  - north_africa
+  primary_historical_region: north_africa
 eligibility: accepted
 sources:
 - histomap_editorial

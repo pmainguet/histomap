@@ -29,7 +29,11 @@ geography:
   continents:
   - africa
   - europe
-  present_countries: []
+  present_countries:
+  - MA
+  - DZ
+  - TN
+  - ES
   confidence: high
   historical_regions:
   - north_africa
