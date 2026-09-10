@@ -14,18 +14,20 @@ geography:
   present_countries:
   - ES
   confidence: high
+  historical_regions:
+  - southern_europe
+  primary_historical_region: southern_europe
 eligibility: accepted
 sources:
 - histomap_editorial
-notes: Editorial grouping (ROADMAP.md item 3) for standalone hereditary noble
-  titles held under the Spanish Crown (Duchy of Medina Sidonia, Duke of Tetuan,
-  and similar) -- each was auto-generated from its own Wikidata entry as an
-  independent top-level polity, which crowded the Iberia bucket with dozens of
-  aristocratic titles that were never sovereign states in their own right.
-  Not a claim that every attached title carries the specific legal "Grandee of
-  Spain" rank (only some do) -- a plain container for "a noble title of Spain",
-  not a real historical institution with its own name/dates. Distinct from
-  Principality of Asturias/Girona (heir-apparent titles, already or better
-  attached to their respective crown -- Castile/Aragon) and from Barony of
-  Castalla (a territorial feudal lordship), which this grouping deliberately
+notes: Editorial grouping (ROADMAP.md item 3) for standalone hereditary noble titles
+  held under the Spanish Crown (Duchy of Medina Sidonia, Duke of Tetuan, and similar)
+  -- each was auto-generated from its own Wikidata entry as an independent top-level
+  polity, which crowded the Iberia bucket with dozens of aristocratic titles that
+  were never sovereign states in their own right. Not a claim that every attached
+  title carries the specific legal "Grandee of Spain" rank (only some do) -- a plain
+  container for "a noble title of Spain", not a real historical institution with its
+  own name/dates. Distinct from Principality of Asturias/Girona (heir-apparent titles,
+  already or better attached to their respective crown -- Castile/Aragon) and from
+  Barony of Castalla (a territorial feudal lordship), which this grouping deliberately
   excludes.

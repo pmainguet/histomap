@@ -10,12 +10,15 @@ geography:
   - europe
   present_countries:
   - DE
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
 broader_periods: []
 successors: []
 authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
 external_ids:
   wikidata: Q2487
-notes: One of the most destructive wars in European history, fought largely in
-  the Holy Roman Empire, 1618-1648; ended by the Peace of Westphalia.
+notes: One of the most destructive wars in European history, fought largely in the
+  Holy Roman Empire, 1618-1648; ended by the Peace of Westphalia.
 source_urls:
 - https://en.wikipedia.org/wiki/Thirty_Years%27_War

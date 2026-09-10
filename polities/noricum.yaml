@@ -27,7 +27,9 @@ geography:
   continents:
   - europe
   primary_continent: europe
-  historical_regions: []
+  historical_regions:
+  - balkans
+  - western_europe
   present_countries:
   - AT
   - SI

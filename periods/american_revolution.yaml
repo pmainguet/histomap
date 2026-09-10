@@ -10,13 +10,16 @@ geography:
   - north_america
   present_countries:
   - US
+  historical_regions:
+  - north_america
+  primary_historical_region: north_america
 broader_periods: []
 successors: []
 authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
 external_ids:
   wikidata: Q192769
-notes: The war and political movement (1775-1783) by which the Thirteen Colonies
-  won independence from Great Britain. united_states.yaml starts in 1784 (post-war),
-  leaving this earlier revolutionary period previously uncovered.
+notes: The war and political movement (1775-1783) by which the Thirteen Colonies won
+  independence from Great Britain. united_states.yaml starts in 1784 (post-war), leaving
+  this earlier revolutionary period previously uncovered.
 source_urls:
 - https://en.wikipedia.org/wiki/American_Revolution

@@ -10,10 +10,12 @@ geography:
   - africa
   - asia
   primary_continent: africa
-  historical_regions: []
+  historical_regions:
+  - north_africa
   present_countries:
   - EG
   confidence: high
+  primary_historical_region: north_africa
 start: -3550
 end: -3301
 start_confidence: low

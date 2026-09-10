@@ -33,9 +33,11 @@ geography:
   continents:
   - europe
   primary_continent: europe
-  historical_regions: []
+  historical_regions:
+  - southern_europe
   present_countries:
   - GR
   confidence: high
+  primary_historical_region: southern_europe
 manual_overrides:
 - geography

@@ -198,8 +198,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -1699,8 +1701,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
       "present_countries": [
         "TM",
         "UZ"
@@ -2211,8 +2215,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "GR"
       ],
@@ -2289,8 +2295,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -2627,8 +2635,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "VN"
       ],
@@ -2946,8 +2956,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "GB",
         "IE"
@@ -4121,8 +4133,10 @@
         "asia"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SA",
         "YE"
@@ -4194,8 +4208,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SY"
       ],
@@ -4355,8 +4371,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IQ",
         "IR",
@@ -4753,8 +4771,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -6474,8 +6494,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "PS"
       ],
@@ -8067,8 +8089,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -9100,8 +9124,10 @@
         "oceania"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "FR",
         "GB",
@@ -10601,8 +10627,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
       "present_countries": [
         "CD",
         "CG"
@@ -11649,8 +11677,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AZ"
       ],
@@ -12072,8 +12102,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IR"
       ],
@@ -13042,8 +13074,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "NG"
       ],
@@ -13120,8 +13154,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SY",
         "TR"
@@ -14869,8 +14905,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN",
         "VN"
@@ -16609,8 +16647,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -17797,8 +17837,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -18004,8 +18046,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IQ"
       ],
@@ -18408,8 +18452,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
       "present_countries": [
         "AF"
       ],
@@ -20389,8 +20435,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "northern_europe"
+      ],
+      "primary_historical_region": "northern_europe",
       "present_countries": [
         "EE",
         "LV"
@@ -20743,7 +20791,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
+      "historical_regions": [
+        "balkans",
+        "eastern_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "HU",
@@ -22240,8 +22291,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "DZ"
       ],
@@ -22317,8 +22370,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "LY"
       ],
@@ -23678,8 +23733,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -27530,8 +27587,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -27605,8 +27664,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -27768,8 +27829,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -27930,8 +27993,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -31038,8 +31103,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -33061,8 +33128,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "UA"
       ],
@@ -33536,8 +33605,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -33617,8 +33688,10 @@
         "oceania"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "FR",
         "GB"
@@ -35333,8 +35406,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "GH"
       ],
@@ -37345,8 +37420,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
       "present_countries": [
         "UZ"
       ],
@@ -37422,8 +37499,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SY"
       ],
@@ -37908,8 +37987,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "PH"
       ],
@@ -39703,8 +39784,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "TH"
       ],
@@ -39781,8 +39864,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -44226,8 +44311,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "CR",
         "GT",
@@ -44855,8 +44942,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -45464,8 +45553,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -45714,8 +45805,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -46068,8 +46161,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "UA"
       ],
@@ -46546,8 +46641,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -46620,8 +46717,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -47411,8 +47510,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -48049,8 +48150,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "MM"
       ],
@@ -48384,8 +48487,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AZ",
         "IQ",
@@ -48463,8 +48568,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -48632,8 +48739,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -48969,8 +49078,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -49123,8 +49234,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -49379,8 +49492,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -50015,8 +50130,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "PL"
       ],
@@ -50469,8 +50586,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "VN"
       ],
@@ -53447,8 +53566,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "VN"
       ],
@@ -54761,8 +54882,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -55344,8 +55467,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -55612,8 +55737,10 @@
         "oceania"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "FR"
       ],
@@ -56376,8 +56503,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -56569,8 +56698,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SY",
         "TR"
@@ -57496,8 +57627,10 @@
         "south_america"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "BE",
         "NL"
@@ -57571,8 +57704,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -58846,8 +58981,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "ES"
       ],
@@ -59834,8 +59971,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "ES"
       ],
@@ -62108,8 +62247,10 @@
         "south_america"
       ],
       "primary_continent": "south_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "andes"
+      ],
+      "primary_historical_region": "andes",
       "present_countries": [
         "CO"
       ],
@@ -63244,8 +63385,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -63478,8 +63621,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -63712,8 +63857,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "KP"
       ],
@@ -63956,8 +64103,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -64106,8 +64255,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -64183,8 +64334,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -64428,7 +64581,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_africa",
+        "north_africa"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "SD",
@@ -64506,8 +64662,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "IE"
       ],
@@ -64756,8 +64914,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "balkans"
+      ],
+      "primary_historical_region": "balkans",
       "present_countries": [
         "HR"
       ],
@@ -64995,8 +65155,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -65152,8 +65314,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -65392,8 +65556,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -66095,8 +66261,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -66257,8 +66425,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -66331,8 +66501,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -66573,8 +66745,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -67559,8 +67733,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_africa"
+      ],
+      "primary_historical_region": "east_africa",
       "present_countries": [
         "KM"
       ],
@@ -68152,8 +68328,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -68580,8 +68758,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "GR"
       ],
@@ -68654,8 +68834,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "GR"
       ],
@@ -68730,8 +68912,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "BG",
         "RO",
@@ -70156,8 +70340,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -70333,8 +70519,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_africa"
+      ],
+      "primary_historical_region": "southern_africa",
       "present_countries": [
         "ZA"
       ],
@@ -70898,7 +71086,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
+      "historical_regions": [
+        "balkans",
+        "eastern_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "BG",
@@ -72033,7 +72224,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "east_asia",
+        "eastern_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "CN",
@@ -72112,8 +72306,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "KR"
       ],
@@ -72426,8 +72622,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "balkans"
+      ],
+      "primary_historical_region": "balkans",
       "present_countries": [
         "HR"
       ],
@@ -72717,8 +72915,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "BE"
       ],
@@ -73912,8 +74112,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -74627,8 +74829,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -76065,8 +76269,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -76399,8 +76605,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "northern_europe"
+      ],
+      "primary_historical_region": "northern_europe",
       "present_countries": [
         "LV"
       ],
@@ -76637,8 +76845,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "PL"
       ],
@@ -77753,8 +77963,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -78725,8 +78937,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "PL"
       ],
@@ -79120,8 +79334,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "GE"
       ],
@@ -79278,8 +79494,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "PL"
       ],
@@ -80111,8 +80329,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -80604,8 +80824,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "PL"
       ],
@@ -81243,7 +81465,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
+      "historical_regions": [
+        "balkans",
+        "southern_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "HR",
@@ -81582,8 +81807,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "ES"
       ],
@@ -83227,8 +83454,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -83382,8 +83611,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "UA"
       ],
@@ -84651,8 +84882,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "PL"
       ],
@@ -85363,8 +85596,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "PL"
       ],
@@ -86809,8 +87044,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -88594,8 +88831,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "ES"
       ],
@@ -90077,8 +90316,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -90154,8 +90395,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "IE"
       ],
@@ -91157,8 +91400,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -94574,8 +94819,10 @@
         "oceania"
       ],
       "primary_continent": "oceania",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "oceania_pacific"
+      ],
+      "primary_historical_region": "oceania_pacific",
       "present_countries": [
         "TV"
       ],
@@ -94650,8 +94897,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IR"
       ],
@@ -95064,8 +95313,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "DZ"
       ],
@@ -95610,8 +95861,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SY"
       ],
@@ -95699,8 +95952,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "DZ"
       ],
@@ -96381,8 +96636,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -96651,8 +96908,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "LY"
       ],
@@ -96726,7 +96985,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "eastern_europe",
+        "west_asia"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AZ",
@@ -97105,8 +97367,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SY"
       ],
@@ -97514,8 +97778,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "BF"
       ],
@@ -97590,8 +97856,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN",
         "PK"
@@ -97668,8 +97936,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SA"
       ],
@@ -97831,8 +98101,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -99787,8 +100059,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "horn_of_africa"
+      ],
+      "primary_historical_region": "horn_of_africa",
       "present_countries": [
         "ET"
       ],
@@ -100026,7 +100300,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
+      "historical_regions": [
+        "balkans",
+        "southern_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AL",
@@ -100272,8 +100549,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -100661,8 +100940,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -101808,8 +102089,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "GH"
       ],
@@ -103444,7 +103727,10 @@
         "asia"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
+      "historical_regions": [
+        "north_africa",
+        "west_asia"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "EG",
@@ -104309,8 +104595,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "GH"
       ],
@@ -105210,8 +105498,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -106874,8 +107164,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "PL"
       ],
@@ -107442,8 +107734,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -107800,8 +108094,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "LA",
         "MM",
@@ -108443,7 +108739,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "east_asia",
+        "eastern_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "CN",
@@ -109310,8 +109609,10 @@
         "oceania"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "FR"
       ],
@@ -112866,8 +113167,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -114949,8 +115252,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -115347,8 +115652,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "PL"
       ],
@@ -118112,7 +118419,10 @@
         "oceania"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
+      "historical_regions": [
+        "southern_europe",
+        "western_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "BE",
@@ -118430,8 +118740,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -118692,8 +119004,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AZ"
       ],
@@ -122263,8 +122577,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -122341,8 +122657,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IR"
       ],
@@ -122597,8 +122915,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "NE",
         "NG"
@@ -123020,7 +123340,11 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "east_asia",
+        "eastern_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "CN",
@@ -124068,8 +124392,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "NP"
       ],
@@ -124494,8 +124820,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -126919,8 +127247,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -127506,7 +127836,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "eastern_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "KZ",
@@ -127670,8 +128003,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -127830,8 +128165,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -128570,8 +128907,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -129657,8 +129996,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -130779,8 +131120,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -130941,8 +131284,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "balkans"
+      ],
+      "primary_historical_region": "balkans",
       "present_countries": [
         "BA"
       ],
@@ -131491,8 +131836,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "DZ"
       ],
@@ -131728,8 +132075,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -131876,8 +132225,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -132203,8 +132554,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "TH"
       ],
@@ -132910,8 +133263,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "GB"
       ],
@@ -133071,8 +133426,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AM"
       ],
@@ -133467,8 +133824,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -133795,7 +134154,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "west_asia"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AF",
@@ -134521,8 +134883,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -135728,8 +136092,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -136512,8 +136878,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "MT"
       ],
@@ -136752,8 +137120,10 @@
         "oceania"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "BE",
         "DE",
@@ -137282,8 +137652,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -137356,8 +137728,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -137430,8 +137804,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -138716,8 +139092,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "NG"
       ],
@@ -139726,8 +140104,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "NG"
       ],
@@ -143340,8 +143720,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "horn_of_africa"
+      ],
+      "primary_historical_region": "horn_of_africa",
       "present_countries": [
         "ET",
         "SO"
@@ -143415,8 +143797,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -143700,8 +144084,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IQ"
       ],
@@ -143779,8 +144165,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "PK"
       ],
@@ -144278,8 +144666,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IQ",
         "SY"
@@ -145843,8 +146233,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "LK"
       ],
@@ -147922,8 +148314,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "BH",
         "QA",
@@ -148645,8 +149039,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AZ"
       ],
@@ -148979,8 +149375,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "ML"
       ],
@@ -149042,8 +149440,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN",
         "KP"
@@ -149132,8 +149532,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -149576,8 +149978,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -149653,8 +150057,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -149832,8 +150238,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -151666,8 +152074,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IL",
         "PS"
@@ -152093,8 +152503,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -152980,8 +153392,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -153915,8 +154329,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -154349,7 +154765,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "east_asia"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AF",
@@ -157104,8 +157523,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
       "present_countries": [
         "AO"
       ],
@@ -157340,8 +157761,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -157417,8 +157840,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN",
         "PK"
@@ -158352,7 +158777,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_africa",
+        "east_africa"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "CD",
@@ -160868,8 +161296,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IR"
       ],
@@ -161038,8 +161468,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -161485,8 +161917,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "ML"
       ],
@@ -162172,8 +162606,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -162404,8 +162840,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -162627,8 +163065,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IR"
       ],
@@ -162964,8 +163404,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -163132,8 +163574,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
       "present_countries": [
         "KZ"
       ],
@@ -163695,8 +164139,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "TN"
       ],
@@ -163948,8 +164394,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "SD"
       ],
@@ -164338,8 +164786,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "DZ",
         "TN"
@@ -164416,8 +164866,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IQ"
       ],
@@ -164831,8 +165283,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AM"
       ],
@@ -165158,8 +165612,10 @@
         "asia"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "YE"
       ],
@@ -166138,8 +166594,10 @@
         "oceania"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "ID"
       ],
@@ -167840,8 +168298,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "LB",
         "SY"
@@ -168076,8 +168536,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -169318,8 +169780,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -169676,8 +170140,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "IE"
       ],
@@ -169924,8 +170390,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "GB"
       ],
@@ -170272,8 +170740,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SY"
       ],
@@ -170779,7 +171249,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
+      "historical_regions": [
+        "horn_of_africa",
+        "north_africa"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "ET",
@@ -173939,8 +174412,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -177162,8 +177637,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "NG"
       ],
@@ -177416,8 +177893,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "JP"
       ],
@@ -177653,8 +178132,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "SL"
       ],
@@ -177803,8 +178284,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "MY",
         "TH"
@@ -177882,8 +178365,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "DZ"
       ],
@@ -178340,8 +178825,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "IE"
       ],
@@ -179143,8 +179630,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AM",
         "AZ",
@@ -179569,8 +180058,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -179725,8 +180216,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "MY"
       ],
@@ -180602,8 +181095,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "IE"
       ],
@@ -181281,8 +181776,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "TH"
       ],
@@ -181358,8 +181855,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN",
         "LA",
@@ -182171,8 +182670,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "GM",
         "SN"
@@ -182753,8 +183254,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
       "present_countries": [
         "GA"
       ],
@@ -182830,8 +183333,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "IE"
       ],
@@ -183083,8 +183588,10 @@
         "oceania"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "ID"
       ],
@@ -183172,8 +183679,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SY"
       ],
@@ -183452,8 +183961,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -183545,11 +184056,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [
       "consolidation"
@@ -184784,8 +185299,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "LK"
       ],
@@ -184860,8 +185377,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "LK"
       ],
@@ -184936,8 +185455,10 @@
         "oceania"
       ],
       "primary_continent": "oceania",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "oceania_pacific"
+      ],
+      "primary_historical_region": "oceania_pacific",
       "present_countries": [
         "NZ"
       ],
@@ -185335,8 +185856,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -185729,8 +186252,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "CI"
       ],
@@ -185868,8 +186393,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -186028,8 +186555,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "BJ"
       ],
@@ -187195,8 +187724,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -187270,8 +187801,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -187450,8 +187983,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "SN"
       ],
@@ -188300,8 +188835,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AM",
         "AZ"
@@ -188463,8 +189000,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "CR"
       ],
@@ -188642,8 +189181,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "LK"
       ],
@@ -189445,8 +189986,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "TN"
       ],
@@ -189770,8 +190313,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "GE",
         "TR"
@@ -190013,8 +190558,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "GR"
       ],
@@ -190560,8 +191107,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "IE"
       ],
@@ -191526,8 +192075,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IL",
         "LB"
@@ -191605,8 +192156,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "NG"
       ],
@@ -191682,8 +192235,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "IE"
       ],
@@ -191759,8 +192314,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -192341,8 +192898,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "ES"
       ],
@@ -194660,8 +195219,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "balkans"
+      ],
+      "primary_historical_region": "balkans",
       "present_countries": [
         "SI"
       ],
@@ -194734,8 +195295,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "BD",
         "IN"
@@ -195082,8 +195645,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "UA"
       ],
@@ -198177,8 +198742,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IQ"
       ],
@@ -199040,8 +199607,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -200083,8 +200652,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -200324,8 +200895,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "AT"
       ],
@@ -201756,8 +202329,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -202985,8 +203560,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN",
         "KP"
@@ -204147,8 +204724,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -205054,8 +205633,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "TH"
       ],
@@ -205317,8 +205898,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_america"
+      ],
+      "primary_historical_region": "north_america",
       "present_countries": [
         "CA"
       ],
@@ -205472,8 +206055,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "GR"
       ],
@@ -205550,8 +206135,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "balkans"
+      ],
+      "primary_historical_region": "balkans",
       "present_countries": [
         "AL"
       ],
@@ -205927,8 +206514,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "CH"
       ],
@@ -206331,8 +206920,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -207119,8 +207710,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -207198,8 +207791,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "NP"
       ],
@@ -207636,8 +208231,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "IE"
       ],
@@ -208739,8 +209336,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "northern_europe"
+      ],
+      "primary_historical_region": "northern_europe",
       "present_countries": [
         "EE",
         "LV"
@@ -208819,7 +209418,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "east_asia"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AF",
@@ -209073,8 +209675,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "TW"
       ],
@@ -210639,8 +211243,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "GR"
       ],
@@ -210827,7 +211433,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
+      "historical_regions": [
+        "balkans",
+        "southern_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AL",
@@ -211122,8 +211731,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "GB"
       ],
@@ -211772,8 +212383,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -214064,8 +214677,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "BJ"
       ],
@@ -214570,8 +215185,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -214925,8 +215542,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "PK"
       ],
@@ -214999,8 +215618,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IR"
       ],
@@ -218052,8 +218673,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -219978,8 +220601,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -220589,8 +221214,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "GR"
       ],
@@ -220831,8 +221458,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -221380,8 +222009,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN",
         "IN",
@@ -221625,8 +222256,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "BF",
         "ML",
@@ -221703,8 +222336,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_africa"
+      ],
+      "primary_historical_region": "southern_africa",
       "present_countries": [
         "ZW"
       ],
@@ -222046,8 +222681,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -222541,8 +223178,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "DZ",
         "MA"
@@ -222988,7 +223627,11 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_africa",
+        "east_africa",
+        "southern_africa"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AO",
@@ -223067,8 +223710,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
       "present_countries": [
         "AO"
       ],
@@ -223484,8 +224129,10 @@
         "asia"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "EG"
       ],
@@ -223559,8 +224206,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "horn_of_africa"
+      ],
+      "primary_historical_region": "horn_of_africa",
       "present_countries": [
         "ER",
         "ET"
@@ -224061,8 +224710,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "PK"
       ],
@@ -226094,8 +226745,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "GR"
       ],
@@ -226383,8 +227036,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -226615,8 +227270,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN",
         "TW"
@@ -227045,8 +227702,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "LB",
         "SY"
@@ -227273,8 +227932,10 @@
         "oceania"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_america"
+      ],
+      "primary_historical_region": "north_america",
       "present_countries": [
         "US"
       ],
@@ -227683,7 +228344,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "east_asia"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "CN",
@@ -228448,8 +229112,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN",
         "IN",
@@ -228708,8 +229374,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -229103,8 +229771,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -229408,8 +230078,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "CZ"
       ],
@@ -230543,8 +231215,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "LA",
         "VN"
@@ -231162,8 +231836,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SY"
       ],
@@ -231907,8 +232583,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_africa"
+      ],
+      "primary_historical_region": "east_africa",
       "present_countries": [
         "ZM"
       ],
@@ -232057,11 +232735,15 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
+      "present_countries": [
+        "IR"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
@@ -232292,8 +232974,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "MM"
       ],
@@ -234141,8 +234825,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -235319,8 +236005,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RO"
       ],
@@ -237019,8 +237707,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "balkans"
+      ],
+      "primary_historical_region": "balkans",
       "present_countries": [
         "SI"
       ],
@@ -237501,8 +238191,10 @@
         "south_america"
       ],
       "primary_continent": "oceania",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_cone"
+      ],
+      "primary_historical_region": "southern_cone",
       "present_countries": [
         "CL"
       ],
@@ -238702,8 +239394,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN",
         "VN"
@@ -240012,7 +240706,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
+      "historical_regions": [
+        "balkans",
+        "western_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AT",
@@ -240408,8 +241105,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -240483,8 +241182,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -241729,8 +242430,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -241991,8 +242694,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -244031,8 +244736,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "NE"
       ],
@@ -244191,8 +244898,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_africa"
+      ],
+      "primary_historical_region": "east_africa",
       "present_countries": [
         "MW"
       ],
@@ -244431,8 +245140,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -244596,7 +245307,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "east_asia"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AF",
@@ -245707,8 +246421,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "CY",
         "LB",
@@ -245963,8 +246679,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -246143,8 +246861,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -247112,8 +247832,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -247285,8 +248007,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -249034,8 +249758,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "balkans"
+      ],
+      "primary_historical_region": "balkans",
       "present_countries": [
         "HR"
       ],
@@ -250765,8 +251491,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SY"
       ],
@@ -251263,8 +251991,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -251504,8 +252234,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "PH"
       ],
@@ -252231,8 +252963,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IR"
       ],
@@ -252311,8 +253045,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IR"
       ],
@@ -253151,8 +253887,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -253835,8 +254573,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SY",
         "TR"
@@ -253910,8 +254650,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN",
         "PK"
@@ -255328,8 +256070,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
       "present_countries": [
         "CD"
       ],
@@ -257753,8 +258497,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "MM"
       ],
@@ -257998,8 +258744,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_america"
+      ],
+      "primary_historical_region": "north_america",
       "present_countries": [
         "US"
       ],
@@ -258835,8 +259583,10 @@
         "oceania"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "FR"
       ],
@@ -259687,8 +260437,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_africa"
+      ],
+      "primary_historical_region": "southern_africa",
       "present_countries": [
         "LS"
       ],
@@ -259953,8 +260705,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -263069,8 +263823,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "GR"
       ],
@@ -263926,8 +264682,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "balkans"
+      ],
+      "primary_historical_region": "balkans",
       "present_countries": [
         "AL"
       ],
@@ -264005,8 +264763,10 @@
         "oceania"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "FR"
       ],
@@ -264162,8 +264922,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -264627,8 +265389,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -264856,8 +265620,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -265325,8 +266091,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
       "present_countries": [
         "AF"
       ],
@@ -265954,8 +266722,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -266193,8 +266963,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
       "present_countries": [
         "UZ"
       ],
@@ -266565,7 +267337,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
+      "historical_regions": [
+        "balkans",
+        "southern_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AL",
@@ -266711,8 +267486,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -266878,8 +267655,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "KH",
         "VN"
@@ -267194,8 +267973,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -267366,8 +268147,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "GE"
       ],
@@ -267524,8 +268307,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -267677,8 +268462,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AZ"
       ],
@@ -267824,8 +268611,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -268139,8 +268928,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "balkans"
+      ],
+      "primary_historical_region": "balkans",
       "present_countries": [
         "HR"
       ],
@@ -268541,7 +269332,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
+      "historical_regions": [
+        "balkans",
+        "eastern_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "HR",
@@ -269093,8 +269887,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -269966,8 +270762,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -270836,8 +271634,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SY",
         "TR"
@@ -271149,7 +271949,11 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "east_asia",
+        "west_asia"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AF",
@@ -271865,8 +272669,10 @@
         "oceania"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "FR"
       ],
@@ -272193,8 +272999,10 @@
         "oceania"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "FR"
       ],
@@ -273208,8 +274016,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "ES"
       ],
@@ -273374,8 +274184,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "UA"
       ],
@@ -273453,7 +274265,10 @@
         "oceania"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
+      "historical_regions": [
+        "southern_europe",
+        "western_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "FR",
@@ -273684,8 +274499,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "VN"
       ],
@@ -273998,8 +274815,10 @@
         "south_america"
       ],
       "primary_continent": "south_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "brazil_amazonia"
+      ],
+      "primary_historical_region": "brazil_amazonia",
       "present_countries": [
         "BR"
       ],
@@ -274320,8 +275139,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "balkans"
+      ],
+      "primary_historical_region": "balkans",
       "present_countries": [
         "AL"
       ],
@@ -274831,8 +275652,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "UA"
       ],
@@ -275566,8 +276389,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -276211,8 +277036,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_africa"
+      ],
+      "primary_historical_region": "east_africa",
       "present_countries": [
         "KE"
       ],
@@ -277863,8 +278690,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -278188,8 +279017,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "EG"
       ],
@@ -278648,8 +279479,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -278726,8 +279559,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -278995,8 +279830,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
       "present_countries": [
         "TM"
       ],
@@ -279162,8 +279999,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AM",
         "AZ",
@@ -279678,7 +280517,10 @@
         "asia"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
+      "historical_regions": [
+        "north_africa",
+        "west_asia"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "EG",
@@ -279754,8 +280596,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -279830,8 +280674,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -280068,8 +280914,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -280713,8 +281561,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AZ"
       ],
@@ -281112,8 +281962,10 @@
         "europe"
       ],
       "primary_continent": "antarctica",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "northern_europe"
+      ],
+      "primary_historical_region": "northern_europe",
       "present_countries": [
         "NO"
       ],
@@ -281187,8 +282039,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AZ"
       ],
@@ -285000,8 +285854,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -285717,8 +286573,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -286427,8 +287285,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -286791,8 +287651,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -288597,8 +289459,10 @@
         "oceania"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_america"
+      ],
+      "primary_historical_region": "north_america",
       "present_countries": [
         "US"
       ],
@@ -289557,8 +290421,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "AT"
       ],
@@ -291098,8 +291964,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -291325,8 +292193,10 @@
         "oceania"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_america"
+      ],
+      "primary_historical_region": "north_america",
       "present_countries": [
         "US"
       ],
@@ -291636,8 +292506,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "PL"
       ],
@@ -292383,8 +293255,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -293574,8 +294448,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -293693,8 +294569,10 @@
         "oceania"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_america"
+      ],
+      "primary_historical_region": "north_america",
       "present_countries": [
         "US"
       ],
@@ -294737,8 +295615,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -294975,8 +295855,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "CH"
       ],
@@ -295052,8 +295934,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -295432,8 +296316,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -295771,8 +296657,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "balkans"
+      ],
+      "primary_historical_region": "balkans",
       "present_countries": [
         "MK"
       ],
@@ -295992,8 +296880,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "northern_europe"
+      ],
+      "primary_historical_region": "northern_europe",
       "present_countries": [
         "LT"
       ],
@@ -296356,8 +297246,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_africa"
+      ],
+      "primary_historical_region": "southern_africa",
       "present_countries": [
         "ZA"
       ],
@@ -296576,8 +297468,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -297125,8 +298019,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "CH"
       ],
@@ -297524,8 +298420,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -300715,7 +301613,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
+      "historical_regions": [
+        "eastern_europe",
+        "western_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AT",
@@ -300791,8 +301692,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -301656,7 +302559,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "eastern_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "KZ",
@@ -301749,8 +302655,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "DZ"
       ],
@@ -301826,8 +302734,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -302846,8 +303756,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "MM"
       ],
@@ -302921,8 +303833,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -303082,8 +303996,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -303773,8 +304689,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IR"
       ],
@@ -304093,8 +305011,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -304170,8 +305090,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AZ"
       ],
@@ -304510,7 +305432,11 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
+      "historical_regions": [
+        "balkans",
+        "eastern_europe",
+        "western_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AT",
@@ -305797,8 +306723,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "balkans"
+      ],
+      "primary_historical_region": "balkans",
       "present_countries": [
         "HR"
       ],
@@ -305871,8 +306799,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IR"
       ],
@@ -306820,8 +307750,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AM"
       ],
@@ -306899,8 +307831,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "TR"
       ],
@@ -307417,8 +308351,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "PL"
       ],
@@ -309744,8 +310680,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "UA"
       ],
@@ -309822,8 +310760,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IQ"
       ],
@@ -310066,8 +311006,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -314519,8 +315461,10 @@
         "asia"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "EG"
       ],
@@ -315642,8 +316586,10 @@
         "oceania"
       ],
       "primary_continent": "oceania",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "oceania_pacific"
+      ],
+      "primary_historical_region": "oceania_pacific",
       "present_countries": [
         "FM"
       ],
@@ -320955,8 +321901,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "GR"
       ],
@@ -321029,8 +321977,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -321104,8 +322054,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -321179,8 +322131,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -321544,8 +322498,10 @@
         "asia"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "EG"
       ],
@@ -321765,8 +322721,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -321840,8 +322798,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -321915,8 +322875,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -322062,8 +323024,10 @@
         "oceania"
       ],
       "primary_continent": "oceania",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "oceania_pacific"
+      ],
+      "primary_historical_region": "oceania_pacific",
       "present_countries": [
         "PG"
       ],
@@ -322207,8 +323171,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "GR"
       ],
@@ -322711,8 +323677,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "GR"
       ],
@@ -322930,8 +323898,10 @@
         "asia"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "EG"
       ],
@@ -325218,8 +326188,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -325721,8 +326693,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN",
         "MM"
@@ -325890,8 +326864,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -325967,8 +326943,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SA"
       ],
@@ -326157,8 +327135,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "MA"
       ],
@@ -326470,8 +327450,10 @@
         "asia"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SA",
         "YE"
@@ -326629,8 +327611,10 @@
         "asia"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "YE"
       ],
@@ -326785,8 +327769,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -327013,8 +327999,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_africa"
+      ],
+      "primary_historical_region": "east_africa",
       "present_countries": [
         "MW"
       ],
@@ -327210,8 +328198,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AZ"
       ],
@@ -327285,8 +328275,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AM"
       ],
@@ -327523,8 +328515,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -327597,8 +328591,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "UA"
       ],
@@ -332950,8 +333946,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -333274,8 +334272,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IQ",
         "IR",
@@ -333354,8 +334354,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "ML"
       ],
@@ -336444,8 +337446,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "northern_europe"
+      ],
+      "primary_historical_region": "northern_europe",
       "present_countries": [
         "EE"
       ],
@@ -336813,8 +337817,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -337515,8 +338521,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "ES"
       ],
@@ -338246,8 +339254,10 @@
         "south_america"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "NL"
       ],
@@ -338481,8 +339491,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -339343,8 +340355,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "KH"
       ],
@@ -339640,8 +340654,10 @@
         "oceania"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "ID"
       ],
@@ -341847,8 +342863,10 @@
         "oceania"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "ID"
       ],
@@ -343569,8 +344587,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "horn_of_africa"
+      ],
+      "primary_historical_region": "horn_of_africa",
       "present_countries": [
         "ET"
       ],
@@ -343733,7 +344753,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
+      "historical_regions": [
+        "horn_of_africa",
+        "north_africa"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "ER",
@@ -344659,8 +345682,10 @@
         "oceania"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "ID"
       ],
@@ -344966,8 +345991,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IQ"
       ],
@@ -345043,8 +346070,10 @@
         "oceania"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "ID"
       ],
@@ -345280,8 +346309,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "PH"
       ],
@@ -345541,7 +346572,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "east_asia",
+        "west_asia"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AE",
@@ -345947,8 +346981,10 @@
         "oceania"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "ID",
         "MY"
@@ -346111,8 +347147,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "horn_of_africa"
+      ],
+      "primary_historical_region": "horn_of_africa",
       "present_countries": [
         "ET"
       ],
@@ -346540,8 +347578,10 @@
         "asia"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "YE"
       ],
@@ -346819,8 +347859,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "DZ"
       ],
@@ -347211,8 +348253,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -347289,8 +348333,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "BD",
         "IN",
@@ -349290,8 +350336,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN",
         "PK"
@@ -349605,8 +350653,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IR"
       ],
@@ -350160,8 +351210,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "TW"
       ],
@@ -354847,8 +355899,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -355625,8 +356679,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AZ",
         "IR"
@@ -356911,8 +357967,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -356983,8 +358041,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -357251,8 +358311,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
       "present_countries": [
         "UZ"
       ],
@@ -357417,8 +358479,10 @@
         "oceania"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "ID"
       ],
@@ -358479,8 +359543,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -358561,8 +359627,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -360296,8 +361364,10 @@
         "europe"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
       "present_countries": [
         "IT"
       ],
@@ -362024,8 +363094,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "CH"
       ],
@@ -362099,8 +363171,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -362343,8 +363417,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -363118,8 +364194,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_africa"
+      ],
+      "primary_historical_region": "central_africa",
       "present_countries": [
         "CD"
       ],
@@ -364429,8 +365507,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -364855,8 +365935,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
       "present_countries": [
         "TM"
       ],
@@ -366998,7 +368080,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
+      "historical_regions": [
+        "balkans",
+        "eastern_europe"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "BG",
@@ -367075,8 +368160,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -367657,8 +368744,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
       "present_countries": [
         "KG",
         "KZ",
@@ -371954,8 +373043,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE",
         "NL"
@@ -373087,8 +374178,10 @@
         "south_america"
       ],
       "primary_continent": "south_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "andes"
+      ],
+      "primary_historical_region": "andes",
       "present_countries": [
         "CO"
       ],
@@ -373921,8 +375014,10 @@
         "oceania"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "ID"
       ],
@@ -375691,8 +376786,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "AE",
         "BH",
@@ -375921,7 +377018,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
+      "historical_regions": [
+        "central_asia",
+        "east_asia"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "AF",
@@ -376943,8 +378043,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "CH"
       ],
@@ -377524,8 +378626,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "central_asia"
+      ],
+      "primary_historical_region": "central_asia",
       "present_countries": [
         "UZ"
       ],
@@ -380132,8 +381236,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -380214,8 +381320,10 @@
         "oceania"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "FR"
       ],
@@ -381091,8 +382199,10 @@
         "asia"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "YE"
       ],
@@ -382971,8 +384081,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -384128,8 +385240,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
       "present_countries": [
         "DZ"
       ],
@@ -384467,8 +385581,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -385638,8 +386754,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -385896,8 +387014,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -386238,8 +387358,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -386788,8 +387910,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_africa"
+      ],
+      "primary_historical_region": "east_africa",
       "present_countries": [
         "KE"
       ],
@@ -386944,8 +388068,10 @@
         "europe"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "RU"
       ],
@@ -387764,8 +388890,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -387931,8 +389059,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -388096,8 +389226,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -388509,8 +389641,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -389145,8 +390279,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
       "present_countries": [
         "BF"
       ],
@@ -389221,8 +390357,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "IN"
       ],
@@ -389877,8 +391015,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -390195,8 +391335,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -390814,8 +391956,10 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "horn_of_africa"
+      ],
+      "primary_historical_region": "horn_of_africa",
       "present_countries": [
         "ER",
         "ET"
@@ -391944,8 +393088,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "mesoamerica"
+      ],
+      "primary_historical_region": "mesoamerica",
       "present_countries": [
         "MX"
       ],
@@ -392023,7 +393169,10 @@
         "europe"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
+      "historical_regions": [
+        "north_africa",
+        "west_asia"
+      ],
       "primary_historical_region": null,
       "present_countries": [
         "EG",
@@ -392175,8 +393324,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -392261,8 +393412,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "NP"
       ],
@@ -392417,8 +393570,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -392493,8 +393648,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -392641,8 +393798,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -392898,8 +394057,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -392975,8 +394136,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "CN"
       ],
@@ -393370,8 +394533,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "LB",
         "SY"
@@ -393445,8 +394610,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "SA"
       ],
@@ -393681,8 +394848,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "BY"
       ],
@@ -393840,8 +395009,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "eastern_europe"
+      ],
+      "primary_historical_region": "eastern_europe",
       "present_countries": [
         "UA"
       ],

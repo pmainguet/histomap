@@ -31,6 +31,9 @@ geography:
   - CA
   centroid: null
   confidence: low
+  historical_regions:
+  - north_america
+  primary_historical_region: north_america
 entity_type: micronation
 entity_type_confidence: high
 entity_type_source_qids:

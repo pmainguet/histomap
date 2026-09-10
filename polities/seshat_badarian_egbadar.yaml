@@ -36,10 +36,12 @@ geography:
   - africa
   - asia
   primary_continent: africa
-  historical_regions: []
+  historical_regions:
+  - north_africa
   present_countries:
   - EG
   confidence: high
+  primary_historical_region: north_africa
 names: {}
 entity_type_reviewed_against: []
 timeline_role: entity

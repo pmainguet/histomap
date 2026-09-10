@@ -7,10 +7,12 @@ geography:
   continents:
   - oceania
   primary_continent: oceania
-  historical_regions: []
+  historical_regions:
+  - oceania_pacific
   present_countries:
   - PG
   confidence: high
+  primary_historical_region: oceania_pacific
 start: 1734
 end: 1883
 start_confidence: low

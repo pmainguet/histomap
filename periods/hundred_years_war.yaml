@@ -11,12 +11,15 @@ geography:
   present_countries:
   - FR
   - GB
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
 broader_periods: []
 successors: []
 authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
 external_ids:
   wikidata: Q12551
-notes: Series of conflicts between the kingdoms of England and France over the
-  French throne, 1337-1453.
+notes: Series of conflicts between the kingdoms of England and France over the French
+  throne, 1337-1453.
 source_urls:
 - https://en.wikipedia.org/wiki/Hundred_Years%27_War

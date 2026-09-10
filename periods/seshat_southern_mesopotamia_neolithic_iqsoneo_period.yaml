@@ -8,8 +8,9 @@ geography:
   continents:
   - asia
   primary_continent: asia
-  historical_regions: []
-  primary_historical_region: null
+  historical_regions:
+  - west_asia
+  primary_historical_region: west_asia
   present_countries:
   - IQ
   centroid: null

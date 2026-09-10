@@ -10,6 +10,9 @@ geography:
   - asia
   present_countries:
   - VN
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
 broader_periods: []
 successors: []
 authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'

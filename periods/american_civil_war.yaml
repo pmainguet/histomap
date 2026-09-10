@@ -10,12 +10,15 @@ geography:
   - north_america
   present_countries:
   - US
+  historical_regions:
+  - north_america
+  primary_historical_region: north_america
 broader_periods: []
 successors: []
 authority: 'Histomap editorial: humanhistorytimeline.com gap-check, 8 September 2026'
 external_ids:
   wikidata: Q8676
-notes: War between the United States and the secessionist Confederate States,
-  1861-1865, ending slavery in the US.
+notes: War between the United States and the secessionist Confederate States, 1861-1865,
+  ending slavery in the US.
 source_urls:
 - https://en.wikipedia.org/wiki/American_Civil_War

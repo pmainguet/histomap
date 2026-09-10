@@ -29,6 +29,9 @@ geography:
   - DE
   centroid: null
   confidence: low
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []

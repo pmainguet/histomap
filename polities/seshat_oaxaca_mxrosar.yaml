@@ -7,10 +7,12 @@ geography:
   continents:
   - north_america
   primary_continent: north_america
-  historical_regions: []
+  historical_regions:
+  - mesoamerica
   present_countries:
   - MX
   confidence: high
+  primary_historical_region: mesoamerica
 start: -700
 end: -501
 start_confidence: low

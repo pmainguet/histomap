@@ -11,6 +11,9 @@ geography:
   - north_america
   present_countries:
   - US
+  historical_regions:
+  - north_america
+  primary_historical_region: north_america
 eligibility: accepted
 sources:
 - histomap_editorial

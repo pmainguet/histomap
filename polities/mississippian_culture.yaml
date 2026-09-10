@@ -12,10 +12,12 @@ geography:
   - north_america
   - oceania
   primary_continent: north_america
-  historical_regions: []
+  historical_regions:
+  - north_america
   present_countries:
   - US
   confidence: high
+  primary_historical_region: north_america
 eligibility: accepted
 sources:
 - histomap_editorial

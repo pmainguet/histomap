@@ -27,13 +27,15 @@ geography:
   continents:
   - oceania
   primary_continent: oceania
-  historical_regions: []
+  historical_regions:
+  - oceania_pacific
   present_countries:
   - NZ
   centroid:
     lat: -21.2
     lon: -159.766666666
   confidence: high
+  primary_historical_region: oceania_pacific
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids:

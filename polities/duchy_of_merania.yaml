@@ -34,6 +34,9 @@ geography:
   centroid: null
   confidence: low
   primary_continent: africa
+  historical_regions:
+  - balkans
+  - southern_europe
 entity_type: polity
 entity_type_confidence: low
 entity_type_source_qids: []

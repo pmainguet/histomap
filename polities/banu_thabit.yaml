@@ -27,10 +27,12 @@ geography:
   continents:
   - africa
   primary_continent: africa
-  historical_regions: []
+  historical_regions:
+  - north_africa
   present_countries:
   - LY
   confidence: high
+  primary_historical_region: north_africa
 entity_type: tribe
 entity_type_confidence: medium
 entity_type_source_qids:

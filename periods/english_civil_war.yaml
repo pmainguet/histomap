@@ -10,13 +10,16 @@ geography:
   - europe
   present_countries:
   - GB
+  historical_regions:
+  - western_europe
+  primary_historical_region: western_europe
 broader_periods: []
 successors: []
 authority: 'Histomap editorial: beckchris.com gap-check, 8 September 2026'
 external_ids:
   wikidata: Q80330
-notes: Series of civil wars and political crises between Parliamentarians and
-  Royalists, running through the Commonwealth/Protectorate to the 1660 Restoration.
-  kingdom_of_england (927-1707) already covers this era as the surrounding polity.
+notes: Series of civil wars and political crises between Parliamentarians and Royalists,
+  running through the Commonwealth/Protectorate to the 1660 Restoration. kingdom_of_england
+  (927-1707) already covers this era as the surrounding polity.
 source_urls:
 - https://en.wikipedia.org/wiki/English_Civil_War

@@ -13,6 +13,9 @@ geography:
   - north_america
   present_countries:
   - MX
+  historical_regions:
+  - mesoamerica
+  primary_historical_region: mesoamerica
 eligibility: accepted
 sources:
 - histomap_editorial

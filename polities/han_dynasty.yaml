@@ -13,6 +13,9 @@ geography:
   - asia
   present_countries:
   - CN
+  historical_regions:
+  - east_asia
+  primary_historical_region: east_asia
 eligibility: accepted
 sources:
 - histomap_editorial

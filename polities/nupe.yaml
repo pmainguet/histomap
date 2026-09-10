@@ -27,10 +27,12 @@ geography:
   continents:
   - africa
   primary_continent: africa
-  historical_regions: []
+  historical_regions:
+  - west_africa
   present_countries:
   - NE
   confidence: high
+  primary_historical_region: west_africa
 entity_type: people
 entity_type_confidence: medium
 entity_type_source_qids:
