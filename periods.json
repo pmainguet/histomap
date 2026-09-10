@@ -286,8 +286,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_america"
+      ],
+      "primary_historical_region": "north_america",
       "present_countries": [
         "US"
       ],
@@ -326,8 +328,10 @@
         "north_america"
       ],
       "primary_continent": "north_america",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "north_america"
+      ],
+      "primary_historical_region": "north_america",
       "present_countries": [
         "US"
       ],
@@ -1634,8 +1638,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "GB"
       ],
@@ -2356,8 +2362,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "FR",
         "GB"
@@ -5531,8 +5539,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "west_asia"
+      ],
+      "primary_historical_region": "west_asia",
       "present_countries": [
         "IQ"
       ],
@@ -6002,8 +6012,10 @@
         "europe"
       ],
       "primary_continent": "europe",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "western_europe"
+      ],
+      "primary_historical_region": "western_europe",
       "present_countries": [
         "DE"
       ],
@@ -6156,8 +6168,10 @@
         "asia"
       ],
       "primary_continent": "asia",
-      "historical_regions": [],
-      "primary_historical_region": null,
+      "historical_regions": [
+        "east_asia"
+      ],
+      "primary_historical_region": "east_asia",
       "present_countries": [
         "VN"
       ],
