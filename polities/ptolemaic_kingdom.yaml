@@ -31,10 +31,11 @@ eligibility: accepted
 geography:
   continents:
   - africa
-  - asia
-  present_countries: []
-  centroid: null
-  confidence: low
+  primary_continent: africa
+  historical_regions: []
+  present_countries:
+  - EG
+  confidence: high
 entity_type: polity
 entity_type_confidence: high
 entity_type_source_qids: []
@@ -52,6 +53,7 @@ prominence_components:
   total: 39.67
 manual_overrides:
 - entity_type
+- geography
 government_form: kingdom
 deprecated:
   visibility_tier: detailed
