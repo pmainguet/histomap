@@ -5857,6 +5857,22 @@
                     "kind": "polity"
                   }
                 ]
+              },
+              {
+                "id": "western_roman_empire",
+                "canonical_name": "Western Roman Empire",
+                "start": 395,
+                "end": 476,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "sack_of_rome_410",
+                    "canonical_name": "Sack of Rome (410)",
+                    "start": 410,
+                    "end": 410,
+                    "kind": "event"
+                  }
+                ]
               }
             ]
           },
@@ -6296,28 +6312,6 @@
               "ES",
               "FR",
               "GB"
-            ]
-          },
-          {
-            "id": "western_roman_empire",
-            "canonical_name": "Western Roman Empire",
-            "start": 395,
-            "end": 476,
-            "curated": true,
-            "linked_era_id": "classical_antiquity_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ],
-            "details": [
-              {
-                "id": "sack_of_rome_410",
-                "canonical_name": "Sack of Rome (410)",
-                "start": 410,
-                "end": 410,
-                "kind": "event"
-              }
             ]
           },
           {
@@ -12884,6 +12878,22 @@
                     "kind": "polity"
                   }
                 ]
+              },
+              {
+                "id": "western_roman_empire",
+                "canonical_name": "Western Roman Empire",
+                "start": 395,
+                "end": 476,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "sack_of_rome_410",
+                    "canonical_name": "Sack of Rome (410)",
+                    "start": 410,
+                    "end": 410,
+                    "kind": "event"
+                  }
+                ]
               }
             ]
           },
@@ -13606,28 +13616,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "western_roman_empire",
-            "canonical_name": "Western Roman Empire",
-            "start": 395,
-            "end": 476,
-            "curated": true,
-            "linked_era_id": "classical_antiquity_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ],
-            "details": [
-              {
-                "id": "sack_of_rome_410",
-                "canonical_name": "Sack of Rome (410)",
-                "start": 410,
-                "end": 410,
-                "kind": "event"
-              }
-            ]
           },
           {
             "id": "kingdom_of_the_suebi",
@@ -23858,6 +23846,15 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "IT"
+            ],
+            "details": [
+              {
+                "id": "kingdom_of_sicily_q3932079",
+                "canonical_name": "Kingdom of Sicily",
+                "start": 1734,
+                "end": 1816,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -42547,6 +42544,15 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "IT"
+            ],
+            "details": [
+              {
+                "id": "kingdom_of_sicily_q3932079",
+                "canonical_name": "Kingdom of Sicily",
+                "start": 1734,
+                "end": 1816,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -52798,19 +52804,6 @@
             ]
           },
           {
-            "id": "kingdom_of_sicily_q3932079",
-            "canonical_name": "Kingdom of Sicily",
-            "start": 1734,
-            "end": 1816,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
             "id": "kingdom_of_the_two_sicilies",
             "canonical_name": "Kingdom of the Two Sicilies",
             "start": 1738,
@@ -61500,19 +61493,6 @@
             "primary_historical_region": "west_africa",
             "present_countries": [
               "ML"
-            ]
-          },
-          {
-            "id": "kingdom_of_sicily_q3932079",
-            "canonical_name": "Kingdom of Sicily",
-            "start": 1734,
-            "end": 1816,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
             ]
           },
           {
@@ -71079,6 +71059,15 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "IT"
+            ],
+            "details": [
+              {
+                "id": "fascist_italy",
+                "canonical_name": "Fascist Italy",
+                "start": 1922,
+                "end": 1943,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -72693,6 +72682,15 @@
             "primary_historical_region": "southern_europe",
             "present_countries": [
               "IT"
+            ],
+            "details": [
+              {
+                "id": "fascist_italy",
+                "canonical_name": "Fascist Italy",
+                "start": 1922,
+                "end": 1943,
+                "kind": "polity"
+              }
             ]
           },
           {
@@ -80909,73 +80907,6 @@
             ]
           }
         ],
-        "southern_europe": [
-          {
-            "id": "first_portuguese_republic",
-            "canonical_name": "First Portuguese Republic",
-            "start": 1910,
-            "end": 1926,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "PT"
-            ]
-          },
-          {
-            "id": "fascist_italy",
-            "canonical_name": "Fascist Italy",
-            "start": 1922,
-            "end": 1943,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          },
-          {
-            "id": "nationalist_zone",
-            "canonical_name": "Nationalist zone",
-            "start": 1936,
-            "end": 1939,
-            "curated": true,
-            "linked_era_id": "africa_world_wars_reordering_era",
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "ES"
-            ]
-          },
-          {
-            "id": "regional_defence_council_of_aragon",
-            "canonical_name": "Regional Defence Council of Aragon",
-            "start": 1936,
-            "end": 1937,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "ES"
-            ]
-          },
-          {
-            "id": "italian_social_republic",
-            "canonical_name": "Italian Social Republic",
-            "start": 1943,
-            "end": 1945,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
-            ]
-          }
-        ],
         "mesoamerica": [
           {
             "id": "federation_of_central_america",
@@ -81083,6 +81014,60 @@
             "primary_historical_region": "northern_europe",
             "present_countries": [
               "NO"
+            ]
+          }
+        ],
+        "southern_europe": [
+          {
+            "id": "first_portuguese_republic",
+            "canonical_name": "First Portuguese Republic",
+            "start": 1910,
+            "end": 1926,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "PT"
+            ]
+          },
+          {
+            "id": "nationalist_zone",
+            "canonical_name": "Nationalist zone",
+            "start": 1936,
+            "end": 1939,
+            "curated": true,
+            "linked_era_id": "africa_world_wars_reordering_era",
+            "primary_continent": "africa",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "ES"
+            ]
+          },
+          {
+            "id": "regional_defence_council_of_aragon",
+            "canonical_name": "Regional Defence Council of Aragon",
+            "start": 1936,
+            "end": 1937,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "ES"
+            ]
+          },
+          {
+            "id": "italian_social_republic",
+            "canonical_name": "Italian Social Republic",
+            "start": 1943,
+            "end": 1945,
+            "curated": false,
+            "linked_era_id": null,
+            "primary_continent": "europe",
+            "primary_historical_region": "southern_europe",
+            "present_countries": [
+              "IT"
             ]
           }
         ],
@@ -83448,19 +83433,6 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "RU"
-            ]
-          },
-          {
-            "id": "fascist_italy",
-            "canonical_name": "Fascist Italy",
-            "start": 1922,
-            "end": 1943,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "southern_europe",
-            "present_countries": [
-              "IT"
             ]
           },
           {

@@ -102337,7 +102337,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kingdom_of_italy_q172579",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -187789,7 +187789,7 @@
     "timeline_role": "entity",
     "consolidation_status": "independent",
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "kingdom_of_sicily_q188586",
     "deprecated": {
       "visibility_tier": "detailed"
     },
@@ -386186,7 +386186,7 @@
     "timeline_role": "entity",
     "consolidation_status": null,
     "consolidated_into": null,
-    "detail_of": null,
+    "detail_of": "ancient_rome",
     "deprecated": {
       "visibility_tier": "global"
     },
