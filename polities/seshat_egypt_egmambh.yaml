@@ -9,9 +9,14 @@ successors: []
 geography:
   continents:
   - africa
-  present_countries: []
-  centroid: null
-  confidence: null
+  - asia
+  primary_continent: africa
+  historical_regions:
+  - north_africa
+  present_countries:
+  - EG
+  confidence: high
+  primary_historical_region: north_africa
 start: 1260
 end: 1347
 start_confidence: low
@@ -42,6 +47,7 @@ prominence_components:
   total: 11.86
 manual_overrides:
 - entity_type
+- geography
 government_form: null
 deprecated:
   visibility_tier: detailed

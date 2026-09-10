@@ -392,13 +392,19 @@
         "asia"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "EG"
+      ],
       "centroid": null,
-      "confidence": "medium"
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": "puppet state",
@@ -77400,7 +77406,9 @@
       "wikipedia_en": null,
       "seshat": []
     },
-    "source_urls": [],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Duke_of_Francavilla"
+    ],
     "fade_in_years": null,
     "fade_out_years": null,
     "entity_type": "polity",
@@ -77420,15 +77428,16 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
-        "europe",
-        "oceania"
+        "europe"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "europe",
+      "historical_regions": [
+        "southern_europe"
+      ],
+      "primary_historical_region": "southern_europe",
+      "present_countries": [
+        "IT"
+      ],
       "centroid": null,
       "confidence": "medium"
     },
@@ -317596,17 +317605,23 @@
     "successors": [],
     "geography": {
       "continents": [
-        "africa"
+        "africa",
+        "asia"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "EG"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "high"
     },
     "manual_overrides": [
-      "entity_type"
+      "entity_type",
+      "geography"
     ],
     "linked_era_id": null,
     "linked_chapter_id": null,
@@ -324576,7 +324591,9 @@
       "wikipedia_en": null,
       "seshat": []
     },
-    "source_urls": [],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/S%C3%A9gou_Empire"
+    ],
     "fade_in_years": null,
     "fade_out_years": null,
     "entity_type": "polity",
@@ -324599,11 +324616,15 @@
         "africa"
       ],
       "primary_continent": "africa",
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "west_africa"
+      ],
+      "primary_historical_region": "west_africa",
+      "present_countries": [
+        "ML"
+      ],
       "centroid": null,
-      "confidence": null
+      "confidence": "medium"
     },
     "manual_overrides": [
       "entity_type"
@@ -341106,19 +341127,22 @@
     ],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
-        "europe",
-        "oceania"
+        "south_america"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "south_america",
+      "historical_regions": [
+        "brazil_amazonia"
+      ],
+      "primary_historical_region": "brazil_amazonia",
+      "present_countries": [
+        "BR"
+      ],
       "centroid": null,
-      "confidence": "medium"
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -341950,19 +341974,22 @@
     ],
     "geography": {
       "continents": [
-        "africa",
-        "asia",
-        "europe",
-        "oceania"
+        "south_america"
       ],
-      "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "primary_continent": "south_america",
+      "historical_regions": [
+        "brazil_amazonia"
+      ],
+      "primary_historical_region": "brazil_amazonia",
+      "present_countries": [
+        "BR"
+      ],
       "centroid": null,
-      "confidence": "medium"
+      "confidence": "high"
     },
-    "manual_overrides": [],
+    "manual_overrides": [
+      "geography"
+    ],
     "linked_era_id": null,
     "linked_chapter_id": null,
     "government_form": null,
@@ -368681,7 +368708,9 @@
       "wikipedia_en": null,
       "seshat": []
     },
-    "source_urls": [],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Tulunids"
+    ],
     "fade_in_years": null,
     "fade_out_years": null,
     "entity_type": "polity",
@@ -368705,11 +368734,15 @@
         "asia"
       ],
       "primary_continent": null,
-      "historical_regions": [],
-      "primary_historical_region": null,
-      "present_countries": [],
+      "historical_regions": [
+        "north_africa"
+      ],
+      "primary_historical_region": "north_africa",
+      "present_countries": [
+        "EG"
+      ],
       "centroid": null,
-      "confidence": "low"
+      "confidence": "medium"
     },
     "manual_overrides": [],
     "linked_era_id": null,
