@@ -89446,6 +89446,76 @@
                 "start": 1961,
                 "end": 1994,
                 "kind": "polity"
+              },
+              {
+                "id": "gazankulu",
+                "canonical_name": "Gazankulu",
+                "start": 1971,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "ciskei",
+                "canonical_name": "Ciskei",
+                "start": 1972,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "lebowa",
+                "canonical_name": "Lebowa",
+                "start": 1972,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "qwaqwa",
+                "canonical_name": "QwaQwa",
+                "start": 1974,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "transkei",
+                "canonical_name": "Transkei",
+                "start": 1976,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "bophuthatswana",
+                "canonical_name": "Bophuthatswana",
+                "start": 1977,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "venda",
+                "canonical_name": "Venda",
+                "start": 1979,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "kangwane",
+                "canonical_name": "KaNgwane",
+                "start": 1981,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "kwandebele",
+                "canonical_name": "KwaNdebele",
+                "start": 1981,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "kwazulu",
+                "canonical_name": "kwaZulu",
+                "start": 1981,
+                "end": 1994,
+                "kind": "polity"
               }
             ]
           },
@@ -89554,32 +89624,6 @@
             ]
           },
           {
-            "id": "gazankulu",
-            "canonical_name": "Gazankulu",
-            "start": 1971,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
-            ]
-          },
-          {
-            "id": "ciskei",
-            "canonical_name": "Ciskei",
-            "start": 1972,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
-            ]
-          },
-          {
             "id": "east_caprivi",
             "canonical_name": "East Caprivi",
             "start": 1972,
@@ -89590,19 +89634,6 @@
             "primary_historical_region": "southern_africa",
             "present_countries": [
               "NA"
-            ]
-          },
-          {
-            "id": "lebowa",
-            "canonical_name": "Lebowa",
-            "start": 1972,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
             ]
           },
           {
@@ -89632,19 +89663,6 @@
             ]
           },
           {
-            "id": "qwaqwa",
-            "canonical_name": "QwaQwa",
-            "start": 1974,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
-            ]
-          },
-          {
             "id": "bushmanland",
             "canonical_name": "Bushmanland",
             "start": 1976,
@@ -89658,32 +89676,6 @@
             ]
           },
           {
-            "id": "transkei",
-            "canonical_name": "Transkei",
-            "start": 1976,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
-            ]
-          },
-          {
-            "id": "bophuthatswana",
-            "canonical_name": "Bophuthatswana",
-            "start": 1977,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
-            ]
-          },
-          {
             "id": "rehoboth",
             "canonical_name": "Rehoboth",
             "start": 1979,
@@ -89694,19 +89686,6 @@
             "primary_historical_region": "southern_africa",
             "present_countries": [
               "NA"
-            ]
-          },
-          {
-            "id": "venda",
-            "canonical_name": "Venda",
-            "start": 1979,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
             ]
           },
           {
@@ -89759,46 +89738,6 @@
             "primary_historical_region": "southern_africa",
             "present_countries": [
               "ZW"
-            ]
-          },
-          {
-            "id": "kangwane",
-            "canonical_name": "KaNgwane",
-            "start": 1981,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "SZ",
-              "ZA"
-            ]
-          },
-          {
-            "id": "kwandebele",
-            "canonical_name": "KwaNdebele",
-            "start": 1981,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
-            ]
-          },
-          {
-            "id": "kwazulu",
-            "canonical_name": "kwaZulu",
-            "start": 1981,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
             ]
           },
           {
@@ -102321,6 +102260,76 @@
                 "start": 1961,
                 "end": 1994,
                 "kind": "polity"
+              },
+              {
+                "id": "gazankulu",
+                "canonical_name": "Gazankulu",
+                "start": 1971,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "ciskei",
+                "canonical_name": "Ciskei",
+                "start": 1972,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "lebowa",
+                "canonical_name": "Lebowa",
+                "start": 1972,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "qwaqwa",
+                "canonical_name": "QwaQwa",
+                "start": 1974,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "transkei",
+                "canonical_name": "Transkei",
+                "start": 1976,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "bophuthatswana",
+                "canonical_name": "Bophuthatswana",
+                "start": 1977,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "venda",
+                "canonical_name": "Venda",
+                "start": 1979,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "kangwane",
+                "canonical_name": "KaNgwane",
+                "start": 1981,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "kwandebele",
+                "canonical_name": "KwaNdebele",
+                "start": 1981,
+                "end": 1994,
+                "kind": "polity"
+              },
+              {
+                "id": "kwazulu",
+                "canonical_name": "kwaZulu",
+                "start": 1981,
+                "end": 1994,
+                "kind": "polity"
               }
             ]
           },
@@ -103823,19 +103832,6 @@
             ]
           },
           {
-            "id": "gazankulu",
-            "canonical_name": "Gazankulu",
-            "start": 1971,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
-            ]
-          },
-          {
             "id": "sierra_leone",
             "canonical_name": "Sierra Leone",
             "start": 1971,
@@ -103859,19 +103855,6 @@
             "primary_historical_region": "central_africa",
             "present_countries": [
               "CD"
-            ]
-          },
-          {
-            "id": "ciskei",
-            "canonical_name": "Ciskei",
-            "start": 1972,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
             ]
           },
           {
@@ -103900,19 +103883,6 @@
               "EG",
               "LY",
               "SY"
-            ]
-          },
-          {
-            "id": "lebowa",
-            "canonical_name": "Lebowa",
-            "start": 1972,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
             ]
           },
           {
@@ -103965,19 +103935,6 @@
             "primary_historical_region": "west_africa",
             "present_countries": [
               "NG"
-            ]
-          },
-          {
-            "id": "qwaqwa",
-            "canonical_name": "QwaQwa",
-            "start": 1974,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
             ]
           },
           {
@@ -104142,32 +104099,6 @@
             ]
           },
           {
-            "id": "transkei",
-            "canonical_name": "Transkei",
-            "start": 1976,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
-            ]
-          },
-          {
-            "id": "bophuthatswana",
-            "canonical_name": "Bophuthatswana",
-            "start": 1977,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
-            ]
-          },
-          {
             "id": "djibouti",
             "canonical_name": "Djibouti",
             "start": 1977,
@@ -104220,19 +104151,6 @@
             ]
           },
           {
-            "id": "venda",
-            "canonical_name": "Venda",
-            "start": 1979,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
-            ]
-          },
-          {
             "id": "damaraland",
             "canonical_name": "Damaraland",
             "start": 1980,
@@ -104282,46 +104200,6 @@
             "primary_historical_region": "southern_africa",
             "present_countries": [
               "ZW"
-            ]
-          },
-          {
-            "id": "kangwane",
-            "canonical_name": "KaNgwane",
-            "start": 1981,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "SZ",
-              "ZA"
-            ]
-          },
-          {
-            "id": "kwandebele",
-            "canonical_name": "KwaNdebele",
-            "start": 1981,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
-            ]
-          },
-          {
-            "id": "kwazulu",
-            "canonical_name": "kwaZulu",
-            "start": 1981,
-            "end": 1994,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "africa",
-            "primary_historical_region": "southern_africa",
-            "present_countries": [
-              "ZA"
             ]
           },
           {
