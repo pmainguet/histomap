@@ -20707,6 +20707,13 @@
                 "kind": "polity"
               },
               {
+                "id": "ellwangen_abbey",
+                "canonical_name": "Ellwangen Abbey",
+                "start": 1011,
+                "end": 1802,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_lausanne",
                 "canonical_name": "Prince-Bishopric of Lausanne",
                 "start": 1011,
@@ -20840,6 +20847,13 @@
                 "kind": "polity"
               },
               {
+                "id": "wied",
+                "canonical_name": "Wied",
+                "start": 1093,
+                "end": 1698,
+                "kind": "polity"
+              },
+              {
                 "id": "county_of_henneberg",
                 "canonical_name": "County of Henneberg",
                 "start": 1096,
@@ -20868,6 +20882,13 @@
                     "kind": "polity"
                   }
                 ]
+              },
+              {
+                "id": "county_of_berg",
+                "canonical_name": "County of Berg",
+                "start": 1101,
+                "end": 1380,
+                "kind": "polity"
               },
               {
                 "id": "burgraviate_of_nuremberg",
@@ -21010,6 +21031,13 @@
                 "kind": "polity"
               },
               {
+                "id": "hohnstein",
+                "canonical_name": "Hohnstein",
+                "start": 1182,
+                "end": 1593,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_brabant",
                 "canonical_name": "Duchy of Brabant",
                 "start": 1183,
@@ -21066,6 +21094,13 @@
                 "kind": "polity"
               },
               {
+                "id": "wolfstein",
+                "canonical_name": "Wolfstein",
+                "start": 1217,
+                "end": 1383,
+                "kind": "polity"
+              },
+              {
                 "id": "principality_of_furstenberg",
                 "canonical_name": "Principality of Fürstenberg",
                 "start": 1218,
@@ -21115,6 +21150,13 @@
                 "kind": "polity"
               },
               {
+                "id": "roman_catholic_diocese_of_ratzeburg",
+                "canonical_name": "Roman Catholic Diocese of Ratzeburg",
+                "start": 1236,
+                "end": 1648,
+                "kind": "polity"
+              },
+              {
                 "id": "county_of_rietberg",
                 "canonical_name": "County of Rietberg",
                 "start": 1237,
@@ -21143,6 +21185,20 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_lower_bavaria",
+                "canonical_name": "Duchy of Lower Bavaria",
+                "start": 1255,
+                "end": 1340,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_upper_bavaria",
+                "canonical_name": "Duchy of Upper Bavaria",
+                "start": 1255,
+                "end": 1363,
+                "kind": "polity"
+              },
+              {
                 "id": "landgraviate_of_hesse",
                 "canonical_name": "Landgraviate of Hesse",
                 "start": 1264,
@@ -21164,6 +21220,20 @@
                 "kind": "polity"
               },
               {
+                "id": "free_imperial_city_of_ravensburg",
+                "canonical_name": "Free imperial city of Ravensburg",
+                "start": 1276,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "herrschaft_homburg",
+                "canonical_name": "Herrschaft Homburg",
+                "start": 1276,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
                 "id": "principality_of_gottingen",
                 "canonical_name": "Principality of Göttingen",
                 "start": 1279,
@@ -21178,6 +21248,13 @@
                 "kind": "polity"
               },
               {
+                "id": "free_city_of_wissembourg",
+                "canonical_name": "Free City of Wissembourg",
+                "start": 1281,
+                "end": 1679,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_paderborn",
                 "canonical_name": "Prince-Bishopric of Paderborn",
                 "start": 1281,
@@ -21189,6 +21266,13 @@
                 "canonical_name": "Free Imperial City of Kempten",
                 "start": 1289,
                 "end": 1802,
+                "kind": "polity"
+              },
+              {
+                "id": "free_city_of_landau",
+                "canonical_name": "Free City of Landau",
+                "start": 1291,
+                "end": 1679,
                 "kind": "polity"
               },
               {
@@ -21220,6 +21304,13 @@
                 "kind": "polity"
               },
               {
+                "id": "margraviate_hachberg_sausenberg",
+                "canonical_name": "Margraviate Hachberg-Sausenberg",
+                "start": 1306,
+                "end": 1503,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_mirandola",
                 "canonical_name": "Duchy of Mirandola",
                 "start": 1310,
@@ -21248,6 +21339,13 @@
                 "kind": "polity"
               },
               {
+                "id": "bavaria_landshut",
+                "canonical_name": "Bavaria-Landshut",
+                "start": 1353,
+                "end": 1503,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_luxembourg",
                 "canonical_name": "Duchy of Luxembourg",
                 "start": 1353,
@@ -21262,6 +21360,20 @@
                 "kind": "polity"
               },
               {
+                "id": "free_city_of_seltz",
+                "canonical_name": "Free City of Seltz",
+                "start": 1357,
+                "end": 1418,
+                "kind": "polity"
+              },
+              {
+                "id": "free_imperial_city_of_gengenbach",
+                "canonical_name": "free imperial city of Gengenbach",
+                "start": 1360,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_krnov",
                 "canonical_name": "Duchy of Krnov",
                 "start": 1377,
@@ -21273,6 +21385,20 @@
                 "canonical_name": "Duchy of Berg",
                 "start": 1380,
                 "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "bavaria_ingolstadt",
+                "canonical_name": "Bavaria-Ingolstadt",
+                "start": 1392,
+                "end": 1447,
+                "kind": "polity"
+              },
+              {
+                "id": "bavaria_munich",
+                "canonical_name": "Bavaria-Munich",
+                "start": 1392,
+                "end": 1505,
                 "kind": "polity"
               },
               {
@@ -21322,6 +21448,29 @@
                 "canonical_name": "Margravate of Mantua",
                 "start": 1433,
                 "end": 1530,
+                "kind": "polity"
+              },
+              {
+                "id": "palatinate_zweibrucken",
+                "canonical_name": "Palatinate-Zweibrücken",
+                "start": 1444,
+                "end": 1801,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "palatinate_zweibrucken_vohenstrauss_parkstein",
+                    "canonical_name": "Palatinate-Zweibrücken-Vohenstrauss-Parkstein",
+                    "start": 1569,
+                    "end": 1597,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "house_of_hohenlohe",
+                "canonical_name": "House of Hohenlohe",
+                "start": 1450,
+                "end": 1806,
                 "kind": "polity"
               },
               {
@@ -21402,6 +21551,20 @@
                 "kind": "polity"
               },
               {
+                "id": "waldamt_laurenzi",
+                "canonical_name": "Waldamt Laurenzi",
+                "start": 1500,
+                "end": 1790,
+                "kind": "polity"
+              },
+              {
+                "id": "waldamt_sebaldi",
+                "canonical_name": "Waldamt Sebaldi",
+                "start": 1500,
+                "end": 1790,
+                "kind": "polity"
+              },
+              {
                 "id": "margraviate_of_baden_baden",
                 "canonical_name": "Margraviate of Baden-Baden",
                 "start": 1515,
@@ -21423,10 +21586,31 @@
                 "kind": "polity"
               },
               {
+                "id": "mecklenburg_gustrow",
+                "canonical_name": "Mecklenburg-Güstrow",
+                "start": 1520,
+                "end": 1695,
+                "kind": "polity"
+              },
+              {
+                "id": "united_duchies_of_julich_cleves_berg",
+                "canonical_name": "United Duchies of Jülich-Cleves-Berg",
+                "start": 1521,
+                "end": 1614,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_mantua",
                 "canonical_name": "Duchy of Mantua",
                 "start": 1530,
                 "end": 1797,
+                "kind": "polity"
+              },
+              {
+                "id": "margraviate_of_brandenburg_kustrin",
+                "canonical_name": "Margraviate of Brandenburg-Küstrin",
+                "start": 1535,
+                "end": 1571,
                 "kind": "polity"
               },
               {
@@ -21441,6 +21625,13 @@
                 "canonical_name": "Duchy of Gifhorn",
                 "start": 1539,
                 "end": 1549,
+                "kind": "polity"
+              },
+              {
+                "id": "holstein_gluckstadt",
+                "canonical_name": "Holstein-Glückstadt",
+                "start": 1544,
+                "end": 1773,
                 "kind": "polity"
               },
               {
@@ -21486,6 +21677,13 @@
                 "kind": "polity"
               },
               {
+                "id": "saxe_coburg_eisenach",
+                "canonical_name": "Saxe-Coburg-Eisenach",
+                "start": 1572,
+                "end": 1638,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_montferrat",
                 "canonical_name": "Duchy of Montferrat",
                 "start": 1574,
@@ -21497,6 +21695,20 @@
                 "canonical_name": "Principality of Salm-Salm",
                 "start": 1574,
                 "end": 1811,
+                "kind": "polity"
+              },
+              {
+                "id": "hohenzollern_haigerloch",
+                "canonical_name": "Hohenzollern-Haigerloch",
+                "start": 1576,
+                "end": 1767,
+                "kind": "polity"
+              },
+              {
+                "id": "pflegamt_hauseck",
+                "canonical_name": "Pflegamt Hauseck",
+                "start": 1600,
+                "end": 1610,
                 "kind": "polity"
               },
               {
@@ -21535,6 +21747,13 @@
                 "kind": "polity"
               },
               {
+                "id": "anhalt_harzgerode",
+                "canonical_name": "Anhalt-Harzgerode",
+                "start": 1635,
+                "end": 1709,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_bremen_and_verden",
                 "canonical_name": "Duchy of Bremen and Verden",
                 "start": 1648,
@@ -21556,10 +21775,38 @@
                 "kind": "polity"
               },
               {
+                "id": "saxe_weissenfels",
+                "canonical_name": "Saxe-Weissenfels",
+                "start": 1656,
+                "end": 1746,
+                "kind": "polity"
+              },
+              {
+                "id": "saxe_zeitz",
+                "canonical_name": "Saxe-Zeitz",
+                "start": 1657,
+                "end": 1718,
+                "kind": "polity"
+              },
+              {
+                "id": "saxe_marksuhl",
+                "canonical_name": "Saxe-Marksuhl",
+                "start": 1662,
+                "end": 1671,
+                "kind": "polity"
+              },
+              {
                 "id": "principality_of_anhalt_dornburg",
                 "canonical_name": "Principality of Anhalt-Dornburg",
                 "start": 1667,
                 "end": 1742,
+                "kind": "polity"
+              },
+              {
+                "id": "isenburg_wachtersbach",
+                "canonical_name": "Isenburg-Wächtersbach",
+                "start": 1673,
+                "end": 1806,
                 "kind": "polity"
               },
               {
@@ -21609,6 +21856,20 @@
                 "canonical_name": "Duchy of Mecklenburg-Strelitz",
                 "start": 1701,
                 "end": 1815,
+                "kind": "polity"
+              },
+              {
+                "id": "stolberg_rossla",
+                "canonical_name": "Stolberg-Rossla",
+                "start": 1706,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "solms_hohensolms_lich",
+                "canonical_name": "Solms-Hohensolms-Lich",
+                "start": 1718,
+                "end": 1806,
                 "kind": "polity"
               },
               {
@@ -21672,6 +21933,20 @@
                 "canonical_name": "Principality of Regensburg",
                 "start": 1803,
                 "end": 1810,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_paderborn",
+                "canonical_name": "Principality Paderborn",
+                "start": 1803,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_rheina_wolbeck",
+                "canonical_name": "Principality Rheina-Wolbeck",
+                "start": 1803,
+                "end": 1806,
                 "kind": "polity"
               }
             ]
@@ -21758,36 +22033,10 @@
             ]
           },
           {
-            "id": "ellwangen_abbey",
-            "canonical_name": "Ellwangen Abbey",
-            "start": 1011,
-            "end": 1802,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "wurttemberg",
             "canonical_name": "Württemberg",
             "start": 1083,
             "end": 1952,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "wied",
-            "canonical_name": "Wied",
-            "start": 1093,
-            "end": 1698,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -21810,19 +22059,6 @@
               "DE",
               "FR",
               "NL"
-            ]
-          },
-          {
-            "id": "county_of_berg",
-            "canonical_name": "County of Berg",
-            "start": 1101,
-            "end": 1380,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -21994,19 +22230,6 @@
             ]
           },
           {
-            "id": "hohnstein",
-            "canonical_name": "Hohnstein",
-            "start": 1182,
-            "end": 1593,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "free_imperial_city_of_hamburg",
             "canonical_name": "Free imperial city of Hamburg",
             "start": 1189,
@@ -22059,19 +22282,6 @@
             ]
           },
           {
-            "id": "wolfstein",
-            "canonical_name": "Wolfstein",
-            "start": 1217,
-            "end": 1383,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "lordship_of_echery",
             "canonical_name": "lordship of Échéry",
             "start": 1232,
@@ -22082,45 +22292,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "FR"
-            ]
-          },
-          {
-            "id": "roman_catholic_diocese_of_ratzeburg",
-            "canonical_name": "Roman Catholic Diocese of Ratzeburg",
-            "start": 1236,
-            "end": 1648,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "duchy_of_lower_bavaria",
-            "canonical_name": "Duchy of Lower Bavaria",
-            "start": 1255,
-            "end": 1340,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "duchy_of_upper_bavaria",
-            "canonical_name": "Duchy of Upper Bavaria",
-            "start": 1255,
-            "end": 1363,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -22202,19 +22373,6 @@
             ]
           },
           {
-            "id": "free_city_of_wissembourg",
-            "canonical_name": "Free City of Wissembourg",
-            "start": 1281,
-            "end": 1679,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "free_imperial_city_of_schlettstadt",
             "canonical_name": "Free Imperial City of Schlettstadt",
             "start": 1281,
@@ -22267,19 +22425,6 @@
             ]
           },
           {
-            "id": "free_city_of_landau",
-            "canonical_name": "Free City of Landau",
-            "start": 1291,
-            "end": 1679,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "free_city_of_kaysersberg",
             "canonical_name": "Free City of Kaysersberg",
             "start": 1293,
@@ -22306,19 +22451,6 @@
             ]
           },
           {
-            "id": "margraviate_hachberg_sausenberg",
-            "canonical_name": "Margraviate Hachberg-Sausenberg",
-            "start": 1306,
-            "end": 1503,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "free_city_of_turckheim",
             "canonical_name": "Free City of Turckheim",
             "start": 1312,
@@ -22332,32 +22464,6 @@
             ]
           },
           {
-            "id": "bavaria_landshut",
-            "canonical_name": "Bavaria-Landshut",
-            "start": 1353,
-            "end": 1503,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "free_city_of_seltz",
-            "canonical_name": "Free City of Seltz",
-            "start": 1357,
-            "end": 1418,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "burgundian_netherlands",
             "canonical_name": "Burgundian Netherlands",
             "start": 1384,
@@ -22368,32 +22474,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "NL"
-            ]
-          },
-          {
-            "id": "bavaria_ingolstadt",
-            "canonical_name": "Bavaria-Ingolstadt",
-            "start": 1392,
-            "end": 1447,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "bavaria_munich",
-            "canonical_name": "Bavaria-Munich",
-            "start": 1392,
-            "end": 1505,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           }
         ],
@@ -40002,6 +40082,13 @@
                 "kind": "polity"
               },
               {
+                "id": "ellwangen_abbey",
+                "canonical_name": "Ellwangen Abbey",
+                "start": 1011,
+                "end": 1802,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_lausanne",
                 "canonical_name": "Prince-Bishopric of Lausanne",
                 "start": 1011,
@@ -40135,6 +40222,13 @@
                 "kind": "polity"
               },
               {
+                "id": "wied",
+                "canonical_name": "Wied",
+                "start": 1093,
+                "end": 1698,
+                "kind": "polity"
+              },
+              {
                 "id": "county_of_henneberg",
                 "canonical_name": "County of Henneberg",
                 "start": 1096,
@@ -40163,6 +40257,13 @@
                     "kind": "polity"
                   }
                 ]
+              },
+              {
+                "id": "county_of_berg",
+                "canonical_name": "County of Berg",
+                "start": 1101,
+                "end": 1380,
+                "kind": "polity"
               },
               {
                 "id": "burgraviate_of_nuremberg",
@@ -40305,6 +40406,13 @@
                 "kind": "polity"
               },
               {
+                "id": "hohnstein",
+                "canonical_name": "Hohnstein",
+                "start": 1182,
+                "end": 1593,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_brabant",
                 "canonical_name": "Duchy of Brabant",
                 "start": 1183,
@@ -40361,6 +40469,13 @@
                 "kind": "polity"
               },
               {
+                "id": "wolfstein",
+                "canonical_name": "Wolfstein",
+                "start": 1217,
+                "end": 1383,
+                "kind": "polity"
+              },
+              {
                 "id": "principality_of_furstenberg",
                 "canonical_name": "Principality of Fürstenberg",
                 "start": 1218,
@@ -40410,6 +40525,13 @@
                 "kind": "polity"
               },
               {
+                "id": "roman_catholic_diocese_of_ratzeburg",
+                "canonical_name": "Roman Catholic Diocese of Ratzeburg",
+                "start": 1236,
+                "end": 1648,
+                "kind": "polity"
+              },
+              {
                 "id": "county_of_rietberg",
                 "canonical_name": "County of Rietberg",
                 "start": 1237,
@@ -40438,6 +40560,20 @@
                 "kind": "polity"
               },
               {
+                "id": "duchy_of_lower_bavaria",
+                "canonical_name": "Duchy of Lower Bavaria",
+                "start": 1255,
+                "end": 1340,
+                "kind": "polity"
+              },
+              {
+                "id": "duchy_of_upper_bavaria",
+                "canonical_name": "Duchy of Upper Bavaria",
+                "start": 1255,
+                "end": 1363,
+                "kind": "polity"
+              },
+              {
                 "id": "landgraviate_of_hesse",
                 "canonical_name": "Landgraviate of Hesse",
                 "start": 1264,
@@ -40459,6 +40595,20 @@
                 "kind": "polity"
               },
               {
+                "id": "free_imperial_city_of_ravensburg",
+                "canonical_name": "Free imperial city of Ravensburg",
+                "start": 1276,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "herrschaft_homburg",
+                "canonical_name": "Herrschaft Homburg",
+                "start": 1276,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
                 "id": "principality_of_gottingen",
                 "canonical_name": "Principality of Göttingen",
                 "start": 1279,
@@ -40473,6 +40623,13 @@
                 "kind": "polity"
               },
               {
+                "id": "free_city_of_wissembourg",
+                "canonical_name": "Free City of Wissembourg",
+                "start": 1281,
+                "end": 1679,
+                "kind": "polity"
+              },
+              {
                 "id": "prince_bishopric_of_paderborn",
                 "canonical_name": "Prince-Bishopric of Paderborn",
                 "start": 1281,
@@ -40484,6 +40641,13 @@
                 "canonical_name": "Free Imperial City of Kempten",
                 "start": 1289,
                 "end": 1802,
+                "kind": "polity"
+              },
+              {
+                "id": "free_city_of_landau",
+                "canonical_name": "Free City of Landau",
+                "start": 1291,
+                "end": 1679,
                 "kind": "polity"
               },
               {
@@ -40515,6 +40679,13 @@
                 "kind": "polity"
               },
               {
+                "id": "margraviate_hachberg_sausenberg",
+                "canonical_name": "Margraviate Hachberg-Sausenberg",
+                "start": 1306,
+                "end": 1503,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_mirandola",
                 "canonical_name": "Duchy of Mirandola",
                 "start": 1310,
@@ -40543,6 +40714,13 @@
                 "kind": "polity"
               },
               {
+                "id": "bavaria_landshut",
+                "canonical_name": "Bavaria-Landshut",
+                "start": 1353,
+                "end": 1503,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_luxembourg",
                 "canonical_name": "Duchy of Luxembourg",
                 "start": 1353,
@@ -40557,6 +40735,20 @@
                 "kind": "polity"
               },
               {
+                "id": "free_city_of_seltz",
+                "canonical_name": "Free City of Seltz",
+                "start": 1357,
+                "end": 1418,
+                "kind": "polity"
+              },
+              {
+                "id": "free_imperial_city_of_gengenbach",
+                "canonical_name": "free imperial city of Gengenbach",
+                "start": 1360,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_krnov",
                 "canonical_name": "Duchy of Krnov",
                 "start": 1377,
@@ -40568,6 +40760,20 @@
                 "canonical_name": "Duchy of Berg",
                 "start": 1380,
                 "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "bavaria_ingolstadt",
+                "canonical_name": "Bavaria-Ingolstadt",
+                "start": 1392,
+                "end": 1447,
+                "kind": "polity"
+              },
+              {
+                "id": "bavaria_munich",
+                "canonical_name": "Bavaria-Munich",
+                "start": 1392,
+                "end": 1505,
                 "kind": "polity"
               },
               {
@@ -40617,6 +40823,29 @@
                 "canonical_name": "Margravate of Mantua",
                 "start": 1433,
                 "end": 1530,
+                "kind": "polity"
+              },
+              {
+                "id": "palatinate_zweibrucken",
+                "canonical_name": "Palatinate-Zweibrücken",
+                "start": 1444,
+                "end": 1801,
+                "kind": "polity",
+                "details": [
+                  {
+                    "id": "palatinate_zweibrucken_vohenstrauss_parkstein",
+                    "canonical_name": "Palatinate-Zweibrücken-Vohenstrauss-Parkstein",
+                    "start": 1569,
+                    "end": 1597,
+                    "kind": "polity"
+                  }
+                ]
+              },
+              {
+                "id": "house_of_hohenlohe",
+                "canonical_name": "House of Hohenlohe",
+                "start": 1450,
+                "end": 1806,
                 "kind": "polity"
               },
               {
@@ -40697,6 +40926,20 @@
                 "kind": "polity"
               },
               {
+                "id": "waldamt_laurenzi",
+                "canonical_name": "Waldamt Laurenzi",
+                "start": 1500,
+                "end": 1790,
+                "kind": "polity"
+              },
+              {
+                "id": "waldamt_sebaldi",
+                "canonical_name": "Waldamt Sebaldi",
+                "start": 1500,
+                "end": 1790,
+                "kind": "polity"
+              },
+              {
                 "id": "margraviate_of_baden_baden",
                 "canonical_name": "Margraviate of Baden-Baden",
                 "start": 1515,
@@ -40718,10 +40961,31 @@
                 "kind": "polity"
               },
               {
+                "id": "mecklenburg_gustrow",
+                "canonical_name": "Mecklenburg-Güstrow",
+                "start": 1520,
+                "end": 1695,
+                "kind": "polity"
+              },
+              {
+                "id": "united_duchies_of_julich_cleves_berg",
+                "canonical_name": "United Duchies of Jülich-Cleves-Berg",
+                "start": 1521,
+                "end": 1614,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_mantua",
                 "canonical_name": "Duchy of Mantua",
                 "start": 1530,
                 "end": 1797,
+                "kind": "polity"
+              },
+              {
+                "id": "margraviate_of_brandenburg_kustrin",
+                "canonical_name": "Margraviate of Brandenburg-Küstrin",
+                "start": 1535,
+                "end": 1571,
                 "kind": "polity"
               },
               {
@@ -40736,6 +41000,13 @@
                 "canonical_name": "Duchy of Gifhorn",
                 "start": 1539,
                 "end": 1549,
+                "kind": "polity"
+              },
+              {
+                "id": "holstein_gluckstadt",
+                "canonical_name": "Holstein-Glückstadt",
+                "start": 1544,
+                "end": 1773,
                 "kind": "polity"
               },
               {
@@ -40781,6 +41052,13 @@
                 "kind": "polity"
               },
               {
+                "id": "saxe_coburg_eisenach",
+                "canonical_name": "Saxe-Coburg-Eisenach",
+                "start": 1572,
+                "end": 1638,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_montferrat",
                 "canonical_name": "Duchy of Montferrat",
                 "start": 1574,
@@ -40792,6 +41070,20 @@
                 "canonical_name": "Principality of Salm-Salm",
                 "start": 1574,
                 "end": 1811,
+                "kind": "polity"
+              },
+              {
+                "id": "hohenzollern_haigerloch",
+                "canonical_name": "Hohenzollern-Haigerloch",
+                "start": 1576,
+                "end": 1767,
+                "kind": "polity"
+              },
+              {
+                "id": "pflegamt_hauseck",
+                "canonical_name": "Pflegamt Hauseck",
+                "start": 1600,
+                "end": 1610,
                 "kind": "polity"
               },
               {
@@ -40830,6 +41122,13 @@
                 "kind": "polity"
               },
               {
+                "id": "anhalt_harzgerode",
+                "canonical_name": "Anhalt-Harzgerode",
+                "start": 1635,
+                "end": 1709,
+                "kind": "polity"
+              },
+              {
                 "id": "duchy_of_bremen_and_verden",
                 "canonical_name": "Duchy of Bremen and Verden",
                 "start": 1648,
@@ -40851,10 +41150,38 @@
                 "kind": "polity"
               },
               {
+                "id": "saxe_weissenfels",
+                "canonical_name": "Saxe-Weissenfels",
+                "start": 1656,
+                "end": 1746,
+                "kind": "polity"
+              },
+              {
+                "id": "saxe_zeitz",
+                "canonical_name": "Saxe-Zeitz",
+                "start": 1657,
+                "end": 1718,
+                "kind": "polity"
+              },
+              {
+                "id": "saxe_marksuhl",
+                "canonical_name": "Saxe-Marksuhl",
+                "start": 1662,
+                "end": 1671,
+                "kind": "polity"
+              },
+              {
                 "id": "principality_of_anhalt_dornburg",
                 "canonical_name": "Principality of Anhalt-Dornburg",
                 "start": 1667,
                 "end": 1742,
+                "kind": "polity"
+              },
+              {
+                "id": "isenburg_wachtersbach",
+                "canonical_name": "Isenburg-Wächtersbach",
+                "start": 1673,
+                "end": 1806,
                 "kind": "polity"
               },
               {
@@ -40904,6 +41231,20 @@
                 "canonical_name": "Duchy of Mecklenburg-Strelitz",
                 "start": 1701,
                 "end": 1815,
+                "kind": "polity"
+              },
+              {
+                "id": "stolberg_rossla",
+                "canonical_name": "Stolberg-Rossla",
+                "start": 1706,
+                "end": 1803,
+                "kind": "polity"
+              },
+              {
+                "id": "solms_hohensolms_lich",
+                "canonical_name": "Solms-Hohensolms-Lich",
+                "start": 1718,
+                "end": 1806,
                 "kind": "polity"
               },
               {
@@ -40967,6 +41308,20 @@
                 "canonical_name": "Principality of Regensburg",
                 "start": 1803,
                 "end": 1810,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_paderborn",
+                "canonical_name": "Principality Paderborn",
+                "start": 1803,
+                "end": 1806,
+                "kind": "polity"
+              },
+              {
+                "id": "principality_rheina_wolbeck",
+                "canonical_name": "Principality Rheina-Wolbeck",
+                "start": 1803,
+                "end": 1806,
                 "kind": "polity"
               }
             ]
@@ -41435,19 +41790,6 @@
             "present_countries": []
           },
           {
-            "id": "ellwangen_abbey",
-            "canonical_name": "Ellwangen Abbey",
-            "start": 1011,
-            "end": 1802,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "taifa_of_arcos",
             "canonical_name": "Taifa of Arcos",
             "start": 1011,
@@ -41896,19 +42238,6 @@
             "present_countries": []
           },
           {
-            "id": "wied",
-            "canonical_name": "Wied",
-            "start": 1093,
-            "end": 1698,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "principality_of_novgorod_seversky",
             "canonical_name": "Principality of Novgorod-Seversky",
             "start": 1097,
@@ -41979,19 +42308,6 @@
             "present_countries": [
               "RS",
               "XK"
-            ]
-          },
-          {
-            "id": "county_of_berg",
-            "canonical_name": "County of Berg",
-            "start": 1101,
-            "end": 1380,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -42734,19 +43050,6 @@
             "present_countries": []
           },
           {
-            "id": "hohnstein",
-            "canonical_name": "Hohnstein",
-            "start": 1182,
-            "end": 1593,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "second_bulgarian_empire",
             "canonical_name": "Second Bulgarian Empire",
             "start": 1185,
@@ -43086,19 +43389,6 @@
             ]
           },
           {
-            "id": "wolfstein",
-            "canonical_name": "Wolfstein",
-            "start": 1217,
-            "end": 1383,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "principality_of_yaroslavl",
             "canonical_name": "Principality of Yaroslavl",
             "start": 1218,
@@ -43260,19 +43550,6 @@
             "present_countries": []
           },
           {
-            "id": "roman_catholic_diocese_of_ratzeburg",
-            "canonical_name": "Roman Catholic Diocese of Ratzeburg",
-            "start": 1236,
-            "end": 1648,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "livonian_order",
             "canonical_name": "Livonian Order",
             "start": 1237,
@@ -43362,32 +43639,6 @@
             "primary_historical_region": "northern_europe",
             "present_countries": [
               "LT"
-            ]
-          },
-          {
-            "id": "duchy_of_lower_bavaria",
-            "canonical_name": "Duchy of Lower Bavaria",
-            "start": 1255,
-            "end": 1340,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "duchy_of_upper_bavaria",
-            "canonical_name": "Duchy of Upper Bavaria",
-            "start": 1255,
-            "end": 1363,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -43641,19 +43892,6 @@
             ]
           },
           {
-            "id": "free_city_of_wissembourg",
-            "canonical_name": "Free City of Wissembourg",
-            "start": 1281,
-            "end": 1679,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "free_imperial_city_of_schlettstadt",
             "canonical_name": "Free Imperial City of Schlettstadt",
             "start": 1281,
@@ -43742,19 +43980,6 @@
             ]
           },
           {
-            "id": "free_city_of_landau",
-            "canonical_name": "Free City of Landau",
-            "start": 1291,
-            "end": 1679,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "free_city_of_kaysersberg",
             "canonical_name": "Free City of Kaysersberg",
             "start": 1293,
@@ -43825,19 +44050,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "margraviate_hachberg_sausenberg",
-            "canonical_name": "Margraviate Hachberg-Sausenberg",
-            "start": 1306,
-            "end": 1503,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
           },
           {
             "id": "duchy_of_brzeg",
@@ -44065,19 +44277,6 @@
             ]
           },
           {
-            "id": "bavaria_landshut",
-            "canonical_name": "Bavaria-Landshut",
-            "start": 1353,
-            "end": 1503,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "bavaria_straubing",
             "canonical_name": "Bavaria-Straubing",
             "start": 1353,
@@ -44124,19 +44323,6 @@
             "present_countries": [
               "BG",
               "RS"
-            ]
-          },
-          {
-            "id": "free_city_of_seltz",
-            "canonical_name": "Free City of Seltz",
-            "start": 1357,
-            "end": 1418,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -44446,32 +44632,6 @@
             "primary_historical_region": "balkans",
             "present_countries": [
               "AL"
-            ]
-          },
-          {
-            "id": "bavaria_ingolstadt",
-            "canonical_name": "Bavaria-Ingolstadt",
-            "start": 1392,
-            "end": 1447,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "bavaria_munich",
-            "canonical_name": "Bavaria-Munich",
-            "start": 1392,
-            "end": 1505,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -52839,32 +52999,6 @@
             ]
           },
           {
-            "id": "free_imperial_city_of_ravensburg",
-            "canonical_name": "Free imperial city of Ravensburg",
-            "start": 1276,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "herrschaft_homburg",
-            "canonical_name": "Herrschaft Homburg",
-            "start": 1276,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "further_austria",
             "canonical_name": "Further Austria",
             "start": 1278,
@@ -52983,19 +53117,6 @@
             ]
           },
           {
-            "id": "free_imperial_city_of_gengenbach",
-            "canonical_name": "free imperial city of Gengenbach",
-            "start": 1360,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "free_city_of_frankfurt",
             "canonical_name": "Free City of Frankfurt",
             "start": 1372,
@@ -53058,41 +53179,6 @@
             ]
           },
           {
-            "id": "palatinate_zweibrucken",
-            "canonical_name": "Palatinate-Zweibrücken",
-            "start": 1444,
-            "end": 1801,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ],
-            "details": [
-              {
-                "id": "palatinate_zweibrucken_vohenstrauss_parkstein",
-                "canonical_name": "Palatinate-Zweibrücken-Vohenstrauss-Parkstein",
-                "start": 1569,
-                "end": 1597,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
-            "id": "house_of_hohenlohe",
-            "canonical_name": "House of Hohenlohe",
-            "start": 1450,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "seventeen_provinces",
             "canonical_name": "Seventeen Provinces",
             "start": 1482,
@@ -53103,32 +53189,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "BE"
-            ]
-          },
-          {
-            "id": "waldamt_laurenzi",
-            "canonical_name": "Waldamt Laurenzi",
-            "start": 1500,
-            "end": 1790,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "waldamt_sebaldi",
-            "canonical_name": "Waldamt Sebaldi",
-            "start": 1500,
-            "end": 1790,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -53155,33 +53215,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "DE"
-            ]
-          },
-          {
-            "id": "mecklenburg_gustrow",
-            "canonical_name": "Mecklenburg-Güstrow",
-            "start": 1520,
-            "end": 1695,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "united_duchies_of_julich_cleves_berg",
-            "canonical_name": "United Duchies of Jülich-Cleves-Berg",
-            "start": 1521,
-            "end": 1614,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE",
-              "NL"
             ]
           },
           {
@@ -53289,19 +53322,6 @@
             ]
           },
           {
-            "id": "margraviate_of_brandenburg_kustrin",
-            "canonical_name": "Margraviate of Brandenburg-Küstrin",
-            "start": 1535,
-            "end": 1571,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "kingdom_of_ireland",
             "canonical_name": "Kingdom of Ireland",
             "start": 1542,
@@ -53312,19 +53332,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "IE"
-            ]
-          },
-          {
-            "id": "holstein_gluckstadt",
-            "canonical_name": "Holstein-Glückstadt",
-            "start": 1544,
-            "end": 1773,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -53389,19 +53396,6 @@
             ]
           },
           {
-            "id": "saxe_coburg_eisenach",
-            "canonical_name": "Saxe-Coburg-Eisenach",
-            "start": 1572,
-            "end": 1638,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "calvinist_republic_of_brussels",
             "canonical_name": "Calvinist Republic of Brussels",
             "start": 1576,
@@ -53412,19 +53406,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "BE"
-            ]
-          },
-          {
-            "id": "hohenzollern_haigerloch",
-            "canonical_name": "Hohenzollern-Haigerloch",
-            "start": 1576,
-            "end": 1767,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -53550,19 +53531,6 @@
             ]
           },
           {
-            "id": "pflegamt_hauseck",
-            "canonical_name": "Pflegamt Hauseck",
-            "start": 1600,
-            "end": 1610,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "saxe_altenburg",
             "canonical_name": "Saxe-Altenburg",
             "start": 1602,
@@ -53657,19 +53625,6 @@
             ]
           },
           {
-            "id": "anhalt_harzgerode",
-            "canonical_name": "Anhalt-Harzgerode",
-            "start": 1635,
-            "end": 1709,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "salm_reifferscheid_dyck",
             "canonical_name": "Salm-Reifferscheid-Dyck",
             "start": 1639,
@@ -53722,75 +53677,10 @@
             ]
           },
           {
-            "id": "saxe_weissenfels",
-            "canonical_name": "Saxe-Weissenfels",
-            "start": 1656,
-            "end": 1746,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "saxe_zeitz",
-            "canonical_name": "Saxe-Zeitz",
-            "start": 1657,
-            "end": 1718,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "saxe_marksuhl",
-            "canonical_name": "Saxe-Marksuhl",
-            "start": 1662,
-            "end": 1671,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "isenburg_wachtersbach",
-            "canonical_name": "Isenburg-Wächtersbach",
-            "start": 1673,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "reuss_ebersdorf",
             "canonical_name": "Reuss-Ebersdorf",
             "start": 1678,
             "end": 1824,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "stolberg_rossla",
-            "canonical_name": "Stolberg-Rossla",
-            "start": 1706,
-            "end": 1803,
             "curated": false,
             "linked_era_id": null,
             "primary_continent": "europe",
@@ -53823,19 +53713,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "NL"
-            ]
-          },
-          {
-            "id": "solms_hohensolms_lich",
-            "canonical_name": "Solms-Hohensolms-Lich",
-            "start": 1718,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -62007,32 +61884,6 @@
             "present_countries": []
           },
           {
-            "id": "free_imperial_city_of_ravensburg",
-            "canonical_name": "Free imperial city of Ravensburg",
-            "start": 1276,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "herrschaft_homburg",
-            "canonical_name": "Herrschaft Homburg",
-            "start": 1276,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "andorra",
             "canonical_name": "Andorra",
             "start": 1278,
@@ -62418,19 +62269,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "free_imperial_city_of_gengenbach",
-            "canonical_name": "free imperial city of Gengenbach",
-            "start": 1360,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
           },
           {
             "id": "barony_of_castalla",
@@ -62895,28 +62733,6 @@
             ]
           },
           {
-            "id": "palatinate_zweibrucken",
-            "canonical_name": "Palatinate-Zweibrücken",
-            "start": 1444,
-            "end": 1801,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ],
-            "details": [
-              {
-                "id": "palatinate_zweibrucken_vohenstrauss_parkstein",
-                "canonical_name": "Palatinate-Zweibrücken-Vohenstrauss-Parkstein",
-                "start": 1569,
-                "end": 1597,
-                "kind": "polity"
-              }
-            ]
-          },
-          {
             "id": "duchy_of_zator",
             "canonical_name": "Duchy of Zator",
             "start": 1445,
@@ -62927,19 +62743,6 @@
             "primary_historical_region": "eastern_europe",
             "present_countries": [
               "PL"
-            ]
-          },
-          {
-            "id": "house_of_hohenlohe",
-            "canonical_name": "House of Hohenlohe",
-            "start": 1450,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -63184,32 +62987,6 @@
             "present_countries": []
           },
           {
-            "id": "waldamt_laurenzi",
-            "canonical_name": "Waldamt Laurenzi",
-            "start": 1500,
-            "end": 1790,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "waldamt_sebaldi",
-            "canonical_name": "Waldamt Sebaldi",
-            "start": 1500,
-            "end": 1790,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "duchy_bavaria",
             "canonical_name": "Duchy Bavaria",
             "start": 1505,
@@ -63329,33 +63106,6 @@
                 "end": 1975,
                 "kind": "polity"
               }
-            ]
-          },
-          {
-            "id": "mecklenburg_gustrow",
-            "canonical_name": "Mecklenburg-Güstrow",
-            "start": 1520,
-            "end": 1695,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "united_duchies_of_julich_cleves_berg",
-            "canonical_name": "United Duchies of Jülich-Cleves-Berg",
-            "start": 1521,
-            "end": 1614,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE",
-              "NL"
             ]
           },
           {
@@ -63550,19 +63300,6 @@
             "present_countries": []
           },
           {
-            "id": "margraviate_of_brandenburg_kustrin",
-            "canonical_name": "Margraviate of Brandenburg-Küstrin",
-            "start": 1535,
-            "end": 1571,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "danish_colonial_empire",
             "canonical_name": "Danish colonial empire",
             "start": 1536,
@@ -63599,19 +63336,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "IE"
-            ]
-          },
-          {
-            "id": "holstein_gluckstadt",
-            "canonical_name": "Holstein-Glückstadt",
-            "start": 1544,
-            "end": 1773,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -63839,19 +63563,6 @@
             ]
           },
           {
-            "id": "saxe_coburg_eisenach",
-            "canonical_name": "Saxe-Coburg-Eisenach",
-            "start": 1572,
-            "end": 1638,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "saxe_weimar",
             "canonical_name": "Saxe-Weimar",
             "start": 1572,
@@ -63873,19 +63584,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "BE"
-            ]
-          },
-          {
-            "id": "hohenzollern_haigerloch",
-            "canonical_name": "Hohenzollern-Haigerloch",
-            "start": 1576,
-            "end": 1767,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -64112,19 +63810,6 @@
             ]
           },
           {
-            "id": "pflegamt_hauseck",
-            "canonical_name": "Pflegamt Hauseck",
-            "start": 1600,
-            "end": 1610,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "saxe_altenburg",
             "canonical_name": "Saxe-Altenburg",
             "start": 1602,
@@ -64232,19 +63917,6 @@
             ]
           },
           {
-            "id": "anhalt_harzgerode",
-            "canonical_name": "Anhalt-Harzgerode",
-            "start": 1635,
-            "end": 1709,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "swedish_overseas_colonies",
             "canonical_name": "Swedish overseas colonies",
             "start": 1638,
@@ -64341,19 +64013,6 @@
             ]
           },
           {
-            "id": "saxe_weissenfels",
-            "canonical_name": "Saxe-Weissenfels",
-            "start": 1656,
-            "end": 1746,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "saxe_merseburg",
             "canonical_name": "Saxe-Merseburg",
             "start": 1657,
@@ -64365,32 +64024,6 @@
             "present_countries": []
           },
           {
-            "id": "saxe_zeitz",
-            "canonical_name": "Saxe-Zeitz",
-            "start": 1657,
-            "end": 1718,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "saxe_marksuhl",
-            "canonical_name": "Saxe-Marksuhl",
-            "start": 1662,
-            "end": 1671,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "saxe_jena",
             "canonical_name": "Saxe-Jena",
             "start": 1672,
@@ -64400,19 +64033,6 @@
             "primary_continent": "europe",
             "primary_historical_region": "unclassified",
             "present_countries": []
-          },
-          {
-            "id": "isenburg_wachtersbach",
-            "canonical_name": "Isenburg-Wächtersbach",
-            "start": 1673,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
           },
           {
             "id": "reuss_ebersdorf",
@@ -64555,19 +64175,6 @@
             "present_countries": []
           },
           {
-            "id": "stolberg_rossla",
-            "canonical_name": "Stolberg-Rossla",
-            "start": 1706,
-            "end": 1803,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "kingdom_of_great_britain",
             "canonical_name": "Kingdom of Great Britain",
             "start": 1707,
@@ -64630,19 +64237,6 @@
             "primary_historical_region": "balkans",
             "present_countries": [
               "RS"
-            ]
-          },
-          {
-            "id": "solms_hohensolms_lich",
-            "canonical_name": "Solms-Hohensolms-Lich",
-            "start": 1718,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -65596,32 +65190,6 @@
             ]
           },
           {
-            "id": "principality_paderborn",
-            "canonical_name": "Principality Paderborn",
-            "start": 1803,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "principality_rheina_wolbeck",
-            "canonical_name": "Principality Rheina-Wolbeck",
-            "start": 1803,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "salm_horstmar",
             "canonical_name": "Salm-Horstmar",
             "start": 1803,
@@ -66152,6 +65720,13 @@
                 "canonical_name": "German Empire",
                 "start": 1871,
                 "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "weimar_republic",
+                "canonical_name": "Weimar Republic",
+                "start": 1918,
+                "end": 1933,
                 "kind": "polity"
               },
               {
@@ -72354,32 +71929,6 @@
             "present_countries": []
           },
           {
-            "id": "principality_paderborn",
-            "canonical_name": "Principality Paderborn",
-            "start": 1803,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "principality_rheina_wolbeck",
-            "canonical_name": "Principality Rheina-Wolbeck",
-            "start": 1803,
-            "end": 1806,
-            "curated": false,
-            "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "salm_horstmar",
             "canonical_name": "Salm-Horstmar",
             "start": 1803,
@@ -73381,6 +72930,13 @@
                 "canonical_name": "German Empire",
                 "start": 1871,
                 "end": 1918,
+                "kind": "polity"
+              },
+              {
+                "id": "weimar_republic",
+                "canonical_name": "Weimar Republic",
+                "start": 1918,
+                "end": 1933,
                 "kind": "polity"
               },
               {
@@ -81176,19 +80732,6 @@
             ]
           },
           {
-            "id": "weimar_republic",
-            "canonical_name": "Weimar Republic",
-            "start": 1918,
-            "end": 1933,
-            "curated": true,
-            "linked_era_id": "europe_world_wars_reordering_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
             "id": "first_republic_of_austria",
             "canonical_name": "First Republic of Austria",
             "start": 1919,
@@ -83761,19 +83304,6 @@
             "end": 1919,
             "curated": false,
             "linked_era_id": null,
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
-            ]
-          },
-          {
-            "id": "weimar_republic",
-            "canonical_name": "Weimar Republic",
-            "start": 1918,
-            "end": 1933,
-            "curated": true,
-            "linked_era_id": "europe_world_wars_reordering_era",
             "primary_continent": "europe",
             "primary_historical_region": "western_europe",
             "present_countries": [
@@ -91340,6 +90870,13 @@
                 "kind": "polity"
               },
               {
+                "id": "west_germany",
+                "canonical_name": "West Germany",
+                "start": 1949,
+                "end": 1990,
+                "kind": "polity"
+              },
+              {
                 "id": "baden_wurttemberg",
                 "canonical_name": "Baden-Württemberg",
                 "start": 1952,
@@ -91380,19 +90917,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "NL"
-            ]
-          },
-          {
-            "id": "west_germany",
-            "canonical_name": "West Germany",
-            "start": 1949,
-            "end": 1990,
-            "curated": true,
-            "linked_era_id": "europe_contemporary_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
@@ -96581,6 +96105,13 @@
                 "kind": "polity"
               },
               {
+                "id": "west_germany",
+                "canonical_name": "West Germany",
+                "start": 1949,
+                "end": 1990,
+                "kind": "polity"
+              },
+              {
                 "id": "baden_wurttemberg",
                 "canonical_name": "Baden-Württemberg",
                 "start": 1952,
@@ -96621,19 +96152,6 @@
             "primary_historical_region": "western_europe",
             "present_countries": [
               "NL"
-            ]
-          },
-          {
-            "id": "west_germany",
-            "canonical_name": "West Germany",
-            "start": 1949,
-            "end": 1990,
-            "curated": true,
-            "linked_era_id": "europe_contemporary_world_era",
-            "primary_continent": "europe",
-            "primary_historical_region": "western_europe",
-            "present_countries": [
-              "DE"
             ]
           },
           {
