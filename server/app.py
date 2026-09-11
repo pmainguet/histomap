@@ -1719,6 +1719,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
     for page_route, page_file in (
         ("/reviews", "reviews.html"),
         ("/explore", "explore.html"),
+        ("/population", "population.html"),
         ("/consolidation-review", "consolidation_review.html"),
         ("/events-review", "events_review.html"),
         ("/poster", "poster.html"),

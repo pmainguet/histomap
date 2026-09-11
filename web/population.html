@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Histomap — world population</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/explore" aria-label="Histomap timeline">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M5 6h7v24H5zM15 11h7v19h-7zM25 3h7v27h-7z"/></svg>
+        <span>Histomap</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/explore">Explore</a>
+        <a href="/population" aria-current="page">Population</a>
+        <a href="/reviews">Reviews</a>
+        <a href="/poster">Poster</a>
+        <a href="/docs">API</a>
+      </nav>
+    </header>
+    <section class="review-toolbar review-toolbar-flush">
+      <div>
+        <p class="eyebrow">Population lane</p>
+        <h1>World population, 10,000 BCE&ndash;today</h1>
+        <p class="workspace-purpose-inline">The same per-continent population chart as the Population lane on
+          <a href="/explore">Explore</a>, full-size on its own page. Estimated from HYDE 3.4's gridded population
+          data where available, falling back to hand-curated global milestones otherwise -- hover any band for
+          its numbers, click a point for its full source.</p>
+      </div>
+    </section>
+    <div class="hierarchy-controls" aria-label="Display options">
+      <label for="zoom-start-year">From year</label>
+      <input type="number" id="zoom-start-year" placeholder="e.g. -500">
+      <label for="zoom-end-year">To year</label>
+      <input type="number" id="zoom-end-year" placeholder="e.g. 500">
+      <button type="button" id="zoom-to-years" class="action-button">Zoom</button>
+      <a href="#" id="zoom-reset" hidden>&larr; Full range</a>
+    </div>
+    <div id="population-legend" class="hierarchy-legend" aria-label="Population lane legend">
+      <span>Population</span>
+      <i class="pop-asia"></i> Asia
+      <i class="pop-africa"></i> Africa
+      <i class="pop-europe"></i> Europe
+      <i class="pop-north_america"></i> North America
+      <i class="pop-south_america"></i> South America
+      <i class="pop-oceania"></i> Oceania
+    </div>
+    <div id="population-chart" class="hierarchy-chart-container" aria-label="World population over time">
+      <p class="loading">Loading…</p>
+    </div>
+    <button id="detail-backdrop" class="detail-backdrop" type="button" aria-label="Close entity details" tabindex="-1"></button>
+    <aside id="details" class="details detail-drawer" aria-live="polite" aria-hidden="true"></aside>
+    <script src="/static/common.js"></script>
+    <script src="/static/population_estimates.js"></script>
+    <script src="/static/timeline_scale.js"></script>
+    <script src="/static/explore_timeline.js"></script>
+    <script src="/static/explore_details.js"></script>
+    <script src="/static/population.js"></script>
+  </body>
+</html>

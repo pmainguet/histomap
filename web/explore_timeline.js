@@ -823,6 +823,56 @@ function populationEntryTotal(entry) {
   return entry.segments.reduce((sum, segment) => sum + segment.population, 0);
 }
 
+// Builds the unified {id, year, segments, source, marker, label} shape
+// drawPopulationRow expects, from either the HYDE-derived per-continent
+// breakdown (population_by_continent.json, preferred -- see
+// pipeline/extract_hyde_by_continent.py) or, when that cache hasn't been
+// built on this machine yet (build.py's own copy-through step skips it if
+// missing), population_estimates.js's hand-curated global milestones as a
+// graceful single-segment fallback. `segments` is a list of {continent,
+// population} -- continent is null in fallback mode (one segment, the
+// whole world) and a real continent id in HYDE mode (always the same 6
+// continents, one segment each). Shared by /explore's Population lane
+// (explore.js) and the standalone /population page (population.js) --
+// both load population_estimates.js before this file (see explore.html/
+// population.html), so WORLD_POPULATION_ESTIMATES is already defined by
+// the time this runs.
+function buildPopulationSeries(hydeRows) {
+  const HYDE_SOURCE = {
+    name: "HYDE 3.4 (Klein Goldewijk & Beusen), aggregated by continent",
+    url: "https://www.pbl.nl/en/hyde-history-database-of-the-global-environment",
+  };
+  if (hydeRows && hydeRows.length > 0) {
+    const byYear = new Map();
+    for (const row of hydeRows) {
+      if (!byYear.has(row.year)) byYear.set(row.year, []);
+      byYear.get(row.year).push({ continent: row.continent, population: row.population });
+    }
+    const labelYears = new Set([-10000, -5000, -2000, -1000, 1, 1000, 1500, 1800, 1900, 1950]);
+    return [...byYear.keys()].sort((a, b) => a - b).map((year) => ({
+      id: `hyde_pop_${year}`,
+      year,
+      segments: byYear.get(year),
+      source: HYDE_SOURCE,
+      // HYDE samples annually from 1950 on -- thin markers to every 10th
+      // year there so the dense modern era doesn't turn into an unreadable
+      // cluster of circles; every year still contributes to the area shape
+      // itself (see drawPopulationRow), only the individual marker/label is
+      // thinned.
+      marker: year < 1950 || year % 10 === 0,
+      label: year < 1950 ? labelYears.has(year) : year % 25 === 0,
+    }));
+  }
+  return WORLD_POPULATION_ESTIMATES.map((point) => ({
+    id: point.id,
+    year: point.year,
+    segments: [{ continent: null, population: point.population }],
+    source: point.source,
+    marker: true,
+    label: point.label,
+  }));
+}
+
 // `entries` is already filtered to the visible domain (see
 // renderHierarchyTimeline) and sorted by year. Requires at least 2 entries
 // to draw a shape; a single surviving entry (an extreme zoom) draws just
@@ -943,6 +993,37 @@ function drawPopulationRow(svg, scale, entries, y, laneHeight, width, onZoom) {
       svg.append(label);
     }
   }
+}
+
+// Standalone chart for /population (population.js): the same
+// drawPopulationRow the /explore Population lane uses, but as the only
+// row on the page -- a much taller lane, and its own year gridlines/axis
+// labels rather than borrowing them from a surrounding hierarchy chart.
+// Mirrors renderHierarchyTimeline's own tail (grid-line/axis-label, drawn
+// last so they sit on top of the fill) closely enough to stay easy to
+// compare. `domain` is {start, end} -- segment_break is always pinned to
+// `start` so the scale is plain linear (population data has no multi-
+// -million-year deep-time prefix to compress, unlike the full timeline).
+function renderPopulationChart(container, series, domain, onZoom) {
+  const width = Math.max(900, Math.min(4800, window.innerWidth - 80));
+  const laneHeight = 460;
+  const topMargin = 28;
+  const height = topMargin + laneHeight;
+  const scale = createTimeScale(domain.start, domain.end, domain.start, width - LEFT_MARGIN, 0.1, LEFT_MARGIN);
+  const svg = svgEl("svg", { viewBox: `0 0 ${width} ${height}`, width, height, class: "hierarchy-chart" });
+
+  drawPopulationRow(svg, scale, series, topMargin, laneHeight, width, onZoom);
+
+  for (const tickYear of scale.tickYears()) {
+    const tickX = scale.x(tickYear);
+    svg.append(svgEl("line", { x1: tickX, x2: tickX, y1: topMargin, y2: height, class: "grid-line" }));
+    const label = svgEl("text", { x: tickX + 2, y: topMargin - 8, class: "axis-label" });
+    label.textContent = formatYear(tickYear);
+    svg.append(label);
+  }
+
+  container.replaceChildren(svg);
+  return scale;
 }
 
 function drawEventsRow(svg, scale, lanes, y, laneHeight, onZoom) {

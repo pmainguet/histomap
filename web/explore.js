@@ -139,51 +139,9 @@ function wireCreateEntityDialog(triggerButton, geographyOptions, { onCreated }) 
 // instead of only the immediate parent, which would leave a deeply nested
 // target's own container collapsed (and so not even in the DOM to scroll
 // or highlight). detail_of can point at either a polity or a period.
-// Builds the unified {id, year, segments, source, marker, label} shape
-// drawPopulationRow (explore_timeline.js) expects, from either the
-// HYDE-derived per-continent breakdown (population_by_continent.json,
-// preferred -- see pipeline/extract_hyde_by_continent.py) or, when that
-// cache hasn't been built on this machine yet (build.py's own copy-through
-// step skips it if missing), population_estimates.js's hand-curated global
-// milestones as a graceful single-segment fallback. `segments` is a list of
-// {continent, population} -- continent is null in fallback mode (one
-// segment, the whole world) and a real continent id in HYDE mode (always
-// the same 6 continents, one segment each).
-function buildPopulationSeries(hydeRows) {
-  const HYDE_SOURCE = {
-    name: "HYDE 3.4 (Klein Goldewijk & Beusen), aggregated by continent",
-    url: "https://www.pbl.nl/en/hyde-history-database-of-the-global-environment",
-  };
-  if (hydeRows && hydeRows.length > 0) {
-    const byYear = new Map();
-    for (const row of hydeRows) {
-      if (!byYear.has(row.year)) byYear.set(row.year, []);
-      byYear.get(row.year).push({ continent: row.continent, population: row.population });
-    }
-    const labelYears = new Set([-10000, -5000, -2000, -1000, 1, 1000, 1500, 1800, 1900, 1950]);
-    return [...byYear.keys()].sort((a, b) => a - b).map((year) => ({
-      id: `hyde_pop_${year}`,
-      year,
-      segments: byYear.get(year),
-      source: HYDE_SOURCE,
-      // HYDE samples annually from 1950 on -- thin markers to every 10th
-      // year there so the dense modern era doesn't turn into an unreadable
-      // cluster of circles; every year still contributes to the area shape
-      // itself (see drawPopulationRow), only the individual marker/label is
-      // thinned.
-      marker: year < 1950 || year % 10 === 0,
-      label: year < 1950 ? labelYears.has(year) : year % 25 === 0,
-    }));
-  }
-  return WORLD_POPULATION_ESTIMATES.map((point) => ({
-    id: point.id,
-    year: point.year,
-    segments: [{ continent: null, population: point.population }],
-    source: point.source,
-    marker: true,
-    label: point.label,
-  }));
-}
+// buildPopulationSeries itself now lives in explore_timeline.js (shared
+// with the standalone /population page -- see population.js), same
+// classic-script global-scope sharing as everything else here.
 
 function detailOfChain(id, detailCtx) {
   const chain = [id];
