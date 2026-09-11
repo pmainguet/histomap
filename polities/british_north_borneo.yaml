@@ -12,10 +12,10 @@ start: 1882
 end: 1963
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1900: 1.84
   1950: 2.72
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -25,7 +25,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 52.4
+prominence_score: 52.17
 eligibility: accepted
 geography:
   continents:
@@ -52,8 +52,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 4.78
-  population_scale: 12.83
-  total: 52.4
+  population_scale: 12.61
+  total: 52.17
 government_form: protectorate
 deprecated:
   visibility_tier: detailed

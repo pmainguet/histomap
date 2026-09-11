@@ -12,9 +12,9 @@ start: 1965
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1965: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 50.42
+prominence_score: 34.48
 eligibility: accepted
 geography:
   continents:
@@ -50,8 +50,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 4.48
-  population_scale: 15.94
-  total: 50.42
+  population_scale: 0.0
+  total: 34.48
 government_form: city-state
 deprecated:
   visibility_tier: detailed

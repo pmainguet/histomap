@@ -11,9 +11,9 @@ start: 1923
 end: 1946
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1923: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 42.68
+prominence_score: 42.54
 eligibility: accepted
 geography:
   continents:
@@ -54,8 +54,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.45
-  population_scale: 14.72
-  total: 42.68
+  population_scale: 14.59
+  total: 42.54
 government_form: mandate
 timeline_role: entity
 manual_overrides:

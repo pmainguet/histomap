@@ -10,7 +10,7 @@ start: 1189
 end: 1866
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1200: 7.43
   1300: 7.98
   1400: 7.26
@@ -20,7 +20,7 @@ weight_by_era:
   1750: 7.94
   1800: 8.1
   1850: 8.65
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -30,7 +30,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 38.92
+prominence_score: 38.88
 eligibility: accepted
 geography:
   continents:
@@ -56,8 +56,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 7.08
-  population_scale: 15.32
-  total: 38.92
+  population_scale: 15.29
+  total: 38.88
 government_form: free imperial city
 deprecated:
   visibility_tier: detailed

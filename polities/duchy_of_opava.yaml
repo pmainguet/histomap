@@ -10,7 +10,7 @@ start: 1269
 end: 1918
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1300: 8.84
   1400: 8.44
   1500: 8.51
@@ -20,7 +20,7 @@ weight_by_era:
   1800: 8.59
   1850: 9.4
   1900: 9.01
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -30,7 +30,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 53.17
+prominence_score: 53.13
 eligibility: accepted
 geography:
   continents:
@@ -54,8 +54,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 7.03
-  population_scale: 16.08
-  total: 53.17
+  population_scale: 16.04
+  total: 53.13
 government_form: null
 deprecated:
   visibility_tier: detailed

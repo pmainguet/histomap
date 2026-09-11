@@ -10,9 +10,9 @@ start: 1898
 end: 1913
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1900: 4.04
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 52.4
+prominence_score: 52.37
 eligibility: accepted
 geography:
   continents:
@@ -47,8 +47,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 3.01
-  population_scale: 13.36
-  total: 52.4
+  population_scale: 13.33
+  total: 52.37
 manual_overrides:
 - geography
 linked_era_id: europe_industrial_imperial_world_era

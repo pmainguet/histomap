@@ -2195,7 +2195,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
         """General-purpose polity editor: unlike the single-field endpoints
         above (entity-type, geography), this can edit anything in the YAML
         file, including fields with no dedicated UI/endpoint (timeline_role,
-        dates, weight_by_era, etc.)."""
+        dates, significance_by_era, etc.)."""
         merged, changed = save_merged_fields(
             polities_dir / f"{polity_id}.yaml",
             polity_id,
@@ -2247,8 +2247,8 @@ def create_app(root: Path = ROOT) -> FastAPI:
                 "end": period["end"],
                 "start_confidence": period.get("start_confidence", "low"),
                 "end_confidence": period.get("end_confidence", "low"),
-                "weight_by_era": {},
-                "weight_imputed": True,
+                "significance_by_era": {},
+                "significance_imputed": True,
                 "text": {"long_en": ""},
                 "notes": period.get("notes", "Promoted from a Histomap period."),
                 "sources": ["wikidata"] if qid else ["histomap_editorial"],

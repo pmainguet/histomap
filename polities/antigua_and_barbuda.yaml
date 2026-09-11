@@ -11,9 +11,9 @@ start: 1981
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1981: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 47.1
+prominence_score: 34.16
 eligibility: accepted
 geography:
   continents:
@@ -48,8 +48,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 4.16
-  population_scale: 12.94
-  total: 47.1
+  population_scale: 0.0
+  total: 34.16
 manual_overrides:
 - geography
 linked_era_id: north_america_contemporary_world_era

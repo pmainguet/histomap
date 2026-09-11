@@ -11,9 +11,9 @@ start: -1600
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   -1600: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -21,9 +21,8 @@ text:
   long_en: ''
 notes: Automatically generated from Wikidata; requires review.
 sources:
-- hyde
 - wikidata
-prominence_score: 50.0
+prominence_score: 38.0
 eligibility: accepted
 geography:
   continents:
@@ -44,11 +43,11 @@ entity_type_source_qids:
 relationships: []
 prominence_components:
   wikidata_reach: 30
-  authority_coverage: 4
-  historical_evidence: 8
+  authority_coverage: 0
+  historical_evidence: 0
   longevity: 8
   population_scale: 0.0
-  total: 50.0
+  total: 38.0
 manual_overrides:
 - consolidation
 linked_era_id: classical_antiquity_era

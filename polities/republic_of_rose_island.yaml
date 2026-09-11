@@ -12,9 +12,9 @@ start: 1968
 end: 1969
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1968: 3
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 40.68
+prominence_score: 40.67
 eligibility: accepted
 geography:
   continents:
@@ -51,7 +51,7 @@ prominence_components:
   historical_evidence: 0
   longevity: 0.75
   population_scale: 16.06
-  total: 40.68
+  total: 40.67
 government_form: null
 deprecated:
   visibility_tier: detailed

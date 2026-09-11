@@ -13,9 +13,9 @@ start: 1959
 end: 1960
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1959: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 38.63
+prominence_score: 38.62
 eligibility: accepted
 geography:
   continents:
@@ -60,8 +60,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 0.75
-  population_scale: 13.38
-  total: 38.63
+  population_scale: 13.37
+  total: 38.62
 government_form: null
 deprecated:
   visibility_tier: detailed

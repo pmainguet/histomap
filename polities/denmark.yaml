@@ -11,9 +11,9 @@ start: 800
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   800: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 53.07
+prominence_score: 37.72
 eligibility: accepted
 geography:
   continents:
@@ -54,8 +54,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 7.72
-  population_scale: 15.35
-  total: 53.07
+  population_scale: 0.0
+  total: 37.72
 manual_overrides:
 - consolidation
 linked_era_id: medieval_europe_era

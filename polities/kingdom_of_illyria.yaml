@@ -10,9 +10,9 @@ start: 1816
 end: 1849
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1816: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -21,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 41.45
+prominence_score: 41.4
 eligibility: accepted
 geography:
   continents:
@@ -45,8 +45,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.83
-  population_scale: 14.65
-  total: 41.45
+  population_scale: 14.6
+  total: 41.4
 government_form: null
 deprecated:
   visibility_tier: detailed

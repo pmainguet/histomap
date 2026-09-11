@@ -12,12 +12,12 @@ start: 1821
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1850: 7.18
   1900: 6.95
   1950: 7.66
   2000: 5.41
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -27,7 +27,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - maddison
 - wikidata
-prominence_score: 63.27
+prominence_score: 63.25
 eligibility: accepted
 geography:
   continents:
@@ -52,8 +52,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 5.78
-  population_scale: 15.49
-  total: 63.27
+  population_scale: 15.47
+  total: 63.25
 linked_era_id: europe_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world

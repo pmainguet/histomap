@@ -1,4 +1,4 @@
-"""Compute reproducible polity band weights from population, area, and complexity."""
+"""Compute reproducible polity significance scores from population, area, and complexity."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ import yaml
 
 from pipeline.backfill_entity_types import (
     CONTEXT_TYPES,
-    reset_context_type_weight,
+    reset_context_type_significance,
     sovereign_state_qids,
 )
 
@@ -61,6 +61,56 @@ def consolidate_population(
     return pd.DataFrame(rows)
 
 
+def load_consolidated_population(
+    hyde_path: Path = HYDE_PATH,
+    maddison_path: Path = MADDISON_PATH,
+    polities_dir: Path = ROOT / "polities",
+    interval: int | None = None,
+    type_cache_path: Path | None = None,
+) -> pd.DataFrame:
+    """The one population-merging pathway both this module's own
+    significance_by_era (below, via normalize_significance) and
+    pipeline/compute_prominence.py's population_scale component are built
+    from -- previously each read the raw HYDE/Maddison parquets
+    independently, with compute_prominence.py's own version missing the
+    unmapped_modern exclusion below (a real, if narrow, correctness gap:
+    without it, a handful of still-open modern sovereign states Maddison
+    failed to map would fall through to HYDE's badly-undercounting
+    centroid-radius number instead of getting no population signal at
+    all). Columns: polity_id, year (bucket start), population (this
+    bucket's Maddison-preferred median -- see consolidate_population),
+    population_source ("maddison" or "hyde"). Returns an empty frame if
+    hyde_path/maddison_path don't exist yet on this machine. Every path
+    parameter defaults to this module's own real-repo constants but is
+    independently overridable, so a test can isolate all of them at once
+    (a fixture polities_dir with its own sources/wikidata_direct_types.json
+    sitting next to it would NOT be picked up automatically -- pass
+    type_cache_path explicitly too)."""
+    if not hyde_path.exists() or not maddison_path.exists():
+        return pd.DataFrame(columns=["polity_id", "year", "population", "population_source"])
+    if interval is None:
+        config = tomllib.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+        interval = int(config["normalization"]["interval_years"])
+    documents = [yaml.safe_load(path.read_text(encoding="utf-8")) for path in polities_dir.glob("*.yaml")]
+    maddison = pd.read_parquet(maddison_path)
+    if type_cache_path is None:
+        type_cache_path = ROOT / "sources" / "wikidata_direct_types.json"
+    direct_types = json.loads(type_cache_path.read_text(encoding="utf-8")) if type_cache_path.exists() else {}
+    sovereign_qids = sovereign_state_qids(direct_types)
+    maddison_ids = set(maddison["polity_id"])
+    # Still-open ("end" is null) modern sovereign states that Maddison
+    # failed to map (id mismatch) -- excluded from HYDE too, rather than
+    # letting its centroid-radius undercount silently stand in for them.
+    unmapped_modern = {
+        document["id"]
+        for document in documents
+        if document.get("end") is None
+        and (document.get("external_ids") or {}).get("wikidata") in sovereign_qids
+        and document["id"] not in maddison_ids
+    }
+    return consolidate_population(pd.read_parquet(hyde_path), maddison, interval, unmapped_modern)
+
+
 def interpolate_feature(rows: pd.DataFrame, year: int, column: str) -> float:
     available = rows.dropna(subset=[column]).sort_values("year")
     if available.empty:
@@ -68,7 +118,7 @@ def interpolate_feature(rows: pd.DataFrame, year: int, column: str) -> float:
     return float(np.interp(year, available["year"], available[column]))
 
 
-def normalize_weights(frame: pd.DataFrame, config: dict) -> pd.DataFrame:
+def normalize_significance(frame: pd.DataFrame, config: dict) -> pd.DataFrame:
     result = frame.copy()
     coefficients = config["coefficients"]
     settings = config["normalization"]
@@ -79,23 +129,23 @@ def normalize_weights(frame: pd.DataFrame, config: dict) -> pd.DataFrame:
     for column in ("area_km2_log10", "social_complexity_index"):
         era_median = result.groupby("century")[column].transform("median")
         result[column] = result[column].fillna(era_median).fillna(result[column].median()).fillna(0)
-    result["raw_weight"] = (
+    result["raw_significance"] = (
         coefficients["population"] * result["population_log10"]
         + coefficients["area"] * result["area_km2_log10"]
         + coefficients["complexity"]
         * (result["social_complexity_index"] / settings["complexity_scale"] * 10)
     )
-    upper = result.groupby("century")["raw_weight"].transform(
+    upper = result.groupby("century")["raw_significance"].transform(
         lambda values: float(values.quantile(settings["percentile"]))
     )
-    lower = result.groupby("century")["raw_weight"].transform(
+    lower = result.groupby("century")["raw_significance"].transform(
         lambda values: float(values.quantile(settings["lower_percentile"]))
     )
     spread = (upper - lower).clip(lower=0.000001)
-    result["weight"] = (1 + 9 * (result["raw_weight"] - lower) / spread).clip(
+    result["significance"] = (1 + 9 * (result["raw_significance"] - lower) / spread).clip(
         settings["minimum_weight"], settings["maximum_weight"]
     )
-    result["weight_imputed"] = (
+    result["significance_imputed"] = (
         (result["population_source"] == "hyde")
         | result["area_missing"]
         | result["complexity_missing"]
@@ -114,22 +164,7 @@ def run() -> dict[str, int]:
         seshat_ids_by_polity[document["id"]] = (document.get("external_ids") or {}).get(
             "seshat", []
         )
-    maddison = pd.read_parquet(MADDISON_PATH)
-    direct_types = json.loads(
-        (ROOT / "sources" / "wikidata_direct_types.json").read_text(encoding="utf-8")
-    )
-    sovereign_qids = sovereign_state_qids(direct_types)
-    maddison_ids = set(maddison["polity_id"])
-    unmapped_modern = {
-        document["id"]
-        for _, document in documents
-        if document.get("end") is None
-        and (document.get("external_ids") or {}).get("wikidata") in sovereign_qids
-        and document["id"] not in maddison_ids
-    }
-    population = consolidate_population(
-        pd.read_parquet(HYDE_PATH), maddison, interval, unmapped_modern
-    )
+    population = load_consolidated_population(HYDE_PATH, MADDISON_PATH, ROOT / "polities", interval)
     seshat = pd.read_parquet(SESHAT_PATH)
     seshat_by_id = {key: group for key, group in seshat.groupby("seshat_id")}
 
@@ -154,14 +189,14 @@ def run() -> dict[str, int]:
         )
     population["area_km2_log10"] = areas
     population["social_complexity_index"] = complexities
-    weighted = normalize_weights(population, config)
+    weighted = normalize_significance(population, config)
     by_polity = {key: group for key, group in weighted.groupby("polity_id")}
 
     updated = 0
     measured = 0
     for path, document in documents:
         if document.get("entity_type", "polity") in CONTEXT_TYPES:
-            reset_context_type_weight(document)
+            reset_context_type_significance(document)
             path.write_text(
                 yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
             )
@@ -170,33 +205,33 @@ def run() -> dict[str, int]:
         if rows is None:
             generated_sources = {"hyde", "maddison"} & set(document.get("sources", []))
             if generated_sources:
-                document["weight_by_era"] = {int(document["start"]): 5}
-                document["weight_imputed"] = True
+                document["significance_by_era"] = {int(document["start"]): 5}
+                document["significance_imputed"] = True
                 document["sources"] = sorted(set(document.get("sources", [])) - generated_sources)
                 path.write_text(
                     yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8"
                 )
             continue
-        document["weight_by_era"] = {
-            int(row.year): round(float(row.weight), 2)
+        document["significance_by_era"] = {
+            int(row.year): round(float(row.significance), 2)
             for row in rows.sort_values("year").itertuples(index=False)
             if document["start"] <= row.year <= (document.get("end") or 2100)
         }
-        if not document["weight_by_era"]:
+        if not document["significance_by_era"]:
             continue
-        document["weight_imputed"] = bool(rows["weight_imputed"].any())
+        document["significance_imputed"] = bool(rows["significance_imputed"].any())
         sources = set(document.get("sources", []))
         sources.update(rows["population_source"].unique())
         document["sources"] = sorted(sources)
         path.write_text(yaml.safe_dump(document, sort_keys=False, allow_unicode=True), encoding="utf-8")
         updated += 1
-        measured += not document["weight_imputed"]
+        measured += not document["significance_imputed"]
 
     lines = [
-        "# Weight computation",
+        "# Significance computation",
         "",
         f"- Updated polities: {updated:,}",
-        f"- Polity-era weights: {len(weighted):,}",
+        f"- Polity-era significance values: {len(weighted):,}",
         f"- Fully measured polities: {measured:,}",
         f"- Imputed polities: {updated - measured:,}",
         f"- Era interval: {interval} years",
@@ -211,6 +246,6 @@ def run() -> dict[str, int]:
 if __name__ == "__main__":
     counts = run()
     print(
-        f"Weights: updated={counts['updated']:,}, eras={counts['eras']:,}, "
+        f"Significance: updated={counts['updated']:,}, eras={counts['eras']:,}, "
         f"fully_measured={counts['measured']:,}"
     )

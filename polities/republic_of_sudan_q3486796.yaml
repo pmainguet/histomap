@@ -11,9 +11,9 @@ start: 1956
 end: 1969
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1956: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 36.04
+prominence_score: 35.83
 eligibility: accepted
 geography:
   continents:
@@ -46,8 +46,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 2.87
-  population_scale: 14.0
-  total: 36.04
+  population_scale: 13.79
+  total: 35.83
 consolidation_status: independent
 government_form: null
 deprecated:

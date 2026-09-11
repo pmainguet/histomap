@@ -10,9 +10,9 @@ start: 1906
 end: 1934
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1906: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -21,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 38.04
+prominence_score: 37.97
 eligibility: accepted
 geography:
   continents:
@@ -46,8 +46,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.66
-  population_scale: 13.69
-  total: 38.04
+  population_scale: 13.62
+  total: 37.97
 government_form: emirate
 deprecated:
   visibility_tier: detailed

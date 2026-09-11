@@ -15,9 +15,9 @@ start: 1983
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1983: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -26,7 +26,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 48.59
+prominence_score: 34.11
 eligibility: accepted
 geography:
   continents:
@@ -54,8 +54,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 4.11
-  population_scale: 14.48
-  total: 48.59
+  population_scale: 0.0
+  total: 34.11
 government_form: puppet state
 consolidation_status: independent
 manual_overrides:

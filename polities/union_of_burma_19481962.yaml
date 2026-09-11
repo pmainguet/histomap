@@ -10,9 +10,9 @@ start: 1948
 end: 1962
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1950: 7.5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 49.11
+prominence_score: 48.98
 eligibility: accepted
 geography:
   continents:
@@ -46,8 +46,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 2.94
-  population_scale: 15.34
-  total: 49.11
+  population_scale: 15.22
+  total: 48.98
 government_form: null
 timeline_role: entity
 manual_overrides:

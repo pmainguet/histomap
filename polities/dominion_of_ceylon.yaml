@@ -12,9 +12,9 @@ start: 1948
 end: 1972
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1950: 7.83
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 53.07
+prominence_score: 52.83
 eligibility: accepted
 geography:
   continents:
@@ -55,8 +55,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 3.49
-  population_scale: 15.63
-  total: 53.07
+  population_scale: 15.4
+  total: 52.83
 manual_overrides:
 - geography
 linked_era_id: asia_contemporary_world_era

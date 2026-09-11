@@ -9,9 +9,9 @@ start: 1985
 end: 2019
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   2000: 4.69
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -21,7 +21,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 40.23
+prominence_score: 39.99
 eligibility: accepted
 geography:
   continents:
@@ -45,8 +45,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 3.86
-  population_scale: 15.34
-  total: 40.23
+  population_scale: 15.1
+  total: 39.99
 consolidation_status: independent
 government_form: null
 deprecated:

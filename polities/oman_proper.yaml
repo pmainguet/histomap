@@ -12,7 +12,7 @@ start: 751
 end: 1970
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   800: 4.03
   900: 3.12
   1000: 2.53
@@ -28,7 +28,7 @@ weight_by_era:
   1850: 2.93
   1900: 2.22
   1950: 2.61
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -38,7 +38,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 52.69
+prominence_score: 52.4
 eligibility: accepted
 geography:
   continents:
@@ -68,8 +68,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 7.72
-  population_scale: 12.84
-  total: 52.69
+  population_scale: 12.55
+  total: 52.4
 linked_era_id: islamic_caliphates_era
 government_form: null
 linked_chapter_id: macro_postclassical_worlds

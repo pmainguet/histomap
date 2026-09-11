@@ -10,9 +10,9 @@ start: 1000
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1000: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -21,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 53.45
+prominence_score: 37.53
 eligibility: accepted
 geography:
   continents:
@@ -46,8 +46,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 7.53
-  population_scale: 15.92
-  total: 53.45
+  population_scale: 0.0
+  total: 37.53
 consolidation_status: independent
 manual_overrides:
 - consolidation

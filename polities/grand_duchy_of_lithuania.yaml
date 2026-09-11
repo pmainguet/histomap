@@ -11,14 +11,14 @@ start: 1236
 end: 1795
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1300: 2.43
   1400: 3.14
   1500: 3.62
   1600: 3.64
   1700: 3.92
   1750: 4.87
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 60.8
+prominence_score: 60.6
 eligibility: accepted
 geography:
   continents:
@@ -58,8 +58,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.87
-  population_scale: 13.46
-  total: 60.8
+  population_scale: 13.27
+  total: 60.6
 linked_era_id: europe_early_modern_connections_era
 government_form: null
 linked_chapter_id: macro_early_modern_connections

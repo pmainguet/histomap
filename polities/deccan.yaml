@@ -7,8 +7,9 @@ start: -2700
 end: -301
 start_confidence: low
 end_confidence: low
-weight_by_era: {}
-weight_imputed: true
+significance_by_era:
+  -2700: 3
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''

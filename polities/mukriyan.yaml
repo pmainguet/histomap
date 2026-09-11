@@ -10,7 +10,7 @@ start: 1500
 end: 1900
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1500: 5.15
   1600: 5.34
   1700: 4.59
@@ -18,7 +18,7 @@ weight_by_era:
   1800: 5.05
   1850: 5.5
   1900: 5.09
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''

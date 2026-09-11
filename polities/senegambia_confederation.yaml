@@ -10,9 +10,9 @@ start: 1982
 end: 1989
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1982: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -21,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 41.0
+prominence_score: 40.89
 eligibility: accepted
 geography:
   continents:
@@ -45,8 +45,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 2.26
-  population_scale: 15.05
-  total: 41.0
+  population_scale: 14.94
+  total: 40.89
 government_form: null
 deprecated:
   visibility_tier: detailed

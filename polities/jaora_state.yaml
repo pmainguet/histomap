@@ -11,10 +11,10 @@ start: 1817
 end: 1948
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1850: 9.4
   1900: 8.56
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 49.42
+prominence_score: 49.28
 eligibility: accepted
 geography:
   continents:
@@ -55,8 +55,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 5.3
-  population_scale: 15.93
-  total: 49.42
+  population_scale: 15.79
+  total: 49.28
 government_form: princely state
 deprecated:
   visibility_tier: detailed

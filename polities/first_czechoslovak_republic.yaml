@@ -12,9 +12,9 @@ start: 1918
 end: 1938
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1918: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 43.67
+prominence_score: 43.64
 eligibility: accepted
 geography:
   continents:
@@ -53,8 +53,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.31
-  population_scale: 16.02
-  total: 43.67
+  population_scale: 15.98
+  total: 43.64
 consolidation_status: independent
 manual_overrides:
 - consolidation

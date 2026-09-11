@@ -10,9 +10,9 @@ start: 1830
 end: 1881
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1850: 2.92
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 41.17
+prominence_score: 41.11
 eligibility: accepted
 geography:
   continents:
@@ -48,8 +48,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 4.29
-  population_scale: 12.2
-  total: 41.17
+  population_scale: 12.15
+  total: 41.11
 government_form: null
 detail_of: wahidi
 manual_overrides:

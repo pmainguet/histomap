@@ -12,8 +12,9 @@ start: 1871
 end: 1949
 start_confidence: low
 end_confidence: low
-weight_by_era: {}
-weight_imputed: true
+significance_by_era:
+  1900: 9.02
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -21,8 +22,9 @@ text:
   long_en: ''
 notes: Editorially identified as a phase or aspect of German Empire.
 sources:
+- hyde
 - wikidata
-prominence_score: 46.63
+prominence_score: 58.53
 eligibility: accepted
 geography:
   continents:
@@ -49,11 +51,11 @@ manual_overrides:
 linked_era_id: europe_industrial_imperial_world_era
 prominence_components:
   wikidata_reach: 25.74
-  authority_coverage: 0
-  historical_evidence: 0
+  authority_coverage: 4
+  historical_evidence: 8
   longevity: 4.74
-  population_scale: 16.15
-  total: 46.63
+  population_scale: 16.04
+  total: 58.53
 government_form: null
 linked_chapter_id: macro_industrial_imperial_world
 consolidation_status: independent

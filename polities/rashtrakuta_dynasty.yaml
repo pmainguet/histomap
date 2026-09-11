@@ -14,9 +14,9 @@ start: 753
 end: 982
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   753: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''

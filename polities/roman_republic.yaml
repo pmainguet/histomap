@@ -18,7 +18,7 @@ start: -509
 end: -27
 start_confidence: medium
 end_confidence: high
-weight_by_era:
+significance_by_era:
   -500: 2
   -400: 3
   -300: 5
@@ -28,7 +28,7 @@ weight_by_era:
   -100: 8
   -50: 9
   -30: 9
-weight_imputed: false
+significance_imputed: false
 text:
   long_en: Roman state from the overthrow of the kings to the founding of the Empire
     under Augustus.

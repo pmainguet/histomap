@@ -11,7 +11,7 @@ start: 1405
 end: 1915
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1500: 1.0
   1600: 1.0
   1700: 1.0
@@ -19,7 +19,7 @@ weight_by_era:
   1800: 1.0
   1850: 1.54
   1900: 1.31
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -29,7 +29,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 54.72
+prominence_score: 54.64
 eligibility: accepted
 geography:
   continents:
@@ -55,8 +55,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.77
-  population_scale: 11.92
-  total: 54.72
+  population_scale: 11.84
+  total: 54.64
 manual_overrides:
 - geography
 linked_era_id: asia_early_modern_connections_era

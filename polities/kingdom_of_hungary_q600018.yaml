@@ -12,9 +12,9 @@ start: 1920
 end: 1946
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1920: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 44.73
+prominence_score: 44.69
 eligibility: accepted
 geography:
   continents:
@@ -53,8 +53,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.58
-  population_scale: 15.8
-  total: 44.73
+  population_scale: 15.76
+  total: 44.69
 timeline_role: retired
 consolidation_status: same_entity
 consolidated_into: kingdom_of_hungary_q171150

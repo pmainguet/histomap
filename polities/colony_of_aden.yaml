@@ -11,9 +11,9 @@ start: 1937
 end: 1963
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1950: 5.59
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 52.64
+prominence_score: 52.53
 eligibility: accepted
 geography:
   continents:
@@ -47,8 +47,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 3.58
-  population_scale: 14.28
-  total: 52.64
+  population_scale: 14.17
+  total: 52.53
 government_form: colony
 deprecated:
   visibility_tier: detailed

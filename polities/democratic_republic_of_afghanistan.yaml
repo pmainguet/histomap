@@ -12,9 +12,9 @@ start: 1978
 end: 1992
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1978: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 45.08
+prominence_score: 44.94
 eligibility: accepted
 geography:
   continents:
@@ -53,8 +53,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 2.94
-  population_scale: 15.69
-  total: 45.08
+  population_scale: 15.55
+  total: 44.94
 government_form: null
 timeline_role: entity
 manual_overrides:

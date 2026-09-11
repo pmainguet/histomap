@@ -11,9 +11,9 @@ start: 1975
 end: 1990
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1975: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 38.62
+prominence_score: 38.48
 eligibility: accepted
 geography:
   continents:
@@ -53,8 +53,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.01
-  population_scale: 13.03
-  total: 38.62
+  population_scale: 12.89
+  total: 38.48
 government_form: null
 deprecated:
   visibility_tier: detailed

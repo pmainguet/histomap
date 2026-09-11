@@ -10,7 +10,7 @@ start: 1534
 end: 1980
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1600: 8.0
   1700: 7.45
   1750: 7.72
@@ -18,7 +18,7 @@ weight_by_era:
   1850: 8.3
   1900: 7.48
   1950: 7.68
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 62.62
+prominence_score: 62.56
 eligibility: accepted
 geography:
   continents:
@@ -53,8 +53,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.63
-  population_scale: 15.37
-  total: 62.62
+  population_scale: 15.31
+  total: 62.56
 manual_overrides:
 - geography
 linked_era_id: europe_early_modern_connections_era

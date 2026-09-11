@@ -15,11 +15,11 @@ start: 1789
 end: 1925
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1800: 6.17
   1850: 6.49
   1900: 1.83
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -30,7 +30,7 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 67.49
+prominence_score: 67.42
 eligibility: accepted
 geography:
   continents:
@@ -60,8 +60,8 @@ prominence_components:
   authority_coverage: 16
   historical_evidence: 8
   longevity: 5.34
-  population_scale: 14.63
-  total: 67.49
+  population_scale: 14.56
+  total: 67.42
 linked_era_id: asia_industrial_imperial_world_era
 government_form: null
 linked_chapter_id: macro_industrial_imperial_world

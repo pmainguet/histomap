@@ -50,8 +50,8 @@ manual_overrides:
 - notes
 linked_era_id: null
 linked_chapter_id: null
-weight_by_era: {}
-weight_imputed: false
+significance_by_era: {}
+significance_imputed: false
 icon: null
 text:
   short_child_en: ''

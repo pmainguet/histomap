@@ -12,10 +12,10 @@ start: 1884
 end: 1976
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1900: 1.0
   1950: 1.0
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -25,7 +25,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 52.57
+prominence_score: 52.03
 eligibility: accepted
 geography:
   continents:
@@ -56,8 +56,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 4.92
-  population_scale: 11.0
-  total: 52.57
+  population_scale: 10.46
+  total: 52.03
 linked_era_id: africa_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_world_wars_reordering

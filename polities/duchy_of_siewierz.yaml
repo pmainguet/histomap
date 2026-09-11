@@ -10,13 +10,13 @@ start: 1312
 end: 1795
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1400: 8.01
   1500: 8.04
   1600: 8.48
   1700: 7.74
   1750: 8.15
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 50.88
+prominence_score: 50.8
 eligibility: accepted
 geography:
   continents:
@@ -51,8 +51,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.71
-  population_scale: 14.98
-  total: 50.88
+  population_scale: 14.9
+  total: 50.8
 government_form: duchy
 deprecated:
   visibility_tier: detailed

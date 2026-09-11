@@ -12,14 +12,14 @@ start: 1690
 end: 1955
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1700: 7.74
   1750: 7.89
   1800: 7.84
   1850: 8.0
   1900: 7.16
   1950: 8.0
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -29,7 +29,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 54.29
+prominence_score: 54.25
 eligibility: accepted
 geography:
   continents:
@@ -60,8 +60,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.06
-  population_scale: 15.53
-  total: 54.29
+  population_scale: 15.49
+  total: 54.25
 linked_era_id: asia_industrial_imperial_world_era
 government_form: princely state
 linked_chapter_id: macro_industrial_imperial_world

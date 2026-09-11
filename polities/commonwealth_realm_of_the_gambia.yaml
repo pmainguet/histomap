@@ -10,8 +10,8 @@ start: 1965
 end: 1970
 start_confidence: low
 end_confidence: low
-weight_by_era: {}
-weight_imputed: true
+significance_by_era: {}
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -20,7 +20,7 @@ text:
 notes: Editorially identified as a phase or aspect of The Gambia.
 sources:
 - wikidata
-prominence_score: 33.89
+prominence_score: 33.82
 eligibility: accepted
 geography:
   continents:
@@ -50,8 +50,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 1.95
-  population_scale: 14.75
-  total: 33.89
+  population_scale: 14.69
+  total: 33.82
 government_form: null
 linked_chapter_id: macro_contemporary_world
 detail_of: the_gambia

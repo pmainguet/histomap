@@ -11,9 +11,9 @@ start: 1806
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1806: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 52.56
+prominence_score: 35.86
 eligibility: accepted
 geography:
   continents:
@@ -48,8 +48,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 5.86
-  population_scale: 16.7
-  total: 52.56
+  population_scale: 0.0
+  total: 35.86
 government_form: null
 deprecated:
   visibility_tier: detailed

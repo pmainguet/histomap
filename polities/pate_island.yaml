@@ -11,7 +11,7 @@ start: 1300
 end: 1895
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1300: 1.0
   1400: 1.17
   1500: 1.61
@@ -20,7 +20,7 @@ weight_by_era:
   1750: 1.75
   1800: 2.33
   1850: 2.6
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -30,7 +30,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 51.99
+prominence_score: 51.88
 eligibility: accepted
 geography:
   continents:
@@ -54,8 +54,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.94
-  population_scale: 12.09
-  total: 51.99
+  population_scale: 11.97
+  total: 51.88
 linked_era_id: africa_early_modern_connections_era
 government_form: null
 linked_chapter_id: macro_early_modern_connections

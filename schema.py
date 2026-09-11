@@ -236,8 +236,15 @@ class Polity(BaseModel):
     end: int | None = None
     start_confidence: Confidence
     end_confidence: Confidence
-    weight_by_era: dict[int, float] = Field(default_factory=dict)
-    weight_imputed: bool = False
+    # A composite population + area + social-complexity score per era,
+    # normalized to [1, 10] within its own century's cohort -- not a
+    # measure of population alone, see pipeline/compute_weights.py's
+    # normalize_significance(). significance_imputed marks whether the
+    # underlying population came from HYDE's coarser centroid-radius
+    # estimate or area/complexity had to be filled from an era median
+    # (vs. a fully measured value).
+    significance_by_era: dict[int, float] = Field(default_factory=dict)
+    significance_imputed: bool = False
     prominence_score: float = Field(default=0, ge=0, le=100)
     prominence_components: dict[str, float] = Field(default_factory=dict)
     eligibility: Eligibility = Eligibility.review
@@ -278,11 +285,11 @@ class Polity(BaseModel):
             raise ValueError("detail_of cannot reference the entity's own id")
         if self.end is not None and self.end < self.start:
             raise ValueError("end must be >= start (or null for still-extant)")
-        for year, w in self.weight_by_era.items():
+        for year, w in self.significance_by_era.items():
             if not (1 <= w <= 10):
-                raise ValueError(f"weight_by_era value {w} at year {year} must be in [1, 10]")
+                raise ValueError(f"significance_by_era value {w} at year {year} must be in [1, 10]")
             if not (YEAR_MIN <= year <= YEAR_MAX):
-                raise ValueError(f"weight_by_era year {year} out of range")
+                raise ValueError(f"significance_by_era year {year} out of range")
         return self
 
 

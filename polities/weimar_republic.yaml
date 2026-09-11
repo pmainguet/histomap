@@ -14,9 +14,9 @@ start: 1918
 end: 1933
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1918: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -25,7 +25,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 49.11
+prominence_score: 49.07
 eligibility: accepted
 geography:
   continents:
@@ -55,8 +55,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.01
-  population_scale: 16.1
-  total: 49.11
+  population_scale: 16.06
+  total: 49.07
 timeline_role: entity
 manual_overrides:
 - consolidation

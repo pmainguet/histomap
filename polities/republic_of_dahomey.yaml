@@ -12,9 +12,9 @@ start: 1958
 end: 1975
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1958: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 42.47
+prominence_score: 42.27
 eligibility: accepted
 geography:
   continents:
@@ -54,8 +54,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.14
-  population_scale: 15.81
-  total: 42.47
+  population_scale: 15.61
+  total: 42.27
 consolidation_status: independent
 manual_overrides:
 - consolidation

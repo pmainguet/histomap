@@ -12,10 +12,10 @@ start: 1806
 end: 1918
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1850: 9.53
   1900: 9.15
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -25,7 +25,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 59.41
+prominence_score: 59.35
 eligibility: accepted
 geography:
   continents:
@@ -55,8 +55,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 5.13
-  population_scale: 16.17
-  total: 59.41
+  population_scale: 16.11
+  total: 59.35
 consolidation_status: independent
 linked_era_id: europe_industrial_imperial_world_era
 government_form: null

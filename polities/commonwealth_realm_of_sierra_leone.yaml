@@ -12,9 +12,9 @@ start: 1961
 end: 1971
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1961: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 32.37
+prominence_score: 32.28
 eligibility: accepted
 geography:
   continents:
@@ -53,8 +53,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 2.6
-  population_scale: 14.76
-  total: 32.37
+  population_scale: 14.68
+  total: 32.28
 consolidation_status: independent
 manual_overrides:
 - consolidation

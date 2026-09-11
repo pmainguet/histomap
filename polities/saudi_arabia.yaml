@@ -11,14 +11,14 @@ start: 1727
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1750: 1.98
   1800: 6.12
   1850: 6.32
   1900: 5.53
   1950: 7.22
   2000: 7.16
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -29,7 +29,7 @@ sources:
 - hyde
 - maddison
 - wikidata
-prominence_score: 68.78
+prominence_score: 68.57
 eligibility: accepted
 geography:
   continents:
@@ -55,8 +55,8 @@ prominence_components:
   authority_coverage: 8
   historical_evidence: 8
   longevity: 6.19
-  population_scale: 16.58
-  total: 68.78
+  population_scale: 16.38
+  total: 68.57
 linked_era_id: asia_contemporary_world_era
 government_form: kingdom
 linked_chapter_id: macro_contemporary_world

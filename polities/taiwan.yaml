@@ -13,9 +13,9 @@ start: 1912
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1912: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 51.59
+prominence_score: 35.15
 eligibility: accepted
 geography:
   continents:
@@ -48,8 +48,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 5.15
-  population_scale: 16.44
-  total: 51.59
+  population_scale: 0.0
+  total: 35.15
 government_form: null
 deprecated:
   visibility_tier: detailed

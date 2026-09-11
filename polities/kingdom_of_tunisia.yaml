@@ -10,9 +10,9 @@ start: 1956
 end: 1957
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1956: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -45,7 +45,7 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 0.75
-  population_scale: 14.5
+  population_scale: 14.49
   total: 35.08
 government_form: null
 detail_of: tunisia

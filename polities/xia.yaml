@@ -12,9 +12,9 @@ start: 407
 end: 431
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   407: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''

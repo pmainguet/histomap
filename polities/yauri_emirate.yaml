@@ -10,11 +10,11 @@ start: 1799
 end: 1904
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1800: 6.0
   1850: 5.95
   1900: 5.16
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''

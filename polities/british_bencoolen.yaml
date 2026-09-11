@@ -10,9 +10,9 @@ start: 1785
 end: 1824
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1800: 3.54
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 42.08
+prominence_score: 42.04
 eligibility: accepted
 geography:
   continents:
@@ -53,8 +53,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 4.01
-  population_scale: 12.53
-  total: 42.08
+  population_scale: 12.49
+  total: 42.04
 manual_overrides:
 - geography
 linked_era_id: asia_industrial_imperial_world_era

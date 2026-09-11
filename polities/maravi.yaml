@@ -12,14 +12,14 @@ start: 1480
 end: 1870
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1500: 4.25
   1600: 4.21
   1700: 4.5
   1750: 5.62
   1800: 6.28
   1850: 6.58
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -53,7 +53,7 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.48
-  population_scale: 14.16
+  population_scale: 14.15
   total: 52.77
 government_form: null
 deprecated:

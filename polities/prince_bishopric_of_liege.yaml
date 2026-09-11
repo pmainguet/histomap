@@ -14,7 +14,7 @@ start: 985
 end: 1795
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1000: 7.53
   1100: 7.66
   1200: 8.76
@@ -24,7 +24,7 @@ weight_by_era:
   1600: 9.51
   1700: 8.84
   1750: 9.28
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -34,7 +34,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 59.16
+prominence_score: 59.08
 eligibility: accepted
 geography:
   continents:
@@ -71,8 +71,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 7.27
-  population_scale: 15.54
-  total: 59.16
+  population_scale: 15.46
+  total: 59.08
 linked_era_id: medieval_europe_era
 government_form: prince-bishopric
 linked_chapter_id: macro_postclassical_worlds

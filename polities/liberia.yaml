@@ -11,12 +11,12 @@ start: 1822
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1850: 4.58
   1900: 4.19
   1950: 4.63
   2000: 3.58
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -27,7 +27,7 @@ sources:
 - hyde
 - maddison
 - wikidata
-prominence_score: 66.56
+prominence_score: 66.3
 eligibility: accepted
 geography:
   continents:
@@ -52,8 +52,8 @@ prominence_components:
   authority_coverage: 8
   historical_evidence: 8
   longevity: 5.78
-  population_scale: 14.78
-  total: 66.56
+  population_scale: 14.52
+  total: 66.3
 linked_era_id: africa_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world

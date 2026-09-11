@@ -13,12 +13,12 @@ start: 1729
 end: 1949
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1750: 8.58
   1800: 8.47
   1850: 8.86
   1900: 8.03
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 57.63
+prominence_score: 57.4
 eligibility: accepted
 geography:
   continents:
@@ -65,8 +65,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 5.86
-  population_scale: 15.74
-  total: 57.63
+  population_scale: 15.51
+  total: 57.4
 government_form: princely state
 linked_chapter_id: macro_industrial_imperial_world
 deprecated:

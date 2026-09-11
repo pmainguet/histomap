@@ -47,39 +47,55 @@ class ProminenceComponentsTests(unittest.TestCase):
 
 
 class LoadPeakPopulationsTests(unittest.TestCase):
-    def test_maddison_wins_over_hyde_when_both_cover_a_polity(self) -> None:
-        # HYDE's centroid-radius figure badly undercounts territorially
-        # large modern states -- Maddison's real national population is
-        # preferred wherever both cover the same polity_id.
+    """_load_peak_populations delegates to pipeline/compute_weights.py's
+    own load_consolidated_population (see that module's tests for the
+    Maddison-over-HYDE merge behavior itself) and just takes each
+    polity's peak population from the merged result -- these tests cover
+    that peak-taking, not the merge logic, which isn't duplicated here."""
+
+    def _kwargs(self, root: Path) -> dict:
+        polities_dir = root / "polities"
+        polities_dir.mkdir(exist_ok=True)
+        return {
+            "hyde_path": root / "hyde.parquet",
+            "maddison_path": root / "maddison.parquet",
+            "polities_dir": polities_dir,
+            "interval": 50,
+            "type_cache_path": root / "sources" / "wikidata_direct_types.json",  # doesn't exist -- no exclusions
+        }
+
+    def test_takes_each_polity_s_peak_population(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            hyde_path = root / "hyde.parquet"
-            maddison_path = root / "maddison.parquet"
+            kwargs = self._kwargs(root)
             pd.DataFrame(
-                {"polity_id": ["united_states", "united_states"], "population": [1_800_000, 1_900_000]}
-            ).to_parquet(hyde_path)
+                {"polity_id": ["rome", "rome"], "year": [100, 200], "population": [1_000, 1_900]}
+            ).to_parquet(kwargs["hyde_path"])
+            pd.DataFrame({"polity_id": [], "year": [], "population": []}).to_parquet(kwargs["maddison_path"])
+            peaks, source = _load_peak_populations(**kwargs)
+            self.assertEqual(peaks["rome"], 1_900)
+            self.assertEqual(source["rome"], "hyde")
+
+    def test_maddison_preferred_source_surfaces_in_the_peak(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            kwargs = self._kwargs(root)
             pd.DataFrame(
-                {"polity_id": ["united_states", "united_states"], "population": [300_000_000, 335_000_000]}
-            ).to_parquet(maddison_path)
-            peaks, source = _load_peak_populations(maddison_path, hyde_path)
+                {"polity_id": ["united_states"], "year": [2000], "population": [1_900_000]}
+            ).to_parquet(kwargs["hyde_path"])
+            pd.DataFrame(
+                {"polity_id": ["united_states"], "year": [2000], "population": [335_000_000]}
+            ).to_parquet(kwargs["maddison_path"])
+            peaks, source = _load_peak_populations(**kwargs)
             self.assertEqual(peaks["united_states"], 335_000_000)
             self.assertEqual(source["united_states"], "maddison")
-
-    def test_hyde_fills_in_polities_maddison_does_not_cover(self) -> None:
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            hyde_path = root / "hyde.parquet"
-            maddison_path = root / "maddison.parquet"
-            pd.DataFrame({"polity_id": ["ancient_carthage"], "population": [250_000]}).to_parquet(hyde_path)
-            pd.DataFrame({"polity_id": ["united_states"], "population": [335_000_000]}).to_parquet(maddison_path)
-            peaks, source = _load_peak_populations(maddison_path, hyde_path)
-            self.assertEqual(peaks["ancient_carthage"], 250_000)
-            self.assertEqual(source["ancient_carthage"], "hyde")
 
     def test_missing_files_return_empty(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            peaks, source = _load_peak_populations(root / "no_maddison.parquet", root / "no_hyde.parquet")
+            kwargs = self._kwargs(root)
+            # hyde_path/maddison_path point at files that were never written.
+            peaks, source = _load_peak_populations(**kwargs)
             self.assertEqual(peaks, {})
             self.assertEqual(source, {})
 

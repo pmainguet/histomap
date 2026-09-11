@@ -9,11 +9,11 @@ start: 1154
 end: 1485
 start_confidence: high
 end_confidence: high
-weight_by_era:
+significance_by_era:
   1200: 8.56
   1300: 9.21
   1400: 7.3
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -21,8 +21,8 @@ text:
   long_en: ''
 notes: Converted from a period-context record to a polity (sub-polity of kingdom_of_england)
   on 2026-08-30. 1154 accession of Henry II to 1485 death of Richard III at Bosworth.
-  weight_by_era reuses kingdom_of_england's own values at the century marks (1200,
-  1300, 1400) that fall within this span.
+  significance_by_era reuses kingdom_of_england's own values at the century marks
+  (1200, 1300, 1400) that fall within this span.
 sources:
 - wikidata
 prominence_score: 33.79

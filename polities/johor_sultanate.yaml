@@ -11,14 +11,14 @@ start: 1528
 end: 1946
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1600: 1.71
   1700: 1.76
   1750: 2.14
   1800: 2.98
   1850: 4.21
   1900: 4.97
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 54.64
+prominence_score: 54.1
 eligibility: accepted
 geography:
   continents:
@@ -53,8 +53,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.56
-  population_scale: 14.38
-  total: 54.64
+  population_scale: 13.83
+  total: 54.1
 linked_era_id: asia_early_modern_connections_era
 government_form: sultanate
 linked_chapter_id: macro_early_modern_connections

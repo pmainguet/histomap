@@ -10,9 +10,9 @@ start: 1954
 end: 1975
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1954: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -21,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 31.43
+prominence_score: 31.31
 eligibility: accepted
 geography:
   continents:
@@ -51,8 +51,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.36
-  population_scale: 12.45
-  total: 31.43
+  population_scale: 12.34
+  total: 31.31
 consolidation_status: independent
 manual_overrides:
 - consolidation

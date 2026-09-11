@@ -11,10 +11,10 @@ start: 1903
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1950: 4.76
   2000: 3.32
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - maddison
 - wikidata
-prominence_score: 61.76
+prominence_score: 61.62
 eligibility: accepted
 geography:
   continents:
@@ -51,8 +51,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 5.23
-  population_scale: 14.53
-  total: 61.76
+  population_scale: 14.39
+  total: 61.62
 linked_era_id: north_america_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world

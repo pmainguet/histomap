@@ -11,9 +11,9 @@ start: 1861
 end: 1865
 start_confidence: low
 end_confidence: medium
-weight_by_era:
+significance_by_era:
   1861: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''

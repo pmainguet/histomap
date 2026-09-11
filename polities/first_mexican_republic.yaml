@@ -10,8 +10,8 @@ start: 1823
 end: 1835
 start_confidence: low
 end_confidence: low
-weight_by_era: {}
-weight_imputed: true
+significance_by_era: {}
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''

@@ -11,9 +11,9 @@ start: 1830
 end: 1864
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1850: 4.19
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 43.8
+prominence_score: 43.7
 eligibility: accepted
 geography:
   continents:
@@ -47,8 +47,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 3.86
-  population_scale: 12.94
-  total: 43.8
+  population_scale: 12.84
+  total: 43.7
 linked_era_id: south_america_industrial_imperial_world_era
 government_form: null
 linked_chapter_id: macro_industrial_imperial_world

@@ -12,9 +12,9 @@ start: 1908
 end: 1946
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1908: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 45.88
+prominence_score: 45.66
 eligibility: accepted
 geography:
   continents:
@@ -53,8 +53,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.98
-  population_scale: 15.45
-  total: 45.88
+  population_scale: 15.23
+  total: 45.66
 government_form: null
 timeline_role: entity
 manual_overrides:

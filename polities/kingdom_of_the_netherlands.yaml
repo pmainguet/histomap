@@ -11,12 +11,12 @@ start: 1815
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1850: 7.15
   1900: 7.29
   1950: 8.38
   2000: 6.22
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - maddison
 - wikidata
-prominence_score: 63.76
+prominence_score: 63.71
 eligibility: accepted
 geography:
   continents:
@@ -58,8 +58,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 5.82
-  population_scale: 15.95
-  total: 63.76
+  population_scale: 15.89
+  total: 63.71
 linked_era_id: africa_contemporary_world_era
 government_form: kingdom
 linked_chapter_id: macro_contemporary_world

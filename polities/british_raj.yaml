@@ -16,9 +16,9 @@ start: 1858
 end: 1947
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1900: 9.97
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 63.62
+prominence_score: 63.45
 eligibility: accepted
 geography:
   continents:
@@ -71,8 +71,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 4.89
-  population_scale: 16.73
-  total: 63.62
+  population_scale: 16.56
+  total: 63.45
 linked_era_id: asia_industrial_imperial_world_era
 government_form: colony
 linked_chapter_id: macro_industrial_imperial_world

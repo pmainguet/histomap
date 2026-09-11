@@ -11,10 +11,10 @@ start: 1561
 end: 1721
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1600: 1.44
   1700: 2.14
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 52.89
+prominence_score: 52.77
 eligibility: accepted
 geography:
   continents:
@@ -49,8 +49,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 5.52
-  population_scale: 12.02
-  total: 52.89
+  population_scale: 11.91
+  total: 52.77
 linked_era_id: europe_early_modern_connections_era
 government_form: duchy
 linked_chapter_id: macro_early_modern_connections

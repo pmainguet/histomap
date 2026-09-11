@@ -13,9 +13,9 @@ start: 2003
 end: 2006
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   2003: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -60,7 +60,7 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 1.51
-  population_scale: 15.84
+  population_scale: 15.83
   total: 47.34
 government_form: null
 deprecated:

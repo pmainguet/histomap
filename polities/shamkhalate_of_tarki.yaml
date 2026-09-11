@@ -10,7 +10,7 @@ start: 1200
 end: 1867
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1200: 3.56
   1300: 2.88
   1400: 3.12
@@ -20,7 +20,7 @@ weight_by_era:
   1750: 3.91
   1800: 4.67
   1850: 5.22
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -30,7 +30,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 51.7
+prominence_score: 51.65
 eligibility: accepted
 geography:
   continents:
@@ -55,8 +55,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 7.06
-  population_scale: 13.46
-  total: 51.7
+  population_scale: 13.41
+  total: 51.65
 government_form: khanate
 deprecated:
   visibility_tier: detailed

@@ -10,8 +10,9 @@ start: 1947
 end: 1956
 start_confidence: low
 end_confidence: low
-weight_by_era: {}
-weight_imputed: true
+significance_by_era:
+  1950: 9.89
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -19,8 +20,9 @@ text:
   long_en: ''
 notes: Editorially identified as a phase or aspect of Saarland.
 sources:
+- hyde
 - wikidata
-prominence_score: 42.59
+prominence_score: 54.54
 eligibility: accepted
 geography:
   continents:
@@ -47,11 +49,11 @@ manual_overrides:
 linked_era_id: europe_contemporary_world_era
 prominence_components:
   wikidata_reach: 23.52
-  authority_coverage: 0
-  historical_evidence: 0
+  authority_coverage: 4
+  historical_evidence: 8
   longevity: 2.5
-  population_scale: 16.56
-  total: 42.59
+  population_scale: 16.52
+  total: 54.54
 government_form: protectorate
 linked_chapter_id: macro_contemporary_world
 deprecated:

@@ -11,9 +11,9 @@ start: 1709
 end: 1738
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1709: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 40.79
+prominence_score: 40.76
 eligibility: accepted
 geography:
   continents:
@@ -46,8 +46,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.69
-  population_scale: 12.75
-  total: 40.79
+  population_scale: 12.72
+  total: 40.76
 government_form: null
 deprecated:
   visibility_tier: detailed

@@ -11,14 +11,14 @@ start: 1429
 end: 1879
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1500: 1.0
   1600: 1.0
   1700: 1.65
   1750: 1.75
   1800: 2.31
   1850: 2.58
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 56.75
+prominence_score: 56.7
 eligibility: accepted
 geography:
   continents:
@@ -54,8 +54,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.64
-  population_scale: 12.01
-  total: 56.75
+  population_scale: 11.96
+  total: 56.7
 government_form: kingdom
 linked_chapter_id: macro_early_modern_connections
 deprecated:

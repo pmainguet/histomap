@@ -9,12 +9,12 @@ start: 1800
 end: 1967
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1800: 6.04
   1850: 6.23
   1900: 5.63
   1950: 6.26
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 42.73
+prominence_score: 42.59
 eligibility: accepted
 geography:
   continents:
@@ -50,8 +50,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 5.56
-  population_scale: 14.68
-  total: 42.73
+  population_scale: 14.54
+  total: 42.59
 government_form: null
 deprecated:
   visibility_tier: detailed

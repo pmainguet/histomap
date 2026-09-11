@@ -10,12 +10,12 @@ start: 1310
 end: 1710
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1400: 8.73
   1500: 8.65
   1600: 9.3
   1700: 8.2
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -25,7 +25,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 49.63
+prominence_score: 49.62
 eligibility: accepted
 geography:
   continents:
@@ -51,8 +51,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.51
-  population_scale: 14.94
-  total: 49.63
+  population_scale: 14.92
+  total: 49.62
 government_form: countship
 deprecated:
   visibility_tier: detailed

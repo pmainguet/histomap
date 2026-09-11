@@ -11,9 +11,9 @@ start: 1958
 end: 1968
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1958: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 37.66
+prominence_score: 37.49
 eligibility: accepted
 geography:
   continents:
@@ -46,8 +46,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 2.6
-  population_scale: 14.92
-  total: 37.66
+  population_scale: 14.75
+  total: 37.49
 government_form: null
 timeline_role: entity
 manual_overrides:

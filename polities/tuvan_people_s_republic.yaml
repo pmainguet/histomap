@@ -12,9 +12,9 @@ start: 1921
 end: 1944
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1921: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 41.09
+prominence_score: 41.01
 eligibility: accepted
 geography:
   continents:
@@ -47,8 +47,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.45
-  population_scale: 11.42
-  total: 41.09
+  population_scale: 11.34
+  total: 41.01
 government_form: null
 deprecated:
   visibility_tier: detailed

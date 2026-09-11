@@ -12,9 +12,9 @@ start: 1988
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   2000: 3.59
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - maddison
 - wikidata
-prominence_score: 60.72
+prominence_score: 60.5
 eligibility: accepted
 geography:
   continents:
@@ -50,8 +50,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 3.98
-  population_scale: 14.75
-  total: 60.72
+  population_scale: 14.52
+  total: 60.5
 linked_era_id: asia_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world

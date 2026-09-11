@@ -10,9 +10,9 @@ start: 1992
 end: 2010
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   2000: 5.24
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 42.37
+prominence_score: 42.25
 eligibility: accepted
 geography:
   continents:
@@ -46,8 +46,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 3.2
-  population_scale: 15.5
-  total: 42.37
+  population_scale: 15.38
+  total: 42.25
 government_form: null
 timeline_role: entity
 manual_overrides:

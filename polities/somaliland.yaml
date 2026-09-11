@@ -11,9 +11,9 @@ start: 1991
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1991: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 48.15
+prominence_score: 33.89
 eligibility: accepted
 geography:
   continents:
@@ -46,8 +46,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.89
-  population_scale: 14.26
-  total: 48.15
+  population_scale: 0.0
+  total: 33.89
 manual_overrides:
 - consolidation
 government_form: null

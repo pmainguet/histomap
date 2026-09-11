@@ -9,8 +9,9 @@ start: 1910
 end: 1961
 start_confidence: low
 end_confidence: low
-weight_by_era: {}
-weight_imputed: true
+significance_by_era:
+  1950: 2.86
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -18,8 +19,9 @@ text:
   long_en: ''
 notes: Editorially identified as a phase or aspect of South Africa.
 sources:
+- hyde
 - wikidata
-prominence_score: 44.31
+prominence_score: 56.17
 eligibility: accepted
 geography:
   continents:
@@ -47,11 +49,11 @@ manual_overrides:
 linked_era_id: africa_world_wars_reordering_era
 prominence_components:
   wikidata_reach: 27.19
-  authority_coverage: 0
-  historical_evidence: 0
+  authority_coverage: 4
+  historical_evidence: 8
   longevity: 4.29
-  population_scale: 12.82
-  total: 44.31
+  population_scale: 12.69
+  total: 56.17
 government_form: null
 linked_chapter_id: macro_world_wars_reordering
 detail_of: south_africa

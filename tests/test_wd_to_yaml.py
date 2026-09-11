@@ -49,7 +49,7 @@ class WikidataToYamlTests(unittest.TestCase):
         )
         self.assertEqual(document["start"], -500)
         self.assertEqual(document["end"], 100)
-        self.assertEqual(document["weight_by_era"], {-500: 5})
+        self.assertEqual(document["significance_by_era"], {-500: 5})
         self.assertEqual(
             document["external_ids"],
             {"wikidata": "Q42", "wikipedia_en": "https://en.wikipedia.org/wiki/Example"},

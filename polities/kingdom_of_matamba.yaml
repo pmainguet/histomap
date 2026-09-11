@@ -11,9 +11,9 @@ start: 1631
 end: 1744
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1631: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''

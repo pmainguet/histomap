@@ -11,14 +11,14 @@ start: -407
 end: 500
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   0: 7.14
   100: 7.36
   200: 7.05
   300: 7.21
   400: 6.9
   500: 6.28
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''

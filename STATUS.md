@@ -2711,3 +2711,54 @@ relationship_centrality), or a single not-always-reliable Wikidata type/confiden
 - 533 tests pass (7 new/rewritten in `tests/test_compute_prominence.py`). `pipeline/poster.py`
   (the only other consumer of the raw score shape, via `scale_prominence_score`) verified
   unaffected -- still renders correctly, same 0-100 input range.
+
+### `weight_by_era` renamed to `significance_by_era`; `population_scale` refactored onto one shared population merge -- 11 September 2026
+
+Two follow-ups from the prominence work above, both raised in conversation rather than
+pre-planned. First: `weight_by_era` never meant "population" -- it's `0.4*population_log10 +
+0.4*area_km2_log10 + 0.2*social_complexity_index` (see `pipeline/weights.toml`), normalized
+`[1,10]` within its own century's cohort, so it's not comparable across eras and not
+recoverable back into a raw population number. The name didn't say that. Renamed to
+`significance_by_era`/`significance_imputed` across `schema.py`, `pipeline/compute_weights.py`
+(also `normalize_weights` -> `normalize_significance`, `weight`/`raw_weight` columns ->
+`significance`/`raw_significance`), `pipeline/compute_prominence.py`,
+`pipeline/backfill_entity_types.py` (`reset_context_type_weight` ->
+`reset_context_type_significance`), `pipeline/wd_to_yaml.py`, `pipeline/apply_review_decisions.py`,
+`server/app.py`, `web/explore_details.js` (display label "Historical weight" -> "Historical
+significance"), `README.md`'s schema example, `ONTOLOGY.md`'s "Ranking and sizing" section, and
+the literal YAML key in all 4,665 polity files carrying it (mechanical rename, values untouched)
+plus 5 files' own `notes` prose that named the field directly. `pipeline/extract_hyde.py`'s
+*own* `weight_imputed` column (a per-row flag inside the raw HYDE extraction cache, marking
+that row's population as centroid-radius-imputed -- a narrower, different concept from the
+polity-level composite) was deliberately left alone, as was the already-stale, unread
+`reports/seshat_separate_entity_drafts.yaml` draft.
+
+Second: `population_scale` (see above) originally read `sources/maddison_by_polity.parquet` and
+`sources/hyde_pop_by_polity.parquet` directly with its own standalone peak-per-polity lookup --
+a second, independent implementation of the same "Maddison preferred over HYDE" merge
+`compute_weights.py`'s `consolidate_population()` already did, and missing that function's
+`unmapped_modern` exclusion (still-open modern sovereign states Maddison failed to map, whose
+HYDE-only number would badly undercount them). `compute_weights.py` now exposes
+`load_consolidated_population()` -- the same merge (Maddison-preferred, 50-year-bucketed
+median, `unmapped_modern` excluded from HYDE), used by both `run()` (feeding
+`normalize_significance`) and `pipeline/compute_prominence.py`'s `_load_peak_populations()`
+(now just takes each polity's peak from the shared result). One population-merging
+implementation instead of two.
+
+Also ran `pipeline/compute_weights.py` itself end-to-end (not just its unit tests) against the
+real dataset to confirm the refactor holds up outside a test fixture -- its own report hadn't
+been regenerated all session (still titled "Weight computation" from before this work), so this
+doubled as the routine recompute it was already due for: 1,061 polities updated, 4,424
+polity-era significance values, era interval 50 years. Recomputed `prominence_score` again
+afterward for consistency (`population_scale` depends on the same merge) and rebuilt `data.json`.
+
+Recomputed dataset-wide again with the refactored lookup: 4,730 records, score range 0.8-77.1,
+mean 29.1 (138 from Maddison, 1,094 from HYDE, 3,498 with none -- close to, not identical to,
+the first pass' 141/1,155/3,434, since bucketed-median-then-peak differs slightly from raw-max,
+and `unmapped_modern` now actually excludes rather than being computed but unused). Spot-checked
+live: United States 70.65 (population_scale 18.69/20), India 66.73 (capped at 20) -- consistent
+with the first pass. 537 tests pass (test_compute_weights.py gained
+`LoadConsolidatedPopulationTests`, test_compute_prominence.py's population tests rewritten
+against the new delegation). Verified live: `/explore`'s polity detail panel shows "Historical
+significance" correctly; rebuilt `data.json` carries zero remaining `weight_by_era`/
+`weight_imputed` references.

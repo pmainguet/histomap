@@ -402,9 +402,14 @@ Two existing systems were built to answer "how important/how big is this record"
   `compute_prominence.py`'s `balanced_visibility()` — a competitive quota algorithm
   (top 60 absolute + top-2 per continent/era stratum) that recomputes across all 4,671
   records whenever it runs.
-- `weight_by_era` — visual band-width weight, mostly `weight_imputed: true` today
-  (per `STATUS.md`: "the large majority of records are still imputed"), computed from
-  sparse Maddison/HYDE/Seshat population and area data.
+- `significance_by_era` (renamed from `weight_by_era`, 11 September 2026 — the old name
+  didn't say what it actually measures) — a composite of population, area, and social
+  complexity per era, normalized `[1,10]` within its own century's cohort; mostly
+  `significance_imputed: true` today (per `STATUS.md`: "the large majority of records are
+  still imputed"), computed from sparse Maddison/HYDE/Seshat data. Not the poster's band
+  width directly (that's `prominence_score`, or a real population curve for Civilizations
+  & Cultures entities — see `pipeline/poster.py`'s `width_source`) — its live role today is
+  gating `prominence_score`'s own `historical_evidence` component.
 
 Now that the ontology tree exists, "what's important here" becomes a **local** question
 — within "Mediterranean Classical Antiquity," what stands out is obvious without a
@@ -421,12 +426,13 @@ cross-dataset algorithm. Going forward:
   limit)` helper in `pipeline/period_hierarchy.py`: entities under a node, sorted by
   score, `visibility_override` pinned first. No global rebalancing needed when a new
   entity is added — see the implementation plan.
-- **`weight_by_era`'s multi-source estimation pipeline (`compute_weights.py`) is not
+- **`significance_by_era`'s multi-source estimation pipeline (`compute_weights.py`) is not
   worth further algorithmic investment** — most values are imputed proxies already. The
-  field stays (band width is core to the actual Histomap visual, not redundant with the
-  ontology), but refining specific weights becomes ordinary editorial curation — the
-  same review-queue pattern as everything else in this project — rather than a pipeline
-  problem to solve with more source data.
+  field stays (its population component now also feeds `prominence_score`'s
+  `population_scale`, via `compute_weights.py`'s own `load_consolidated_population` — see
+  `pipeline/compute_prominence.py`), but refining specific values becomes ordinary
+  editorial curation — the same review-queue pattern as everything else in this project —
+  rather than a pipeline problem to solve with more source data.
 
 ## Tree, lanes, graph: three things, not one
 

@@ -19,6 +19,7 @@ geography:
 eligibility: accepted
 sources:
 - histomap_editorial
+- hyde
 external_ids:
   wikidata: Q7209
 notes: Parent for its two constitutional phases -- Western Han and Eastern Han (separated
@@ -30,9 +31,14 @@ source_urls:
 - https://en.wikipedia.org/wiki/Han_dynasty
 prominence_components:
   wikidata_reach: 30
-  authority_coverage: 0
-  historical_evidence: 0
+  authority_coverage: 4
+  historical_evidence: 8
   longevity: 6.58
   population_scale: 13.58
-  total: 50.15
-prominence_score: 50.15
+  total: 62.15
+prominence_score: 62.15
+significance_by_era:
+  0: 9.04
+  100: 8.71
+  200: 7.83
+significance_imputed: true

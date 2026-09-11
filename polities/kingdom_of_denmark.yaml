@@ -13,9 +13,9 @@ start: 965
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   965: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 49.02
+prominence_score: 33.67
 eligibility: accepted
 geography:
   continents:
@@ -51,8 +51,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 7.57
-  population_scale: 15.35
-  total: 49.02
+  population_scale: 0.0
+  total: 33.67
 timeline_role: retired
 consolidation_status: same_entity
 consolidated_into: denmark

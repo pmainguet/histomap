@@ -10,9 +10,9 @@ start: 1861
 end: 1918
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1900: 5.73
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -46,7 +46,7 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 4.41
-  population_scale: 14.26
+  population_scale: 14.25
   total: 49.12
 government_form: null
 deprecated:

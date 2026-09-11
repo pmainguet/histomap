@@ -12,7 +12,7 @@ start: 1250
 end: 1949
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1300: 7.98
   1400: 8.06
   1500: 7.83
@@ -22,7 +22,7 @@ weight_by_era:
   1800: 7.36
   1850: 7.74
   1900: 6.87
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -32,7 +32,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 53.32
+prominence_score: 53.17
 eligibility: accepted
 geography:
   continents:
@@ -62,8 +62,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 7.11
-  population_scale: 15.03
-  total: 53.32
+  population_scale: 14.87
+  total: 53.17
 linked_era_id: asia_early_modern_connections_era
 government_form: null
 linked_chapter_id: macro_early_modern_connections

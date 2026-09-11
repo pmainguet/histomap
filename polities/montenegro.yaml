@@ -10,9 +10,9 @@ start: 2006
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   2006: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -46,7 +46,7 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.31
-  population_scale: 12.75
+  population_scale: 12.74
   total: 46.05
 consolidation_status: independent
 manual_overrides:

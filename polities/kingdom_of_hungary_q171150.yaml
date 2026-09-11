@@ -12,7 +12,7 @@ start: 1000
 end: 1946
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1000: 6.3
   1100: 6.16
   1200: 7.62
@@ -25,7 +25,7 @@ weight_by_era:
   1800: 7.83
   1850: 8.49
   1900: 8.11
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -35,7 +35,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 63.18
+prominence_score: 63.03
 eligibility: accepted
 geography:
   continents:
@@ -65,8 +65,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 7.44
-  population_scale: 15.7
-  total: 63.18
+  population_scale: 15.55
+  total: 63.03
 consolidation_status: independent
 linked_era_id: medieval_europe_era
 government_form: null

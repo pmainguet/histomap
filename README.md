@@ -297,7 +297,7 @@ histomap/
 │   ├── enrich_relationships.py # parent/successor/group candidates
 │   ├── enrich_geography.py     # continent + present-country location
 │   ├── reconcile.py            # fuzzy match + LLM proposals
-│   ├── compute_weights.py      # area + pop + complexity → weight_by_era
+│   ├── compute_weights.py      # area + pop + complexity → significance_by_era
 │   └── review_cli.py           # terminal-based accept/edit/skip
 ├── polities/                   # canonical YAML, committed
 │   ├── achaemenid_empire.yaml
@@ -334,13 +334,13 @@ start: -550
 end: -330
 start_confidence: medium          # high | medium | low | legendary
 end_confidence: high
-weight_by_era:                    # sparse; interpolate between
-  -540: 4
-  -500: 8
-  -480: 9
+significance_by_era:              # sparse; interpolate between -- composite of
+  -540: 4                         # population + area + social complexity, not
+  -500: 8                         # population alone; normalized [1,10] within
+  -480: 9                         # its own century's cohort
   -400: 7
   -350: 5
-weight_imputed: false             # true if computed from regional average
+significance_imputed: false       # true if computed from regional average
 text:
   long_en: "Persian empire founded by Cyrus II, stretching from the Indus to Thrace."
 notes: "Wikidata 550 BCE; Seshat 559 BCE (Cyrus's accession)."

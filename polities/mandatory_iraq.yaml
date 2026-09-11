@@ -12,9 +12,9 @@ start: 1920
 end: 1932
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1920: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 40.19
+prominence_score: 40.15
 eligibility: accepted
 geography:
   continents:
@@ -56,8 +56,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 2.78
-  population_scale: 13.88
-  total: 40.19
+  population_scale: 13.84
+  total: 40.15
 government_form: protectorate
 deprecated:
   visibility_tier: detailed

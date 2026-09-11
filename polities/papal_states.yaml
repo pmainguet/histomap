@@ -20,7 +20,7 @@ start: 754
 end: 1870
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   800: 2.8
   900: 3.85
   1000: 5.44
@@ -34,7 +34,7 @@ weight_by_era:
   1750: 3.0
   1800: 1.29
   1850: 1.74
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -45,7 +45,7 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 76.16
+prominence_score: 76.14
 eligibility: accepted
 geography:
   continents:
@@ -82,8 +82,8 @@ prominence_components:
   authority_coverage: 16
   historical_evidence: 8
   longevity: 7.62
-  population_scale: 15.15
-  total: 76.16
+  population_scale: 15.13
+  total: 76.14
 linked_era_id: medieval_europe_era
 government_form: null
 linked_chapter_id: macro_postclassical_worlds

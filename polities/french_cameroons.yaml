@@ -12,9 +12,9 @@ start: 1919
 end: 1960
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1950: 5.59
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 52.26
+prominence_score: 52.17
 eligibility: accepted
 geography:
   continents:
@@ -55,8 +55,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 4.06
-  population_scale: 14.26
-  total: 52.26
+  population_scale: 14.17
+  total: 52.17
 consolidation_status: independent
 manual_overrides:
 - consolidation

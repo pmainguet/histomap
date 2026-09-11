@@ -11,9 +11,9 @@ start: 1978
 end: 2001
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   2000: 1.0
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 41.64
+prominence_score: 41.62
 eligibility: accepted
 geography:
   continents:
@@ -47,8 +47,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 3.45
-  population_scale: 12.64
-  total: 41.64
+  population_scale: 12.63
+  total: 41.62
 government_form: null
 detail_of: comoros
 manual_overrides:

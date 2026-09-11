@@ -12,9 +12,9 @@ start: 1925
 end: 1979
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1925: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''

@@ -11,9 +11,9 @@ start: 1910
 end: 1926
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1910: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 41.0
+prominence_score: 40.98
 eligibility: accepted
 geography:
   continents:
@@ -46,8 +46,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.08
-  population_scale: 14.58
-  total: 41.0
+  population_scale: 14.56
+  total: 40.98
 government_form: null
 deprecated:
   visibility_tier: detailed

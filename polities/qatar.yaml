@@ -11,11 +11,11 @@ start: 1870
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1900: 2.23
   1950: 1.0
   2000: 2.22
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -26,7 +26,7 @@ sources:
 - hyde
 - maddison
 - wikidata
-prominence_score: 65.59
+prominence_score: 65.31
 eligibility: accepted
 geography:
   continents:
@@ -52,8 +52,8 @@ prominence_components:
   authority_coverage: 8
   historical_evidence: 8
   longevity: 5.49
-  population_scale: 14.1
-  total: 65.59
+  population_scale: 13.82
+  total: 65.31
 linked_era_id: asia_contemporary_world_era
 government_form: emirate
 linked_chapter_id: macro_contemporary_world

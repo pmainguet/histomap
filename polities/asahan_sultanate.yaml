@@ -10,13 +10,13 @@ start: 1630
 end: 1946
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1700: 3.86
   1750: 4.13
   1800: 4.7
   1850: 5.73
   1900: 6.05
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 49.68
+prominence_score: 49.38
 eligibility: accepted
 geography:
   continents:
@@ -51,8 +51,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.25
-  population_scale: 14.72
-  total: 49.68
+  population_scale: 14.42
+  total: 49.38
 government_form: sultanate
 deprecated:
   visibility_tier: detailed

@@ -14,9 +14,9 @@ start: 1819
 end: 1831
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1819: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -25,7 +25,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 43.78
+prominence_score: 43.7
 eligibility: accepted
 geography:
   continents:
@@ -67,8 +67,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 2.78
-  population_scale: 12.87
-  total: 43.78
+  population_scale: 12.79
+  total: 43.7
 linked_era_id: south_america_industrial_imperial_world_era
 government_form: null
 linked_chapter_id: macro_industrial_imperial_world

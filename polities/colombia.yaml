@@ -11,12 +11,12 @@ start: 1810
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1850: 6.36
   1900: 7.21
   1950: 9.37
   2000: 8.02
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - maddison
 - wikidata
-prominence_score: 64.8
+prominence_score: 64.66
 eligibility: accepted
 geography:
   continents:
@@ -51,8 +51,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 5.84
-  population_scale: 16.96
-  total: 64.8
+  population_scale: 16.82
+  total: 64.66
 linked_era_id: south_america_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world

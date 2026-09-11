@@ -10,9 +10,9 @@ start: -1900
 end: -538
 start_confidence: low
 end_confidence: low
-weight_by_era:
-  -1900: 4
-weight_imputed: true
+significance_by_era:
+  -1000: 6.21
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -27,7 +27,8 @@ notes: Hand-authored 2026-08-31, replacing the deleted babylonia_period.yaml ("c
   Sumer plays for the earlier Sumerian city-states. See STATUS.md.
 sources:
 - editorial
-prominence_score: 50.63
+- hyde
+prominence_score: 62.63
 manual_overrides:
 - consolidation
 - visibility_override
@@ -49,11 +50,11 @@ entity_type_confidence: medium
 relationships: []
 prominence_components:
   wikidata_reach: 29.93
-  authority_coverage: 0
-  historical_evidence: 0
+  authority_coverage: 4
+  historical_evidence: 8
   longevity: 7.84
   population_scale: 12.86
-  total: 50.63
+  total: 62.63
 linked_era_id: classical_antiquity_era
 entity_type_source_qids:
 - Q28171280

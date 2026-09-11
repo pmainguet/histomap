@@ -11,9 +11,9 @@ start: 2008
 end: 2009
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   2008: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 29.51
+prominence_score: 29.49
 eligibility: accepted
 geography:
   continents:
@@ -52,8 +52,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 0.75
-  population_scale: 13.75
-  total: 29.51
+  population_scale: 13.74
+  total: 29.49
 government_form: null
 deprecated:
   visibility_tier: detailed

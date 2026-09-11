@@ -11,7 +11,7 @@ start: 1565
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1600: 2.2
   1700: 2.83
   1750: 3.3
@@ -20,7 +20,7 @@ weight_by_era:
   1900: 8.11
   1950: 10.0
   2000: 9.54
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -31,7 +31,7 @@ sources:
 - hyde
 - maddison
 - wikidata
-prominence_score: 70.45
+prominence_score: 70.27
 eligibility: accepted
 geography:
   continents:
@@ -56,8 +56,8 @@ prominence_components:
   authority_coverage: 8
   historical_evidence: 8
   longevity: 6.66
-  population_scale: 17.78
-  total: 70.45
+  population_scale: 17.61
+  total: 70.27
 linked_era_id: asia_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world

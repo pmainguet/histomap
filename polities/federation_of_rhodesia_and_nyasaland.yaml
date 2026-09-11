@@ -11,9 +11,9 @@ start: 1953
 end: 1963
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1953: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 42.08
+prominence_score: 41.93
 eligibility: accepted
 geography:
   continents:
@@ -46,8 +46,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 2.6
-  population_scale: 14.26
-  total: 42.08
+  population_scale: 14.11
+  total: 41.93
 government_form: null
 deprecated:
   visibility_tier: detailed

@@ -10,10 +10,10 @@ start: 1830
 end: 1917
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1850: 2.99
   1900: 3.77
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 41.78
+prominence_score: 41.71
 eligibility: accepted
 geography:
   continents:
@@ -47,8 +47,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 4.86
-  population_scale: 13.24
-  total: 41.78
+  population_scale: 13.18
+  total: 41.71
 government_form: null
 detail_of: uruguay
 manual_overrides:

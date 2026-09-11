@@ -11,9 +11,9 @@ start: 1990
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   2000: 3.02
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - maddison
 - wikidata
-prominence_score: 60.37
+prominence_score: 60.32
 eligibility: accepted
 geography:
   continents:
@@ -48,8 +48,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 3.92
-  population_scale: 14.45
-  total: 60.37
+  population_scale: 14.4
+  total: 60.32
 consolidation_status: independent
 manual_overrides:
 - consolidation

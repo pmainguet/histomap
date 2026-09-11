@@ -13,9 +13,9 @@ start: 1929
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1929: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 50.93
+prominence_score: 34.98
 eligibility: accepted
 geography:
   continents:
@@ -51,8 +51,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 4.98
-  population_scale: 15.96
-  total: 50.93
+  population_scale: 0.0
+  total: 34.98
 government_form: city-state
 deprecated:
   visibility_tier: detailed

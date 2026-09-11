@@ -9,8 +9,9 @@ start: 1968
 end: 2003
 start_confidence: low
 end_confidence: low
-weight_by_era: {}
-weight_imputed: true
+significance_by_era:
+  2000: 6.39
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -18,8 +19,9 @@ text:
   long_en: ''
 notes: Editorially identified as a phase or aspect of Iraq.
 sources:
+- hyde
 - wikidata
-prominence_score: 42.06
+prominence_score: 54.03
 eligibility: accepted
 geography:
   continents:
@@ -46,11 +48,11 @@ manual_overrides:
 linked_era_id: asia_contemporary_world_era
 prominence_components:
   wikidata_reach: 22.16
-  authority_coverage: 0
-  historical_evidence: 0
+  authority_coverage: 4
+  historical_evidence: 8
   longevity: 3.89
-  population_scale: 16.02
-  total: 42.06
+  population_scale: 15.98
+  total: 54.03
 government_form: null
 linked_chapter_id: macro_contemporary_world
 detail_of: iraq

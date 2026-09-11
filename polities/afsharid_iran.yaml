@@ -12,9 +12,9 @@ start: 1736
 end: 1796
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1750: 5.94
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 50.73
+prominence_score: 50.69
 eligibility: accepted
 geography:
   continents:
@@ -54,8 +54,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 4.46
-  population_scale: 13.84
-  total: 50.73
+  population_scale: 13.8
+  total: 50.69
 linked_era_id: asia_early_modern_connections_era
 government_form: null
 linked_chapter_id: macro_early_modern_connections

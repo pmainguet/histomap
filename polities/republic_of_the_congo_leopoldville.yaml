@@ -11,9 +11,9 @@ start: 1960
 end: 1971
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1960: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 38.67
+prominence_score: 38.42
 eligibility: accepted
 geography:
   continents:
@@ -46,8 +46,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 2.7
-  population_scale: 14.5
-  total: 38.67
+  population_scale: 14.25
+  total: 38.42
 consolidation_status: independent
 government_form: null
 deprecated:

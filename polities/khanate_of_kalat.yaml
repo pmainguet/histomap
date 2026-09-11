@@ -13,14 +13,14 @@ start: 1638
 end: 1955
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1700: 4.46
   1750: 4.69
   1800: 5.0
   1850: 5.18
   1900: 4.39
   1950: 5.0
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -30,7 +30,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 53.4
+prominence_score: 53.33
 eligibility: accepted
 geography:
   continents:
@@ -61,8 +61,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.26
-  population_scale: 13.92
-  total: 53.4
+  population_scale: 13.85
+  total: 53.33
 linked_era_id: asia_early_modern_connections_era
 government_form: princely state
 linked_chapter_id: macro_early_modern_connections

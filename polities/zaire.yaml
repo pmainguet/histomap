@@ -11,9 +11,9 @@ start: 1971
 end: 1997
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1971: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 46.72
+prominence_score: 46.21
 eligibility: accepted
 geography:
   continents:
@@ -46,8 +46,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.58
-  population_scale: 15.47
-  total: 46.72
+  population_scale: 14.96
+  total: 46.21
 government_form: null
 deprecated:
   visibility_tier: detailed

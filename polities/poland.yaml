@@ -11,10 +11,10 @@ start: 1918
 end: null
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1950: 9.98
   2000: 7.76
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''

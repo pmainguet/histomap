@@ -11,12 +11,12 @@ start: 1335
 end: 1742
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1400: 8.08
   1500: 8.12
   1600: 8.61
   1700: 7.83
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 53.17
+prominence_score: 53.1
 eligibility: accepted
 geography:
   continents:
@@ -50,8 +50,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.53
-  population_scale: 14.81
-  total: 53.17
+  population_scale: 14.74
+  total: 53.1
 timeline_role: retired
 consolidation_status: same_entity
 consolidated_into: duchy_of_silesia

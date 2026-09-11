@@ -13,9 +13,9 @@ start: 1967
 end: 1990
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1967: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 46.2
+prominence_score: 45.76
 eligibility: accepted
 geography:
   continents:
@@ -56,8 +56,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.45
-  population_scale: 15.07
-  total: 46.2
+  population_scale: 14.63
+  total: 45.76
 government_form: null
 deprecated:
   visibility_tier: detailed

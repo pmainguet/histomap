@@ -10,7 +10,7 @@ start: 1236
 end: 1833
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1300: 7.47
   1400: 6.87
   1500: 7.0
@@ -18,7 +18,7 @@ weight_by_era:
   1700: 6.54
   1750: 6.8
   1800: 6.93
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 48.98
+prominence_score: 48.91
 eligibility: accepted
 geography:
   continents:
@@ -55,8 +55,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.94
-  population_scale: 14.42
-  total: 48.98
+  population_scale: 14.35
+  total: 48.91
 government_form: kingdom
 detail_of: crown_of_castile
 deprecated:

@@ -11,11 +11,11 @@ start: 1709
 end: 1876
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1750: 6.03
   1800: 6.48
   1850: 6.85
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -25,7 +25,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 57.91
+prominence_score: 57.85
 eligibility: accepted
 geography:
   continents:
@@ -50,8 +50,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 5.56
-  population_scale: 14.36
-  total: 57.91
+  population_scale: 14.31
+  total: 57.85
 linked_era_id: asia_early_modern_connections_era
 government_form: khanate
 linked_chapter_id: macro_early_modern_connections

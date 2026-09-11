@@ -12,9 +12,9 @@ start: 1965
 end: 1989
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1965: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''

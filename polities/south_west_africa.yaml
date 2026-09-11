@@ -11,9 +11,9 @@ start: 1915
 end: 1990
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1950: 1.0
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 54.03
+prominence_score: 53.46
 eligibility: accepted
 geography:
   continents:
@@ -54,8 +54,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 4.7
-  population_scale: 12.11
-  total: 54.03
+  population_scale: 11.54
+  total: 53.46
 linked_era_id: africa_contemporary_world_era
 government_form: mandate
 linked_chapter_id: macro_contemporary_world

@@ -13,9 +13,9 @@ start: 1919
 end: 1934
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1919: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 43.84
+prominence_score: 43.81
 eligibility: accepted
 geography:
   continents:
@@ -54,8 +54,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.01
-  population_scale: 15.89
-  total: 43.84
+  population_scale: 15.86
+  total: 43.81
 consolidation_status: independent
 government_form: null
 deprecated:

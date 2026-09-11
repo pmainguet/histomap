@@ -13,20 +13,15 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-import pandas as pd
 import yaml
 
+from pipeline.compute_weights import HYDE_PATH, MADDISON_PATH, load_consolidated_population
 from schema import CURRENT_YEAR
 
 ROOT = Path(__file__).resolve().parent.parent
 POLITIES_DIR = ROOT / "polities"
 CACHE_PATH = ROOT / "sources" / "wikidata_sitelinks.json"
 REPORT_PATH = ROOT / "reports" / "prominence_summary.md"
-# Peak-population sources for the population_scale component -- see
-# _load_peak_populations' own docstring for why Maddison wins over HYDE
-# where both cover the same polity.
-MADDISON_PATH = ROOT / "sources" / "maddison_by_polity.parquet"
-HYDE_POLITY_PATH = ROOT / "sources" / "hyde_pop_by_polity.parquet"
 API_URL = "https://www.wikidata.org/w/api.php"
 USER_AGENT = "histomap/0.1 (https://github.com/pmainguet/histomap)"
 BATCH_SIZE = 50
@@ -49,7 +44,13 @@ def prominence_components(
     curation attention a record happens to have received, or a single
     Wikidata type/confidence flag that isn't always reliable. Replaced by
     population_scale, a real magnitude signal instead of a boolean
-    "is a population source tagged" proxy -- see _load_peak_populations)."""
+    "is a population source tagged" proxy -- see _load_peak_populations).
+    population is a raw population count, NOT the same thing as
+    significance_by_era (historical_evidence's own input): that's a
+    per-era composite of population *and* area *and* social complexity,
+    normalized relative to its own century's cohort -- not comparable
+    across eras and not recoverable back into a population number. See
+    pipeline/compute_weights.py's normalize_significance()."""
     duration = max(1, (end if end is not None else current_year) - start)
     components = {
         "wikidata_reach": min(30, 15 * math.log10(1 + max(0, sitelinks))),
@@ -103,33 +104,22 @@ def fetch_sitelinks(qids: list[str], cache_path: Path = CACHE_PATH) -> dict[str,
     return cache
 
 
-def _peak_by_polity(path: Path) -> dict[str, float]:
-    if not path.exists():
-        return {}
-    frame = pd.read_parquet(path, columns=["polity_id", "population"])
-    return frame.groupby("polity_id")["population"].max().astype(float).to_dict()
-
-
-def _load_peak_populations(
-    maddison_path: Path = MADDISON_PATH, hyde_path: Path = HYDE_POLITY_PATH
-) -> tuple[dict[str, float], dict[str, str]]:
+def _load_peak_populations(**kwargs: Path) -> tuple[dict[str, float], dict[str, str]]:
     """Peak population per polity_id, plus which source it came from (for
-    the report). HYDE's per-polity estimate (pipeline/extract_hyde.py) is
-    a fixed 2.5-degree centroid-radius sum -- broad coverage (every
-    eligible accepted polity with a centroid) but badly undercounts
-    anything territorially large, since the circle only ever captures a
-    slice of a big country (the United States' 2025 HYDE figure is ~1.9
-    million against a real ~335 million). Maddison Project population
-    (pipeline/map_maddison.py's per-polity mapping, matched via
-    present_countries) is real national population -- accurate, but only
-    covers ~141 modern nation-states, 1516-2022. Maddison wins wherever
-    it covers a polity; HYDE fills in everyone else."""
-    peaks = _peak_by_polity(hyde_path)
-    source = {polity_id: "hyde" for polity_id in peaks}
-    maddison_peaks = _peak_by_polity(maddison_path)
-    peaks.update(maddison_peaks)
-    source.update({polity_id: "maddison" for polity_id in maddison_peaks})
-    return peaks, source
+    the report). Sourced from pipeline/compute_weights.py's own
+    load_consolidated_population() -- the same Maddison-preferred-over-
+    HYDE population merge significance_by_era's own population component
+    is built from, rather than a second, independent implementation
+    reading the same raw parquets (kwargs forwards straight through to
+    load_consolidated_population -- hyde_path/maddison_path/polities_dir/
+    interval, for tests that need to inject temp paths)."""
+    consolidated = load_consolidated_population(**kwargs)
+    if consolidated.empty:
+        return {}, {}
+    peak_rows = consolidated.loc[consolidated.groupby("polity_id")["population"].idxmax()]
+    peaks = dict(zip(peak_rows["polity_id"], peak_rows["population"].astype(float)))
+    sources = dict(zip(peak_rows["polity_id"], peak_rows["population_source"]))
+    return peaks, sources
 
 
 def compute(
@@ -138,7 +128,7 @@ def compute(
     offline: bool = False,
     report_path: Path = REPORT_PATH,
     maddison_path: Path = MADDISON_PATH,
-    hyde_path: Path = HYDE_POLITY_PATH,
+    hyde_path: Path = HYDE_PATH,
 ) -> dict[str, int]:
     paths = sorted(polities_dir.glob("*.yaml"))
     documents = [yaml.safe_load(path.read_text(encoding="utf-8")) for path in paths]
@@ -150,13 +140,21 @@ def compute(
     sitelinks = _load_cache(cache_path) if offline else fetch_sitelinks(qids, cache_path)
     if offline and set(qids) - set(sitelinks):
         raise ValueError("sitelink cache is incomplete; rerun without --offline")
-    peak_population, population_source = _load_peak_populations(maddison_path, hyde_path)
+    peak_population, population_source = _load_peak_populations(
+        hyde_path=hyde_path, maddison_path=maddison_path, polities_dir=polities_dir
+    )
 
     for document in documents:
         qid = (document.get("external_ids") or {}).get("wikidata")
         sources = set(document.get("sources") or [])
         authority = (12 if "seshat" in sources else 0) + (4 if "hyde" in sources else 0) + (4 if "maddison" in sources else 0)
-        evidence = 20 if document.get("weight_by_era") and not document.get("weight_imputed", True) else 8 if {"hyde", "maddison"} & sources else 0
+        evidence = (
+            20
+            if document.get("significance_by_era") and not document.get("significance_imputed", True)
+            else 8
+            if {"hyde", "maddison"} & sources
+            else 0
+        )
         components = prominence_components(
             sitelinks=sitelinks.get(qid, 0),
             start=document["start"],

@@ -11,12 +11,12 @@ start: 1563
 end: 1822
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1600: 3.67
   1700: 3.02
   1750: 3.09
   1800: 3.38
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -50,7 +50,7 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.04
-  population_scale: 12.41
+  population_scale: 12.4
   total: 47.63
 linked_era_id: south_america_early_modern_connections_era
 government_form: null

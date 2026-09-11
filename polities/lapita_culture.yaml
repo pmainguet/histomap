@@ -35,3 +35,6 @@ prominence_components:
   population_scale: 0.0
   total: 31.13
 prominence_score: 31.13
+significance_by_era:
+  -1600: 3
+significance_imputed: true

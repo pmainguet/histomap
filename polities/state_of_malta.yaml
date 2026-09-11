@@ -11,9 +11,9 @@ start: 1964
 end: 1974
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1964: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 37.62
+prominence_score: 37.6
 eligibility: accepted
 geography:
   continents:
@@ -53,8 +53,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 2.6
-  population_scale: 14.59
-  total: 37.62
+  population_scale: 14.57
+  total: 37.6
 manual_overrides:
 - consolidation
 - geography

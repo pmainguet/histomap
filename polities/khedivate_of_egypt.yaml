@@ -12,9 +12,9 @@ start: 1867
 end: 1914
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1900: 7.64
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 56.21
+prominence_score: 56.14
 eligibility: accepted
 geography:
   continents:
@@ -56,8 +56,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 4.2
-  population_scale: 15.36
-  total: 56.21
+  population_scale: 15.29
+  total: 56.14
 consolidation_status: independent
 manual_overrides:
 - consolidation

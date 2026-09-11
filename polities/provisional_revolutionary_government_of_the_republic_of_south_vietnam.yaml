@@ -11,9 +11,9 @@ start: 1969
 end: 1976
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1969: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 40.88
+prominence_score: 40.82
 eligibility: accepted
 geography:
   continents:
@@ -46,8 +46,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 2.26
-  population_scale: 16.25
-  total: 40.88
+  population_scale: 16.19
+  total: 40.82
 government_form: null
 detail_of: vietnam
 manual_overrides:

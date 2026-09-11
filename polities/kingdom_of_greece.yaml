@@ -10,11 +10,11 @@ start: 1832
 end: 1973
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1850: 6.2
   1900: 5.96
   1950: 6.63
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 59.17
+prominence_score: 59.11
 eligibility: accepted
 geography:
   continents:
@@ -49,8 +49,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 5.38
-  population_scale: 14.8
-  total: 59.17
+  population_scale: 14.74
+  total: 59.11
 linked_era_id: europe_industrial_imperial_world_era
 government_form: kingdom
 linked_chapter_id: macro_industrial_imperial_world

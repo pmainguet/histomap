@@ -19,9 +19,9 @@ start: 1000
 end: 1199
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1000: 1.0
-weight_imputed: true
+significance_imputed: true
 prominence_score: 5.75
 eligibility: review
 notes: Kept as a separate entity during Seshat reconciliation; requires canonical

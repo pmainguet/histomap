@@ -11,9 +11,9 @@ start: 1921
 end: 1958
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1950: 6.38
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -23,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 56.0
+prominence_score: 55.9
 eligibility: accepted
 geography:
   continents:
@@ -48,8 +48,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 3.95
-  population_scale: 14.7
-  total: 56.0
+  population_scale: 14.6
+  total: 55.9
 linked_era_id: asia_world_wars_reordering_era
 government_form: kingdom
 linked_chapter_id: macro_world_wars_reordering

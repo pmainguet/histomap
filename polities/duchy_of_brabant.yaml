@@ -12,7 +12,7 @@ start: 1183
 end: 1795
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1200: 8.52
   1300: 9.35
   1400: 8.36
@@ -20,7 +20,7 @@ weight_by_era:
   1600: 9.22
   1700: 8.58
   1750: 8.95
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -30,7 +30,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 60.2
+prominence_score: 60.13
 eligibility: accepted
 geography:
   continents:
@@ -62,8 +62,8 @@ prominence_components:
   authority_coverage: 4
   historical_evidence: 8
   longevity: 6.97
-  population_scale: 15.36
-  total: 60.2
+  population_scale: 15.3
+  total: 60.13
 linked_era_id: medieval_europe_era
 government_form: duchy
 linked_chapter_id: macro_postclassical_worlds

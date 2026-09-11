@@ -11,9 +11,9 @@ start: 1918
 end: 1944
 start_confidence: low
 end_confidence: low
-weight_by_era:
+significance_by_era:
   1918: 5
-weight_imputed: true
+significance_imputed: true
 icon: null
 text:
   short_child_en: ''
@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 38.72
+prominence_score: 38.57
 eligibility: accepted
 geography:
   continents:
@@ -53,8 +53,8 @@ prominence_components:
   authority_coverage: 0
   historical_evidence: 0
   longevity: 3.58
-  population_scale: 10.95
-  total: 38.72
+  population_scale: 10.8
+  total: 38.57
 government_form: kingdom
 consolidation_status: independent
 manual_overrides:
