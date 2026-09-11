@@ -139,6 +139,52 @@ function wireCreateEntityDialog(triggerButton, geographyOptions, { onCreated }) 
 // instead of only the immediate parent, which would leave a deeply nested
 // target's own container collapsed (and so not even in the DOM to scroll
 // or highlight). detail_of can point at either a polity or a period.
+// Builds the unified {id, year, segments, source, marker, label} shape
+// drawPopulationRow (explore_timeline.js) expects, from either the
+// HYDE-derived per-continent breakdown (population_by_continent.json,
+// preferred -- see pipeline/extract_hyde_by_continent.py) or, when that
+// cache hasn't been built on this machine yet (build.py's own copy-through
+// step skips it if missing), population_estimates.js's hand-curated global
+// milestones as a graceful single-segment fallback. `segments` is a list of
+// {continent, population} -- continent is null in fallback mode (one
+// segment, the whole world) and a real continent id in HYDE mode (always
+// the same 6 continents, one segment each).
+function buildPopulationSeries(hydeRows) {
+  const HYDE_SOURCE = {
+    name: "HYDE 3.4 (Klein Goldewijk & Beusen), aggregated by continent",
+    url: "https://www.pbl.nl/en/hyde-history-database-of-the-global-environment",
+  };
+  if (hydeRows && hydeRows.length > 0) {
+    const byYear = new Map();
+    for (const row of hydeRows) {
+      if (!byYear.has(row.year)) byYear.set(row.year, []);
+      byYear.get(row.year).push({ continent: row.continent, population: row.population });
+    }
+    const labelYears = new Set([-10000, -5000, -2000, -1000, 1, 1000, 1500, 1800, 1900, 1950]);
+    return [...byYear.keys()].sort((a, b) => a - b).map((year) => ({
+      id: `hyde_pop_${year}`,
+      year,
+      segments: byYear.get(year),
+      source: HYDE_SOURCE,
+      // HYDE samples annually from 1950 on -- thin markers to every 10th
+      // year there so the dense modern era doesn't turn into an unreadable
+      // cluster of circles; every year still contributes to the area shape
+      // itself (see drawPopulationRow), only the individual marker/label is
+      // thinned.
+      marker: year < 1950 || year % 10 === 0,
+      label: year < 1950 ? labelYears.has(year) : year % 25 === 0,
+    }));
+  }
+  return WORLD_POPULATION_ESTIMATES.map((point) => ({
+    id: point.id,
+    year: point.year,
+    segments: [{ continent: null, population: point.population }],
+    source: point.source,
+    marker: true,
+    label: point.label,
+  }));
+}
+
 function detailOfChain(id, detailCtx) {
   const chain = [id];
   let current = detailCtx?.politiesById.get(id) || detailCtx?.periodsById.get(id);
@@ -248,6 +294,7 @@ async function main() {
   let fullTree = null;
   let eraColorMap = null;
   let zoomRange = null;
+  let populationSeries = [];
 
   // Detail-of reveal state (see explore_timeline.js's DETAIL_PANEL_HEIGHT
   // section) -- owned here, not by the render function, so it survives the
@@ -333,12 +380,13 @@ async function main() {
       // of the tree (an event's placement comes from its own `year`, not
       // from tree nesting the way chapters/eras/periods are).
       events: detailCtx ? [...detailCtx.eventsById.values()] : [],
-      // Population lane: WORLD_POPULATION_ESTIMATES is a plain global
-      // (population_estimates.js), same "flat list, not tree-nested" shape
-      // as events -- never filtered by zoom/groupBy/geoFilter, same as
-      // events aren't; off-domain points just render outside the current
-      // viewBox, same as an off-screen event marker already does.
-      population: WORLD_POPULATION_ESTIMATES,
+      // Population lane: built once (see buildPopulationSeries) from
+      // either the HYDE per-continent breakdown or population_estimates.js's
+      // fallback -- same "flat list, not tree-nested" shape as events,
+      // never filtered by zoom/groupBy/geoFilter; off-domain points just
+      // render outside the current viewBox, same as an off-screen event
+      // marker already does.
+      population: populationSeries,
     }, onSelect);
   };
 
@@ -393,11 +441,27 @@ async function main() {
     // itself already enforces at build time.
     const events = await eventsResponse.json();
     const geographyOptions = await geographyOptionsResponse.json();
+    // Fetched separately from the batch above, and non-fatal on failure --
+    // this is a cached intermediate artifact (see build.py's own comment on
+    // POPULATION_BY_CONTINENT_OUT_PATH) that may not exist yet on every
+    // machine (extract_hyde_by_continent.py never run there). A 404 here
+    // should fall back to population_estimates.js's hand-curated global
+    // figures, not break the whole page the way a missing periods.json
+    // would.
+    let hydeByContinent = null;
+    try {
+      const populationResponse = await fetch("/population_by_continent.json");
+      if (populationResponse.ok) hydeByContinent = await populationResponse.json();
+    } catch {
+      // Network error or missing file -- buildPopulationSeries(null) below
+      // falls back to the hand-curated table either way.
+    }
+    populationSeries = buildPopulationSeries(hydeByContinent);
     detailCtx = {
       politiesById: new Map(polities.map((polity) => [polity.id, polity])),
       periodsById: new Map(periods.map((period) => [period.id, period])),
       eventsById: new Map(events.map((event) => [event.id, event])),
-      populationById: new Map(WORLD_POPULATION_ESTIMATES.map((point) => [point.id, point])),
+      populationById: new Map(populationSeries.map((entry) => [entry.id, entry])),
       periodLinks,
       transitions,
       geographyOptions,

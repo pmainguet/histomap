@@ -779,19 +779,35 @@ function drawFlatLaneRow(svg, scale, lanes, y, laneHeight, cls, onZoom, domainEn
 // of overlapping it.
 const EVENT_MARKER_RADIUS = 4;
 
-// Population lane (ROADMAP.md item, 10 September 2026): a single filled
-// "tide" silhouette rising from the lane's own baseline, one lane above
-// Events per explicit request. Height is driven by log10(population) --
-// world population was near-flat for 99.7% of history then rose almost
-// vertically in the last two centuries, so a linear height would leave the
-// shape looking empty until the last sliver of the timeline; log height is
-// a drawing decision only, never shown to the viewer (hover/click always
-// surfaces the real figure via POPULATION_MARKER_RADIUS below). The x-axis
-// stays exactly time-proportional like every other row -- only the height
-// channel is compressed.
+// Population lane (ROADMAP.md item, 10 September 2026): a filled "tide"
+// silhouette rising from the lane's own baseline, one lane above Events per
+// explicit request. Height is driven by log10(TOTAL population) -- world
+// population was near-flat for 99.7% of history then rose almost vertically
+// in the last two centuries, so a linear height would leave the shape
+// looking empty until the last sliver of the timeline; log height is a
+// drawing decision only, never shown to the viewer (hover/click always
+// surfaces the real figures). The x-axis stays exactly time-proportional
+// like every other row -- only the height channel is compressed.
+//
+// Each `entry` is {year, segments: [{continent, population}, ...], source,
+// id, label?} -- `continent` is null for the single-segment hand-curated
+// fallback (population_estimates.js, used when population_by_continent.json
+// hasn't been built yet) and a real continent id for the HYDE-derived
+// per-continent breakdown (see explore.js's buildPopulationSeries). Within
+// one year's total height, each continent gets a vertical slice sized by
+// its SHARE of that year's total -- not its own log-scaled height, which
+// would make log(a)+log(b) != log(a+b) mean the stack no longer sums to the
+// total. This is a normalized stack (like a 100%-stacked chart) riding on a
+// log-scaled total, not a literal stacked-log-area chart.
 const POPULATION_MARKER_RADIUS = 3;
+const POPULATION_CONTINENT_ORDER = ["asia", "africa", "europe", "north_america", "south_america", "oceania"];
+const POPULATION_CONTINENT_COLORS = {
+  asia: "#8c422d", africa: "#c98b4a", europe: "#4f6f63",
+  north_america: "#5c7a94", south_america: "#748a46", oceania: "#7a4d7a",
+};
 
 function populationHeight(population, minLog, maxLog, laneHeight) {
+  if (population <= 0) return 0;
   if (maxLog === minLog) return laneHeight; // defensive: a single-point series would divide by zero
   const raw = laneHeight * (Math.log10(population) - minLog) / (maxLog - minLog);
   return Math.max(0, Math.min(laneHeight, raw)); // belt-and-suspenders alongside the clip-path below
@@ -803,21 +819,23 @@ function formatPopulation(population) {
   return population.toLocaleString();
 }
 
-// `points` is WORLD_POPULATION_ESTIMATES already filtered to the visible
-// domain (see renderHierarchyTimeline) and sorted by year. Requires at
-// least 2 points to draw a shape; a single surviving point (an extreme
-// zoom) draws just its marker, no fill.
-function drawPopulationRow(svg, scale, points, y, laneHeight, width, onZoom) {
-  if (points.length === 0) return;
-  const logs = points.map((p) => Math.log10(p.population));
+function populationEntryTotal(entry) {
+  return entry.segments.reduce((sum, segment) => sum + segment.population, 0);
+}
+
+// `entries` is already filtered to the visible domain (see
+// renderHierarchyTimeline) and sorted by year. Requires at least 2 entries
+// to draw a shape; a single surviving entry (an extreme zoom) draws just
+// its marker, no fill.
+function drawPopulationRow(svg, scale, entries, y, laneHeight, width, onZoom) {
+  if (entries.length === 0) return;
+  const totals = entries.map(populationEntryTotal).filter((total) => total > 0);
+  if (totals.length === 0) return;
+  const logs = totals.map((total) => Math.log10(total));
   const minLog = Math.min(...logs);
   const maxLog = Math.max(...logs);
   const baseline = y + laneHeight;
-  const coords = points.map((p) => ({
-    x: scale.x(p.year),
-    y: baseline - populationHeight(p.population, minLog, maxLog, laneHeight),
-    point: p,
-  }));
+  const multiContinent = entries[0].segments.length > 1 || entries[0].segments[0].continent;
 
   // Clip to this lane's own rect so the tide can never bleed into the row
   // above or below regardless of data -- the height clamp in
@@ -829,42 +847,83 @@ function drawPopulationRow(svg, scale, points, y, laneHeight, width, onZoom) {
   const clipPath = svgEl("clipPath", { id: "population-lane-clip" });
   clipPath.append(svgEl("rect", { x: 0, y, width, height: laneHeight }));
   svg.append(clipPath);
-  // Rises from pale sand to the page's own accent color -- objectBoundingBox
-  // (the gradient default) scales to the filled path's own bbox, so one
-  // fixed vertical gradient works regardless of the lane's actual height.
-  const gradient = svgEl("linearGradient", { id: "population-tide-gradient", x1: 0, y1: 1, x2: 0, y2: 0 });
-  gradient.append(
-    svgEl("stop", { offset: 0, "stop-color": "#e7dcc5" }),
-    svgEl("stop", { offset: 1, "stop-color": "#8c422d" }),
-  );
-  svg.append(gradient);
+  if (!multiContinent) {
+    // Rises from pale sand to the page's own accent color -- only used in
+    // single-segment (fallback) mode; the multi-continent stack uses each
+    // continent's own flat color instead. Defined before any path
+    // references it, not just appended afterward -- a fill="url(#id)" only
+    // needs the def present in the DOM by paint time, but defining it first
+    // keeps the draw order easy to follow.
+    const gradient = svgEl("linearGradient", { id: "population-tide-gradient", x1: 0, y1: 1, x2: 0, y2: 0 });
+    gradient.append(
+      svgEl("stop", { offset: 0, "stop-color": "#e7dcc5" }),
+      svgEl("stop", { offset: 1, "stop-color": "#8c422d" }),
+    );
+    svg.append(gradient);
+  }
 
-  if (coords.length >= 2) {
-    const top = coords.map((c) => `${c.x},${c.y}`).join(" L ");
-    const areaPath = `M ${coords[0].x},${baseline} L ${top} L ${coords[coords.length - 1].x},${baseline} Z`;
-    const area = svgEl("path", {
-      d: areaPath, class: "hierarchy-population-fill", fill: "url(#population-tide-gradient)",
-      "clip-path": "url(#population-lane-clip)",
-    });
-    svg.append(area);
-    const line = svgEl("path", { d: `M ${top}`, class: "hierarchy-population-line", "clip-path": "url(#population-lane-clip)" });
+  // For each entry, compute the total height (log-scaled) and then split it
+  // into cumulative per-continent boundaries (bottom-to-top in
+  // POPULATION_CONTINENT_ORDER) sized by each continent's share of that
+  // year's total -- same construction as a normalized stacked-area chart.
+  const perEntry = entries.map((entry) => {
+    const x = scale.x(entry.year);
+    const total = populationEntryTotal(entry);
+    const totalHeight = populationHeight(total, minLog, maxLog, laneHeight);
+    const byContinent = new Map(entry.segments.map((segment) => [segment.continent, segment.population]));
+    let cumulative = 0;
+    const bounds = {};
+    for (const continent of POPULATION_CONTINENT_ORDER) {
+      const value = byContinent.get(continent);
+      if (value == null) continue;
+      const bottom = baseline - totalHeight * (cumulative / (total || 1));
+      cumulative += value;
+      const top = baseline - totalHeight * (cumulative / (total || 1));
+      bounds[continent] = { top, bottom };
+    }
+    // Single-segment fallback mode (continent: null) -- the whole height is
+    // one plain band, same shape as the original tide-line design.
+    if (!multiContinent) bounds[null] = { top: baseline - totalHeight, bottom: baseline };
+    return { entry, x, total, topY: baseline - totalHeight, bounds };
+  });
+
+  if (perEntry.length >= 2) {
+    const layers = multiContinent ? POPULATION_CONTINENT_ORDER : [null];
+    for (const continent of layers) {
+      const withLayer = perEntry.filter((p) => p.bounds[continent]);
+      if (withLayer.length < 2) continue;
+      const topLine = withLayer.map((p) => `${p.x},${p.bounds[continent].top}`).join(" L ");
+      const bottomLine = [...withLayer].reverse().map((p) => `${p.x},${p.bounds[continent].bottom}`).join(" L ");
+      const areaPath = `M ${topLine} L ${bottomLine} Z`;
+      const fill = continent ? POPULATION_CONTINENT_COLORS[continent] : "url(#population-tide-gradient)";
+      const area = svgEl("path", {
+        d: areaPath, class: "hierarchy-population-fill", fill, "clip-path": "url(#population-lane-clip)",
+      });
+      svg.append(area);
+    }
+    const topLine = perEntry.map((p) => `${p.x},${p.topY}`).join(" L ");
+    const line = svgEl("path", { d: `M ${topLine}`, class: "hierarchy-population-line", "clip-path": "url(#population-lane-clip)" });
     svg.append(line);
   }
 
-  for (const { x, y: cy, point } of coords) {
-    const openPanel = () => onZoom("population", point.id);
+  for (const { entry, x, topY, total } of perEntry) {
+    if (entry.marker === false) continue; // thinned out (see explore.js) -- too dense to mark individually, still part of the shape above
+    const openPanel = () => onZoom("population", entry.id);
     const circle = svgEl("circle", {
-      cx: x, cy, r: POPULATION_MARKER_RADIUS, class: "hierarchy-population-marker zoomable",
+      cx: x, cy: topY, r: POPULATION_MARKER_RADIUS, class: "hierarchy-population-marker zoomable",
     });
-    circle.dataset.bandId = `population:${point.id}`;
+    circle.dataset.bandId = `population:${entry.id}`;
     const title = svgEl("title");
-    title.textContent = `${formatYear(point.year)}: ~${formatPopulation(point.population)} people (${point.source.name})`;
+    const breakdown = multiContinent
+      ? entry.segments.map((s) => `${displayTerm(s.continent)} ~${formatPopulation(s.population)}`).join(", ")
+      : `~${formatPopulation(total)} people`;
+    title.textContent = `${formatYear(entry.year)}: ${breakdown} (${entry.source.name})`;
     circle.append(title);
     circle.addEventListener("click", openPanel);
     svg.append(circle);
-    if (point.label) {
-      const label = svgEl("text", { x: x + POPULATION_MARKER_RADIUS + 3, y: cy - 4, class: "hierarchy-population-label zoomable" });
-      label.textContent = `~${formatPopulation(point.population)}`;
+    if (entry.label) {
+      const label = svgEl("text", { x: x + POPULATION_MARKER_RADIUS + 3, y: topY - 4, class: "hierarchy-population-label zoomable" });
+      label.textContent = `~${formatPopulation(total)}`;
       label.addEventListener("click", openPanel);
       svg.append(label);
     }

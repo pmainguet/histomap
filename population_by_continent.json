@@ -1,0 +1,3842 @@
+[
+  {
+    "year": -10000,
+    "continent": "africa",
+    "population": 208889
+  },
+  {
+    "year": -10000,
+    "continent": "asia",
+    "population": 1125719
+  },
+  {
+    "year": -10000,
+    "continent": "europe",
+    "population": 469427
+  },
+  {
+    "year": -10000,
+    "continent": "north_america",
+    "population": 1137776
+  },
+  {
+    "year": -10000,
+    "continent": "oceania",
+    "population": 295836
+  },
+  {
+    "year": -10000,
+    "continent": "south_america",
+    "population": 1054458
+  },
+  {
+    "year": -9000,
+    "continent": "africa",
+    "population": 296323
+  },
+  {
+    "year": -9000,
+    "continent": "asia",
+    "population": 1591780
+  },
+  {
+    "year": -9000,
+    "continent": "europe",
+    "population": 573206
+  },
+  {
+    "year": -9000,
+    "continent": "north_america",
+    "population": 1373716
+  },
+  {
+    "year": -9000,
+    "continent": "oceania",
+    "population": 299352
+  },
+  {
+    "year": -9000,
+    "continent": "south_america",
+    "population": 1288416
+  },
+  {
+    "year": -8000,
+    "continent": "africa",
+    "population": 424703
+  },
+  {
+    "year": -8000,
+    "continent": "asia",
+    "population": 2290822
+  },
+  {
+    "year": -8000,
+    "continent": "europe",
+    "population": 708398
+  },
+  {
+    "year": -8000,
+    "continent": "north_america",
+    "population": 1663428
+  },
+  {
+    "year": -8000,
+    "continent": "oceania",
+    "population": 304625
+  },
+  {
+    "year": -8000,
+    "continent": "south_america",
+    "population": 1582352
+  },
+  {
+    "year": -7000,
+    "continent": "africa",
+    "population": 614984
+  },
+  {
+    "year": -7000,
+    "continent": "asia",
+    "population": 3414798
+  },
+  {
+    "year": -7000,
+    "continent": "europe",
+    "population": 888672
+  },
+  {
+    "year": -7000,
+    "continent": "north_america",
+    "population": 2019854
+  },
+  {
+    "year": -7000,
+    "continent": "oceania",
+    "population": 312539
+  },
+  {
+    "year": -7000,
+    "continent": "south_america",
+    "population": 1952785
+  },
+  {
+    "year": -6000,
+    "continent": "africa",
+    "population": 899615
+  },
+  {
+    "year": -6000,
+    "continent": "asia",
+    "population": 5396850
+  },
+  {
+    "year": -6000,
+    "continent": "europe",
+    "population": 1169583
+  },
+  {
+    "year": -6000,
+    "continent": "north_america",
+    "population": 2459169
+  },
+  {
+    "year": -6000,
+    "continent": "oceania",
+    "population": 324413
+  },
+  {
+    "year": -6000,
+    "continent": "south_america",
+    "population": 2420994
+  },
+  {
+    "year": -5000,
+    "continent": "africa",
+    "population": 1329204
+  },
+  {
+    "year": -5000,
+    "continent": "asia",
+    "population": 9037355
+  },
+  {
+    "year": -5000,
+    "continent": "europe",
+    "population": 1543376
+  },
+  {
+    "year": -5000,
+    "continent": "north_america",
+    "population": 3001592
+  },
+  {
+    "year": -5000,
+    "continent": "oceania",
+    "population": 342231
+  },
+  {
+    "year": -5000,
+    "continent": "south_america",
+    "population": 3014432
+  },
+  {
+    "year": -4000,
+    "continent": "africa",
+    "population": 2074322
+  },
+  {
+    "year": -4000,
+    "continent": "asia",
+    "population": 15418188
+  },
+  {
+    "year": -4000,
+    "continent": "europe",
+    "population": 2242880
+  },
+  {
+    "year": -4000,
+    "continent": "north_america",
+    "population": 3672447
+  },
+  {
+    "year": -4000,
+    "continent": "oceania",
+    "population": 368976
+  },
+  {
+    "year": -4000,
+    "continent": "south_america",
+    "population": 3768567
+  },
+  {
+    "year": -3000,
+    "continent": "africa",
+    "population": 3693350
+  },
+  {
+    "year": -3000,
+    "continent": "asia",
+    "population": 25782824
+  },
+  {
+    "year": -3000,
+    "continent": "europe",
+    "population": 3445668
+  },
+  {
+    "year": -3000,
+    "continent": "north_america",
+    "population": 4503473
+  },
+  {
+    "year": -3000,
+    "continent": "oceania",
+    "population": 409129
+  },
+  {
+    "year": -3000,
+    "continent": "south_america",
+    "population": 4729290
+  },
+  {
+    "year": -2000,
+    "continent": "africa",
+    "population": 5600570
+  },
+  {
+    "year": -2000,
+    "continent": "asia",
+    "population": 44986124
+  },
+  {
+    "year": -2000,
+    "continent": "europe",
+    "population": 6622874
+  },
+  {
+    "year": -2000,
+    "continent": "north_america",
+    "population": 5534531
+  },
+  {
+    "year": -2000,
+    "continent": "oceania",
+    "population": 469428
+  },
+  {
+    "year": -2000,
+    "continent": "south_america",
+    "population": 5956155
+  },
+  {
+    "year": -1000,
+    "continent": "africa",
+    "population": 8326373
+  },
+  {
+    "year": -1000,
+    "continent": "asia",
+    "population": 69735848
+  },
+  {
+    "year": -1000,
+    "continent": "europe",
+    "population": 11887241
+  },
+  {
+    "year": -1000,
+    "continent": "north_america",
+    "population": 6815759
+  },
+  {
+    "year": -1000,
+    "continent": "oceania",
+    "population": 563953
+  },
+  {
+    "year": -1000,
+    "continent": "south_america",
+    "population": 7569550
+  },
+  {
+    "year": 0,
+    "continent": "africa",
+    "population": 13728057
+  },
+  {
+    "year": 0,
+    "continent": "asia",
+    "population": 159707136
+  },
+  {
+    "year": 0,
+    "continent": "europe",
+    "population": 28905248
+  },
+  {
+    "year": 0,
+    "continent": "north_america",
+    "population": 8410348
+  },
+  {
+    "year": 0,
+    "continent": "oceania",
+    "population": 701097
+  },
+  {
+    "year": 0,
+    "continent": "south_america",
+    "population": 9673069
+  },
+  {
+    "year": 100,
+    "continent": "africa",
+    "population": 14973595
+  },
+  {
+    "year": 100,
+    "continent": "asia",
+    "population": 160120176
+  },
+  {
+    "year": 100,
+    "continent": "europe",
+    "population": 30352092
+  },
+  {
+    "year": 100,
+    "continent": "north_america",
+    "population": 8885148
+  },
+  {
+    "year": 100,
+    "continent": "oceania",
+    "population": 721187
+  },
+  {
+    "year": 100,
+    "continent": "south_america",
+    "population": 10340057
+  },
+  {
+    "year": 200,
+    "continent": "africa",
+    "population": 16393892
+  },
+  {
+    "year": 200,
+    "continent": "asia",
+    "population": 159215632
+  },
+  {
+    "year": 200,
+    "continent": "europe",
+    "population": 31744040
+  },
+  {
+    "year": 200,
+    "continent": "north_america",
+    "population": 9389469
+  },
+  {
+    "year": 200,
+    "continent": "oceania",
+    "population": 742286
+  },
+  {
+    "year": 200,
+    "continent": "south_america",
+    "population": 11053004
+  },
+  {
+    "year": 300,
+    "continent": "africa",
+    "population": 17265176
+  },
+  {
+    "year": 300,
+    "continent": "asia",
+    "population": 145156288
+  },
+  {
+    "year": 300,
+    "continent": "europe",
+    "population": 30508638
+  },
+  {
+    "year": 300,
+    "continent": "north_america",
+    "population": 9925669
+  },
+  {
+    "year": 300,
+    "continent": "oceania",
+    "population": 764449
+  },
+  {
+    "year": 300,
+    "continent": "south_america",
+    "population": 11815287
+  },
+  {
+    "year": 400,
+    "continent": "africa",
+    "population": 18403364
+  },
+  {
+    "year": 400,
+    "continent": "asia",
+    "population": 157550080
+  },
+  {
+    "year": 400,
+    "continent": "europe",
+    "population": 29305368
+  },
+  {
+    "year": 400,
+    "continent": "north_america",
+    "population": 10496412
+  },
+  {
+    "year": 400,
+    "continent": "oceania",
+    "population": 787734
+  },
+  {
+    "year": 400,
+    "continent": "south_america",
+    "population": 12630566
+  },
+  {
+    "year": 500,
+    "continent": "africa",
+    "population": 19773596
+  },
+  {
+    "year": 500,
+    "continent": "asia",
+    "population": 169603296
+  },
+  {
+    "year": 500,
+    "continent": "europe",
+    "population": 26098014
+  },
+  {
+    "year": 500,
+    "continent": "north_america",
+    "population": 11104740
+  },
+  {
+    "year": 500,
+    "continent": "oceania",
+    "population": 812203
+  },
+  {
+    "year": 500,
+    "continent": "south_america",
+    "population": 13502816
+  },
+  {
+    "year": 600,
+    "continent": "africa",
+    "population": 21592856
+  },
+  {
+    "year": 600,
+    "continent": "asia",
+    "population": 187530624
+  },
+  {
+    "year": 600,
+    "continent": "europe",
+    "population": 22767096
+  },
+  {
+    "year": 600,
+    "continent": "north_america",
+    "population": 11754152
+  },
+  {
+    "year": 600,
+    "continent": "oceania",
+    "population": 837924
+  },
+  {
+    "year": 600,
+    "continent": "south_america",
+    "population": 14436362
+  },
+  {
+    "year": 700,
+    "continent": "africa",
+    "population": 24855362
+  },
+  {
+    "year": 700,
+    "continent": "asia",
+    "population": 186275232
+  },
+  {
+    "year": 700,
+    "continent": "europe",
+    "population": 24810644
+  },
+  {
+    "year": 700,
+    "continent": "north_america",
+    "population": 12448711
+  },
+  {
+    "year": 700,
+    "continent": "oceania",
+    "population": 864971
+  },
+  {
+    "year": 700,
+    "continent": "south_america",
+    "population": 15435928
+  },
+  {
+    "year": 800,
+    "continent": "africa",
+    "population": 29002672
+  },
+  {
+    "year": 800,
+    "continent": "asia",
+    "population": 184467328
+  },
+  {
+    "year": 800,
+    "continent": "europe",
+    "population": 27115772
+  },
+  {
+    "year": 800,
+    "continent": "north_america",
+    "population": 13193198
+  },
+  {
+    "year": 800,
+    "continent": "oceania",
+    "population": 893423
+  },
+  {
+    "year": 800,
+    "continent": "south_america",
+    "population": 16506682
+  },
+  {
+    "year": 900,
+    "continent": "africa",
+    "population": 32902822
+  },
+  {
+    "year": 900,
+    "continent": "asia",
+    "population": 198676592
+  },
+  {
+    "year": 900,
+    "continent": "europe",
+    "population": 30196896
+  },
+  {
+    "year": 900,
+    "continent": "north_america",
+    "population": 15264531
+  },
+  {
+    "year": 900,
+    "continent": "oceania",
+    "population": 923368
+  },
+  {
+    "year": 900,
+    "continent": "south_america",
+    "population": 17324854
+  },
+  {
+    "year": 1000,
+    "continent": "africa",
+    "population": 36891108
+  },
+  {
+    "year": 1000,
+    "continent": "asia",
+    "population": 200349616
+  },
+  {
+    "year": 1000,
+    "continent": "europe",
+    "population": 33409850
+  },
+  {
+    "year": 1000,
+    "continent": "north_america",
+    "population": 17231490
+  },
+  {
+    "year": 1000,
+    "continent": "oceania",
+    "population": 954908
+  },
+  {
+    "year": 1000,
+    "continent": "south_america",
+    "population": 18147862
+  },
+  {
+    "year": 1100,
+    "continent": "africa",
+    "population": 39462816
+  },
+  {
+    "year": 1100,
+    "continent": "asia",
+    "population": 258048416
+  },
+  {
+    "year": 1100,
+    "continent": "europe",
+    "population": 41072792
+  },
+  {
+    "year": 1100,
+    "continent": "north_america",
+    "population": 19380916
+  },
+  {
+    "year": 1100,
+    "continent": "oceania",
+    "population": 988156
+  },
+  {
+    "year": 1100,
+    "continent": "south_america",
+    "population": 20042806
+  },
+  {
+    "year": 1200,
+    "continent": "africa",
+    "population": 42510800
+  },
+  {
+    "year": 1200,
+    "continent": "asia",
+    "population": 279032256
+  },
+  {
+    "year": 1200,
+    "continent": "europe",
+    "population": 57148948
+  },
+  {
+    "year": 1200,
+    "continent": "north_america",
+    "population": 21634850
+  },
+  {
+    "year": 1200,
+    "continent": "oceania",
+    "population": 1036096
+  },
+  {
+    "year": 1200,
+    "continent": "south_america",
+    "population": 21938012
+  },
+  {
+    "year": 1300,
+    "continent": "africa",
+    "population": 47792168
+  },
+  {
+    "year": 1300,
+    "continent": "asia",
+    "population": 259529376
+  },
+  {
+    "year": 1300,
+    "continent": "europe",
+    "population": 76694840
+  },
+  {
+    "year": 1300,
+    "continent": "north_america",
+    "population": 23928546
+  },
+  {
+    "year": 1300,
+    "continent": "oceania",
+    "population": 1076399
+  },
+  {
+    "year": 1300,
+    "continent": "south_america",
+    "population": 23837516
+  },
+  {
+    "year": 1400,
+    "continent": "africa",
+    "population": 51729532
+  },
+  {
+    "year": 1400,
+    "continent": "asia",
+    "population": 259047440
+  },
+  {
+    "year": 1400,
+    "continent": "europe",
+    "population": 56420320
+  },
+  {
+    "year": 1400,
+    "continent": "north_america",
+    "population": 26339712
+  },
+  {
+    "year": 1400,
+    "continent": "oceania",
+    "population": 1115693
+  },
+  {
+    "year": 1400,
+    "continent": "south_america",
+    "population": 25737342
+  },
+  {
+    "year": 1500,
+    "continent": "africa",
+    "population": 55892508
+  },
+  {
+    "year": 1500,
+    "continent": "asia",
+    "population": 290078080
+  },
+  {
+    "year": 1500,
+    "continent": "europe",
+    "population": 73221080
+  },
+  {
+    "year": 1500,
+    "continent": "north_america",
+    "population": 28815682
+  },
+  {
+    "year": 1500,
+    "continent": "oceania",
+    "population": 1205624
+  },
+  {
+    "year": 1500,
+    "continent": "south_america",
+    "population": 28837376
+  },
+  {
+    "year": 1600,
+    "continent": "africa",
+    "population": 65675256
+  },
+  {
+    "year": 1600,
+    "continent": "asia",
+    "population": 318018336
+  },
+  {
+    "year": 1600,
+    "continent": "europe",
+    "population": 94215160
+  },
+  {
+    "year": 1600,
+    "continent": "north_america",
+    "population": 3288556
+  },
+  {
+    "year": 1600,
+    "continent": "oceania",
+    "population": 1298342
+  },
+  {
+    "year": 1600,
+    "continent": "south_america",
+    "population": 6123138
+  },
+  {
+    "year": 1700,
+    "continent": "africa",
+    "population": 71777432
+  },
+  {
+    "year": 1700,
+    "continent": "asia",
+    "population": 367099456
+  },
+  {
+    "year": 1700,
+    "continent": "europe",
+    "population": 107148056
+  },
+  {
+    "year": 1700,
+    "continent": "north_america",
+    "population": 6131118
+  },
+  {
+    "year": 1700,
+    "continent": "oceania",
+    "population": 1389240
+  },
+  {
+    "year": 1700,
+    "continent": "south_america",
+    "population": 5635914
+  },
+  {
+    "year": 1710,
+    "continent": "africa",
+    "population": 73461600
+  },
+  {
+    "year": 1710,
+    "continent": "asia",
+    "population": 378878976
+  },
+  {
+    "year": 1710,
+    "continent": "europe",
+    "population": 115178672
+  },
+  {
+    "year": 1710,
+    "continent": "north_america",
+    "population": 6938032
+  },
+  {
+    "year": 1710,
+    "continent": "oceania",
+    "population": 1382649
+  },
+  {
+    "year": 1710,
+    "continent": "south_america",
+    "population": 5805666
+  },
+  {
+    "year": 1720,
+    "continent": "africa",
+    "population": 75224480
+  },
+  {
+    "year": 1720,
+    "continent": "asia",
+    "population": 399609664
+  },
+  {
+    "year": 1720,
+    "continent": "europe",
+    "population": 121539824
+  },
+  {
+    "year": 1720,
+    "continent": "north_america",
+    "population": 7761713
+  },
+  {
+    "year": 1720,
+    "continent": "oceania",
+    "population": 1384471
+  },
+  {
+    "year": 1720,
+    "continent": "south_america",
+    "population": 5992178
+  },
+  {
+    "year": 1730,
+    "continent": "africa",
+    "population": 76992128
+  },
+  {
+    "year": 1730,
+    "continent": "asia",
+    "population": 412699232
+  },
+  {
+    "year": 1730,
+    "continent": "europe",
+    "population": 128088328
+  },
+  {
+    "year": 1730,
+    "continent": "north_america",
+    "population": 8598346
+  },
+  {
+    "year": 1730,
+    "continent": "oceania",
+    "population": 1386370
+  },
+  {
+    "year": 1730,
+    "continent": "south_america",
+    "population": 6199020
+  },
+  {
+    "year": 1740,
+    "continent": "africa",
+    "population": 78764960
+  },
+  {
+    "year": 1740,
+    "continent": "asia",
+    "population": 433992640
+  },
+  {
+    "year": 1740,
+    "continent": "europe",
+    "population": 134690784
+  },
+  {
+    "year": 1740,
+    "continent": "north_america",
+    "population": 9450886
+  },
+  {
+    "year": 1740,
+    "continent": "oceania",
+    "population": 1388349
+  },
+  {
+    "year": 1740,
+    "continent": "south_america",
+    "population": 6430679
+  },
+  {
+    "year": 1750,
+    "continent": "africa",
+    "population": 80543496
+  },
+  {
+    "year": 1750,
+    "continent": "asia",
+    "population": 474266112
+  },
+  {
+    "year": 1750,
+    "continent": "europe",
+    "population": 141379712
+  },
+  {
+    "year": 1750,
+    "continent": "north_america",
+    "population": 10323004
+  },
+  {
+    "year": 1750,
+    "continent": "oceania",
+    "population": 1390417
+  },
+  {
+    "year": 1750,
+    "continent": "south_america",
+    "population": 6692757
+  },
+  {
+    "year": 1760,
+    "continent": "africa",
+    "population": 82328328
+  },
+  {
+    "year": 1760,
+    "continent": "asia",
+    "population": 498509280
+  },
+  {
+    "year": 1760,
+    "continent": "europe",
+    "population": 148184112
+  },
+  {
+    "year": 1760,
+    "continent": "north_america",
+    "population": 11219282
+  },
+  {
+    "year": 1760,
+    "continent": "oceania",
+    "population": 1392588
+  },
+  {
+    "year": 1760,
+    "continent": "south_america",
+    "population": 6992246
+  },
+  {
+    "year": 1770,
+    "continent": "africa",
+    "population": 84120176
+  },
+  {
+    "year": 1770,
+    "continent": "asia",
+    "population": 527061696
+  },
+  {
+    "year": 1770,
+    "continent": "europe",
+    "population": 155085200
+  },
+  {
+    "year": 1770,
+    "continent": "north_america",
+    "population": 12145476
+  },
+  {
+    "year": 1770,
+    "continent": "oceania",
+    "population": 1395036
+  },
+  {
+    "year": 1770,
+    "continent": "south_america",
+    "population": 7337887
+  },
+  {
+    "year": 1780,
+    "continent": "africa",
+    "population": 85919888
+  },
+  {
+    "year": 1780,
+    "continent": "asia",
+    "population": 587286400
+  },
+  {
+    "year": 1780,
+    "continent": "europe",
+    "population": 162412240
+  },
+  {
+    "year": 1780,
+    "continent": "north_america",
+    "population": 13122219
+  },
+  {
+    "year": 1780,
+    "continent": "oceania",
+    "population": 1397865
+  },
+  {
+    "year": 1780,
+    "continent": "south_america",
+    "population": 7740616
+  },
+  {
+    "year": 1790,
+    "continent": "africa",
+    "population": 87728512
+  },
+  {
+    "year": 1790,
+    "continent": "asia",
+    "population": 615923712
+  },
+  {
+    "year": 1790,
+    "continent": "europe",
+    "population": 170120352
+  },
+  {
+    "year": 1790,
+    "continent": "north_america",
+    "population": 14141429
+  },
+  {
+    "year": 1790,
+    "continent": "oceania",
+    "population": 1401834
+  },
+  {
+    "year": 1790,
+    "continent": "south_america",
+    "population": 8214129
+  },
+  {
+    "year": 1800,
+    "continent": "africa",
+    "population": 89547312
+  },
+  {
+    "year": 1800,
+    "continent": "asia",
+    "population": 615662208
+  },
+  {
+    "year": 1800,
+    "continent": "europe",
+    "population": 177692224
+  },
+  {
+    "year": 1800,
+    "continent": "north_america",
+    "population": 16107266
+  },
+  {
+    "year": 1800,
+    "continent": "oceania",
+    "population": 1390728
+  },
+  {
+    "year": 1800,
+    "continent": "south_america",
+    "population": 8775582
+  },
+  {
+    "year": 1810,
+    "continent": "africa",
+    "population": 91828600
+  },
+  {
+    "year": 1810,
+    "continent": "asia",
+    "population": 672131072
+  },
+  {
+    "year": 1810,
+    "continent": "europe",
+    "population": 186627824
+  },
+  {
+    "year": 1810,
+    "continent": "north_america",
+    "population": 18603500
+  },
+  {
+    "year": 1810,
+    "continent": "oceania",
+    "population": 1381746
+  },
+  {
+    "year": 1810,
+    "continent": "south_america",
+    "population": 9658569
+  },
+  {
+    "year": 1820,
+    "continent": "africa",
+    "population": 94042944
+  },
+  {
+    "year": 1820,
+    "continent": "asia",
+    "population": 686986880
+  },
+  {
+    "year": 1820,
+    "continent": "europe",
+    "population": 198986480
+  },
+  {
+    "year": 1820,
+    "continent": "north_america",
+    "population": 21739796
+  },
+  {
+    "year": 1820,
+    "continent": "oceania",
+    "population": 1404230
+  },
+  {
+    "year": 1820,
+    "continent": "south_america",
+    "population": 10902863
+  },
+  {
+    "year": 1830,
+    "continent": "africa",
+    "population": 96222936
+  },
+  {
+    "year": 1830,
+    "continent": "asia",
+    "population": 738045760
+  },
+  {
+    "year": 1830,
+    "continent": "europe",
+    "population": 215674112
+  },
+  {
+    "year": 1830,
+    "continent": "north_america",
+    "population": 25903076
+  },
+  {
+    "year": 1830,
+    "continent": "oceania",
+    "population": 1446442
+  },
+  {
+    "year": 1830,
+    "continent": "south_america",
+    "population": 13242465
+  },
+  {
+    "year": 1840,
+    "continent": "africa",
+    "population": 98436144
+  },
+  {
+    "year": 1840,
+    "continent": "asia",
+    "population": 762070464
+  },
+  {
+    "year": 1840,
+    "continent": "europe",
+    "population": 236957328
+  },
+  {
+    "year": 1840,
+    "continent": "north_america",
+    "population": 30963890
+  },
+  {
+    "year": 1840,
+    "continent": "oceania",
+    "population": 1540219
+  },
+  {
+    "year": 1840,
+    "continent": "south_america",
+    "population": 15494234
+  },
+  {
+    "year": 1850,
+    "continent": "africa",
+    "population": 100721400
+  },
+  {
+    "year": 1850,
+    "continent": "asia",
+    "population": 805491072
+  },
+  {
+    "year": 1850,
+    "continent": "europe",
+    "population": 252594240
+  },
+  {
+    "year": 1850,
+    "continent": "north_america",
+    "population": 37689060
+  },
+  {
+    "year": 1850,
+    "continent": "oceania",
+    "population": 1816514
+  },
+  {
+    "year": 1850,
+    "continent": "south_america",
+    "population": 18076418
+  },
+  {
+    "year": 1860,
+    "continent": "africa",
+    "population": 102963200
+  },
+  {
+    "year": 1860,
+    "continent": "asia",
+    "population": 820353280
+  },
+  {
+    "year": 1860,
+    "continent": "europe",
+    "population": 274099872
+  },
+  {
+    "year": 1860,
+    "continent": "north_america",
+    "population": 47194984
+  },
+  {
+    "year": 1860,
+    "continent": "oceania",
+    "population": 2405932
+  },
+  {
+    "year": 1860,
+    "continent": "south_america",
+    "population": 21026156
+  },
+  {
+    "year": 1870,
+    "continent": "africa",
+    "population": 107408736
+  },
+  {
+    "year": 1870,
+    "continent": "asia",
+    "population": 780491392
+  },
+  {
+    "year": 1870,
+    "continent": "europe",
+    "population": 294155808
+  },
+  {
+    "year": 1870,
+    "continent": "north_america",
+    "population": 55317228
+  },
+  {
+    "year": 1870,
+    "continent": "oceania",
+    "population": 2929090
+  },
+  {
+    "year": 1870,
+    "continent": "south_america",
+    "population": 23504660
+  },
+  {
+    "year": 1880,
+    "continent": "africa",
+    "population": 113755016
+  },
+  {
+    "year": 1880,
+    "continent": "asia",
+    "population": 800364608
+  },
+  {
+    "year": 1880,
+    "continent": "europe",
+    "population": 324620960
+  },
+  {
+    "year": 1880,
+    "continent": "north_america",
+    "population": 68037552
+  },
+  {
+    "year": 1880,
+    "continent": "oceania",
+    "population": 3397944
+  },
+  {
+    "year": 1880,
+    "continent": "south_america",
+    "population": 26873372
+  },
+  {
+    "year": 1890,
+    "continent": "africa",
+    "population": 121729064
+  },
+  {
+    "year": 1890,
+    "continent": "asia",
+    "population": 849685888
+  },
+  {
+    "year": 1890,
+    "continent": "europe",
+    "population": 356277664
+  },
+  {
+    "year": 1890,
+    "continent": "north_america",
+    "population": 82899136
+  },
+  {
+    "year": 1890,
+    "continent": "oceania",
+    "population": 4209166
+  },
+  {
+    "year": 1890,
+    "continent": "south_america",
+    "population": 33360112
+  },
+  {
+    "year": 1900,
+    "continent": "africa",
+    "population": 125706784
+  },
+  {
+    "year": 1900,
+    "continent": "asia",
+    "population": 896482240
+  },
+  {
+    "year": 1900,
+    "continent": "europe",
+    "population": 391245088
+  },
+  {
+    "year": 1900,
+    "continent": "north_america",
+    "population": 98100568
+  },
+  {
+    "year": 1900,
+    "continent": "oceania",
+    "population": 4755609
+  },
+  {
+    "year": 1900,
+    "continent": "south_america",
+    "population": 39440424
+  },
+  {
+    "year": 1910,
+    "continent": "africa",
+    "population": 131475160
+  },
+  {
+    "year": 1910,
+    "continent": "asia",
+    "population": 922907456
+  },
+  {
+    "year": 1910,
+    "continent": "europe",
+    "population": 442761600
+  },
+  {
+    "year": 1910,
+    "continent": "north_america",
+    "population": 116999000
+  },
+  {
+    "year": 1910,
+    "continent": "oceania",
+    "population": 5329078
+  },
+  {
+    "year": 1910,
+    "continent": "south_america",
+    "population": 48278804
+  },
+  {
+    "year": 1920,
+    "continent": "africa",
+    "population": 137914752
+  },
+  {
+    "year": 1920,
+    "continent": "asia",
+    "population": 1000159488
+  },
+  {
+    "year": 1920,
+    "continent": "europe",
+    "population": 440395648
+  },
+  {
+    "year": 1920,
+    "continent": "north_america",
+    "population": 132855864
+  },
+  {
+    "year": 1920,
+    "continent": "oceania",
+    "population": 6221203
+  },
+  {
+    "year": 1920,
+    "continent": "south_america",
+    "population": 62173164
+  },
+  {
+    "year": 1930,
+    "continent": "africa",
+    "population": 157729600
+  },
+  {
+    "year": 1930,
+    "continent": "asia",
+    "population": 1075416832
+  },
+  {
+    "year": 1930,
+    "continent": "europe",
+    "population": 475028160
+  },
+  {
+    "year": 1930,
+    "continent": "north_america",
+    "population": 153896448
+  },
+  {
+    "year": 1930,
+    "continent": "oceania",
+    "population": 7124195
+  },
+  {
+    "year": 1930,
+    "continent": "south_america",
+    "population": 77808848
+  },
+  {
+    "year": 1940,
+    "continent": "africa",
+    "population": 180849504
+  },
+  {
+    "year": 1940,
+    "continent": "asia",
+    "population": 1188630784
+  },
+  {
+    "year": 1940,
+    "continent": "europe",
+    "population": 520316576
+  },
+  {
+    "year": 1940,
+    "continent": "north_america",
+    "population": 168301472
+  },
+  {
+    "year": 1940,
+    "continent": "oceania",
+    "population": 7871402
+  },
+  {
+    "year": 1940,
+    "continent": "south_america",
+    "population": 85575352
+  },
+  {
+    "year": 1950,
+    "continent": "africa",
+    "population": 215027968
+  },
+  {
+    "year": 1950,
+    "continent": "asia",
+    "population": 1303683968
+  },
+  {
+    "year": 1950,
+    "continent": "europe",
+    "population": 509364928
+  },
+  {
+    "year": 1950,
+    "continent": "north_america",
+    "population": 206696000
+  },
+  {
+    "year": 1950,
+    "continent": "oceania",
+    "population": 8833190
+  },
+  {
+    "year": 1950,
+    "continent": "south_america",
+    "population": 105982416
+  },
+  {
+    "year": 1951,
+    "continent": "africa",
+    "population": 219036592
+  },
+  {
+    "year": 1951,
+    "continent": "asia",
+    "population": 1333166720
+  },
+  {
+    "year": 1951,
+    "continent": "europe",
+    "population": 513964416
+  },
+  {
+    "year": 1951,
+    "continent": "north_america",
+    "population": 203997136
+  },
+  {
+    "year": 1951,
+    "continent": "oceania",
+    "population": 9057511
+  },
+  {
+    "year": 1951,
+    "continent": "south_america",
+    "population": 108822368
+  },
+  {
+    "year": 1952,
+    "continent": "africa",
+    "population": 223574752
+  },
+  {
+    "year": 1952,
+    "continent": "asia",
+    "population": 1359711744
+  },
+  {
+    "year": 1952,
+    "continent": "europe",
+    "population": 519008544
+  },
+  {
+    "year": 1952,
+    "continent": "north_america",
+    "population": 208235504
+  },
+  {
+    "year": 1952,
+    "continent": "oceania",
+    "population": 9266300
+  },
+  {
+    "year": 1952,
+    "continent": "south_america",
+    "population": 111795072
+  },
+  {
+    "year": 1953,
+    "continent": "africa",
+    "population": 228313856
+  },
+  {
+    "year": 1953,
+    "continent": "asia",
+    "population": 1385241088
+  },
+  {
+    "year": 1953,
+    "continent": "europe",
+    "population": 524276416
+  },
+  {
+    "year": 1953,
+    "continent": "north_america",
+    "population": 212554640
+  },
+  {
+    "year": 1953,
+    "continent": "oceania",
+    "population": 9468646
+  },
+  {
+    "year": 1953,
+    "continent": "south_america",
+    "population": 114824208
+  },
+  {
+    "year": 1954,
+    "continent": "africa",
+    "population": 233254144
+  },
+  {
+    "year": 1954,
+    "continent": "asia",
+    "population": 1410478976
+  },
+  {
+    "year": 1954,
+    "continent": "europe",
+    "population": 529650240
+  },
+  {
+    "year": 1954,
+    "continent": "north_america",
+    "population": 216946432
+  },
+  {
+    "year": 1954,
+    "continent": "oceania",
+    "population": 9671315
+  },
+  {
+    "year": 1954,
+    "continent": "south_america",
+    "population": 117907160
+  },
+  {
+    "year": 1955,
+    "continent": "africa",
+    "population": 238396448
+  },
+  {
+    "year": 1955,
+    "continent": "asia",
+    "population": 1435995392
+  },
+  {
+    "year": 1955,
+    "continent": "europe",
+    "population": 535049984
+  },
+  {
+    "year": 1955,
+    "continent": "north_america",
+    "population": 221403504
+  },
+  {
+    "year": 1955,
+    "continent": "oceania",
+    "population": 9878699
+  },
+  {
+    "year": 1955,
+    "continent": "south_america",
+    "population": 121045848
+  },
+  {
+    "year": 1956,
+    "continent": "africa",
+    "population": 243740384
+  },
+  {
+    "year": 1956,
+    "continent": "asia",
+    "population": 1462180224
+  },
+  {
+    "year": 1956,
+    "continent": "europe",
+    "population": 540435008
+  },
+  {
+    "year": 1956,
+    "continent": "north_america",
+    "population": 225918816
+  },
+  {
+    "year": 1956,
+    "continent": "oceania",
+    "population": 10092823
+  },
+  {
+    "year": 1956,
+    "continent": "south_america",
+    "population": 124246976
+  },
+  {
+    "year": 1957,
+    "continent": "africa",
+    "population": 249286720
+  },
+  {
+    "year": 1957,
+    "continent": "asia",
+    "population": 1489311488
+  },
+  {
+    "year": 1957,
+    "continent": "europe",
+    "population": 545802240
+  },
+  {
+    "year": 1957,
+    "continent": "north_america",
+    "population": 230485840
+  },
+  {
+    "year": 1957,
+    "continent": "oceania",
+    "population": 10313435
+  },
+  {
+    "year": 1957,
+    "continent": "south_america",
+    "population": 127521664
+  },
+  {
+    "year": 1958,
+    "continent": "africa",
+    "population": 255034592
+  },
+  {
+    "year": 1958,
+    "continent": "asia",
+    "population": 1517509632
+  },
+  {
+    "year": 1958,
+    "continent": "europe",
+    "population": 551180160
+  },
+  {
+    "year": 1958,
+    "continent": "north_america",
+    "population": 235098624
+  },
+  {
+    "year": 1958,
+    "continent": "oceania",
+    "population": 10538276
+  },
+  {
+    "year": 1958,
+    "continent": "south_america",
+    "population": 130884608
+  },
+  {
+    "year": 1959,
+    "continent": "africa",
+    "population": 260990032
+  },
+  {
+    "year": 1959,
+    "continent": "asia",
+    "population": 1546787328
+  },
+  {
+    "year": 1959,
+    "continent": "europe",
+    "population": 556619584
+  },
+  {
+    "year": 1959,
+    "continent": "north_america",
+    "population": 239751888
+  },
+  {
+    "year": 1959,
+    "continent": "oceania",
+    "population": 10763750
+  },
+  {
+    "year": 1959,
+    "continent": "south_america",
+    "population": 134352288
+  },
+  {
+    "year": 1960,
+    "continent": "africa",
+    "population": 267160160
+  },
+  {
+    "year": 1960,
+    "continent": "asia",
+    "population": 1577115776
+  },
+  {
+    "year": 1960,
+    "continent": "europe",
+    "population": 562177024
+  },
+  {
+    "year": 1960,
+    "continent": "north_america",
+    "population": 244441280
+  },
+  {
+    "year": 1960,
+    "continent": "oceania",
+    "population": 10986474
+  },
+  {
+    "year": 1960,
+    "continent": "south_america",
+    "population": 137938208
+  },
+  {
+    "year": 1961,
+    "continent": "africa",
+    "population": 273748000
+  },
+  {
+    "year": 1961,
+    "continent": "asia",
+    "population": 1608461312
+  },
+  {
+    "year": 1961,
+    "continent": "europe",
+    "population": 567626304
+  },
+  {
+    "year": 1961,
+    "continent": "north_america",
+    "population": 248729360
+  },
+  {
+    "year": 1961,
+    "continent": "oceania",
+    "population": 11199156
+  },
+  {
+    "year": 1961,
+    "continent": "south_america",
+    "population": 141650784
+  },
+  {
+    "year": 1962,
+    "continent": "africa",
+    "population": 280551392
+  },
+  {
+    "year": 1962,
+    "continent": "asia",
+    "population": 1641165568
+  },
+  {
+    "year": 1962,
+    "continent": "europe",
+    "population": 573130240
+  },
+  {
+    "year": 1962,
+    "continent": "north_america",
+    "population": 253049888
+  },
+  {
+    "year": 1962,
+    "continent": "oceania",
+    "population": 11409797
+  },
+  {
+    "year": 1962,
+    "continent": "south_america",
+    "population": 145479792
+  },
+  {
+    "year": 1963,
+    "continent": "africa",
+    "population": 287576512
+  },
+  {
+    "year": 1963,
+    "continent": "asia",
+    "population": 1675639680
+  },
+  {
+    "year": 1963,
+    "continent": "europe",
+    "population": 578559424
+  },
+  {
+    "year": 1963,
+    "continent": "north_america",
+    "population": 257403408
+  },
+  {
+    "year": 1963,
+    "continent": "oceania",
+    "population": 11624623
+  },
+  {
+    "year": 1963,
+    "continent": "south_america",
+    "population": 149403232
+  },
+  {
+    "year": 1964,
+    "continent": "africa",
+    "population": 294824576
+  },
+  {
+    "year": 1964,
+    "continent": "asia",
+    "population": 1712386048
+  },
+  {
+    "year": 1964,
+    "continent": "europe",
+    "population": 583742336
+  },
+  {
+    "year": 1964,
+    "continent": "north_america",
+    "population": 261791984
+  },
+  {
+    "year": 1964,
+    "continent": "oceania",
+    "population": 11852118
+  },
+  {
+    "year": 1964,
+    "continent": "south_america",
+    "population": 153389984
+  },
+  {
+    "year": 1965,
+    "continent": "africa",
+    "population": 302298784
+  },
+  {
+    "year": 1965,
+    "continent": "asia",
+    "population": 1751706112
+  },
+  {
+    "year": 1965,
+    "continent": "europe",
+    "population": 588559744
+  },
+  {
+    "year": 1965,
+    "continent": "north_america",
+    "population": 266217888
+  },
+  {
+    "year": 1965,
+    "continent": "oceania",
+    "population": 12097570
+  },
+  {
+    "year": 1965,
+    "continent": "south_america",
+    "population": 157415952
+  },
+  {
+    "year": 1966,
+    "continent": "africa",
+    "population": 310006016
+  },
+  {
+    "year": 1966,
+    "continent": "asia",
+    "population": 1793752576
+  },
+  {
+    "year": 1966,
+    "continent": "europe",
+    "population": 592953024
+  },
+  {
+    "year": 1966,
+    "continent": "north_america",
+    "population": 270674880
+  },
+  {
+    "year": 1966,
+    "continent": "oceania",
+    "population": 12363440
+  },
+  {
+    "year": 1966,
+    "continent": "south_america",
+    "population": 161476800
+  },
+  {
+    "year": 1967,
+    "continent": "africa",
+    "population": 317953472
+  },
+  {
+    "year": 1967,
+    "continent": "asia",
+    "population": 1838273920
+  },
+  {
+    "year": 1967,
+    "continent": "europe",
+    "population": 596963648
+  },
+  {
+    "year": 1967,
+    "continent": "north_america",
+    "population": 275163200
+  },
+  {
+    "year": 1967,
+    "continent": "oceania",
+    "population": 12645701
+  },
+  {
+    "year": 1967,
+    "continent": "south_america",
+    "population": 165574816
+  },
+  {
+    "year": 1968,
+    "continent": "africa",
+    "population": 326141824
+  },
+  {
+    "year": 1968,
+    "continent": "asia",
+    "population": 1884626688
+  },
+  {
+    "year": 1968,
+    "continent": "europe",
+    "population": 600694208
+  },
+  {
+    "year": 1968,
+    "continent": "north_america",
+    "population": 279699680
+  },
+  {
+    "year": 1968,
+    "continent": "oceania",
+    "population": 12935206
+  },
+  {
+    "year": 1968,
+    "continent": "south_america",
+    "population": 169700880
+  },
+  {
+    "year": 1969,
+    "continent": "africa",
+    "population": 334567744
+  },
+  {
+    "year": 1969,
+    "continent": "asia",
+    "population": 1931911680
+  },
+  {
+    "year": 1969,
+    "continent": "europe",
+    "population": 604299712
+  },
+  {
+    "year": 1969,
+    "continent": "north_america",
+    "population": 284306816
+  },
+  {
+    "year": 1969,
+    "continent": "oceania",
+    "population": 13219240
+  },
+  {
+    "year": 1969,
+    "continent": "south_america",
+    "population": 173846112
+  },
+  {
+    "year": 1970,
+    "continent": "africa",
+    "population": 343236288
+  },
+  {
+    "year": 1970,
+    "continent": "asia",
+    "population": 1979426304
+  },
+  {
+    "year": 1970,
+    "continent": "europe",
+    "population": 607891648
+  },
+  {
+    "year": 1970,
+    "continent": "north_america",
+    "population": 288997920
+  },
+  {
+    "year": 1970,
+    "continent": "oceania",
+    "population": 13488503
+  },
+  {
+    "year": 1970,
+    "continent": "south_america",
+    "population": 178005872
+  },
+  {
+    "year": 1971,
+    "continent": "africa",
+    "population": 352349024
+  },
+  {
+    "year": 1971,
+    "continent": "asia",
+    "population": 2026540544
+  },
+  {
+    "year": 1971,
+    "continent": "europe",
+    "population": 611361664
+  },
+  {
+    "year": 1971,
+    "continent": "north_america",
+    "population": 293897856
+  },
+  {
+    "year": 1971,
+    "continent": "oceania",
+    "population": 13709782
+  },
+  {
+    "year": 1971,
+    "continent": "south_america",
+    "population": 182177344
+  },
+  {
+    "year": 1972,
+    "continent": "africa",
+    "population": 361719840
+  },
+  {
+    "year": 1972,
+    "continent": "asia",
+    "population": 2073659904
+  },
+  {
+    "year": 1972,
+    "continent": "europe",
+    "population": 614841664
+  },
+  {
+    "year": 1972,
+    "continent": "north_america",
+    "population": 298876448
+  },
+  {
+    "year": 1972,
+    "continent": "oceania",
+    "population": 13930562
+  },
+  {
+    "year": 1972,
+    "continent": "south_america",
+    "population": 186362944
+  },
+  {
+    "year": 1973,
+    "continent": "africa",
+    "population": 371465824
+  },
+  {
+    "year": 1973,
+    "continent": "asia",
+    "population": 2120781952
+  },
+  {
+    "year": 1973,
+    "continent": "europe",
+    "population": 618322048
+  },
+  {
+    "year": 1973,
+    "continent": "north_america",
+    "population": 303900032
+  },
+  {
+    "year": 1973,
+    "continent": "oceania",
+    "population": 14150854
+  },
+  {
+    "year": 1973,
+    "continent": "south_america",
+    "population": 190584240
+  },
+  {
+    "year": 1974,
+    "continent": "africa",
+    "population": 381538304
+  },
+  {
+    "year": 1974,
+    "continent": "asia",
+    "population": 2167900160
+  },
+  {
+    "year": 1974,
+    "continent": "europe",
+    "population": 621789376
+  },
+  {
+    "year": 1974,
+    "continent": "north_america",
+    "population": 308922272
+  },
+  {
+    "year": 1974,
+    "continent": "oceania",
+    "population": 14370654
+  },
+  {
+    "year": 1974,
+    "continent": "south_america",
+    "population": 194871232
+  },
+  {
+    "year": 1975,
+    "continent": "africa",
+    "population": 391912288
+  },
+  {
+    "year": 1975,
+    "continent": "asia",
+    "population": 2215009792
+  },
+  {
+    "year": 1975,
+    "continent": "europe",
+    "population": 625233600
+  },
+  {
+    "year": 1975,
+    "continent": "north_america",
+    "population": 313908960
+  },
+  {
+    "year": 1975,
+    "continent": "oceania",
+    "population": 14589970
+  },
+  {
+    "year": 1975,
+    "continent": "south_america",
+    "population": 199246016
+  },
+  {
+    "year": 1976,
+    "continent": "africa",
+    "population": 402667136
+  },
+  {
+    "year": 1976,
+    "continent": "asia",
+    "population": 2259949824
+  },
+  {
+    "year": 1976,
+    "continent": "europe",
+    "population": 628333376
+  },
+  {
+    "year": 1976,
+    "continent": "north_america",
+    "population": 318849280
+  },
+  {
+    "year": 1976,
+    "continent": "oceania",
+    "population": 14766391
+  },
+  {
+    "year": 1976,
+    "continent": "south_america",
+    "population": 203711104
+  },
+  {
+    "year": 1977,
+    "continent": "africa",
+    "population": 413804864
+  },
+  {
+    "year": 1977,
+    "continent": "asia",
+    "population": 2304882176
+  },
+  {
+    "year": 1977,
+    "continent": "europe",
+    "population": 631407296
+  },
+  {
+    "year": 1977,
+    "continent": "north_america",
+    "population": 323750080
+  },
+  {
+    "year": 1977,
+    "continent": "oceania",
+    "population": 14942533
+  },
+  {
+    "year": 1977,
+    "continent": "south_america",
+    "population": 208260960
+  },
+  {
+    "year": 1978,
+    "continent": "africa",
+    "population": 425408864
+  },
+  {
+    "year": 1978,
+    "continent": "asia",
+    "population": 2349806336
+  },
+  {
+    "year": 1978,
+    "continent": "europe",
+    "population": 634457536
+  },
+  {
+    "year": 1978,
+    "continent": "north_america",
+    "population": 328615360
+  },
+  {
+    "year": 1978,
+    "continent": "oceania",
+    "population": 15118393
+  },
+  {
+    "year": 1978,
+    "continent": "south_america",
+    "population": 212899296
+  },
+  {
+    "year": 1979,
+    "continent": "africa",
+    "population": 437450592
+  },
+  {
+    "year": 1979,
+    "continent": "asia",
+    "population": 2394724864
+  },
+  {
+    "year": 1979,
+    "continent": "europe",
+    "population": 637488768
+  },
+  {
+    "year": 1979,
+    "continent": "north_america",
+    "population": 333455104
+  },
+  {
+    "year": 1979,
+    "continent": "oceania",
+    "population": 15293966
+  },
+  {
+    "year": 1979,
+    "continent": "south_america",
+    "population": 217628288
+  },
+  {
+    "year": 1980,
+    "continent": "africa",
+    "population": 449928256
+  },
+  {
+    "year": 1980,
+    "continent": "asia",
+    "population": 2439639040
+  },
+  {
+    "year": 1980,
+    "continent": "europe",
+    "population": 640503616
+  },
+  {
+    "year": 1980,
+    "continent": "north_america",
+    "population": 338278240
+  },
+  {
+    "year": 1980,
+    "continent": "oceania",
+    "population": 15469258
+  },
+  {
+    "year": 1980,
+    "continent": "south_america",
+    "population": 222446208
+  },
+  {
+    "year": 1981,
+    "continent": "africa",
+    "population": 462892704
+  },
+  {
+    "year": 1981,
+    "continent": "asia",
+    "population": 2489453568
+  },
+  {
+    "year": 1981,
+    "continent": "europe",
+    "population": 643016960
+  },
+  {
+    "year": 1981,
+    "continent": "north_america",
+    "population": 342911424
+  },
+  {
+    "year": 1981,
+    "continent": "oceania",
+    "population": 15701198
+  },
+  {
+    "year": 1981,
+    "continent": "south_america",
+    "population": 227335776
+  },
+  {
+    "year": 1982,
+    "continent": "africa",
+    "population": 476229088
+  },
+  {
+    "year": 1982,
+    "continent": "asia",
+    "population": 2539276800
+  },
+  {
+    "year": 1982,
+    "continent": "europe",
+    "population": 645507072
+  },
+  {
+    "year": 1982,
+    "continent": "north_america",
+    "population": 347525984
+  },
+  {
+    "year": 1982,
+    "continent": "oceania",
+    "population": 15932884
+  },
+  {
+    "year": 1982,
+    "continent": "south_america",
+    "population": 232306576
+  },
+  {
+    "year": 1983,
+    "continent": "africa",
+    "population": 489876544
+  },
+  {
+    "year": 1983,
+    "continent": "asia",
+    "population": 2589096448
+  },
+  {
+    "year": 1983,
+    "continent": "europe",
+    "population": 647970880
+  },
+  {
+    "year": 1983,
+    "continent": "north_america",
+    "population": 352137088
+  },
+  {
+    "year": 1983,
+    "continent": "oceania",
+    "population": 16164319
+  },
+  {
+    "year": 1983,
+    "continent": "south_america",
+    "population": 237329888
+  },
+  {
+    "year": 1984,
+    "continent": "africa",
+    "population": 503734080
+  },
+  {
+    "year": 1984,
+    "continent": "asia",
+    "population": 2638912256
+  },
+  {
+    "year": 1984,
+    "continent": "europe",
+    "population": 650404480
+  },
+  {
+    "year": 1984,
+    "continent": "north_america",
+    "population": 356764640
+  },
+  {
+    "year": 1984,
+    "continent": "oceania",
+    "population": 16395506
+  },
+  {
+    "year": 1984,
+    "continent": "south_america",
+    "population": 242367776
+  },
+  {
+    "year": 1985,
+    "continent": "africa",
+    "population": 517902240
+  },
+  {
+    "year": 1985,
+    "continent": "asia",
+    "population": 2688724224
+  },
+  {
+    "year": 1985,
+    "continent": "europe",
+    "population": 652805248
+  },
+  {
+    "year": 1985,
+    "continent": "north_america",
+    "population": 361423744
+  },
+  {
+    "year": 1985,
+    "continent": "oceania",
+    "population": 16626451
+  },
+  {
+    "year": 1985,
+    "continent": "south_america",
+    "population": 247390848
+  },
+  {
+    "year": 1986,
+    "continent": "africa",
+    "population": 532483552
+  },
+  {
+    "year": 1986,
+    "continent": "asia",
+    "population": 2743100928
+  },
+  {
+    "year": 1986,
+    "continent": "europe",
+    "population": 655315392
+  },
+  {
+    "year": 1986,
+    "continent": "north_america",
+    "population": 366115744
+  },
+  {
+    "year": 1986,
+    "continent": "oceania",
+    "population": 16881564
+  },
+  {
+    "year": 1986,
+    "continent": "south_america",
+    "population": 252386768
+  },
+  {
+    "year": 1987,
+    "continent": "africa",
+    "population": 547470720
+  },
+  {
+    "year": 1987,
+    "continent": "asia",
+    "population": 2797474560
+  },
+  {
+    "year": 1987,
+    "continent": "europe",
+    "population": 657793024
+  },
+  {
+    "year": 1987,
+    "continent": "north_america",
+    "population": 370838400
+  },
+  {
+    "year": 1987,
+    "continent": "oceania",
+    "population": 17136356
+  },
+  {
+    "year": 1987,
+    "continent": "south_america",
+    "population": 257355088
+  },
+  {
+    "year": 1988,
+    "continent": "africa",
+    "population": 562789248
+  },
+  {
+    "year": 1988,
+    "continent": "asia",
+    "population": 2851844864
+  },
+  {
+    "year": 1988,
+    "continent": "europe",
+    "population": 660239360
+  },
+  {
+    "year": 1988,
+    "continent": "north_america",
+    "population": 375596672
+  },
+  {
+    "year": 1988,
+    "continent": "oceania",
+    "population": 17390818
+  },
+  {
+    "year": 1988,
+    "continent": "south_america",
+    "population": 262293024
+  },
+  {
+    "year": 1989,
+    "continent": "africa",
+    "population": 578354176
+  },
+  {
+    "year": 1989,
+    "continent": "asia",
+    "population": 2906213632
+  },
+  {
+    "year": 1989,
+    "continent": "europe",
+    "population": 662656192
+  },
+  {
+    "year": 1989,
+    "continent": "north_america",
+    "population": 380395232
+  },
+  {
+    "year": 1989,
+    "continent": "oceania",
+    "population": 17644960
+  },
+  {
+    "year": 1989,
+    "continent": "south_america",
+    "population": 267201728
+  },
+  {
+    "year": 1990,
+    "continent": "africa",
+    "population": 594109056
+  },
+  {
+    "year": 1990,
+    "continent": "asia",
+    "population": 2960580352
+  },
+  {
+    "year": 1990,
+    "continent": "europe",
+    "population": 665045376
+  },
+  {
+    "year": 1990,
+    "continent": "north_america",
+    "population": 385234240
+  },
+  {
+    "year": 1990,
+    "continent": "oceania",
+    "population": 17898792
+  },
+  {
+    "year": 1990,
+    "continent": "south_america",
+    "population": 272081856
+  },
+  {
+    "year": 1991,
+    "continent": "africa",
+    "population": 610171776
+  },
+  {
+    "year": 1991,
+    "continent": "asia",
+    "population": 3010683904
+  },
+  {
+    "year": 1991,
+    "continent": "europe",
+    "population": 666459456
+  },
+  {
+    "year": 1991,
+    "continent": "north_america",
+    "population": 391008768
+  },
+  {
+    "year": 1991,
+    "continent": "oceania",
+    "population": 18158986
+  },
+  {
+    "year": 1991,
+    "continent": "south_america",
+    "population": 276937248
+  },
+  {
+    "year": 1992,
+    "continent": "africa",
+    "population": 626560384
+  },
+  {
+    "year": 1992,
+    "continent": "asia",
+    "population": 3060784640
+  },
+  {
+    "year": 1992,
+    "continent": "europe",
+    "population": 667842560
+  },
+  {
+    "year": 1992,
+    "continent": "north_america",
+    "population": 396818976
+  },
+  {
+    "year": 1992,
+    "continent": "oceania",
+    "population": 18419088
+  },
+  {
+    "year": 1992,
+    "continent": "south_america",
+    "population": 281751104
+  },
+  {
+    "year": 1993,
+    "continent": "africa",
+    "population": 643198592
+  },
+  {
+    "year": 1993,
+    "continent": "asia",
+    "population": 3110881536
+  },
+  {
+    "year": 1993,
+    "continent": "europe",
+    "population": 669189632
+  },
+  {
+    "year": 1993,
+    "continent": "north_america",
+    "population": 402634976
+  },
+  {
+    "year": 1993,
+    "continent": "oceania",
+    "population": 18679094
+  },
+  {
+    "year": 1993,
+    "continent": "south_america",
+    "population": 286529728
+  },
+  {
+    "year": 1994,
+    "continent": "africa",
+    "population": 660113664
+  },
+  {
+    "year": 1994,
+    "continent": "asia",
+    "population": 3160974336
+  },
+  {
+    "year": 1994,
+    "continent": "europe",
+    "population": 670492608
+  },
+  {
+    "year": 1994,
+    "continent": "north_america",
+    "population": 408417024
+  },
+  {
+    "year": 1994,
+    "continent": "oceania",
+    "population": 18939012
+  },
+  {
+    "year": 1994,
+    "continent": "south_america",
+    "population": 291283008
+  },
+  {
+    "year": 1995,
+    "continent": "africa",
+    "population": 677217408
+  },
+  {
+    "year": 1995,
+    "continent": "asia",
+    "population": 3211062272
+  },
+  {
+    "year": 1995,
+    "continent": "europe",
+    "population": 671749568
+  },
+  {
+    "year": 1995,
+    "continent": "north_america",
+    "population": 414135744
+  },
+  {
+    "year": 1995,
+    "continent": "oceania",
+    "population": 19198836
+  },
+  {
+    "year": 1995,
+    "continent": "south_america",
+    "population": 296016512
+  },
+  {
+    "year": 1996,
+    "continent": "africa",
+    "population": 695049216
+  },
+  {
+    "year": 1996,
+    "continent": "asia",
+    "population": 3256786432
+  },
+  {
+    "year": 1996,
+    "continent": "europe",
+    "population": 671600128
+  },
+  {
+    "year": 1996,
+    "continent": "north_america",
+    "population": 419787424
+  },
+  {
+    "year": 1996,
+    "continent": "oceania",
+    "population": 19461988
+  },
+  {
+    "year": 1996,
+    "continent": "south_america",
+    "population": 300731328
+  },
+  {
+    "year": 1997,
+    "continent": "africa",
+    "population": 711816000
+  },
+  {
+    "year": 1997,
+    "continent": "asia",
+    "population": 3302505728
+  },
+  {
+    "year": 1997,
+    "continent": "europe",
+    "population": 671409024
+  },
+  {
+    "year": 1997,
+    "continent": "north_america",
+    "population": 425378976
+  },
+  {
+    "year": 1997,
+    "continent": "oceania",
+    "population": 19724836
+  },
+  {
+    "year": 1997,
+    "continent": "south_america",
+    "population": 305419680
+  },
+  {
+    "year": 1998,
+    "continent": "africa",
+    "population": 729603328
+  },
+  {
+    "year": 1998,
+    "continent": "asia",
+    "population": 3348215808
+  },
+  {
+    "year": 1998,
+    "continent": "europe",
+    "population": 671212288
+  },
+  {
+    "year": 1998,
+    "continent": "north_america",
+    "population": 430907904
+  },
+  {
+    "year": 1998,
+    "continent": "oceania",
+    "population": 19987392
+  },
+  {
+    "year": 1998,
+    "continent": "south_america",
+    "population": 310067072
+  },
+  {
+    "year": 1999,
+    "continent": "africa",
+    "population": 747730432
+  },
+  {
+    "year": 1999,
+    "continent": "asia",
+    "population": 3393909760
+  },
+  {
+    "year": 1999,
+    "continent": "europe",
+    "population": 671058688
+  },
+  {
+    "year": 1999,
+    "continent": "north_america",
+    "population": 436374368
+  },
+  {
+    "year": 1999,
+    "continent": "oceania",
+    "population": 20249656
+  },
+  {
+    "year": 1999,
+    "continent": "south_america",
+    "population": 314654144
+  },
+  {
+    "year": 2000,
+    "continent": "africa",
+    "population": 766292800
+  },
+  {
+    "year": 2000,
+    "continent": "asia",
+    "population": 3439583232
+  },
+  {
+    "year": 2000,
+    "continent": "europe",
+    "population": 670980992
+  },
+  {
+    "year": 2000,
+    "continent": "north_america",
+    "population": 441783712
+  },
+  {
+    "year": 2000,
+    "continent": "oceania",
+    "population": 20511628
+  },
+  {
+    "year": 2000,
+    "continent": "south_america",
+    "population": 319166304
+  },
+  {
+    "year": 2001,
+    "continent": "africa",
+    "population": 784172544
+  },
+  {
+    "year": 2001,
+    "continent": "asia",
+    "population": 3480797696
+  },
+  {
+    "year": 2001,
+    "continent": "europe",
+    "population": 671484224
+  },
+  {
+    "year": 2001,
+    "continent": "north_america",
+    "population": 446676320
+  },
+  {
+    "year": 2001,
+    "continent": "oceania",
+    "population": 20814792
+  },
+  {
+    "year": 2001,
+    "continent": "south_america",
+    "population": 323596544
+  },
+  {
+    "year": 2002,
+    "continent": "africa",
+    "population": 803472512
+  },
+  {
+    "year": 2002,
+    "continent": "asia",
+    "population": 3521992192
+  },
+  {
+    "year": 2002,
+    "continent": "europe",
+    "population": 672069376
+  },
+  {
+    "year": 2002,
+    "continent": "north_america",
+    "population": 451513440
+  },
+  {
+    "year": 2002,
+    "continent": "oceania",
+    "population": 21117544
+  },
+  {
+    "year": 2002,
+    "continent": "south_america",
+    "population": 327950208
+  },
+  {
+    "year": 2003,
+    "continent": "africa",
+    "population": 823281152
+  },
+  {
+    "year": 2003,
+    "continent": "asia",
+    "population": 3563171840
+  },
+  {
+    "year": 2003,
+    "continent": "europe",
+    "population": 672706240
+  },
+  {
+    "year": 2003,
+    "continent": "north_america",
+    "population": 456352000
+  },
+  {
+    "year": 2003,
+    "continent": "oceania",
+    "population": 21419888
+  },
+  {
+    "year": 2003,
+    "continent": "south_america",
+    "population": 332223584
+  },
+  {
+    "year": 2004,
+    "continent": "africa",
+    "population": 843700096
+  },
+  {
+    "year": 2004,
+    "continent": "asia",
+    "population": 3604344064
+  },
+  {
+    "year": 2004,
+    "continent": "europe",
+    "population": 673350720
+  },
+  {
+    "year": 2004,
+    "continent": "north_america",
+    "population": 461267520
+  },
+  {
+    "year": 2004,
+    "continent": "oceania",
+    "population": 21721822
+  },
+  {
+    "year": 2004,
+    "continent": "south_america",
+    "population": 336413952
+  },
+  {
+    "year": 2005,
+    "continent": "africa",
+    "population": 864831744
+  },
+  {
+    "year": 2005,
+    "continent": "asia",
+    "population": 3645515008
+  },
+  {
+    "year": 2005,
+    "continent": "europe",
+    "population": 673968768
+  },
+  {
+    "year": 2005,
+    "continent": "north_america",
+    "population": 466312192
+  },
+  {
+    "year": 2005,
+    "continent": "oceania",
+    "population": 22023352
+  },
+  {
+    "year": 2005,
+    "continent": "south_america",
+    "population": 340520896
+  },
+  {
+    "year": 2006,
+    "continent": "africa",
+    "population": 886543936
+  },
+  {
+    "year": 2006,
+    "continent": "asia",
+    "population": 3685122816
+  },
+  {
+    "year": 2006,
+    "continent": "europe",
+    "population": 674762304
+  },
+  {
+    "year": 2006,
+    "continent": "north_america",
+    "population": 471508672
+  },
+  {
+    "year": 2006,
+    "continent": "oceania",
+    "population": 22410234
+  },
+  {
+    "year": 2006,
+    "continent": "south_america",
+    "population": 344538816
+  },
+  {
+    "year": 2007,
+    "continent": "africa",
+    "population": 908990336
+  },
+  {
+    "year": 2007,
+    "continent": "asia",
+    "population": 3724729344
+  },
+  {
+    "year": 2007,
+    "continent": "europe",
+    "population": 675527936
+  },
+  {
+    "year": 2007,
+    "continent": "north_america",
+    "population": 476836480
+  },
+  {
+    "year": 2007,
+    "continent": "oceania",
+    "population": 22796480
+  },
+  {
+    "year": 2007,
+    "continent": "south_america",
+    "population": 348471360
+  },
+  {
+    "year": 2008,
+    "continent": "africa",
+    "population": 932246912
+  },
+  {
+    "year": 2008,
+    "continent": "asia",
+    "population": 3764333056
+  },
+  {
+    "year": 2008,
+    "continent": "europe",
+    "population": 676257856
+  },
+  {
+    "year": 2008,
+    "continent": "north_america",
+    "population": 482250496
+  },
+  {
+    "year": 2008,
+    "continent": "oceania",
+    "population": 23182088
+  },
+  {
+    "year": 2008,
+    "continent": "south_america",
+    "population": 352339168
+  },
+  {
+    "year": 2009,
+    "continent": "africa",
+    "population": 956336640
+  },
+  {
+    "year": 2009,
+    "continent": "asia",
+    "population": 3803932160
+  },
+  {
+    "year": 2009,
+    "continent": "europe",
+    "population": 676945728
+  },
+  {
+    "year": 2009,
+    "continent": "north_america",
+    "population": 487683168
+  },
+  {
+    "year": 2009,
+    "continent": "oceania",
+    "population": 23567064
+  },
+  {
+    "year": 2009,
+    "continent": "south_america",
+    "population": 356170176
+  },
+  {
+    "year": 2010,
+    "continent": "africa",
+    "population": 977486976
+  },
+  {
+    "year": 2010,
+    "continent": "asia",
+    "population": 3844195840
+  },
+  {
+    "year": 2010,
+    "continent": "europe",
+    "population": 677531904
+  },
+  {
+    "year": 2010,
+    "continent": "north_america",
+    "population": 493083296
+  },
+  {
+    "year": 2010,
+    "continent": "oceania",
+    "population": 23951418
+  },
+  {
+    "year": 2010,
+    "continent": "south_america",
+    "population": 359983552
+  },
+  {
+    "year": 2011,
+    "continent": "africa",
+    "population": 994271616
+  },
+  {
+    "year": 2011,
+    "continent": "asia",
+    "population": 3880381952
+  },
+  {
+    "year": 2011,
+    "continent": "europe",
+    "population": 678579328
+  },
+  {
+    "year": 2011,
+    "continent": "north_america",
+    "population": 497371680
+  },
+  {
+    "year": 2011,
+    "continent": "oceania",
+    "population": 24324704
+  },
+  {
+    "year": 2011,
+    "continent": "south_america",
+    "population": 363051136
+  },
+  {
+    "year": 2012,
+    "continent": "africa",
+    "population": 1019095296
+  },
+  {
+    "year": 2012,
+    "continent": "asia",
+    "population": 3915524352
+  },
+  {
+    "year": 2012,
+    "continent": "europe",
+    "population": 679628608
+  },
+  {
+    "year": 2012,
+    "continent": "north_america",
+    "population": 501658976
+  },
+  {
+    "year": 2012,
+    "continent": "oceania",
+    "population": 24704808
+  },
+  {
+    "year": 2012,
+    "continent": "south_america",
+    "population": 366117152
+  },
+  {
+    "year": 2013,
+    "continent": "africa",
+    "population": 1043218240
+  },
+  {
+    "year": 2013,
+    "continent": "asia",
+    "population": 3948217856
+  },
+  {
+    "year": 2013,
+    "continent": "europe",
+    "population": 679834944
+  },
+  {
+    "year": 2013,
+    "continent": "north_america",
+    "population": 505642016
+  },
+  {
+    "year": 2013,
+    "continent": "oceania",
+    "population": 25028170
+  },
+  {
+    "year": 2013,
+    "continent": "south_america",
+    "population": 368575616
+  },
+  {
+    "year": 2014,
+    "continent": "africa",
+    "population": 1068402560
+  },
+  {
+    "year": 2014,
+    "continent": "asia",
+    "population": 3984089088
+  },
+  {
+    "year": 2014,
+    "continent": "europe",
+    "population": 680903616
+  },
+  {
+    "year": 2014,
+    "continent": "north_america",
+    "population": 509999712
+  },
+  {
+    "year": 2014,
+    "continent": "oceania",
+    "population": 25429020
+  },
+  {
+    "year": 2014,
+    "continent": "south_america",
+    "population": 371733760
+  },
+  {
+    "year": 2015,
+    "continent": "africa",
+    "population": 1093773312
+  },
+  {
+    "year": 2015,
+    "continent": "asia",
+    "population": 4019961856
+  },
+  {
+    "year": 2015,
+    "continent": "europe",
+    "population": 681971840
+  },
+  {
+    "year": 2015,
+    "continent": "north_america",
+    "population": 514357408
+  },
+  {
+    "year": 2015,
+    "continent": "oceania",
+    "population": 25829864
+  },
+  {
+    "year": 2015,
+    "continent": "south_america",
+    "population": 374891904
+  },
+  {
+    "year": 2016,
+    "continent": "africa",
+    "population": 1119198976
+  },
+  {
+    "year": 2016,
+    "continent": "asia",
+    "population": 4055829248
+  },
+  {
+    "year": 2016,
+    "continent": "europe",
+    "population": 683018944
+  },
+  {
+    "year": 2016,
+    "continent": "north_america",
+    "population": 518715072
+  },
+  {
+    "year": 2016,
+    "continent": "oceania",
+    "population": 26230124
+  },
+  {
+    "year": 2016,
+    "continent": "south_america",
+    "population": 378050048
+  },
+  {
+    "year": 2017,
+    "continent": "africa",
+    "population": 1144862464
+  },
+  {
+    "year": 2017,
+    "continent": "asia",
+    "population": 4091697408
+  },
+  {
+    "year": 2017,
+    "continent": "europe",
+    "population": 684065408
+  },
+  {
+    "year": 2017,
+    "continent": "north_america",
+    "population": 523072800
+  },
+  {
+    "year": 2017,
+    "continent": "oceania",
+    "population": 26583086
+  },
+  {
+    "year": 2017,
+    "continent": "south_america",
+    "population": 381208192
+  },
+  {
+    "year": 2018,
+    "continent": "africa",
+    "population": 1170608896
+  },
+  {
+    "year": 2018,
+    "continent": "asia",
+    "population": 4127567616
+  },
+  {
+    "year": 2018,
+    "continent": "europe",
+    "population": 685111296
+  },
+  {
+    "year": 2018,
+    "continent": "north_america",
+    "population": 527430400
+  },
+  {
+    "year": 2018,
+    "continent": "oceania",
+    "population": 26936048
+  },
+  {
+    "year": 2018,
+    "continent": "south_america",
+    "population": 384366336
+  },
+  {
+    "year": 2019,
+    "continent": "africa",
+    "population": 1196185088
+  },
+  {
+    "year": 2019,
+    "continent": "asia",
+    "population": 4163438592
+  },
+  {
+    "year": 2019,
+    "continent": "europe",
+    "population": 686156928
+  },
+  {
+    "year": 2019,
+    "continent": "north_america",
+    "population": 531788064
+  },
+  {
+    "year": 2019,
+    "continent": "oceania",
+    "population": 27289016
+  },
+  {
+    "year": 2019,
+    "continent": "south_america",
+    "population": 387524480
+  },
+  {
+    "year": 2020,
+    "continent": "africa",
+    "population": 1227411712
+  },
+  {
+    "year": 2020,
+    "continent": "asia",
+    "population": 4198362624
+  },
+  {
+    "year": 2020,
+    "continent": "europe",
+    "population": 687299840
+  },
+  {
+    "year": 2020,
+    "continent": "north_america",
+    "population": 536145760
+  },
+  {
+    "year": 2020,
+    "continent": "oceania",
+    "population": 27641976
+  },
+  {
+    "year": 2020,
+    "continent": "south_america",
+    "population": 390682624
+  },
+  {
+    "year": 2021,
+    "continent": "africa",
+    "population": 1246757120
+  },
+  {
+    "year": 2021,
+    "continent": "asia",
+    "population": 4227134464
+  },
+  {
+    "year": 2021,
+    "continent": "europe",
+    "population": 687890816
+  },
+  {
+    "year": 2021,
+    "continent": "north_america",
+    "population": 540408128
+  },
+  {
+    "year": 2021,
+    "continent": "oceania",
+    "population": 28025130
+  },
+  {
+    "year": 2021,
+    "continent": "south_america",
+    "population": 393422848
+  },
+  {
+    "year": 2022,
+    "continent": "africa",
+    "population": 1272073728
+  },
+  {
+    "year": 2022,
+    "continent": "asia",
+    "population": 4254907136
+  },
+  {
+    "year": 2022,
+    "continent": "europe",
+    "population": 688389952
+  },
+  {
+    "year": 2022,
+    "continent": "north_america",
+    "population": 544670464
+  },
+  {
+    "year": 2022,
+    "continent": "oceania",
+    "population": 28400636
+  },
+  {
+    "year": 2022,
+    "continent": "south_america",
+    "population": 396163072
+  },
+  {
+    "year": 2023,
+    "continent": "africa",
+    "population": 1296764672
+  },
+  {
+    "year": 2023,
+    "continent": "asia",
+    "population": 4282680064
+  },
+  {
+    "year": 2023,
+    "continent": "europe",
+    "population": 688888640
+  },
+  {
+    "year": 2023,
+    "continent": "north_america",
+    "population": 548932928
+  },
+  {
+    "year": 2023,
+    "continent": "oceania",
+    "population": 28768348
+  },
+  {
+    "year": 2023,
+    "continent": "south_america",
+    "population": 398903360
+  },
+  {
+    "year": 2024,
+    "continent": "africa",
+    "population": 1321218816
+  },
+  {
+    "year": 2024,
+    "continent": "asia",
+    "population": 4310454272
+  },
+  {
+    "year": 2024,
+    "continent": "europe",
+    "population": 689386688
+  },
+  {
+    "year": 2024,
+    "continent": "north_america",
+    "population": 553195328
+  },
+  {
+    "year": 2024,
+    "continent": "oceania",
+    "population": 29129870
+  },
+  {
+    "year": 2024,
+    "continent": "south_america",
+    "population": 401643584
+  },
+  {
+    "year": 2025,
+    "continent": "africa",
+    "population": 1346465792
+  },
+  {
+    "year": 2025,
+    "continent": "asia",
+    "population": 4338228736
+  },
+  {
+    "year": 2025,
+    "continent": "europe",
+    "population": 689883904
+  },
+  {
+    "year": 2025,
+    "continent": "north_america",
+    "population": 557457664
+  },
+  {
+    "year": 2025,
+    "continent": "oceania",
+    "population": 29489408
+  },
+  {
+    "year": 2025,
+    "continent": "south_america",
+    "population": 404383808
+  }
+]

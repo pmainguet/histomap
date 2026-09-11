@@ -331,6 +331,16 @@ kbd { padding: .1rem .3rem; color: #27251f; background: white; border: 1px solid
 .hierarchy-legend { padding: 0 clamp(1rem, 4vw, 3.5rem) .5rem; color: var(--ink-faint); font: .76rem system-ui, sans-serif; }
 .hierarchy-legend i { display: inline-block; width: 1.2rem; height: .55rem; margin: 0 .25rem 0 .55rem; background: #27251f; border: 1px solid rgb(39 37 31 / 30%); vertical-align: middle; }
 .hierarchy-legend .heuristic { border-style: dashed; }
+/* Population lane continent colors -- kept in sync with
+   POPULATION_CONTINENT_COLORS in explore_timeline.js by hand, same as
+   every other legend/rendering color pair on this page (no shared color
+   token between CSS and JS). */
+.hierarchy-legend .pop-asia { background: #8c422d; }
+.hierarchy-legend .pop-africa { background: #c98b4a; }
+.hierarchy-legend .pop-europe { background: #4f6f63; }
+.hierarchy-legend .pop-north_america { background: #5c7a94; }
+.hierarchy-legend .pop-south_america { background: #748a46; }
+.hierarchy-legend .pop-oceania { background: #7a4d7a; }
 .hierarchy-chart-container { overflow: auto; padding: 0 clamp(1rem, 4vw, 3.5rem) 2rem; }
 .hierarchy-chart { display: block; min-width: 740px; }
 .hierarchy-band { fill: var(--paper); stroke: var(--rule); cursor: pointer; }

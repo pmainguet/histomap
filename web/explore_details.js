@@ -672,19 +672,33 @@ function renderEventDetails(event, ctx) {
 // come from explore_timeline.js (loaded first, see explore.html), same
 // classic-script global-scope sharing common.js's own docstring already
 // explains.
-function renderPopulationDetails(point, ctx) {
+// `entry.segments` is [{continent, population}] -- one segment (continent:
+// null) in the hand-curated fallback, six real continents in HYDE mode
+// (see explore.js's buildPopulationSeries). Sorted largest-first so the
+// breakdown reads like a ranked list, not the fixed stack-draw order
+// POPULATION_CONTINENT_ORDER uses (that order is about visual stability
+// across years, not about which continent is biggest in any one year).
+function renderPopulationDetails(entry, ctx) {
+  const total = entry.segments.reduce((sum, segment) => sum + segment.population, 0);
+  const breakdown = entry.segments.length > 1
+    ? [...entry.segments].sort((a, b) => b.population - a.population)
+        .map((segment) => `<dt>${escapeHtml(displayTerm(segment.continent))}</dt><dd>~${escapeHtml(formatPopulation(segment.population))} (${segment.population.toLocaleString()})</dd>`)
+        .join("")
+    : "";
+
   explorePanel.innerHTML = `<button class="detail-close" type="button" aria-label="Close details">×</button>
     <p class="detail-kicker">Population estimate</p>
-    <h2>${escapeHtml(formatYear(point.year))}</h2>
+    <h2>${escapeHtml(formatYear(entry.year))}</h2>
     <div class="detail-actions"><button class="zoom-explore" type="button">Zoom to this</button><button class="reset-explore" type="button">Full timeline</button></div>
-    <p>Estimated world population: <strong>~${escapeHtml(formatPopulation(point.population))}</strong> people.</p>
+    <p>Estimated ${breakdown ? "world" : ""} population: <strong>~${escapeHtml(formatPopulation(total))}</strong> people.</p>
     <dl>
-      <dt>Year</dt><dd>${escapeHtml(formatYear(point.year))}</dd>
-      <dt>Estimate</dt><dd>~${escapeHtml(formatPopulation(point.population))} (${point.population.toLocaleString()})</dd>
-      <dt>Source</dt><dd class="detail-links"><a href="${escapeHtml(point.source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(point.source.name)} ↗</a></dd>
+      <dt>Year</dt><dd>${escapeHtml(formatYear(entry.year))}</dd>
+      <dt>Total</dt><dd>~${escapeHtml(formatPopulation(total))} (${total.toLocaleString()})</dd>
+      ${breakdown}
+      <dt>Source</dt><dd class="detail-links"><a href="${escapeHtml(entry.source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(entry.source.name)} ↗</a></dd>
     </dl>`;
 
-  wireExplorePanel(ctx, point.year, point.year, point.id);
+  wireExplorePanel(ctx, entry.year, entry.year, entry.id);
 }
 
 function renderPolityDetails(polity, ctx) {

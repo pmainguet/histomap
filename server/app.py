@@ -1678,7 +1678,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
 
     BUILD_ARTIFACT_FILES = (
         "data.json", "transitions.json", "periods.json", "period_links.json", "explore_tree.json",
-        "events.json",
+        "events.json", "population_by_continent.json",
     )
 
     @application.middleware("http")
