@@ -879,11 +879,11 @@ function drawPopulationRow(svg, scale, entries, y, laneHeight, width, onZoom) {
       const bottom = baseline - totalHeight * (cumulative / (total || 1));
       cumulative += value;
       const top = baseline - totalHeight * (cumulative / (total || 1));
-      bounds[continent] = { top, bottom };
+      bounds[continent] = { top, bottom, value };
     }
     // Single-segment fallback mode (continent: null) -- the whole height is
     // one plain band, same shape as the original tide-line design.
-    if (!multiContinent) bounds[null] = { top: baseline - totalHeight, bottom: baseline };
+    if (!multiContinent) bounds[null] = { top: baseline - totalHeight, bottom: baseline, value: total };
     return { entry, x, total, topY: baseline - totalHeight, bounds };
   });
 
@@ -892,14 +892,29 @@ function drawPopulationRow(svg, scale, entries, y, laneHeight, width, onZoom) {
     for (const continent of layers) {
       const withLayer = perEntry.filter((p) => p.bounds[continent]);
       if (withLayer.length < 2) continue;
-      const topLine = withLayer.map((p) => `${p.x},${p.bounds[continent].top}`).join(" L ");
-      const bottomLine = [...withLayer].reverse().map((p) => `${p.x},${p.bounds[continent].bottom}`).join(" L ");
-      const areaPath = `M ${topLine} L ${bottomLine} Z`;
       const fill = continent ? POPULATION_CONTINENT_COLORS[continent] : "url(#population-tide-gradient)";
-      const area = svgEl("path", {
-        d: areaPath, class: "hierarchy-population-fill", fill, "clip-path": "url(#population-lane-clip)",
-      });
-      svg.append(area);
+      // One <path> per year-to-year segment, not a single polygon across the
+      // whole layer, so hovering anywhere in the shape shows that segment's
+      // own region + numbers via its <title> -- the same native-tooltip
+      // convention markers already use. Opacity lives on the wrapping <g>
+      // (see .hierarchy-population-fill in styles.css), not on each path,
+      // so adjacent segments composite as one flat layer instead of leaving
+      // visible seams where their edges meet.
+      const group = svgEl("g", { class: "hierarchy-population-fill", fill, "clip-path": "url(#population-lane-clip)" });
+      for (let i = 0; i < withLayer.length - 1; i++) {
+        const p0 = withLayer[i];
+        const p1 = withLayer[i + 1];
+        const b0 = p0.bounds[continent];
+        const b1 = p1.bounds[continent];
+        const segmentPath = `M ${p0.x},${b0.top} L ${p1.x},${b1.top} L ${p1.x},${b1.bottom} L ${p0.x},${b0.bottom} Z`;
+        const segment = svgEl("path", { d: segmentPath });
+        const title = svgEl("title");
+        const region = continent ? displayTerm(continent) : "World";
+        title.textContent = `${region}: ~${formatPopulation(b0.value)} (${formatYear(p0.entry.year)}) to ~${formatPopulation(b1.value)} (${formatYear(p1.entry.year)})`;
+        segment.append(title);
+        group.append(segment);
+      }
+      svg.append(group);
     }
     const topLine = perEntry.map((p) => `${p.x},${p.topY}`).join(" L ");
     const line = svgEl("path", { d: `M ${topLine}`, class: "hierarchy-population-line", "clip-path": "url(#population-lane-clip)" });
@@ -1142,9 +1157,10 @@ function renderHierarchyTimeline(tree, container, options = {}, onZoom = () => {
   // vertical space.
   // Tall enough for "Population" (10 chars) to fit as a rotated tier label
   // without overlapping the row above (drawTierLabel's own footprint
-  // estimate is chars * ESTIMATED_CHAR_WIDTH = 60px) -- also gives the tide
-  // shape itself a bit more room to actually read as a shape.
-  const populationLaneHeight = 64;
+  // estimate is chars * ESTIMATED_CHAR_WIDTH = 60px) -- sized well past
+  // that minimum so the per-continent stack actually reads as a shape
+  // rather than a thin ribbon.
+  const populationLaneHeight = 140;
   const sortedPopulation = [...population].sort((a, b) => a.year - b.year);
   const populationRowHeight = sortedPopulation.length > 0 ? populationLaneHeight : 0;
 
