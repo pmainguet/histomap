@@ -1,0 +1,1402 @@
+[
+  {
+    "entity_id": "baban",
+    "year": 1600,
+    "population": 1257528
+  },
+  {
+    "entity_id": "baban",
+    "year": 1700,
+    "population": 1020263
+  },
+  {
+    "entity_id": "baban",
+    "year": 1710,
+    "population": 1021849
+  },
+  {
+    "entity_id": "baban",
+    "year": 1720,
+    "population": 1022344
+  },
+  {
+    "entity_id": "baban",
+    "year": 1730,
+    "population": 1022856
+  },
+  {
+    "entity_id": "baban",
+    "year": 1740,
+    "population": 1023377
+  },
+  {
+    "entity_id": "baban",
+    "year": 1750,
+    "population": 1023897
+  },
+  {
+    "entity_id": "baban",
+    "year": 1760,
+    "population": 1024409
+  },
+  {
+    "entity_id": "baban",
+    "year": 1770,
+    "population": 1024907
+  },
+  {
+    "entity_id": "baban",
+    "year": 1780,
+    "population": 1025388
+  },
+  {
+    "entity_id": "baban",
+    "year": 1790,
+    "population": 1025850
+  },
+  {
+    "entity_id": "baban",
+    "year": 1800,
+    "population": 1026290
+  },
+  {
+    "entity_id": "baban",
+    "year": 1810,
+    "population": 1077024
+  },
+  {
+    "entity_id": "baban",
+    "year": 1820,
+    "population": 1130488
+  },
+  {
+    "entity_id": "baban",
+    "year": 1830,
+    "population": 1189074
+  },
+  {
+    "entity_id": "baban",
+    "year": 1840,
+    "population": 1250447
+  },
+  {
+    "entity_id": "babylonia",
+    "year": -1000,
+    "population": 1218868
+  },
+  {
+    "entity_id": "banu_thabit",
+    "year": 1400,
+    "population": 370917
+  },
+  {
+    "entity_id": "caralsupe_civilization",
+    "year": -3000,
+    "population": 812927
+  },
+  {
+    "entity_id": "caralsupe_civilization",
+    "year": -2000,
+    "population": 975377
+  },
+  {
+    "entity_id": "chimor",
+    "year": 900,
+    "population": 2528362
+  },
+  {
+    "entity_id": "chimor",
+    "year": 1000,
+    "population": 2808870
+  },
+  {
+    "entity_id": "chimor",
+    "year": 1100,
+    "population": 2996702
+  },
+  {
+    "entity_id": "chimor",
+    "year": 1200,
+    "population": 3184534
+  },
+  {
+    "entity_id": "chimor",
+    "year": 1300,
+    "population": 3372366
+  },
+  {
+    "entity_id": "chimor",
+    "year": 1400,
+    "population": 3560198
+  },
+  {
+    "entity_id": "chimu_culture",
+    "year": 1100,
+    "population": 2996702
+  },
+  {
+    "entity_id": "chimu_culture",
+    "year": 1200,
+    "population": 3184534
+  },
+  {
+    "entity_id": "chimu_culture",
+    "year": 1300,
+    "population": 3372366
+  },
+  {
+    "entity_id": "chimu_culture",
+    "year": 1400,
+    "population": 3560198
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 0,
+    "population": 1156131
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 100,
+    "population": 1232130
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 200,
+    "population": 1313126
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 300,
+    "population": 1399448
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 400,
+    "population": 1491447
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 500,
+    "population": 1589496
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 600,
+    "population": 1693993
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 700,
+    "population": 1805362
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 800,
+    "population": 1924056
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 900,
+    "population": 2116103
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 1000,
+    "population": 2308165
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 1100,
+    "population": 2614993
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 1200,
+    "population": 2921830
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 1300,
+    "population": 3228679
+  },
+  {
+    "entity_id": "cultura_tarija",
+    "year": 1400,
+    "population": 3535538
+  },
+  {
+    "entity_id": "deccan",
+    "year": -2000,
+    "population": 18813034
+  },
+  {
+    "entity_id": "deccan",
+    "year": -1000,
+    "population": 36921864
+  },
+  {
+    "entity_id": "gaelic_ireland",
+    "year": 500,
+    "population": 185137
+  },
+  {
+    "entity_id": "gaelic_ireland",
+    "year": 600,
+    "population": 184862
+  },
+  {
+    "entity_id": "gaelic_ireland",
+    "year": 700,
+    "population": 188479
+  },
+  {
+    "entity_id": "gaelic_ireland",
+    "year": 800,
+    "population": 195683
+  },
+  {
+    "entity_id": "gaelic_ireland",
+    "year": 900,
+    "population": 213344
+  },
+  {
+    "entity_id": "gaelic_ireland",
+    "year": 1000,
+    "population": 231004
+  },
+  {
+    "entity_id": "gaelic_ireland",
+    "year": 1100,
+    "population": 305460
+  },
+  {
+    "entity_id": "gaelic_ireland",
+    "year": 1200,
+    "population": 454371
+  },
+  {
+    "entity_id": "gaelic_ireland",
+    "year": 1300,
+    "population": 610919
+  },
+  {
+    "entity_id": "gaelic_ireland",
+    "year": 1400,
+    "population": 454371
+  },
+  {
+    "entity_id": "gaelic_ireland",
+    "year": 1500,
+    "population": 610919
+  },
+  {
+    "entity_id": "gaelic_ireland",
+    "year": 1600,
+    "population": 930693
+  },
+  {
+    "entity_id": "gandhara_q213651",
+    "year": 0,
+    "population": 2895212
+  },
+  {
+    "entity_id": "gandhara_q213651",
+    "year": 100,
+    "population": 3110630
+  },
+  {
+    "entity_id": "gandhara_q213651",
+    "year": 200,
+    "population": 3326003
+  },
+  {
+    "entity_id": "gandhara_q213651",
+    "year": 300,
+    "population": 3568475
+  },
+  {
+    "entity_id": "gandhara_q213651",
+    "year": 400,
+    "population": 3811771
+  },
+  {
+    "entity_id": "gandhara_q213651",
+    "year": 500,
+    "population": 4055042
+  },
+  {
+    "entity_id": "gojoseon",
+    "year": -2000,
+    "population": 59659
+  },
+  {
+    "entity_id": "gojoseon",
+    "year": -1000,
+    "population": 72823
+  },
+  {
+    "entity_id": "hephthalites",
+    "year": 500,
+    "population": 2334064
+  },
+  {
+    "entity_id": "hephthalites",
+    "year": 600,
+    "population": 2337471
+  },
+  {
+    "entity_id": "indo_scythians",
+    "year": 0,
+    "population": 72540848
+  },
+  {
+    "entity_id": "indo_scythians",
+    "year": 100,
+    "population": 76182800
+  },
+  {
+    "entity_id": "indo_scythians",
+    "year": 200,
+    "population": 79825088
+  },
+  {
+    "entity_id": "indo_scythians",
+    "year": 300,
+    "population": 83477576
+  },
+  {
+    "entity_id": "indo_scythians",
+    "year": 400,
+    "population": 87131216
+  },
+  {
+    "entity_id": "jomon",
+    "year": -10000,
+    "population": 4297
+  },
+  {
+    "entity_id": "jomon",
+    "year": -9000,
+    "population": 6445
+  },
+  {
+    "entity_id": "jomon",
+    "year": -8000,
+    "population": 9664
+  },
+  {
+    "entity_id": "jomon",
+    "year": -7000,
+    "population": 14497
+  },
+  {
+    "entity_id": "jomon",
+    "year": -6000,
+    "population": 21745
+  },
+  {
+    "entity_id": "jomon",
+    "year": -5000,
+    "population": 32618
+  },
+  {
+    "entity_id": "jomon",
+    "year": -4000,
+    "population": 48926
+  },
+  {
+    "entity_id": "jomon",
+    "year": -3000,
+    "population": 73390
+  },
+  {
+    "entity_id": "jomon",
+    "year": -2000,
+    "population": 110084
+  },
+  {
+    "entity_id": "jomon",
+    "year": -1000,
+    "population": 165126
+  },
+  {
+    "entity_id": "kachi_plain",
+    "year": -7000,
+    "population": 78539
+  },
+  {
+    "entity_id": "kachi_plain",
+    "year": -6000,
+    "population": 130525
+  },
+  {
+    "entity_id": "kachi_plain",
+    "year": -5000,
+    "population": 217292
+  },
+  {
+    "entity_id": "kachi_plain",
+    "year": -4000,
+    "population": 371993
+  },
+  {
+    "entity_id": "kachi_plain",
+    "year": -3000,
+    "population": 622984
+  },
+  {
+    "entity_id": "kachi_plain",
+    "year": -2000,
+    "population": 1035326
+  },
+  {
+    "entity_id": "lapita_culture",
+    "year": -1000,
+    "population": 275141
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1700,
+    "population": 3084430
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1710,
+    "population": 3021844
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1720,
+    "population": 2960524
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1730,
+    "population": 2900303
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1740,
+    "population": 2841188
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1750,
+    "population": 2783188
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1760,
+    "population": 2726308
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1770,
+    "population": 2670560
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1780,
+    "population": 2615952
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1790,
+    "population": 2562493
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1800,
+    "population": 2510193
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1810,
+    "population": 2459062
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1820,
+    "population": 2317479
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1830,
+    "population": 2184614
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1840,
+    "population": 2059964
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1850,
+    "population": 1940318
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1860,
+    "population": 1842513
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1870,
+    "population": 1880631
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1880,
+    "population": 1924129
+  },
+  {
+    "entity_id": "mahi_people",
+    "year": 1890,
+    "population": 1970187
+  },
+  {
+    "entity_id": "mississippian_culture",
+    "year": 800,
+    "population": 984588
+  },
+  {
+    "entity_id": "mississippian_culture",
+    "year": 900,
+    "population": 1108570
+  },
+  {
+    "entity_id": "mississippian_culture",
+    "year": 1000,
+    "population": 1232597
+  },
+  {
+    "entity_id": "mississippian_culture",
+    "year": 1100,
+    "population": 1331112
+  },
+  {
+    "entity_id": "mississippian_culture",
+    "year": 1200,
+    "population": 1474917
+  },
+  {
+    "entity_id": "mississippian_culture",
+    "year": 1300,
+    "population": 1596532
+  },
+  {
+    "entity_id": "mississippian_culture",
+    "year": 1400,
+    "population": 1763986
+  },
+  {
+    "entity_id": "mississippian_culture",
+    "year": 1500,
+    "population": 1910343
+  },
+  {
+    "entity_id": "mississippian_culture",
+    "year": 1600,
+    "population": 742319
+  },
+  {
+    "entity_id": "norte_chico_civilization",
+    "year": -3000,
+    "population": 812927
+  },
+  {
+    "entity_id": "norte_chico_civilization",
+    "year": -2000,
+    "population": 975377
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1500,
+    "population": 939574
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1600,
+    "population": 1105368
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1700,
+    "population": 1282562
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1710,
+    "population": 1283522
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1720,
+    "population": 1284589
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1730,
+    "population": 1285669
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1740,
+    "population": 1286761
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1750,
+    "population": 1287867
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1760,
+    "population": 1288988
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1770,
+    "population": 1290126
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1780,
+    "population": 1291281
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1790,
+    "population": 1292457
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1800,
+    "population": 1293657
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1810,
+    "population": 1294882
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1820,
+    "population": 1295504
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1830,
+    "population": 1296241
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1840,
+    "population": 1297100
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1850,
+    "population": 1296692
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1860,
+    "population": 1325114
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1870,
+    "population": 1367110
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1880,
+    "population": 1424936
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1890,
+    "population": 1487594
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1900,
+    "population": 1551150
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1910,
+    "population": 1723666
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1920,
+    "population": 1868438
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1930,
+    "population": 2150824
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1940,
+    "population": 2452974
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1950,
+    "population": 2904958
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1951,
+    "population": 2985172
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1952,
+    "population": 3065902
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1953,
+    "population": 3147460
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1954,
+    "population": 3229941
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1955,
+    "population": 3313594
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1956,
+    "population": 3398816
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1957,
+    "population": 3486167
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1958,
+    "population": 3576297
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1959,
+    "population": 3669935
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1960,
+    "population": 3767721
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1961,
+    "population": 3870038
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1962,
+    "population": 3976860
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1963,
+    "population": 4087710
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1964,
+    "population": 4201812
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1965,
+    "population": 4318641
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1966,
+    "population": 4438230
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1967,
+    "population": 4560905
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1968,
+    "population": 4686642
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1969,
+    "population": 4815480
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1970,
+    "population": 4947552
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1971,
+    "population": 5083594
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1972,
+    "population": 5222990
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1973,
+    "population": 5366788
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1974,
+    "population": 5516368
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1975,
+    "population": 5672719
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1976,
+    "population": 5836440
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1977,
+    "population": 6007306
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1978,
+    "population": 6184322
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1979,
+    "population": 6366040
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1980,
+    "population": 6551469
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1981,
+    "population": 6741478
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1982,
+    "population": 6936149
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1983,
+    "population": 7135687
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1984,
+    "population": 7340429
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1985,
+    "population": 7550928
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1986,
+    "population": 7767376
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1987,
+    "population": 7990728
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1988,
+    "population": 8223312
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1989,
+    "population": 8468071
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1990,
+    "population": 8727323
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1991,
+    "population": 8999887
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1992,
+    "population": 9288162
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1993,
+    "population": 9592368
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1994,
+    "population": 9912384
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1995,
+    "population": 10248136
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1996,
+    "population": 10610710
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1997,
+    "population": 10969735
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1998,
+    "population": 11355144
+  },
+  {
+    "entity_id": "nupe",
+    "year": 1999,
+    "population": 11755336
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2000,
+    "population": 12169571
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2001,
+    "population": 12598707
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2002,
+    "population": 13043028
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2003,
+    "population": 13504337
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2004,
+    "population": 13985018
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2005,
+    "population": 14487029
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2006,
+    "population": 15011237
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2007,
+    "population": 15558067
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2008,
+    "population": 16128654
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2009,
+    "population": 16724120
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2010,
+    "population": 16506771
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2011,
+    "population": 17147696
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2012,
+    "population": 17788602
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2013,
+    "population": 18431126
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2014,
+    "population": 19072658
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2015,
+    "population": 19714188
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2016,
+    "population": 20355720
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2017,
+    "population": 20997252
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2018,
+    "population": 21638788
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2019,
+    "population": 22280318
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2020,
+    "population": 22918850
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2021,
+    "population": 23729288
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2022,
+    "population": 24536724
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2023,
+    "population": 25344164
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2024,
+    "population": 26151598
+  },
+  {
+    "entity_id": "nupe",
+    "year": 2025,
+    "population": 26959040
+  },
+  {
+    "entity_id": "swahili_culture",
+    "year": 1000,
+    "population": 2102673
+  },
+  {
+    "entity_id": "swahili_culture",
+    "year": 1100,
+    "population": 2789844
+  },
+  {
+    "entity_id": "swahili_culture",
+    "year": 1200,
+    "population": 3477015
+  },
+  {
+    "entity_id": "swahili_culture",
+    "year": 1300,
+    "population": 4165988
+  },
+  {
+    "entity_id": "swahili_culture",
+    "year": 1400,
+    "population": 4855627
+  },
+  {
+    "entity_id": "swahili_culture",
+    "year": 1500,
+    "population": 4567918
+  },
+  {
+    "entity_id": "teotihuacan_civilization",
+    "year": 100,
+    "population": 7645122
+  },
+  {
+    "entity_id": "teotihuacan_civilization",
+    "year": 200,
+    "population": 8058038
+  },
+  {
+    "entity_id": "teotihuacan_civilization",
+    "year": 300,
+    "population": 8493489
+  },
+  {
+    "entity_id": "teotihuacan_civilization",
+    "year": 400,
+    "population": 8952709
+  },
+  {
+    "entity_id": "teotihuacan_civilization",
+    "year": 500,
+    "population": 9437000
+  },
+  {
+    "entity_id": "teotihuacan_civilization",
+    "year": 600,
+    "population": 9947739
+  },
+  {
+    "entity_id": "teotihuacan_civilization",
+    "year": 700,
+    "population": 10486377
+  },
+  {
+    "entity_id": "tiwanaku_polity",
+    "year": 300,
+    "population": 381918
+  },
+  {
+    "entity_id": "tiwanaku_polity",
+    "year": 400,
+    "population": 407139
+  },
+  {
+    "entity_id": "tiwanaku_polity",
+    "year": 500,
+    "population": 434026
+  },
+  {
+    "entity_id": "tiwanaku_polity",
+    "year": 600,
+    "population": 462688
+  },
+  {
+    "entity_id": "tiwanaku_polity",
+    "year": 700,
+    "population": 493244
+  },
+  {
+    "entity_id": "tiwanaku_polity",
+    "year": 800,
+    "population": 525817
+  },
+  {
+    "entity_id": "tiwanaku_polity",
+    "year": 900,
+    "population": 576882
+  },
+  {
+    "entity_id": "tiwanaku_polity",
+    "year": 1000,
+    "population": 628008
+  },
+  {
+    "entity_id": "tiwanaku_polity",
+    "year": 1100,
+    "population": 697586
+  },
+  {
+    "entity_id": "wari",
+    "year": 600,
+    "population": 1998479
+  },
+  {
+    "entity_id": "wari",
+    "year": 700,
+    "population": 2119512
+  },
+  {
+    "entity_id": "wari",
+    "year": 800,
+    "population": 2247877
+  },
+  {
+    "entity_id": "wari",
+    "year": 900,
+    "population": 2528362
+  },
+  {
+    "entity_id": "xiongnu",
+    "year": 0,
+    "population": 303098
+  },
+  {
+    "entity_id": "xiongnu",
+    "year": 100,
+    "population": 313425
+  },
+  {
+    "entity_id": "xiongnu",
+    "year": 200,
+    "population": 324535
+  },
+  {
+    "entity_id": "xiongnu",
+    "year": 300,
+    "population": 333170
+  },
+  {
+    "entity_id": "xiongnu",
+    "year": 400,
+    "population": 352863
+  },
+  {
+    "entity_id": "xiongnu",
+    "year": 500,
+    "population": 374599
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 0,
+    "population": 7253570
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 100,
+    "population": 7645122
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 200,
+    "population": 8058038
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 300,
+    "population": 8493489
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 400,
+    "population": 8952709
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 500,
+    "population": 9437000
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 600,
+    "population": 9947739
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 700,
+    "population": 10486377
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 800,
+    "population": 11054437
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 900,
+    "population": 12738458
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 1000,
+    "population": 14300878
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 1100,
+    "population": 16125347
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 1200,
+    "population": 17969348
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 1300,
+    "population": 19826172
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 1400,
+    "population": 21691776
+  },
+  {
+    "entity_id": "zapotec_civilization",
+    "year": 1500,
+    "population": 23563030
+  },
+  {
+    "entity_id": "zhangzhung",
+    "year": 0,
+    "population": 1911116
+  },
+  {
+    "entity_id": "zhangzhung",
+    "year": 100,
+    "population": 2000896
+  },
+  {
+    "entity_id": "zhangzhung",
+    "year": 200,
+    "population": 2092134
+  },
+  {
+    "entity_id": "zhangzhung",
+    "year": 300,
+    "population": 2184778
+  },
+  {
+    "entity_id": "zhangzhung",
+    "year": 400,
+    "population": 2279334
+  },
+  {
+    "entity_id": "zhangzhung",
+    "year": 500,
+    "population": 2375556
+  },
+  {
+    "entity_id": "zhangzhung",
+    "year": 600,
+    "population": 2473584
+  }
+]

@@ -8,6 +8,7 @@ const status = document.querySelector("#poster-status");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const style = document.querySelector("#poster-style").value;
+  const widthSource = document.querySelector("#poster-width-source").value;
   const start = document.querySelector("#poster-start").value;
   const end = document.querySelector("#poster-end").value;
   if (Number(end) <= Number(start)) {
@@ -17,6 +18,6 @@ form.addEventListener("submit", (event) => {
   }
   status.classList.remove("error");
   status.textContent = "Opening in a new tab…";
-  const url = `/api/poster.svg?style=${encodeURIComponent(style)}&start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}`;
+  const url = `/api/poster.svg?style=${encodeURIComponent(style)}&start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}&width_source=${encodeURIComponent(widthSource)}`;
   window.open(url, "_blank", "noopener");
 });

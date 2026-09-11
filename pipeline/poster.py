@@ -31,6 +31,15 @@ PROMINENCE_SCALE_MIN = 1.0
 PROMINENCE_SCALE_MAX = 10.0
 
 Style = Literal["authentic", "stacked"]
+# "prominence" (default): every polity gets a flat width across its whole
+# span, from its prominence_score -- today's only behavior. "population":
+# Civilizations & Cultures entities with a HYDE-derived population curve
+# (see pipeline/extract_hyde_by_civilization.py) get a real multi-keyframe
+# width that grows and shrinks with their own population over time;
+# everything else (no curve on file) falls back to the flat prominence
+# width, same as "prominence" mode -- see _load_population_keyframes/
+# _build_polities.
+WidthSource = Literal["prominence", "population"]
 
 
 def smoothstep(t: float) -> float:
@@ -46,6 +55,36 @@ def scale_prominence_score(prominence_score: float) -> float:
     """Rescale a 0-100 prominence_score to the ~1-10 range width_px
     expects, for a polity with no per-era weight curve of its own."""
     fraction = max(0.0, min(1.0, prominence_score / PROMINENCE_SCORE_MAX))
+    return PROMINENCE_SCALE_MIN + fraction * (PROMINENCE_SCALE_MAX - PROMINENCE_SCALE_MIN)
+
+
+def scale_population(population: float, min_log: float, max_log: float) -> float:
+    """Log-scale a population count to the same ~1-10 range width_px
+    expects -- mirrors the /explore Population lane's own log-scale
+    treatment (web/explore_timeline.js's populationHeight): population
+    spans orders of magnitude across a civilization's lifespan, so a
+    linear scale would flatten every early-era sample to a sliver next to
+    a late one. min_log/max_log come from *this one entity's own* curve
+    (see _load_population_keyframes), not the whole dataset -- a single
+    shared global range is dominated by whichever open-ended entity's
+    modern annual HYDE tail reaches the highest (tens of millions), which
+    squashes every other entity's own, much narrower, real growth into a
+    barely-visible sliver of the 1-10 scale. Per-entity scaling also
+    matches the extraction script's own documented caveat that *absolute*
+    cross-entity population comparison isn't reliable anyway (each
+    entity's country-mask overcounting bias differs by how much of its
+    present_countries' modern territory it actually occupied) -- this
+    makes every band's *own* width responsive to its *own* history
+    instead, which is what "draw the width of the civilization lane"
+    asked for. Stable across different poster year-range selections for
+    the same entity (min_log/max_log come from that entity's whole cached
+    curve, not just the requested window)."""
+    if population <= 0:
+        return PROMINENCE_SCALE_MIN
+    if max_log <= min_log:
+        return PROMINENCE_SCALE_MAX
+    fraction = (math.log10(population) - min_log) / (max_log - min_log)
+    fraction = max(0.0, min(1.0, fraction))
     return PROMINENCE_SCALE_MIN + fraction * (PROMINENCE_SCALE_MAX - PROMINENCE_SCALE_MIN)
 
 
@@ -71,6 +110,12 @@ def taper_factor(year: float, boundary_year: float, total_years: float, directio
 
 @dataclass
 class Keyframe:
+    """year -> a value already scaled to width_px's ~1-10 input range.
+    `prominence` is the name from this module's original (and still
+    default) data source, but any PosterPolity can carry more than the
+    flat 2-keyframe curve _build_polities gives a prominence_score-only
+    polity -- see _load_population_keyframes for the other source, a real
+    multi-point curve from HYDE-derived population data."""
     year: int
     prominence: float
 
@@ -171,14 +216,30 @@ def select_top_polities(
     end_year: int,
     prominence_score: dict[str, float],
     top_n: int = TOP_N_POLITIES,
+    priority_ids: frozenset[str] = frozenset(),
 ) -> list[PosterPolity]:
     """Polities overlapping [start_year, end_year], ranked by
     prominence_score, capped to top_n. Overlap, not full containment --
     a polity that starts before start_year or ends after end_year still
-    shows (tapered at whichever edge falls inside the window)."""
+    shows (tapered at whichever edge falls inside the window).
+
+    priority_ids (used by width_source="population" -- see
+    _build_polities) go in ahead of the prominence ranking, as long as
+    they overlap the window: a Civilizations & Cultures entity's own
+    prominence_score rarely if ever wins a top_n spot against major world
+    empires, so without this, "population" mode would select the exact
+    same 60 polities as "prominence" mode and render identically -- the
+    whole point of the mode is to actually show these entities' width
+    tracking their own population. The remaining top_n - len(priority)
+    slots still go to the highest-prominence remaining candidates, same
+    as before; empty (the default) leaves this identical to the prior
+    behavior."""
     overlapping = [p for p in candidates if p.start <= end_year and p.end >= start_year]
-    overlapping.sort(key=lambda p: prominence_score.get(p.id, 0.0), reverse=True)
-    return overlapping[:top_n]
+    priority = [p for p in overlapping if p.id in priority_ids]
+    rest = [p for p in overlapping if p.id not in priority_ids]
+    priority.sort(key=lambda p: prominence_score.get(p.id, 0.0), reverse=True)
+    rest.sort(key=lambda p: prominence_score.get(p.id, 0.0), reverse=True)
+    return (priority + rest)[:top_n]
 
 
 @dataclass
@@ -333,8 +394,49 @@ def _load_json(path: Path) -> object:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _load_population_keyframes(root: Path) -> dict[str, list[Keyframe]]:
+    """Loads population_by_civilization.json (build.py's copy-through of
+    pipeline/extract_hyde_by_civilization.py's cached extraction -- same
+    pattern as population_by_continent.json), keyed by entity id, each
+    value a real multi-point curve rather than the flat 2-keyframe curve
+    _build_polities gives a prominence_score-only polity. Returns {} if
+    the file doesn't exist yet on this machine or is empty -- callers
+    treat that exactly like "no curve for this entity", same graceful
+    fallback web/explore.js's buildPopulationSeries already uses for the
+    /explore Population lane. An entity with fewer than 2 sample years in
+    its range (PosterPolity needs >= 2 keyframes) is skipped here, not
+    passed through as an unusable single-point curve. Each entity is
+    log-scaled against its *own* min/max population (see scale_population's
+    own docstring for why, not a single range shared across every entity)."""
+    path = root / "population_by_civilization.json"
+    if not path.exists():
+        return {}
+    rows = _load_json(path)
+    if not rows:
+        return {}
+    by_entity: dict[str, list[tuple[int, int]]] = {}
+    for row in rows:
+        by_entity.setdefault(row["entity_id"], []).append((row["year"], row["population"]))
+    keyframes: dict[str, list[Keyframe]] = {}
+    for entity_id, points in by_entity.items():
+        if len(points) < 2:
+            continue
+        logs = [math.log10(population) for _, population in points if population > 0]
+        if not logs:
+            continue
+        min_log, max_log = min(logs), max(logs)
+        keyframes[entity_id] = [
+            Keyframe(year, scale_population(population, min_log, max_log)) for year, population in sorted(points)
+        ]
+    return keyframes
+
+
 def _build_polities(
-    raw_polities: list[dict], start_year: int, end_year: int, top_n: int = TOP_N_POLITIES
+    raw_polities: list[dict],
+    start_year: int,
+    end_year: int,
+    top_n: int = TOP_N_POLITIES,
+    population_keyframes: dict[str, list[Keyframe]] | None = None,
 ) -> tuple[list[PosterPolity], dict[str, float]]:
     candidates = []
     prominence_score: dict[str, float] = {}
@@ -347,16 +449,37 @@ def _build_polities(
             continue
         score = record.get("prominence_score") or 0.0
         prominence_score[record["id"]] = score
+        # A population curve for this entity (see _load_population_keyframes)
+        # replaces the flat prominence-based width when width_source=
+        # "population" was requested -- render_poster_svg only passes
+        # population_keyframes at all in that mode, so this is unchanged
+        # (flat 2-keyframe) behavior whenever it's None/empty/missing this
+        # entity. Flat-extended to the record's own [start, effective_end]
+        # at either end where the curve itself starts later or ends earlier
+        # (HYDE's sample years don't necessarily land exactly on this
+        # entity's own recorded start/end) -- keeps PosterPolity.start/.end
+        # (== keyframes[0]/[-1].year) matching the record, not the curve's
+        # own narrower coverage, so overlap checks below stay accurate.
+        curve = (population_keyframes or {}).get(record["id"])
+        if curve:
+            keyframes = list(curve)
+            if keyframes[0].year > start:
+                keyframes.insert(0, Keyframe(start, keyframes[0].prominence))
+            if keyframes[-1].year < effective_end:
+                keyframes.append(Keyframe(effective_end, keyframes[-1].prominence))
+        else:
+            keyframes = [Keyframe(start, scale_prominence_score(score)), Keyframe(effective_end, scale_prominence_score(score))]
         candidates.append(
             PosterPolity(
                 id=record["id"],
                 label=record["canonical_name"],
-                keyframes=[Keyframe(start, scale_prominence_score(score)), Keyframe(effective_end, scale_prominence_score(score))],
+                keyframes=keyframes,
                 fade_in_years=record.get("fade_in_years"),
                 fade_out_years=record.get("fade_out_years"),
             )
         )
-    selected = select_top_polities(candidates, start_year, end_year, prominence_score, top_n)
+    priority_ids = frozenset((population_keyframes or {}).keys())
+    selected = select_top_polities(candidates, start_year, end_year, prominence_score, top_n, priority_ids=priority_ids)
     edges = []
     by_id = {record["id"]: record for record in raw_polities}
     for p in selected:
@@ -377,12 +500,19 @@ def _rotated_label(x: float, y: float, text: str, size: float, color: str) -> st
     )
 
 
-def render_poster_svg(style: Style, start_year: int, end_year: int, root: Path = ROOT) -> str:
+def render_poster_svg(
+    style: Style, start_year: int, end_year: int, root: Path = ROOT, width_source: WidthSource = "prominence"
+) -> str:
     """Renders the poster as a complete, standalone SVG document string.
     style: "authentic" (independent per-lineage columns) or "stacked"
-    (100% of the canvas width, shared proportionally every year). root
-    defaults to the real repo root; server/app.py's create_app(root=...)
-    passes its own root through here, so a test server reads its isolated
+    (100% of the canvas width, shared proportionally every year).
+    width_source: "prominence" (default, every band flat-width across its
+    span) or "population" (Civilizations & Cultures entities with a HYDE-
+    derived curve on file get a real width that tracks their own
+    population over time -- see _load_population_keyframes; everything
+    else still falls back to the flat prominence width). root defaults to
+    the real repo root; server/app.py's create_app(root=...) passes its
+    own root through here, so a test server reads its isolated
     temp-directory build artifacts instead of the real ones.
 
     Known v1 simplifications (see docs/plans/2026-09-08-poster-visualization-
@@ -396,7 +526,8 @@ def render_poster_svg(style: Style, start_year: int, end_year: int, root: Path =
     raw_polities = _load_json(root / "data.json")
     raw_periods = _load_json(root / "periods.json")
     raw_events = _load_json(root / "events.json")
-    polities, _ = _build_polities(raw_polities, start_year, end_year)
+    population_keyframes = _load_population_keyframes(root) if width_source == "population" else {}
+    polities, _ = _build_polities(raw_polities, start_year, end_year, population_keyframes=population_keyframes)
     lineage_order = order_lineages(polities) if polities else []
 
     height = max(600.0, min(4000.0, (end_year - start_year) * 1.4))

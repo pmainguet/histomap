@@ -26,7 +26,9 @@
         <h1>Generate a poster</h1>
         <p class="workspace-purpose-inline">Renders the top 60 polities by prominence in the chosen
           range as flowing bands, in the style of the 1931 <em>Histomap of World History</em>. Opens
-          as an SVG in a new tab -- save it from there.</p>
+          as an SVG in a new tab -- save it from there. "Band width: Population" widens/narrows
+          Civilizations &amp; Cultures bands with their own HYDE-derived population over time where
+          that data exists; every other band keeps its usual prominence-based width.</p>
       </div>
     </section>
     <main class="review-main">
@@ -35,6 +37,12 @@
           <select id="poster-style">
             <option value="authentic">Histomap Authentic</option>
             <option value="stacked">100% Stacked</option>
+          </select>
+        </label>
+        <label>Band width
+          <select id="poster-width-source">
+            <option value="prominence">Prominence (current)</option>
+            <option value="population">Population</option>
           </select>
         </label>
         <label>From year<input id="poster-start" type="number" value="-500" required></label>

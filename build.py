@@ -25,6 +25,11 @@ EXPLORE_TREE_OUT_PATH = ROOT / "explore_tree.json"
 # just gets copied through, the same as periods.json/events.json below.
 HYDE_POPULATION_BY_CONTINENT_PATH = ROOT / "sources" / "hyde_population_by_continent.json"
 POPULATION_BY_CONTINENT_OUT_PATH = ROOT / "population_by_continent.json"
+# Same cached-artifact/copy-through pattern as the continent pair above --
+# see pipeline/extract_hyde_by_civilization.py's own docstring. Feeds
+# pipeline/poster.py's width_source="population" option, not /explore.
+HYDE_POPULATION_BY_CIVILIZATION_PATH = ROOT / "sources" / "hyde_population_by_civilization.json"
+POPULATION_BY_CIVILIZATION_OUT_PATH = ROOT / "population_by_civilization.json"
 # Same grace window validate_transitions() already applies to a transition's
 # year against its source/target polity dates -- reused here rather than a
 # new threshold, for the same reason: editorial start/end estimates are
@@ -436,6 +441,13 @@ def main() -> None:
     if HYDE_POPULATION_BY_CONTINENT_PATH.exists():
         POPULATION_BY_CONTINENT_OUT_PATH.write_text(
             HYDE_POPULATION_BY_CONTINENT_PATH.read_text(encoding="utf-8"), encoding="utf-8"
+        )
+    # Same copy-through, for pipeline/poster.py's width_source="population"
+    # option -- missing cache just leaves that option at its own graceful
+    # fallback (every polity's flat prominence width), not a build failure.
+    if HYDE_POPULATION_BY_CIVILIZATION_PATH.exists():
+        POPULATION_BY_CIVILIZATION_OUT_PATH.write_text(
+            HYDE_POPULATION_BY_CIVILIZATION_PATH.read_text(encoding="utf-8"), encoding="utf-8"
         )
     print(
         f"OK  validated {len(polities)} and wrote {len(published_polities)} entities, "

@@ -1,12 +1,18 @@
+import json
+import tempfile
 import unittest
+from pathlib import Path
 
 from pipeline.poster import (
     Keyframe,
     PosterPolity,
+    _build_polities,
+    _load_population_keyframes,
     compute_lineages,
     order_lineages,
     path_from_stacked_samples,
     render_poster_svg,
+    scale_population,
     scale_prominence_score,
     select_top_polities,
     smoothstep,
@@ -56,6 +62,110 @@ class ScaleProminenceScoreTests(unittest.TestCase):
 
     def test_clamps_below_zero(self) -> None:
         self.assertEqual(scale_prominence_score(-10), 1.0)
+
+
+class ScalePopulationTests(unittest.TestCase):
+    def test_zero_or_negative_maps_to_scale_min(self) -> None:
+        self.assertEqual(scale_population(0, 3.0, 6.0), 1.0)
+        self.assertEqual(scale_population(-5, 3.0, 6.0), 1.0)
+
+    def test_min_log_maps_to_scale_min(self) -> None:
+        self.assertAlmostEqual(scale_population(10**3, 3.0, 6.0), 1.0)
+
+    def test_max_log_maps_to_scale_max(self) -> None:
+        self.assertAlmostEqual(scale_population(10**6, 3.0, 6.0), 10.0)
+
+    def test_degenerate_range_maps_to_scale_max(self) -> None:
+        self.assertEqual(scale_population(500, 4.0, 4.0), 10.0)
+
+    def test_increases_with_population(self) -> None:
+        self.assertLess(scale_population(10**4, 3.0, 6.0), scale_population(10**5, 3.0, 6.0))
+
+
+class LoadPopulationKeyframesTests(unittest.TestCase):
+    def test_missing_file_returns_empty(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(_load_population_keyframes(Path(tmp)), {})
+
+    def test_builds_sorted_multi_point_curves_from_cached_rows(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            rows = [
+                {"entity_id": "civ", "year": 100, "population": 1000},
+                {"entity_id": "civ", "year": 0, "population": 100},
+                {"entity_id": "civ", "year": 200, "population": 10000},
+            ]
+            (root / "population_by_civilization.json").write_text(json.dumps(rows), encoding="utf-8")
+            keyframes = _load_population_keyframes(root)
+            self.assertIn("civ", keyframes)
+            self.assertEqual([kf.year for kf in keyframes["civ"]], [0, 100, 200])
+            # log-scaled against this file's own min/max: lowest population ->
+            # PROMINENCE_SCALE_MIN, highest -> PROMINENCE_SCALE_MAX.
+            self.assertAlmostEqual(keyframes["civ"][0].prominence, 1.0)
+            self.assertAlmostEqual(keyframes["civ"][-1].prominence, 10.0)
+
+    def test_entity_with_a_single_sample_year_is_skipped(self) -> None:
+        # PosterPolity needs >= 2 keyframes -- a lone sample year can't
+        # become a usable curve, so it's dropped here rather than passed
+        # through as an unusable one-point "curve".
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            rows = [{"entity_id": "civ", "year": 100, "population": 1000}]
+            (root / "population_by_civilization.json").write_text(json.dumps(rows), encoding="utf-8")
+            self.assertEqual(_load_population_keyframes(root), {})
+
+
+class BuildPolitiesPopulationTests(unittest.TestCase):
+    def test_population_curve_overrides_flat_prominence_width(self) -> None:
+        raw = [{"id": "civ", "canonical_name": "Civ", "start": 0, "end": 200, "prominence_score": 10.0}]
+        curve = {"civ": [Keyframe(0, 2.0), Keyframe(100, 8.0), Keyframe(200, 4.0)]}
+        selected, _ = _build_polities(raw, 0, 200, population_keyframes=curve)
+        self.assertEqual(len(selected), 1)
+        p = selected[0]
+        self.assertEqual([kf.year for kf in p.keyframes], [0, 100, 200])
+        self.assertEqual([kf.prominence for kf in p.keyframes], [2.0, 8.0, 4.0])
+
+    def test_population_curve_flat_extended_to_record_bounds(self) -> None:
+        # The curve's own coverage (0-200) is narrower than the record's
+        # true [start, end] (-100, 300) -- HYDE's own sample years don't
+        # necessarily land exactly on a record's dates. Both ends should
+        # extend flat to the record's real bounds, not leave PosterPolity.
+        # start/end narrower than the record (which would break
+        # select_top_polities' overlap check for a poster window that only
+        # touches the gap between the two).
+        raw = [{"id": "civ", "canonical_name": "Civ", "start": -100, "end": 300, "prominence_score": 10.0}]
+        curve = {"civ": [Keyframe(0, 2.0), Keyframe(200, 8.0)]}
+        selected, _ = _build_polities(raw, -100, 300, population_keyframes=curve)
+        p = selected[0]
+        self.assertEqual(p.start, -100)
+        self.assertEqual(p.end, 300)
+        self.assertEqual(p.keyframes[0].prominence, 2.0)
+        self.assertEqual(p.keyframes[-1].prominence, 8.0)
+
+    def test_entity_without_a_curve_falls_back_to_flat_prominence(self) -> None:
+        raw = [{"id": "state", "canonical_name": "State", "start": 0, "end": 100, "prominence_score": 50.0}]
+        selected, _ = _build_polities(raw, 0, 100, population_keyframes={"other": [Keyframe(0, 1), Keyframe(100, 2)]})
+        p = selected[0]
+        self.assertEqual(len(p.keyframes), 2)
+        self.assertEqual(p.keyframes[0].prominence, p.keyframes[1].prominence)
+
+    def test_no_population_keyframes_argument_behaves_as_before(self) -> None:
+        raw = [{"id": "state", "canonical_name": "State", "start": 0, "end": 100, "prominence_score": 50.0}]
+        selected, _ = _build_polities(raw, 0, 100)
+        self.assertEqual(len(selected[0].keyframes), 2)
+
+    def test_low_prominence_entity_with_a_curve_still_gets_selected(self) -> None:
+        # A prominence_score of 1 would never make a top_n=2 cut against a
+        # score of 90 on its own -- the population-curve priority (see
+        # select_top_polities) is what gets it in.
+        raw = [
+            {"id": "obscure_civ", "canonical_name": "Obscure", "start": 0, "end": 100, "prominence_score": 1.0},
+            {"id": "empire", "canonical_name": "Empire", "start": 0, "end": 100, "prominence_score": 90.0},
+            {"id": "empire2", "canonical_name": "Empire 2", "start": 0, "end": 100, "prominence_score": 80.0},
+        ]
+        curve = {"obscure_civ": [Keyframe(0, 2.0), Keyframe(100, 4.0)]}
+        selected, _ = _build_polities(raw, 0, 100, top_n=2, population_keyframes=curve)
+        self.assertIn("obscure_civ", [p.id for p in selected])
 
 
 class TaperFactorTests(unittest.TestCase):
@@ -188,6 +298,33 @@ class SelectTopPolitiesTests(unittest.TestCase):
         self.assertEqual(len(result), 2)
         self.assertEqual([p.id for p in result], ["p4", "p3"])
 
+    def test_priority_ids_win_a_slot_over_higher_prominence(self) -> None:
+        # A low-prominence Civilizations & Cultures entity would never
+        # crack top_n against a major empire on prominence_score alone --
+        # priority_ids (width_source="population") is what actually makes
+        # it show up.
+        obscure = polity("obscure_civ", 0, 100)
+        empires = [polity(f"empire{i}", 0, 100) for i in range(5)]
+        scores = {"obscure_civ": 1.0, **{f"empire{i}": 90.0 - i for i in range(5)}}
+        result = select_top_polities(
+            [obscure, *empires], 0, 100, prominence_score=scores, top_n=3, priority_ids=frozenset({"obscure_civ"})
+        )
+        self.assertIn("obscure_civ", [p.id for p in result])
+        self.assertEqual(len(result), 3)
+
+    def test_priority_ids_still_capped_to_top_n(self) -> None:
+        priorities = [polity(f"civ{i}", 0, 100) for i in range(3)]
+        result = select_top_polities(
+            priorities, 0, 100, prominence_score={}, top_n=2, priority_ids=frozenset({"civ0", "civ1", "civ2"})
+        )
+        self.assertEqual(len(result), 2)
+
+    def test_no_priority_ids_behaves_as_before(self) -> None:
+        low = polity("low", 0, 100)
+        high = polity("high", 0, 100)
+        result = select_top_polities([low, high], 0, 100, prominence_score={"low": 10, "high": 90})
+        self.assertEqual([p.id for p in result], ["high", "low"])
+
 
 class StackPolitiesTests(unittest.TestCase):
     def test_active_polities_always_sum_to_canvas_width(self) -> None:
@@ -283,6 +420,32 @@ class RenderPosterSvgTests(unittest.TestCase):
         self.assertIn("EPOCH", svg)
         self.assertIn("CHAPTER", svg)
         self.assertIn("EVENTS", svg)
+
+    def test_population_width_source_produces_a_well_formed_svg(self) -> None:
+        # A wide range so at least one Civilizations & Cultures entity with
+        # a cached population curve (see pipeline/extract_hyde_by_
+        # civilization.py) is plausibly in view -- this is still a smoke
+        # test (well-formed output), not a check of any specific band's
+        # width; BuildPolitiesPopulationTests above covers the curve logic
+        # itself in isolation.
+        svg = render_poster_svg("authentic", -3000, 500, width_source="population")
+        self.assertTrue(svg.startswith("<svg"))
+        self.assertTrue(svg.endswith("</svg>"))
+        self.assertIn("<path", svg)
+
+    def test_population_width_source_without_a_cached_file_falls_back_cleanly(self) -> None:
+        # An isolated root with no population_by_civilization.json at all
+        # (a machine that never ran extract_hyde_by_civilization.py) --
+        # should render exactly like "prominence" mode, not raise.
+        import shutil
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name in ("data.json", "periods.json", "events.json"):
+                shutil.copy(Path(__file__).resolve().parents[1] / name, root / name)
+            svg = render_poster_svg("authentic", -500, 500, root=root, width_source="population")
+            self.assertTrue(svg.startswith("<svg"))
+            self.assertIn("<path", svg)
 
 
 if __name__ == "__main__":

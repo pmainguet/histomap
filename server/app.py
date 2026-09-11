@@ -1678,7 +1678,7 @@ def create_app(root: Path = ROOT) -> FastAPI:
 
     BUILD_ARTIFACT_FILES = (
         "data.json", "transitions.json", "periods.json", "period_links.json", "explore_tree.json",
-        "events.json", "population_by_continent.json",
+        "events.json", "population_by_continent.json", "population_by_civilization.json",
     )
 
     @application.middleware("http")
@@ -2055,14 +2055,19 @@ def create_app(root: Path = ROOT) -> FastAPI:
         style: str = Query("authentic", pattern="^(authentic|stacked)$"),
         start: int = Query(...),
         end: int = Query(...),
+        width_source: str = Query("prominence", pattern="^(prominence|population)$"),
     ) -> Response:
         """ROADMAP.md item 3b -- see
         docs/plans/2026-09-08-poster-visualization-design.md. Minimal
         generation surface, per explicit request: style, a year range,
-        and that's it -- no column count, palette, or dimension controls."""
+        and that's it -- no column count, palette, or dimension controls.
+        width_source (ROADMAP.md item, 11 September 2026) is the one
+        addition since: "prominence" (default, unchanged) or "population"
+        -- see pipeline/poster.py's render_poster_svg/_load_population_
+        keyframes for what that second mode actually changes."""
         if end <= start:
             raise HTTPException(422, "end must be after start")
-        svg = render_poster_svg(style, start, end, root=root)  # type: ignore[arg-type]
+        svg = render_poster_svg(style, start, end, root=root, width_source=width_source)  # type: ignore[arg-type]
         return Response(content=svg, media_type="image/svg+xml")
 
     @application.patch("/api/polities/{polity_id}/geography")
