@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - maddison
 - wikidata
-prominence_score: 47.43
+prominence_score: 61.65
 eligibility: accepted
 geography:
   continents:
@@ -48,13 +48,9 @@ prominence_components:
   wikidata_reach: 30
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 5.55
   longevity: 4.89
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 47.43
+  population_scale: 14.76
+  total: 61.65
 linked_era_id: europe_contemporary_world_era
 government_form: null
 linked_chapter_id: macro_contemporary_world

@@ -14,12 +14,8 @@ prominence_components:
   wikidata_reach: 0.0
   authority_coverage: 12
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 4.39
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -0.0
-  aggregate_penalty: 0
+  population_scale: 0.0
   total: 16.39
 prominence_score: 16.39
 eligibility: review

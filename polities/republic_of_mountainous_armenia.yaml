@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review. End date correcte
   2026).
 sources:
 - wikidata
-prominence_score: 18.12
+prominence_score: 23.12
 eligibility: accepted
 geography:
   continents:
@@ -45,13 +45,9 @@ prominence_components:
   wikidata_reach: 22.37
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 0.75
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 18.12
+  population_scale: 0.0
+  total: 23.12
 manual_overrides:
 - geography
 linked_era_id: asia_contemporary_world_era

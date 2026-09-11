@@ -29,3 +29,11 @@ notes: Editorial grouping (10 September 2026) for the ~23 rival regional governm
   or recognized, so detail_of would misrepresent them as a subordinate part of it
   (same reasoning as Biafra/Vichy France elsewhere in this dataset). A plain container
   grouping by shared era/category only, not sovereignty or lineage.
+prominence_components:
+  wikidata_reach: 0.0
+  authority_coverage: 0
+  historical_evidence: 0
+  longevity: 3.98
+  population_scale: 0.0
+  total: 3.98
+prominence_score: 3.98

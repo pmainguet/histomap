@@ -22,7 +22,7 @@ notes: Automatically generated from Wikidata; requires review. Editorially disca
   as outside Histomap scope.
 sources:
 - wikidata
-prominence_score: 17.68
+prominence_score: 19.18
 eligibility: excluded
 geography:
   continents:
@@ -45,13 +45,9 @@ prominence_components:
   wikidata_reach: 13.55
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 3.5
   longevity: 5.63
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 17.68
+  population_scale: 0.0
+  total: 19.18
 government_form: null
 timeline_role: retired
 consolidation_status: discarded

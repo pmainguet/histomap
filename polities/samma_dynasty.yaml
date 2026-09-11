@@ -23,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 29.87
+prominence_score: 48.31
 eligibility: accepted
 geography:
   continents:
@@ -46,13 +46,9 @@ prominence_components:
   wikidata_reach: 17.19
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 0.0
   longevity: 5.67
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 29.87
+  population_scale: 13.44
+  total: 48.31
 government_form: null
 deprecated:
   visibility_tier: detailed

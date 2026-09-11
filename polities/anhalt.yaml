@@ -21,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 12.5
+prominence_score: 27.5
 eligibility: review
 geography:
   continents:
@@ -43,13 +43,9 @@ prominence_components:
   wikidata_reach: 22.37
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 5.13
-  editorial_work: 0
-  type_uncertainty_penalty: -10
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 12.5
+  population_scale: 0.0
+  total: 27.5
 timeline_role: retired
 consolidation_status: same_entity
 consolidated_into: duchy_of_anhalt

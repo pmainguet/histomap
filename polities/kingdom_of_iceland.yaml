@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 26.27
+prominence_score: 38.72
 eligibility: accepted
 geography:
   continents:
@@ -52,13 +52,9 @@ prominence_components:
   wikidata_reach: 24.19
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 3.5
   longevity: 3.58
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 26.27
+  population_scale: 10.95
+  total: 38.72
 government_form: kingdom
 consolidation_status: independent
 manual_overrides:

@@ -25,7 +25,7 @@ notes: Automatically generated from Wikidata; requires review. end date fixed 1 
   it isn't silently reset by a future import.
 sources:
 - wikidata
-prominence_score: 12.79
+prominence_score: 15.29
 eligibility: accepted
 geography:
   continents:
@@ -48,13 +48,9 @@ prominence_components:
   wikidata_reach: 13.55
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 1.75
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -2.5
-  aggregate_penalty: 0
-  total: 12.79
+  population_scale: 0.0
+  total: 15.29
 manual_overrides:
 - consolidation
 - dates

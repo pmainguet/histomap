@@ -25,7 +25,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 18.01
+prominence_score: 37.87
 eligibility: accepted
 geography:
   continents:
@@ -50,13 +50,9 @@ prominence_components:
   wikidata_reach: 4.52
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 0.0
   longevity: 6.5
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 18.01
+  population_scale: 14.86
+  total: 37.87
 government_form: free imperial city
 deprecated:
   visibility_tier: detailed

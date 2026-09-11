@@ -20,7 +20,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 7.92
+prominence_score: 12.92
 eligibility: accepted
 geography:
   continents:
@@ -41,13 +41,9 @@ prominence_components:
   wikidata_reach: 9.03
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 3.89
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 7.92
+  population_scale: 0.0
+  total: 12.92
 government_form: emirate
 deprecated:
   visibility_tier: detailed

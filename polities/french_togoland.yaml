@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 37.21
+prominence_score: 53.38
 eligibility: accepted
 geography:
   continents:
@@ -54,13 +54,9 @@ prominence_components:
   wikidata_reach: 22.58
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 3.5
   longevity: 4.13
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 37.21
+  population_scale: 14.67
+  total: 53.38
 linked_era_id: africa_world_wars_reordering_era
 government_form: colony
 linked_chapter_id: macro_world_wars_reordering

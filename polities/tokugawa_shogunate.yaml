@@ -31,7 +31,7 @@ sources:
 - hyde
 - seshat
 - wikidata
-prominence_score: 60.1
+prominence_score: 73.52
 eligibility: accepted
 geography:
   continents:
@@ -66,13 +66,9 @@ prominence_components:
   wikidata_reach: 28.04
   authority_coverage: 16
   historical_evidence: 8
-  relationship_centrality: 7.0
   longevity: 6.06
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 60.1
+  population_scale: 15.43
+  total: 73.52
 linked_era_id: asia_early_modern_connections_era
 government_form: null
 linked_chapter_id: macro_early_modern_connections

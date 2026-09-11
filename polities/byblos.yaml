@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 31.86
+prominence_score: 36.86
 eligibility: review
 geography:
   continents:
@@ -45,13 +45,9 @@ prominence_components:
   wikidata_reach: 28.86
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 8
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 31.86
+  population_scale: 0.0
+  total: 36.86
 government_form: city-state
 deprecated:
   visibility_tier: detailed

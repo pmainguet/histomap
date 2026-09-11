@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review. End date correcte
   2026).
 sources:
 - wikidata
-prominence_score: 3.81
+prominence_score: 18.81
 eligibility: review
 geography:
   continents:
@@ -46,13 +46,9 @@ prominence_components:
   wikidata_reach: 18.06
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 0.75
-  editorial_work: 0
-  type_uncertainty_penalty: -10
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 3.81
+  population_scale: 0.0
+  total: 18.81
 government_form: null
 consolidation_status: independent
 manual_overrides:

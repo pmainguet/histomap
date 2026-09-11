@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 32.76
+prominence_score: 52.29
 eligibility: accepted
 geography:
   continents:
@@ -50,13 +50,9 @@ prominence_components:
   wikidata_reach: 19.18
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 0.0
   longevity: 6.58
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 32.76
+  population_scale: 14.53
+  total: 52.29
 government_form: duchy
 deprecated:
   visibility_tier: detailed

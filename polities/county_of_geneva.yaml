@@ -21,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 16.75
+prominence_score: 21.75
 eligibility: accepted
 geography:
   continents:
@@ -43,13 +43,9 @@ prominence_components:
   wikidata_reach: 15.0
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 6.75
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 16.75
+  population_scale: 0.0
+  total: 21.75
 manual_overrides:
 - entity_type
 government_form: countship

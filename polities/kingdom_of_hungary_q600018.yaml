@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 32.06
+prominence_score: 44.73
 eligibility: accepted
 geography:
   continents:
@@ -52,13 +52,9 @@ prominence_components:
   wikidata_reach: 25.35
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 8.13
   longevity: 3.58
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 32.06
+  population_scale: 15.8
+  total: 44.73
 timeline_role: retired
 consolidation_status: same_entity
 consolidated_into: kingdom_of_hungary_q171150

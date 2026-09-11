@@ -28,7 +28,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 48.93
+prominence_score: 61.03
 eligibility: accepted
 geography:
   continents:
@@ -59,13 +59,9 @@ prominence_components:
   wikidata_reach: 27.86
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 7.0
   longevity: 7.07
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 48.93
+  population_scale: 14.1
+  total: 61.03
 timeline_role: retired
 consolidation_status: same_entity
 consolidated_into: crown_of_aragon

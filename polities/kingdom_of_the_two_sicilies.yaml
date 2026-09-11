@@ -26,7 +26,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 40.45
+prominence_score: 60.51
 eligibility: accepted
 geography:
   continents:
@@ -49,13 +49,9 @@ prominence_components:
   wikidata_reach: 28.21
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 0.0
   longevity: 5.23
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 40.45
+  population_scale: 15.06
+  total: 60.51
 linked_era_id: europe_early_modern_connections_era
 government_form: null
 linked_chapter_id: macro_early_modern_connections

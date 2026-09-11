@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 38.92
+prominence_score: 54.46
 eligibility: accepted
 geography:
   continents:
@@ -54,13 +54,9 @@ prominence_components:
   wikidata_reach: 20.97
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 5.55
   longevity: 5.4
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 38.92
+  population_scale: 16.08
+  total: 54.46
 manual_overrides:
 - consolidation
 linked_era_id: europe_industrial_imperial_world_era

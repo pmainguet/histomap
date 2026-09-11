@@ -24,7 +24,7 @@ sources:
 - wikidata
 source_urls:
 - https://en.wikipedia.org/wiki/Duke_of_Francavilla
-prominence_score: 6.2
+prominence_score: 11.2
 eligibility: accepted
 geography:
   continents:
@@ -45,13 +45,9 @@ prominence_components:
   wikidata_reach: 4.52
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 6.68
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 6.2
+  population_scale: 0.0
+  total: 11.2
 government_form: duchy
 deprecated:
   visibility_tier: detailed

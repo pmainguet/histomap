@@ -25,7 +25,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - seshat
 - wikidata
-prominence_score: 26.26
+prominence_score: 31.26
 eligibility: accepted
 geography:
   continents:
@@ -49,13 +49,9 @@ prominence_components:
   wikidata_reach: 12.68
   authority_coverage: 12
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 6.58
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 26.26
+  population_scale: 0.0
+  total: 31.26
 government_form: sultanate
 deprecated:
   visibility_tier: detailed

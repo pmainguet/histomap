@@ -2670,3 +2670,44 @@ states, per explicit request they now get their own lane instead:
   when switched to Show All (3 excluded as detail_of children per above; 2 zero-length-date
   records fall through the same date-overlap heuristic every other lane already shares -- a
   pre-existing limitation of `overlap_years`, not new here).
+
+### `prominence_score` formula revised: five brittle components dropped, a real population signal added — 11 September 2026
+
+ROADMAP.md item 1, brainstormed before implementing. `pipeline/compute_prominence.py`'s
+`prominence_components()` previously had six additive components plus three penalties;
+`editorial_work`, `relationship_centrality`, `aggregate_penalty`, `type_uncertainty_penalty`, and
+`date_uncertainty_penalty` are all dropped per explicit request -- they mixed genuine historical
+prominence with how much curation attention a record happened to have received (editorial_work,
+relationship_centrality), or a single not-always-reliable Wikidata type/confidence flag
+(aggregate_penalty, type_uncertainty_penalty, date_uncertainty_penalty). What remains:
+`wikidata_reach` (30), `authority_coverage` (20), `historical_evidence` (20), `longevity` (8).
+
+- New `population_scale` component (cap 20, `min(20, 2.2 * log10(1 + population))`) replaces what
+  used to be population's only role in the formula: a boolean "is hyde/maddison a listed source"
+  bonus inside `historical_evidence`. Now it's the polity's actual peak population, log-scaled the
+  same way `wikidata_reach` already is.
+- `_load_peak_populations()` sources that peak from `sources/maddison_by_polity.parquet` (real
+  national population via `pipeline/map_maddison.py`'s present_countries matching -- 141 modern
+  nation-states, 1516-2022, accurate) preferred over `sources/hyde_pop_by_polity.parquet`
+  (`pipeline/extract_hyde.py`'s fixed 2.5-degree centroid-radius sum -- broader coverage, every
+  eligible accepted polity with a centroid, but badly undercounts anything territorially large:
+  spot-checked live, the United States' 2025 HYDE figure is ~1.9 million against a real ~335
+  million). Maddison wins wherever it covers a polity; HYDE fills in everyone else.
+- Recomputed dataset-wide: 4,730 records, score range 0.8-77.2 (down from a higher ceiling before
+  the five removals -- expected, it's a relative ranking, not an absolute one), mean 29.3.
+  Population-scale coverage: 141 from Maddison, 1,155 from HYDE, 3,434 with no population data at
+  all (component contributes 0, same "no bonus, no penalty" treatment every other component
+  already gives missing data). Verified live: United States 70.71 (population_scale 18.75/20,
+  was one of the biggest single contributors to its score), India 66.76 (population_scale capped
+  at 20) -- exactly the modern-great-power under-ranking ROADMAP.md item 2 flagged as the reason
+  to revisit this in the first place.
+- Known gap, not yet closed: `population_by_civilization.json` (this session's own
+  `pipeline/extract_hyde_by_civilization.py`, present_countries-masked, covers 27 of 28
+  Civilizations & Cultures entities) is *not* wired in here -- those entities still fall back to
+  `hyde_pop_by_polity.parquet`'s narrower centroid-only eligibility (many, e.g. Zapotec
+  civilization, have no centroid on file at all and get population_scale 0 despite the project
+  already having real population data for them). Left out of this pass since it wasn't part of
+  the brainstormed/approved scope; flagged for a follow-up.
+- 533 tests pass (7 new/rewritten in `tests/test_compute_prominence.py`). `pipeline/poster.py`
+  (the only other consumer of the raw score shape, via `scale_prominence_score`) verified
+  unaffected -- still renders correctly, same 0-100 input range.

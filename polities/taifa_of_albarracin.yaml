@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 33.48
+prominence_score: 48.43
 eligibility: accepted
 geography:
   continents:
@@ -56,13 +56,9 @@ prominence_components:
   wikidata_reach: 18.06
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 3.5
   longevity: 4.92
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 33.48
+  population_scale: 13.44
+  total: 48.43
 government_form: taifa
 deprecated:
   visibility_tier: detailed

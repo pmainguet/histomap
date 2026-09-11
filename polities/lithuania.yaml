@@ -23,7 +23,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - maddison
 - wikidata
-prominence_score: 44.42
+prominence_score: 60.37
 eligibility: accepted
 geography:
   continents:
@@ -47,13 +47,9 @@ prominence_components:
   wikidata_reach: 30
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 3.5
   longevity: 3.92
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 44.42
+  population_scale: 14.45
+  total: 60.37
 consolidation_status: independent
 manual_overrides:
 - consolidation

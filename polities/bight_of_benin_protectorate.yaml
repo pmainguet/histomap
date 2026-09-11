@@ -22,7 +22,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 0
+prominence_score: 2.5
 eligibility: accepted
 geography:
   continents:
@@ -52,13 +52,9 @@ prominence_components:
   wikidata_reach: 0.0
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 3.5
   longevity: 2.5
-  editorial_work: 0
-  type_uncertainty_penalty: -10
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 0
+  population_scale: 0.0
+  total: 2.5
 government_form: protectorate
 consolidation_status: independent
 manual_overrides:

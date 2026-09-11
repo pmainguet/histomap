@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 40.38
+prominence_score: 52.3
 eligibility: accepted
 geography:
   continents:
@@ -53,13 +53,9 @@ prominence_components:
   wikidata_reach: 23.16
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 5.55
   longevity: 4.67
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 40.38
+  population_scale: 12.46
+  total: 52.3
 linked_era_id: asia_industrial_imperial_world_era
 government_form: null
 linked_chapter_id: macro_industrial_imperial_world

@@ -20,7 +20,7 @@ end_confidence: low
 weight_by_era:
   -300: 1.0
 weight_imputed: true
-prominence_score: 0.75
+prominence_score: 5.75
 eligibility: review
 notes: Kept as a separate entity during Seshat reconciliation; requires canonical
   review.
@@ -33,13 +33,9 @@ prominence_components:
   wikidata_reach: 0.0
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 5.75
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 0.75
+  population_scale: 0.0
+  total: 5.75
 manual_overrides:
 - entity_type
 - geography

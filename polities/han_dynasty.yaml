@@ -32,11 +32,7 @@ prominence_components:
   wikidata_reach: 30
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 6.58
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 31.58
-prominence_score: 31.58
+  population_scale: 13.58
+  total: 50.15
+prominence_score: 50.15

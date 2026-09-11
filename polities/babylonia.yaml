@@ -27,7 +27,7 @@ notes: Hand-authored 2026-08-31, replacing the deleted babylonia_period.yaml ("c
   Sumer plays for the earlier Sumerian city-states. See STATUS.md.
 sources:
 - editorial
-prominence_score: 32.77
+prominence_score: 50.63
 manual_overrides:
 - consolidation
 - visibility_override
@@ -51,13 +51,9 @@ prominence_components:
   wikidata_reach: 29.93
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 7.84
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 32.77
+  population_scale: 12.86
+  total: 50.63
 linked_era_id: classical_antiquity_era
 entity_type_source_qids:
 - Q28171280

@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 42.87
+prominence_score: 59.17
 eligibility: accepted
 geography:
   continents:
@@ -48,13 +48,9 @@ prominence_components:
   wikidata_reach: 26.99
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 3.5
   longevity: 5.38
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 42.87
+  population_scale: 14.8
+  total: 59.17
 linked_era_id: europe_industrial_imperial_world_era
 government_form: kingdom
 linked_chapter_id: macro_industrial_imperial_world

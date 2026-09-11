@@ -22,7 +22,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 37.6
+prominence_score: 48.91
 eligibility: accepted
 geography:
   continents:
@@ -45,13 +45,9 @@ prominence_components:
   wikidata_reach: 21.71
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 3.5
   longevity: 5.39
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 37.6
+  population_scale: 9.81
+  total: 48.91
 linked_era_id: classical_antiquity_era
 government_form: null
 linked_chapter_id: macro_postclassical_worlds

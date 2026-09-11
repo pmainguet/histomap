@@ -25,7 +25,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - seshat
 - wikidata
-prominence_score: 24.41
+prominence_score: 29.41
 eligibility: accepted
 geography:
   continents:
@@ -47,13 +47,9 @@ prominence_components:
   wikidata_reach: 13.55
   authority_coverage: 12
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 3.86
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 24.41
+  population_scale: 0.0
+  total: 29.41
 government_form: kingdom
 deprecated:
   visibility_tier: detailed

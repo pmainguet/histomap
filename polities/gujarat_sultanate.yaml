@@ -22,7 +22,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 34.26
+prominence_score: 54.14
 eligibility: accepted
 geography:
   continents:
@@ -46,13 +46,9 @@ prominence_components:
   wikidata_reach: 21.71
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 0.0
   longevity: 5.56
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 34.26
+  population_scale: 14.87
+  total: 54.14
 government_form: sultanate
 deprecated:
   visibility_tier: detailed

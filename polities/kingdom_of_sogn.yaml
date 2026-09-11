@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review. End date correcte
   2026).
 sources:
 - wikidata
-prominence_score: 2.91
+prominence_score: 7.91
 eligibility: accepted
 geography:
   continents:
@@ -48,13 +48,9 @@ prominence_components:
   wikidata_reach: 7.16
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 0.75
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 2.91
+  population_scale: 0.0
+  total: 7.91
 manual_overrides:
 - entity_type
 government_form: petty kingdom

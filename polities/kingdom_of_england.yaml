@@ -31,7 +31,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 53.58
+prominence_score: 63.36
 eligibility: accepted
 geography:
   continents:
@@ -60,13 +60,9 @@ prominence_components:
   wikidata_reach: 29.53
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 9.83
   longevity: 7.23
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 53.58
+  population_scale: 14.6
+  total: 63.36
 linked_era_id: medieval_europe_era
 government_form: null
 linked_chapter_id: macro_postclassical_worlds

@@ -24,7 +24,7 @@ notes: Automatically generated from Wikidata; requires review.
 sources:
 - hyde
 - wikidata
-prominence_score: 33.97
+prominence_score: 51.51
 eligibility: accepted
 geography:
   continents:
@@ -55,13 +55,9 @@ prominence_components:
   wikidata_reach: 18.06
   authority_coverage: 4
   historical_evidence: 8
-  relationship_centrality: 3.5
   longevity: 5.4
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 33.97
+  population_scale: 16.04
+  total: 51.51
 government_form: princely state
 deprecated:
   visibility_tier: detailed

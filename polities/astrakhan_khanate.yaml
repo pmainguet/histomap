@@ -21,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 25.88
+prominence_score: 30.88
 eligibility: accepted
 geography:
   continents:
@@ -42,13 +42,9 @@ prominence_components:
   wikidata_reach: 25.99
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 4.9
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 25.88
+  population_scale: 0.0
+  total: 30.88
 manual_overrides:
 - geography
 linked_era_id: asia_early_modern_connections_era

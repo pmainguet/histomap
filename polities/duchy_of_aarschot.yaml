@@ -21,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 3.41
+prominence_score: 18.41
 eligibility: accepted
 geography:
   continents:
@@ -41,13 +41,9 @@ prominence_components:
   wikidata_reach: 11.67
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 6.74
-  editorial_work: 0
-  type_uncertainty_penalty: -10
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 3.41
+  population_scale: 0.0
+  total: 18.41
 government_form: duchy
 deprecated:
   visibility_tier: detailed

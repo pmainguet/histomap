@@ -21,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 27.19
+prominence_score: 28.69
 eligibility: accepted
 geography:
   continents:
@@ -48,13 +48,9 @@ prominence_components:
   wikidata_reach: 22.16
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 3.5
   longevity: 6.53
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 27.19
+  population_scale: 0.0
+  total: 28.69
 consolidation_status: independent
 government_form: null
 detail_of: polishlithuanian_commonwealth

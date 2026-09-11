@@ -21,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 22.81
+prominence_score: 27.81
 eligibility: accepted
 geography:
   continents:
@@ -42,13 +42,9 @@ prominence_components:
   wikidata_reach: 24.8
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 3.01
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 22.81
+  population_scale: 0.0
+  total: 27.81
 government_form: null
 deprecated:
   visibility_tier: detailed

@@ -20,7 +20,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 14.48
+prominence_score: 15.98
 eligibility: accepted
 geography:
   continents:
@@ -40,13 +40,9 @@ prominence_components:
   wikidata_reach: 11.67
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 3.5
   longevity: 4.31
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 14.48
+  population_scale: 0.0
+  total: 15.98
 manual_overrides:
 - entity_type
 government_form: khanate

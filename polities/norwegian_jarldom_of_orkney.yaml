@@ -21,7 +21,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 18.1
+prominence_score: 23.1
 eligibility: accepted
 geography:
   continents:
@@ -42,13 +42,9 @@ prominence_components:
   wikidata_reach: 16.19
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 0.0
   longevity: 6.91
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 18.1
+  population_scale: 0.0
+  total: 23.1
 manual_overrides:
 - geography
 linked_era_id: medieval_europe_era

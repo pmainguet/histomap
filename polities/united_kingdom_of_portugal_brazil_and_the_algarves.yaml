@@ -23,7 +23,7 @@ text:
 notes: Automatically generated from Wikidata; requires review.
 sources:
 - wikidata
-prominence_score: 30.0
+prominence_score: 38.95
 eligibility: accepted
 geography:
   continents:
@@ -52,13 +52,9 @@ prominence_components:
   wikidata_reach: 23.7
   authority_coverage: 0
   historical_evidence: 0
-  relationship_centrality: 9.05
   longevity: 2.26
-  editorial_work: 0
-  type_uncertainty_penalty: 0
-  date_uncertainty_penalty: -5.0
-  aggregate_penalty: 0
-  total: 30.0
+  population_scale: 13.0
+  total: 38.95
 manual_overrides:
 - consolidation
 linked_era_id: south_america_industrial_imperial_world_era
