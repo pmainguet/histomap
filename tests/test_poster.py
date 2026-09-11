@@ -17,6 +17,7 @@ from pipeline.poster import (
     select_top_polities,
     smoothstep,
     stack_polities,
+    stack_polities_by_value,
     taper_factor,
     width_px,
 )
@@ -379,6 +380,69 @@ class StackPolitiesTests(unittest.TestCase):
         samples = stack_polities([a], order_lineages([a]), (-1000, 1000), step=500, canvas_x0=0, canvas_x1=100)
         # Years far from a's own span (with default 15-year fade window)
         # should contribute nothing.
+        self.assertEqual(samples["a"], [s for s in samples["a"] if -15 <= s.year <= 25])
+
+
+class StackPolitiesByValueTests(unittest.TestCase):
+    """The "Histomap Authentic" style's stacking core -- see
+    StackPolitiesTests above for its percentage-based ("100% Stacked")
+    sibling; the shared behaviors (contiguity, ordering, active-window
+    filtering) are covered there and not re-proven here in full."""
+
+    def test_active_polities_are_contiguous_but_not_clamped_to_any_canvas(self) -> None:
+        a = polity("a", -100, 100, prominence=5)
+        b = polity("b", -50, 150, prominence=3)
+        compute_lineages([a, b], edges=[])
+        samples = stack_polities_by_value(
+            [a, b], order_lineages([a, b]), (-100, 150), step=10, canvas_x0=0, jitter_amp=0
+        )
+        by_year: dict[int, list] = {}
+        for pid in ("a", "b"):
+            for s in samples[pid]:
+                by_year.setdefault(s.year, []).append(s)
+        self.assertGreater(len(by_year), 5)
+        for year, entries in by_year.items():
+            entries.sort(key=lambda s: s.x_left)
+            self.assertAlmostEqual(entries[0].x_left, 0, places=6, msg=f"year {year}")
+            for prev, cur in zip(entries, entries[1:]):
+                self.assertAlmostEqual(prev.x_right, cur.x_left, places=6, msg=f"year {year}")
+            # Unlike stack_polities, nothing forces the total to any fixed
+            # value -- it's just whatever width_px(...) sums to.
+            total_width = entries[-1].x_right - entries[0].x_left
+            self.assertGreater(total_width, 0)
+
+    def test_width_reflects_absolute_prominence_not_a_share(self) -> None:
+        # A single polity alone in the pool should still get its own
+        # absolute width_px-derived width, not "100% of some canvas" --
+        # the whole point of "value" stacking over "percent" stacking.
+        # Checked mid-span (year 50), well clear of the default 15-year
+        # fade-in/out windows at either edge, which taper the effective
+        # prominence (and so the width) below the flat width_px(5) value.
+        a = polity("a", 0, 100, prominence=5)
+        compute_lineages([a], edges=[])
+        samples = stack_polities_by_value([a], order_lineages([a]), (0, 100), step=10, canvas_x0=0, jitter_amp=0)
+        mid = next(s for s in samples["a"] if s.year == 50)
+        self.assertAlmostEqual(mid.x_right - mid.x_left, width_px(5) * 2, places=1)
+
+    def test_more_simultaneous_polities_makes_a_wider_total(self) -> None:
+        # No normalization means the total width at a crowded year should
+        # exceed the total width at a quiet year with fewer active bands
+        # -- the opposite of stack_polities, which always fills the same
+        # canvas either way.
+        few = [polity("a", 0, 100, prominence=5)]
+        many = [polity(f"p{i}", 0, 100, prominence=5) for i in range(5)]
+        compute_lineages(few, edges=[])
+        compute_lineages(many, edges=[])
+        few_samples = stack_polities_by_value(few, order_lineages(few), (0, 100), step=50, canvas_x0=0, jitter_amp=0)
+        many_samples = stack_polities_by_value(many, order_lineages(many), (0, 100), step=50, canvas_x0=0, jitter_amp=0)
+        few_total = max(s.x_right for pts in few_samples.values() for s in pts)
+        many_total = max(s.x_right for pts in many_samples.values() for s in pts)
+        self.assertGreater(many_total, few_total)
+
+    def test_no_active_polities_produces_no_samples_for_that_year(self) -> None:
+        a = polity("a", 0, 10)
+        compute_lineages([a], edges=[])
+        samples = stack_polities_by_value([a], order_lineages([a]), (-1000, 1000), step=500, canvas_x0=0)
         self.assertEqual(samples["a"], [s for s in samples["a"] if -15 <= s.year <= 25])
 
 

@@ -332,36 +332,62 @@ def _band_jitter(lo: int, hi: int, seed: int, amp: float, year: int) -> float:
     return a + (b - a) * local_t
 
 
-def authentic_path(
-    polity: PosterPolity,
-    lineage_x: float,
+def stack_polities_by_value(
+    polities: list[PosterPolity],
+    lineage_order: list[str],
     year_range: tuple[int, int],
     step: int,
-    year_to_y,
+    canvas_x0: float,
     jitter_amp: float = 3.0,
-) -> str:
-    """Style "authentic": a polity's own band, centered on its lineage's
-    fixed x, independent of every other lineage -- the counterpart to
-    stack_polities for the non-stacked style. Small deterministic jitter
-    on the half-width, echoing the 1931 original's hand-drawn edges."""
+    epsilon: float = 0.15,
+) -> dict[str, list[StackedSample]]:
+    """The "Histomap Authentic" style's core: at every sampled year, every
+    active polity's width is its own absolute width_px(...) value -- not
+    a share of a fixed canvas width, stack_polities' sibling for the
+    "100% Stacked" style -- stacked contiguously left-to-right from
+    canvas_x0. The *total* width at any given year is therefore whatever
+    the sum of active widths happens to be that year, not stretched or
+    compressed to fill any fixed canvas -- closer to the real 1931
+    Histomap's own look (the whole "wall of history" widens and narrows
+    over time, not just the bands within an always-fixed-width wall) than
+    giving each lineage its own independent, evenly-pitched lane. Order
+    within a year is lineage first (by lineage_order), then each polity's
+    own start year within its lineage -- same contiguity/stability
+    reasoning as stack_polities. Small deterministic jitter on each
+    band's own width (not on its edges independently, which would break
+    contiguity with its neighbors) echoes the 1931 original's hand-drawn
+    edges, the same role _band_jitter played in this style's own
+    previous, non-stacked, per-lineage-lane path builder."""
+    lineage_rank = {lineage_id: i for i, lineage_id in enumerate(lineage_order)}
     start_year, end_year = year_range
+    samples: dict[str, list[StackedSample]] = {p.id: [] for p in polities}
     max_year_no_fade_out = end_year
-    lo = max(start_year, polity.start)
-    hi = min(end_year, polity.end)
-    if lo >= hi:
-        return ""
-    years = list(range(lo, hi, step)) + [hi]
-    seed = hash(polity.id) % 100000
-    left, right = [], []
-    for year in years:
-        prom = polity.effective_prominence_at(year, max_year_no_fade_out)
-        hw = width_px(prom) + _band_jitter(lo, hi, seed, jitter_amp, year)
-        hw = max(2.0, hw)
-        y = year_to_y(year)
-        left.append(f"{lineage_x - hw:.1f},{y:.1f}")
-        right.append(f"{lineage_x + hw:.1f},{y:.1f}")
-    right.reverse()
-    return f"M {' L '.join(left)} L {' L '.join(right)} Z"
+
+    def fade_reach(years: int) -> float:
+        return years * (2 / 3)
+
+    year = start_year
+    while year <= end_year:
+        active = []
+        for p in polities:
+            fade_in = p.fade_in_years if p.fade_in_years is not None else DEFAULT_FADE_YEARS
+            fade_out = p.fade_out_years if p.fade_out_years is not None else DEFAULT_FADE_YEARS
+            window_start = p.start - fade_reach(fade_in)
+            window_end = p.end + fade_out * (1 / 3) if p.end < max_year_no_fade_out else p.end
+            if window_start <= year <= window_end:
+                active.append(p)
+        if active:
+            active.sort(key=lambda p: (lineage_rank.get(p.lineage_id, len(lineage_rank)), p.start))
+            cx = canvas_x0
+            for p in active:
+                prom = max(p.effective_prominence_at(year, max_year_no_fade_out), epsilon)
+                seed = hash(p.id) % 100000
+                jitter = _band_jitter(p.start, p.end, seed, jitter_amp, year)
+                w = max(2.0, width_px(prom) * 2 + jitter)
+                samples[p.id].append(StackedSample(year, cx, cx + w))
+                cx += w
+        year += step
+    return samples
 
 
 # -- Integration layer: loads the published build artifacts and renders a
@@ -500,12 +526,46 @@ def _rotated_label(x: float, y: float, text: str, size: float, color: str) -> st
     )
 
 
+def _render_stacked_bands(
+    parts: list[str],
+    polities: list[PosterPolity],
+    samples: dict[str, list[StackedSample]],
+    year_to_y,
+    lineage_color: dict[str, tuple[str, str]],
+) -> None:
+    """Shared by both styles -- "100% Stacked" (stack_polities, percentage
+    of a fixed canvas) and "Histomap Authentic" (stack_polities_by_value,
+    absolute width, dynamic canvas): same path-per-polity plus a label at
+    each band's own widest sampled point either way, only how `samples`
+    itself was computed differs between the two callers."""
+    for p in polities:
+        fill, line = lineage_color.get(p.lineage_id, _PALETTE[0])
+        d = path_from_stacked_samples(samples[p.id], year_to_y)
+        if d:
+            parts.append(f'<path d="{d}" fill="{fill}" stroke="{line}" stroke-width="1.1"/>')
+    for p in polities:
+        pts = samples[p.id]
+        if not pts:
+            continue
+        widest = max(pts, key=lambda s: s.x_right - s.x_left)
+        mid_x = (widest.x_left + widest.x_right) / 2
+        hw = (widest.x_right - widest.x_left) / 2
+        fs = max(7.0, min(15.0, hw * 0.55))
+        parts.append(
+            f'<text x="{mid_x:.1f}" y="{year_to_y(widest.year) + fs * 0.32:.1f}" '
+            f'text-anchor="middle" style="font:700 {fs:.1f}px serif; fill:{_INK};">{_esc(p.label)}</text>'
+        )
+
+
 def render_poster_svg(
     style: Style, start_year: int, end_year: int, root: Path = ROOT, width_source: WidthSource = "prominence"
 ) -> str:
     """Renders the poster as a complete, standalone SVG document string.
-    style: "authentic" (independent per-lineage columns) or "stacked"
-    (100% of the canvas width, shared proportionally every year).
+    style: "authentic" (each lineage's bands stacked contiguously by their
+    own absolute width_px value -- see stack_polities_by_value; the total
+    width at any year is whatever the active bands add up to, not a fixed
+    canvas) or "stacked" (100% of one fixed canvas width, shared
+    proportionally every year -- see stack_polities).
     width_source: "prominence" (default, every band flat-width across its
     span) or "population" (Civilizations & Cultures entities with a HYDE-
     derived curve on file get a real width that tracks their own
@@ -539,47 +599,25 @@ def render_poster_svg(
     parts: list[str] = []
     content_x0 = _MARGIN_X0
 
+    lineage_color = {lineage_id: _PALETTE[i % len(_PALETTE)] for i, lineage_id in enumerate(lineage_order)}
     if style == "stacked":
         content_x1 = content_x0 + _STACKED_CONTENT_W
         step = max(1, (end_year - start_year) // 400)
         samples = stack_polities(polities, lineage_order, (start_year, end_year), step, content_x0, content_x1)
-        lineage_color = {lineage_id: _PALETTE[i % len(_PALETTE)] for i, lineage_id in enumerate(lineage_order)}
-        for p in polities:
-            fill, line = lineage_color.get(p.lineage_id, _PALETTE[0])
-            d = path_from_stacked_samples(samples[p.id], year_to_y)
-            if d:
-                parts.append(f'<path d="{d}" fill="{fill}" stroke="{line}" stroke-width="1.1"/>')
-        for p in polities:
-            pts = samples[p.id]
-            if not pts:
-                continue
-            widest = max(pts, key=lambda s: s.x_right - s.x_left)
-            mid_x = (widest.x_left + widest.x_right) / 2
-            hw = (widest.x_right - widest.x_left) / 2
-            fs = max(7.0, min(15.0, hw * 0.55))
-            parts.append(
-                f'<text x="{mid_x:.1f}" y="{year_to_y(widest.year) + fs * 0.32:.1f}" '
-                f'text-anchor="middle" style="font:700 {fs:.1f}px serif; fill:{_INK};">{_esc(p.label)}</text>'
-            )
     else:
-        content_x1 = content_x0 + max(_LINEAGE_PITCH, len(lineage_order) * _LINEAGE_PITCH)
-        lineage_x = {
-            lineage_id: content_x0 + (i + 0.5) * _LINEAGE_PITCH for i, lineage_id in enumerate(lineage_order)
-        }
-        lineage_color = {lineage_id: _PALETTE[i % len(_PALETTE)] for i, lineage_id in enumerate(lineage_order)}
+        # "Histomap Authentic": value-stacked, not given each lineage its
+        # own independent, evenly-pitched lane -- see stack_polities_by_
+        # value's own docstring for why. content_x1 isn't fixed up front
+        # (unlike "stacked"'s _STACKED_CONTENT_W): it's however wide the
+        # busiest sampled year's stack actually got, so gridlines/gutters
+        # still sit clear of every band.
         step = max(1, (end_year - start_year) // 300)
-        for p in polities:
-            fill, line = lineage_color.get(p.lineage_id, _PALETTE[0])
-            x = lineage_x.get(p.lineage_id, content_x0)
-            d = authentic_path(p, x, (start_year, end_year), step, year_to_y)
-            if d:
-                parts.append(f'<path d="{d}" fill="{fill}" stroke="{line}" stroke-width="1.1"/>')
-                mid_year = max(start_year, min(end_year, (p.start + p.end) // 2))
-                fs = max(7.0, min(15.0, width_px(p.effective_prominence_at(mid_year, end_year)) * 0.5))
-                parts.append(
-                    f'<text x="{x:.1f}" y="{year_to_y(mid_year) + fs * 0.32:.1f}" '
-                    f'text-anchor="middle" style="font:700 {fs:.1f}px serif; fill:{_INK};">{_esc(p.label)}</text>'
-                )
+        samples = stack_polities_by_value(polities, lineage_order, (start_year, end_year), step, content_x0)
+        content_x1 = max(
+            (s.x_right for points in samples.values() for s in points),
+            default=content_x0 + _LINEAGE_PITCH,
+        )
+    _render_stacked_bands(parts, polities, samples, year_to_y, lineage_color)
 
     # Year axis, both margins.
     tick_step = max(50, round((end_year - start_year) / 12 / 50) * 50)
